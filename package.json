@@ -1,16 +1,18 @@
 {
   "name": "lsk-general",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "author": "isuvorov",
   "license": "MIT",
-  "private": true,
   "engines": {
     "node": ">=5.0 <7",
     "npm": ">=3.3 <4"
   },
   "dependencies": {
     "core-decorators": "^0.12.3",
+    "highlight.js": "^9.8.0",
     "importcss": "^1.0.0",
+    "markdown-it": "^8.1.0",
+    "markdown-it-emoji": "^1.3.0",
     "react": "15.1.0",
     "react-bootstrap": "^0.29.5",
     "react-icons": "^2.2.1"
