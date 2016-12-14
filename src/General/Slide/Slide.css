@@ -1,0 +1,160 @@
+@import "../_vars.css";
+
+.Slide {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+}
+
+
+/*.Slide__flex,
+.Slide__wrap {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100vh;
+}*/
+
+.Slide__content {
+  z-index: 111;
+}
+
+/*
+.Slide__aside {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+}*/
+
+
+.Slide__top {
+  padding-top: 40px;
+}
+.Slide__middle {
+  flex: 1;
+  padding: 20px 10px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  justify-content: space-between;
+}
+.Slide__bottom {
+  padding-bottom: 40px;
+}
+
+.Slide__left {
+  /*text-align: left*/
+}
+.Slide__center {
+  flex-grow: 1;
+  /*text-align: center;*/
+}
+.Slide__right {
+  /*text-align: right;*/
+}
+
+
+.Slide__inner {
+  z-index: 103;
+}
+
+.Slide_fixed {
+  .Slide__inner {
+    /*@mixin gridColors;*/
+    @mixin gridContainer;
+  }
+}
+
+
+
+.noclick {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 102;
+}
+
+
+.overlay {
+  min-width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 101;
+
+  background-color: rgba(255, 0, 0, 0.5);
+}
+
+.video__wrapper {
+  min-width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  /*opacity: 1;
+  transition-property: opacity;
+  transition-duration: 2000ms;*/
+}
+.video {
+  position: absolute;
+  /*z-index: 0;*/
+  width: 1888px;
+  height: 1347.44px;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+  opacity: 1;
+  margin-top: -170.72px;
+  margin-left: -558px;
+  transition-property: opacity;
+  transition-duration: 1000ms;
+}
+
+
+.Slide__bg-image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 99;
+  top: 0;
+  left: 0;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+
+.Slide__bg-video {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -2;
+  top: 0;
+  left: 0;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.Slide__bg-video-inner {
+  width: 100%;
+  height: 100%;
+
+  background-attachment: scroll;
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
