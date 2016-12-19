@@ -8,7 +8,5 @@ const ctx = {
   pkg: require('../package.json'),
   deps: [
   ],
-  alias: {
-  },
 }
 export default ctx

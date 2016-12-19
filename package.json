@@ -1,20 +1,18 @@
 {
   "name": "lsk-general",
-  "version": "0.3.1",
+  "version": "0.3.3",
   "author": "isuvorov",
   "license": "MIT",
-  "engines": {
-    "node": ">=5.0 <7",
-    "npm": ">=3.3 <4"
-  },
   "dependencies": {
     "core-decorators": "^0.12.3",
     "highlight.js": "^9.8.0",
     "importcss": "^1.0.0",
     "markdown-it": "^8.1.0",
     "markdown-it-emoji": "^1.3.0",
-    "react": "15.1.0",
+    "react": "15.4.1",
+    "react-dom": "15.4.1",
     "react-bootstrap": "^0.29.5",
+    "react-drive-in": "^1.7.3",
     "react-icons": "^2.2.1"
   },
   "devDependencies": {
@@ -23,7 +21,7 @@
     "babel-core": "^6.9.0",
     "babel-eslint": "^6.0.4",
     "babel-loader": "^6.2.4",
-    "babel-plugin-react-require": "^2.1.0",
+    "babel-plugin-react-require": "^3.0.0",
     "babel-plugin-react-transform": "^2.0.2",
     "babel-plugin-rewire": "^1.0.0-rc-3",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
@@ -48,7 +46,7 @@
     "glob-loader": "^0.2.0",
     "json-loader": "^0.5.4",
     "jsx-control-statements": "^3.1.2",
-    "lsk-build": "^0.2.5",
+    "lsk-build": "0.4.3",
     "path": "^0.12.7",
     "postcss-loader": "^1.0.0",
     "webpack": "^1.13.2",
