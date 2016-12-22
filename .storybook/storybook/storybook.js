@@ -3,6 +3,12 @@ import React from 'react';
 import StyleWrapper from './StyleWrapper';
 import StoryWrapper from './StoryWrapper';
 
+// console.log = (a) => {
+//   require('fs').writeFileSync('./stotylog.txt', a)
+// }
+// console.log('asdasdas')
+// throw new Error('asdasdas')
+
 const storybook = {
   action,
   storiesOf: (...args) => {
@@ -25,10 +31,10 @@ function wrapModule(module) {
   }
 }
 
-function wrapModules(modules, module) {
+function wrapModules(stories, module) {
   return configure(() => {
-    for (let key in modules) { // eslint-disable-line
-      wrapModule(modules[key]);
+    for (let key in stories) { // eslint-disable-line
+      wrapModule(stories[key]);
     }
   }, module);
 }

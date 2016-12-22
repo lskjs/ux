@@ -1,2 +1,3 @@
 import { wrapModules } from './storybook';
-wrapModules(require('glob-loader!./story.pattern'), module);
+const stories = require('glob!./story.pattern')
+wrapModules(stories, module);

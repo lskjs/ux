@@ -8,7 +8,7 @@ import _ from 'lodash'
 import { Row, Col } from 'react-bootstrap'
 
 module.exports = function ({ storiesOf, action }) {
-  return storiesOf('Abp/Slide', module)
+  return storiesOf('Slide', module)
     .add('default', () => (
       <Slide>
         Default slide

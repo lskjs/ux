@@ -8,7 +8,7 @@ import Page from './Page'
 // import { Row, Col } from 'react-bootstrap'
 
 module.exports = function ({ storiesOf, action }) {
-  return storiesOf('Abp/Page', module)
+  return storiesOf('Page', module)
     .add('Page default no styles', () => (
       <Page>
         <h1>Какой-то заголовок</h1>

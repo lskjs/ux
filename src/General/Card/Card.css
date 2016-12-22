@@ -1,0 +1,172 @@
+@import "../_vars.css";
+
+
+.card {
+  background-color: white;
+  box-shadow: 0 0 15px $sk-shadow;
+  .card-photo {
+    width: 100%;
+    height: 224px;
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    &:after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      display: block;
+      background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(132,132,132,0.65) 100%);
+    }
+    .cp-username {
+        position: absolute;
+        bottom: 0;
+        font-size: 24px;
+        color: white;
+        padding: 25px 30px;
+        line-height: 28px;
+    }
+  }
+  .card-title {
+    font-size: 24px;
+    color: $sk-primary;
+    padding: 25px 30px;
+    line-height: 28px;
+  }
+  .card-rating {
+      display: flex;
+      padding: 20px 30px;
+      border-bottom: 1px #f2f2f2 solid;
+      .cr-item {
+          display: flex;
+          flex-direction: column;
+          flex-grow: 1;
+          align-items: center;
+          .cri-head {
+              font-size: 14px;
+              color: $sk-whiteText;
+          }
+          .cri-val {
+              margin-top: 8px;
+              font-size: 30px;
+          }
+      }
+  }
+  .separator {
+      width: calc(100% - 70px);
+      height: 1px;
+      margin-left: auto;
+      background: $sk-background;
+      &.large {
+        width: calc(100% - 30px);
+      }
+      &.task {
+        width: calc(100% - 30px);
+        margin-right: -30px;
+      }
+  }
+  .card-info {
+    border-top: 1px solid $sk-background;
+    border-bottom: 1px solid $sk-background;
+    display: flex;
+    flex-direction: column;
+    .ci-item {
+      padding: 28px 30px;
+      display: flex;
+      align-items: center;
+      &.skills {
+        .cii-info {
+          .cii-info-body {
+            margin-left: -5px;
+            margin-right: -10px;
+            display: flex;
+            flex-flow: row wrap;
+            .ib-tag {
+              margin: 0 5px 10px;
+              font-size: 12px;
+              font-weight: 600;
+              text-transform: uppercase;
+              padding: 10px 18px;
+              background-color: $sk-background;
+            }
+          }
+        }
+      }
+      .cii-info {
+        display: flex;
+        flex-direction: column;
+        .cii-info-header {
+          margin-bottom: 6px;
+          color: $sk-whiteText;
+          font-size: 14px;
+          &:after {
+            content: ':';
+            font-size: 14px;
+          }
+        }
+        .cii-info-body {
+          color: $sk-header;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  .card-text {
+    padding: 28px 30px 29px;
+    line-height: 18px;
+  }
+  .card-footer {
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    .cf-more {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: $sk-header;
+      border-bottom: 1px solid $sk-header;
+    }
+    .cf-likes {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+      background: none;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      .cfl-count {
+        font-family: 'Muller', sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: $sk-header;
+        margin-right: 10px;
+      }
+      .cfl-heart {
+        width: 16px;
+        height: 16px;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+  .card-buttons {
+    margin-left: -5px;
+    margin-right: -5px;
+    padding: 20px;
+    display: flex;
+    .cb-item {
+      cursor: pointer;
+      flex-grow: 1;
+      padding: 20px 0;
+      color: white;
+      font-size: 12px;
+      font-family: 'Muller', sans-serif;
+      text-transform: uppercase;
+      font-weight: 600;
+      border: none;
+      margin: 0 5px;
+      background-color: $sk-button;
+    }
+  }
+}
