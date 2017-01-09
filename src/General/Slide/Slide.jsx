@@ -126,7 +126,7 @@ export default class Slide extends Component {
     </div>
   }
   render() {
-    let { color, style } = this.props
+    let { color, style, className } = this.props
 
 
 
@@ -140,7 +140,7 @@ export default class Slide extends Component {
 
     const rootClass = `Slide ${this.props.fixed ? ' Slide_fixed' : ''}${this.props.center ? ' Slide_center' : ''}`
     return (
-      <div styleName={rootClass} style={style}>
+      <div styleName={rootClass} style={style} className={className}>
         {this.renderBg()}
         {this.renderInner()}
       </div>

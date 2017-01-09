@@ -43,13 +43,15 @@
   }
 }
 
+$sk-paddings: 20px;
+
 
 $sk-background: rgb(242, 242, 242);
 $sk-whiteText: rgb(172, 172, 172);
 $sk-whited: rgb(194, 194, 194);
 $sk-shadow: rgba(0, 0, 0, 0.1);
 $sk-muted: rgb(98, 98, 98);
-$sk-primary: rgb(64, 64, 64);
+$sk-primary: rgb(64, 64, 64); /*  основной цвет текста*/
 $sk-blackBorder: rgb(56, 56, 56);
 $sk-header: rgb(35, 35, 34);
 $sk-red: rgb(218, 59, 55);

@@ -1,18 +1,16 @@
 import React, { PropTypes } from 'react';
 // import Link from '../Link';
 import _ from 'lodash';
+// import Promise from "bluebird";
 
 export default class Component extends React.Component {
-  // constructor(props) {
-  //   super(props)
-  // }
   //
   static contextTypes = {
     history: PropTypes.object.isRequired,
   };
 
-  redirect(...args) {
-    this.context.history.push(...args);
+  setStateAsync(state) {
+    return new Promise(resolve => this.setState(state, resolve))
   }
 
   getStatePath(path) {
@@ -22,6 +20,11 @@ export default class Component extends React.Component {
   setStatePath(path, value) {
     const state = _.cloneDeep(this.state);
     _.set(state, path, value);
-    this.setState(state);
+    return this.setStateAsync(state)
   }
+
+  redirect(...args) {
+    this.context.history.push(...args);
+  }
+
 }

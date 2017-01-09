@@ -1,6 +1,6 @@
 {
   "name": "lsk-general",
-  "version": "0.4.0",
+  "version": "0.4.2",
   "author": "isuvorov",
   "license": "MIT",
   "dependencies": {
@@ -17,7 +17,6 @@
     "react-icons": "^2.2.1"
   },
   "devDependencies": {
-    "@kadira/storybook": "^2.26.0",
     "babel-cli": "^6.9.0",
     "babel-core": "^6.9.0",
     "babel-eslint": "^6.0.4",
@@ -44,6 +43,7 @@
     "eslint-plugin-import": "^1.8.1",
     "eslint-plugin-jsx-a11y": "^1.2.2",
     "eslint-plugin-react": "^5.1.1",
+    "getstorybook": "^1.7.0",
     "glob-loader": "^0.3.0",
     "json-loader": "^0.5.4",
     "jsx-control-statements": "^3.1.2",

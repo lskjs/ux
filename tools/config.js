@@ -9,6 +9,8 @@ const ctx = {
   deps: [
   ],
   alias: {
+    react: fs.realpathSync(dirname + '/node_modules/react'),
+    'react-dom': fs.realpathSync(dirname + '/node_modules/react-dom'),
   },
 }
 export default ctx
