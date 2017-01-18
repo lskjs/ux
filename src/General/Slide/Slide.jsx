@@ -1,13 +1,12 @@
-import { Component, PropTypes } from 'react'
-import importcss from 'importcss'
-import ReactDriveIn from 'react-drive-in'
+import { Component, PropTypes } from 'react';
+import importcss from 'importcss';
+import ReactDriveIn from 'react-drive-in';
 
 @importcss(require('./Slide.css'))
 export default class Slide extends Component {
   static propTypes = {};
 
   renderVideo(video) {
-
     // https://www.youtube.com/asdasd/asd/asd/watch?v=c-shIOFYCRU
     // https://youtu.be/C8PYHjRj-zk
     // https://www.youtube.com/embed/C8PYHjRj-zk
@@ -15,29 +14,29 @@ export default class Slide extends Component {
     //
 
     if (video.indexOf('youtube.com') !== -1 || video.indexOf('youtu.be') !== -1) {
-      const code = video.split('watch?v=').pop().split('/').pop().split('?')[0]
-      const playlist = `https://www.youtube.com/embed/${code}?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=${code}`
-      return <div styleName='Slide__video Slide__video_youtube'>
-        <div styleName='Slide__videoForeground'>
+      const code = video.split('watch?v=').pop().split('/').pop().split('?')[0];
+      const playlist = `https://www.youtube.com/embed/${code}?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=${code}`;
+      return (<div styleName="Slide__video Slide__video_youtube">
+        <div styleName="Slide__videoForeground">
           <iframe
-            styleName='video'
-            frameBorder='0'
-            allowFullScreen='1'
-            width='640'
-            height='360'
+            styleName="video"
+            frameBorder="0"
+            allowFullScreen="1"
+            width="640"
+            height="360"
             src={playlist}
           />
         </div>
-      </div>
+      </div>);
     }
-    return <div styleName='Slide__video'>
+    return (<div styleName="Slide__video">
       <ReactDriveIn
         show={video}
       />
-    </div>
+    </div>);
   }
   renderBg() {
-    let { color, overlay } = this.props
+    let { color, overlay } = this.props;
     if (!color) {
       color = 'transparent';
     }
@@ -45,10 +44,10 @@ export default class Slide extends Component {
       overlay = 'rgba(0,0,0,0.5)';
     }
 
-    return <div styleName="Slide__bg">
+    return (<div styleName="Slide__bg">
       <div styleName="Slide__noclick" />
       <If condition={this.props.overlay}>
-        <div styleName="Slide__overlay" style={{backgroundColor: overlay}} />
+        <div styleName="Slide__overlay" style={{ backgroundColor: overlay }} />
       </If>
       <If condition={this.props.video}>
         {this.renderVideo(this.props.video)}
@@ -75,15 +74,15 @@ export default class Slide extends Component {
       </If> */}
       <If condition={this.props.image}>
         <div
-          styleName='Slide__image'
-          style={{backgroundImage: 'url(' + this.props.image + ')'}}
+          styleName="Slide__image"
+          style={{ backgroundImage: `url(${this.props.image})` }}
         />
       </If>
-    </div>
+    </div>);
   }
   renderInner() {
-    let { width, height } = this.props
-    const style = {}
+    let { width, height } = this.props;
+    const style = {};
     if (this.props.full && !height) {
       height = '100vh';
     }
@@ -94,7 +93,7 @@ export default class Slide extends Component {
       style.minWidth = width;
     }
 
-    return <div styleName='Slide__inner' style={style}>
+    return (<div styleName="Slide__inner" style={style}>
       <If condition={this.props.top}>
         <div styleName="Slide__top">
           {this.props.top}
@@ -123,11 +122,10 @@ export default class Slide extends Component {
           {this.props.bottom}
         </div>
       </If>
-    </div>
+    </div>);
   }
   render() {
-    let { color, style, className } = this.props
-
+    let { color, style, className } = this.props;
 
 
     if (!style) {
@@ -138,12 +136,12 @@ export default class Slide extends Component {
     }
     style.backgroundColor = color;
 
-    const rootClass = `Slide ${this.props.fixed ? ' Slide_fixed' : ''}${this.props.center ? ' Slide_center' : ''}`
+    const rootClass = `Slide ${this.props.stretch ? ' Slide_stretch' : ''} ${this.props.fixed ? ' Slide_fixed' : ''}${this.props.center ? ' Slide_center' : ''}`;
     return (
       <div styleName={rootClass} style={style} className={className}>
         {this.renderBg()}
         {this.renderInner()}
       </div>
-    )
+    );
   }
 }

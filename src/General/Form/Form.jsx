@@ -1,6 +1,4 @@
-import Component from '../Component';
 import { autobind } from 'core-decorators';
-// import _ from 'lodash'
 import {
   Form as FormBase,
   FormGroup,
@@ -11,10 +9,10 @@ import {
   Button,
   Col,
 } from 'react-bootstrap';
+import Component from '../Component';
 
 // import models from 'import?grep=./models/*.js';
 // import from 'biot/asdasd/asdasdasd/'
-
 export default class Form extends Component {
 
   constructor(props) {
@@ -80,20 +78,24 @@ export default class Form extends Component {
 
   @autobind
   renderFieldInner(item) {
+    const control = <FormControl
+      type="text"
+      value={this.getStatePath(`data.${item.name}`) || ''}
+      onChange={this.handleChangeField(`data.${item.name}`)}
+      {...item.control}
+    />
     return (<div>
-      <InputGroup>
-        <If condition={item.icon}>
+      <If condition={item.icon}>
+        <InputGroup>
           <InputGroup.Addon>
             {item.icon}
           </InputGroup.Addon>
-        </If>
-        <FormControl
-          type="text"
-          value={this.getStatePath(`data.${item.name}`) || ''}
-          onChange={this.handleChangeField(`data.${item.name}`)}
-          {...item.control}
-        />
-      </InputGroup>
+          {control}
+        </InputGroup>
+      </If>
+      <If condition={!item.icon}>
+        {control}
+      </If>
       <FormControl.Feedback />
       <If condition={item.help}>
         <HelpBlock>
@@ -135,12 +137,15 @@ export default class Form extends Component {
     let submitText = 'Отправить';
     if (typeof this.props.submitButton === 'string') {
       submitText = this.props.submitButton;
+    } else if (this.props.submitButton != null) {
+      return this.props.submitButton;
     }
-    if (this.props.submitButton != null) return this.props.submitButton;
     return (
-      <Button type="submit" bsStyle="primary">
-        {submitText}
-      </Button>
+      <div style={{textAlign: 'center'}}>
+        <Button type="submit" bsStyle="primary">
+          {submitText}
+        </Button>
+      </div>
     );
   }
 

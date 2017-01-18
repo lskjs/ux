@@ -7,6 +7,14 @@
   text-align: center;
   z-index: 110;
 }
+.Slide_stretch {
+  .Slide__middle {
+    align-items: stretch !important;
+  }
+  .Slide__content {
+    height: 100%;
+  }
+}
 .Slide_fixed {
   /*.Slide__inner {*/
   .Slide__content {
