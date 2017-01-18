@@ -1,10 +1,7 @@
 import React, { PropTypes } from 'react';
-// import Link from '../Link';
 import _ from 'lodash';
-// import Promise from "bluebird";
 
 export default class Component extends React.Component {
-  //
   static contextTypes = {
     history: PropTypes.object.isRequired,
   };

@@ -1,4 +1,4 @@
-import Form from './Form'
+import Form from './Form';
 
 module.exports = function ({ storiesOf, action }) {
   return storiesOf('Form', module)
@@ -44,7 +44,7 @@ module.exports = function ({ storiesOf, action }) {
         onSubmit={action('onSubmit')}
       />
     ))
-    .add('Sample 3' , () => (
+    .add('Sample 3', () => (
       <Form
         fields={[
           {
@@ -65,7 +65,7 @@ module.exports = function ({ storiesOf, action }) {
         onSubmit={action('onSubmit')}
       />
     ))
-    .add('Sample 4' , () => (
+    .add('Sample 4', () => (
       <Form
         fields={[
           {
@@ -83,7 +83,7 @@ module.exports = function ({ storiesOf, action }) {
         onSubmit={action('onSubmit')}
       />
     ))
-    .add('Sample 5' , () => (
+    .add('Sample 5', () => (
       <Form
         fields={[
           {
@@ -121,5 +121,35 @@ module.exports = function ({ storiesOf, action }) {
         onSubmit={action('onSubmit')}
       />
     ))
-
-}
+    .add('Register', () => (
+      <Form
+        fields={[
+          {
+            name: 'name',
+            title: 'Имя',
+            control: {
+              placeholder: 'Например, Василий',
+            },
+          },
+          {
+            name: 'password',
+            title: 'Пароль',
+            control: {
+              type: 'password',
+            },
+          },
+          {
+            name: 'email',
+            title: 'Email',
+            control: {
+              placeholder: 'Например, utkin@mail.ru',
+              type: 'email',
+            },
+          },
+        ]}
+        submitButton="Регистрация"
+        onChange={action('onChange')}
+        onSubmit={action('onSubmit')}
+      />
+    ));
+};

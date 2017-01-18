@@ -1,5 +1,5 @@
-import Component from '../Component'
-import {autobind} from 'core-decorators'
+import Component from '../Component';
+import { autobind } from 'core-decorators';
 // import _ from 'lodash'
 import {
   Form as FormBase,
@@ -9,8 +9,8 @@ import {
   InputGroup,
   HelpBlock,
   Button,
-  Col
-} from 'react-bootstrap'
+  Col,
+} from 'react-bootstrap';
 
 // import models from 'import?grep=./models/*.js';
 // import from 'biot/asdasd/asdasdasd/'
@@ -18,12 +18,12 @@ import {
 export default class Form extends Component {
 
   constructor(props) {
-    super(props)
+    super(props);
 
     let data = props.data;
     if (!data) {
       data = {};
-      (this.formatFields(props.fields)).forEach(field => {
+      (this.formatFields(props.fields)).forEach((field) => {
         data[field.name] = field.value;
       });
     }
@@ -33,29 +33,29 @@ export default class Form extends Component {
   }
 
   formatFields(fields = []) {
-    return fields.map(field => {
+    return fields.map((field) => {
       if (typeof field === 'string') {
         return {
           name: field,
           title: field,
-        }
+        };
       }
       return {
         name: field.name || field.path,
         ...field,
-      }
-    })
+      };
+    });
   }
 
 
   @autobind
   validate() {
-    return true
+    return true;
   }
 
   @autobind
   getData() {
-    return this.state.data
+    return this.state.data;
   }
 
   @autobind
@@ -68,19 +68,19 @@ export default class Form extends Component {
       alert('Validation error');
       return;
     }
-    return this.props.onSubmit && this.props.onSubmit(this.getData())
+    return this.props.onSubmit && this.props.onSubmit(this.getData());
   }
 
   handleChangeField(path) {
     return async (e) => {
-      await this.setStatePath(path, e.target.value)
+      await this.setStatePath(path, e.target.value);
       this.props.onChange && this.props.onChange(this.getData());
-    }
+    };
   }
 
   @autobind
   renderFieldInner(item) {
-    return <div>
+    return (<div>
       <InputGroup>
         <If condition={item.icon}>
           <InputGroup.Addon>
@@ -88,9 +88,9 @@ export default class Form extends Component {
           </InputGroup.Addon>
         </If>
         <FormControl
-          type='text'
-          value={this.getStatePath('data.' + item.name) || ''}
-          onChange={this.handleChangeField('data.' + item.name)}
+          type="text"
+          value={this.getStatePath(`data.${item.name}`) || ''}
+          onChange={this.handleChangeField(`data.${item.name}`)}
           {...item.control}
         />
       </InputGroup>
@@ -100,50 +100,55 @@ export default class Form extends Component {
           {item.help}
         </HelpBlock>
       </If>
-    </div>
+    </div>);
   }
 
   @autobind
   renderField(item) {
     if (this.props.horizontal) {
-      return <FormGroup controlId={item.name}>
+      return (<FormGroup controlId={item.name}>
         <Col componentClass={ControlLabel} sm={2}>
           {item.title}
         </Col>
         <Col sm={10}>
           {this.renderFieldInner(item)}
         </Col>
-      </FormGroup>
+      </FormGroup>);
     }
-    return <FormGroup controlId={item.name}>
+    return (<FormGroup controlId={item.name}>
       <If condition={item.title}>
         <ControlLabel>
           {item.title}
         </ControlLabel>
       </If>
       {this.renderFieldInner(item)}
-    </FormGroup>
+    </FormGroup>);
   }
 
   renderFields(fields) {
-    return <div>
+    return (<div>
       {fields.map(this.renderField)}
-    </div>
+    </div>);
   }
 
   renderSubmitButton() {
-    return this.props.submitButton != null ? this.props.submitButton : (
-      <Button type='submit' bsStyle='primary'>
-        Отправить
+    let submitText = 'Отправить';
+    if (typeof this.props.submitButton === 'string') {
+      submitText = this.props.submitButton;
+    }
+    if (this.props.submitButton != null) return this.props.submitButton;
+    return (
+      <Button type="submit" bsStyle="primary">
+        {submitText}
       </Button>
-    )
+    );
   }
 
   render() {
-    return <FormBase horizontal={this.props.horizontal} onSubmit={this.handleSubmit}>
+    return (<FormBase horizontal={this.props.horizontal} onSubmit={this.handleSubmit}>
       {this.renderFields(this.formatFields(this.props.fields))}
       {this.renderSubmitButton()}
-    </FormBase>
+    </FormBase>);
   }
 
 }

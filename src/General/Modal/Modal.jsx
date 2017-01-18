@@ -8,7 +8,31 @@ export default class MyModal extends Component {
   constructor(props) {
     super(props)
     this.state = { visible: false }
+    if (props.event) {
+
+    }
+
   }
+  componentDidMount() {
+    if (this.props.emitter) {
+      this.props.emitter.on('open', () => {
+        this.setState({
+          visible: true,
+        })
+      })
+      this.props.emitter.on('close', () => {
+        this.setState({
+          visible: false,
+        })
+      })
+    }
+  }
+  componenWillUnmount() {
+    if (this.props.emitter) {
+
+    }
+  }
+
   getChildContext() {
     return {
       _modal: ({ type, id }) => {
