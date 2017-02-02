@@ -78,12 +78,12 @@ export default class Form extends Component {
 
   @autobind
   renderFieldInner(item) {
-    const control = <FormControl
+    const control = (<FormControl
       type="text"
       value={this.getStatePath(`data.${item.name}`) || ''}
       onChange={this.handleChangeField(`data.${item.name}`)}
       {...item.control}
-    />
+    />);
     return (<div>
       <If condition={item.icon}>
         <InputGroup>
@@ -106,9 +106,9 @@ export default class Form extends Component {
   }
 
   @autobind
-  renderField(item) {
+  renderField(item, i) {
     if (this.props.horizontal) {
-      return (<FormGroup controlId={item.name}>
+      return (<FormGroup key={i} controlId={item.name}>
         <Col componentClass={ControlLabel} sm={2}>
           {item.title}
         </Col>
@@ -117,7 +117,7 @@ export default class Form extends Component {
         </Col>
       </FormGroup>);
     }
-    return (<FormGroup controlId={item.name}>
+    return (<FormGroup key={i} controlId={item.name}>
       <If condition={item.title}>
         <ControlLabel>
           {item.title}
@@ -128,21 +128,25 @@ export default class Form extends Component {
   }
 
   renderFields(fields) {
-    return (<div>
-      {fields.map(this.renderField)}
-    </div>);
+    return fields.map(this.renderField);
   }
+  // renderFields(fields) {
+  //   return (<div>
+  //     {fields.map(this.renderField)}
+  //   </div>);
+  // }
 
   renderSubmitButton() {
     let submitText = 'Отправить';
+    // console.log('typeof', typeof this.props.ssouubmitButton);
     if (typeof this.props.submitButton === 'string') {
       submitText = this.props.submitButton;
     } else if (this.props.submitButton != null) {
       return this.props.submitButton;
     }
     return (
-      <div style={{textAlign: 'center'}}>
-        <Button type="submit" bsStyle="primary">
+      <div style={{ textAlign: 'center' }}>
+        <Button type="submit" bsStyle="primary" onClick={this.handleSubmit}>
           {submitText}
         </Button>
       </div>
@@ -150,6 +154,12 @@ export default class Form extends Component {
   }
 
   render() {
+    if (this.props.form === false) {
+      return (<div>
+        {this.renderFields(this.formatFields(this.props.fields))}
+        {this.renderSubmitButton()}
+      </div>);
+    }
     return (<FormBase horizontal={this.props.horizontal} onSubmit={this.handleSubmit}>
       {this.renderFields(this.formatFields(this.props.fields))}
       {this.renderSubmitButton()}

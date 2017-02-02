@@ -17,7 +17,7 @@
     "react-icons": "^2.2.3"
   },
   "devDependencies": {
-    "@kadira/storybook": "^2.35.2",
+    "@kadira/storybook": "^2.35.3",
     "babel-cli": "^6.9.0",
     "babel-core": "^6.9.0",
     "babel-eslint": "^7.1.1",
