@@ -7,7 +7,7 @@ export default class Component extends React.Component {
   };
 
   setStateAsync(state) {
-    return new Promise(resolve => this.setState(state, resolve))
+    return new Promise(resolve => this.setState(state, resolve));
   }
 
   getStatePath(path) {
@@ -17,7 +17,7 @@ export default class Component extends React.Component {
   setStatePath(path, value) {
     const state = _.cloneDeep(this.state);
     _.set(state, path, value);
-    return this.setStateAsync(state)
+    return this.setStateAsync(state);
   }
 
   redirect(...args) {

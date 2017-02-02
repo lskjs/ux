@@ -1,4 +1,5 @@
-import InnerHtml from './InnerHtml'
+import React from 'react';
+import InnerHtml from './InnerHtml';
 
 module.exports = function ({ storiesOf, action }) {
   return storiesOf('InnerHtml', module)
@@ -8,7 +9,7 @@ module.exports = function ({ storiesOf, action }) {
       </InnerHtml>
     ))
     .add('demo 0', () => (
-      <InnerHtml type='md'>{`
+      <InnerHtml type="md">{`
 # h1 Heading 8-)
 ## h2 Heading
 ### h3 Heading
@@ -39,9 +40,8 @@ test.. test... test..... test?..... test!....
       `}</InnerHtml>
     ))
     .add('demo 1', () => (
-      <InnerHtml type='md'>
+      <InnerHtml type="md">
         {require('raw!./demo.md')}
       </InnerHtml>
-    ))
-
-}
+    ));
+};

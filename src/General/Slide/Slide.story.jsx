@@ -1,11 +1,6 @@
-import Slide from './Slide'
-// import SlideInner from '../SlideInner/SlideInner'
-// import SlideInfoPic from '../SlideInfoPic/SlideInfoPic'
-// import SlideLink from '../SlideLink/SlideLink'
-// import Button from '../Button/Button'
-import _ from 'lodash'
-// import { Row, Col, Button } from 'react-bootstrap'
-import { Row, Col } from 'react-bootstrap'
+import React from 'react';
+import Slide from './Slide';
+import _ from 'lodash';
 
 module.exports = function ({ storiesOf, action }) {
   return storiesOf('Slide', module)
@@ -17,7 +12,7 @@ module.exports = function ({ storiesOf, action }) {
     .add('full color', () => (
       <Slide
         full
-        color='#eee'
+        color="#eee"
       >
         Default slide
       </Slide>
@@ -25,7 +20,7 @@ module.exports = function ({ storiesOf, action }) {
     .add('image', () => (
       <Slide
         full
-        image='https://pp.vk.me/c636819/v636819936/346c3/6xIvJ0BI8rs.jpg'
+        image="https://pp.vk.me/c636819/v636819936/346c3/6xIvJ0BI8rs.jpg"
       >
         Try it now
       </Slide>
@@ -33,14 +28,14 @@ module.exports = function ({ storiesOf, action }) {
     .add('all directions', () => (
       <Slide
         full
-        left='left'
-        right='right'
-        top='top'
-        bottom='bottom'
+        left="left"
+        right="right"
+        top="top"
+        bottom="bottom"
 
-        color='#ff644b'
+        color="#ff644b"
         center
-        style={{color: '#fff'}}
+        style={{ color: '#fff' }}
       >
         Content
       </Slide>
@@ -48,10 +43,10 @@ module.exports = function ({ storiesOf, action }) {
     .add('full error', () => (
       <Slide
         full
-        color='#ff644b'
+        color="#ff644b"
         center
-        style={{color: '#fff'}}
-        bottom='nginx'
+        style={{ color: '#fff' }}
+        bottom="nginx"
       >
         <h1>502</h1>
         <h2>Внутренняя ошибка сервера</h2>
@@ -62,15 +57,15 @@ module.exports = function ({ storiesOf, action }) {
     .add('large content', () => (
       <Slide
         full
-        left='left'
-        right='right'
-        top='top'
-        bottom='bottom'
+        left="left"
+        right="right"
+        top="top"
+        bottom="bottom"
 
-        color='#ff644b'
+        color="#ff644b"
         center
         fixed
-        style={{color: '#fff'}}
+        style={{ color: '#fff' }}
       >
         {_.repeat('Content ', 10000)}
       </Slide>
@@ -78,12 +73,12 @@ module.exports = function ({ storiesOf, action }) {
     .add('fixed', () => (
       <Slide
         full
-        left='left'
-        right='right'
+        left="left"
+        right="right"
         top={_.repeat('top ', 100)}
-        bottom='bottom'
+        bottom="bottom"
         center
-        style={{color: '#fff'}}
+        style={{ color: '#fff' }}
 
         fixed
       >
@@ -96,7 +91,7 @@ module.exports = function ({ storiesOf, action }) {
         overlay
         image="https://pp.vk.me/c636819/v636819936/3474a/g6I0ETjiQ4I.jpg"
         style={{
-          color: '#fff'
+          color: '#fff',
         }}
       >
         <h1>502</h1>
@@ -107,7 +102,7 @@ module.exports = function ({ storiesOf, action }) {
     .add('overlay 2', () => (
       <Slide
         full
-        overlay='rgba(255,0,0,0.3)'
+        overlay="rgba(255,0,0,0.3)"
         image="https://pp.vk.me/c636819/v636819936/3474a/g6I0ETjiQ4I.jpg"
       >
         <h1>502</h1>
@@ -120,9 +115,9 @@ module.exports = function ({ storiesOf, action }) {
         full
         overlay
         style={{
-          color: '#fff'
+          color: '#fff',
         }}
-        video='http://skill-branch.ru/video-background.webm'
+        video="http://skill-branch.ru/video-background.webm"
       >
         <h1>502</h1>
         <h2>Внутренняя ошибка сервера</h2>
@@ -134,9 +129,9 @@ module.exports = function ({ storiesOf, action }) {
         full
         overlay
         style={{
-          color: '#fff'
+          color: '#fff',
         }}
-        video='https://akg.moe/videoplayback.webm'
+        video="https://akg.moe/videoplayback.webm"
       >
         <h1>502</h1>
         <h2>Внутренняя ошибка сервера</h2>
@@ -148,9 +143,9 @@ module.exports = function ({ storiesOf, action }) {
         full
         overlay
         style={{
-          color: '#fff'
+          color: '#fff',
         }}
-        video='http://raw.githubusercontent.com/ronik-design/react-drive-in/master/example/glacier.mp4'
+        video="http://raw.githubusercontent.com/ronik-design/react-drive-in/master/example/glacier.mp4"
       >
         <h1>502</h1>
         <h2>Внутренняя ошибка сервера</h2>
@@ -167,9 +162,9 @@ module.exports = function ({ storiesOf, action }) {
         full
         overlay
         style={{
-          color: '#fff'
+          color: '#fff',
         }}
-        video='https://youtu.be/c-shIOFYCRU'
+        video="https://youtu.be/c-shIOFYCRU"
       >
         <h1>502</h1>
         <h2>Внутренняя ошибка сервера</h2>
@@ -181,15 +176,15 @@ module.exports = function ({ storiesOf, action }) {
         full
         overlay
         style={{
-          color: '#fff'
+          color: '#fff',
         }}
-        video='https://www.youtube.com/embed/W0LHTWG-UmQ'
+        video="https://www.youtube.com/embed/W0LHTWG-UmQ"
       >
         <h1>502</h1>
         <h2>Внутренняя ошибка сервера</h2>
         <p>Наши специалисты знают о проблеме и уже решают её</p>
       </Slide>
-    ))
+    ));
     // .add('3 Items gray', () => (
     //   <Slide
     //     gray
@@ -290,4 +285,4 @@ module.exports = function ({ storiesOf, action }) {
     //     </Col>
     //   </Slide>
     // ))
-}
+};

@@ -1,4 +1,5 @@
-import A from './A'
+import React from 'react'; //eslint-disable-line
+import A from './A';
 
 module.exports = function ({ storiesOf, action }) {
   return storiesOf('A', module)
@@ -8,13 +9,13 @@ module.exports = function ({ storiesOf, action }) {
       </A>
     ))
     .add('href', () => (
-      <A href='/test'>
+      <A href="/test">
         Href
       </A>
     ))
     .add('onClick', () => (
-      <A href='/test' onClick={action('onClick')}>
+      <A href="/test" onClick={action('onClick')}>
         onClick
       </A>
-    ))
-}
+    ));
+};

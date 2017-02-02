@@ -1,4 +1,4 @@
-@import "../_vars.css";
+@import url('&General/_vars.css');
 
 .Slide {
   position: relative;
@@ -30,7 +30,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
-
 }
 
 .Slide__top {

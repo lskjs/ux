@@ -1,21 +1,8 @@
+import React from 'react';
 import Modal from './Modal';
 
 module.exports = function ({ storiesOf, action }) {
   return storiesOf('Modal', module)
-    // .add('Modal 0', () => (
-    //   <Modal>
-    //     123123123
-    //   </Modal>
-    // ))
-    // .add('Modal 01', () => (
-    //   <Modal>
-    //     123123123
-    //     <Modal.Button>
-    //       Sample content
-    //     </Modal.Button>
-    //   </Modal>
-    // ))
-
     .add('Modal 1', () => (
       <Modal>
         <Modal.Trigger>

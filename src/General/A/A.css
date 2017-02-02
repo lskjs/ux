@@ -1,11 +1,20 @@
+@import url('&General/_vars.css');
+
 .A {
   text-decoration: underline;
+  cursor: pointer;
 }
 
 .A_style_primary {
-  color: #da3b37;
+  color: $color-primary;
+  &:hover {
+    color: $color-primary-hovered;
+  }
 }
 
 .A_style_secondary {
-  color: #c4c4c4;
+  color: $color-secondary;
+  &:hover {
+    color: $color-secondary-hovered;
+  }
 }
