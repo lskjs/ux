@@ -19,9 +19,15 @@ function isModifiedEvent(event) {
 }
 
 class Link extends Component {
-
+  static defaultProps = {
+    children: null,
+    onClick: null,
+    to: null,
+    href: null,
+  }
   static propTypes = {
-    // to: PropTypes.string.isRequired,
+    to: PropTypes.string,
+    href: PropTypes.string,
     children: PropTypes.node,
     onClick: PropTypes.func,
   };
@@ -48,8 +54,8 @@ class Link extends Component {
   };
 
   render() {
-    const { to, children, ...props } = this.props;
-    return <a href={to || this.props.href} {...props} onClick={this.handleClick}>{children}</a>;
+    const { to, href, children, ...props } = this.props;
+    return <a href={to || href} {...props} onClick={this.handleClick}>{children}</a>;
   }
 
 }

@@ -1,5 +1,4 @@
 @import url('&General/_vars.css');
-/*@import url('../_vars.css');*/
 
 html, body {
   height: 100%;
@@ -10,7 +9,7 @@ html, body {
 :global #app {
   height: 100%;
 }
-:global  #app > div{
+:global  #app > div {
   height: 100%;
 }
 

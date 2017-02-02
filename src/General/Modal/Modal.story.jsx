@@ -1,21 +1,8 @@
-import Modal from './Modal'
+import React from 'react'; //eslint-disable-line
+import Modal from './Modal';
 
 module.exports = function ({ storiesOf, action }) {
   return storiesOf('Modal', module)
-    // .add('Modal 0', () => (
-    //   <Modal>
-    //     123123123
-    //   </Modal>
-    // ))
-    // .add('Modal 01', () => (
-    //   <Modal>
-    //     123123123
-    //     <Modal.Button>
-    //       Sample content
-    //     </Modal.Button>
-    //   </Modal>
-    // ))
-
     .add('Modal 1', () => (
       <Modal>
         <Modal.Trigger>
@@ -58,7 +45,7 @@ module.exports = function ({ storiesOf, action }) {
           emitter.emit('close');
         }, 1000);
       };
-      return <div>
+      return (<div>
         <button onClick={open}>
           Open async modal
         </button>
@@ -70,6 +57,6 @@ module.exports = function ({ storiesOf, action }) {
             </button>
           </Modal.Content>
         </Modal>
-      </div>
-    })
-}
+      </div>);
+    });
+};

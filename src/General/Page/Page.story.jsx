@@ -1,4 +1,5 @@
-import Page from './Page'
+import React from 'react';
+import Page from './Page';
 // import SlideInner from '../SlideInner/SlideInner'
 // import SlideInfoPic from '../SlideInfoPic/SlideInfoPic'
 // import SlideLink from '../SlideLink/SlideLink'
@@ -17,35 +18,32 @@ module.exports = function ({ storiesOf, action }) {
       </Page>
     ))
     .add('Page Any bootstrap theme', () => (
-      <Page
-        // вариант 1 самый простой - подключаем booststap.theme.css
-        // themeLink='https://bootswatch.com/journal/bootstrap.min.css'
-      >
+      <Page >
         <h1>Какой-то заголовок</h1>
         <p>Какой-то абзац</p>
-        <button className='btn btn-default'>Default</button>
-        <button className='btn btn-primary'>Primary</button>
-        <button className='btn btn-success'>Success</button>
-        <button className='btn btn-info'>Info</button>
-        <button className='btn btn-warning'>Warning</button>
-        <button className='btn btn-danger'>Danger</button>
+        <button className="btn btn-default">Default</button>
+        <button className="btn btn-primary">Primary</button>
+        <button className="btn btn-success">Success</button>
+        <button className="btn btn-info">Info</button>
+        <button className="btn btn-warning">Warning</button>
+        <button className="btn btn-danger">Danger</button>
       </Page>
     ))
     .add('Page custom font and color palette', () => (
       <Page
-        mainFont='OpenSans'
+        mainFont="OpenSans"
 
-        primaryColor=''
-        accentColor=''
+        primaryColor=""
+        accentColor=""
 
-        grayColor=''
-        whiteColor=''
-        darkColor=''
+        grayColor=""
+        whiteColor=""
+        darkColor=""
       >
         <h1>Какой-то заголовок</h1>
         <p>Какой-то абзац</p>
         <button>Какая-то кнопка</button>
 
       </Page>
-    ))
-}
+    ));
+};

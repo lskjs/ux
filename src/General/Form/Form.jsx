@@ -1,5 +1,7 @@
-import Component from '../Component';
+import React, { PropTypes } from 'react';
 import { autobind } from 'core-decorators';
+import importcss from 'importcss';
+import cx from 'classnames';
 // import _ from 'lodash'
 import {
   Form as FormBase,
@@ -12,11 +14,34 @@ import {
   Col,
 } from 'react-bootstrap';
 
+import Component from '../Component';
 // import models from 'import?grep=./models/*.js';
 // import from 'biot/asdasd/asdasdasd/'
 
+@importcss(require('./Form.css'))
 export default class Form extends Component {
-
+  static defaultProps = {
+    data: null,
+    fields: null,
+    onSubmit: null,
+    onChange: null,
+    horizontal: false,
+    submitButton: 'Отправить',
+    form: false,
+    align: 'center',
+    bsStyle: 'primary',
+  }
+  static propTypes = {
+    data: PropTypes.object,
+    fields: PropTypes.array,
+    onSubmit: PropTypes.func,
+    onChange: PropTypes.func,
+    horizontal: PropTypes.bool,
+    submitButton: PropTypes.any,
+    form: PropTypes.bool,
+    bsStyle: PropTypes.string,
+    align: PropTypes.oneOf(['left', 'right', 'center']),
+  }
   constructor(props) {
     super(props);
 
@@ -47,7 +72,6 @@ export default class Form extends Component {
     });
   }
 
-
   @autobind
   validate() {
     return true;
@@ -60,95 +84,125 @@ export default class Form extends Component {
 
   @autobind
   async handleSubmit(e) {
-    if (!this.props.onSubmit) {
-      return true;
+    const { onSubmit } = this.props;
+    if (!onSubmit) {
+      return false;
     }
     e.preventDefault();
     if (!this.validate()) {
       alert('Validation error');
-      return;
+      return false;
     }
-    return this.props.onSubmit && this.props.onSubmit(this.getData());
+    return onSubmit(this.getData());
   }
 
   handleChangeField(path) {
+    const { onChange } = this.props;
     return async (e) => {
       await this.setStatePath(path, e.target.value);
-      this.props.onChange && this.props.onChange(this.getData());
+      if (onChange) {
+        onChange(this.getData());
+      }
     };
   }
 
   @autobind
   renderFieldInner(item) {
-    return (<div>
-      <InputGroup>
-        <If condition={item.icon}>
-          <InputGroup.Addon>
-            {item.icon}
-          </InputGroup.Addon>
+    return (
+      <div>
+        <InputGroup>
+          <If condition={item.icon}>
+            <InputGroup.Addon>
+              {item.icon}
+            </InputGroup.Addon>
+          </If>
+          <FormControl
+            type="text"
+            value={this.getStatePath(`data.${item.name}`) || ''}
+            onChange={this.handleChangeField(`data.${item.name}`)}
+            {...item.control}
+          />
+        </InputGroup>
+        <FormControl.Feedback />
+        <If condition={item.help}>
+          <HelpBlock>
+            {item.help}
+          </HelpBlock>
         </If>
-        <FormControl
-          type="text"
-          value={this.getStatePath(`data.${item.name}`) || ''}
-          onChange={this.handleChangeField(`data.${item.name}`)}
-          {...item.control}
-        />
-      </InputGroup>
-      <FormControl.Feedback />
-      <If condition={item.help}>
-        <HelpBlock>
-          {item.help}
-        </HelpBlock>
-      </If>
-    </div>);
+      </div>
+    );
   }
 
   @autobind
   renderField(item) {
-    if (this.props.horizontal) {
-      return (<FormGroup controlId={item.name}>
-        <Col componentClass={ControlLabel} sm={2}>
-          {item.title}
-        </Col>
-        <Col sm={10}>
-          {this.renderFieldInner(item)}
-        </Col>
-      </FormGroup>);
+    const { horizontal } = this.props;
+    if (horizontal) {
+      return (
+        <FormGroup controlId={item.name}>
+          <Col componentClass={ControlLabel} sm={2}>
+            {item.title}
+          </Col>
+          <Col sm={10}>
+            {this.renderFieldInner(item)}
+          </Col>
+        </FormGroup>
+      );
     }
-    return (<FormGroup controlId={item.name}>
-      <If condition={item.title}>
-        <ControlLabel>
-          {item.title}
-        </ControlLabel>
-      </If>
-      {this.renderFieldInner(item)}
-    </FormGroup>);
+    return (
+      <FormGroup controlId={item.name}>
+        <If condition={item.title}>
+          <ControlLabel>
+            {item.title}
+          </ControlLabel>
+        </If>
+        {this.renderFieldInner(item)}
+      </FormGroup>
+    );
   }
 
   renderFields(fields) {
-    return (<div>
-      {fields.map(this.renderField)}
-    </div>);
+    return (
+      <div>
+        {fields.map(this.renderField)}
+      </div>
+    );
   }
 
   renderSubmitButton() {
-    let submitText = 'Отправить';
-    if (typeof this.props.submitButton === 'string') {
-      submitText = this.props.submitButton;
+    const { submitButton, align, bsStyle } = this.props;
+    const style = cx({ [`align-${align}`]: align });
+    if (typeof submitButton === 'string') {
+      return (
+        <div styleName={style}>
+          <Button type="submit" bsStyle={bsStyle}>
+            {submitButton}
+          </Button>
+        </div>
+      );
     }
-    if (this.props.submitButton != null) return this.props.submitButton;
     return (
-      <Button type="submit" bsStyle="primary">
-        {submitText}
-      </Button>
+      <div styleName={style}>
+        {submitButton}
+      </div>
     );
   }
 
   render() {
-    return (<FormBase horizontal={this.props.horizontal} onSubmit={this.handleSubmit}>
-      {this.renderFields(this.formatFields(this.props.fields))}
-      {this.renderSubmitButton()}
-    </FormBase>);
+    const { form, horizontal, fields } = this.props;
+    if (form) {
+      return (
+        <div>
+          {this.renderFields(this.formatFields(fields))}
+          {this.renderSubmitButton()}
+        </div>
+      );
+    }
+    return (
+      <FormBase horizontal={horizontal} onSubmit={this.handleSubmit}>
+        {this.renderFields(this.formatFields(fields))}
+        {this.renderSubmitButton()}
+      </FormBase>
+    );
   }
 
 }

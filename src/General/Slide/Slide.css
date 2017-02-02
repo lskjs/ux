@@ -1,4 +1,4 @@
-@import "../_vars.css";
+@import url('&General/_vars.css');
 
 .Slide {
   position: relative;

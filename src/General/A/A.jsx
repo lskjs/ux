@@ -1,16 +1,34 @@
-import React, { Component } from 'react'
-import Link from '../Link'
-import importcss from 'importcss'
+import React, { Component, PropTypes } from 'react';
+import importcss from 'importcss';
+import cx from 'classnames';
+import Link from '../Link';
 
 @importcss(require('./A.css'))
 export default class A extends Component {
+  static defaultProps = {
+    bsStyle: 'primary',
+    className: null,
+    href: null,
+    to: null,
+  }
+  static propTypes = {
+    bsStyle: PropTypes.string,
+    className: PropTypes.string,
+    href: PropTypes.string,
+    to: PropTypes.string,
+  }
   render() {
-    const bsStyle = this.props.bsStyle || 'primary'
-    const className = [
-      this.props.className || '',
-      this.props.styles && this.props.styles.A,
-      this.props.styles && this.props.styles['A_style_' + bsStyle],
-    ].join(' ')
-    return <Link {...this.props} className={className} href={this.props.href || this.props.to} />
+    const { bsStyle, className, href, to } = this.props;
+    return (
+      <Link
+        {...this.props}
+        styleName={cx({
+          [className]: className,
+          A: true,
+          [`A_style_${bsStyle}`]: bsStyle,
+        })}
+        href={href || to}
+      />
+    );
   }
 }

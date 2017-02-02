@@ -4,8 +4,6 @@
 @custom-media --lg (992px  <= width < 1200px);
 @custom-media --xl (1200px <= width < 9999px);
 
-
-
 @define-mixin gridColors {
   background: #fc8ffb;
   @media (--xs) {
@@ -43,16 +41,22 @@
   }
 }
 
-$sk-paddings: 20px;
+$color-default: #404040;
 
+$color-primary: #108ee9;
+$color-primary-hovered: #49a9ee;
 
-$sk-background: rgb(242, 242, 242);
-$sk-whiteText: rgb(172, 172, 172);
-$sk-whited: rgb(194, 194, 194);
-$sk-shadow: rgba(0, 0, 0, 0.1);
-$sk-muted: rgb(98, 98, 98);
-$sk-primary: rgb(64, 64, 64); /*  основной цвет текста*/
-$sk-blackBorder: rgb(56, 56, 56);
-$sk-header: rgb(35, 35, 34);
-$sk-red: rgb(218, 59, 55);
-$sk-button: rgb(196, 200, 207);
+$color-secondary: #d9d9d9;
+$color-secondary-hovered: #656565;
+
+$color-lightgray: #acacac;
+$color-darkgray: #222222;
+
+$color-clay: #c3c7cf;
+
+$color-background: #f2f2f2;
+$color-border: #ebebeb;
+$color-shadow: rgba(0, 0, 0, 0.2);
+
+$color-transparent: rgba(0, 0, 0, 0);
+$color-overlay: rgba(132, 132, 132, .7);
