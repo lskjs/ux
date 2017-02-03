@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 import { autobind } from 'core-decorators';
 import importcss from 'importcss';
 import cx from 'classnames';
+import validate from 'validate.js';
 // import _ from 'lodash'
 import {
   Form as FormBase,
@@ -19,7 +20,10 @@ import Component from '../Component';
 export default class Form extends Component {
   static defaultProps = {
     data: null,
+    errors: null,
     fields: null,
+    validators: null,
+    onError: null,
     onSubmit: null,
     onChange: null,
     horizontal: false,
@@ -30,8 +34,11 @@ export default class Form extends Component {
   }
   static propTypes = {
     data: PropTypes.object,
+    errors: PropTypes.object,
     fields: PropTypes.array,
+    validators: PropTypes.object,
     onSubmit: PropTypes.func,
+    onError: PropTypes.func,
     onChange: PropTypes.func,
     horizontal: PropTypes.bool,
     submitButton: PropTypes.any,
@@ -43,14 +50,21 @@ export default class Form extends Component {
     super(props);
 
     let data = props.data;
+    let errors = props.errors;
     if (!data) {
       data = {};
+      errors = {};
       (this.formatFields(props.fields)).forEach((field) => {
         data[field.name] = field.value;
+        errors[field.name] = {
+          state: null,
+          message: null,
+        };
       });
     }
     this.state = {
       data,
+      errors,
     };
   }
 
@@ -70,8 +84,9 @@ export default class Form extends Component {
   }
 
   @autobind
-  validate() {
-    return true;
+  validate(data) {
+    const { validators } = this.props;
+    return validate(data, validators);
   }
 
   @autobind
@@ -80,17 +95,53 @@ export default class Form extends Component {
   }
 
   @autobind
-  async handleSubmit(e) {
+  getErrors(results) {
+    const { onError } = this.props;
+    const { errors, data } = this.state;
+    for (const item in data) {
+      errors[item] = {
+        state: null,
+        message: null,
+      };
+    }
+    for (const item in results) {
+      const re = new RegExp(`${item} (.+)`, 'i');
+      const [, message] = re.exec(results[item][0]);
+      errors[item] = {
+        state: 'error',
+        message,
+      };
+    }
+    this.setState({ errors });
+    if (onError) return onError(errors);
+    return false;
+  }
+
+  @autobind
+  getResults(data) {
     const { onSubmit } = this.props;
-    if (!onSubmit) {
-      return false;
+    const { errors } = this.state;
+    for (const item in data) {
+      errors[item] = {
+        state: null,
+        message: null,
+      };
     }
+    this.setState({ errors });
+    if (onSubmit) return onSubmit(data);
+    return false;
+  }
+
+  @autobind
+  async handleSubmit(e) {
+    const { validators } = this.props;
     e.preventDefault();
-    if (!this.validate()) {
-      alert('Validation error');
-      return false;
+    const errors = validators ? this.validate(this.getData()) : null;
+    if (!errors) {
+      this.getResults(this.getData());
+    } else {
+      this.getErrors(errors);
     }
-    return onSubmit(this.getData());
   }
 
   handleChangeField(path) {
@@ -105,6 +156,7 @@ export default class Form extends Component {
 
   @autobind
   renderFieldInner(item) {
+    const { errors } = this.state;
     const control = (
       <FormControl
         type="text"
@@ -127,9 +179,9 @@ export default class Form extends Component {
           {control}
         </If>
         <FormControl.Feedback />
-        <If condition={item.help}>
+        <If condition={errors[item.name].message}>
           <HelpBlock>
-            {item.help}
+            {errors[item.name].message}
           </HelpBlock>
         </If>
       </div>
@@ -137,11 +189,15 @@ export default class Form extends Component {
   }
 
   @autobind
-  renderField(item, i) {
+  renderField(item) {
     const { horizontal } = this.props;
+    const { errors } = this.state;
     if (horizontal) {
       return (
-        <FormGroup key={i} controlId={item.name}>
+        <FormGroup
+          controlId={item.name}
+          validationState={errors[item.name].state}
+        >
           <Col componentClass={ControlLabel} sm={2}>
             {item.title}
           </Col>
@@ -152,7 +208,10 @@ export default class Form extends Component {
       );
     }
     return (
-      <FormGroup key={i} controlId={item.name}>
+      <FormGroup
+        controlId={item.name}
+        validationState={errors[item.name].state}
+      >
         <If condition={item.title}>
           <ControlLabel>
             {item.title}
@@ -164,7 +223,11 @@ export default class Form extends Component {
   }
 
   renderFields(fields) {
-    return fields.map(this.renderField);
+    return fields.map((e, i) => (
+      <div key={i}>
+        {this.renderField(e)}
+      </div>
+    ));
   }
 
   renderSubmitButton() {

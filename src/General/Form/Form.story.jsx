@@ -122,6 +122,52 @@ module.exports = function ({ storiesOf, action }) {
         onSubmit={action('onSubmit')}
       />
     ))
+    .add('Sample Validation', () => (
+      <Form
+        validators={{
+          email: {
+            presence: {
+              message: 'Поле не должно быть пустым',
+            },
+            email: {
+              message: 'Введите настоящий адрес почты.',
+            },
+          },
+          password: {
+            presence: {
+              message: 'Поле не должно быть пустым',
+            },
+            length: {
+              minimum: 6,
+              message: 'Пароль должен быть больше 6 символов.',
+            },
+          },
+        }}
+        fields={[
+          {
+            name: 'email',
+            title: 'Электронная почта',
+            icon: 'Э',
+            control: {
+              type: 'text',
+              placeholder: 'Почта',
+            },
+          },
+          {
+            name: 'password',
+            title: 'Пароль',
+            icon: 'П',
+            control: {
+              type: 'password',
+              placeholder: 'Пароль',
+            },
+          },
+        ]}
+        onChange={action('onChange')}
+        onSubmit={action('onSubmit')}
+        onError={action('onError')}
+      />
+    ))
     .add('Register', () => (
       <Form
         fields={[
