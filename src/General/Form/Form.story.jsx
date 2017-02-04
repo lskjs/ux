@@ -122,6 +122,38 @@ module.exports = function ({ storiesOf, action }) {
         onSubmit={action('onSubmit')}
       />
     ))
+
+    .add('Sample Signup', () => (
+      <Form
+        fields={[
+          {
+            name: 'name',
+            title: 'Имя',
+            control: {
+              placeholder: 'Например, Василий',
+            },
+          },
+          {
+            name: 'password',
+            title: 'Пароль',
+            control: {
+              type: 'password',
+            },
+          },
+          {
+            name: 'email',
+            title: 'Email',
+            control: {
+              placeholder: 'Например, utkin@mail.ru',
+              type: 'email',
+            },
+          },
+        ]}
+        submitButton="Регистрация"
+        onChange={action('onChange')}
+        onSubmit={action('onSubmit')}
+      />
+    ))
     .add('Sample Validation', () => (
       <Form
         validators={{
@@ -166,37 +198,6 @@ module.exports = function ({ storiesOf, action }) {
         onChange={action('onChange')}
         onSubmit={action('onSubmit')}
         onError={action('onError')}
-      />
-    ))
-    .add('Register', () => (
-      <Form
-        fields={[
-          {
-            name: 'name',
-            title: 'Имя',
-            control: {
-              placeholder: 'Например, Василий',
-            },
-          },
-          {
-            name: 'password',
-            title: 'Пароль',
-            control: {
-              type: 'password',
-            },
-          },
-          {
-            name: 'email',
-            title: 'Email',
-            control: {
-              placeholder: 'Например, utkin@mail.ru',
-              type: 'email',
-            },
-          },
-        ]}
-        submitButton="Регистрация"
-        onChange={action('onChange')}
-        onSubmit={action('onSubmit')}
       />
     ));
 };

@@ -3,7 +3,7 @@ import { autobind } from 'core-decorators';
 import importcss from 'importcss';
 import cx from 'classnames';
 import validate from 'validate.js';
-// import _ from 'lodash'
+import _ from 'lodash';
 import {
   Form as FormBase,
   FormGroup,
@@ -46,29 +46,24 @@ export default class Form extends Component {
     bsStyle: PropTypes.string,
     align: PropTypes.oneOf(['left', 'right', 'center']),
   }
+
   constructor(props) {
     super(props);
-
     let data = props.data;
-    let errors = props.errors;
     if (!data) {
       data = {};
-      errors = {};
-      (this.formatFields(props.fields)).forEach((field) => {
+      (this.getFields(props.fields)).forEach((field) => {
         data[field.name] = field.value;
-        errors[field.name] = {
-          state: null,
-          message: null,
-        };
       });
     }
     this.state = {
       data,
-      errors,
+      errors: props.errors || {}, // @TODO хз зачем
     };
   }
 
-  formatFields(fields = []) {
+  getFields(fields) {
+    if (!fields) fields = this.props.fields; // eslint-disable-line
     return fields.map((field) => {
       if (typeof field === 'string') {
         return {
@@ -83,10 +78,13 @@ export default class Form extends Component {
     });
   }
 
-  @autobind
-  validate(data) {
-    const { validators } = this.props;
-    return validate(data, validators);
+  getFieldNames() {
+    this.getFields();
+  }
+
+  getError(name) {
+    const { errors } = this.state;
+    return errors && errors[name] || {};
   }
 
   @autobind
@@ -94,56 +92,50 @@ export default class Form extends Component {
     return this.state.data;
   }
 
-  @autobind
-  getErrors(results) {
-    const { onError } = this.props;
-    const { errors, data } = this.state;
-    for (const item in data) {
-      errors[item] = {
-        state: null,
-        message: null,
-      };
-    }
+  getValidatorResults() {
+    const { validators } = this.props;
+    return validate(this.state.data, validators);
+  }
+
+  validate() {
+    const results = this.getValidatorResults();
+    const errors = {};
     for (const item in results) {
-      const re = new RegExp(`${item} (.+)`, 'i');
+      const re = new RegExp(`^${item} (.+)$`, 'i');
       const [, message] = re.exec(results[item][0]);
       errors[item] = {
         state: 'error',
         message,
       };
     }
-    this.setState({ errors });
-    if (onError) return onError(errors);
-    return false;
+    if (_.size(errors) > 0) {
+      this.onError(errors);
+      return false;
+    }
+    return true;
   }
 
-  @autobind
-  getResults(data) {
-    const { onSubmit } = this.props;
-    const { errors } = this.state;
-    for (const item in data) {
-      errors[item] = {
-        state: null,
-        message: null,
-      };
-    }
+  onError(errors) {
+    const { onError } = this.props;
     this.setState({ errors });
-    if (onSubmit) return onSubmit(data);
-    return false;
+    if (onError) onError(errors);
+  }
+
+  onSubmit(data) {
+    const { onSubmit } = this.props;
+    this.setState({ errors: {} });
+    if (onSubmit) onSubmit(this.getData());
   }
 
   @autobind
   async handleSubmit(e) {
-    const { validators } = this.props;
     e.preventDefault();
-    const errors = validators ? this.validate(this.getData()) : null;
-    if (!errors) {
-      this.getResults(this.getData());
-    } else {
-      this.getErrors(errors);
+    if (this.validate()) {
+      this.onSubmit();
     }
   }
 
+  @autobind
   handleChangeField(path) {
     const { onChange } = this.props;
     return async (e) => {
@@ -154,9 +146,7 @@ export default class Form extends Component {
     };
   }
 
-  @autobind
   renderFieldInner(item) {
-    const { errors } = this.state;
     const control = (
       <FormControl
         type="text"
@@ -179,9 +169,9 @@ export default class Form extends Component {
           {control}
         </If>
         <FormControl.Feedback />
-        <If condition={errors[item.name].message}>
+        <If condition={this.getError(item.name).state}>
           <HelpBlock>
-            {errors[item.name].message}
+            {this.getError(item.name).message}
           </HelpBlock>
         </If>
       </div>
@@ -189,14 +179,14 @@ export default class Form extends Component {
   }
 
   @autobind
-  renderField(item) {
+  renderField(item, i) {
     const { horizontal } = this.props;
-    const { errors } = this.state;
     if (horizontal) {
       return (
         <FormGroup
+          key={i}
           controlId={item.name}
-          validationState={errors[item.name].state}
+          validationState={this.getError(item.name).state}
         >
           <Col componentClass={ControlLabel} sm={2}>
             {item.title}
@@ -209,8 +199,9 @@ export default class Form extends Component {
     }
     return (
       <FormGroup
+        key={i}
         controlId={item.name}
-        validationState={errors[item.name].state}
+        validationState={this.getError(item.name).state}
       >
         <If condition={item.title}>
           <ControlLabel>
@@ -223,11 +214,7 @@ export default class Form extends Component {
   }
 
   renderFields(fields) {
-    return fields.map((e, i) => (
-      <div key={i}>
-        {this.renderField(e)}
-      </div>
-    ));
+    return fields.map(this.renderField);
   }
 
   renderSubmitButton() {
@@ -254,14 +241,14 @@ export default class Form extends Component {
     if (form) {
       return (
         <div>
-          {this.renderFields(this.formatFields(fields))}
+          {this.renderFields(this.getFields(fields))}
           {this.renderSubmitButton()}
         </div>
       );
     }
     return (
       <FormBase horizontal={horizontal} onSubmit={this.handleSubmit}>
-        {this.renderFields(this.formatFields(fields))}
+        {this.renderFields(this.getFields(fields))}
         {this.renderSubmitButton()}
       </FormBase>
     );
