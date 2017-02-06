@@ -122,15 +122,15 @@ module.exports = function ({ storiesOf, action }) {
         onSubmit={action('onSubmit')}
       />
     ))
-
     .add('Sample Signup', () => (
       <Form
         fields={[
           {
-            name: 'name',
-            title: 'Имя',
+            name: 'email',
+            title: 'Email',
             control: {
-              placeholder: 'Например, Василий',
+              placeholder: 'Например, utkin@mail.ru',
+              type: 'email',
             },
           },
           {
@@ -141,12 +141,42 @@ module.exports = function ({ storiesOf, action }) {
             },
           },
           {
+            name: 'name',
+            title: 'Имя',
+            control: {
+              placeholder: 'Например, Василий',
+            },
+          },
+        ]}
+        submitButton="Регистрация"
+        onChange={action('onChange')}
+        onSubmit={action('onSubmit')}
+      />
+    ))
+    .add('Sample Login', () => (
+      <Form
+        fields={[
+          {
             name: 'email',
             title: 'Email',
             control: {
               placeholder: 'Например, utkin@mail.ru',
               type: 'email',
             },
+          },
+          {
+            name: 'password',
+            title: 'Пароль',
+            control: {
+              type: 'password',
+            },
+            help: (
+              <div style={{textAlign: 'right'}}>
+                <a href='#'>
+                  Забыли пароль?
+                </a>
+              </div>
+            ),
           },
         ]}
         submitButton="Регистрация"

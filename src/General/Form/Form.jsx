@@ -169,6 +169,11 @@ export default class Form extends Component {
           {control}
         </If>
         <FormControl.Feedback />
+        <If condition={item.help}>
+          <HelpBlock>
+            {item.help}
+          </HelpBlock>
+        </If>
         <If condition={this.getError(item.name).state}>
           <HelpBlock>
             {this.getError(item.name).message}
