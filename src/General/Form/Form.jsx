@@ -78,10 +78,6 @@ export default class Form extends Component {
     });
   }
 
-  getFieldNames() {
-    this.getFields();
-  }
-
   getError(name) {
     const { errors } = this.state;
     return errors && errors[name] || {};
@@ -108,7 +104,8 @@ export default class Form extends Component {
         message,
       };
     }
-    if (_.size(errors) > 0) {
+
+    if (this.getFields().filter(field => !!errors[field.name]).length > 0) {
       this.onError(errors);
       return false;
     }
