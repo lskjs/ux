@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import importcss from 'importcss';
 import cx from 'classnames';
+import _ from 'lodash';
 import Link from '../Link';
 
 @importcss(require('./A.css'))
@@ -21,7 +22,7 @@ export default class A extends Component {
     const { bsStyle, className, href, to } = this.props;
     return (
       <Link
-        {...this.props}
+        {..._.omit(this.props, ['bsStyle'])}
         styleName={cx({
           [className]: className,
           A: true,
