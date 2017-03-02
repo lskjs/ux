@@ -78,7 +78,7 @@ module.exports = function ({ storiesOf, action }) {
       <Card>
         <Card.Photo
           title="Игорь Суворов"
-          image="https://pp.vk.me/c630321/v630321029/52c63/m2hCs6YCVjY.jpg"
+          image="https://pp.userapi.com/c630321/v630321029/52c63/m2hCs6YCVjY.jpg"
         />
         <Card.Numbers>
           <Card.Number

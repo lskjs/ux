@@ -1,8 +1,16 @@
 import React from 'react';
 import Form from './Form';
 
+const WrapBootsrstap = props => (
+  <div>
+    <link rel="stylesheet" type="text/css" href="http://yastatic.net/bootstrap/3.3.6/css/bootstrap.min.css" />
+    { props() }
+  </div>
+);
+
 module.exports = function ({ storiesOf, action }) {
   return storiesOf('Form', module)
+    .addDecorator(WrapBootsrstap)
     .add('Sample 1', () => (
       <Form
         fields={[
@@ -171,8 +179,8 @@ module.exports = function ({ storiesOf, action }) {
               type: 'password',
             },
             help: (
-              <div style={{textAlign: 'right'}}>
-                <a href='#'>
+              <div style={{ textAlign: 'right' }}>
+                <a href="#">
                   Забыли пароль?
                 </a>
               </div>

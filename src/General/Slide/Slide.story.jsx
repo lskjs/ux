@@ -20,7 +20,7 @@ module.exports = function ({ storiesOf, action }) {
     .add('image', () => (
       <Slide
         full
-        image="https://pp.vk.me/c636819/v636819936/346c3/6xIvJ0BI8rs.jpg"
+        image="https://pp.userapi.com/c636819/v636819936/346c3/6xIvJ0BI8rs.jpg"
       >
         Try it now
       </Slide>
@@ -89,7 +89,7 @@ module.exports = function ({ storiesOf, action }) {
       <Slide
         full
         overlay
-        image="https://pp.vk.me/c636819/v636819936/3474a/g6I0ETjiQ4I.jpg"
+        image="https://pp.userapi.com/c636819/v636819936/3474a/g6I0ETjiQ4I.jpg"
         style={{
           color: '#fff',
         }}
@@ -103,7 +103,7 @@ module.exports = function ({ storiesOf, action }) {
       <Slide
         full
         overlay="rgba(255,0,0,0.3)"
-        image="https://pp.vk.me/c636819/v636819936/3474a/g6I0ETjiQ4I.jpg"
+        image="https://pp.userapi.com/c636819/v636819936/3474a/g6I0ETjiQ4I.jpg"
       >
         <h1>502</h1>
         <h2>Внутренняя ошибка сервера</h2>

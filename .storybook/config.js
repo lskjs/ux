@@ -1,3 +1,7 @@
-import { wrapModules } from './storybook';
-const stories = require('glob!./story.pattern')
-wrapModules(stories, module);
+import { config } from 'storybox';
+config({
+  options: {
+    name: 'lsk-general',
+  },
+  modules: require('glob!./glob.txt'),
+});

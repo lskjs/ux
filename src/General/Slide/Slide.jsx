@@ -3,6 +3,8 @@ import importcss from 'importcss';
 import ReactDriveIn from 'react-drive-in';
 import cx from 'classnames';
 
+global.__IE__ = global.__IE__ || false;
+
 @importcss(require('./Slide.css'))
 export default class Slide extends Component {
   static defaultProps = {
@@ -137,6 +139,37 @@ export default class Slide extends Component {
     if (width) {
       style.minWidth = width;
     }
+    if (__IE__) {
+      return <div styleName="Slide__inner"  style={{...style, position:'relative'}}>
+          <table width='100%' styleName="Slide__inner" style={{...style}}>
+          <tr>
+            <td colSpan={3} styleName="Slide__top" width='100%' height={10}>
+              {top}
+            </td>
+          </tr>
+          <tr>
+            <td styleName="Slide__left">
+              {left}
+            </td>
+            <td width='100%'>
+              <div>
+                {content}
+                {children}
+              </div>
+            </td>
+            <td styleName="Slide__right">
+              {right}
+            </td>
+          </tr>
+          <tr>
+            <td colSpan={3} styleName="Slide__bottom" width='100%' height={10}>
+              {bottom}
+            </td>
+          </tr>
+        </table>
+      </div>
+    }
+
     return (
       <div styleName="Slide__inner" style={style}>
         <If condition={top}>
@@ -180,12 +213,13 @@ export default class Slide extends Component {
           Slide_stretch: stretch,
           Slide_fixed: fixed,
           Slide_center: center,
+          Slide_ie: __IE__,
         })}
         className={className}
         style={style}
       >
-        {this.renderBg()}
         {this.renderInner()}
+        {this.renderBg()}
       </div>
     );
   }

@@ -74,7 +74,7 @@ export default class MyModal extends Component {
   }
 }
 
-export class ModalButton extends Component { // eslint-disable-line
+export class Open extends Component { // eslint-disable-line
   static contextTypes = {
     _modal: PropTypes.func,
   }
@@ -103,8 +103,41 @@ export class ModalButton extends Component { // eslint-disable-line
   }
 }
 
-MyModal.Button = ModalButton;
-MyModal.Trigger = ModalButton;
+MyModal.Button = Open;
+MyModal.Trigger = Open;
+MyModal.Open = Open;
+
+
+export class Close extends Component { // eslint-disable-line
+  static contextTypes = {
+    _modal: PropTypes.func,
+  }
+  static defaultProps = {
+    id: 'single',
+    type: 'close',
+    children: '',
+  }
+  static propTypes = {
+    type: PropTypes.string,
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    children: PropTypes.string,
+  }
+  @autobind
+  handle() {
+    const { type, id } = this.props;
+    this.context._modal({ type, id });
+  }
+  render() {
+    const { children } = this.props;
+    return (
+      <span onClick={this.handle}>
+        {children}
+      </span>
+    );
+  }
+}
+MyModal.Close = Close;
+
 
 // @importcss(require('./ModalContent.css'))
 export class ModalContent extends Component { // eslint-disable-line
@@ -129,7 +162,7 @@ export class ModalContent extends Component { // eslint-disable-line
     this.context._modal({ type: 'close', id });
   }
   render() {
-    const { id, fullscreen, title, children } = this.props;
+    const { id, fullscreen, title, body, children } = this.props;
     const state = this.context._modal({ type: 'state', id });
     return (
       <Modal
@@ -139,15 +172,18 @@ export class ModalContent extends Component { // eslint-disable-line
           'modal-fullscreen': fullscreen,
         })}
       >
-        <If condition={title}>
-          <Modal.Header closeButton>
-            {title}
-          </Modal.Header>
+        <If condition={title || body}>
+          <If condition={title}>
+            <Modal.Header closeButton>
+              {title}
+            </Modal.Header>
+          </If>
           <Modal.Body>
+            {body}
             {children}
           </Modal.Body>
         </If>
-        <If condition={!title}>
+        <If condition={!(title || body)}>
           {children}
         </If>
         {/* <Modal.Footer>

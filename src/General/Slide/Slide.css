@@ -1,5 +1,15 @@
 @import url('&General/_vars.css');
 
+
+tr, td {
+  border: 3px green dotted;
+
+}
+
+/*.Slide_ie {
+  background: red !important;
+}*/
+
 .Slide {
   position: relative;
 }
@@ -22,7 +32,6 @@
     @mixin gridContainer;
   }
 }
-
 .Slide__inner {
   z-index: 110;
 
@@ -66,6 +75,10 @@
 }
 
 
+.Slide__bg {
+  z-index: 100;
+  /*display: none;*/
+}
 .Slide__noclick {
   @mixin bg;
   z-index: 103;
@@ -144,4 +157,32 @@
   background-position: 50% 0;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.Slide__inner {
+  /*border: 5px red dotted;*/
+  /*display: block;*/
+  /*height: 100%;
+  border: 5px red dotted;*/
+  /*display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  -ms-flex-pack: center;*/
+}
+
+.Slide__middle {
+  /*border: 3px green dotted;*/
+  /*display: block;*/
+  /*height: 100%;*/
+  /*min-height: 90vh;*/
+}
+
+
+.Slide__content {
+  /*border: 1px red dotted;*/
 }
