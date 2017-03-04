@@ -1,9 +1,8 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import importcss from 'importcss';
 import ReactDriveIn from 'react-drive-in';
 import cx from 'classnames';
-
-global.__IE__ = global.__IE__ || false;
+import Component from 'lsk-general/General/Component';
 
 @importcss(require('./Slide.css'))
 export default class Slide extends Component {
@@ -98,26 +97,6 @@ export default class Slide extends Component {
       <If condition={video}>
         {this.renderVideo(video)}
       </If>
-      {/* <If condition={this.props.video}>
-        <ReactDriveIn
-         show={this.props.video}
-        />
-      </If> */}
-      {/* <If condition={this.props.video}>
-        <div
-          styleName="video__wrapper"
-        >
-          <iframe
-            styleName="video"
-            frameborder="0"
-            allowfullscreen="1"
-            title="YouTube video player"
-            width="640"
-            height="360"
-            src={this.props.video}
-          />
-        </div>
-      </If> */}
       <If condition={image}>
         <div
           styleName="Slide__image"
@@ -126,6 +105,54 @@ export default class Slide extends Component {
       </If>
     </div>);
   }
+
+  renderInnerIE() {
+    let { height } = this.props;
+    const { width, top, left, right, bottom, content, children, full } = this.props;
+    const style = {};
+    if (full && !height) {
+      height = '76vh';
+    }
+    if (height) {
+      style.minHeight = height;
+    }
+    if (width) {
+      style.minWidth = width;
+    }
+    return (
+      <div styleName="Slide__inner" style={{ ...style, position: 'relative' }}>
+        <table width="100%" styleName="Slide__inner" style={{ ...style }}>
+          <tbody>
+            <tr>
+              <td colSpan={3} styleName="Slide__top" width="100%" height={10}>
+                {top}
+              </td>
+            </tr>
+            <tr>
+              <td styleName="Slide__left">
+                {left}
+              </td>
+              <td width="100%" style={{ height: style.minHeight }}>
+                <div styleName="Slide__content">
+                  {content}
+                  {children}
+                </div>
+              </td>
+              <td styleName="Slide__right">
+                {right}
+              </td>
+            </tr>
+            <tr>
+              <td colSpan={3} styleName="Slide__bottom" width="100%" height={10}>
+                {bottom}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    );
+  }
+
   renderInner() {
     let { height } = this.props;
     const { width, top, left, right, bottom, content, children, full } = this.props;
@@ -139,37 +166,6 @@ export default class Slide extends Component {
     if (width) {
       style.minWidth = width;
     }
-    if (__IE__) {
-      return <div styleName="Slide__inner"  style={{...style, position:'relative'}}>
-          <table width='100%' styleName="Slide__inner" style={{...style}}>
-          <tr>
-            <td colSpan={3} styleName="Slide__top" width='100%' height={10}>
-              {top}
-            </td>
-          </tr>
-          <tr>
-            <td styleName="Slide__left">
-              {left}
-            </td>
-            <td width='100%'>
-              <div>
-                {content}
-                {children}
-              </div>
-            </td>
-            <td styleName="Slide__right">
-              {right}
-            </td>
-          </tr>
-          <tr>
-            <td colSpan={3} styleName="Slide__bottom" width='100%' height={10}>
-              {bottom}
-            </td>
-          </tr>
-        </table>
-      </div>
-    }
-
     return (
       <div styleName="Slide__inner" style={style}>
         <If condition={top}>
@@ -213,12 +209,12 @@ export default class Slide extends Component {
           Slide_stretch: stretch,
           Slide_fixed: fixed,
           Slide_center: center,
-          Slide_ie: __IE__,
+          Slide_ie: this._ie(),
         })}
         className={className}
         style={style}
       >
-        {this.renderInner()}
+        {this._ie() ? this.renderInnerIE() : this.renderInner()}
         {this.renderBg()}
       </div>
     );

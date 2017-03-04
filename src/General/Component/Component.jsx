@@ -24,4 +24,13 @@ export default class Component extends React.Component {
     this.context.history.push(...args);
   }
 
+  _ie() {
+    const ie = typeof window !== 'undefined' && (
+      window.navigator.userAgent.indexOf('MSIE ') > 0 ||
+      !!window.navigator.userAgent.match(/Trident.*rv\:11\./)
+    );
+    ie && console.log('ie', ie);
+    return ie;
+  }
+
 }

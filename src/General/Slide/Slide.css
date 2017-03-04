@@ -1,10 +1,14 @@
 @import url('&General/_vars.css');
 
-
+/*
 tr, td {
   border: 3px green dotted;
-
+  height: 100%;
 }
+
+tbody {
+  height: 100vh;
+}*/
 
 /*.Slide_ie {
   background: red !important;
