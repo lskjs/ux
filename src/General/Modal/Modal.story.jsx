@@ -3,7 +3,7 @@ import Modal from './Modal';
 
 module.exports = function ({ storiesOf, action }) {
   return storiesOf('Modal', module)
-    .addHtml(<link rel="stylesheet" type="text/css" href="http://yastatic.net/bootstrap/3.3.6/css/bootstrap.min.css" />)
+    .addHtml(<link rel="stylesheet" type="text/css" href="https://yastatic.net/bootstrap/3.3.6/css/bootstrap.min.css" />)
     .add('1. Widthout wrap', () => (
       <Modal>
         <Modal.Open>
