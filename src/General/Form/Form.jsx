@@ -136,7 +136,6 @@ export default class Form extends Component {
   handleChangeField(path) {
     const { onChange } = this.props;
     return async (e) => {
-      console.log(path, e.target.value);
       await this.setStatePath(path, e.target.value);
       if (onChange) {
         onChange(this.getData());
