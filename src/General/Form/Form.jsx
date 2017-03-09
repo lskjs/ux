@@ -3,7 +3,7 @@ import { autobind } from 'core-decorators';
 import importcss from 'importcss';
 import cx from 'classnames';
 import validate from 'validate.js';
-import _ from 'lodash';
+import set from 'lodash/set';
 import {
   Form as FormBase,
   FormGroup,
@@ -53,7 +53,7 @@ export default class Form extends Component {
     if (!data) {
       data = {};
       (this.getFields(props.fields)).forEach((field) => {
-        data[field.name] = field.value;
+        set(data, field.name, field.value);
       });
     }
     this.state = {
@@ -136,6 +136,7 @@ export default class Form extends Component {
   handleChangeField(path) {
     const { onChange } = this.props;
     return async (e) => {
+      console.log(path, e.target.value);
       await this.setStatePath(path, e.target.value);
       if (onChange) {
         onChange(this.getData());
