@@ -13,9 +13,17 @@ tbody {
 /*.Slide_ie {
   background: red !important;
 }*/
+html, body {
+    min-height:100%;
+    height:100%;
+}
 
 .Slide {
   position: relative;
+
+  * {
+    border: 1px red solid;
+  }
 }
 .Slide_center {
   text-align: center;
@@ -43,13 +51,15 @@ tbody {
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
+  height:100vh;
 }
 
 .Slide__top {
   padding-top: 40px;
+  flex-shrink: 0;
 }
 .Slide__middle {
-  flex: 1;
+  flex: 1 0 auto;
   padding: 20px 10px;
   display: flex;
   align-items: center;
@@ -59,6 +69,7 @@ tbody {
 }
 .Slide__bottom {
   padding-bottom: 40px;
+  flex-shrink: 0;
 }
 
 .Slide__left {

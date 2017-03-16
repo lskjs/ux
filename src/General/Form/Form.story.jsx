@@ -1,9 +1,16 @@
 import React from 'react';
 import Form from './Form';
 
+const data = {
+  profile: {
+    fio: 'kek',
+    age: 80,
+  },
+};
+
 const WrapBootsrstap = props => (
   <div>
-    <link rel="stylesheet" type="text/css" href="http://yastatic.net/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://yastatic.net/bootstrap/3.3.6/css/bootstrap.min.css" />
     { props() }
   </div>
 );
@@ -113,6 +120,7 @@ module.exports = function ({ storiesOf, action }) {
           {
             name: 'profile.fio',
             title: 'ФИО',
+            value: data.profile.fio,
             control: {
               placeholder: 'Например, Василий',
             },
@@ -120,6 +128,7 @@ module.exports = function ({ storiesOf, action }) {
           {
             name: 'profile.age',
             title: 'Возраст',
+            value: data.profile.age,
             control: {
               placeholder: 'Например, 55',
               type: 'number',

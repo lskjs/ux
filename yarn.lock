@@ -61,6 +61,13 @@
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@kadira/storybook-channel/-/storybook-channel-1.1.0.tgz#806d1cdf2498d11cce09871a6fd27bbb41ed3564"
 
+"@kadira/storybook-deployer@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@kadira/storybook-deployer/-/storybook-deployer-1.2.0.tgz#1708f5cb37fa08ab4173b1bd99df6f4717dfae12"
+  dependencies:
+    git-url-parse "^6.0.2"
+    shelljs "^0.7.0"
+
 "@kadira/storybook-ui@^3.10.1":
   version "3.11.0"
   resolved "https://registry.yarnpkg.com/@kadira/storybook-ui/-/storybook-ui-3.11.0.tgz#a5ccdcc479aa5e08465c58e7df493e37e4b2a14a"
@@ -417,7 +424,7 @@ babel-code-frame@^6.11.0, babel-code-frame@^6.16.0, babel-code-frame@^6.22.0, ba
     esutils "^2.0.2"
     js-tokens "^3.0.0"
 
-babel-core@6.9.0, babel-core@^6.1.2, babel-core@^6.9.0:
+babel-core@6.9.0:
   version "6.9.0"
   resolved "https://registry.yarnpkg.com/babel-core/-/babel-core-6.9.0.tgz#d38c221b0ed02e628a1b10daa920151821272d41"
   dependencies:
@@ -443,7 +450,7 @@ babel-core@6.9.0, babel-core@^6.1.2, babel-core@^6.9.0:
     slash "^1.0.0"
     source-map "^0.5.0"
 
-babel-core@^6.11.4, babel-core@^6.18.2, babel-core@^6.23.0:
+babel-core@^6.1.2, babel-core@^6.11.4, babel-core@^6.18.2, babel-core@^6.23.0, babel-core@^6.9.0:
   version "6.23.1"
   resolved "https://registry.yarnpkg.com/babel-core/-/babel-core-6.23.1.tgz#c143cb621bb2f621710c220c5d579d15b8a442df"
   dependencies:
@@ -617,7 +624,7 @@ babel-helpers@^6.23.0, babel-helpers@^6.8.0:
     babel-runtime "^6.22.0"
     babel-template "^6.23.0"
 
-babel-loader@6.2.4:
+babel-loader@6.2.4, babel-loader@^6.2.4:
   version "6.2.4"
   resolved "https://registry.yarnpkg.com/babel-loader/-/babel-loader-6.2.4.tgz#aa70aff8ddc223a5952e839a43a6c3a4c8bfa1e9"
   dependencies:
@@ -625,7 +632,7 @@ babel-loader@6.2.4:
     mkdirp "^0.5.1"
     object-assign "^4.0.1"
 
-babel-loader@^6.2.4, babel-loader@^6.2.8:
+babel-loader@^6.2.8:
   version "6.3.2"
   resolved "https://registry.yarnpkg.com/babel-loader/-/babel-loader-6.3.2.tgz#18de4566385578c1b4f8ffe6cbc668f5e2a5ef03"
   dependencies:
@@ -3069,6 +3076,19 @@ getpass@^0.1.1:
   dependencies:
     assert-plus "^1.0.0"
 
+git-up@^2.0.0:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/git-up/-/git-up-2.0.6.tgz#38d6dddc5db720de83ef09ef3865e748f5887e12"
+  dependencies:
+    is-ssh "^1.3.0"
+    parse-url "^1.3.0"
+
+git-url-parse@^6.0.2:
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/git-url-parse/-/git-url-parse-6.2.0.tgz#fc0eeb0e96f8f5fdc71e1324116ecd2735cefc96"
+  dependencies:
+    git-up "^2.0.0"
+
 glob-base@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/glob-base/-/glob-base-0.3.0.tgz#dbb164f6221b1c0b1ccf82aea328b497df0ea3c4"
@@ -3576,6 +3596,12 @@ is-resolvable@^1.0.0:
   resolved "https://registry.yarnpkg.com/is-resolvable/-/is-resolvable-1.0.0.tgz#8df57c61ea2e3c501408d100fb013cf8d6e0cc62"
   dependencies:
     tryit "^1.0.1"
+
+is-ssh@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/is-ssh/-/is-ssh-1.3.0.tgz#ebea1169a2614da392a63740366c3ce049d8dff6"
+  dependencies:
+    protocols "^1.1.0"
 
 is-stream@^1.0.1:
   version "1.1.0"
@@ -4756,6 +4782,13 @@ parse-passwd@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/parse-passwd/-/parse-passwd-1.0.0.tgz#6d5b934a456993b23d37f40a382d6f1666a8e5c6"
 
+parse-url@^1.3.0:
+  version "1.3.5"
+  resolved "https://registry.yarnpkg.com/parse-url/-/parse-url-1.3.5.tgz#c9f27e266bc81691927a417c77d543a11da31b35"
+  dependencies:
+    is-ssh "^1.3.0"
+    protocols "^1.4.0"
+
 parsejson@0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/parsejson/-/parsejson-0.0.3.tgz#ab7e3759f209ece99437973f7d0f1f64ae0e64ab"
@@ -5453,6 +5486,10 @@ proper-lockfile@^1.1.2:
     extend "^3.0.0"
     graceful-fs "^4.1.2"
     retry "^0.10.0"
+
+protocols@^1.1.0, protocols@^1.4.0:
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/protocols/-/protocols-1.4.3.tgz#635b1c0785f0b389e8a012df1b1afffda9608b76"
 
 proxy-addr@~1.1.3:
   version "1.1.3"
@@ -6273,7 +6310,7 @@ shebang-regex@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/shebang-regex/-/shebang-regex-1.0.0.tgz#da42f49740c0b42db2ca9728571cb190c98efea3"
 
-shelljs@^0.7.4, shelljs@^0.7.5:
+shelljs@^0.7.0, shelljs@^0.7.4, shelljs@^0.7.5:
   version "0.7.6"
   resolved "https://registry.yarnpkg.com/shelljs/-/shelljs-0.7.6.tgz#379cccfb56b91c8601e4793356eb5382924de9ad"
   dependencies:
