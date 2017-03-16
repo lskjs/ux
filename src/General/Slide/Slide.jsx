@@ -111,7 +111,8 @@ export default class Slide extends Component {
     const { width, top, left, right, bottom, content, children, full } = this.props;
     const style = {};
     if (full && !height) {
-      height = '76vh';
+      // height = '76vh';
+      height = '100vh';
     }
     if (height) {
       style.minHeight = height;

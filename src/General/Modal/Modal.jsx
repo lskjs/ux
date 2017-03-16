@@ -22,9 +22,6 @@ export default class MyModal extends Component {
   constructor(props) {
     super(props);
     this.state = { visible: false };
-    // if (props.event) {
-    //
-    // }
   }
   getChildContext() {
     return {
@@ -54,13 +51,7 @@ export default class MyModal extends Component {
       });
     }
   }
-  // componenWillUnmount() {
-  //   if (this.props.emitter) {
-  //
-  //   }
-  // }
   render() {
-    // return this.props.children
     const { fullscreen, children } = this.props;
     let className = '';
     if (fullscreen) {
