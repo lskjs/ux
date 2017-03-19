@@ -30,7 +30,6 @@ export default class Component extends React.Component {
       !!window.navigator.userAgent.match(/Trident.*rv\:11\./)
     );
     // ie && console.log('ie', ie);
-    return false;
     return ie;
   }
 

@@ -1,5 +1,7 @@
 @import url('&General/_vars.css');
 
+
+
 /*
 tr, td {
   border: 3px green dotted;
@@ -13,17 +15,17 @@ tbody {
 /*.Slide_ie {
   background: red !important;
 }*/
-html, body {
+/*html, body {
     min-height:100%;
     height:100%;
-}
+}*/
 
 .Slide {
   position: relative;
 
-  * {
+  /** {
     border: 1px red solid;
-  }
+  }*/
 }
 .Slide_center {
   text-align: center;
@@ -51,25 +53,26 @@ html, body {
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
-  height:100vh;
 }
 
 .Slide__top {
   padding-top: 40px;
-  flex-shrink: 0;
+  /*flex-shrink: 0;*/
 }
+
+
 .Slide__middle {
-  flex: 1 0 auto;
+  /*flex: 1 0 auto;*/
+  flex: 1;
   padding: 20px 10px;
   display: flex;
   align-items: center;
-  height: 100%;
+  /*height: 100%;*/
   justify-content: space-between;
   z-index: 110;
 }
 .Slide__bottom {
   padding-bottom: 40px;
-  flex-shrink: 0;
 }
 
 .Slide__left {
@@ -200,4 +203,22 @@ html, body {
 
 .Slide__content {
   /*border: 1px red dotted;*/
+}
+
+.Slide_ie {
+  * {
+    border: 1px red solid;
+  }
+  .Slide__top {
+    flex-shrink: 0;
+  }
+  .Slide__bottom {
+    flex-shrink: 0;
+  }
+  .Slide__middle {
+    flex: 1 0 auto;
+  }
+  .Slide__inner {
+    height:100vh;
+  }
 }
