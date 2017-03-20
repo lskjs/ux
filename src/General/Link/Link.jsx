@@ -48,9 +48,14 @@ class Link extends Component {
     if (event.defaultPrevented === true) {
       return;
     }
+    
+    const url = this.props.to || this.props.href;
+    if(this.props.target === '_blank' || isAbsoluteUrl(url)){
+      return;
+    }    
 
     event.preventDefault();
-    this.context.history.push(this.props.to || this.props.href);
+    this.context.history.push(url);
   };
 
   render() {
@@ -61,3 +66,7 @@ class Link extends Component {
 }
 
 export default Link;
+
+function isAbsoluteUrl(url){
+  return url.indexOf('://') > 0 || url.indexOf('//') === 0 
+}
