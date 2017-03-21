@@ -205,10 +205,13 @@ tbody {
   /*border: 1px red dotted;*/
 }
 
-.Slide_ie {
+.__DEV__ .Slide_ie  {
   * {
     border: 1px red solid;
   }
+}
+
+.Slide_ie {
   .Slide__top {
     flex-shrink: 0;
   }

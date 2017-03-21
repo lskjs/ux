@@ -23,6 +23,12 @@ export default class MyModal extends Component {
     super(props);
     this.state = { visible: false };
   }
+  open() {
+    this.setState({ visible: true });
+  }
+  close() {
+    this.setState({ visible: false });
+  }
   getChildContext() {
     return {
       _modal: ({ type }) => {
