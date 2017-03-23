@@ -49,6 +49,13 @@ export default class Form extends Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      data: this.getStateData(props),
+      errors: props.errors || {}, // @TODO хз зачем
+    };
+  }
+
+  getStateData(props) {
     let data = props.data;
     if (!data) {
       data = {};
@@ -56,11 +63,15 @@ export default class Form extends Component {
         set(data, field.name, field.value);
       });
     }
-    this.state = {
-      data,
-      errors: props.errors || {}, // @TODO хз зачем
-    };
+    return data;
   }
+
+  componentWillReceiveProps(props) {
+    this.setState({
+      data: this.getStateData(props),
+    });
+  }
+
 
   getFields(fields) {
     if (!fields) fields = this.props.fields; // eslint-disable-line
