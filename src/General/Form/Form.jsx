@@ -3,7 +3,7 @@ import { autobind } from 'core-decorators';
 import importcss from 'importcss';
 import cx from 'classnames';
 import validate from 'validate.js';
-import set from 'lodash/set';
+import { set, get } from 'lodash';
 import {
   Form as FormBase,
   FormGroup,
@@ -97,15 +97,13 @@ export default class Form extends Component {
     const results = this.getValidatorResults();
     const errors = {};
     for (const item in results) {
-      const re = new RegExp(`^${item} (.+)$`, 'i');
-      const [, message] = re.exec(results[item][0]);
+      const [, message] = /[ \w]* (.*)$/.exec(results[item][0]);
       errors[item] = {
         state: 'error',
         message,
       };
     }
-
-    if (this.getFields().filter(field => !!errors[field.name]).length > 0) {
+    if (this.getFields().filter(field => !!get(errors, field.name)).length > 0) {
       this.onError(errors);
       return false;
     }
