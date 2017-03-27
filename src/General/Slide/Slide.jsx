@@ -77,6 +77,7 @@ export default class Slide extends Component {
     return (
       <div styleName="Slide__video">
         <ReactDriveIn
+          poster={this.props.image || '//cdn.mgbeta.ru/lsk/_t.png'}
           show={video}
         />
       </div>
