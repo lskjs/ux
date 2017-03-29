@@ -1,0 +1,89 @@
+.StatusButton {
+  transition: .1s ease;
+  will-change: transform;
+  outline: none !important;
+  border: none !important;
+
+  &:hover,
+  &:focus,
+  &:active {
+    outline: none !important;
+  }
+
+  .animate {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    border: 2px solid #2e6da4;
+    box-sizing: border-box;
+    border-radius: 4px;
+    transition: border .3s ease;
+  }
+
+  &.loading {
+    .animate {
+      border: 2px solid #adadad;
+      animation: spinner .8s infinite forwards, appear .3s 1;
+    }
+  }
+
+  &.success {
+    .animate {
+      opacity: .2;
+      animation: success .3s 1 forwards;
+    }
+  }
+
+  &.error {
+    .animate {
+      opacity: .2;
+      animation: error .3s 1 forwards;
+    }
+  }
+}
+
+/* =================================== */
+
+@keyframes appear {
+  from {
+    opacity: .2;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes success {
+  to {
+    opacity: 1;
+    border: 2px solid #4cae4c;
+  }
+}
+
+@keyframes error {
+  to {
+    opacity: 1;
+    border: 2px solid #d43f3a;
+  }
+}
+
+@keyframes spinner {
+  0% {
+    border-top-color: #48b1f1;
+  }
+  30% {
+    border-right-color: #48b1f1;
+  }
+  60% {
+    border-bottom-color: #48b1f1;
+  }
+  90% {
+    border-left-color: #48b1f1;
+  }
+}
