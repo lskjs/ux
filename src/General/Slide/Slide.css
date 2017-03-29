@@ -1,31 +1,8 @@
 @import url('&General/_vars.css');
 
 
-
-/*
-tr, td {
-  border: 3px green dotted;
-  height: 100%;
-}
-
-tbody {
-  height: 100vh;
-}*/
-
-/*.Slide_ie {
-  background: red !important;
-}*/
-/*html, body {
-    min-height:100%;
-    height:100%;
-}*/
-
 .Slide {
   position: relative;
-
-  /** {
-    border: 1px red solid;
-  }*/
 }
 .Slide_center {
   text-align: center;
@@ -204,8 +181,12 @@ tbody {
 .Slide__content {
   /*border: 1px red dotted;*/
 }
-
-.__DEV__ .Slide_ie  {
+.Slide_ie  {
+  * {
+    border: 1px transparent solid;
+  }
+}
+:global(.__DEV__) .Slide_ie  {
   * {
     border: 1px red solid;
   }
