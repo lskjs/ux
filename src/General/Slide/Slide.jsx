@@ -28,11 +28,11 @@ export default class Slide extends Component {
   }
   static propTypes = {
     overlay: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
-    video: PropTypes.string,
+    video: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
     stretch: PropTypes.bool,
     full: PropTypes.bool,
-    color: PropTypes.string,
-    image: PropTypes.string,
+    color: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+    image: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
     width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     top: PropTypes.any,
