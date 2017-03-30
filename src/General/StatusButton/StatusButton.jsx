@@ -20,11 +20,15 @@ class StatusButton extends Component {
     status: BUTTON_STATUS.none,
     children: 'Отправить',
     promise: null,
+    bsStyle: 'primary',
+    styleName: '',
   };
   static propTypes = {
     status: React.PropTypes.string,
     children: PropTypes.any,
     promise: PropTypes.any,
+    bsStyle: PropTypes.string,
+    styleName: PropTypes.string,
   };
   constructor(props) {
     super(props);
@@ -67,10 +71,9 @@ class StatusButton extends Component {
   }
   render() {
     const { status } = this.state;
-    const { children } = this.props;
+    const { children, bsStyle, styleName } = this.props;
 
     const style = cx({
-      primary: status === BUTTON_STATUS.none,
       default: status === BUTTON_STATUS.loading,
       success: status === BUTTON_STATUS.success,
       danger: status === BUTTON_STATUS.error,
@@ -78,10 +81,10 @@ class StatusButton extends Component {
 
     return (
       <Button
-        styleName={`StatusButton ${style}`}
-        bsStyle={style}
-        disabled={['loading', 'error', 'success'].includes(status)}
         {...this.props}
+        styleName={`StatusButton ${style} ${styleName}`}
+        bsStyle={status === BUTTON_STATUS.none ? bsStyle : style}
+        disabled={['loading', 'error', 'success'].includes(status)}
       >
         <span style={{ visibility: status ? 'hidden' : 'visible' }}>
           {children}
