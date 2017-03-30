@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { Button } from 'react-bootstrap';
 import cx from 'classnames';
 import css from 'importcss';
+import omit from 'lodash/omit';
 
 import Check from 'react-icons/lib/fa/check';
 import Refresh from 'react-icons/lib/fa/refresh';
@@ -82,14 +83,15 @@ class StatusButton extends Component {
       success: status === BUTTON_STATUS.success,
       danger: status === BUTTON_STATUS.error,
     });
+
     const disabled = ['loading', 'error', 'success'].includes(status);
 
     return (
       <Tag
+        {...omit(this.props, ['status', 'tag', 'promise', 'timeout'])}
         styleName={`StatusButton ${style} ${styleName}`}
-        bbsStyle={disabled ? style : bsStyle}
+        bsStyle={disabled ? style : bsStyle}
         disabled={disabled}
-        {...this.props}
       >
         <span style={{ visibility: disabled ? 'hidden' : 'visible' }}>
           {children}
