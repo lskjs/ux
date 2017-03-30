@@ -3,6 +3,10 @@ import { Button } from 'react-bootstrap';
 import cx from 'classnames';
 import css from 'importcss';
 
+import Check from 'react-icons/lib/fa/check';
+import Refresh from 'react-icons/lib/fa/refresh';
+import Close from 'react-icons/lib/fa/close';
+
 const BUTTON_STATUS = {
   none: '',
   loading: 'loading',
@@ -36,20 +40,34 @@ class StatusButton extends Component {
     }
   }
   resolvePromise(promise) {
+    const { status } = this.state;
     if (!promise) return;
-    if (this.state.status !== BUTTON_STATUS.loading) {
+    if (status !== BUTTON_STATUS.loading) {
       this.setState({ status: BUTTON_STATUS.loading });
     }
     promise
-      .then(() => this.setState({ status: BUTTON_STATUS.success }))
-      .catch(() => this.setState({ status: BUTTON_STATUS.error }));
+      .then(() => this.finishStatus(BUTTON_STATUS.success))
+      .catch(() => this.finishStatus(BUTTON_STATUS.error));
+  }
+  finishStatus(status) {
+    this.setState({ status });
+    setTimeout(() => this.setState({ status: '' }), 2000);
+  }
+  convertStatus(status) {
+    switch (status) {
+      case 'loading':
+        return <Refresh />;
+      case 'success':
+        return <Check />;
+      case 'error':
+        return <Close />;
+      default:
+        return '';
+    }
   }
   render() {
-    const status = this.state.status;
-
-    const {
-      children,
-    } = this.props;
+    const { status } = this.state;
+    const { children } = this.props;
 
     const style = cx({
       primary: status === BUTTON_STATUS.none,
@@ -58,22 +76,24 @@ class StatusButton extends Component {
       danger: status === BUTTON_STATUS.error,
     });
 
-    const classnames = cx({
-      StatusButton: true,
-      default: status === BUTTON_STATUS.none,
-      loading: status === BUTTON_STATUS.loading,
-      success: status === BUTTON_STATUS.success,
-      error: status === BUTTON_STATUS.error,
-    });
-
-    const ButtonContent = this.state.status || '';
-
     return (
-      <Button styleName={classnames} bsStyle={style} {...this.props}>
-        <span style={{ visibility: this.state.status ? 'hidden' : 'visible' }}>
+      <Button
+        styleName={`StatusButton ${style}`}
+        bsStyle={style}
+        disabled={['loading', 'error', 'success'].includes(status)}
+        {...this.props}
+      >
+        <span style={{ visibility: status ? 'hidden' : 'visible' }}>
           {children}
         </span>
-        <div styleName="animate">{ButtonContent}</div>
+        <div
+          styleName={cx({
+            animate: true,
+            spin: status === BUTTON_STATUS.loading,
+          })}
+        >
+          {this.convertStatus(status)}
+        </div>
       </Button>
     );
   }
