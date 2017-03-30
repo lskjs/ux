@@ -20,11 +20,15 @@ class StatusButton extends Component {
     status: BUTTON_STATUS.none,
     children: 'Отправить',
     promise: null,
+    timeout: 2000,
+    tag: Button,
   };
   static propTypes = {
     status: React.PropTypes.string,
     children: PropTypes.any,
     promise: PropTypes.any,
+    timeout: PropTypes.number,
+    tag: PropTypes.any,
   };
   constructor(props) {
     super(props);
@@ -51,7 +55,7 @@ class StatusButton extends Component {
   }
   finishStatus(status) {
     this.setState({ status });
-    setTimeout(() => this.setState({ status: '' }), 2000);
+    setTimeout(() => this.setState({ status: '' }), this.props.timeout);
   }
   convertStatus(status) {
     switch (status) {
@@ -67,23 +71,24 @@ class StatusButton extends Component {
   }
   render() {
     const { status } = this.state;
-    const { children } = this.props;
+    const { children, tag: Tag } = this.props;
 
-    const style = cx({
+    const bsStyle = cx({
       primary: status === BUTTON_STATUS.none,
       default: status === BUTTON_STATUS.loading,
       success: status === BUTTON_STATUS.success,
       danger: status === BUTTON_STATUS.error,
     });
+    const disabled = ['loading', 'error', 'success'].includes(status);
 
     return (
-      <Button
-        styleName={`StatusButton ${style}`}
-        bsStyle={style}
-        disabled={['loading', 'error', 'success'].includes(status)}
+      <Tag
         {...this.props}
+        styleName={`StatusButton ${bsStyle} ${this.props.styleName}`}
+        bsStyle={disabled ? bsStyle : this.props.bsStyle}
+        disabled={disabled}
       >
-        <span style={{ visibility: status ? 'hidden' : 'visible' }}>
+        <span style={{ visibility: disabled ? 'hidden' : 'visible' }}>
           {children}
         </span>
         <div
@@ -94,7 +99,7 @@ class StatusButton extends Component {
         >
           {this.convertStatus(status)}
         </div>
-      </Button>
+      </Tag>
     );
   }
 }
