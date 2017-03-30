@@ -20,8 +20,10 @@ class StatusButton extends Component {
     status: BUTTON_STATUS.none,
     children: 'Отправить',
     promise: null,
-    bsStyle: 'primary',
+    bsStyle: 'default',
     styleName: '',
+    timeout: 2000,
+    tag: Button,
   };
   static propTypes = {
     status: React.PropTypes.string,
@@ -29,6 +31,8 @@ class StatusButton extends Component {
     promise: PropTypes.any,
     bsStyle: PropTypes.string,
     styleName: PropTypes.string,
+    timeout: PropTypes.number,
+    tag: PropTypes.any,
   };
   constructor(props) {
     super(props);
@@ -55,7 +59,7 @@ class StatusButton extends Component {
   }
   finishStatus(status) {
     this.setState({ status });
-    setTimeout(() => this.setState({ status: '' }), 2000);
+    setTimeout(() => this.setState({ status: '' }), this.props.timeout);
   }
   convertStatus(status) {
     switch (status) {
@@ -71,22 +75,23 @@ class StatusButton extends Component {
   }
   render() {
     const { status } = this.state;
-    const { children, bsStyle, styleName } = this.props;
+    const { children, tag: Tag, bsStyle, styleName } = this.props;
 
     const style = cx({
       default: status === BUTTON_STATUS.loading,
       success: status === BUTTON_STATUS.success,
       danger: status === BUTTON_STATUS.error,
     });
+    const disabled = ['loading', 'error', 'success'].includes(status);
 
     return (
-      <Button
-        {...this.props}
+      <Tag
         styleName={`StatusButton ${style} ${styleName}`}
-        bsStyle={status === BUTTON_STATUS.none ? bsStyle : style}
-        disabled={['loading', 'error', 'success'].includes(status)}
+        bbsStyle={disabled ? style : bsStyle}
+        disabled={disabled}
+        {...this.props}
       >
-        <span style={{ visibility: status ? 'hidden' : 'visible' }}>
+        <span style={{ visibility: disabled ? 'hidden' : 'visible' }}>
           {children}
         </span>
         <div
@@ -97,7 +102,7 @@ class StatusButton extends Component {
         >
           {this.convertStatus(status)}
         </div>
-      </Button>
+      </Tag>
     );
   }
 }
