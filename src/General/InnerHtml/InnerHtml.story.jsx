@@ -1,8 +1,14 @@
 import React from 'react';
 import InnerHtml from './InnerHtml';
 
-module.exports = function ({ storiesOf, action }) {
+module.exports = function ({ storiesOf, action, knob }) {
   return storiesOf('InnerHtml', module)
+    .add('--example', () => (
+      <InnerHtml
+        type={knob.text('type=text/md', 'md')}
+        children={knob.text('children', '# Demo Title\n Demo text')}
+      />
+    ))
     .add('text', () => (
       <InnerHtml>
         Demo text Demo text Demo text Demo text Demo text Demo text
