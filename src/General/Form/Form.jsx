@@ -248,6 +248,7 @@ export default class Form extends Component {
   }
 
   render() {
+    if (__SERVER__) return <div>Form Loading</div> // @TODO: пофиксить баг с серверным рендерингом
     const { form, horizontal, fields } = this.props;
     if (form) {
       return (
