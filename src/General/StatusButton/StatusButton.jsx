@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { Button } from 'react-bootstrap';
 import cx from 'classnames';
 import css from 'importcss';
+import omit from 'lodash/omit';
 
 import Check from 'react-icons/lib/fa/check';
 import Refresh from 'react-icons/lib/fa/refresh';
@@ -20,6 +21,8 @@ class StatusButton extends Component {
     status: BUTTON_STATUS.none,
     children: 'Отправить',
     promise: null,
+    bsStyle: 'default',
+    styleName: '',
     timeout: 2000,
     tag: Button,
   };
@@ -27,6 +30,8 @@ class StatusButton extends Component {
     status: React.PropTypes.string,
     children: PropTypes.any,
     promise: PropTypes.any,
+    bsStyle: PropTypes.string,
+    styleName: PropTypes.string,
     timeout: PropTypes.number,
     tag: PropTypes.any,
   };
@@ -71,21 +76,21 @@ class StatusButton extends Component {
   }
   render() {
     const { status } = this.state;
-    const { children, tag: Tag } = this.props;
+    const { children, tag: Tag, bsStyle, styleName } = this.props;
 
-    const bsStyle = cx({
-      primary: status === BUTTON_STATUS.none,
+    const style = cx({
       default: status === BUTTON_STATUS.loading,
       success: status === BUTTON_STATUS.success,
       danger: status === BUTTON_STATUS.error,
     });
+
     const disabled = ['loading', 'error', 'success'].includes(status);
 
     return (
       <Tag
-        {...this.props}
-        styleName={`StatusButton ${bsStyle} ${this.props.styleName}`}
-        bsStyle={disabled ? bsStyle : this.props.bsStyle}
+        {...omit(this.props, ['status', 'tag', 'promise', 'timeout'])}
+        styleName={`StatusButton ${style} ${styleName}`}
+        bsStyle={disabled ? style : bsStyle}
         disabled={disabled}
       >
         <span style={{ visibility: disabled ? 'hidden' : 'visible' }}>

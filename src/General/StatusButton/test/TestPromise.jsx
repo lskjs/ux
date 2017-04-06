@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { autobind } from 'core-decorators';
 import StatusButton from '../StatusButton';
+import omit from 'lodash/omit';
 
 // const PROMISE_TIMEOUT = 2000;
 
@@ -34,7 +35,7 @@ export default class TestPromise extends Component {
   render() {
     return (
       <StatusButton
-        {...this.props}
+        {...omit(this.props, ['promiseTimeout', 'error', 'success', 'loading'])}
         promise={this.promise}
         onClick={this.handleClick}
       />
