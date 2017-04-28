@@ -1,6 +1,6 @@
 {
   "name": "lsk-general",
-  "version": "0.6.15",
+  "version": "0.6.16",
   "author": "isuvorov",
   "license": "MIT",
   "dependencies": {
@@ -66,7 +66,7 @@
     "render": "babel-node tools/run render",
     "start": "node build/server.js",
     "dev": "npm run storybook",
-    "publish": "sh -c 'npm publish'",
+    "release": "sh -c 'npm publish'",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "build-storybook": "build-storybook -c .storybook -o .out",
     "deploy-storybook": "storybook-to-ghpages"
