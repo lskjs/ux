@@ -1,3 +1,5 @@
+@import url('&General/_vars.css');
+
 .align-right {
   text-align: right;
 }
@@ -8,4 +10,8 @@
 
 .align-center {
   text-align: center;
+}
+
+.submitButton {
+  margin-top: $submit-button-top-offset;
 }

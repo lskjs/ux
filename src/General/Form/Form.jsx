@@ -1,9 +1,10 @@
 import React, { PropTypes } from 'react';
-import { autobind } from 'core-decorators';
+import autobind from 'core-decorators/lib/autobind';
 import importcss from 'importcss';
 import cx from 'classnames';
 import validate from 'validate.js';
-import { set, get } from 'lodash';
+import set from 'lodash/set';
+import get from 'lodash/get';
 import {
   Form as FormBase,
   FormGroup,
@@ -230,7 +231,7 @@ export default class Form extends Component {
 
   renderSubmitButton() {
     const { submitButton, align, bsStyle } = this.props;
-    const style = cx({ [`align-${align}`]: align });
+    const style = cx({ [`align-${align}`]: align, submitButton: true });
     if (typeof submitButton === 'string') {
       return (
         <div styleName={style}>
