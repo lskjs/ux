@@ -87,7 +87,7 @@ export default class Avatar extends Component {
       shadow,
       inactive,
     } = this.props;
-    const name = this.props.title || this.props.name;
+    const name = this.props.title || this.props.name || '';
     const src = this.props.src || this.props.avatar;
 
     const initials = name
