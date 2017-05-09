@@ -3,7 +3,7 @@ export default {
   options: {
     name: 'lsk-general',
   },
-  info: true,
+  info: false,
   knob: true,
   utils: {},
 };
