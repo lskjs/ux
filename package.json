@@ -1,21 +1,27 @@
 {
   "name": "lsk-general",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "author": "isuvorov",
   "license": "MIT",
   "dependencies": {
+    "antd": "^2.10.0",
     "core-decorators": "0.15.0",
     "glob-loader": "0.3.0",
     "highlight.js": "9.8.0",
     "importcss": "1.0.3",
     "markdown-it": "8.1.0",
     "markdown-it-emoji": "1.3.0",
+    "rc-slider": "^7.0.3",
+    "rc-tree": "^1.5.0",
     "react": "15.4.2",
     "react-bootstrap": "0.30.7",
     "react-dom": "15.4.2",
     "react-drive-in": "1.7.3",
     "react-icons": "2.2.3",
+    "react-icons2": "^2.3.0",
     "react-image-fallback": "4.0.1",
+    "react-responsive": "^1.3.0",
+    "react-tree-menu": "^1.5.0",
     "validate.js": "0.11.1"
   },
   "devDependencies": {

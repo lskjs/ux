@@ -125,6 +125,7 @@ export default class Avatar extends Component {
     const {
       size,
       style,
+      className,
       children,
     } = this.props;
 
@@ -142,6 +143,7 @@ export default class Avatar extends Component {
 
     return (
       <div
+        className={className}
         style={wrapperStyle}
       >
         {src != null ? this.renderAsImage() : this.renderAsText()}
