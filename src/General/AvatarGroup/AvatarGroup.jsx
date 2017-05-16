@@ -1,0 +1,40 @@
+// follow
+// avatar-group
+// avatar.setdefault
+
+import React, { PropTypes, Component } from 'react';
+import Avatar from '../Avatar';
+
+export default class AvatarGroup extends Component {
+  render() {
+    const { size = 64, offset = -0.35, items = [], limit } = this.props;
+
+    let renderItems = items;
+    if (limit) {
+      renderItems = renderItems.slice(0, limit)
+    }
+    let count = this.props.count || items.length;
+    const wrapStyle = {marginLeft: size * offset};
+    return (
+      <div style={{paddingLeft:-wrapStyle.marginLeft}}>
+        {renderItems.map((item = {}, index) => (
+          <span style={wrapStyle}>
+            <Avatar
+              key={item._id || index}
+              size={size}
+              {...item}
+            />
+          </span>
+        ))}
+        <If condition={renderItems.length !== count}>
+          <span style={wrapStyle}>
+            <Avatar
+              size={size}
+              placeholder={'+' + (count - renderItems.length)}
+            />
+          </span>
+        </If>
+      </div>
+    )
+  }
+}

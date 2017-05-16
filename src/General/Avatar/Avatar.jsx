@@ -3,12 +3,11 @@ import Component from 'lsk-general/General/Component';
 import _ from 'lodash';
 import ReactImageFallback from 'react-image-fallback';
 
-const defaultAvatar = '//cdn.mgbeta.ru/lsk/no-avatar.png';
 // import gifSpinner from './img/loading.gif';
 const textSizeRatio = 3;
 
 export default class Avatar extends Component {
-
+  static defaultAvatar = '//cdn.mgbeta.ru/lsk/no-avatar.png';
   static defaultProps = {
     title: '',
     name: '',
@@ -95,8 +94,8 @@ export default class Avatar extends Component {
     return (
       <ReactImageFallback
         src={src}
-        fallbackImage={defaultAvatar}
-        initialImage={defaultAvatar}
+        fallbackImage={this.constructor.defaultAvatar}
+        initialImage={this.constructor.defaultAvatar}
         style={this.getInnerStyle()}
         alt={title}
         title={title}
@@ -105,18 +104,21 @@ export default class Avatar extends Component {
   }
 
   renderAsText() {
-    const title = this.props.title || this.props.name;
-    const initials = title
-      .split(' ')
-      .map(s => s.charAt(0))
-      .join('');
+    let { placeholder } = this.props
+    const title = this.props.title || this.props.name || placeholder;
+    if (!placeholder) {
+      placeholder = title
+        .split(' ')
+        .map(s => s.charAt(0))
+        .join('');
+    }
     return (
       <div
         style={this.getInnerStyle()}
-        alt={title}
-        title={title}
+        // alt={title}
+        // title={title}
       >
-        {initials}
+        {placeholder}
       </div>
     );
   }
@@ -158,6 +160,7 @@ Avatar.Badge = function (props) {
   const style = {
     position: 'absolute',
   };
+  const Wrap = props.componentClass;
 
   ['left', 'top', 'right', 'bottom'].forEach((dir) => {
     if (!props[dir]) return;
