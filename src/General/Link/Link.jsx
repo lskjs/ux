@@ -18,6 +18,12 @@ function isModifiedEvent(event) {
   return !!(event.metaKey || event.altKey || event.ctrlKey || event.shiftKey);
 }
 
+
+function isAbsoluteUrl(url = ''){
+  return url.indexOf('://') > 0 || url.indexOf('//') === 0
+}
+
+
 class Link extends Component {
   static defaultProps = {
     children: null,
@@ -38,7 +44,7 @@ class Link extends Component {
 
   handleClick = (event) => {
     if (this.props.onClick) {
-      this.props.onClick(event);
+      return this.props.onClick(event);
     }
 
     if (isModifiedEvent(event) || !isLeftClickEvent(event)) {
@@ -48,11 +54,11 @@ class Link extends Component {
     if (event.defaultPrevented === true) {
       return;
     }
-    
+
     const url = this.props.to || this.props.href;
     if(this.props.target === '_blank' || isAbsoluteUrl(url)){
       return;
-    }    
+    }
 
     event.preventDefault();
     this.context.history.push(url);
@@ -66,7 +72,3 @@ class Link extends Component {
 }
 
 export default Link;
-
-function isAbsoluteUrl(url){
-  return url.indexOf('://') > 0 || url.indexOf('//') === 0 
-}
