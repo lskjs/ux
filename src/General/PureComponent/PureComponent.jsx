@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import _ from 'lodash';
 
-export default class Component extends React.Component {
+export default class PureComponent extends React.PureComponent {
   static contextTypes = {
     history: PropTypes.object,
   };
