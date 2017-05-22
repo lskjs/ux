@@ -4,9 +4,9 @@ import cx from 'classnames';
 import css from 'importcss';
 import omit from 'lodash/omit';
 
-import Check from 'react-icons/lib/fa/check';
-import Refresh from 'react-icons/lib/fa/refresh';
-import Close from 'react-icons/lib/fa/close';
+import Check from 'react-icons2/fa/check';
+import Refresh from 'react-icons2/fa/refresh';
+import Close from 'react-icons2/fa/close';
 
 const BUTTON_STATUS = {
   none: '',
