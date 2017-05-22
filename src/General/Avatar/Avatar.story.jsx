@@ -74,6 +74,18 @@ module.exports = function ({ storiesOf, action, knob }) {
           </Avatar.Badge>
         </Avatar>
 
+        <Avatar size={100} title="Offline Smith">
+          <Avatar.Badge right bottom>
+            <div style={{ width: 10, height: 10, backgroundColor: '#F44336', borderRadius: '50%', border: '2px solid #fff' }} />
+          </Avatar.Badge>
+        </Avatar>
+
+        <Avatar size={200} title="Offline Smith">
+          <Avatar.Badge right bottom>
+            <div style={{ width: 10, height: 10, backgroundColor: '#F44336', borderRadius: '50%', border: '2px solid #fff' }} />
+          </Avatar.Badge>
+        </Avatar>
+
         <Avatar>
           <Avatar.Badge left top >
             <div style={{ width: 10, height: 10, backgroundColor: '#4CAF50', borderRadius: '50%', border: '2px solid #fff' }} />
@@ -118,10 +130,10 @@ module.exports = function ({ storiesOf, action, knob }) {
     ))
     .add('Knobs', () => (
       <Avatar
-        name={knob.string('Name')}
-        title={knob.string('Title')}
-        avatar={knob.string('Avatar')}
-        src={knob.string('Src')}
+        name={knob.text('Name')}
+        title={knob.text('Title')}
+        avatar={knob.text('Avatar')}
+        src={knob.text('Src')}
         size={knob.number('Size', 64)}
         width={knob.number('Width')}
         height={knob.number('Height')}

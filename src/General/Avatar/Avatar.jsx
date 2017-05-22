@@ -105,7 +105,7 @@ export default class Avatar extends Component {
 
   renderAsText() {
     let { placeholder } = this.props
-    const title = this.props.title || this.props.name || placeholder;
+    const title = this.props.title || this.props.name || placeholder || '';
     if (!placeholder) {
       placeholder = title
         .split(' ')
@@ -156,7 +156,7 @@ export default class Avatar extends Component {
 }
 
 Avatar.Badge = function (props) {
-  const offset = 6;
+  const offset = '7%';
   const style = {
     position: 'absolute',
   };
@@ -164,8 +164,10 @@ Avatar.Badge = function (props) {
 
   ['left', 'top', 'right', 'bottom'].forEach((dir) => {
     if (!props[dir]) return;
-    if (typeof props[dir] === 'number') {
+    if (typeof props[dir] === 'string') {
       style[dir] = props[dir];
+    } else if (typeof props[dir] === 'number') {
+      style[dir] = props[dir] + '%';
     } else {
       style[dir] = offset;
     }
