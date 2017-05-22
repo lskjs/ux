@@ -16,22 +16,49 @@ import {
   Col,
 } from 'react-bootstrap';
 import Component from '../Component';
+import PureComponent from '../PureComponent';
 
-@importcss(require('./Form.css')) // eslint-disable-line
+
+
+class Input extends PureComponent {
+
+  @autobind
+  onChange(e) {
+    let value = e.target.value;
+    this.props.onChange && this.props.onChange(value);
+  }
+
+  render() {
+    return (
+      <FormControl
+        {...this.props}
+        onChange={this.onChange}
+      />
+    )
+  }
+}
+
+
+// @importcss(require('./Form.css')) // eslint-disable-line
 export default class Form extends Component {
+  static Input = Input;
   static defaultProps = {
     data: null,
     errors: null,
     fields: null,
-    validators: null,
+    validators: {},
     onError: null,
     onSubmit: null,
     onChange: null,
     horizontal: false,
-    submitButton: 'Отправить',
+
     form: false,
-    align: 'center',
-    bsStyle: 'primary',
+    format: String,
+    formComponent: FormBase,
+    submitButton: 'Отправить',
+    submitButtonComponent: Button,
+    // align: 'center',
+    // bsStyle: 'primary',
   }
   static propTypes = {
     data: PropTypes.object,
@@ -42,10 +69,14 @@ export default class Form extends Component {
     onError: PropTypes.func,
     onChange: PropTypes.func,
     horizontal: PropTypes.bool,
+
+    format: PropTypes.any,
     submitButton: PropTypes.any,
+    submitButtonComponent: PropTypes.any,
     form: PropTypes.bool,
-    bsStyle: PropTypes.string,
-    align: PropTypes.oneOf(['left', 'right', 'center']),
+    formComponent: PropTypes.any,
+    // bsStyle: PropTypes.string,
+    // align: PropTypes.oneOf(['left', 'right', 'center']),
   }
 
   constructor(props) {
@@ -83,11 +114,12 @@ export default class Form extends Component {
           title: field,
         };
       }
-      return {
-        name: field.name || field.path,
-        ...field,
-      };
+      return field;
     });
+  }
+
+  getField(name) {
+    return _.find(this.getFields(), {name});
   }
 
   getError(name) {
@@ -100,9 +132,19 @@ export default class Form extends Component {
     return this.state.data;
   }
 
-  getValidatorResults() {
+  getValidators() {
     const { validators } = this.props;
-    return validate(this.state.data, validators);
+    (this.props.fields || []).forEach(field => {
+      if (!field.validator) return ;
+      validators[field.name] = field.validator;
+    })
+    return validators;
+  }
+
+  getValidatorResults() {
+    // const va
+    // const { validators } = this.props;
+    return validate(this.state.data, this.getValidators());
   }
 
   validate() {
@@ -124,7 +166,7 @@ export default class Form extends Component {
 
   onError(errors) {
     const { onError } = this.props;
-  this.setState({ errors });
+    this.setState({ errors });
     if (onError) onError(errors);
   }
 
@@ -143,22 +185,35 @@ export default class Form extends Component {
   }
 
   @autobind
-  handleChangeField(path) {
+  handleChangeField(name) {
     const { onChange } = this.props;
-    return async (e) => {
-      await this.setStatePath(path, e.target.value);
+    const field = this.getField(name);
+    return async (inputValue) => {
+      let value = inputValue;
+      if (field && field.format) {
+        try {
+          value = field.format(value);
+        } catch(err) {
+          console.log('try err', err);
+        }
+      }
+      await this.setStatePath('data.' + name, value);
       if (onChange) {
         onChange(this.getData());
       }
     };
   }
 
-  renderFieldInner(item) {
+
+
+  @autobind
+  renderFormControl(item) {
+    const { Input } = this.constructor;
     const control = (
-      <FormControl
+      <Input
         type="text"
         value={this.getStatePath(`data.${item.name}`) || ''}
-        onChange={this.handleChangeField(`data.${item.name}`)}
+        onChange={this.handleChangeField(item.name)}
         {...item.control}
       />
     );
@@ -191,7 +246,7 @@ export default class Form extends Component {
   }
 
   @autobind
-  renderField(item, i) {
+  renderFormGroup(item, i) {
     const { horizontal } = this.props;
     if (horizontal) {
       return (
@@ -204,7 +259,7 @@ export default class Form extends Component {
             {item.title}
           </Col>
           <Col sm={10}>
-            {this.renderFieldInner(item)}
+            {this.renderFormControl(item)}
           </Col>
         </FormGroup>
       );
@@ -220,50 +275,69 @@ export default class Form extends Component {
             {item.title}
           </ControlLabel>
         </If>
-        {this.renderFieldInner(item)}
+        {this.renderFormControl(item)}
       </FormGroup>
     );
   }
 
   renderFields(fields) {
-    return fields.map(this.renderField);
+    return fields.map(this.renderFormGroup);
   }
 
   renderSubmitButton() {
-    const { submitButton, align, bsStyle } = this.props;
-    const style = cx({ [`align-${align}`]: align, submitButton: true });
-    if (typeof submitButton === 'string') {
-      return (
-        <div styleName={style}>
-          <Button type="submit" bsStyle={bsStyle}>
-            {submitButton}
-          </Button>
-        </div>
-      );
-    }
+    const { submitButton, submitButtonComponent: SubmitButtonComponent } = this.props;
+
+    if (!SubmitButtonComponent) return null;
+    // const style = {
+    //   textAlign: align;
+    //   // margin-top: $submit-button-top-offset;
+    // };
+
+    // const SubmitButtonComponent = submitButtonComponent || Button;
+    // if (typeof submitButton === 'string') {
+    //   return (
     return (
-      <div styleName={style}>
-        {submitButton}
+      <div style={{
+        textAlign: 'center',
+      }}>
+        <SubmitButtonComponent type="submit" bsStyle='primary'>
+          {submitButton}
+        </SubmitButtonComponent>
       </div>
     );
+    //   );
+    // }
+    // return (
+    //   <div styleName={style}>
+    //     {submitButton}
+    //   </div>
+    // );
   }
 
   render() {
-    const { form, horizontal, fields } = this.props;
-    if (form) {
-      return (
-        <div>
-          {this.renderFields(this.getFields(fields))}
-          {this.renderSubmitButton()}
-        </div>
-      );
-    }
-    return (
-      <FormBase horizontal={horizontal} onSubmit={this.handleSubmit}>
+    const { horizontal, fields, formComponent } = this.props;
+    const FormComponent = formComponent || FormBase;
+
+    return  (
+      <FormComponent horizontal={horizontal} onSubmit={this.handleSubmit}>
         {this.renderFields(this.getFields(fields))}
         {this.renderSubmitButton()}
-      </FormBase>
-    );
+      </FormComponent>
+    )
+    // if (FormComponent) {
+    //   return (
+    //     <FormComponent horizontal={horizontal} onSubmit={this.handleSubmit}>
+    //       {this.renderFields(this.getFields(fields))}
+    //       {this.renderSubmitButton()}
+    //     </FormComponent>
+    //   );
+    // }
+    // return (
+    //   <FormBase horizontal={horizontal} onSubmit={this.handleSubmit}>
+    //     {this.renderFields(this.getFields(fields))}
+    //     {this.renderSubmitButton()}
+    //   </FormBase>
+    // );
   }
 
 }
