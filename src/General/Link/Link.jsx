@@ -1,13 +1,3 @@
-
-/**
- * React Starter Kit (https://www.reactstarterkit.com/)
- *
- * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE.txt file in the root directory of this source tree.
- */
-
 import React, { Component, PropTypes } from 'react';
 
 function isLeftClickEvent(event) {
@@ -42,25 +32,28 @@ class Link extends Component {
     history: PropTypes.object.isRequired,
   };
 
-  handleClick = (event) => {
+  handleClick = (e) => {
     if (this.props.onClick) {
-      return this.props.onClick(event);
+      this.props.onClick(e);
     }
 
-    if (isModifiedEvent(event) || !isLeftClickEvent(event)) {
+    if (isModifiedEvent(e) || !isLeftClickEvent(e)) {
       return;
     }
 
-    if (event.defaultPrevented === true) {
+    if (e.defaultPrevented === true) {
       return;
     }
 
     const url = this.props.to || this.props.href;
+    if (url != null) {
+      return;
+    }
     if(this.props.target === '_blank' || isAbsoluteUrl(url)){
       return;
     }
+    e.preventDefault();
 
-    event.preventDefault();
     this.context.history.push(url);
   };
 

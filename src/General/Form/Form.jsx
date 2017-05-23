@@ -295,15 +295,22 @@ export default class Form extends Component {
     // };
 
     // const SubmitButtonComponent = submitButtonComponent || Button;
-    // if (typeof submitButton === 'string') {
+    let button
+    if (typeof submitButton === 'string') {
+      button = (
+        <SubmitButtonComponent type="submit" bsStyle='primary'>
+          {submitButton}
+        </SubmitButtonComponent>
+      )
+    } else {
+      button = submitButton;
+    }
     //   return (
     return (
       <div style={{
         textAlign: 'center',
       }}>
-        <SubmitButtonComponent type="submit" bsStyle='primary'>
-          {submitButton}
-        </SubmitButtonComponent>
+        {button}
       </div>
     );
     //   );
