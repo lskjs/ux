@@ -46,7 +46,7 @@ class Link extends Component {
     }
 
     const url = this.props.to || this.props.href;
-    if (url != null) {
+    if (url == null) {
       return;
     }
     if(this.props.target === '_blank' || isAbsoluteUrl(url)){

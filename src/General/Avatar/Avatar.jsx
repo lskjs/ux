@@ -39,7 +39,8 @@ export default class Avatar extends Component {
     textColor: PropTypes.string,
     textScale: PropTypes.number,
 
-    shape: PropTypes.oneOfType(['circle', 'square', 'rounded']),
+    shape: PropTypes.string,
+    // shape: PropTypes.oneOfType(['circle', 'square', 'rounded']),
 
     style: PropTypes.object,
     innerStyle: PropTypes.object,
