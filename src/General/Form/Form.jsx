@@ -3,6 +3,7 @@ import autobind from 'core-decorators/lib/autobind';
 import importcss from 'importcss';
 import cx from 'classnames';
 import validate from 'validate.js';
+import find from 'lodash/find';
 import set from 'lodash/set';
 import get from 'lodash/get';
 import {
@@ -119,7 +120,7 @@ export default class Form extends Component {
   }
 
   getField(name) {
-    return _.find(this.getFields(), {name});
+    return find(this.getFields(), {name});
   }
 
   getError(name) {
