@@ -39,6 +39,35 @@ module.exports = function ({ storiesOf, action }) {
         onSubmit={action('onSubmit')}
       />
     ))
+    .add('Separated fields structure and state', () => (
+      <Form
+        fields={[
+          {
+            name: 'firstname',
+            title: 'Имя',
+          },
+          {
+            name: 'lastname',
+            title: 'Фамилия',
+          },
+          {
+            name: 'profile.age',
+            title: 'Возраст',
+          },
+        ]}
+        // value
+        // data
+        state={{
+          firstname: 'Игорь',
+          lastname: 'Суворов',
+          profile: {
+            age: '20',
+          }
+        }}
+        onChange={action('onChange')}
+        onSubmit={action('onSubmit')}
+      />
+    ))
     .add('Icons and placeholder', () => (
       <Form
         fields={[

@@ -46,7 +46,7 @@ export default class Form extends Component {
   static defaultProps = {
     data: null,
     errors: null,
-    fields: null,
+    fields: [],
     validators: {},
     onError: null,
     onSubmit: null,
@@ -89,7 +89,7 @@ export default class Form extends Component {
   }
 
   getStateData(props) {
-    let data = props.data;
+    let data = props.data || props.state || props.value;
     if (!data) {
       data = {};
       (this.getFields(props.fields)).forEach((field) => {
@@ -108,7 +108,7 @@ export default class Form extends Component {
 
   getFields(fields) {
     if (!fields) fields = this.props.fields; // eslint-disable-line
-    return fields.map((field) => {
+    return (fields || []).map((field) => {
       if (typeof field === 'string') {
         return {
           name: field,
@@ -185,20 +185,32 @@ export default class Form extends Component {
     }
   }
 
+  getFieldValue(name) {
+    return this.getStatePath('data.' + name);
+  }
+  setFieldValue(name, inputValue) {
+    const field = this.getField(name);
+    let value = inputValue;
+    if (field && field.format) {
+      try {
+        value = field.format(value);
+      } catch(err) {
+        console.log('try err', err);
+      }
+    }
+    return this.setStatePath('data.' + name, value);
+  }
+
+  setFieldData(...args) {
+    return this.setFieldValue(...args);
+  }
+
+
   @autobind
   handleChangeField(name) {
     const { onChange } = this.props;
-    const field = this.getField(name);
     return async (inputValue) => {
-      let value = inputValue;
-      if (field && field.format) {
-        try {
-          value = field.format(value);
-        } catch(err) {
-          console.log('try err', err);
-        }
-      }
-      await this.setStatePath('data.' + name, value);
+      await this.setFieldData(name, inputValue)
       if (onChange) {
         onChange(this.getData());
       }
