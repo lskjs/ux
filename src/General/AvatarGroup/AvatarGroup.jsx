@@ -14,7 +14,7 @@ export default class AvatarGroup extends Component {
       renderItems = renderItems.slice(0, limit)
     }
     let count = this.props.count || items.length;
-    const wrapStyle = {marginLeft: size * offset};
+    const wrapStyle = {marginLeft: size * offset, float: 'left'};
     return (
       <div style={{paddingLeft:-wrapStyle.marginLeft}}>
         {renderItems.map((item = {}, index) => (

@@ -21,6 +21,9 @@ export default class Avatar extends Component {
     textColor: '#d9d9d9',
     textScale: 1,
 
+    placeholder: null,
+    placeholderLimit: 3,
+
     shape: 'circle',
 
     style: {},
@@ -40,6 +43,9 @@ export default class Avatar extends Component {
     textScale: PropTypes.number,
 
     shape: PropTypes.string,
+
+    placeholder: PropTypes.string,
+    placeholderLimit: PropTypes.number,
     // shape: PropTypes.oneOfType(['circle', 'square', 'rounded']),
 
     style: PropTypes.object,
@@ -76,7 +82,7 @@ export default class Avatar extends Component {
       boxSizing: 'border-box',
       maxWidth: '100%',
       objectFit: 'cover',
-      overflow: 'hidden',
+      // overflow: 'hidden',
       width,
       height,
       textAlign: 'center',
@@ -105,13 +111,14 @@ export default class Avatar extends Component {
   }
 
   renderAsText() {
-    let { placeholder } = this.props
+    let { placeholder, placeholderLimit } = this.props
     const title = this.props.title || this.props.name || placeholder || '';
     if (!placeholder) {
       placeholder = title
         .split(' ')
         .map(s => s.charAt(0))
-        .join('');
+        .join('')
+        .substr(0, placeholderLimit);
     }
     return (
       <div
