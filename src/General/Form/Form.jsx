@@ -92,7 +92,8 @@ export default class Form extends Component {
     let data = props.data || props.state || props.value;
     if (!data) {
       data = {};
-      (this.getFields(props.fields)).forEach((field) => {
+      const fields = this && this.fields || props.fields;
+      (this.getFields(fields)).forEach((field) => {
         set(data, field.name, field.value);
       });
     }
@@ -105,9 +106,8 @@ export default class Form extends Component {
     });
   }
 
-
   getFields(fields) {
-    if (!fields) fields = this.props.fields; // eslint-disable-line
+    if (!fields) fields = this.fields || this.props.fields; // eslint-disable-line
     return (fields || []).map((field) => {
       if (typeof field === 'string') {
         return {
@@ -135,7 +135,7 @@ export default class Form extends Component {
 
   getValidators() {
     const { validators } = this.props;
-    (this.props.fields || []).forEach(field => {
+    (this.fields || this.props.fields || []).forEach(field => {
       if (!field.validator) return ;
       validators[field.name] = field.validator;
     })
@@ -259,12 +259,14 @@ export default class Form extends Component {
   }
 
   @autobind
-  renderFormGroup(item, i) {
+  renderFormGroup(itemOrName, key) {
+    if (!itemOrName) return;
     const { horizontal } = this.props;
+    const item = typeof itemOrName === 'string' ? this.getField(itemOrName) : itemOrName;
     if (horizontal) {
       return (
         <FormGroup
-          key={i}
+          key={key || item.name}
           controlId={item.name}
           validationState={this.getError(item.name).state}
         >
@@ -279,7 +281,7 @@ export default class Form extends Component {
     }
     return (
       <FormGroup
-        key={i}
+        key={key || item.name}
         controlId={item.name}
         validationState={this.getError(item.name).state}
       >

@@ -15,8 +15,9 @@ export default class AvatarGroup extends Component {
     }
     let count = this.props.count || items.length;
     const wrapStyle = {marginLeft: size * offset, float: 'left'};
+    //  style={{paddingLeft:-wrapStyle.marginLeft}}
     return (
-      <div style={{paddingLeft:-wrapStyle.marginLeft}}>
+      <div>
         {renderItems.map((item = {}, index) => (
           <span style={wrapStyle}>
             <Avatar
@@ -34,6 +35,7 @@ export default class AvatarGroup extends Component {
             />
           </span>
         </If>
+        <div style={{clear:'both'}}></div>
       </div>
     )
   }
