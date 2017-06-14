@@ -112,7 +112,7 @@ export default class Form extends FormBase {
 
   @autobind
   renderFormGroup(itemOrName, key) {
-    console.log('renderFormGroup', {itemOrName});
+    // console.log('renderFormGroup', {itemOrName});
     if (!itemOrName) return;
     const { horizontal } = this.props;
     const item = typeof itemOrName === 'string' ? this.getField(itemOrName) : itemOrName;
