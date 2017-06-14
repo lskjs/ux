@@ -18,7 +18,7 @@ module.exports = function ({ storiesOf, action }) {
         fields={[
           'firstname',
           'lastname',
-        ]}
+        ].map(name => ({name, title: name}))}
         onChange={action('onChange')}
         onSubmit={action('onSubmit')}
       />
@@ -75,13 +75,17 @@ module.exports = function ({ storiesOf, action }) {
             name: 'firstname',
             title: 'Имя',
             icon: 'И',
-            placeholder: 'Например, Василий',
+            control: {
+              placeholder: 'Например, Василий',
+            }
           },
           {
             name: 'lastname',
             title: 'Фамилия',
             icon: 'Ф',
-            placeholder: 'Например, Уткин',
+            control: {
+              placeholder: 'Например, Уткин',
+            },
             help: 'Фамилия и отчество (если есть)',
           },
         ]}

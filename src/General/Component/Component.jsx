@@ -1,7 +1,9 @@
 import React, { PropTypes } from 'react';
-import _ from 'lodash';
+import cloneDeep from 'lodash/cloneDeep';
+import get from 'lodash/get';
+import set from 'lodash/set';
 
-export default class Component extends React.Component {
+export default class PureComponent extends React.Component {
   static contextTypes = {
     history: PropTypes.object,
   };
@@ -11,12 +13,12 @@ export default class Component extends React.Component {
   }
 
   getStatePath(path) {
-    return _.get(this.state, path);
+    return get(this.state, path);
   }
 
   setStatePath(path, value) {
-    const state = _.cloneDeep(this.state);
-    _.set(state, path, value);
+    const state = cloneDeep(this.state);
+    set(state, path, value);
     return this.setStateAsync(state);
   }
 
@@ -24,13 +26,5 @@ export default class Component extends React.Component {
     this.context.history.push(...args);
   }
 
-  _ie() {
-    const ie = typeof window !== 'undefined' && (
-      window.navigator.userAgent.indexOf('MSIE ') > 0 ||
-      !!window.navigator.userAgent.match(/Trident.*rv\:11\./)
-    );
-    // ie && console.log('ie', ie);
-    return ie;
-  }
 
 }

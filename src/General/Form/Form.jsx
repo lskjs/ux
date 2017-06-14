@@ -6,8 +6,9 @@ import validate from 'validate.js';
 import find from 'lodash/find';
 import set from 'lodash/set';
 import get from 'lodash/get';
+import DebounceInput from 'react-debounce-input'
 import {
-  Form as FormBase,
+  Form as BsForm,
   FormGroup,
   FormControl,
   ControlLabel,
@@ -18,8 +19,7 @@ import {
 } from 'react-bootstrap';
 import Component from '../Component';
 import PureComponent from '../PureComponent';
-
-
+import FormBase from '../FormBase'
 
 class Input extends PureComponent {
 
@@ -32,6 +32,7 @@ class Input extends PureComponent {
   render() {
     return (
       <FormControl
+        componentClass={DebounceInput}
         {...this.props}
         onChange={this.onChange}
       />
@@ -40,35 +41,24 @@ class Input extends PureComponent {
 }
 
 
+
 // @importcss(require('./Form.css')) // eslint-disable-line
-export default class Form extends Component {
+export default class Form extends FormBase {
   static Input = Input;
   static defaultProps = {
-    data: null,
-    errors: null,
-    fields: [],
-    validators: {},
-    onError: null,
-    onSubmit: null,
-    onChange: null,
+    ...FormBase.defaultProps,
     horizontal: false,
 
     form: false,
     format: String,
-    formComponent: FormBase,
+    formComponent: BsForm,
     submitButton: 'Отправить',
     submitButtonComponent: Button,
     // align: 'center',
     // bsStyle: 'primary',
   }
   static propTypes = {
-    data: PropTypes.object,
-    errors: PropTypes.object,
-    fields: PropTypes.array,
-    validators: PropTypes.object,
-    onSubmit: PropTypes.func,
-    onError: PropTypes.func,
-    onChange: PropTypes.func,
+    ...FormBase.propTypes,
     horizontal: PropTypes.bool,
 
     format: PropTypes.any,
@@ -79,144 +69,6 @@ export default class Form extends Component {
     // bsStyle: PropTypes.string,
     // align: PropTypes.oneOf(['left', 'right', 'center']),
   }
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      data: this.getStateData(props),
-      errors: props.errors || {}, // @TODO хз зачем
-    };
-  }
-
-  getStateData(props) {
-    let data = props.data || props.state || props.value;
-    if (!data) {
-      data = {};
-      const fields = this && this.fields || props.fields;
-      (this.getFields(fields)).forEach((field) => {
-        set(data, field.name, field.value);
-      });
-    }
-    return data;
-  }
-
-  componentWillReceiveProps(props) {
-    this.setState({
-      data: this.getStateData(props),
-    });
-  }
-
-  getFields(fields) {
-    if (!fields) fields = this.fields || this.props.fields; // eslint-disable-line
-    return (fields || []).map((field) => {
-      if (typeof field === 'string') {
-        return {
-          name: field,
-          title: field,
-        };
-      }
-      return field;
-    });
-  }
-
-  getField(name) {
-    return find(this.getFields(), {name});
-  }
-
-  getError(name) {
-    const { errors } = this.state;
-    return errors && errors[name] || {};
-  }
-
-  @autobind
-  getData() {
-    return this.state.data;
-  }
-
-  getValidators() {
-    const { validators } = this.props;
-    (this.fields || this.props.fields || []).forEach(field => {
-      if (!field.validator) return ;
-      validators[field.name] = field.validator;
-    })
-    return validators;
-  }
-
-  getValidatorResults() {
-    // const va
-    // const { validators } = this.props;
-    return validate(this.state.data, this.getValidators());
-  }
-
-  validate() {
-    const results = this.getValidatorResults();
-    const errors = {};
-    for (const item in results) {
-      const [, message] = /[ \w]* (.*)$/.exec(results[item][0]);
-      errors[item] = {
-        state: 'error',
-        message,
-      };
-    }
-    if (this.getFields().filter(field => !!get(errors, field.name)).length > 0) {
-      this.onError(errors);
-      return false;
-    }
-    return true;
-  }
-
-  onError(errors) {
-    const { onError } = this.props;
-    this.setState({ errors });
-    if (onError) onError(errors);
-  }
-
-  onSubmit(data) {
-    const { onSubmit } = this.props;
-    this.setState({ errors: {} });
-    if (onSubmit) onSubmit(this.getData());
-  }
-
-  @autobind
-  async handleSubmit(e) {
-    e.preventDefault();
-    if (this.validate()) {
-      this.onSubmit();
-    }
-  }
-
-  getFieldValue(name) {
-    return this.getStatePath('data.' + name);
-  }
-  setFieldValue(name, inputValue) {
-    const field = this.getField(name);
-    let value = inputValue;
-    if (field && field.format) {
-      try {
-        value = field.format(value);
-      } catch(err) {
-        console.log('try err', err);
-      }
-    }
-    return this.setStatePath('data.' + name, value);
-  }
-
-  setFieldData(...args) {
-    return this.setFieldValue(...args);
-  }
-
-
-  @autobind
-  handleChangeField(name) {
-    const { onChange } = this.props;
-    return async (inputValue) => {
-      await this.setFieldData(name, inputValue)
-      if (onChange) {
-        onChange(this.getData());
-      }
-    };
-  }
-
 
 
   @autobind
@@ -260,6 +112,7 @@ export default class Form extends Component {
 
   @autobind
   renderFormGroup(itemOrName, key) {
+    console.log('renderFormGroup', {itemOrName});
     if (!itemOrName) return;
     const { horizontal } = this.props;
     const item = typeof itemOrName === 'string' ? this.getField(itemOrName) : itemOrName;
@@ -337,29 +190,16 @@ export default class Form extends Component {
   }
 
   render() {
-    const { horizontal, fields, formComponent } = this.props;
-    const FormComponent = formComponent || FormBase;
+    const { horizontal, formComponent } = this.props;
+    const FormComponent = formComponent || BsForm;
 
     return  (
       <FormComponent horizontal={horizontal} onSubmit={this.handleSubmit}>
-        {this.renderFields(this.getFields(fields))}
+        {this.renderFields(this.fields)}
         {this.renderSubmitButton()}
       </FormComponent>
     )
-    // if (FormComponent) {
-    //   return (
-    //     <FormComponent horizontal={horizontal} onSubmit={this.handleSubmit}>
-    //       {this.renderFields(this.getFields(fields))}
-    //       {this.renderSubmitButton()}
-    //     </FormComponent>
-    //   );
-    // }
-    // return (
-    //   <FormBase horizontal={horizontal} onSubmit={this.handleSubmit}>
-    //     {this.renderFields(this.getFields(fields))}
-    //     {this.renderSubmitButton()}
-    //   </FormBase>
-    // );
+
   }
 
 }
