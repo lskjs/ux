@@ -6,8 +6,15 @@ import React, { PropTypes, Component } from 'react';
 import Avatar from '../Avatar';
 
 export default class AvatarGroup extends Component {
+  propTypes = {
+    Avatar: Avatar,
+  };
+  defaultProps = {
+    Avatar: Avatar,
+  };
   render() {
     const { size = 64, offset = -0.35, items = [], limit } = this.props;
+    const { Avatar } = this.props;
 
     let renderItems = items;
     if (limit) {
