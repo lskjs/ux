@@ -74,14 +74,26 @@ export default class Form extends FormBase {
   @autobind
   renderFormControl(item) {
     const { Input } = this.constructor;
-    const control = (
-      <Input
-        type="text"
-        value={this.getStatePath(`data.${item.name}`) || ''}
-        onChange={this.handleChangeField(item.name)}
-        {...item.control}
-      />
-    );
+    const { Control } = item;
+    let control;
+    if (Control) {
+      control = (
+        <Control
+          value={this.getStatePath(`data.${item.name}`) || ''}
+          onChange={this.handleChangeField(item.name)}
+          {...item.control}
+        />
+      )
+    } else {
+      control = (
+        <Input
+          type="text"
+          value={this.getStatePath(`data.${item.name}`) || ''}
+          onChange={this.handleChangeField(item.name)}
+          {...item.control}
+        />
+      );
+    }
     return (
       <div>
         <If condition={item.icon}>
