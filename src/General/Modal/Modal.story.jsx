@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Modal from './Modal';
 
 module.exports = function ({ storiesOf, action }) {
@@ -95,6 +95,35 @@ module.exports = function ({ storiesOf, action }) {
         </Modal.Content>
       </Modal>
     ))
+
+    .add('6. External open and close', () => {
+      class ComponentWithModal extends Component {
+        render() {
+          return (
+            <div>
+              <button onClick={() => this.modal.open()}>Open</button>
+              <button onClick={() => this.modal.close()}>Close</button>
+              <Modal ref={modal => this.modal = modal}>
+                <Modal.Content>
+                  <Modal.Header closeButton>
+                    Hello!
+                  </Modal.Header>
+                  <Modal.Body>
+                    Some info content
+                  </Modal.Body>
+                  <Modal.Footer>
+                    <Modal.Close>
+                      <button>CLOSE ME</button>
+                    </Modal.Close>
+                  </Modal.Footer>
+                </Modal.Content>
+              </Modal>
+            </div>
+          )
+        }
+      }
+      return <ComponentWithModal />;
+    })
     ;
 
     // .add('Modal async trigger', () => {
