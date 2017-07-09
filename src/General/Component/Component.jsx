@@ -3,7 +3,7 @@ import cloneDeep from 'lodash/cloneDeep';
 import get from 'lodash/get';
 import set from 'lodash/set';
 
-export default class PureComponent extends React.Component {
+export default class Component extends React.Component {
   static contextTypes = {
     history: PropTypes.object,
   };
