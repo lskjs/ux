@@ -52,7 +52,6 @@ export default class FormBase extends Component {
       // console.log(333);
       this.fields = [];
     }
-    // console.log('processStateData', props, this.fields);
 
     let data = props.data || props.state || props.value;
     if (!data) {
@@ -72,7 +71,6 @@ export default class FormBase extends Component {
 
 
   getField(name) {
-    // console.log('this.fields', this.fields);
     return find(this.fields, { name });
   }
 
@@ -172,10 +170,10 @@ export default class FormBase extends Component {
   }
 
   @autobind
-  handleChangeField(name) {
+  handleChangeField(name, ...args) {
     const { onChange } = this.props;
     return async (inputValue) => {
-      await this.setFieldData(name, inputValue)
+      await this.setFieldData(name, inputValue, ...args)
       if (onChange) {
         onChange(this.getData());
       }
