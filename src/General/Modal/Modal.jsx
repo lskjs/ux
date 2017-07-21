@@ -25,9 +25,11 @@ export default class MyModal extends Component {
   }
   open() {
     this.setState({ visible: true });
+    this.props.onOpen && this.props.onOpen();
   }
   close() {
     this.setState({ visible: false });
+    this.props.onClose && this.props.onClose();
   }
   getChildContext() {
     return {

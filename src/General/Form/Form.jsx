@@ -122,8 +122,7 @@ export default class Form extends FormBase {
     );
   }
 
-  @autobind
-  renderFormGroup(itemOrName, key) {
+   renderFormGroup(itemOrName, key) {
     // console.log('renderFormGroup', {itemOrName});
     if (!itemOrName) return;
     const { horizontal } = this.props;
@@ -161,7 +160,7 @@ export default class Form extends FormBase {
   }
 
   renderFields(fields) {
-    return fields.map(this.renderFormGroup);
+    return fields.map((...args) => this.renderFormGroup(...args));
   }
 
   renderSubmitButton() {
