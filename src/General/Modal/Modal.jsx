@@ -119,7 +119,7 @@ export class Close extends Component { // eslint-disable-line
   static propTypes = {
     type: PropTypes.string,
     id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    children: PropTypes.string,
+    children: PropTypes.any,
   }
   @autobind
   handle() {
