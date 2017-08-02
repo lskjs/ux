@@ -124,6 +124,16 @@ module.exports = function ({ storiesOf, action }) {
       }
       return <ComponentWithModal />;
     })
+    .add('7. Visible by default', () => (
+      <Modal visible>
+        <Modal.Open>
+          <button>Open modal</button>
+        </Modal.Open>
+        <Modal.Content>
+          Sample content
+        </Modal.Content>
+      </Modal>
+    ))
     ;
 
     // .add('Modal async trigger', () => {

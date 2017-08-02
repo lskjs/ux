@@ -13,15 +13,17 @@ export default class MyModal extends Component {
     event: null,
     fullscreen: false,
     children: null,
+    visible: false,
   }
   static propTypes = {
     emitter: PropTypes.object,
     fullscreen: PropTypes.bool,
     children: PropTypes.any,
+    visible: PropTypes.bool,
   }
   constructor(props) {
     super(props);
-    this.state = { visible: false };
+    this.state = { visible: props.visible };
   }
   open() {
     this.setState({ visible: true });
