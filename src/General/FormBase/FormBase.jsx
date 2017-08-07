@@ -124,11 +124,39 @@ export default class FormBase extends Component {
     };
   }
 
+
+  onChange(data) {
+    const { onChange } = this.props;
+    // if (this.props.validateOnChange && !this.validate()) return null;
+    if (onChange) {
+      onChange(data);
+    }
+  }
+
+  @autobind
+  handleChangeField(name, ...args) {
+    // console.log('handleChangeField', name, ...args);
+    return async (inputValue) => {
+      await this.setFieldData(name, inputValue, ...args)
+      this.props.validateOnChange && this.validate();
+      // this.props.validateOnChange && this.validate();
+      this.onChange(this.getData());
+    };
+  }
+
   onSubmit(data) {
     const { onSubmit } = this.props;
-    this.setState({ errors: {} });
+    // this.setState({ errors: {} });
     if (onSubmit) {
-      return onSubmit(this.getData());
+      onSubmit(data);
+    }
+  }
+
+  @autobind
+  handleSubmit(e) {
+    e && e.preventDefault && e.preventDefault();
+    if (this.validate()) {
+      return this.onSubmit(this.getData());
     }
   }
 
@@ -138,14 +166,6 @@ export default class FormBase extends Component {
     this.setState({
       data: this.processStateData(this.props),
     });
-  }
-
-  @autobind
-  handleSubmit(e) {
-    e && e.preventDefault && e.preventDefault();
-    if (this.validate()) {
-      return this.onSubmit();
-    }
   }
 
   getFieldValue(name) {
@@ -168,17 +188,5 @@ export default class FormBase extends Component {
   setFieldData(...args) {
     return this.setFieldValue(...args);
   }
-
-  @autobind
-  handleChangeField(name, ...args) {
-    const { onChange } = this.props;
-    return async (inputValue) => {
-      await this.setFieldData(name, inputValue, ...args)
-      if (onChange) {
-        onChange(this.getData());
-      }
-    };
-  }
-
 
 }

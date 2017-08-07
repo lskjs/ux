@@ -38,9 +38,11 @@ export default class MyModal extends Component {
       _modal: ({ type }) => {
         if (type === 'open') {
           this.setState({ visible: true });
+          this.props.onOpen && this.props.onOpen();
         }
         if (type === 'close') {
           this.setState({ visible: false });
+          this.props.onClose && this.props.onClose();
         }
         return this.state;
       },
