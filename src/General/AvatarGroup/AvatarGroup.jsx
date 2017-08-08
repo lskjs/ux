@@ -1,19 +1,27 @@
 // follow
 // avatar-group
 // avatar.setdefault
-
 import React, { PropTypes, Component } from 'react';
 import DefaultAvatar from '../Avatar';
 
 export default class AvatarGroup extends Component {
   static propTypes = {
-    Avatar: PropTypes.element,
+    Avatar: PropTypes.func,
+    size: PropTypes.number,
+    limit: PropTypes.number,
+    offset: PropTypes.number,
+    count: PropTypes.number,
+    items: PropTypes.array,
   };
   static defaultProps = {
     Avatar: DefaultAvatar,
+    size: 64,
+    limit: null,
+    offset: -0.35,
+    count: null,
+    items: []
   };
   render() {
-    // console.log(1111);
     const { size = 64, offset = -0.35, items = [], limit } = this.props;
     const { Avatar } = this.props;
 
@@ -24,13 +32,14 @@ export default class AvatarGroup extends Component {
     let count = this.props.count || items.length;
     const wrapStyle = {marginLeft: size * offset, float: 'left'};
     //  style={{paddingLeft:-wrapStyle.marginLeft}}
-    // console.log(2222, renderItems, Avatar);
     return (
       <div>
         {renderItems.map((item = {}, index) => (
-          <span style={wrapStyle}>
+          <span
+            key={item._id || index}
+            style={wrapStyle}
+          >
             <Avatar
-              key={item._id || index}
               size={size}
               {...item}
             />
