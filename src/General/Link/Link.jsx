@@ -37,12 +37,12 @@ class Link extends Component {
   };
 
   handleClick = (e) => {
-    if (this.props.onClick) {
-      this.props.onClick(e);
-    }
-
     if (isMiddleClickEvent(e)) {
       return;
+    }
+    
+    if (this.props.onClick) {
+      this.props.onClick(e);
     }
 
     if (isModifiedEvent(e) || !isLeftClickEvent(e)) {
