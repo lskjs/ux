@@ -1,5 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 
+function isMiddleClickEvent(event) {
+  return event.button === 1;
+}
+
 function isLeftClickEvent(event) {
   return event.button === 0;
 }
@@ -35,6 +39,10 @@ class Link extends Component {
   handleClick = (e) => {
     if (this.props.onClick) {
       this.props.onClick(e);
+    }
+
+    if (isMiddleClickEvent(e)) {
+      return;
     }
 
     if (isModifiedEvent(e) || !isLeftClickEvent(e)) {
