@@ -30,6 +30,7 @@ const md = (new MarkdownIt({
 
 function getHtml(obj = '', type) {
   // return md.render(demo);
+  if (obj === null) obj = '';
   if (type === 'md') return md.render(obj);
   if (obj.__md) return md.render(obj.__md);
   if (typeof obj === 'string') {
