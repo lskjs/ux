@@ -165,13 +165,14 @@ export class ModalContent extends Component { // eslint-disable-line
     this.context._modal({ type: 'close', id });
   }
   render() {
-    const { id, fullscreen, title, body, children } = this.props;
+    const { id, fullscreen, title, body, children, ...otherProps, dialogClassName } = this.props;
     const state = this.context._modal({ type: 'state', id });
     return (
       <Modal
+        {...otherProps}
         show={state.visible}
         onHide={this.handle}
-        dialogClassName={cx({
+        dialogClassName={dialogClassName || cx({
           'modal-fullscreen': fullscreen,
         })}
       >
