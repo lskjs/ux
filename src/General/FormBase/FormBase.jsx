@@ -10,17 +10,20 @@ import Component from '../Component';
 
 
 export default class FormBase extends Component {
+  static validate = validate;
   static defaultProps = {
-    data: null,
+    defaultValue: null,
+    value: null,
     errors: null,
-    fields: null,
+    fields: [],
     validators: {},
     onError: null,
     onSubmit: null,
     onChange: null,
-  }
+  };
   static propTypes = {
-    data: PropTypes.object,
+    defaultValue: PropTypes.object,
+    value: PropTypes.object,
     errors: PropTypes.object,
     fields: PropTypes.array,
     validators: PropTypes.object,
@@ -28,18 +31,18 @@ export default class FormBase extends Component {
     onError: PropTypes.func,
     onChange: PropTypes.func,
     horizontal: PropTypes.bool,
-  }
+  };
 
   constructor(props) {
     super(props);
     this.state = {
-      data: this.processStateData(props),
+      data: this.processStateData(props, 1),
       errors: {},
       // errors: props.errors || {}, // @TODO хз зачем
     };
   }
 
-  processStateData(props) {
+  processStateData(props, isConstructor) {
     const { fields } = props;
 
     if (this.getFields) {
@@ -53,7 +56,15 @@ export default class FormBase extends Component {
       this.fields = [];
     }
 
-    let data = props.data || props.state || props.value;
+    let data;
+    if (isConstructor) {
+      data = props.defaultValue || props.data || props.state || props.value;
+    } else {
+      data = props.data || props.state || props.value;
+      if (!data) {
+        data = this.state.data
+      }
+    }
     if (!data) {
       data = {};
       this.fields.forEach((field) => {
@@ -96,7 +107,7 @@ export default class FormBase extends Component {
   getValidatorResults() {
     // const va
     // const { validators } = this.props;
-    return validate(this.state.data, this.getValidators());
+    return this.constructor.validate(this.state.data, this.getValidators());
   }
 
   validate() {

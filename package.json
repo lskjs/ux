@@ -1,16 +1,16 @@
 {
   "name": "lsk-general",
-  "version": "0.11.16",
+  "version": "0.12.1",
   "author": "isuvorov",
   "license": "MIT",
   "dependencies": {
-    "core-decorators": "0.15.0",
+    "core-decorators": "^0.20.0",
     "importcss": "1.0.3",
-    "react-bootstrap": "0.30.7",
-    "react-debounce-input": "3.0.0",
+    "react-bootstrap": "^0.31.3",
+    "react-debounce-input": "^3.0.1",
     "react-drive-in": "1.7.3",
-    "react-icons2": "2.3.0",
-    "react-image-fallback": "4.0.1",
+    "react-icons2": "^2.3.2",
+    "react-image-fallback": "^7.0.1",
     "validate.js": "0.11.1"
   },
   "peerDependencies": {
@@ -54,7 +54,7 @@
     "json-loader": "0.5.4",
     "jsx-control-statements": "3.1.2",
     "lodash": "4.17.4",
-    "lsk-build": "0.5.2",
+    "lsk-build": "^0.9.1",
     "markdown-it": "8.1.0",
     "markdown-it-emoji": "1.3.0",
     "path": "0.12.7",

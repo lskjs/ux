@@ -1,7 +1,7 @@
 import React from 'react';
 import Form from './Form';
 
-const data = {
+const value = {
   email: 'hi@coder24.ru',
   profile: {
     fio: 'Суворов Игорь Александрович',
@@ -9,6 +9,12 @@ const data = {
     bdate: '1990-02-15',
   },
 };
+
+const value2 = {
+  firstname: 'Игорь',
+  lastname: 'Суворов',
+  age: 21,
+}
 
 module.exports = function ({ storiesOf, action }) {
   return storiesOf('Form', module)
@@ -55,9 +61,7 @@ module.exports = function ({ storiesOf, action }) {
             title: 'Возраст',
           },
         ]}
-        // value
-        // data
-        state={{
+        value={{
           firstname: 'Игорь',
           lastname: 'Суворов',
           profile: {
@@ -169,7 +173,7 @@ module.exports = function ({ storiesOf, action }) {
     ))
     .add('External state data and formats', () => (
       <Form
-        data={data}
+        value={value}
         fields={[
           {
             name: 'email',
@@ -411,4 +415,72 @@ module.exports = function ({ storiesOf, action }) {
         onSubmit={action('onSubmit')}
       />
     ))
+    .add('value vs defaultValue', () => {
+      const props = {
+        fields: [
+          {
+            name: 'firstname',
+            title: 'Имя',
+          },
+          {
+            name: 'lastname',
+            title: 'Фамилия',
+          },
+          {
+            name: 'age',
+            title: 'Возраст',
+          },
+        ],
+        onChange: action('onChange'),
+        onSubmit: action('onSubmit'),
+      }
+      class Wrapper extends React.Component {
+        constructor(){
+          super();
+          this.state = {
+            age: value2.age || 0,
+          }
+        }
+        render() {
+          return (
+            <div>
+              <button onClick={() => this.setState({ age: this.state.age + 1})}>
+                age={this.state.age}
+              </button>
+              <table>
+                <tr>
+                  <th>
+                    value
+                  </th>
+                  <th>
+                    defaultValue
+                  </th>
+                </tr>
+                <tr>
+                  <td>
+                    <Form
+                      {...props}
+                      value={{
+                        ...value2,
+                        ...this.state,
+                      }}
+                    />
+                  </td>
+                  <td>
+                    <Form
+                      {...props}
+                      defaultValue={{
+                        ...value2,
+                        ...this.state,
+                      }}
+                    />
+                  </td>
+                </tr>
+              </table>
+            </div>
+          )
+        }
+      }
+      return <Wrapper />
+    })
 };
