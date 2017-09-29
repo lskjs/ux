@@ -6,9 +6,9 @@ module.exports = function ({ storiesOf, action }) {
     .addHtml(<link rel="stylesheet" type="text/css" href="https://yastatic.net/bootstrap/3.3.6/css/bootstrap.min.css" />)
     .add('1. Widthout wrap', () => (
       <Modal>
-        <Modal.Open>
+        <Modal.Trigger>
           <button>Open modal</button>
-        </Modal.Open>
+        </Modal.Trigger>
         <Modal.Content>
           Sample content
         </Modal.Content>
@@ -16,9 +16,9 @@ module.exports = function ({ storiesOf, action }) {
     ))
     .add('2. With title and wrap', () => (
       <Modal>
-        <Modal.Open>
+        <Modal.Trigger>
           <button>Open modal</button>
-        </Modal.Open>
+        </Modal.Trigger>
         <Modal.Content title="Sample title">
           Sample content
         </Modal.Content>
@@ -39,9 +39,9 @@ module.exports = function ({ storiesOf, action }) {
     ))
     .add('4. Full control', () => (
       <Modal>
-        <Modal.Open>
+        <Modal.Trigger>
           <button>Open modal</button>
-        </Modal.Open>
+        </Modal.Trigger>
         <Modal.Content>
           <Modal.Header closeButton>
             Hello!
@@ -59,9 +59,9 @@ module.exports = function ({ storiesOf, action }) {
     ))
     .add('5. Nested', () => (
       <Modal>
-        <Modal.Open>
+        <Modal.Trigger>
           <button>Open modal</button>
-        </Modal.Open>
+        </Modal.Trigger>
         <Modal.Content>
           <Modal.Header closeButton>
             Hello!
@@ -69,9 +69,9 @@ module.exports = function ({ storiesOf, action }) {
           <Modal.Body>
             Some info content
             <Modal>
-              <Modal.Open>
+              <Modal.Trigger>
                 <button>Open new modal</button>
-              </Modal.Open>
+              </Modal.Trigger>
               <Modal.Content>
                 <Modal.Header closeButton>
                   Hello!
@@ -126,9 +126,21 @@ module.exports = function ({ storiesOf, action }) {
     })
     .add('7. Visible by default', () => (
       <Modal visible>
-        <Modal.Open>
+        <Modal.Trigger>
           <button>Open modal</button>
-        </Modal.Open>
+        </Modal.Trigger>
+        <Modal.Content>
+          Sample content
+        </Modal.Content>
+      </Modal>
+    ))
+    .add('8. e.preventDefault', () => (
+      <Modal>
+        <Modal.Trigger>
+          some trigger text, open modal <br />
+          <button onClick={() => console.log('log1 log1 log1')}>Some console.log into modal and open modal</button>  <br />
+          <button onClick={(e) => { e.preventDefault(); console.log('log2 log2 log2') }}>Some console.log into modal  without open modal</button>
+        </Modal.Trigger>
         <Modal.Content>
           Sample content
         </Modal.Content>

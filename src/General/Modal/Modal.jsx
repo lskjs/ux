@@ -92,9 +92,11 @@ export class Open extends Component { // eslint-disable-line
     children: PropTypes.any,
   }
   @autobind
-  handle() {
+  handle(e) {
     const { type, id } = this.props;
-    this.context._modal({ type, id });
+    if (!e.isDefaultPrevented()) {
+      this.context._modal({ type, id });
+    }
   }
   render() {
     const { children } = this.props;
