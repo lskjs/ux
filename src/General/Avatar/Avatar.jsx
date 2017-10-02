@@ -7,6 +7,13 @@ import ReactImageFallback from 'react-image-fallback';
 const textSizeRatio = 3;
 
 export default class Avatar extends Component {
+  static defaultColors = [
+    '#F8B195',
+    '#F67280',
+    '#C06C84',
+    '#6C5B7B',
+    '#355C7D',
+  ];
   static defaultAvatar = '//cdn.mgbeta.ru/lsk/no-avatar.png';
   static defaultProps = {
     title: '',
@@ -17,7 +24,7 @@ export default class Avatar extends Component {
     width: null,
     height: null,
 
-    backgroundColor: '#838383',
+    // backgroundColor: '#838383',
     textColor: '#d9d9d9',
     textScale: 1,
 
@@ -28,7 +35,7 @@ export default class Avatar extends Component {
 
     style: {},
     innerStyle: {},
-  }
+  };
 
   static propTypes = {
     title: PropTypes.string,
@@ -52,6 +59,27 @@ export default class Avatar extends Component {
     innerStyle: PropTypes.object,
   };
 
+  getColorByHash(num) {
+    if (_.isNull(num)) {
+      const index = Math.floor(Math.random() * Avatar.defaultColors.length);
+      return Avatar.defaultColors[index];
+    }
+    if (num > Avatar.defaultColors.length) return this.getColorByHash(num - Avatar.defaultColors.length);
+    return Avatar.defaultColors[num-1] || Avatar.defaultColors[0];
+  }
+
+  hashCode(str) {
+    if (_.isNull(str)) return null;
+    let hash = 0, i, chr;
+    if (str.length === 0) return hash;
+    for (i = 0; i < str.length; i++) {
+      chr   = str.charCodeAt(i);
+      hash  = ((hash << 5) - hash) + chr;
+      hash |= 0; // Convert to 32bit integer
+    }
+    return Math.abs(hash % 5);
+  };
+
   getInnerStyle() {
     const {
       size,
@@ -60,7 +88,12 @@ export default class Avatar extends Component {
       backgroundColor,
       innerStyle,
       textColor,
+      title,
+      id,
     } = this.props;
+
+    const str = id || title || null;
+    const color = backgroundColor ? backgroundColor : this.getColorByHash(this.hashCode(str));
 
     const width = this.props.width || size;
     const height = this.props.height || size;
@@ -90,7 +123,7 @@ export default class Avatar extends Component {
       borderRadius,
       fontSize: `${fontSize}px`,
       lineHeight: `${lineHeight}px`,
-      backgroundColor,
+      backgroundColor: color,
       color: textColor,
     }, innerStyle);
   }

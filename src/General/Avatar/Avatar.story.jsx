@@ -30,6 +30,36 @@ module.exports = function ({ storiesOf, action, knob }) {
     .add('Empty', () => (
       <Avatar />
     ))
+    .add('colored by random  ', () => (
+      <div>
+        <Avatar />
+        <Avatar />
+        <Avatar />
+        <Avatar />
+      </div>
+    ))
+    .add('colored by hash  ', () => (
+      <div>
+        <Avatar id="sad123asd" />
+        <Avatar id="asd" />
+        <Avatar title="Asd Qwerty" />
+        <Avatar title="Igor Suvorov" />
+        <Avatar title="Igor Suvorov" />
+        <Avatar title="Igor Suvorov" id="asdasd1231asdasdqweqwasd" />
+        <Avatar title="Igor Suvorov" id="asdasd1231asdasdqweqwasd" />
+        <Avatar title="Antons" id="asdasd123" />
+        <Avatar title="Antons" id="asdasd123" />
+      </div>
+    ))
+    .add('colored by props.backgroundColor', () => (
+      <div>
+        <Avatar backgroundColor="#A7226E" title="Purple" />
+        <Avatar backgroundColor="#EC2049" title="Pink" />
+        <Avatar backgroundColor="#F26B38" title="Orange" />
+        <Avatar backgroundColor="#F7DB4F" title="Yellow" />
+        <Avatar backgroundColor="#2F9599" title="Blue" />
+      </div>
+    ))
     .add('No image', () => (
       <div>
         <Avatar title="John Smith" />
