@@ -24,7 +24,7 @@ export default class AvatarGroup extends Component {
     items: []
   };
   render() {
-    const { size = 64, offset = -0.35, items = [], limitbackgroundColor } = this.props;
+    const { size = 64, offset = -0.35, items = [], limit, backgroundColor } = this.props;
     const { Avatar } = this.props;
 
     let renderItems = items;
