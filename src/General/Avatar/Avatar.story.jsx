@@ -15,13 +15,13 @@ const user = () => ({
 
 module.exports = function ({ storiesOf, action, knob }) {
   return storiesOf('Avatar', module)
-    .add('Default as img', () => (
+    .add('Default as img (title,src)', () => (
       <Avatar
         title="John Smith"
         src={avatarImg}
       />
     ))
-    .add('Alternative as User', () => (
+    .add('Alternative as User (name,avatar)', () => (
       <Avatar
         name="John Smith"
         avatar={avatarImg}
@@ -30,44 +30,56 @@ module.exports = function ({ storiesOf, action, knob }) {
     .add('Empty', () => (
       <Avatar />
     ))
-    .add('colored by random  ', () => (
-      <div>
-        <Avatar />
-        <Avatar />
-        <Avatar />
-        <Avatar />
-      </div>
-    ))
-    .add('colored by hash  ', () => (
-      <div>
-        <Avatar id="sad123asd" />
-        <Avatar id="asd" />
-        <Avatar id={123} />
-        <Avatar id={21231231235555} />
-        <Avatar title="Asd Qwerty" />
-        <Avatar title="Igor Suvorov" />
-        <Avatar title="Igor Suvorov" />
-        <Avatar title="Igor Suvorov" id="asdasd1231asdasdqweqwasd" />
-        <Avatar title="Igor Suvorov" id="asdasd1231asdasdqweqwasd" />
-        <Avatar title="Antons" id="asdasd123" />
-        <Avatar title="Antons" id="asdasd123" />
-      </div>
-    ))
-    .add('palette', () => (
-      <div>
-        <Avatar id={123} title="First"/>
-        <Avatar title="Igor Suvorov" />
-        <Avatar title="Igor Suvorov" id="asdasd1231asdasdqweqwasd" />
-        <Avatar title="Antons" id="asdasd123" />
-      </div>
-    ))
-    .add('colored by props.backgroundColor', () => (
+    .add('props.backgroundColor', () => (
       <div>
         <Avatar backgroundColor="#A7226E" title="Purple" />
         <Avatar backgroundColor="#EC2049" title="Pink" />
         <Avatar backgroundColor="#F26B38" title="Orange" />
         <Avatar backgroundColor="#F7DB4F" title="Yellow" />
         <Avatar backgroundColor="#2F9599" title="Blue" />
+      </div>
+    ))
+    .add('Empty avatar, colored by random  ', () => (
+      <div>
+        <Avatar />
+        <Avatar />
+        <Avatar />
+        <Avatar />
+      </div>
+    ))
+    .add('Colored by title', () => (
+      <div>
+        <p>
+          Any titles:
+        </p>
+        <Avatar title='user 1' />
+        <Avatar title='user 2' />
+        <Avatar title='user 3' />
+        <Avatar title='user 4' />
+        <p>
+          Same titles:
+        </p>
+        <Avatar title='user 1' />
+        <Avatar title='user 2' />
+        <Avatar title='user 3' />
+        <Avatar title='user 4' />
+      </div>
+    ))
+    .add('Colored by id', () => (
+      <div>
+        <p>
+          Any users:
+        </p>
+        <Avatar title='user 1' id={1} />
+        <Avatar title='user 2' id={2} />
+        <Avatar title='user 3' id={'user3'} />
+        <Avatar title='user 4' id={null} />
+        <p>
+          Same ids:
+        </p>
+        <Avatar title='name 1' id={1} />
+        <Avatar title='name 2' id={1} />
+        <Avatar title='name 3' id={1} />
       </div>
     ))
     .add('No image', () => (
