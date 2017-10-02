@@ -42,12 +42,22 @@ module.exports = function ({ storiesOf, action, knob }) {
       <div>
         <Avatar id="sad123asd" />
         <Avatar id="asd" />
+        <Avatar id={123} />
+        <Avatar id={21231231235555} />
         <Avatar title="Asd Qwerty" />
         <Avatar title="Igor Suvorov" />
         <Avatar title="Igor Suvorov" />
         <Avatar title="Igor Suvorov" id="asdasd1231asdasdqweqwasd" />
         <Avatar title="Igor Suvorov" id="asdasd1231asdasdqweqwasd" />
         <Avatar title="Antons" id="asdasd123" />
+        <Avatar title="Antons" id="asdasd123" />
+      </div>
+    ))
+    .add('palette', () => (
+      <div>
+        <Avatar id={123} title="First"/>
+        <Avatar title="Igor Suvorov" />
+        <Avatar title="Igor Suvorov" id="asdasd1231asdasdqweqwasd" />
         <Avatar title="Antons" id="asdasd123" />
       </div>
     ))

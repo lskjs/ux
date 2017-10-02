@@ -64,12 +64,13 @@ export default class Avatar extends Component {
       const index = Math.floor(Math.random() * Avatar.defaultColors.length);
       return Avatar.defaultColors[index];
     }
-    if (num > Avatar.defaultColors.length) return this.getColorByHash(num - Avatar.defaultColors.length);
+    num = num % Avatar.defaultColors.length;
     return Avatar.defaultColors[num-1] || Avatar.defaultColors[0];
   }
 
   hashCode(str) {
     if (_.isNull(str)) return null;
+    if (!_.isString(str)) str += "";
     let hash = 0, i, chr;
     if (str.length === 0) return hash;
     for (i = 0; i < str.length; i++) {
@@ -77,7 +78,7 @@ export default class Avatar extends Component {
       hash  = ((hash << 5) - hash) + chr;
       hash |= 0; // Convert to 32bit integer
     }
-    return Math.abs(hash % 5);
+    return Math.abs(hash);
   };
 
   getInnerStyle() {
