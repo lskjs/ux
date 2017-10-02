@@ -5,6 +5,7 @@ import React, { PropTypes, Component } from 'react';
 import DefaultAvatar from '../Avatar';
 
 export default class AvatarGroup extends Component {
+  static defaultLimitBackground = "#355C7D";
   static propTypes = {
     Avatar: PropTypes.func,
     size: PropTypes.number,
@@ -50,6 +51,7 @@ export default class AvatarGroup extends Component {
             <Avatar
               size={size}
               placeholder={'+' + (count - renderItems.length)}
+              backgroundColor={AvatarGroup.defaultLimitBackground}
             />
           </span>
         </If>
