@@ -9,6 +9,7 @@ const largeImg = 'http://placeimg.com/1920/1920/people';
 const noProportionalImg = 'http://placeimg.com/640/320/people';
 
 const user = () => ({
+  id: _.random(99),
   title: 'John Smith',
   src: `https://randomuser.me/api/portraits/men/${_.random(99)}.jpg`,
 });
@@ -102,14 +103,21 @@ module.exports = function ({ storiesOf, action, knob }) {
     ))
     .add('Custom styles', () => (
       <div>
-        <Avatar {...user()} style={{ margin: 10 }} />
-        <Avatar {...user()} style={{ padding: 10 }} />
-        <Avatar {...user()} style={{ border: '4px solid rgb(244, 67, 54)' }} />
-        <Avatar {...user()} innerStyle={{ boxShadow: '1px 1px 10px 2px #333' }} />
-        <Avatar {...user()} innerStyle={{ filter: 'grayscale(100%)' }} />
-        <Avatar {...user()} innerStyle={{ border: '4px solid rgb(244, 67, 54)' }} />
-        <Avatar {...user()} innerStyle={{ border: '2px solid #4CAF50'}} />
-        <Avatar {...user()} innerStyle={{ border: '4px solid #F44336' }} />
+        <div>
+          <Avatar {...user()} style={{ margin: 10 }} />
+          <Avatar {...user()} style={{ padding: 10 }} />
+          <Avatar {...user()} style={{ border: '4px solid rgb(244, 67, 54)' }} />
+          <Avatar {...user()} style={{ border: '4px solid rgba(128, 128, 128, 0.5)' }} />
+          <Avatar {...user()} style={{ border: '4px solid rgba(128, 128, 128, 0.5)' }} src='//broken.site/img.png' />
+        </div>
+        <div>
+          <Avatar {...user()} innerStyle={{ boxShadow: '1px 1px 10px 2px #333' }} />
+          <Avatar {...user()} innerStyle={{ filter: 'grayscale(100%)' }} />
+          <Avatar {...user()} innerStyle={{ border: '4px solid rgb(244, 67, 54)' }} />
+          <Avatar {...user()} innerStyle={{ border: '4px solid rgba(128, 128, 128, 0.5)' }} src='//broken.site/img.png' />
+          <Avatar {...user()} innerStyle={{ border: '2px solid #4CAF50'}} />
+          <Avatar {...user()} innerStyle={{ border: '4px solid #F44336' }} />
+        </div>
       </div>
     ))
     .add('Badge', () => (
