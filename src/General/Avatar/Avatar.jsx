@@ -92,6 +92,7 @@ export default class Avatar extends Component {
       textColor,
       title,
       id,
+      src,
     } = this.props;
 
     const str = id || title || null;
@@ -125,7 +126,7 @@ export default class Avatar extends Component {
       borderRadius,
       fontSize: `${fontSize}px`,
       lineHeight: `${lineHeight}px`,
-      backgroundColor: color,
+      backgroundColor: src ? 'rgba(0, 0, 0, 0)' :  color,
       color: textColor,
     }, innerStyle);
   }
