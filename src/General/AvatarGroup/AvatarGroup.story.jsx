@@ -10,7 +10,13 @@ const user = () => ({
 const userWithLink = () => ({
   title: 'John Smith',
   src: `https://randomuser.me/api/portraits/men/${_.random(99)}.jpg`,
-  link: `user/${_.random(99)}.jpg`,
+  link: `user/link-${_.random(99)}`,
+});
+
+const userWithHref = () => ({
+  title: 'John Smith',
+  src: `https://randomuser.me/api/portraits/men/${_.random(99)}.jpg`,
+  href: `user/href-${_.random(99)}`,
 });
 
 module.exports = function ({ storiesOf, action, knob }) {
@@ -86,10 +92,17 @@ module.exports = function ({ storiesOf, action, knob }) {
       />
     ))
     .add('Items + count + limit + link', () => (
-      <AvatarGroup
-        items={_.range(5).map(userWithLink)}
-        limit={3}
-        count={20}
-      />
+      <div>
+        <AvatarGroup
+          items={_.range(5).map(userWithLink)}
+          limit={3}
+          count={20}
+        />
+        <AvatarGroup
+          items={_.range(5).map(userWithHref)}
+          limit={3}
+          count={20}
+        />
+      </div>
     ))
 };

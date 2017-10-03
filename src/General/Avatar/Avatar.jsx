@@ -151,10 +151,10 @@ export default class Avatar extends Component {
       height,
     }, style);
 
-
-    if (this.props.link) {
+    const link = this.props.link || this.props.href;
+    if (link) {
       return (
-        <A href={this.props.link}>
+        <A href={link}>
           {src != null ? this.renderAsImage() : this.renderAsText()}
           { children }
         </A>
