@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import Component from 'lsk-general/General/Component';
 import _ from 'lodash';
 import ReactImageFallback from 'react-image-fallback';
-import A from '../A';
+import Link from '../Link';
 
 // import gifSpinner from './img/loading.gif';
 const textSizeRatio = 3;
@@ -138,6 +138,7 @@ export default class Avatar extends Component {
       style,
       className,
       children,
+      componentClass,
     } = this.props;
 
     const src = this.props.src || this.props.avatar;
@@ -152,27 +153,17 @@ export default class Avatar extends Component {
     }, style);
 
     const link = this.props.link || this.props.href;
-    if (link) {
-      return (
-      <div
-        className={className}
-        style={wrapperStyle}
-      >
-        <A href={link}>
-          {src != null ? this.renderAsImage() : this.renderAsText()}
-          { children }
-        </A>
-      </div>
-      )
-    }
+    const Component = componentClass || (link ? Link : 'div')
+
     return (
-      <div
+      <Component
+        href={link}
         className={className}
         style={wrapperStyle}
       >
         {src != null ? this.renderAsImage() : this.renderAsText()}
         { children }
-      </div>
+      </Component>
     );
   }
 }
