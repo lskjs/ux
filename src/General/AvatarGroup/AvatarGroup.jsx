@@ -37,7 +37,7 @@ export default class AvatarGroup extends Component {
         {renderItems.map((item = {}, index) => (
           <span
             key={item._id || index}
-            style={wrapStyle}
+            style={{...wrapStyle, marginLeft: ( index ? size * offset : 0)}}
           >
             <Avatar
               size={size}
