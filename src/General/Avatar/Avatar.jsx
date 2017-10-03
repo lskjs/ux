@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 import Component from 'lsk-general/General/Component';
 import _ from 'lodash';
 import ReactImageFallback from 'react-image-fallback';
+import A from '../A';
 
 // import gifSpinner from './img/loading.gif';
 const textSizeRatio = 3;
@@ -151,6 +152,14 @@ export default class Avatar extends Component {
     }, style);
 
 
+    if (this.props.link) {
+      return (
+        <A href={this.props.link}>
+          {src != null ? this.renderAsImage() : this.renderAsText()}
+          { children }
+        </A>
+      )
+    }
     return (
       <div
         className={className}
