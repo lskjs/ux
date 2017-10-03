@@ -12,6 +12,7 @@ export default class AvatarGroup extends Component {
     offset: PropTypes.number,
     count: PropTypes.number,
     items: PropTypes.array,
+    backgroundColor: PropTypes.string,
   };
   static defaultProps = {
     Avatar: DefaultAvatar,
@@ -19,10 +20,11 @@ export default class AvatarGroup extends Component {
     limit: null,
     offset: -0.35,
     count: null,
+    backgroundColor: '#838383',
     items: []
   };
   render() {
-    const { size = 64, offset = -0.35, items = [], limit } = this.props;
+    const { size = 64, offset = -0.35, items = [], limit, backgroundColor } = this.props;
     const { Avatar } = this.props;
 
     let renderItems = items;
@@ -50,6 +52,7 @@ export default class AvatarGroup extends Component {
             <Avatar
               size={size}
               placeholder={'+' + (count - renderItems.length)}
+              backgroundColor={backgroundColor}
             />
           </span>
         </If>
