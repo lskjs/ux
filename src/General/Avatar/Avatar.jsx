@@ -95,7 +95,6 @@ export default class Avatar extends Component {
       id,
       src,
     } = this.props;
-    console.log(size, textScale, innerStyle, this.props)
     const str = id || title || null;
     const color = backgroundColor ? backgroundColor : this.getColorByHash(this.hashCode(str));
 
