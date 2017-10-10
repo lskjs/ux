@@ -6,6 +6,7 @@ import Link from '../Link';
 
 // import gifSpinner from './img/loading.gif';
 const textSizeRatio = 3;
+const textSizePercent = 30;
 
 export default class Avatar extends Component {
   static defaultColors = [
@@ -94,7 +95,7 @@ export default class Avatar extends Component {
       id,
       src,
     } = this.props;
-
+    console.log(size, textScale, innerStyle, this.props)
     const str = id || title || null;
     const color = backgroundColor ? backgroundColor : this.getColorByHash(this.hashCode(str));
 
@@ -103,7 +104,8 @@ export default class Avatar extends Component {
 
     const lineHeight = size;
     const fontSize = Math.min(
-      Math.floor(size / textSizeRatio * textScale),
+      // Math.floor(size / textSizeRatio * textScale),
+      Math.floor(size * textSizePercent / 100),
       lineHeight,
     );
 
