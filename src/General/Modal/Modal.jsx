@@ -7,20 +7,20 @@ import cx from 'classnames';
 export default class MyModal extends Component {
   static childContextTypes = {
     _modal: PropTypes.func,
-  }
+  };
   static defaultProps = {
     emitter: null,
     event: null,
     fullscreen: false,
     children: null,
     visible: false,
-  }
+  };
   static propTypes = {
     emitter: PropTypes.object,
     fullscreen: PropTypes.bool,
     children: PropTypes.any,
     visible: PropTypes.bool,
-  }
+  };
   constructor(props) {
     super(props);
     this.state = { visible: props.visible };
@@ -89,17 +89,17 @@ export default class MyModal extends Component {
 export class Open extends Component { // eslint-disable-line
   static contextTypes = {
     _modal: PropTypes.func,
-  }
+  };
   static defaultProps = {
     id: 'single',
     type: 'open',
     children: '',
-  }
+  };
   static propTypes = {
     type: PropTypes.string,
     id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     children: PropTypes.any,
-  }
+  };
   @autobind
   handle(e) {
     if (__CLIENT__) {
@@ -128,17 +128,17 @@ MyModal.Open = Open;
 export class Close extends Component { // eslint-disable-line
   static contextTypes = {
     _modal: PropTypes.func,
-  }
+  };
   static defaultProps = {
     id: 'single',
     type: 'close',
     children: '',
-  }
+  };
   static propTypes = {
     type: PropTypes.string,
     id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     children: PropTypes.any,
-  }
+  };
   @autobind
   handle() {
     if (__CLIENT__) {
@@ -163,19 +163,19 @@ MyModal.Close = Close;
 export class ModalContent extends Component { // eslint-disable-line
   static contextTypes = {
     _modal: PropTypes.func,
-  }
+  };
   static defaultProps = {
     id: 'single',
     children: '',
     title: null,
     fullscreen: false,
-  }
+  };
   static propTypes = {
     id: PropTypes.string,
     children: PropTypes.any,
     title: PropTypes.string,
     fullscreen: PropTypes.bool,
-  }
+  };
   @autobind
   handle() {
     const { id } = this.props;
@@ -225,6 +225,7 @@ MyModal.Footer = Modal.Footer;
 MyModal.Title = Modal.Title;
 
 function addHash(id) {
+  if (id === 'single') return;
   window.location.hash = id;
 }
 
