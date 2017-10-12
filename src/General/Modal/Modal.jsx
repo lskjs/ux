@@ -24,12 +24,21 @@ export default class MyModal extends Component {
   constructor(props) {
     super(props);
     this.state = { visible: props.visible };
+    if (__CLIENT__ && window.location.hash.substring(1) === this.props.id) {
+      this.state.visible = true;
+    }
   }
   open() {
+    if (__CLIENT__) {
+      addHash(this.props.id);
+    }
     this.setState({ visible: true });
     this.props.onOpen && this.props.onOpen();
   }
   close() {
+    if (__CLIENT__) {
+      removeHash();
+    }
     this.setState({ visible: false });
     this.props.onClose && this.props.onClose();
   }
@@ -93,6 +102,9 @@ export class Open extends Component { // eslint-disable-line
   }
   @autobind
   handle(e) {
+    if (__CLIENT__) {
+      addHash(this.props.id);
+    }
     const { type, id } = this.props;
     if (!e.isDefaultPrevented()) {
       this.context._modal({ type, id });
@@ -129,6 +141,9 @@ export class Close extends Component { // eslint-disable-line
   }
   @autobind
   handle() {
+    if (__CLIENT__) {
+      removeHash();
+    }
     const { type, id } = this.props;
     this.context._modal({ type, id });
   }
@@ -165,6 +180,9 @@ export class ModalContent extends Component { // eslint-disable-line
   handle() {
     const { id } = this.props;
     this.context._modal({ type: 'close', id });
+    if (__CLIENT__) {
+      removeHash();
+    }
   }
   render() {
     const { id, fullscreen, title, body, children, dialogClassName, ...otherProps } = this.props;
@@ -205,3 +223,11 @@ MyModal.Header = Modal.Header;
 MyModal.Body = Modal.Body;
 MyModal.Footer = Modal.Footer;
 MyModal.Title = Modal.Title;
+
+function addHash(id) {
+  window.location.hash = id;
+}
+
+function removeHash() {
+  history.pushState('', document.title, window.location.pathname);
+}
