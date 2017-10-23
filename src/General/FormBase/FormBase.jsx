@@ -42,19 +42,19 @@ export default class FormBase extends Component {
     };
   }
 
+  _getFields() {
+    let fields;
+    if (this.getFields) {
+      return this.getFields()
+    } else if (this.props.fields != null) {
+      return this.props.fields;
+    } else {
+      return [];
+    }
+  }
+
   processStateData(props, isConstructor) {
     const { fields } = props;
-
-    if (this.getFields) {
-      // console.log(111);
-      this.fields = this.getFields()
-    } else if (fields != null) {
-      // console.log(222);
-      this.fields = fields;
-    } else {
-      // console.log(333);
-      this.fields = [];
-    }
 
     let data;
     if (isConstructor) {
@@ -67,7 +67,7 @@ export default class FormBase extends Component {
     }
     if (!data) {
       data = {};
-      this.fields.forEach((field) => {
+      this._getFields().forEach((field) => {
         set(data, field.name, field.value);
       });
     }
@@ -82,7 +82,7 @@ export default class FormBase extends Component {
 
 
   getField(name) {
-    return find(this.fields, { name });
+    return find(this._getFields(), { name });
   }
 
   getError(name) {
@@ -97,7 +97,7 @@ export default class FormBase extends Component {
 
   getValidators() {
     const { validators } = this.props;
-    this.fields.forEach(field => {
+    this._getFields().forEach(field => {
       if (!field.validator) return ;
       validators[field.name] = field.validator;
     })
@@ -120,7 +120,7 @@ export default class FormBase extends Component {
         message,
       };
     }
-    if (this.fields.filter(field => !!get(errors, field.name)).length > 0) {
+    if (this._getFields().filter(field => !!get(errors, field.name)).length > 0) {
       this.onError(errors);
       return false;
     }

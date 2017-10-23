@@ -206,7 +206,7 @@ export default class Form extends FormBase {
 
     return  (
       <FormComponent horizontal={horizontal} onSubmit={this.handleSubmit}>
-        {this.renderFields(this.fields)}
+        {this.renderFields(this._getFields())}
         {this.renderSubmitButton()}
       </FormComponent>
     )
