@@ -54,6 +54,7 @@ export default class FormBase extends Component {
   }
 
   processStateData(props, isConstructor) {
+    // console.log('processStateData', isConstructor, this._getFields());
     const { fields } = props;
 
     let data;
@@ -67,10 +68,14 @@ export default class FormBase extends Component {
     }
     if (!data) {
       data = {};
-      this._getFields().forEach((field) => {
-        set(data, field.name, field.value);
-      });
     }
+    this._getFields().forEach((field) => {
+      set(data, field.name, field.value);
+      // console.log('defaultValue@@@@@', field, get(data, field.name), typeof field.defaultValue !== 'undefined', field.defaultValue);
+      if (!get(data, field.name) && typeof field.defaultValue !== 'undefined') {
+        set(data, field.name, field.defaultValue);
+      }
+    });
     return data;
   }
 
@@ -96,11 +101,22 @@ export default class FormBase extends Component {
   }
 
   getValidators() {
-    const { validators } = this.props;
+    const { validators, t } = this.props;
     this._getFields().forEach(field => {
-      if (!field.validator) return ;
-      validators[field.name] = field.validator;
+      // if (!field.validator) return ;
+      validators[field.name] = field.validator || {};
+      // console.log('field.required', field.required);
+      if (field.required) {
+        if (!validators[field.name].presence) {
+          validators[field.name].presence = {
+            allowEmpty: false,
+            message: t ? t('form.presence') : 'form.presence',
+          };
+        }
+      }
     })
+
+    // console.log({validators}, this.state.data, t);
     return validators;
   }
 
@@ -112,14 +128,15 @@ export default class FormBase extends Component {
 
   validate() {
     const results = this.getValidatorResults();
+    // console.log('validate', {results});
     const errors = {};
     for (const item in results) {
-      const [, message] = /[ \w]* (.*)$/.exec(results[item][0]);
       errors[item] = {
         state: 'error',
-        message,
+        message: results[item][0].substr(item.length + 1),
       };
     }
+    // console.log('errors', {errors});
     if (this._getFields().filter(field => !!get(errors, field.name)).length > 0) {
       this.onError(errors);
       return false;
