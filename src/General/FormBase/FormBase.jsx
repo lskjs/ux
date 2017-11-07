@@ -56,26 +56,39 @@ export default class FormBase extends Component {
   processStateData(props, isConstructor) {
     // console.log('processStateData', isConstructor, this._getFields());
     const { fields } = props;
+    const propsData = props.data || props.state || props.value;
 
     let data;
     if (isConstructor) {
-      data = props.defaultValue || props.data || props.state || props.value;
+      data = props.defaultValue || propsData;
+
+      this._getFields().forEach((field) => {
+        if (typeof get(data, field.name) === 'undefined' && typeof field.defaultValue !== 'undefined') {
+          set(data, field.name, field.defaultValue);
+        }
+      });
     } else {
-      data = props.data || props.state || props.value;
+      data = propsData;
       if (!data) {
-        data = this.state.data
+        data = this.state.data;
       }
     }
     if (!data) {
       data = {};
+      this._getFields().forEach((field) => {
+        set(data, field.name, field.value);
+      });
     }
-    this._getFields().forEach((field) => {
-      set(data, field.name, field.value);
-      // console.log('defaultValue@@@@@', field, get(data, field.name), typeof field.defaultValue !== 'undefined', field.defaultValue);
-      if (!get(data, field.name) && typeof field.defaultValue !== 'undefined') {
-        set(data, field.name, field.defaultValue);
-      }
-    });
+    // this._getFields().forEach((field) => {
+    //   console.log('field.value'), field.value;
+    //   set(data, field.name, field.value);
+    //   // console.log('defaultValue@@@@@', field, get(data, field.name), typeof field.defaultValue !== 'undefined', typeof field.defaultValue, field.defaultValue);
+    //   // // console.log();
+    //   // if (!get(data, field.name) && typeof field.defaultValue !== 'undefined') {
+    //   //   set(data, field.name, field.defaultValue);
+    //   // }
+    // });
+    // console.log('processStateData', isConstructor, data);
     return data;
   }
 
