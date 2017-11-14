@@ -223,6 +223,11 @@ export default class FormBase extends Component {
         typeof __DEV__ !== 'undefined' && __DEV__ && console.error('field.format(value) err', err);
       }
     }
+    const { removeNull } = this.props;
+    if (removeNull && value == null) {
+      console.log('removeStatePath');
+      return this.removeStatePath('data.' + name);
+    }
     return this.setStatePath('data.' + name, value);
   }
 
