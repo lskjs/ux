@@ -6,6 +6,8 @@ import validate from 'validate.js';
 import find from 'lodash/find';
 import set from 'lodash/set';
 import get from 'lodash/get';
+import isPlainObject from 'lodash/isPlainObject';
+import map from 'lodash/map';
 import Component from '../Component';
 
 
@@ -43,14 +45,22 @@ export default class FormBase extends Component {
   }
 
   _getFields() {
-    let fields;
+    let fields = [];
     if (this.getFields) {
-      return this.getFields()
+      fields = this.getFields()
     } else if (this.props.fields != null) {
-      return this.props.fields;
-    } else {
-      return [];
+      fields = this.props.fields;
     }
+
+    if (isPlainObject(fields)) {
+      fields = map(fields, (field, name) => {
+        return {
+          ...field,
+          name: field.name || name,
+        };
+      });
+    }
+    return fields.filter(field => field.show !== false);
   }
 
   processStateData(props, isConstructor) {
