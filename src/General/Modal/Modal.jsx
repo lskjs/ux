@@ -1,8 +1,11 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import { Modal } from 'react-bootstrap';
 import { autobind } from 'core-decorators';
 import importcss from 'importcss';
 import cx from 'classnames';
+
+import Component from '../Component';
+const DEBUG = 0;
 
 export default class MyModal extends Component {
   static childContextTypes = {
@@ -29,29 +32,39 @@ export default class MyModal extends Component {
     }
   }
   open() {
-    if (__CLIENT__) {
-      addHash(this.props.id);
+    if (this.props.openHandler) {
+      this.props.openHandler.bind(this)();
+    } else {
+      if (this.props.id) {
+        this.setLocation({
+          hash: this.props.id,
+        });
+      }
+      this.setState({ visible: true });
+      this.props.onOpen && this.props.onOpen();
     }
-    this.setState({ visible: true });
-    this.props.onOpen && this.props.onOpen();
   }
   close() {
-    if (__CLIENT__) {
-      removeHash();
+    if (this.props.closeHandler) {
+      this.props.closeHandler.bind(this)();
+    } else {
+      if (this.props.id) {
+        this.setLocation({
+          hash: null,
+        });
+      }
+      this.setState({ visible: false });
+      this.props.onClose && this.props.onClose();
     }
-    this.setState({ visible: false });
-    this.props.onClose && this.props.onClose();
   }
   getChildContext() {
     return {
       _modal: ({ type }) => {
         if (type === 'open') {
-          this.setState({ visible: true });
-          this.props.onOpen && this.props.onOpen();
+          this.open();
         }
         if (type === 'close') {
-          this.setState({ visible: false });
-          this.props.onClose && this.props.onClose();
+          this.close();
         }
         return this.state;
       },
@@ -100,11 +113,9 @@ export class Open extends Component { // eslint-disable-line
     id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     children: PropTypes.any,
   };
+
   @autobind
   handle(e) {
-    if (__CLIENT__) {
-      addHash(this.props.id);
-    }
     const { type, id } = this.props;
     if (!e.isDefaultPrevented()) {
       this.context._modal({ type, id });
@@ -141,9 +152,6 @@ export class Close extends Component { // eslint-disable-line
   };
   @autobind
   handle() {
-    if (__CLIENT__) {
-      removeHash();
-    }
     const { type, id } = this.props;
     this.context._modal({ type, id });
   }
@@ -180,9 +188,6 @@ export class ModalContent extends Component { // eslint-disable-line
   handle() {
     const { id } = this.props;
     this.context._modal({ type: 'close', id });
-    if (__CLIENT__) {
-      removeHash();
-    }
   }
   render() {
     const { id, fullscreen, title, body, children, dialogClassName, ...otherProps } = this.props;
@@ -223,27 +228,3 @@ MyModal.Header = Modal.Header;
 MyModal.Body = Modal.Body;
 MyModal.Footer = Modal.Footer;
 MyModal.Title = Modal.Title;
-
-function addHash(id) {
-  if (id === 'single') return;
-  window.location.hash = id;
-}
-
-function removeHash() {
-  let scrollV;
-  let scrollH;
-  const loc = window.location;
-  if ("pushState" in history)
-    history.pushState("", document.title, loc.pathname + loc.search);
-  else {
-    // Prevent scrolling by storing the page's current scroll offset
-    scrollV = document.body.scrollTop;
-    scrollH = document.body.scrollLeft;
-
-    loc.hash = "";
-
-    // Restore the scroll offset, should be flicker free
-    document.body.scrollTop = scrollV;
-    document.body.scrollLeft = scrollH;
-  }
-}
