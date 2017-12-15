@@ -102,9 +102,16 @@ export default class FormBase extends Component {
     return data;
   }
 
+  reset(isConstructor) {
+    this.setState({
+      data: this.processStateData(props, isConstructor),
+      errors: {},
+    });
+  }
   componentWillReceiveProps(props) {
     this.setState({
       data: this.processStateData(props),
+      errors: {},
     });
   }
 
