@@ -105,7 +105,7 @@ export default class FormBase extends Component {
 
   reset(isConstructor) {
     this.setState({
-      data: this.processStateData(props, isConstructor),
+      data: this.processStateData(this.props, isConstructor),
       errors: {},
     });
   }
