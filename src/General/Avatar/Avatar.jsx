@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import Component from 'lsk-general/General/Component';
 import _ from 'lodash';
 import ReactImageFallback from 'react-image-fallback';

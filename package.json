@@ -1,11 +1,12 @@
 {
   "name": "lsk-general",
-  "version": "0.12.16",
+  "version": "0.12.18",
   "author": "isuvorov",
   "license": "MIT",
   "dependencies": {
     "core-decorators": "0.20.0",
     "importcss": "1.0.3",
+    "prop-types": "15.6.0",
     "react-bootstrap": "0.31.5",
     "react-debounce-input": "3.1.0",
     "react-drive-in": "1.7.3",

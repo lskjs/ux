@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import importcss from 'importcss';
 import ReactDriveIn from 'react-drive-in';
 import cx from 'classnames';

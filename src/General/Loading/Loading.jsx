@@ -1,4 +1,5 @@
-import React, { PureComponent, PropTypes } from 'react';
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import css from 'importcss';
 import Refresh from 'react-icons2/fa/refresh';
 

@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 // import { markdown } from 'markdown'
 import MarkdownIt from 'markdown-it';
 import MarkdownItEmoji from 'markdown-it-emoji';

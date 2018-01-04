@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Modal } from 'react-bootstrap';
 import { autobind } from 'core-decorators';
 import importcss from 'importcss';
