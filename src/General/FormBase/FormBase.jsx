@@ -206,7 +206,7 @@ export default class FormBase extends Component {
     const { onSubmit } = this.props;
     // this.setState({ errors: {} });
     if (onSubmit) {
-      onSubmit(data);
+      onSubmit.bind(this)(data);
     }
   }
 
