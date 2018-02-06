@@ -1,6 +1,6 @@
 {
   "name": "lsk-general",
-  "version": "0.12.19",
+  "version": "0.12.20",
   "author": "isuvorov",
   "license": "MIT",
   "dependencies": {
@@ -12,13 +12,13 @@
     "react-drive-in": "1.7.3",
     "react-icons2": "2.3.2",
     "react-image-fallback": "7.0.1",
+    "highlight.js": "9.8.0",
+    "markdown-it": "8.1.0",
+    "markdown-it-emoji": "1.3.0",
     "validate.js": "0.12.0"
   },
   "peerDependencies": {
-    "highlight.js": "9.8.0",
     "lodash": "4.17.4",
-    "markdown-it": "8.1.0",
-    "markdown-it-emoji": "1.3.0",
     "react": "15.4.2",
     "react-dom": "15.4.2"
   },
