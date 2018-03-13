@@ -45,6 +45,7 @@ export default class FormBase extends Component {
     };
   }
 
+  // TODO: производительность
   _getFields() {
     let fields = [];
     if (this.getFields) {
@@ -243,7 +244,7 @@ export default class FormBase extends Component {
     }
     const { removeNull } = this.props;
     if (removeNull && value == null) {
-      console.log('removeStatePath');
+      // console.log('removeStatePath');
       return this.removeStatePath('data.' + name);
     }
     return this.setStatePath('data.' + name, value);

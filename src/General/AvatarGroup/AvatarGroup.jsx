@@ -1,7 +1,8 @@
 // follow
 // avatar-group
 // avatar.setdefault
-import React, { PropTypes, Component } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import DefaultAvatar from '../Avatar';
 import { merge, isEqual } from 'lodash';
 
