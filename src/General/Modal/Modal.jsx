@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Modal } from 'react-bootstrap';
-import { autobind } from 'core-decorators';
+import autobind from 'core-decorators/lib/autobind';
 import importcss from 'importcss';
 import cx from 'classnames';
 

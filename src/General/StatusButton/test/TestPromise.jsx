@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { autobind } from 'core-decorators';
+import autobind from 'core-decorators/lib/autobind';
 import StatusButton from '../StatusButton';
 import omit from 'lodash/omit';
 
