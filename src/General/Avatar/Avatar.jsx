@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Component from 'lsk-general/General/Component';
-import _ from 'lodash';
+import PureComponent from 'lsk-general/General/PureComponent';
+import isNull from 'lodash/isNull';
+import isString from 'lodash/isString';
 import ReactImageFallback from 'react-image-fallback';
 import Link from '../Link';
 
@@ -9,7 +10,7 @@ import Link from '../Link';
 const textSizeRatio = 3;
 const textSizePercent = 30;
 
-export default class Avatar extends Component {
+export default class Avatar extends PureComponent {
   static defaultColors = [
     '#F8B195',
     '#F67280',
@@ -63,7 +64,7 @@ export default class Avatar extends Component {
   };
 
   getColorByHash(num) {
-    if (_.isNull(num)) {
+    if (isNull(num)) {
       const index = Math.floor(Math.random() * Avatar.defaultColors.length);
       return Avatar.defaultColors[index];
     }
@@ -72,8 +73,8 @@ export default class Avatar extends Component {
   }
 
   hashCode(str) {
-    if (_.isNull(str)) return null;
-    if (!_.isString(str)) str += "";
+    if (isNull(str)) return null;
+    if (!isString(str)) str += "";
     let hash = 0, i, chr;
     if (str.length === 0) return hash;
     for (i = 0; i < str.length; i++) {

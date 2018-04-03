@@ -5,7 +5,7 @@
   "license": "MIT",
   "dependencies": {
     "core-decorators": "0.20.0",
-    "importcss": "1.1.1",
+    "importcss": "1.1.6",
     "prop-types": "15.6.1",
     "react-bootstrap": "0.32.1",
     "react-debounce-input": "3.2.0",

@@ -1,12 +1,13 @@
 // follow
 // avatar-group
 // avatar.setdefault
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import DefaultAvatar from '../Avatar';
-import { merge, isEqual } from 'lodash';
+import merge from 'lodash/merge';
+import isEqual from 'lodash/isEqual';
 
-export default class AvatarGroup extends Component {
+export default class AvatarGroup extends PureComponent {
   static propTypes = {
     Avatar: PropTypes.func,
     size: PropTypes.number,

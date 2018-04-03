@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Button } from 'react-bootstrap';
 import cx from 'classnames';
@@ -17,7 +17,7 @@ const BUTTON_STATUS = {
 };
 
 @css(require('./StatusButton.css'))
-class StatusButton extends Component {
+class StatusButton extends PureComponent {
   static defaultProps = {
     status: BUTTON_STATUS.none,
     children: 'Отправить',

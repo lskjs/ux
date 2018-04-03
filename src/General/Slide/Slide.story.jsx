@@ -1,6 +1,6 @@
 import React from 'react';
 import Slide from './Slide';
-import _ from 'lodash';
+import repeat from 'lodash/repeat';
 
 module.exports = function ({ storiesOf, action }) {
   return storiesOf('Slide', module)
@@ -67,7 +67,7 @@ module.exports = function ({ storiesOf, action }) {
         fixed
         style={{ color: '#fff' }}
       >
-        {_.repeat('Content ', 10000)}
+        {repeat('Content ', 10000)}
       </Slide>
     ))
     .add('fixed', () => (
@@ -75,14 +75,14 @@ module.exports = function ({ storiesOf, action }) {
         full
         left="left"
         right="right"
-        top={_.repeat('top ', 100)}
+        top={repeat('top ', 100)}
         bottom="bottom"
         center
         style={{ color: '#fff' }}
 
         fixed
       >
-        {_.repeat('Content ', 100)}
+        {repeat('Content ', 100)}
       </Slide>
     ))
     .add('overlay', () => (

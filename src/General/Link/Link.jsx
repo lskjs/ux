@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
 function isMiddleClickEvent(event) {
@@ -19,7 +19,7 @@ function isAbsoluteUrl(url = ''){
 }
 
 
-class Link extends Component {
+class Link extends PureComponent {
   static defaultProps = {
     children: null,
     onClick: null,
@@ -41,7 +41,7 @@ class Link extends Component {
     if (isMiddleClickEvent(e)) {
       return;
     }
-    
+
     if (this.props.onClick) {
       this.props.onClick(e);
     }

@@ -1,17 +1,17 @@
 import React from 'react';
 import Avatar from './Avatar';
-import _ from 'lodash';
+import random from 'lodash/random';
 
-const rndNum = _.random(99);
+const rndNum = random(99);
 const avatarImg = `https://randomuser.me/api/portraits/men/${rndNum}.jpg`;
 const smallImg = 'http://placeimg.com/32/32/people';
 const largeImg = 'http://placeimg.com/1920/1920/people';
 const noProportionalImg = 'http://placeimg.com/640/320/people';
 
 const user = () => ({
-  id: _.random(99),
+  id: random(99),
   title: 'John Smith',
-  src: `https://randomuser.me/api/portraits/men/${_.random(99)}.jpg`,
+  src: `https://randomuser.me/api/portraits/men/${random(99)}.jpg`,
 });
 
 module.exports = function ({ storiesOf, action, knob }) {

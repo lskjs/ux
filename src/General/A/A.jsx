@@ -1,12 +1,13 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import importcss from 'importcss';
 import cx from 'classnames';
-import _ from 'lodash';
+import omit from 'lodash/omit';
 import Link from '../Link';
+import styles from './A.css';
 
-@importcss(require('./A.css'))
-export default class A extends Component {
+@importcss(styles)
+export default class A extends PureComponent {
   static defaultProps = {
     bsStyle: 'primary',
     className: null,
@@ -23,12 +24,15 @@ export default class A extends Component {
     const { bsStyle, className, href, to } = this.props;
     return (
       <Link
-        {..._.omit(this.props, ['bsStyle'])}
-        styleName={cx({
-          [className]: className,
-          A: true,
-          [`A_style_${bsStyle}`]: bsStyle,
-        })}
+        {...omit(this.props, ['bsStyle'])}
+        className={styleName(
+          styles,
+          cx({
+            A: true,
+            [`A_style_${bsStyle}`]: bsStyle,
+          }),
+          className,
+        )}
         href={href || to}
       />
     );
