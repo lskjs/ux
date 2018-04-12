@@ -23,7 +23,7 @@ export default class FormBase extends Component {
     onError: null,
     onSubmit: null,
     onChange: null,
-    noCacheFields: false,
+    cacheFields: false,
   };
   static propTypes = {
     defaultValue: PropTypes.object,
@@ -35,7 +35,7 @@ export default class FormBase extends Component {
     onError: PropTypes.func,
     onChange: PropTypes.func,
     horizontal: PropTypes.bool,
-    noCacheFields: PropTypes.bool,
+    cacheFields: PropTypes.bool,
   };
 
   constructor(props) {
@@ -49,8 +49,8 @@ export default class FormBase extends Component {
 
   // TODO: производительность
   _getFields() {
-    const { noCacheFields } = this.props;
-    if (!noCacheFields) {
+    const { cacheFields } = this.props;
+    if (cacheFields) {
       if (this.fields) return this.fields.filter(field => field.show !== false);
     }
     let fields = [];
