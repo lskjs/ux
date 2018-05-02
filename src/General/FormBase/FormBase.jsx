@@ -160,28 +160,30 @@ export default class FormBase extends Component {
     return validators;
   }
 
-  getValidatorResults() {
-    // const va
-    // const { validators } = this.props;
-    return this.constructor.validate(this.state.data, this.getValidators());
+  async getValidatorResults() {
+    return await this.constructor.validate.async(this.state.data, this.getValidators());
   }
 
-  validate() {
-    const results = this.getValidatorResults();
-    // console.log('validate', {results});
-    const errors = {};
-    for (const item in results) {
-      errors[item] = {
-        state: 'error',
-        message: results[item][0].substr(item.length + 1),
-      };
+  async validate() {
+    try {
+      const results = await this.getValidatorResults();
+      // console.log('validate', { results });
+      return true;
+    } catch (err) {
+      // console.log('validate err', { err });
+      const errors = {};
+      for (const item in err) {
+        errors[item] = {
+          state: 'error',
+          message: err[item][0].substr(item.length + 1),
+        };
+      }
+      // console.log('errors', {errors});
+      if (this._getFields().filter(field => !!get(errors, field.name)).length > 0) {
+        this.onError(errors);
+        return false;
+      }
     }
-    // console.log('errors', {errors});
-    if (this._getFields().filter(field => !!get(errors, field.name)).length > 0) {
-      this.onError(errors);
-      return false;
-    }
-    return true;
   }
 
   onError(errors) {
@@ -206,7 +208,7 @@ export default class FormBase extends Component {
     // console.log('handleChangeField', name, ...args);
     return async (inputValue) => {
       await this.setFieldData(name, inputValue, ...args)
-      this.props.validateOnChange && this.validate();
+      this.props.validateOnChange && await this.validate();
       // this.props.validateOnChange && this.validate();
       this.onChange(this.getData());
     };

@@ -310,6 +310,75 @@ module.exports = function ({ storiesOf, action }) {
         onError={action('onError')}
       />
     ))
+    .add('Async validator', () => {
+      Form.validate.validators.asyncValidator = function(value) {
+        return new Form.validate.Promise(function(resolve, reject) {
+          // console.log('@@@@@');
+          setTimeout(function() {
+            if (value === "foo") resolve();
+            else resolve("is not foo");
+          }, 1000);
+        });
+      };
+      return (
+        <Form
+          fields={[
+            {
+              name: 'email',
+              title: 'Электронная почта',
+              icon: 'Э',
+              validator: {
+                // asyncValidator: true,
+                presence: {
+                  message: 'Поле не должно быть пустым',
+                },
+                email: {
+                  message: 'Введите настоящий адрес почты.',
+                },
+              },
+              control: {
+                type: 'text',
+                placeholder: 'Почта',
+              },
+            },
+            {
+              name: 'password',
+              title: 'Пароль',
+              icon: 'П',
+              validator: {
+                // asyncValidator: true,
+                presence: {
+                  message: 'Поле не должно быть пустым',
+                },
+                length: {
+                  minimum: 6,
+                  message: 'Пароль должен быть больше 6 символов.',
+                },
+              },
+              control: {
+                type: 'password',
+                placeholder: 'Пароль',
+              },
+            },
+            {
+              name: 'foo',
+              title: 'Foo',
+              icon: 'F',
+              validator: {
+                asyncValidator: true,
+              },
+              control: {
+                type: 'password',
+                placeholder: 'Пароль',
+              },
+            },
+          ]}
+          onChange={action('onChange')}
+          onSubmit={action('onSubmit')}
+          onError={action('onError')}
+        />
+      );
+    })
     .add('Control types', () => (
       <Form
         fields={[
