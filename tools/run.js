@@ -1,4 +1,4 @@
-import { Runner } from 'lsk-build'
+import { Runner } from '@lskjs/build'
 import config from './config'
 import webpackConfig from './webpack.config'
 

@@ -1,5 +1,5 @@
-require('babel-core/register');
-require('babel-polyfill');
+require('@babel/register');
+require('@babel/polyfill');
 const ctx = require('./config').default;
-const getWebpackConfig = require('lsk-build').getWebpackConfig;
+const getWebpackConfig = require('@lskjs/build').getWebpackConfig;
 module.exports = getWebpackConfig(ctx);
