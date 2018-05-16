@@ -30,6 +30,7 @@
     "react/jsx-first-prop-new-line": "warn",
     "guard-for-in": "off",
     "no-restricted-syntax": ["error", "WithStatement"],
-    "react/forbid-prop-types": "off"
+    "react/forbid-prop-types": "off",
+    "import/no-extraneous-dependencies": "off"
   }
 }

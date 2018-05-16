@@ -2,10 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Modal } from 'react-bootstrap';
 import autobind from 'core-decorators/lib/autobind';
-import importcss from 'importcss';
 import cx from 'classnames';
-
 import Component from '../Component';
+
 const DEBUG = 0;
 
 export default class MyModal extends Component {
@@ -167,8 +166,6 @@ export class Close extends Component { // eslint-disable-line
 }
 MyModal.Close = Close;
 
-
-// @importcss(require('./ModalContent.css'))
 export class ModalContent extends Component { // eslint-disable-line
   static contextTypes = {
     _modal: PropTypes.func,
@@ -216,9 +213,6 @@ export class ModalContent extends Component { // eslint-disable-line
         <If condition={!(title || body)}>
           {children}
         </If>
-        {/* <Modal.Footer>
-          <Button onClick={this.close.bind(this)}>Закрыть</Button>
-        </Modal.Footer>*/}
       </Modal>
     );
   }

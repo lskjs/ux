@@ -129,7 +129,7 @@ export default class Avatar extends PureComponent {
       borderRadius,
       fontSize: `${fontSize}px`,
       lineHeight: `${lineHeight}px`,
-      backgroundColor: src ? 'rgba(0, 0, 0, 0)' :  color,
+      backgroundColor: src ? 'rgba(0, 0, 0, 0)' : color,
       color: textColor,
     }, innerStyle);
   }
