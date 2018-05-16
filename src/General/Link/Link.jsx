@@ -14,8 +14,8 @@ function isModifiedEvent(event) {
 }
 
 
-function isAbsoluteUrl(url = ''){
-  return url.indexOf('://') > 0 || url.indexOf('//') === 0
+function isAbsoluteUrl(url = '') {
+  return url.indexOf('://') > 0 || url.indexOf('//') === 0;
 }
 
 
@@ -58,7 +58,7 @@ class Link extends PureComponent {
     if (url == null) {
       return;
     }
-    if(this.props.target === '_blank' || isAbsoluteUrl(url)){
+    if (this.props.target === '_blank' || isAbsoluteUrl(url)) {
       return;
     }
     e.preventDefault();
@@ -67,10 +67,14 @@ class Link extends PureComponent {
   };
 
   render() {
-    const { to, href, children, ...props } = this.props;
+    const {
+      to,
+      href,
+      children,
+      ...props
+    } = this.props;
     return <a href={to || href} {...props} onClick={this.handleClick}>{children}</a>;
   }
-
 }
 
 export default Link;

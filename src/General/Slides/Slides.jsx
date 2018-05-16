@@ -1,8 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import importcss from 'importcss';
 
-@importcss(require('./Slides.css'))
 export default class Slides extends PureComponent {
   static propTypes = {
     children: PropTypes.any.isRequired,

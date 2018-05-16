@@ -1,21 +1,29 @@
-import React from 'react'; //eslint-disable-line
+import React from 'react';
+import ThemeInjector from '../ThemeInjector';
 import A from './A';
 
-module.exports = function ({ storiesOf, action }) {
-  return storiesOf('A', module)
+module.exports = ({ storiesOf, action }) => (
+  storiesOf('A', module)
     .add('empty', () => (
-      <A>
-        Empty
-      </A>
+      <ThemeInjector>
+        <A>
+          Empty
+        </A>
+      </ThemeInjector>
     ))
     .add('href', () => (
-      <A href="/test">
-        Href
-      </A>
+      <ThemeInjector>
+        <A href="/test">
+          Href
+        </A>
+      </ThemeInjector>
     ))
     .add('onClick', () => (
-      <A href="/test" onClick={action('onClick')}>
+      <ThemeInjector>
+        <A href="/test" onClick={action('onClick')}>
         onClick
-      </A>
-    ));
-};
+        </A>
+      </ThemeInjector>
+    ))
+);
+

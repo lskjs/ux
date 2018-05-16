@@ -1,12 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import importcss from 'importcss';
 import ReactDriveIn from 'react-drive-in';
-import cx from 'classnames';
-// import Component from 'lsk-general/General/Component';
-import Component from '../Component';
+import Component from 'lsk-general/General/Component';
+import {
+  Content,
+  Middle,
+  InnerBlock,
+  InnerTable,
+  TopBlock,
+  TopTable,
+  BottomBlock,
+  BottomTable,
+  SlideFrame,
+  LeftBlock,
+  LeftTable,
+  RightBlock,
+  RightTable,
+  Center,
+  Background,
+  NoClick,
+  Overlay,
+  Video,
+  VideoForeground,
+  Image,
+  IFrameVideo,
+} from './Slide.styles';
 
-@importcss(require('./Slide.css'))
 export default class Slide extends Component {
   static defaultProps = {
     color: 'transparent',
@@ -28,6 +47,7 @@ export default class Slide extends Component {
     fixed: false,
     center: false,
   }
+
   static propTypes = {
     overlay: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
     video: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
@@ -47,7 +67,16 @@ export default class Slide extends Component {
     style: PropTypes.object,
     fixed: PropTypes.bool,
     center: PropTypes.bool,
-  };
+  }
+
+  _ie() {
+    const ie = typeof window !== 'undefined' && (
+      window.navigator.userAgent.indexOf('MSIE ') > 0 ||
+      !!window.navigator.userAgent.match(/Trident.*rv\:11\./)
+    );
+    // ie && console.log('ie', ie);
+    return ie;
+  }
 
   renderVideo(video) {
     // https://www.youtube.com/asdasd/asd/asd/watch?v=c-shIOFYCRU
@@ -62,27 +91,27 @@ export default class Slide extends Component {
         .split('?')[0];
       const playlist = `https://www.youtube.com/embed/${code}?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=${code}`;
       return (
-        <div styleName="Slide__video Slide__video_youtube">
-          <div styleName="Slide__videoForeground">
-            <iframe
-              styleName="video"
+        <Video youtube>
+          <VideoForeground>
+            <IFrameVideo
+              title="iframe"
               frameBorder="0"
               allowFullScreen="1"
               width="640"
               height="360"
               src={playlist}
             />
-          </div>
-        </div>
+          </VideoForeground>
+        </Video>
       );
     }
     return (
-      <div styleName="Slide__video">
+      <Video>
         <ReactDriveIn
           poster={this.props.image || '//cdn.mgbeta.ru/lsk/_t.png'}
           show={video}
         />
-      </div>
+      </Video>
     );
   }
   renderBg() {
@@ -92,26 +121,34 @@ export default class Slide extends Component {
       overlay = 'rgba(0,0,0,0.5)';
     }
 
-    return (<div styleName="Slide__bg">
-      <div styleName="Slide__noclick" />
-      <If condition={this.props.overlay}>
-        <div styleName="Slide__overlay" style={{ backgroundColor: overlay }} />
-      </If>
-      <If condition={video}>
-        {this.renderVideo(video)}
-      </If>
-      <If condition={image}>
-        <div
-          styleName="Slide__image"
-          style={{ backgroundImage: `url(${image})` }}
-        />
-      </If>
-    </div>);
+    return (
+      <Background>
+        <NoClick />
+        <If condition={this.props.overlay}>
+          <Overlay style={{ backgroundColor: overlay }} />
+        </If>
+        <If condition={video}>
+          {this.renderVideo(video)}
+        </If>
+        <If condition={image}>
+          <Image style={{ backgroundImage: `url(${image})` }} />
+        </If>
+      </Background>
+    );
   }
 
   renderInnerIE() {
     let { height } = this.props;
-    const { width, top, left, right, bottom, content, children, full } = this.props;
+    const {
+      width,
+      top,
+      left,
+      right,
+      bottom,
+      content,
+      children,
+      full,
+    } = this.props;
     const style = {};
     if (full && !height) {
       // height = '76vh';
@@ -124,36 +161,36 @@ export default class Slide extends Component {
       style.minWidth = width;
     }
     return (
-      <div styleName="Slide__inner" style={{ ...style, position: 'relative' }}>
-        <table width="100%" styleName="Slide__inner" style={{ ...style }}>
+      <InnerBlock style={{ ...style, position: 'relative' }}>
+        <InnerTable width="100%" style={{ ...style }}>
           <tbody>
             <tr>
-              <td colSpan={3} styleName="Slide__top" width="100%" height={10}>
+              <TopTable colSpan={3} width="100%" height={10}>
                 {top}
-              </td>
+              </TopTable>
             </tr>
             <tr>
-              <td styleName="Slide__left">
+              <LeftTable>
                 {left}
-              </td>
+              </LeftTable>
               <td width="100%" style={{ height: style.minHeight }}>
-                <div styleName="Slide__content">
+                <Content>
                   {content}
                   {children}
-                </div>
+                </Content>
               </td>
-              <td styleName="Slide__right">
+              <RightTable>
                 {right}
-              </td>
+              </RightTable>
             </tr>
             <tr>
-              <td colSpan={3} styleName="Slide__bottom" width="100%" height={10}>
+              <BottomTable colSpan={3} width="100%" height={10}>
                 {bottom}
-              </td>
+              </BottomTable>
             </tr>
           </tbody>
-        </table>
-      </div>
+        </InnerTable>
+      </InnerBlock>
     );
   }
 
@@ -171,66 +208,54 @@ export default class Slide extends Component {
       style.minWidth = width;
     }
     return (
-      <div styleName="Slide__inner" style={style}>
+      <InnerBlock style={style}>
         <If condition={top}>
-          <div styleName="Slide__top">
+          <TopBlock>
             {top}
-          </div>
+          </TopBlock>
         </If>
-        <div styleName="Slide__middle">
+        <Middle>
           <If condition={left}>
-            <div styleName="Slide__left">
+            <LeftBlock>
               {left}
-            </div>
+            </LeftBlock>
           </If>
-          <div styleName="Slide__center">
-            <div styleName="Slide__content">
+          <Center>
+            <Content>
               {content}
               {children}
-            </div>
-          </div>
+            </Content>
+          </Center>
           <If condition={right}>
-            <div styleName="Slide__right">
+            <RightBlock>
               {right}
-            </div>
+            </RightBlock>
           </If>
-        </div>
+        </Middle>
         <If condition={bottom}>
-          <div styleName="Slide__bottom">
+          <BottomBlock>
             {bottom}
-          </div>
+          </BottomBlock>
         </If>
-      </div>
+      </InnerBlock>
     );
-  }
-
-  _ie() {
-    const ie = typeof window !== 'undefined' && (
-      window.navigator.userAgent.indexOf('MSIE ') > 0 ||
-      !!window.navigator.userAgent.match(/Trident.*rv\:11\./)
-    );
-    // ie && console.log('ie', ie);
-    return ie;
   }
 
   render() {
     const { style, color, className, fixed, center, stretch } = this.props;
     style.backgroundColor = color;
     return (
-      <div
-        styleName={cx({
-          Slide: true,
-          Slide_stretch: stretch,
-          Slide_fixed: fixed,
-          Slide_center: center,
-          Slide_ie: this._ie(),
-        })}
+      <SlideFrame
+        stretch={stretch}
+        fixed={fixed}
+        center={center}
+        ie={this._ie()}
         className={className}
         style={style}
       >
         {this._ie() ? this.renderInnerIE() : this.renderInner()}
         {this.renderBg()}
-      </div>
+      </SlideFrame>
     );
   }
 }

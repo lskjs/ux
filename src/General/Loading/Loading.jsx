@@ -1,30 +1,27 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import css from 'importcss';
-import Refresh from 'react-icons2/fa/refresh';
+import Refresh from 'react-icons2/mdi/refresh';
+import Block from './Loading.styles';
 
-@css(require('./Loading.css'))
 export default class Loading extends PureComponent {
   static defaultProps = {
     text: 'Загрузка...',
     icon: <Refresh />,
+    full: false,
   }
   static propTypes = {
     text: PropTypes.string,
     icon: PropTypes.any,
+    full: PropTypes.bool,
   };
 
   render() {
-    const { text, icon } = this.props;
-
-    const style = this.props.full ? {
-      height: '87vh',
-    } : {};
+    const { text, icon, full } = this.props;
 
     return (
-      <div styleName="block" style={style}>
+      <Block full={full}>
         {icon}<span>{text}</span>
-      </div>
+      </Block>
     );
   }
 }

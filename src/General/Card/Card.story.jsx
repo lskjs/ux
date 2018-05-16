@@ -1,8 +1,8 @@
 import React from 'react';
 import Card from './Card';
 
-module.exports = function ({ storiesOf, action }) {
-  return storiesOf('Card', module)
+module.exports = ({ storiesOf }) => (
+  storiesOf('Card', module)
     .add('Inner', () => (
       <Card>
         Some inner
@@ -102,8 +102,8 @@ module.exports = function ({ storiesOf, action }) {
         Впервые на Skill Branch?
         &nbsp;
         <a href="йцу">
-           Создайте аккаунт
+            Создайте аккаунт
         </a>
       </Card>
-    ));
-};
+    ))
+);

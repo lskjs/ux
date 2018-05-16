@@ -1,13 +1,8 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import importcss from 'importcss';
-import cx from 'classnames';
-import omit from 'lodash/omit';
-import Link from '../Link';
-import styles from './A.css';
+import Tag from './A.styles';
 
-@importcss(styles)
-export default class A extends PureComponent {
+class A extends PureComponent {
   static defaultProps = {
     bsStyle: 'primary',
     className: null,
@@ -21,20 +16,22 @@ export default class A extends PureComponent {
     to: PropTypes.string,
   }
   render() {
-    const { bsStyle, className, href, to } = this.props;
+    const {
+      bsStyle,
+      className,
+      href,
+      to,
+      ...props
+    } = this.props;
     return (
-      <Link
-        {...omit(this.props, ['bsStyle'])}
-        className={styleName(
-          styles,
-          cx({
-            A: true,
-            [`A_style_${bsStyle}`]: bsStyle,
-          }),
-          className,
-        )}
+      <Tag
+        className={className}
+        bsStyle={bsStyle}
         href={href || to}
+        {...props}
       />
     );
   }
 }
+
+export default A;

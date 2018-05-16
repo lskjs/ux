@@ -1,17 +1,16 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import importcss from 'importcss';
+import Block from './Page.styles';
 
-@importcss(require('./Page.css'))
 export default class Page extends PureComponent {
   static propTypes = {
     children: PropTypes.any.isRequired,
   };
   render() {
     return (
-      <div styleName="Page">
+      <Block>
         {this.props.children}
-      </div>
+      </Block>
     );
   }
 }

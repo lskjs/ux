@@ -1,12 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import autobind from 'core-decorators/lib/autobind';
-import importcss from 'importcss';
-import cx from 'classnames';
-import validate from 'validate.js';
-import find from 'lodash/find';
-import set from 'lodash/set';
-import get from 'lodash/get';
 import DebounceInput from 'react-debounce-input'
 import {
   Form as BsForm,
@@ -18,16 +12,14 @@ import {
   Button,
   Col,
 } from 'react-bootstrap';
-import Component from '../Component';
 import PureComponent from '../PureComponent';
-import FormBase from '../FormBase'
+import FormBase from '../FormBase';
 
 class Input extends PureComponent {
-
   @autobind
   onChange(e) {
-    let value = e.target.value;
-    this.props.onChange && this.props.onChange(value);
+    const { value } = e.target;
+    if (this.props.onChange) this.props.onChange(value);
   }
 
   render() {
@@ -41,9 +33,6 @@ class Input extends PureComponent {
   }
 }
 
-
-
-// @importcss(require('./Form.css')) // eslint-disable-line
 export default class Form extends FormBase {
   static Input = Input;
   static defaultProps = {
@@ -74,7 +63,6 @@ export default class Form extends FormBase {
 
   @autobind
   renderFormControl(item) {
-    const { Input } = this.constructor;
     const { Control } = item;
     let control;
     if (Control) {
@@ -96,7 +84,7 @@ export default class Form extends FormBase {
       );
     }
     return (
-      <div>
+      <React.Fragment>
         <If condition={item.icon}>
           <InputGroup>
             <InputGroup.Addon>
@@ -119,13 +107,13 @@ export default class Form extends FormBase {
             {item.help}
           </HelpBlock>
         </If>
-      </div>
+      </React.Fragment>
     );
   }
 
    renderFormGroup(itemOrName, key) {
     // console.log('renderFormGroup', {itemOrName});
-    if (!itemOrName) return;
+    if (!itemOrName) return null;
     const { horizontal } = this.props;
     const item = typeof itemOrName === 'string' ? this.getField(itemOrName) : itemOrName;
     if (horizontal) {
@@ -174,44 +162,33 @@ export default class Form extends FormBase {
     // };
 
     // const SubmitButtonComponent = submitButtonComponent || Button;
-    let button
+    let button;
     if (typeof submitButton === 'string') {
       button = (
-        <SubmitButtonComponent type="submit" bsStyle='primary'>
+        <SubmitButtonComponent type="submit" bsStyle="primary">
           {submitButton}
         </SubmitButtonComponent>
-      )
+      );
     } else {
       button = submitButton;
     }
     //   return (
     return (
-      <div style={{
-        textAlign: 'center',
-      }}>
+      <div style={{ textAlign: 'center' }}>
         {button}
       </div>
     );
-    //   );
-    // }
-    // return (
-    //   <div styleName={style}>
-    //     {submitButton}
-    //   </div>
-    // );
   }
 
   render() {
     const { horizontal, formComponent } = this.props;
     const FormComponent = formComponent || BsForm;
 
-    return  (
+    return (
       <FormComponent horizontal={horizontal} onSubmit={this.handleSubmit}>
         {this.renderFields(this._getFields())}
         {this.renderSubmitButton()}
       </FormComponent>
-    )
-
+    );
   }
-
 }
