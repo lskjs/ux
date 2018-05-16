@@ -10,7 +10,7 @@
     "resolve": {
       "alias": {
         "~": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fsrc",
-        "lsk-general": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fsrc",
+        "lsk-general": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fssrc",
         "react": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fnode_modules\u002Freact",
         "react-dom": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fnode_modules\u002Freact-dom"
       },
@@ -55,6 +55,14 @@
                 "@babel\u002Fpreset-react"
               ],
               "plugins": [
+                "module:jsx-control-statements",
+                "@babel\u002Fplugin-proposal-decorators",
+                [
+                  "@babel\u002Fplugin-proposal-class-properties",
+                  {
+                    "loose": true
+                  }
+                ],
                 [
                   "@babel\u002Fplugin-transform-runtime",
                   {
@@ -216,27 +224,12 @@
               "name": "[path][name].[ext]?[hash]"
             }
           }
-        },
-        {
-          "exclude": [
-            /\.(js|jsx|mjs)$/,
-            /\.(css|less|styl|scss|sass|sss)$/,
-            /\.(bmp|gif|jpg|jpeg|png|svg)$/,
-            /\.json$/,
-            /\.txt$/,
-            /\.md$/
-          ],
-          "loader": "file-loader",
-          "options": {
-            "name": "[path][name].[ext]?[hash]"
-          }
         }
       ]
     },
     "plugins": [
       {
         "options": {
-          "debug": true,
           "test": {
             "test": () => true
           }
@@ -313,7 +306,7 @@
     "resolve": {
       "alias": {
         "~": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fsrc",
-        "lsk-general": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fsrc",
+        "lsk-general": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fssrc",
         "react": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fnode_modules\u002Freact",
         "react-dom": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fnode_modules\u002Freact-dom"
       },
@@ -358,6 +351,14 @@
                 "@babel\u002Fpreset-react"
               ],
               "plugins": [
+                "module:jsx-control-statements",
+                "@babel\u002Fplugin-proposal-decorators",
+                [
+                  "@babel\u002Fplugin-proposal-class-properties",
+                  {
+                    "loose": true
+                  }
+                ],
                 [
                   "@babel\u002Fplugin-transform-runtime",
                   {
@@ -519,27 +520,12 @@
               "name": "[path][name].[ext]?[hash]"
             }
           }
-        },
-        {
-          "exclude": [
-            /\.(js|jsx|mjs)$/,
-            /\.(css|less|styl|scss|sass|sss)$/,
-            /\.(bmp|gif|jpg|jpeg|png|svg)$/,
-            /\.json$/,
-            /\.txt$/,
-            /\.md$/
-          ],
-          "loader": "file-loader",
-          "options": {
-            "name": "[path][name].[ext]?[hash]"
-          }
         }
       ]
     },
     "plugins": [
       {
         "options": {
-          "debug": true,
           "test": {
             "test": () => true
           }

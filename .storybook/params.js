@@ -1,8 +1,12 @@
-const d = require('glob-loader!./glob.txt');
-console.log({d});
+import React from 'react';
+// require('/Users/isuvorov/projects/lskjs/lsk-general/src/Test.story');
+// require('lsk-general/General/Test.story')
+// require('../asdsrc/Test.story')
+// require('../asdsrc/Test.story')
+// require('~/Test.story')
 
 export default {
-  modules: require('glob-loader!./glob.txt'),
+  modules: require('./stories').default,
   options: {
     name: 'lsk-general',
   },

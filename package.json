@@ -9,6 +9,7 @@
     "prop-types": "15.6.1",
     "react-bootstrap": "0.32.1",
     "react-debounce-input": "3.2.0",
+    "react-dom": "^16.3.2",
     "react-drive-in": "1.7.3",
     "react-image-fallback": "7.0.1",
     "validate.js": "0.12.0"
@@ -20,7 +21,7 @@
   },
   "devDependencies": {
     "babel-core": "^7.0.0-bridge.0",
-    "@lskjs/build": "1.18.3",
+    "@lskjs/build": "1.19.0",
     "@babel/cli": "7.0.0-beta.42",
     "@babel/core": "7.0.0-beta.42",
     "@babel/node": "7.0.0-beta.42",
@@ -46,7 +47,7 @@
     "markdown-it-emoji": "1.4.0",
     "postcss-loader": "2.1.5",
     "react-hot-loader": "4.1.3",
-    "storybox": "0.5.2",
+    "storybox": "1.0.1",
     "webpack": "4.8.3"
   },
   "scripts": {
@@ -59,7 +60,8 @@
     "start": "node build/server.js",
     "dev": "npm run storybook",
     "release": "sh -c 'npm publish --access=public'",
-    "storybook": "start-storybook -p 9001 -c .storybook",
+    "storybook": "npm run build-stories && start-storybook -p 9001 -c .storybook",
+    "build-stories": "node node_modules/storybox/glob.js \"ssrc/**/*.story.jsx\" .storybook/stories.js ../",
     "build-storybook": "build-storybook -c .storybook -o .out",
     "deploy-storybook": "storybook-to-ghpages"
   }
