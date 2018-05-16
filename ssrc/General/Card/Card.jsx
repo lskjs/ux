@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import importcss from 'importcss';
+// import importcss from 'importcss';
 import Link from '../Link';
 
-@importcss(require('./Card.css'))
+
+// @importcss(require('./Card.css'))
 export default class Card extends Component {
   static defaultProps = {
     wrap: false,
@@ -40,7 +41,7 @@ export default class Card extends Component {
   }
 }
 
-@importcss(require('./Card.css'))
+// @importcss(require('./Card.css'))
 export class CardSeparator extends Component {
   render() {
     return <div styleName="separator" />;
@@ -49,7 +50,7 @@ export class CardSeparator extends Component {
 Card.Separator = CardSeparator;
 
 
-@importcss(require('./Card.css'))
+// @importcss(require('./Card.css'))
 export class CardContent extends Component {
   render() {
     return (<div styleName="card-text">
@@ -60,7 +61,7 @@ export class CardContent extends Component {
 Card.Content = CardContent;
 
 
-@importcss(require('./Card.css'))
+// @importcss(require('./Card.css'))
 export class CardItem extends Component {
   static propTypes = {
     children: PropTypes.any.isRequired,
@@ -75,7 +76,7 @@ export class CardItem extends Component {
 }
 Card.Item = CardItem;
 
-@importcss(require('./Card.css'))
+// @importcss(require('./Card.css'))
 export class CardPhoto extends Component {
   static propTypes = {
     children: PropTypes.any.isRequired,
@@ -93,7 +94,7 @@ export class CardPhoto extends Component {
 }
 Card.Photo = CardPhoto;
 
-@importcss(require('./Card.css'))
+// @importcss(require('./Card.css'))
 export class CardNumber extends Component {
   static propTypes = {
     title: PropTypes.string.isRequired,
@@ -110,7 +111,7 @@ export class CardNumber extends Component {
 }
 Card.Number = CardNumber;
 
-@importcss(require('./Card.css'))
+// @importcss(require('./Card.css'))
 export class CardNumbers extends Component {
   static defaultProps = {
     items: null,
@@ -135,7 +136,7 @@ export class CardNumbers extends Component {
 Card.Numbers = CardNumbers;
 
 
-@importcss(require('./Card.css'))
+// @importcss(require('./Card.css'))
 export class CardButtons extends Component {
   static propTypes = {
     children: PropTypes.any.isRequired,
@@ -156,7 +157,7 @@ export class CardButtons extends Component {
 Card.Item = CardItem;
 
 
-@importcss(require('./Card.css'))
+// @importcss(require('./Card.css'))
 class PostCard extends Component {
   static defaultProps = {
     likes: 0,

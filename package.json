@@ -25,7 +25,7 @@
   },
   "devDependencies": {
     "babel-core": "^7.0.0-bridge.0",
-    "@lskjs/build": "1.19.0",
+    "@lskjs/build": "1.19.1",
     "@babel/cli": "7.0.0-beta.42",
     "@babel/core": "7.0.0-beta.42",
     "@babel/node": "7.0.0-beta.42",
@@ -52,7 +52,7 @@
     "markdown-it-emoji": "1.4.0",
     "postcss-loader": "2.1.5",
     "react-hot-loader": "4.1.3",
-    "storybox": "1.0.1",
+    "storybox": "1.0.2",
     "webpack": "4.8.3"
   },
   "scripts": {
