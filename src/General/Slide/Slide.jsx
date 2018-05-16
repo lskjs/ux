@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import importcss from 'importcss';
 import ReactDriveIn from 'react-drive-in';
 import cx from 'classnames';
-import Component from 'lsk-general/General/Component';
+// import Component from 'lsk-general/General/Component';
+import Component from '../Component';
 
 @importcss(require('./Slide.css'))
 export default class Slide extends Component {

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import PureComponent from 'lsk-general/General/PureComponent';
+// import PureComponent from 'lsk-general/General/PureComponent';
+import PureComponent from '../PureComponent';
 import isNull from 'lodash/isNull';
 import isString from 'lodash/isString';
 import ReactImageFallback from 'react-image-fallback';

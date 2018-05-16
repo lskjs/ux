@@ -1,10 +1,9 @@
 {
-  "name": "@lsk/general",
+  "name": "@lskjs/general",
   "version": "0.14.0",
   "author": "isuvorov",
   "license": "MIT",
   "dependencies": {
-    "@lskjs/build": "1.18.1",
     "core-decorators": "0.20.0",
     "importcss": "1.1.6",
     "prop-types": "15.6.1",
@@ -20,6 +19,8 @@
     "react-dom": "15.4.2"
   },
   "devDependencies": {
+    "babel-core": "^7.0.0-bridge.0",
+    "@lskjs/build": "1.18.3",
     "@babel/cli": "7.0.0-beta.42",
     "@babel/core": "7.0.0-beta.42",
     "@babel/node": "7.0.0-beta.42",
