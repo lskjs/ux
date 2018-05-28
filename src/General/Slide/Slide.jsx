@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReactDriveIn from 'react-drive-in';
-import Component from 'lsk-general/General/Component';
+import Component from '../Component';
 import {
   Content,
   Middle,

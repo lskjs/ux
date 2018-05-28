@@ -10,7 +10,7 @@
     "resolve": {
       "alias": {
         "~": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fsrc",
-        "lsk-general": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fssrc",
+        "lsk-general": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fsrc",
         "react": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fnode_modules\u002Freact",
         "react-dom": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fnode_modules\u002Freact-dom"
       },
@@ -77,7 +77,7 @@
           "test": /\.g(lobal)?\.css$/,
           "loader": [
             {
-              "loader": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flsk-build\u002Fnode_modules\u002Fextract-text-webpack-plugin\u002Fdist\u002Floader.js",
+              "loader": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fnode_modules\u002Fextract-text-webpack-plugin\u002Fdist\u002Floader.js",
               "options": {
                 "omit": 0,
                 "remove": true
@@ -106,7 +106,7 @@
           "exclude": /\.g(lobal)?\.css$/,
           "loader": [
             {
-              "loader": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flsk-build\u002Fnode_modules\u002Fextract-text-webpack-plugin\u002Fdist\u002Floader.js",
+              "loader": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fnode_modules\u002Fextract-text-webpack-plugin\u002Fdist\u002Floader.js",
               "options": {
                 "omit": 0,
                 "remove": true
@@ -135,7 +135,7 @@
           "test": /\.g(lobal)?\.scss$/,
           "loader": [
             {
-              "loader": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flsk-build\u002Fnode_modules\u002Fextract-text-webpack-plugin\u002Fdist\u002Floader.js",
+              "loader": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fnode_modules\u002Fextract-text-webpack-plugin\u002Fdist\u002Floader.js",
               "options": {
                 "omit": 0,
                 "remove": true
@@ -167,7 +167,7 @@
           "exclude": /\.g(lobal)?\.scss$/,
           "loader": [
             {
-              "loader": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flsk-build\u002Fnode_modules\u002Fextract-text-webpack-plugin\u002Fdist\u002Floader.js",
+              "loader": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fnode_modules\u002Fextract-text-webpack-plugin\u002Fdist\u002Floader.js",
               "options": {
                 "omit": 0,
                 "remove": true
@@ -306,7 +306,7 @@
     "resolve": {
       "alias": {
         "~": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fsrc",
-        "lsk-general": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fssrc",
+        "lsk-general": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fsrc",
         "react": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fnode_modules\u002Freact",
         "react-dom": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fnode_modules\u002Freact-dom"
       },
@@ -373,7 +373,7 @@
           "test": /\.g(lobal)?\.css$/,
           "loader": [
             {
-              "loader": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flsk-build\u002Fnode_modules\u002Fextract-text-webpack-plugin\u002Fdist\u002Floader.js",
+              "loader": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fnode_modules\u002Fextract-text-webpack-plugin\u002Fdist\u002Floader.js",
               "options": {
                 "omit": 0,
                 "remove": true
@@ -402,7 +402,7 @@
           "exclude": /\.g(lobal)?\.css$/,
           "loader": [
             {
-              "loader": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flsk-build\u002Fnode_modules\u002Fextract-text-webpack-plugin\u002Fdist\u002Floader.js",
+              "loader": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fnode_modules\u002Fextract-text-webpack-plugin\u002Fdist\u002Floader.js",
               "options": {
                 "omit": 0,
                 "remove": true
@@ -431,7 +431,7 @@
           "test": /\.g(lobal)?\.scss$/,
           "loader": [
             {
-              "loader": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flsk-build\u002Fnode_modules\u002Fextract-text-webpack-plugin\u002Fdist\u002Floader.js",
+              "loader": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fnode_modules\u002Fextract-text-webpack-plugin\u002Fdist\u002Floader.js",
               "options": {
                 "omit": 0,
                 "remove": true
@@ -463,7 +463,7 @@
           "exclude": /\.g(lobal)?\.scss$/,
           "loader": [
             {
-              "loader": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flsk-build\u002Fnode_modules\u002Fextract-text-webpack-plugin\u002Fdist\u002Floader.js",
+              "loader": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fnode_modules\u002Fextract-text-webpack-plugin\u002Fdist\u002Floader.js",
               "options": {
                 "omit": 0,
                 "remove": true
