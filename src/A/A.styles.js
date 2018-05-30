@@ -2,23 +2,23 @@ import styled, { css } from 'react-emotion';
 import Link from '../Link';
 
 const defaultStyle = ({ theme }) => css`
-  color: ${theme.colors.default};
+  color: ${theme.colors && theme.colors.default};
   &:hover {
-    color: ${theme.colors.darkGray};
+    color: ${theme.colors && theme.colors.darkGray};
   }
 `;
 
 const primaryStyle = ({ theme }) => css`
-  color: ${theme.colors.primary};
+  color: ${theme.colors && theme.colors.primary};
   &:hover {
-    color: ${theme.colors.primaryHover};
+    color: ${theme.colors && theme.colors.primaryHover};
   }
 `;
 
 const secondaryStyle = ({ theme }) => css`
-  color: ${theme.colors.secondary};
+  color: ${theme.colors && theme.colors.secondary};
   &:hover {
-    color: ${theme.colors.secondaryHover};
+    color: ${theme.colors && theme.colors.secondaryHover};
   }
 `;
 

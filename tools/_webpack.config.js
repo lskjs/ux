@@ -1,12 +1,18 @@
 [
   {
     "name": "client",
-    "mode": "development",
     "context": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fsrc",
-    "target": "web",
-    "entry": [
-      ".\u002Fclient.js"
-    ],
+    "mode": "development",
+    "output": {
+      "path": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fbuild\u002Fpublic\u002Fassets",
+      "publicPath": "\u002Fassets\u002F",
+      "pathinfo": false,
+      "filename": "[name].js?[chunkhash]",
+      "chunkFilename": "module_[name].js?[chunkhash]",
+      "devtoolModuleFilenameTemplate": function devtoolModuleFilenameTemplate(info) {
+          return _path.default.resolve(info.absoluteResourcePath).replace(/\\/g, '/');
+        }
+    },
     "resolve": {
       "alias": {
         "~": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fsrc",
@@ -26,51 +32,62 @@
         "node_modules"
       ]
     },
-    "output": {
-      "path": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fbuild\u002Fpublic\u002Fassets",
-      "publicPath": "\u002Fassets\u002F",
-      "pathinfo": false,
-      "devtoolModuleFilenameTemplate": function devtoolModuleFilenameTemplate(info) {
-          return _path.default.resolve(info.absoluteResourcePath).replace(/\\/g, '/');
-        },
-      "filename": "[name].js?[chunkhash]",
-      "chunkFilename": "module_[name].js?[chunkhash]"
+    "entry": {
+      "client": [
+        "@babel\u002Fpolyfill",
+        ".\u002Fclient.js"
+      ]
     },
+    "target": "web",
     "module": {
       "strictExportPresence": true,
       "rules": [
         {
-          "test": /\.(jsx|js)?$/,
+          "test": /\.(js|jsx|mjs)$/,
           "include": [
             "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fsrc"
           ],
-          "use": {
-            "loader": "babel-loader",
-            "options": {
-              "cacheDirectory": true,
-              "babelrc": false,
-              "presets": [
+          "loader": "babel-loader",
+          "options": {
+            "cacheDirectory": true,
+            "babelrc": false,
+            "presets": [
+              [
                 "@babel\u002Fpreset-env",
-                "@babel\u002Fpreset-stage-0",
-                "@babel\u002Fpreset-react"
+                {
+                  "targets": {
+                    "browsers": [],
+                    "forceAllTransforms": false
+                  },
+                  "modules": false,
+                  "useBuiltIns": false,
+                  "debug": false
+                }
               ],
-              "plugins": [
-                "module:jsx-control-statements",
-                "@babel\u002Fplugin-proposal-decorators",
-                [
-                  "@babel\u002Fplugin-proposal-class-properties",
-                  {
-                    "loose": true
-                  }
-                ],
-                [
-                  "@babel\u002Fplugin-transform-runtime",
-                  {
-                    "polyfill": false
-                  }
-                ]
+              [
+                "@babel\u002Fpreset-react",
+                {
+                  "development": true
+                }
+              ],
+              "@babel\u002Fpreset-stage-0"
+            ],
+            "plugins": [
+              "module:jsx-control-statements",
+              "@babel\u002Fplugin-proposal-decorators",
+              [
+                "@babel\u002Fplugin-proposal-class-properties",
+                {
+                  "loose": true
+                }
+              ],
+              [
+                "@babel\u002Fplugin-transform-runtime",
+                {
+                  "polyfill": false
+                }
               ]
-            }
+            ]
           }
         },
         {
@@ -88,14 +105,15 @@
               "options": {
                 "sourceMap": false,
                 "modules": false,
-                "minimize": false
+                "minimize": false,
+                "localIdentName": "[name]-[local]-[hash:base64:5]"
               }
             },
             {
               "loader": "postcss-loader",
               "options": {
                 "plugins": function getPostcssModule(bundle) {
-        return _this2.getPostcssModule(bundle);
+        return _this3.getPostcssModule(bundle);
       }
               }
             }
@@ -115,9 +133,9 @@
             {
               "loader": "css-loader",
               "options": {
-                "sourceMap": true,
+                "sourceMap": false,
                 "modules": true,
-                "localIdentName": "[name]_[local]_[hash:base64:3]",
+                "localIdentName": "[name]-[local]-[hash:base64:5]",
                 "minimize": false
               }
             },
@@ -125,7 +143,7 @@
               "loader": "postcss-loader",
               "options": {
                 "plugins": function getPostcssModule(bundle) {
-        return _this2.getPostcssModule(bundle);
+        return _this3.getPostcssModule(bundle);
       }
               }
             }
@@ -146,6 +164,7 @@
               "options": {
                 "sourceMap": false,
                 "modules": false,
+                "localIdentName": "[name]-[local]-[hash:base64:5]",
                 "minimize": false
               }
             },
@@ -153,7 +172,7 @@
               "loader": "postcss-loader",
               "options": {
                 "plugins": function getPostcssModule(bundle) {
-        return _this2.getPostcssModule(bundle);
+        return _this3.getPostcssModule(bundle);
       }
               }
             },
@@ -178,7 +197,7 @@
               "options": {
                 "sourceMap": false,
                 "modules": true,
-                "localIdentName": "[name]_[local]_[hash:base64:3]",
+                "localIdentName": "[name]-[local]-[hash:base64:5]",
                 "minimize": false
               }
             },
@@ -186,7 +205,7 @@
               "loader": "postcss-loader",
               "options": {
                 "plugins": function getPostcssModule(bundle) {
-        return _this2.getPostcssModule(bundle);
+        return _this3.getPostcssModule(bundle);
       }
               }
             },
@@ -196,7 +215,7 @@
           ]
         },
         {
-          "test": /\.(png|jpg|jpeg|gif|svg)(\?.+)?$/,
+          "test": /\.(bmp|gif|jpg|jpeg|png|svg)$/,
           "use": {
             "loader": "url-loader",
             "options": {
@@ -212,7 +231,8 @@
             "options": {
               "name": "[path][name].[ext]?[hash]",
               "mimetype": "application\u002Ffont-woff",
-              "limit": 8192
+              "limit": 8192,
+              "emitFile": true
             }
           }
         },
@@ -221,7 +241,8 @@
           "use": {
             "loader": "file-loader",
             "options": {
-              "name": "[path][name].[ext]?[hash]"
+              "name": "[path][name].[ext]?[hash]",
+              "emitFile": true
             }
           }
         }
@@ -277,32 +298,40 @@
       processor(data, iterator(callback))
     }
   }
-      }
+      },
+      {}
     ],
     "cache": true,
     "bail": false,
     "stats": {
-      "colors": true,
-      "reasons": true,
-      "hash": false,
-      "version": false,
-      "timings": true,
-      "chunks": false,
-      "chunkModules": false,
       "cached": false,
       "cachedAssets": false,
-      "modules": false
+      "chunks": false,
+      "chunkModules": false,
+      "colors": true,
+      "hash": false,
+      "modules": false,
+      "reasons": true,
+      "timings": true,
+      "version": false
     },
-    "devtool": "eval"
+    "devtool": "cheap-module-eval-source-map"
   },
   {
     "name": "server",
-    "mode": "development",
     "context": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fsrc",
-    "target": "node",
-    "entry": [
-      ".\u002Fserver.js"
-    ],
+    "mode": "development",
+    "output": {
+      "path": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fbuild",
+      "publicPath": "\u002Fassets\u002F",
+      "pathinfo": false,
+      "filename": "server.js",
+      "chunkFilename": "chunks\u002F[name].js",
+      "devtoolModuleFilenameTemplate": function devtoolModuleFilenameTemplate(info) {
+          return _path.default.resolve(info.absoluteResourcePath).replace(/\\/g, '/');
+        },
+      "libraryTarget": "commonjs2"
+    },
     "resolve": {
       "alias": {
         "~": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fsrc",
@@ -322,51 +351,60 @@
         "node_modules"
       ]
     },
-    "output": {
-      "path": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fbuild\u002Fpublic\u002Fassets",
-      "publicPath": "\u002Fassets\u002F",
-      "pathinfo": false,
-      "devtoolModuleFilenameTemplate": function devtoolModuleFilenameTemplate(info) {
-          return _path.default.resolve(info.absoluteResourcePath).replace(/\\/g, '/');
-        },
-      "filename": "..\u002F..\u002Fserver.js",
-      "libraryTarget": "commonjs2"
+    "entry": {
+      "server": [
+        ".\u002Fserver.js"
+      ]
     },
+    "target": "node",
     "module": {
       "strictExportPresence": true,
       "rules": [
         {
-          "test": /\.(jsx|js)?$/,
+          "test": /\.(js|jsx|mjs)$/,
           "include": [
             "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fsrc"
           ],
-          "use": {
-            "loader": "babel-loader",
-            "options": {
-              "cacheDirectory": true,
-              "babelrc": false,
-              "presets": [
+          "loader": "babel-loader",
+          "options": {
+            "cacheDirectory": true,
+            "babelrc": false,
+            "presets": [
+              [
                 "@babel\u002Fpreset-env",
-                "@babel\u002Fpreset-stage-0",
-                "@babel\u002Fpreset-react"
+                {
+                  "targets": {
+                    "node": "8"
+                  },
+                  "modules": false,
+                  "useBuiltIns": false,
+                  "debug": false
+                }
               ],
-              "plugins": [
-                "module:jsx-control-statements",
-                "@babel\u002Fplugin-proposal-decorators",
-                [
-                  "@babel\u002Fplugin-proposal-class-properties",
-                  {
-                    "loose": true
-                  }
-                ],
-                [
-                  "@babel\u002Fplugin-transform-runtime",
-                  {
-                    "polyfill": false
-                  }
-                ]
+              [
+                "@babel\u002Fpreset-react",
+                {
+                  "development": true
+                }
+              ],
+              "@babel\u002Fpreset-stage-0"
+            ],
+            "plugins": [
+              "module:jsx-control-statements",
+              "@babel\u002Fplugin-proposal-decorators",
+              [
+                "@babel\u002Fplugin-proposal-class-properties",
+                {
+                  "loose": true
+                }
+              ],
+              [
+                "@babel\u002Fplugin-transform-runtime",
+                {
+                  "polyfill": false
+                }
               ]
-            }
+            ]
           }
         },
         {
@@ -384,14 +422,15 @@
               "options": {
                 "sourceMap": false,
                 "modules": false,
-                "minimize": false
+                "minimize": false,
+                "localIdentName": "[name]-[local]-[hash:base64:5]"
               }
             },
             {
               "loader": "postcss-loader",
               "options": {
                 "plugins": function getPostcssModule(bundle) {
-        return _this2.getPostcssModule(bundle);
+        return _this3.getPostcssModule(bundle);
       }
               }
             }
@@ -411,9 +450,9 @@
             {
               "loader": "css-loader",
               "options": {
-                "sourceMap": true,
+                "sourceMap": false,
                 "modules": true,
-                "localIdentName": "[name]_[local]_[hash:base64:3]",
+                "localIdentName": "[name]-[local]-[hash:base64:5]",
                 "minimize": false
               }
             },
@@ -421,7 +460,7 @@
               "loader": "postcss-loader",
               "options": {
                 "plugins": function getPostcssModule(bundle) {
-        return _this2.getPostcssModule(bundle);
+        return _this3.getPostcssModule(bundle);
       }
               }
             }
@@ -442,6 +481,7 @@
               "options": {
                 "sourceMap": false,
                 "modules": false,
+                "localIdentName": "[name]-[local]-[hash:base64:5]",
                 "minimize": false
               }
             },
@@ -449,7 +489,7 @@
               "loader": "postcss-loader",
               "options": {
                 "plugins": function getPostcssModule(bundle) {
-        return _this2.getPostcssModule(bundle);
+        return _this3.getPostcssModule(bundle);
       }
               }
             },
@@ -474,7 +514,7 @@
               "options": {
                 "sourceMap": false,
                 "modules": true,
-                "localIdentName": "[name]_[local]_[hash:base64:3]",
+                "localIdentName": "[name]-[local]-[hash:base64:5]",
                 "minimize": false
               }
             },
@@ -482,7 +522,7 @@
               "loader": "postcss-loader",
               "options": {
                 "plugins": function getPostcssModule(bundle) {
-        return _this2.getPostcssModule(bundle);
+        return _this3.getPostcssModule(bundle);
       }
               }
             },
@@ -492,7 +532,7 @@
           ]
         },
         {
-          "test": /\.(png|jpg|jpeg|gif|svg)(\?.+)?$/,
+          "test": /\.(bmp|gif|jpg|jpeg|png|svg)$/,
           "use": {
             "loader": "url-loader",
             "options": {
@@ -508,7 +548,8 @@
             "options": {
               "name": "[path][name].[ext]?[hash]",
               "mimetype": "application\u002Ffont-woff",
-              "limit": 8192
+              "limit": 8192,
+              "emitFile": false
             }
           }
         },
@@ -517,7 +558,8 @@
           "use": {
             "loader": "file-loader",
             "options": {
-              "name": "[path][name].[ext]?[hash]"
+              "name": "[path][name].[ext]?[hash]",
+              "emitFile": false
             }
           }
         }
@@ -559,47 +601,39 @@
           "raw": true,
           "entryOnly": false
         },
-        "banner": "require(\"source-map-support\").install();"
-      },
-      {
-        "options": {
-          "maxChunks": 1
-        }
+        "banner": () => banner
       }
     ],
     "cache": true,
     "bail": false,
     "stats": {
-      "colors": true,
-      "reasons": true,
-      "hash": false,
-      "version": false,
-      "timings": true,
-      "chunks": false,
-      "chunkModules": false,
       "cached": false,
       "cachedAssets": false,
-      "modules": false
+      "chunks": false,
+      "chunkModules": false,
+      "colors": true,
+      "hash": false,
+      "modules": false,
+      "reasons": true,
+      "timings": true,
+      "version": false
     },
     "externals": [
-      /^\.\/assets$/,
-      function (context, request, callback) {
-          var depsStr = _this2.getDeps().map(function (dep) {
-            return dep.name;
-          }).filter(function (a) {
-            return a;
-          }).join('|');
-
-          var isExternal = request.match(/^[@a-z][a-z\/\.\-0-9]*$/i) && !request.match(/\.(css|less|scss|sss)$/i) && (!depsStr || !request.match(new RegExp("^(".concat(depsStr, ")")))); // console.log('==================');
-          // console.log(depsStr);
-          // console.log(request.match(/^[@a-z][a-z\/\.\-0-9]*$/i), !!request.match(/^[@a-z][a-z\/\.\-0-9]*$/i));
-          // console.log(request.match(/\.(css|less|scss|sss)$/i), !request.match(/\.(css|less|scss|sss)$/i));
-          // console.log(request.match(new RegExp(`^(${depsStr})`)), !request.match(new RegExp(`^(${depsStr})`)));
-          // !Boolean(isExternal) && console.log('!!!!!!!!!!!!ext', request, !request.match(new RegExp(`^(${depsStr})`)), Boolean(isExternal));
-          // console.log('==================');
-
-          callback(null, Boolean(isExternal));
-        }
+      ".\u002Fchunk-manifest.json",
+      ".\u002Fasset-manifest.json",
+      ".\u002Fassets",
+      function (context, request, callback){
+        var moduleName = getModuleName(request, includeAbsolutePaths);
+        if (utils.contains(nodeModules, moduleName) && !utils.containsPattern(whitelist, request)) {
+            if (typeof importType === 'function') {
+                return callback(null, importType(request));
+            }
+            // mark this module as external
+            // https://webpack.js.org/configuration/externals/
+            return callback(null, importType + " " + request);
+        };
+        callback();
+    }
     ],
     "node": {
       "console": false,
@@ -609,6 +643,6 @@
       "__filename": false,
       "__dirname": false
     },
-    "devtool": "source-map"
+    "devtool": "inline-source-map"
   }
 ]
