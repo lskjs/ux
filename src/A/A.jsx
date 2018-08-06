@@ -4,13 +4,11 @@ import Tag from './A.styles';
 
 class A extends PureComponent {
   static defaultProps = {
-    bsStyle: 'primary',
     className: null,
     href: null,
     to: null,
   }
   static propTypes = {
-    bsStyle: PropTypes.string,
     className: PropTypes.string,
     href: PropTypes.string,
     to: PropTypes.string,
@@ -26,7 +24,6 @@ class A extends PureComponent {
     return (
       <Tag
         className={className}
-        bsStyle={bsStyle}
         href={href || to}
         {...props}
       />
