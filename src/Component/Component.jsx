@@ -39,13 +39,13 @@ export default class Component extends React.Component {
 
   setLocation(props = {}) {
     // DEBUG && console.log('setHash', id);
-    if (!__CLIENT__) return null;
+    if (typeof window === 'undefined') return null;
     let url = props.url || (window.location.pathname + window.location.search);
     // if (props.hash) {
-    if (typeof window.history !== 'undefined' && "pushState" in history) {
+    if (typeof window.history !== 'undefined' && 'pushState' in history) {
       DEBUG && console.log('history.pushState 1');
       if (props.hash) {
-        url += '#' + props.hash;
+        url += `#${props.hash}`;
       }
       history.pushState({}, document.title, url);
       // history.pushState({ a: 123}, document.title, window.location.pathname + window.location.search + '#' + id);
@@ -61,6 +61,4 @@ export default class Component extends React.Component {
     //   }
     // }
   }
-
-
 }

@@ -27,7 +27,7 @@ export default class MyModal extends Component {
   constructor(props) {
     super(props);
     this.state = { visible: props.visible };
-    if (__CLIENT__ && window.location.hash.substring(1) === this.props.id) {
+    if (typeof window !== 'undefined' && window.location.hash.substring(1) === this.props.id) {
       this.state.visible = true;
     }
   }
@@ -188,7 +188,9 @@ export class ModalContent extends Component { // eslint-disable-line
     this.context._modal({ type: 'close', id });
   }
   render() {
-    const { id, fullscreen, title, body, children, dialogClassName, onHide, ...otherProps } = this.props;
+    const {
+      id, fullscreen, title, body, children, dialogClassName, onHide, ...otherProps
+    } = this.props;
     const state = this.context._modal({ type: 'state', id });
     return (
       <Modal
