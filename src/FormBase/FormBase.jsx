@@ -184,6 +184,7 @@ export default class FormBase extends Component {
         this.onError(errors);
         return false;
       }
+      return true;
     }
   }
 
