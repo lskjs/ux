@@ -55,7 +55,7 @@ export default class FormBase extends Component {
     }
     let fields = [];
     if (this.getFields) {
-      fields = this.getFields()
+      fields = this.getFields();
     } else if (this.props.fields != null) {
       fields = this.props.fields;
     }
@@ -142,7 +142,7 @@ export default class FormBase extends Component {
 
   getValidators() {
     const { validators, t } = this.props;
-    this._getFields().forEach(field => {
+    this._getFields().forEach((field) => {
       // if (!field.validator) return ;
       validators[field.name] = field.validator || {};
       // console.log('field.required', field.required);
@@ -154,19 +154,20 @@ export default class FormBase extends Component {
           };
         }
       }
-    })
+    });
 
     // console.log({validators}, this.state.data, t);
     return validators;
   }
 
   async getValidatorResults() {
-    return await this.constructor.validate.async(this.state.data, this.getValidators());
+    return this.constructor.validate.async(this.state.data, this.getValidators());
   }
 
   async validate() {
     try {
-      const results = await this.getValidatorResults();
+      // const results =
+      await this.getValidatorResults();
       // console.log('validate', { results });
       return true;
     } catch (err) {
@@ -190,8 +191,8 @@ export default class FormBase extends Component {
     const { onError } = this.props;
     this.setState({ errors });
     if (onError) {
-      return onError(errors)
-    };
+      onError(errors);
+    }
   }
 
 
@@ -207,7 +208,7 @@ export default class FormBase extends Component {
   handleChangeField(name, ...args) {
     // console.log('handleChangeField', name, ...args);
     return async (inputValue) => {
-      await this.setFieldData(name, inputValue, ...args)
+      await this.setFieldData(name, inputValue, ...args);
       this.props.validateOnChange && await this.validate();
       // this.props.validateOnChange && this.validate();
       this.onChange(this.getData());
@@ -223,9 +224,9 @@ export default class FormBase extends Component {
   }
 
   @autobind
-  handleSubmit(e) {
+  async handleSubmit(e) {
     e && e.preventDefault && e.preventDefault();
-    if (this.validate()) {
+    if (await this.validate()) {
       return this.onSubmit(this.getData());
     }
   }
@@ -239,7 +240,7 @@ export default class FormBase extends Component {
   }
 
   getFieldValue(name) {
-    return this.getStatePath('data.' + name);
+    return this.getStatePath(`data.${name}`);
   }
 
   setFieldValue(name, inputValue) {
@@ -248,20 +249,19 @@ export default class FormBase extends Component {
     if (field && field.format) {
       try {
         value = field.format(value);
-      } catch(err) {
+      } catch (err) {
         typeof __DEV__ !== 'undefined' && __DEV__ && console.error('field.format(value) err', err);
       }
     }
     const { removeNull } = this.props;
     if (removeNull && value == null) {
       // console.log('removeStatePath');
-      return this.removeStatePath('data.' + name);
+      return this.removeStatePath(`data.${name}`);
     }
-    return this.setStatePath('data.' + name, value);
+    return this.setStatePath(`data.${name}`, value);
   }
 
   setFieldData(...args) {
     return this.setFieldValue(...args);
   }
-
 }
