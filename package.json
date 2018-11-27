@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/general",
-  "version": "0.15.7",
+  "version": "0.15.8",
   "author": "isuvorov",
   "license": "MIT",
   "dependencies": {
@@ -13,7 +13,7 @@
     "react-bootstrap": "0.32.1",
     "react-debounce-input": "3.2.0",
     "react-dom": "16.4.0",
-    "react-drive-in": "1.7.3",
+    "react-drive-in2": "1.8.1",
     "react-emotion": "9.1.3",
     "react-image-fallback": "7.0.1",
     "validate.js": "0.12.0"
@@ -56,9 +56,9 @@
     "webpack": "4.9.1"
   },
   "scripts": {
+    "babel-build": "rm -rf dist && mkdir dist && cp {package.json,package-lock.json,README.md} dist/ && npx babel src --out-dir dist --source-maps inline --copy-files",
     "release": "npm run babel-build && npm publish --access=public dist",
     "dev": "npm run storybook",
-    "babel-build": "rm -rf dist && mkdir dist && cp {package.json,package-lock.json,README.md} dist/ && npx babel src --out-dir dist --source-maps inline --copy-files",
     "release_old": "sh -c 'npm publish --access=public'",
     "storybook": "npm run build-stories && start-storybook -p 9001 -c .storybook",
     "build-stories": "node node_modules/storybox/glob.js \"src/**/*.story.jsx\" .storybook/stories.js ../",
