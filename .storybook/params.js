@@ -1,16 +1,16 @@
-import React from 'react';
-// require('/Users/isuvorov/projects/lskjs/lsk-general/src/Test.story');
-// require('lsk-general/General/Test.story')
-// require('../asdsrc/Test.story')
-// require('../asdsrc/Test.story')
-// require('~/Test.story')
+const req = require.context(
+  '../src',
+  true,
+  /.story.js|.story.js|.story.jsx|.story.jsx$/,
+);
+
+
 
 export default {
-  modules: require('./stories').default,
+  modules: req.keys().map(req),
   options: {
-    name: 'lsk-general',
+    name: 'LskGeneral',
   },
-  info: false,
-  knob: true,
-  utils: {},
+  info: true,
 };
+

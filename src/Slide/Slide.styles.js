@@ -70,7 +70,7 @@ export const SlideFrame = styled('div')`
 
   ${props => (props.fixed && `
     ${Content} {
-      ${props.theme.mixins.grid};
+      ${props.theme?.mixins?.grid};
     }
   `)}
 

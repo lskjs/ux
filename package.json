@@ -4,12 +4,13 @@
   "author": "isuvorov",
   "license": "MIT",
   "dependencies": {
+    "babel-plugin-emotion": "^9.2.11",
     "core-decorators": "0.20.0",
     "emotion": "9.1.3",
     "emotion-theming": "9.1.2",
     "facepaint": "1.2.1",
     "importcss": "1.1.6",
-    "prop-types": "15.6.1",
+    "prop-types": "^15.6.2",
     "react-bootstrap": "0.32.1",
     "react-debounce-input": "3.2.0",
     "react-dom": "16.4.0",
@@ -19,9 +20,10 @@
     "validate.js": "0.12.0"
   },
   "peerDependencies": {
-    "lodash": "4.17.4",
-    "react": "15.4.2",
-    "react-dom": "15.4.2"
+    "lodash": "^4.17.4",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "prop-types": "^15.6.2"
   },
   "devDependencies": {
     "@babel/cli": "7.0.0-beta.42",
@@ -34,8 +36,8 @@
     "@babel/register": "7.0.0-beta.42",
     "@babel/template": "7.0.0-beta.42",
     "@babel/types": "7.0.0-beta.42",
-    "@lskjs/build": "1.19.9",
-    "@storybook/react": "4.0.0-alpha.6",
+    "@lskjs/build": "^1.19.31",
+    "@storybook/react": "^4.0.9",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "8.2.3",
     "css-loader": "0.28.11",
@@ -48,11 +50,11 @@
     "glob-loader": "0.3.0",
     "highlight.js": "9.12.0",
     "json-loader": "0.5.7",
-    "markdown-it": "8.4.1",
+    "markdown-it": "^8.4.2",
     "markdown-it-emoji": "1.4.0",
     "postcss-loader": "2.1.5",
     "react-hot-loader": "4.2.0",
-    "storybox": "1.0.2",
+    "storybox": "1.0.3",
     "webpack": "4.9.1"
   },
   "scripts": {

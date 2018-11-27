@@ -120,15 +120,6 @@ module.exports = function ({ storiesOf, action, knob }) {
         count={20}
       />
     ))
-    .add('disable offset between avatars', () => (
-      <AvatarGroup
-        offset={0.2}
-
-        items={range(5).map(user)}
-        limit={3}
-        count={20}
-      />
-    ))
     .add('Items + count + limit + link', () => (
       <div>
         <AvatarGroup

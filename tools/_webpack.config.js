@@ -52,25 +52,9 @@
             "cacheDirectory": true,
             "babelrc": false,
             "presets": [
-              [
-                "@babel\u002Fpreset-env",
-                {
-                  "targets": {
-                    "browsers": [],
-                    "forceAllTransforms": false
-                  },
-                  "modules": false,
-                  "useBuiltIns": false,
-                  "debug": false
-                }
-              ],
-              [
-                "@babel\u002Fpreset-react",
-                {
-                  "development": true
-                }
-              ],
-              "@babel\u002Fpreset-stage-0"
+              "@babel\u002Fpreset-env",
+              "@babel\u002Fpreset-stage-0",
+              "@babel\u002Fpreset-react"
             ],
             "plugins": [
               "module:jsx-control-statements",
@@ -280,22 +264,30 @@
       },
       {
         "options": {
-          "path": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fbuild",
           "filename": "assets.js",
           "prettyPrint": false,
           "update": false,
           "fullPath": true,
+          "manifestFirst": true,
+          "useCompilerPath": false,
+          "fileTypes": [
+            "js",
+            "css"
+          ],
+          "includeAllFileTypes": true,
+          "keepInMemory": false,
+          "path": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fbuild",
           "processOutput": function processOutput(x) {
           return "module.exports = ".concat(JSON.stringify(x), ";");
         }
         },
-        "writer": function queuedWriter(data, callback) {
-    var empty = !queue.length
-    queue.push({data: data, callback: callback})
+        "writer": function queuedWriter(fs, data, callback) {
+    var empty = !queue.length;
+    queue.push({ fs: fs, data: data, callback: callback });
 
     if (empty) {
-            // start processing
-      processor(data, iterator(callback))
+      // start processing
+      processor(fs, data, iterator(callback));
     }
   }
       },
@@ -370,24 +362,9 @@
             "cacheDirectory": true,
             "babelrc": false,
             "presets": [
-              [
-                "@babel\u002Fpreset-env",
-                {
-                  "targets": {
-                    "node": "8"
-                  },
-                  "modules": false,
-                  "useBuiltIns": false,
-                  "debug": false
-                }
-              ],
-              [
-                "@babel\u002Fpreset-react",
-                {
-                  "development": true
-                }
-              ],
-              "@babel\u002Fpreset-stage-0"
+              "@babel\u002Fpreset-env",
+              "@babel\u002Fpreset-stage-0",
+              "@babel\u002Fpreset-react"
             ],
             "plugins": [
               "module:jsx-control-statements",

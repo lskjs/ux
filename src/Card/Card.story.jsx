@@ -18,11 +18,6 @@ module.exports = ({ storiesOf }) => (
         Sample text sample texte text sample texte text sample texte text sample texte text sample texte text sample texte text sample text
       </Card>
     ))
-    .add('Inner wrap', () => (
-      <Card wrap>
-        Sample content
-      </Card>
-    ))
     .add('Separator', () => (
       <Card title="Sample title" wrap>
         Sample text sample texte text sample texte text sample texte text sample texte text sample texte text sample texte text sample text
@@ -30,17 +25,6 @@ module.exports = ({ storiesOf }) => (
         Sample text sample texte text sample texte text sample texte text sample texte text sample texte text sample texte text sample text
         <Card.Separator />
         Sample text sample texte text sample texte text sample texte text sample texte text sample texte text sample texte text sample text
-      </Card>
-    ))
-    .add('Content', () => (
-      <Card title="Sample title">
-        <Card.Content>
-          Sample text sample texte text sample texte text sample texte text sample texte text sample texte text sample texte text sample text
-          <Card.Separator />
-          Sample text sample texte text sample texte text sample texte text sample texte text sample texte text sample texte text sample text
-          <Card.Separator />
-          Sample text sample texte text sample texte text sample texte text sample texte text sample texte text sample texte text sample text
-        </Card.Content>
       </Card>
     ))
     .add('Content', () => (

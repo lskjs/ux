@@ -196,7 +196,9 @@ export default class Slide extends Component {
 
   renderInner() {
     let { height } = this.props;
-    const { width, top, left, right, bottom, content, children, full } = this.props;
+    const {
+      width, top, left, right, bottom, content, children, full,
+    } = this.props;
     const style = {};
     if (full && !height) {
       height = '100vh';
@@ -242,8 +244,11 @@ export default class Slide extends Component {
   }
 
   render() {
-    const { style, color, className, fixed, center, stretch } = this.props;
-    style.backgroundColor = color;
+    const {
+      style, color, className, fixed, center, stretch,
+    } = this.props;
+    // console.log({ style });
+    // style.backgroundColor = color;
     return (
       <SlideFrame
         stretch={stretch}
@@ -251,7 +256,10 @@ export default class Slide extends Component {
         center={center}
         ie={this._ie()}
         className={className}
-        style={style}
+        style={{
+          ...style,
+          backgroundColor: color,
+        }}
       >
         {this._ie() ? this.renderInnerIE() : this.renderInner()}
         {this.renderBg()}

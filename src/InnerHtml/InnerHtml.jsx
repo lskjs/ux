@@ -13,8 +13,8 @@ const md = (new MarkdownIt({
     if (lang && hljs.getLanguage(lang)) {
       try {
         return `<pre class="hljs"><code>${
-               hljs.highlight(lang, str, true).value
-               }</code></pre>`;
+          hljs.highlight(lang, str, true).value
+        }</code></pre>`;
       } catch (err) {
         console.log(err);
       }
@@ -22,7 +22,7 @@ const md = (new MarkdownIt({
     return `<pre class="hljs"><code>${md.utils.escapeHtml(str)}</code></pre>`;
   },
 }))
-.use(MarkdownItEmoji);
+  .use(MarkdownItEmoji);
 
 // const demo = require('raw!./demo.md');
 // function mdToHtml(str) {
