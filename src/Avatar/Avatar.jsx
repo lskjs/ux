@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import PureComponent from 'lsk-general/General/PureComponent';
-import PureComponent from '../PureComponent';
 import isNull from 'lodash/isNull';
 import isString from 'lodash/isString';
 import ReactImageFallback from 'react-image-fallback';
+// import PureComponent from 'lsk-general/General/PureComponent';
+import PureComponent from '../PureComponent';
 import Link from '../Link';
 
 // import gifSpinner from './img/loading.gif';
@@ -122,6 +122,9 @@ export default class Avatar extends PureComponent {
       boxSizing: 'border-box',
       maxWidth: '100%',
       objectFit: 'cover',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
       // overflow: 'hidden',
       width,
       height,
@@ -192,7 +195,7 @@ export default class Avatar extends PureComponent {
     }, style);
 
     const link = this.props.link || this.props.href;
-    const Component = componentClass || (link ? Link : 'div')
+    const Component = componentClass || (link ? Link : 'div');
 
     return (
       <Component
@@ -207,7 +210,7 @@ export default class Avatar extends PureComponent {
   }
 }
 
-Avatar.Badge = function (props) {
+Avatar.Badge = (props) => {
   const offset = '7%';
   const style = {
     position: 'absolute',

@@ -14,7 +14,7 @@ const user = () => ({
   src: `https://randomuser.me/api/portraits/men/${random(99)}.jpg`,
 });
 
-module.exports = function ({ storiesOf, action, knob }) {
+module.exports = ({ storiesOf, action, knob }) => {
   return storiesOf('Avatar', module)
     .add('Default as img (title,src)', () => (
       <Avatar
@@ -113,7 +113,15 @@ module.exports = function ({ storiesOf, action, knob }) {
         <div>
           <Avatar {...user()} innerStyle={{ boxShadow: '1px 1px 10px 2px #333' }} />
           <Avatar {...user()} innerStyle={{ filter: 'grayscale(100%)' }} />
-          <Avatar {...user()} innerStyle={{ border: '4px solid rgb(244, 67, 54)' }} />
+          <Avatar
+            {...(
+              {
+                id: random(99),
+                title: 'John Smith',
+              }
+            )}
+            innerStyle={{ border: '4px solid rgb(244, 67, 54)' }}
+          />
           <Avatar {...user()} innerStyle={{ border: '4px solid rgba(128, 128, 128, 0.5)' }} src='//broken.site/img.png' />
           <Avatar {...user()} innerStyle={{ border: '2px solid #4CAF50'}} />
           <Avatar {...user()} innerStyle={{ border: '4px solid #F44336' }} />

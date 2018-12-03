@@ -1,5 +1,6 @@
 import React from 'react';
 import Page from './Page';
+
 // import SlideInner from '../SlideInner/SlideInner'
 // import SlideInfoPic from '../SlideInfoPic/SlideInfoPic'
 // import SlideLink from '../SlideLink/SlideLink'
@@ -8,7 +9,7 @@ import Page from './Page';
 // import { Row, Col, Button } from 'react-bootstrap'
 // import { Row, Col } from 'react-bootstrap'
 
-module.exports = function ({ storiesOf, action }) {
+module.exports = ({ storiesOf, action }) => {
   return storiesOf('Page', module)
     .add('Page default no styles', () => (
       <Page>
