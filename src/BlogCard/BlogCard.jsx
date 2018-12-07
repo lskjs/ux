@@ -1,5 +1,8 @@
 import React, { PureComponent } from 'react';
 // import PropTypes from 'prop-types';
+// import Tag from './BlogCard.styles';
+import { Wrapper, Img, Body, Date, Title } from './BlogCard.styles';
+
 
 export default class BlogCard extends PureComponent {
   render() {
@@ -12,23 +15,25 @@ export default class BlogCard extends PureComponent {
       ...props
     } = this.props;
     return (
-      <article
-        className="blog-card"
+      <Wrapper
         {...props}
       >
         <a href={link}>
-          <img src={img} alt="blog cover" />
+          <Img
+            src={img}
+            alt="blog cover"
+          />
         </a>
-        <div className="blog-card__body">
-          <span className="blog-card__date">{date}</span>
-          <h4 className="blog-card__title">{title}</h4>
+        <Body>
+          <Date>{date}</Date>
+          <Title>{title}</Title>
           {children}
           <a href={link} className="link-animated-hover link-hover-v1 text-primary">
             Read More
             {/* <Icon type="arrow-right" /> */}
           </a>
-        </div>
-      </article>
+        </Body>
+      </Wrapper>
     );
   }
 }

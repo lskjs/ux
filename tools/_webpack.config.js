@@ -1,10 +1,10 @@
 [
   {
     "name": "client",
-    "context": "\u002FUsers\u002Fblacklightburn\u002Flsk-general\u002Fsrc",
+    "context": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fsrc",
     "mode": "development",
     "output": {
-      "path": "\u002FUsers\u002Fblacklightburn\u002Flsk-general\u002Fbuild\u002Fpublic\u002Fassets",
+      "path": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fbuild\u002Fpublic\u002Fassets",
       "publicPath": "\u002Fassets\u002F",
       "pathinfo": false,
       "filename": "[name].js?[chunkhash]",
@@ -15,10 +15,10 @@
     },
     "resolve": {
       "alias": {
-        "~": "\u002FUsers\u002Fblacklightburn\u002Flsk-general\u002Fsrc",
-        "lsk-general": "\u002FUsers\u002Fblacklightburn\u002Flsk-general\u002Fsrc",
-        "react": "\u002FUsers\u002Fblacklightburn\u002Flsk-general\u002Fnode_modules\u002Freact",
-        "react-dom": "\u002FUsers\u002Fblacklightburn\u002Flsk-general\u002Fnode_modules\u002Freact-dom"
+        "~": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fsrc",
+        "lsk-general": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fsrc",
+        "react": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fnode_modules\u002Freact",
+        "react-dom": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fnode_modules\u002Freact-dom"
       },
       "extensions": [
         ".webpack.js",
@@ -28,7 +28,7 @@
         ".json"
       ],
       "modules": [
-        "\u002FUsers\u002Fblacklightburn\u002Flsk-general\u002Fsrc",
+        "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fsrc",
         "node_modules"
       ]
     },
@@ -45,7 +45,7 @@
         {
           "test": /\.(js|jsx|mjs)$/,
           "include": [
-            "\u002FUsers\u002Fblacklightburn\u002Flsk-general\u002Fsrc"
+            "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fsrc"
           ],
           "loader": "babel-loader",
           "options": {
@@ -70,6 +70,13 @@
                 {
                   "polyfill": false
                 }
+              ],
+              [
+                "emotion",
+                {
+                  "sourceMap": true,
+                  "autoLabel": true
+                }
               ]
             ]
           }
@@ -78,7 +85,7 @@
           "test": /\.g(lobal)?\.css$/,
           "loader": [
             {
-              "loader": "\u002FUsers\u002Fblacklightburn\u002Flsk-general\u002Fnode_modules\u002Fextract-text-webpack-plugin\u002Fdist\u002Floader.js",
+              "loader": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fnode_modules\u002Fextract-text-webpack-plugin\u002Fdist\u002Floader.js",
               "options": {
                 "omit": 0,
                 "remove": true
@@ -97,7 +104,7 @@
               "loader": "postcss-loader",
               "options": {
                 "plugins": function getPostcssModule(bundle) {
-        return _this3.getPostcssModule(bundle);
+        return _this2.getPostcssModule(bundle);
       }
               }
             }
@@ -108,7 +115,7 @@
           "exclude": /\.g(lobal)?\.css$/,
           "loader": [
             {
-              "loader": "\u002FUsers\u002Fblacklightburn\u002Flsk-general\u002Fnode_modules\u002Fextract-text-webpack-plugin\u002Fdist\u002Floader.js",
+              "loader": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fnode_modules\u002Fextract-text-webpack-plugin\u002Fdist\u002Floader.js",
               "options": {
                 "omit": 0,
                 "remove": true
@@ -127,7 +134,7 @@
               "loader": "postcss-loader",
               "options": {
                 "plugins": function getPostcssModule(bundle) {
-        return _this3.getPostcssModule(bundle);
+        return _this2.getPostcssModule(bundle);
       }
               }
             }
@@ -137,7 +144,7 @@
           "test": /\.g(lobal)?\.scss$/,
           "loader": [
             {
-              "loader": "\u002FUsers\u002Fblacklightburn\u002Flsk-general\u002Fnode_modules\u002Fextract-text-webpack-plugin\u002Fdist\u002Floader.js",
+              "loader": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fnode_modules\u002Fextract-text-webpack-plugin\u002Fdist\u002Floader.js",
               "options": {
                 "omit": 0,
                 "remove": true
@@ -156,7 +163,7 @@
               "loader": "postcss-loader",
               "options": {
                 "plugins": function getPostcssModule(bundle) {
-        return _this3.getPostcssModule(bundle);
+        return _this2.getPostcssModule(bundle);
       }
               }
             },
@@ -170,7 +177,7 @@
           "exclude": /\.g(lobal)?\.scss$/,
           "loader": [
             {
-              "loader": "\u002FUsers\u002Fblacklightburn\u002Flsk-general\u002Fnode_modules\u002Fextract-text-webpack-plugin\u002Fdist\u002Floader.js",
+              "loader": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fnode_modules\u002Fextract-text-webpack-plugin\u002Fdist\u002Floader.js",
               "options": {
                 "omit": 0,
                 "remove": true
@@ -189,7 +196,7 @@
               "loader": "postcss-loader",
               "options": {
                 "plugins": function getPostcssModule(bundle) {
-        return _this3.getPostcssModule(bundle);
+        return _this2.getPostcssModule(bundle);
       }
               }
             },
@@ -276,7 +283,7 @@
           ],
           "includeAllFileTypes": true,
           "keepInMemory": false,
-          "path": "\u002FUsers\u002Fblacklightburn\u002Flsk-general\u002Fbuild",
+          "path": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fbuild",
           "processOutput": function processOutput(x) {
           return "module.exports = ".concat(JSON.stringify(x), ";");
         }
@@ -311,10 +318,10 @@
   },
   {
     "name": "server",
-    "context": "\u002FUsers\u002Fblacklightburn\u002Flsk-general\u002Fsrc",
+    "context": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fsrc",
     "mode": "development",
     "output": {
-      "path": "\u002FUsers\u002Fblacklightburn\u002Flsk-general\u002Fbuild",
+      "path": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fbuild",
       "publicPath": "\u002Fassets\u002F",
       "pathinfo": false,
       "filename": "server.js",
@@ -326,10 +333,10 @@
     },
     "resolve": {
       "alias": {
-        "~": "\u002FUsers\u002Fblacklightburn\u002Flsk-general\u002Fsrc",
-        "lsk-general": "\u002FUsers\u002Fblacklightburn\u002Flsk-general\u002Fsrc",
-        "react": "\u002FUsers\u002Fblacklightburn\u002Flsk-general\u002Fnode_modules\u002Freact",
-        "react-dom": "\u002FUsers\u002Fblacklightburn\u002Flsk-general\u002Fnode_modules\u002Freact-dom"
+        "~": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fsrc",
+        "lsk-general": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fsrc",
+        "react": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fnode_modules\u002Freact",
+        "react-dom": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fnode_modules\u002Freact-dom"
       },
       "extensions": [
         ".webpack.js",
@@ -339,7 +346,7 @@
         ".json"
       ],
       "modules": [
-        "\u002FUsers\u002Fblacklightburn\u002Flsk-general\u002Fsrc",
+        "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fsrc",
         "node_modules"
       ]
     },
@@ -355,7 +362,7 @@
         {
           "test": /\.(js|jsx|mjs)$/,
           "include": [
-            "\u002FUsers\u002Fblacklightburn\u002Flsk-general\u002Fsrc"
+            "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fsrc"
           ],
           "loader": "babel-loader",
           "options": {
@@ -380,6 +387,13 @@
                 {
                   "polyfill": false
                 }
+              ],
+              [
+                "emotion",
+                {
+                  "sourceMap": true,
+                  "autoLabel": true
+                }
               ]
             ]
           }
@@ -388,7 +402,7 @@
           "test": /\.g(lobal)?\.css$/,
           "loader": [
             {
-              "loader": "\u002FUsers\u002Fblacklightburn\u002Flsk-general\u002Fnode_modules\u002Fextract-text-webpack-plugin\u002Fdist\u002Floader.js",
+              "loader": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fnode_modules\u002Fextract-text-webpack-plugin\u002Fdist\u002Floader.js",
               "options": {
                 "omit": 0,
                 "remove": true
@@ -407,7 +421,7 @@
               "loader": "postcss-loader",
               "options": {
                 "plugins": function getPostcssModule(bundle) {
-        return _this3.getPostcssModule(bundle);
+        return _this2.getPostcssModule(bundle);
       }
               }
             }
@@ -418,7 +432,7 @@
           "exclude": /\.g(lobal)?\.css$/,
           "loader": [
             {
-              "loader": "\u002FUsers\u002Fblacklightburn\u002Flsk-general\u002Fnode_modules\u002Fextract-text-webpack-plugin\u002Fdist\u002Floader.js",
+              "loader": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fnode_modules\u002Fextract-text-webpack-plugin\u002Fdist\u002Floader.js",
               "options": {
                 "omit": 0,
                 "remove": true
@@ -437,7 +451,7 @@
               "loader": "postcss-loader",
               "options": {
                 "plugins": function getPostcssModule(bundle) {
-        return _this3.getPostcssModule(bundle);
+        return _this2.getPostcssModule(bundle);
       }
               }
             }
@@ -447,7 +461,7 @@
           "test": /\.g(lobal)?\.scss$/,
           "loader": [
             {
-              "loader": "\u002FUsers\u002Fblacklightburn\u002Flsk-general\u002Fnode_modules\u002Fextract-text-webpack-plugin\u002Fdist\u002Floader.js",
+              "loader": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fnode_modules\u002Fextract-text-webpack-plugin\u002Fdist\u002Floader.js",
               "options": {
                 "omit": 0,
                 "remove": true
@@ -466,7 +480,7 @@
               "loader": "postcss-loader",
               "options": {
                 "plugins": function getPostcssModule(bundle) {
-        return _this3.getPostcssModule(bundle);
+        return _this2.getPostcssModule(bundle);
       }
               }
             },
@@ -480,7 +494,7 @@
           "exclude": /\.g(lobal)?\.scss$/,
           "loader": [
             {
-              "loader": "\u002FUsers\u002Fblacklightburn\u002Flsk-general\u002Fnode_modules\u002Fextract-text-webpack-plugin\u002Fdist\u002Floader.js",
+              "loader": "\u002FUsers\u002Fisuvorov\u002Fprojects\u002Flskjs\u002Flsk-general\u002Fnode_modules\u002Fextract-text-webpack-plugin\u002Fdist\u002Floader.js",
               "options": {
                 "omit": 0,
                 "remove": true
@@ -499,7 +513,7 @@
               "loader": "postcss-loader",
               "options": {
                 "plugins": function getPostcssModule(bundle) {
-        return _this3.getPostcssModule(bundle);
+        return _this2.getPostcssModule(bundle);
       }
               }
             },

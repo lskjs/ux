@@ -13,6 +13,7 @@
     "mobx": "5.6.0",
     "mobx-react": "^5.4.2",
     "prop-types": "^15.6.2",
+    "rc-queue-anim": "^1.6.8",
     "react-bootstrap": "0.32.1",
     "react-debounce-input": "3.2.0",
     "react-dom": "16.4.0",
@@ -66,7 +67,7 @@
     "release": "npm run babel-build && npm publish --access=public dist",
     "dev": "npm run storybook",
     "release_old": "sh -c 'npm publish --access=public'",
-    "storybook": "npm run build-stories && start-storybook -p 9001 -c .storybook",
+    "storybook": "start-storybook -p 9001 -c .storybook",
     "build-stories": "node node_modules/storybox/glob.js \"src/**/*.story.jsx\" .storybook/stories.js ../",
     "build-storybook": "build-storybook -c .storybook -o .out",
     "deploy-storybook": "storybook-to-ghpages"
