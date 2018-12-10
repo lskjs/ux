@@ -21,4 +21,22 @@ export default {
     mainBackground: '#f8f9fd',
     darkerBackground: '#eeeff4',
   },
+  ui: {
+    colors: {
+      default: '#212121',
+      primary: '#007bff',
+      secondary: '#f2f2f2',
+      primaryHover: '',
+      white: '#fff',
+      grey: '#595959',
+      border: 'rgba(0,0,0,.1)',
+      black: '#343a40',
+      blue: '#1890ff',
+      aqua: '#01bcd4',
+      green: '#66bb6a',
+      yellow: '#ffc53d',
+      red: '#ff4d4f',
+    },
+    borderRadius: '6px',
+  },
 };

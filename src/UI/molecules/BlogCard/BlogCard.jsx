@@ -1,10 +1,24 @@
 import React, { PureComponent } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 // import Tag from './BlogCard.styles';
 import { Wrapper, Img, Body, Date, Title } from './BlogCard.styles';
 
 
 export default class BlogCard extends PureComponent {
+  static propTypes = {
+    children: PropTypes.any,
+    link: PropTypes.string,
+    img: PropTypes.string,
+    date: PropTypes.string,
+    title: PropTypes.string,
+  }
+  static defaultProps = {
+    children: null,
+    link: null,
+    img: null,
+    date: null,
+    title: null,
+  }
   render() {
     const {
       children,
@@ -28,10 +42,6 @@ export default class BlogCard extends PureComponent {
           <Date>{date}</Date>
           <Title>{title}</Title>
           {children}
-          <a href={link} className="link-animated-hover link-hover-v1 text-primary">
-            Read More
-            {/* <Icon type="arrow-right" /> */}
-          </a>
         </Body>
       </Wrapper>
     );

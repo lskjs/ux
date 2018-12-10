@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { ThemeProvider } from 'emotion-theming';
 import PropTypes from 'prop-types';
-import theme from './theme';
+import theme from './utils/theme';
 
 class ThemeInjector extends PureComponent {
   static propTypes = {

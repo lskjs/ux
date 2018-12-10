@@ -4,6 +4,7 @@
   "author": "isuvorov",
   "license": "MIT",
   "dependencies": {
+    "antd": "3.11.0",
     "babel-plugin-emotion": "^9.2.11",
     "core-decorators": "0.20.0",
     "emotion": "9.1.3",

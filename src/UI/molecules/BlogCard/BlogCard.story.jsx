@@ -2,7 +2,10 @@ import React from 'react';
 import QueueAnim from 'rc-queue-anim';
 import BlogCard from './BlogCard';
 import { FlexItem, FlexContainer } from './BlogCard.styles';
+import AnimatedLink from '../AnimatedLink';
+import ThemeInjector from '../../../ThemeInjector';
 
+import '../../../antd.css';
 
 const articles = [
   {
@@ -54,29 +57,40 @@ const articles = [
 module.exports = ({ storiesOf }) => (
   storiesOf('BlogCard', module)
     .add('BlogCard', () => (
-      <BlogCard
-        {...articles[0]}
-      >
-        children
-      </BlogCard>
+      <ThemeInjector>
+        <BlogCard
+          {...articles[0]}
+          style={{ width: 280 }}
+        >
+          <AnimatedLink
+            href="//google.com"
+            target="_blank"
+            icon="arrow-right"
+            paint="primary"
+          >
+            Read More
+          </AnimatedLink>
+        </BlogCard>
+      </ThemeInjector>
     ))
     .add('BlogCard2', () => (
-
-      <FlexContainer>
-        {
-              articles.map((article, i) => (
-                <FlexItem
-                  className="flex-item mb-4"
-                >
-                  <QueueAnim type="bottom" className="ui-animate flex-items-container">
-                    <BlogCard
-                      key={i.toString()}
-                      {...article}
-                    />
-                  </QueueAnim>
-                </FlexItem>
-              ))
-            }
-      </FlexContainer>
+      <ThemeInjector>
+        <FlexContainer>
+          {
+                articles.map((article, i) => (
+                  <FlexItem
+                    className="flex-item mb-4"
+                  >
+                    <QueueAnim type="bottom" className="ui-animate flex-items-container">
+                      <BlogCard
+                        key={i.toString()}
+                        {...article}
+                      />
+                    </QueueAnim>
+                  </FlexItem>
+                ))
+              }
+        </FlexContainer>
+      </ThemeInjector>
     ))
 );
