@@ -8,7 +8,7 @@ export const RememberCheckbox = styled(FormItem)`
 `;
 
 export const FormButton = styled(Button)`
-
+ 
 `;
 
 export const Lock = styled(Icon)`
@@ -44,6 +44,10 @@ export const FormWrap = styled(Form)`
 
 export const FormContainer = styled('section')`
   width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   h2, p {
     text-align: center;
   }
@@ -73,12 +77,25 @@ export const FormContainer = styled('section')`
   }
 `;
 
+export const Grid = styled('div')`
+  display:flex;
+  flex-direction:row;
+  height: 100vh;
+`;
+
 export const RightSide = styled('div')`
-  max-width: 50%;
-  text-align: right;
+  display: flex;
+  width: 50%;
 `;
 
 export const LeftSide = styled('div')`
-  max-width: 50%;
-  text-align: left;
+  display: flex;
+  width: 50%;
+`;
+
+export const ImageContainer = styled('div')`
+  background-image: ${p => `url(${p.image})`};
+  background-attachment: fixed;
+  width: 100%;
+  min-height: 300px;
 `;

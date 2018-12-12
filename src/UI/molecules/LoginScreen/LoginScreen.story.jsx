@@ -1,7 +1,6 @@
 import React from 'react';
-import 'antd/dist/antd.css';
 import ThemeInjector from '../../../ThemeInjector';
-
+import '../../../antd.css';
 
 import LoginScreen from './LoginScreen';
 
