@@ -14,10 +14,13 @@ class Layout extends Component {
     children: null,
   }
   render() {
-    const { children, boxed, fixed } = this.props;
+    const {
+      children,
+      boxed,
+      fixed,
+    } = this.props;
     return (
       <LayoutFrame boxed={boxed} fixed={fixed}>
-        <LayoutSidebar />
         {children}
       </LayoutFrame>
     );

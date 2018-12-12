@@ -1,0 +1,29 @@
+import styled from 'react-emotion';
+import { Layout } from 'antd';
+
+const { Header: AntHeader } = Layout;
+
+export default styled(AntHeader)`
+  padding: 0;
+  border: 0;
+
+  &.ant-layout-header {
+    height: 60px;
+    line-height: 60px;
+  }
+
+  .app-header-inner {
+    height: 60px;
+  }
+  
+  .ant-badge { 
+    sup {
+      box-shadow: none;
+    }
+  }
+
+  color: ${p => p.theme.ui.colors.darkGrey};
+  a {
+    color: ${p => p.theme.ui.colors.darkGrey};
+  }
+`;
