@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
-import 'antd/dist/antd.css';
+import '../../../antd.g.css';
 import { FormContainer, WelcomeHeader, FormWrap, RememberCheckbox, RightSide, LeftSide } from './LoginsScreen.styles';
 
 const FormItem = Form.Item;
