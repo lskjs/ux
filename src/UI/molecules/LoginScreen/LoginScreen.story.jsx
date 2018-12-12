@@ -1,6 +1,8 @@
 import React from 'react';
-import 'antd/dist/antd.css';
 import ThemeInjector from '../../../ThemeInjector';
+
+import '../../../antd.g.css';
+import '../../../bootstrap.g.css';
 
 
 import LoginScreen from './LoginScreen';

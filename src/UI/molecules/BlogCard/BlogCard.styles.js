@@ -5,11 +5,16 @@ export const Wrapper = styled('article')`
   background: ${p => p.theme.ui.colors.white};
   border-radius: ${p => p.theme.ui.borderRadius};
   overflow: hidden;
+  max-width: 600px;
 `;
 
 export const Img = styled('img')`
   width: 100%;
   max-width: 100%;
+`;
+
+export const ImgContainer = styled('div')`
+  height: 50%;
 `;
 
 export const Body = styled('div')`

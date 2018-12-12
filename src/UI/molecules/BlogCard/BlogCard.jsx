@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 // import Tag from './BlogCard.styles';
-import { Wrapper, Img, Body, Date, Title } from './BlogCard.styles';
+import { Wrapper, Img, Body, Date, Title, ImgContainer } from './BlogCard.styles';
 
 
 export default class BlogCard extends PureComponent {
@@ -32,12 +32,12 @@ export default class BlogCard extends PureComponent {
       <Wrapper
         {...props}
       >
-        <a href={link}>
+        <ImgContainer>
           <Img
             src={img}
             alt="blog cover"
           />
-        </a>
+        </ImgContainer>
         <Body>
           <Date>{date}</Date>
           <Title>{title}</Title>

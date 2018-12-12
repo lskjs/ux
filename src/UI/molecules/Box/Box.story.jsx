@@ -2,8 +2,8 @@ import React from 'react';
 import ThemeInjector from '../../../ThemeInjector';
 import Box from './Box';
 import AnimatedLink from '../AnimatedLink';
+import '../../../antd.g.css';
 
-import '../../../antd.css';
 import BoxDivider from '../../atoms/BoxDivider';
 
 module.exports = ({ storiesOf }) => (

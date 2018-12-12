@@ -1,5 +1,6 @@
 import styled from 'react-emotion';
-import { Form, Icon, Input, Button, Checkbox } from 'antd';
+import { Row as BsRow, Col as BsCol } from 'reactstrap';
+import { Form, Icon, Button } from 'antd';
 
 const FormItem = Form.Item;
 
@@ -8,7 +9,7 @@ export const RememberCheckbox = styled(FormItem)`
 `;
 
 export const FormButton = styled(Button)`
-
+ 
 `;
 
 export const Lock = styled(Icon)`
@@ -44,6 +45,10 @@ export const FormWrap = styled(Form)`
 
 export const FormContainer = styled('section')`
   width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   h2, p {
     text-align: center;
   }
@@ -73,12 +78,30 @@ export const FormContainer = styled('section')`
   }
 `;
 
-export const RightSide = styled('div')`
-  max-width: 50%;
-  text-align: right;
+export const Row = styled(BsRow)`
+  height: 100vh;
+  margin-left: 0;
+  margin-right: 0;
 `;
 
-export const LeftSide = styled('div')`
-  max-width: 50%;
-  text-align: left;
+export const Col = styled(BsCol)`
+  padding-left: 0;
+  padding-right: 0;
 `;
+
+export const ImageContainer = styled('div')`
+  background-image: ${p => `url(${p.image})`};
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+`;
+
+export const FormWrapper = styled('div')`
+  padding: 3rem 8rem;
+  display: flex;
+  align-items: center;
+  height: 100%;
+`;
+
