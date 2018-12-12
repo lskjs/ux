@@ -37,6 +37,7 @@ export default {
       yellow: '#ffc53d',
       red: '#ff4d4f',
       darkGrey: '#212529',
+      grey600: '#868e96',
     },
     borderRadius: '6px',
   },

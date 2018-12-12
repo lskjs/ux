@@ -9,6 +9,7 @@ import {
   Col,
   FormWrapper,
   ImageContainer,
+  AdditionalInfo,
 } from './LoginsScreen.styles';
 
 const FormItem = Form.Item;
@@ -44,8 +45,8 @@ class LoginScreen extends PureComponent {
                   </Button>
                 </FormItem>
               </FormWrap>
-              <p className="additional-info">Don't have an account yet? <a href="">Sign up</a></p>
-              <p className="additional-info">Forgot your username or password? <a href="" >Reset password</a></p>
+              <AdditionalInfo>Don't have an account yet? <a href=''>Sign up</a></AdditionalInfo>
+              <AdditionalInfo>Forgot your username or password? <a href="" >Reset password</a></AdditionalInfo>
             </FormContainer>
           </FormWrapper>
         </Col>
