@@ -1,5 +1,6 @@
 import styled from 'react-emotion';
-import { Form, Icon, Input, Button, Checkbox } from 'antd';
+import { Row as BsRow, Col as BsCol } from 'reactstrap';
+import { Form, Icon, Button } from 'antd';
 
 const FormItem = Form.Item;
 
@@ -77,25 +78,30 @@ export const FormContainer = styled('section')`
   }
 `;
 
-export const Grid = styled('div')`
-  display:flex;
-  flex-direction:row;
+export const Row = styled(BsRow)`
   height: 100vh;
+  margin-left: 0;
+  margin-right: 0;
 `;
 
-export const RightSide = styled('div')`
-  display: flex;
-  width: 50%;
-`;
-
-export const LeftSide = styled('div')`
-  display: flex;
-  width: 50%;
+export const Col = styled(BsCol)`
+  padding-left: 0;
+  padding-right: 0;
 `;
 
 export const ImageContainer = styled('div')`
   background-image: ${p => `url(${p.image})`};
-  background-attachment: fixed;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   width: 100%;
-  min-height: 300px;
 `;
+
+export const FormWrapper = styled('div')`
+  padding: 3rem 8rem;
+  display: flex;
+  align-items: center;
+  height: 100%;
+`;
+

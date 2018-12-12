@@ -3,7 +3,7 @@ import Link from '../../../Link';
 import AnimatedLink from './AnimatedLink';
 import ThemeInjector from '../../../ThemeInjector';
 
-import '../../../antd.css';
+import '../../../antd.g.css';
 
 module.exports = ({ storiesOf }) => (
   storiesOf('AnimatedLink', module)
