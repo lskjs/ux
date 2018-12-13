@@ -46,7 +46,7 @@ class Product extends PureComponent {
             <TitleLink href={nameLink}>{name}</TitleLink>
           </CardTitle>
           <CardPrice>
-            <StrikeTroughItem isPierced={oldPrice}>$699.99</StrikeTroughItem>
+            <StrikeTroughItem oldPrice={oldPrice}>$699.99</StrikeTroughItem>
             <StrikeTroughItem>$649.99</StrikeTroughItem>
           </CardPrice>
         </CardBody>

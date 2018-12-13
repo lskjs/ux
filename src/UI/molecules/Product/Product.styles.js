@@ -62,7 +62,7 @@ export const CardPrice = styled('div')`
 export const StrikeTroughItem = styled('div')`
   display: block;
   color: ${p => (p.theme.ui.colors.grey600)};
-  ${p => (p.isPierced && css`
+  ${p => (p.oldPrice && css`
     opacity: .5;
     text-decoration: line-through;
   `)}
