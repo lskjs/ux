@@ -1,8 +1,9 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { Icon } from 'antd';
 
 
-import { ProfileCardItem, ProfileCardAvatar } from './ProfileCardBig.styles';
+import { ProfileCardItem, ProfileCardAvatar, SocialIcon } from './ProfileCardBig.styles';
 
 
 class ProfileCardBig extends PureComponent {
@@ -31,6 +32,11 @@ class ProfileCardBig extends PureComponent {
         <h4>{name}</h4>
         <span>{info}</span>
         <p>{sign}</p>
+        <div>
+          <SocialIcon><Icon type="twitter" /></SocialIcon>
+          <SocialIcon><Icon type="facebook" /></SocialIcon>
+          <SocialIcon><Icon type="instagram" /></SocialIcon>
+        </div>
       </ProfileCardItem>
     );
   }
