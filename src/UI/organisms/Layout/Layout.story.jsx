@@ -1,4 +1,5 @@
 import React from 'react';
+import { Container } from 'reactstrap';
 import { Menu, Icon, Layout as AntLayout, Tooltip, Badge, List } from 'antd';
 import LayoutSidenavBrand from '../../atoms/LayoutSidenavBrand';
 import LayoutSidenavContent from '../../atoms/LayoutSidenavContent';
@@ -171,17 +172,17 @@ const header = (
   />
 );
 
-const content = (
+const content = props => (
   <LayoutContent>
-    <div
-      style={{
-        maxWidth: 600,
-        margin: '0 auto',
-        whiteSpace: 'pre-line',
-      }}
-    >
-      {contentData}
-    </div>
+    <Container {...props}>
+      <div
+        style={{
+          whiteSpace: 'pre-line',
+        }}
+      >
+        {contentData}
+      </div>
+    </Container>
   </LayoutContent>
 );
 
@@ -265,24 +266,24 @@ const sidebar = (
   </LayoutSidebar>
 );
 
-const noFixedLayout = (
+const noFixedLayout = props => (
   <React.Fragment>
     {sidebar}
     <AntLayout>
       {header}
-      {content}
+      {content(props)}
       {footer}
     </AntLayout>
   </React.Fragment>
 );
 
-const fixedLayout = (
+const fixedLayout = props => (
   <React.Fragment>
     {sidebar}
     <AntLayout>
       {header}
       <AntLayout>
-        {content}
+        {content(props)}
         {footer}
       </AntLayout>
     </AntLayout>
@@ -294,42 +295,49 @@ module.exports = ({ storiesOf }) => (
     .add('Default', () => (
       <ThemeInjector>
         <Layout>
-          {noFixedLayout}
+          {noFixedLayout({})}
         </Layout>
       </ThemeInjector>
     ))
     .add('Fixed sidebar', () => (
       <ThemeInjector>
         <Layout fixed={['sidebar']}>
-          {noFixedLayout}
+          {noFixedLayout({})}
         </Layout>
       </ThemeInjector>
     ))
     .add('Fixed sidebar & header', () => (
       <ThemeInjector>
         <Layout fixed={['sidebar', 'header']}>
-          {fixedLayout}
+          {fixedLayout({})}
+        </Layout>
+      </ThemeInjector>
+    ))
+    .add('Fluid container & all fixed', () => (
+      <ThemeInjector>
+        <Layout fixed={['sidebar', 'header']}>
+          {fixedLayout({ fluid: true })}
         </Layout>
       </ThemeInjector>
     ))
     .add('Boxed', () => (
       <ThemeInjector>
         <Layout boxed>
-          {noFixedLayout}
+          {noFixedLayout({})}
         </Layout>
       </ThemeInjector>
     ))
     .add('Boxed & Fixed sidebar', () => (
       <ThemeInjector>
         <Layout boxed fixed={['sidebar']}>
-          {noFixedLayout}
+          {noFixedLayout({})}
         </Layout>
       </ThemeInjector>
     ))
     .add('Boxed & Fixed sidebar & header', () => (
       <ThemeInjector>
         <Layout boxed fixed={['sidebar', 'header']}>
-          {fixedLayout}
+          {fixedLayout({})}
         </Layout>
       </ThemeInjector>
     ))
