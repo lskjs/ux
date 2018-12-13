@@ -1,5 +1,7 @@
 import styled, { css } from 'react-emotion';
 import { Layout } from 'antd';
+import Sider from '../../molecules/LayoutSidenav/LayoutSidenav.styles';
+import LayoutSidebarContainer from '../LayoutSidebarContainer';
 import removeProps from '../../../utils/removeProps';
 
 const filteredTag = removeProps(Layout, ['boxed', 'fixed']);
@@ -12,8 +14,8 @@ const boxedStyle = css`
 `;
 
 const sideBarFixedStyle = css`
-  .app-sidenav-container, // when #app-sidenav is wrapped in a container
-  #app-sidenav {
+  ${LayoutSidebarContainer},
+  ${Sider} {
     height: 100vh;
   
     & + .ant-layout {

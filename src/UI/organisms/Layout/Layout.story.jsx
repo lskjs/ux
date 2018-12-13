@@ -1,22 +1,169 @@
 import React from 'react';
+import { Menu, Icon, Layout as AntLayout, Tooltip, Badge } from 'antd';
+import LayoutSidenavBrand from '../../atoms/LayoutSidenavBrand';
+import LayoutSidenavContent from '../../atoms/LayoutSidenavContent';
+import LayoutSidenavFooter from '../../atoms/LayoutSidenavFooter';
+import LayoutSidenavHeader from '../../atoms/LayoutSidenavHeader';
+import HeaderDropdown from '../../atoms/HeaderDropdown';
+import LayoutNotificationIcon from '../../atoms/LayoutNotificationIcon';
+import LayoutHeaderListItem from '../../atoms/LayoutHeaderListItem';
+import LayoutHeaderNotifications from '../../molecules/LayoutHeaderNotifications';
+import LayoutHeaderSearchBox from '../../molecules/LayoutHeaderSearchBox';
+import LayoutHeaderUserMenu from '../../molecules/LayoutHeaderUserMenu';
+import LayoutHeader from '../../molecules/LayoutHeader';
+import LayoutSidebar from '../../molecules/LayoutSidebar';
 import ThemeInjector from '../../../ThemeInjector';
 import '../../../antd.g.css';
+import '../../../bootstrap.g.css';
 
 import Layout from './Layout';
+
+const noFixedLayout = (
+  <React.Fragment>
+    <LayoutSidebar
+      mobileHidden
+      onCloseMobile={e => console.log('onCloseMobile', e)} // eslint-disable-line no-console
+      hidden={false}
+      collapsed={false}
+      mobile={false}
+    >
+      <LayoutSidenavHeader>
+        Logo
+        <LayoutSidenavBrand href="#!">Title</LayoutSidenavBrand>
+      </LayoutSidenavHeader>
+      <LayoutSidenavContent>
+        <Menu
+          theme="light"
+          mode="inline"
+          inlineCollapsed={false}
+          onClick={e => console.log('onClick', e)} // eslint-disable-line no-console
+          selectedKeys={['dashboard']}
+        >
+          <Menu.Item key="dashboard">
+            <a href="#!">
+              <Icon type="dashboard" />
+              <span className="nav-text">Dashboard</span>
+            </a>
+          </Menu.Item>
+          <Menu.Item key="overview">
+            <a href="#!">
+              <Icon type="shop" />
+              <span className="nav-text">UI Overview</span>
+              <span className="nav-badge badge-right badge badge-pill badge-info ml-1">100+</span>
+            </a>
+          </Menu.Item>
+          <Menu.SubMenu
+            key="submenu"
+            title={<span><Icon type="appstore" /><span>Navigation Two</span></span>}
+          >
+            <Menu.Item key="5">Option 5</Menu.Item>
+            <Menu.Item key="6">Option 6</Menu.Item>
+            <Menu.ItemGroup key="g2" title="Item group 1">
+              <Menu.Item key="3">Option 3</Menu.Item>
+              <Menu.Item key="4">Option 4</Menu.Item>
+            </Menu.ItemGroup>
+            <Menu.SubMenu key="sub3" title="Submenu">
+              <Menu.Item key="7">Option 7</Menu.Item>
+              <Menu.Item key="8">Option 8</Menu.Item>
+            </Menu.SubMenu>
+          </Menu.SubMenu>
+          <Menu.Item key="landing">
+            <a
+              href="http://iarouse.com/dist-react-ant-design/landing/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Icon type="link" />
+              <span className="nav-text">Landing Page</span>
+            </a>
+          </Menu.Item>
+        </Menu>
+      </LayoutSidenavContent>
+      <LayoutSidenavFooter>
+        <a target="_blank" href="//google.ru" rel="noopener noreferrer">
+          <Icon type="question-circle" />
+          <span className="nav-text"><span>Help</span> & <span>Support</span></span>
+        </a>
+      </LayoutSidenavFooter>
+    </LayoutSidebar>
+    <AntLayout>
+      <LayoutHeader
+        collapsed={false}
+        logo="Logo"
+        onCollapsed={e => console.log('onCollapsed', e)} // eslint-disable-line no-console
+        onCloseMobile={e => console.log('onCloseMobile', e)} // eslint-disable-line no-console
+        pullLeft={(
+          <React.Fragment>
+            <Tooltip placement="bottom" title="UI Overview">
+              <LayoutHeaderListItem href="#!" className="d-none d-md-inline-block">
+                <Icon type="shop" />
+              </LayoutHeaderListItem>
+            </Tooltip>
+          </React.Fragment>
+        )}
+        pullRight={(
+          <React.Fragment>
+            <LayoutHeaderSearchBox right placeholder="Поиск..." />
+            <LayoutHeaderNotifications>
+              <LayoutHeaderListItem href="#!">
+                <Badge count={11}>
+                  <LayoutNotificationIcon type="bell" />
+                </Badge>
+              </LayoutHeaderListItem>
+            </LayoutHeaderNotifications>
+            <LayoutHeaderUserMenu
+              user={{
+                title: 'Пользователь',
+                avatar: 'https://picsum.photos/100?random',
+              }}
+            >
+              <HeaderDropdown>
+                <Menu.Item key="4" className="d-block d-md-none">
+                  Signed in as <strong>User</strong>
+                </Menu.Item>
+                <Menu.Divider className="d-block d-md-none" />
+                <Menu.Item key="1" disabled>
+                  <Icon type="setting" />Settings
+                </Menu.Item>
+                <Menu.Item key="0">
+                  <a href="#!">
+                    <Icon type="info-circle-o" />About
+                  </a>
+                </Menu.Item>
+                <Menu.Item key="2">
+                  <a href="#!">
+                    <Icon type="question-circle-o" />Need Help?
+                  </a>
+                </Menu.Item>
+                <Menu.Divider />
+                <Menu.Item key="3">
+                  <a href="#!">
+                    <Icon type="logout" />Sign out
+                  </a>
+                </Menu.Item>
+              </HeaderDropdown>
+            </LayoutHeaderUserMenu>
+          </React.Fragment>
+        )}
+      />
+      123
+    </AntLayout>
+  </React.Fragment>
+);
 
 module.exports = ({ storiesOf }) => (
   storiesOf('Layout', module)
     .add('Default', () => (
       <ThemeInjector>
         <Layout>
-          123
+          {noFixedLayout}
         </Layout>
       </ThemeInjector>
     ))
     .add('Boxed', () => (
       <ThemeInjector>
         <Layout boxed>
-          123
+          {noFixedLayout}
         </Layout>
       </ThemeInjector>
     ))
