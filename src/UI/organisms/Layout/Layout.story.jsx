@@ -188,12 +188,7 @@ const content = (
 const footer = (
   <LayoutFooter>
     <LayoutFooterElement>
-      © 2018 <LayoutFooterBrand
-      target="_blank"
-      rel="noopener noreferrer"
-      href="//google.ru"
-    >
-      Brand</LayoutFooterBrand>
+      © 2018 <LayoutFooterBrand target="_blank" rel="noopener noreferrer" href="//google.ru">Brand</LayoutFooterBrand>
     </LayoutFooterElement>
     <LayoutFooterElement>
       Built with Love <Icon type="heart-o" />
