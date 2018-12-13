@@ -8,6 +8,10 @@ export default styled(dynamicTag)`
   padding: 0 .875rem;
   margin: 0;
   transition: all .3s;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
   
   &:not(:last-child) {
     margin-right: .5rem;

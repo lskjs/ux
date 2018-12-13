@@ -56,14 +56,14 @@ class LayoutHeader extends Component {
                 <Divider type="vertical" key="line" />
               </If>
               <LayoutHeaderListItem
-                href="#!"
+                componentClass="button"
                 onClick={this.onToggleCollapsed}
                 className="d-none d-md-inline-block"
               >
                 <Icon type={collapsed ? 'menu-unfold' : 'menu-fold'} />
               </LayoutHeaderListItem>
               <LayoutHeaderListItem
-                href="#!"
+                componentClass="button"
                 className="d-md-none"
                 onClick={this.onToggleHiddenMobile}
               >

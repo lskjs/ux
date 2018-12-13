@@ -30,6 +30,11 @@ const headerFixedStyle = css`
   }
 `;
 
+const allFixed = css`
+  ${sideBarFixedStyle}
+  ${headerFixedStyle}
+`;
+
 export default styled(filteredTag)`
   max-width: 100%;
   margin: auto;
@@ -47,7 +52,8 @@ export default styled(filteredTag)`
       p.fixed.includes('header')
       && p.fixed.includes('sidebar')
     ) {
-      return `${sideBarFixedStyle} ${headerFixedStyle}`;
+      console.log('kek');
+      return allFixed;
     } else if (p.fixed.includes('sidebar')) {
       return sideBarFixedStyle;
     }
