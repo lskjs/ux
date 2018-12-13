@@ -1,5 +1,7 @@
 import styled from 'react-emotion';
 
 export default styled('div')`
-  padding-right: 5px;
+  margin-top: .4rem;
+  opacity: .8;
+  font-size: .75rem;
 `;

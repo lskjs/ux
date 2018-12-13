@@ -32,6 +32,7 @@ export default {
       border: 'rgba(0,0,0,.1)',
       black: '#343a40',
       blue: '#1890ff',
+      cyan: '#17a2b8',
       aqua: '#01bcd4',
       green: '#66bb6a',
       yellow: '#ffc53d',

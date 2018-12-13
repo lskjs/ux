@@ -1,5 +1,8 @@
 import styled from 'react-emotion';
 
 export default styled('div')`
-  padding-right: 5px;
+  text-transform: capitalize;
+  .ant-tag {
+    float: right;
+  }
 `;
