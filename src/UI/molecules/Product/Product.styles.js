@@ -10,7 +10,7 @@ export const CardImage = styled(dynamicTag)`
   padding: 30px 15px;
   height: 300px;
   border-radius: 6px 6px 0 0;
-  background-color: rgba(#000, .035);
+  background-color: rgba(0,0,0, .035);
   text-align: center;
 `;
 

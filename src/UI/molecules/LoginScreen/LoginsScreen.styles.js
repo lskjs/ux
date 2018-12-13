@@ -93,6 +93,7 @@ export const ImageContainer = styled('div')`
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
+  min-height: 300px;
 `;
 
 export const FormWrapper = styled('div')`

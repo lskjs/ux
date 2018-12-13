@@ -10,7 +10,6 @@ export const ItemCard = styled('div')`
   &:hover {
     box-shadow: 0 0 15px rgba(0,0,0, .1);
   }
-  margin-bottom: 1.5rem !important;
 `;
 
 export const CardImage = styled(dynamicTag)`
@@ -19,23 +18,21 @@ export const CardImage = styled(dynamicTag)`
   padding: 30px 15px;
   height: 300px;
   width: 50%;
-  border-radius: 6px 6px 0 0;
-  background-color: rgba(#000, .035);
+  border-radius: 6px 0 0 6px;
+  background-color: rgba(0,0,0, .035);;
   text-align: center;
 `;
 
-export const 
-
 export const CardBody = styled('div')`
-  border-radius: 0 0 6px 6px;
+  border-radius: 0 6px 6px 0;
   width: 50%;
   height: 100%;
   position: absolute;
   top: 0;
   right: 0;
   padding: 40px 30px;
-  color: $body-color;
-  background-color: #fff;
+  color: ${p => (p.theme.ui.colors.darkGrey)};
+  background-color: ${p => (p.theme.ui.colors.white)};
 `;
 
 export const CardTitle = styled('div')`
@@ -64,7 +61,7 @@ export const Divider = styled('div')`
   margin-top: 10px;
   margin-bottom: 10px;
   border-style: solid;
-  border-color: $divider-color;
+  border-color: rgba(0,0,0, .1);
   margin-top: 24px
   margin-bottom: 24px;
 `;
@@ -80,14 +77,14 @@ export const Image = styled('img')`
 `;
 
 export const TitleLink = styled(dynamicTag)`
-  color: $body-color;
-  font-weight: $font-weight-500;
+  color: ${p => (p.theme.ui.colors.darkGrey)};
+  font-weight: 500;
   text-decoration: none
 `;
 
 export const TitleSpan = styled('span')`
   display: block;
-  font-size: $font-size-sm;
+  font-size: .75rem;
   opacity: .5;
 `;
 

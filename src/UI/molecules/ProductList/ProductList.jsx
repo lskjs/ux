@@ -9,22 +9,46 @@ import {
   StrikeThroughItem,
   Divider,
   CardDesc,
+  TitleLink,
+  TitleSpan,
+  Image,
 } from './ProductList.styles';
 
 class ProductList extends PureComponent {
+  static propTypes = {
+    imageLink: PropTypes.string,
+    titleLink: PropTypes.string,
+    img: PropTypes.string,
+    name: PropTypes.string,
+    oldPrice: PropTypes.bool,
+  };
+  static defaultProps = {
+    imageLink: null,
+    titleLink: null,
+    img: null,
+    name: null,
+    oldPrice: false,
+  };
   render() {
+    const {
+      imageLink,
+      titleLink,
+      img,
+      name,
+      oldPrice,
+    } = this.props;
     return (
       <ItemCard>
-        <CardImage href={DEMO.link}>
-          <img alt="product" src={product.img} />
+        <CardImage href={imageLink}>
+          <Image alt="product" src={img} />
         </CardImage>
         <CardBody>
           <CardTitle>
-            <a href="{product.link}">{product.name}</a>
-            <span>Accessories</span>
+            <TitleLink href={titleLink}>{name}</TitleLink>
+            <TitleSpan>Accessories</TitleSpan>
           </CardTitle>
           <CardPrice>
-            <StrikeThroughItem true>$699.99</StrikeThroughItem>
+            <StrikeThroughItem isPierced={oldPrice}>$699.99</StrikeThroughItem>
             <StrikeThroughItem>$649.99</StrikeThroughItem>
           </CardPrice>
           <Divider />
@@ -34,3 +58,4 @@ class ProductList extends PureComponent {
     );
   }
 }
+export default ProductList;
