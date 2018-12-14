@@ -13,13 +13,13 @@ export const ProfileCardItem = styled('article')`
   h4 {
     margin: 0;
     font-weight: 500;
-    font-size: 1.25rem;
-    line-height: 1.625rem;
+    font-size: 20px;
+    line-height: 26px;
   }
   h4 + span {
     display: block;
     opacity: .8;
-    margin-bottom: .875rem;
+    margin-bottom: 14px;
   }
 `;
 
@@ -34,14 +34,14 @@ export const SocialIcon = styled(dynamicTag)`
   border: 0;
   transition: all .2s;
   line-height: 30px;
-  font-size: .875rem;
+  font-size: 14px;
   height: 30px;
   width: 30px;
   border-radius: 50%;
   padding: 0;
   display: inline-block;
   text-align: center;
-  margin-left: .25rem;
+  margin-left: 4зч;
   &:hover {
     color: ${p => (p.theme.ui.colors.white)};
     text-decoration: none;
