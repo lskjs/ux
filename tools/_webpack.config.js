@@ -249,10 +249,10 @@
       },
       {
         "definitions": {
-          "process.env.NODE_ENV": "\"production\"",
-          "__ENV__": "\"production\"",
-          "__DEV__": false,
-          "__PROD__": true,
+          "process.env.NODE_ENV": "\"development\"",
+          "__ENV__": "\"development\"",
+          "__DEV__": true,
+          "__PROD__": false,
           "__STAGE__": "\"development\"",
           "__SERVER__": false,
           "__CLIENT__": true,
@@ -566,10 +566,10 @@
       },
       {
         "definitions": {
-          "process.env.NODE_ENV": "\"production\"",
-          "__ENV__": "\"production\"",
-          "__DEV__": false,
-          "__PROD__": true,
+          "process.env.NODE_ENV": "\"development\"",
+          "__ENV__": "\"development\"",
+          "__DEV__": true,
+          "__PROD__": false,
           "__STAGE__": "\"development\"",
           "__SERVER__": true,
           "__CLIENT__": false,

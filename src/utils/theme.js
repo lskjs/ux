@@ -37,6 +37,7 @@ export default {
       green: '#66bb6a',
       yellow: '#ffc53d',
       red: '#ff4d4f',
+      gray100: '#f8f9fa',
       darkGrey: '#212529',
       grey600: '#868e96',
     },
