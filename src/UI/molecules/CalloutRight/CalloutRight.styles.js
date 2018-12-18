@@ -58,7 +58,7 @@ export const Button = styled(BsButton)`
   text-transform: uppercase;
   letter-spacing: .5px;
   line-height: 2;
-  font-size: 14px;
+  font-size: 12px;
 `;
 
 export const FeatureCallout = styled('div')`
