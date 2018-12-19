@@ -222,12 +222,14 @@ export default class Slide extends Component {
               {left}
             </LeftBlock>
           </If>
-          <Center>
-            <Content>
-              {content}
-              {children}
-            </Content>
-          </Center>
+          <If condition={content || children}>
+            <Center>
+              <Content>
+                {content}
+                {children}
+              </Content>
+            </Center>
+          </If>
           <If condition={right}>
             <RightBlock>
               {right}
