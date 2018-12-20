@@ -8,4 +8,5 @@ export default styled('div')`
   margin-top: 1.5rem;
   border-color: #1890ff;
   width: 2.5rem;
+  display: inline-block;
 `;

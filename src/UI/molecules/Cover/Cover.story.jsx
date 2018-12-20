@@ -1,11 +1,14 @@
 import React from 'react';
+import { Col } from 'reactstrap';
 import Cover from './Cover';
+
 
 module.exports = ({ storiesOf }) => (
   storiesOf('Cover', module)
     .add('Default', () => (
       <Cover
-        image="https://pp.userapi.com/c636819/v636819936/3474a/g6I0ETjiQ4I.jpg"
+        image="http://iarouse.com/dist-react-ant-design/v1.1.4/assets/images-demo/covers/leone-venter-559377-cut.jpg"
+        color="black"
       >
         <Cover.Title>100+ Components</Cover.Title>
         <Cover.SubTitle>
@@ -14,7 +17,30 @@ module.exports = ({ storiesOf }) => (
           huge collection of components out of box.
         </Cover.SubTitle>
         <Cover.Divider />
-        All components are well designed & easy to use.
+        <Cover.Footer>
+          All components are well designed & easy to use.
+        </Cover.Footer>
+      </Cover>
+    ))
+    .add('Centered', () => (
+      <Cover
+        image="http://iarouse.com/dist-react-ant-design/v1.1.4/assets/images-demo/covers/alexandre-perotto-75274-unsplash.jpg"
+        color="white"
+        align="center"
+        overlay
+      >
+        <Col md={7} lg={6} style={{ margin: 'auto' }}>
+          <Cover.Title>100+ Components</Cover.Title>
+          <Cover.SubTitle>
+            Ant admin is a multi-purpose
+            template which comes with a
+            huge collection of components out of box.
+          </Cover.SubTitle>
+          <Cover.Divider />
+          <Cover.Footer>
+            <Cover.Button type="primary">try it now</Cover.Button>
+          </Cover.Footer>
+        </Col>
       </Cover>
     ))
 );

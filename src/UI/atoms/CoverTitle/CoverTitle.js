@@ -5,6 +5,4 @@ export default styled('h1')`
   font-size: 2.75rem;
   margin-bottom: 1.625rem;
   line-height: 1.3;
-  
-  color: rgba(0,0,0,.65);
 `;
