@@ -12,6 +12,7 @@ import CTAInline from './UI/molecules/CTAInline';
 import ThemeInjector from './ThemeInjector';
 import Input from './UI/atoms/Input';
 import InputContainer from './UI/atoms/InputContainer';
+import Container from './UI/atoms/Container';
 
 
 module.exports = ({ storiesOf }) => (
@@ -40,13 +41,7 @@ module.exports = ({ storiesOf }) => (
             </Col>
           </Cover>
           <Slide center color="#f5f5f5">
-            <div
-              style={{
-                maxWidth: 1110,
-                margin: '0 auto',
-                padding: '54px 2em 5em',
-              }}
-            >
+            <Container>
               <section style={{
                 marginBottom: '4rem',
                 fontSize: '2rem',
@@ -144,18 +139,12 @@ module.exports = ({ storiesOf }) => (
                   />
                 </Col>
               </Row>
-            </div>
+            </Container>
           </Slide>
           <Callout />
           <CalloutRight />
           <Slide center color="#f5f5f5">
-            <div
-              style={{
-                maxWidth: 1110,
-                margin: '0 auto',
-                padding: '6em 2em 5em',
-              }}
-            >
+            <Container>
               <section style={{
                 marginBottom: '4rem',
                 fontSize: '2rem',
@@ -246,7 +235,7 @@ module.exports = ({ storiesOf }) => (
                   </p>
                 </Col>
               </Row>
-            </div>
+            </Container>
           </Slide>
           <Slide center color="#343a40">
             <Row style={{ padding: '45px 0' }}>
