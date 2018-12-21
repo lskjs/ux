@@ -7,7 +7,10 @@ module.exports = ({ storiesOf }) => (
     .add('Default', () => (
       <div style={{ padding: 60 }}>
         <ThemeInjector>
-          <CTAInline />
+          <CTAInline
+            title="Download it now and get up and running in minutes"
+            buttonText="Let's start"
+          />
         </ThemeInjector>
       </div>
     ))

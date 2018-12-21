@@ -16,6 +16,7 @@ export const Content = styled('div')`
   ${Title} {
     margin: 0;
   }
+  @media (max-width: 810px) { display: grid }
 `;
 
 export const Button = styled(BsButton)`

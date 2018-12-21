@@ -14,7 +14,7 @@ class CalloutRight extends PureComponent {
   render() {
     return (
       <FeatureCallout>
-        <BsCol md={6} offset-md={6} />
+        <BsCol md={6} offset-md={6}/>
         <div className="container-fluid container-mw-xl">
           <div className="col-12 col-md-6">
             <Content>

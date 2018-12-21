@@ -1,7 +1,7 @@
 import styled from 'react-emotion';
 
 export const IconWrapper = styled('div')`
-
+  font-size: 52px;
 `;
 
 export const Header = styled('h4')`

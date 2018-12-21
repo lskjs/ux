@@ -10,7 +10,10 @@ export const BsCol = styled(Col)`
   @media (min-width: 768px) {
     position:absolute;
     top: 0;
-    bottom: 0
+    bottom: 0;
+  }
+  @media (max-width: 810px) {
+    margin-left: 0;
   }
   background-image: url('https://picsum.photos/200');
   margin-left: 50%;
