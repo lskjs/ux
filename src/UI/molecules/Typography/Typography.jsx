@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 class Typography extends PureComponent {
   render() {
     return (
-
+      1234
     );
   }
 };
