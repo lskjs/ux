@@ -1,0 +1,9 @@
+import styled from 'react-emotion';
+
+export default styled('section')`
+  margin-bottom: 4rem;
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 400;
+  color: #000;
+`;

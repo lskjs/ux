@@ -13,6 +13,12 @@ import ThemeInjector from './ThemeInjector';
 import Input from './UI/atoms/Input';
 import InputContainer from './UI/atoms/InputContainer';
 import Container from './UI/atoms/Container';
+import Header from './UI/atoms/Header';
+import Typography from './UI/atoms/Typography';
+import CTAContainer from './UI/atoms/CTAContainer';
+import CopyrightContainer from './UI/atoms/CopyrightContainer';
+import FaqContainer from './UI/atoms/FaqContainer';
+import FeatureContainer from './UI/atoms/FeatureContainer';
 
 
 module.exports = ({ storiesOf }) => (
@@ -42,18 +48,11 @@ module.exports = ({ storiesOf }) => (
           </Cover>
           <Slide center color="#f5f5f5">
             <Container>
-              <section style={{
-                marginBottom: '4rem',
-                fontSize: '2rem',
-                textAlign: 'center',
-                fontWeight: 400,
-                color: 'black',
-                }}
-              >
+              <Header>
                 Key features
-              </section>
+              </Header>
               <Row>
-                <Col md={4} style={{ marginBottom: '3rem' }}>
+                <FeatureContainer md={4}>
                   <Feature
                     icon={<AccountIcon />}
                     header="RESPONSIVE DESIGN"
@@ -61,8 +60,8 @@ module.exports = ({ storiesOf }) => (
                     content2="any device"
                     center="true"
                   />
-                </Col>
-                <Col md={4} style={{ marginBottom: '3rem' }}>
+                </FeatureContainer>
+                <FeatureContainer md={4}>
                   <Feature
                     icon={<AccountIcon />}
                     header="RESPONSIVE DESIGN"
@@ -70,8 +69,8 @@ module.exports = ({ storiesOf }) => (
                     content2="any device"
                     center="true"
                   />
-                </Col>
-                <Col md={4} style={{ marginBottom: '3rem' }}>
+                </FeatureContainer>
+                <FeatureContainer md={4}>
                   <Feature
                     icon={<AccountIcon />}
                     header="RESPONSIVE DESIGN"
@@ -79,10 +78,10 @@ module.exports = ({ storiesOf }) => (
                     content2="any device"
                     center="true"
                   />
-                </Col>
+                </FeatureContainer>
               </Row>
               <Row>
-                <Col md={4} style={{ marginBottom: '3rem' }}>
+                <FeatureContainer md={4}>
                   <Feature
                     icon={<AccountIcon />}
                     header="RESPONSIVE DESIGN"
@@ -90,8 +89,8 @@ module.exports = ({ storiesOf }) => (
                     content2="any device"
                     center="true"
                   />
-                </Col>
-                <Col md={4} style={{ marginBottom: '3rem' }}>
+                </FeatureContainer>
+                <FeatureContainer md={4}>
                   <Feature
                     icon={<AccountIcon />}
                     header="RESPONSIVE DESIGN"
@@ -99,8 +98,8 @@ module.exports = ({ storiesOf }) => (
                     content2="any device"
                     center="true"
                   />
-                </Col>
-                <Col md={4} style={{ marginBottom: '3rem' }}>
+                </FeatureContainer>
+                <FeatureContainer md={4}>
                   <Feature
                     icon={<AccountIcon />}
                     header="RESPONSIVE DESIGN"
@@ -108,10 +107,10 @@ module.exports = ({ storiesOf }) => (
                     content2="any device"
                     center="true"
                   />
-                </Col>
+                </FeatureContainer>
               </Row>
               <Row>
-                <Col md={4} style={{ marginBottom: '3rem' }}>
+                <FeatureContainer md={4}>
                   <Feature
                     icon={<AccountIcon />}
                     header="RESPONSIVE DESIGN"
@@ -119,8 +118,8 @@ module.exports = ({ storiesOf }) => (
                     content2="any device"
                     center="true"
                   />
-                </Col>
-                <Col md={4} style={{ marginBottom: '3rem' }}>
+                </FeatureContainer>
+                <FeatureContainer md={4}>
                   <Feature
                     icon={<AccountIcon />}
                     header="RESPONSIVE DESIGN"
@@ -128,8 +127,8 @@ module.exports = ({ storiesOf }) => (
                     content2="any device"
                     center="true"
                   />
-                </Col>
-                <Col md={4} style={{ marginBottom: '3rem' }}>
+                </FeatureContainer>
+                <FeatureContainer md={4}>
                   <Feature
                     icon={<AccountIcon />}
                     header="RESPONSIVE DESIGN"
@@ -137,7 +136,7 @@ module.exports = ({ storiesOf }) => (
                     content2="any device"
                     center="true"
                   />
-                </Col>
+                </FeatureContainer>
               </Row>
             </Container>
           </Slide>
@@ -145,95 +144,56 @@ module.exports = ({ storiesOf }) => (
           <CalloutRight />
           <Slide center color="#f5f5f5">
             <Container>
-              <section style={{
-                marginBottom: '4rem',
-                fontSize: '2rem',
-                textAlign: 'center',
-                fontWeight: 400,
-                color: 'black',
-                }}
-              >
+              <Header>
                 Why React
-              </section>
+              </Header>
               <Row>
-                <Col md={6} style={{ padding: '1rem 3rem' }}>
-                  <h4
-                    style={{
-                      marginBottom: '.6em',
-                      fontSize: '21px',
-                      lineHeight: '1.6em',
-                      fontWeight: 400,
-                      textAlign: 'left',
-                    }}
-                  >
+                <FaqContainer md={6}>
+                  <Typography variant="h4" paragraph>
                     Develop Across All Platforms
-                  </h4>
-                  <p style={{ fontSize: '1rem', opacity: '.8', textAlign: 'left' }} >
+                  </Typography>
+                  <Typography variant="body">
                     Learn one way to build applications with
                     React and reuse your code and abilities to build apps for any
                     deployment target. For web, mobile web, native mobile and native desktop.
                     Declarative views make your code more predictable and easier to debug.
-                  </p>
-                </Col>
-                <Col md={6} style={{ padding: '1rem 3rem' }}>
-                  <h4
-                    style={{
-                      marginBottom: '.6em',
-                      fontSize: '21px',
-                      lineHeight: '1.6em',
-                      fontWeight: 400,
-                      textAlign: 'left',
-                    }}
-                  >
+                  </Typography>
+                </FaqContainer>
+                <FaqContainer md={6}>
+                  <Typography variant="h4" paragraph>
                     Develop Across All Platforms
-                  </h4>
-                  <p style={{ fontSize: '1rem', opacity: '.8', textAlign: 'left' }} >
+                  </Typography>
+                  <Typography variant="body">
                     Learn one way to build applications with
                     React and reuse your code and abilities to build apps for any
                     deployment target. For web, mobile web, native mobile and native desktop.
                     Declarative views make your code more predictable and easier to debug.
-                  </p>
-                </Col>
+                  </Typography>
+                </FaqContainer>
               </Row>
               <Row>
-                <Col md={6} style={{ padding: '1rem 3rem' }}>
-                  <h4
-                    style={{
-                      marginBottom: '.6em',
-                      fontSize: '21px',
-                      lineHeight: '1.6em',
-                      fontWeight: 400,
-                      textAlign: 'left',
-                    }}
-                  >
+                <FaqContainer md={6}>
+                  <Typography variant="h4" paragraph>
                     Develop Across All Platforms
-                  </h4>
-                  <p style={{ fontSize: '1rem', opacity: '.8', textAlign: 'left' }} >
+                  </Typography>
+                  <Typography variant="body">
                     Learn one way to build applications with
                     React and reuse your code and abilities to build apps for any
                     deployment target. For web, mobile web, native mobile and native desktop.
                     Declarative views make your code more predictable and easier to debug.
-                  </p>
-                </Col>
-                <Col md={6} style={{ padding: '1rem 3rem' }}>
-                  <h4
-                    style={{
-                      marginBottom: '.6em',
-                      fontSize: '21px',
-                      lineHeight: '1.6em',
-                      fontWeight: 400,
-                      textAlign: 'left',
-                    }}
-                  >
+                  </Typography>
+                </FaqContainer>
+                <FaqContainer md={6}>
+                  <Typography variant="h4" paragraph>
                     Develop Across All Platforms
-                  </h4>
-                  <p style={{ fontSize: '1rem', opacity: '.8', textAlign: 'left' }} >
+                  </Typography>
+                  <Typography variant="body">
                     Learn one way to build applications with
                     React and reuse your code and abilities to build apps for any
                     deployment target. For web, mobile web, native mobile and native desktop.
                     Declarative views make your code more predictable and easier to debug.
-                  </p>
-                </Col>
+                  </Typography>
+                </FaqContainer>
               </Row>
             </Container>
           </Slide>
@@ -251,53 +211,36 @@ module.exports = ({ storiesOf }) => (
             </Row>
           </Slide>
           <Slide center image="http://iarouse.com/dist-react-ant-design/landing/images/covers/bench-accounting-49909-unsplash-lg.jpg">
-            <section style={{
-                padding: '45px 0',
-              }}
-            >
-              <h2
-                style={{
-                  position: 'relative',
-                  textAlign: 'center',
-                  fontSize: '2rem',
-                  fontWeight: 200,
-                  colot: 'black',
-                }}
-              >
-                Get Notified When We Update!
-              </h2>
-              <InputContainer>
-                <Input
-                  type="text"
-                  placeholder="Email"
-                />
-              </InputContainer>
-              <div style={{ marginTop: '20px' }}>
-                <Button type="primary">Subscribe</Button>
-              </div>
-            </section>
+            <Row style={{ padding: '45px 0' }}>
+              <Col md={{ size: 6, offset: 3 }}>
+                <Typography variant="h2" align="center">
+                  Get Notified When We Update!
+                </Typography>
+                <InputContainer>
+                  <Input
+                    type="text"
+                    placeholder="Email"
+                  />
+                </InputContainer>
+                <div style={{ marginTop: '20px' }}>
+                  <Button type="primary">Subscribe</Button>
+                </div>
+              </Col>
+            </Row>
           </Slide>
           <Slide center color="#1890ff">
             <div style={{ padding: '30px 4em' }}>
-              <Col
-                lg={8}
-                style={{
-                  color: 'white',
-                  marginLeft: 'auto',
-                  marginRight: 'auto',
-                  maxWidth: '54%',
-                }}
-              >
+              <CTAContainer lg={8}>
                 <CTAInline title="Try it now, get up and running in minutes." buttonText="Download Ant" />
-              </Col>
+              </CTAContainer>
             </div>
           </Slide>
           <Slide center color="#263237">
-            <div style={{ position: 'relative', padding: '30px 0', fontSize: '12px' }}>
-              <p style={{ color: '#7a859e', margin: 0 }} >
+            <CopyrightContainer>
+              <Typography variant="small" color="#7a859e" align="center">
                 Copyright
-              </p>
-            </div>
+              </Typography>
+            </CopyrightContainer>
           </Slide>
         </div>
       </ThemeInjector>
