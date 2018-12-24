@@ -68,8 +68,8 @@
     "webpack": "4.9.1"
   },
   "scripts": {
-    "babel-build": "rm -rf dist && mkdir dist && cp {package.json,package-lock.json,README.md} dist/ && npx babel src --out-dir dist --source-maps inline --copy-files",
-    "release": "npm run babel-build && npm publish --access=public dist",
+    "release": "rm -rf dist && npm run babel-build && npm publish --access=public dist",
+    "babel-build": "mkdir -p dist && cp {package.json,package-lock.json,README.md} dist/ && npx babel src --out-dir dist --source-maps inline --copy-files",
     "dev": "npm run storybook",
     "release_old": "sh -c 'npm publish --access=public'",
     "storybook": "start-storybook -p 9001 -c .storybook",
