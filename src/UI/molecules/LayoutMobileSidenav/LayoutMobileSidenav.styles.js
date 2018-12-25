@@ -9,6 +9,7 @@ export default styled(AntDrawer)`
 
   ${LayoutSidenav} {
     height: 100vh;
+    display: block;
   }
   
   @media screen and (min-width: 768px) {

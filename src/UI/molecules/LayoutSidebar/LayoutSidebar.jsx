@@ -7,8 +7,8 @@ class LayoutSidebar extends Component {
   render() {
     return (
       <LayoutSidebarContainer>
-        <LayoutMobileSidenav {...this.props} />
-        <LayoutSidenav {...this.props} />
+        <LayoutMobileSidenav mobile {...this.props} />
+        <LayoutSidenav mobile={false} {...this.props} />
       </LayoutSidebarContainer>
     );
   }
