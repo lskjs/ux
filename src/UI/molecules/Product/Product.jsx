@@ -14,40 +14,48 @@ import {
 
 class Product extends PureComponent {
   static propTypes = {
-    productLink: PropTypes.string,
-    nameLink: PropTypes.string,
-    img: PropTypes.string,
+    href: PropTypes.string,
+    price: PropTypes.string,
+    image: PropTypes.string,
     name: PropTypes.string,
+    category: PropTypes.string,
     oldPrice: PropTypes.bool,
+    componentClass: PropTypes.any,
   };
   static defaultProps = {
-    productLink: null,
-    nameLink: null,
-    img: null,
+    href: null,
+    price: null,
+    image: null,
     name: null,
-    oldPrice: false,
+    category: null,
+    oldPrice: null,
+    componentClass: 'a',
   };
   render() {
     const {
-      productLink,
-      img,
-      nameLink,
+      image,
+      href,
       name,
+      price,
+      category,
       oldPrice,
+      componentClass,
     } = this.props;
     return (
       <ItemCard>
-        <CardImage href={productLink} >
-          <Image alt="product" src={img} />
+        <CardImage componentClass={componentClass} href={href} >
+          <Image alt="product" src={image} />
         </CardImage>
         <CardBody>
           <CardTitle>
-            <TitleSp>Accessories</TitleSp>
-            <TitleLink href={nameLink}>{name}</TitleLink>
+            <TitleSp>{category}</TitleSp>
+            <TitleLink componentClass={componentClass} href={href}>{name}</TitleLink>
           </CardTitle>
           <CardPrice>
-            <StrikeTroughItem oldPrice={oldPrice}>$699.99</StrikeTroughItem>
-            <StrikeTroughItem>$649.99</StrikeTroughItem>
+            <If condition={oldPrice}>
+              <StrikeTroughItem oldPrice={oldPrice}>{oldPrice}</StrikeTroughItem>
+            </If>
+            <StrikeTroughItem>{price}</StrikeTroughItem>
           </CardPrice>
         </CardBody>
       </ItemCard>

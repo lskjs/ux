@@ -4,11 +4,13 @@ import ThemeInjector from '../../../ThemeInjector';
 
 const articles = [
   {
-    img: 'https://picsum.photos/300',
-    productLink: '',
-    nameLink: '',
+    image: 'https://picsum.photos/300',
+    href: '',
+    category: 'Accessories',
     name: 'Silver Watch',
-    oldPrice: true,
+    oldPrice: '$699.99',
+    price: '$300.00',
+    description: 'From the way it works to the way it looks, Watch isn’t just something you wear. It’s an essential part of who you are.',
   },
 ];
 

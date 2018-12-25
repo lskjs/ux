@@ -16,43 +16,54 @@ import {
 
 class ProductList extends PureComponent {
   static propTypes = {
-    imageLink: PropTypes.string,
-    titleLink: PropTypes.string,
-    img: PropTypes.string,
+    href: PropTypes.string,
+    price: PropTypes.string,
+    image: PropTypes.string,
     name: PropTypes.string,
+    category: PropTypes.string,
+    description: PropTypes.string,
     oldPrice: PropTypes.bool,
+    componentClass: PropTypes.any,
   };
   static defaultProps = {
-    imageLink: null,
-    titleLink: null,
-    img: null,
+    href: null,
+    price: null,
+    image: null,
     name: null,
-    oldPrice: false,
+    category: null,
+    oldPrice: null,
+    description: null,
+    componentClass: 'a',
   };
   render() {
     const {
-      imageLink,
-      titleLink,
-      img,
+      image,
+      href,
       name,
+      price,
+      category,
       oldPrice,
+      description,
+      componentClass,
     } = this.props;
     return (
       <ItemCard>
-        <CardImage href={imageLink}>
-          <Image alt="product" src={img} />
+        <CardImage componentClass={componentClass} href={href}>
+          <Image alt="product" src={image} />
         </CardImage>
         <CardBody>
           <CardTitle>
-            <TitleLink href={titleLink}>{name}</TitleLink>
-            <TitleSpan>Accessories</TitleSpan>
+            <TitleLink componentClas={componentClass} href={href}>{name}</TitleLink>
+            <TitleSpan>{category}</TitleSpan>
           </CardTitle>
           <CardPrice>
-            <StrikeThroughItem isPierced={oldPrice}>$699.99</StrikeThroughItem>
-            <StrikeThroughItem>$649.99</StrikeThroughItem>
+            <If condition={oldPrice}>
+              <StrikeThroughItem isPierced={oldPrice}>{oldPrice}</StrikeThroughItem>
+            </If>
+            <StrikeThroughItem>{price}</StrikeThroughItem>
           </CardPrice>
           <Divider />
-          <CardDesc>From the way it works to the way it looks, Watch isn’t just something you wear. It’s an essential part of who you are.</CardDesc>
+          <CardDesc>{description}</CardDesc>
         </CardBody>
       </ItemCard>
     );
