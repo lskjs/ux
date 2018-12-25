@@ -266,18 +266,20 @@ const sidebar = (
   </LayoutSidebar>
 );
 
-const noFixedLayout = props => (
-  <React.Fragment>
-    {sidebar}
-    <AntLayout>
-      {header}
-      {content(props)}
-      {footer}
-    </AntLayout>
-  </React.Fragment>
-);
+export function noFixedLayout(props, body) {
+  return (
+    <React.Fragment>
+      {sidebar}
+      <AntLayout>
+        {header}
+        {body || content(props)}
+        {footer}
+      </AntLayout>
+    </React.Fragment>
+  );
+}
 
-const fixedLayout = props => (
+export const fixedLayout = props => (
   <React.Fragment>
     {sidebar}
     <AntLayout>

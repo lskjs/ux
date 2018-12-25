@@ -3,7 +3,7 @@ import ThemeInjector from '../../../ThemeInjector';
 import Box from './Box';
 import AnimatedLink from '../AnimatedLink';
 import '../../../antd.g.css';
-
+import UserBoxFooter from '../UserBoxFooter';
 import BoxDivider from '../../atoms/BoxDivider';
 
 module.exports = ({ storiesOf }) => (
@@ -396,6 +396,14 @@ module.exports = ({ storiesOf }) => (
               Link
             </AnimatedLink>
           </Box.Footer>
+        </Box>
+      </ThemeInjector>
+    ))
+    .add('UserPage', () => (
+      <ThemeInjector>
+        <Box image="https://picsum.photos/1280/720/?random" style={{ height: 380 }}>
+          <div style={{ height: 240 }} />
+          <UserBoxFooter />
         </Box>
       </ThemeInjector>
     ))

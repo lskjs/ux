@@ -19,21 +19,24 @@ class Box extends PureComponent {
     children: PropTypes.any,
     padded: PropTypes.bool,
     paint: PropTypes.string,
+    image: PropTypes.string,
   };
 
   static defaultProps = {
     children: null,
     padded: false,
     paint: null,
+    image: null,
   }
   render() {
     const {
       children,
       padded,
       paint,
+      image,
     } = this.props;
     return (
-      <BoxItem padded={padded} paint={paint}>
+      <BoxItem padded={padded} paint={paint} image={image}>
         {children}
       </BoxItem>
     );

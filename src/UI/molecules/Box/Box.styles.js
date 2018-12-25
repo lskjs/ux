@@ -66,4 +66,11 @@ export default styled(filteredTag)`
   >section:last-child {
     border-radius: 0 0 6px 6px;
   }
+  ${p => (p.image && css`
+    background-image: ${`url(${p.image})`};
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0px;
+  `)}
 `;
