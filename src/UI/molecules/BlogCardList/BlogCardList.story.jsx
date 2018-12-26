@@ -17,7 +17,7 @@ const articles = [
 ];
 
 module.exports = ({ storiesOf }) => (
-  storiesOf('BlogCardList', module)
+  storiesOf('ui/BlogCardList', module)
     .add('BlogCardList', () => (
       <div style={{ padding: 60 }}>
         <ThemeInjector>

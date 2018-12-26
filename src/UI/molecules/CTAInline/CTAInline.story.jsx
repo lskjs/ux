@@ -3,7 +3,7 @@ import CTAInline from './CTAInline';
 import ThemeInjector from '../../../ThemeInjector';
 
 module.exports = ({ storiesOf }) => (
-  storiesOf('CTAInline', module)
+  storiesOf('ui/CTAInline', module)
     .add('Default', () => (
       <div style={{ padding: 60 }}>
         <ThemeInjector>

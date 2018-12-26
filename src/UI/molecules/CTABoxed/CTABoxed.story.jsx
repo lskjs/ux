@@ -12,7 +12,7 @@ const articles = [
 ];
 
 module.exports = ({ storiesOf }) => (
-  storiesOf('CTABoxed', module)
+  storiesOf('ui/CTABoxed', module)
     .add('Default', () => (
       <div style={{ padding: 60 }}>
         <ThemeInjector>

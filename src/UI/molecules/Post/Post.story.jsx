@@ -70,7 +70,7 @@ const tags = (
 );
 
 module.exports = ({ storiesOf }) => (
-  storiesOf('Post', module)
+  storiesOf('ui/Post', module)
     .add('Default', () => (
       <ThemeInjector>
         <div style={{ padding: 60 }}>

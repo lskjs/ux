@@ -8,7 +8,7 @@ import '../../../bootstrap.g.css';
 import LoginScreen from './LoginScreen';
 
 module.exports = ({ storiesOf }) => (
-  storiesOf('LoginScreen', module)
+  storiesOf('ui/LoginScreen', module)
     .add('LoginScreen', () => (
       <ThemeInjector>
         <LoginScreen />

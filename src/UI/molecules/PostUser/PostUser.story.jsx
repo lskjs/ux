@@ -3,7 +3,7 @@ import PostUser from './PostUser';
 import ThemeInjector from '../../../ThemeInjector';
 
 module.exports = ({ storiesOf }) => (
-  storiesOf('PostUser', module)
+  storiesOf('ui/PostUser', module)
     .add('Default', () => (
       <ThemeInjector>
         <div style={{ padding: 60 }}>

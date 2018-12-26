@@ -9,7 +9,7 @@ import Cover from './UI/molecules/Cover';
 import Feature from './UI/molecules/Feature';
 import TestImonialV2 from './UI/molecules/TestImonialV2';
 import CTAInline from './UI/molecules/CTAInline';
-import ThemeInjector from './ThemeInjector';
+import Story from './Story';
 import Input from './UI/atoms/Input';
 import InputContainer from './UI/atoms/InputContainer';
 import Container from './UI/atoms/Container';
@@ -22,9 +22,9 @@ import FeatureContainer from './UI/atoms/FeatureContainer';
 
 
 module.exports = ({ storiesOf }) => (
-  storiesOf('Landing', module)
+  storiesOf('example/landing1', module)
     .add('Default', () => (
-      <ThemeInjector>
+      <Story>
         <div>
           <Cover
             image="http://iarouse.com/dist-react-ant-design/v1.1.4/assets/images-demo/covers/alexandre-perotto-75274-unsplash.jpg"
@@ -243,6 +243,6 @@ module.exports = ({ storiesOf }) => (
             </CopyrightContainer>
           </Slide>
         </div>
-      </ThemeInjector>
+      </Story>
     ))
 );

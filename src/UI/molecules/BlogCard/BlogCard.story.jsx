@@ -54,7 +54,7 @@ const articles = [
 
 
 module.exports = ({ storiesOf }) => (
-  storiesOf('BlogCard', module)
+  storiesOf('ui/BlogCard', module)
     .add('BlogCard', () => (
       <ThemeInjector>
         <BlogCard

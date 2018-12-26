@@ -13,7 +13,7 @@ const articles = [
 ];
 
 module.exports = ({ storiesOf }) => (
-  storiesOf('TestImonialV1', module)
+  storiesOf('ui/TestImonialV1', module)
     .add('default', () => (
       <div style={{ padding: 60, backgroundColor: 'red' }}>
         <ThemeInjector>

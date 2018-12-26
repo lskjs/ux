@@ -3,7 +3,7 @@ import CalloutRight from './CalloutRight';
 import ThemeInjector from '../../../ThemeInjector';
 
 module.exports = ({ storiesOf }) => (
-  storiesOf('CalloutRight', module)
+  storiesOf('ui/CalloutRight', module)
     .add('Default', () => (
       <div style={{ padding: 60 }}>
         <ThemeInjector>

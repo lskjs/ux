@@ -3,7 +3,7 @@ import CTACentered from './CTACentered';
 import ThemeInjector from '../../../ThemeInjector';
 
 module.exports = ({ storiesOf }) => (
-  storiesOf('CTACentered', module)
+  storiesOf('ui/CTACentered', module)
     .add('Default', () => (
       <div style={{ padding: 60 }}>
         <ThemeInjector>

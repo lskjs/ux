@@ -4,7 +4,7 @@ import Cover from './Cover';
 
 
 module.exports = ({ storiesOf }) => (
-  storiesOf('Cover', module)
+  storiesOf('ui/Cover', module)
     .add('Default', () => (
       <Cover
         image="http://iarouse.com/dist-react-ant-design/v1.1.4/assets/images-demo/covers/leone-venter-559377-cut.jpg"

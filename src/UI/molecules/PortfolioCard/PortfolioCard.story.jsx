@@ -19,7 +19,7 @@ const articles = [
 ];
 
 module.exports = ({ storiesOf }) => (
-  storiesOf('PortfolioCard', module)
+  storiesOf('ui/PortfolioCard', module)
     .add('Card1', () => (
       <div style={{ padding: 60, maxWidth: 400 }}>
         <ThemeInjector>

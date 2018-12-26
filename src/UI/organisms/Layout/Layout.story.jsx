@@ -293,7 +293,7 @@ export const fixedLayout = props => (
 );
 
 module.exports = ({ storiesOf }) => (
-  storiesOf('Layout', module)
+  storiesOf('ui/Layout', module)
     .add('Default', () => (
       <ThemeInjector>
         <Layout>

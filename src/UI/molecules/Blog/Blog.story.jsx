@@ -13,7 +13,7 @@ const articles = [
 ];
 
 module.exports = ({ storiesOf }) => (
-  storiesOf('Blog', module)
+  storiesOf('ui/Blog', module)
     .add('Default', () => (
       <div style={{ padding: 60 }}>
         <ThemeInjector>

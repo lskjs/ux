@@ -7,7 +7,7 @@ import UserBoxFooter from '../UserBoxFooter';
 import BoxDivider from '../../atoms/BoxDivider';
 
 module.exports = ({ storiesOf }) => (
-  storiesOf('Box', module)
+  storiesOf('ui/Box', module)
     .add('Default', () => (
       <ThemeInjector>
         <Box padded>
