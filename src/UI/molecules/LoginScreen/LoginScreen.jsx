@@ -10,7 +10,7 @@ import {
   FormWrapper,
   ImageContainer,
   AdditionalInfo,
-} from './LoginsScreen.styles';
+} from './LoginScreen.styles';
 
 const FormItem = Form.Item;
 

@@ -5,6 +5,7 @@ import Story from '../../Story';
 import DEV from '../../DEV';
 import createForm from '../createForm';
 import Input from '../controls/Input';
+import LightFormGroup from '../LightFormGroup';
 
 
 const FormExample1View = (props) => {
@@ -24,6 +25,7 @@ const FormExample1View = (props) => {
 
 const FormExample1 = createForm({
   view: FormExample1View,
+  FormGroup: LightFormGroup,
   controls: {
     input: {
       title: 'input',
