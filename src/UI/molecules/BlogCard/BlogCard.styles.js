@@ -1,9 +1,9 @@
 import styled from 'react-emotion';
 
 export const Wrapper = styled('article')`
-  border: 1px solid ${p => p.theme.ui.colors.border};
-  background: ${p => p.theme.ui.colors.white};
-  border-radius: ${p => p.theme.ui.borderRadius};
+  border: 1px solid ${p => p.theme.colors.border};
+  background: ${p => p.theme.colors.white};
+  border-radius: ${p => p.theme.borderRadius};
   overflow: hidden;
   max-width: 600px;
 `;
@@ -18,21 +18,23 @@ export const ImgContainer = styled('div')`
 `;
 
 export const Body = styled('div')`
-  border-radius: 0 0 
-    ${p => p.theme.ui.borderRadius} ${p => p.theme.ui.borderRadius};
+  border-radius: 0 0 ${p => p.theme.borderRadius} ${p => p.theme.borderRadius};
   padding: 1.625rem;
+  font-family: ${p => p.theme.fontFamily};
 `;
 
 export const Date = styled('span')`
   opacity: .7;
+  font-family: ${p => p.theme.fontFamily};
 `;
 
 export const Title = styled('h4')`
   line-height: 1.625rem;
   font-size: 1em;
+  font-family: ${p => p.theme.fontFamily};
   margin: 5px 0;
   font-weight: 500;
-  color: ${p => p.theme.ui.colors.default};
+  color: ${p => p.theme.colors.main};
 `;
 
 

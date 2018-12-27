@@ -7,6 +7,7 @@ export const BsCol = styled(Col)`
   min-height: 300px;
   background-size: cover;
   background-position: center;
+  font-family: ${p => p.theme.fontFamily};
   @media (min-width: 768px) {
     position:absolute;
     top: 0;
@@ -17,6 +18,7 @@ export const BsCol = styled(Col)`
 
 export const Content = styled('div')`
   padding: 3em 0;
+  font-family: ${p => p.theme.fontFamily};
   @media (min-width: 768px) {
     padding-top: 96px;
     padding-bottom: 96px;
@@ -33,7 +35,8 @@ export const Content = styled('div')`
 
 export const FeatureCallout = styled('div')`
   position: relative;
-  background-color: ${p => (p.theme.ui.colors.white)};
+  font-family: ${p => p.theme.fontFamily};
+  background-color: ${p => (p.theme.colors.white)};
   ${Content} {
     @media (min-width: 768px) { padding-right: 32px; }
     @media (min-width: 1200px) { padding-right: 48px; }
@@ -42,6 +45,7 @@ export const FeatureCallout = styled('div')`
 
 export const Title = styled('h2')`
   font-size: 24px;
+  font-family: ${p => p.theme.fontFamily};
   margin-top: 0;
   @media (min-width: 768px) {
     font-size: 32px;
@@ -55,6 +59,7 @@ export const ContentItem = styled('div')`
   line-height: 1.5;
   hyphens: none;
   margin: 26px 0;
+  font-family: ${p => p.theme.fontFamily};
   @media (min-width: 768px) {
     line-height: 1.5;
   }
@@ -62,6 +67,7 @@ export const ContentItem = styled('div')`
 
 export const Button = styled(BsButton)`
   height: auto;
+  font-family: ${p => p.theme.fontFamily};
   padding: 10px 56px;
   text-transform: uppercase;
   letter-spacing: .5px;

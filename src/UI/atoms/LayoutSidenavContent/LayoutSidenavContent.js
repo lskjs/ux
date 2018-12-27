@@ -6,4 +6,5 @@ export default styled('div')`
   flex: 1 1 auto;
   overflow: auto;
   border-right: 1px solid rgba(0,0,0,.1);
+  font-family: ${p => p.theme.fontFamily};
 `;

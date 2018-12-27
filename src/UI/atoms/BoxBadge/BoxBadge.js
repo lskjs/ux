@@ -5,6 +5,7 @@ export default styled('div')`
   right: 1rem;
   top: 1rem;
   padding: .375rem .6rem;
+  font-family: ${p => p.theme.fontFamily};
   display: inline-block;
   font-size: 75%;
   font-weight: 700;

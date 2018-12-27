@@ -34,9 +34,10 @@ class Box extends PureComponent {
       padded,
       paint,
       image,
+      ...props
     } = this.props;
     return (
-      <BoxItem padded={padded} paint={paint} image={image}>
+      <BoxItem padded={padded} paint={paint} image={image} {...props}>
         {children}
       </BoxItem>
     );

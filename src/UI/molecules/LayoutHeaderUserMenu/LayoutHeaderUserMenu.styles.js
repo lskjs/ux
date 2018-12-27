@@ -2,15 +2,17 @@ import styled from 'react-emotion';
 
 export const DropdownLink = styled('a')`
   text-decoration: none !important;
-  color: ${p => p.theme.ui.colors.darkGrey} !important;
+  font-family: ${p => p.theme.fontFamily};
+  color: ${p => p.theme.colors.darkGray} !important;
   &:hover,
   &:focus,
   &:active {
     text-decoration: none !important;
-    color: ${p => p.theme.ui.colors.darkGrey} !important;
+    color: ${p => p.theme.colors.darkGray} !important;
   }
 `;
 
 export const AvatarText = styled('span')`
+  font-family: ${p => p.theme.fontFamily};
   margin-left: .5rem;
 `;

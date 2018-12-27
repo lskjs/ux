@@ -2,7 +2,7 @@ import styled from 'react-emotion';
 
 export default (component = 'input') => (
   styled(component)`
-    border-radius: 3px;
+    ${p => p.theme.borderSmall};
     width: 100%;
     background-color: rgba(255, 255, 255, 0.44);
     border: solid 1px #e3e3e3;
@@ -113,7 +113,7 @@ export default (component = 'input') => (
 // `;
 
 // export const Block = styled('input')`
-//    border-radius: 3px;
+//    ${p => p.theme.borderSmall};
 //     width: 100%;
 //     background-color: rgba(255, 255, 255, 0.44);
 //     border: solid 1px #e3e3e3;

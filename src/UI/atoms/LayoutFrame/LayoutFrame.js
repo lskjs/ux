@@ -38,6 +38,7 @@ const allFixed = css`
 export default styled(filteredTag)`
   max-width: 100%;
   margin: auto;
+  font-family: ${p => p.theme.fontFamily};
   transition: max-width .35s ease;
 
   &.ant-layout {

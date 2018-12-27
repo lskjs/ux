@@ -6,6 +6,7 @@ const dynamicTag = createDynamicTag('a');
 export default styled(dynamicTag)`
   display: inline-block;
   padding: 0 .875rem;
+  font-family: ${p => p.theme.fontFamily};
   margin: 0;
   transition: all .3s;
   background-color: transparent;

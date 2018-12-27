@@ -4,4 +4,5 @@ import { Col } from 'reactstrap';
 
 export default styled(Col)`
   padding: 1rem 3rem;
+  font-family: ${p => p.theme.fontFamily};
 `;

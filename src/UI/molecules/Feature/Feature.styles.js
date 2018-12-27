@@ -7,14 +7,16 @@ export const IconWrapper = styled('div')`
 export const Header = styled('h4')`
   font-size: 0.875rem;
   font-weight: 500;
+  font-family: ${p => p.theme.fontFamily};
   text-transform: uppercase;
   letter-spacing: 1px;
   margin: 0;
-  color: ${p => (p.theme.ui.colors.darkGrey)};
+  color: ${p => (p.theme.colors.darkGray)};
 `;
 
 export const Content = styled('div')`
   margin: .5rem 0 0;
+  font-family: ${p => p.theme.fontFamily};
   opacity: .87;
 
 `;

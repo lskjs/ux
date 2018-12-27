@@ -9,8 +9,9 @@ const { Sider: AntSider } = Layout;
 export default styled(AntSider)`
   display: flex;
   flex-direction: column;
+  font-family: ${p => p.theme.fontFamily};
   display: none;
-  background-color: ${p => p.theme.ui.colors.white};
+  background-color: ${p => p.theme.colors.white};
   
   @media screen and (min-width: 768px) {
     display: flex !important;

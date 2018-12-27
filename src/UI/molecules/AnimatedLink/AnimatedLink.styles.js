@@ -10,7 +10,7 @@ const filteredTag = removeProps(dynamicTag, [
 ]);
 
 const paintColors = (p) => {
-  const { colors } = p.theme.ui;
+  const { colors } = p.theme;
   switch (p.paint) {
     case 'primary':
       return colors.primary;
@@ -22,6 +22,7 @@ const paintColors = (p) => {
 export const ALink = styled(filteredTag)`
   position: relative;
   display: inline-block;
+  font-family: ${p => p.theme.fontFamily};
   text-decoration: none;
   color: ${paintColors};
   &:hover,
@@ -50,7 +51,7 @@ export const ALink = styled(filteredTag)`
     transition: width .25s;
     background: ${paintColors};
     ${p => (p.paint === 'primary' && css`
-      border-color: ${p.theme.ui.colors.primary};
+      border-color: ${p.theme.colors.primary};
     `)}
   }
 `;

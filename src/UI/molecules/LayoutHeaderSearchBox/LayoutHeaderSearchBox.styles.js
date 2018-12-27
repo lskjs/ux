@@ -79,6 +79,7 @@ export const Inner = styled('div')`
   display: flex;
   flex-wrap: wrap;
   height: 100%;
+  font-family: ${p => p.theme.fontFamily};
 `;
 
 const filteredIconWrapper = removeProps('div', ['right']);
@@ -101,6 +102,7 @@ export const Bar = styled('span')`
   width: 90%;
   bottom: 0;
   left: 5%;
+  font-family: ${p => p.theme.fontFamily};
   
   &:before,
   &:after {
@@ -109,7 +111,7 @@ export const Bar = styled('span')`
     height: 1px;
     width: 0;
     bottom: 1px;
-    background: ${p => p.theme.ui.colors.darkGrey};
+    background: ${p => p.theme.colors.darkGray};
     transition: all .25s;
   }
   &:before {
@@ -123,6 +125,7 @@ export const Bar = styled('span')`
 const filteredInput = removeProps('input', ['right']);
 export const Input = styled(filteredInput)`
   position: relative;
+  font-family: ${p => p.theme.fontFamily};
   flex: 1 1 auto;
   padding: ${p => (p.right ? '9px 10px 3px' : '7px 10px 5px')};
   width: 1%;
