@@ -1,12 +1,11 @@
 import React from 'react';
 import { Form, Field } from 'formik';
 import { Button } from 'react-bootstrap';
-import validate from 'validate.js';
-import Story from '../../Story';
-import createForm from '../createForm';
-import Input from '../controls/Input';
-import LightFormGroup from '../LightFormGroup';
-import DEV from '../../DEV';
+import Story from '../../../Story';
+import createForm from '../../createForm';
+import Input from '../../controls/Input';
+import LightFormGroup from '../../LightFormGroup';
+import DEV from '../../../DEV';
 
 
 const ValidationExampleView = (props) => {
@@ -19,6 +18,7 @@ const ValidationExampleView = (props) => {
   console.log({ props });
   return (
     <Form>
+      Existing emails: some@email.com, someasync@email.com
       <Field {...controls.email} disabled={isSubmitting} />
       <Field {...controls.password} disabled={isSubmitting} />
       <Button onClick={handleSubmit} disabled={isSubmitting}>SUBMIT</Button>
@@ -31,18 +31,45 @@ const ValidationExampleView = (props) => {
   );
 };
 
-const ValidationExample = createForm({
+const checkEmail = async (data) => {
+  return new Promise(((resolve, reject) => {
+    setTimeout(() => {
+      if (data === 'someasync@email.com') {
+        reject(new Error('email already exists'));
+      } else {
+        resolve();
+      }
+    }, 1000);
+  }));
+};
+
+const ValidationExampleAsync = createForm({
   view: ValidationExampleView,
   FormGroup: LightFormGroup,
   controls: {
     email: {
       title: 'email',
       component: Input,
-      placeholder: 'email placeholder',
+      placeholder: 'email async placeholder',
       type: 'text',
       validator: {
+        // asyncValidator: true,
         presence: {
           allowEmpty: false,
+        },
+        checkEmail: (value) => {
+          if (value === 'some@email.com') {
+            return 'email already exists';
+          }
+          return '';
+        },
+        checkEmailAsync: async (value) => {
+          try {
+            await checkEmail(value);
+            return '';
+          } catch (err) {
+            return err.message;
+          }
         },
       },
     },
@@ -60,13 +87,12 @@ const ValidationExample = createForm({
   },
 });
 
-
 module.exports = ({ storiesOf }) =>
-  storiesOf('Form2', module)
-    .add('Validation with validate.js', () => {
+  storiesOf('Form2/validation', module)
+    .add('Custom async validation', () => {
       return (
         <Story>
-          <ValidationExample
+          <ValidationExampleAsync
             onSubmit={(values) => {
               console.log({ values });
             }}
