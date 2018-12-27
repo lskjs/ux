@@ -78,16 +78,32 @@ const createForm = ({
       onChange(values);
     },
     // validate
-    validate(values) {
+    // validate(values) {
+    //   const validators = {};
+    //   forEach(preparedControls, (value, key) => {
+    //     validators[key] = value.validator;
+    //   });
+    //   const errors = validate(values, validators, { fullMessages: false }) || {};
+    //   forEach(errors, (error, name) => {
+    //     errors[name] = error?.[0];
+    //   });
+    //   return errors;
+    // },
+    async validate(values) {
       const validators = {};
       forEach(preparedControls, (value, key) => {
         validators[key] = value.validator;
       });
-      const errors = validate(values, validators, { fullMessages: false }) || {};
-      forEach(errors, (error, name) => {
-        errors[name] = error?.[0];
-      });
-      return errors;
+      try {
+        await validate.async(values, validators, { fullMessages: false });
+        return {};
+      } catch (errors) {
+        console.log('catch work', { errors });
+        forEach(errors, (error, name) => {
+          errors[name] = error?.[0];
+        });
+        throw errors;
+      }
     },
     validateOnChange: false,
     validateOnBlur: false,
