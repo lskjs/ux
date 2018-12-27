@@ -13,30 +13,39 @@ import {
 
 class UserBoxFooter extends PureComponent {
   static propTypes = {
-    name: PropTypes.string,
-    position: PropTypes.string,
-    image: PropTypes.string,
+    subtitle: PropTypes.string,
+    actions: PropTypes.any,
+    user: PropTypes.object,
   };
   static defaultProps = {
-    name: null,
-    position: null,
-    image: null,
+    subtitle: null,
+    actions: null,
+    user: null,
   };
   render() {
     const {
-      image,
-      name,
-      position,
+      subtitle,
+      actions,
+      user,
     } = this.props;
     return (
       <UserFooterItem>
-        <AvatarContainer><Avatar src={image} id="123" size={140} /></AvatarContainer>
+        <AvatarContainer>
+          <Avatar
+            title={user.title}
+            src={user.avatar}
+            id={user._id}
+            size={140}
+          />
+        </AvatarContainer>
         <Content>
           <TextContainer>
-            <TextItem>{name}</TextItem>
-            <TextItem>{position}</TextItem>
+            <TextItem>{user.title}</TextItem>
+            <TextItem>{subtitle}</TextItem>
           </TextContainer>
-          <ButtonContainer><Button>Edit</Button></ButtonContainer>
+          <ButtonContainer>
+            {actions}
+          </ButtonContainer>
         </Content>
       </UserFooterItem>
     );

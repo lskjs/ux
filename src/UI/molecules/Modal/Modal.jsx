@@ -16,8 +16,6 @@ import ModalTitle from '../ModalTitle';
 
 import closeButtonStyle from './Modal.styles';
 
-import './Modal.g.css';
-
 class Modal extends PureComponent {
   static Subtitle = ModalSubtitle;
   static Description = ModalDescription;

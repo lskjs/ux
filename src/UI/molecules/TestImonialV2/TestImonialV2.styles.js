@@ -6,41 +6,41 @@ export const Wrapper = styled('div')`
   font-family: ${p => p.theme.fontFamily};
   padding: 48px 16px 54px;
   text-align: center;
-  ${p => p.theme.borderRadius};
+  border-radius: ${p => p.theme.borderRadius};
   margin-bottom: 34px;
   ${(p) => {
     switch (p.paint) {
       case 'light':
-        return css` 
-          background-color: ${p.theme.colors.secondary}; 
+        return css`
+          background-color: ${p.theme.colors.secondary};
           color: ${p.theme.colors.main};`;
       case 'dark':
-        return css` 
-          background-color: ${p.theme.colors.black}; 
+        return css`
+          background-color: ${p.theme.colors.black};
           color: ${p.theme.colors.white};`;
       case 'primary':
-        return css` 
-          background-color: ${p.theme.colors.primary}; 
+        return css`
+          background-color: ${p.theme.colors.primary};
           color: ${p.theme.colors.white};`;
       case 'info':
-        return css` 
-          background-color: ${p.theme.colors.info}; 
+        return css`
+          background-color: ${p.theme.colors.info};
           color: ${p.theme.colors.white};`;
       case 'success':
-        return css` 
-          background-color: ${p.theme.colors.success}; 
+        return css`
+          background-color: ${p.theme.colors.success};
           color: ${p.theme.colors.white};`;
       case 'warning':
-        return css` 
-          background-color: ${p.theme.colors.warning}; 
+        return css`
+          background-color: ${p.theme.colors.warning};
           color: ${p.theme.colors.main};`;
       case 'danger':
-        return css` 
-          background-color: ${p.theme.colors.danger}; 
+        return css`
+          background-color: ${p.theme.colors.danger};
           color: ${p.theme.colors.white};`;
       default:
-        return css` 
-          background-color: ${p.theme.colors.white}; 
+        return css`
+          background-color: ${p.theme.colors.white};
           color: ${p.theme.colors.main}; `;
     }
   }}
