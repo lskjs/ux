@@ -4,16 +4,16 @@ import ThemeInjector from '../../../ThemeInjector';
 
 const articles = [
   {
-    img: 'https://picsum.photos/300/200?random',
-    link: '',
-    name: 'Lorem ipsum dolor',
-    tag: 'PSD',
+    image: 'https://picsum.photos/300/200?random',
+    href: '',
+    title: 'Lorem ipsum dolor',
+    subtitle: 'PSD',
   },
   {
-    img: 'https://picsum.photos/300/200?random',
-    link: '',
-    name: 'Lorem ipsum dolor',
-    tag: 'PSD',
+    image: 'https://picsum.photos/300/200?random',
+    href: '',
+    title: 'Lorem ipsum dolor',
+    subtitle: 'PSD',
     position: 'bottom',
   },
 ];

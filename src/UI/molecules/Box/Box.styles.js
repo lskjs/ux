@@ -50,6 +50,7 @@ const paintColors = (p) => {
 };
 
 export default styled(filteredTag)`
+  overflow: hidden;
   position: relative;
   display: flex;
   flex-direction: column;
