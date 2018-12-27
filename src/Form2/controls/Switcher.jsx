@@ -1,7 +1,7 @@
 import React from 'react';
 import get from 'lodash/get';
-import SwitcherBase from '~/Uapp/components/Switcher';
-import FormGroup from '../FormGroup';
+import SwitcherBase from '../../Switcher';
+// import FormGroup from '../FormGroup';
 
 const Switcher = ({
   field,
@@ -9,15 +9,15 @@ const Switcher = ({
   ...props
 }) => {
   return (
-    <FormGroup
-      field={field}
-      form={form}
+  // <FormGroup
+  //   field={field}
+  //   form={form}
+  //   {...props}
+  // >
+    <SwitcherBase
+      {...field}
       {...props}
-    >
-      <SwitcherBase
-        {...field}
-        {...props}
-        onChange={(val) => {
+      onChange={(val) => {
           field.onChange({
             target: {
               name: field.name,
@@ -25,9 +25,9 @@ const Switcher = ({
             },
           });
         }}
-        value={get(form.values, field.name)}
-      />
-    </FormGroup>
+      value={get(form.values, field.name)}
+    />
+  // </FormGroup>
   );
 };
 
