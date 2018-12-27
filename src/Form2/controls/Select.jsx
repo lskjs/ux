@@ -37,11 +37,6 @@ const Select = ({
     value: option.value == null ? NULL_STRING : option.value,
   }));
   return (
-  // <FormGroup
-  //   field={field}
-  //   form={form}
-  //   {...props}
-  // >
     <SelectBase
       {...field}
       {...props}
@@ -57,7 +52,6 @@ const Select = ({
         }}
       options={options}
     />
-  // </FormGroup>
   );
 };
 

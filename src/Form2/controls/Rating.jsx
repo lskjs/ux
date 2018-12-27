@@ -1,7 +1,6 @@
 import React from 'react';
 import get from 'lodash/get';
 import Feedback from '../../Feedback';
-// import FormGroup from '../FormGroup';
 
 const Rating = ({
   field,
@@ -9,11 +8,6 @@ const Rating = ({
   ...props
 }) => {
   return (
-  // <FormGroup
-  //   field={field}
-  //   form={form}
-  //   {...props}
-  // >
     <Feedback
       {...field}
       {...props}
@@ -31,7 +25,6 @@ const Rating = ({
         }}
       starCount={5}
     />
-  // </FormGroup>
   );
 };
 

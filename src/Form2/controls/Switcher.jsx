@@ -1,7 +1,6 @@
 import React from 'react';
 import get from 'lodash/get';
 import SwitcherBase from '../../Switcher';
-// import FormGroup from '../FormGroup';
 
 const Switcher = ({
   field,
@@ -9,11 +8,6 @@ const Switcher = ({
   ...props
 }) => {
   return (
-  // <FormGroup
-  //   field={field}
-  //   form={form}
-  //   {...props}
-  // >
     <SwitcherBase
       {...field}
       {...props}
@@ -27,7 +21,6 @@ const Switcher = ({
         }}
       value={get(form.values, field.name)}
     />
-  // </FormGroup>
   );
 };
 

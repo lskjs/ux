@@ -1,6 +1,5 @@
 import React from 'react';
 import Textarea from 'react-textarea-autosize';
-// import Input from '~/Uapp/components/Input';
 import Input from '../../Input';
 
 const TextArea = ({

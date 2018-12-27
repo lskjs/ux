@@ -3,8 +3,7 @@ import get from 'lodash/get';
 import cloneDeep from 'lodash/cloneDeep';
 import sortBy from 'lodash/sortBy';
 import isPlainObject from 'lodash/isPlainObject';
-import RadioBase from '~/Uapp/components/Radio';
-import FormGroup from '../FormGroup';
+import RadioBase from '../../Radio';
 
 const NULL_STRING = '@@NULL@@';
 
@@ -39,17 +38,12 @@ const Radio = ({
     value: option.value == null ? NULL_STRING : option.value,
   }));
   return (
-    <FormGroup
-      field={field}
-      form={form}
+    <RadioBase
+      {...field}
       {...props}
-    >
-      <RadioBase
-        {...field}
-        {...props}
-        validationState={form.errors[field.name] ? 'error' : null}
-        value={value}
-        onChange={(val) => {
+      validationState={form.errors[field.name] ? 'error' : null}
+      value={value}
+      onChange={(val) => {
           field.onChange({
             target: {
               name: field.name,
@@ -57,9 +51,8 @@ const Radio = ({
             },
           });
         }}
-        options={options}
-      />
-    </FormGroup>
+      options={options}
+    />
   );
 };
 
