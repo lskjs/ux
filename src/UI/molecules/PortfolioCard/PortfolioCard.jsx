@@ -7,39 +7,40 @@ import {
   CardInfo,
   CardName,
   CardTag,
-} from './PortfolioCard.styled';
+} from './PortfolioCard.styles';
 
 class PortfolioCard extends PureComponent {
   static propTypes = {
-    link: PropTypes.string,
-    img: PropTypes.string,
-    name: PropTypes.string,
+    href: PropTypes.string,
+    image: PropTypes.string,
+    title: PropTypes.string,
     position: PropTypes.string,
-    tag: PropTypes.string,
+    subtitle: PropTypes.string,
   };
   static defaultProps = {
-    link: null,
-    img: null,
+    href: null,
+    image: null,
     position: null,
-    name: null,
-    tag: null,
+    title: null,
+    subtitle: null,
   };
   render() {
     const {
-      link,
-      img,
+      href,
+      image,
       position,
-      name,
-      tag,
+      title,
+      subtitle,
+      ...props
     } = this.props;
     return (
-      <Card href={link}>
+      <Card href={href} {...props} >
         <ImageContainer>
-          <Image src={img} alt="cover"/>
+          <Image src={image} alt="cover" />
         </ImageContainer>
         <CardInfo position={position}>
-          <CardName>{name}</CardName>
-          <CardTag>{tag}</CardTag>
+          <CardName>{title}</CardName>
+          <CardTag>{subtitle}</CardTag>
         </CardInfo>
       </Card>
     );

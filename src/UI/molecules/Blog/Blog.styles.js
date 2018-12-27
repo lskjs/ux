@@ -79,7 +79,7 @@ export const Category = styled('span')`
   text-transform: uppercase;
   font-size: 12px;
   padding: 2px 5px;
-  ${p => p.theme.borderRadius};
+  border-radius: ${p => p.theme.borderRadius};
   background-color: rgba(0,0,0, .08);
 `;
 

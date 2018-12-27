@@ -14,14 +14,14 @@ export const ImageContainer = styled('div')`
     height: 80%;
     left: 0;
     top: 0;
-    background: linear-gradient(180deg, ${p => (p.theme.colors.darkGray)} 0%, rgba(33,37,41, 0) 100%);
+    background: linear-gradient(180deg, ${p => p.theme.colors.darkGray} 0%, rgba(33,37,41, 0) 100%);
   }
 `;
 
 export const Image = styled('img')`
   width: 100%;
   max-width: 100%;
-  ${p => p.theme.borderRadius};
+ border-radius:  ${p => p.theme.borderRadius};
 `;
 
 export const CardInfo = styled('div')`

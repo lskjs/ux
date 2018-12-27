@@ -7,6 +7,8 @@ import Component from '../Component';
 
 const DEBUG = 0;
 
+console.log(Modal);
+
 export default class MyModal extends Component {
   static childContextTypes = {
     _modal: PropTypes.func,
@@ -29,32 +31,6 @@ export default class MyModal extends Component {
     this.state = { visible: props.visible };
     if (typeof window !== 'undefined' && window.location.hash.substring(1) === this.props.id) {
       this.state.visible = true;
-    }
-  }
-  open() {
-    if (this.props.openHandler) {
-      this.props.openHandler.bind(this)();
-    } else {
-      if (this.props.id) {
-        this.setLocation({
-          hash: this.props.id,
-        });
-      }
-      this.setState({ visible: true });
-      this.props.onOpen && this.props.onOpen();
-    }
-  }
-  close() {
-    if (this.props.closeHandler) {
-      this.props.closeHandler.bind(this)();
-    } else {
-      if (this.props.id) {
-        this.setLocation({
-          hash: null,
-        });
-      }
-      this.setState({ visible: false });
-      this.props.onClose && this.props.onClose();
     }
   }
   getChildContext() {
@@ -83,6 +59,32 @@ export default class MyModal extends Component {
           visible: false,
         });
       });
+    }
+  }
+  open() {
+    if (this.props.openHandler) {
+      this.props.openHandler.bind(this)();
+    } else {
+      if (this.props.id) {
+        this.setLocation({
+          hash: this.props.id,
+        });
+      }
+      this.setState({ visible: true });
+      if (this.props.onOpen) this.props.onOpen();
+    }
+  }
+  close() {
+    if (this.props.closeHandler) {
+      this.props.closeHandler.bind(this)();
+    } else {
+      if (this.props.id) {
+        this.setLocation({
+          hash: null,
+        });
+      }
+      this.setState({ visible: false });
+      if (this.props.onClose) this.props.onClose();
     }
   }
   render() {

@@ -2,7 +2,7 @@ import styled from 'react-emotion';
 
 export default (component = 'input') => (
   styled(component)`
-    ${p => p.theme.borderSmall};
+    border-radius: ${p => p.theme.borderSmall};
     width: 100%;
     background-color: rgba(255, 255, 255, 0.44);
     border: solid 1px #e3e3e3;
@@ -29,18 +29,18 @@ export default (component = 'input') => (
     margin: 0;
     display: block;
     resize: none;
-  
+
     ${p => (p.disabled && `
       background-color: rgba(155, 155, 155, 0.03) !important;
       color: rgba(74, 74, 74, 0.5) !important;
       border-color: #e3e3e3 !important;
     `)}
-  
+
     &:focus,
     &:active {
       border-color: ${p => p.theme?.colors?.primary};
     }
-  
+
     &::-webkit-input-placeholder {
       opacity: 0.5 !important;
       color: #9b9b9b !important;
@@ -48,7 +48,7 @@ export default (component = 'input') => (
       font-size: 14px !important;
       line-height: 1.43 !important;
     }
-  
+
     &::-moz-placeholder {
       opacity: 0.5 !important;
       color: #9b9b9b !important;
@@ -56,7 +56,7 @@ export default (component = 'input') => (
       font-size: 14px !important;
       line-height: 1.43 !important;
     }
-  
+
     &:-moz-placeholder {
       opacity: 0.5 !important;
       color: #9b9b9b !important;
@@ -64,7 +64,7 @@ export default (component = 'input') => (
       font-size: 14px !important;
       line-height: 1.43 !important;
     }
-  
+
     &:-ms-input-placeholder {
       opacity: 0.5 !important;
       color: #9b9b9b !important;
@@ -72,7 +72,7 @@ export default (component = 'input') => (
       font-size: 14px !important;
       line-height: 1.43 !important;
     }
-  
+
     ${(p) => {
     switch (p.validationState) {
       case 'error': return 'border-color: #da4c5a !important;';
@@ -81,7 +81,7 @@ export default (component = 'input') => (
       default: return '';
     }
   }}
-  
+
     ${p => (p.block && 'width: 100%;')}
   `
 );

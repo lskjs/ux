@@ -452,7 +452,7 @@ export const Btn = styled(filteredTag)`
   background-color: #fff;
   border: none;
   outline: none;
-  ${p => p.theme.borderSmall};
+  border-radius: ${p => p.theme.borderSmall};
   overflow: hidden;
   position: relative;
   text-align: center;
@@ -654,7 +654,7 @@ export const State = styled(removeProps('div', ['size', 'disabled', 'visible', '
   overflow: hidden;
   box-sizing: border-box;
   cursor: default !important;
-  ${p => p.theme.borderSmall};
+  border-radius: ${p => p.theme.borderSmall};
   ${(props) => {
     if (props.bordered) {
       return `

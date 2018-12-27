@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/general",
-  "version": "0.15.14",
+  "version": "0.15.19",
   "author": "isuvorov",
   "license": "MIT",
   "dependencies": {
@@ -13,6 +13,7 @@
     "facepaint": "1.2.1",
     "formik": "^1.4.1",
     "importcss": "1.1.6",
+    "lodash-decorators": "6.0.1",
     "mobx": "5.6.0",
     "mobx-react": "^5.4.2",
     "prop-types": "^15.6.2",
