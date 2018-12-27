@@ -1,13 +1,13 @@
 import React from 'react';
 import { Form, Field } from 'formik';
 // import { Button } from 'react-bootstrap';
-import Story from '../../Story';
-import createForm from '../createForm';
-import Checkbox from '../controls/Checkbox';
-import LightFormGroup from '../LightFormGroup';
+import Story from '../../../../Story';
+import createForm from '../../../createForm';
+import RadioComponent from '../../../controls/Radio';
+import LightFormGroup from '../../../LightFormGroup';
 
 
-const CheckboxExampleView = (props) => {
+const RadioView = (props) => {
   const {
     // handleSubmit,
     controls,
@@ -22,31 +22,31 @@ const CheckboxExampleView = (props) => {
   );
 };
 
-const CheckboxExample = createForm({
-  view: CheckboxExampleView,
+const Radio = createForm({
+  view: RadioView,
   FormGroup: LightFormGroup,
   controls: {
     blue: {
       title: 'first value',
-      component: Checkbox,
+      component: RadioComponent,
     },
     black: {
       title: 'second value',
-      component: Checkbox,
+      component: RadioComponent,
     },
     green: {
       title: 'third value',
-      component: Checkbox,
+      component: RadioComponent,
     },
   },
 });
 
 module.exports = ({ storiesOf }) =>
-  storiesOf('Form2', module)
-    .add('CheckboxExample', () => {
+  storiesOf('Form2/stories/controls', module)
+    .add('Radio ', () => {
       return (
         <Story>
-          <CheckboxExample />
+          <Radio />
         </Story>
       );
     });

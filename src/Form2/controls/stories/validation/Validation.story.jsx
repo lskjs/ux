@@ -1,14 +1,14 @@
 import React from 'react';
 import { Form, Field } from 'formik';
 import { Button } from 'react-bootstrap';
-import Story from '../../../Story';
-import createForm from '../../createForm';
-import Input from '../../controls/Input';
-import LightFormGroup from '../../LightFormGroup';
-import DEV from '../../../DEV';
+import Story from '../../../../Story';
+import createForm from '../../../createForm';
+import InputComponent from '../../Input';
+import LightFormGroup from '../../../LightFormGroup';
+import DEV from '../../../../DEV';
 
 
-const ValidationExampleView = (props) => {
+const ValidationView = (props) => {
   const {
     handleSubmit,
     isSubmitting,
@@ -30,13 +30,13 @@ const ValidationExampleView = (props) => {
   );
 };
 
-const ValidationExample = createForm({
-  view: ValidationExampleView,
+const Validation = createForm({
+  view: ValidationView,
   FormGroup: LightFormGroup,
   controls: {
     email: {
       title: 'email',
-      component: Input,
+      component: InputComponent,
       placeholder: 'email placeholder',
       type: 'text',
       validator: {
@@ -47,7 +47,7 @@ const ValidationExample = createForm({
     },
     password: {
       title: 'password',
-      component: Input,
+      component: InputComponent,
       placeholder: 'password placeholder',
       type: 'password',
       validator: {
@@ -61,11 +61,11 @@ const ValidationExample = createForm({
 
 
 module.exports = ({ storiesOf }) =>
-  storiesOf('Form2/validation', module)
+  storiesOf('Form2/stories/validation', module)
     .add('Validation with validate.js', () => {
       return (
         <Story>
-          <ValidationExample
+          <Validation
             onSubmit={(values) => {
               console.log({ values });
             }}

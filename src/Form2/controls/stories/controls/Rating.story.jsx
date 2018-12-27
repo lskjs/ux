@@ -1,13 +1,13 @@
 import React from 'react';
 import { Form, Field } from 'formik';
 import { Button } from 'react-bootstrap';
-import Story from '../../Story';
-import createForm from '../createForm';
-import Rating from '../controls/Rating';
-import LightFormGroup from '../LightFormGroup';
+import Story from '../../../../Story';
+import createForm from '../../../createForm';
+import RatingComponent from '../../../controls/Rating';
+import LightFormGroup from '../../../LightFormGroup';
 
 
-const RatingExampleView = (props) => {
+const RatingView = (props) => {
   const {
     handleSubmit,
     controls,
@@ -20,23 +20,23 @@ const RatingExampleView = (props) => {
   );
 };
 
-const RatingExample = createForm({
-  view: RatingExampleView,
+const Rating = createForm({
+  view: RatingView,
   FormGroup: LightFormGroup,
   controls: {
     rating: {
       title: 'Rating',
-      component: Rating,
+      component: RatingComponent,
     },
   },
 });
 
 module.exports = ({ storiesOf }) =>
-  storiesOf('Form2', module)
-    .add('RatingExample', () => {
+  storiesOf('Form2/stories/controls', module)
+    .add('Rating ', () => {
       return (
         <Story>
-          <RatingExample />
+          <Rating />
         </Story>
       );
     });

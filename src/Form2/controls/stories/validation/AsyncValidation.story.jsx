@@ -1,14 +1,14 @@
 import React from 'react';
 import { Form, Field } from 'formik';
 import { Button } from 'react-bootstrap';
-import Story from '../../../Story';
-import createForm from '../../createForm';
-import Input from '../../controls/Input';
-import LightFormGroup from '../../LightFormGroup';
-import DEV from '../../../DEV';
+import Story from '../../../../Story';
+import createForm from '../../../createForm';
+import InputComponent from '../../Input';
+import LightFormGroup from '../../../LightFormGroup';
+import DEV from '../../../../DEV';
 
 
-const ValidationExampleView = (props) => {
+const ValidationView = (props) => {
   const {
     handleSubmit,
     isSubmitting,
@@ -43,13 +43,13 @@ const checkEmail = async (data) => {
   }));
 };
 
-const ValidationExampleAsync = createForm({
-  view: ValidationExampleView,
+const ValidationAsync = createForm({
+  view: ValidationView,
   FormGroup: LightFormGroup,
   controls: {
     email: {
       title: 'email',
-      component: Input,
+      component: InputComponent,
       placeholder: 'email async placeholder',
       type: 'text',
       validator: {
@@ -75,7 +75,7 @@ const ValidationExampleAsync = createForm({
     },
     password: {
       title: 'password',
-      component: Input,
+      component: InputComponent,
       placeholder: 'password placeholder',
       type: 'password',
       validator: {
@@ -88,11 +88,11 @@ const ValidationExampleAsync = createForm({
 });
 
 module.exports = ({ storiesOf }) =>
-  storiesOf('Form2/validation', module)
+  storiesOf('Form2/stories/validation', module)
     .add('Custom async validation', () => {
       return (
         <Story>
-          <ValidationExampleAsync
+          <ValidationAsync
             onSubmit={(values) => {
               console.log({ values });
             }}

@@ -1,13 +1,13 @@
 import React from 'react';
 import { Form, Field } from 'formik';
 import { Button } from 'react-bootstrap';
-import Story from '../../Story';
-import createForm from '../createForm';
-import Textarea from '../controls/Textarea';
-import LightFormGroup from '../LightFormGroup';
+import Story from '../../../../Story';
+import createForm from '../../../createForm';
+import TextareaComponent from '../../../controls/Textarea';
+import LightFormGroup from '../../../LightFormGroup';
 
 
-const TextareaExampleView = (props) => {
+const TextareaView = (props) => {
   const {
     handleSubmit,
     controls,
@@ -20,26 +20,26 @@ const TextareaExampleView = (props) => {
   );
 };
 
-const TextareaExample = createForm({
-  view: TextareaExampleView,
+const Textarea = createForm({
+  view: TextareaView,
   FormGroup: LightFormGroup,
   controls: {
     textarea: {
       title: 'textarea',
-      component: Textarea,
+      component: TextareaComponent,
       type: 'textarea',
       minRows: 5,
-      placeholder: 'TextArea Example',
+      placeholder: 'TextArea  ',
     },
   },
 });
 
 module.exports = ({ storiesOf }) =>
-  storiesOf('Form2', module)
-    .add('TextareaExample', () => {
+  storiesOf('Form2/stories/controls', module)
+    .add('Textarea ', () => {
       return (
         <Story>
-          <TextareaExample />
+          <Textarea />
         </Story>
       );
     });

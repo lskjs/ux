@@ -1,15 +1,15 @@
 import React from 'react';
 import { Form, FastField } from 'formik';
 
-import Story from '../../Story';
-import DEV from '../../DEV';
-import createForm from '../createForm';
-import Input from '../controls/Input';
-import LightFormGroup from '../LightFormGroup';
-import TagsPicker from '../controls/TagsPicker';
+import Story from '../../../../Story';
+import DEV from '../../../../DEV';
+import createForm from '../../../createForm';
+import Input from '../../Input';
+import LightFormGroup from '../../../LightFormGroup';
+import TagsPicker from '../../TagsPicker';
 
-import '../../antd.g.css';
-import '../../bootstrap.g.css';
+import '../../../../antd.g.css';
+import '../../../../bootstrap.g.css';
 
 const FormExample1View = (props) => {
   const {
@@ -68,8 +68,8 @@ const FormExample1 = createForm({
 });
 
 module.exports = ({ storiesOf }) =>
-  storiesOf('Form2', module)
-    .add('Default', () => {
+  storiesOf('Form2/stories/examples', module)
+    .add('FormExample', () => {
       return (
         <Story>
           <FormExample1 />

@@ -1,13 +1,12 @@
 import React from 'react';
 import { Form, Field } from 'formik';
 import { Button } from 'react-bootstrap';
-import Story from '../../Story';
-import createForm from '../createForm';
-import Switcher from '../controls/Switcher';
-import LightFormGroup from '../LightFormGroup';
+import Story from '../../../../Story';
+import createForm from '../../../createForm';
+import SwitcherComponent from '../../../controls/Switcher';
+import LightFormGroup from '../../../LightFormGroup';
 
-
-const SwitcherExampleView = (props) => {
+const SwitcherView = (props) => {
   const {
     handleSubmit,
     controls,
@@ -20,23 +19,23 @@ const SwitcherExampleView = (props) => {
   );
 };
 
-const SwitcherExample = createForm({
-  view: SwitcherExampleView,
+const Switcher = createForm({
+  view: SwitcherView,
   FormGroup: LightFormGroup,
   controls: {
     switcher: {
       title: 'switcher',
-      component: Switcher,
+      component: SwitcherComponent,
     },
   },
 });
 
 module.exports = ({ storiesOf }) =>
-  storiesOf('Form2', module)
-    .add('SwitcherExample', () => {
+  storiesOf('Form2/stories/controls', module)
+    .add('Switcher ', () => {
       return (
         <Story>
-          <SwitcherExample />
+          <Switcher />
         </Story>
       );
     });

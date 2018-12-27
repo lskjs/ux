@@ -1,13 +1,13 @@
 import React from 'react';
 import { Form, Field } from 'formik';
 import { Button } from 'react-bootstrap';
-import Story from '../../Story';
-import createForm from '../createForm';
-import Select from '../controls/Select';
-import LightFormGroup from '../LightFormGroup';
+import Story from '../../../../Story';
+import createForm from '../../../createForm';
+import SelectComponent from '../../../controls/Select';
+import LightFormGroup from '../../../LightFormGroup';
 
 
-const SelectExampleView = (props) => {
+const SelectView = (props) => {
   const {
     handleSubmit,
     controls,
@@ -20,13 +20,13 @@ const SelectExampleView = (props) => {
   );
 };
 
-const SelectExample = createForm({
-  view: SelectExampleView,
+const Select = createForm({
+  view: SelectView,
   FormGroup: LightFormGroup,
   controls: {
     select: {
       title: 'select',
-      component: Select,
+      component: SelectComponent,
       type: 'select',
       options: [
         {
@@ -38,17 +38,17 @@ const SelectExample = createForm({
           title: 'second',
         },
       ],
-      placeholder: 'Select Example',
+      placeholder: 'Select  ',
     },
   },
 });
 
 module.exports = ({ storiesOf }) =>
-  storiesOf('Form2', module)
-    .add('SelectExample', () => {
+  storiesOf('Form2/stories/controls', module)
+    .add('Select ', () => {
       return (
         <Story>
-          <SelectExample />
+          <Select />
         </Story>
       );
     });
