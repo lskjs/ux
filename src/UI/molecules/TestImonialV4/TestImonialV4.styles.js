@@ -4,29 +4,33 @@ import { Avatar } from 'antd';
 export const Box = styled('div')`
   position: relative;
   border: 1px solid rgba(0,0,0,.1);
-  border-radius: 6px;
-  background-color: ${p => (p.theme.ui.colors.white)};
+  border-radius: ${p => p.theme.borderRadius};
+  background-color: ${p => (p.theme.colors.white)};
+  font-family: ${p => (p.theme.fontFamily)}
 `;
 
 export const BoxBody = styled('div')`
   padding: 20px;
-  border-radius: 0 0 6px 6px;
+  border-radius: 0 0 ${p => p.theme.borderRadius} ${p => p.theme.borderRadius};
   &:after {
     display: block;
     clear: both;
     content: "";
   }
+  font-family: ${p => p.theme.fontFamily};
 `;
 
 export const Wrapper = styled('div')`
   text-align: center;
+  font-family: ${p => p.theme.fontFamily};
 `;
 
 export const AvatarItem = styled(Avatar)`
   max-width: 100px;
   margin-bottom: 16px;
-  border-radius: 50%;
+  border-radius: ${p => p.theme.borderCircle};
   max-width: 80px;
+  font-family: ${p => p.theme.fontFamily};
 `;
 
 export const Citation = styled('blockquote')`
@@ -40,10 +44,12 @@ export const Citation = styled('blockquote')`
   font-size: 20px;
   opacity: .9;
   border-left: 0;
+  font-family: ${p => p.theme.fontFamily};
 `;
 
 export const Author = styled('p')`
   font-size: 16px;
   opacity: .54;
   margin-bottom: 0;
+  font-family: ${p => p.theme.fontFamily};
 `;

@@ -12,14 +12,29 @@ import {
 } from './UserBoxFooter.styles';
 
 class UserBoxFooter extends PureComponent {
+  static propTypes = {
+    name: PropTypes.string,
+    position: PropTypes.string,
+    image: PropTypes.string,
+  };
+  static defaultProps = {
+    name: null,
+    position: null,
+    image: null,
+  };
   render() {
+    const {
+      image,
+      name,
+      position,
+    } = this.props;
     return (
       <UserFooterItem>
-        <AvatarContainer><Avatar src="https://picsum.photos/200" id="123" size={140} /></AvatarContainer>
+        <AvatarContainer><Avatar src={image} id="123" size={140} /></AvatarContainer>
         <Content>
           <TextContainer>
-            <TextItem>123</TextItem>
-            <TextItem>123</TextItem>
+            <TextItem>{name}</TextItem>
+            <TextItem>{position}</TextItem>
           </TextContainer>
           <ButtonContainer><Button>Edit</Button></ButtonContainer>
         </Content>

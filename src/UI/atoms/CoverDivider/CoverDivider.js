@@ -9,4 +9,5 @@ export default styled('div')`
   border-color: #1890ff;
   width: 2.5rem;
   display: inline-block;
+  font-family: ${p => p.theme.fontFamily};
 `;

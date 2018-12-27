@@ -452,7 +452,7 @@ export const Btn = styled(filteredTag)`
   background-color: #fff;
   border: none;
   outline: none;
-  border-radius: 3px;
+  ${p => p.theme.borderSmall};
   overflow: hidden;
   position: relative;
   text-align: center;
@@ -518,9 +518,7 @@ export const Btn = styled(filteredTag)`
     }
     return '';
   }}
-  ${props => (props.new
-    ? `font-family: ${props.theme.fontFamily};`
-    : `font-family: ${props.theme.fontFamily};`)}
+  font-family: ${p => p.theme.fontFamily};
 
   transition: color .2s ease, background-color .2s ease;
   will-change: color, background-color;
@@ -611,7 +609,7 @@ export const RippleCircle = styled('span')`
   opacity: 0;
   width: 0;
   height: 0;
-  border-radius: 50%;
+  ${p =>(p.theme.corderCircle)};
   background: rgba(255, 255, 255, .25);
 `;
 
@@ -656,7 +654,7 @@ export const State = styled(removeProps('div', ['size', 'disabled', 'visible', '
   overflow: hidden;
   box-sizing: border-box;
   cursor: default !important;
-  border-radius: 3px;
+  ${p => p.theme.borderSmall};
   ${(props) => {
     if (props.bordered) {
       return `

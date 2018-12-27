@@ -18,11 +18,13 @@ export const BlogItem = styled('section')`
 
 export const Title = styled('h2')`
   font-size: 30px;
+  font-family: ${p => p.theme.fontFamily};
   line-height: 1;
 `;
 
 export const TitleLink = styled(dynamicTag)`
   color: rgba(0,0,0,.87);
+  font-family: ${p => p.theme.fontFamily};
   font-weight: 300;
   text-decoration: none;
   &:hover {
@@ -41,6 +43,7 @@ export const TitleLink = styled(dynamicTag)`
 
 export const BlogInfo = styled('div')`
   margin: 10px 0;
+  font-family: ${p => p.theme.fontFamily};
   > span {
     margin-right: 8px;
   }
@@ -49,6 +52,7 @@ export const BlogInfo = styled('div')`
 export const AuthorLink = styled(dynamicTag)`
   color: rgba(0,0,0,.87);
   font-weight: 300;
+  font-family: ${p => p.theme.fontFamily};
   text-decoration: none;
   &:active {
     text-decoration: none;
@@ -65,21 +69,24 @@ export const AuthorLink = styled(dynamicTag)`
 `;
 
 export const DateItem = styled('span')`
+  font-family: ${p => p.theme.fontFamily};
   opacity: .7;
 `;
 
 export const Category = styled('span')`
   display: inline-block;
+  font-family: ${p => p.theme.fontFamily};
   text-transform: uppercase;
   font-size: 12px;
   padding: 2px 5px;
-  border-radius: 6px;
+  ${p => p.theme.borderRadius};
   background-color: rgba(0,0,0, .08);
 `;
 
 export const CategoryLink = styled(dynamicTag)`
   color: rgba(0,0,0,.87);
   text-decoration: none;
+  font-family: ${p => p.theme.fontFamily};
   opacity: .7;
   &:hover {
     text-decoration: none;
@@ -97,5 +104,6 @@ export const CategoryLink = styled(dynamicTag)`
 
 export const Desc = styled('p')`
   font-size: 14px;
+  font-family: ${p => p.theme.fontFamily};
   opacity: .7;
 `;

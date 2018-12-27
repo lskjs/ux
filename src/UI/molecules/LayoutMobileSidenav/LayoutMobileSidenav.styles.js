@@ -3,6 +3,7 @@ import { Drawer as AntDrawer } from 'antd';
 import LayoutSidenav from '../LayoutSidenav/LayoutSidenav.styles';
 
 export default styled(AntDrawer)`
+  font-family: ${p => p.theme.fontFamily};
   .ant-drawer-body {
     padding: 0;
   }

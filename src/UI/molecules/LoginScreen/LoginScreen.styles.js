@@ -9,11 +9,13 @@ const FormItem = Form.Item;
 
 export const RememberCheckbox = styled(FormItem)`
   margin-bottom: 1.25rem;
+  font-family: ${p => p.theme.fontFamily};
 `;
 
 export const FormButton = styled(Button)`
   height: auto;
   padding: .6em 3.5em;
+  font-family: ${p => p.theme.fontFamily};
   text-transform: uppercase;
   letter-spacing: .5px;
   line-height: 2;
@@ -26,11 +28,13 @@ export const FormButton = styled(Button)`
 export const AdditionalInfo = styled('p')`
   font-size: 0.875rem;
   margin-bottom: 0;
+  font-family: ${p => p.theme.fontFamily};
   line-height: 1.5rem;
 `;
 
 export const WelcomeHeader = styled('p')`
   margin-bottom: 1.5rem;
+  font-family: ${p => p.theme.fontFamily};
   text-align: center;
 `;
 
@@ -38,6 +42,7 @@ export const InputItem = styled(FormItem)`
   padding-left: 30px;
   min-height: 100%;
   position: static;
+  font-family: ${p => p.theme.fontFamily};
   padding: 6px 11px;
   height: 40px;
   font-size: 16px;
@@ -49,6 +54,7 @@ export const FormWrap = styled(Form)`
 
 export const FormH2 = styled('h2')`
   text-align: center;
+  font-family: ${p => p.theme.fontFamily};
   font-weight: 300;
   margin-bottom: 1.5rem;
 `;
@@ -59,8 +65,9 @@ export const FormA = styled(dynamicTag)`
     text-decoration: underline;
   }
   &:not(.btn):hover {
-    color: ${p => p.theme.ui.colors.primary};
+    color: ${p => p.theme.colors.primary};
   }
+  font-family: ${p => p.theme.fontFamily};
 `;
 
 export const FormContainer = styled('section')`
@@ -68,6 +75,7 @@ export const FormContainer = styled('section')`
   text-align: center;
   display: flex;
   flex-direction: column;
+  font-family: ${p => p.theme.fontFamily};
   justify-content: center;
   ${FormH2} + ${FormWrap},
   ${WelcomeHeader} + ${FormWrap} {

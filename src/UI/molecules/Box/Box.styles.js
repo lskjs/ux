@@ -7,70 +7,74 @@ const paintColors = (p) => {
   switch (p.paint) {
     case 'light':
       return css` 
-        background-color: ${p.theme.ui.colors.secondary}; 
-        color: ${p.theme.ui.colors.default};`;
+        background-color: ${p.theme.colors.lightGray}; 
+        color: ${p.theme.colors.main};`;
     case 'dark':
       return css` 
-        background-color: ${p.theme.ui.colors.black}; 
-        color: ${p.theme.ui.colors.white};`;
+        background-color: ${p.theme.colors.black}; 
+        color: ${p.theme.colors.white};`;
     case 'primary':
       return css` 
-        background-color: ${p.theme.ui.colors.blue}; 
-        color: ${p.theme.ui.colors.white};`;
+        background-color: ${p.theme.colors.primary}; 
+        color: ${p.theme.colors.white};`;
     case 'info':
       return css` 
-        background-color: ${p.theme.ui.colors.aqua}; 
-        color: ${p.theme.ui.colors.white};`;
+        background-color: ${p.theme.colors.info}; 
+        color: ${p.theme.colors.white};`;
     case 'success':
       return css` 
-        background-color: ${p.theme.ui.colors.green}; 
-        color: ${p.theme.ui.colors.white};`;
+        background-color: ${p.theme.colors.success}; 
+        color: ${p.theme.colors.white};`;
     case 'warning':
       return css` 
-        background-color: ${p.theme.ui.colors.yellow}; 
-        color: ${p.theme.ui.colors.default};`;
+        background-color: ${p.theme.colors.warning}; 
+        color: ${p.theme.colors.main};`;
     case 'danger':
       return css` 
-        background-color: ${p.theme.ui.colors.red}; 
-        color: ${p.theme.ui.colors.white};`;
+        background-color: ${p.theme.colors.danger}; 
+        color: ${p.theme.colors.white};`;
     case 'nobackground':
       return css`
         background-color: transparent;
-        color: ${p.theme.ui.colors.default}; `;
+        color: ${p.theme.colors.main}; `;
     case 'transparent':
       return css`
       background-color: transparent;
-      color: ${p.theme.ui.colors.default};
+      color: ${p.theme.colors.main};
       border: 1px solid transparent; `;
     default:
       return css` 
-        background-color: ${p.theme.ui.colors.white}; 
-        color: ${p.theme.ui.colors.default}; `;
+        background-color: ${p.theme.colors.white}; 
+        color: ${p.theme.colors.main}; `;
   }
 };
 
 export default styled(filteredTag)`
   position: relative;
-  border-radius: ${p => p.theme.ui.borderRadius};
-  border: 1px solid ${p => p.theme.ui.colors.border}; 
+  display: flex;
+  flex-direction: column;
+  font-family: ${p => p.theme.fontFamily};
+  border-radius: ${p => p.theme.borderRadius};
+  border: 1px solid ${p => p.theme.colors.border}; 
   ${p => (p.padded && css`
     padding: 1.625rem;
     line-height: 1.85em;
-    background-color: ${p.theme.ui.colors.white};
+    background-color: ${p.theme.colors.white};
   `)}
   ${paintColors}
-  >section:first-child {
-    border-radius: 6px 6px 0 0;
+  > section:first-child {
+    border-radius: ${p => p.theme.borderRadius} ${p => p.theme.borderRadius} 0 0;
   }
 
-  >section:last-child {
-    border-radius: 0 0 6px 6px;
+  > section:last-child {
+    border-radius: 0 0 ${p => p.theme.borderRadius} ${p => p.theme.borderRadius};
   }
   ${p => (p.image && css`
     background-image: ${`url(${p.image})`};
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    border-radius: 0px;
+    border-radius: ${p.theme.borderRadius}
   `)}
 `;
+
