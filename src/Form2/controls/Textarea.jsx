@@ -1,7 +1,6 @@
 import React from 'react';
-import Input from '~/Uapp/components/Input';
 import Textarea from 'react-textarea-autosize';
-import FormGroup from '../FormGroup';
+import Input from '../../Input';
 
 const TextArea = ({
   field,
@@ -9,24 +8,18 @@ const TextArea = ({
   ...props
 }) => {
   return (
-    <FormGroup
-      field={field}
-      form={form}
+    <Input
+      {...field}
+      debounce={0}
       {...props}
-    >
-      <Input
-        {...field}
-        debounce={0}
-        {...props}
-        block
+      block
       // validationState={this.getError(field.name).state}
-        componentClass={Textarea}
+      componentClass={Textarea}
       // value={this.getFieldValue(field.name)}
-        onChange={(value) => {
+      onChange={(value) => {
           form.setFieldValue(field.name, value);
         }}
-      />
-    </FormGroup>
+    />
   );
 };
 

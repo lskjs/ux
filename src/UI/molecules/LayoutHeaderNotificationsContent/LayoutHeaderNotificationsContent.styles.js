@@ -13,7 +13,7 @@ export default styled('div')`
     padding: .75rem 1.5rem;
     transition: background-color .2s;
     &:hover {
-      background-color: ${p => `rgba(${p.theme.ui.colors.cyan}, .08)`};
+      background-color: ${p => `rgba(${p.theme.colors.info}, .08)`};
       cursor: pointer;
     }
   }
@@ -29,8 +29,8 @@ export default styled('div')`
       transition: all .2s;
 
       &:hover {
-        color: ${p => p.theme.ui.colors.darkGrey};
-        background-color: ${p => `rgba(${p.theme.ui.colors.darkGrey}, .03)`};
+        color: ${p => p.theme.colors.darkGray};
+        background-color: ${p => `rgba(${p.theme.colors.darkGray}, .03)`};
       }
     }
   }

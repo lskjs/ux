@@ -1,7 +1,6 @@
 import React from 'react';
 import get from 'lodash/get';
-import Feedback from '~/modules/offer/uapp/components/conversations2/Feedback';
-import FormGroup from '../FormGroup';
+import Feedback from '../../Feedback';
 
 const Rating = ({
   field,
@@ -9,19 +8,14 @@ const Rating = ({
   ...props
 }) => {
   return (
-    <FormGroup
-      field={field}
-      form={form}
+    <Feedback
+      {...field}
       {...props}
-    >
-      <Feedback
-        {...field}
-        {...props}
-        noTitle
-        disabled={false}
+      noTitle
+      disabled={false}
         // allowHalf={field.control?.allowHalf}
-        value={get(form.values, field.name)}
-        onChange={(val) => {
+      value={get(form.values, field.name)}
+      onChange={(val) => {
           field.onChange({
             target: {
               name: field.name,
@@ -29,9 +23,8 @@ const Rating = ({
             },
           });
         }}
-        starCount={5}
-      />
-    </FormGroup>
+      starCount={5}
+    />
   );
 };
 

@@ -2,13 +2,14 @@ import styled from 'react-emotion';
 
 export default styled('div')`
   display: flex;
+  font-family: ${p => p.theme.fontFamily};
   justify-content: space-between;
   transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
-  background-color: ${p => p.theme.ui.colors.white};
+  background-color: ${p => p.theme.colors.white};
   a {
-    color: ${p => p.theme.ui.colors.darkGrey};
+    color: ${p => p.theme.colors.darkGray};
     &:hover {
-      color: ${p => p.theme.ui.colors.darkGrey};
+      color: ${p => p.theme.colors.darkGray};
     }
   }
   

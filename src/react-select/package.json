@@ -1,0 +1,4 @@
+{
+  "main": "react-select.server.js",
+  "browser": "react-select.client.js"
+}

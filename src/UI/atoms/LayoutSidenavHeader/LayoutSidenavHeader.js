@@ -5,11 +5,12 @@ export default styled('section')`
   padding: 0 0 0 19px;
   line-height: 60px;
   flex: 0 0 auto;
-  background-color: ${p => p.theme.ui.colors.white};
+  font-family: ${p => p.theme.fontFamily};
+  background-color: ${p => p.theme.colors.white};
   a {
-    color: ${p => p.theme.ui.colors.darkGrey};
+    color: ${p => p.theme.colors.darkGray};
     &:hover {
-      color: ${p => p.theme.ui.colors.darkGrey};
+      color: ${p => p.theme.colors.darkGray};
     }
   }
 `;

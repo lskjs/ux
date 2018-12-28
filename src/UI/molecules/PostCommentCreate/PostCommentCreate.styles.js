@@ -6,6 +6,7 @@ export const Wrapper = styled('div')`
   display: flex;
   align-items: flex-start;
   padding: 12px 24px;
+  font-family: ${p => p.theme.fontFamily};
 `;
 
 export const Avatar = styled(AntAvatar)`
@@ -18,6 +19,7 @@ export const Input = styled(Textarea)`
   background: none;
   border: none;
   outline: none;
+  font-family: ${p => p.theme.fontFamily};
   resize: none;
   padding: 0;
   margin: 6px 0 0;

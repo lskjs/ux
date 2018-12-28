@@ -12,16 +12,40 @@ import {
 } from './UserBoxFooter.styles';
 
 class UserBoxFooter extends PureComponent {
+  static propTypes = {
+    subtitle: PropTypes.string,
+    actions: PropTypes.any,
+    user: PropTypes.object,
+  };
+  static defaultProps = {
+    subtitle: null,
+    actions: null,
+    user: null,
+  };
   render() {
+    const {
+      subtitle,
+      actions,
+      user,
+    } = this.props;
     return (
       <UserFooterItem>
-        <AvatarContainer><Avatar src="https://picsum.photos/200" id="123" size={140} /></AvatarContainer>
+        <AvatarContainer>
+          <Avatar
+            title={user.title}
+            src={user.avatar}
+            id={user._id}
+            size={140}
+          />
+        </AvatarContainer>
         <Content>
           <TextContainer>
-            <TextItem>123</TextItem>
-            <TextItem>123</TextItem>
+            <TextItem>{user.title}</TextItem>
+            <TextItem>{subtitle}</TextItem>
           </TextContainer>
-          <ButtonContainer><Button>Edit</Button></ButtonContainer>
+          <ButtonContainer>
+            {actions}
+          </ButtonContainer>
         </Content>
       </UserFooterItem>
     );

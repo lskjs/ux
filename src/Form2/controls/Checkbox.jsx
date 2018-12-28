@@ -1,9 +1,8 @@
 import React from 'react';
 import get from 'lodash/get';
-import CheckBoxBase from 'antd/lib/checkbox';
-import Tooltip from '~/Uapp/components/Tooltip';
 import Help from 'react-icons2/mdi/help-circle';
-import FormGroup from '../FormGroup';
+import CheckBoxBase from 'antd/lib/checkbox';
+import Tooltip from '../../Tooltip';
 
 const CheckBox = ({
   field,
@@ -11,11 +10,7 @@ const CheckBox = ({
   ...props
 }) => {
   return (
-    <FormGroup
-      field={field}
-      form={form}
-      {...props}
-    >
+    <div>
       <CheckBoxBase
         {...field}
         {...props}
@@ -37,7 +32,7 @@ const CheckBox = ({
           <span className="checkbox-help"><Help /></span>
         </Tooltip>
       )}
-    </FormGroup>
+    </div>
   );
 };
 

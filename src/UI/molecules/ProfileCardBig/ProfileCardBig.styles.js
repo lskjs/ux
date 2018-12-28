@@ -7,9 +7,10 @@ const dynamicTag = createDynamicTag('a');
 export const ProfileCardItem = styled('article')`
   border: 1px solid rgba(0,0,0,.1);
   padding: 1rem;
-  border-radius: 6px;
-  background-color: ${p => p.theme.ui.colors.white};
+  border-radius: ${p => p.theme.borderRadius};
+  background-color: ${p => p.theme.colors.white};
   text-align: center;
+  font-family: ${p => p.theme.fontFamily};
   h4 {
     margin: 0;
     font-weight: 500;
@@ -37,23 +38,23 @@ export const SocialIcon = styled(dynamicTag)`
   font-size: 14px;
   height: 30px;
   width: 30px;
-  border-radius: 50%;
+  border-radius: ${p => p.theme.borderCircle};
   padding: 0;
   display: inline-block;
   text-align: center;
   margin-left: 4зч;
   &:hover {
-    color: ${p => (p.theme.ui.colors.white)};
+    color: ${p => (p.theme.colors.white)};
     text-decoration: none;
     background-color: #717a82;
   };
   &:focus {
-    color: ${p => (p.theme.ui.colors.white)};
+    color: ${p => (p.theme.colors.white)};
     text-decoration: none;
     background-color: #717a82;
   };
   &:active {
-    color: ${p => (p.theme.ui.colors.white)};
+    color: ${p => (p.theme.colors.white)};
     text-decoration: none;
     background-color: #717a82;
   }

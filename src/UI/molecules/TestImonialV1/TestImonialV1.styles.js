@@ -3,12 +3,13 @@ import { Avatar } from 'antd';
 
 export const Content = styled('div')`
   position: relative;
+  font-family: ${p => p.theme.fontFamily};
   padding: 30px;
   margin: 0 0 30px;
   font-size: 14px;
   line-height: 1.8;
-  border-radius: 6px;
-  background-color: ${p => (p.theme.ui.colors.white)};
+  border-radius: ${p => p.theme.borderRadius};
+  background-color: ${p => (p.theme.colors.white)};
   &:after {
     content: "";
     position: absolute;
@@ -16,7 +17,7 @@ export const Content = styled('div')`
     left: 20px;
     border-right: 30px solid transparent;
     border-top: 30px solid;
-    border-top-color: ${p => (p.theme.ui.colors.white)};
+    border-top-color: ${p => (p.theme.colors.white)};
     border-bottom-color: transparent !important;
     border-left-color: transparent !important;
     border-right-color: transparent !important;
@@ -25,10 +26,12 @@ export const Content = styled('div')`
 
 export const Meta = styled('div')`
   margin: 0 0 0 30px;
+  font-family: ${p => p.theme.fontFamily};
 `;
 
 export const InfoHolder = styled('div')`
   display: flex;
+  font-family: ${p => p.theme.fontFamily};
   align-items: center;
 `;
 
@@ -38,14 +41,14 @@ export const AuthorImg = styled('div')`
 
 export const AvatarItem = styled(Avatar)`
   max-width: 60px;
-  border-radius: 50%;
+  border-radius: ${p => p.theme.borderCircle};
   width: 30px;
   height: auto;
-  border-radius: 50%;
 `;
 
 export const AuthorDesc = styled('div')`
   margin-top: 3px;
   font-size: 12px;
+  font-family: ${p => p.theme.fontFamily};
   opacity: .7;
 `;

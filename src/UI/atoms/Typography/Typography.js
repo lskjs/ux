@@ -29,8 +29,9 @@ const smallStyle = css`
 
 
 export default styled('div')`
+  font-family: ${p => p.theme.fontFamily};
   text-align: ${p => (p.align || 'left')};
-  color: ${p => (p.color || p.theme.ui.colors.default)};
+  color: ${p => (p.color || p.theme.colors.main)};
   ${p => (p.paragraph && css`
     margin-bottom: .6em;
   `)}

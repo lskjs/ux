@@ -4,9 +4,10 @@ import { Button as BsButton } from 'antd';
 
 export const Title = styled('h1')`
   line-height: 1.3;
-  color: ${p => (p.theme.ui.colors.darkGrey)};
+  color: ${p => (p.theme.colors.darkGray)};
   font-weight: 200;
   -webkit-font-smoothing: antialiased;
+  font-family: ${p => p.theme.fontFamily};
   font-size: 2.5rem;
 `;
 
@@ -14,6 +15,7 @@ export const Lead = styled('p')`
   font-size: 1.25rem;
   font-weight: 300;
   margin-bottom: 1.5rem;
+  font-family: ${p => p.theme.fontFamily};
 `;
 
 export const Button = styled(BsButton)`
@@ -22,12 +24,14 @@ export const Button = styled(BsButton)`
   text-transform: uppercase;
   letter-spacing: .5px;
   line-height: 2;
+  font-family: ${p => p.theme.fontFamily};
   font-size: .75rem;
 `;
 
 export const Muted = styled('div')`
   margin-top: .5rem;
   font-size: .75rem;
+  font-family: ${p => p.theme.fontFamily};
   opacity: .7;
   font-style: italic;
 `;

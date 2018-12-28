@@ -3,11 +3,9 @@ import get from 'lodash/get';
 import cloneDeep from 'lodash/cloneDeep';
 import sortBy from 'lodash/sortBy';
 import isPlainObject from 'lodash/isPlainObject';
-import SelectBase from '~/Uapp/components/Select';
-import FormGroup from '../FormGroup';
+import SelectBase from '../../Select';
 
 const NULL_STRING = '@@NULL@@';
-
 const Select = ({
   field,
   form,
@@ -39,17 +37,12 @@ const Select = ({
     value: option.value == null ? NULL_STRING : option.value,
   }));
   return (
-    <FormGroup
-      field={field}
-      form={form}
+    <SelectBase
+      {...field}
       {...props}
-    >
-      <SelectBase
-        {...field}
-        {...props}
-        error={!!form.errors[field.name]}
-        value={value}
-        onChange={(val) => {
+      error={!!form.errors[field.name]}
+      value={value}
+      onChange={(val) => {
           field.onChange({
             target: {
               name: field.name,
@@ -57,9 +50,8 @@ const Select = ({
             },
           });
         }}
-        options={options}
-      />
-    </FormGroup>
+      options={options}
+    />
   );
 };
 

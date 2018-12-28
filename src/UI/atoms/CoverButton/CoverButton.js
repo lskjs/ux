@@ -7,5 +7,6 @@ export default styled(BsButton)`
   text-transform: uppercase;
   letter-spacing: .5px;
   line-height: 2;
+  font-family: ${p => p.theme.fontFamily};
   font-size: .75rem;
 `;

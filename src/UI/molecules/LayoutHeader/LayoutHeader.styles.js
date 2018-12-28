@@ -6,7 +6,7 @@ const { Header: AntHeader } = Layout;
 export default styled(AntHeader)`
   padding: 0;
   border: 0;
-
+  font-family: ${p => p.theme.fontFamily};
   &.ant-layout-header {
     height: 60px;
     line-height: 60px;
@@ -22,8 +22,8 @@ export default styled(AntHeader)`
     }
   }
 
-  color: ${p => p.theme.ui.colors.darkGrey};
+  color: ${p => p.theme.colors.darkGray};
   a {
-    color: ${p => p.theme.ui.colors.darkGrey};
+    color: ${p => p.theme.colors.darkGray};
   }
 `;

@@ -6,4 +6,5 @@ export default styled('section')`
   text-align: center;
   font-weight: 400;
   color: #000;
+  font-family: ${p => p.theme.fontFamily};
 `;
