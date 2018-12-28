@@ -53,6 +53,7 @@ export const TextContainer = styled('div')`
 
 export const TextItem = styled('div')`
   margin-top: 5px;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   &:first-child {
