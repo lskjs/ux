@@ -1,7 +1,8 @@
 import React from 'react';
-import AvatarGroup from './AvatarGroup';
 import range from 'lodash/range';
 import random from 'lodash/random';
+import AvatarGroup from './AvatarGroup';
+
 
 const user = () => ({
   title: 'John Smith',
@@ -96,7 +97,7 @@ module.exports = function ({ storiesOf, action, knob }) {
     ))
     .add('custom avatar size', () => (
       <AvatarGroup
-        size={40}
+        size={20}
 
         items={range(5).map(user)}
         limit={3}

@@ -188,7 +188,7 @@ export default class Avatar extends PureComponent {
     const height = this.props.height || size;
 
     const wrapperStyle = Object.assign({
-      display: 'inline-block',
+      display: 'block',
       position: 'relative',
       width,
       height,
