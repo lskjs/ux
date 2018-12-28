@@ -6,6 +6,7 @@ const dynamicTag = createDynamicTag('article');
 
 export const ProfileCardItem = styled(dynamicTag)`
   border: 1px solid rgba(0,0,0,.1);
+  display: block;
   padding: 1rem;
   border-radius: ${p => p.theme.borderRadius};
   background-color: ${p => p.theme.colors.white};
