@@ -2,10 +2,11 @@ import styled from 'react-emotion';
 import Avatar from '../../../Avatar';
 import createDynamicTag from '../../../utils/createDynamicTag';
 
-const dynamicTag = createDynamicTag('a');
+const dynamicTag = createDynamicTag('article');
 
-export const ProfileCardItem = styled('article')`
+export const ProfileCardItem = styled(dynamicTag)`
   border: 1px solid rgba(0,0,0,.1);
+  display: block;
   padding: 1rem;
   border-radius: ${p => p.theme.borderRadius};
   background-color: ${p => p.theme.colors.white};
@@ -29,7 +30,7 @@ export const ProfileCardAvatar = styled(Avatar)`
   border-radius: 80px;
 `;
 
-export const SocialIcon = styled(dynamicTag)`
+export const SocialIcon = styled('a')`
   color: #fff;
   background-color: #868e96;
   border: 0;
