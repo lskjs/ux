@@ -1,10 +1,10 @@
 import React from 'react';
 import { Form, Field } from 'formik';
 import { Button } from 'react-bootstrap';
-import Story from '../../../../Story';
-import createForm from '../../../createForm';
-import SelectComponent from '../../../controls/Select';
-import LightFormGroup from '../../../LightFormGroup';
+import Story from '../../../Story';
+import createForm from '../../createForm';
+import SelectComponent from '../../controls/Select';
+import LightFormGroup from '../../LightFormGroup';
 
 
 const SelectView = (props) => {

@@ -1,11 +1,11 @@
 import React from 'react';
 import { Form, Field } from 'formik';
 import { Button } from 'react-bootstrap';
-import Story from '../../../../Story';
-import createForm from '../../../createForm';
-import InputComponent from '../../Input';
-import LightFormGroup from '../../../LightFormGroup';
-import DEV from '../../../../DEV';
+import Story from '../../../Story';
+import createForm from '../../createForm';
+import InputComponent from '../../controls/Input';
+import LightFormGroup from '../../LightFormGroup';
+import DEV from '../../../DEV';
 
 
 const ValidationView = (props) => {

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Form, Field } from 'formik';
 import { Button } from 'react-bootstrap';
-import Story from '../../../../Story';
-import createForm from '../../../createForm';
-import TextareaComponent from '../../../controls/Textarea';
-import LightFormGroup from '../../../LightFormGroup';
+import Story from '../../../Story';
+import createForm from '../../createForm';
+import TextareaComponent from '../../controls/Textarea';
+import LightFormGroup from '../../LightFormGroup';
 
 
 const TextareaView = (props) => {
