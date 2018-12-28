@@ -38,6 +38,7 @@ export const ButtonContainer = styled('div')`
 export const Content = styled('div')`
   display: flex;
   width: 100%;
+  overflow: hidden;
   font-family: ${p => p.theme.fontFamily};
   @media screen and (max-width: 768px) {
     flex-direction: column;
@@ -47,10 +48,13 @@ export const Content = styled('div')`
 export const TextContainer = styled('div')`
   padding: 10px 36px;
   font-family: ${p => p.theme.fontFamily};
+  overflow: hidden;
 `;
 
 export const TextItem = styled('div')`
   margin-top: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
   &:first-child {
     font-size: 24px;
     font-weight: bold;
