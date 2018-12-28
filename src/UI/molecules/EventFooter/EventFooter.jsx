@@ -14,17 +14,17 @@ class EventFooter extends PureComponent {
   static propTypes = {
     children: PropTypes.any,
     actions: PropTypes.any,
-    user: PropTypes.object,
+    event: PropTypes.object,
   };
   static defaultProps = {
     children: null,
     actions: null,
-    user: null,
+    event: null,
   };
   render() {
     const {
       actions,
-      user,
+      event,
       children,
     } = this.props;
     return (
@@ -32,15 +32,15 @@ class EventFooter extends PureComponent {
         <Content>
           <AvatarContainer>
             <Avatar
-              title={user.title}
-              src={user.avatar}
-              id={user._id}
+              title={event.title}
+              src={event.image}
+              id={event._id}
               size={140}
               shape="rounded"
             />
           </AvatarContainer>
           <TextContainer>
-            <TextItem>{user.title}</TextItem>
+            <TextItem>{event.title}</TextItem>
             {children}
           </TextContainer>
           <ButtonContainer>

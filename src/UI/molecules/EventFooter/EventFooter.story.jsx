@@ -8,9 +8,9 @@ module.exports = ({ storiesOf }) => (
       <ThemeInjector>
         <div style={{ padding: 60, backgroundColor: 'grey' }}>
           <EventFooter
-            user={{
+            event={{
               title: 'Название эвента',
-              avatar: 'https://picsum.photos/200?random',
+              image: 'https://picsum.photos/200?random',
               _id: 1,
             }}
           >

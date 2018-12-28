@@ -4,7 +4,7 @@ import { Content, Title, Block } from './CTAInline.styles';
 
 class CTAInline extends PureComponent {
   static propTypes = {
-    title: PropTypes.string,
+    title: PropTypes.any,
     actions: PropTypes.any,
   };
   static defaultProps = {

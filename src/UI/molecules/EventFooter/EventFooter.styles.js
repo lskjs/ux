@@ -5,11 +5,11 @@ export const EventFooterItem = styled('div')`
   display: flex;
   margin-top: auto;
   position: relative;
-  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 100%);
+  background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0.5) 100%);
   margin-bottom: -1px;
   font-family: ${p => p.theme.fontFamily};
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 992px) {
     flex-direction: column;
     height: auto;
   }
@@ -22,7 +22,7 @@ export const AvatarContainer = styled('div')`
 `;
 
 export const ButtonContainer = styled('div')`
-  padding: 10px 36px;
+  padding: 10px 16px;
   margin-left: auto;
   display: flex;
   justify-content: flex-end;
@@ -39,7 +39,7 @@ export const Content = styled('div')`
   width: 100%;
   overflow: hidden;
   font-family: ${p => p.theme.fontFamily};
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 992px) {
     flex-direction: column;
   }
 `;
@@ -48,9 +48,8 @@ export const TextContainer = styled('div')`
   padding-left: 36px;
   font-family: ${p => p.theme.fontFamily};
   overflow: hidden;
-  display: flex;
+  width: 100%;
   color: ${p => p.theme.colors.white};
-  flex-direction: column;
   margin: auto 0;
 `;
 
@@ -60,6 +59,7 @@ export const TextItem = styled('div')`
   &:first-child {
     font-size: 24px;
     font-weight: 500;
+    white-space: nowrap;
   }
   font-family: ${p => p.theme.fontFamily};
 `;
