@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import autobind from 'core-decorators/lib/autobind';
-import DebounceInput from 'react-debounce-input'
+import DebounceInput from 'react-debounce-input';
 import {
   Form as BsForm,
   FormGroup,
@@ -29,7 +29,7 @@ class Input extends PureComponent {
         {...this.props}
         onChange={this.onChange}
       />
-    )
+    );
   }
 }
 
@@ -72,7 +72,7 @@ export default class Form extends FormBase {
           onChange={this.handleChangeField(item.name)}
           {...item.control}
         />
-      )
+      );
     } else {
       control = (
         <Input
@@ -111,7 +111,7 @@ export default class Form extends FormBase {
     );
   }
 
-   renderFormGroup(itemOrName, key) {
+  renderFormGroup(itemOrName, key) {
     // console.log('renderFormGroup', {itemOrName});
     if (!itemOrName) return null;
     const { horizontal } = this.props;

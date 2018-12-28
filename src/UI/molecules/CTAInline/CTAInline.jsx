@@ -1,27 +1,27 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Content, Title, Button } from './CTAInline.styles';
+import { Content, Title, Block } from './CTAInline.styles';
 
 class CTAInline extends PureComponent {
   static propTypes = {
     title: PropTypes.string,
-    buttonText: PropTypes.string,
+    actions: PropTypes.any,
   };
   static defaultProps = {
     title: null,
-    buttonText: null,
+    actions: null,
   };
   render() {
     const {
       title,
-      buttonText,
+      actions,
     } = this.props;
     return (
       <Content>
         <Title>{title}</Title>
-        <div>
-          <Button type="defaul">{buttonText}</Button>
-        </div>
+        <Block>
+          {actions}
+        </Block>
       </Content>
     );
   }
