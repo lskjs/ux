@@ -28,6 +28,7 @@ export const ProfileCardItem = styled(dynamicTag)`
 export const ProfileCardAvatar = styled(Avatar)`
   box-shadow: 0 0 0 5px rgba(0,0,0,.1), 0 0 10px hsla(0,0%,100%,.2);
   border-radius: 80px;
+  margin: auto auto 18px;
 `;
 
 export const SocialIcon = styled('a')`
