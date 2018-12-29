@@ -3,8 +3,8 @@ import { Form, Field } from 'formik';
 import Story from '../../../Story';
 import createForm from '../../createForm';
 import LightFormGroup from '../../LightFormGroup';
-import GeoComponent from '../../controls/Geo';
-
+import GeoMapboxBase from '../../controls/GeoMapbox';
+import GeoGooglemapsBase from '../../controls/GeoGooglemaps';
 
 const GeoView = (props) => {
   const {
@@ -23,7 +23,7 @@ const GeoView = (props) => {
   );
 };
 
-const Geo = createForm({
+const GeoGoogle = createForm({
   view: GeoView,
   FormGroup: LightFormGroup,
   controls: {
@@ -32,7 +32,20 @@ const Geo = createForm({
         latitude: 37.871263,
         longitude: -122.268783,
       },
-      component: GeoComponent,
+      component: GeoGooglemapsBase,
+    },
+  },
+});
+const GeoMapbox = createForm({
+  view: GeoView,
+  FormGroup: LightFormGroup,
+  controls: {
+    geo: {
+      defaultValue: {
+        latitude: 37.871263,
+        longitude: -122.268783,
+      },
+      component: GeoMapboxBase,
     },
   },
 });
@@ -42,7 +55,14 @@ module.exports = ({ storiesOf }) =>
     .add('GeoMapbox', () => {
       return (
         <Story>
-          <Geo />
+          <GeoMapbox />
+        </Story>
+      );
+    })
+    .add('GeoGoogle', () => {
+      return (
+        <Story>
+          <GeoGoogle />
         </Story>
       );
     });

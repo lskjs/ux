@@ -1,5 +1,5 @@
 import React from 'react';
-import GeoBase from '../../Geo/GeoMapbox';
+import GeoBase from '../../GeoGooglemaps';
 
 const Geo = ({
   field,
