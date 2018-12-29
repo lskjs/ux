@@ -18521,6 +18521,9 @@ li.ant-select-tree-treenode-disabled > .ant-select-tree-node-content-wrapper:hov
 .ant-upload-list .ant-upload-animate-inline-leave {
   animation-name: uploadAnimateInlineOut;
 }
+h1, h2, h3, h4, h5, h6 {
+  color: inherit !important;
+ }
 @keyframes uploadAnimateIn {
   from {
     height: 0;
