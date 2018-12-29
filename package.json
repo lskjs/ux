@@ -78,9 +78,9 @@
     "webpack": "4.9.1"
   },
   "scripts": {
+    "dev": "DEBUG=1 npm run babel-build -- --watch",
     "release": "rm -rf dist && npm run babel-build && npm publish --access=public dist",
     "babel-build": "mkdir -p dist && cp {package.json,package-lock.json,README.md} dist/ && npx babel src --out-dir dist --source-maps inline --copy-files",
-    "dev": "npm run storybook",
     "release_old": "sh -c 'npm publish --access=public'",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "build-stories": "node node_modules/storybox/glob.js \"src/**/*.story.jsx\" .storybook/stories.js ../",

@@ -1,9 +1,11 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import Container from '../../atoms/PageContainer';
+import { Container } from 'reactstrap';
+// import Container from '../../atoms/PageContainer';
 import Title from '../../atoms/PageTitle';
 import Breadcrumbs from '../../atoms/PageBreadcrumbs';
 import TitleActions from '../../atoms/PageTitleActions';
+
 
 import Block from './Page.styles';
 
@@ -21,11 +23,21 @@ class Page extends PureComponent {
   render() {
     const {
       children,
+      container,
       ...props
     } = this.props;
+
+    let data = children;
+    if (container) {
+      data = (
+        <Container>
+          {data}
+        </Container>
+      );
+    }
     return (
       <Block {...props}>
-        {children}
+        {data}
       </Block>
     );
   }
