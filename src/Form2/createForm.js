@@ -60,11 +60,11 @@ const createForm = ({
     },
     handleSubmit: (values, { /* setSubmitting , */ props }) => {
       const { onSubmit } = props;
-      onSubmit(values);
+      if (onSubmit) onSubmit(values);
     },
     handleChange: (values, { /* setSubmitting, */ props/* , form  */ }) => {
       const { onChange } = props;
-      onChange(values);
+      if (onChange) onChange(values);
     },
     getValidators: (ctrls) => {
       const validators = {};

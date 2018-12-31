@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { Form, Field } from 'formik';
+import { Form as AntForm, Button } from 'antd';
 
 import Story from '../../../Story';
 import DEV from '../../../DEV';
 import createForm from '../../createForm';
 import FormGroup from '../../FormGroup';
 import SimpleFormGroup from '../../SimpleFormGroup';
-import Input from '../../../Input';
+import Input from '../../controls/Input';
+import SimpleInput from './SimpleInput';
 
 const ctrls = {
   input: {
@@ -23,7 +25,7 @@ const ctrls = {
   input3: {
     title: 'input3',
     help: 'help',
-    component: Input,
+    component: SimpleInput,
     placeholder: 'offer.placeholders.title',
   },
 };
@@ -36,17 +38,20 @@ const FormExampleView = (props) => {
   } = props;
   return (
     <Form>
-      <Field {...controls.input} />
-      <Field {...controls.input2} />
-      <Field {...controls.input3} />
-      <button onClick={handleSubmit}>Submit</button>
-      <DEV json={Math.random()} />
-      <DEV json={values} />
+      <AntForm layout="horizontal">
+        <Field {...controls.input} />
+        <Field {...controls.input2} />
+        <Field {...controls.input3} />
+        <AntForm.Item>
+          <Button type="primary" onClick={handleSubmit}>Submit</Button>
+        </AntForm.Item>
+        <DEV json={values} />
+      </AntForm>
     </Form>
   );
 };
 
-class FormExampleView2 extends Component {
+class DebugFormExampleView extends Component {
   state = {
     i: 1,
   };
@@ -58,33 +63,38 @@ class FormExampleView2 extends Component {
     } = this.props;
     return (
       <Form>
-        <Field {...controls.input} />
-        <Field {...controls.input2} />
-        <Field {...controls.input3} />
-        <button onClick={handleSubmit}>Submit</button>
-        <button onClick={() => this.setState({ i: this.state.i + 1 })}>{this.state.i}++</button>
-        <DEV json={Math.random()} />
-        <DEV json={values} />
+        <AntForm layout="vertical">
+          <Field {...controls.input} />
+          <Field {...controls.input2} />
+          <Field {...controls.input3} />
+          <AntForm.Item>
+            <Button type="primary" onClick={handleSubmit}>Submit</Button>
+          </AntForm.Item>
+          <hr />
+          <DEV json={Math.random()} />
+          <button onClick={() => this.setState({ i: this.state.i + 1 })}>{this.state.i}++</button>
+          <DEV json={values} />
+        </AntForm>
       </Form>
     );
   }
 }
 
 const EmptyFormGroupForm = createForm({
-  view: FormExampleView2,
+  view: DebugFormExampleView,
   controls: ctrls,
   onSubmit: console.log,
 });
 
 const FormGroupForm = createForm({
-  view: FormExampleView2,
+  view: DebugFormExampleView,
   FormGroup,
   controls: ctrls,
   onSubmit: console.log,
 });
 
 const SimpleFormGroupForm = createForm({
-  view: FormExampleView2,
+  view: DebugFormExampleView,
   FormGroup: SimpleFormGroup,
   controls: ctrls,
   onSubmit: console.log,
@@ -110,6 +120,23 @@ module.exports = ({ storiesOf }) =>
       return (
         <Story>
           <SimpleFormGroupForm />
+        </Story>
+      );
+    })
+    .add('form and buttons', () => {
+      return (
+        <Story>
+          <form onSubmit={(e) => { console.log('submit'); e.preventDefault(); }} >
+            <button>
+              default
+            </button>
+            <button type="submit">
+              submit
+            </button>
+            <button type="button">
+              button
+            </button>
+          </form>
         </Story>
       );
     });
