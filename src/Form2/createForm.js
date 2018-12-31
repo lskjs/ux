@@ -14,6 +14,7 @@ const createForm = ({
   view: View,
   displayName,
   FormGroup,
+  withFormik: rawWithFormik,
 }) => {
   const prepareControls = (ctrls) => {
     const prepared = {};
@@ -50,7 +51,8 @@ const createForm = ({
 
   const WrappedView = props => React.createElement(View, { ...staticProps, ...props });
 
-  return withFormik({
+  const wrapperWithFormik = rawWithFormik || withFormik;
+  return wrapperWithFormik({
     mapPropsToValues() {
       const defaultValues = {};
       Object.keys(rawControls).forEach((key) => {
