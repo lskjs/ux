@@ -92,6 +92,12 @@ const FormGroupForm = createForm({
   controls: ctrls,
   onSubmit: console.log,
 });
+const FormGroupForm2 = createForm({
+  view: FormExampleView,
+  FormGroup,
+  controls: ctrls,
+  onSubmit: console.log,
+});
 
 const SimpleFormGroupForm = createForm({
   view: DebugFormExampleView,
@@ -113,6 +119,13 @@ module.exports = ({ storiesOf }) =>
       return (
         <Story>
           <FormGroupForm />
+        </Story>
+      );
+    })
+    .add('FormGroupForm2', () => {
+      return (
+        <Story>
+          <FormGroupForm2 />
         </Story>
       );
     })

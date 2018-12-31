@@ -23,8 +23,7 @@ const createForm = ({
       let component;
       if (ControlWrapper) {
         component = props => {
-          console.log('component', props);
-          
+          // console.log('component', props);
           return React.createElement(
             ControlWrapper,
             props,
