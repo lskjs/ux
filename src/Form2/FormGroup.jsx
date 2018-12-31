@@ -17,7 +17,8 @@ class FormGroup extends Component {
       <Form.Item
         key={fieldId}
         required={props.required}
-        label={field.heading ? field.heading.children : props.title}
+        // label={field.heading ? field.heading.children : props.title}
+        label={props.label ? props.label : props.title}
         help={errorMessage || props.help}
         validateStatus={errorMessage ? 'error' : null}
       >
