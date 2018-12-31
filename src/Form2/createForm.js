@@ -1,8 +1,6 @@
 import React from 'react';
 import forEach from 'lodash/forEach';
 import set from 'lodash/set';
-import get from 'lodash/get';
-import omit from 'lodash/omit';
 import pickBy from 'lodash/pickBy';
 import isFunction from 'lodash/isFunction';
 import map from 'lodash/map';
@@ -10,9 +8,7 @@ import isEmpty from 'lodash/isEmpty';
 import { withFormik } from 'formik';
 import validate from 'validate.js';
 import Promise from 'bluebird';
-// import pickBy from 'lodash/pickBy';
 
-// const createForm = uapp => ({ controls, view: View }) => {
 const createForm = ({
   controls: rawControls,
   view: View,
@@ -25,20 +21,15 @@ const createForm = ({
       const ControlWrapper = ctrl.FormGroup || FormGroup;
       let component;
       if (ControlWrapper) {
-        component = props => React.createElement(
-          ControlWrapper,
-          props,
-          React.createElement(ctrl.component, props),
-        );
-        // (
-        //   <ControlWrapper
-        //     {...props}
-        //   >
-        //     <Component
-        //       {...props}
-        //     />
-        //   </ControlWrapper>
-        // );
+        component = props => {
+          console.log('component', props);
+          
+          return React.createElement(
+            ControlWrapper,
+            props,
+            React.createElement(ctrl.component, props),
+          );
+        }
       } else {
         ({ component } = ctrl);
       }
@@ -48,25 +39,16 @@ const createForm = ({
         ...ctrl,
         component,
       };
-
-      // prepared[name].component = () => (
-      //   <FormGroup
-
-      //   >
-      // )
     });
     return prepared;
   };
-  // if(isf(controls)) {
-  //   controls = controls(uapp);
-  // }
   const controls = prepareControls(rawControls);
 
   const staticProps = {
     controls,
   };
 
-  const WrappedView = props => (<View {...staticProps} {...props} />);
+  const WrappedView = props => React.createElement(View, { ...staticProps, ...props });
 
   return withFormik({
     mapPropsToValues() {
@@ -84,20 +66,7 @@ const createForm = ({
       const { onChange } = props;
       onChange(values);
     },
-    // validate
-    // validate(values) {
-    //   const validators = {};
-    //   forEach(preparedControls, (value, key) => {
-    //     validators[key] = value.validator;
-    //   });
-    //   const errors = validate(values, validators, { fullMessages: false }) || {};
-    //   forEach(errors, (error, name) => {
-    //     errors[name] = error?.[0];
-    //   });
-    //   return errors;
-    // },
     getValidators: (ctrls) => {
-      console.log({ ctrls });
       const validators = {};
       let customValidators = [];
       forEach(ctrls, (value, key) => {
@@ -144,7 +113,7 @@ const createForm = ({
         try {
           const message = await validator(values[name], values);
           if (message) {
-            errors[name] = typeof message === 'string' ? message : 'Some error';
+            errors[name] = typeof message === 'string' ? message : 'The Error';
           }
         } catch (err) {
           if (typeof err === 'string') errors[name] = err;
@@ -157,7 +126,6 @@ const createForm = ({
     },
     validateOnChange: false,
     validateOnBlur: false,
-    // props.
     displayName: displayName || 'Form',
   })(WrappedView);
 };

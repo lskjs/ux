@@ -68,7 +68,7 @@ const FormExample1 = createForm({
 });
 
 module.exports = ({ storiesOf }) =>
-  storiesOf('Form2/stories/examples', module)
+  storiesOf('Form2/examples', module)
     .add('FormExample', () => {
       return (
         <Story>

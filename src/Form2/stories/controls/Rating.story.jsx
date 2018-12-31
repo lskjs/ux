@@ -32,7 +32,7 @@ const Rating = createForm({
 });
 
 module.exports = ({ storiesOf }) =>
-  storiesOf('Form2/stories/controls', module)
+  storiesOf('Form2/controls', module)
     .add('Rating ', () => {
       return (
         <Story>

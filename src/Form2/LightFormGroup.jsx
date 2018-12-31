@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { Form } from 'antd';
 import hash from 'object-hash';
 
-class FormGroup extends Component {
+class LightFormGroup extends Component {
   render() {
     const {
       field,
@@ -10,22 +9,35 @@ class FormGroup extends Component {
       children,
       ...props
     } = this.props;
-
-    const errorMessage = form.errors[field.name];
+    const errorMessage = form && form.errors && form.errors[field.name];
     const fieldId = `field__${hash(field.name)}`;
+    const style = {};
+    if (errorMessage) style.color = '#ff0000';
     return (
-      <Form.Item
+      <div
         key={fieldId}
-        required={props.required}
-        label={field.heading ? field.heading.children : props.title}
-        help={errorMessage || props.help}
-        validateStatus={errorMessage ? 'error' : null}
+        style={style}
       >
         <div id={fieldId} className="smooth" />
-        {children}
-      </Form.Item>
+        <h4>
+          {props.title}{props.required ? ' *' : ''}
+        </h4>
+        <div>
+          {children}
+          {errorMessage && (
+            <div>
+              {errorMessage}
+            </div>
+          )}
+          {props.help && (
+            <div>
+              {props.help}
+            </div>
+          )}
+        </div>
+      </div>
     );
   }
 }
 
-export default FormGroup;
+export default LightFormGroup;

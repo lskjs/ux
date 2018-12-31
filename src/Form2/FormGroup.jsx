@@ -11,7 +11,7 @@ class FormGroup extends Component {
       ...props
     } = this.props;
 
-    const errorMessage = form.errors[field.name];
+    const errorMessage = form && form.errors && form.errors[field.name];
     const fieldId = `field__${hash(field.name)}`;
     return (
       <Form.Item

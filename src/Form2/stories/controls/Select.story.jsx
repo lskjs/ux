@@ -44,7 +44,7 @@ const Select = createForm({
 });
 
 module.exports = ({ storiesOf }) =>
-  storiesOf('Form2/stories/controls', module)
+  storiesOf('Form2/controls', module)
     .add('Select ', () => {
       return (
         <Story>
