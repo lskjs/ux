@@ -3,22 +3,17 @@ import { Form, Field } from 'formik';
 import Story from '../../../Story';
 import createForm from '../../createForm';
 import LightFormGroup from '../../LightFormGroup';
-import GeoMapboxBase from '../../controls/GeoMapbox';
-import GeoGooglemapsBase from '../../controls/GeoGooglemaps';
+import GeoComponent from '../../controls/Geo';
+import '../../../index.g.css';
 
 const GeoView = (props) => {
   const {
     controls,
-    values,
+    // values,
   } = props;
   return (
     <Form>
       <Field {...controls.geo} />
-      <div>
-        latitude: {values.geo?.latitude}
-        <br />
-        longitude: {values.geo?.longitude}
-      </div>
     </Form>
   );
 };
@@ -32,10 +27,15 @@ const GeoGoogle = createForm({
         latitude: 37.871263,
         longitude: -122.268783,
       },
-      component: GeoGooglemapsBase,
+      component: GeoComponent,
+      type: 'google',
+      apiKey: 'AIzaSyDln0Gfickhxbp96Dgh1DyWqjrdhYo0fB0&callback=initMap',
+      height: 300,
+      width: 400,
     },
   },
 });
+
 const GeoMapbox = createForm({
   view: GeoView,
   FormGroup: LightFormGroup,
@@ -45,7 +45,11 @@ const GeoMapbox = createForm({
         latitude: 37.871263,
         longitude: -122.268783,
       },
-      component: GeoMapboxBase,
+      component: GeoComponent,
+      type: 'mapbox',
+      apiKey: 'pk.eyJ1IjoibmF0YXZ0cyIsImEiOiJjanE4NmpsZmswMGpvNDJua293YXVrMmxiIn0.ydvNPvOMQalHl9h5oCSMbA',
+      height: 400,
+      width: 400,
     },
   },
 });

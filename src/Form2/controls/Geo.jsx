@@ -1,5 +1,5 @@
 import React from 'react';
-import GeoBase from '../../GeoGooglemaps';
+import GeoBase from '../../GeoPicker';
 
 const Geo = ({
   field,
@@ -19,4 +19,3 @@ const Geo = ({
 };
 
 export default Geo;
-
