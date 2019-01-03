@@ -1,7 +1,7 @@
 import React from 'react';
 import TestImonialV3 from './TestImonialV3';
 import ThemeInjector from '../../../ThemeInjector';
-import '../../../antd.g.css';
+import '../../../styles/lib/antd.g.css';
 
 const articles = [
   {

@@ -2,7 +2,7 @@ import React from 'react';
 import ThemeInjector from '../../../ThemeInjector';
 import Box from './Box';
 import AnimatedLink from '../AnimatedLink';
-import '../../../antd.g.css';
+import '../../../styles/lib/antd.g.css';
 import UserBoxFooter from '../UserBoxFooter';
 import BoxDivider from '../../atoms/BoxDivider';
 

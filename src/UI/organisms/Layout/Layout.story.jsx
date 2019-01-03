@@ -21,8 +21,8 @@ import LayoutHeader from '../../molecules/LayoutHeader';
 import LayoutSidebar from '../../molecules/LayoutSidebar';
 import ListItem from '../../molecules/ListItem';
 import ThemeInjector from '../../../ThemeInjector';
-import '../../../antd.g.css';
-import '../../../bootstrap.g.css';
+import '../../../styles/lib/antd.g.css';
+import '../../../styles/lib/bootstrap.g.css';
 
 import Layout from './Layout';
 import { notificationsData, messagesData, tasksData, contentData } from './Layout.mock';

@@ -8,8 +8,8 @@ import Input from '../../../Input';
 import LightFormGroup from '../../LightFormGroup';
 import TagsPicker from '../../controls/TagsPicker';
 
-import '../../../antd.g.css';
-import '../../../bootstrap.g.css';
+import '../../../styles/lib/antd.g.css';
+import '../../../styles/lib/bootstrap.g.css';
 
 const FormExample1View = (props) => {
   const {
