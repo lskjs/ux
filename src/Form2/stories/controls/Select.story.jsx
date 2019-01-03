@@ -5,17 +5,18 @@ import Story from '../../../Story';
 import createForm from '../../createForm';
 import SelectComponent from '../../controls/Select';
 import LightFormGroup from '../../LightFormGroup';
-
+import DEV from '../../../DEV';
 
 const SelectView = (props) => {
   const {
-    handleSubmit,
     controls,
+    values,
   } = props;
   return (
     <Form>
       <Field {...controls.select} />
-      <Button onClick={handleSubmit}>Submit</Button>
+      <Button >Submit</Button>
+      <DEV json={values} />
     </Form>
   );
 };
@@ -25,9 +26,8 @@ const Select = createForm({
   FormGroup: LightFormGroup,
   controls: {
     select: {
-      title: 'select',
+      title: 'The Select',
       component: SelectComponent,
-      type: 'select',
       options: [
         {
           value: 'corporation',
@@ -38,13 +38,13 @@ const Select = createForm({
           title: 'second',
         },
       ],
-      placeholder: 'Select  ',
+      placeholder: 'placeholder',
     },
   },
 });
 
 module.exports = ({ storiesOf }) =>
-  storiesOf('Form2/stories/controls', module)
+  storiesOf('Form2/controls', module)
     .add('Select ', () => {
       return (
         <Story>

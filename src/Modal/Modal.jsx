@@ -7,8 +7,6 @@ import Component from '../Component';
 
 const DEBUG = 0;
 
-console.log(Modal);
-
 export default class MyModal extends Component {
   static childContextTypes = {
     _modal: PropTypes.func,

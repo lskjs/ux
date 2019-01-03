@@ -11,6 +11,7 @@ const Input = ({
       {...field}
       debounce={0}
       {...props}
+      // leftIcon={<Icon color="#0088cc" size={24} />}
       onChange={(value) => {
         form.setFieldValue(field.name, value);
       }}

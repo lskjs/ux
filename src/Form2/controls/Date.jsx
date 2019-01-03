@@ -1,8 +1,8 @@
 import React from 'react';
 import get from 'lodash/get';
-import DatePickerBase from '~/Uapp/components/Datepicker';
 import moment from 'moment';
 import 'moment/locale/ru';
+import DatePickerBase from '../../UI/molecules/Datepicker';
 import FormGroup from '../FormGroup';
 
 const DatePicker = (data) => {

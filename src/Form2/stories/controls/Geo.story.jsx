@@ -55,7 +55,7 @@ const GeoMapbox = createForm({
 });
 
 module.exports = ({ storiesOf }) =>
-  storiesOf('Form2/stories/controls', module)
+  storiesOf('Form2/controls', module)
     .add('GeoMapbox', () => {
       return (
         <Story>

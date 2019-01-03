@@ -1,6 +1,6 @@
 import React from 'react';
 import get from 'lodash/get';
-import CheckboxesListBase from '~/Uapp/components/CheckboxesList';
+import CheckboxesListBase from '../../UI/molecules/CheckboxesList';
 import FormGroup from '../FormGroup';
 
 const CheckboxesList = ({

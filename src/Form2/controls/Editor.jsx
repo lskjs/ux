@@ -1,6 +1,6 @@
 import React from 'react';
 import get from 'lodash/get';
-import EditorBase from '~/lsk/Form/Editor';
+import EditorBase from '../../Editor';
 import FormGroup from '../FormGroup';
 
 const Editor = ({

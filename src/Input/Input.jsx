@@ -61,8 +61,8 @@ class Input extends PureComponent {
   @autobind
   handleChange(e) {
     let value = e;
-    if (!(typeof e === 'number' || typeof e === 'string') && e) {
-      value = e.target ? e.target.value : e;
+    if (!(typeof value === 'number' || typeof value === 'string') && value) {
+      value = value.target ? value.target.value : value;
     }
     const { displayRate } = this.props;
     if (typeof displayRate === 'number') {

@@ -1,6 +1,6 @@
 import React from 'react';
 // import { Field, Form } from 'formik';
-import PhoneInput from '~/Uapp/components/PhoneInput';
+import PhoneInput from '../../UI/molecules/PhoneInput';
 
 const CustomInputComponent = ({
   field, // { name, value, onChange, onBlur }

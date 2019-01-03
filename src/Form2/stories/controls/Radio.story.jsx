@@ -42,7 +42,7 @@ const Radio = createForm({
 });
 
 module.exports = ({ storiesOf }) =>
-  storiesOf('Form2/stories/controls', module)
+  storiesOf('Form2/controls', module)
     .add('Radio ', () => {
       return (
         <Story>

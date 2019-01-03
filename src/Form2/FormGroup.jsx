@@ -11,17 +11,19 @@ class FormGroup extends Component {
       ...props
     } = this.props;
 
-    const errorMessage = form.errors[field.name];
+    const errorMessage = form && form.errors && form.errors[field.name];
     const fieldId = `field__${hash(field.name)}`;
     return (
       <Form.Item
+        htmlId={fieldId}
         key={fieldId}
         required={props.required}
-        label={field.heading ? field.heading.children : props.title}
+        // label={field.heading ? field.heading.children : props.title}
+        label={props.label ? props.label : props.title}
         help={errorMessage || props.help}
         validateStatus={errorMessage ? 'error' : null}
       >
-        <div id={fieldId} className="smooth" />
+        {/* <div id={fieldId} className="smooth" /> */}
         {children}
       </Form.Item>
     );

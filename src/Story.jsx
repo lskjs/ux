@@ -3,6 +3,8 @@ import { ThemeProvider } from 'emotion-theming';
 import { Provider } from 'mobx-react';
 import theme from './utils/theme';
 
+import './antd.g.css';
+import './bootstrap.g.css';
 
 class Story extends Component {
   render() {
@@ -14,7 +16,15 @@ class Story extends Component {
     const uapp = {
       t,
       config,
-      modules: {},
+      modules: {
+        billing: {
+          stores: {
+            Transactions: {
+              getCardTokenSign: () => {},
+            },
+          },
+        },
+      },
       onError: e => console.error(e),
       provide: () => ({ t, config }),
     };

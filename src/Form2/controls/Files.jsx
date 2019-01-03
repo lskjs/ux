@@ -1,6 +1,6 @@
 import React from 'react';
 import get from 'lodash/get';
-import FilesUploaderBase from '~/Uapp/components/FilesUploader';
+import FilesUploaderBase from '../../UI/molecules/FilesUploader';
 import FormGroup from '../FormGroup';
 
 const FilesUploader = ({

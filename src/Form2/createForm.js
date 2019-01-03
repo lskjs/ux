@@ -1,74 +1,60 @@
 import React from 'react';
 import forEach from 'lodash/forEach';
 import set from 'lodash/set';
-import get from 'lodash/get';
-import omit from 'lodash/omit';
 import pickBy from 'lodash/pickBy';
 import isFunction from 'lodash/isFunction';
 import map from 'lodash/map';
+import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
 import { withFormik } from 'formik';
 import validate from 'validate.js';
 import Promise from 'bluebird';
-// import pickBy from 'lodash/pickBy';
 
-// const createForm = uapp => ({ controls, view: View }) => {
+const prepareControls = (ctrls, FormGroup) => {
+  const prepared = {};
+  forEach(ctrls, (ctrl, name) => {
+    const ControlWrapper = ctrl.FormGroup || FormGroup;
+    let component;
+    if (ControlWrapper) {
+      component = (props2) => {
+        // console.log('component', props2);
+        return React.createElement(
+          ControlWrapper,
+          props2,
+          React.createElement(ctrl.component, props2),
+        );
+      };
+    } else {
+      ({ component } = ctrl);
+    }
+
+    prepared[name] = {
+      name,
+      ...ctrl,
+      component,
+    };
+  });
+  return prepared;
+};
+
+
 const createForm = ({
   controls: rawControls,
   view: View,
   displayName,
   FormGroup,
+  withFormik: rawWithFormik,
+  ...props
 }) => {
-  const prepareControls = (ctrls) => {
-    const prepared = {};
-    forEach(ctrls, (ctrl, name) => {
-      const ControlWrapper = ctrl.FormGroup || FormGroup;
-      let component;
-      if (ControlWrapper) {
-        component = props => React.createElement(
-          ControlWrapper,
-          props,
-          React.createElement(ctrl.component, props),
-        );
-        // (
-        //   <ControlWrapper
-        //     {...props}
-        //   >
-        //     <Component
-        //       {...props}
-        //     />
-        //   </ControlWrapper>
-        // );
-      } else {
-        ({ component } = ctrl);
-      }
-
-      prepared[name] = {
-        name,
-        ...ctrl,
-        component,
-      };
-
-      // prepared[name].component = () => (
-      //   <FormGroup
-
-      //   >
-      // )
-    });
-    return prepared;
-  };
-  // if(isf(controls)) {
-  //   controls = controls(uapp);
-  // }
-  const controls = prepareControls(rawControls);
-
+  const controls = prepareControls(rawControls, FormGroup);
   const staticProps = {
     controls,
   };
 
-  const WrappedView = props => (<View {...staticProps} {...props} />);
+  const WrappedView = props => React.createElement(View, { ...staticProps, ...props });
 
-  return withFormik({
+  const wrapperWithFormik = rawWithFormik || withFormik;
+  return wrapperWithFormik({
     mapPropsToValues() {
       const defaultValues = {};
       Object.keys(rawControls).forEach((key) => {
@@ -78,26 +64,18 @@ const createForm = ({
     },
     handleSubmit: (values, { /* setSubmitting , */ props }) => {
       const { onSubmit } = props;
-      onSubmit(values);
+      if (onSubmit) onSubmit(values);
     },
-    handleChange: (values, { /* setSubmitting, */ props/* , form  */ }) => {
-      const { onChange } = props;
-      onChange(values);
+    handleChange: (values, { /* setSubmitting, */ props3/* , form  */ }) => {
+      // console.log('Form2.handleChange', values, props, props3);
+      try {
+        const onChange = get(this, 'props.onChange') || get(props3, 'onChange');
+        if (onChange) onChange(values);
+      } catch (err) {
+        console.log('onChange err', err);
+      }
     },
-    // validate
-    // validate(values) {
-    //   const validators = {};
-    //   forEach(preparedControls, (value, key) => {
-    //     validators[key] = value.validator;
-    //   });
-    //   const errors = validate(values, validators, { fullMessages: false }) || {};
-    //   forEach(errors, (error, name) => {
-    //     errors[name] = error?.[0];
-    //   });
-    //   return errors;
-    // },
     getValidators: (ctrls) => {
-      console.log({ ctrls });
       const validators = {};
       let customValidators = [];
       forEach(ctrls, (value, key) => {
@@ -124,6 +102,7 @@ const createForm = ({
       };
     },
     async validate(values) {
+
       const errors = {};
 
       const {
@@ -139,12 +118,13 @@ const createForm = ({
           errors[name] = error?.[0];
         });
       }
+
       // validate by custom functions
       await Promise.map(customValidators, async ({ name, validator }) => {
         try {
           const message = await validator(values[name], values);
           if (message) {
-            errors[name] = typeof message === 'string' ? message : 'Some error';
+            errors[name] = typeof message === 'string' ? message : 'The Error';
           }
         } catch (err) {
           if (typeof err === 'string') errors[name] = err;
@@ -152,13 +132,22 @@ const createForm = ({
         }
       });
 
+
       // throw if errors
       if (!isEmpty(errors)) throw errors;
+      try {
+        // this.handleChange(values);
+        const onChange = get(this, 'props.onChange') || get(props, 'onChange');
+        // const { onChange } = props;
+        if (onChange) onChange(values);
+      } catch (err) {
+        console.log('onChange err', err);
+      }
     },
     validateOnChange: false,
     validateOnBlur: false,
-    // props.
     displayName: displayName || 'Form',
+    ...props,
   })(WrappedView);
 };
 

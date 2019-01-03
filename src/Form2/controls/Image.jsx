@@ -1,6 +1,6 @@
 import React from 'react';
 import get from 'lodash/get';
-import ImageUploaderBase from '~/Uapp/components/ImageUploader';
+import ImageUploaderBase from '../../UI/molecules/ImageUploader';
 import FormGroup from '../FormGroup';
 
 const ImageUploader = ({
