@@ -5,28 +5,30 @@ import GoogleMap from 'react-geo-picker/lib/google-map';
 const Geo = ({
   field,
   form,
-  defaultValues,
+  // defaultValues,
   type,
   value,
   ...props
 }) => {
-  const defaultCoordinates = defaultValues || [-122.268783, 37.871263];
+  // const defaultVal = defaultValues || [-122.268783, 37.871263];
   const coordinates = value ? {
     longitude: value?.[0],
     latitude: value?.[1],
-  } : null;
+  } : {
+    longitude: 0,
+    latitude: 0,
+  };
 
   const GeoComponent = type === 'google' ? GoogleMap : MapBox;
-
   return (
     <div>
       <GeoComponent
         {...field}
         {...props}
-        defaultValue={{
-          longitude: defaultCoordinates?.[0],
-          latitude: defaultCoordinates?.[1],
-        }}
+        // defaultValue={{
+        //   longitude: -111.268783,
+        //   latitude: 37.871263,
+        // }}
         onChange={(val) => {
           form.setFieldValue(field.name, [val.longitude, val.latitude]);
         }}

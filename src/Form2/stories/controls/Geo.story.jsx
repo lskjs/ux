@@ -12,6 +12,9 @@ const GeoView = (props) => {
     controls,
     values,
   } = props;
+
+  console.log({ controls, values });
+  
   return (
     <Form>
       <Field {...controls.geo} />
@@ -25,7 +28,7 @@ const GeoGoogle = createForm({
   FormGroup: LightFormGroup,
   controls: {
     geo: {
-      defaultValues: [-122.268783, 37.871263],
+      default: [-122.268783, 37.871263],
       component: Geo,
       type: 'google',
       apiKey: 'AIzaSyDln0Gfickhxbp96Dgh1DyWqjrdhYo0fB0&callback=initMap',
@@ -38,7 +41,7 @@ const GeoMapbox = createForm({
   FormGroup: LightFormGroup,
   controls: {
     geo: {
-      defaultValues: [-122.268783, 37.871263],
+      default: [-122.268783, 37.871263],
       component: Geo,
       type: 'mapbox',
       apiKey: 'pk.eyJ1IjoibmF0YXZ0cyIsImEiOiJjanE4NmpsZmswMGpvNDJua293YXVrMmxiIn0.ydvNPvOMQalHl9h5oCSMbA',
