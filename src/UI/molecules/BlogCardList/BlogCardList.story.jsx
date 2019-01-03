@@ -2,7 +2,7 @@ import React from 'react';
 import BlogCardList from './BlogCardList';
 import ThemeInjector from '../../../ThemeInjector';
 
-import '../../../antd.g.css';
+import '../../../styles/lib/antd.g.css';
 
 const articles = [
   {

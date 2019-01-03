@@ -7,7 +7,7 @@ import PostCommentCreate from '../PostCommentCreate';
 import ThemeInjector from '../../../ThemeInjector';
 import Post from './Post';
 
-import '../../../antd.g.css';
+import '../../../styles/lib/antd.g.css';
 
 const user = {
   title: 'Имя Фамилия',

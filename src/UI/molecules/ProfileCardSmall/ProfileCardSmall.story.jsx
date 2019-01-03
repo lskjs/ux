@@ -2,7 +2,7 @@ import React from 'react';
 import ThemeInjector from '../../../ThemeInjector';
 import ProfileCardV1 from './ProfileCardSmall';
 
-import '../../../antd.g.css';
+import '../../../styles/lib/antd.g.css';
 
 module.exports = ({ storiesOf }) => (
   storiesOf('ui/ProfileCardSmall', module)

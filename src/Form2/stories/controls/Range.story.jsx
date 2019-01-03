@@ -5,16 +5,18 @@ import Story from '../../../Story';
 import createForm from '../../createForm';
 import RangeComponent from '../../controls/Range';
 import LightFormGroup from '../../LightFormGroup';
-
+import DEV from '../../../DEV';
 
 const RangeView = (props) => {
   const {
     // handleSubmit,
     controls,
+    values,
   } = props;
   return (
     <Form>
       <Field {...controls.range} />
+      <DEV json={values} />
       {/* <Button onClick={handleSubmit}>Submit</Button> */}
     </Form>
   );

@@ -5,16 +5,18 @@ import Story from '../../../Story';
 import createForm from '../../createForm';
 import PriceInputComponent from '../../controls/PriceInput';
 import LightFormGroup from '../../LightFormGroup';
-
+import DEV from '../../../DEV';
 
 const PriceInputView = (props) => {
   const {
     // handleSubmit,
     controls,
+    values,
   } = props;
   return (
     <Form>
       <Field {...controls.priceInput} />
+      <DEV json={values} />
       {/* <Button onClick={handleSubmit}>Submit</Button> */}
     </Form>
   );

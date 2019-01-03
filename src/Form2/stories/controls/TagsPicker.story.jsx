@@ -5,6 +5,7 @@ import Story from '../../../Story';
 import createForm from '../../createForm';
 import TagsPickerComponent from '../../controls/TagsPicker';
 import LightFormGroup from '../../LightFormGroup';
+import DEV from '../../../DEV';
 
 import '../../../UI/molecules/Modal/Modal.g.css';
 
@@ -12,10 +13,12 @@ const TagsPickerView = (props) => {
   const {
     handleSubmit,
     controls,
+    values,
   } = props;
   return (
     <Form>
       <Field {...controls.tagsPicker} />
+      <DEV json={values} />
       <Button onClick={handleSubmit}>Submit</Button>
     </Form>
   );

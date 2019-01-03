@@ -5,6 +5,7 @@ import Story from '../../../Story';
 import createForm from '../../createForm';
 import TagsComponent from '../../controls/Tags';
 import LightFormGroup from '../../LightFormGroup';
+import DEV from '../../../DEV';
 
 import '../../../UI/molecules/Modal/Modal.g.css';
 
@@ -12,10 +13,12 @@ const TagsView = (props) => {
   const {
     handleSubmit,
     controls,
+    values,
   } = props;
   return (
     <Form>
       <Field {...controls.tags} />
+      <DEV json={values} />
       <Button onClick={handleSubmit}>Submit</Button>
     </Form>
   );

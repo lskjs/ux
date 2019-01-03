@@ -4,7 +4,7 @@ import BlogCard from './BlogCard';
 import { FlexItem, FlexContainer } from './BlogCard.styles';
 import AnimatedLink from '../AnimatedLink';
 import ThemeInjector from '../../../ThemeInjector';
-import '../../../antd.g.css';
+import '../../../styles/lib/antd.g.css';
 
 const articles = [
   {

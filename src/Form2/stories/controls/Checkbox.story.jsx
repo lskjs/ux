@@ -5,18 +5,20 @@ import Story from '../../../Story';
 import createForm from '../../createForm';
 import CheckboxComponent from '../../controls/Checkbox';
 import LightFormGroup from '../../LightFormGroup';
-
+import DEV from '../../../DEV';
 
 const CheckboxView = (props) => {
   const {
     // handleSubmit,
     controls,
+    values,
   } = props;
   return (
     <Form>
       <Field {...controls.blue} />
       <Field {...controls.black} />
       <Field {...controls.green} />
+       <DEV json={values} />
       {/* <Button onClick={handleSubmit}>Submit</Button> */}
     </Form>
   );

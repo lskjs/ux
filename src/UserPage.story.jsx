@@ -1,8 +1,8 @@
 import React from 'react';
 import { Container, Col, Row } from 'reactstrap';
 import ThemeInjector from './ThemeInjector';
-import './antd.g.css';
-import './bootstrap.g.css';
+import './styles/lib/antd.g.css';
+import './styles/lib/bootstrap.g.css';
 import Button from './Button';
 import Page from './UI/molecules/Page';
 import Box from './UI/molecules/Box';

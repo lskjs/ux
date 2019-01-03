@@ -5,16 +5,18 @@ import Story from '../../../Story';
 import createForm from '../../createForm';
 import RadioCardsComponent from '../../controls/RadioCards';
 import LightFormGroup from '../../LightFormGroup';
-
+import DEV from '../../../DEV';
 
 const RadioCardsView = (props) => {
   const {
     // handleSubmit,
     controls,
+    values,
   } = props;
   return (
     <Form>
       <Field {...controls.radioCards} />
+      <DEV json={values} />
       {/* <Button onClick={handleSubmit}>Submit</Button> */}
     </Form>
   );

@@ -3,8 +3,8 @@ import { ThemeProvider } from 'emotion-theming';
 import { Provider } from 'mobx-react';
 import theme from './utils/theme';
 
-import './antd.g.css';
-import './bootstrap.g.css';
+import './styles/lib/antd.g.css';
+import './styles/lib/bootstrap.g.css';
 
 class Story extends Component {
   render() {

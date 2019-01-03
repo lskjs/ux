@@ -5,16 +5,18 @@ import Story from '../../../Story';
 import createForm from '../../createForm';
 import RatingComponent from '../../controls/Rating';
 import LightFormGroup from '../../LightFormGroup';
-
+import DEV from '../../../DEV';
 
 const RatingView = (props) => {
   const {
     handleSubmit,
     controls,
+    values,
   } = props;
   return (
     <Form>
       <Field {...controls.rating} />
+      <DEV json={values} />
       <Button onClick={handleSubmit}>Submit</Button>
     </Form>
   );
