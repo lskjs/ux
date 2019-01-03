@@ -5,6 +5,7 @@ import createForm from '../../createForm';
 import LightFormGroup from '../../LightFormGroup';
 import GeoMapboxBase from '../../controls/GeoMapbox';
 import GeoGooglemapsBase from '../../controls/GeoGooglemaps';
+import DEV from '../../../DEV';
 
 const GeoView = (props) => {
   const {
@@ -19,6 +20,7 @@ const GeoView = (props) => {
         <br />
         longitude: {values.geo?.longitude}
       </div>
+      <DEV json={values} />
     </Form>
   );
 };

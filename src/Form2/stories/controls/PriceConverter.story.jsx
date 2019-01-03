@@ -4,15 +4,17 @@ import Story from '../../../Story';
 import createForm from '../../createForm';
 import PriceConverterComponent from '../../controls/PriceConverter';
 import LightFormGroup from '../../LightFormGroup';
-
+import DEV from '../../../DEV';
 
 const PriceConverterView = (props) => {
   const {
     controls,
+    values,
   } = props;
   return (
     <Form>
       <Field {...controls.priceConverter} />
+      <DEV json={values} />
     </Form>
   );
 };
