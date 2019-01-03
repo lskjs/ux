@@ -1,19 +1,21 @@
 import React from 'react';
 import { Form, Field } from 'formik';
+import DEV from '../../../DEV';
 import Story from '../../../Story';
 import createForm from '../../createForm';
 import LightFormGroup from '../../LightFormGroup';
-import GeoComponent from '../../controls/Geo';
-import '../../../index.g.css';
+import Geo from '../../controls/Geo';
+import '../../controls/Geo.g.css';
 
 const GeoView = (props) => {
   const {
     controls,
-    // values,
+    values,
   } = props;
   return (
     <Form>
       <Field {...controls.geo} />
+      <DEV json={values} />
     </Form>
   );
 };
@@ -23,15 +25,10 @@ const GeoGoogle = createForm({
   FormGroup: LightFormGroup,
   controls: {
     geo: {
-      defaultValue: {
-        latitude: 37.871263,
-        longitude: -122.268783,
-      },
-      component: GeoComponent,
+      defaultValues: [-122.268783, 37.871263],
+      component: Geo,
       type: 'google',
       apiKey: 'AIzaSyDln0Gfickhxbp96Dgh1DyWqjrdhYo0fB0&callback=initMap',
-      height: 300,
-      width: 400,
     },
   },
 });
@@ -41,11 +38,8 @@ const GeoMapbox = createForm({
   FormGroup: LightFormGroup,
   controls: {
     geo: {
-      defaultValue: {
-        latitude: 37.871263,
-        longitude: -122.268783,
-      },
-      component: GeoComponent,
+      defaultValues: [-122.268783, 37.871263],
+      component: Geo,
       type: 'mapbox',
       apiKey: 'pk.eyJ1IjoibmF0YXZ0cyIsImEiOiJjanE4NmpsZmswMGpvNDJua293YXVrMmxiIn0.ydvNPvOMQalHl9h5oCSMbA',
       height: 400,
