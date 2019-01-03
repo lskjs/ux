@@ -8,7 +8,6 @@ import Title from './PageTitle';
 import Breadcrumbs from './PageBreadcrumbs';
 import TitleActions from '../../atoms/PageTitleActions';
 
-
 import Block from './Page.styles';
 
 class Page extends PureComponent {

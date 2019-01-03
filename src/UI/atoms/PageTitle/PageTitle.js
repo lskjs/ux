@@ -13,5 +13,4 @@ export default styled('div')`
   min-height: 40px;
   width: 100%;
   position: relative;
-  padding: 0 12px;
 `;

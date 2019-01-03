@@ -5,6 +5,7 @@ import get from 'lodash/get';
 import Plus from 'react-icons2/mdi/plus-circle';
 
 import Tag from '../../molecules/Tag';
+import Tags from '../../molecules/Tags';
 import TagsWrapper from '../../atoms/TagsWrapper';
 import Add from '../../atoms/IconCircleButton';
 import TreePicker from '../TreePicker';
@@ -37,6 +38,8 @@ class TagsPicker extends PureComponent {
     flat: PropTypes.bool,
     disabled: PropTypes.bool,
     readOnly: PropTypes.bool,
+    renderTag: PropTypes.func,
+    block: PropTypes.bool,
   }
 
   static defaultProps = {
@@ -48,6 +51,8 @@ class TagsPicker extends PureComponent {
     flat: false,
     disabled: false,
     readOnly: false,
+    renderTag: null,
+    block: false,
   }
 
   constructor(props) {
@@ -130,9 +135,16 @@ class TagsPicker extends PureComponent {
   }
 
   render() {
-    const { block, triggerTitle, fields, disabled, readOnly } = this.props;
-    const value = this.getValue();
+    const {
+      block,
+      triggerTitle,
+      fields,
+      disabled,
+      readOnly,
+      renderTag,
+    } = this.props;
     const fieldsKeys = getFieldsKeys(fields);
+    const value = this.getValue();
     const trigger = value.length > 0
       ? <Add inverse disabled={disabled} />
       : (
@@ -150,16 +162,16 @@ class TagsPicker extends PureComponent {
         {/* <DEV json={fields} /> */}
         <If condition={value.length > 0}>
           <TagsWrapper>
-            {value.filter(item => !(!get(fieldsKeys, `${item}.title`) && __DEV__)).map(item => (
-              <Tag
-                key={item}
-                id={item}
-                onClose={!readOnly ? () => this.handleDeleteTag(item) : null}
-                disabled={disabled}
-              >
-                {get(fieldsKeys, `${item}.title`, '???')}
-              </Tag>
-            ))}
+            <Tags
+              items={(
+                value
+                .filter(item => !(!get(fieldsKeys, `${item}.title`) && __DEV__))
+                .map(e => ({ value: e, title: get(fieldsKeys, `${e}.title`, '???') }))
+              )}
+              onDelete={this.handleDeleteTag}
+              disabled={disabled || readOnly}
+              renderTag={renderTag}
+            />
             <If condition={!readOnly}>
               {disabled ? trigger : this.renderModal(trigger)}
             </If>

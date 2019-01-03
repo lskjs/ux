@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/general",
-  "version": "0.15.32",
+  "version": "0.15.35",
   "author": "isuvorov",
   "license": "MIT",
   "dependencies": {
@@ -73,8 +73,10 @@
     "glob-loader": "0.3.0",
     "highlight.js": "9.12.0",
     "json-loader": "0.5.7",
+    "less": "^3.9.0",
     "markdown-it": "^8.4.2",
     "markdown-it-emoji": "1.4.0",
+    "node-sass": "^4.11.0",
     "postcss-loader": "2.1.5",
     "react-hot-loader": "4.2.0",
     "storybox": "1.0.3",
@@ -88,6 +90,9 @@
     "storybook": "start-storybook -p 9001 -c .storybook",
     "build-stories": "node node_modules/storybox/glob.js \"src/**/*.story.jsx\" .storybook/stories.js ../",
     "build-storybook": "build-storybook -c .storybook -o .out",
-    "deploy-storybook": "storybook-to-ghpages"
+    "deploy-storybook": "storybook-to-ghpages",
+    "build-less": "lessc --js src/styles/src/antd/antd.less src/styles/lib/antd.g.css && lessc --js src/styles/src/antd/antdbase.less src/styles/lib/antdbase.g.css",
+    "build-sass": "node-sass src/styles/src/bootstrap/bootstrap.scss src/styles/lib/bootstrap.g.css",
+    "build-styles": "npm run build-less && npm run build-sass"
   }
 }

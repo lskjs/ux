@@ -12,5 +12,4 @@ export default styled('div')`
   display: flex;
   width: 100%;
   position: relative;
-  padding: 0 12px;
 `;
