@@ -16,7 +16,15 @@ class Story extends Component {
     const uapp = {
       t,
       config,
-      modules: {},
+      modules: {
+        billing: {
+          stores: {
+            Transactions: {
+              getCardTokenSign: () => {},
+            },
+          },
+        },
+      },
       onError: e => console.error(e),
       provide: () => ({ t, config }),
     };

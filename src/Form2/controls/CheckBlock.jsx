@@ -1,6 +1,6 @@
 import React from 'react';
 import get from 'lodash/get';
-import ExtendedCheckblock from '~/Uapp/components/ExtendedCheckblock';
+import ExtendedCheckblock from '../../UI/molecules/ExtendedCheckblock';
 import FormGroup from '../FormGroup';
 
 const CheckBlock = ({

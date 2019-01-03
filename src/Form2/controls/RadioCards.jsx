@@ -1,6 +1,6 @@
 import React from 'react';
 import get from 'lodash/get';
-import RadioCardsBase from '~/Uapp/components/RadioCards';
+import RadioCardsBase from '../../UI/molecules/RadioCards';
 import FormGroup from '../FormGroup';
 
 const RadioCards = ({

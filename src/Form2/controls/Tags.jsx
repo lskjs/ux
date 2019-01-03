@@ -1,6 +1,6 @@
 import React from 'react';
 import get from 'lodash/get';
-import TagsPickerBase from '~/lsk/Form/TagsPicker';
+import TagsPickerBase from '../../UI/molecules/TagsPicker';
 import FormGroup from '../FormGroup';
 
 const TagsPicker = ({

@@ -1,7 +1,7 @@
 import React from 'react';
 import get from 'lodash/get';
 import debounce from 'lodash.debounce';
-import RangeBase from '~/Uapp/components/RangeGroup';
+import RangeBase from '../../UI/molecules/RangeGroup';
 import FormGroup from '../FormGroup';
 
 const Range = ({

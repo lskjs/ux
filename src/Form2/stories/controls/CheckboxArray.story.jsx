@@ -1,0 +1,59 @@
+import React from 'react';
+import { Form, Field } from 'formik';
+// import { Button } from 'react-bootstrap';
+import Story from '../../../Story';
+import createForm from '../../createForm';
+import Checkbox from '../../../UI/molecules/Checkbox';
+import CheckboxArrayComponent from '../../controls/CheckboxArray';
+import CheckboxDeal from '../../../UI/molecules/CheckboxDeal';
+import LightFormGroup from '../../LightFormGroup';
+
+
+const CheckboxArrayView = (props) => {
+  const {
+    // handleSubmit,
+    controls,
+  } = props;
+  return (
+    <Form>
+      <Field {...controls.checkboxArray} />
+      {/* <Button onClick={handleSubmit}>Submit</Button> */}
+    </Form>
+  );
+};
+
+const CheckboxArray = createForm({
+  view: CheckboxArrayView,
+  FormGroup: LightFormGroup,
+  controls: {
+    checkboxArray: {
+      title: 'checkboxArray',
+      component: CheckboxArrayComponent,
+      itemComponent: CheckboxDeal,
+      options: [
+        {
+          _id: 1,
+          label: 'value1',
+          link: 'google.com',
+          price: 15000,
+        },
+        {
+          _id: 2,
+          label: 'value2',
+          link: 'google.com',
+          price: 1000,
+        },
+      ],
+    },
+  },
+});
+
+module.exports = ({ storiesOf }) =>
+  storiesOf('Form2/controls', module)
+    .add('CheckboxArray ', () => {
+      return (
+        <Story>
+          <CheckboxArray />
+        </Story>
+      );
+    });

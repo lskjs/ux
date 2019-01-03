@@ -1,6 +1,6 @@
 import React from 'react';
 import get from 'lodash/get';
-import InputArrayBase from '~/lsk/Form/InputArray';
+import InputArrayBase from '../../UI/molecules/InputArray';
 import FormGroup from '../FormGroup';
 
 const InputArray = ({
