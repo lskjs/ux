@@ -3,7 +3,11 @@ import get from 'lodash/get';
 import cloneDeep from 'lodash/cloneDeep';
 import sortBy from 'lodash/sortBy';
 import isPlainObject from 'lodash/isPlainObject';
-import SelectBase from '../../Select';
+import omit from 'lodash/omit';
+import find from 'lodash/find';
+import ReactSelect from 'react-select';
+import Up from 'react-icons2/mdi/chevron-up';
+import Down from 'react-icons2/mdi/chevron-down';
 
 const NULL_STRING = '@@NULL@@';
 const Select = ({
@@ -32,24 +36,28 @@ const Select = ({
   }
 
   const options = preOptions.map(option => ({
-    ...option,
+    ...omit(option, ['value', 'title', 'label']),
     label: option.label || option.title,
     value: option.value == null ? NULL_STRING : option.value,
   }));
+
   return (
-    <SelectBase
+    <ReactSelect
+      className="list-selector"
+      clearable={false}
+      arrowRenderer={e => (e.isOpen ? <Up /> : <Down />)}
+      error={!!form.errors[field.name]}
       {...field}
       {...props}
-      error={!!form.errors[field.name]}
-      value={value}
+      value={find(options, { value })}
       onChange={(val) => {
-          field.onChange({
-            target: {
-              name: field.name,
-              value: val,
-            },
-          });
-        }}
+        field.onChange({
+          target: {
+            name: field.name,
+            value: val.value,
+          },
+        });
+      }}
       options={options}
     />
   );
