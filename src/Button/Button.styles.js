@@ -458,6 +458,7 @@ export const Btn = styled(filteredTag)`
   text-align: center;
   justify-content: center;
   pointer-events: auto;
+  -webkit-appearance: none !important;
 
   ${(props) => {
     if (props.bordered) {
