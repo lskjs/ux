@@ -10,13 +10,8 @@ const CheckBlock = ({
   const props2 = {
     value: get(form.values, field.name),
     validationState: form.errors[field.name] ? 'error' : null,
-    onChange: (val) => {
-      field.onChange({
-        target: {
-          name: field.name,
-          value: val,
-        },
-      });
+    onChange: (value) => {
+      form.setFieldValue(field.name, value);
     },
     label: props.title || props.name,
     info: props.info,

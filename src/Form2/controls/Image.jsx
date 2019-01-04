@@ -13,13 +13,8 @@ const ImageUploader = ({
       {...field}
       {...props}
       validationState={form.errors[field.name] ? 'error' : null}
-      onSubmit={(val) => {
-        field.onChange({
-          target: {
-            name: field.name,
-            value: val,
-          },
-        });
+      onSubmit={(value) => {
+        form.setFieldValue(field.name, value);
       }}
       onError={() => onError?.(form.errors[field.name])} // this.globalError
       value={get(form.values, field.name)}

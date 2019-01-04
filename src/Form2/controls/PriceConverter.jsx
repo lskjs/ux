@@ -11,13 +11,8 @@ const PriceConverter = ({
     <PriceConverterBase
       {...field}
       {...props}
-      onChange={(val) => {
-        field.onChange({
-          target: {
-            name: field.name,
-            value: val,
-          },
-        });
+      onChange={(value) => {
+        form.setFieldValue(field.name, value);
       }}
       value={get(form.values, field.name)}
     />

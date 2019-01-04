@@ -51,12 +51,7 @@ const Select = ({
       {...props}
       value={find(options, { value })}
       onChange={(val) => {
-        field.onChange({
-          target: {
-            name: field.name,
-            value: val.value,
-          },
-        });
+        form.setFieldValue(field.name, val.value);
       }}
       options={options}
     />

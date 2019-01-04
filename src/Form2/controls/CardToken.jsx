@@ -11,13 +11,8 @@ const CardToken = ({
     <CardTokenBase
       {...field}
       {...props}
-      onSubmit={(val) => {
-        field.onChange({
-          target: {
-            name: field.name,
-            value: val,
-          },
-        });
+      onSubmit={(value) => {
+        form.setFieldValue(field.name, value);
       }}
       value={get(form.values, field.name)}
       fields={field.fields}

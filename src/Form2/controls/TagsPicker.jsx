@@ -12,13 +12,8 @@ const TagsPicker = ({
       {...field}
       {...props}
       onChange={null}
-      onSubmit={(val) => {
-        field.onChange({
-          target: {
-            name: field.name,
-            value: val,
-          },
-        });
+      onSubmit={(value) => {
+        form.setFieldValue(field.name, value);
       }}
       value={get(form.values, field.name)}
     />

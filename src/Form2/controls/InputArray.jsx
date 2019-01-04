@@ -13,13 +13,8 @@ const InputArray = ({
       {...field}
       {...props}
       validationState={form.errors[field.name] ? 'error' : null}
-      onChange={(val) => {
-        field.onChange({
-          target: {
-            name: field.name,
-            value: val,
-          },
-        });
+      onChange={(value) => {
+        form.setFieldValue(field.name, value);
       }}
       onError={() => onError?.(form.errors[field.name])} // this.globalError
       value={get(form.values, field.name)}

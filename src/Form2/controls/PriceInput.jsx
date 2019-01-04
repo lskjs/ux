@@ -7,13 +7,8 @@ const PriceInput = ({
   form,
   ...props
 }) => {
-  const onChange2 = (val) => {
-    field.onChange({
-      target: {
-        name: field.name,
-        value: val,
-      },
-    });
+  const onChange2 = (value) => {
+    form.setFieldValue(field.name, value);
   };
   const onChange = (pp) => {
     // console.log('onChange', {pp});

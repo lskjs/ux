@@ -14,7 +14,6 @@ const Radio = ({
 }) => {
   const valueBefore = get(form.values, field.name);
   const value = (valueBefore == null) ? NULL_STRING : valueBefore;
-  // console.log(field, form, props);
 
   let preOptions = [];
   if (props.options) {
@@ -43,14 +42,9 @@ const Radio = ({
       {...field}
       {...props}
       validationState={form.errors[field.name] ? 'error' : null}
-      value={get(form.values, field.name)}
+      value={value}
       onChange={(val) => {
-        field.onChange({
-          target: {
-            name: field.name,
-            value: val,
-          },
-        });
+        form.setFieldValue(field.name, val);
       }}
       options={options}
     />

@@ -26,19 +26,12 @@ const CheckboxView = (props) => {
 
 const Checkbox = createForm({
   view: CheckboxView,
-  FormGroup: LightFormGroup,
+  // FormGroup: LightFormGroup,
   controls: {
     blue: {
       title: 'first value',
       component: CheckboxComponent,
-      options: [
-        {
-          _id: 1,
-          label: 'value1',
-          link: 'google.com',
-          price: 15000,
-        },
-      ],
+      label: '1',
     },
     black: {
       title: 'second value',
