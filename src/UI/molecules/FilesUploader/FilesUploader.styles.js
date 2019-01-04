@@ -1,42 +1,18 @@
-import styled from 'react-emotion';
+import styled, { css } from 'react-emotion';
 
-import { createDynamicTag } from '../../../utils';
-
-const dynamicTag = createDynamicTag('div');
-
-export const Zone = styled(dynamicTag)`
-  width: 100%;
-  height: 156px;
+export const zoneStyle = css`
+  width: 270px;
+  height: auto;
   border: none !important;
   border-radius: 0 !important;
-  @media screen and (max-width: 730px) {
-    height: 100%;
-  }
-`;
-
-export const UploaderFilename = styled('a')`
-  font-size: 13px;
-  letter-spacing: -0.1px;
-  text-align: left;
-  color: #4a4a4a;
-  overflow: hidden;
-  display: flex;
-  > div {
+  @media screen and (max-width: 330px) {
     width: 100%;
-    display: flex;
-    text-align: left;
-  }
-  > div > span:first-child {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 100%;
   }
 `;
 
 export const Drop = styled('div')`
-  width: 100%;
-  height: 156px;
+  width: 280px;
+  height: 392px;
   border-radius: 3px;
   background-color: #ffffff;
   border: solid 3px ${p => p.theme.colors.primary};
@@ -44,8 +20,8 @@ export const Drop = styled('div')`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  @media screen and (max-width: 730px) {
-    height: 100%;
+  @media screen and (max-width: 330px) {
+    width: 100%;
   }
 `;
 
@@ -58,42 +34,74 @@ export const DropText = styled('div')`
   width: 70%;
 `;
 
-export const Block = styled('div')`
-  width: 100%;
-  height: 156px;
-  padding: 1px 1px 1px 0;
-  border-radius: 3px;
-  background-color: #ffffff;
-  border: solid 1px #e3e3e3;
-  display: flex;
-  flex-direction: column;
-  ${p => (p.error && `
-    border-color: #da4c5a;
-  `)}
-  @media screen and (max-width: 730px) {
-    height: 100%;
+export const DropIcon = styled('div')`
+  color: ${p => p.theme.colors.primary};
+  font-size: 64px;
+  > svg {
+    display: flex;
   }
 `;
 
-export const Header = styled('div')`
-  padding: 12px 16px 20px;
-  background-color: #ffffff;
-  flex: 1;
+export const Overlay = styled('div')`
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 1;
 `;
 
-export const Info = styled('div')`
-  font-size: 13px;
-  line-height: 1.43;
-  letter-spacing: -0.1px;
-  text-align: left;
-  color: #4a4a4a;
-  font-family: ${p => p.theme.fontFamily};
-  margin-bottom: 22px;
-`;
-
-export const Actions = styled('div')`
+export const RemoveButton = styled('button')`
+  background: none;
+  border: none;
+  outline: none;
+  opacity: 0.7;
+  color: #ffffff;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 8px;
+  margin: 0;
+  font-size: 50px;
   display: flex;
+  z-index: 2;
+`;
+
+export const PlaceholderFooter = styled('div')`
+  opacity: 0.5;
+  font-family: ${p => p.theme.fontFamily};
+  font-size: 11px;
+  letter-spacing: -0.1px;
+  text-align: center;
+  color: ${p => p.theme.colors.primary};
+`;
+
+export const IconFooter = styled('div')`
+  color: ${p => p.theme.colors.primary};
+  opacity: 0.5;
+  font-size: 64px;
+  margin-bottom: 24px;
+  display: flex;
+  > svg {
+    display: flex;
+  }
+`;
+
+export const Footer = styled('div')`
+  height: 200px;
+  width: 100%;
+  background-color: ${p => p.theme.colors.lighterPrimary};
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+  flex-shrink: 0;
+  background-size: cover;
+  background-position: center;
+  border-radius: 0 0 3px 3px;
 `;
 
 export const Button = styled('button')`
@@ -115,51 +123,51 @@ export const Button = styled('button')`
   }
 `;
 
-export const UploaderContent = styled('div')`
-  margin-top: 8px;
+export const Actions = styled('div')`
   display: flex;
-  flex-wrap: wrap;
+  justify-content: center;
 `;
 
-export const UploaderFile = styled('div')`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
+export const Info = styled('div')`
+  font-size: 13px;
+  line-height: 1.43;
+  letter-spacing: -0.1px;
+  text-align: left;
+  color: #4a4a4a;
+  font-family: ${p => p.theme.fontFamily};
+  margin-bottom: 32px;
+`;
+
+export const Header = styled('div')`
+padding: 12px 16px;
+  background-color: #ffffff;
+  flex: 1;
+  border-radius: 3px 3px 0 0;
+`;
+
+export const Block = styled('div')`
+  width: 269px;
+  height: 391px;
+  padding: 0;
   border-radius: 3px;
   background-color: #ffffff;
   border: solid 1px #e3e3e3;
-  padding: 7px 12px;
-  &:not(:last-child) {
-    margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  ${p => (p.error && `
+    border-color: #da4c5a;
+  `)}
+  ${p => (p.avatar && `
+    height: 384px;
+    ${Header} {
+      order: 1;
+    }
+    ${IconFooter} {
+      opacity: 1;
+      margin-bottom: 16px;
+    }
+  `)}
+  @media screen and (max-width: 330px) {
+    width: 100%;
   }
-  > span {
-    color: ${p => p.theme.colors.primary};
-    font-size: 24px;
-    margin-left: auto;
-  }
-  a {
-    font-size: 13px;
-    line-height: 1.43;
-    letter-spacing: -0.1px;
-    text-align: left;
-    color: ${p => p.theme.colors.primary};
-    margin-right: 8px;
-  }
-`;
-
-export const UploaderSize = styled('span')`
-  font-size: 14px !important;
-  line-height: 1.43;
-  letter-spacing: -0.1px;
-  text-align: right;
-  color: #9b9b9b !important;
-  margin-right: 8px;
-  margin-left: 0 !important;
-  > span:first-child {
-    cursor: pointer;
-  }
-  > span > svg {
-    display: flex;
-  }  
 `;

@@ -23,10 +23,11 @@ const CheckBox = ({
             },
           });
         }}
-        checked={get(form.values, field.name)}
+        // checked={get(form.values, field.name)}
       />
       {props.icon && props.icon}
-      <span className="checkbox-title">{props.title || field.name}</span>
+      {console.log(props, field)}
+      <span className="checkbox-title">{props.label}</span>
       {props.control && props.control.help && (
         <Tooltip id={field.name} place="bottom" overlay={props.control.help}>
           <span className="checkbox-help"><Help /></span>

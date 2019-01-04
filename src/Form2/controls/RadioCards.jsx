@@ -1,7 +1,6 @@
 import React from 'react';
 import get from 'lodash/get';
 import RadioCardsBase from '../../UI/molecules/RadioCards';
-import FormGroup from '../FormGroup';
 
 const RadioCards = ({
   field,
@@ -9,22 +8,16 @@ const RadioCards = ({
   ...props
 }) => {
   return (
-    <FormGroup
-      field={field}
-      form={form}
+    <RadioCardsBase
+      {...field}
       {...props}
-    >
-      <RadioCardsBase
-        {...field}
-        {...props}
-        value={get(form.values, field.name)}
-        validationState={form.errors[field.name] ? 'error' : null}
-        onChange={(value) => {
-          form.setFieldValue(field.name, value);
-        }}
-        options={props.options}
-      />
-    </FormGroup>
+      value={get(form.values, field.name)}
+      validationState={form.errors[field.name] ? 'error' : null}
+      onChange={(value) => {
+        form.setFieldValue(field.name, value);
+      }}
+      options={props.options}
+    />
   );
 };
 

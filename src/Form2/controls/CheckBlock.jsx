@@ -1,7 +1,6 @@
 import React from 'react';
 import get from 'lodash/get';
 import ExtendedCheckblock from '../../UI/molecules/ExtendedCheckblock';
-import FormGroup from '../FormGroup';
 
 const CheckBlock = ({
   field,
@@ -24,20 +23,14 @@ const CheckBlock = ({
   };
 
   return (
-    <FormGroup
-      field={field}
-      form={form}
-      {...props}
-    >
-      <div>
-        <ExtendedCheckblock
-          {...field}
-          {...props}
-          {...props2}
-          children={props.children}  //eslint-disable-line
-        />
-      </div>
-    </FormGroup>
+    <div>
+      <ExtendedCheckblock
+        {...field}
+        {...props}
+        {...props2}
+        children={props.children}  //eslint-disable-line
+      />
+    </div>
   );
 };
 

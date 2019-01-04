@@ -1,7 +1,6 @@
 import React from 'react';
 import get from 'lodash/get';
 import FilesUploaderBase from '../../UI/molecules/FilesUploader';
-import FormGroup from '../FormGroup';
 
 const FilesUploader = ({
   field,
@@ -10,27 +9,21 @@ const FilesUploader = ({
   ...props
 }) => {
   return (
-    <FormGroup
-      field={field}
-      form={form}
+    <FilesUploaderBase
+      {...field}
       {...props}
-    >
-      <FilesUploaderBase
-        {...field}
-        {...props}
-        validationState={form.errors[field.name] ? 'error' : null}
-        onSubmit={(val) => {
-          field.onSubmit({
-            target: {
-              name: field.name,
-              value: val,
-            },
-          });
-        }}
-        onError={() => onError?.(form.errors[field.name])} // this.globalError
-        files={get(form.values, field.name)}
-      />
-    </FormGroup>
+      validationState={form.errors[field.name] ? 'error' : null}
+      onSubmit={(val) => {
+        field.onChange({
+          target: {
+            name: field.name,
+            value: val,
+          },
+        });
+      }}
+      onError={() => onError?.(form.errors[field.name])} // this.globalError
+      files={get(form.values, field.name)}
+    />
   );
 };
 

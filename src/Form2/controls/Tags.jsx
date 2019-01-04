@@ -1,7 +1,6 @@
 import React from 'react';
 import get from 'lodash/get';
 import TagsPickerBase from '../../UI/molecules/TagsPicker';
-import FormGroup from '../FormGroup';
 
 const TagsPicker = ({
   field,
@@ -9,27 +8,21 @@ const TagsPicker = ({
   ...props
 }) => {
   return (
-    <FormGroup
-      field={field}
-      form={form}
+    <TagsPickerBase
+      {...field}
       {...props}
-    >
-      <TagsPickerBase
-        {...field}
-        {...props}
-        onSubmit={(val) => {
-          field.onChange({
-            target: {
-              name: field.name,
-              value: val,
-            },
-          });
-        }}
-        value={get(form.values, field.name)}
-        fields={field.fields}
-        title={field.title}
-      />
-    </FormGroup>
+      onSubmit={(val) => {
+        field.onChange({
+          target: {
+            name: field.name,
+            value: val,
+          },
+        });
+      }}
+      value={get(form.values, field.name)}
+      fields={field.fields}
+      title={field.title}
+    />
   );
 };
 

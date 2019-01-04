@@ -18,7 +18,7 @@ const CheckboxView = (props) => {
       <Field {...controls.blue} />
       <Field {...controls.black} />
       <Field {...controls.green} />
-       <DEV json={values} />
+      <DEV json={values} />
       {/* <Button onClick={handleSubmit}>Submit</Button> */}
     </Form>
   );
@@ -31,14 +31,24 @@ const Checkbox = createForm({
     blue: {
       title: 'first value',
       component: CheckboxComponent,
+      options: [
+        {
+          _id: 1,
+          label: 'value1',
+          link: 'google.com',
+          price: 15000,
+        },
+      ],
     },
     black: {
       title: 'second value',
       component: CheckboxComponent,
+      label: '2',
     },
     green: {
       title: 'third value',
       component: CheckboxComponent,
+      label: '3',
     },
   },
 });

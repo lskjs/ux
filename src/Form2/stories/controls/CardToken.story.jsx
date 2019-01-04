@@ -24,6 +24,11 @@ const CardToken = createForm({
     cardToken: {
       title: 'CardToken',
       component: CardTokenComponent,
+      options: [
+        {
+          title: 'asd',
+        },
+      ],
     },
   },
 });

@@ -28,6 +28,7 @@ const CheckboxesList = ({
         }}
         selected={get(form.values, field.name) || []}
       />
+      {console.log(props, field)}
     </FormGroup>
   );
 };

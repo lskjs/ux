@@ -17,6 +17,9 @@ class Story extends Component {
       t,
       config,
       modules: {
+        upload: {
+          uploadFile: async e => ({ url: e }),
+        },
         billing: {
           stores: {
             Transactions: {
