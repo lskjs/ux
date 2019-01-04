@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import { Breadcrumb } from 'antd';
 import get from 'lodash/get';
@@ -9,7 +9,7 @@ import Link from '../../../Link';
 
 @inject('page')
 @observer
-class PageBreadcrumbs extends PureComponent {
+class PageBreadcrumbs extends Component {
   render() {
     const {
       children,

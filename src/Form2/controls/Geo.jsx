@@ -16,22 +16,20 @@ const Geo = ({
   } : null;
 
   const GeoComponent = type === 'google' ? GoogleMap : MapBox;
-  
+
   return (
-    <div>
-      <GeoComponent
-        {...field}
-        {...props}
-        defaultValue={{
-          longitude: 0,
-          latitude: 0,
-        }}
-        onChange={(val) => {
-          form.setFieldValue(field.name, [val.longitude, val.latitude]);
-        }}
-        value={coordinates}
-      />
-    </div>
+    <GeoComponent
+      {...field}
+      {...props}
+      defaultValue={{
+        longitude: 0,
+        latitude: 0,
+      }}
+      onChange={(val) => {
+        form.setFieldValue(field.name, [val.longitude, val.latitude]);
+      }}
+      value={coordinates}
+    />
   );
 };
 

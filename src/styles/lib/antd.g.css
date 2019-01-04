@@ -2798,6 +2798,15 @@ a.ant-btn-sm {
   width: auto;
   cursor: not-allowed;
 }
+.ant-fullcalendar-header {
+  padding: 11px 16px 11px 0;
+  text-align: right;
+}
+.ant-fullcalendar-header .ant-fullcalendar-year-select,
+.ant-fullcalendar-header .ant-fullcalendar-month-select {
+  width: auto;
+  margin-left: 8px;
+}
 .ant-card {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 14px;
@@ -17428,6 +17437,9 @@ li.ant-tree-treenode-disabled > .ant-tree-node-content-wrapper:hover {
   margin: 22px 0;
 }
 .ant-tree.ant-tree-icon-hide .ant-tree-treenode-loading .ant-tree-iconEle {
+  display: none;
+}
+.ant-tree span.ant-tree-switcher {
   display: none;
 }
 .ant-select-tree-checkbox {
