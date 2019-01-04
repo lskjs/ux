@@ -23,14 +23,12 @@ const CheckBlock = ({
   };
 
   return (
-    <div>
-      <ExtendedCheckblock
-        {...field}
-        {...props}
-        {...props2}
-        children={props.children}  //eslint-disable-line
-      />
-    </div>
+    <ExtendedCheckblock
+      {...field}
+      {...props}
+      {...props2}
+      children={props.children}  //eslint-disable-line
+    />
   );
 };
 

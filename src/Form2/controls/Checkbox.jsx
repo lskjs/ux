@@ -15,11 +15,11 @@ const CheckBox = ({
         {...field}
         {...props}
         className="checkbox-icon"
-        onChange={(val) => {
+        onChange={(e) => {
           field.onChange({
             target: {
               name: field.name,
-              value: val,
+              value: e.target.checked,
             },
           });
         }}

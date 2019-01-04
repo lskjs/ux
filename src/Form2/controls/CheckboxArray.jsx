@@ -1,7 +1,6 @@
 import React from 'react';
 import get from 'lodash/get';
 import CheckboxesListBase from '../../UI/molecules/CheckboxesList';
-import FormGroup from '../FormGroup';
 
 const CheckboxesList = ({
   field,
@@ -9,27 +8,20 @@ const CheckboxesList = ({
   ...props
 }) => {
   return (
-    <FormGroup
-      field={field}
-      form={form}
+    <CheckboxesListBase
+      {...field}
       {...props}
-    >
-      <CheckboxesListBase
-        {...field}
-        {...props}
-        data={props.options || []}
-        onChange={(val) => {
-          field.onChange({
-            target: {
-              name: field.name,
-              value: val,
-            },
-          });
-        }}
-        selected={get(form.values, field.name) || []}
-      />
-      {console.log(props, field)}
-    </FormGroup>
+      data={props.options || []}
+      onChange={(val) => {
+        field.onChange({
+          target: {
+            name: field.name,
+            value: val,
+          },
+        });
+      }}
+      selected={get(form.values, field.name) || []}
+    />
   );
 };
 
