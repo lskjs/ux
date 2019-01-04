@@ -4,7 +4,7 @@ export default (component = 'input') => (
   styled(component)`
     border-radius: ${p => p.theme.borderSmall};
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.44);
+    /* background-color: rgba(255, 255, 255, 0.44); */
     border: solid 1px #e3e3e3;
     color: #4a4a4a;
     font-family: ${p => p.theme.fontFamily};
