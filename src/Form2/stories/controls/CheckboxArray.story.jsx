@@ -6,6 +6,7 @@ import createForm from '../../createForm';
 import Checkbox from '../../../UI/molecules/Checkbox';
 import CheckboxArrayComponent from '../../controls/CheckboxArray';
 import CheckboxDeal from '../../../UI/molecules/CheckboxDeal';
+
 import LightFormGroup from '../../LightFormGroup';
 import DEV from '../../../DEV';
 
@@ -18,7 +19,7 @@ const CheckboxArrayView = (props) => {
   return (
     <Form>
       <Field {...controls.checkboxArray} />
-       <DEV json={values} />
+      <DEV json={values} />
       {/* <Button onClick={handleSubmit}>Submit</Button> */}
     </Form>
   );
@@ -35,13 +36,13 @@ const CheckboxArray = createForm({
       options: [
         {
           _id: 1,
-          label: 'value1',
+          title: 'value1',
           link: 'google.com',
           price: 15000,
         },
         {
           _id: 2,
-          label: 'value2',
+          title: 'value2',
           link: 'google.com',
           price: 1000,
         },

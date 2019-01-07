@@ -1,5 +1,5 @@
 import styled from 'react-emotion';
-import { Icon } from 'antd';
+import Icon from 'antd/lib/icon';
 
 export default styled(Icon)`
   font-size: 1rem;

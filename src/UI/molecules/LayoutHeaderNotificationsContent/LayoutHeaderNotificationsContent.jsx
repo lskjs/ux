@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Tabs, Icon } from 'antd';
+import Tabs from 'antd/lib/tabs';
+import Icon from 'antd/lib/icon';
 import Wrapper from './LayoutHeaderNotificationsContent.styles';
 
 class LayoutHeaderNotificationsContent extends Component {

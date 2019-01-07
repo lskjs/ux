@@ -1,5 +1,5 @@
 import styled, { css } from 'react-emotion';
-import { Button as AntButton } from 'antd';
+import AntButton from 'antd/lib/button';
 
 export default styled(AntButton)`
   border: none !important;

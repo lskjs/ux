@@ -1,6 +1,7 @@
 import React from 'react';
 import { Form, Field } from 'formik';
 // import { Button } from 'react-bootstrap';
+import Icon from 'react-icons2/mdi/magnify';
 import Story from '../../../Story';
 import createForm from '../../createForm';
 import RadioCardsComponent from '../../controls/RadioCards';
@@ -34,6 +35,7 @@ const RadioCards = createForm({
           value: 'value-1',
           title: 'title1',
           description: 'desc1',
+          icon: <Icon />,
         },
         {
           value: 'value-2',

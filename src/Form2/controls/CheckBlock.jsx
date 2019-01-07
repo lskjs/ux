@@ -1,7 +1,6 @@
 import React from 'react';
 import get from 'lodash/get';
 import ExtendedCheckblock from '../../UI/molecules/ExtendedCheckblock';
-import FormGroup from '../FormGroup';
 
 const CheckBlock = ({
   field,
@@ -11,33 +10,20 @@ const CheckBlock = ({
   const props2 = {
     value: get(form.values, field.name),
     validationState: form.errors[field.name] ? 'error' : null,
-    onChange: (val) => {
-      field.onChange({
-        target: {
-          name: field.name,
-          value: val,
-        },
-      });
+    onChange: (value) => {
+      form.setFieldValue(field.name, value);
     },
     label: props.title || props.name,
     info: props.info,
   };
 
   return (
-    <FormGroup
-      field={field}
-      form={form}
+    <ExtendedCheckblock
+      {...field}
       {...props}
-    >
-      <div>
-        <ExtendedCheckblock
-          {...field}
-          {...props}
-          {...props2}
-          children={props.children}  //eslint-disable-line
-        />
-      </div>
-    </FormGroup>
+      {...props2}
+      children={props.children}  //eslint-disable-line
+    />
   );
 };
 

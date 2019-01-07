@@ -31,6 +31,16 @@ const Radio = createForm({
     blue: {
       title: 'first value',
       component: RadioComponent,
+      options: [
+        {
+          value: 'fixed',
+          title: 'asd',
+        },
+        {
+          value: 'cpm',
+          title: 'offerEdit.type.cpm',
+        },
+      ],
     },
     black: {
       title: 'second value',

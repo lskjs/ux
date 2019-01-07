@@ -1,6 +1,6 @@
 import styled from 'react-emotion';
 
-import { Col } from 'reactstrap';
+import Col from 'reactstrap/lib/Col';
 
 export default styled(Col)`
   margin-bottom: 3rem;

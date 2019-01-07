@@ -18,7 +18,7 @@ const CheckboxView = (props) => {
       <Field {...controls.blue} />
       <Field {...controls.black} />
       <Field {...controls.green} />
-       <DEV json={values} />
+      <DEV json={values} />
       {/* <Button onClick={handleSubmit}>Submit</Button> */}
     </Form>
   );
@@ -26,19 +26,22 @@ const CheckboxView = (props) => {
 
 const Checkbox = createForm({
   view: CheckboxView,
-  FormGroup: LightFormGroup,
+  // FormGroup: LightFormGroup,
   controls: {
     blue: {
       title: 'first value',
       component: CheckboxComponent,
+      label: '1',
     },
     black: {
       title: 'second value',
       component: CheckboxComponent,
+      label: '2',
     },
     green: {
       title: 'third value',
       component: CheckboxComponent,
+      label: '3',
     },
   },
 });

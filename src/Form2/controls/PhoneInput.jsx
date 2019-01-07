@@ -14,8 +14,7 @@ const CustomInputComponent = ({
         {...props}
         onChange={(value) => {
           form.setFieldValue(field.name, value);
-        }
-      }
+        }}
       />
       {/* <input type="text" {...field} {...props} /> */}
       {/* {touched[field.name] &&

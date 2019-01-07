@@ -3,7 +3,6 @@ import get from 'lodash/get';
 import moment from 'moment';
 import 'moment/locale/ru';
 import DatePickerBase from '../../UI/molecules/Datepicker';
-import FormGroup from '../FormGroup';
 
 const DatePicker = (data) => {
   const {
@@ -18,12 +17,7 @@ const DatePicker = (data) => {
   const locale = t && t('locale') || 'ru';
   let value = get(form.values, field.name) && moment(new Date(get(form.values, field.name)), dateFormat, locale) || null; // eslint-disable-line
   let change = (val) => {
-    field.onChange({
-      target: {
-        name: field.name,
-        value: val,
-      },
-    });
+    form.setFieldValue(field.name, val);
   };
 
   if (ranged) {
@@ -53,24 +47,18 @@ const DatePicker = (data) => {
     };
   }
   return (
-    <FormGroup
-      field={field}
-      form={form}
+    <DatePickerBase
+      {...field}
       {...props}
-    >
-      <DatePickerBase
-        {...field}
-        {...props}
-        ranged={ranged}
-        validationState={form.errors[field.name] ? 'error' : null}
-        onChange={change}
-          // await this.handleChangeField(name1)(range[0].toDate());
-          // await this.handleChangeField(name2)(range[1].toDate());
-        value={value}
-        format={dateFormat}
-        disabledDate={disabledDate}
-      />
-    </FormGroup>
+      ranged={ranged}
+      validationState={form.errors[field.name] ? 'error' : null}
+      onChange={change}
+        // await this.handleChangeField(name1)(range[0].toDate());
+        // await this.handleChangeField(name2)(range[1].toDate());
+      value={value}
+      format={dateFormat}
+      disabledDate={disabledDate}
+    />
   );
 };
 

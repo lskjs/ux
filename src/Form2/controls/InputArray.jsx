@@ -1,7 +1,6 @@
 import React from 'react';
 import get from 'lodash/get';
 import InputArrayBase from '../../UI/molecules/InputArray';
-import FormGroup from '../FormGroup';
 
 const InputArray = ({
   field,
@@ -10,27 +9,16 @@ const InputArray = ({
   ...props
 }) => {
   return (
-    <FormGroup
-      field={field}
-      form={form}
+    <InputArrayBase
+      {...field}
       {...props}
-    >
-      <InputArrayBase
-        {...field}
-        {...props}
-        validationState={form.errors[field.name] ? 'error' : null}
-        onChange={(val) => {
-          field.onChange({
-            target: {
-              name: field.name,
-              value: val,
-            },
-          });
-        }}
-        onError={() => onError?.(form.errors[field.name])} // this.globalError
-        value={get(form.values, field.name)}
-      />
-    </FormGroup>
+      validationState={form.errors[field.name] ? 'error' : null}
+      onChange={(value) => {
+        form.setFieldValue(field.name, value);
+      }}
+      onError={() => onError?.(form.errors[field.name])} // this.globalError
+      value={get(form.values, field.name)}
+    />
   );
 };
 

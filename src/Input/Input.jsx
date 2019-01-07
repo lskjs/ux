@@ -87,7 +87,6 @@ class Input extends PureComponent {
     } = this.props;
     const { value } = this.state;
     const { Block } = this;
-
     return (
       <InputBox>
         <If condition={leftIcon}>

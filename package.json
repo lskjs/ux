@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/general",
-  "version": "0.15.37",
+  "version": "0.15.41",
   "author": "isuvorov",
   "license": "MIT",
   "dependencies": {
@@ -13,7 +13,7 @@
     "formik": "^1.4.1",
     "importcss": "1.1.6",
     "is-hotkey": "0.1.4",
-    "lodash-decorators": "6.0.1",
+    "lodash-decorators": "6.0.0",
     "mobx": "5.6.0",
     "mobx-react": "^5.4.2",
     "prop-types": "^15.6.2",
@@ -34,9 +34,9 @@
     "react-select": "2.1.2",
     "react-textarea-autosize": "7.1.0",
     "reactstrap": "6.5.0",
-    "slate": "0.44.9",
-    "slate-md-serializer": "5.2.2",
-    "slate-react": "0.21.15",
+    "slate": "0.33.4",
+    "slate-md-serializer": "3.1.1",
+    "slate-react": "0.12.4",
     "validate.js": "0.12.0"
   },
   "peerDependencies": {
@@ -80,7 +80,7 @@
     "postcss-loader": "2.1.5",
     "react-hot-loader": "4.2.0",
     "storybox": "1.0.3",
-    "webpack": "4.9.1"
+    "webpack": "4.16.5"
   },
   "scripts": {
     "dev": "DEBUG=1 npm run babel-build -- --watch",

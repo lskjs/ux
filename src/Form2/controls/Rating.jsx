@@ -15,14 +15,9 @@ const Rating = ({
       disabled={false}
         // allowHalf={field.control?.allowHalf}
       value={get(form.values, field.name)}
-      onChange={(val) => {
-          field.onChange({
-            target: {
-              name: field.name,
-              value: val,
-            },
-          });
-        }}
+      onChange={(value) => {
+        form.setFieldValue(field.name, value);
+      }}
       starCount={5}
     />
   );

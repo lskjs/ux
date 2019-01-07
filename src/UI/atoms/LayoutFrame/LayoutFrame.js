@@ -1,5 +1,5 @@
 import styled, { css } from 'react-emotion';
-import { Layout } from 'antd';
+import Layout from 'antd/lib/layout';
 import Sider from '../../molecules/LayoutSidenav/LayoutSidenav.styles';
 import LayoutSidebarContainer from '../LayoutSidebarContainer';
 import removeProps from '../../../utils/removeProps';

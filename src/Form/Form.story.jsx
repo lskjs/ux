@@ -14,7 +14,7 @@ const value2 = {
   firstname: 'Игорь',
   lastname: 'Суворов',
   age: 21,
-}
+};
 
 module.exports = ({ storiesOf, action }) => {
   return storiesOf('Form', module)

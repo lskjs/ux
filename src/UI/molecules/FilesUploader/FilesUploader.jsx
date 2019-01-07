@@ -1,25 +1,22 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
-import bind from 'core-decorators/lib/autobind';
+import autobind from 'core-decorators/lib/autobind';
 import Promise from 'bluebird';
 import PropTypes from 'prop-types';
+import File from 'react-icons2/mdi/file-image';
 import Dropzone from 'react-dropzone';
-import Close from 'react-icons2/mdi/close-circle-outline';
-import { toShort } from '../../../utils/formatter';
-
+import cx from 'classnames';
+import Button from '../../../Button';
 import {
-  Zone,
-  UploaderFilename,
+  zoneStyle,
   Drop,
+  DropIcon,
   DropText,
-  Block,
-  Header,
-  Info,
+  Footer,
   Actions,
-  Button,
-  UploaderContent,
-  UploaderFile,
-  UploaderSize,
+  Info,
+  Header,
+  Block,
 } from './FilesUploader.styles';
 
 @inject(s => ({
@@ -29,7 +26,8 @@ import {
 @observer
 class FilesUploader extends Component {
   static propTypes = {
-    files: PropTypes.array,
+    // accept: PropTypes.string,
+    value: PropTypes.string,
     dropText: PropTypes.string,
     buttonText: PropTypes.string,
     placeholder: PropTypes.string,
@@ -39,169 +37,144 @@ class FilesUploader extends Component {
     onError: PropTypes.func,
     t: PropTypes.func.isRequired,
     upload: PropTypes.object.isRequired,
-    maxCount: PropTypes.number,
+    id: PropTypes.string,
+    title: PropTypes.string,
   }
   static defaultProps = {
+    // accept: '*',
     onSubmit: null,
     onError: null,
-    files: [],
+    value: null,
     info: null,
     dropText: null,
     buttonText: null,
     placeholder: null,
     validationState: null,
-    maxCount: null,
+    id: null,
+    title: null,
   }
   constructor(props) {
     super(props);
     this.state = {
-      files: props.files || [],
+      value: props.value,
       dragged: false,
     };
   }
   componentWillReceiveProps(next) {
-    const { files } = this.props;
-    if (files !== next.files) {
-      this.setState({ files: next.files });
+    const { value } = this.props;
+    if (value !== next.value) {
+      this.setState({ value: next.value });
     }
   }
-  @bind async onDrop(inputFiles = []) {
-    let files = inputFiles;
-    const alreadyFiles = this.state.files;
-    const { onSubmit, upload, onError, maxCount } = this.props;
-
-    if (maxCount && files.length > maxCount) {
-      files = files.slice(0, maxCount);
-    }
-
+  @autobind
+  async onDrop(files = []) {
+    const { onSubmit, upload, onError } = this.props;
     if (!upload) return;
-    let uploaded = null;
+    let value = null;
     try {
       const res = await Promise.map(files, file => (
         upload.uploadFile(file)
       ));
-      uploaded = alreadyFiles.concat(res);
-      if (onSubmit) onSubmit(uploaded);
+      value = res[0] && res[0].url;
+      if (onSubmit) onSubmit(value);
     } catch (err) {
       if (onError) onError(err);
       else {
-        console.error('FilesUploader', '!onError', onError, err); // eslint-disable-line
+        console.error('FilesUploader.onDrop', '!onError', onError, err); // eslint-disable-line
       }
     }
-    this.setState({ files: uploaded, dragged: false });
+    this.setState({ value, dragged: false });
   }
-  @bind onDragged(dragged) {
+  @autobind
+  onDragged(dragged) {
     this.setState({ dragged });
   }
-  @bind removeFile(index) {
-    const { files } = this.state;
+  @autobind
+  removeFile() {
     const { onSubmit } = this.props;
-    files.splice(index, 1);
-    this.setState({
-      files,
-    }, () => {
-      if (onSubmit) onSubmit(files);
+    this.setState({ value: null }, () => {
+      if (onSubmit) onSubmit(null);
     });
   }
-  renderConvertedFilename({ filename, url }) {
-    function renderLink(body) {
-      if (!url) {
-        return body;
-      }
-      return (
-        <UploaderFilename
-          href={url}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {body}
-        </UploaderFilename>
-      );
-    }
-    const re = /(.+)(\.[a-zA-Z0-9]+$)/;
-    if (re.test(filename)) {
-      const [, name, ext] = re.exec(filename);
-      return renderLink((
-        <div>
-          <span>{name}</span><span>{ext}</span>
-        </div>
-      ));
-    }
-    return renderLink(<span>{filename}</span>);
-  }
   render() {
-    const { dragged, files } = this.state;
+    const { dragged, value } = this.state;
     const {
       t,
       info,
       dropText,
       buttonText,
+      placeholder,
       validationState,
-      files: __,
-      upload,
-      maxCount,
+      id,
+      title,
+      className,
       ...otherProps
     } = this.props;
     return (
-      <div>
-        <Zone
-          compnentClass={Dropzone}
-          {...otherProps}
-          disableClick
-          ref={(e) => { this.zone = e; }}
-          onDrop={this.onDrop}
-          onDragEnter={() => this.onDragged(true)}
-          onDragLeave={() => this.onDragged(false)}
-        >
-          <If condition={dragged}>
-            <Drop>
-              <DropText>
-                {dropText || t('upload.dropFiles')}
-              </DropText>
-            </Drop>
-          </If>
-          <If condition={!dragged}>
-            <Block
-              validationState={validationState}
-            >
-              <Header>
-                <Info>
-                  {info || t('upload.infoFiles')}
-                </Info>
-                <Actions>
+      <Dropzone
+        {...otherProps}
+        className={cx({
+          [zoneStyle]: true,
+          [className]: className,
+        })}
+        disableClick
+        multiple={false}
+        ref={(e) => { this.zone = e; }}
+        onDrop={this.onDrop}
+        onDragEnter={() => this.onDragged(true)}
+        onDragLeave={() => this.onDragged(false)}
+      >
+        <If condition={dragged}>
+          <Drop>
+            <DropText>
+              {dropText || t('upload.dropFiles')}
+            </DropText>
+            <DropIcon>
+              <File />
+            </DropIcon>
+          </Drop>
+        </If>
+        <If condition={!dragged}>
+          <Block
+            validationState={validationState}
+          >
+            <Header>
+              <Info>
+                {info || t('upload.infoFiles')}
+              </Info>
+              <Actions>
+                <If condition={!value}>
                   <Button
                     type="button"
                     onClick={() => this.zone.open()}
                   >
                     {buttonText || t('upload.buttonFiles')}
                   </Button>
-                </Actions>
-              </Header>
-            </Block>
-          </If>
-        </Zone>
-        <If condition={files}>
-          <UploaderContent>
-            {files.map((item, index) => (
-              <UploaderFile key={index}> {/* eslint-disable-line */}
-                {this.renderConvertedFilename(item)}
-                <If condition={item.size}>
-                  <UploaderSize>
-                    {`(${toShort(item.size)}b)`}
-                  </UploaderSize>
                 </If>
-                <span
-                  aria-hidden
+                <If condition={value}>
+                  <Button
+                    type="button"
+                    onClick={this.removeFile}
+                  >
+                    Delete file
+                  </Button>
+                </If>
+              </Actions>
+            </Header>
+            {/* <Footer>
+              <If condition={value}>
+                <Button
                   type="button"
-                  onClick={() => this.removeFile(index)}
+                  paint="danger"
+                  onClick={this.removeFile}
                 >
-                  <Close />
-                </span>
-              </UploaderFile>
-            ))}
-          </UploaderContent>
+                  Delete file
+                </Button>
+              </If>
+            </Footer> */}
+          </Block>
         </If>
-      </div>
+      </Dropzone>
     );
   }
 }

@@ -44,13 +44,8 @@ const Radio = ({
       validationState={form.errors[field.name] ? 'error' : null}
       value={value}
       onChange={(val) => {
-          field.onChange({
-            target: {
-              name: field.name,
-              value: val,
-            },
-          });
-        }}
+        form.setFieldValue(field.name, val);
+      }}
       options={options}
     />
   );

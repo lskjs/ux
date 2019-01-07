@@ -1,7 +1,6 @@
 import React from 'react';
 import get from 'lodash/get';
 import ImageUploaderBase from '../../UI/molecules/ImageUploader';
-import FormGroup from '../FormGroup';
 
 const ImageUploader = ({
   field,
@@ -10,27 +9,16 @@ const ImageUploader = ({
   ...props
 }) => {
   return (
-    <FormGroup
-      field={field}
-      form={form}
+    <ImageUploaderBase
+      {...field}
       {...props}
-    >
-      <ImageUploaderBase
-        {...field}
-        {...props}
-        validationState={form.errors[field.name] ? 'error' : null}
-        onSubmit={(val) => {
-          field.onSubmit({
-            target: {
-              name: field.name,
-              value: val,
-            },
-          });
-        }}
-        onError={() => onError?.(form.errors[field.name])} // this.globalError
-        value={get(form.values, field.name)}
-      />
-    </FormGroup>
+      validationState={form.errors[field.name] ? 'error' : null}
+      onSubmit={(value) => {
+        form.setFieldValue(field.name, value);
+      }}
+      onError={() => onError?.(form.errors[field.name])} // this.globalError
+      value={get(form.values, field.name)}
+    />
   );
 };
 

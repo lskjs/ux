@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form } from 'antd';
+import Form from 'antd/lib/form';
 import hash from 'object-hash';
 
 class FormGroup extends Component {

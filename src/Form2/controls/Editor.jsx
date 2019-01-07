@@ -1,7 +1,6 @@
 import React from 'react';
 import get from 'lodash/get';
 import EditorBase from '../../Editor';
-import FormGroup from '../FormGroup';
 
 const Editor = ({
   field,
@@ -9,25 +8,14 @@ const Editor = ({
   ...props
 }) => {
   return (
-    <FormGroup
-      field={field}
-      form={form}
+    <EditorBase
+      {...field}
       {...props}
-    >
-      <EditorBase
-        {...field}
-        {...props}
-        onChange={(val) => {
-          field.onChange({
-            target: {
-              name: field.name,
-              value: val,
-            },
-          });
-        }}
-        value={get(form.values, field.name)}
-      />
-    </FormGroup>
+      onChange={(value) => {
+        form.setFieldValue(field.name, value);
+      }}
+      value={get(form.values, field.name)}
+    />
   );
 };
 

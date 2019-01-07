@@ -1,5 +1,5 @@
 import styled from 'react-emotion';
-import { Drawer as AntDrawer } from 'antd';
+import AntDrawer from 'antd/lib/drawer';
 import LayoutSidenav from '../LayoutSidenav/LayoutSidenav.styles';
 
 export default styled(AntDrawer)`

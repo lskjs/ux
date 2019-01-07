@@ -1,6 +1,6 @@
 import styled from 'react-emotion';
 
-import { Col } from 'reactstrap';
+import Col from 'reactstrap/lib/Col';
 
 export default styled(Col)`
   padding: 1rem 3rem;

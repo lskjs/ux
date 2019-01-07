@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import autobind from 'core-decorators/lib/autobind';
-import { Icon, Divider } from 'antd';
+import Divider from 'antd/lib/divider';
+import Icon from 'antd/lib/icon';
 import LayoutHeaderInner from '../../atoms/LayoutHeaderInner';
 import LayoutHeaderLeft from '../../atoms/LayoutHeaderLeft';
 import LayoutHeaderRight from '../../atoms/LayoutHeaderRight';

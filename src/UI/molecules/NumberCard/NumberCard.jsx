@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { Icon } from 'antd';
+import Icon from 'antd/lib/icon';
 import {
   Card,
   IconButton,

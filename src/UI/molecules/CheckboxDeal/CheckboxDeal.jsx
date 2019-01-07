@@ -39,8 +39,7 @@ class CheckboxDeal extends Component {
           />
         </CheckBoxWrapper>
         <Title>
-          {`${t('billing.audit.deal')}`}
-          <Deal>{`«${item.title}»`}</Deal>
+          {item.title}
         </Title>
         <If condition={item.price}>
           <PriceWrapper>
