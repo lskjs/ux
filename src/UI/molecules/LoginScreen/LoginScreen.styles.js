@@ -86,7 +86,7 @@ export const FormContainer = styled('section')`
 `;
 
 export const Row = styled(BsRow)`
-  height: 100vh;
+  min-height: 100vh;
   margin-left: 0;
   margin-right: 0;
 `;
@@ -104,6 +104,10 @@ export const ImageContainer = styled('div')`
   background-repeat: no-repeat;
   width: 100%;
   min-height: 300px;
+  @media screen and (max-width: 992px) {
+    height: 0px;
+    min-height: 0px;
+  }
 `;
 
 export const FormWrapper = styled('div')`
