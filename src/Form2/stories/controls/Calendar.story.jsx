@@ -29,6 +29,7 @@ const Calendar = createForm({
       component: CalendarComponent,
       highlightedDates: [
         moment('2019-01-15'),
+        moment('2019-01-18'),
       ],
     },
   },
