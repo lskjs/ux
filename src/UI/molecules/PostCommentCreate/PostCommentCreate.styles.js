@@ -1,6 +1,6 @@
 import styled from 'react-emotion';
 import Textarea from 'react-textarea-autosize';
-import { Avatar as AntAvatar } from 'antd';
+import AntAvatar from 'antd/lib/avatar';
 
 export const Wrapper = styled('div')`
   display: flex;

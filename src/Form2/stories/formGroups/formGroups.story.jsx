@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Form, Field } from 'formik';
-import { Form as AntForm, Button } from 'antd';
+import AntForm from 'antd/lib/form';
+import Button from 'antd/lib/button';
 
 import Story from '../../../Story';
 import DEV from '../../../DEV';

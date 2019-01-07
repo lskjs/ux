@@ -1,5 +1,7 @@
 import React from 'react';
-import { Container, Col, Row } from 'reactstrap';
+import Container from 'reactstrap/lib/Container';
+import Col from 'reactstrap/lib/Col';
+import Row from 'reactstrap/lib/Row';
 import ThemeInjector from './ThemeInjector';
 import './styles/lib/antd.g.css';
 import './styles/lib/bootstrap.g.css';

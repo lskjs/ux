@@ -1,5 +1,9 @@
 import React, { PureComponent } from 'react';
-import { Form, Icon, Input, Button, Checkbox } from 'antd';
+import Form from 'antd/lib/form';
+import Icon from 'antd/lib/icon';
+import Input from 'antd/lib/input';
+import Button from 'antd/lib/button';
+import Checkbox from 'antd/lib/checkbox';
 import {
   FormContainer,
   WelcomeHeader,

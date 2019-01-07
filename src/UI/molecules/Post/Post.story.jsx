@@ -1,5 +1,9 @@
 import React from 'react';
-import { Dropdown, Menu, Icon, Button, Tag } from 'antd';
+import Dropdown from 'antd/lib/dropdown';
+import Menu from 'antd/lib/menu';
+import Icon from 'antd/lib/icon';
+import Button from 'antd/lib/button';
+import Tag from 'antd/lib/tag';
 import IconButton from '../../atoms/IconButton';
 import ButtonGroup from '../../atoms/ButtonGroup';
 import PostUser from '../PostUser';

@@ -1,5 +1,5 @@
 import styled from 'react-emotion';
-import { Button as BsButton } from 'antd';
+import BsButton from 'antd/lib/button';
 
 export default styled(BsButton)`
   height: auto;
