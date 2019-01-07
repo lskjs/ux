@@ -4,7 +4,7 @@ import { Button } from 'react-bootstrap';
 import Story from '../../../Story';
 import createForm from '../../createForm';
 import TagsPickerComponent from '../../controls/TagsPicker';
-import LightFormGroup from '../../LightFormGroup';
+import FormGroup from '../../FormGroup';
 import DEV from '../../../DEV';
 
 import '../../../UI/molecules/Modal/Modal.g.css';
@@ -26,7 +26,7 @@ const TagsPickerView = (props) => {
 
 const TagsPicker = createForm({
   view: TagsPickerView,
-  FormGroup: LightFormGroup,
+  FormGroup,
   controls: {
     tagsPicker: {
       title: 'TagsPicker',

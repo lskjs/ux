@@ -14,9 +14,6 @@ const CardToken = ({
       onSubmit={(value) => {
         form.setFieldValue(field.name, value);
       }}
-      value={get(form.values, field.name)}
-      fields={field.fields}
-      title={field.title}
     />
   );
 };

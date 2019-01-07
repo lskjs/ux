@@ -4,7 +4,7 @@ import { Button } from 'react-bootstrap';
 import Story from '../../../Story';
 import createForm from '../../createForm';
 import TextareaComponent from '../../controls/Textarea';
-import LightFormGroup from '../../LightFormGroup';
+import FormGroup from '../../FormGroup';
 import DEV from '../../../DEV';
 
 const TextareaView = (props) => {
@@ -24,7 +24,7 @@ const TextareaView = (props) => {
 
 const Textarea = createForm({
   view: TextareaView,
-  FormGroup: LightFormGroup,
+  FormGroup,
   controls: {
     textarea: {
       title: 'textarea',

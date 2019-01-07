@@ -3,7 +3,7 @@ import { Form, Field } from 'formik';
 import Story from '../../../Story';
 import createForm from '../../createForm';
 import PhoneInputComponent from '../../controls/PhoneInput';
-import LightFormGroup from '../../LightFormGroup';
+import FormGroup from '../../FormGroup';
 import DEV from '../../../DEV';
 
 const PhoneInputView = (props) => {
@@ -21,7 +21,7 @@ const PhoneInputView = (props) => {
 
 const PhoneInput = createForm({
   view: PhoneInputView,
-  FormGroup: LightFormGroup,
+  FormGroup,
   controls: {
     phoneInput: {
       title: 'PhoneInput',

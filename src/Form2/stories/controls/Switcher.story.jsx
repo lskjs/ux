@@ -4,7 +4,7 @@ import { Button } from 'react-bootstrap';
 import Story from '../../../Story';
 import createForm from '../../createForm';
 import SwitcherComponent from '../../controls/Switcher';
-import LightFormGroup from '../../LightFormGroup';
+import FormGroup from '../../FormGroup';
 import DEV from '../../../DEV';
 
 const SwitcherView = (props) => {
@@ -24,7 +24,7 @@ const SwitcherView = (props) => {
 
 const Switcher = createForm({
   view: SwitcherView,
-  FormGroup: LightFormGroup,
+  FormGroup,
   controls: {
     switcher: {
       title: 'switcher',

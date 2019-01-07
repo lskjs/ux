@@ -5,6 +5,7 @@ import pickBy from 'lodash/pickBy';
 import isFunction from 'lodash/isFunction';
 import map from 'lodash/map';
 import get from 'lodash/get';
+import cloneDeep from 'lodash/cloneDeep';
 import isEmpty from 'lodash/isEmpty';
 import { withFormik } from 'formik';
 import validate from 'validate.js';
@@ -44,7 +45,7 @@ const createForm = ({
   displayName,
   FormGroup,
   withFormik: rawWithFormik,
-  ...props
+  ...otherProps
 }) => {
   const controls = prepareControls(rawControls, FormGroup);
   const staticProps = {
@@ -55,11 +56,24 @@ const createForm = ({
 
   const wrapperWithFormik = rawWithFormik || withFormik;
   return wrapperWithFormik({
-    mapPropsToValues() {
-      const defaultValues = {};
+    mapPropsToValues(props) {
+      const { initialValues } = props;
+      const defaultValues = cloneDeep(initialValues) || {};
+
       Object.keys(rawControls).forEach((key) => {
-        set(defaultValues, key, rawControls[key].default);
+        // console.log(key, typeof get(defaultValues, key), typeof rawControls[key].default);
+        if (typeof get(defaultValues, key) !== 'undefined') return;
+
+        let initialValue = get(rawControls, `${key}.initialValue`);
+        if (initialValue === 'undefined') {
+          initialValue = get(rawControls, `${key}.defaultValue`);
+          if (initialValue === 'undefined') return;
+        }
+        // initialValue = get(rawControls, `${key}.defaultValue`);
+        // get(rawControls, `${key}.value`,)
+        set(defaultValues, key, initialValue);
       });
+      // console.log({ defaultValues, props });
       return defaultValues;
     },
     handleSubmit: (values, { /* setSubmitting , */ props }) => {
@@ -102,7 +116,6 @@ const createForm = ({
       };
     },
     async validate(values) {
-
       const errors = {};
 
       const {
@@ -137,7 +150,7 @@ const createForm = ({
       if (!isEmpty(errors)) throw errors;
       try {
         // this.handleChange(values);
-        const onChange = get(this, 'props.onChange') || get(props, 'onChange');
+        const onChange = get(this, 'props.onChange') || get(otherProps, 'onChange');
         // const { onChange } = props;
         if (onChange) onChange(values);
       } catch (err) {
@@ -147,7 +160,7 @@ const createForm = ({
     validateOnChange: false,
     validateOnBlur: false,
     displayName: displayName || 'Form',
-    ...props,
+    ...otherProps,
   })(WrappedView);
 };
 

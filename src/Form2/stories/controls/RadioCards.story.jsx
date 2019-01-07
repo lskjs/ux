@@ -5,7 +5,7 @@ import Icon from 'react-icons2/mdi/magnify';
 import Story from '../../../Story';
 import createForm from '../../createForm';
 import RadioCardsComponent from '../../controls/RadioCards';
-import LightFormGroup from '../../LightFormGroup';
+import FormGroup from '../../FormGroup';
 import DEV from '../../../DEV';
 
 const RadioCardsView = (props) => {
@@ -25,7 +25,7 @@ const RadioCardsView = (props) => {
 
 const RadioCards = createForm({
   view: RadioCardsView,
-  FormGroup: LightFormGroup,
+  FormGroup,
   controls: {
     radioCards: {
       title: 'radioCards',

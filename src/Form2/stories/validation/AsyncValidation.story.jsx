@@ -33,9 +33,6 @@ const ValidationView = (props) => {
       <p>
         Existing emails: some@email.com, someasync@email.com
       </p>
-      <h5>
-        Errors
-      </h5>
       <DEV json={{ isSubmitting, errors, values }} />
     </Form>
   );

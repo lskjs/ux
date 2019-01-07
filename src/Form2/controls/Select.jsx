@@ -10,19 +10,24 @@ import Up from 'react-icons2/mdi/chevron-up';
 import Down from 'react-icons2/mdi/chevron-down';
 
 const NULL_STRING = '@@NULL@@';
+
+const getOptionValue = value => ((value == null) ? NULL_STRING : value);
+const getOptionTitle = option => option.label || option.title || option.value;
+
 const Select = ({
   field,
   form,
   ...props
 }) => {
-  const valueBefore = get(form.values, field.name);
-  const value = (valueBefore == null) ? NULL_STRING : valueBefore;
+  const value = getOptionValue(field.value);
+  // console.log('<select>', {props})
+  // , sortBy(preOptions, 'value'));
 
   let preOptions = [];
   if (props.options) {
-    preOptions = cloneDeep(props.options);
+    preOptions = cloneDeep(props.options).map(option => (typeof option === 'string' ? { value: option } : option));
     if (field.sortOptions) {
-      preOptions = sortBy(preOptions, 'title');
+      preOptions = sortBy(preOptions, getOptionTitle);
     }
 
     if (field.nullOption && field.options) {
@@ -37,13 +42,13 @@ const Select = ({
 
   const options = preOptions.map(option => ({
     ...omit(option, ['value', 'title', 'label']),
-    label: option.label || option.title,
-    value: option.value == null ? NULL_STRING : option.value,
+    label: getOptionTitle(option),
+    value: getOptionValue(option.value),
   }));
 
   return (
     <ReactSelect
-      className="list-selector"
+      // className="list-selector"
       clearable={false}
       arrowRenderer={e => (e.isOpen ? <Up /> : <Down />)}
       error={!!form.errors[field.name]}

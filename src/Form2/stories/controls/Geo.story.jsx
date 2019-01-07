@@ -3,7 +3,7 @@ import { Form, Field } from 'formik';
 import DEV from '../../../DEV';
 import Story from '../../../Story';
 import createForm from '../../createForm';
-import LightFormGroup from '../../LightFormGroup';
+import FormGroup from '../../FormGroup';
 import Geo from '../../controls/Geo';
 import '../../controls/Geo.g.css';
 
@@ -25,7 +25,7 @@ const GeoView = (props) => {
 
 const GeoGoogle = createForm({
   view: GeoView,
-  FormGroup: LightFormGroup,
+  FormGroup,
   controls: {
     geo: {
       default: [-122.268783, 37.871263],
@@ -38,7 +38,7 @@ const GeoGoogle = createForm({
 
 const GeoMapbox = createForm({
   view: GeoView,
-  FormGroup: LightFormGroup,
+  FormGroup,
   controls: {
     geo: {
       default: [-122.268783, 37.871263],

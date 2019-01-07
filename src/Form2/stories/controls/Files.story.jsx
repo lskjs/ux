@@ -3,7 +3,7 @@ import { Form, Field } from 'formik';
 import Story from '../../../Story';
 import createForm from '../../createForm';
 import FilesComponent from '../../controls/Files';
-import LightFormGroup from '../../LightFormGroup';
+import FormGroup from '../../FormGroup';
 import DEV from '../../../DEV';
 
 const FilesView = (props) => {
@@ -21,7 +21,7 @@ const FilesView = (props) => {
 
 const Files = createForm({
   view: FilesView,
-  FormGroup: LightFormGroup,
+  FormGroup,
   controls: {
     files: {
       title: 'Files',

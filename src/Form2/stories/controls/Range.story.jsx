@@ -4,7 +4,7 @@ import { Form, Field } from 'formik';
 import Story from '../../../Story';
 import createForm from '../../createForm';
 import RangeComponent from '../../controls/Range';
-import LightFormGroup from '../../LightFormGroup';
+import FormGroup from '../../FormGroup';
 import DEV from '../../../DEV';
 
 const RangeView = (props) => {
@@ -24,7 +24,7 @@ const RangeView = (props) => {
 
 const Range = createForm({
   view: RangeView,
-  FormGroup: LightFormGroup,
+  FormGroup,
   controls: {
     range: {
       title: 'range',

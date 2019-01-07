@@ -4,7 +4,7 @@ import { Form, Field } from 'formik';
 import Story from '../../../Story';
 import createForm from '../../createForm';
 import CheckboxComponent from '../../controls/Checkbox';
-import LightFormGroup from '../../LightFormGroup';
+import FormGroup from '../../FormGroup';
 import DEV from '../../../DEV';
 
 const CheckboxView = (props) => {
@@ -26,7 +26,7 @@ const CheckboxView = (props) => {
 
 const Checkbox = createForm({
   view: CheckboxView,
-  // FormGroup: LightFormGroup,
+  // FormGroup,
   controls: {
     blue: {
       title: 'first value',

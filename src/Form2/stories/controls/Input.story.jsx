@@ -1,41 +1,50 @@
 import React from 'react';
-import { Form, Field } from 'formik';
+import { Form, Field, FastField } from 'formik';
 import Story from '../../../Story';
 import createForm from '../../createForm';
-import InputComponent from '../../controls/Input';
-import LightFormGroup from '../../LightFormGroup';
-import DEV from '../../../DEV';
+import Input from '../../controls/Input';
+import FormGroup from '../../FormGroup';
+import FormDebug from '../../FormDebug';
 
-const InputView = (props) => {
-  const {
-    controls,
-    values,
-  } = props;
+const InputFormView = (props) => {
   return (
     <Form>
-      <Field {...controls.input} />
-      <DEV json={values} />
+      <Field {...props.controls.input} />
+      <Field {...props.controls.input2} />
+      <FastField {...props.controls.input2} title="FastField/input2"  />
+      <FormDebug {...props} />
     </Form>
   );
 };
 
-const Input = createForm({
-  view: InputView,
-  FormGroup: LightFormGroup,
+const InputForm = createForm({
+  view: InputFormView,
+  FormGroup,
+  initialValues: {
+    input: 'createForm.initialValues',
+  },
   controls: {
     input: {
-      title: 'Input',
-      component: InputComponent,
+      title: 'input',
+      component: Input,
+      placeholder: 'input placeholder',
+    },
+    input2: {
+      title: 'input2',
+      component: Input,
+      placeholder: 'input2 placeholder',
+      initialValue: 'Some value in input2',
     },
   },
 });
 
 module.exports = ({ storiesOf }) =>
   storiesOf('Form2/controls', module)
-    .add('Input ', () => {
+    .add('Input', () => {
       return (
         <Story>
-          <Input />
+          <InputForm />
         </Story>
       );
     });
+

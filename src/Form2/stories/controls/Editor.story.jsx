@@ -3,7 +3,7 @@
 // import Story from '../../../Story';
 // import createForm from '../../createForm';
 // import EditorComponent from '../../controls/Editor';
-// import LightFormGroup from '../../LightFormGroup';
+// import FormGroup from '../../FormGroup';
 
 
 // const EditorView = (props) => {
@@ -19,7 +19,7 @@
 
 // const Editor = createForm({
 //   view: EditorView,
-//   FormGroup: LightFormGroup,
+//   FormGroup,
 //   controls: {
 //     editor: {
 //       title: 'Editor',

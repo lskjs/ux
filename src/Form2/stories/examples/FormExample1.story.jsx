@@ -2,39 +2,59 @@ import React from 'react';
 import { Form, FastField } from 'formik';
 
 import Story from '../../../Story';
-import DEV from '../../../DEV';
 import createForm from '../../createForm';
-import Input from '../../../Input';
-import LightFormGroup from '../../LightFormGroup';
+import FormGroup from '../../FormGroup';
+import FormDebug from '../../FormDebug';
+
+import Input from '../../controls/Input';
+import Select from '../../controls/Select';
+import Checkbox from '../../controls/Checkbox';
 import TagsPicker from '../../controls/TagsPicker';
 
-import '../../../styles/lib/antd.g.css';
-import '../../../styles/lib/bootstrap.g.css';
+// import '../../../styles/lib/antd.g.css';
+// import '../../../styles/lib/bootstrap.g.css';
 
 const FormExample1View = (props) => {
-  const {
-    handleSubmit,
-    controls,
-    values,
-  } = props;
   return (
     <Form>
-      <FastField {...controls.input} />
-      <FastField {...controls.tagsPicker} />
-      <DEV json={values} />
-      <button onClick={handleSubmit}>Submit</button>
+      <FastField {...props.controls.input} />
+      <FastField {...props.controls.select} />
+      <FastField {...props.controls.checkbox} />
+      <FastField {...props.controls.tagsPicker} />
+      <FormDebug {...props} />
     </Form>
   );
 };
 
 const FormExample1 = createForm({
   view: FormExample1View,
-  FormGroup: LightFormGroup,
+  FormGroup,
   controls: {
     input: {
       title: 'input',
       component: Input,
-      placeholder: 'offer.placeholders.title',
+      placeholder: 'input',
+    },
+    select: {
+      title: 'The Select',
+      component: Select,
+      options: [
+        {
+          value: 'corporation',
+          title: 'first',
+        },
+        {
+          value: 'individual',
+          title: 'second',
+        },
+      ],
+      placeholder: 'placeholder',
+    },
+    checkbox: {
+      title: 'The Checkbox',
+      component: Checkbox,
+      label: 'Checkbox label',
+      placeholder: 'Checkbox placeholder',
     },
     tagsPicker: {
       title: 'tagsPicker',

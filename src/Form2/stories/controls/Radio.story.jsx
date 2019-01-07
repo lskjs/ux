@@ -4,7 +4,7 @@ import { Form, Field } from 'formik';
 import Story from '../../../Story';
 import createForm from '../../createForm';
 import RadioComponent from '../../controls/Radio';
-import LightFormGroup from '../../LightFormGroup';
+import FormGroup from '../../FormGroup';
 import DEV from '../../../DEV';
 
 const RadioView = (props) => {
@@ -26,7 +26,7 @@ const RadioView = (props) => {
 
 const Radio = createForm({
   view: RadioView,
-  FormGroup: LightFormGroup,
+  FormGroup,
   controls: {
     blue: {
       title: 'first value',

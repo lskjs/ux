@@ -2,8 +2,8 @@ import React from 'react';
 import { Form, Field } from 'formik';
 import Story from '../../../Story';
 import createForm from '../../createForm';
-import InputArrayComponent from '../../controls/InputArray';
-import LightFormGroup from '../../LightFormGroup';
+import InputArray from '../../controls/InputArray';
+import FormGroup from '../../FormGroup';
 import DEV from '../../../DEV';
 
 const InputArrayView = (props) => {
@@ -19,13 +19,13 @@ const InputArrayView = (props) => {
   );
 };
 
-const InputArray = createForm({
+const InputArrayForm = createForm({
   view: InputArrayView,
-  FormGroup: LightFormGroup,
+  FormGroup,
   controls: {
     inputArray: {
       title: 'InputArray',
-      component: InputArrayComponent,
+      component: InputArray,
     },
   },
 });
@@ -35,7 +35,7 @@ module.exports = ({ storiesOf }) =>
     .add('InputArray ', () => {
       return (
         <Story>
-          <InputArray />
+          <InputArrayForm />
         </Story>
       );
     });

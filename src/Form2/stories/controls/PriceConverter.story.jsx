@@ -3,7 +3,7 @@ import { Form, Field } from 'formik';
 import Story from '../../../Story';
 import createForm from '../../createForm';
 import PriceConverterComponent from '../../controls/PriceConverter';
-import LightFormGroup from '../../LightFormGroup';
+import FormGroup from '../../FormGroup';
 import DEV from '../../../DEV';
 
 const PriceConverterView = (props) => {
@@ -21,7 +21,7 @@ const PriceConverterView = (props) => {
 
 const PriceConverter = createForm({
   view: PriceConverterView,
-  FormGroup: LightFormGroup,
+  FormGroup,
   controls: {
     priceConverter: {
       title: 'PriceConverter',

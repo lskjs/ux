@@ -4,7 +4,7 @@ import { Button } from 'react-bootstrap';
 import Story from '../../../Story';
 import createForm from '../../createForm';
 import RatingComponent from '../../controls/Rating';
-import LightFormGroup from '../../LightFormGroup';
+import FormGroup from '../../FormGroup';
 import DEV from '../../../DEV';
 
 const RatingView = (props) => {
@@ -24,7 +24,7 @@ const RatingView = (props) => {
 
 const Rating = createForm({
   view: RatingView,
-  FormGroup: LightFormGroup,
+  FormGroup,
   controls: {
     rating: {
       title: 'Rating',

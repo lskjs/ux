@@ -4,7 +4,7 @@ import { Form, Field } from 'formik';
 import Story from '../../../Story';
 import createForm from '../../createForm';
 import PriceInputComponent from '../../controls/PriceInput';
-import LightFormGroup from '../../LightFormGroup';
+import FormGroup from '../../FormGroup';
 import DEV from '../../../DEV';
 
 const PriceInputView = (props) => {
@@ -24,7 +24,7 @@ const PriceInputView = (props) => {
 
 const PriceInput = createForm({
   view: PriceInputView,
-  FormGroup: LightFormGroup,
+  FormGroup,
   controls: {
     priceInput: {
       title: 'PriceInput',

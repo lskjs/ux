@@ -3,7 +3,7 @@ import { Form, Field } from 'formik';
 import Story from '../../../Story';
 import createForm from '../../createForm';
 import DateComponent from '../../controls/Date';
-import LightFormGroup from '../../LightFormGroup';
+import FormGroup from '../../FormGroup';
 import DEV from '../../../DEV';
 
 const DateView = (props) => {
@@ -22,7 +22,7 @@ const DateView = (props) => {
 
 const Date = createForm({
   view: DateView,
-  FormGroup: LightFormGroup,
+  FormGroup,
   controls: {
     date: {
       title: 'Date',

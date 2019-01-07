@@ -4,7 +4,7 @@ import moment from 'moment';
 import Story from '../../../Story';
 import createForm from '../../createForm';
 import CalendarComponent from '../../controls/Calendar';
-import LightFormGroup from '../../LightFormGroup';
+import FormGroup from '../../FormGroup';
 import DEV from '../../../DEV';
 
 const CalendarView = (props) => {
@@ -22,7 +22,7 @@ const CalendarView = (props) => {
 
 const Calendar = createForm({
   view: CalendarView,
-  FormGroup: LightFormGroup,
+  FormGroup,
   controls: {
     calendar: {
       title: 'Calendar',

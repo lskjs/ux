@@ -1,43 +1,64 @@
 import React from 'react';
 import { Form, Field } from 'formik';
-import { Button } from 'react-bootstrap';
 import Story from '../../../Story';
 import createForm from '../../createForm';
-import SelectComponent from '../../controls/Select';
-import LightFormGroup from '../../LightFormGroup';
-import DEV from '../../../DEV';
+import FormGroup from '../../FormGroup';
+import FormDebug from '../../FormDebug';
+import Select from '../../controls/Select';
 
-const SelectView = (props) => {
-  const {
-    controls,
-    values,
-  } = props;
+const SelectFormView = (props) => {
   return (
     <Form>
-      <Field {...controls.select} />
-      <Button >Submit</Button>
-      <DEV json={values} />
+      <Field {...props.controls.select} />
+      <Field {...props.controls.select2} />
+      <Field {...props.controls.select3} />
+      <Field {...props.controls.select4} />
+      <FormDebug {...props} />
     </Form>
   );
 };
 
-const Select = createForm({
-  view: SelectView,
-  FormGroup: LightFormGroup,
+const SelectForm = createForm({
+  view: SelectFormView,
+  FormGroup,
   controls: {
     select: {
       title: 'The Select',
-      component: SelectComponent,
+      component: Select,
       options: [
         {
-          value: 'corporation',
-          title: 'first',
+          value: 'one',
+          title: 'The One',
         },
         {
-          value: 'individual',
-          title: 'second',
+          value: 'two',
+          title: 'The Two',
         },
       ],
+      placeholder: 'placeholder 1',
+    },
+    select2: {
+      title: 'The Select2',
+      component: Select,
+      options: [
+        {
+          value: 'one',
+        },
+        {
+          value: 'two',
+        },
+      ],
+      placeholder: 'placeholder 2',
+    },
+    select3: {
+      title: 'The Select3',
+      component: Select,
+      options: ['one', 'two'],
+    },
+    select4: {
+      title: 'The Select4',
+      component: Select,
+      options: ['one', 'two'],
       placeholder: 'placeholder',
     },
   },
@@ -48,7 +69,11 @@ module.exports = ({ storiesOf }) =>
     .add('Select ', () => {
       return (
         <Story>
-          <Select />
+          <SelectForm
+            initialValues={{
+              select4: 'two',
+            }}
+          />
         </Story>
       );
     });

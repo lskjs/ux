@@ -4,7 +4,7 @@ import { Button } from 'react-bootstrap';
 import Story from '../../../Story';
 import createForm from '../../createForm';
 import TagsComponent from '../../controls/Tags';
-import LightFormGroup from '../../LightFormGroup';
+import FormGroup from '../../FormGroup';
 import DEV from '../../../DEV';
 
 import '../../../UI/molecules/Modal/Modal.g.css';
@@ -26,7 +26,7 @@ const TagsView = (props) => {
 
 const Tags = createForm({
   view: TagsView,
-  FormGroup: LightFormGroup,
+  FormGroup,
   controls: {
     tags: {
       title: 'Tags',
