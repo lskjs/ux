@@ -115,6 +115,7 @@ export const Button = styled('button')`
   color: ${p => p.theme.colors.primary};
   border: none;
   outline: none;
+  cursor: pointer;
   &:hover {
     background-color: rgba(155, 155, 155, 0.24);
   }
