@@ -48,6 +48,9 @@
     "prop-types": "^15.6.2"
   },
   "devDependencies": {
+    "antd": "^3.11.0",
+    "lodash": "^4.17.4",
+    "react-bootstrap": "^0.32.4",
     "@babel/cli": "7.0.0-beta.42",
     "@babel/core": "7.0.0-beta.42",
     "@babel/node": "7.0.0-beta.42",
