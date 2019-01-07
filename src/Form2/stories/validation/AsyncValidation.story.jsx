@@ -14,6 +14,7 @@ const ValidationView = (props) => {
     isSubmitting,
     controls,
     errors,
+    values,
   } = props;
   return (
     <Form>
@@ -35,8 +36,7 @@ const ValidationView = (props) => {
       <h5>
         Errors
       </h5>
-      <DEV json={{ isSubmitting }} />
-      <DEV json={errors} />
+      <DEV json={{ isSubmitting, errors, values }} />
     </Form>
   );
 };
