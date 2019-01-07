@@ -143,16 +143,25 @@ class FilesUploader extends Component {
                 {info || t('upload.infoFiles')}
               </Info>
               <Actions>
-                <Button
-                  type="button"
-                  paint="primary"
-                  onClick={() => this.zone.open()}
-                >
-                  {buttonText || t('upload.buttonFiles')}
-                </Button>
+                <If condition={!value}>
+                  <Button
+                    type="button"
+                    onClick={() => this.zone.open()}
+                  >
+                    {buttonText || t('upload.buttonFiles')}
+                  </Button>
+                </If>
+                <If condition={value}>
+                  <Button
+                    type="button"
+                    onClick={this.removeFile}
+                  >
+                    Delete file
+                  </Button>
+                </If>
               </Actions>
             </Header>
-            <Footer>
+            {/* <Footer>
               <If condition={value}>
                 <Button
                   type="button"
@@ -162,7 +171,7 @@ class FilesUploader extends Component {
                   Delete file
                 </Button>
               </If>
-            </Footer>
+            </Footer> */}
           </Block>
         </If>
       </Dropzone>

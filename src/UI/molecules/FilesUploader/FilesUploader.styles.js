@@ -1,7 +1,7 @@
 import styled, { css } from 'react-emotion';
 
 export const zoneStyle = css`
-  width: 270px;
+  width: 100%;
   height: auto;
   border: none !important;
   border-radius: 0 !important;
@@ -11,8 +11,8 @@ export const zoneStyle = css`
 `;
 
 export const Drop = styled('div')`
-  width: 280px;
-  height: 392px;
+  width: 100%;
+  height: 132px;
   border-radius: 3px;
   background-color: #ffffff;
   border: solid 3px ${p => p.theme.colors.primary};
@@ -146,8 +146,8 @@ padding: 12px 16px;
 `;
 
 export const Block = styled('div')`
-  width: 269px;
-  height: 391px;
+  width: 100%;
+  height: 138px;
   padding: 0;
   border-radius: 3px;
   background-color: #ffffff;

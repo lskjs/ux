@@ -80,7 +80,7 @@
     "postcss-loader": "2.1.5",
     "react-hot-loader": "4.2.0",
     "storybox": "1.0.3",
-    "webpack": "4.9.1"
+    "webpack": "4.16.5"
   },
   "scripts": {
     "dev": "DEBUG=1 npm run babel-build -- --watch",
