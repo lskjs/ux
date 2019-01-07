@@ -1,10 +1,10 @@
 import React from 'react';
 import { Form, Field } from 'formik';
-import { Button } from 'react-bootstrap';
+import Button from '../../../Button';
 import Story from '../../../Story';
 import createForm from '../../createForm';
 import InputComponent from '../../controls/Input';
-import LightFormGroup from '../../LightFormGroup';
+import FormGroup from '../../FormGroup';
 import DEV from '../../../DEV';
 
 
@@ -15,17 +15,27 @@ const ValidationView = (props) => {
     controls,
     errors,
   } = props;
-  console.log({ props });
   return (
     <Form>
-      Existing emails: some@email.com, someasync@email.com
       <Field {...controls.email} disabled={isSubmitting} />
       <Field {...controls.password} disabled={isSubmitting} />
-      <Button onClick={handleSubmit} disabled={isSubmitting}>SUBMIT</Button>
+      <Button
+        paint="primary"
+        onClick={handleSubmit}
+        disabled={isSubmitting}
+      >
+        SUBMIT
+      </Button>
       <br />
       <br />
       <br />
-      props.errors:
+      <p>
+        Existing emails: some@email.com, someasync@email.com
+      </p>
+      <h5>
+        Errors
+      </h5>
+      <DEV json={{ isSubmitting }} />
       <DEV json={errors} />
     </Form>
   );
@@ -45,28 +55,24 @@ const checkEmail = async (data) => {
 
 const ValidationAsync = createForm({
   view: ValidationView,
-  FormGroup: LightFormGroup,
+  FormGroup,
   controls: {
     email: {
       title: 'email',
       component: InputComponent,
       placeholder: 'email async placeholder',
-      type: 'text',
       validator: {
         // asyncValidator: true,
         presence: {
           allowEmpty: false,
         },
         checkEmail: (value) => {
-          if (value === 'some@email.com') {
-            return 'email already exists';
-          }
+          if (value === 'some@email.com') return 'email already exists';
           return '';
         },
         checkEmailAsync: async (value) => {
           try {
-            await checkEmail(value);
-            return '';
+            return checkEmail(value);
           } catch (err) {
             return err.message;
           }
