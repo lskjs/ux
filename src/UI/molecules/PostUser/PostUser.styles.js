@@ -1,5 +1,6 @@
 import styled from 'react-emotion';
-import { Avatar as AntAvatar, Icon as AntIcon } from 'antd';
+import AntAvatar from 'antd/lib/avatar';
+import AntIcon from 'antd/lib/icon';
 
 import removeProps from '../../../utils/removeProps';
 import createDynamicTag from '../../../utils/createDynamicTag';

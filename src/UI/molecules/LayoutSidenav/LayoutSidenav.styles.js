@@ -1,5 +1,5 @@
 import styled from 'react-emotion';
-import { Layout } from 'antd';
+import Layout from 'antd/lib/layout';
 import LayoutSidenavFooter from '../../atoms/LayoutSidenavFooter';
 import LayoutSidenavBrand from '../../atoms/LayoutSidenavBrand';
 import LayoutSidenavHeader from '../../atoms/LayoutSidenavHeader';

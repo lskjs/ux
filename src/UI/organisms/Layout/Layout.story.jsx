@@ -1,6 +1,11 @@
 import React from 'react';
-import { Container } from 'reactstrap';
-import { Menu, Icon, Layout as AntLayout, Tooltip, Badge, List } from 'antd';
+import Container from 'reactstrap/lib/Container';
+import Menu from 'antd/lib/menu';
+import Icon from 'antd/lib/icon';
+import AntLayout from 'antd/lib/layout';
+import Tooltip from 'antd/lib/tooltip';
+import Badge from 'antd/lib/badge';
+import List from 'antd/lib/list';
 import LayoutSidenavBrand from '../../atoms/LayoutSidenavBrand';
 import LayoutSidenavContent from '../../atoms/LayoutSidenavContent';
 import LayoutSidenavFooter from '../../atoms/LayoutSidenavFooter';

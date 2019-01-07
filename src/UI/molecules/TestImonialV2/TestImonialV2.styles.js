@@ -1,5 +1,5 @@
 import styled, { css } from 'react-emotion';
-import { Avatar } from 'antd';
+import Avatar from 'antd/lib/avatar';
 
 export const Wrapper = styled('div')`
   position: relative;

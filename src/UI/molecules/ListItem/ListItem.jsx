@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Icon } from 'antd';
+import Icon from 'antd/lib/icon';
 import PropTypes from 'prop-types';
 import ListItemIcon from '../../atoms/ListItemIcon';
 import ListItemInner from '../../atoms/ListItemInner';

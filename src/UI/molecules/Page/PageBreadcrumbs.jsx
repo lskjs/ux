@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
-import { Breadcrumb } from 'antd';
+import Breadcrumb from 'antd/lib/breadcrumb';
 import get from 'lodash/get';
 import cloneDeep from 'lodash/cloneDeep';
 // import Container from '../../atoms/PageContainer';

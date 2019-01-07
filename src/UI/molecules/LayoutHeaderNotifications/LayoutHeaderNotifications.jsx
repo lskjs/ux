@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Popover } from 'antd';
+import Popover from 'antd/lib/popover';
 import overlayStyle from './LayoutHeaderNotifications.styles';
 
 class LayoutHeaderNotifications extends Component {

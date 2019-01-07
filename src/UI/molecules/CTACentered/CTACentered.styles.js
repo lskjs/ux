@@ -1,6 +1,6 @@
 import styled from 'react-emotion';
 
-import { Button as BsButton } from 'antd';
+import BsButton from 'antd/lib/button';
 
 export const Title = styled('h1')`
   line-height: 1.3;

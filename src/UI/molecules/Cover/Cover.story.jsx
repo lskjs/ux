@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col } from 'reactstrap';
+import Col from 'reactstrap/lib/Col';
 import Cover from './Cover';
 
 

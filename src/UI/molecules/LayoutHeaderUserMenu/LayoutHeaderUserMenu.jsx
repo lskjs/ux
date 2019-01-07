@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Avatar, Dropdown } from 'antd';
+import Avatar from 'antd/lib/avatar';
+import Dropdown from 'antd/lib/dropdown';
 import LayoutHeaderListItem from '../../atoms/LayoutHeaderListItem';
 import { DropdownLink /* , AvatarText */ } from './LayoutHeaderUserMenu.styles';
 

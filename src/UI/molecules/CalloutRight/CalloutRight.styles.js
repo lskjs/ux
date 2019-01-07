@@ -1,7 +1,7 @@
 import styled from 'react-emotion';
 
-import { Col } from 'reactstrap';
-import { Button as BsButton } from 'antd';
+import Col from 'reactstrap/lib/Col';
+import BsButton from 'antd/lib/button';
 
 export const BsCol = styled(Col)`
   min-height: 300px;

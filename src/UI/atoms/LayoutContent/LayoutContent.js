@@ -1,5 +1,5 @@
 import styled from 'react-emotion';
-import { Layout } from 'antd';
+import Layout from 'antd/lib/layout';
 
 const { Content } = Layout;
 

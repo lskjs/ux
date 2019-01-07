@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Icon } from 'antd';
+import Icon from 'antd/lib/icon';
 import cx from 'classnames';
 import LayoutHeaderListItem from '../../atoms/LayoutHeaderListItem';
 import {

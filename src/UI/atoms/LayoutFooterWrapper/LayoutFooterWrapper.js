@@ -1,5 +1,5 @@
 import styled from 'react-emotion';
-import { Layout } from 'antd';
+import Layout from 'antd/lib/layout';
 import LayoutFooterElement from '../LayoutFooterElement';
 
 const { Footer } = Layout;

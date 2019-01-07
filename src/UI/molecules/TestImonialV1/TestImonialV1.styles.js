@@ -1,5 +1,5 @@
 import styled from 'react-emotion';
-import { Avatar } from 'antd';
+import Avatar from 'antd/lib/avatar';
 
 export const Content = styled('div')`
   position: relative;
