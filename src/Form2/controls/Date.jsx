@@ -17,12 +17,7 @@ const DatePicker = (data) => {
   const locale = t && t('locale') || 'ru';
   let value = get(form.values, field.name) && moment(new Date(get(form.values, field.name)), dateFormat, locale) || null; // eslint-disable-line
   let change = (val) => {
-    field.onChange({
-      target: {
-        name: field.name,
-        value: val,
-      },
-    });
+    form.setFieldValue(field.name, val);
   };
 
   if (ranged) {
