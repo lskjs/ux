@@ -3856,110 +3856,9 @@ a.ant-btn-sm {
 .ant-comment-nested {
   margin-left: 44px;
 }
-.ant-calendar-picker-container {
-  font-size: 14px;
-  font-variant: tabular-nums;
-  line-height: 1.71428571;
-  color: rgba(0, 0, 0, 0.65);
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  position: absolute;
-  z-index: 1050;
-}
-.ant-calendar-picker-container.slide-up-enter.slide-up-enter-active.ant-calendar-picker-container-placement-topLeft,
-.ant-calendar-picker-container.slide-up-enter.slide-up-enter-active.ant-calendar-picker-container-placement-topRight,
-.ant-calendar-picker-container.slide-up-appear.slide-up-appear-active.ant-calendar-picker-container-placement-topLeft,
-.ant-calendar-picker-container.slide-up-appear.slide-up-appear-active.ant-calendar-picker-container-placement-topRight {
-  animation-name: antSlideDownIn;
-}
-.ant-calendar-picker-container.slide-up-enter.slide-up-enter-active.ant-calendar-picker-container-placement-bottomLeft,
-.ant-calendar-picker-container.slide-up-enter.slide-up-enter-active.ant-calendar-picker-container-placement-bottomRight,
-.ant-calendar-picker-container.slide-up-appear.slide-up-appear-active.ant-calendar-picker-container-placement-bottomLeft,
-.ant-calendar-picker-container.slide-up-appear.slide-up-appear-active.ant-calendar-picker-container-placement-bottomRight {
-  animation-name: antSlideUpIn;
-}
-.ant-calendar-picker-container.slide-up-leave.slide-up-leave-active.ant-calendar-picker-container-placement-topLeft,
-.ant-calendar-picker-container.slide-up-leave.slide-up-leave-active.ant-calendar-picker-container-placement-topRight {
-  animation-name: antSlideDownOut;
-}
-.ant-calendar-picker-container.slide-up-leave.slide-up-leave-active.ant-calendar-picker-container-placement-bottomLeft,
-.ant-calendar-picker-container.slide-up-leave.slide-up-leave-active.ant-calendar-picker-container-placement-bottomRight {
-  animation-name: antSlideUpOut;
-}
-.ant-calendar-picker {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 14px;
-  font-variant: tabular-nums;
-  line-height: 1.71428571;
-  color: rgba(0, 0, 0, 0.65);
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  position: relative;
-  display: inline-block;
-  outline: none;
-  transition: opacity 0.3s;
-}
-.ant-calendar-picker-input {
-  outline: none;
-}
-.ant-calendar-picker-input.ant-input-sm {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-.ant-calendar-picker:hover .ant-calendar-picker-input:not(.ant-input-disabled) {
-  border-color: #1890ff;
-}
-.ant-calendar-picker:focus .ant-calendar-picker-input:not(.ant-input-disabled) {
-  border-color: #40a9ff;
-  outline: 0;
-  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
-  border-right-width: 1px !important;
-}
-.ant-calendar-picker-clear,
-.ant-calendar-picker-icon {
-  position: absolute;
-  width: 14px;
-  height: 14px;
-  right: 12px;
-  top: 50%;
-  margin-top: -7px;
-  line-height: 14px;
-  font-size: 12px;
-  transition: all 0.3s;
-  user-select: none;
-  z-index: 1;
-}
-.ant-calendar-picker-clear {
-  opacity: 0;
-  z-index: 2;
-  font-size: 14px;
-  color: rgba(0, 0, 0, 0.25);
-  background: #fff;
-  pointer-events: none;
-  cursor: pointer;
-}
-.ant-calendar-picker-clear:hover {
-  color: rgba(0, 0, 0, 0.45);
-}
-.ant-calendar-picker:hover .ant-calendar-picker-clear {
-  opacity: 1;
-  pointer-events: auto;
-}
-.ant-calendar-picker-icon {
-  font-family: "anticon";
-  font-size: 14px;
-  color: rgba(0, 0, 0, 0.25);
-  display: inline-block;
-  line-height: 1;
-}
-.ant-calendar-picker-small .ant-calendar-picker-clear,
-.ant-calendar-picker-small .ant-calendar-picker-icon {
-  right: 8px;
+.ant-calendar-picker-container-clear,
+.ant-calendar-picker-container-icon {
+  z-index: 0;
 }
 .ant-calendar {
   position: relative;
@@ -17439,8 +17338,8 @@ li.ant-tree-treenode-disabled > .ant-tree-node-content-wrapper:hover {
 .ant-tree.ant-tree-icon-hide .ant-tree-treenode-loading .ant-tree-iconEle {
   display: none;
 }
-.ant-tree span.ant-tree-switcher {
-  display: none;
+.ant-tree ant-tree-switcher {
+  display: none !important;
 }
 .ant-select-tree-checkbox {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";

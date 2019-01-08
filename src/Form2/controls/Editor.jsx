@@ -14,7 +14,7 @@ const Editor = ({
       onChange={(value) => {
         form.setFieldValue(field.name, value);
       }}
-      value={get(form.values, field.name)}
+      value={field.value}
     />
   );
 };

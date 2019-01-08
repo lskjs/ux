@@ -11,7 +11,7 @@ const RadioCards = ({
     <RadioCardsBase
       {...field}
       {...props}
-      value={get(form.values, field.name)}
+      value={field.value}
       validationState={form.errors[field.name] ? 'error' : null}
       onChange={(value) => {
         form.setFieldValue(field.name, value);

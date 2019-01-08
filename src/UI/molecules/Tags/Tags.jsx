@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import Tag from '../Tag';
+import Tag from 'antd/lib/tag';
 
 class Tags extends PureComponent {
   static propTypes = {
@@ -8,23 +8,29 @@ class Tags extends PureComponent {
     disabled: PropTypes.bool,
     onDelete: PropTypes.func,
     renderTag: PropTypes.func,
+    color: PropTypes.string,
   }
   static defaultProps = {
     items: [],
     disabled: false,
     onDelete: null,
     renderTag: null,
+    color: 'blue',
   }
   render() {
     let { renderTag } = this.props;
-    const { items, disabled, onDelete } = this.props;
+    const {
+      color,
+      items,
+      disabled,
+      onDelete,
+    } = this.props;
     if (!renderTag) {
       renderTag = data => (
         <Tag
           key={data.key}
-          id={data.item.value}
+          color={data.color || 'blue'}
           onClose={!data.disabled ? () => data.onDelete?.(data.item.value) : null}
-          disabled={data.disabled}
         >
           {data.item.title}
         </Tag>
@@ -36,6 +42,7 @@ class Tags extends PureComponent {
           .map((item) => {
             return React.createElement(renderTag, {
               item,
+              color,
               key: item.value,
               disabled,
               onDelete,

@@ -28,7 +28,7 @@ const Calendar = ({
         }
         return '';
       }}
-      value={get(form.values, field.name)}
+      value={field.value}
       fullscreen={false}
     />
   );

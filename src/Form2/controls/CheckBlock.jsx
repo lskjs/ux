@@ -8,7 +8,7 @@ const CheckBlock = ({
   ...props
 }) => {
   const props2 = {
-    value: get(form.values, field.name),
+    value: field.value,
     validationState: form.errors[field.name] ? 'error' : null,
     onChange: (value) => {
       form.setFieldValue(field.name, value);
@@ -16,7 +16,6 @@ const CheckBlock = ({
     label: props.title || props.name,
     info: props.info,
   };
-
   return (
     <ExtendedCheckblock
       {...field}

@@ -15,7 +15,7 @@ const CheckboxesList = ({
       onChange={(value) => {
         form.setFieldValue(field.name, value);
       }}
-      selected={get(form.values, field.name) || []}
+      selected={field.value || []}
     />
   );
 };

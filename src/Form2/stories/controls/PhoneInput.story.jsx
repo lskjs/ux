@@ -6,6 +6,8 @@ import PhoneInputComponent from '../../controls/PhoneInput';
 import FormGroup from '../../FormGroup';
 import DEV from '../../../DEV';
 
+import '../../../UI/molecules/PhoneInput/PhoneInput.g.css';
+
 const PhoneInputView = (props) => {
   const {
     controls,

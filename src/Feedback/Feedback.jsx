@@ -6,7 +6,7 @@ import { inject, observer } from 'mobx-react';
 import Rate from 'antd/lib/rate';
 
 
-import { Block, Title, Rating, fbVal, Desc } from './Feedback.styles';
+import { Block, Title, Rating, FbVal, Desc } from './Feedback.styles';
 
 @inject('t')
 @observer
@@ -49,9 +49,9 @@ class Feedback extends Component {
               // character={<Star />}
             />
           </div>
-          <fbVal>
+          <FbVal>
             {`${value}/${starCount}`}
-          </fbVal>
+          </FbVal>
         </Rating>
         {message && <Desc>«{message}»</Desc>}
       </Block>

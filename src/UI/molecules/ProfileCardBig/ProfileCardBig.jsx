@@ -10,12 +10,14 @@ class ProfileCardBig extends PureComponent {
     name: PropTypes.string,
     info: PropTypes.string,
     sign: PropTypes.string,
+    fixHeight: PropTypes.string,
   };
   static defaultProps = {
     img: null,
     name: null,
     info: null,
     sign: null,
+    fixHeight: 'auto',
   }
   render() {
     const {
@@ -23,11 +25,16 @@ class ProfileCardBig extends PureComponent {
       name,
       info,
       sign,
+      fixHeight,
       ...props
     } = this.props;
     return (
-      <ProfileCardItem {...props}>
-        <ProfileCardAvatar size={100} src={img} shape="circle" />
+      <ProfileCardItem fixHeight={fixHeight} {...props}>
+        <ProfileCardAvatar
+          size={100}
+          src={img}
+          shape="circle"
+        />
         <h4>{name}</h4>
         <span>{info}</span>
         <p>{sign}</p>

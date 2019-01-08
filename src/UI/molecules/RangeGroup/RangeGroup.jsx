@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import bind from 'core-decorators/lib/autobind';
 
 import InputRange from '../InputRange';
@@ -7,6 +8,12 @@ import Slider from '../Slider';
 import { Graph, GraphItem } from './RangeGroup.styles';
 
 class RangeGroup extends PureComponent {
+  static propTypes = {
+    validationState: PropTypes.oneOf(['success', 'warning', 'error']),
+  }
+  static defaultProps = {
+    validationState: null,
+  }
   constructor(props) {
     super(props);
     this.state = {

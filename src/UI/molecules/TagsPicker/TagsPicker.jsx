@@ -95,6 +95,8 @@ class TagsPicker extends PureComponent {
     const { flat, title, onChange, fields, createTag } = this.props;
     // const { fields } = this.state;
     const value = this.getValue();
+    console.log(this.props);
+
     return (
       <TreePicker
         fields={fields}

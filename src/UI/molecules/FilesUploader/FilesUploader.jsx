@@ -27,7 +27,7 @@ import {
 class FilesUploader extends Component {
   static propTypes = {
     // accept: PropTypes.string,
-    value: PropTypes.string,
+    value: PropTypes.any,
     dropText: PropTypes.string,
     buttonText: PropTypes.string,
     placeholder: PropTypes.string,

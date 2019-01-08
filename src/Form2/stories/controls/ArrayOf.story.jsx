@@ -31,7 +31,6 @@ const ArrayOfForm = createForm({
       },
       itemInitialValue: '',
       showRemoveButton: true,
-      addButton: props => <Button paint="primary" {...props}>+</Button>,
       addLastItem: true,
       maxCount: 5,
       minCount: 4,

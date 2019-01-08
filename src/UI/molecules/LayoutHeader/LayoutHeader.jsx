@@ -19,6 +19,7 @@ class LayoutHeader extends Component {
     mobileHidden: PropTypes.bool,
     onCollapsed: PropTypes.func,
     onCloseMobile: PropTypes.func,
+    noMenu: PropTypes.bool,
   }
   static defaultProps = {
     logo: null,
@@ -28,6 +29,7 @@ class LayoutHeader extends Component {
     mobileHidden: false,
     onCollapsed: null,
     onCloseMobile: null,
+    noMenu: false,
   }
   @autobind
   onToggleCollapsed() {
@@ -46,6 +48,7 @@ class LayoutHeader extends Component {
       logo,
       pullLeft,
       pullRight,
+      noMenu,
     } = this.props;
     return (
       <Header>
@@ -56,20 +59,22 @@ class LayoutHeader extends Component {
                 {logo}
                 <Divider type="vertical" key="line" />
               </If>
-              <LayoutHeaderListItem
-                componentClass="button"
-                onClick={this.onToggleCollapsed}
-                className="d-none d-md-inline-block"
-              >
-                <Icon type={collapsed ? 'menu-unfold' : 'menu-fold'} />
-              </LayoutHeaderListItem>
-              <LayoutHeaderListItem
-                componentClass="button"
-                className="d-md-none"
-                onClick={this.onToggleHiddenMobile}
-              >
-                <Icon type={mobileHidden ? 'menu-unfold' : 'menu-fold'} />
-              </LayoutHeaderListItem>
+              <If condition={noMenu === false}>
+                <LayoutHeaderListItem
+                  componentClass="button"
+                  onClick={this.onToggleCollapsed}
+                  className="d-none d-md-inline-block"
+                >
+                  <Icon type={collapsed ? 'menu-unfold' : 'menu-fold'} />
+                </LayoutHeaderListItem>
+                <LayoutHeaderListItem
+                  componentClass="button"
+                  className="d-md-none"
+                  onClick={this.onToggleHiddenMobile}
+                >
+                  <Icon type={mobileHidden ? 'menu-unfold' : 'menu-fold'} />
+                </LayoutHeaderListItem>
+              </If>
               {pullLeft}
             </LayoutHeaderList>
           </LayoutHeaderLeft>

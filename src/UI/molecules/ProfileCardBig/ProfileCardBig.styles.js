@@ -11,7 +11,7 @@ export const ProfileCardItem = styled(dynamicTag)`
   border-radius: ${p => p.theme.borderRadius};
   background-color: ${p => p.theme.colors.white};
   text-align: center;
-  height: 270px;
+  height: ${p => `${p.fixHeight}px`};
   overflow: hidden;
   font-family: ${p => p.theme.fontFamily};
   h4 {

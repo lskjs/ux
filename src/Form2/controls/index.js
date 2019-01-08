@@ -1,3 +1,4 @@
+export { default as Calendar } from './Calendar';
 export { default as CardToken } from './CardToken';
 export { default as CheckBlock } from './CheckBlock';
 export { default as Checkbox } from './Checkbox';

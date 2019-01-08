@@ -17,7 +17,7 @@ const FilesUploader = ({
         form.setFieldValue(field.name, value);
       }}
       onError={() => onError?.(form.errors[field.name])} // this.globalError
-      files={get(form.values, field.name)}
+      files={field.value}
     />
   );
 };
