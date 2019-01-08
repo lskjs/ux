@@ -61,7 +61,7 @@
     "@babel/register": "7.0.0-beta.42",
     "@babel/template": "7.0.0-beta.42",
     "@babel/types": "7.0.0-beta.42",
-    "@lskjs/build": "1.19.31",
+    "@lskjs/build": "1.21.0",
     "@storybook/react": "4.0.9",
     "@storybook/storybook-deployer": "2.8.1",
     "babel-core": "7.0.0-bridge.0",
