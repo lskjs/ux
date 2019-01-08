@@ -21,7 +21,7 @@ const PriceInput = ({
       onChange={onChange}
       // onSubmit={this.handleChangeField(field.name)}
       validationState={form.errors[field.name] ? 'error' : null}
-      value={get(form.values, field.name)}
+      value={field.value}
       fields={field.fields}
       required={field.required}
     />

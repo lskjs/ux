@@ -18,7 +18,7 @@ const Range = ({
     <RangeBase
       {...field}
       {...props}
-      value={get(form.values, field.name)}
+      value={field.value}
       validationState={form.errors[field.name] ? 'error' : null}
       onChange={(value) => {
         if (debounceFunction && debounceFunction.cancel) {

@@ -15,15 +15,15 @@ const DatePicker = (data) => {
 
   const dateFormat = t && t('format.date') || 'DD.MM.YYYY';
   const locale = t && t('locale') || 'ru';
-  let value = get(form.values, field.name) && moment(new Date(get(form.values, field.name)), dateFormat, locale) || null; // eslint-disable-line
+  let value = field.value && moment(new Date(field.value), dateFormat, locale) || null; // eslint-disable-line
   let change = (val) => {
     form.setFieldValue(field.name, val);
   };
 
   if (ranged) {
     value = [
-      get(form.values, field.name)?.[0] && moment(new Date(get(form.values, field.name)[0])) || null,
-      get(form.values, field.name)?.[1] && moment(new Date(get(form.values, field.name)[1])) || null,
+      field.value?.[0] && moment(new Date(field.value[0])) || null,
+      field.value?.[1] && moment(new Date(field.value[1])) || null,
     ];
     change = async (range) => {
       form.setFieldValue(field.name, range);

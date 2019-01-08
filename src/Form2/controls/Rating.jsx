@@ -14,7 +14,7 @@ const Rating = ({
       noTitle
       disabled={false}
         // allowHalf={field.control?.allowHalf}
-      value={get(form.values, field.name)}
+      value={field.value}
       onChange={(value) => {
         form.setFieldValue(field.name, value);
       }}

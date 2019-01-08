@@ -9,7 +9,7 @@ const Geo = ({
   type,
   ...props
 }) => {
-  const value = get(form.values, field.name);
+  const value = field.value;
   const coordinates = value ? {
     longitude: value?.[0],
     latitude: value?.[1],
