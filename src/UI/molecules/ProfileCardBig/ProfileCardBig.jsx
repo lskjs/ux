@@ -10,14 +10,14 @@ class ProfileCardBig extends PureComponent {
     name: PropTypes.string,
     info: PropTypes.string,
     sign: PropTypes.string,
-    fixHeight: PropTypes.string,
+    fixHeight: PropTypes.number,
   };
   static defaultProps = {
     img: null,
     name: null,
     info: null,
     sign: null,
-    fixHeight: 'auto',
+    fixHeight: null,
   }
   render() {
     const {
