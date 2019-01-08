@@ -21,6 +21,7 @@ class Input extends PureComponent {
     styleName: PropTypes.string,
     leftIcon: PropTypes.any,
     rightIcon: PropTypes.any,
+    className: PropTypes.string,
   }
   static defaultProps = {
     validationState: null,
@@ -31,6 +32,7 @@ class Input extends PureComponent {
     displayRate: null,
     leftIcon: null,
     rightIcon: null,
+    className: null,
   }
   constructor(props) {
     super(props);

@@ -47,7 +47,9 @@ const Radio = ({
         form.setFieldValue(field.name, val);
       }}
       options={options}
-    />
+    >
+      {props.title}
+    </RadioBase>
   );
 };
 

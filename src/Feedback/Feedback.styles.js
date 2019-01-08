@@ -32,7 +32,7 @@ export const Rating = styled('div')`
   }
 `;
 
-export const fbVal = styled('div')`
+export const FbVal = styled('div')`
   font-family: ${p => p.theme.fontFamily};
   font-size: 32px;
   line-height: 1.25;

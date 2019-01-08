@@ -86,6 +86,7 @@ class ExtendedCheckblock extends PureComponent {
             block={block}
             onClick={this.handleClick}
             disabled={disabled}
+            type="button"
           >
             <Header>
               <Icon>

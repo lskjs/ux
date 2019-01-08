@@ -101,6 +101,7 @@ class InputArray extends React.Component {
           {this.getValues().map((val, i) => {
             return (
               <FormControl
+                key={i} // eslint-disable-line
                 className={inputArrayStyles}
                 componentClass={DebounceInput}
                 // debounceTimeout={100}
@@ -127,6 +128,7 @@ class InputArray extends React.Component {
         {this.getValues().map((val, i) => {
           return (
             <Input
+              key={i} // eslint-disable-line
               className={inputArrayStyles}
               block
               // componentClass={DebounceInput}

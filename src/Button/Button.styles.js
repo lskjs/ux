@@ -446,6 +446,8 @@ const filteredTag = removeProps(dynamicTag, [
   'block',
   'onlyIcon',
   'twoIcons',
+  'bordered',
+  'auto',
 ]);
 
 export const Btn = styled(filteredTag)`
@@ -644,7 +646,7 @@ export const Ripple = styled('div')`
   )}
 `;
 
-export const State = styled(removeProps('div', ['size', 'disabled', 'visible', 'paint', 'iconDirection']))`
+export const State = styled(removeProps('div', ['size', 'disabled', 'visible', 'paint', 'iconDirection', 'bordered']))`
   position: absolute;
   display: block;
   z-index: 2;

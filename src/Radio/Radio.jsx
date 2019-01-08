@@ -10,8 +10,8 @@ class Radio extends PureComponent {
   static propTypes = {
     onChange: PropTypes.func,
     selected: PropTypes.bool,
-    value: PropTypes.string.isRequired,
-    id: PropTypes.string.isRequired,
+    value: PropTypes.any.isRequired,
+    id: PropTypes.number.isRequired,
     children: PropTypes.any,
     validationState: PropTypes.oneOf(['success', 'error', 'warning']),
     disabled: PropTypes.bool,
@@ -45,7 +45,14 @@ class Radio extends PureComponent {
   }
   render() {
     const { selected } = this.state;
-    const { block, disabled, validationState, id, children, ...otherProps } = this.props;
+    const {
+      block,
+      disabled,
+      validationState,
+      id,
+      children,
+      ...otherProps
+    } = this.props;
 
     let onChange = this.handleSelect;
     if (selected) onChange = null;

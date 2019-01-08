@@ -18,7 +18,7 @@ class PriceConverter extends Component {
   static propTypes = {
     t: PropTypes.func.isRequired,
     value: PropTypes.shape({
-      price: PropTypes.number,
+      price: PropTypes.any,
       type: PropTypes.oneOf(types),
     }),
     onChange: PropTypes.func,
@@ -114,6 +114,7 @@ class PriceConverter extends Component {
             onChange={this.handleChangePrice}
           />
           <Clear
+            type="button"
             visible={value !== 0}
             onClick={this.handleClearValue}
           >
@@ -124,6 +125,7 @@ class PriceConverter extends Component {
           {types.map(key => (
             <Action
               key={key}
+              type="button"
               onClick={() => {
                 this.handleChangeAction(key);
               }}

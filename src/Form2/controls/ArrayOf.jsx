@@ -146,7 +146,7 @@ class ArrayOf extends React.Component {
           );
           if (!showRemoveButton || (values.length === 1 && addLastItem)) return children;
           return (
-            <div>
+            <div key={key}>
               {children}
               <If condition={showRemoveButton}>
                 <RemoveButton onClick={() => this.removeButtonHandler(key)} />

@@ -17,9 +17,10 @@ const CheckBox = ({
         onChange={(e) => {
           form.setFieldValue(field.name, e.target.checked);
         }}
-      />
-      {props.icon && props.icon}
-      <span className="checkbox-title">{props.label}</span>
+      >
+        {props.icon && props.icon}
+        <span className="checkbox-title">{props.label}</span>
+      </CheckBoxBase>
       {props.control && props.control.help && (
         <Tooltip id={field.name} place="bottom" overlay={props.control.help}>
           <span className="checkbox-help"><Help /></span>
