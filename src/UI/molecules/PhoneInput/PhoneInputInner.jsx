@@ -9,6 +9,7 @@ import classNames from 'classnames';
 
 import { allCountries } from './countriesData';
 import isNumberValid from './isNumberValid';
+import Input from '../../../Input';
 
 const isModernBrowser = Boolean(__CLIENT__ && document.createElement('input').setSelectionRange);
 
@@ -282,7 +283,7 @@ class ReactPhoneInput extends Component {
 
   // put the cursor to the end of the input (usually after a focus event)
   _cursorToEnd() {
-    const input = ReactDOM.findDOMNode(this.refs.numberInput); // eslint-disable-line
+    const input = ReactDOM.findDOMNode(this.numberInput); // eslint-disable-line
     input.focus();
     if (isModernBrowser) {
       const len = input.value.length;
@@ -304,30 +305,24 @@ class ReactPhoneInput extends Component {
   }
 
   handleInput(event) {
+    console.log(event);
     let formattedNumber = '+';
     let newSelectedCountry = this.state.selectedCountry;
     let { freezeSelection } = this.state;
 
     // Does not exceed 16 digit phone number limit
-    if (event.target.value.replace(/\D/g, '').length > 16) {
+    if (event.replace(/\D/g, '').length > 16) {
       return;
     }
 
     // if the input is the same as before, must be some special key like enter etc.
-    if (event.target.value === this.state.formattedNumber) {
+    if (event === this.state.formattedNumber) {
       return;
     }
 
-    // ie hack
-    if (event.preventDefault) {
-      event.preventDefault();
-    } else {
-      event.returnValue = false;
-    }
-
-    if (event.target.value.length > 0) {
+    if (event.length > 0) {
       // before entering the number in new format, lets check if the dial code now matches some other country
-      const inputNumber = event.target.value.replace(/\D/g, '');
+      const inputNumber = event.replace(/\D/g, '');
 
       // we don't need to send the whole number to guess the country... only the first 6 characters are enough
       // the guess country function can then use memoization much more effectively since the set of input it
@@ -346,9 +341,9 @@ class ReactPhoneInput extends Component {
       formattedNumber = this.formatNumber(inputNumber, newSelectedCountry.format);
     }
 
-    let caretPosition = event.target.selectionStart;
-    const oldFormattedText = this.state.formattedNumber;
-    const diff = formattedNumber.length - oldFormattedText.length;
+    // let caretPosition = event.target.selectionStart;
+    // const oldFormattedText = this.state.formattedNumber;
+    // const diff = formattedNumber.length - oldFormattedText.length;
 
     this.setState({
       formattedNumber,
@@ -357,15 +352,15 @@ class ReactPhoneInput extends Component {
         ? newSelectedCountry
         : this.state.selectedCountry,
     }, () => {
-      if (isModernBrowser) {
-        if (diff > 0) {
-          caretPosition -= diff;
-        }
+      // if (isModernBrowser) {
+      //   if (diff > 0) {
+      //     caretPosition -= diff;
+      //   }
 
-        if (caretPosition > 0 && oldFormattedText.length >= formattedNumber.length) {
-          ReactDOM.findDOMNode(this.refs.numberInput).setSelectionRange(caretPosition, caretPosition); // eslint-disable-line
-        }
-      }
+      //   if (caretPosition > 0 && oldFormattedText.length >= formattedNumber.length) {
+      //     ReactDOM.findDOMNode(this.numberInput).setSelectionRange(caretPosition, caretPosition); // eslint-disable-line
+      //   }
+      // }
 
       if (this.props.onChange) {
         this.props.onChange(this.state.formattedNumber);
@@ -410,7 +405,7 @@ class ReactPhoneInput extends Component {
 
   handleInputFocus(evt) {
     // if the input is blank, insert dial code of the selected country
-    if (ReactDOM.findDOMNode(this.refs.numberInput).value === '+') { // eslint-disable-line
+    if (ReactDOM.findDOMNode(this.numberInput).value === '+') { // eslint-disable-line
       this.setState({
         formattedNumber: `+${this.state.selectedCountry.dialCode}`,
       }, () => setTimeout(this._cursorToEnd, 10));
@@ -508,7 +503,7 @@ class ReactPhoneInput extends Component {
   }
 
   updateDropdownWidth() {
-    const width = ReactDOM.findDOMNode(this.refs.numberInput).offsetWidth; // eslint-disable-line
+    const width = ReactDOM.findDOMNode(this.numberInput).offsetWidth; // eslint-disable-line
     this.setState({
       dropdownWidth: width,
     });
@@ -540,14 +535,14 @@ class ReactPhoneInput extends Component {
           'react-tel-input-new': this.props.new,
         })}
       >
-        <input
+        <Input
           placeholder={this.props.placeholder}
           onChange={this.handleInput}
           onClick={this.handleInputClick}
           onFocus={this.handleInputFocus}
           onKeyDown={this.handleInputKeyDown}
           value={this.state.formattedNumber}
-          ref="numberInput" // eslint-disable-line
+          innerRef={e => this.numberInput = e} // eslint-disable-line
           type="tel"
           className={inputClasses}
         />

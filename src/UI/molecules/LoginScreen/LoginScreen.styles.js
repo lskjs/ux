@@ -85,15 +85,20 @@ export const FormContainer = styled('section')`
   }
 `;
 
+export const Col = styled(BsCol)`
+  padding-left: 0;
+  padding-right: 0;
+`;
+
 export const Row = styled(BsRow)`
   min-height: 100vh;
   margin-left: 0;
   margin-right: 0;
-`;
-
-export const Col = styled(BsCol)`
-  padding-left: 0;
-  padding-right: 0;
+  @media screen and (max-width: 992px) {
+    > ${Col}:first-child {
+      display: none;
+    }
+  }
 `;
 
 export const ImageContainer = styled('div')`
