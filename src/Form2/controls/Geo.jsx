@@ -9,10 +9,10 @@ const Geo = ({
   type,
   ...props
 }) => {
-  const value = field.value;
+  const { value } = field;
   const coordinates = value ? {
-    longitude: value?.[0],
-    latitude: value?.[1],
+    longitude: get(value, 0, 0),
+    latitude: get(value, 1, 0),
   } : null;
 
   const GeoComponent = type === 'google' ? GoogleMap : MapBox;

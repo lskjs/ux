@@ -5,20 +5,15 @@ import Story from '../../../Story';
 import createForm from '../../createForm';
 import FormGroup from '../../FormGroup';
 import Geo from '../../controls/Geo';
+import FormDebug from '../../FormDebug';
+
 import '../../controls/Geo.g.css';
 
 const GeoView = (props) => {
-  const {
-    controls,
-    values,
-  } = props;
-
-  console.log({ controls, values });
-  
   return (
     <Form>
-      <Field {...controls.geo} />
-      <DEV json={values} />
+      <Field {...props.controls.geo} />
+      <FormDebug {...props} />
     </Form>
   );
 };
