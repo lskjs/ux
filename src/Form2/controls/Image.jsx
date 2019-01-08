@@ -17,7 +17,7 @@ const ImageUploader = ({
         form.setFieldValue(field.name, value);
       }}
       onError={() => onError?.(form.errors[field.name])} // this.globalError
-      value={get(form.values, field.name)}
+      value={field.value}
     />
   );
 };

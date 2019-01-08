@@ -444,10 +444,10 @@ const filteredTag = removeProps(dynamicTag, [
   'view',
   'size',
   'block',
+  'auto',
   'onlyIcon',
   'twoIcons',
   'bordered',
-  'auto',
 ]);
 
 export const Btn = styled(filteredTag)`

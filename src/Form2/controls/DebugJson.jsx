@@ -8,5 +8,5 @@ export default props => (
 
 // field,
 // form,
-// value={get(form.values, field.name)}
+// value={field.value}
 //
