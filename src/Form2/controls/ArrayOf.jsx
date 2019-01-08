@@ -2,14 +2,16 @@ import React from 'react';
 
 import autobind from 'core-decorators/lib/autobind';
 import isArray from 'lodash/isArray';
-import { Form, Field, FastField } from 'formik';
-import If from 'react-if';
-import Button from '../../Button';
+import { Field } from 'formik';
+import Tooltip from 'antd/lib/tooltip';
+import CloseIcon from 'react-icons2/mdi/close';
+import IconCircleButton from '../../UI/atoms/IconCircleButton';
 import DebugJson from './DebugJson';
+import Horizontal from '../../UI/atoms/Horizontal';
 
 
-const DefaultRemoveButton = props => <Button paint="danger" {...props}>x</Button>;
-const DefaultAddButton = props => <Button paint="primary" {...props}>+</Button>;
+const DefaultRemoveButton = props => <IconCircleButton {...props}><CloseIcon /></IconCircleButton>;
+const DefaultAddButton = props => <IconCircleButton {...props} />;
 
 
 class ArrayOf extends React.Component {
@@ -59,8 +61,8 @@ class ArrayOf extends React.Component {
 
   getValues() {
     const {
- field, maxCount, addLastItem, itemInitialValue = null 
-} = this.props;
+      field, maxCount, addLastItem, itemInitialValue = null,
+    } = this.props;
     let value = field.value || [];
     if (!isArray(value)) value = [];
     if (maxCount) {
@@ -123,13 +125,21 @@ class ArrayOf extends React.Component {
       showRemoveButton,
       removeButton: RemoveButton = DefaultRemoveButton,
       showAddButton,
-      addButton: AddButton,
+      addButton: AddButton = DefaultAddButton,
       maxCount,
       // ...props
     } = this.props;
     // console.log('@#@#@#', { props, field, form });
     const values = this.getValues();
     const ItemComponent = itemComponent || DebugJson;
+    const addBtn = (
+      <If condition={(showAddButton || AddButton) && (!maxCount || values.length < maxCount)}>
+        <Tooltip placement="right" title="Добавить элемент">
+          <AddButton onClick={this.addButtonHandler} />
+        </Tooltip>
+      </If>
+    );
+    console.log(values);
     return (
       <React.Fragment>
         {values.map((value, key) => {
@@ -144,25 +154,28 @@ class ArrayOf extends React.Component {
               value={value}
             />
           );
-          if (!showRemoveButton || (values.length === 1 && addLastItem)) return children;
+          // if (!showRemoveButton || (values.length === 1 && addLastItem)) return children;
           return (
-            <div>
-              {children}
-              <If condition={showRemoveButton}>
-                <RemoveButton onClick={() => this.removeButtonHandler(key)} />
-              </If>
-            </div>
+            <Horizontal>
+              <div style={{ width: 50, paddingTop: 4 }}>
+                <If condition={showRemoveButton && !(values.length === 1 && addLastItem)}>
+                  <Tooltip placement="right" title="Удалить элемент">
+                    <RemoveButton onClick={() => this.removeButtonHandler(key)} />
+                  </Tooltip>
+                </If>
+                <If condition={!showAddButton && values.length === 1}>
+                  {addBtn}
+                </If>
+              </div>
+              <div style={{ flex: 1 }}>
+                {children}
+              </div>
+            </Horizontal>
           );
         })}
-        <If condition={(showAddButton || AddButton) && (!maxCount || values.length < maxCount)}>
-          <If condition={AddButton}>
-            <AddButton onClick={this.addButtonHandler} />
-          </If>
-          <If condition={!AddButton}>
-            <DefaultAddButton onClick={this.addButtonHandler} />
-          </If>
+        <If condition={values.length > 1 || showAddButton}>
+          {addBtn}
         </If>
-        {/* <button>+</button> */}
       </React.Fragment>
     );
   }

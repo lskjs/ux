@@ -4,7 +4,6 @@ import autobind from 'core-decorators/lib/autobind';
 import get from 'lodash/get';
 import Plus from 'react-icons2/mdi/plus-circle';
 
-import Tag from '../../molecules/Tag';
 import Tags from '../../molecules/Tags';
 import TagsWrapper from '../../atoms/TagsWrapper';
 import Add from '../../atoms/IconCircleButton';
@@ -146,7 +145,7 @@ class TagsPicker extends PureComponent {
     const fieldsKeys = getFieldsKeys(fields);
     const value = this.getValue();
     const trigger = value.length > 0
-      ? <Add inverse disabled={disabled} />
+      ? <Add inverse small disabled={disabled} />
       : (
         <Button
           paint="primary"

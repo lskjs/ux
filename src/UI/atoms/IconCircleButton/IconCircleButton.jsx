@@ -15,7 +15,7 @@ class IconCircleButton extends PureComponent {
       style,
       href,
       onClick,
-      inverse,
+      inverse = false,
       transparent,
     } = this.props;
     const props = {
