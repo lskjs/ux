@@ -17,6 +17,8 @@ const Geo = ({
 
   const GeoComponent = type === 'google' ? GoogleMap : MapBox;
 
+  if (!GeoComponent) return <div>!GeoComponent</div>;
+
   return (
     <GeoComponent
       {...field}
