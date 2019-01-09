@@ -49,7 +49,7 @@ const Select = ({
   return (
     <ReactSelect
       // className="list-selector"
-      clearable={false}
+      clearable={!props.required}
       arrowRenderer={e => (e.isOpen ? <Up /> : <Down />)}
       error={!!form.errors[field.name]}
       {...field}
@@ -64,4 +64,3 @@ const Select = ({
 };
 
 export default Select;
-
