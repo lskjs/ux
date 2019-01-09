@@ -4,18 +4,22 @@ import Container from 'reactstrap/lib/Container';
 // import Container from '../../atoms/PageContainer';
 // import Title from '../../atoms/PageTitle';
 // import Breadcrumbs from '../../atoms/PageBreadcrumbs';
-import Title from './PageTitle';
-import Breadcrumbs from './PageBreadcrumbs';
+import PageHeader from './PageHeader';
+import PageTitle from './PageTitle';
+import PageBreadcrumbs from './PageBreadcrumbs';
+import PageBody from './PageBody';
 import TitleActions from '../../atoms/PageTitleActions';
 
 import Block from './Page.styles';
 
 class Page extends PureComponent {
   static Container = Container;
-  static Title = Title;
-  static Body = ({ children }) => children;
-  static Breadcrumbs = Breadcrumbs;
+  static Header = PageHeader;
+  static Title = PageTitle;
+  static Breadcrumbs = PageBreadcrumbs;
   static TitleActions = TitleActions;
+  static Body = PageBody;
+
   static propTypes = {
     children: PropTypes.any,
     container: PropTypes.boolean,
