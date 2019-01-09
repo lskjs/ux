@@ -208,6 +208,7 @@ export const Block = styled('div')`
     font-size: 24px;
     color: ${p => p.theme.colors.primary};
     margin-left: 24px;
+    z-index: 1;
   }
   > input {
     width: 100%;
