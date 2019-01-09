@@ -13,7 +13,7 @@ module.exports = ({ storiesOf }) => (
           name="Jason Bourne"
           info="Engineer"
           sign="I must confess I'm American (I know… nobody's perfect)"
-          fixHeight={250}
+          // fixHeight={250}
         />
       </ThemeInjector>
     ))
