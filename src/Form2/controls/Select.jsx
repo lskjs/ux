@@ -46,6 +46,11 @@ const Select = ({
     value: getOptionValue(option.value),
   }));
 
+  const customStyles = {
+    control: styles => ({ ...styles, height: 48 }),
+    valueContainer: styles => ({ ...styles, height: 48 }),
+  };
+
   return (
     <ReactSelect
       // className="list-selector"
@@ -54,6 +59,7 @@ const Select = ({
       error={!!form.errors[field.name]}
       {...field}
       {...props}
+      styles={customStyles}
       value={find(options, { value })}
       onChange={(val) => {
         form.setFieldValue(field.name, val.value);
