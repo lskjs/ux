@@ -7,7 +7,7 @@ import Plus from 'react-icons2/mdi/plus-circle';
 import Tag from '../Tag';
 import TagsWrapper from '../TagsWrapper';
 import Add from '../../atoms/IconCircleButton';
-import TreePicker from '../TreePicker';
+import TreePicker from '../../organisms/TreePicker';
 import Button from '../../../Button';
 
 function getFieldsKeys(fields = []) {
