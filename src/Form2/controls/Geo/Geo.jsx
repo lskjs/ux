@@ -1,6 +1,6 @@
 import React from 'react';
 import get from 'lodash/get';
-import MapBox from 'react-geo-picker/lib/mapbox';
+// import MapBox from 'react-geo-picker/lib/mapbox';
 import GoogleMap from 'react-geo-picker/lib/google-map';
 
 const Geo = ({
@@ -15,12 +15,12 @@ const Geo = ({
     latitude: get(value, 1, 0),
   } : null;
 
-  const GeoComponent = type === 'google' ? GoogleMap : MapBox;
+  // const GeoComponent = type === 'google' ? GoogleMap : MapBox;
 
-  if (!GeoComponent) return <div>!GeoComponent</div>;
+  // if (!GeoComponent) return <div>!GeoComponent</div>;
 
   return (
-    <GeoComponent
+    <GoogleMap
       {...field}
       {...props}
       defaultValue={{
