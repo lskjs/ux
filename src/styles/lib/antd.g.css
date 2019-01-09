@@ -18164,3 +18164,12 @@ li.ant-select-tree-treenode-disabled > .ant-select-tree-node-content-wrapper:hov
     opacity: 0;
   }
 }
+.ant-tree-node-selected {
+  background: none !important;
+}
+.ant-tree-node-content-wrapper {
+  padding: 2px 5px 0px 5px !important;
+}
+.ant-tree-node-content-wrapper:hover {
+  background: none !important;
+}

@@ -29,8 +29,32 @@ const TagsPicker = createForm({
   FormGroup,
   controls: {
     tagsPicker: {
-      title: 'TagsPicker',
+      title: 'tagsPicker',
       component: TagsPickerComponent,
+      triggerTitle: 'Выбрать теги',
+      flat: true,
+      fields: [
+        {
+          _id: '1',
+          value: 'one',
+          title: 'Один',
+        },
+        {
+          _id: '2',
+          value: 'two',
+          title: 'Два',
+        },
+        {
+          _id: '3',
+          value: 'three',
+          title: 'Три',
+        },
+        {
+          _id: '4',
+          value: 'four',
+          title: 'Четыре',
+        },
+      ],
     },
   },
 });
