@@ -13,6 +13,8 @@ const ArrayOfFormView = (props) => {
     <Form>
       <Field {...props.controls.inputArray} />
       <FastField {...props.controls.inputArray} title="FastField/inputArray" />
+      <hr />
+      <Field {...props.controls.inputArray} />
       <FormDebug {...props} />
     </Form>
   );
@@ -31,9 +33,24 @@ const ArrayOfForm = createForm({
       },
       itemInitialValue: '',
       showRemoveButton: true,
-      addLastItem: true,
+      autoAddLastItem: true,
       maxCount: 5,
       minCount: 4,
+    },
+    inputArray2: {
+      title: 'inputArray2',
+      component: ArrayOf,
+      itemComponent: Input,
+      showRemoveButton: true,
+      // addLastItem: true,
+    },
+    inputArray3: {
+      title: 'inputArray3',
+      component: ArrayOf,
+      itemComponent: Input,
+      showRemoveButton: true,
+      showAddButton: true,
+      addButton: 'Добавить input',
     },
   },
 });

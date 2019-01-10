@@ -1,18 +1,17 @@
 import React from 'react';
-
 import autobind from 'core-decorators/lib/autobind';
 import isArray from 'lodash/isArray';
 import { Field } from 'formik';
 import Tooltip from 'antd/lib/tooltip';
 import CloseIcon from 'react-icons2/mdi/close';
-import IconCircleButton from '../../../UI/atoms/IconCircleButton';
+import If from 'react-if';
 import DebugJson from '../DebugJson';
+import IconCircleButton from '../../../UI/atoms/IconCircleButton';
 import Horizontal from '../../../UI/atoms/Horizontal';
 
 
 const DefaultRemoveButton = props => <IconCircleButton {...props}><CloseIcon /></IconCircleButton>;
 const DefaultAddButton = props => <IconCircleButton {...props} />;
-
 
 class ArrayOf extends React.Component {
   // shouldComponentUpdate(nextProps, nextState) {
@@ -61,7 +60,7 @@ class ArrayOf extends React.Component {
 
   getValues() {
     const {
-      field, maxCount, addLastItem, itemInitialValue = null,
+      field, maxCount, autoAddLastItem, itemInitialValue = null,
     } = this.props;
     let value = field.value || [];
     if (!isArray(value)) value = [];
@@ -71,7 +70,7 @@ class ArrayOf extends React.Component {
     if (value.length === maxCount) return value;
 
 
-    if (typeof addLastItem !== 'undefined') {
+    if (typeof autoAddLastItem !== 'undefined') {
       return [
         ...value,
         itemInitialValue,
@@ -119,7 +118,7 @@ class ArrayOf extends React.Component {
       field,
       // form,
       // onError,
-      addLastItem,
+      autoAddLastItem,
       itemComponent,
       itemProps = {},
       showRemoveButton,
@@ -154,11 +153,11 @@ class ArrayOf extends React.Component {
               value={value}
             />
           );
-          // if (!showRemoveButton || (values.length === 1 && addLastItem)) return children;
+          // if (!showRemoveButton || (values.length === 1 && autoAddLastItem)) return children;
           return (
             <Horizontal>
               <div style={{ width: 50, paddingTop: 4 }}>
-                <If condition={showRemoveButton && !(values.length === 1 && addLastItem)}>
+                <If condition={showRemoveButton && !(values.length === key + 1 && autoAddLastItem)}>
                   <Tooltip placement="right" title="Удалить элемент">
                     <RemoveButton onClick={() => this.removeButtonHandler(key)} />
                   </Tooltip>
