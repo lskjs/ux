@@ -30,12 +30,34 @@ const prepareControls = (ctrls, FormGroup) => {
     }
 
     prepared[name] = {
-      name,
+      name: ctrl.key || name,
       ...ctrl,
       component,
     };
   });
   return prepared;
+};
+
+const replaceSymbols = (str, oldSymbol, newSymbol = '') => {
+  const re = new RegExp(oldSymbol, 'g');
+  return str.replace(re, newSymbol);
+};
+
+const avoidNestedFields = (values) => {
+  let newValues = {};
+
+  forEach(values, (value, oldKey) => {
+    if (oldKey.indexOf('@') !== -1) {
+      const newKey = replaceSymbols(oldKey, '@', '.');
+      newValues = {
+        ...newValues,
+        [newKey]: value,
+      };
+      return;
+    }
+    newValues[oldKey] = value;
+  });
+  return newValues;
 };
 
 
@@ -63,6 +85,7 @@ const createForm = ({
       Object.keys(rawControls).forEach((key) => {
         // console.log(key, typeof get(defaultValues, key), typeof rawControls[key].default);
         if (typeof get(defaultValues, key) !== 'undefined') return;
+        if (rawControls[key].key) return;
 
         let initialValue = get(rawControls, `${key}.initialValue`);
         if (initialValue === 'undefined') {
@@ -78,6 +101,7 @@ const createForm = ({
     },
     handleSubmit: (values, { /* setSubmitting , */ props }) => {
       const { onSubmit } = props;
+      if (values) values = avoidNestedFields(values);
       if (onSubmit) onSubmit(values);
     },
     handleChange: (values, { /* setSubmitting, */ props3/* , form  */ }) => {
