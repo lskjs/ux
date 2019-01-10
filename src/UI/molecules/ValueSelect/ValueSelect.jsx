@@ -9,13 +9,9 @@ import { Option, Image, Title } from './ValueSelect.styles';
 class ValueSelect extends PureComponent {
   render() {
     const {
-      value,
       data,
       // ...props
     } = this.props;
-    console.log(this.props);
-    // console.log(this.props);
-    // console.log(value.image);
     return (
       <Option image={data.avatar}>
         <If condition={data.avatar}>
