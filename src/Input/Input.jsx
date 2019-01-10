@@ -4,12 +4,15 @@ import debounce from 'lodash/debounce';
 import autobind from 'core-decorators/lib/autobind';
 
 // import getBlock from './Input.styles';
+import If from 'react-if';
+import filterProps from '../utils/filterProps';
 import getBlock from './Input.styles';
 import {
   InputBox,
   LeftWrapper,
   RightWrapper,
 } from './InputStyle.styles';
+
 
 class Input extends PureComponent {
   static propTypes = {
@@ -104,7 +107,7 @@ class Input extends PureComponent {
           block={block}
           disabled={disabled}
           className={className}
-          {...otherProps}
+          {...filterProps(otherProps, Block)}
           value={typeof displayRate === 'number' ? value * displayRate : value}
           onChange={this.handleChange}
         />

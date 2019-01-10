@@ -139,7 +139,7 @@ class ArrayOf extends React.Component {
         </Tooltip>
       </If>
     );
-    console.log(values);
+    // console.log(values);
     return (
       <React.Fragment>
         {values.map((value, key) => {
