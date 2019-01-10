@@ -1,11 +1,9 @@
 import React, { PureComponent } from 'react';
-import { withTheme } from 'emotion-theming';
 // import PropTypes from 'prop-types';
+import If from 'react-if';
 import { Option, Image, Title, Icon } from './ValueSelect.styles';
-
 // import omit from 'lodash/omit';
 
-@withTheme
 class ValueSelect extends PureComponent {
   render() {
     const {
