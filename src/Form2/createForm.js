@@ -99,10 +99,10 @@ const createForm = ({
       // console.log({ defaultValues, props });
       return defaultValues;
     },
-    handleSubmit: (values, { /* setSubmitting , */ props }) => {
+    handleSubmit: (values, { setSubmitting, props }) => {
       const { onSubmit } = props;
       if (values) values = avoidNestedFields(values);
-      if (onSubmit) onSubmit(values);
+      if (onSubmit) onSubmit(values, { setSubmitting });
     },
     handleChange: (values, { /* setSubmitting, */ props3/* , form  */ }) => {
       // console.log('Form2.handleChange', values, props, props3);
