@@ -1,4 +1,5 @@
 import React from 'react';
+import { ValueContainer as DefaultValueContainer } from 'react-select/lib/components/containers';
 import CheckBlank from 'react-icons2/mdi/checkbox-blank-outline';
 import CheckMarked from 'react-icons2/mdi/checkbox-marked';
 import RadioBlank from 'react-icons2/mdi/checkbox-blank-circle-outline';
@@ -24,13 +25,37 @@ const options = [
   },
 ];
 
-const customStyles = {
-  control: styles => ({ ...styles, height: 100 }),
-  valueContainer: (styles) => {
-    console.log(styles);
-    return { ...styles, height: 80, width: 240 };
-  },
+const codes = ['ru', 'gb'];
+
+const MultiValueLabel = (props) => {
+  console.log(props);
+  return (
+    <div
+      style={{
+        backgroundColor: "#fff",
+        color: "#7070ff",
+        fontFamily: "PT Sans"
+      }}
+    >
+      Выбрано ({props.selectProps.value.length})
+    </div>
+  );
 };
+
+const ValueContainer = ({ children, selectProps, ...props }) => {
+  const chl = [children[0][0] || children[0], children[1]];
+  return (
+    <DefaultValueContainer {...props}>{chl}</DefaultValueContainer>
+  );
+};
+
+// const customStyles = {
+//   control: styles => ({ ...styles, height: 48 }),
+//   valueContainer: (styles) => {
+//     console.log(styles);
+//     return { ...styles, height: 80, width: 48 };
+//   },
+// };
 // console.log(colourStyles);
 
 module.exports = ({ storiesOf }) => (
@@ -83,7 +108,7 @@ module.exports = ({ storiesOf }) => (
               title: 'User2',
             },
           ]}
-          styles={customStyles}
+          // styles={customStyles}
         />
       </ThemeInjector>
     ))
@@ -91,11 +116,13 @@ module.exports = ({ storiesOf }) => (
       <ThemeInjector theme={theme}>
         <CustomSelect
           closeMenuOnSelect={false}
+          components={{
+            SingleValue: ValueSelect,
+            Option: OptionSelect,
+          }}
           icon={<RadioBlank />}
           iconActive={<RadioSelected />}
           iconColor={theme.colors.primary}
-          optionComponent={OptionSelect}
-          valueComponent={ValueSelect}
           options={[
             {
               label: 'first',
@@ -110,19 +137,24 @@ module.exports = ({ storiesOf }) => (
               title: 'User2',
             },
           ]}
-          styles={customStyles}
+          // styles={customStyles}
         />
       </ThemeInjector>
     ))
     .add('Checkbox', () => (
       <ThemeInjector theme={theme}>
         <CustomSelect
+          isMulti
+          components={{
+            MultiValueLabel,
+            ValueContainer,
+            MultiValueRemove: () => null,
+            Option: OptionSelect,
+          }}
           hideSelectedOptions={false}
           closeMenuOnSelect={false}
           icon={<CheckBlank color="#1890ff" />}
           iconActive={<CheckMarked color="#1890ff" />}
-          optionComponent={OptionSelect}
-          valueComponent={ValueSelect}
           options={[
             {
               label: 'first',
@@ -137,7 +169,7 @@ module.exports = ({ storiesOf }) => (
               title: 'User2',
             },
           ]}
-          styles={customStyles}
+          // styles={customStyles}
         />
       </ThemeInjector>
     ))
@@ -145,12 +177,16 @@ module.exports = ({ storiesOf }) => (
       <ThemeInjector theme={theme}>
         <CustomSelect
           isMulti
+          components={{
+            MultiValueLabel,
+            ValueContainer,
+            MultiValueRemove: () => null,
+            Option: OptionSelect,
+          }}
           hideSelectedOptions={false}
           closeMenuOnSelect={false}
           icon={<CheckBlank color="#1890ff" />}
           iconActive={<CheckMarked color="#1890ff" />}
-          optionComponent={OptionSelect}
-          valueComponent={ValueSelect}
           options={[
             {
               label: 'first',
@@ -167,37 +203,37 @@ module.exports = ({ storiesOf }) => (
               title: 'User2',
             },
           ]}
-          styles={customStyles}
+          // styles={customStyles}
         />
       </ThemeInjector>
     ))
     .add('Flag', () => (
       <ThemeInjector theme={theme}>
         <CustomSelect
-          isMulti
+          components={{
+            SingleValue: ValueSelect,
+            Option: OptionSelect,
+          }}
           hideSelectedOptions={false}
           closeMenuOnSelect={false}
-          icon={<CheckBlank color="#1890ff" />}
-          iconActive={<CheckMarked color="#1890ff" />}
+          // icon={<CheckBlank color="#1890ff" />}
+          // iconActive={<CheckMarked color="#1890ff" />}
           optionComponent={OptionSelect}
           valueComponent={ValueSelect}
-          options={[
-            {
-              label: 'first',
-              value: 'one',
-              _id: 1,
-              image: 'https://cdn2.iconfinder.com/data/icons/adobe-icons-professional/512/Br.png',
-              title: 'User1',
-            },
-            {
-              label: 'second',
-              value: 'two',
-              _id: 2,
-              image: 'https://cdn2.iconfinder.com/data/icons/adobe-icons-professional/512/Br.png',
-              title: 'User2',
-            },
-          ]}
-          styles={customStyles}
+          options={codes.map((item) => {
+              return (
+                {
+                  label: 'first',
+                  value: 'one',
+                  _id: 1,
+                  icon: <FlagIcon
+                    code={item}
+                  />,
+                  title: 'User1',
+                }
+              );
+            })}
+          // styles={customStyles}
         />
       </ThemeInjector>
     ))
@@ -250,7 +286,7 @@ module.exports = ({ storiesOf }) => (
               }, 500);
             });
           }}
-          styles={customStyles}
+          // styles={customStyles}
         />
       </ThemeInjector>
     ))

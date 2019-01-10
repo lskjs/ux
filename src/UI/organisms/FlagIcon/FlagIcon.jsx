@@ -6,7 +6,7 @@ import countries from './countries.json';
 
 const codes = keyBy(countries, 'code');
 
-@inject('t')
+// @inject('t')
 @observer
 class FlagIcon extends Component {
   static codes = codes;
@@ -30,7 +30,7 @@ class FlagIcon extends Component {
     };
   }
   render() {
-    const { code, t = () => '', key, tooltip = true, ...props } = this.props;
+    const { code, t = () => '', key, tooltip = false, ...props } = this.props;
     const country = this.constructor.getInfo(code);
     let { flag } = country;
     if (!flag) {
@@ -50,11 +50,12 @@ class FlagIcon extends Component {
 
     if (!tooltip) return content;
     // if (__DEV__) {
-    // return (
-    //   <Tooltip noStyle id={`country.${country.code}`} overlay={t(`country.${country.code}`)} key={country.code}>
-    //     {content}
-    //   </Tooltip>
-    // );
+    //   return (
+    //     <Tooltip noStyle id={`country.${country.code}`} overlay={t(`country.${country.code}`)} key={country.code}>
+    //       {content}
+    //     </Tooltip>
+    //   );
+    // }
     // }
     // return (
     //   <img

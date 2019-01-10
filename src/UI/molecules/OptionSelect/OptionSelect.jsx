@@ -18,12 +18,6 @@ class OptionSelect extends PureComponent {
       theme,
       // ...props
     } = this.props;
-    // console.log(this.props);
-    // console.log(this.props);
-    // console.log(data);
-    // const isFocused = className.split(' ').includes('is-focused');
-    // console.log(this.props, isFocused);
-    // console.log(this.props);
     return (
       <Option
         onClick={() => selectOption(data)}

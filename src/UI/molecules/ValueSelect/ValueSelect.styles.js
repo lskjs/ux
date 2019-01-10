@@ -29,3 +29,8 @@ export const Image = styled('img')`
 export const Title = styled('div')`
   margin-left: ${p => (p.image ? '8px' : '0px')};
 `;
+
+export const Icon = styled('div')`
+  margin-right: ${p => (p.icon ? '8px' : '0px')};
+  margin-top: ${p => (p.icon ? '4px' : '0px')};
+`;

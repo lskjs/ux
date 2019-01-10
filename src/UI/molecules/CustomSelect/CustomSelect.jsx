@@ -92,7 +92,7 @@ class CustomSelect extends PureComponent {
     } = this.props;
     const opt = options.map(option => ({
       ...option,
-      icon,
+      icon: option.icon || icon,
       iconActive,
       iconColor,
       label: option.label || option.title,
