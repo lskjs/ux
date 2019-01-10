@@ -58,6 +58,7 @@ const DatePicker = (data) => {
       value={value}
       format={dateFormat}
       disabledDate={disabledDate}
+      onBlur={e => console.log('bluuuuurr', { e })}
     />
   );
 };

@@ -18,6 +18,7 @@ const FilesUploader = ({
       }}
       onError={() => onError?.(form.errors[field.name])} // this.globalError
       files={field.value}
+      onBlur={e => console.log('bluuuuurr', { e })}
     />
   );
 };

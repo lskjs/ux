@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import Select from 'react-select';
-import AsyncSelect from 'react-select/lib/Async';
+import Select, { AsyncSelect } from 'react-select';
 import cx from 'classnames';
 import omit from 'lodash/omit';
 
@@ -20,6 +19,8 @@ class CustomSelect extends PureComponent {
     iconColor: PropTypes.string,
     loadOptions: PropTypes.func,
     async: PropTypes.bool,
+    initOption: PropTypes.func,
+    isClearable: PropTypes.bool,
   }
   static defaultProps = {
     value: null,
@@ -35,18 +36,29 @@ class CustomSelect extends PureComponent {
     iconColor: null,
     loadOptions: null,
     async: false,
+    initOption: null,
+    isClearable: false,
   }
   constructor(props) {
     super(props);
     this.state = {
       value: props.value,
     };
+    this.asyncSelect = React.createRef();
     this.changeOption = this.changeOption.bind(this);
     this.callback = this.callback.bind(this);
   }
+  async componentDidMount() {
+    const { initOption, value, async } = this.props;
+    // const { asyncSelect } = this;
+    // console.log({ initOption, value, async, asyncSelect });
+    if (async && value && initOption) {
+      this.initAsyncValue();
+    }
+  }
   componentWillReceiveProps(next) {
-    const { value } = this.props;
-    if (value !== next.value) {
+    const { value, async } = this.props;
+    if (value !== next.value && !async) {
       this.setState({ value: next.value });
     }
   }
@@ -58,30 +70,33 @@ class CustomSelect extends PureComponent {
     const { onChange } = this.props;
     if (onChange) onChange(value);
   }
+  async initAsyncValue() {
+    const { initOption, value } = this.props;
+    const option = await initOption(value);
+    this.setState({ value: option });
+  }
   render() {
     const { value } = this.state;
     const {
       options,
       className,
       error,
-      optionComponent,
-      valueComponent,
+      components,
       icon,
       iconActive,
       iconColor,
       async,
+      onChange,
+      isClearable,
       ...props
     } = this.props;
     const opt = options.map(option => ({
       ...option,
-      icon,
+      icon: option.icon || icon,
       iconActive,
       iconColor,
       label: option.label || option.title,
     }));
-    const components = {};
-    if (optionComponent) components.Option = optionComponent;
-    if (valueComponent) components.SingleValue = valueComponent;
     const selectProps = {
       components,
       className: cx({
@@ -92,6 +107,7 @@ class CustomSelect extends PureComponent {
       classNamePrefix: 'react-select',
       value,
       onChange: this.changeOption,
+      isClearable,
       ...omit(props, ['onChange', 'value']),
     };
     if (async) {
@@ -99,6 +115,8 @@ class CustomSelect extends PureComponent {
       return (
         <AsyncSelect
           {...selectProps}
+          cacheOptions
+          ref={this.asyncSelect}
           loadOptions={loadOptions}
           defaultOptions
         />
@@ -108,7 +126,6 @@ class CustomSelect extends PureComponent {
       <Select
         {...selectProps}
         options={opt}
-        isClearable={false}
         isSearchable={false}
       />
     );

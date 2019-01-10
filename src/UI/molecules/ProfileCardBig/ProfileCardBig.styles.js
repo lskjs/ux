@@ -1,10 +1,10 @@
 import styled from 'react-emotion';
 import Avatar from '../../../Avatar';
-import createDynamicTag from '../../../utils/createDynamicTag';
+import removeProps from '../../../utils/removeProps';
 
-const dynamicTag = createDynamicTag('article');
+const filteredTag = removeProps('article', ['fixHeight']);
 
-export const ProfileCardItem = styled(dynamicTag)`
+export const ProfileCardItem = styled(filteredTag)`
   border: 1px solid rgba(0,0,0,.1);
   display: block;
   padding: 1rem;

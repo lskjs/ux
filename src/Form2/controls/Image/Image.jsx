@@ -18,6 +18,7 @@ const ImageUploader = ({
       }}
       onError={() => onError?.(form.errors[field.name])} // this.globalError
       value={field.value}
+      onBlur={e => console.log('bluuuuurr', { e })}
     />
   );
 };
