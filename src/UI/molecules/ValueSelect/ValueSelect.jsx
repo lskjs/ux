@@ -11,18 +11,22 @@ class ValueSelect extends PureComponent {
     const {
       value,
       data,
+      isMulti,
       // ...props
     } = this.props;
-    console.log(this.props);
+    console.log('PROPS', this.props);
+    console.log(data);
     // console.log(this.props);
     // console.log(value.image);
     return (
-      <Option image={data.avatar}>
-        <If condition={data.avatar}>
-          {typeof data.avatar === 'string' ? <Image src={data.avatar} /> : data.avatar}
+      <Option image={data.image}>
+        <If condition={isMulti}>
+          Выбрано:
         </If>
-
-        <Title image={data.avatar}>
+        <If condition={data.image}>
+          {typeof data.image === 'string' ? <Image src={data.image} /> : data.image}
+        </If>
+        <Title image={data.image}>
           {data.title}
         </Title>
       </Option>

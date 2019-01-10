@@ -1,5 +1,4 @@
 import React from 'react';
-import get from 'lodash/get';
 import debounce from 'lodash.debounce';
 import RangeBase from '../../../UI/molecules/RangeGroup';
 

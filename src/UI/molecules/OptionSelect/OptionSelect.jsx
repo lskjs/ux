@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { withTheme } from 'emotion-theming';
-import MiniUser from './MiniUser';
+// import MiniUser from './MiniUser';
 // import PropTypes from 'prop-types';
 import { Option, Image, IconWrapper, Title } from './OptionSelect.styles';
 
@@ -19,6 +19,7 @@ class OptionSelect extends PureComponent {
       // ...props
     } = this.props;
     // console.log(this.props);
+    // console.log(this.props);
     // console.log(data);
     // const isFocused = className.split(' ').includes('is-focused');
     // console.log(this.props, isFocused);
@@ -27,10 +28,7 @@ class OptionSelect extends PureComponent {
       <Option
         onClick={() => selectOption(data)}
       >
-        <MiniUser
-          user={data}
-        />
-        {/* <If condition={data.image}>
+        <If condition={data.image}>
           {typeof data.image === 'string' ? <Image src={data.image} /> : data.image}
         </If>
         <If condition={data.icon}>
@@ -40,7 +38,7 @@ class OptionSelect extends PureComponent {
         </If>
         <Title image={data.image}>
           {data.title}
-        </Title> */}
+        </Title>
       </Option>
     );
   }
