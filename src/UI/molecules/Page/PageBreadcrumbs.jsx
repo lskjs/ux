@@ -14,14 +14,20 @@ class PageBreadcrumbs extends Component {
     const {
       children,
       page,
+      reverse,
       omitFirst,
       omitLast,
       items: rawItems,
       ...props
     } = this.props;
     // console.log({ page });
-    const metas = get(page, 'state.metas');
-    let items = rawItems ? cloneDeep(rawItems) : metas.reverse().map(meta => ({
+    let metas = get(page, 'state.metas');
+    if (reverse) {
+      metas = metas.reverse();
+    }
+
+    let items = rawItems ? cloneDeep(rawItems) : metas.map((meta, key) => ({
+      key,
       title: meta.title,
       href: meta.url,
     }));

@@ -9,7 +9,6 @@ import { Option, Image, Title } from './ValueSelect.styles';
 class ValueSelect extends PureComponent {
   render() {
     const {
-      value,
       data,
       isMulti,
       // ...props

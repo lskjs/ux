@@ -22,17 +22,19 @@ class Select extends PureComponent {
   }
   render() {
     const {
-      options, ...props
+      options, required, ...props
     } = this.props;
     const opt = options.map(i => ({
       label: i.title,
       ...omit(i, ['title']),
     }));
+
     return (
       <ReactSelect
         className="list-selector"
         options={opt}
-        clearable={false}
+        clearable={!required}
+        required={required}
         arrowRenderer={e => (e.isOpen ? <Up /> : <Down />)}
         {...props}
       />

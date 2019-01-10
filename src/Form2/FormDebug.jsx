@@ -8,6 +8,7 @@ export default (props) => {
     isSubmitting,
     errors,
     values,
+    handleSubmit,
     // controls,
     // ...props
   } = props;
@@ -15,7 +16,10 @@ export default (props) => {
   return (
     <React.Fragment>
       <hr />
-      <Button paint="primary">
+      <Button
+        paint="primary"
+        onClick={handleSubmit}
+      >
         Отправить
       </Button>
       <DEV
