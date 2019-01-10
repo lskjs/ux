@@ -5,6 +5,7 @@ import omit from 'lodash/omit';
 
 const NULL_STRING = '@@NULL@@';
 
+export const getReverseOptionValue = value => ((value === NULL_STRING) ? null : value);
 export const getOptionValue = value => ((value == null) ? NULL_STRING : value);
 export const getOptionTitle = option => option.label || option.title || option.value;
 export const getNormalizedOptions = (options = [], props = {}) => {
@@ -24,8 +25,10 @@ export const getNormalizedOptions = (options = [], props = {}) => {
     // console.log({ preOptions });
     // console.log('field.options', field.options, field);
   }
+  const { optionProps = {} } = props;
 
   return preOptions.map(option => ({
+    ...optionProps,
     ...omit(option, ['value', 'title', 'label']),
     label: getOptionTitle(option),
     value: getOptionValue(option.value),
