@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import autobind from 'core-decorators/lib/autobind';
-import Divider from 'antd/lib/divider';
+// import Divider from 'antd/lib/divider';
 import Icon from 'antd/lib/icon';
 import LayoutHeaderInner from '../../atoms/LayoutHeaderInner';
 import LayoutHeaderLeft from '../../atoms/LayoutHeaderLeft';
@@ -57,9 +57,9 @@ class LayoutHeader extends Component {
             <LayoutHeaderList>
               <If condition={logo}>
                 {logo}
-                <Divider type="vertical" key="line" />
+                {/* <Divider type="vertical" key="line" /> */}
               </If>
-              <If condition={noMenu === false}>
+              <If condition={!noMenu}>
                 <LayoutHeaderListItem
                   componentClass="button"
                   onClick={this.onToggleCollapsed}
