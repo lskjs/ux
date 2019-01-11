@@ -7,15 +7,13 @@ export const Option = styled('div')`
   overflow: hidden;
   width: 100%;
   border: none;
-  position: absolute;
-  padding: 8px;
+
 
   font-family: ${p => p.theme.fontFamily};
   font-size: 13px;
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
-  height: 48px;
   letter-spacing: -0.1px;
   color: #4a4a4a;
 `;

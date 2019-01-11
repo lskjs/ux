@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import DefaultSingleValue from 'react-select/lib/components/SingleValue';
 // import PropTypes from 'prop-types';
 import If from 'react-if';
 import { Option, Image, Title, Icon } from './ValueSelect.styles';
@@ -8,22 +9,24 @@ class ValueSelect extends PureComponent {
   render() {
     const {
       data,
-      // ...props
+      ...props
     } = this.props;
     return (
-      <Option image={data.image}>
-        <If condition={!data.iconActive}>
-          <Icon icon={data.icon}>
-            {data.icon}
-          </Icon>
-        </If>
-        <If condition={data.image}>
-          {typeof data.image === 'string' ? <Image src={data.image} /> : data.image}
-        </If>
-        <Title image={data.image}>
-          {data.label}
-        </Title>
-      </Option>
+      <DefaultSingleValue data={data} {...props}>
+        <Option image={data.image}>
+          <If condition={!data.iconActive}>
+            <Icon icon={data.icon}>
+              {data.icon}
+            </Icon>
+          </If>
+          <If condition={data.image}>
+            {typeof data.image === 'string' ? <Image src={data.image} /> : data.image}
+          </If>
+          <Title image={data.image}>
+            {data.label}
+          </Title>
+        </Option>
+      </DefaultSingleValue>
     );
   }
 }

@@ -65,6 +65,18 @@ const SelectForm = createForm({
     select2: {
       title: 'The Select2',
       component: Select,
+      components: {
+        SingleValue: ValueSelect,
+        Option: OptionSelect,
+      },
+      styles: {
+        singleValue: base => ({
+          ...base,
+          position: 'relative',
+          top: 'inherit',
+          transform: 'inherit',
+        }),
+      },
       options: [
         {
           value: 'one',
@@ -132,7 +144,6 @@ const SelectForm = createForm({
       },
       options: [
         {
-          _id: 1,
           value: 'one',
           title: 'User1',
           icon: <RadioBlank />,
@@ -140,7 +151,6 @@ const SelectForm = createForm({
           iconColor: '#1890ff',
         },
         {
-          _id: 2,
           value: 'two',
           title: 'User2',
           icon: <RadioBlank />,
@@ -161,7 +171,6 @@ const SelectForm = createForm({
       },
       options: [
         {
-          _id: 1,
           value: 'one',
           title: 'User1',
           icon: <CheckBlank />,
@@ -169,7 +178,6 @@ const SelectForm = createForm({
           iconColor: '#1890ff',
         },
         {
-          _id: 2,
           value: 'two',
           title: 'User2',
           icon: <CheckBlank />,
@@ -192,7 +200,6 @@ const SelectForm = createForm({
       },
       options: [
         {
-          _id: 1,
           value: 'one',
           title: 'User1',
           icon: <CheckBlank />,
@@ -201,7 +208,6 @@ const SelectForm = createForm({
           image: 'https://cdn2.iconfinder.com/data/icons/adobe-icons-professional/512/Br.png',
         },
         {
-          _id: 2,
           value: 'two',
           title: 'User2',
           icon: <CheckBlank />,
@@ -221,33 +227,26 @@ const SelectForm = createForm({
         SingleValue: ValueSelect,
         Option: OptionSelect,
       },
+      styles: {
+        singleValue: base => ({
+          ...base,
+          position: 'relative',
+          top: 'inherit',
+          transform: 'inherit',
+        }),
+      },
       options: [
         {
-          _id: 1,
           title: 'Russia',
           value: 'one',
           icon: <FlagIcon code="ru" />,
         },
         {
-          _id: 2,
           title: 'Britain',
           value: 'two',
           icon: <FlagIcon code="gb" />,
         },
       ],
-      // options: codes.map((item) => {
-      //   return (
-      //     {
-      //       _id: 1,
-      //       label: 'first',
-      //       title: 'User1',
-      //       value: 'one',
-      //       icon: <FlagIcon
-      //         code={item}
-      //       />,
-      //     }
-      //   );
-      // }),
       closeMenuOnSelect: false,
     },
   },

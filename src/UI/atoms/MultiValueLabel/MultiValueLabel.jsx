@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import MultiValue from './MultiValueLabel.styles';
+import { MultiValue, Value } from './MultiValueLabel.styles';
 
 class MultiValueLabel extends PureComponent {
   render() {
