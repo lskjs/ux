@@ -64,7 +64,7 @@ class Select extends PureComponent {
     const option = async ? this.state.option : find(normalizedOptions, { value });
     const Component = async ? ReactAsyncSelect : ReactSelect;
 
-    const hasError = !!get(form, `errors.${field.name}`);
+    const hasError = field && field.name && !!get(form, `errors.${field.name}`);
     return (
       <Component
         isClearable={!props.required}
