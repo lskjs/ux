@@ -9,13 +9,12 @@ import Down from 'react-icons2/mdi/chevron-down';
 import { getOptionValue, getReverseOptionValue, getNormalizedOptions } from './utils';
 
 class Select extends PureComponent {
-  state = {}
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     option: props.value,
-  //   };
-  // }
+  constructor(props) {
+    super(props);
+    this.state = {
+      option: props.value,
+    };
+  }
   componentDidMount() {
     const { loadOption, value, async } = this.props;
     if (async && value && loadOption) {
@@ -49,6 +48,8 @@ class Select extends PureComponent {
     }
     if (onChange) onChange(value);
   }
+  // toggleClearable = () =>
+  //   this.setState(state => ({ isClearable: !state.isClearable }));
   render() {
     const {
       value: propValue,
