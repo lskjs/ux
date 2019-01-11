@@ -9,12 +9,13 @@ import Down from 'react-icons2/mdi/chevron-down';
 import { getOptionValue, getReverseOptionValue, getNormalizedOptions } from './utils';
 
 class Select extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      option: props.value,
-    };
-  }
+  state = {}
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     option: props.value,
+  //   };
+  // }
   componentDidMount() {
     const { loadOption, value, async } = this.props;
     if (async && value && loadOption) {
@@ -34,17 +35,26 @@ class Select extends PureComponent {
   }
   @autobind
   async loadOptions(...args) {
-    const { loadOptions, ...props } = this.props;
-    const options = await loadOptions(...args);
-    return getNormalizedOptions(options, props);
+    try {
+      // console.log('loadOptions');
+      const { loadOptions, ...props } = this.props;
+      const options = await loadOptions(...args);
+      // console.log({ options });
+      return getNormalizedOptions(options, props);
+    } catch (err) {
+      if (__DEV__) console.error('Form2/Select loadOptions error', err); // eslint-disable-line no-console
+      return [];
+    }
   }
   @autobind
   handleChange(option) {
     const { form, field, onChange } = this.props;
     this.setState({ option, initOption: false }); // eslint-disable-line react/no-unused-state
-    let value = getReverseOptionValue(option && option.value);
+    let value;
     if (option.length) {
       value = option.map(item => getReverseOptionValue(item && item.value));
+    } else {
+      value = getReverseOptionValue(option && option.value);
     }
     if (form && field) {
       form.setFieldValue(field.name, value);

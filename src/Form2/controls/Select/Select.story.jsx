@@ -29,12 +29,13 @@ const SelectFormView = (props) => {
       <hr />
       <h1>Мультиселекты</h1>
       <Field {...props.controls.multiselect} />
+      <Field {...props.controls.multiselect2} />
       <Field {...props.controls.checkboxes} />
       <Field {...props.controls.checkboxesWithValueConrainer} />
       <hr />
       <h1>Асинхронные селекты</h1>
       <Field {...props.controls.asyncSelect} />
-      <Field {...props.controls.asyncSelectWithoutloadOptions} />
+      <Field {...props.controls.asyncSelect2} />
       <hr />
       <h1>Кастомный дизайн</h1>
       <Field {...props.controls.radio} />
@@ -93,21 +94,6 @@ const SelectForm = createForm({
       options: ['one', 'two'],
       placeholder: 'placeholder',
     },
-    userSelect: {
-      title: 'The userSelect',
-      component: Select,
-      components: {
-        SingleValue: ValueSelect,
-        Option: OptionSelect,
-      },
-      options: range(1, 11).map(id => ({
-        value: id,
-        id,
-        image: `https://picsum.photos/40/40/?image=${id}`,
-        title: `User ${id}`,
-      })),
-      placeholder: 'placeholder',
-    },
     radio: {
       title: 'Radio',
       component: Select,
@@ -126,10 +112,22 @@ const SelectForm = createForm({
         iconColor: '#1890ff',
       },
     },
+    // ///
     multiselect: {
       title: 'multiselect',
       component: Select,
       isMulti: true,
+      options: range(1, 11).map(id => ({
+        value: id,
+        id,
+        title: `User ${id}`,
+      })),
+    },
+    multiselect2: {
+      title: 'multiselect2',
+      component: Select,
+      isMulti: true,
+      hideSelectedOptions: false,
       options: range(1, 11).map(id => ({
         value: id,
         id,
@@ -183,6 +181,22 @@ const SelectForm = createForm({
         iconActive: <CheckMarked />,
         iconColor: '#1890ff',
       },
+    },
+    // ////
+    userSelect: {
+      title: 'The userSelect',
+      component: Select,
+      components: {
+        SingleValue: ValueSelect,
+        Option: OptionSelect,
+      },
+      options: range(1, 11).map(id => ({
+        value: id,
+        id,
+        image: `https://picsum.photos/40/40/?image=${id}`,
+        title: `User ${id}`,
+      })),
+      placeholder: 'placeholder',
     },
     games: {
       title: 'Games',
@@ -241,31 +255,46 @@ const SelectForm = createForm({
         },
       ],
     },
-    asyncSelectWithoutloadOptions: {
-      title: 'The asyncSelectWithoutloadOptions',
-      component: Select,
-      async: true,
-      options: ['one', 'two'],
-      placeholder: 'placeholder',
-    },
+    // /////
     asyncSelect: {
       title: 'The asyncSelect',
       component: Select,
       async: true,
       loadOption: async value => ({
         value,
-        title: (value || '').toUpperCase(),
+        id: value,
+        image: `https://picsum.photos/40/40/?image=${value}`,
+        title: `User ${value}`,
       }),
       loadOptions: async (searchValue = '') => {
-        const start = random(i, i * (searchValue.length + 2));
-        return range(start, start + 10).map(id => ({
-          value: id,
-          id,
-          title: `User ${id}`,
+        const start = searchValue.length;
+        return range(start, start + 10).map(value => ({
+          value,
+          id: value,
+          image: `https://picsum.photos/40/40/?image=${value}`,
+          title: `User ${value}`,
         }));
       },
-      options: ['one', 'two'],
-      placeholder: 'placeholder',
+    },
+    asyncSelect2: {
+      title: 'The asyncSelect2',
+      component: Select,
+      async: true,
+      loadOption: async value => ({
+        value,
+        id: value,
+        image: `https://picsum.photos/40/40/?image=${value}`,
+        title: `User ${value}`,
+      }),
+      loadOptions: async (searchValue = '') => {
+        const start = searchValue.length;
+        return range(start, start + 10).map(value => ({
+          value,
+          id: value,
+          image: `https://picsum.photos/40/40/?image=${value}`,
+          title: `User ${value}`,
+        }));
+      },
     },
   },
 });
@@ -279,6 +308,7 @@ module.exports = ({ storiesOf }) =>
           <SelectForm
             initialValues={{
               select4: 'two',
+              asyncSelect2: 99,
             }}
           />
         </Story>
