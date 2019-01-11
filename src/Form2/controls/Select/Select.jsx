@@ -7,10 +7,11 @@ import cx from 'classnames';
 import Up from 'react-icons2/mdi/chevron-up';
 import Down from 'react-icons2/mdi/chevron-down';
 import { getOptionValue, getReverseOptionValue, getNormalizedOptions } from './utils';
-// import SingleValue from './SingleValue';
-// import Option from './Option';
-const SingleValue = () => null;
-const Option = () => null;
+
+import SingleValue from './SingleValue';
+import Option from './Option';
+import CollapsedValueContainer from './CollapsedValueContainer';
+import CollapsedMultiValue from './CollapsedMultiValue';
 
 class Select extends PureComponent {
   state = {};
@@ -43,7 +44,7 @@ class Select extends PureComponent {
     const { form, field, onChange } = this.props;
     this.setState({ option, initOption: false }); // eslint-disable-line react/no-unused-state
     let value;
-    if (option.length) {
+    if (option && option.length) {
       value = option.map(item => getReverseOptionValue(item && item.value));
     } else {
       value = getReverseOptionValue(option && option.value);
@@ -60,6 +61,7 @@ class Select extends PureComponent {
       form,
       async,
       options,
+      collapsed,
       className,
       components = {},
       styles = {},
@@ -70,6 +72,12 @@ class Select extends PureComponent {
     const option = async ? this.state.option : find(normalizedOptions, { value });
     const Component = async ? ReactAsyncSelect : ReactSelect;
     const hasError = field && field.name && !!get(form, `errors.${field.name}`);
+
+    const collapsedComponents = {
+      ValueContainer: CollapsedValueContainer,
+      MultiValue: CollapsedMultiValue,
+    };
+
     return (
       <Component
         isClearable={!props.required}
@@ -84,6 +92,7 @@ class Select extends PureComponent {
         components={{
           SingleValue,
           Option,
+          ...(collapsed ? collapsedComponents : {}),
           ...components,
         }}
         styles={{
