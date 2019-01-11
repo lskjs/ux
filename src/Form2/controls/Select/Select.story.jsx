@@ -206,7 +206,6 @@ const SelectForm = createForm({
         Option: OptionSelect,
       },
       isMulti: true,
-      closeMenuOnSelect: false,
       options: [
         {
           value: 'one',
@@ -229,7 +228,6 @@ const SelectForm = createForm({
       title: 'Games',
       component: Select,
       isMulti: true,
-      closeMenuOnSelect: false,
       components: {
         MultiValue,
         ValueContainer,

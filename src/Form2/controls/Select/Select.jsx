@@ -65,7 +65,6 @@ class Select extends PureComponent {
     const value = getOptionValue(field ? field.value : propValue);
     const option = async ? this.state.option : find(normalizedOptions, { value });
     const Component = async ? ReactAsyncSelect : ReactSelect;
-
     const hasError = field && field.name && !!get(form, `errors.${field.name}`);
     return (
       <Component
@@ -75,6 +74,7 @@ class Select extends PureComponent {
         classNamePrefix="react-select"
         cacheOptions={async}
         defaultOptions={async}
+        closeMenuOnSelect={!props.isMulti}
         {...field}
         {...props}
         styles={{
