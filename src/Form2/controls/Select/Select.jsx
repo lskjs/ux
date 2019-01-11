@@ -13,24 +13,12 @@ const SingleValue = () => null;
 const Option = () => null;
 
 class Select extends PureComponent {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //    option: props.value,
-  //  };
-  // }
   componentDidMount() {
     const { loadOption, value, async } = this.props;
     if (async && value && loadOption) {
       this.initOption();
     }
   }
-  // componentWillReceiveProps(next) {
-  //   const { value, async } = this.props;
-  //   if (value !== next.value && !async) {
-  //     this.setState({ value: next.value });
-  //   }
-  // }
   async initOption() {
     const { loadOption, value } = this.props;
     const option = await loadOption(value);
@@ -64,8 +52,6 @@ class Select extends PureComponent {
     }
     if (onChange) onChange(value);
   }
-  toggleClearable = () =>
-    this.setState(state => ({ isClearable: !state.isClearable }));
   render() {
     const {
       value: propValue,
@@ -80,7 +66,7 @@ class Select extends PureComponent {
     } = this.props;
     const normalizedOptions = getNormalizedOptions(options, props);
     const value = getOptionValue(field ? field.value : propValue);
-    const option = async ? this.state.option : value ? find(normalizedOptions, { value }) :undefined;
+    const option = async ? this.state.option : find(normalizedOptions, { value });
     const Component = async ? ReactAsyncSelect : ReactSelect;
     const hasError = field && field.name && !!get(form, `errors.${field.name}`);
     return (
