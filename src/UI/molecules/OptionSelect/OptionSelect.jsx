@@ -21,16 +21,18 @@ class OptionSelect extends PureComponent {
     return (
       <Option
         onClick={() => selectOption(data)}
+        onFocus={onFocus}
+        selected={isSelected}
       >
         <If condition={data.image}>
           {typeof data.image === 'string' ? <Image src={data.image} /> : data.image}
         </If>
         <If condition={data.icon}>
-          <IconWrapper image={data.image} color={data.iconColor || theme.colors.secondary}>
+          <IconWrapper color={data.iconColor || theme.colors.secondary}>
             {(isSelected && data.iconActive) ? data.iconActive : data.icon}
           </IconWrapper>
         </If>
-        <Title image={data.image}>
+        <Title>
           {data.label}
         </Title>
       </Option>

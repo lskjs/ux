@@ -42,7 +42,10 @@ class Select extends PureComponent {
   handleChange(option) {
     const { form, field, onChange } = this.props;
     this.setState({ option, initOption: false }); // eslint-disable-line react/no-unused-state
-    const value = getReverseOptionValue(option && option.value);
+    let value = getReverseOptionValue(option && option.value);
+    if (option.length) {
+      value = option.map(item => getReverseOptionValue(item && item.value));
+    }
     if (form && field) {
       form.setFieldValue(field.name, value);
     }

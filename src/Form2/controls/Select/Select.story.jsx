@@ -75,10 +75,6 @@ const SelectForm = createForm({
     select2: {
       title: 'The Select2',
       component: Select,
-      components: {
-        SingleValue: ValueSelect,
-        Option: OptionSelect,
-      },
       styles: {
         singleValue: base => ({
           ...base,
@@ -169,30 +165,29 @@ const SelectForm = createForm({
     checkboxes: {
       title: 'checkboxes',
       component: Select,
+      isMulti: true,
+      hideSelectedOptions: false,
       components: {
         MultiValue,
         ValueContainer,
         // MultiValueRemove: () => null,
         Option: OptionSelect,
       },
-      isMulti: true,
       options: [
         {
           value: 'one',
           title: 'User1',
-          icon: <CheckBlank />,
-          iconActive: <CheckMarked />,
-          iconColor: '#1890ff',
         },
         {
           value: 'two',
           title: 'User2',
-          icon: <CheckBlank />,
-          iconActive: <CheckMarked />,
-          iconColor: '#1890ff',
         },
       ],
-      hideSelectedOptions: false,
+      optionProps: {
+        icon: <CheckBlank />,
+        iconActive: <CheckMarked />,
+        iconColor: '#1890ff',
+      },
     },
     games: {
       title: 'Games',
@@ -250,7 +245,6 @@ const SelectForm = createForm({
           icon: <FlagIcon code="gb" />,
         },
       ],
-      closeMenuOnSelect: false,
     },
   },
 });
