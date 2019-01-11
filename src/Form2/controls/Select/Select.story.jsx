@@ -28,6 +28,7 @@ const SelectFormView = (props) => {
       <hr />
       <Field {...props.controls.radio} />
       <Field {...props.controls.checkboxes} />
+      <Field {...props.controls.checkboxesWithValueConrainer} />
       <Field {...props.controls.games} />
       <Field {...props.controls.flag} />
       <hr />
@@ -79,14 +80,14 @@ const SelectForm = createForm({
         SingleValue: ValueSelect,
         Option: OptionSelect,
       },
-      styles: {
-        singleValue: base => ({
-          ...base,
-          position: 'relative',
-          top: 'inherit',
-          transform: 'inherit',
-        }),
-      },
+      // styles: {
+      //   singleValue: base => ({
+      //     ...base,
+      //     position: 'relative',
+      //     top: 'inherit',
+      //     transform: 'inherit',
+      //   }),
+      // },
       options: [
         {
           value: 'one',
@@ -170,12 +171,42 @@ const SelectForm = createForm({
       title: 'checkboxes',
       component: Select,
       components: {
+        // MultiValue,
+        // ValueContainer,
+        // MultiValueRemove: () => null,
+        Option: OptionSelect,
+      },
+      isMulti: true,
+      closeMenuOnSelect: false,
+      options: [
+        {
+          value: 'one',
+          title: 'User1',
+          icon: <CheckBlank />,
+          iconActive: <CheckMarked />,
+          iconColor: '#1890ff',
+        },
+        {
+          value: 'two',
+          title: 'User2',
+          icon: <CheckBlank />,
+          iconActive: <CheckMarked />,
+          iconColor: '#1890ff',
+        },
+      ],
+      hideSelectedOptions: false,
+    },
+    checkboxesWithValueConrainer: {
+      title: 'checkboxesWithValueConrainer',
+      component: Select,
+      components: {
         MultiValue,
         ValueContainer,
         // MultiValueRemove: () => null,
         Option: OptionSelect,
       },
       isMulti: true,
+      closeMenuOnSelect: false,
       options: [
         {
           value: 'one',
@@ -198,6 +229,7 @@ const SelectForm = createForm({
       title: 'Games',
       component: Select,
       isMulti: true,
+      closeMenuOnSelect: false,
       components: {
         MultiValue,
         ValueContainer,
@@ -250,7 +282,6 @@ const SelectForm = createForm({
           icon: <FlagIcon code="gb" />,
         },
       ],
-      closeMenuOnSelect: false,
     },
   },
 });
