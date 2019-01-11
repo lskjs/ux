@@ -7,6 +7,10 @@ import cx from 'classnames';
 import Up from 'react-icons2/mdi/chevron-up';
 import Down from 'react-icons2/mdi/chevron-down';
 import { getOptionValue, getReverseOptionValue, getNormalizedOptions } from './utils';
+// import SingleValue from './SingleValue';
+// import Option from './Option';
+const SingleValue = () => null;
+const Option = () => null;
 
 class Select extends PureComponent {
   state = {}
@@ -71,6 +75,7 @@ class Select extends PureComponent {
       async,
       options,
       className,
+      components = {},
       styles = {},
       ...props
     } = this.props;
@@ -90,6 +95,11 @@ class Select extends PureComponent {
         closeMenuOnSelect={!props.isMulti}
         {...field}
         {...props}
+        components={{
+          SingleValue,
+          Option,
+          ...components,
+        }}
         styles={{
           singleValue: base => ({
             ...base,

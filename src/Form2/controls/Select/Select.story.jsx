@@ -6,7 +6,6 @@ import CheckMarked from 'react-icons2/mdi/checkbox-marked';
 import RadioBlank from 'react-icons2/mdi/checkbox-blank-circle-outline';
 import RadioSelected from 'react-icons2/mdi/checkbox-marked-circle';
 import range from 'lodash/range';
-import random from 'lodash/random';
 import Story from '../../../Story';
 import createForm from '../../createForm';
 import FormGroup from '../../FormGroup';
@@ -94,24 +93,6 @@ const SelectForm = createForm({
       options: ['one', 'two'],
       placeholder: 'placeholder',
     },
-    radio: {
-      title: 'Radio',
-      component: Select,
-      components: {
-        SingleValue: ValueSelect,
-        Option: OptionSelect,
-      },
-      options: range(1, 11).map(id => ({
-        value: id,
-        id,
-        title: `User ${id}`,
-      })),
-      optionProps: {
-        icon: <RadioBlank />,
-        iconActive: <RadioSelected />,
-        iconColor: '#1890ff',
-      },
-    },
     // ///
     multiselect: {
       title: 'multiselect',
@@ -182,7 +163,25 @@ const SelectForm = createForm({
         iconColor: '#1890ff',
       },
     },
-    // ////
+    // ///
+    radio: {
+      title: 'Radio',
+      component: Select,
+      components: {
+        SingleValue: ValueSelect,
+        Option: OptionSelect,
+      },
+      options: range(1, 11).map(id => ({
+        value: id,
+        id,
+        title: `User ${id}`,
+      })),
+      optionProps: {
+        icon: <RadioBlank />,
+        iconActive: <RadioSelected />,
+        iconColor: '#1890ff',
+      },
+    },
     userSelect: {
       title: 'The userSelect',
       component: Select,
@@ -233,14 +232,6 @@ const SelectForm = createForm({
       components: {
         SingleValue: ValueSelect,
         Option: OptionSelect,
-      },
-      styles: {
-        singleValue: base => ({
-          ...base,
-          position: 'relative',
-          top: 'inherit',
-          transform: 'inherit',
-        }),
       },
       options: [
         {
