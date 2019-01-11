@@ -47,15 +47,15 @@ const GeoMapboxForm = createForm({
 });
 
 module.exports = ({ storiesOf }) =>
-  storiesOf('Form2/controls', module)
-    .add('GeoMapbox', () => {
+  storiesOf('Form2/controls/Geo', module)
+    .add('mapbox', () => {
       return (
         <Story>
           <GeoMapboxForm />
         </Story>
       );
     })
-    .add('GeoGoogle', () => {
+    .add('google', () => {
       return (
         <Story>
           <GeoGoogleForm />

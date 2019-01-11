@@ -13,6 +13,7 @@ import FormGroup from '../../FormGroup';
 import FormDebug from '../../FormDebug';
 import Select from './Select';
 import FlagIcon from '../../../UI/organisms/FlagIcon';
+
 import MultiValue from '../../../UI/atoms/MultiValueLabel';
 import OptionSelect from '../../../UI/molecules/OptionSelect';
 import ValueSelect from '../../../UI/molecules/ValueSelect';
@@ -24,13 +25,22 @@ const SelectFormView = (props) => {
       <Field {...props.controls.select2} />
       <Field {...props.controls.select3} />
       <Field {...props.controls.select4} />
+      <hr />
       <Field {...props.controls.radio} />
-      <Field {...props.controls.checkbox} />
+      <Field {...props.controls.checkboxes} />
       <Field {...props.controls.games} />
       <Field {...props.controls.flag} />
       <hr />
       <Field {...props.controls.userSelect} />
       <Field {...props.controls.asyncSelect} />
+      <hr />
+      <hr />
+      <select>
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+      </select>
       <FormDebug {...props} />
     </Form>
   );
@@ -142,33 +152,30 @@ const SelectForm = createForm({
         SingleValue: ValueSelect,
         Option: OptionSelect,
       },
-      options: [
-        {
-          value: 'one',
-          title: 'User1',
-          icon: <RadioBlank />,
-          iconActive: <RadioSelected />,
-          iconColor: '#1890ff',
-        },
-        {
-          value: 'two',
-          title: 'User2',
-          icon: <RadioBlank />,
-          iconActive: <RadioSelected />,
-          iconColor: '#1890ff',
-        },
-      ],
-      closeMenuOnSelect: false,
+      options: [{
+        value: 'id1',
+        title: 'User1',
+      },
+      {
+        value: 'id2',
+        title: 'User2',
+      }],
+      optionProps: {
+        icon: <RadioBlank />,
+        iconActive: <RadioSelected />,
+        iconColor: '#1890ff',
+      },
     },
-    checkbox: {
-      title: 'Checkbox',
+    checkboxes: {
+      title: 'checkboxes',
       component: Select,
       components: {
         MultiValue,
         ValueContainer,
-        MultiValueRemove: () => null,
+        // MultiValueRemove: () => null,
         Option: OptionSelect,
       },
+      isMulti: true,
       options: [
         {
           value: 'one',
@@ -185,40 +192,36 @@ const SelectForm = createForm({
           iconColor: '#1890ff',
         },
       ],
-      isMulti: true,
       hideSelectedOptions: false,
-      closeMenuOnSelect: false,
     },
     games: {
       title: 'Games',
       component: Select,
+      isMulti: true,
       components: {
         MultiValue,
         ValueContainer,
-        MultiValueRemove: () => null,
+        // MultiValueRemove: () => null,
         Option: OptionSelect,
       },
       options: [
         {
-          value: 'one',
+          value: 'id1',
           title: 'User1',
-          icon: <CheckBlank />,
-          iconActive: <CheckMarked />,
-          iconColor: '#1890ff',
           image: 'https://cdn2.iconfinder.com/data/icons/adobe-icons-professional/512/Br.png',
         },
         {
-          value: 'two',
+          value: 'id2',
           title: 'User2',
-          icon: <CheckBlank />,
-          iconActive: <CheckMarked />,
-          iconColor: '#1890ff',
           image: 'https://cdn2.iconfinder.com/data/icons/adobe-icons-professional/512/Br.png',
         },
       ],
-      isMulti: true,
+      optionProps: {
+        icon: <CheckBlank />,
+        iconActive: <CheckMarked />,
+        iconColor: '#1890ff',
+      },
       hideSelectedOptions: false,
-      closeMenuOnSelect: false,
     },
     flag: {
       title: 'Flag',
