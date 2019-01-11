@@ -257,13 +257,22 @@ const SelectForm = createForm({
       }),
       loadOptions: async (searchValue = '') => {
         const start = searchValue.length;
-        return range(start, start + 10).map(value => ({
-          value,
-          id: value,
-          image: `https://picsum.photos/40/40/?image=${value}`,
-          title: `User ${value}`,
-        }));
+        return new Promise((resolve) => {
+          setTimeout(() => resolve(range(start, start + 10).map(value => ({
+            value,
+            id: value,
+            image: `https://picsum.photos/40/40/?image=${value}`,
+            title: `User ${value}`,
+          }))), 50);
+        });
       },
+        // return range(start, start + 10).map(value => ({
+        //   value,
+        //   id: value,
+        //   image: `https://picsum.photos/40/40/?image=${value}`,
+        //   title: `User ${value}`,
+        // }));
+      // },
     },
     asyncSelect2: {
       title: 'The asyncSelect2',
@@ -277,12 +286,14 @@ const SelectForm = createForm({
       }),
       loadOptions: async (searchValue = '') => {
         const start = searchValue.length;
-        return range(start, start + 10).map(value => ({
-          value,
-          id: value,
-          image: `https://picsum.photos/40/40/?image=${value}`,
-          title: `User ${value}`,
-        }));
+        return new Promise((resolve) => {
+          setTimeout(() => resolve(range(start, start + 10).map(value => ({
+            value,
+            id: value,
+            image: `https://picsum.photos/40/40/?image=${value}`,
+            title: `User ${value}`,
+          }))), 2000);
+        });
       },
     },
   },
