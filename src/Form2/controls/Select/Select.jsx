@@ -13,12 +13,11 @@ const SingleValue = () => null;
 const Option = () => null;
 
 class Select extends PureComponent {
-  state = {}
   // constructor(props) {
   //   super(props);
   //   this.state = {
-  //     option: props.value,
-  //   };
+  //    option: props.value,
+  //  };
   // }
   componentDidMount() {
     const { loadOption, value, async } = this.props;
@@ -65,8 +64,8 @@ class Select extends PureComponent {
     }
     if (onChange) onChange(value);
   }
-  // toggleClearable = () =>
-  //   this.setState(state => ({ isClearable: !state.isClearable }));
+  toggleClearable = () =>
+    this.setState(state => ({ isClearable: !state.isClearable }));
   render() {
     const {
       value: propValue,
@@ -81,7 +80,7 @@ class Select extends PureComponent {
     } = this.props;
     const normalizedOptions = getNormalizedOptions(options, props);
     const value = getOptionValue(field ? field.value : propValue);
-    const option = async ? this.state.option : find(normalizedOptions, { value });
+    const option = async ? this.state.option : value ? find(normalizedOptions, { value }) :undefined;
     const Component = async ? ReactAsyncSelect : ReactSelect;
     const hasError = field && field.name && !!get(form, `errors.${field.name}`);
     return (
