@@ -5,6 +5,8 @@ import CheckBlank from 'react-icons2/mdi/checkbox-blank-outline';
 import CheckMarked from 'react-icons2/mdi/checkbox-marked';
 import RadioBlank from 'react-icons2/mdi/checkbox-blank-circle-outline';
 import RadioSelected from 'react-icons2/mdi/checkbox-marked-circle';
+import range from 'lodash/range';
+import random from 'lodash/random';
 import Story from '../../../Story';
 import createForm from '../../createForm';
 import FormGroup from '../../FormGroup';
@@ -26,6 +28,9 @@ const SelectFormView = (props) => {
       <Field {...props.controls.checkbox} />
       <Field {...props.controls.games} />
       <Field {...props.controls.flag} />
+      <hr />
+      <Field {...props.controls.userSelect} />
+      <Field {...props.controls.asyncSelect} />
       <FormDebug {...props} />
     </Form>
   );
@@ -78,6 +83,43 @@ const SelectForm = createForm({
     select4: {
       title: 'The Select4',
       component: Select,
+      options: ['one', 'two'],
+      placeholder: 'placeholder',
+    },
+    userSelect: {
+      title: 'The userSelect',
+      component: Select,
+      components: {
+        SingleValue: ValueSelect,
+        Option: OptionSelect,
+      },
+      options: [{
+        value: 'id1',
+        _id: 1,
+        image: 'https://cdn2.iconfinder.com/data/icons/adobe-icons-professional/512/Br.png',
+        title: 'User1',
+      }, {
+        value: 'id2',
+        _id: 2,
+        image: 'https://cdn2.iconfinder.com/data/icons/adobe-icons-professional/512/Br.png',
+        title: 'User2',
+      }],
+      placeholder: 'placeholder',
+    },
+    asyncSelect: {
+      title: 'The asyncSelect',
+      component: Select,
+      async: true,
+      loadOption: async value => ({
+        value,
+        title: (value || '').toUpperCase(),
+      }),
+      loadOptions: async (searchValue = '') => (
+        range(10).map(i => i * random(i, i * (searchValue.length + 2))).map(value => ({
+          value,
+          title: `Title ${value}`,
+        }))
+      ),
       options: ['one', 'two'],
       placeholder: 'placeholder',
     },
@@ -210,6 +252,7 @@ const SelectForm = createForm({
     },
   },
 });
+
 
 module.exports = ({ storiesOf }) =>
   storiesOf('Form2/controls', module)

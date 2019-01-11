@@ -14,8 +14,11 @@ const CheckboxArrayFormView = (props) => {
   return (
     <Form>
       <Field {...props.controls.checkboxArray} />
+      <Field {...props.controls.control1} />
+      <Field {...props.controls.control2} />
+      <Field {...props.controls.control3} />
+      <Field {...props.controls.control4} />
       <FormDebug {...props} />
-      {/* <Button onClick={handleSubmit}>Submit</Button> */}
     </Form>
   );
 };
@@ -42,6 +45,49 @@ const CheckboxArrayForm = createForm({
           price: 1000,
         },
       ],
+    },
+    control1: {
+      title: 'The Control',
+      component: CheckboxArray,
+      itemComponent: CheckboxDeal,
+      options: [
+        {
+          value: 'one',
+          title: 'The One',
+        },
+        {
+          value: 'two',
+          title: 'The Two',
+        },
+      ],
+      placeholder: 'placeholder 1',
+    },
+    control2: {
+      title: 'The Control2',
+      component: CheckboxArray,
+      itemComponent: CheckboxDeal,
+      options: [
+        {
+          value: 'one',
+        },
+        {
+          value: 'two',
+        },
+      ],
+      placeholder: 'placeholder 2',
+    },
+    control3: {
+      title: 'The Control3',
+      component: CheckboxArray,
+      itemComponent: CheckboxDeal,
+      options: ['one', 'two'],
+    },
+    control4: {
+      title: 'The Control4',
+      component: CheckboxArray,
+      itemComponent: CheckboxDeal,
+      options: ['one', 'two'],
+      placeholder: 'placeholder',
     },
   },
 });

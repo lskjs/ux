@@ -1,72 +1,93 @@
-import React from 'react';
-import get from 'lodash/get';
-import cloneDeep from 'lodash/cloneDeep';
-import sortBy from 'lodash/sortBy';
-import isPlainObject from 'lodash/isPlainObject';
-import omit from 'lodash/omit';
+import React, { PureComponent } from 'react';
 import find from 'lodash/find';
-import ReactSelect from 'react-select';
+import get from 'lodash/get';
+import autobind from 'core-decorators/lib/autobind';
+import ReactSelect, { AsyncSelect as ReactAsyncSelect } from 'react-select';
+import cx from 'classnames';
 import Up from 'react-icons2/mdi/chevron-up';
 import Down from 'react-icons2/mdi/chevron-down';
+import { getOptionValue, getReverseOptionValue, getNormalizedOptions } from './utils';
 
-const NULL_STRING = '@@NULL@@';
-
-const getOptionValue = value => ((value == null) ? NULL_STRING : value);
-const getOptionTitle = option => option.label || option.title || option.value;
-
-const Select = ({
-  field,
-  form,
-  ...props
-}) => {
-  const value = getOptionValue(field.value);
-  // console.log('<select>', {props})
-  // , sortBy(preOptions, 'value'));
-
-  let preOptions = [];
-  if (props.options) {
-    preOptions = cloneDeep(props.options).map(option => (typeof option === 'string' ? { value: option } : option));
-    if (field.sortOptions) {
-      preOptions = sortBy(preOptions, getOptionTitle);
+class Select extends PureComponent {
+  state = {}
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     option: props.value,
+  //   };
+  // }
+  componentDidMount() {
+    const { loadOption, value, async } = this.props;
+    if (async && value && loadOption) {
+      this.initOption();
     }
-
-    if (field.nullOption && field.options) {
-      const option = isPlainObject(field.nullOption) ? field.nullOption : {};
-      // if (!option.title) option.title = t && t('form.nullOption');
-      if (!option.value) option.value = null;
-      preOptions.unshift(option);
-    }
-    // console.log({ preOptions });
-    // console.log('field.options', field.options, field);
   }
+  // componentWillReceiveProps(next) {
+  //   const { value, async } = this.props;
+  //   if (value !== next.value && !async) {
+  //     this.setState({ value: next.value });
+  //   }
+  // }
+  async initOption() {
+    const { loadOption, value } = this.props;
+    const option = await loadOption(value);
+    this.setState({ option, initOption: true }); // eslint-disable-line react/no-unused-state
+  }
+  @autobind
+  async loadOptions(...args) {
+    const { loadOptions, ...props } = this.props;
+    const options = await loadOptions(...args);
+    return getNormalizedOptions(options, props);
+  }
+  @autobind
+  handleChange(option) {
+    const { form, field, onChange } = this.props;
+    this.setState({ option, initOption: false }); // eslint-disable-line react/no-unused-state
+    const value = getReverseOptionValue(option && option.value);
+    if (form && field) {
+      form.setFieldValue(field.name, value);
+    }
+    if (onChange) onChange(value);
+  }
+  render() {
+    const {
+      value: propValue,
+      field,
+      form,
+      async,
+      options,
+      className,
+      ...props
+    } = this.props;
+    const normalizedOptions = getNormalizedOptions(options, props);
+    const value = getOptionValue(field ? field.value : propValue);
+    const option = async ? this.state.option : find(normalizedOptions, { value });
+    const Component = async ? ReactAsyncSelect : ReactSelect;
 
-  const options = preOptions.map(option => ({
-    ...omit(option, ['value', 'title', 'label']),
-    label: getOptionTitle(option),
-    value: getOptionValue(option.value),
-  }));
-
-  const customStyles = {
-    control: styles => ({ ...styles, height: 48 }),
-    valueContainer: styles => ({ ...styles, height: 48 }),
-  };
-
-  return (
-    <ReactSelect
-      // className="list-selector"
-      isClearable={!props.required}
-      arrowRenderer={e => (e.isOpen ? <Up /> : <Down />)}
-      error={!!form.errors[field.name]}
-      {...field}
-      {...props}
-      styles={customStyles}
-      value={find(options, { value })}
-      onChange={(val) => {
-        form.setFieldValue(field.name, val.value);
-      }}
-      options={options}
-    />
-  );
-};
+    const hasError = !!get(form, `errors.${field.name}`);
+    return (
+      <Component
+        isClearable={!props.required}
+        arrowRenderer={e => (e.isOpen ? <Up /> : <Down />)}
+        // styles={customStyles}
+        error={hasError}
+        classNamePrefix="react-select"
+        cacheOptions={async}
+        defaultOptions={async}
+        {...field}
+        {...props}
+        className={cx({
+          'lsk-form-select': true,
+          [className]: !!className,
+          'has-error': hasError,
+        })}
+        value={option}
+        loadOptions={this.loadOptions}
+        onChange={this.handleChange}
+        options={async ? null : normalizedOptions}
+      />
+    );
+  }
+}
 
 export default Select;

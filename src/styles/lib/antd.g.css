@@ -9736,7 +9736,7 @@ form .ant-input-group-wrapper {
   display: inline-block;
   padding: 4px 11px;
   width: 100%;
-  height: 48px;
+  height: 32px;
   font-size: 14px;
   line-height: 1.71428571;
   color: rgba(0, 0, 0, 0.65);
@@ -18172,4 +18172,7 @@ li.ant-select-tree-treenode-disabled > .ant-select-tree-node-content-wrapper:hov
 }
 .ant-tree-node-content-wrapper:hover {
   background: none !important;
+}
+.ant-tree-switcher-noop {
+  display: none !important;
 }
