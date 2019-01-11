@@ -21,20 +21,27 @@ import ValueSelect from '../../../UI/molecules/ValueSelect';
 const SelectFormView = (props) => {
   return (
     <Form>
+      <h1>Обычные селекты</h1>
       <Field {...props.controls.select} />
       <Field {...props.controls.select2} />
       <Field {...props.controls.select3} />
       <Field {...props.controls.select4} />
       <hr />
-      <Field {...props.controls.radio} />
+      <h1>Мультиселекты</h1>
+      <Field {...props.controls.multiselect} />
       <Field {...props.controls.checkboxes} />
       <Field {...props.controls.checkboxesWithValueConrainer} />
-      <Field {...props.controls.games} />
-      <Field {...props.controls.flag} />
       <hr />
-      <Field {...props.controls.userSelect} />
+      <h1>Асинхронные селекты</h1>
       <Field {...props.controls.asyncSelect} />
       <Field {...props.controls.asyncSelectWithoutloadOptions} />
+      <hr />
+      <h1>Кастомный дизайн</h1>
+      <Field {...props.controls.radio} />
+      <Field {...props.controls.games} />
+      <Field {...props.controls.flag} />
+      <Field {...props.controls.userSelect} />
+      <hr />
       <hr />
       <hr />
       <select>
@@ -119,11 +126,21 @@ const SelectForm = createForm({
         iconColor: '#1890ff',
       },
     },
+    multiselect: {
+      title: 'multiselect',
+      component: Select,
+      isMulti: true,
+      options: range(1, 11).map(id => ({
+        value: id,
+        id,
+        title: `User ${id}`,
+      })),
+    },
     checkboxes: {
       title: 'checkboxes',
       component: Select,
       isMulti: true,
-      // hideSelectedOptions: false,
+      hideSelectedOptions: false,
       components: {
         // MultiValue,
         // ValueContainer,
