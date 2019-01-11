@@ -31,7 +31,7 @@ class OptionSelect extends PureComponent {
           </IconWrapper>
         </If>
         <Title image={data.image}>
-          {data.title}
+          {data.label}
         </Title>
       </Option>
     );

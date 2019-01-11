@@ -23,7 +23,7 @@ class ValueSelect extends PureComponent {
           {typeof data.image === 'string' ? <Image src={data.image} /> : data.image}
         </If>
         <Title image={data.image}>
-          {data.title}
+          {data.label}
         </Title>
       </Option>
     );

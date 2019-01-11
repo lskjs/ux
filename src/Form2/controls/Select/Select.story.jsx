@@ -1,10 +1,19 @@
 import React from 'react';
 import { Form, Field } from 'formik';
+import { ValueContainer as DefaultValueContainer } from 'react-select/lib/components/containers';
+import CheckBlank from 'react-icons2/mdi/checkbox-blank-outline';
+import CheckMarked from 'react-icons2/mdi/checkbox-marked';
+import RadioBlank from 'react-icons2/mdi/checkbox-blank-circle-outline';
+import RadioSelected from 'react-icons2/mdi/checkbox-marked-circle';
 import Story from '../../../Story';
 import createForm from '../../createForm';
 import FormGroup from '../../FormGroup';
 import FormDebug from '../../FormDebug';
 import Select from './Select';
+import FlagIcon from '../../../UI/organisms/FlagIcon';
+import MultiValue from '../../../UI/atoms/MultiValueLabel';
+import OptionSelect from '../../../UI/molecules/OptionSelect';
+import ValueSelect from '../../../UI/molecules/ValueSelect';
 
 const SelectFormView = (props) => {
   return (
@@ -13,8 +22,19 @@ const SelectFormView = (props) => {
       <Field {...props.controls.select2} />
       <Field {...props.controls.select3} />
       <Field {...props.controls.select4} />
+      <Field {...props.controls.radio} />
+      <Field {...props.controls.checkbox} />
+      <Field {...props.controls.games} />
+      <Field {...props.controls.flag} />
       <FormDebug {...props} />
     </Form>
+  );
+};
+
+const ValueContainer = ({ children, selectProps, ...props }) => {
+  const chl = [children[0][0] || children[0], children[1]];
+  return (
+    <DefaultValueContainer {...props}>{chl}</DefaultValueContainer>
   );
 };
 
@@ -60,6 +80,133 @@ const SelectForm = createForm({
       component: Select,
       options: ['one', 'two'],
       placeholder: 'placeholder',
+    },
+    radio: {
+      title: 'Radio',
+      component: Select,
+      components: {
+        SingleValue: ValueSelect,
+        Option: OptionSelect,
+      },
+      options: [
+        {
+          _id: 1,
+          value: 'one',
+          title: 'User1',
+          icon: <RadioBlank />,
+          iconActive: <RadioSelected />,
+          iconColor: '#1890ff',
+        },
+        {
+          _id: 2,
+          value: 'two',
+          title: 'User2',
+          icon: <RadioBlank />,
+          iconActive: <RadioSelected />,
+          iconColor: '#1890ff',
+        },
+      ],
+      closeMenuOnSelect: false,
+    },
+    checkbox: {
+      title: 'Checkbox',
+      component: Select,
+      components: {
+        MultiValue,
+        ValueContainer,
+        MultiValueRemove: () => null,
+        Option: OptionSelect,
+      },
+      options: [
+        {
+          _id: 1,
+          value: 'one',
+          title: 'User1',
+          icon: <CheckBlank />,
+          iconActive: <CheckMarked />,
+          iconColor: '#1890ff',
+        },
+        {
+          _id: 2,
+          value: 'two',
+          title: 'User2',
+          icon: <CheckBlank />,
+          iconActive: <CheckMarked />,
+          iconColor: '#1890ff',
+        },
+      ],
+      isMulti: true,
+      hideSelectedOptions: false,
+      closeMenuOnSelect: false,
+    },
+    games: {
+      title: 'Games',
+      component: Select,
+      components: {
+        MultiValue,
+        ValueContainer,
+        MultiValueRemove: () => null,
+        Option: OptionSelect,
+      },
+      options: [
+        {
+          _id: 1,
+          value: 'one',
+          title: 'User1',
+          icon: <CheckBlank />,
+          iconActive: <CheckMarked />,
+          iconColor: '#1890ff',
+          image: 'https://cdn2.iconfinder.com/data/icons/adobe-icons-professional/512/Br.png',
+        },
+        {
+          _id: 2,
+          value: 'two',
+          title: 'User2',
+          icon: <CheckBlank />,
+          iconActive: <CheckMarked />,
+          iconColor: '#1890ff',
+          image: 'https://cdn2.iconfinder.com/data/icons/adobe-icons-professional/512/Br.png',
+        },
+      ],
+      isMulti: true,
+      hideSelectedOptions: false,
+      closeMenuOnSelect: false,
+    },
+    flag: {
+      title: 'Flag',
+      component: Select,
+      components: {
+        SingleValue: ValueSelect,
+        Option: OptionSelect,
+      },
+      options: [
+        {
+          _id: 1,
+          title: 'Russia',
+          value: 'one',
+          icon: <FlagIcon code="ru" />,
+        },
+        {
+          _id: 2,
+          title: 'Britain',
+          value: 'two',
+          icon: <FlagIcon code="gb" />,
+        },
+      ],
+      // options: codes.map((item) => {
+      //   return (
+      //     {
+      //       _id: 1,
+      //       label: 'first',
+      //       title: 'User1',
+      //       value: 'one',
+      //       icon: <FlagIcon
+      //         code={item}
+      //       />,
+      //     }
+      //   );
+      // }),
+      closeMenuOnSelect: false,
     },
   },
 });

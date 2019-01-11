@@ -10,6 +10,7 @@ import OptionSelect from '../OptionSelect';
 import ValueSelect from '../ValueSelect';
 import theme from '../../../utils/theme';
 import FlagIcon from '../../organisms/FlagIcon';
+import MultiValue from '../../atoms/MultiValueLabel';
 
 import '../../../styles/lib/antd.g.css';
 import './CustomSelect.g.css';
@@ -26,21 +27,6 @@ const options = [
 ];
 
 const codes = ['ru', 'gb'];
-
-const MultiValueLabel = (props) => {
-  console.log(props);
-  return (
-    <div
-      style={{
-        backgroundColor: "#fff",
-        color: "#7070ff",
-        fontFamily: "PT Sans"
-      }}
-    >
-      Выбрано ({props.selectProps.value.length})
-    </div>
-  );
-};
 
 const ValueContainer = ({ children, selectProps, ...props }) => {
   const chl = [children[0][0] || children[0], children[1]];
@@ -146,7 +132,7 @@ module.exports = ({ storiesOf }) => (
         <CustomSelect
           isMulti
           components={{
-            MultiValueLabel,
+            MultiValue,
             ValueContainer,
             MultiValueRemove: () => null,
             Option: OptionSelect,
@@ -178,7 +164,7 @@ module.exports = ({ storiesOf }) => (
         <CustomSelect
           isMulti
           components={{
-            MultiValueLabel,
+            MultiValue,
             ValueContainer,
             MultiValueRemove: () => null,
             Option: OptionSelect,
@@ -214,12 +200,12 @@ module.exports = ({ storiesOf }) => (
             SingleValue: ValueSelect,
             Option: OptionSelect,
           }}
-          hideSelectedOptions={false}
+          // hideSelectedOptions={false}
           closeMenuOnSelect={false}
           // icon={<CheckBlank color="#1890ff" />}
           // iconActive={<CheckMarked color="#1890ff" />}
-          optionComponent={OptionSelect}
-          valueComponent={ValueSelect}
+          // optionComponent={OptionSelect}
+          // valueComponent={ValueSelect}
           options={codes.map((item) => {
               return (
                 {
