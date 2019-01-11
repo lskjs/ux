@@ -6,7 +6,6 @@ import CheckMarked from 'react-icons2/mdi/checkbox-marked';
 import RadioBlank from 'react-icons2/mdi/checkbox-blank-circle-outline';
 import RadioSelected from 'react-icons2/mdi/checkbox-marked-circle';
 import range from 'lodash/range';
-import random from 'lodash/random';
 import Story from '../../../Story';
 import createForm from '../../createForm';
 import FormGroup from '../../FormGroup';
@@ -22,18 +21,28 @@ import ValueContainer from './ValueContainer/ValueContainer';
 const SelectFormView = (props) => {
   return (
     <Form>
+      <h1>Обычные селекты</h1>
       <Field {...props.controls.select} />
       <Field {...props.controls.select2} />
       <Field {...props.controls.select3} />
       <Field {...props.controls.select4} />
       <hr />
-      <Field {...props.controls.radio} />
+      <h1>Мультиселекты</h1>
+      <Field {...props.controls.multiselect} />
+      <Field {...props.controls.multiselect2} />
       <Field {...props.controls.checkboxes} />
+      <Field {...props.controls.checkboxesWithValueConrainer} />
+      <hr />
+      <h1>Асинхронные селекты</h1>
+      <Field {...props.controls.asyncSelect} />
+      <Field {...props.controls.asyncSelect2} />
+      <hr />
+      <h1>Кастомный дизайн</h1>
+      <Field {...props.controls.radio} />
       <Field {...props.controls.games} />
       <Field {...props.controls.flag} />
-      <hr />
       <Field {...props.controls.userSelect} />
-      <Field {...props.controls.asyncSelect} />
+      <hr />
       <hr />
       <hr />
       <select>
@@ -61,37 +70,17 @@ const SelectForm = createForm({
     select: {
       title: 'The Select',
       component: Select,
-      options: [
-        {
-          value: 'one',
-          title: 'The One',
-        },
-        {
-          value: 'two',
-          title: 'The Two',
-        },
-      ],
-      placeholder: 'placeholder 1',
+      options: range(1, 11).map(id => ({
+        value: id,
+        title: `The ${id}`,
+      })),
     },
     select2: {
       title: 'The Select2',
       component: Select,
-      styles: {
-        singleValue: base => ({
-          ...base,
-          position: 'relative',
-          top: 'inherit',
-          transform: 'inherit',
-        }),
-      },
-      options: [
-        {
-          value: 'one',
-        },
-        {
-          value: 'two',
-        },
-      ],
+      options: range(1, 11).map(id => ({
+        value: id,
+      })),
       placeholder: 'placeholder 2',
     },
     select3: {
@@ -105,70 +94,51 @@ const SelectForm = createForm({
       options: ['one', 'two'],
       placeholder: 'placeholder',
     },
-    userSelect: {
-      title: 'The userSelect',
+    // ///
+    multiselect: {
+      title: 'multiselect',
       component: Select,
-      components: {
-        SingleValue,
-        Option,
-      },
-      options: [{
-        value: 'id1',
-        _id: 1,
-        image: 'https://cdn2.iconfinder.com/data/icons/adobe-icons-professional/512/Br.png',
-        title: 'User1',
-      }, {
-        value: 'id2',
-        _id: 2,
-        image: 'https://cdn2.iconfinder.com/data/icons/adobe-icons-professional/512/Br.png',
-        title: 'User2',
-      }],
-      placeholder: 'placeholder',
+      isMulti: true,
+      options: range(1, 11).map(id => ({
+        value: id,
+        id,
+        title: `User ${id}`,
+      })),
     },
-    asyncSelect: {
-      title: 'The asyncSelect',
+    multiselect2: {
+      title: 'multiselect2',
       component: Select,
-      async: true,
-      loadOption: async value => ({
-        value,
-        title: (value || '').toUpperCase(),
-      }),
-      loadOptions: async (searchValue = '') => (
-        range(10).map(i => i * random(i, i * (searchValue.length + 2))).map(value => ({
-          value,
-          title: `Title ${value}`,
-        }))
-      ),
-      options: ['one', 'two'],
-      placeholder: 'placeholder',
-    },
-    radio: {
-      title: 'Radio',
-      component: Select,
-      components: {
-        SingleValue,
-        Option,
-      },
-      options: [{
-        value: 'id1',
-        title: 'User1',
-      },
-      {
-        value: 'id2',
-        title: 'User2',
-      }],
-      optionProps: {
-        icon: <RadioBlank />,
-        iconActive: <RadioSelected />,
-        iconColor: '#1890ff',
-      },
+      isMulti: true,
+      hideSelectedOptions: false,
+      options: range(1, 11).map(id => ({
+        value: id,
+        id,
+        title: `User ${id}`,
+      })),
     },
     checkboxes: {
       title: 'checkboxes',
       component: Select,
       isMulti: true,
-      closeMenuOnSelect: false,
       hideSelectedOptions: false,
+      components: {
+        Option,
+      },
+      options: range(1, 11).map(id => ({
+        value: id,
+        id,
+        title: `User ${id}`,
+      })),
+      optionProps: {
+        icon: <CheckBlank />,
+        iconActive: <CheckMarked />,
+        iconColor: '#1890ff',
+      },
+      // hideSelectedOptions: false,
+    },
+    checkboxesWithValueConrainer: {
+      title: 'checkboxesWithValueConrainer',
+      component: Select,
       components: {
         MultiValue,
         ValueContainer,
@@ -191,11 +161,44 @@ const SelectForm = createForm({
         iconColor: '#1890ff',
       },
     },
+    // ///
+    radio: {
+      title: 'Radio',
+      component: Select,
+      components: {
+        SingleValue,
+        Option,
+      },
+      options: range(1, 11).map(id => ({
+        value: id,
+        id,
+        title: `User ${id}`,
+      })),
+      optionProps: {
+        icon: <RadioBlank />,
+        iconActive: <RadioSelected />,
+        iconColor: '#1890ff',
+      },
+    },
+    userSelect: {
+      title: 'The userSelect',
+      component: Select,
+      components: {
+        SingleValue,
+        Option,
+      },
+      options: range(1, 11).map(id => ({
+        value: id,
+        id,
+        image: `https://picsum.photos/40/40/?image=${id}`,
+        title: `User ${id}`,
+      })),
+      placeholder: 'placeholder',
+    },
     games: {
       title: 'Games',
       component: Select,
       isMulti: true,
-      closeMenuOnSelect: false,
       components: {
         MultiValue,
         ValueContainer,
@@ -228,14 +231,6 @@ const SelectForm = createForm({
         SingleValue,
         Option,
       },
-      styles: {
-        singleValue: base => ({
-          ...base,
-          position: 'relative',
-          top: 'inherit',
-          transform: 'inherit',
-        }),
-      },
       options: [
         {
           title: 'Russia',
@@ -249,6 +244,47 @@ const SelectForm = createForm({
         },
       ],
     },
+    // /////
+    asyncSelect: {
+      title: 'The asyncSelect',
+      component: Select,
+      async: true,
+      loadOption: async value => ({
+        value,
+        id: value,
+        image: `https://picsum.photos/40/40/?image=${value}`,
+        title: `User ${value}`,
+      }),
+      loadOptions: async (searchValue = '') => {
+        const start = searchValue.length;
+        return range(start, start + 10).map(value => ({
+          value,
+          id: value,
+          image: `https://picsum.photos/40/40/?image=${value}`,
+          title: `User ${value}`,
+        }));
+      },
+    },
+    asyncSelect2: {
+      title: 'The asyncSelect2',
+      component: Select,
+      async: true,
+      loadOption: async value => ({
+        value,
+        id: value,
+        image: `https://picsum.photos/40/40/?image=${value}`,
+        title: `User ${value}`,
+      }),
+      loadOptions: async (searchValue = '') => {
+        const start = searchValue.length;
+        return range(start, start + 10).map(value => ({
+          value,
+          id: value,
+          image: `https://picsum.photos/40/40/?image=${value}`,
+          title: `User ${value}`,
+        }));
+      },
+    },
   },
 });
 
@@ -261,6 +297,7 @@ module.exports = ({ storiesOf }) =>
           <SelectForm
             initialValues={{
               select4: 'two',
+              asyncSelect2: 99,
             }}
           />
         </Story>
