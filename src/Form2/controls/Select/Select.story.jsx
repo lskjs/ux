@@ -166,6 +166,7 @@ const SelectForm = createForm({
       title: 'checkboxes',
       component: Select,
       isMulti: true,
+      closeMenuOnSelect: false,
       hideSelectedOptions: false,
       components: {
         MultiValue,
@@ -193,6 +194,7 @@ const SelectForm = createForm({
       title: 'Games',
       component: Select,
       isMulti: true,
+      closeMenuOnSelect: false,
       components: {
         MultiValue,
         ValueContainer,
