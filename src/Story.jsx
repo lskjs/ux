@@ -7,6 +7,7 @@ import theme from './utils/theme';
 // import './styles/lib/antdbase.g.css';
 import './styles/lib/antd.g.css';
 import './styles/lib/bootstrap.g.css';
+import './Form2/controls/Select/Select.g.css';
 
 class Story extends Component {
   render() {

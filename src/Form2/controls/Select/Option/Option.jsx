@@ -2,12 +2,12 @@ import React, { PureComponent } from 'react';
 import { withTheme } from 'emotion-theming';
 // import MiniUser from './MiniUser';
 // import PropTypes from 'prop-types';
-import { Option, Image, IconWrapper, Title } from './OptionSelect.styles';
+import { OptionItem, Image, IconWrapper, Title } from './Option.styles';
 
 // import omit from 'lodash/omit';
 
 @withTheme
-class OptionSelect extends PureComponent {
+class Option extends PureComponent {
   render() {
     const {
       // className,
@@ -19,7 +19,7 @@ class OptionSelect extends PureComponent {
       // ...props
     } = this.props;
     return (
-      <Option
+      <OptionItem
         onClick={() => selectOption(data)}
         onFocus={onFocus}
         selected={isSelected}
@@ -35,9 +35,9 @@ class OptionSelect extends PureComponent {
         <Title>
           {data.label}
         </Title>
-      </Option>
+      </OptionItem>
     );
   }
 }
 
-export default OptionSelect;
+export default Option;

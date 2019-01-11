@@ -1,29 +1,61 @@
 import React from 'react';
 import { Form, Field } from 'formik';
+// import { ValueContainer as DefaultValueContainer } from 'react-select/lib/components/containers';
+import CheckBlank from 'react-icons2/mdi/checkbox-blank-outline';
+import CheckMarked from 'react-icons2/mdi/checkbox-marked';
+import RadioBlank from 'react-icons2/mdi/checkbox-blank-circle-outline';
+import RadioSelected from 'react-icons2/mdi/checkbox-marked-circle';
 import range from 'lodash/range';
-import random from 'lodash/random';
 import Story from '../../../Story';
 import createForm from '../../createForm';
 import FormGroup from '../../FormGroup';
 import FormDebug from '../../FormDebug';
 import Select from './Select';
-import OptionSelect from '../../../UI/molecules/OptionSelect';
-import ValueSelect from '../../../UI/molecules/ValueSelect';
+import FlagIcon from '../../../UI/organisms/FlagIcon';
 
 const SelectFormView = (props) => {
   return (
     <Form>
+      <h1>Обычные селекты</h1>
       <Field {...props.controls.select} />
       <Field {...props.controls.select2} />
       <Field {...props.controls.select3} />
-      <Field {...props.controls.select4} />
+      <Field {...props.controls.radio} />
       <hr />
-      <Field {...props.controls.userSelect} />
+      <h1>Мультиселекты</h1>
+      <Field {...props.controls.multiselect} />
+      <Field {...props.controls.multiselect2} />
+      <Field {...props.controls.multiselect3} />
+      <Field {...props.controls.checkboxes} />
+      <hr />
+      <h1>Асинхронные селекты</h1>
       <Field {...props.controls.asyncSelect} />
+      <Field {...props.controls.asyncSelect2} />
+      <hr />
+      <h1>Кастомный дизайн</h1>
+      <Field {...props.controls.games} />
+      <Field {...props.controls.flag} />
+      <Field {...props.controls.userSelect} />
+      <hr />
+      <hr />
+      <hr />
+      <select>
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+      </select>
       <FormDebug {...props} />
     </Form>
   );
 };
+
+// const ValueContainer = ({ children, selectProps, ...props }) => {
+//   const chl = [children[0][0] || children[0], children[1]];
+//   return (
+//     <DefaultValueContainer {...props}>{chl}</DefaultValueContainer>
+//   );
+// };
 
 const SelectForm = createForm({
   view: SelectFormView,
@@ -32,33 +64,21 @@ const SelectForm = createForm({
     select: {
       title: 'The Select',
       component: Select,
-      options: [
-        {
-          value: 'one',
-          title: 'The One',
-        },
-        {
-          value: 'two',
-          title: 'The Two',
-        },
-      ],
-      placeholder: 'placeholder 1',
+      options: range(1, 11).map(id => ({
+        value: id,
+        title: `The ${id}`,
+      })),
     },
     select2: {
-      title: 'The Select2',
+      title: 'The Select2: without title',
       component: Select,
-      options: [
-        {
-          value: 'one',
-        },
-        {
-          value: 'two',
-        },
-      ],
+      options: range(1, 11).map(id => ({
+        value: id,
+      })),
       placeholder: 'placeholder 2',
     },
     select3: {
-      title: 'The Select3',
+      title: 'The Select3: options as stings',
       component: Select,
       options: ['one', 'two'],
     },
@@ -68,42 +88,162 @@ const SelectForm = createForm({
       options: ['one', 'two'],
       placeholder: 'placeholder',
     },
+    // ///
+    multiselect: {
+      title: 'multiselect: isMulti',
+      component: Select,
+      isMulti: true,
+      options: range(1, 11).map(id => ({
+        value: id,
+        id,
+        title: `User ${id}`,
+      })),
+    },
+    multiselect2: {
+      title: 'multiselect2: isMulti & hideSelectedOptions',
+      component: Select,
+      isMulti: true,
+      hideSelectedOptions: false,
+      options: range(1, 11).map(id => ({
+        value: id,
+        id,
+        title: `User ${id}`,
+      })),
+    },
+    multiselect3: {
+      title: 'multiselect3: isMulti & collapsed',
+      component: Select,
+      isMulti: true,
+      collapsed: true,
+      options: range(1, 11).map(id => ({
+        value: id,
+        id,
+        title: `User ${id}`,
+      })),
+    },
+    checkboxes: {
+      title: 'checkboxes: isMulti & hideSelectedOptions & collapsed & customView',
+      component: Select,
+      isMulti: true,
+      collapsed: true,
+      hideSelectedOptions: false,
+      options: range(1, 11).map(id => ({
+        value: id,
+        id,
+        title: `User ${id}`,
+      })),
+      optionProps: {
+        icon: <CheckBlank />,
+        iconActive: <CheckMarked />,
+        iconColor: '#1890ff',
+      },
+      // hideSelectedOptions: false,
+    },
+    // ///
+    radio: {
+      title: 'Radio',
+      component: Select,
+      options: range(1, 11).map(id => ({
+        value: id,
+        id,
+        title: `User ${id}`,
+      })),
+      optionProps: {
+        icon: <RadioBlank />,
+        iconActive: <RadioSelected />,
+        iconColor: '#1890ff',
+      },
+    },
     userSelect: {
       title: 'The userSelect',
       component: Select,
-      components: {
-        SingleValue: ValueSelect,
-        Option: OptionSelect,
-      },
-      options: [{
-        value: 'id1',
-        _id: 1,
-        image: 'https://cdn2.iconfinder.com/data/icons/adobe-icons-professional/512/Br.png',
-        title: 'User1',
-      }, {
-        value: 'id2',
-        _id: 2,
-        image: 'https://cdn2.iconfinder.com/data/icons/adobe-icons-professional/512/Br.png',
-        title: 'User2',
-      }],
-      placeholder: 'placeholder',
+      options: range(1, 11).map(id => ({
+        value: id,
+        id,
+        image: `https://picsum.photos/40/40/?image=${id}`,
+        title: `User ${id}`,
+      })),
     },
+    games: {
+      title: 'Games',
+      component: Select,
+      isMulti: true,
+      hideSelectedOptions: false,
+      collapsed: true,
+      options: [
+        {
+          value: 'id1',
+          title: 'User1',
+          image: 'https://cdn2.iconfinder.com/data/icons/adobe-icons-professional/512/Br.png',
+        },
+        {
+          value: 'id2',
+          title: 'User2',
+          image: 'https://cdn2.iconfinder.com/data/icons/adobe-icons-professional/512/Br.png',
+        },
+      ],
+      optionProps: {
+        icon: <CheckBlank />,
+        iconActive: <CheckMarked />,
+        iconColor: '#1890ff',
+      },
+    },
+    flag: {
+      title: 'Flag',
+      component: Select,
+      options: [
+        {
+          title: 'Russia',
+          value: 'one',
+          icon: <FlagIcon code="ru" />,
+        },
+        {
+          title: 'Britain',
+          value: 'two',
+          icon: <FlagIcon code="gb" />,
+        },
+      ],
+    },
+    // /////
     asyncSelect: {
       title: 'The asyncSelect',
       component: Select,
       async: true,
       loadOption: async value => ({
         value,
-        title: (value || '').toUpperCase(),
+        id: value,
+        image: `https://picsum.photos/40/40/?image=${value}`,
+        title: `User ${value}`,
       }),
-      loadOptions: async (searchValue = '') => (
-        range(10).map(i => i * random(i, i * (searchValue.length + 2))).map(value => ({
+      loadOptions: async (searchValue = '') => {
+        const start = searchValue.length;
+        return range(start, start + 10).map(value => ({
           value,
-          title: `Title ${value}`,
-        }))
-      ),
-      options: ['one', 'two'],
-      placeholder: 'placeholder',
+          id: value,
+          image: `https://picsum.photos/40/40/?image=${value}`,
+          title: `User ${value}`,
+        }));
+      },
+    },
+    asyncSelect2: {
+      title: 'The asyncSelect2',
+      component: Select,
+      async: true,
+      loadOption: async value => ({
+        value,
+        id: value,
+        image: `https://picsum.photos/40/40/?image=${value}`,
+        title: `User ${value}`,
+      }),
+      loadOptions: async (searchValue = '') => {
+        const start = searchValue.length;
+        return range(start, start + 10).map(value => ({
+          value,
+          id: value,
+          image: `https://picsum.photos/40/40/?image=${value}`,
+          title: `User ${value}`,
+        }));
+      },
     },
   },
 });
@@ -117,6 +257,7 @@ module.exports = ({ storiesOf }) =>
           <SelectForm
             initialValues={{
               select4: 'two',
+              asyncSelect2: 99,
             }}
           />
         </Story>

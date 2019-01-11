@@ -66,17 +66,22 @@ class CheckboxesList extends PureComponent {
             const props = {
               ...(!itemComponent ? {
                 ...element,
+                children: element.title,
                 onChange: this.handleSelect,
-                checked: selected.includes(element._id),
+                checked: selected.includes(element.value || element._id),
               } : {
-                item: element,
+                item: {
+                  ...element,
+                  _id: element.value,
+                  title: element.title,
+                },
                 onChange: this.handleSelect,
-                checked: selected.includes(element._id),
+                checked: selected.includes(element.value || element._id),
               }),
             };
             return (
               <Item
-                key={element._id}
+                key={element.value || element._id}
                 {...props}
               />
             );

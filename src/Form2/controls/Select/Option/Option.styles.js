@@ -1,7 +1,7 @@
 import styled, { css } from 'react-emotion';
-import { removeProps } from '../../../utils';
+import { removeProps } from '../../../../utils';
 
-export const Option = styled('button')`
+export const OptionItem = styled('button')`
   display: flex;
   align-items: center;
   overflow: hidden;

@@ -33,13 +33,13 @@ const CheckboxArrayForm = createForm({
       itemComponent: CheckboxDeal,
       options: [
         {
-          _id: 1,
+          value: 1,
           title: 'value1',
           link: 'google.com',
           price: 15000,
         },
         {
-          _id: 2,
+          value: 2,
           title: 'value2',
           link: 'google.com',
           price: 1000,

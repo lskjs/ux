@@ -30,7 +30,9 @@ class FlagIcon extends Component {
     };
   }
   render() {
-    const { code, t = () => '', key, tooltip = false, ...props } = this.props;
+    const {
+      code, t = () => '', key, tooltip = false, ...props
+    } = this.props;
     const country = this.constructor.getInfo(code);
     let { flag } = country;
     if (!flag) {

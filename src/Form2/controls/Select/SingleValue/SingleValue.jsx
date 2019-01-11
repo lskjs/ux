@@ -2,10 +2,10 @@ import React, { PureComponent } from 'react';
 import DefaultSingleValue from 'react-select/lib/components/SingleValue';
 // import PropTypes from 'prop-types';
 import If from 'react-if';
-import { Option, Image, Title, Icon } from './ValueSelect.styles';
+import { Option, Image, Title, Icon } from './SingleValue.styles';
 // import omit from 'lodash/omit';
 
-class ValueSelect extends PureComponent {
+class SingleValue extends PureComponent {
   render() {
     const {
       data,
@@ -31,4 +31,4 @@ class ValueSelect extends PureComponent {
   }
 }
 
-export default ValueSelect;
+export default SingleValue;
