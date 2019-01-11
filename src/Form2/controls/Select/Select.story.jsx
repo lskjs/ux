@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form, Field } from 'formik';
-import { ValueContainer as DefaultValueContainer } from 'react-select/lib/components/containers';
+// import { ValueContainer as DefaultValueContainer } from 'react-select/lib/components/containers';
 import CheckBlank from 'react-icons2/mdi/checkbox-blank-outline';
 import CheckMarked from 'react-icons2/mdi/checkbox-marked';
 import RadioBlank from 'react-icons2/mdi/checkbox-blank-circle-outline';
@@ -14,9 +14,10 @@ import FormDebug from '../../FormDebug';
 import Select from './Select';
 import FlagIcon from '../../../UI/organisms/FlagIcon';
 
-import MultiValue from '../../../UI/atoms/MultiValueLabel';
-import OptionSelect from '../../../UI/molecules/OptionSelect';
-import ValueSelect from '../../../UI/molecules/ValueSelect';
+import SingleValue from './SingleValue';
+import MultiValue from './MultiValue';
+import Option from './Option';
+import ValueContainer from './ValueContainer/ValueContainer';
 
 const SelectFormView = (props) => {
   return (
@@ -46,12 +47,12 @@ const SelectFormView = (props) => {
   );
 };
 
-const ValueContainer = ({ children, selectProps, ...props }) => {
-  const chl = [children[0][0] || children[0], children[1]];
-  return (
-    <DefaultValueContainer {...props}>{chl}</DefaultValueContainer>
-  );
-};
+// const ValueContainer = ({ children, selectProps, ...props }) => {
+//   const chl = [children[0][0] || children[0], children[1]];
+//   return (
+//     <DefaultValueContainer {...props}>{chl}</DefaultValueContainer>
+//   );
+// };
 
 const SelectForm = createForm({
   view: SelectFormView,
@@ -108,8 +109,8 @@ const SelectForm = createForm({
       title: 'The userSelect',
       component: Select,
       components: {
-        SingleValue: ValueSelect,
-        Option: OptionSelect,
+        SingleValue,
+        Option,
       },
       options: [{
         value: 'id1',
@@ -145,8 +146,8 @@ const SelectForm = createForm({
       title: 'Radio',
       component: Select,
       components: {
-        SingleValue: ValueSelect,
-        Option: OptionSelect,
+        SingleValue,
+        Option,
       },
       options: [{
         value: 'id1',
@@ -172,7 +173,7 @@ const SelectForm = createForm({
         MultiValue,
         ValueContainer,
         // MultiValueRemove: () => null,
-        Option: OptionSelect,
+        Option,
       },
       options: [
         {
@@ -199,7 +200,7 @@ const SelectForm = createForm({
         MultiValue,
         ValueContainer,
         // MultiValueRemove: () => null,
-        Option: OptionSelect,
+        Option,
       },
       options: [
         {
@@ -224,8 +225,8 @@ const SelectForm = createForm({
       title: 'Flag',
       component: Select,
       components: {
-        SingleValue: ValueSelect,
-        Option: OptionSelect,
+        SingleValue,
+        Option,
       },
       styles: {
         singleValue: base => ({
