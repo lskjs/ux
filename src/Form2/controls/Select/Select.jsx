@@ -57,6 +57,7 @@ class Select extends PureComponent {
       async,
       options,
       className,
+      styles = {},
       ...props
     } = this.props;
     const normalizedOptions = getNormalizedOptions(options, props);
@@ -69,13 +70,21 @@ class Select extends PureComponent {
       <Component
         isClearable={!props.required}
         arrowRenderer={e => (e.isOpen ? <Up /> : <Down />)}
-        // styles={customStyles}
         error={hasError}
         classNamePrefix="react-select"
         cacheOptions={async}
         defaultOptions={async}
         {...field}
         {...props}
+        styles={{
+          singleValue: base => ({
+            ...base,
+            position: 'relative',
+            top: 'inherit',
+            transform: 'inherit',
+          }),
+          ...styles,
+        }}
         className={cx({
           'lsk-form-select': true,
           [className]: !!className,
