@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import find from 'lodash/find';
+import get from 'lodash/get';
 import autobind from 'core-decorators/lib/autobind';
 import ReactSelect, { AsyncSelect as ReactAsyncSelect } from 'react-select';
 import cx from 'classnames';
@@ -43,11 +44,14 @@ class Select extends PureComponent {
     const { form, field, onChange } = this.props;
     this.setState({ option, initOption: false }); // eslint-disable-line react/no-unused-state
     const value = getReverseOptionValue(option && option.value);
-    form.setFieldValue(field.name, value);
+    if (form && field) {
+      form.setFieldValue(field.name, value);
+    }
     if (onChange) onChange(value);
   }
   render() {
     const {
+      value: propValue,
       field,
       form,
       async,
@@ -56,11 +60,11 @@ class Select extends PureComponent {
       ...props
     } = this.props;
     const normalizedOptions = getNormalizedOptions(options, props);
-    const value = getOptionValue(field.value);
+    const value = getOptionValue(field ? field.value : propValue);
     const option = async ? this.state.option : find(normalizedOptions, { value });
     const Component = async ? ReactAsyncSelect : ReactSelect;
 
-    const hasError = !!form.errors[field.name];
+    const hasError = !!get(form, `errors.${field.name}`);
     return (
       <Component
         isClearable={!props.required}
