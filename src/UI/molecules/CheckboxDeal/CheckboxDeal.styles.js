@@ -14,6 +14,7 @@ export const Block = styled('button')`
   transition: background .2s ease;
 
   border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
   &:last-child {
     border-bottom: none;
   }
