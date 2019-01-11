@@ -11,6 +11,7 @@
     "emotion-theming": "9.1.2",
     "facepaint": "1.2.1",
     "formik": "1.4.1",
+    "google-map-react": "^1.1.2",
     "importcss": "1.1.6",
     "is-hotkey": "0.1.4",
     "lodash-decorators": "6.0.0",
