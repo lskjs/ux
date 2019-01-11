@@ -1,4 +1,4 @@
-import styled from 'react-emotion';
+import styled, { css } from 'react-emotion';
 import { removeProps } from '../../../utils';
 
 export const Option = styled('button')`
@@ -19,11 +19,13 @@ export const Option = styled('button')`
   letter-spacing: -0.1px;
   color: #4a4a4a;
   &:hover {
-    transition: .3s ease-in;
-    background-color: #f0f0ff;
-    color: #7070ff;
+    background-color: #eff4fa !important;
+    color: #4a4a4a !important;
   }
-
+  ${p => (p.selected && css`
+    background-color: #f0f0ff !important;
+    color: #7070ff !important;
+  `)}
 `;
 
 export const Image = styled('img')`
@@ -34,14 +36,13 @@ export const Image = styled('img')`
 
 
 export const Title = styled('div')`
-  margin-left: ${p => (p.image ? '2px' : '4px')};
+  margin-left: 8px;
 `;
 
 const filteredTag = removeProps('div', ['color']);
 export const IconWrapper = styled(filteredTag)`
   font-size: 24px;
-  margin-right: 8px;
   color: ${p => p.color};
   display: inline-flex;
-  margin-left: ${p => (p.image ? '8px' : '4px')};
+  margin-left: 8px;
 `;

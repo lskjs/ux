@@ -34,6 +34,7 @@ const SelectFormView = (props) => {
       <hr />
       <Field {...props.controls.userSelect} />
       <Field {...props.controls.asyncSelect} />
+      <Field {...props.controls.asyncSelectWithoutloadOptions} />
       <hr />
       <hr />
       <select>
@@ -61,41 +62,17 @@ const SelectForm = createForm({
     select: {
       title: 'The Select',
       component: Select,
-      options: [
-        {
-          value: 'one',
-          title: 'The One',
-        },
-        {
-          value: 'two',
-          title: 'The Two',
-        },
-      ],
-      placeholder: 'placeholder 1',
+      options: range(1, 11).map(id => ({
+        value: id,
+        title: `The ${id}`,
+      })),
     },
     select2: {
       title: 'The Select2',
       component: Select,
-      components: {
-        SingleValue: ValueSelect,
-        Option: OptionSelect,
-      },
-      // styles: {
-      //   singleValue: base => ({
-      //     ...base,
-      //     position: 'relative',
-      //     top: 'inherit',
-      //     transform: 'inherit',
-      //   }),
-      // },
-      options: [
-        {
-          value: 'one',
-        },
-        {
-          value: 'two',
-        },
-      ],
+      options: range(1, 11).map(id => ({
+        value: id,
+      })),
       placeholder: 'placeholder 2',
     },
     select3: {
@@ -116,34 +93,12 @@ const SelectForm = createForm({
         SingleValue: ValueSelect,
         Option: OptionSelect,
       },
-      options: [{
-        value: 'id1',
-        _id: 1,
-        image: 'https://cdn2.iconfinder.com/data/icons/adobe-icons-professional/512/Br.png',
-        title: 'User1',
-      }, {
-        value: 'id2',
-        _id: 2,
-        image: 'https://cdn2.iconfinder.com/data/icons/adobe-icons-professional/512/Br.png',
-        title: 'User2',
-      }],
-      placeholder: 'placeholder',
-    },
-    asyncSelect: {
-      title: 'The asyncSelect',
-      component: Select,
-      async: true,
-      loadOption: async value => ({
-        value,
-        title: (value || '').toUpperCase(),
-      }),
-      loadOptions: async (searchValue = '') => (
-        range(10).map(i => i * random(i, i * (searchValue.length + 2))).map(value => ({
-          value,
-          title: `Title ${value}`,
-        }))
-      ),
-      options: ['one', 'two'],
+      options: range(1, 11).map(id => ({
+        value: id,
+        id,
+        image: `https://picsum.photos/40/40/?image=${id}`,
+        title: `User ${id}`,
+      })),
       placeholder: 'placeholder',
     },
     radio: {
@@ -153,14 +108,11 @@ const SelectForm = createForm({
         SingleValue: ValueSelect,
         Option: OptionSelect,
       },
-      options: [{
-        value: 'id1',
-        title: 'User1',
-      },
-      {
-        value: 'id2',
-        title: 'User2',
-      }],
+      options: range(1, 11).map(id => ({
+        value: id,
+        id,
+        title: `User ${id}`,
+      })),
       optionProps: {
         icon: <RadioBlank />,
         iconActive: <RadioSelected />,
@@ -170,31 +122,25 @@ const SelectForm = createForm({
     checkboxes: {
       title: 'checkboxes',
       component: Select,
+      isMulti: true,
+      // hideSelectedOptions: false,
       components: {
         // MultiValue,
         // ValueContainer,
         // MultiValueRemove: () => null,
         Option: OptionSelect,
       },
-      isMulti: true,
-      closeMenuOnSelect: false,
-      options: [
-        {
-          value: 'one',
-          title: 'User1',
-          icon: <CheckBlank />,
-          iconActive: <CheckMarked />,
-          iconColor: '#1890ff',
-        },
-        {
-          value: 'two',
-          title: 'User2',
-          icon: <CheckBlank />,
-          iconActive: <CheckMarked />,
-          iconColor: '#1890ff',
-        },
-      ],
-      hideSelectedOptions: false,
+      options: range(1, 11).map(id => ({
+        value: id,
+        id,
+        title: `User ${id}`,
+      })),
+      optionProps: {
+        icon: <CheckBlank />,
+        iconActive: <CheckMarked />,
+        iconColor: '#1890ff',
+      },
+      // hideSelectedOptions: false,
     },
     checkboxesWithValueConrainer: {
       title: 'checkboxesWithValueConrainer',
@@ -205,24 +151,21 @@ const SelectForm = createForm({
         // MultiValueRemove: () => null,
         Option: OptionSelect,
       },
-      isMulti: true,
       options: [
         {
           value: 'one',
           title: 'User1',
-          icon: <CheckBlank />,
-          iconActive: <CheckMarked />,
-          iconColor: '#1890ff',
         },
         {
           value: 'two',
           title: 'User2',
-          icon: <CheckBlank />,
-          iconActive: <CheckMarked />,
-          iconColor: '#1890ff',
         },
       ],
-      hideSelectedOptions: false,
+      optionProps: {
+        icon: <CheckBlank />,
+        iconActive: <CheckMarked />,
+        iconColor: '#1890ff',
+      },
     },
     games: {
       title: 'Games',
@@ -280,6 +223,32 @@ const SelectForm = createForm({
           icon: <FlagIcon code="gb" />,
         },
       ],
+    },
+    asyncSelectWithoutloadOptions: {
+      title: 'The asyncSelectWithoutloadOptions',
+      component: Select,
+      async: true,
+      options: ['one', 'two'],
+      placeholder: 'placeholder',
+    },
+    asyncSelect: {
+      title: 'The asyncSelect',
+      component: Select,
+      async: true,
+      loadOption: async value => ({
+        value,
+        title: (value || '').toUpperCase(),
+      }),
+      loadOptions: async (searchValue = '') => {
+        const start = random(i, i * (searchValue.length + 2));
+        return range(start, start + 10).map(id => ({
+          value: id,
+          id,
+          title: `User ${id}`,
+        }));
+      },
+      options: ['one', 'two'],
+      placeholder: 'placeholder',
     },
   },
 });
