@@ -13,11 +13,6 @@ import FormDebug from '../../FormDebug';
 import Select from './Select';
 import FlagIcon from '../../../UI/organisms/FlagIcon';
 
-import SingleValue from './SingleValue';
-import MultiValue from './MultiValue';
-import Option from './Option';
-import ValueContainer from './ValueContainer/ValueContainer';
-
 const SelectFormView = (props) => {
   return (
     <Form>
@@ -25,20 +20,19 @@ const SelectFormView = (props) => {
       <Field {...props.controls.select} />
       <Field {...props.controls.select2} />
       <Field {...props.controls.select3} />
-      <Field {...props.controls.select4} />
+      <Field {...props.controls.radio} />
       <hr />
       <h1>Мультиселекты</h1>
       <Field {...props.controls.multiselect} />
       <Field {...props.controls.multiselect2} />
+      <Field {...props.controls.multiselect3} />
       <Field {...props.controls.checkboxes} />
-      <Field {...props.controls.checkboxesWithValueConrainer} />
       <hr />
       <h1>Асинхронные селекты</h1>
       <Field {...props.controls.asyncSelect} />
       <Field {...props.controls.asyncSelect2} />
       <hr />
       <h1>Кастомный дизайн</h1>
-      <Field {...props.controls.radio} />
       <Field {...props.controls.games} />
       <Field {...props.controls.flag} />
       <Field {...props.controls.userSelect} />
@@ -76,7 +70,7 @@ const SelectForm = createForm({
       })),
     },
     select2: {
-      title: 'The Select2',
+      title: 'The Select2: without title',
       component: Select,
       options: range(1, 11).map(id => ({
         value: id,
@@ -84,7 +78,7 @@ const SelectForm = createForm({
       placeholder: 'placeholder 2',
     },
     select3: {
-      title: 'The Select3',
+      title: 'The Select3: options as stings',
       component: Select,
       options: ['one', 'two'],
     },
@@ -96,7 +90,7 @@ const SelectForm = createForm({
     },
     // ///
     multiselect: {
-      title: 'multiselect',
+      title: 'multiselect: isMulti',
       component: Select,
       isMulti: true,
       options: range(1, 11).map(id => ({
@@ -106,7 +100,7 @@ const SelectForm = createForm({
       })),
     },
     multiselect2: {
-      title: 'multiselect2',
+      title: 'multiselect2: isMulti & hideSelectedOptions',
       component: Select,
       isMulti: true,
       hideSelectedOptions: false,
@@ -116,14 +110,23 @@ const SelectForm = createForm({
         title: `User ${id}`,
       })),
     },
-    checkboxes: {
-      title: 'checkboxes',
+    multiselect3: {
+      title: 'multiselect3: isMulti & collapsed',
       component: Select,
       isMulti: true,
+      collapsed: true,
+      options: range(1, 11).map(id => ({
+        value: id,
+        id,
+        title: `User ${id}`,
+      })),
+    },
+    checkboxes: {
+      title: 'checkboxes: isMulti & hideSelectedOptions & collapsed & customView',
+      component: Select,
+      isMulti: true,
+      collapsed: true,
       hideSelectedOptions: false,
-      components: {
-        Option,
-      },
       options: range(1, 11).map(id => ({
         value: id,
         id,
@@ -136,39 +139,10 @@ const SelectForm = createForm({
       },
       // hideSelectedOptions: false,
     },
-    checkboxesWithValueConrainer: {
-      title: 'checkboxesWithValueConrainer',
-      component: Select,
-      components: {
-        MultiValue,
-        ValueContainer,
-        // MultiValueRemove: () => null,
-        Option,
-      },
-      options: [
-        {
-          value: 'one',
-          title: 'User1',
-        },
-        {
-          value: 'two',
-          title: 'User2',
-        },
-      ],
-      optionProps: {
-        icon: <CheckBlank />,
-        iconActive: <CheckMarked />,
-        iconColor: '#1890ff',
-      },
-    },
     // ///
     radio: {
       title: 'Radio',
       component: Select,
-      components: {
-        SingleValue,
-        Option,
-      },
       options: range(1, 11).map(id => ({
         value: id,
         id,
@@ -183,28 +157,19 @@ const SelectForm = createForm({
     userSelect: {
       title: 'The userSelect',
       component: Select,
-      components: {
-        SingleValue,
-        Option,
-      },
       options: range(1, 11).map(id => ({
         value: id,
         id,
         image: `https://picsum.photos/40/40/?image=${id}`,
         title: `User ${id}`,
       })),
-      placeholder: 'placeholder',
     },
     games: {
       title: 'Games',
       component: Select,
       isMulti: true,
-      components: {
-        MultiValue,
-        ValueContainer,
-        // MultiValueRemove: () => null,
-        Option,
-      },
+      hideSelectedOptions: false,
+      collapsed: true,
       options: [
         {
           value: 'id1',
@@ -222,15 +187,10 @@ const SelectForm = createForm({
         iconActive: <CheckMarked />,
         iconColor: '#1890ff',
       },
-      hideSelectedOptions: false,
     },
     flag: {
       title: 'Flag',
       component: Select,
-      components: {
-        SingleValue,
-        Option,
-      },
       options: [
         {
           title: 'Russia',

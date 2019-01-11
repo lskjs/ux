@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
-import { ValueBlock, Value } from './MultiValue.styles';
+import { ValueBlock, Value } from './CollapsedMultiValue.styles';
 
-class MultiValue extends PureComponent {
+class CollapsedMultiValue extends PureComponent {
   render() {
     const { selectProps } = this.props;
     return (
@@ -12,4 +12,4 @@ class MultiValue extends PureComponent {
   }
 }
 
-export default MultiValue;
+export default CollapsedMultiValue;
