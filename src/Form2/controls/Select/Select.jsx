@@ -7,10 +7,10 @@ import cx from 'classnames';
 import Up from 'react-icons2/mdi/chevron-up';
 import Down from 'react-icons2/mdi/chevron-down';
 import { getOptionValue, getReverseOptionValue, getNormalizedOptions } from './utils';
-// import SingleValue from './SingleValue';
-// import Option from './Option';
-const SingleValue = () => null;
-const Option = () => null;
+import SingleValue from './SingleValue';
+import Option from './Option';
+// const SingleValue = () => null;
+// const Option = () => null;
 
 class Select extends PureComponent {
   state = {};
@@ -43,7 +43,7 @@ class Select extends PureComponent {
     const { form, field, onChange } = this.props;
     this.setState({ option, initOption: false }); // eslint-disable-line react/no-unused-state
     let value;
-    if (option.length) {
+    if (option && option.length) {
       value = option.map(item => getReverseOptionValue(item && item.value));
     } else {
       value = getReverseOptionValue(option && option.value);
