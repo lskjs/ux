@@ -34,6 +34,7 @@ const SelectFormView = (props) => {
       <hr />
       <h1>Кастомный дизайн</h1>
       <Field {...props.controls.games} />
+      <Field {...props.controls.games2} />
       <Field {...props.controls.flag} />
       <Field {...props.controls.userSelect} />
       <hr />
@@ -170,18 +171,29 @@ const SelectForm = createForm({
       isMulti: true,
       hideSelectedOptions: false,
       collapsed: true,
-      options: [
-        {
-          value: 'id1',
-          title: 'User1',
-          image: 'https://cdn2.iconfinder.com/data/icons/adobe-icons-professional/512/Br.png',
-        },
-        {
-          value: 'id2',
-          title: 'User2',
-          image: 'https://cdn2.iconfinder.com/data/icons/adobe-icons-professional/512/Br.png',
-        },
-      ],
+      options: range(1, 11).map(id => ({
+        value: id,
+        id,
+        image: `https://picsum.photos/40/40/?image=1${id}`,
+        title: `Game ${id}`,
+      })),
+      optionProps: {
+        icon: <CheckBlank />,
+        iconActive: <CheckMarked />,
+        iconColor: '#1890ff',
+      },
+    },
+    games2: {
+      title: 'Games2: hideSelectedOptions',
+      component: Select,
+      isMulti: true,
+      hideSelectedOptions: false,
+      options: range(1, 11).map(id => ({
+        value: id,
+        id,
+        image: `https://picsum.photos/40/40/?image=1${id}`,
+        title: `Game ${id}`,
+      })),
       optionProps: {
         icon: <CheckBlank />,
         iconActive: <CheckMarked />,
