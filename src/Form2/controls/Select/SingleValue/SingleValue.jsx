@@ -15,7 +15,7 @@ class SingleValue extends PureComponent {
       <DefaultSingleValue data={data} {...props}>
         <Option image={data.image}>
           <If condition={!data.iconActive}>
-            <Icon icon={data.icon}>
+            <Icon icon={data.icon} style={data.iconColor ? { color: data.iconColor } : {}}>
               {data.icon}
             </Icon>
           </If>
