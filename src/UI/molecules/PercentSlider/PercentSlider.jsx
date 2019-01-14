@@ -1,39 +1,25 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import ASlider from 'antd/lib/slider';
-import cx from 'classnames';
-import { Value, SliderWrapper } from './PercentSlider.styles';
+import { Wrapper, Value, SliderWrapper } from './PercentSlider.styles';
 
-class Slider extends Component {
-  state = {
-    inputValue: 0,
-  }
-
-  onChange = (value) => {
-    this.setState({
-      inputValue: value,
-    });
-  }
+class Slider extends PureComponent {
   render() {
-    const { inputValue } = this.state;
-    const { inverseTrack, styleWrapper = {}, ...props } = this.props;
-    console.log(styleWrapper);
+    const {
+      value,
+      onChange,
+      ...props
+    } = this.props;
     return (
-      <div
-        className={cx({
-          'buzz-slider': true,
-          'buzz-slider-inverse-track': inverseTrack,
-        })}
-        style={{ display: 'flex' }}
-      >
-        <Value>{this.state.inputValue}%</Value>
+      <Wrapper>
+        <Value>{value}%</Value>
         <SliderWrapper>
           <ASlider
-            onChange={this.onChange}
-            value={typeof inputValue === 'number' ? inputValue : 0}
+            onChange={onChange}
+            value={value}
             {...props}
           />
         </SliderWrapper>
-      </div>
+      </Wrapper>
     );
   }
 }

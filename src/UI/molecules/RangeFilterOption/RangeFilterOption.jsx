@@ -10,7 +10,7 @@ class RangeFilterOption extends PureComponent {
     min: PropTypes.number,
     max: PropTypes.number,
     stats: PropTypes.array,
-    onSelect: PropTypes.func.isRequired,
+    onChange: PropTypes.func.isRequired,
     selected: PropTypes.object.isRequired,
     quickValues: PropTypes.shape({
       min: PropTypes.array,
@@ -56,8 +56,8 @@ class RangeFilterOption extends PureComponent {
   }
   @autobind
   callback(min, max) {
-    const { onSelect } = this.props;
-    onSelect({
+    const { onChange } = this.props;
+    onChange({
       title: `${min ? formatter(min) : 'Мин.'} - ${max ? formatter(max) : 'Макс.'}`,
       value: [min, max],
     });
@@ -141,6 +141,7 @@ class RangeFilterOption extends PureComponent {
             </Values>
           </If>
         </If>
+        {mmkkmmk}
       </Wrapper>
     );
   }
