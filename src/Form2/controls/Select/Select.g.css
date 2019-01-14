@@ -6,7 +6,7 @@
 
 .lsk-form-select .react-select__control {
   border-radius: 3px;
-  background-color: rgba(255, 255, 255, 0.44);
+  background-color: #fff;
   border: solid 1px #e3e3e3;
   color: #4a4a4a;
   font-family: 'Gotham Pro', Helvetica, Arial;
