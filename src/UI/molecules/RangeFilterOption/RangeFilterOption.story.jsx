@@ -95,9 +95,6 @@ module.exports = ({ storiesOf }) => {
               },
             ],
           }}
-          footer={(
-            <Field {...props.} />
-          )}
         />
       </Story>
     ));

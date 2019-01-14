@@ -9,12 +9,14 @@ class SelectFilter extends Component {
     trigger: PropTypes.any,
     children: PropTypes.any,
     width: PropTypes.number,
+    disabled: PropTypes.bool,
   }
 
   static defaultProps = {
     trigger: null,
     width: null,
     children: null,
+    disabled: false,
   }
 
   constructor(props) {
@@ -31,7 +33,6 @@ class SelectFilter extends Component {
     this.overlay.current.setState({ show: open });
   }
 
-  @autobind
   renderContent() {
     const { width, id, children } = this.props;
     return (
@@ -43,7 +44,7 @@ class SelectFilter extends Component {
 
   render() {
     const { open } = this.state;
-    const { width, trigger } = this.props;
+    const { width, trigger, disabled } = this.props;
     return (
       <Overlay
         rootClose
@@ -52,13 +53,15 @@ class SelectFilter extends Component {
         overlay={this.renderContent()}
         innerRef={this.overlay}
         delay={0}
-        onClick={() => this.openHandler(true)}
-        onExit={() => this.openHandler(false)}
+        onClick={() => !disabled && this.openHandler(true)}
+        onExit={() => !disabled && this.openHandler(false)}
         width={width}
       >
         <Trigger
           width={width}
-          open={open}
+          open={!disabled ? open : false}
+          disabled={disabled}
+          type="button"
         >
           {trigger}
           <Triangle />

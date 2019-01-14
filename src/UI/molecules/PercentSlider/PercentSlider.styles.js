@@ -1,8 +1,9 @@
 import styled from 'react-emotion';
 
 export const Value = styled('div')`
-  padding: 10px;
-  font-size: 20px;
+  margin-top: -6px;
+  font-weight: 500;
+  font-size: 14px;
   font-family: ${p => p.theme.fontFamily};
   color: ${p => p.theme.colors.primary};
 `;

@@ -73,7 +73,7 @@ class RangeFilterOption extends PureComponent {
   }
   render() {
     const { minFocused, maxFocused, minValue, maxValue } = this.state;
-    const { min, max, stats, quickValues } = this.props;
+    const { min, max, stats, quickValues, footer } = this.props;
     let minValues;
     let maxValues;
     let values;
@@ -141,7 +141,7 @@ class RangeFilterOption extends PureComponent {
             </Values>
           </If>
         </If>
-        {mmkkmmk}
+        {footer}
       </Wrapper>
     );
   }
