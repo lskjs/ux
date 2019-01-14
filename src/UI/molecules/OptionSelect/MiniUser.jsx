@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Avatar from '../../../Avatar';
 import { Title, AvatarWrapper, Block } from './MiniUser.styles';
+import filterProps from '../../../utils/filterProps';
 
 class MiniUser extends PureComponent {
   static propTypes = {
@@ -19,10 +20,11 @@ class MiniUser extends PureComponent {
     const { normal, tiny, title, user, componentClass: Tag, ...props } = this.props;
     return (
       <Block
-        componentClass={Tag}
+        // componentClass={Tag}
         tiny={tiny}
         normal={normal}
-        {...(Tag !== 'div' ? props : {})}
+        {...filterProps(Tag !== 'div' ? props : {}, Tag)}
+        // {...(Tag !== 'div' ? props : {})}
       >
         <AvatarWrapper>
           <Avatar id={user._id} src={user.avatar} name={user.title} size={tiny ? 16 : 24} />

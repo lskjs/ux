@@ -4,6 +4,7 @@ import autobind from 'core-decorators/lib/autobind';
 import omit from 'lodash/omit';
 import { inject, observer } from 'mobx-react';
 import StatefulButton from '../StatefulButton';
+import filterProps from '../utils/filterProps';
 
 @inject('api', 'uapp')
 @observer
@@ -41,10 +42,11 @@ class UrlButton extends Component {
     const buttonProps = omit(props, ['url', 'api', 'onSuccess']);
     return (
       <StatefulButton
-        componentClass={componentClass}
+        // componentClass={componentClass}
         onClick={this.onClick}
         onError={this.onError}
-        {...buttonProps}
+        {...filterProps(buttonProps, componentClass)}
+        // {...buttonProps}
       />
     );
   }

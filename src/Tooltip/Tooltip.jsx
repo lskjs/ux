@@ -5,6 +5,7 @@ import cx from 'classnames';
 import OverlayTrigger from 'react-bootstrap/lib/OverlayTrigger';
 import BsTooltip from 'react-bootstrap/lib/Tooltip';
 import Block from './Tooltip.styles';
+import filterProps from '../utils/filterProps';
 
 function makeId() {
   let text = '';
@@ -54,8 +55,9 @@ class Tooltip extends PureComponent {
       return (
         <Block
           disabled={disabled}
-          componentClass={Tag}
-          {...(componentClass ? props : {})}
+          // componentClass={Tag}
+          // {...(componentClass ? props : {})}
+          {...filterProps(componentClass ? props : {}, Tag)}
         >
           {children}
         </Block>
@@ -80,9 +82,10 @@ class Tooltip extends PureComponent {
       >
         <Block
           disabled={disabled}
-          componentClass={Tag}
+          // componentClass={Tag}
           className="tooltip-block"
-          {...(componentClass ? props : {})}
+          // {...(componentClass ? props : {})}
+          {...filterProps(componentClass ? props : {}, Tag)}
         >
           {children}
         </Block>

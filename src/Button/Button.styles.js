@@ -27,7 +27,7 @@ export const Text = styled('span')`
 `;
 
 
-export const Icon = styled(removeProps('div', ['direction', 'spin']))`
+export const Icon = styled('div')`
   display: flex;
   margin-top: 0;
   ${(props) => {
@@ -450,6 +450,7 @@ const filteredTag = removeProps(dynamicTag, [
   'bordered',
 ]);
 
+// Если убрать filteredTag, то появляются варнинги
 export const Btn = styled(filteredTag)`
   background-color: #fff;
   border: none;
@@ -646,7 +647,7 @@ export const Ripple = styled('div')`
   )}
 `;
 
-export const State = styled(removeProps('div', ['size', 'disabled', 'visible', 'paint', 'iconDirection', 'bordered']))`
+export const State = styled('div')`
   position: absolute;
   display: block;
   z-index: 2;

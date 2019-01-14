@@ -42,6 +42,7 @@ class Radio extends PureComponent {
     const { onChange, value } = this.props;
     const { selected } = this.state;
     if (onChange) onChange({ [value]: selected });
+    // if (onChange) onChange(selected);
   }
   render() {
     const { selected } = this.state;

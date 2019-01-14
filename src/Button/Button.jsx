@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import omit from 'lodash/omit';
 import If from 'react-if';
 import LoadingDots from '../LoadingDots';
+import filterProps from '../utils/filterProps';
 import {
   Btn,
   Text,
@@ -238,7 +239,7 @@ class Button extends PureComponent {
     return (
       <Btn
         type={type}
-        componentClass={tag}
+        // componentClass={tag}
         bordered={bordered}
         size={size}
         paint={paint}
@@ -254,7 +255,8 @@ class Button extends PureComponent {
         onClick={!disabled ? onClick : null}
         twoIcons={icoLeft && iconRight}
         style={style}
-        {...buttonProps}
+        {...filterProps(buttonProps, tag)}
+        // {...buttonProps}
       >
         <If condition={!disabled}>
           <Ripple

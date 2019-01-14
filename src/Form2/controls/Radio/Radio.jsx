@@ -12,7 +12,7 @@ const Radio = ({
   form,
   ...props
 }) => {
-  const valueBefore = field.value;
+  const valueBefore = field.name;
   const value = (valueBefore == null) ? NULL_STRING : valueBefore;
 
   let preOptions = [];
