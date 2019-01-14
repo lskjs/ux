@@ -29,6 +29,6 @@ export const Title = styled('div')`
 `;
 
 export const Icon = styled('div')`
+  font-size: 18px;
   margin-right: ${p => (p.icon ? '8px' : '0px')};
-  margin-top: ${p => (p.icon ? '4px' : '0px')};
 `;

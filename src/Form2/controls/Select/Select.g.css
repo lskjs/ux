@@ -6,7 +6,7 @@
 
 .lsk-form-select .react-select__control {
   border-radius: 3px;
-  background-color: rgba(255, 255, 255, 0.44);
+  background-color: #fff;
   border: solid 1px #e3e3e3;
   color: #4a4a4a;
   font-family: 'Gotham Pro', Helvetica, Arial;
@@ -15,6 +15,7 @@
   text-align: left;
   padding: 6px 6px 6px 3px;
   outline: none;
+  cursor: pointer;
 }
 
 .lsk-form-select .react-select__placeholder,
@@ -86,4 +87,9 @@
 
 .lsk-form-select .react-select__clear {
   font-size: 22px !important;
+}
+
+.lsk-form-select .react-select__control--is-disabled {
+  opacity: .5;
+  cursor: not-allowed;
 }
