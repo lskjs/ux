@@ -1,5 +1,5 @@
 import styled, { css } from 'react-emotion';
-import { removeProps } from '~/utils';
+import { removeProps } from '../../../utils';
 
 export const Wrapper = styled('div')`
   padding: 12px;

@@ -5,6 +5,7 @@ import Numeric from 'react-numeric-input';
 
 import Input from '../../../Input';
 import { elInput, El, Block } from './InputRange.styles';
+import filterProps from '../../../utils/filterProps';
 
 class InputRange extends PureComponent {
   static propTypes = {
@@ -59,13 +60,14 @@ class InputRange extends PureComponent {
           <Input
             validationState={validationState}
             className={elInput}
-            componentClass={Numeric}
+            // componentClass={Numeric}
             onChange={this.changeFrom}
             placeholder={min}
             value={from}
             max={to || max}
             min={min}
-            {...minProps}
+            {...filterProps(minProps, Numeric)}
+            // {...minProps}
           />
         </El>
         -
@@ -73,13 +75,14 @@ class InputRange extends PureComponent {
           <Input
             validationState={validationState}
             className={elInput}
-            componentClass={Numeric}
+            // componentClass={Numeric}
             onChange={this.changeTo}
             placeholder={max}
             value={to}
             max={max}
             min={from || min}
-            {...maxProps}
+            {...filterProps(maxProps, Numeric)}
+            // {...maxProps}
           />
         </El>
       </Block>

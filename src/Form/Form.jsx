@@ -14,6 +14,8 @@ import {
 } from 'react-bootstrap';
 import PureComponent from '../PureComponent';
 import FormBase from '../FormBase';
+import filterProps from '../utils/filterProps';
+
 
 class Input extends PureComponent {
   @autobind
@@ -25,8 +27,9 @@ class Input extends PureComponent {
   render() {
     return (
       <FormControl
-        componentClass={DebounceInput}
-        {...this.props}
+        // componentClass={DebounceInput}
+        // {...this.props}
+        {...filterProps(this.props, DebounceInput)}
         onChange={this.onChange}
       />
     );

@@ -6,6 +6,7 @@ import CheckMarked from 'react-icons2/mdi/checkbox-marked';
 import RadioBlank from 'react-icons2/mdi/checkbox-blank-circle-outline';
 import RadioSelected from 'react-icons2/mdi/checkbox-marked-circle';
 import range from 'lodash/range';
+import random from 'lodash/random';
 import Story from '../../../Story';
 import createForm from '../../createForm';
 import FormGroup from '../../FormGroup';
@@ -229,13 +230,22 @@ const SelectForm = createForm({
       }),
       loadOptions: async (searchValue = '') => {
         const start = searchValue.length;
-        return range(start, start + 10).map(value => ({
-          value,
-          id: value,
-          image: `https://picsum.photos/40/40/?image=${value}`,
-          title: `User ${value}`,
-        }));
+        return new Promise((resolve) => {
+          setTimeout(() => resolve(range(start, start + 10).map(value => ({
+            value,
+            id: value,
+            image: `https://picsum.photos/40/40/?image=${value}`,
+            title: `User ${value}`,
+          }))), 50);
+        });
       },
+        // return range(start, start + 10).map(value => ({
+        //   value,
+        //   id: value,
+        //   image: `https://picsum.photos/40/40/?image=${value}`,
+        //   title: `User ${value}`,
+        // }));
+      // },
     },
     asyncSelect2: {
       title: 'The asyncSelect2',
@@ -249,12 +259,14 @@ const SelectForm = createForm({
       }),
       loadOptions: async (searchValue = '') => {
         const start = searchValue.length;
-        return range(start, start + 10).map(value => ({
-          value,
-          id: value,
-          image: `https://picsum.photos/40/40/?image=${value}`,
-          title: `User ${value}`,
-        }));
+        return new Promise((resolve) => {
+          setTimeout(() => resolve(range(start, start + 10).map(value => ({
+            value,
+            id: value,
+            image: `https://picsum.photos/40/40/?image=${value}`,
+            title: `User ${value}`,
+          }))), 2000);
+        });
       },
     },
   },

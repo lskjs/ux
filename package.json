@@ -1,6 +1,10 @@
 {
   "name": "@lskjs/general",
+<<<<<<< HEAD
   "version": "0.15.63",
+=======
+  "version": "0.15.62",
+>>>>>>> a68b291d1265608407e54cd19986bdb634260db6
   "author": "isuvorov",
   "license": "MIT",
   "dependencies": {

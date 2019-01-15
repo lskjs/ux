@@ -1,6 +1,6 @@
 import styled from 'react-emotion';
 
-import { createDynamicTag } from '../../../utils';
+import { createDynamicTag } from '../../../../utils';
 
 const dynamicTag = createDynamicTag('div');
 

@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import autobind from 'core-decorators/lib/autobind';
 import omit from 'lodash/omit';
+import filterProps from '../utils/filterProps';
 
 class StatefulButton extends PureComponent {
   static propTypes = {
@@ -182,7 +183,8 @@ class StatefulButton extends PureComponent {
       <Tag
         onClick={this.onClick}
         state={this.getButtonState()}
-        {...buttonProps}
+        {...filterProps(buttonProps, Tag)}
+        // {...buttonProps}
       />
     );
   }
