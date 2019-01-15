@@ -14,9 +14,9 @@ class TableCol extends Component {
 
     const otherStyle = {};
     if (index !== null) otherStyle.gridColumn = index + 1;
+    otherStyle.display = 'flex';
+    // otherStyle.flex = 1;
     if (align) {
-      otherStyle.display = 'flex';
-      otherStyle.flex = 1;
       otherStyle.justifyContent = (
         align === 'right' ? 'flex-end' : // eslint-disable-line
           align === 'center' ? 'center'
