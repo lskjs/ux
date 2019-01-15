@@ -75,6 +75,11 @@ class GridTableTest extends Component {
         //   border: '1px red solid',
         // }}
         // columns={['24px', 'minmax(180px, 1fr)', '108px', '64px', '64px', 'minmax(84px, 1fr)']}
+        // columns={{
+        //   0: ['24px', 'minmax(180px, 1fr)', '108px', '64px', '64px', 'minmax(84px, 1fr)'],
+        //   800: ['24px', 'minmax(180px, 1fr)', '108px', '64px', '64px', 'minmax(84px, 1fr)'],
+        // }}
+        // columns={(width) => ['24px', 'minmax(180px, 1fr)', '108px', '64px', '64px', 'minmax(84px, 1fr)']}
         columns={columnsFn}
       >
         <Row>
@@ -96,6 +101,9 @@ class GridTableTest extends Component {
           </Col>
           <Col index={4}>
             Подписки
+          </Col>
+          <Col index={5}>
+            Подп
           </Col>
           <Col index={5}>
             Просмотры
