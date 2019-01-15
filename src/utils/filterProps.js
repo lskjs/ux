@@ -1,6 +1,3 @@
-import pick from 'lodash/pick';
-
-
 // https://raw.githubusercontent.com/emotion-js/emotion/master/packages/is-prop-valid/src/props.js
 export const validProps = {
   // react props
@@ -477,7 +474,14 @@ export default (props, Component) => {
   if (Component && typeof Component !== 'string') {
     return props;
   }
-  const filterdProps = pick(props, prop => validProps[prop]);
+
+  const filterdProps = {};
+  Object.keys(props).forEach((prop) => {
+    if (!validProps[prop]) return;
+    filterdProps[prop] = props[prop];
+  });
+
+  // const filterdProps = pickBy(props, prop => validProps[prop]);
   // console.log('@@@@@@@', filterdProps);
   return filterdProps;
 };
