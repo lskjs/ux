@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { ThemeProvider } from 'emotion-theming';
 import { Provider } from 'mobx-react';
+import DevTools from 'mobx-react-devtools';
 import theme from './utils/theme';
 
 // import './styles/lib/cssreset.g.css';
@@ -11,7 +12,7 @@ import './Form2/controls/Select/Select.g.css';
 
 class Story extends Component {
   render() {
-    const { children, locale = 'en' } = this.props;
+    const { children, devtools, locale = 'en' } = this.props;
     const t = (a) => {
       return a === 'locale' ? locale : a;
     };
@@ -49,6 +50,7 @@ class Story extends Component {
           }}
           >
             {children}
+            {devtools && <DevTools />}
           </div>
         </Provider>
       </ThemeProvider>
