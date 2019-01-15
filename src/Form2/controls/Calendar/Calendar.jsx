@@ -1,6 +1,7 @@
 import React from 'react';
-import get from 'lodash/get';
-import CalendarBase from 'antd/lib/calendar';
+// import get from 'lodash/get';
+import CalendarBase from 'antd/es/calendar';
+import moment from 'moment';
 import HighlightedCell from '../../../UI/atoms/HighlightedCell';
 
 const Calendar = ({
@@ -9,7 +10,6 @@ const Calendar = ({
   highlightedDates,
   ...props
 }) => {
-  
   return (
     <CalendarBase
       {...field}
@@ -29,7 +29,7 @@ const Calendar = ({
         }
         return '';
       }}
-      value={field.value}
+      value={field.value || props.defaultValue || moment()}
       fullscreen={false}
     />
   );
