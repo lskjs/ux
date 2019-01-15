@@ -95,4 +95,36 @@ module.exports = ({ storiesOf }) => (
         <PerformanceTest count={100000} />
       </Story>
     ))
+    .add('grid', () => (
+      <Story>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: '0px 2fr 1fr',
+        }}
+        >
+        
+          <div style={{
+            gridColumn: 1,
+            overflow: 'hidden',
+          }}
+          >
+            111
+          </div>
+          <div style={{
+            gridColumn: 2,
+            overflow: 'hidden',
+          }}
+          >
+            222
+          </div>
+          <div style={{
+            gridColumn: 3,
+            overflow: 'hidden',
+          }}
+          >
+            333
+          </div>
+        </div>
+      </Story>
+    ))
 );
