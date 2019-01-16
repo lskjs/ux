@@ -6,7 +6,7 @@ export const Box = styled('div')`
   border: 1px solid rgba(0,0,0,.1);
   border-radius: ${p => p.theme.borderRadius};
   background-color: ${p => (p.theme.colors.white)};
-  font-family: ${p => (p.theme.fontFamily)}
+  font-family: ${p => (p.theme.fontFamily)};
 `;
 
 export const BoxBody = styled('div')`
