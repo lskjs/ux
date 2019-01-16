@@ -8,6 +8,11 @@ export default class OnChangeListener extends Component {
   // }
 
   componentWillReceiveProps(nextProps) {
+    // console.log(
+    //   nextProps.values,
+    //   this.props.values,
+    //   !isEqual(nextProps.values, this.props.values)
+    // );
     if (!isEqual(nextProps.values, this.props.values)) {
       if (this.props.onChange) {
         this.props.onChange(nextProps.values, { props: nextProps.props });
