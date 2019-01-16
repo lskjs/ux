@@ -1,5 +1,4 @@
 import React from 'react';
-import get from 'lodash/get';
 import CheckboxesListBase from '../../../UI/molecules/CheckboxesList';
 
 const CheckboxesList = ({

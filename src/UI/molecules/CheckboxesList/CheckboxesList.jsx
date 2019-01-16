@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import bind from 'core-decorators/lib/autobind';
 import { Scrollbars } from 'react-custom-scrollbars';
+import cloneDeep from 'lodash/cloneDeep';
 
 import Checkbox from '../Checkbox';
 import Block from './CheckboxesList.styles';
@@ -36,7 +37,7 @@ class CheckboxesList extends PureComponent {
   @bind handleSelect(id) {
     const { selected = [] } = this.state;
     const isExists = selected.includes(id);
-    let arr = selected;
+    let arr = cloneDeep(selected);
     if (isExists) {
       arr = arr.filter(i => i !== id);
     } else {
