@@ -1,31 +1,16 @@
 import styled, { css } from 'react-emotion';
-import Popover from 'react-bootstrap/lib/Popover';
-import OverlayTrigger from 'react-bootstrap/lib/OverlayTrigger';
 
-export const Overlay = styled(OverlayTrigger)`
-  width: ${p => ((p.width && (typeof p.width === 'number' ? `${p.width}px` : p.width)) || '198px')};
+export const popperDisabledStyle = css`
+  pointer-events: none;
 `;
 
-export const Content = styled(Popover)`
+export const Content = styled('div')`
+  width: 100%;
   border-radius: 4px;
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.24);
   background-color: ${p => p.theme.colors.white};
-  border: none;
-  margin-top: 0 !important;
-  
-  &.fade {
-    &:not(.show) {
-      opacity: 1 !important;
-    }
-  }
-  
-  > .arrow {
-    display: none;
-  }
-  
-  > .popover-content {
-    padding: 0;
-  }
+  z-index: 1;
+  height: ${p => p.height}px;
 `;
 
 export const Triangle = styled('div')`
@@ -43,7 +28,7 @@ export const Triangle = styled('div')`
 
 
 export const Trigger = styled('button')`
-  width: ${p => ((p.width && (typeof p.width === 'number' ? `${p.width}px` : p.width)) || '198px')};
+  width: 100%;
   height: 48px;
   border-radius: 4px;
   font-size: 13px;

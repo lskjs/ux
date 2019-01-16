@@ -4,6 +4,7 @@ export const Value = styled('div')`
   margin-top: -6px;
   font-weight: 500;
   font-size: 14px;
+  margin-right: 12px;
   font-family: ${p => p.theme.fontFamily};
   color: ${p => p.theme.colors.primary};
 `;

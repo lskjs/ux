@@ -31,7 +31,7 @@ module.exports = ({ storiesOf }) => {
         >
           <RangeFilterOption
             value={[10000, 20000]}
-            onSelect={(e) => {
+            onChange={(e) => {
               console.log(e);
             }}
             min={10000}

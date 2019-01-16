@@ -5,7 +5,6 @@ import removeProps from '../../../utils/removeProps';
 
 const filteredTag = removeProps(Card, ['withActions']);
 export default styled(filteredTag)`
-  max-width: 600px;
   font-family: ${p => p.theme.fontFamily};
   border-radius: ${p => p.theme.borderRadius};
   

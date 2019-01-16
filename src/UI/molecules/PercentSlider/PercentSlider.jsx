@@ -1,27 +1,29 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import ASlider from 'antd/lib/slider';
 import { Wrapper, Value, SliderWrapper } from './PercentSlider.styles';
 
-class Slider extends PureComponent {
-  render() {
-    const {
-      value,
-      onChange,
-      ...props
-    } = this.props;
-    return (
-      <Wrapper>
-        <Value>{value}%</Value>
-        <SliderWrapper>
-          <ASlider
-            onChange={onChange}
-            value={value}
-            {...props}
-          />
-        </SliderWrapper>
-      </Wrapper>
-    );
-  }
-}
+const Slider = ({ value, onChange, ...props }) => (
+  <Wrapper>
+    <Value>{value}%</Value>
+    <SliderWrapper>
+      <ASlider
+        onChange={onChange}
+        value={value}
+        {...props}
+      />
+    </SliderWrapper>
+  </Wrapper>
+);
+
+Slider.propTypes = {
+  value: PropTypes.number,
+  onChange: PropTypes.func,
+};
+
+Slider.defaultProps = {
+  value: 0,
+  onChange: null,
+};
 
 export default Slider;
