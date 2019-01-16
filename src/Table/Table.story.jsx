@@ -1,68 +1,10 @@
 import React, { Component } from 'react';
 import Story from '../Story';
 import range from 'lodash/range';
-import { withTheme } from 'emotion-theming';
 
 import { Table, Row, Col } from './index';
 
-const columnsFn = ({ width }) => {
-  return [
-    {
-      width: '24px',
-      // className: 'hidden-sm', // sm md lg xl.
-      style: {
-        backgroundColor: 'red',
-      },
-    },
-    {
-      width: '24px',
-      // className: 'hidden-sm', // sm md lg xl.
-      style: {
-        backgroundColor: 'red',
-      },
-    },
-    {
-      width: 'minmax(180px, 1fr)',
-      // className: 'hidden-md', // sm md lg xl.
-      style: {
-        backgroundColor: 'yellow',
-      },
-      show: width > 800,
-    },
-    {
-      width: '108px',
-      // className: 'hidden-sm hidden-xs', // sm md lg xl.
-      style: {
-        backgroundColor: 'green',
-      },
-      show: width <= 800,
-    },
-    {
-      width: '64px',
-      // className: 'hidden-sm hidden-xs', // sm md lg xl.
-      style: {
-        backgroundColor: 'blue',
-      },
-    },
-    {
-      width: '64px',
-      // className: 'hidden-md', // sm md lg xl.
-      style: {
-        backgroundColor: 'pink',
-      },
-    },
-    {
-      width: 'minmax(84px, 1fr)',
-      // className: 'hidden-md', // sm md lg xl.
-      style: {
-        backgroundColor: 'brown',
-      },
-    },
-  ];
-};
-
-@withTheme //eslint-disable-line
-class GridTableTest extends Component {
+class TableTest extends Component {
   render() {
     const { count = 10 } = this.props;
     const items = range(count);
@@ -74,13 +16,13 @@ class GridTableTest extends Component {
         // cellStyle={{
         //   border: '1px red solid',
         // }}
-        // columns={['24px', 'minmax(180px, 1fr)', '108px', '64px', '64px', 'minmax(84px, 1fr)']}
-        // columns={{
-        //   0: ['24px', 'minmax(180px, 1fr)', '108px', '64px', '64px', 'minmax(84px, 1fr)'],
-        //   800: ['24px', 'minmax(180px, 1fr)', '108px', '64px', '64px', 'minmax(84px, 1fr)'],
-        // }}
+        // columns={['24px', '24px', 'minmax(180px, 1fr)', '108px', '64px', '64px', 'minmax(84px, 1fr)']}
+        columns={{
+          0: ['24px', '24px', 'minmax(180px, 1fr)', '108px', '64px', '64px', 'minmax(84px, 1fr)'],
+          800: ['24px', '24px', 0, 0, 0, 0, 'minmax(84px, 1fr)'],
+        }}
         // columns={(width) => ['24px', 'minmax(180px, 1fr)', '108px', '64px', '64px', 'minmax(84px, 1fr)']}
-        columns={columnsFn}
+        // columns={columnsFn}
       >
         <Row>
           <Col index={0}>
@@ -105,7 +47,7 @@ class GridTableTest extends Component {
           <Col index={5}>
             Подп
           </Col>
-          <Col index={5}>
+          <Col index={6} align="right">
             Просмотры
           </Col>
         </Row>
@@ -129,7 +71,7 @@ class GridTableTest extends Component {
             <Col index={5}>
               1.02M
             </Col>
-            <Col align="right" index={6}>
+            <Col index={6} align="right">
               §123123123
             </Col>
           </Row>
@@ -141,15 +83,20 @@ class GridTableTest extends Component {
 
 
 module.exports = ({ storiesOf }) => {
-  storiesOf('GridTable', module)
+  storiesOf('Table', module)
     .add('Default', () => (
       <Story devtools>
-        <GridTableTest />
+        <TableTest />
       </Story>
     ))
     .add('100 counts', () => (
       <Story devtools>
-        <GridTableTest count={100} />
+        <TableTest count={100} />
+      </Story>
+    ))
+    .add('1000 counts', () => (
+      <Story devtools>
+        <TableTest count={1000} />
       </Story>
     ));
 };

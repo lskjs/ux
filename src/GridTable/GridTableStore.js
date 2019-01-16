@@ -101,8 +101,6 @@ class GridTableStore extends Store {
         index,
       };
     });
-    console.log('normalizedColumns', { normalizedColumns });
-
     return normalizedColumns;
   }
 
