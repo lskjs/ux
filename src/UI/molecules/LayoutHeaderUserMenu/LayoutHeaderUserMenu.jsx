@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Avatar from 'antd/lib/avatar';
 import Dropdown from 'antd/lib/dropdown';
+import If from 'react-if';
+import Avatar from '../../../Avatar';
 import LayoutHeaderListItem from '../../atoms/LayoutHeaderListItem';
-import { DropdownLink /* , AvatarText */ } from './LayoutHeaderUserMenu.styles';
+// import { DropdownLink /* , AvatarText */ } from './LayoutHeaderUserMenu.styles';
+import { DropdownLink, AvatarText } from './LayoutHeaderUserMenu.styles';
 
 class LayoutHeaderUserMenu extends Component {
   static propTypes = {
@@ -20,8 +22,15 @@ class LayoutHeaderUserMenu extends Component {
         placement="bottomRight"
       >
         <DropdownLink href="#!">
-          <Avatar src={user.avatar} size="small" />
-          {/* <AvatarText className="d-none d-md-inline">{user.title}</AvatarText> */}
+          <Avatar
+            size={32}
+            id={user.id || user._id}
+            src={user.avatar}
+            title={user.title || user.name}
+          />
+          <If condition={user.title || user.name}>
+            <AvatarText className="d-none d-md-inline">{user.title || user.name}</AvatarText>
+          </If>
         </DropdownLink>
       </LayoutHeaderListItem>
     );

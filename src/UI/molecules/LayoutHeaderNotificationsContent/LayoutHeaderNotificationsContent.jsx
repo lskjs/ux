@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import If from 'react-if';
 import Tabs from 'antd/lib/tabs';
 import Icon from 'antd/lib/icon';
 import Wrapper from './LayoutHeaderNotificationsContent.styles';
@@ -15,7 +16,6 @@ class LayoutHeaderNotificationsContent extends Component {
   }
   render() {
     const { tabs } = this.props;
-    console.log(tabs);
     return (
       <Wrapper>
         <Tabs animated={false}>
