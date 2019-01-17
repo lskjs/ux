@@ -1,64 +1,66 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Avatar from '../../../Avatar';
-
-import {
-  Card,
-  Title,
-  Wrapper,
-  Position,
-  Content,
-  Footer,
-} from './UserCard.styles';
+import UserTitle from '../../atoms/UserTitle';
+import UserPosition from '../../atoms/UserPosition';
+import AvatarWrapper from '../../atoms/AvatarWrapper';
+import Card from '../../atoms/Card';
+import Button from '../../../Button';
 
 class UserCard extends PureComponent {
   static propTypes = {
     id: PropTypes.number,
+    componentClass: PropTypes.any,
+    href: PropTypes.string,
     title: PropTypes.string,
     avatar: PropTypes.string,
     position: PropTypes.string,
-    content: PropTypes.string,
-    footer: PropTypes.string,
+    buttonTitle: PropTypes.string,
   };
   static defaultProps = {
     id: null,
     title: null,
     avatar: null,
     position: null,
-    content: null,
-    footer: null,
+    href: null,
+    componentClass: 'a',
+    buttonTitle: null,
   }
   render() {
     const {
       id,
+      componentClass,
+      href,
       title,
       avatar,
       position,
-      content,
-      footer,
+      buttonTitle,
     } = this.props;
-    // TODO: Можаев: вынести в атомы
     return (
-      <Card>
-        <Wrapper>
+      <Card componentClass={componentClass} href={href}>
+        <AvatarWrapper>
           <Avatar
             id={id}
             title={title}
             src={avatar}
-            size={100}
+            size={80}
             innerStyle={{ border: '6px solid #d68345' }}
           />
-        </Wrapper>
+        </AvatarWrapper>
         <If condition={title}>
-          <Title>{title}</Title>
+          <UserTitle>{title}</UserTitle>
         </If>
         <If condition={position}>
-          <Position>{position}</Position>
+          <UserPosition>{position}</UserPosition>
         </If>
-        <Content>{content}</Content>
-        <If condition={footer}>
-          <Footer>{footer}</Footer>
-        </If>
+        <div style={{ display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
+          <Button
+            paint="primary"
+            view="solid"
+          >
+            {buttonTitle}
+          </Button>
+        </div>
       </Card>
     );
   }
