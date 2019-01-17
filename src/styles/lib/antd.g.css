@@ -18176,3 +18176,9 @@ li.ant-select-tree-treenode-disabled > .ant-select-tree-node-content-wrapper:hov
 .ant-tree-switcher-noop {
   display: none !important;
 }
+.ant-input {
+  height: 48px;
+}
+.ant-calendar-range-picker-separator {
+  vertical-align: baseline;
+}
