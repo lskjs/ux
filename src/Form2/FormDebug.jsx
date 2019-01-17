@@ -12,6 +12,7 @@ export default (props) => {
     errors,
     values,
     handleSubmit,
+    status,
     // controls,
     // ...props
   } = props;
@@ -58,6 +59,7 @@ export default (props) => {
           wasSubmiting,
           errors,
           values,
+          status,
         }}
       />
     </React.Fragment>

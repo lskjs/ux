@@ -99,10 +99,27 @@ const createForm = ({
       // console.log({ defaultValues, props });
       return defaultValues;
     },
-    handleSubmit: (values, { setSubmitting, props }) => {
+    handleSubmit: async (values, {
+      setSubmitting,
+      props,
+      setStatus,
+      status,
+    }) => {
       const { onSubmit } = props;
-      if (values) values = avoidNestedFields(values);
-      if (onSubmit) onSubmit(values, { setSubmitting });
+      if (!status) {
+        setStatus('progress');
+        try {
+          if (values) values = avoidNestedFields(values);
+          if (onSubmit) await onSubmit(values, { setSubmitting });
+          setStatus('success');
+        } catch (err) {
+          setStatus('error');
+        }
+        setSubmitting(false);
+        setTimeout(() => {
+          setStatus(null);
+        }, 1000);
+      }
     },
     handleChange: (values, { /* setSubmitting, */ props3/* , form  */ }) => {
       // console.log('Form2.handleChange', values, props, props3);

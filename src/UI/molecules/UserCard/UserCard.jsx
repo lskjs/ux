@@ -1,57 +1,72 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Avatar from '../../../Avatar';
-
-import {
-  Card,
-  Title,
-  Wrapper,
-  Position,
-  Content,
-  Footer,
-} from './UserCard.styles';
+import UserTitle from '../../atoms/UserTitle';
+import UserPosition from '../../atoms/UserPosition';
+import AvatarWrapper from '../../atoms/AvatarWrapper';
+import Card from '../../atoms/Card';
+import Button from '../../../Button';
 
 class UserCard extends PureComponent {
   static propTypes = {
     id: PropTypes.number,
+    componentClass: PropTypes.any,
+    href: PropTypes.string,
     title: PropTypes.string,
-    src: PropTypes.string,
+    avatar: PropTypes.string,
     position: PropTypes.string,
-    content: PropTypes.string,
-    footer: PropTypes.string,
+    buttonTitle: PropTypes.string,
+    onClick: PropTypes.func,
   };
   static defaultProps = {
     id: null,
     title: null,
-    src: '//cdn.mgbeta.ru/lsk/no-avatar.png',
+    avatar: null,
     position: null,
-    content: null,
-    footer: null,
+    href: null,
+    componentClass: 'a',
+    buttonTitle: null,
+    onClick: null,
   }
   render() {
     const {
       id,
+      componentClass,
+      href,
       title,
-      src,
+      avatar,
       position,
-      content,
-      footer,
+      buttonTitle,
+      onClick,
     } = this.props;
     return (
-      <Card>
-        <Wrapper>
+      <Card componentClass={componentClass} href={href}>
+        <AvatarWrapper>
           <Avatar
             id={id}
             title={title}
-            src={src}
-            size={100}
+            src={avatar}
+            size={80}
             innerStyle={{ border: '6px solid #d68345' }}
           />
-        </Wrapper>
-        <Title>{title}</Title>
-        <Position>{position}</Position>
-        <Content>{content}</Content>
-        <Footer>{footer}</Footer>
+        </AvatarWrapper>
+        <If condition={title}>
+          <UserTitle>{title}</UserTitle>
+        </If>
+        <If condition={position}>
+          <UserPosition>{position}</UserPosition>
+        </If>
+        <If condition={buttonTitle}>
+          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
+            <Button
+              paint="primary"
+              view="solid"
+              onClick={onClick}
+            >
+              {buttonTitle}
+            </Button>
+          </div>
+        </If>
       </Card>
     );
   }

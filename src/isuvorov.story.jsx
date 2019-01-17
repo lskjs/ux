@@ -41,7 +41,7 @@ module.exports = ({ storiesOf }) => (
     .add('isuvorov', () => (
       <Story>
         <Btn
-          // componentClass={'button'}
+          componentClass="button"
           // componentClass={Button}
           some="some"
           fullWidth

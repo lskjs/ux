@@ -239,7 +239,7 @@ class Button extends PureComponent {
     return (
       <Btn
         type={type}
-        // componentClass={tag}
+        componentClass={tag}
         bordered={bordered}
         size={size}
         paint={paint}

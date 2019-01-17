@@ -42,7 +42,7 @@ class UrlButton extends Component {
     const buttonProps = omit(props, ['url', 'api', 'onSuccess']);
     return (
       <StatefulButton
-        // componentClass={componentClass}
+        componentClass={componentClass}
         onClick={this.onClick}
         onError={this.onError}
         {...filterProps(buttonProps, componentClass)}
