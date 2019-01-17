@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import autobind from 'core-decorators/lib/autobind';
 import { Manager, Reference, Popper } from 'react-popper';
-// import Outside from 'react-click-outside';
+import Outside from 'react-click-outside';
 import { popperDisabledStyle, Content, Trigger, Triangle } from './DropdownAsSelect.styles';
 
 class SelectFilter extends PureComponent {
