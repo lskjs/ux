@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import autobind from 'core-decorators/lib/autobind';
 import PropTypes from 'prop-types';
 import { inject, observer } from 'mobx-react';
 import DatePicker from 'antd/lib/date-picker';
@@ -28,15 +29,25 @@ class Datepicker extends Component {
     validationState: null,
     ranged: false,
   }
+  @autobind
+  getCalendarContainer() {
+    const { id } = this.props;
+    if (!__CLIENT__ && !id) return false;
+    return document.querySelector(`.datepicker-${id}`)
+      || document.querySelector('.container')
+      || document.body;
+  }
   render() {
-    const { id, className, ranged, validationState, t, ...otherProps } = this.props;
+    const {
+      id, className, ranged, validationState, t, ...otherProps
+    } = this.props;
     const locale = t('locale') === 'ru' ? ru : en;
     return (
       <LocaleProvider locale={locale}>
         <div
-          id={id}
           className={cx({
             'datepicker-wrapper': true,
+            [`datepicker-${id}`]: id,
             [validationState]: validationState,
             [className]: className,
           })}
@@ -45,6 +56,7 @@ class Datepicker extends Component {
             ? (
               <RangePicker
                 className="datepicker"
+                getCalendarContainer={this.getCalendarContainer}
                 {...otherProps}
               />
             )
@@ -54,6 +66,7 @@ class Datepicker extends Component {
                 onChange={(m) => {
                   this.onChange(m.toDate());
                 }}
+                getCalendarContainer={this.getCalendarContainer}
                 {...otherProps}
               />
           )}

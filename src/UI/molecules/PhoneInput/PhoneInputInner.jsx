@@ -613,7 +613,7 @@ ReactPhoneInput.defaultProps = {
   autoFormat: true,
   onlyCountries: [],
   excludeCountries: [],
-  defaultCountry: allCountries[0].iso2,
+  defaultCountry: 'ru',
   isValid: isNumberValid,
   flagsImagePath: './flags.png',
   onEnterKeyPress() {},
