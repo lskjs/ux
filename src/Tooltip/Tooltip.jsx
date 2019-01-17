@@ -55,7 +55,7 @@ class Tooltip extends PureComponent {
       return (
         <Block
           disabled={disabled}
-          // componentClass={Tag}
+          componentClass={Tag}
           // {...(componentClass ? props : {})}
           {...filterProps(componentClass ? props : {}, Tag)}
         >
@@ -82,7 +82,7 @@ class Tooltip extends PureComponent {
       >
         <Block
           disabled={disabled}
-          // componentClass={Tag}
+          componentClass={Tag}
           className="tooltip-block"
           // {...(componentClass ? props : {})}
           {...filterProps(componentClass ? props : {}, Tag)}

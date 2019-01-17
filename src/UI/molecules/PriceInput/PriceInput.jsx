@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { inject, observer } from 'mobx-react';
 import autobind from 'core-decorators/lib/autobind';
 import { debounce } from 'lodash-decorators';
+import DebounceInput from 'react-debounce-input';
 
 import UsdIcon from 'react-icons2/mdi/currency-usd';
 
@@ -140,7 +141,7 @@ class PriceInput extends Component {
               data-max={max}
               max={max}
               disabled={disabled}
-              // componentClass={DebounceInput}
+              componentClass={DebounceInput}
               value={value}
               placeholder="0"
               validationState={validationState}
@@ -161,7 +162,7 @@ class PriceInput extends Component {
               data-max={max * rate}
               max={max * rate}
               disabled={disabled}
-              // componentClass={DebounceInput}
+              componentClass={DebounceInput}
               value={result}
               placeholder="0"
               validationState={validationState}
@@ -186,7 +187,7 @@ class PriceInput extends Component {
                 data-max={max * 0.85}
                 max={max * 0.85}
                 disabled={disabled}
-                // componentClass={DebounceInput}
+                componentClass={DebounceInput}
                 value={result2}
                 placeholder="0"
                 validationState={validationState}

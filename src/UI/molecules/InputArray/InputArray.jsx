@@ -131,7 +131,7 @@ class InputArray extends React.Component {
               key={i} // eslint-disable-line
               className={inputArrayStyles}
               block
-              // componentClass={DebounceInput}
+              componentClass={DebounceInput}
               {...props}
               value={val}
               onChange={e => this.onChangeHandler(i, e)}

@@ -27,7 +27,7 @@ class Input extends PureComponent {
   render() {
     return (
       <FormControl
-        // componentClass={DebounceInput}
+        componentClass={DebounceInput}
         // {...this.props}
         {...filterProps(this.props, DebounceInput)}
         onChange={this.onChange}
