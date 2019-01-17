@@ -15,7 +15,7 @@ class UserCard extends PureComponent {
   static propTypes = {
     id: PropTypes.number,
     title: PropTypes.string,
-    src: PropTypes.string,
+    avatar: PropTypes.string,
     position: PropTypes.string,
     content: PropTypes.string,
     footer: PropTypes.string,
@@ -23,7 +23,7 @@ class UserCard extends PureComponent {
   static defaultProps = {
     id: null,
     title: null,
-    src: '//cdn.mgbeta.ru/lsk/no-avatar.png',
+    avatar: null,
     position: null,
     content: null,
     footer: null,
@@ -32,26 +32,33 @@ class UserCard extends PureComponent {
     const {
       id,
       title,
-      src,
+      avatar,
       position,
       content,
       footer,
     } = this.props;
+    // TODO: Можаев: вынести в атомы
     return (
       <Card>
         <Wrapper>
           <Avatar
             id={id}
             title={title}
-            src={src}
+            src={avatar}
             size={100}
             innerStyle={{ border: '6px solid #d68345' }}
           />
         </Wrapper>
-        <Title>{title}</Title>
-        <Position>{position}</Position>
+        <If condition={title}>
+          <Title>{title}</Title>
+        </If>
+        <If condition={position}>
+          <Position>{position}</Position>
+        </If>
         <Content>{content}</Content>
-        <Footer>{footer}</Footer>
+        <If condition={footer}>
+          <Footer>{footer}</Footer>
+        </If>
       </Card>
     );
   }
