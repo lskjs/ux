@@ -16,6 +16,7 @@ class UserCard extends PureComponent {
     avatar: PropTypes.string,
     position: PropTypes.string,
     buttonTitle: PropTypes.string,
+    onClick: PropTypes.func,
   };
   static defaultProps = {
     id: null,
@@ -25,6 +26,7 @@ class UserCard extends PureComponent {
     href: null,
     componentClass: 'a',
     buttonTitle: null,
+    onClick: null,
   }
   render() {
     const {
@@ -35,6 +37,7 @@ class UserCard extends PureComponent {
       avatar,
       position,
       buttonTitle,
+      onClick,
     } = this.props;
     return (
       <Card componentClass={componentClass} href={href}>
@@ -53,14 +56,17 @@ class UserCard extends PureComponent {
         <If condition={position}>
           <UserPosition>{position}</UserPosition>
         </If>
-        <div style={{ display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
-          <Button
-            paint="primary"
-            view="solid"
-          >
-            {buttonTitle}
-          </Button>
-        </div>
+        <If condition={buttonTitle}>
+          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
+            <Button
+              paint="primary"
+              view="solid"
+              onClick={onClick}
+            >
+              {buttonTitle}
+            </Button>
+          </div>
+        </If>
       </Card>
     );
   }
