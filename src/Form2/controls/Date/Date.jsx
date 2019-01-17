@@ -50,6 +50,7 @@ const DatePicker = (data) => {
     <DatePickerBase
       {...field}
       {...props}
+      id={field.name}
       ranged={ranged}
       validationState={form.errors[field.name] ? 'error' : null}
       onChange={change}
