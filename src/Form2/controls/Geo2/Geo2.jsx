@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import RadioCheck from 'react-icons2/md/room';
+import Marker from 'react-icons2/md/room';
 import GoogleMapReact from 'google-map-react';
 // import { Icon } from './Geo2.styles';
 
@@ -52,12 +52,12 @@ class SimpleMap extends Component {
         >
           <div
             className="place"
-            lat={this.state.lat}
-            lng={this.state.lng}
+            // lat={this.state.lat}
+            // lng={this.state.lng}
           >
-            <RadioCheck />
+            <Marker />
             {/* <Icon>
-              <RadioCheck />
+              <Marker />
             </Icon> */}
           </div>
         </GoogleMapReact>
