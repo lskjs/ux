@@ -20,6 +20,7 @@ export default (props) => {
       <Button
         paint="primary"
         state={status}
+        disabled={!!status}
         onClick={handleSubmit}
       >
         Отправить

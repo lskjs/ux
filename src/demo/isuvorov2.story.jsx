@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'react-emotion';
-import Story from './Story';
-import filterProps from './utils/filterProps';
+import Story from '../Story';
+import filterProps from '../utils/filterProps';
 
 class Input extends React.Component {
   render() {

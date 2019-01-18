@@ -104,9 +104,13 @@ const createForm = ({
       props,
       setStatus,
       status,
+      isSubmitting,
     }) => {
       const { onSubmit } = props;
-      if (!status) {
+
+      // console.log({status, isSubmitting});
+
+      if (!isSubmitting) {
         setStatus('progress');
         try {
           if (values) values = avoidNestedFields(values);

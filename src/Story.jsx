@@ -2,13 +2,9 @@ import React, { Component } from 'react';
 import { ThemeProvider } from 'emotion-theming';
 import { Provider } from 'mobx-react';
 import DevTools from 'mobx-react-devtools';
-import theme from './utils/theme';
+import theme from './theme';
+import './styles.g.css';
 
-// import './styles/lib/cssreset.g.css';
-// import './styles/lib/antdbase.g.css';
-import './styles/lib/antd.g.css';
-import './styles/lib/bootstrap.g.css';
-import './Form2/controls/Select/Select.g.css';
 
 class Story extends Component {
   render() {

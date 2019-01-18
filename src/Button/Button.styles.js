@@ -1,7 +1,7 @@
 import styled, { css, keyframes } from 'react-emotion';
 import createDynamicTag from '../utils/createDynamicTag';
 import removeProps from '../utils/removeProps';
-import theme from '../utils/theme';
+import theme from '../__theme';
 
 const iconLeft = css`
   margin-right: 8px;

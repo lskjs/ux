@@ -3,13 +3,11 @@ import SearchIcon from 'react-icons2/mdi/magnify';
 import Container from 'reactstrap/lib/Container';
 import Col from 'reactstrap/lib/Col';
 import Row from 'reactstrap/lib/Row';
-import ThemeInjector from './ThemeInjector';
-import './styles/lib/antd.g.css';
-import './styles/lib/bootstrap.g.css';
-import Input from './Input';
-import Button from './Button';
-import Portfoliocard from './UI/molecules/PortfolioCard';
-import Header from './UI/atoms/Header';
+import Story from '../Story';
+import Input from '../Input';
+import Button from '../Button';
+import Portfoliocard from '../UI/molecules/PortfolioCard';
+import Header from '../UI/atoms/Header';
 
 const articles = [
   {
@@ -22,7 +20,7 @@ const articles = [
 module.exports = ({ storiesOf }) => (
   storiesOf('Companies', module)
     .add('Default', () => (
-      <ThemeInjector>
+      <Story>
         <Container>
           <Header>Services</Header>
           <div style={{ display: 'flex' }}>
@@ -31,6 +29,7 @@ module.exports = ({ storiesOf }) => (
           </div>
           <Row style={{ marginBottom: 20 }}>
             <Col md={4}>
+            §
               <Portfoliocard {...articles[0]} />
             </Col>
             <Col md={4}>
@@ -63,6 +62,6 @@ module.exports = ({ storiesOf }) => (
             </Col>
           </Row>
         </Container>
-      </ThemeInjector>
+      </Story>
     ))
 );

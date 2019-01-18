@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { toJS } from 'mobx';
 import { observer, inject } from 'mobx-react';
 
 import filterProps from '../utils/filterProps';

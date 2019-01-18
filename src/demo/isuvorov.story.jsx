@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'react-emotion';
 
-import Story from './Story';
-import createDynamicTag from './utils/createDynamicTag';
-import removeProps from './utils/removeProps';
+import Story from '../Story';
+import createDynamicTag from '../utils/createDynamicTag';
+import removeProps from '../utils/removeProps';
 
-import Input from './Input';
+import Input from '../Input';
 
 const dynamicTag = createDynamicTag('button');
 const filteredTag = removeProps(dynamicTag, [

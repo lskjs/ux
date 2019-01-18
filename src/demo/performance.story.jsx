@@ -1,7 +1,7 @@
-import React, { Component, PureComponent } from 'react';
+import React, {  PureComponent } from 'react';
 import range from 'lodash/range';
 
-import Story from './Story';
+import Story from '../Story';
 
 class Item extends PureComponent {
   render() {
