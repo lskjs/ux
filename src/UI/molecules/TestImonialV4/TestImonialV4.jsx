@@ -37,7 +37,7 @@ class TestImonialV4 extends PureComponent {
             <Citation>
               {content}
             </Citation>
-            <Author>{name}, {title}</Author>
+            <Author>{name && `${name}, `}{title}</Author>
           </Wrapper>
         </BoxBody>
       </Box>
