@@ -24,6 +24,7 @@ class Tags extends PureComponent {
       items,
       disabled,
       onDelete,
+      ...props
     } = this.props;
     if (!renderTag) {
       renderTag = data => (
@@ -37,7 +38,7 @@ class Tags extends PureComponent {
       );
     }
     return (
-      <React.Fragment>
+      <div {...props}>
         {items
           .map((item) => {
             return React.createElement(renderTag, {
@@ -48,7 +49,7 @@ class Tags extends PureComponent {
               onDelete,
             });
           })}
-      </React.Fragment>
+      </div>
     );
   }
 }
