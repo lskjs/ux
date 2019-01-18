@@ -22,12 +22,20 @@ class LayoutHeaderUserMenu extends Component {
         placement="bottomRight"
       >
         <DropdownLink href="#!">
-          <Avatar
-            size={32}
-            id={user.id || user._id}
-            src={user.avatar}
-            title={user.title || user.name}
-          />
+          <div style={{
+            display: 'inline-block',
+            position: 'relative',
+            width: 32,
+            height: 32,
+          }}
+          >
+            <Avatar
+              size={32}
+              id={user.id || user._id}
+              src={user.avatar}
+              title={user.title || user.name}
+            />
+          </div>
           <If condition={user.title || user.name}>
             <AvatarText className="d-none d-md-inline">{user.title || user.name}</AvatarText>
           </If>
