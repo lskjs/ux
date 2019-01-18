@@ -1,29 +1,14 @@
 import React from 'react';
-import ThemeInjector from '../ThemeInjector';
-import A from './A';
+import Story from '../Story';
+import T from './T';
 
-module.exports = ({ storiesOf, action }) => (
-  storiesOf('A', module)
+module.exports = ({ storiesOf }) => (
+  storiesOf('T', module)
     .add('empty', () => (
-      <ThemeInjector>
-        <A>
-          Empty
-        </A>
-      </ThemeInjector>
+      <Story>
+        <T name="test.key" />
+      </Story>
     ))
-    .add('href', () => (
-      <ThemeInjector>
-        <A href="/test">
-          Href
-        </A>
-      </ThemeInjector>
-    ))
-    .add('onClick', () => (
-      <ThemeInjector>
-        <A href="/test" onClick={action('onClick')}>
-        onClick
-        </A>
-      </ThemeInjector>
-    ))
+
 );
 
