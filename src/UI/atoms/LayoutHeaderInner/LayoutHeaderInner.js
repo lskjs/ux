@@ -2,6 +2,7 @@ import styled from 'react-emotion';
 
 export default styled('div')`
   display: flex;
+  line-height: 60px;
   font-family: ${p => p.theme.fontFamily};
   justify-content: space-between;
   transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);

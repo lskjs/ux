@@ -5,5 +5,7 @@ export default styled('div')`
   list-style: none;
   font-family: ${p => p.theme.fontFamily};
   display: flex;
-  align-items: baseline;
+  align-items: center;
+  line-height: 60px;
+  height: 60px;
 `;
