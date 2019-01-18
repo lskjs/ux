@@ -60,7 +60,7 @@ class InputRange extends PureComponent {
           <Input
             validationState={validationState}
             className={elInput}
-            // componentClass={Numeric}
+            componentClass={Numeric}
             onChange={this.changeFrom}
             placeholder={min}
             value={from}
@@ -75,7 +75,7 @@ class InputRange extends PureComponent {
           <Input
             validationState={validationState}
             className={elInput}
-            // componentClass={Numeric}
+            componentClass={Numeric}
             onChange={this.changeTo}
             placeholder={max}
             value={to}

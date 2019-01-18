@@ -1,6 +1,8 @@
 import styled from 'react-emotion';
 
 export const DropdownLink = styled('a')`
+  display: flex;
+  align-items: center;
   text-decoration: none !important;
   font-family: ${p => p.theme.fontFamily};
   color: ${p => p.theme.colors.darkGray} !important;

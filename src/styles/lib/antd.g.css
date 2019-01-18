@@ -2807,6 +2807,9 @@ a.ant-btn-sm {
   width: auto;
   margin-left: 8px;
 }
+.ant-calendar-picker-container {
+  z-index: 1;
+}
 .ant-card {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 14px;
@@ -18175,4 +18178,10 @@ li.ant-select-tree-treenode-disabled > .ant-select-tree-node-content-wrapper:hov
 }
 .ant-tree-switcher-noop {
   display: none !important;
+}
+.ant-input {
+  height: 48px;
+}
+.ant-calendar-range-picker-separator {
+  vertical-align: baseline;
 }

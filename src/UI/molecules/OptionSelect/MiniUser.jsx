@@ -20,7 +20,7 @@ class MiniUser extends PureComponent {
     const { normal, tiny, title, user, componentClass: Tag, ...props } = this.props;
     return (
       <Block
-        // componentClass={Tag}
+        componentClass={Tag}
         tiny={tiny}
         normal={normal}
         {...filterProps(Tag !== 'div' ? props : {}, Tag)}

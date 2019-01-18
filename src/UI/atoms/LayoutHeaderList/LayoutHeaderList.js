@@ -6,4 +6,6 @@ export default styled('div')`
   font-family: ${p => p.theme.fontFamily};
   display: flex;
   align-items: baseline;
+  line-height: 60px;
+  height: 60px;
 `;

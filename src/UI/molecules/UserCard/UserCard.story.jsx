@@ -1,5 +1,6 @@
 import React from 'react';
 import random from 'lodash/random';
+import Link from '../../../Link';
 
 import UserCard from './UserCard';
 import ThemeInjector from '../../../ThemeInjector';
@@ -8,10 +9,11 @@ import '../../../styles/lib/antd.g.css';
 const user = () => ({
   id: random(99),
   title: 'John Smith',
-  src: `https://randomuser.me/api/portraits/men/${random(99)}.jpg`,
+  componentClass: Link,
+  href: 'http://php-web.info/articles/video-info/otlichiya-4k-full-hd-uhd/',
+  avatar: `https://randomuser.me/api/portraits/men/${random(99)}.jpg`,
   position: 'Managing partner - DELTA2020',
-  content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', // eslint-disable-line
-  footer: 'Your request has been passed to the QV Team',
+  buttonTitle: 'Запрос',
 });
 
 module.exports = ({ storiesOf }) => (

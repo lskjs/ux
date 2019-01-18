@@ -34,11 +34,10 @@ class Button extends PureComponent {
       'success',
     ]),
     state: PropTypes.oneOf([
-      'processing',
+      'processing', 'progress',
       'success',
       'error',
-      'ready',
-      null,
+      'ready', null,
     ]),
     view: PropTypes.oneOf([
       'solid',
@@ -118,9 +117,20 @@ class Button extends PureComponent {
     }
   }
 
+  getPropsState() {
+    const { state } = this.props;
+    if (state === 'processing' || state === 'progress') {
+      return 'processing';
+    }
+    if (state === 'ready' || state === null) {
+      return 'ready';
+    }
+    return state;
+  }
+
   @autoBind
   getButtonStateTheme() {
-    switch (this.props.state) {
+    switch (this.getPropsState()) {
       case 'processing':
         return {
           paint: this.props.paint,
@@ -201,8 +211,8 @@ class Button extends PureComponent {
       children,
       view,
       size,
-      state,
       block,
+      state,  //eslint-disable-line
       onClick,
       autoMobile,
       componentClass,
@@ -239,7 +249,7 @@ class Button extends PureComponent {
     return (
       <Btn
         type={type}
-        // componentClass={tag}
+        componentClass={tag}
         bordered={bordered}
         size={size}
         paint={paint}
@@ -247,7 +257,7 @@ class Button extends PureComponent {
         block={block}
         disabled={disabled}
         new={isNew}
-        state={state}
+        state={this.getPropsState()}
         auto={autoMobile}
         className={className}
         iconDirection={iconDirection}
