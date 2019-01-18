@@ -15,23 +15,26 @@ class TestImonialV1 extends PureComponent {
     avatar: PropTypes.string,
     name: PropTypes.string,
     title: PropTypes.string,
+    color: PropTypes.string,
   };
   static defaultProps = {
     content: null,
     avatar: null,
     name: null,
     title: null,
+    color: null,
   };
   render() {
     const {
       content,
       avatar,
       name,
+      color,
       title,
     } = this.props;
     return (
       <div>
-        <Content>{content}</Content>
+        <Content color={color}>{content}</Content>
         <Meta>
           <InfoHolder>
             <AuthorImg> <AvatarItem alt="avatar" src={avatar} size={60} /> </AuthorImg>
