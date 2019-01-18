@@ -1,5 +1,5 @@
 import styled from 'react-emotion';
-import Avatar from 'antd/lib/avatar';
+import Avatar from '../../../Avatar';
 
 export const Box = styled('div')`
   position: relative;
