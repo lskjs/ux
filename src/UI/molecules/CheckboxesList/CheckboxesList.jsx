@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import bind from 'core-decorators/lib/autobind';
+import autobind from 'core-decorators/lib/autobind';
 import { Scrollbars } from 'react-custom-scrollbars';
 import cloneDeep from 'lodash/cloneDeep';
 
@@ -34,7 +34,7 @@ class CheckboxesList extends PureComponent {
       this.setState({ selected: next.selected });
     }
   }
-  @bind handleSelect(id) {
+  @autobind handleSelect(id) {
     const { selected = [] } = this.state;
     const isExists = selected.includes(id);
     let arr = cloneDeep(selected);
@@ -45,7 +45,7 @@ class CheckboxesList extends PureComponent {
     }
     this.setState({ selected: arr }, this.callback);
   }
-  @bind callback() {
+  @autobind callback() {
     const { selected } = this.state;
     const { onChange } = this.props;
     if (onChange) onChange(selected);

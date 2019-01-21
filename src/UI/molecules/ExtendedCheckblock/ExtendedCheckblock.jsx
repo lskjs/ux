@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import bind from 'core-decorators/lib/autobind';
+import autobind from 'core-decorators/lib/autobind';
 
 import CheckboxBlank from 'react-icons2/mdi/checkbox-blank-outline';
 import CheckboxCheck from 'react-icons2/mdi/checkbox-marked';
@@ -54,10 +54,10 @@ class ExtendedCheckblock extends PureComponent {
       this.setState({ value: next.value });
     }
   }
-  @bind handleClick() {
+  @autobind handleClick() {
     this.setState({ value: !this.state.value }, this.callback);
   }
-  @bind callback() {
+  @autobind callback() {
     const { onChange } = this.props;
     const { value } = this.state;
     if (onChange) onChange(value);
