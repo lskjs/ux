@@ -61,24 +61,20 @@ const FormExample1 = createForm({
       component: Tags,
       triggerTitle: 'Выбрать теги',
       flat: true,
-      fields: [
+      options: [
         {
-          _id: '1',
           value: 'one',
           title: 'Один',
         },
         {
-          _id: '2',
           value: 'two',
           title: 'Два',
         },
         {
-          _id: '3',
           value: 'three',
           title: 'Три',
         },
         {
-          _id: '4',
           value: 'four',
           title: 'Четыре',
         },
