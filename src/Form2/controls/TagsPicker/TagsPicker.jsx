@@ -1,5 +1,4 @@
 import React from 'react';
-import get from 'lodash/get';
 import TagsPickerBase from '../../../UI/organisms/TagsPicker';
 
 const TagsPicker = ({

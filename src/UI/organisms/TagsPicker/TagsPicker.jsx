@@ -30,6 +30,7 @@ function getAvailable(fields, values) {
 class TagsPicker extends PureComponent {
   static propTypes = {
     fields: PropTypes.array,
+    options: PropTypes.array,
     value: PropTypes.array,
     onSubmit: PropTypes.func,
     onChange: PropTypes.func,
@@ -43,6 +44,7 @@ class TagsPicker extends PureComponent {
 
   static defaultProps = {
     fields: [],
+    options: [],
     value: [],
     onSubmit: null,
     onChange: null,
@@ -115,12 +117,12 @@ class TagsPicker extends PureComponent {
 
   @autobind
   renderModal(trigger) {
-    const { flat, title, onChange, fields, createTag } = this.props;
+    const { flat, title, onChange, fields, options, createTag } = this.props;
     // const { fields } = this.state;
     const value = this.getValue();
     return (
       <TreePicker
-        fields={fields}
+        fields={options || fields}
         value={value}
         title={title}
         onChange={onChange && this.handleChange}
