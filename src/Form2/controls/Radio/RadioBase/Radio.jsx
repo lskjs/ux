@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import bind from 'core-decorators/lib/autobind';
+import autobind from 'core-decorators/lib/autobind';
 import PropTypes from 'prop-types';
 
 import Blank from 'react-icons2/mdi/checkbox-blank-circle-outline';
@@ -35,10 +35,10 @@ class Radio extends PureComponent {
       this.setState({ selected: next.selected });
     }
   }
-  @bind handleSelect() {
+  @autobind handleSelect() {
     this.setState({ selected: !this.state.selected }, this.callback);
   }
-  @bind callback() {
+  @autobind callback() {
     const { onChange, value } = this.props;
     const { selected } = this.state;
     if (onChange) onChange({ [value]: selected });

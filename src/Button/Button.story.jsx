@@ -2,312 +2,487 @@ import React from 'react';
 // import FacebookIcon from '~/icons/ic_fb';
 import { withKnobs } from '@storybook/addon-knobs';
 import Button from './Button';
+import Story from '../Story';
 
 module.exports = ({ storiesOf }) => {
   storiesOf('Button/Solid/Large', module)
     .addDecorator(withKnobs)
     .add('Default', () => (
-      <Button size="large">Большая кнопка</Button>
+      <Story>
+        <Button size="large">Большая кнопка</Button>
+      </Story>
     ))
     .add('Primary', () => (
-      <Button size="large" paint="primary">Большая кнопка</Button>
+      <Story>
+        <Button size="large" paint="primary">Большая кнопка</Button>
+      </Story>
     ))
     .add('Info', () => (
-      <Button size="large" paint="info">Большая кнопка</Button>
+      <Story>
+        <Button size="large" paint="info">Большая кнопка</Button>
+      </Story>
     ))
     .add('Success', () => (
-      <Button size="large" paint="success">Большая кнопка</Button>
+      <Story>
+        <Button size="large" paint="success">Большая кнопка</Button>
+      </Story>
     ))
     .add('Warning', () => (
-      <Button size="large" paint="warning">Большая кнопка</Button>
+      <Story>
+        <Button size="large" paint="warning">Большая кнопка</Button>
+      </Story>
     ))
     .add('Danger', () => (
-      <Button size="large" paint="danger">Большая кнопка</Button>
+      <Story>
+        <Button size="large" paint="danger">Большая кнопка</Button>
+      </Story>
     ))
     .add('Disabled', () => (
-      <Button disabled size="large">Большая кнопка</Button>
+      <Story>
+        <Button disabled size="large">Большая кнопка</Button>
+      </Story>
     ));
 
   storiesOf('Button/Solid/Default', module)
     .add('Default', () => (
-      <Button>Нормальная кнопка</Button>
+      <Story>
+        <Button>Нормальная кнопка</Button>
+      </Story>
     ))
     .add('Primary', () => (
-      <Button paint="primary">Нормальная кнопка</Button>
+      <Story>
+        <Button paint="primary">Нормальная кнопка</Button>
+      </Story>
     ))
     .add('Info', () => (
-      <Button paint="info">Нормальная кнопка</Button>
+      <Story>
+        <Button paint="info">Нормальная кнопка</Button>
+      </Story>
     ))
     .add('Success', () => (
-      <Button paint="success">Нормальная кнопка</Button>
+      <Story>
+        <Button paint="success">Нормальная кнопка</Button>
+      </Story>
     ))
     .add('Warning', () => (
-      <Button paint="warning">Нормальная кнопка</Button>
+      <Story>
+        <Button paint="warning">Нормальная кнопка</Button>
+      </Story>
     ))
     .add('Danger', () => (
-      <Button paint="danger">Нормальная кнопка</Button>
+      <Story>
+        <Button paint="danger">Нормальная кнопка</Button>
+      </Story>
     ))
     .add('Disabled', () => (
-      <Button disabled view="solid">Нормальная кнопка</Button>
+      <Story>
+        <Button disabled view="solid">Нормальная кнопка</Button>
+      </Story>
     ));
 
   storiesOf('Button/Solid/Small', module)
     .add('Default', () => (
-      <Button size="small">Маленькая кнопка</Button>
+      <Story>
+        <Button size="small">Маленькая кнопка</Button>
+      </Story>
     ))
     .add('Primary', () => (
-      <Button size="small" paint="primary">Маленькая кнопка</Button>
+      <Story>
+        <Button size="small" paint="primary">Маленькая кнопка</Button>
+      </Story>
     ))
     .add('Info', () => (
-      <Button size="small" paint="info">Маленькая кнопка</Button>
+      <Story>
+        <Button size="small" paint="info">Маленькая кнопка</Button>
+      </Story>
     ))
     .add('Success', () => (
-      <Button size="small" paint="success">Маленькая кнопка</Button>
+      <Story>
+        <Button size="small" paint="success">Маленькая кнопка</Button>
+      </Story>
     ))
     .add('Warning', () => (
-      <Button size="small" paint="warning">Маленькая кнопка</Button>
+      <Story>
+        <Button size="small" paint="warning">Маленькая кнопка</Button>
+      </Story>
     ))
     .add('Danger', () => (
-      <Button size="small" paint="danger">Маленькая кнопка</Button>
+      <Story>
+        <Button size="small" paint="danger">Маленькая кнопка</Button>
+      </Story>
     ))
     .add('Disabled', () => (
-      <Button disabled view="solid" size="small">Маленькая кнопка</Button>
+      <Story>
+        <Button disabled view="solid" size="small">Маленькая кнопка</Button>
+      </Story>
     ));
 
   storiesOf('Button/Text/Large', module)
     .add('Default', () => (
-      <Button view="text" size="large">Большая кнопка</Button>
+      <Story>
+        <Button view="text" size="large">Большая кнопка</Button>
+      </Story>
     ))
     .add('Primary', () => (
-      <Button view="text" size="large" paint="primary">Большая кнопка</Button>
+      <Story>
+        <Button view="text" size="large" paint="primary">Большая кнопка</Button>
+      </Story>
     ))
     .add('Info', () => (
-      <Button view="text" size="large" paint="info">Большая кнопка</Button>
+      <Story>
+        <Button view="text" size="large" paint="info">Большая кнопка</Button>
+      </Story>
     ))
     .add('Success', () => (
-      <Button view="text" size="large" paint="success">Большая кнопка</Button>
+      <Story>
+        <Button view="text" size="large" paint="success">Большая кнопка</Button>
+      </Story>
     ))
     .add('Warning', () => (
-      <Button view="text" size="large" paint="warning">Большая кнопка</Button>
+      <Story>
+        <Button view="text" size="large" paint="warning">Большая кнопка</Button>
+      </Story>
     ))
     .add('Danger', () => (
-      <Button view="text" size="large" paint="danger">Большая кнопка</Button>
+      <Story>
+        <Button view="text" size="large" paint="danger">Большая кнопка</Button>
+      </Story>
     ))
     .add('Disabled', () => (
-      <Button disabled view="text" size="large">Большая кнопка</Button>
+      <Story>
+        <Button disabled view="text" size="large">Большая кнопка</Button>
+      </Story>
     ));
 
   storiesOf('Button/Text/Default', module)
     .add('Default', () => (
-      <Button view="text">Нормальная кнопка</Button>
+      <Story>
+        <Button view="text">Нормальная кнопка</Button>
+      </Story>
     ))
     .add('Primary', () => (
-      <Button view="text" paint="primary">Нормальная кнопка</Button>
+      <Story>
+        <Button view="text" paint="primary">Нормальная кнопка</Button>
+      </Story>
     ))
     .add('Info', () => (
-      <Button view="text" paint="info">Нормальная кнопка</Button>
+      <Story>
+        <Button view="text" paint="info">Нормальная кнопка</Button>
+      </Story>
     ))
     .add('Success', () => (
-      <Button view="text" paint="success">Нормальная кнопка</Button>
+      <Story>
+        <Button view="text" paint="success">Нормальная кнопка</Button>
+      </Story>
     ))
     .add('Warning', () => (
-      <Button view="text" paint="warning">Нормальная кнопка</Button>
+      <Story>
+        <Button view="text" paint="warning">Нормальная кнопка</Button>
+      </Story>
     ))
     .add('Danger', () => (
-      <Button view="text" paint="danger">Нормальная кнопка</Button>
+      <Story>
+        <Button view="text" paint="danger">Нормальная кнопка</Button>
+      </Story>
     ))
     .add('Disabled', () => (
-      <Button disabled view="text">Нормальная кнопка</Button>
+      <Story>
+        <Button disabled view="text">Нормальная кнопка</Button>
+      </Story>
     ));
 
   storiesOf('Button/Text/Small', module)
     .add('Default', () => (
-      <Button view="text" size="small">Маленькая кнопка</Button>
+      <Story>
+        <Button view="text" size="small">Маленькая кнопка</Button>
+      </Story>
     ))
     .add('Primary', () => (
-      <Button view="text" size="small" paint="primary">Маленькая кнопка</Button>
+      <Story>
+        <Button view="text" size="small" paint="primary">Маленькая кнопка</Button>
+      </Story>
     ))
     .add('Info', () => (
-      <Button view="text" size="small" paint="info">Маленькая кнопка</Button>
+      <Story>
+        <Button view="text" size="small" paint="info">Маленькая кнопка</Button>
+      </Story>
     ))
     .add('Success', () => (
-      <Button view="text" size="small" paint="success">Маленькая кнопка</Button>
+      <Story>
+        <Button view="text" size="small" paint="success">Маленькая кнопка</Button>
+      </Story>
     ))
     .add('Warning', () => (
-      <Button view="text" size="small" paint="warning">Маленькая кнопка</Button>
+      <Story>
+        <Button view="text" size="small" paint="warning">Маленькая кнопка</Button>
+      </Story>
     ))
     .add('Danger', () => (
-      <Button view="text" size="small" paint="danger">Маленькая кнопка</Button>
+      <Story>
+        <Button view="text" size="small" paint="danger">Маленькая кнопка</Button>
+      </Story>
     ))
     .add('Disabled', () => (
-      <Button disabled view="text" size="small">Маленькая кнопка</Button>
+      <Story>
+        <Button disabled view="text" size="small">Маленькая кнопка</Button>
+      </Story>
     ));
 
   storiesOf('Button/Transparent/Large', module)
     .add('Large', () => (
-      <Button view="transparent" size="large">Большая кнопка</Button>
+      <Story>
+        <Button view="transparent" size="large">Большая кнопка</Button>
+      </Story>
     ))
     .add('Disabled', () => (
-      <Button disabled view="transparent" size="large">Большая кнопка</Button>
+      <Story>
+        <Button disabled view="transparent" size="large">Большая кнопка</Button>
+      </Story>
     ));
 
   storiesOf('Button/Transparent/Default', module)
     .add('Default', () => (
-      <Button view="transparent">Нормальная кнопка</Button>
+      <Story>
+        <Button view="transparent">Нормальная кнопка</Button>
+      </Story>
     ))
     .add('Disabled', () => (
-      <Button disabled view="transparent">Нормальная кнопка</Button>
+      <Story>
+        <Button disabled view="transparent">Нормальная кнопка</Button>
+      </Story>
     ));
 
   storiesOf('Button/Transparent/Small', module)
     .add('Small', () => (
-      <Button view="transparent" size="small">Маленькая кнопка</Button>
+      <Story>
+        <Button view="transparent" size="small">Маленькая кнопка</Button>
+      </Story>
     ))
     .add('Disabled', () => (
-      <Button disabled view="transparent" size="small">Маленькая кнопка</Button>
+      <Story>
+        <Button disabled view="transparent" size="small">Маленькая кнопка</Button>
+      </Story>
     ));
 
   storiesOf('Button/Solid/Large/Full', module)
     .add('Default', () => (
-      <Button block size="large">Большая кнопка</Button>
+      <Story>
+        <Button block size="large">Большая кнопка</Button>
+      </Story>
     ))
     .add('Primary', () => (
-      <Button block size="large" paint="primary">Большая кнопка</Button>
+      <Story>
+        <Button block size="large" paint="primary">Большая кнопка</Button>
+      </Story>
     ))
     .add('Info', () => (
-      <Button block size="large" paint="info">Большая кнопка</Button>
+      <Story>
+        <Button block size="large" paint="info">Большая кнопка</Button>
+      </Story>
     ))
     .add('Success', () => (
-      <Button block size="large" paint="success">Большая кнопка</Button>
+      <Story>
+        <Button block size="large" paint="success">Большая кнопка</Button>
+      </Story>
     ))
     .add('Warning', () => (
-      <Button block size="large" paint="warning">Большая кнопка</Button>
+      <Story>
+        <Button block size="large" paint="warning">Большая кнопка</Button>
+      </Story>
     ))
     .add('Danger', () => (
-      <Button block size="large" paint="danger">Большая кнопка</Button>
+      <Story>
+        <Button block size="large" paint="danger">Большая кнопка</Button>
+      </Story>
     ));
 
   storiesOf('Button/Solid/Default/Full', module)
     .add('Default', () => (
-      <Button block>Нормальная кнопка</Button>
+      <Story>
+        <Button block>Нормальная кнопка</Button>
+      </Story>
     ))
     .add('Primary', () => (
-      <Button block paint="primary">Нормальная кнопка</Button>
+      <Story>
+        <Button block paint="primary">Нормальная кнопка</Button>
+      </Story>
     ))
     .add('Info', () => (
-      <Button block paint="info">Нормальная кнопка</Button>
+      <Story>
+        <Button block paint="info">Нормальная кнопка</Button>
+      </Story>
     ))
     .add('Success', () => (
-      <Button block paint="success">Нормальная кнопка</Button>
+      <Story>
+        <Button block paint="success">Нормальная кнопка</Button>
+      </Story>
     ))
     .add('Warning', () => (
-      <Button block paint="warning">Нормальная кнопка</Button>
+      <Story>
+        <Button block paint="warning">Нормальная кнопка</Button>
+      </Story>
     ))
     .add('Danger', () => (
-      <Button block paint="danger">Нормальная кнопка</Button>
+      <Story>
+        <Button block paint="danger">Нормальная кнопка</Button>
+      </Story>
     ));
 
   storiesOf('Button/Solid/Small/Full', module)
     .add('Default', () => (
-      <Button block size="small">Маленькая кнопка</Button>
+      <Story>
+        <Button block size="small">Маленькая кнопка</Button>
+      </Story>
     ))
     .add('Primary', () => (
-      <Button block size="small" paint="primary">Маленькая кнопка</Button>
+      <Story>
+        <Button block size="small" paint="primary">Маленькая кнопка</Button>
+      </Story>
     ))
     .add('Info', () => (
-      <Button block size="small" paint="info">Маленькая кнопка</Button>
+      <Story>
+        <Button block size="small" paint="info">Маленькая кнопка</Button>
+      </Story>
     ))
     .add('Success', () => (
-      <Button block size="small" paint="success">Маленькая кнопка</Button>
+      <Story>
+        <Button block size="small" paint="success">Маленькая кнопка</Button>
+      </Story>
     ))
     .add('Warning', () => (
-      <Button block size="small" paint="warning">Маленькая кнопка</Button>
+      <Story>
+        <Button block size="small" paint="warning">Маленькая кнопка</Button>
+      </Story>
     ))
     .add('Danger', () => (
-      <Button block size="small" paint="danger">Маленькая кнопка</Button>
+      <Story>
+        <Button block size="small" paint="danger">Маленькая кнопка</Button>
+      </Story>
     ));
 
   storiesOf('Button/Text/Large/Full', module)
     .add('Default', () => (
-      <Button block view="text" size="large">Большая кнопка</Button>
+      <Story>
+        <Button block view="text" size="large">Большая кнопка</Button>
+      </Story>
     ))
     .add('Primary', () => (
-      <Button block view="text" size="large" paint="primary">Большая кнопка</Button>
+      <Story>
+        <Button block view="text" size="large" paint="primary">Большая кнопка</Button>
+      </Story>
     ))
     .add('Info', () => (
-      <Button block view="text" size="large" paint="info">Большая кнопка</Button>
+      <Story>
+        <Button block view="text" size="large" paint="info">Большая кнопка</Button>
+      </Story>
     ))
     .add('Success', () => (
-      <Button block view="text" size="large" paint="success">Большая кнопка</Button>
+      <Story>
+        <Button block view="text" size="large" paint="success">Большая кнопка</Button>
+      </Story>
     ))
     .add('Warning', () => (
-      <Button block view="text" size="large" paint="warning">Большая кнопка</Button>
+      <Story>
+        <Button block view="text" size="large" paint="warning">Большая кнопка</Button>
+      </Story>
     ))
     .add('Danger', () => (
-      <Button block view="text" size="large" paint="danger">Большая кнопка</Button>
+      <Story>
+        <Button block view="text" size="large" paint="danger">Большая кнопка</Button>
+      </Story>
     ));
 
   storiesOf('Button/Text/Default/Full', module)
     .add('Default', () => (
-      <Button block view="text">Нормальная кнопка</Button>
+      <Story>
+        <Button block view="text">Нормальная кнопка</Button>
+      </Story>
     ))
     .add('Primary', () => (
-      <Button block view="text" paint="primary">Нормальная кнопка</Button>
+      <Story>
+        <Button block view="text" paint="primary">Нормальная кнопка</Button>
+      </Story>
     ))
     .add('Info', () => (
-      <Button block view="text" paint="info">Нормальная кнопка</Button>
+      <Story>
+        <Button block view="text" paint="info">Нормальная кнопка</Button>
+      </Story>
     ))
     .add('Success', () => (
-      <Button block view="text" paint="success">Нормальная кнопка</Button>
+      <Story>
+        <Button block view="text" paint="success">Нормальная кнопка</Button>
+      </Story>
     ))
     .add('Warning', () => (
-      <Button block view="text" paint="warning">Нормальная кнопка</Button>
+      <Story>
+        <Button block view="text" paint="warning">Нормальная кнопка</Button>
+      </Story>
     ))
     .add('Danger', () => (
-      <Button block view="text" paint="danger">Нормальная кнопка</Button>
+      <Story>
+        <Button block view="text" paint="danger">Нормальная кнопка</Button>
+      </Story>
     ));
 
   storiesOf('Button/Text/Small/Full', module)
     .add('Default', () => (
-      <Button block view="text" size="small">Маленькая кнопка</Button>
+      <Story>
+        <Button block view="text" size="small">Маленькая кнопка</Button>
+      </Story>
     ))
     .add('Primary', () => (
-      <Button block view="text" size="small" paint="primary">Маленькая кнопка</Button>
+      <Story>
+        <Button block view="text" size="small" paint="primary">Маленькая кнопка</Button>
+      </Story>
     ))
     .add('Info', () => (
-      <Button block view="text" size="small" paint="info">Маленькая кнопка</Button>
+      <Story>
+        <Button block view="text" size="small" paint="info">Маленькая кнопка</Button>
+      </Story>
     ))
     .add('Success', () => (
-      <Button block view="text" size="small" paint="success">Маленькая кнопка</Button>
+      <Story>
+        <Button block view="text" size="small" paint="success">Маленькая кнопка</Button>
+      </Story>
     ))
     .add('Warning', () => (
-      <Button block view="text" size="small" paint="warning">Маленькая кнопка</Button>
+      <Story>
+        <Button block view="text" size="small" paint="warning">Маленькая кнопка</Button>
+      </Story>
     ))
     .add('Danger', () => (
-      <Button block view="text" size="small" paint="danger">Маленькая кнопка</Button>
+      <Story>
+        <Button block view="text" size="small" paint="danger">Маленькая кнопка</Button>
+      </Story>
     ));
 
   storiesOf('Button/Transparent/Full', module)
     .add('Large', () => (
-      <Button block view="transparent" size="large">Большая кнопка</Button>
+      <Story>
+        <Button block view="transparent" size="large">Большая кнопка</Button>
+      </Story>
     ))
     .add('Default', () => (
-      <Button block view="transparent">Нормальная кнопка</Button>
+      <Story>
+        <Button block view="transparent">Нормальная кнопка</Button>
+      </Story>
     ))
     .add('Small', () => (
-      <Button block view="transparent" size="small">Маленькая кнопка</Button>
+      <Story>
+        <Button block view="transparent" size="small">Маленькая кнопка</Button>
+      </Story>
     ));
 
   // storiesOf('Button/With Icon', module)
   //   .add('Small / Default', () => (
-  //     <Button iconLeft={<FacebookIcon />} size="small">Маленькая кнопка</Button>
+  //    <Button iconLeft={<FacebookIcon />} size="small">Маленькая кнопка</Button>
   //   ))
   //   .add('Small / Primary', () => (
-  //     <Button iconLeft={<FacebookIcon />} size="small" paint="primary">Маленькая кнопка</Button>
+  //    <Button iconLeft={<FacebookIcon />} size="small" paint="primary">Маленькая кнопка</Button>
   //   ))
   //   .add('Small / Info', () => (
-  //     <Button iconLeft={<FacebookIcon />} size="small" paint="info">Маленькая кнопка</Button>
-  //   ))
+  //    <Button iconLeft={<FacebookIcon />} size="small" paint="info">Маленькая кнопка</Button>
+  //    ))
   //   .add('Small / Success', () => (
   //     <Button iconLeft={<FacebookIcon />} size="small" paint="success">Маленькая кнопка</Button>
   //   ))

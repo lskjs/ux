@@ -27,7 +27,7 @@ export const Wrapper = styled('div')`
 
 export const AvatarItem = styled(Avatar)`
   max-width: 100px;
-  margin-bottom: 16px;
+  margin: 0 auto 16px;
   border-radius: ${p => p.theme.borderCircle};
   max-width: 80px;
   font-family: ${p => p.theme.fontFamily};

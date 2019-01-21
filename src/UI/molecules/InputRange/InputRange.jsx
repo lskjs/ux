@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import bind from 'core-decorators/lib/autobind';
+import autobind from 'core-decorators/lib/autobind';
 import PropTypes from 'prop-types';
 import Numeric from 'react-numeric-input';
 
@@ -37,15 +37,15 @@ class InputRange extends PureComponent {
       this.setState({ value: next.value });
     }
   }
-  @bind changeFrom(e) {
+  @autobind changeFrom(e) {
     const { value } = this.state;
     this.setState({ value: [e, value[1]] }, this.callback);
   }
-  @bind changeTo(e) {
+  @autobind changeTo(e) {
     const { value } = this.state;
     this.setState({ value: [value[0], e] }, this.callback);
   }
-  @bind callback() {
+  @autobind callback() {
     const { value } = this.state;
     const { onChange } = this.props;
     if (onChange) onChange(value);

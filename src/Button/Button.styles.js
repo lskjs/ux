@@ -1,7 +1,6 @@
 import styled, { css, keyframes } from 'react-emotion';
 import createDynamicTag from '../utils/createDynamicTag';
 import removeProps from '../utils/removeProps';
-import theme from '../__theme';
 
 const iconLeft = css`
   margin-right: 8px;
@@ -226,7 +225,7 @@ const defaultSolidTheme = props => css`
   `}
 `;
 
-const primarySolidTheme = css`
+const primarySolidTheme = ({ theme }) => css`
   color: ${theme.colors.white};
   background-color: ${theme.colors.primary};
 
@@ -241,7 +240,7 @@ const primarySolidTheme = css`
   }
 `;
 
-const dangerSolidTheme = css`
+const dangerSolidTheme = ({ theme }) => css`
   color: ${theme.colors.main};
   background-color: ${theme.colors.darkerBackground};
 
@@ -256,7 +255,7 @@ const dangerSolidTheme = css`
   }
 `;
 
-const warningSolidTheme = css`
+const warningSolidTheme = ({ theme }) => css`
   color: #4a4a4a;
   background-color: ${theme.colors.warning};
 
@@ -271,7 +270,7 @@ const warningSolidTheme = css`
   }
 `;
 
-const infoSolidTheme = css`
+const infoSolidTheme = ({ theme }) => css`
   color: ${theme.colors.white};
   background-color: ${theme.colors.primary};
 
@@ -286,7 +285,7 @@ const infoSolidTheme = css`
   }
 `;
 
-const successSolidTheme = css`
+const successSolidTheme = ({ theme }) => css`
   color: ${theme.colors.white};
   background-color: ${theme.colors.success};
 
@@ -330,7 +329,7 @@ const defaultTextTheme = css`
   }
 `;
 
-const primaryTextTheme = css`
+const primaryTextTheme = ({ theme }) => css`
   color: ${theme.colors.primary};
   background-color: transparent;
 
@@ -345,7 +344,7 @@ const primaryTextTheme = css`
   }
 `;
 
-const dangerTextTheme = css`
+const dangerTextTheme = ({ theme }) => css`
   color: ${theme.colors.danger};
   background-color: transparent;
 
@@ -360,7 +359,7 @@ const dangerTextTheme = css`
   }
 `;
 
-const warningTextTheme = css`
+const warningTextTheme = ({ theme }) => css`
   color: ${theme.colors.warning};
   background-color: transparent;
 
@@ -375,7 +374,7 @@ const warningTextTheme = css`
   }
 `;
 
-const infoTextTheme = css`
+const infoTextTheme = ({ theme }) => css`
   color: ${theme.colors.primary};
   background-color: transparent;
 
@@ -390,7 +389,7 @@ const infoTextTheme = css`
   }
 `;
 
-const successTextTheme = css`
+const successTextTheme = ({ theme }) => css`
   color: ${theme.colors.success};
   background-color: transparent;
 
@@ -613,7 +612,7 @@ export const RippleCircle = styled('span')`
   opacity: 0;
   width: 0;
   height: 0;
-  ${p =>(p.theme.corderCircle)};
+  border-radius: ${p => p.theme.borderCircle};
   background: rgba(255, 255, 255, .25);
 `;
 
