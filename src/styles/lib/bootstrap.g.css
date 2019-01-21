@@ -751,7 +751,8 @@ pre {
     border-top: 1px solid rgba(0, 0, 0, 0.1); }
   .table thead th {
     vertical-align: bottom;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.1); }
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1) !important;
+    font-weight: bold; }
   .table tbody + tbody {
     border-top: 2px solid rgba(0, 0, 0, 0.1); }
   .table .table {
