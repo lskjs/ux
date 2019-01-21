@@ -15,7 +15,7 @@ const TagsPicker = ({
       ...option,
     };
   });
-  console.log({formattedOptions});
+  // console.log({formattedOptions});
   
   return (
     <TagsPickerBase
