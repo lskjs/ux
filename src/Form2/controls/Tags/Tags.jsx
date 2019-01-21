@@ -8,15 +8,28 @@ const TagsPicker = ({
   fields,
   ...props
 }) => {
+  const formattedOptions = (options || fields || []).map((option) => {
+    if (option._id) return option;
+    return {
+      _id: option.value,
+      ...option,
+    };
+  });
+  console.log({formattedOptions});
+  
   return (
     <TagsPickerBase
-      {...field}
+      // {...field}
       {...props}
+      onChange={(val) => {
+        console.log('onChange', val);
+      }}
       onSubmit={(value) => {
+        console.log({value});
         form.setFieldValue(field.name, value);
       }}
-      // value={field.value}
-      fields={options || fields || []}
+      value={field.value}
+      fields={formattedOptions}
       // title={field.title}
     />
   );

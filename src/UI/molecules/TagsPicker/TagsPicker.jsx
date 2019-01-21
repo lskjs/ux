@@ -64,41 +64,58 @@ class TagsPicker extends PureComponent {
     if (newValue !== next.value) state.value = getAvailable(next.fields, next.value);
     this.setState(state);
   }
-  @autobind getValue() {
+
+  @autobind
+  getValue() {
     const { value } = this.state;
     return !Array.isArray(value) ? [value] : value;
   }
-  @autobind handleDeleteTag(id) {
+
+  @autobind
+  handleDeleteTag(id) {
     const { value } = this.state;
     this.setState({ value: value.filter(e => e !== id) }, this.callbackCombo);
   }
-  @autobind callbackCombo() {
+
+  @autobind
+  callbackCombo() {
     this.callbackChange();
     this.callbackSubmit();
   }
-  @autobind handleSubmit(value) {
+
+  @autobind
+  handleSubmit(value) {
     this.setState({ value }, this.callbackSubmit);
   }
-  @autobind callbackSubmit() {
+
+  @autobind
+  callbackSubmit() {
     const { onSubmit } = this.props;
     const { value } = this.state;
     if (onSubmit) onSubmit(value);
   }
-  @autobind handleChange(value) {
+
+  @autobind
+  handleChange(value) {
+    console.log('handleChange', value);
+
     this.setState({ value }, this.callbackChange);
   }
-  @autobind callbackChange() {
+
+  @autobind
+  callbackChange() {
     const { onChange } = this.props;
     const { value } = this.state;
     if (onChange) onChange(value);
   }
-  @autobind renderModal(trigger) {
+
+  @autobind
+  renderModal(trigger) {
     const {
       flat, title, onChange, fields, createTag,
     } = this.props;
     // const { fields } = this.state;
     const value = this.getValue();
-    console.log(this.props);
 
     return (
       <TreePicker
