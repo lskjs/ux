@@ -1,10 +1,11 @@
 import React from 'react';
-import get from 'lodash/get';
 import TagsPickerBase from '../../../UI/molecules/TagsPicker';
 
 const TagsPicker = ({
   field,
   form,
+  options,
+  fields,
   ...props
 }) => {
   return (
@@ -14,9 +15,9 @@ const TagsPicker = ({
       onSubmit={(value) => {
         form.setFieldValue(field.name, value);
       }}
-      value={field.value}
-      fields={field.fields}
-      title={field.title}
+      // value={field.value}
+      fields={options || fields || []}
+      // title={field.title}
     />
   );
 };

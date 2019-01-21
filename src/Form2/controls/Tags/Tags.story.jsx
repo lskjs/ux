@@ -26,9 +26,30 @@ const TagsForm = createForm({
     tags: {
       title: 'Tags',
       component: Tags,
+      triggerTitle: 'Выбрать теги',
+      flat: true,
+      options: [
+        {
+          value: 'one',
+          title: 'Один',
+        },
+        {
+          value: 'two',
+          title: 'Два',
+        },
+        {
+          value: 'three',
+          title: 'Три',
+        },
+        {
+          value: 'four',
+          title: 'Четыре',
+        },
+      ],
     },
   },
 });
+
 
 module.exports = ({ storiesOf }) =>
   storiesOf('Form2/controls', module)
