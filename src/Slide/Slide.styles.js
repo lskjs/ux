@@ -10,7 +10,7 @@ const bg = css`
 `;
 
 const videoYoutubeStyle = css`
-  iframe {
+iframe {
     ${bg}
   }
 `;

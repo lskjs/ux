@@ -23,9 +23,10 @@ const GeoGoogleForm = createForm({
   FormGroup,
   controls: {
     geo: {
-      default: [-122.268783, 37.871263],
+      title: 'Координаты',
+      // default: [-122.268783, 37.871263],
       component: Geo,
-      type: 'google',
+      defaultZoom: 9,
       apiKey: 'AIzaSyDln0Gfickhxbp96Dgh1DyWqjrdhYo0fB0&callback=initMap',
     },
   },
@@ -36,7 +37,11 @@ module.exports = ({ storiesOf }) =>
     .add('Geo2', () => {
       return (
         <Story>
-          <GeoGoogleForm />
+          <GeoGoogleForm
+            initialValue={{
+              geo: [-122.268783, 37.871263],
+            }}
+          />
         </Story>
       );
     });

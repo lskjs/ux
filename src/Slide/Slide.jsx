@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReactDriveIn from 'react-drive-in2';
+import If from 'react-if';
+import isIE from '../utils/isIE';
 import Component from '../Component';
 import {
   Content,
@@ -67,15 +69,6 @@ export default class Slide extends Component {
     style: PropTypes.object,
     fixed: PropTypes.bool,
     center: PropTypes.bool,
-  }
-
-  _ie() {
-    const ie = typeof window !== 'undefined' && (
-      window.navigator.userAgent.indexOf('MSIE ') > 0 ||
-      !!window.navigator.userAgent.match(/Trident.*rv\:11\./)
-    );
-    // ie && console.log('ie', ie);
-    return ie;
   }
 
   renderVideo(video) {
@@ -256,14 +249,14 @@ export default class Slide extends Component {
         stretch={stretch}
         fixed={fixed}
         center={center}
-        ie={this._ie()}
+        ie={isIE()}
         className={className}
         style={{
           ...style,
           backgroundColor: color,
         }}
       >
-        {this._ie() ? this.renderInnerIE() : this.renderInner()}
+        {isIE() ? this.renderInnerIE() : this.renderInner()}
         {this.renderBg()}
       </SlideFrame>
     );

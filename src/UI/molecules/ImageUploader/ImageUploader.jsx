@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import File from 'react-icons2/mdi/file-image';
 import Remove from 'react-icons2/mdi/close-circle-outline';
 import Dropzone from 'react-dropzone';
+import If from 'react-if';
 import cx from 'classnames';
 import Avatar from '../../../Avatar';
 import {

@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import autoBind from 'core-decorators/lib/autobind';
+import autobind from 'core-decorators/lib/autobind';
 import CheckIcon from 'react-icons2/mdi/check';
 import CloseIcon from 'react-icons2/mdi/close';
 import PropTypes from 'prop-types';
@@ -128,7 +128,7 @@ class Button extends PureComponent {
     return state;
   }
 
-  @autoBind
+  @autobind
   getButtonStateTheme() {
     switch (this.getPropsState()) {
       case 'processing':
@@ -174,7 +174,7 @@ class Button extends PureComponent {
     }
   }
 
-  @autoBind
+  @autobind
   clickListener(e) {
     if (!this.props.disabled) {
       this.circle.style.top = `${e.offsetY}px`;
@@ -188,14 +188,14 @@ class Button extends PureComponent {
     return document.documentElement.className.includes(name);
   }
 
-  @autoBind
+  @autobind
   endAnimationRipple() {
     if (!this.props.disabled) {
       this.setState({ isRippleActive: false });
     }
   }
 
-  @autoBind
+  @autobind
   renderIcon(icon, dir) {
     return (
       <Icon direction={dir}>

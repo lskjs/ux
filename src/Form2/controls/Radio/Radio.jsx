@@ -1,9 +1,9 @@
 import React from 'react';
-import get from 'lodash/get';
 import cloneDeep from 'lodash/cloneDeep';
 import sortBy from 'lodash/sortBy';
 import isPlainObject from 'lodash/isPlainObject';
-import RadioBase from '../../../Radio';
+// import RadioBase from '../../../Radio';
+import RadioBase from './RadioBase';
 
 const NULL_STRING = '@@NULL@@';
 
