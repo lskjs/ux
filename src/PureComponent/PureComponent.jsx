@@ -26,6 +26,4 @@ export default class PureComponent extends React.PureComponent {
   redirect(...args) {
     this.context.history.push(...args);
   }
-
-
 }

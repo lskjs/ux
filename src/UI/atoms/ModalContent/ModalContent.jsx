@@ -15,7 +15,9 @@ class ModalContent extends PureComponent {
     size: 'default',
   }
   render() {
-    const { children, align, size, className, ...props } = this.props;
+    const {
+      children, align, size, className, ...props
+    } = this.props;
     return (
       <Content
         align={align}

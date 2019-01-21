@@ -49,7 +49,7 @@ class LoginScreen extends PureComponent {
                   </Button>
                 </FormItem>
               </FormWrap>
-              <AdditionalInfo>Don't have an account yet? <a href=''>Sign up</a></AdditionalInfo>
+              <AdditionalInfo>Don't have an account yet? <a href="">Sign up</a></AdditionalInfo>
               <AdditionalInfo>Forgot your username or password? <a href="" >Reset password</a></AdditionalInfo>
             </FormContainer>
           </FormWrapper>

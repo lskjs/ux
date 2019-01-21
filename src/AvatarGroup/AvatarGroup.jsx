@@ -26,38 +26,40 @@ export default class AvatarGroup extends PureComponent {
     offset: -0.35,
     count: null,
     backgroundColor: '#838383',
-    items: []
+    items: [],
   };
   render() {
-    const { size = 64, offset = -0.35, items = [], limit, backgroundColor } = this.props;
+    const {
+      size = 64, offset = -0.35, items = [], limit, backgroundColor,
+    } = this.props;
     const { Avatar } = this.props;
     let { avatarInnerStyle, avatarStyle } = this.props;
 
-    if (!isEqual(avatarStyle, AvatarGroup.defaultProps.avatarStyle)){
+    if (!isEqual(avatarStyle, AvatarGroup.defaultProps.avatarStyle)) {
       avatarStyle = merge(AvatarGroup.defaultProps.avatarStyle, avatarStyle);
     }
 
-    if (!isEqual(avatarInnerStyle, AvatarGroup.defaultProps.avatarInnerStyle)){
+    if (!isEqual(avatarInnerStyle, AvatarGroup.defaultProps.avatarInnerStyle)) {
       avatarInnerStyle = merge(AvatarGroup.defaultProps.avatarInnerStyle, avatarInnerStyle);
     }
 
     let renderItems = items;
     if (limit) {
-      renderItems = renderItems.slice(0, limit)
+      renderItems = renderItems.slice(0, limit);
     }
-    let count = this.props.count || items.length;
-    const wrapStyle = {marginLeft: size * offset, float: 'right'};
+    const count = this.props.count || items.length;
+    const wrapStyle = { marginLeft: size * offset, float: 'right' };
     //  style={{paddingLeft:-wrapStyle.marginLeft}};p
     return (
       <div>
-        <div style={{float: 'left', marginLeft: Math.abs(size * offset)}}>
+        <div style={{ float: 'left', marginLeft: Math.abs(size * offset) }}>
           <If condition={renderItems.length !== count}>
             <span style={wrapStyle}>
               <Avatar
                 size={size}
-                placeholder={'+' + (count - renderItems.length)}
+                placeholder={`+${count - renderItems.length}`}
                 backgroundColor={backgroundColor}
-                style={{...avatarStyle, zIndex: 100}}
+                style={{ ...avatarStyle, zIndex: 100 }}
                 innerStyle={avatarInnerStyle}
               />
             </span>
@@ -65,7 +67,7 @@ export default class AvatarGroup extends PureComponent {
           {renderItems.map((item = {}, index) => (
             <span
               key={item._id || index}
-              style={{...wrapStyle, marginLeft: size * offset}}
+              style={{ ...wrapStyle, marginLeft: size * offset }}
             >
               <Avatar
                 size={size}
@@ -76,8 +78,8 @@ export default class AvatarGroup extends PureComponent {
             </span>
           ))}
         </div>
-        <div style={{clear:'both'}}></div>
+        <div style={{ clear: 'both' }} />
       </div>
-    )
+    );
   }
 }

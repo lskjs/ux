@@ -58,7 +58,8 @@ class RangeGroup extends PureComponent {
             <If condition={stats.length}>
               <Graph>
                 {stats.map((item, i) => (
-                  <GraphItem key={i} // eslint-disable-line react/no-array-index-key
+                  <GraphItem
+                    key={i} // eslint-disable-line react/no-array-index-key
                     height={`${Math.round(item / (maxStatsValue / 100))}%`}
                   />
                 ))}

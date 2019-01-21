@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import autobind from 'core-decorators/lib/autobind';
 import get from 'lodash/get';
 import Plus from 'react-icons2/mdi/plus-circle';
+import If from 'react-if';
 
 import Tag from '../Tag';
 import TagsWrapper from '../TagsWrapper';
@@ -13,9 +14,9 @@ import Button from '../../../Button';
 function getFieldsKeys(fields = []) {
   const keys = {};
   fields.forEach((field) => {
-    keys[field._id] = field;
+    keys[field.value] = field;
     (field.children || []).forEach((f) => {
-      keys[f._id] = f;
+      keys[f.value] = f;
     });
   });
   return keys;
@@ -92,7 +93,9 @@ class TagsPicker extends PureComponent {
     if (onChange) onChange(value);
   }
   @autobind renderModal(trigger) {
-    const { flat, title, onChange, fields, createTag } = this.props;
+    const {
+      flat, title, onChange, fields, createTag,
+    } = this.props;
     // const { fields } = this.state;
     const value = this.getValue();
     console.log(this.props);
@@ -112,7 +115,9 @@ class TagsPicker extends PureComponent {
     );
   }
   render() {
-    const { block, triggerTitle, fields, disabled, readOnly } = this.props;
+    const {
+      block, triggerTitle, fields, disabled, readOnly,
+    } = this.props;
     const value = this.getValue();
     const fieldsKeys = getFieldsKeys(fields);
     const trigger = value.length > 0

@@ -24,7 +24,7 @@ module.exports = ({ storiesOf, action }) => {
         fields={[
           'firstname',
           'lastname',
-        ].map(name => ({name, title: name}))}
+        ].map(name => ({ name, title: name }))}
         onChange={action('onChange')}
         onSubmit={action('onSubmit')}
       />
@@ -66,7 +66,7 @@ module.exports = ({ storiesOf, action }) => {
           lastname: 'Суворов',
           profile: {
             age: '20',
-          }
+          },
         }}
         onChange={action('onChange')}
         onSubmit={action('onSubmit')}
@@ -81,7 +81,7 @@ module.exports = ({ storiesOf, action }) => {
             icon: 'И',
             control: {
               placeholder: 'Например, Василий',
-            }
+            },
           },
           {
             name: 'lastname',
@@ -311,14 +311,14 @@ module.exports = ({ storiesOf, action }) => {
       />
     ))
     .add('Async validator', () => {
-      Form.validate.validators.asyncValidator = function(value) {
-        return new Form.validate.Promise(function(resolve, reject) {
+      Form.validate.validators.asyncValidator = function (value) {
+        return new Form.validate.Promise(((resolve, reject) => {
           // console.log('@@@@@');
-          setTimeout(function() {
-            if (value === "foo") resolve();
-            else resolve("is not foo");
+          setTimeout(() => {
+            if (value === 'foo') resolve();
+            else resolve('is not foo');
           }, 1000);
-        });
+        }));
       };
       return (
         <Form
@@ -502,18 +502,18 @@ module.exports = ({ storiesOf, action }) => {
         ],
         onChange: action('onChange'),
         onSubmit: action('onSubmit'),
-      }
+      };
       class Wrapper extends React.Component {
-        constructor(){
+        constructor() {
           super();
           this.state = {
             age: value2.age || 0,
-          }
+          };
         }
         render() {
           return (
             <div>
-              <button onClick={() => this.setState({ age: this.state.age + 1})}>
+              <button onClick={() => this.setState({ age: this.state.age + 1 })}>
                 age={this.state.age}
               </button>
               <table>
@@ -547,9 +547,9 @@ module.exports = ({ storiesOf, action }) => {
                 </tr>
               </table>
             </div>
-          )
+          );
         }
       }
-      return <Wrapper />
-    })
+      return <Wrapper />;
+    });
 };

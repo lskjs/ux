@@ -170,7 +170,9 @@ class PostCard extends Component {
     onLike: PropTypes.func.isRequired,
   }
   render() {
-    const { id, text, header, likes, onLike } = this.props;
+    const {
+      id, text, header, likes, onLike,
+    } = this.props;
     return (
       <div styleName="card">
         <div styleName="card-photo" style={{ backgroundImage: `url(${header.image})` }}>

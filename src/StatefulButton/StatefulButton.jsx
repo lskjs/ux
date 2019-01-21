@@ -68,7 +68,9 @@ class StatefulButton extends PureComponent {
   @autobind
   onClick(e) {
     if (this.getButtonState() === 'ready') {
-      const { onSubmit, onClick, form, state } = this.props;
+      const {
+        onSubmit, onClick, form, state,
+      } = this.props;
       this.resetInternalStateAfterProcessing = false;
 
       let event;

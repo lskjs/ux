@@ -31,7 +31,7 @@ module.exports = ({ storiesOf, action }) => {
         </Modal.Trigger>
         <Modal.Content body>
           Sample content, and &nbsp;
-          <Modal.Trigger type='close'>
+          <Modal.Trigger type="close">
             <a>close</a>
           </Modal.Trigger>
         </Modal.Content>
@@ -119,7 +119,7 @@ module.exports = ({ storiesOf, action }) => {
                 </Modal.Content>
               </Modal>
             </div>
-          )
+          );
         }
       }
       return <ComponentWithModal />;
@@ -139,44 +139,44 @@ module.exports = ({ storiesOf, action }) => {
         <Modal.Trigger>
           some trigger text, open modal <br />
           <button onClick={() => console.log('log1 log1 log1')}>Some console.log into modal and open modal</button>  <br />
-          <button onClick={(e) => { e.preventDefault(); console.log('log2 log2 log2') }}>Some console.log into modal  without open modal</button>
+          <button onClick={(e) => { e.preventDefault(); console.log('log2 log2 log2'); }}>Some console.log into modal  without open modal</button>
         </Modal.Trigger>
         <Modal.Content>
           Sample content
         </Modal.Content>
       </Modal>
     ))
-    ;
+  ;
 
-    // .add('Modal async trigger', () => {
-    //   // npm i eventemitter3
-    //   if (!require('eventemitter3')) {
-    //     return <div>npm i eventemitter3</div>
-    //   }
-    //   const emitter = new require('eventemitter3').EventEmitter;
-    //   // const emitter = {}
-    //   const open = () => {
-    //     setTimeout(() => {
-    //       emitter.emit('open');
-    //     }, 1000);
-    //   };
-    //   const close = () => {
-    //     setTimeout(() => {
-    //       emitter.emit('close');
-    //     }, 1000);
-    //   };
-    //   return (<div>
-    //     <button onClick={open}>
-    //       Open async modal
-    //     </button>
-    //     <Modal emitter={emitter}>
-    //       <Modal.Content>
-    //         Sample content
-    //         <button onClick={close}>
-    //           Close async modal
-    //         </button>
-    //       </Modal.Content>
-    //     </Modal>
-    //   </div>);
-    // });
+  // .add('Modal async trigger', () => {
+  //   // npm i eventemitter3
+  //   if (!require('eventemitter3')) {
+  //     return <div>npm i eventemitter3</div>
+  //   }
+  //   const emitter = new require('eventemitter3').EventEmitter;
+  //   // const emitter = {}
+  //   const open = () => {
+  //     setTimeout(() => {
+  //       emitter.emit('open');
+  //     }, 1000);
+  //   };
+  //   const close = () => {
+  //     setTimeout(() => {
+  //       emitter.emit('close');
+  //     }, 1000);
+  //   };
+  //   return (<div>
+  //     <button onClick={open}>
+  //       Open async modal
+  //     </button>
+  //     <Modal emitter={emitter}>
+  //       <Modal.Content>
+  //         Sample content
+  //         <button onClick={close}>
+  //           Close async modal
+  //         </button>
+  //       </Modal.Content>
+  //     </Modal>
+  //   </div>);
+  // });
 };

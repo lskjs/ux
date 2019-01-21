@@ -34,7 +34,9 @@ class Feedback extends Component {
   }
   render() {
     const { value } = this.state;
-    const { noTitle, starCount, t, message, allowHalf, disabled = true } = this.props;
+    const {
+      noTitle, starCount, t, message, allowHalf, disabled = true,
+    } = this.props;
     return (
       <Block>
         {!noTitle && <Title>{t('conversations.bloggerFeedbackTitle')}</Title>}

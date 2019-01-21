@@ -18,7 +18,9 @@ class InputGroup extends PureComponent {
     style: {},
   }
   render() {
-    const { children, disabled, uniform, style } = this.props;
+    const {
+      children, disabled, uniform, style,
+    } = this.props;
     return (
       <Block
         className="buzz-input-group"

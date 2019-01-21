@@ -52,7 +52,9 @@ class InputRange extends PureComponent {
   }
   render() {
     const { value } = this.state;
-    const { validationState, min, max, minProps, maxProps } = this.props;
+    const {
+      validationState, min, max, minProps, maxProps,
+    } = this.props;
     const [from, to] = value;
     return (
       <Block>

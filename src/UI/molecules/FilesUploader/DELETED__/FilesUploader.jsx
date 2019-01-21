@@ -68,7 +68,9 @@ class FilesUploader extends Component {
   @autobind async onDrop(inputFiles = []) {
     let files = inputFiles;
     const alreadyFiles = this.state.files;
-    const { onSubmit, upload, onError, maxCount } = this.props;
+    const {
+      onSubmit, upload, onError, maxCount,
+    } = this.props;
 
     if (maxCount && files.length > maxCount) {
       files = files.slice(0, maxCount);

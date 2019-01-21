@@ -180,9 +180,7 @@ class Editor extends Component {
           .unwrapBlock('ordered-list');
       } else if (isList) {
         change
-          .unwrapBlock(
-            type === 'bulleted-list' ? 'ordered-list' : 'bulleted-list',
-          )
+          .unwrapBlock(type === 'bulleted-list' ? 'ordered-list' : 'bulleted-list')
           .wrapBlock(type);
       } else {
         change.setBlock('list-item').wrapBlock(type);

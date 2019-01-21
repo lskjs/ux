@@ -12,7 +12,7 @@ export default styled(filteredTag)`
   line-height: 35px;
   display: inline-block;
   text-align: center;
-  ${p =>(p.theme.corderCircle)};
+  ${p => (p.theme.corderCircle)};
   color: ${p => (p.color || p.theme.colors.darkGray)};
   background-color: ${p => (p.background || p.theme.colors.white)};
   i {
