@@ -21,11 +21,9 @@ const TagsPicker = ({
     <TagsPickerBase
       // {...field}
       {...props}
-      onChange={(val) => {
-        console.log('onChange', val);
-      }}
+      onChange={null}
       onSubmit={(value) => {
-        console.log({value});
+        console.log({ value });
         form.setFieldValue(field.name, value);
       }}
       value={field.value}
