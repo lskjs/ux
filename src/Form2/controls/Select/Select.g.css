@@ -51,6 +51,7 @@
 
 .lsk-form-select .react-select__menu {
   margin: 0 !important;
+  overflow: hidden;
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.24) !important;
 }
 
