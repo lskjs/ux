@@ -13,5 +13,7 @@ export default styled('div')`
   min-height: 40px;
   width: 100%;
   position: relative;
-  align-items: center;
+  @media screen and (max-width: 450px) {
+    align-items: center !important;
+  }
 `;
