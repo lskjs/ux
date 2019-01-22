@@ -43,7 +43,7 @@ export const Trigger = styled('button')`
   letter-spacing: -0.1px;
   font-family: ${p => p.theme.fontFamily};
   background-color: ${p => p.theme.colors.white};
-  border: 1px solid ${p => (p.open ? p.theme.colors.primary : p.theme.colors.border)};
+  border: 1px solid ${p => (p.open ? `${p.theme.colors.primary} !important` : p.theme.colors.border)};
   padding: 0;
   outline: none;
   position: relative;
@@ -57,7 +57,7 @@ export const Trigger = styled('button')`
   
   ${p => (p.open && css`
     ${Icon} {
-      transform: rotate(180deg);
+      color: hsl(0,0%,40%);
     }
   `)}
   
