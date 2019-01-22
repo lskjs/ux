@@ -4,11 +4,12 @@ import cx from 'classnames';
 
 class Slider extends Component {
   render() {
-    const { inverseTrack, styleWrapper = {}, ...props } = this.props;
+    const { inverseTrack, styleWrapper = {}, graphs, ...props } = this.props;
     return (
       <div
         className={cx({
           'buzz-slider': true,
+          'with-graphs': graphs,
           'buzz-slider-inverse-track': inverseTrack,
         })}
         style={styleWrapper}
