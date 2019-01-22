@@ -53,17 +53,17 @@ module.exports = ({ storiesOf, action, knob }) => {
         <p>
           Any titles:
         </p>
-        <Avatar title='user 1' />
-        <Avatar title='user 2' />
-        <Avatar title='user 3' />
-        <Avatar title='user 4' />
+        <Avatar title="user 1" />
+        <Avatar title="user 2" />
+        <Avatar title="user 3" />
+        <Avatar title="user 4" />
         <p>
           Same titles:
         </p>
-        <Avatar title='user 1' />
-        <Avatar title='user 2' />
-        <Avatar title='user 3' />
-        <Avatar title='user 4' />
+        <Avatar title="user 1" />
+        <Avatar title="user 2" />
+        <Avatar title="user 3" />
+        <Avatar title="user 4" />
       </div>
     ))
     .add('Colored by id', () => (
@@ -71,16 +71,16 @@ module.exports = ({ storiesOf, action, knob }) => {
         <p>
           Any users:
         </p>
-        <Avatar title='user 1' id={1} />
-        <Avatar title='user 2' id={2} />
-        <Avatar title='user 3' id={'user3'} />
-        <Avatar title='user 4' id={null} />
+        <Avatar title="user 1" id={1} />
+        <Avatar title="user 2" id={2} />
+        <Avatar title="user 3" id="user3" />
+        <Avatar title="user 4" id={null} />
         <p>
           Same ids:
         </p>
-        <Avatar title='name 1' id={1} />
-        <Avatar title='name 2' id={1} />
-        <Avatar title='name 3' id={1} />
+        <Avatar title="name 1" id={1} />
+        <Avatar title="name 2" id={1} />
+        <Avatar title="name 3" id={1} />
       </div>
     ))
     .add('No image', () => (
@@ -108,7 +108,7 @@ module.exports = ({ storiesOf, action, knob }) => {
           <Avatar {...user()} style={{ padding: 10 }} />
           <Avatar {...user()} style={{ border: '4px solid rgb(244, 67, 54)' }} />
           <Avatar {...user()} style={{ border: '4px solid rgba(128, 128, 128, 0.5)' }} />
-          <Avatar {...user()} style={{ border: '4px solid rgba(128, 128, 128, 0.5)' }} src='//broken.site/img.png' />
+          <Avatar {...user()} style={{ border: '4px solid rgba(128, 128, 128, 0.5)' }} src="//broken.site/img.png" />
         </div>
         <div>
           <Avatar {...user()} innerStyle={{ boxShadow: '1px 1px 10px 2px #333' }} />
@@ -122,8 +122,8 @@ module.exports = ({ storiesOf, action, knob }) => {
             )}
             innerStyle={{ border: '4px solid rgb(244, 67, 54)' }}
           />
-          <Avatar {...user()} innerStyle={{ border: '4px solid rgba(128, 128, 128, 0.5)' }} src='//broken.site/img.png' />
-          <Avatar {...user()} innerStyle={{ border: '2px solid #4CAF50'}} />
+          <Avatar {...user()} innerStyle={{ border: '4px solid rgba(128, 128, 128, 0.5)' }} src="//broken.site/img.png" />
+          <Avatar {...user()} innerStyle={{ border: '2px solid #4CAF50' }} />
           <Avatar {...user()} innerStyle={{ border: '4px solid #F44336' }} />
         </div>
       </div>
@@ -132,45 +132,72 @@ module.exports = ({ storiesOf, action, knob }) => {
       <div>
         <Avatar {...user()}>
           <Avatar.Badge left top>
-            <div style={{ width: 10, height: 10, backgroundColor: '#4CAF50', borderRadius: '50%', border: '2px solid #fff' }} />
+            <div style={{
+ width: 10, height: 10, backgroundColor: '#4CAF50', borderRadius: '50%', border: '2px solid #fff',
+}}
+            />
           </Avatar.Badge>
         </Avatar>
 
         <Avatar title="Offline Smith">
           <Avatar.Badge right bottom>
-            <div style={{ width: 10, height: 10, backgroundColor: '#F44336', borderRadius: '50%', border: '2px solid #fff' }} />
+            <div style={{
+ width: 10, height: 10, backgroundColor: '#F44336', borderRadius: '50%', border: '2px solid #fff',
+}}
+            />
           </Avatar.Badge>
         </Avatar>
 
         <Avatar size={100} title="Offline Smith">
           <Avatar.Badge right bottom>
-            <div style={{ width: 10, height: 10, backgroundColor: '#F44336', borderRadius: '50%', border: '2px solid #fff' }} />
+            <div style={{
+ width: 10, height: 10, backgroundColor: '#F44336', borderRadius: '50%', border: '2px solid #fff',
+}}
+            />
           </Avatar.Badge>
         </Avatar>
 
         <Avatar size={200} title="Offline Smith">
           <Avatar.Badge right bottom>
-            <div style={{ width: 10, height: 10, backgroundColor: '#F44336', borderRadius: '50%', border: '2px solid #fff' }} />
+            <div style={{
+ width: 10, height: 10, backgroundColor: '#F44336', borderRadius: '50%', border: '2px solid #fff',
+}}
+            />
           </Avatar.Badge>
         </Avatar>
 
         <Avatar>
           <Avatar.Badge left top >
-            <div style={{ width: 10, height: 10, backgroundColor: '#4CAF50', borderRadius: '50%', border: '2px solid #fff' }} />
+            <div style={{
+ width: 10, height: 10, backgroundColor: '#4CAF50', borderRadius: '50%', border: '2px solid #fff',
+}}
+            />
           </Avatar.Badge>
           <Avatar.Badge right top >
-            <div style={{ width: 10, height: 10, backgroundColor: '#F44336', borderRadius: '50%', border: '2px solid #fff' }} />
+            <div style={{
+ width: 10, height: 10, backgroundColor: '#F44336', borderRadius: '50%', border: '2px solid #fff',
+}}
+            />
           </Avatar.Badge>
           <Avatar.Badge left bottom >
-            <div style={{ width: 10, height: 10, backgroundColor: '#574caf', borderRadius: '50%', border: '2px solid #fff' }} />
+            <div style={{
+ width: 10, height: 10, backgroundColor: '#574caf', borderRadius: '50%', border: '2px solid #fff',
+}}
+            />
           </Avatar.Badge>
           <Avatar.Badge right bottom >
-            <div style={{ width: 10, height: 10, backgroundColor: '#c6972f', borderRadius: '50%', border: '2px solid #fff' }} />
+            <div style={{
+ width: 10, height: 10, backgroundColor: '#c6972f', borderRadius: '50%', border: '2px solid #fff',
+}}
+            />
           </Avatar.Badge>
         </Avatar>
 
         <Avatar>
-          <div style={{ width: 10, height: 10, backgroundColor: '#F44336', borderRadius: '50%', position: 'absolute', right: '24px', bottom: '24px', border: '2px solid #fff' }} />
+          <div style={{
+ width: 10, height: 10, backgroundColor: '#F44336', borderRadius: '50%', position: 'absolute', right: '24px', bottom: '24px', border: '2px solid #fff',
+}}
+          />
         </Avatar>
       </div>
     ))

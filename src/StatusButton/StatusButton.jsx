@@ -170,7 +170,9 @@ class StatusButton extends PureComponent {
   }
   render() {
     const { status } = this.state;
-    const { children, tag, bsStyle, className } = this.props;
+    const {
+      children, tag, bsStyle, className,
+    } = this.props;
 
     const style = cx({
       default: status === BUTTON_STATUS.loading,
@@ -187,12 +189,12 @@ class StatusButton extends PureComponent {
 
       ${props => (props.disabled && 'cursor: wait !important;')}
       ${(props) => {
-        switch (props.bsStyle) {
-          case 'success': return successStyle;
-          case 'danger': return dangerStyle;
-          default: return defaultStyle;
-        }
-      }}
+    switch (props.bsStyle) {
+      case 'success': return successStyle;
+      case 'danger': return dangerStyle;
+      default: return defaultStyle;
+    }
+  }}
 
       &:hover,
       &:focus,

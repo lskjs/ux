@@ -46,7 +46,7 @@ class BlogCardList extends PureComponent {
     return (
       <Wrapper>
         <ImageContainer href={link}>
-          <Image src={img} alt="Blog cover"/>
+          <Image src={img} alt="Blog cover" />
         </ImageContainer>
         <Body>
           <TagItem>{tag}</TagItem>

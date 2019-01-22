@@ -9,7 +9,7 @@ import FormDebug from '../../FormDebug';
 import Input from '../../controls/Input';
 import Select from '../../controls/Select';
 import Checkbox from '../../controls/Checkbox';
-import TagsPicker from '../../controls/TagsPicker';
+import Tags from '../../controls/Tags';
 
 // import '../../../styles/lib/antd.g.css';
 // import '../../../styles/lib/bootstrap.g.css';
@@ -20,7 +20,7 @@ const FormExample1View = (props) => {
       <FastField {...props.controls.input} />
       <FastField {...props.controls.select} />
       <FastField {...props.controls.checkbox} />
-      <FastField {...props.controls.tagsPicker} />
+      <FastField {...props.controls.tags} />
       <FormDebug {...props} />
     </Form>
   );
@@ -56,29 +56,25 @@ const FormExample1 = createForm({
       label: 'Checkbox label',
       placeholder: 'Checkbox placeholder',
     },
-    tagsPicker: {
-      title: 'tagsPicker',
-      component: TagsPicker,
+    tags: {
+      title: 'tags',
+      component: Tags,
       triggerTitle: 'Выбрать теги',
       flat: true,
-      fields: [
+      options: [
         {
-          _id: '1',
           value: 'one',
           title: 'Один',
         },
         {
-          _id: '2',
           value: 'two',
           title: 'Два',
         },
         {
-          _id: '3',
           value: 'three',
           title: 'Три',
         },
         {
-          _id: '4',
           value: 'four',
           title: 'Четыре',
         },

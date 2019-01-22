@@ -1,8 +1,9 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import bind from 'core-decorators/lib/autobind';
+import autobind from 'core-decorators/lib/autobind';
 import get from 'lodash/get';
 import Plus from 'react-icons2/mdi/plus-circle';
+import If from 'react-if';
 
 import Tag from '../Tag';
 import TagsWrapper from '../TagsWrapper';
@@ -13,9 +14,9 @@ import Button from '../../../Button';
 function getFieldsKeys(fields = []) {
   const keys = {};
   fields.forEach((field) => {
-    keys[field._id] = field;
+    keys[field.value] = field;
     (field.children || []).forEach((f) => {
-      keys[f._id] = f;
+      keys[f.value] = f;
     });
   });
   return keys;
@@ -63,39 +64,58 @@ class TagsPicker extends PureComponent {
     if (newValue !== next.value) state.value = getAvailable(next.fields, next.value);
     this.setState(state);
   }
-  @bind getValue() {
+
+  @autobind
+  getValue() {
     const { value } = this.state;
     return !Array.isArray(value) ? [value] : value;
   }
-  @bind handleDeleteTag(id) {
+
+  @autobind
+  handleDeleteTag(id) {
     const { value } = this.state;
     this.setState({ value: value.filter(e => e !== id) }, this.callbackCombo);
   }
-  @bind callbackCombo() {
+
+  @autobind
+  callbackCombo() {
     this.callbackChange();
     this.callbackSubmit();
   }
-  @bind handleSubmit(value) {
+
+  @autobind
+  handleSubmit(value) {
     this.setState({ value }, this.callbackSubmit);
   }
-  @bind callbackSubmit() {
+
+  @autobind
+  callbackSubmit() {
     const { onSubmit } = this.props;
     const { value } = this.state;
     if (onSubmit) onSubmit(value);
   }
-  @bind handleChange(value) {
+
+  @autobind
+  handleChange(value) {
+    console.log('handleChange', value);
+
     this.setState({ value }, this.callbackChange);
   }
-  @bind callbackChange() {
+
+  @autobind
+  callbackChange() {
     const { onChange } = this.props;
     const { value } = this.state;
     if (onChange) onChange(value);
   }
-  @bind renderModal(trigger) {
-    const { flat, title, onChange, fields, createTag } = this.props;
+
+  @autobind
+  renderModal(trigger) {
+    const {
+      flat, title, onChange, fields, createTag,
+    } = this.props;
     // const { fields } = this.state;
     const value = this.getValue();
-    console.log(this.props);
 
     return (
       <TreePicker
@@ -112,7 +132,9 @@ class TagsPicker extends PureComponent {
     );
   }
   render() {
-    const { block, triggerTitle, fields, disabled, readOnly } = this.props;
+    const {
+      block, triggerTitle, fields, disabled, readOnly,
+    } = this.props;
     const value = this.getValue();
     const fieldsKeys = getFieldsKeys(fields);
     const trigger = value.length > 0

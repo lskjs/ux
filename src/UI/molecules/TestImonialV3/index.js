@@ -1,1 +1,1 @@
-export  { default } from './TestImonialV3';
+export { default } from './TestImonialV3';

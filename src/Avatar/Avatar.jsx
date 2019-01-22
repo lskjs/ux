@@ -69,22 +69,24 @@ export default class Avatar extends PureComponent {
       const index = Math.floor(Math.random() * Avatar.defaultColors.length);
       return Avatar.defaultColors[index];
     }
-    num = num % Avatar.defaultColors.length;
-    return Avatar.defaultColors[num-1] || Avatar.defaultColors[0];
+    num %= Avatar.defaultColors.length;
+    return Avatar.defaultColors[num - 1] || Avatar.defaultColors[0];
   }
 
   hashCode(str) {
     if (isNull(str)) return null;
-    if (!isString(str)) str += "";
-    let hash = 0, i, chr;
+    if (!isString(str)) str += '';
+    let hash = 0,
+      i,
+      chr;
     if (str.length === 0) return hash;
     for (i = 0; i < str.length; i++) {
-      chr   = str.charCodeAt(i);
-      hash  = ((hash << 5) - hash) + chr;
+      chr = str.charCodeAt(i);
+      hash = ((hash << 5) - hash) + chr;
       hash |= 0; // Convert to 32bit integer
     }
     return Math.abs(hash);
-  };
+  }
 
   getInnerStyle() {
     const {
@@ -99,7 +101,7 @@ export default class Avatar extends PureComponent {
       src,
     } = this.props;
     const str = id || title || null;
-    const color = backgroundColor ? backgroundColor : this.getColorByHash(this.hashCode(str));
+    const color = backgroundColor || this.getColorByHash(this.hashCode(str));
 
     const width = this.props.width || size;
     const height = this.props.height || size;
@@ -154,7 +156,7 @@ export default class Avatar extends PureComponent {
   }
 
   renderAsText() {
-    let { placeholder, placeholderLimit } = this.props
+    let { placeholder, placeholderLimit } = this.props;
     const title = this.props.title || this.props.name || placeholder || '';
     if (!placeholder) {
       placeholder = title
@@ -222,7 +224,7 @@ Avatar.Badge = (props) => {
     if (typeof props[dir] === 'string') {
       style[dir] = props[dir];
     } else if (typeof props[dir] === 'number') {
-      style[dir] = props[dir] + '%';
+      style[dir] = `${props[dir]}%`;
     } else {
       style[dir] = offset;
     }

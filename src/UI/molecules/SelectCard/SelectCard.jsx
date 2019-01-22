@@ -33,7 +33,9 @@ class SelectCard extends PureComponent {
     if (onSelect) onSelect(!checked);
   }
   render() {
-    const { validationState, checked, icon, title, description } = this.props;
+    const {
+      validationState, checked, icon, title, description,
+    } = this.props;
     return (
       <Block
         type="button"

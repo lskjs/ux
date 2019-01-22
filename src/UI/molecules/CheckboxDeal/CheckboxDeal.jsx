@@ -19,7 +19,9 @@ import {
 @observer
 class CheckboxDeal extends Component {
   render() {
-    const { t, checked, onChange, item } = this.props;
+    const {
+      t, checked, onChange, item,
+    } = this.props;
     return (
       <Block
         active={checked}

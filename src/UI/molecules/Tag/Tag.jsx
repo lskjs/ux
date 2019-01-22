@@ -4,7 +4,9 @@ import { Title, CloseWrapper, TagItem } from './Tag.styles';
 
 class Tag extends PureComponent {
   render() {
-    const { children, onClose, id, disabled } = this.props;
+    const {
+      children, onClose, id, disabled,
+    } = this.props;
     return (
       <TagItem disabled={disabled}>
         <Title>{children}</Title>

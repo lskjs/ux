@@ -6,7 +6,6 @@ import StatusButton from '../StatusButton';
 // const PROMISE_TIMEOUT = 2000;
 
 export default class TestPromise extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -23,7 +22,7 @@ export default class TestPromise extends Component {
       }, this.props.promiseTimeout || 2000);
     });
     this.setState({ fetching: true });
-    return this.promise
+    return this.promise;
   }
 
   @autobind

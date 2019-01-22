@@ -23,7 +23,9 @@ class Column extends PureComponent {
     noFlex: false,
   }
   render() {
-    const { half, mini, children, double, full, auto, noFlex, grid } = this.props;
+    const {
+      half, mini, children, double, full, auto, noFlex, grid,
+    } = this.props;
     return (
       <Block
         double={double}

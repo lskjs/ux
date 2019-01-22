@@ -239,12 +239,12 @@ const SelectForm = createForm({
           }))), 50);
         });
       },
-        // return range(start, start + 10).map(value => ({
-        //   value,
-        //   id: value,
-        //   image: `https://picsum.photos/40/40/?image=${value}`,
-        //   title: `User ${value}`,
-        // }));
+      // return range(start, start + 10).map(value => ({
+      //   value,
+      //   id: value,
+      //   image: `https://picsum.photos/40/40/?image=${value}`,
+      //   title: `User ${value}`,
+      // }));
       // },
     },
     asyncSelect2: {

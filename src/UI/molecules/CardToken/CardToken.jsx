@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { inject, observer } from 'mobx-react';
 import CreditCard from 'react-icons2/mdi/credit-card';
-import bind from 'core-decorators/lib/autobind';
+import autobind from 'core-decorators/lib/autobind';
 import InputGroup from '../InputGroup';
 import Input from '../../../Input';
 import Button from '../../../Button';
@@ -35,11 +35,11 @@ class CardToken extends Component {
     if (newValue !== next.value) state.value = next.value;
     this.setState(state);
   }
-  @bind getValue() {
+  @autobind getValue() {
     const { value } = this.state;
     return value;
   }
-  @bind handleSubmit(value) {
+  @autobind handleSubmit(value) {
     const { uapp } = this.props;
     const { token, errorMsgs } = value;
     if (!token) uapp.onError('!token');
@@ -52,20 +52,20 @@ class CardToken extends Component {
     this.setState({ value: token }, this.callbackSubmit);
     this.modal.close();
   }
-  @bind callbackSubmit() {
+  @autobind callbackSubmit() {
     const { onSubmit } = this.props;
     const { value } = this.state;
     if (onSubmit) onSubmit(value);
   }
-  @bind handleChange(value) {
+  @autobind handleChange(value) {
     this.setState({ value }, this.callbackChange);
   }
-  @bind callbackChange() {
+  @autobind callbackChange() {
     const { onChange } = this.props;
     const { value } = this.state;
     if (onChange) onChange(value);
   }
-  @bind initWidget(data) {
+  @autobind initWidget(data) {
     const { uapp } = this.props;
     const style = {
       widget: {},
@@ -100,12 +100,12 @@ class CardToken extends Component {
       });
     });
   }
-  @bind async handleOpen() {
+  @autobind async handleOpen() {
     const { uapp } = this.props;
     const res = await uapp.modules.billing.stores.Transactions.getCardTokenSign();
     this.initWidget(res?.data);
   }
-  @bind renderModal(trigger) {
+  @autobind renderModal(trigger) {
     const { title, onChange, t } = this.props;
     return (
       <Modal

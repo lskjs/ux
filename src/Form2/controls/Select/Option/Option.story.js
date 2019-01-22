@@ -21,8 +21,8 @@
 //         <CustomSelect
 //           searchable
 //           value
-          // icon={<CheckBlank />}
-          // iconActive={<CheckMarked />}
+// icon={<CheckBlank />}
+// iconActive={<CheckMarked />}
 //           iconColor={theme.colors.primary}
 //           optionComponent={OptionSelect}
 //           valueComponent={ValueSelect}

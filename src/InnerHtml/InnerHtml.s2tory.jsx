@@ -15,7 +15,7 @@ module.exports = function ({ storiesOf, action, knob }) {
       </InnerHtml>
     ))
     .add('demo 0', () => (
-      <InnerHtml type="md">{`
+      <InnerHtml type="md">
 # h1 Heading 8-)
 ## h2 Heading
 ### h3 Heading
@@ -31,7 +31,6 @@ module.exports = function ({ storiesOf, action, knob }) {
 ---
 
 
-
 ## Typographic replacements
 
 Enable typographer option to see result.
@@ -43,7 +42,7 @@ test.. test... test..... test?..... test!....
 !!!!!! ???? ,,  -- ---
 
 "Smartypants, double quotes" and 'single quotes'
-      `}</InnerHtml>
+      </InnerHtml>
     ))
     .add('demo 1', () => (
       <InnerHtml type="md">

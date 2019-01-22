@@ -48,12 +48,12 @@ export const Item = styled('div')`
         label {
           color: #da4c5a;
         }
-        `;
+`;
       default:
         return '';
     }
   }}  
-  ${p => (p.selected && `
+${p => (p.selected && `
     ${Icon} {
       color: ${p.theme.colors.primary};
       cursor: default;
@@ -62,7 +62,7 @@ export const Item = styled('div')`
       cursor: default;
       color: #4a4a4a !important;
     }
-  `)}
+    `)}
   ${p => (p.disabled && `
     ${Icon} {
       color: #e3e3e3 !important;
@@ -76,5 +76,5 @@ export const Item = styled('div')`
     &:hover label {
       color: ${p.theme.colors.primary};
     }
-  `)}
+    `)}
 `;

@@ -17,7 +17,9 @@ class MiniUser extends PureComponent {
     normal: false,
   }
   render() {
-    const { normal, tiny, title, user, componentClass: Tag, ...props } = this.props;
+    const {
+      normal, tiny, title, user, componentClass: Tag, ...props
+    } = this.props;
     return (
       <Block
         componentClass={Tag}

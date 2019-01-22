@@ -1,4 +1,4 @@
-import React, {  PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 import range from 'lodash/range';
 
 import Story from '../Story';
@@ -102,7 +102,7 @@ module.exports = ({ storiesOf }) => (
           gridTemplateColumns: '0px 2fr 1fr',
         }}
         >
-        
+
           <div style={{
             gridColumn: 1,
             overflow: 'hidden',

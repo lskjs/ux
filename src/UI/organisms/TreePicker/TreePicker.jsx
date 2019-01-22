@@ -183,6 +183,7 @@ class TreePicker extends Component {
       <Modal
         size="small"
         trigger={children}
+        onClose={this.handleReset}
         innerRef={(modal) => {
           this.modal = modal;
         }}

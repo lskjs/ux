@@ -47,7 +47,9 @@ class ModalScroll extends PureComponent {
   }
   render() {
     const { top, bottom } = this.state;
-    const { theme, children, maxHeight, minHeight, inner, className } = this.props;
+    const {
+      theme, children, maxHeight, minHeight, inner, className,
+    } = this.props;
     const style = inner ? css`
       ${top && css`border-top: 1px solid ${theme.colors.border};`}
       ${bottom && css`border-bottom: 1px solid ${theme.colors.border};`}
