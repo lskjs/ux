@@ -6,7 +6,9 @@ import PropTypes from 'prop-types';
 import { inject, observer } from 'mobx-react';
 import Fuse from 'fuse.js';
 import Magnify from 'react-icons2/mdi/magnify';
-import _ from 'lodash';
+import map from 'lodash/map';
+import omit from 'lodash/omit';
+import uniqBy from 'lodash/uniqBy';
 import Modal, {
   Title,
   Subtitle,
@@ -69,12 +71,12 @@ class TreePicker extends Component {
       if (Array.isArray(item.children) && item.children.length > 0) {
         this.getArrays(item.children, array, item);
         item._title = this.getChildrenTitles(item.children, item.title);
-        array.push(_.omit(item, ['children']));
+        array.push(omit(item, ['children']));
       } else {
         array.push(item);
       }
     });
-    return _.uniqBy(array, '_id');
+    return uniqBy(array, '_id');
   }
 
   getChildrenTitles(items, titles = '') {
@@ -146,7 +148,7 @@ class TreePicker extends Component {
   @autobind
   deepSearch(searchedFields, fields = this.props.fields || [], searchedFieldIds) {
     if (!searchedFieldIds) {
-      searchedFieldIds = _.map(searchedFields, '_id');
+      searchedFieldIds = map(searchedFields, '_id');
     }
     const tree = JSON.parse(JSON.stringify(fields)).filter((field) => {
       if (searchedFieldIds.indexOf(field._id) !== -1) {
