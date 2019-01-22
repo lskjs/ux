@@ -50,9 +50,10 @@ class SelectFilter extends PureComponent {
         innerRef={ref}
         data-placement={placement}
         height={contentHeight}
+        className={contentStyle}
         style={style}
       >
-        <div ref={this.content} className={contentStyle}>
+        <div ref={this.content}>
           <div {...contentWrapperProps}>
             {children}
           </div>
