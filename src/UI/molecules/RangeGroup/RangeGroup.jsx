@@ -54,7 +54,7 @@ class RangeGroup extends PureComponent {
     return (
       <React.Fragment>
         <If condition={slider !== false}>
-          <div style={{ marginBottom: 10 }}>
+          <div style={{ marginBottom: 10, marginTop: 30 }}>
             <If condition={stats.length}>
               <Graph>
                 {stats.map((item, i) => (
@@ -67,6 +67,7 @@ class RangeGroup extends PureComponent {
             </If>
             <Slider
               range
+              graphs={stats?.length}
               onChange={this.handleChange}
               value={sliderValue}
               marks={marks}
