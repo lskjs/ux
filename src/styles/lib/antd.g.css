@@ -18185,3 +18185,6 @@ li.ant-select-tree-treenode-disabled > .ant-select-tree-node-content-wrapper:hov
 .ant-calendar-range-picker-separator {
   vertical-align: baseline;
 }
+.ant-tag {
+  margin-bottom: 5px;
+}
