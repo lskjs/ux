@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Dropdown from 'antd/lib/dropdown';
 import If from 'react-if';
+import Fire from 'react-icons2/mdi/fire';
 import Avatar from '../../../Avatar';
 import LayoutHeaderListItem from '../../atoms/LayoutHeaderListItem';
 // import { DropdownLink /* , AvatarText */ } from './LayoutHeaderUserMenu.styles';
@@ -34,7 +35,16 @@ class LayoutHeaderUserMenu extends Component {
               id={user.id || user._id}
               src={user.avatar}
               title={user.title || user.name}
-            />
+            >
+              <If condition={user.role === 'admim'}>
+                <Avatar.Badge left bottom>
+                  {/* <Badge> */}
+                  {/* <Crown /> */}
+                  <Fire />
+                  {/* </Badge> */}
+                </Avatar.Badge>
+              </If>
+            </Avatar>
           </div>
           <If condition={user.title || user.name}>
             <AvatarText className="d-none d-md-inline">{user.title || user.name}</AvatarText>
