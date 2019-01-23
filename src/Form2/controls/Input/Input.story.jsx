@@ -11,6 +11,7 @@ const InputFormView = (props) => {
     <Form>
       <Field {...props.controls.input} />
       <Field {...props.controls.input2} />
+      <Field {...props.controls.input3} />
       <FastField {...props.controls.input2} title="FastField/input2" />
       <FormDebug {...props} />
     </Form>
@@ -34,6 +35,12 @@ const InputForm = createForm({
       component: Input,
       placeholder: 'input2 placeholder',
       initialValue: 'Some value in input2',
+    },
+    input3: {
+      title: 'input with regex',
+      component: Input,
+      placeholder: 'Only digits',
+      regex: /\d*\.?\d*/,
     },
   },
 });

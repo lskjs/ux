@@ -12,4 +12,5 @@ export default styled('div')`
   display: flex;
   width: 100%;
   position: relative;
+  word-break: break-word;
 `;

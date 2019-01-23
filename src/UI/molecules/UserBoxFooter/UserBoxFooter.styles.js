@@ -20,6 +20,11 @@ export const AvatarContainer = styled('div')`
   margin-top: -70px;
   padding: 12px 12px 12px 24px;
   font-family: ${p => p.theme.fontFamily};
+  @media screen and (max-width: 768px) {
+    > div {
+      margin: 0 auto;
+    }
+  }
 `;
 
 export const ButtonContainer = styled('div')`
@@ -31,7 +36,7 @@ export const ButtonContainer = styled('div')`
   align-items: flex-start;
   font-family: ${p => p.theme.fontFamily};
   @media screen and (max-width: 768px) {
-    margin-left: 0;
+    margin: 0 auto;
   }
 `;
 
@@ -49,6 +54,9 @@ export const TextContainer = styled('div')`
   padding: 10px 36px;
   font-family: ${p => p.theme.fontFamily};
   overflow: hidden;
+  @media screen and (max-width: 768px) {
+    margin: auto;
+  }
 `;
 
 export const TextItem = styled('div')`
@@ -61,4 +69,7 @@ export const TextItem = styled('div')`
     font-weight: bold;
   }
   font-family: ${p => p.theme.fontFamily};
+  @media screen and (max-width: 768px) {
+    text-align: center;
+  }
 `;

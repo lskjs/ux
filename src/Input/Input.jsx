@@ -25,6 +25,7 @@ class Input extends PureComponent {
     leftIcon: PropTypes.any,
     rightIcon: PropTypes.any,
     className: PropTypes.string,
+    regex: PropTypes.string,
   }
   static defaultProps = {
     validationState: null,
@@ -36,6 +37,7 @@ class Input extends PureComponent {
     leftIcon: null,
     rightIcon: null,
     className: null,
+    regex: null,
   }
   constructor(props) {
     super(props);
@@ -65,6 +67,7 @@ class Input extends PureComponent {
 
   @autobind
   handleChange(e) {
+    const { regex } = this.props;
     let value = e;
     if (!(typeof value === 'number' || typeof value === 'string') && value) {
       value = value.target ? value.target.value : value;
@@ -72,6 +75,9 @@ class Input extends PureComponent {
     const { displayRate } = this.props;
     if (typeof displayRate === 'number') {
       value /= displayRate;
+    }
+    if (regex) {
+      value = value.match(regex);
     }
     this.setState({ value });
     this.onChange(value);

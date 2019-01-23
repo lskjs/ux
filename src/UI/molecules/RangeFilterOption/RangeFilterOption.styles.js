@@ -6,7 +6,7 @@ export const Wrapper = styled('div')`
 `;
 
 export const Values = styled('div')`
-  margin: 12px -13px 0;
+  margin: 12px -13px;
 `;
 
 export const ValueItem = styled(removeProps('button', ['align']))`

@@ -15,8 +15,8 @@ const Calendar = ({
       {...field}
       {...props}
       onChange={(value) => {
-        form.setFieldValue(field.name, value);
-        // console.log(value);
+        const selectedDate = new Date(value);
+        form.setFieldValue(field.name, selectedDate);
       }}
       dateCellRender={(date) => {
         if (highlightedDates
@@ -29,7 +29,7 @@ const Calendar = ({
         }
         return '';
       }}
-      value={field.value || props.defaultValue || moment()}
+      value={moment(field.value) || moment(props.defaultValue) || moment()}
       fullscreen={false}
     />
   );

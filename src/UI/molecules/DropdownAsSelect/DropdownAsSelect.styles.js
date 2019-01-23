@@ -4,6 +4,10 @@ export const popperDisabledStyle = css`
   pointer-events: none;
 `;
 
+export const contentStyle = css`
+  overflow: hidden;
+`;
+
 export const Content = styled('div')`
   width: 100%;
   border-radius: 4px;
@@ -13,17 +17,20 @@ export const Content = styled('div')`
   height: ${p => p.height}px;
 `;
 
-export const Triangle = styled('div')`
-  width: 0;
-  height: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 5px solid ${p => p.theme.colors.primary};
+export const Icon = styled('div')`
   position: absolute;
   right: 0;
   top: 0;
   bottom: 0;
-  margin: auto 19px;
+  margin: auto 13px;
+  font-size: 24px;
+  line-height: 43px;
+  color: hsl(0,0%,80%);
+  transition: color .1s ease-out;
+  
+  &:hover {
+    color: hsl(0,0%,60%);
+  }
 `;
 
 
@@ -36,10 +43,11 @@ export const Trigger = styled('button')`
   letter-spacing: -0.1px;
   font-family: ${p => p.theme.fontFamily};
   background-color: ${p => p.theme.colors.white};
-  border: 1px solid ${p => (p.open ? p.theme.colors.primary : p.theme.colors.border)};
+  border: 1px solid ${p => (p.open ? `${p.theme.colors.primary} !important` : p.theme.colors.border)};
   padding: 0;
   outline: none;
   position: relative;
+  transition: border-color .1s ease-out;
   
   ${p => (p.disabled && css`
     opacity: .5;
@@ -48,8 +56,12 @@ export const Trigger = styled('button')`
   `)}
   
   ${p => (p.open && css`
-    ${Triangle} {
-      transform: rotate(180deg);
+    ${Icon} {
+      color: hsl(0,0%,40%);
     }
   `)}
+  
+  &:hover {
+    border-color: hsl(0,0%,70%);
+  }
 `;

@@ -2,9 +2,10 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import autobind from 'core-decorators/lib/autobind';
+import ChevronDownIcon from 'react-icons2/mdi/chevron-down';
 import { Manager, Reference, Popper } from 'react-popper';
 import Outside from 'react-click-outside';
-import { popperDisabledStyle, Content, Trigger, Triangle } from './DropdownAsSelect.styles';
+import { contentStyle, popperDisabledStyle, Content, Trigger, Icon } from './DropdownAsSelect.styles';
 
 class SelectFilter extends PureComponent {
   static propTypes = {
@@ -49,6 +50,7 @@ class SelectFilter extends PureComponent {
         innerRef={ref}
         data-placement={placement}
         height={contentHeight}
+        className={contentStyle}
         style={style}
       >
         <div ref={this.content}>
@@ -76,13 +78,29 @@ class SelectFilter extends PureComponent {
                 type="button"
               >
                 {trigger}
-                <Triangle />
+                <Icon>
+                  <ChevronDownIcon />
+                </Icon>
               </Trigger>
             )}
           </Reference>
           <Popper
             placement="bottom"
             eventsEnabled={open}
+            modifiers={{
+              flip: {
+                enabled: false,
+              },
+              keepTogether: {
+                enabled: false,
+              },
+              preventOverflow: {
+                enabled: false,
+              },
+              shift: {
+                enabled: false,
+              },
+            }}
             className={cx({
               [popperDisabledStyle]: !open,
             })}

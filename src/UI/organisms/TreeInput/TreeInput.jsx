@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import autobind from 'core-decorators/lib/autobind';
 import { debounce } from 'lodash-decorators';
 import { inject, observer } from 'mobx-react';
-import _ from 'lodash';
+import uniq from 'lodash/uniq';
 import Tree from 'antd/lib/tree';
 
 const { TreeNode } = Tree;
@@ -37,7 +37,7 @@ class TreeInput extends Component {
     if (!flat) {
       value = value.filter(id => id.charAt(0) !== '@');
     }
-    value = _.uniq(value);
+    value = uniq(value);
 
     // console.log('handleChange');
     this.setState({ value }, () => {
@@ -53,8 +53,8 @@ class TreeInput extends Component {
         defaultExpandAll
         multiple
         checkable
-        checkedKeys={_.uniq(value)}
-        selectedKeys={_.uniq(value)}
+        checkedKeys={uniq(value)}
+        selectedKeys={uniq(value)}
         onSelect={this.handleChange}
         onCheck={this.handleChange}
       >
