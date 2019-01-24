@@ -12,7 +12,7 @@ import {
   PaginationPages,
   PaginationStepper,
   PaginationSelect,
-} from './_List.styles';
+} from './PageList.styles';
 
 @inject('pageStore')
 @observer
@@ -28,9 +28,8 @@ class PageListPaginator extends Component {
     if (to > count) to = count;
     return (
       <React.Fragment>
-
         <PaginationStepper>
-              Показывать:
+          Показывать:
           <PaginationSelect
             name="pagination-size"
             value={pageStore.limit}
@@ -40,9 +39,9 @@ class PageListPaginator extends Component {
           >
             {options.map(option => (<option value={option}>{option}</option>))}
             {/* <option value={10}>10</option>
-          <option value={20}>20</option>
-          <option value={50}>50</option>
-          <option value={100}>100</option> */}
+              <option value={20}>20</option>
+              <option value={50}>50</option>
+              <option value={100}>100</option> */}
           </PaginationSelect>
         </PaginationStepper>
         <PaginationPages>

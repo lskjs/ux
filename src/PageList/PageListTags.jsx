@@ -4,7 +4,7 @@ import { inject, observer } from 'mobx-react';
 import isEmpty from 'lodash/isEmpty';
 import map from 'lodash/map';
 
-import { TagsTableWrapper } from './List.styles';
+import { TagsTableWrapper } from './PageList.styles';
 
 import Button from '../Button';
 // import Tag from '~/Uapp/components.v2/molecules/Tag';

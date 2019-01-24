@@ -11,7 +11,7 @@ import PageListFilter from './PageListFilter';
 import {
   ListPaper,
   ListHeader,
-} from './_List.styles';
+} from './PageList.styles';
 
 class List extends Component {
   static Header = ({ children }) => (<ListHeader>{children}</ListHeader>);

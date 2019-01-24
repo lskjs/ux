@@ -4,7 +4,7 @@ import DownloadIcon from 'react-icons2/mdi/download';
 import {
   Footer as FooterList,
   FooterRight,
-} from './_List.styles';
+} from './PageList.styles';
 
 import PageListPaginator from './PageListPaginator';
 import Button from '../Button';

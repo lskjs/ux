@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { ListTableHeader } from './_List.styles';
+import { ListTableHeader } from './PageList.styles';
 
 class PageListTableHeader extends Component {
   render() {

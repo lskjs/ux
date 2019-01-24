@@ -10,7 +10,7 @@ import Page from './Page';
 // import { Row, Col } from 'react-bootstrap'
 
 module.exports = ({ storiesOf, action }) => {
-  return storiesOf('Page', module)
+  return storiesOf('PageOld', module)
     .add('Page default no styles', () => (
       <Page>
         <h1>Какой-то заголовок</h1>
