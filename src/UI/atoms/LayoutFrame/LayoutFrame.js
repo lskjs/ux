@@ -53,7 +53,6 @@ export default styled(filteredTag)`
       p.fixed.includes('header')
       && p.fixed.includes('sidebar')
     ) {
-      console.log('kek');
       return allFixed;
     } else if (p.fixed.includes('sidebar')) {
       return sideBarFixedStyle;

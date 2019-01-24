@@ -1,29 +1,29 @@
 import React from 'react';
 import Story from '../Story';
-import Page from './Page';
+import PageList from './PageList';
 // import repeat from 'lodash/repeat';
 
 module.exports = ({ storiesOf, action }) => {
-  return storiesOf('Page', module)
+  return storiesOf('PageList', module)
     .add('default', () => (
       <Story>
-        <Page>
-          Default Page
-        </Page>
+        <PageList>
+          Default PageList
+        </PageList>
       </Story>
     ))
     .add('default 2', () => (
       <Story>
-        <Page>
-          Default Page 2
-        </Page>
+        <PageList>
+          Default PageList 2
+        </PageList>
       </Story>
     ))
     .add('default 3', () => (
       <Story>
-        <Page>
-          Default Page 3
-        </Page>
+        <PageList>
+          Default PageList 3
+        </PageList>
       </Story>
     ));
 };

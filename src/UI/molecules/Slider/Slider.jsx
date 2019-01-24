@@ -4,7 +4,9 @@ import cx from 'classnames';
 
 class Slider extends Component {
   render() {
-    const { inverseTrack, styleWrapper = {}, graphs, ...props } = this.props;
+    const {
+      inverseTrack, styleWrapper = {}, graphs, ...props
+    } = this.props;
     return (
       <div
         className={cx({
