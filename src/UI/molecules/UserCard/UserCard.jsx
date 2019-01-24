@@ -5,7 +5,6 @@ import UserTitle from '../../atoms/UserTitle';
 import UserPosition from '../../atoms/UserPosition';
 import AvatarWrapper from '../../atoms/AvatarWrapper';
 import Card from '../../atoms/Card';
-import Button from '../../../Button';
 
 class UserCard extends PureComponent {
   static propTypes = {
@@ -15,8 +14,7 @@ class UserCard extends PureComponent {
     title: PropTypes.string,
     avatar: PropTypes.string,
     position: PropTypes.string,
-    buttonTitle: PropTypes.string,
-    onClick: PropTypes.func,
+    footer: PropTypes.any,
   };
   static defaultProps = {
     id: null,
@@ -25,8 +23,7 @@ class UserCard extends PureComponent {
     position: null,
     href: null,
     componentClass: 'a',
-    buttonTitle: null,
-    onClick: null,
+    footer: null,
   }
   render() {
     const {
@@ -36,8 +33,7 @@ class UserCard extends PureComponent {
       title,
       avatar,
       position,
-      buttonTitle,
-      onClick,
+      footer,
     } = this.props;
     return (
       <Card componentClass={componentClass} href={href}>
@@ -56,16 +52,8 @@ class UserCard extends PureComponent {
         <If condition={position}>
           <UserPosition>{position}</UserPosition>
         </If>
-        <If condition={buttonTitle}>
-          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
-            <Button
-              paint="primary"
-              view="solid"
-              onClick={onClick}
-            >
-              {buttonTitle}
-            </Button>
-          </div>
+        <If condition={footer}>
+          {footer}
         </If>
       </Card>
     );
