@@ -1,31 +1,7 @@
-import styled from 'react-emotion';
 import styled, { css } from 'react-emotion';
 import Rate from 'antd/lib/rate';
 import createDynamicTag from '../utils/createDynamicTag';
 // import TabBlock from '~/Uapp/components.v2/atoms/TabBlock';
-
-const dynamicHeaderTitleTag = createDynamicTag('div');
-export const HeaderTitle = styled(dynamicHeaderTitleTag)`
-  font-family: ${p => p.theme.fontFamily};
-  font-size: 11px;
-  font-weight: 500;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.27;
-  overflow: hidden;
-  letter-spacing: -0.1px;
-  color: ${p => p.theme.colors.main};
-  display: flex;
-  align-items: center;
-  outline: none;
-  background: none;
-  border: none;
-  padding: 0;
-`;
-
-export default HeaderTitle;
-
-
 
 export const Title = styled('div')`
   font-family: ${p => p.theme.fontFamily};
