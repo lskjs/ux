@@ -10,6 +10,12 @@ const Calendar = ({
   highlightedDates,
   ...props
 }) => {
+  let validValue = moment();
+  if (moment.isDate(field.value)) {
+    validValue = moment(field.value);
+  } else if (moment.isDate(props.defaultValue)) {
+    validValue = moment(props.defaultValue);
+  }
   return (
     <CalendarBase
       {...field}
@@ -19,7 +25,7 @@ const Calendar = ({
         form.setFieldValue(field.name, selectedDate);
       }}
       dateCellRender={(date) => {
-        if (highlightedDates
+        if ((highlightedDates || [])
               .filter(e => !date.startOf('day')
                 .diff(e.startOf('day'), 'days')).length
             ) {
@@ -29,7 +35,7 @@ const Calendar = ({
         }
         return '';
       }}
-      value={moment(field.value) || moment(props.defaultValue) || moment()}
+      value={validValue}
       fullscreen={false}
     />
   );
