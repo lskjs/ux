@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
+import { withTheme } from 'emotion-theming';
 
 import ChevronRightIcon from 'react-icons2/mdi/chevron-right';
 import ChevronLeftIcon from 'react-icons2/mdi/chevron-left';
@@ -14,6 +15,7 @@ import {
   PaginationSelect,
 } from './PageList.styles';
 
+@withTheme
 @inject('pageStore')
 @observer
 class PageListPaginator extends Component {
@@ -21,6 +23,7 @@ class PageListPaginator extends Component {
     const {
       pageStore,
       options,
+      theme,
     } = this.props;
     const { count } = pageStore.listStore;
     const from = pageStore.getSkip() + 1;
@@ -52,14 +55,14 @@ class PageListPaginator extends Component {
           <Button
             disabled={!pageStore.canPrevPage()}
             view="text"
-            className={paginationButtonStyle}
+            className={paginationButtonStyle(theme)}
             icon={<ChevronLeftIcon />}
             onClick={pageStore.prevPage}
           />
           <Button
             disabled={!pageStore.canNextPage()}
             view="text"
-            className={paginationButtonStyle}
+            className={paginationButtonStyle(theme)}
             icon={<ChevronRightIcon />}
             onClick={pageStore.nextPage}
           />

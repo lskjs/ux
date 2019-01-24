@@ -285,7 +285,7 @@ export const PaginationGroup = styled('div')`
   }
 `;
 
-export const paginationButtonStyle = css`
+export const paginationButtonStyle = theme => css`
   color: ${theme.colors.secondary};
   
   padding-top: 6px !important;
