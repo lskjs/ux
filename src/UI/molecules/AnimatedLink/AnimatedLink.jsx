@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import If from 'react-if';
 import { ALink, AIcon } from './AnimatedLink.styles';
 
 class AnimatedLink extends PureComponent {

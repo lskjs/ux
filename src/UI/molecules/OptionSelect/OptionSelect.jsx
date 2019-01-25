@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import If from 'react-if';
 import { withTheme } from 'emotion-theming';
 // import MiniUser from './MiniUser';
 // import PropTypes from 'prop-types';

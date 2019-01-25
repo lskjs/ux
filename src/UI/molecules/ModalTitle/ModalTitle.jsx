@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import If from 'react-if';
 import ArrowLeft from 'react-icons2/mdi/arrow-left';
 import Button from '../../../Button';
 import { Title, buttonStyle } from './ModalTitle.styles';

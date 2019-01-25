@@ -12,7 +12,7 @@ module.exports = ({ storiesOf }) => (
             title="Download it now and get up and running in minutes"
             actions={(
               <React.Fragment>
-                <Button paint="primary">Let's start</Button> {/*eslint-disable-line*/}
+                <Button paint="primary">{"Let's"} start</Button>
                 <Button paint="default">Cancel</Button>
               </React.Fragment>
             )}

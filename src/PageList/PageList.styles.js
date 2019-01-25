@@ -354,11 +354,11 @@ export const ListHeader = styled('div')`
     border-bottom: 1px solid ${p => p.theme.colors.border};
   }
   
-  ${p => (p.sticky && css`
+${p => (p.sticky && css`
     position: sticky;
     top: ${p.offset || 0}px;
     z-index: 10;
-  `)}
+    `)}
 `;
 
 export const TagsTableWrapper = styled('div')`

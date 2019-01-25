@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import autobind from 'core-decorators/lib/autobind';
+import If from 'react-if';
 
 import CheckboxBlank from 'react-icons2/mdi/checkbox-blank-outline';
 import CheckboxCheck from 'react-icons2/mdi/checkbox-marked';

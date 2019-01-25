@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import If from 'react-if';
 import PostTags from '../../atoms/PostTags';
 import PostFooter from '../../atoms/PostFooter';
 import PostComments from '../../atoms/PostComments';
