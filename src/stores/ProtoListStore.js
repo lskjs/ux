@@ -21,7 +21,7 @@ import autobind from 'core-decorators/lib/autobind';
 const DEBUG = false; // __DEV__ && __CLIENT__
 export default class ProtpListStore {
   @observable list = [];
-  @observable count = 0;
+  @observable count = null;
   @observable skip = 0;
   @observable loading = false;
   @observable canFetchNext = false;

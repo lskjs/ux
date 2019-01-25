@@ -114,16 +114,16 @@ export default class PageListStore extends ProtoListStore {
     return params;
   }
 
+  getFromTo() {
+    return {
+      from: this.skip,
+      to: this.skip + this.limit,
+    };
+  }
+
   getVisibleList() {
-    // смотря какая страница
     const list = this.list || [];
-    // return list.slice(list.length - this.limit, list.length);
-    // console.log({ skip: this.getSkip() });
-    // const listTo = (this.getSkip() + this.limit) - this.listStore.skip;
-    // const listFrom = listTo - this.limit;
-    const { from, to } = this.getFromTo();
-    // console.log({ listTo, listFrom });
-    return list.slice(from, to);
+    return list.slice(this.skip, this.skip + this.limit);
   }
 
   getList() {
@@ -141,14 +141,21 @@ export default class PageListStore extends ProtoListStore {
 
 
   // from 1
-  getPage() {
+  getCurrentPage() {
     return Math.floor(this.skip / this.limit) + 1;
   }
   // from 1
   // null если count === null
-  getLastPage() {
+  getTotalPage() {
     if (this.count === null) return null;
     return Math.floor(this.count / this.limit) + 1;
+  }
+  // from 1
+  @action.bound
+  setPage(page) {
+    const skip = Math.floor((page - 1) * this.limit);
+    console.log({ skip });
+    this.setState({ skip });
   }
 
   getSkip() {
@@ -166,17 +173,6 @@ export default class PageListStore extends ProtoListStore {
     this.updateList();
     this.onChange();
     this.checkGlobalSelect();
-  }
-
-  //
-  getFromTo() {
-    const skip = this.getSkip();
-    const to = (skip + this.limit) - this.skip;
-    const from = to - this.limit;
-    return {
-      from,
-      to,
-    };
   }
 
   canNextPage() {

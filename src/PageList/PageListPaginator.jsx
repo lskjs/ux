@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
 import { withTheme } from 'emotion-theming';
+import Pagination from 'antd/lib/pagination';
+import DEV from '../DEV';
 
 import ChevronRightIcon from 'react-icons2/mdi/chevron-right';
 import ChevronLeftIcon from 'react-icons2/mdi/chevron-left';
@@ -16,7 +18,6 @@ import {
   PaginationSelect,
   PaginationWrapper,
 } from './PageList.styles';
-import { list } from 'postcss';
 
 @withTheme
 @inject('listStore')
@@ -52,12 +53,16 @@ class PageListPaginator extends Component {
           </If>
         </PaginationPages>
         <PaginationGroup>
-          Page: {listStore.getPage()}
-          <If condition={listStore.getLastPage() !== null}>
-           / {listStore.getLastPage()}
-          </If>
+          <Pagination
+            // hideOnSinglePage={true}
+            onChange={listStore.setPage}
+            defaultCurrent={listStore.getCurrentPage()}
+            total={listStore.getTotalPage()}
+            // pageSizeOptions={options}
+          />
+        </PaginationGroup>
 
-
+        {/* <PaginationGroup>
           <Button
             disabled={!listStore.canPrevPage()}
             view="text"
@@ -77,7 +82,7 @@ class PageListPaginator extends Component {
             icon={<ChevronRightIcon />}
             onClick={listStore.nextPage}
           />
-        </PaginationGroup>
+        </PaginationGroup> */}
       </PaginationWrapper>
     );
   }

@@ -4,12 +4,12 @@ import Spin from 'antd/lib/spin';
 
 import { ListTableItems } from './PageList.styles';
 
-@inject('pageListStore')
+@inject('listStore')
 @observer
 class ListBody extends Component {
   render() {
     const {
-      pageStore,
+      listStore,
       ListItem,
       ...props
     } = this.props;
@@ -17,12 +17,12 @@ class ListBody extends Component {
       <ListTableItems {...props}>
         <Spin
           size="large"
-          spinning={pageStore.listStore.loading}
+          spinning={listStore.loading}
         //   wrapperClassName={cx({
         //   [wrapperContentClass]: wrapperContentClass,
         // })}
         >
-          {pageStore.getVisibleList().map(item => (<ListItem item={item} />))}
+          {listStore.getVisibleList().map(item => (<ListItem item={item} />))}
         </Spin>
       </ListTableItems>
     );
