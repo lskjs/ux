@@ -15,6 +15,7 @@ import {
   PaginationStepper,
   PaginationSelect,
 } from './PageList.styles';
+import { list } from 'postcss';
 
 @withTheme
 @inject('listStore')
@@ -50,6 +51,12 @@ class PageListPaginator extends Component {
           </If>
         </PaginationPages>
         <PaginationGroup>
+          Page: {listStore.getPage()}
+          <If condition={listStore.getLastPage() !== null}>
+           / {listStore.getLastPage()}
+          </If>
+
+
           <Button
             disabled={!listStore.canPrevPage()}
             view="text"

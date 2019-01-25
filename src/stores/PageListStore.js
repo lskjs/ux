@@ -27,7 +27,6 @@ import ProtoListStore from './ProtoListStore';
 // }
 
 export default class PageListStore extends ProtoListStore {
-
   @observable listStore = {};
   @observable tab = null;
   @observable filter = {};
@@ -42,7 +41,7 @@ export default class PageListStore extends ProtoListStore {
     direction: '',
   };
   @observable search = '';
-  @observable page = 1;
+  // @observable page = 1;
   @observable limit = 10;
   @observable skip = 0;
 
@@ -140,6 +139,18 @@ export default class PageListStore extends ProtoListStore {
     this.onChange();
   }
 
+
+  // from 1
+  getPage() {
+    return Math.floor(this.skip / this.limit) + 1;
+  }
+  // from 1
+  // null если count === null
+  getLastPage() {
+    if (this.count === null) return null;
+    return Math.floor(this.count / this.limit) + 1;
+  }
+
   getSkip() {
     this.page;
     this.limit;
@@ -157,6 +168,7 @@ export default class PageListStore extends ProtoListStore {
     this.checkGlobalSelect();
   }
 
+  //
   getFromTo() {
     const skip = this.getSkip();
     const to = (skip + this.limit) - this.skip;

@@ -22,7 +22,7 @@ class ListBody extends Component {
         //   [wrapperContentClass]: wrapperContentClass,
         // })}
         >
-          {pageStore.getList().map(item => (<ListItem item={item} />))}
+          {pageStore.getVisibleList().map(item => (<ListItem item={item} />))}
         </Spin>
       </ListTableItems>
     );

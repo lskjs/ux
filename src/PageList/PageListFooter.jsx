@@ -24,6 +24,13 @@ class ListFooter extends Component {
         >
           Скачть XLSX
         </Button>
+        <Button
+          view="text"
+          iconLeft={<DownloadIcon />}
+          onClick={listStore.download}
+        >
+          list
+        </Button>
         <FooterRight>
           <PageListPaginator />
         </FooterRight>
