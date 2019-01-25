@@ -17,7 +17,17 @@ import { autobind } from 'core-decorators';
 import SelectStore from './SelectStore';
 import ProtoListStore from './ProtoListStore';
 
+
+// if (type === 'create') {
+//   res = await Event.api().create(body);
+//   this.redirect(`/cabinet/events/${res._id}`);
+// } else if (type === 'edit') {
+//   res = await Event.api().update(event._id, body);
+//   this.redirect(`/cabinet/events/${res._id}`);
+// }
+
 export default class PageListStore extends ProtoListStore {
+
   @observable listStore = {};
   @observable tab = null;
   @observable filter = {};

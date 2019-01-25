@@ -4,6 +4,7 @@ import { withTheme } from 'emotion-theming';
 
 import ChevronRightIcon from 'react-icons2/mdi/chevron-right';
 import ChevronLeftIcon from 'react-icons2/mdi/chevron-left';
+import If from 'react-if';
 
 
 import Button from '../Button';
@@ -26,9 +27,8 @@ class PageListPaginator extends Component {
       theme,
     } = this.props;
     const { count } = listStore;
-    const from = listStore.getSkip() + 1;
-    let to = listStore.getSkip() + listStore.limit;
-    if (to > count) to = count;
+    const { from, to } = listStore.getFromTo();
+
     return (
       <React.Fragment>
         <PaginationStepper>
@@ -37,15 +37,17 @@ class PageListPaginator extends Component {
             name="pagination-size"
             value={listStore.limit}
             onChange={(e) => {
-            listStore.handleChangeLimit(+e.target.value);
-          }}
+              listStore.handleChangeLimit(+e.target.value);
+            }}
           >
             {options.map(option => (<option key={option} value={option}>{option}</option>))}
           </PaginationSelect>
         </PaginationStepper>
         <PaginationPages>
-          {/* {listStore.listFromTo} / {listStore.listCount} */}
-          {from}-{to} / {count}
+          {from}—{to}
+          <If condition={count !== null}>
+           / {count}
+          </If>
         </PaginationPages>
         <PaginationGroup>
           <Button
