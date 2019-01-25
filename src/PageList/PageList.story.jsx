@@ -6,22 +6,31 @@ import range from 'lodash/range';
 // import repeat from 'lodash/repeat';
 // import ListStore from '../stores/ListStore';
 import DEV from '../DEV';
-import ProtoListStore from '../stores/PageListStore';
+import ListStore from '../stores/PageListStore';
 import { toJS } from 'mobx';
 
-class ListStore extends ProtoListStore {
-  static getList() {
-    return range(1, 5).map(id => ({ id }));
-  }
-}
-const listStore = new ListStore();
+const api = {
+  getList(params) {
+    console.log('api', params);
+    return {
+      count: 1000,
+      data: range(1, 5).map(id => ({ id })),
+    };
+  },
+};
+const listStore = new ListStore({ api });
 
 @observer
 class ODEV extends Component {
   render() {
     const { listStore } = this.props;
     return (
-      <DEV json={toJS(listStore)} />
+      <div>
+        <button onClick={() => listStore.fetch()}>
+          fetch
+        </button>
+        <DEV json={toJS(listStore)} />
+      </div>
     );
   }
 }

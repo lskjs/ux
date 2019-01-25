@@ -92,7 +92,7 @@ export default class ProtpListStore {
     return toJS(this.list);
   }
 
-  static async getList() {
+  static async getList(...args) {
     throw 'extend getList please';
   }
 
@@ -128,14 +128,20 @@ export default class ProtpListStore {
       }
 
       this.previousOffset = skip;
-      const preObjects = await this.constructor.getList({
+      const params = {
         limit,
         skip,
         sort,
         filter: this.filter,
         subfilter: this.subfilter,
         select: this.select,
-      });
+      };
+      let preObjects;
+      if (this.api && this.api.getList) {
+        preObjects = await this.api.getList(params);
+      } else {
+        preObjects = await this.constructor.getList(params);
+      }
       let objects;
       if (Array.isArray(preObjects)) {
         objects = preObjects;
