@@ -28,6 +28,7 @@
     "react/forbid-prop-types": "off",
     "import/no-extraneous-dependencies": "off",
     "react/prefer-stateless-function": "off",
-    "no-mixed-operators": "off"
+    "no-mixed-operators": "off",
+    "max-len": "off"
   }
 }
