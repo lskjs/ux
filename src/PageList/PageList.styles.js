@@ -304,6 +304,14 @@ export const paginationButtonStyle = theme => css`
 
 export const PaginationPages = styled('div')`
   margin-left: 40px;
+  display: flex;
+  align-items: center;
+`;
+
+export const PaginationWrapper = styled('div')`
+  display: flex;
+  font-family: ${p => p.theme.fontFamily};
+  color: ${p => p.theme.colors.secondary};
 `;
 
 export const PaginationStepper = styled('div')`

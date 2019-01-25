@@ -14,6 +14,7 @@ import {
   PaginationPages,
   PaginationStepper,
   PaginationSelect,
+  PaginationWrapper,
 } from './PageList.styles';
 import { list } from 'postcss';
 
@@ -31,7 +32,7 @@ class PageListPaginator extends Component {
     const { from, to } = listStore.getFromTo();
 
     return (
-      <React.Fragment>
+      <PaginationWrapper>
         <PaginationStepper>
           Показывать:
           <PaginationSelect
@@ -77,7 +78,7 @@ class PageListPaginator extends Component {
             onClick={listStore.nextPage}
           />
         </PaginationGroup>
-      </React.Fragment>
+      </PaginationWrapper>
     );
   }
 }
