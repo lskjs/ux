@@ -168,8 +168,6 @@ export default class Avatar extends PureComponent {
     return (
       <div
         style={this.getInnerStyle()}
-        // alt={title}
-        // title={title}
       >
         {placeholder}
       </div>

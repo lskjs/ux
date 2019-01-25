@@ -9,7 +9,7 @@ export const UserFooterItem = styled('div')`
   margin-bottom: -1px;
   font-family: ${p => p.theme.fontFamily};
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 950px) {
     flex-direction: column;
     height: auto;
   }
@@ -20,7 +20,7 @@ export const AvatarContainer = styled('div')`
   margin-top: -70px;
   padding: 12px 12px 12px 24px;
   font-family: ${p => p.theme.fontFamily};
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 950px) {
     > div {
       margin: 0 auto;
     }
@@ -35,7 +35,7 @@ export const ButtonContainer = styled('div')`
   flex-wrap: wrap;
   align-items: flex-start;
   font-family: ${p => p.theme.fontFamily};
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 950px) {
     margin: 0 auto;
   }
 `;
@@ -45,16 +45,16 @@ export const Content = styled('div')`
   width: 100%;
   overflow: hidden;
   font-family: ${p => p.theme.fontFamily};
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 950px) {
     flex-direction: column;
   }
 `;
 
 export const TextContainer = styled('div')`
-  padding: 10px 36px;
+  padding: 10px 20px;
   font-family: ${p => p.theme.fontFamily};
   overflow: hidden;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 950px) {
     margin: auto;
   }
 `;
@@ -69,7 +69,7 @@ export const TextItem = styled('div')`
     font-weight: bold;
   }
   font-family: ${p => p.theme.fontFamily};
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 950px) {
     text-align: center;
   }
 `;
