@@ -9,18 +9,18 @@ import {
 import PageListPaginator from './PageListPaginator';
 import Button from '../Button';
 
-@inject('pageStore')
+@inject('listStore')
 class ListFooter extends Component {
   render() {
     const {
-      pageStore,
+      listStore,
     } = this.props;
     return (
       <FooterList>
         <Button
           view="text"
           iconLeft={<DownloadIcon />}
-          onClick={pageStore.listStore.downloadExcel}
+          onClick={listStore.download}
         >
           Скачть XLSX
         </Button>
