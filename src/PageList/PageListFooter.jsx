@@ -25,9 +25,7 @@ class ListFooter extends Component {
           Скачть XLSX
         </Button>
         <FooterRight>
-          <PageListPaginator
-            options={[10, 20, 50, 100]}
-          />
+          <PageListPaginator />
         </FooterRight>
       </FooterList>
     );

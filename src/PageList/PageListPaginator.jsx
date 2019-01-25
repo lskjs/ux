@@ -23,7 +23,7 @@ class PageListPaginator extends Component {
   render() {
     const {
       listStore,
-      options = [10, 20, 50],
+      options = [10, 20, 50, 100],
       theme,
     } = this.props;
     const { count } = listStore;
@@ -57,6 +57,11 @@ class PageListPaginator extends Component {
             icon={<ChevronLeftIcon />}
             onClick={listStore.prevPage}
           />
+          (1)
+          (2)
+          (3)
+          (4)
+          ...
           <Button
             disabled={!listStore.canNextPage()}
             view="text"

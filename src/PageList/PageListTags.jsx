@@ -18,7 +18,7 @@ const createDefaultTags = (filter) => {
   }));
 };
 
-@inject('pageStore')
+@inject('listStore')
 @observer
 class PageListTags extends Component {
   static defaultProps = {
@@ -27,15 +27,15 @@ class PageListTags extends Component {
   render() {
     const {
       createTags,
-      pageStore,
+      listStore,
     } = this.props;
 
-    if (!pageStore.search &&
-      (!pageStore.filter || isEmpty(pageStore.filter))
+    if (!listStore.search &&
+      (!listStore.filter || isEmpty(listStore.filter))
     ) return null;
     return (
       <TagsTableWrapper >
-        {createTags(toJS(pageStore.filter)).map((config) => {
+        {createTags(toJS(listStore.filter)).map((config) => {
           // console.log({ config });
           const { component, ...tagProps } = config;
           const TagItem = component || Tag;
@@ -43,7 +43,7 @@ class PageListTags extends Component {
             <TagItem
               {...tagProps}
               onClose={(tag) => {
-                pageStore.removeTag(tag);
+                listStore.removeTag(tag);
               }}
             />
           );
@@ -55,7 +55,7 @@ class PageListTags extends Component {
           bordered
           rounded
           onClick={() => {
-            pageStore.resetTags();
+            listStore.resetTags();
           }}
         >
           Снять все фильтры

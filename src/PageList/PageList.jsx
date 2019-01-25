@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Provider as MobxProvider } from 'mobx-react';
 
 import ListStore from '../stores/ListStore';
-
 import Table from '../Table';
 
 import PageListHeader from './PageListHeader';
@@ -30,8 +29,11 @@ class PageList extends Component {
   static StickyPanel = ({ children }) => <div>{children}</div>;
   render() {
     const {
-      columns, ListItem, FilterForm, createTags, HeaderItem, listStore = new ListStore(),
+      columns, container,
+      ListItem, FilterForm, createTags, HeaderItem, listStore,
     } = this.props;
+
+    if (!listStore) return <div>!listStore</div>;
 
 
     let { children } = this.props;
@@ -59,6 +61,13 @@ class PageList extends Component {
         </Table>
       );
     }
+    if (container) {
+      children = (
+        <ListPaper>
+          {children}
+        </ListPaper>
+      );
+    }
 
     // return <MobxProvider listStore={listStore}>
     // <div>
@@ -68,10 +77,7 @@ class PageList extends Component {
     return (
       <MobxProvider listStore={listStore} pageList={this}>
         <Provider value={this.constructor}>
-          <ListPaper>
-            {/* PageList */}
-            {children}
-          </ListPaper>
+          {children}
         </Provider>
       </MobxProvider>
     );

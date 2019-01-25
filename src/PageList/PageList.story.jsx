@@ -78,9 +78,12 @@ module.exports = ({ storiesOf }) => {
     ))
     .add('PageList.Footer', () => (
       <Story>
-        <PageList>
+        <PageList
+          listStore={listStore}
+        >
           <PageList.Footer />
         </PageList>
+        <ODEV listStore={listStore} />
       </Story>
     ))
     .add('PageList.Paginator', () => (
