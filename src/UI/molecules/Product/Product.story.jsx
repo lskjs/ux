@@ -14,7 +14,7 @@ const articles = [
   },
 ];
 
-module.exports = ({ storiesOf }) => (
+export default ({ storiesOf }) => (
   storiesOf('ui/Product', module)
     .add('Product', () => (
       <div style={{ padding: 60 }}>

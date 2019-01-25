@@ -26,7 +26,7 @@ const FormExample1View = (props) => {
   );
 };
 
-const FormExample1 = createForm({
+export const FormExample1 = createForm({
   view: FormExample1View,
   FormGroup,
   controls: {
@@ -83,7 +83,7 @@ const FormExample1 = createForm({
   },
 });
 
-module.exports = ({ storiesOf }) =>
+export default ({ storiesOf }) =>
   storiesOf('Form2/examples', module)
     .add('FormExample', () => {
       return (

@@ -41,7 +41,7 @@ import { Provider } from 'mobx-react';
 // }
 
 
-module.exports = ({ storiesOf, action }) => {
+export default ({ storiesOf, action }) => {
   return storiesOf('PriceInput', module)
     .add('default', () => {
       return (

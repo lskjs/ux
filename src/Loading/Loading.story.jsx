@@ -3,7 +3,7 @@ import Story from '../Story';
 import Loading from './Loading';
 import LoadingDots from '../LoadingDots';
 
-module.exports = ({ storiesOf }) => (
+export default ({ storiesOf }) => (
   storiesOf('Loading', module)
     .add('Loading', () => (
       <Story>

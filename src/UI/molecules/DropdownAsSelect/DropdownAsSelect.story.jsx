@@ -7,7 +7,7 @@ import FilterValue from '../../atoms/FilterValue';
 
 import './DropdownAsSelect.g.css';
 
-module.exports = ({ storiesOf }) => {
+export default ({ storiesOf }) => {
   storiesOf('ui/DropdownAsSelect', module)
     .add('Default', () => (
       <Story>

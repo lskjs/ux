@@ -3,7 +3,7 @@ import Story from '../../../Story';
 import RangeFilterOption from './RangeFilterOption';
 import { formatter } from '../../../utils/formatter';
 
-module.exports = ({ storiesOf }) => {
+export default ({ storiesOf }) => {
   storiesOf('ui/RangeFilterOption', module)
     .add('Default', () => (
       <Story>

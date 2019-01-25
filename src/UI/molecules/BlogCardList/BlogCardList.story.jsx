@@ -16,7 +16,7 @@ const articles = [
   },
 ];
 
-module.exports = ({ storiesOf }) => (
+export default ({ storiesOf }) => (
   storiesOf('ui/BlogCardList', module)
     .add('BlogCardList', () => (
       <div style={{ padding: 60 }}>

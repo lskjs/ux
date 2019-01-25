@@ -2,7 +2,7 @@ import React from 'react';
 import PostUser from './PostUser';
 import ThemeInjector from '../../../ThemeInjector';
 
-module.exports = ({ storiesOf }) => (
+export default ({ storiesOf }) => (
   storiesOf('ui/PostUser', module)
     .add('Default', () => (
       <ThemeInjector>

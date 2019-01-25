@@ -46,7 +46,7 @@ const Block = styled(SuperInput)`
   `)}
 `;
 
-module.exports = ({ storiesOf }) => {
+export default ({ storiesOf }) => {
   storiesOf('example', module)
     .add('isuvorov2', () => (
       <Story>

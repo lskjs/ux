@@ -2,7 +2,7 @@ import React from 'react';
 import CTACentered from './CTACentered';
 import ThemeInjector from '../../../ThemeInjector';
 
-module.exports = ({ storiesOf }) => (
+export default ({ storiesOf }) => (
   storiesOf('ui/CTACentered', module)
     .add('Default', () => (
       <div style={{ padding: 60 }}>

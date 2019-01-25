@@ -3,7 +3,7 @@ import Col from 'reactstrap/lib/Col';
 import Cover from './Cover';
 
 
-module.exports = ({ storiesOf }) => (
+export default ({ storiesOf }) => (
   storiesOf('ui/Cover', module)
     .add('Default', () => (
       <Cover

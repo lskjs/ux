@@ -11,7 +11,7 @@ const articles = [
   },
 ];
 
-module.exports = ({ storiesOf }) => (
+export default ({ storiesOf }) => (
   storiesOf('ui/CTABoxed', module)
     .add('Default', () => (
       <div style={{ padding: 60 }}>

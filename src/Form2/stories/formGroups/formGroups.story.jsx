@@ -107,7 +107,7 @@ const SimpleFormGroupForm = createForm({
   onSubmit: console.log,
 });
 
-module.exports = ({ storiesOf }) =>
+export default ({ storiesOf }) =>
   storiesOf('Form2/formGroups', module)
     .add('EmptyFormGroup', () => {
       return (

@@ -11,7 +11,7 @@ import Box from './UI/molecules/Box';
 import UserBoxFooter from './UI/molecules/UserBoxFooter';
 
 
-module.exports = ({ storiesOf }) => (
+export default ({ storiesOf }) => (
   storiesOf('UserPage', module)
     .add('Default', () => (
       <ThemeInjector>

@@ -37,7 +37,7 @@ const OnChangeForm = createForm({
   },
 });
 
-module.exports = ({ storiesOf }) =>
+export default ({ storiesOf }) =>
   storiesOf('Form2', module)
     .add('OnChangeListener ', () => {
       return (

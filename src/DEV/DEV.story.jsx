@@ -1,7 +1,8 @@
 import React from 'react';
 import DEV from './DEV';
+// import ObserverDEV from './ObserverDEV';
 
-module.exports = ({ storiesOf, action }) => (
+export default ({ storiesOf, action }) => (
   storiesOf('A', module)
     .add('children', () => (
       <DEV>

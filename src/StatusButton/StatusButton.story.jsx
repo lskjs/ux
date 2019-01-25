@@ -2,7 +2,7 @@
 // import StatusButton from './StatusButton';
 // import TestPromise from './test/TestPromise';
 
-// module.exports = ({ storiesOf, action, knob }) => {
+// export default ({ storiesOf, action, knob }) => {
 //   return storiesOf('StatusButton', module)
 //     .addHtml(<link rel="stylesheet" type="text/css" href="https://yastatic.net/bootstrap/3.3.6/css/bootstrap.min.css" />)
 //     .add('--API', () => (

@@ -47,7 +47,7 @@ function createSubmit(probability = 0.5, delay = 2000) {
   };
 }
 
-module.exports = ({ storiesOf }) =>
+export default ({ storiesOf }) =>
   storiesOf('Form2/statefulForm', module)
     .add('success', () => {
       return (

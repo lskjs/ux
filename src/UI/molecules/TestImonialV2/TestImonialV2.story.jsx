@@ -13,7 +13,7 @@ const articles = [
   },
 ];
 
-module.exports = ({ storiesOf }) => (
+export default ({ storiesOf }) => (
   storiesOf('ui/TestImonialV2', module)
     .add('default', () => (
       <div style={{ padding: 60, backgroundColor: 'red' }}>

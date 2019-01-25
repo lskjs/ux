@@ -1,39 +1,28 @@
 import React, { Component } from 'react';
-import { observer } from 'mobx-react';
-import Story from '../Story';
-import PageList from './PageList';
 import range from 'lodash/range';
+
+import Story from '../Story';
 // import repeat from 'lodash/repeat';
 // import ListStore from '../stores/ListStore';
-import DEV from '../DEV';
+import ObserverDEV from '../DEV/ObserverDEV';
 import ListStore from '../stores/PageListStore';
-import { toJS } from 'mobx';
+import { FormExample1 } from '../Form2/stories/examples/FormExample1.story';
+
+import PageList from './PageList';
 
 const api = {
-  getList(params) {
-    console.log('api', params);
+  find(params, params2) {
+    // console.log('api.find', params, params2);
     return {
       count: 1000,
-      data: range(1, 5).map(id => ({ id })),
+      data: range(1, 6).map(id => ({ id })),
     };
   },
 };
+
 const listStore = new ListStore({ api });
 
-@observer
-class ODEV extends Component {
-  render() {
-    const { listStore } = this.props;
-    return (
-      <div>
-        <button onClick={() => listStore.fetch()}>
-          fetch
-        </button>
-        <DEV json={toJS(listStore)} />
-      </div>
-    );
-  }
-}
+
 const ListItem = () => (
   <div>
     ListItem
@@ -46,14 +35,29 @@ const HeaderItem = () => (
   </div>
 );
 
-module.exports = ({ storiesOf }) => {
+class Debug extends Component {
+  render() {
+    const { store } = this.props;
+    return (
+      <div>
+        <button onClick={() => store.fetch()}>
+          fetch
+        </button>
+        <ObserverDEV json={store} />
+      </div>
+    );
+  }
+}
+
+export default ({ storiesOf }) => {
   return storiesOf('PageList', module)
     .add('default', () => (
       <Story>
         <PageList
           listStore={listStore}
+          Form={FormExample1}
         />
-        <ODEV listStore={listStore} />
+        <Debug store={listStore} />
       </Story>
     ))
     .add('children', () => (
@@ -69,7 +73,7 @@ module.exports = ({ storiesOf }) => {
           listStore={listStore}
         >
           <PageList.Header />
-          <ODEV listStore={listStore} />
+          <Debug store={listStore} />
         </PageList>
       </Story>
     ))
@@ -89,7 +93,7 @@ module.exports = ({ storiesOf }) => {
           listStore={listStore}
         >
           <PageList.Search />
-          <ODEV listStore={listStore} />
+          <Debug store={listStore} />
         </PageList>
       </Story>
     ))
@@ -98,8 +102,8 @@ module.exports = ({ storiesOf }) => {
         <PageList
           listStore={listStore}
         >
-          <PageList.Filter />
-          <ODEV listStore={listStore} />
+          <PageList.Filter Form={FormExample1} />
+          <Debug store={listStore} />
         </PageList>
       </Story>
     ))
@@ -109,7 +113,7 @@ module.exports = ({ storiesOf }) => {
           listStore={listStore}
         >
           <PageList.Tags />
-          <ODEV listStore={listStore} />
+          <Debug store={listStore} />
         </PageList>
       </Story>
     ))
@@ -120,7 +124,7 @@ module.exports = ({ storiesOf }) => {
         >
           <PageList.Body />
         </PageList>
-        <ODEV listStore={listStore} />
+        <Debug store={listStore} />
       </Story>
     ))
     .add('PageList.Footer', () => (
@@ -130,7 +134,7 @@ module.exports = ({ storiesOf }) => {
         >
           <PageList.Footer />
         </PageList>
-        <ODEV listStore={listStore} />
+        <Debug store={listStore} />
       </Story>
     ))
     .add('PageList.Paginator', () => (
@@ -140,7 +144,7 @@ module.exports = ({ storiesOf }) => {
         >
           <PageList.Paginator />
         </PageList>
-        <ODEV listStore={listStore} />
+        <Debug store={listStore} />
       </Story>
     ))
     .add('ListItem', () => (

@@ -14,7 +14,7 @@
 // import '../../../Root/Storybook.g.css';
 
 
-// module.exports = ({ storiesOf }) => {
+// export default ({ storiesOf }) => {
 //   storiesOf('OptionSelect', module)
 //     .add('Checkbox', () => (
 //       <ThemeProvider theme={theme}>

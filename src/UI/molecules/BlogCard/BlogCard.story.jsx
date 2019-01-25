@@ -53,7 +53,7 @@ const articles = [
 ];
 
 
-module.exports = ({ storiesOf }) => (
+export default ({ storiesOf }) => (
   storiesOf('ui/BlogCard', module)
     .add('BlogCard', () => (
       <ThemeInjector>

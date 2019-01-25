@@ -73,7 +73,7 @@ const tags = (
   </React.Fragment>
 );
 
-module.exports = ({ storiesOf }) => (
+export default ({ storiesOf }) => (
   storiesOf('ui/Post', module)
     .add('Default', () => (
       <ThemeInjector>

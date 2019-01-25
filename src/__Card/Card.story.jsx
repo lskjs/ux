@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from './Card';
 
-module.exports = ({ storiesOf }) => (
+export default ({ storiesOf }) => (
   storiesOf('Card', module)
     .add('Inner', () => (
       <Card>

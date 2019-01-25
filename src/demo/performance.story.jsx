@@ -68,7 +68,7 @@ class PerformanceTest extends PureComponent {  //eslint-disable-line
 }
 
 
-module.exports = ({ storiesOf }) => (
+export default ({ storiesOf }) => (
   storiesOf('performance', module)
     .add('10 elements', () => (
       <Story>

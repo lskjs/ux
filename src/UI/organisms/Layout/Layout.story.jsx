@@ -297,7 +297,7 @@ export const fixedLayout = props => (
   </React.Fragment>
 );
 
-module.exports = ({ storiesOf }) => (
+export default ({ storiesOf }) => (
   storiesOf('ui/Layout', module)
     .add('Default', () => (
       <ThemeInjector>

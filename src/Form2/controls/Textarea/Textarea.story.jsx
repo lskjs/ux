@@ -31,7 +31,7 @@ const TextareaForm = createForm({
   },
 });
 
-module.exports = ({ storiesOf }) =>
+export default ({ storiesOf }) =>
   storiesOf('Form2/controls', module)
     .add('Textarea ', () => {
       return (

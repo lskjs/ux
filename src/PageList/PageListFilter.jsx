@@ -11,49 +11,42 @@ class PageListFilter extends Component {
     const {
       Form,
       listStore,
+      container,
       old,
     } = this.props;
     const filter = toJS(listStore.filter);
-    if (old) {
-      return (
-        <div>
-          <Form
-            defaultValues={{ filter }}
-            store={listStore}
-            removeNull
-            value={{ filter }}
-            validateOnChange
-            onChange={(values) => {
-              listStore.handleChangeFilter(values.filter);
-            }}
-          />
-        </div>
+
+    let children = (
+      <Form
+        initialValues={filter}
+        onSubmit={listStore.handleChangeFilter}
+        onChange={listStore.handleChangeFilter}
+      />
+    );
+
+    if (container) {
+      children = (
+        <UnmountClosed
+          isOpened={listStore.isOpenFilterBar}
+          forceInitialAnimation
+          onRest={() => {
+            if (listStore.isOpenFilterBar) {
+              listStore.toggleRestFilterBar(true);
+            }
+          }}
+          theme={{
+            collapse: cx({
+              'ReactCollapse--collapse': true,
+              'ReactCollapse--rest': listStore.isOpenFilterBar && listStore.isRestFilterBar,
+            }),
+          }}
+        >
+          {children}
+        </UnmountClosed>
       );
     }
-    return (
-      <UnmountClosed
-        isOpened={listStore.isOpenFilterBar}
-        forceInitialAnimation
-        onRest={() => {
-          if (listStore.isOpenFilterBar) {
-            listStore.toggleRestFilterBar(true);
-          }
-        }}
-        theme={{
-          collapse: cx({
-            'ReactCollapse--collapse': true,
-            'ReactCollapse--rest': listStore.isOpenFilterBar && listStore.isRestFilterBar,
-          }),
-        }}
-      >
-        <Form
-          initialValues={filter}
-          onChange={(values) => {
-            listStore.handleChangeFilter(values);
-          }}
-        />
-      </UnmountClosed>
-    );
+
+    return children;
   }
 }
 

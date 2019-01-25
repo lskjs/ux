@@ -1,5 +1,5 @@
 import set from 'lodash/set';
-import { toJS, isComputedProp } from 'mobx';
+import { toJS, isComputedProp, action } from 'mobx';
 
 export default class Store {
   constructor(state = {}) {
@@ -18,6 +18,7 @@ export default class Store {
     }
   }
 
+  @action
   setState(state = {}) {
     for (const item in state) {
       this.setStateField(item, state[item]);

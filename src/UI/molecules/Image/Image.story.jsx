@@ -4,7 +4,7 @@ import ThemeInjector from '../../../ThemeInjector';
 import '../../../styles/lib/antd.g.css';
 
 
-module.exports = ({ storiesOf }) => (
+export default ({ storiesOf }) => (
   storiesOf('ui/Image', module)
     .add('default', () => (
       <ThemeInjector>

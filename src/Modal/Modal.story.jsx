@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Modal from './Modal';
 
-module.exports = ({ storiesOf, action }) => {
+export default ({ storiesOf, action }) => {
   return storiesOf('Modal', module)
     .addHtml(<link rel="stylesheet" type="text/css" href="https://yastatic.net/bootstrap/3.3.6/css/bootstrap.min.css" />)
     .add('1. Widthout wrap', () => (

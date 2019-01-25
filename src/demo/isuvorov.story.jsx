@@ -36,7 +36,7 @@ const Btn = styled(filteredTag)`
 `;
 
 
-module.exports = ({ storiesOf }) => (
+export default ({ storiesOf }) => (
   storiesOf('example', module)
     .add('isuvorov', () => (
       <Story>

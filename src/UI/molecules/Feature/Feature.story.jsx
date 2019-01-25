@@ -12,7 +12,7 @@ const articles = [
   },
 ];
 
-module.exports = ({ storiesOf }) => (
+export default ({ storiesOf }) => (
   storiesOf('ui/Feature', module)
     .add('Default', () => (
       <div style={{ padding: 60 }}>

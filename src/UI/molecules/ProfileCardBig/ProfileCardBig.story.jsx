@@ -4,7 +4,7 @@ import ProfileCardBig from './ProfileCardBig';
 
 import '../../../styles/lib/antd.g.css';
 
-module.exports = ({ storiesOf }) => (
+export default ({ storiesOf }) => (
   storiesOf('ui/ProfileCardBig', module)
     .add('Default', () => (
       <ThemeInjector>

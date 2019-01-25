@@ -22,7 +22,7 @@ class ListBody extends Component {
         //   [wrapperContentClass]: wrapperContentClass,
         // })}
         >
-          {listStore.getVisibleList().map(item => (<ListItem item={item} />))}
+          {listStore.map(item => (<ListItem item={item} />))}
         </Spin>
       </ListTableItems>
     );

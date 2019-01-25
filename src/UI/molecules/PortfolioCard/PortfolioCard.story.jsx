@@ -18,7 +18,7 @@ const articles = [
   },
 ];
 
-module.exports = ({ storiesOf }) => (
+export default ({ storiesOf }) => (
   storiesOf('ui/PortfolioCard', module)
     .add('Card1', () => (
       <div style={{ padding: 60, maxWidth: 400 }}>

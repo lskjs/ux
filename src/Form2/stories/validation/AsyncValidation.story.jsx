@@ -90,7 +90,7 @@ const ValidationAsync = createForm({
   },
 });
 
-module.exports = ({ storiesOf }) =>
+export default ({ storiesOf }) =>
   storiesOf('Form2/validation', module)
     .add('Custom async validation', () => {
       return (

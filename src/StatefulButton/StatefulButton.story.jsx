@@ -11,7 +11,7 @@ const promisedHandleSubmit = () => new Promise((resolve, reject) => {
   setTimeout(resolveOrReject, 1000);
 });
 
-module.exports = ({ storiesOf }) => {
+export default ({ storiesOf }) => {
   storiesOf('StatefulButton', module)
     .add('Default', () => (
       <StatefulButton

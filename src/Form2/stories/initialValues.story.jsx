@@ -50,7 +50,7 @@ const InputForm3 = createForm({
   },
 });
 
-module.exports = ({ storiesOf }) =>
+export default ({ storiesOf }) =>
   storiesOf('Form2/initialValues', module)
     .add('createForm control initialValue', () => {
       return (

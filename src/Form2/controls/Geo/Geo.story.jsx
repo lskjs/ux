@@ -46,7 +46,7 @@ const GeoMapboxForm = createForm({
   },
 });
 
-module.exports = ({ storiesOf }) =>
+export default ({ storiesOf }) =>
   storiesOf('Form2/controls/Geo', module)
     .add('mapbox', () => {
       return (

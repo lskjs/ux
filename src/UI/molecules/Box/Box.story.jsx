@@ -6,7 +6,7 @@ import '../../../styles/lib/antd.g.css';
 import UserBoxFooter from '../UserBoxFooter';
 import BoxDivider from '../../atoms/BoxDivider';
 
-module.exports = ({ storiesOf }) => (
+export default ({ storiesOf }) => (
   storiesOf('ui/Box', module)
     .add('Default', () => (
       <ThemeInjector>

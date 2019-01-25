@@ -14,7 +14,7 @@ const user = () => ({
   src: `https://randomuser.me/api/portraits/men/${random(99)}.jpg`,
 });
 
-module.exports = ({ storiesOf, action, knob }) => {
+export default ({ storiesOf, action, knob }) => {
   return storiesOf('Avatar', module)
     .add('Default as img (title,src)', () => (
       <Avatar

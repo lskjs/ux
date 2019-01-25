@@ -5,7 +5,7 @@ import ThemeInjector from '../../../ThemeInjector';
 
 import '../../../styles/lib/antd.g.css';
 
-module.exports = ({ storiesOf }) => (
+export default ({ storiesOf }) => (
   storiesOf('ui/AnimatedLink', module)
     .add('Default', () => (
       <ThemeInjector>

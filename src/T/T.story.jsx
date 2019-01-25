@@ -2,7 +2,7 @@ import React from 'react';
 import Story from '../Story';
 import T from './T';
 
-module.exports = ({ storiesOf }) => (
+export default ({ storiesOf }) => (
   storiesOf('T', module)
     .add('empty', () => (
       <Story>

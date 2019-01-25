@@ -2,7 +2,7 @@ import React from 'react';
 import Slide from './Slide';
 import repeat from 'lodash/repeat';
 
-module.exports = ({ storiesOf, action }) => {
+export default ({ storiesOf, action }) => {
   return storiesOf('Slide', module)
     .add('default', () => (
       <Slide>

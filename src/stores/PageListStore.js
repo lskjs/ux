@@ -121,14 +121,18 @@ export default class PageListStore extends ProtoListStore {
     };
   }
 
-  getVisibleList() {
-    const list = this.list || [];
-    return list.slice(this.skip, this.skip + this.limit);
+  getVisibleItems() {
+    const items = this.items || [];
+    if (!this.cachable) {
+      return items;
+    }
+    return items.slice(this.skip, this.skip + this.limit);
   }
 
-  getList() {
-    return this.getVisibleList();
+  map(...args) {
+    return this.getVisibleItems().map(...args);
   }
+
 
   updateList() {
     // console.log('updateList', { params });
@@ -154,7 +158,6 @@ export default class PageListStore extends ProtoListStore {
   @action.bound
   setPage(page) {
     const skip = Math.floor((page - 1) * this.limit);
-    console.log({ skip });
     this.setState({ skip });
   }
 

@@ -26,7 +26,7 @@ const FilesForm = createForm({
   },
 });
 
-module.exports = ({ storiesOf }) =>
+export default ({ storiesOf }) =>
   storiesOf('Form2/controls', module)
     .add('Files ', () => {
       return (

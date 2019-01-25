@@ -2,7 +2,7 @@ import React from 'react';
 import EventFooter from './EventFooter';
 import ThemeInjector from '../../../ThemeInjector';
 
-module.exports = ({ storiesOf }) => (
+export default ({ storiesOf }) => (
   storiesOf('ui/EventFooter', module)
     .add('default', () => (
       <ThemeInjector>

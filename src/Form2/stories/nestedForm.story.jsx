@@ -110,7 +110,7 @@ const ComplexForm = createForm({
   },
 });
 
-module.exports = ({ storiesOf }) =>
+export default ({ storiesOf }) =>
   storiesOf('Form2/nestedForm', module)
     .add('EntityForm', () => {
       return (

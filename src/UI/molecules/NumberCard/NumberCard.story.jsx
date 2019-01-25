@@ -2,7 +2,7 @@ import React from 'react';
 import NumberCard from './NumberCard';
 import ThemeInjector from '../../../ThemeInjector';
 
-module.exports = ({ storiesOf }) => (
+export default ({ storiesOf }) => (
   storiesOf('ui/NumberCard', module)
     .add('Default', () => (
       <div style={{ padding: 60, maxWidth: 400 }}>

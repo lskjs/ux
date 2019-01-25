@@ -16,7 +16,7 @@ const user = () => ({
   buttonTitle: 'Запрос',
 });
 
-module.exports = ({ storiesOf }) => (
+export default ({ storiesOf }) => (
   storiesOf('ui/UserCard', module)
     .add('default', () => (
       <ThemeInjector>

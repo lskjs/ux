@@ -9,7 +9,7 @@ import Page from './Page';
 // import { Row, Col, Button } from 'react-bootstrap'
 // import { Row, Col } from 'react-bootstrap'
 
-module.exports = ({ storiesOf, action }) => {
+export default ({ storiesOf, action }) => {
   return storiesOf('PageOld', module)
     .add('Page default no styles', () => (
       <Page>

@@ -33,7 +33,7 @@ const marks = {
   100: '100%',
 };
 
-module.exports = ({ storiesOf }) => (
+export default ({ storiesOf }) => (
   storiesOf('Slider', module)
     .add('default', () => (
       <Slider
@@ -42,7 +42,7 @@ module.exports = ({ storiesOf }) => (
       />
     ))
 );
-// module.exports = ({ storiesOf, action, knob }) => {
+// export default ({ storiesOf, action, knob }) => {
 //   storiesOf('Slider', module)
 //     // .addHtml(getStyles())
 //     .addHtml(getFont('PT Sans'))

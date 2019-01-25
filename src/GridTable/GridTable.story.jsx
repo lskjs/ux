@@ -140,7 +140,7 @@ class GridTableTest extends Component {
 }
 
 
-module.exports = ({ storiesOf }) => {
+export default ({ storiesOf }) => {
   storiesOf('GridTable', module)
     .add('Default', () => (
       <Story devtools>

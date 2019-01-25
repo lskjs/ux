@@ -3,7 +3,7 @@ import Story from '../Story';
 import Page from './Page';
 // import repeat from 'lodash/repeat';
 
-module.exports = ({ storiesOf, action }) => {
+export default ({ storiesOf, action }) => {
   return storiesOf('Page', module)
     .add('default', () => (
       <Story>

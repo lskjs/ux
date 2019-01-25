@@ -4,7 +4,7 @@ import { withKnobs } from '@storybook/addon-knobs';
 import Button from './Button';
 import Story from '../Story';
 
-module.exports = ({ storiesOf }) => {
+export default ({ storiesOf }) => {
   storiesOf('Button/Solid/Large', module)
     .addDecorator(withKnobs)
     .add('Default', () => (

@@ -17,7 +17,7 @@ const articles = [
     subtitle: 'PSD',
   },
 ];
-module.exports = ({ storiesOf }) => (
+export default ({ storiesOf }) => (
   storiesOf('Companies', module)
     .add('Default', () => (
       <Story>

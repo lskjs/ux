@@ -29,7 +29,7 @@ const PercentSliderForm = createForm({
   },
 });
 
-module.exports = ({ storiesOf }) =>
+export default ({ storiesOf }) =>
   storiesOf('Form2/controls', module)
     .add('PercentSlider', () => {
       return (

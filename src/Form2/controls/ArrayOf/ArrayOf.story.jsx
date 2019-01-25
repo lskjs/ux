@@ -55,7 +55,7 @@ const ArrayOfForm = createForm({
   },
 });
 
-module.exports = ({ storiesOf }) =>
+export default ({ storiesOf }) =>
   storiesOf('Form2/controls', module)
     .add('ArrayOf ', () => {
       return (
@@ -113,7 +113,7 @@ module.exports = ({ storiesOf }) =>
 //   },
 // });
 
-// module.exports = ({ storiesOf }) =>
+// export default ({ storiesOf }) =>
 //   storiesOf('Form2/controls', module)
 //     .add('Input', () => {
 //       return (

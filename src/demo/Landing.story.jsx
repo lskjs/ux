@@ -22,7 +22,7 @@ import FaqContainer from '../UI/atoms/FaqContainer';
 import FeatureContainer from '../UI/atoms/FeatureContainer';
 
 
-module.exports = ({ storiesOf }) => (
+export default ({ storiesOf }) => (
   storiesOf('example/landing1', module)
     .add('Default', () => (
       <Story>
