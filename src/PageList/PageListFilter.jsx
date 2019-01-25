@@ -4,27 +4,27 @@ import { inject, observer } from 'mobx-react';
 import { UnmountClosed } from 'react-collapse';
 import cx from 'classnames';
 
-@inject('pageStore')
+@inject('listStore')
 @observer
 class PageListFilter extends Component {
   render() {
     const {
       Form,
-      pageStore,
+      listStore,
       old,
     } = this.props;
-    const filter = toJS(pageStore.filter);
+    const filter = toJS(listStore.filter);
     if (old) {
       return (
         <div>
           <Form
             defaultValues={{ filter }}
-            store={pageStore}
+            store={listStore}
             removeNull
             value={{ filter }}
             validateOnChange
             onChange={(values) => {
-              pageStore.handleChangeFilter(values.filter);
+              listStore.handleChangeFilter(values.filter);
             }}
           />
         </div>
@@ -32,24 +32,24 @@ class PageListFilter extends Component {
     }
     return (
       <UnmountClosed
-        isOpened={pageStore.isOpenFilterBar}
+        isOpened={listStore.isOpenFilterBar}
         forceInitialAnimation
         onRest={() => {
-          if (pageStore.isOpenFilterBar) {
-            pageStore.toggleRestFilterBar(true);
+          if (listStore.isOpenFilterBar) {
+            listStore.toggleRestFilterBar(true);
           }
         }}
         theme={{
           collapse: cx({
             'ReactCollapse--collapse': true,
-            'ReactCollapse--rest': pageStore.isOpenFilterBar && pageStore.isRestFilterBar,
+            'ReactCollapse--rest': listStore.isOpenFilterBar && listStore.isRestFilterBar,
           }),
         }}
       >
         <Form
           initialValues={filter}
           onChange={(values) => {
-            pageStore.handleChangeFilter(values);
+            listStore.handleChangeFilter(values);
           }}
         />
       </UnmountClosed>

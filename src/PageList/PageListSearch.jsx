@@ -5,12 +5,12 @@ import TuneIcon from 'react-icons2/mdi/tune';
 import Button from '../Button';
 // import Search from '../Search';
 
-@inject('pageStore')
+@inject('listStore')
 @observer
 class ListSearch extends Component {
   render() {
     const {
-      pageStore,
+      listStore,
       ...props
     } = this.props;
     return (
@@ -19,12 +19,12 @@ class ListSearch extends Component {
         max={120}
         debounceTimeout={1000}
         onChange={(e) => {
-          pageStore.handleChangeSearch(e.target.value);
+          listStore.handleChangeSearch(e.target.value);
         }}
-        value={pageStore.search}
-        canClear={!!pageStore.search}
+        value={listStore.search}
+        canClear={!!listStore.search}
         onClear={() => {
-          pageStore.handleChangeSearch('');
+          listStore.handleChangeSearch('');
         }}
         actions={(
           <React.Fragment>
@@ -33,7 +33,7 @@ class ListSearch extends Component {
               paint="primary"
               view="text"
               size="large"
-              onClick={() => pageStore.toggleRightSidebar()}
+              onClick={() => listStore.toggleRightSidebar()}
             >
               Фильтр
             </Button>
@@ -42,8 +42,8 @@ class ListSearch extends Component {
               paint="primary"
               view="text"
               size="large"
-              bordered={pageStore.isOpenFilterBar}
-              onClick={() => pageStore.toggleFilterBar(pageStore.isOpenFilterBar)}
+              bordered={listStore.isOpenFilterBar}
+              onClick={() => listStore.toggleFilterBar(listStore.isOpenFilterBar)}
             >
               Фильтр
             </Button>

@@ -73,6 +73,46 @@ module.exports = ({ storiesOf }) => {
         </PageList>
       </Story>
     ))
+  //   <React.Fragment>
+  //   <PageList.Search />
+  //   <PageList.Filter
+  //     Form={FilterForm}
+  //   />
+  //   <PageList.Tags createTags={createTags} />
+  //   <PageList.StickyPanel>
+  //     <PageList.TableHeader HeaderItem={HeaderItem} />
+  //   </PageList.StickyPanel>
+  // </React.Fragment>
+    .add('PageList.Search', () => (
+      <Story>
+        <PageList
+          listStore={listStore}
+        >
+          <PageList.Search />
+          <ODEV listStore={listStore} />
+        </PageList>
+      </Story>
+    ))
+    .add('PageList.Filter', () => (
+      <Story>
+        <PageList
+          listStore={listStore}
+        >
+          <PageList.Filter />
+          <ODEV listStore={listStore} />
+        </PageList>
+      </Story>
+    ))
+    .add('PageList.Tags', () => (
+      <Story>
+        <PageList
+          listStore={listStore}
+        >
+          <PageList.Tags />
+          <ODEV listStore={listStore} />
+        </PageList>
+      </Story>
+    ))
     .add('PageList.Body', () => (
       <Story>
         <PageList
