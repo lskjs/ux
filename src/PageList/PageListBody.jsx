@@ -4,7 +4,7 @@ import Spin from 'antd/lib/spin';
 
 import { ListTableItems } from './PageList.styles';
 
-@inject('pageStore')
+@inject('pageListStore')
 @observer
 class ListBody extends Component {
   render() {

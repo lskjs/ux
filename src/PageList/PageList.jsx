@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
+import { Provider as MobxProvider } from 'mobx-react';
+
+import ListStore from '../stores/ListStore';
+
 import Table from '../Table';
 
+import PageListHeader from './PageListHeader';
 import PageListBody from './PageListBody';
 import PageListFooter from './PageListFooter';
 import PageListSearch from './PageListSearch';
@@ -8,34 +13,94 @@ import PageListTags from './PageListTags';
 import PageListTableHeader from './PageListTableHeader';
 import PageListFilter from './PageListFilter';
 
-import {
-  ListPaper,
-  ListHeader,
-} from './PageList.styles';
+import { ListPaper } from './PageList.styles';
+import { Provider } from './PageListContext';
 
-class List extends Component {
-  static Header = ({ children }) => (<ListHeader>{children}</ListHeader>);
+
+class PageList extends Component {
+  static Header = PageListHeader;
   static Body = PageListBody;
   static Footer = PageListFooter;
   static Search = PageListSearch;
   static Filter = PageListFilter;
   static Tags = PageListTags;
   static TableHeader = PageListTableHeader;
+  static Paginator = require('./PageListPaginator').default;
   // static StickyPanel = PageListStickyPanel;
   static StickyPanel = ({ children }) => <div>{children}</div>;
   render() {
-    const { columns, children } = this.props;
-    return (
-      <ListPaper>
+    const {
+      columns, ListItem, FilterForm, createTags, HeaderItem, listStore = new ListStore(),
+    } = this.props;
+
+
+    let { children } = this.props;
+
+    if (!children) {
+      children = (
+        <React.Fragment>
+          <PageList.Header
+            FilterForm={FilterForm}
+            HeaderItem={HeaderItem}
+            createTags={createTags}
+          />
+          <PageList.Body ListItem={ListItem} />
+          <PageList.Footer />
+        </React.Fragment>
+      );
+    }
+
+    if (columns) {
+      children = (
         <Table
           columns={columns}
         >
           {children}
         </Table>
-      </ListPaper>
+      );
+    }
+
+    // return <MobxProvider listStore={listStore}>
+    // <div>
+    //   PageList
+    //   </div>
+    // </MobxProvider>
+    return (
+      <MobxProvider listStore={listStore} pageList={this}>
+        <Provider value={this.constructor}>
+          <ListPaper>
+            {/* PageList */}
+            {children}
+          </ListPaper>
+        </Provider>
+      </MobxProvider>
     );
   }
 }
 
-export default List;
+
+//   <PageList
+// // listStore={pageStore.listStore}
+//     columns={['minmax(180px, 1fr)', 108, 64, 64, 'minmax(84px, 1fr)']}
+// // createTags={createTags}
+//     ListItem={ListItem}
+//     HeaderItem={HeaderItem}
+//   />;
+// <PageList.Header>
+//   <PageList.Search />
+//   <PageList.Filter
+//     Form={FilterForm}
+//   />
+//   <PageList.Tags createTags={createChannelsTags} />
+//   <PageList.StickyPanel>
+//     <HeaderItem />
+//     <PageList.TableHeader HeaderItem={HeaderItem} />
+//   </PageList.StickyPanel>
+// </PageList.Header>
+// <PageList.Body ListItem={ListItem} />
+// <PageList.Footer />
+// </PageList>
+
+
+export default PageList;
 

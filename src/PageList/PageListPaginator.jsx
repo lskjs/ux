@@ -16,18 +16,18 @@ import {
 } from './PageList.styles';
 
 @withTheme
-@inject('pageStore')
+@inject('listStore')
 @observer
 class PageListPaginator extends Component {
   render() {
     const {
-      pageStore,
-      options,
+      listStore,
+      options = [10, 20, 50],
       theme,
     } = this.props;
-    const { count } = pageStore.listStore;
-    const from = pageStore.getSkip() + 1;
-    let to = pageStore.getSkip() + pageStore.limit;
+    const { count } = listStore;
+    const from = listStore.getSkip() + 1;
+    let to = listStore.getSkip() + listStore.limit;
     if (to > count) to = count;
     return (
       <React.Fragment>
@@ -35,36 +35,32 @@ class PageListPaginator extends Component {
           Показывать:
           <PaginationSelect
             name="pagination-size"
-            value={pageStore.limit}
+            value={listStore.limit}
             onChange={(e) => {
-            pageStore.handleChangeLimit(+e.target.value);
+            listStore.handleChangeLimit(+e.target.value);
           }}
           >
-            {options.map(option => (<option value={option}>{option}</option>))}
-            {/* <option value={10}>10</option>
-              <option value={20}>20</option>
-              <option value={50}>50</option>
-              <option value={100}>100</option> */}
+            {options.map(option => (<option key={option} value={option}>{option}</option>))}
           </PaginationSelect>
         </PaginationStepper>
         <PaginationPages>
-          {/* {pageStore.listFromTo} / {pageStore.listCount} */}
+          {/* {listStore.listFromTo} / {listStore.listCount} */}
           {from}-{to} / {count}
         </PaginationPages>
         <PaginationGroup>
           <Button
-            disabled={!pageStore.canPrevPage()}
+            disabled={!listStore.canPrevPage()}
             view="text"
             className={paginationButtonStyle(theme)}
             icon={<ChevronLeftIcon />}
-            onClick={pageStore.prevPage}
+            onClick={listStore.prevPage}
           />
           <Button
-            disabled={!pageStore.canNextPage()}
+            disabled={!listStore.canNextPage()}
             view="text"
             className={paginationButtonStyle(theme)}
             icon={<ChevronRightIcon />}
-            onClick={pageStore.nextPage}
+            onClick={listStore.nextPage}
           />
         </PaginationGroup>
       </React.Fragment>
