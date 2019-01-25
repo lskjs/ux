@@ -3,13 +3,12 @@ import { inject, observer } from 'mobx-react';
 
 
 import Checkbox from '../Checkbox';
-import Price from '../Price';
+// import Price from '../Price';
 
 
 import {
   Block,
   CheckBoxWrapper,
-  Deal,
   Title,
   PriceWrapper,
 } from './CheckboxDeal.styles';
@@ -20,7 +19,7 @@ import {
 class CheckboxDeal extends Component {
   render() {
     const {
-      t, checked, onChange, item,
+      checked, onChange, item,
     } = this.props;
     return (
       <Block

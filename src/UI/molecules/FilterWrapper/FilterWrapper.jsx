@@ -5,13 +5,17 @@ import Modal, { Title, Footer, Content } from '../Modal';
 
 class FilterWrapper extends PureComponent {
   render() {
+    const {
+      trigger,
+      title,
+    } = this.props;
     return (
       <Modal
         size="small"
         innerRef={(modal) => { this.modal = modal; }}
         trigger={trigger}
         onOpen={this.handleOpen}
-        onChange={onChange && this.handleChange}
+        // onChange={onChange && this.handleChange}
         onSubmit={this.handleSubmit}
       >
         <Title>{title}</Title>
