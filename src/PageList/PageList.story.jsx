@@ -53,6 +53,7 @@ module.exports = ({ storiesOf }) => {
         <PageList
           listStore={listStore}
         />
+        <ODEV listStore={listStore} />
       </Story>
     ))
     .add('children', () => (
@@ -64,8 +65,11 @@ module.exports = ({ storiesOf }) => {
     ))
     .add('PageList.Header', () => (
       <Story>
-        <PageList>
+        <PageList
+          listStore={listStore}
+        >
           <PageList.Header />
+          <ODEV listStore={listStore} />
         </PageList>
       </Story>
     ))
