@@ -4,7 +4,7 @@ import {
   action,
 } from 'mobx';
 import Store from './Store';
-
+import insertArray from '../utils/insertArray';
 
 const DEBUG = false; // __DEV__ && __CLIENT__
 export default class ProtoListStore extends Store {
@@ -46,14 +46,10 @@ export default class ProtoListStore extends Store {
     };
   }
 
-  // fetchNextChunk() {
-  //   this.
-  // }
-
   async find({ skip, limit } = {}) {
     if (!this.api) throw '!api';
     if (!this.api.find) throw '!api.find';
-    
+
     const raw = await this.api.find({
       ...this.getFindParams(),
       limit,
@@ -79,9 +75,10 @@ export default class ProtoListStore extends Store {
 
   setItems(items, { skip } = {}) {
     if (this.cacheable) {
-      // if (nextPage)
+      this.items = insertArray(this.items, items, skip);
+      // if (nextPage) {}
       // pos
-      this.items = this.items.concat(items);
+      // this.items = this.items.concat(items);
     }
     this.items = items;
   }

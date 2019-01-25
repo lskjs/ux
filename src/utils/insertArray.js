@@ -1,6 +1,6 @@
 import range from 'lodash/range';
 
-export function insertArray(items, items2, pos = 0) {
+export default function insertArray(items, items2, pos = 0) {
   let nullCount = 0;
   let realPos = pos;
   if (pos > items.length) nullCount = pos - items.length;
@@ -13,5 +13,3 @@ export function insertArray(items, items2, pos = 0) {
   result.splice(...[realPos, items2.length].concat(items2));
   return result;
 }
-
-export default insertArray;

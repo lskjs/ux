@@ -12,7 +12,7 @@ import PageList from './PageList';
 
 const api = {
   find(params, params2) {
-    // console.log('api.find', params, params2);
+    console.log('api.find', params, params2);
     return {
       count: 1000,
       data: range(1, 6).map(id => ({ id })),
@@ -113,6 +113,17 @@ export default ({ storiesOf }) => {
           listStore={listStore}
         >
           <PageList.Tags />
+          <Debug store={listStore} />
+        </PageList>
+      </Story>
+    ))
+    .add('PageList.TableHeader', () => (
+      <Story>
+        <PageList
+          listStore={listStore}
+          HeaderItem={HeaderItem}
+        >
+          <PageList.TableHeader />
           <Debug store={listStore} />
         </PageList>
       </Story>

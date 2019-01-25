@@ -7,8 +7,10 @@ class PageListHeader extends Component {
   render() {
     return (
       <Consumer>
-        {(pageList) => {
-          const PageList = pageList.constructor;
+        {(PageList) => {
+          console.log({PageList});
+          
+          // const PageList = pageList.constructor;
           const {
             FilterForm, createTags, HeaderItem,
           } = this.props;
