@@ -11,6 +11,7 @@ import PageListSearch from './PageListSearch';
 import PageListTags from './PageListTags';
 import PageListTableHeader from './PageListTableHeader';
 import PageListFilter from './PageListFilter';
+import PageListBlank from './PageListBlank';
 
 import { ListPaper } from './PageList.styles';
 import { Provider } from './PageListContext';
@@ -24,6 +25,7 @@ class PageList extends Component {
   static Filter = PageListFilter;
   static Tags = PageListTags;
   static TableHeader = PageListTableHeader;
+  static Blank = PageListBlank;
   static Paginator = require('./PageListPaginator').default;
   // static StickyPanel = PageListStickyPanel;
   static StickyPanel = ({ children }) => <div>{children}</div>;
