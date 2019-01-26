@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import If from 'react-if';
 import Close from 'react-icons2/mdi/close';
 import { Title, CloseWrapper, TagItem } from './Tag.styles';
 

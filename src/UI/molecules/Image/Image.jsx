@@ -17,9 +17,9 @@ class Image extends PureComponent {
     width: PropTypes.number,
     height: PropTypes.number,
 
-    color: PropTypes.string,
+    // color: PropTypes.string,
     textColor: PropTypes.string,
-    textScale: PropTypes.number,
+    // textScale: PropTypes.number,
 
     placeholder: PropTypes.string,
     placeholderLimit: PropTypes.number,
@@ -39,7 +39,7 @@ class Image extends PureComponent {
 
     // backgroundColor: '#838383',
     textColor: '#d9d9d9',
-    textScale: 1,
+    // textScale: 1,
 
     placeholder: null,
     placeholderLimit: 3,

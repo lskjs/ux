@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import If from 'react-if';
 import PropTypes from 'prop-types';
 import { inject, observer } from 'mobx-react';
 import autobind from 'core-decorators/lib/autobind';
@@ -31,11 +32,12 @@ class PriceInput extends Component {
     max: PropTypes.number,
     // value: PropTypes.number,
     rate: PropTypes.number,
-    // dots: PropTypes.boolean,
-    // single: PropTypes.boolean,
-    // disabled: PropTypes.boolean,
-    // reverse: PropTypes.boolean,
-    // required: PropTypes.boolean,
+    dots: PropTypes.boolean,
+    single: PropTypes.boolean,
+    disabled: PropTypes.boolean,
+    reverse: PropTypes.boolean,
+    required: PropTypes.boolean,
+    onChange: PropTypes.string,
   };
   static defaultProps = {
     title1: null,

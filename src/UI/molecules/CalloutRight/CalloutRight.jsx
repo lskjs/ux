@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import {
   BsCol,
   Content,
@@ -19,7 +19,13 @@ class CalloutRight extends PureComponent {
           <div className="col-12 col-md-6">
             <Content>
               <Title>Commodi molestiae, culpa eveniet</Title>
-              <ContentItem>Culpa eveniet labore cupiditate at maiores dignissimos, nesciunt quam porro accusantium velit quas? Nam nobis, deleniti inventore consequuntur quos vero voluptatum nostrum error porro mollitia, accusantium distinctio nemo expedita ipsum quisquam laboriosam</ContentItem>
+              <ContentItem>
+                Culpa eveniet labore cupiditate at maiores dignissimos,
+                nesciunt quam porro accusantium velit quas?
+                Nam nobis, deleniti inventore consequuntur quos
+                vero voluptatum nostrum error porro mollitia,
+                accusantium distinctio nemo expedita ipsum quisquam laboriosam
+              </ContentItem>
               <Button type="primary" className="btn-cta">Try it Now</Button>
             </Content>
           </div>

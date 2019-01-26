@@ -1,7 +1,7 @@
 // import PriceInput from './PriceInput';
-import Form from '~/lsk/Form';
 import React from 'react';
 import { Provider } from 'mobx-react';
+import Form from '../../../Form';
 
 // class PriceInputWrapper extends Component {
 //   state = {

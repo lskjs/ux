@@ -1,5 +1,6 @@
 /* eslint import/no-unresolved: 0, import/extensions: 0 */
 import React, { Component } from 'react';
+import If from 'react-if';
 import autobind from 'core-decorators/lib/autobind';
 
 import PropTypes from 'prop-types';

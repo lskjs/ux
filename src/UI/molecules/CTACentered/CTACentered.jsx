@@ -15,7 +15,11 @@ class CTACentered extends PureComponent {
         <div className="container">
           <div className="col-md-8 mx-auto">
             <Title>Services We Provide</Title>
-            <Lead>Whether you're experiencing a creative block or need assistance in creating a brand for your new business, we're at your service.</Lead>
+            <Lead>
+              Whether {"you're"} experiencing a creative block or need
+              assistance in creating a brand for your new business,
+              {"we're"} at your service.
+            </Lead>
             <div>
               <Button type="primary">Subscribe</Button>
             </div>

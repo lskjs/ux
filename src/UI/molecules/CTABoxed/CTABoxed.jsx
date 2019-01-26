@@ -28,7 +28,7 @@ class CTABoxed extends PureComponent {
               <Content>
                 <Title>Download it now and get up and running in minutes</Title>
                 <div>
-                  <Button type="primary">Let's start</Button>
+                  <Button type="primary">{"Let's"} start</Button>
                 </div>
               </Content>
             </div>
