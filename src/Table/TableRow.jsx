@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { css } from 'react-emotion';
 import { inject, observer } from 'mobx-react';
+import cx from 'classnames';
 import isArray from 'lodash/isArray';
 import forEach from 'lodash/forEach';
 
@@ -125,10 +126,7 @@ class TableRow extends Component {
     // return <div>dsvfbng</div>
     const subProps = {
       ...props,
-      className: [
-        className,
-        cssClassName,
-      ].filter(a => a).join(' ' || null),
+      className: cx([className, cssClassName]),
     };
 
     return React.createElement(

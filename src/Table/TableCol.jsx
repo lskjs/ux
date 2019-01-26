@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
+import { inject, observer } from 'mobx-react';
+import { css } from 'react-emotion';
+import cx from 'classnames';
 import filterProps from '../utils/filterProps';
 
+@inject('overflow')
+@observer
 class TableCol extends Component {
   render() {
     const {
@@ -8,6 +13,7 @@ class TableCol extends Component {
       index,
       style,
       align,
+      overflow = 'hidden',
       children,
       ...props
     } = this.props;
@@ -28,11 +34,14 @@ class TableCol extends Component {
       componentClass,
       filterProps({
         ...props,
-        style: {
-          overflow: 'hidden',
-          ...otherStyle,
-          ...style,
-        },
+        className: cx([
+          props.className,
+          css({
+            overflow,
+            ...otherStyle,
+            ...style,
+          }),
+        ]),
       }, componentClass),
       children,
     );

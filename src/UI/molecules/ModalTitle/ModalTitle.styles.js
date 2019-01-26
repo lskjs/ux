@@ -16,6 +16,7 @@ export const Title = styled(removeProps('div', ['align']))`
   line-height: 1.33;
   letter-spacing: -0.1px;
   color: ${p => p.theme.colors.white};
+  box-sizing: border-box;
 `;
 
 export const buttonStyle = css`

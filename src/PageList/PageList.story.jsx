@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import range from 'lodash/range';
+import random from 'lodash/random';
+import sample from 'lodash/sample';
 import { observer } from 'mobx-react';
+import { css } from 'emotion';
+import cx from 'classnames';
 import Promise from 'bluebird';
 import axios from 'axios';
 
@@ -26,10 +30,24 @@ const api = {
     const promise = Promise.delay(2000); // это типа гет запрос
     cancelToken.token.promise.then(() => promise.cancel());
     await promise;
-
+    const count = 1000;
+    const roles = () => sample([
+      'Director',
+      'Manager',
+      'Stuff',
+      'Salesman',
+      'Driver',
+      'Tester',
+      'Designer',
+    ]);
     return {
-      count: 1000,
-      items: range(skip, skip + limit).map(id => ({ id, title: `User ${id + 1}` })),
+      count,
+      items: range(skip, skip + limit).map(id => ({
+        id,
+        title: `User ${id + 1}`,
+        rating: random(id, count, true).toFixed(2),
+        role: roles(),
+      })),
     };
   },
 
@@ -72,23 +90,41 @@ setTimeout(() => {
   listStore.fetch();
 }, 2000);
 
-const columns = [60, '1fr'];
+const columns = [60, '1fr', '1fr', 60];
+
+const styleHeight = css`
+  height: 100%;
+  min-height: 48px;
+  align-items: center;
+`;
+
+const itemStyle = css`
+  padding: 0 12px;
+`;
 
 const ListItem = observer(({ item = {} }) => (
-  <Row>
+  <Row className={cx([styleHeight, itemStyle])}>
     <Col index={0}>
       {item.id}
     </Col>
     <Col index={1}>
       {item.title}
     </Col>
+    <Col index={2}>
+      {item.role}
+    </Col>
+    <Col index={3}>
+      {item.rating}
+    </Col>
   </Row>
 ));
 
 const HeaderItem = () => (
-  <Row>
+  <Row className={styleHeight}>
     <Col index={0}>id</Col>
     <Col index={1}>name</Col>
+    <Col index={2}>role</Col>
+    <Col index={3}>rating</Col>
   </Row>
 );
 
@@ -110,14 +146,17 @@ export default ({ storiesOf }) => {
   return storiesOf('PageList', module)
     .add('default', () => (
       <Story devtools>
-        <PageList
-          listStore={listStore}
-          HeaderItem={HeaderItem}
-          ListItem={ListItem}
-          FilterForm={FilterForm}
-          columns={columns}
-        />
-        <Debug store={listStore} />
+        <div style={{ padding: 24 }}>
+          <PageList
+            container
+            listStore={listStore}
+            HeaderItem={HeaderItem}
+            ListItem={ListItem}
+            FilterForm={FilterForm}
+            columns={columns}
+          />
+          <Debug store={listStore} />
+        </div>
       </Story>
     ))
     .add('children', () => (

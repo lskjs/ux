@@ -19,7 +19,7 @@ export default {
     darkWarning: '#ddb800',
     lightWarning: '#fff7cd',
     mainBackground: '#f5f5f5',
-    darkerBackground: '#f5f5f5',
+    darkerBackground: '#fff',
     gray: '#595959',
     info: '#17a2b8',
     black: '#343a40',

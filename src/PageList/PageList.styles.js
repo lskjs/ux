@@ -68,18 +68,6 @@ export const SearchInput = styled('input')`
   }
 `;
 
-const bootstrapFixHeight = css`
-  > .row {
-    height: 100%;
-    > div {
-      height: 100%;
-      display: flex;
-      align-items: center;
-    }
-  }
-`;
-
-
 export const ArrowWrapper = styled('div')`
   display: flex;
   font-size: 13px;
@@ -106,8 +94,9 @@ export const ArrowWrapper = styled('div')`
 export const ListTableHeader = styled('div')`
   height: 48px;
   padding: 0 12px;
+  font-family: ${p => p.theme.fontFamily};
   background-color: ${p => p.theme.colors.white};
-  ${bootstrapFixHeight}
+  font-weight: 500;
   
   &:hover {
     ${ArrowWrapper} {
@@ -118,16 +107,17 @@ export const ListTableHeader = styled('div')`
 
 export const ListPaper = styled('div')`
   /* display: grid; */
-  border-radius: ${p => p.theme.radius};
-  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.04), 0 2px 4px 0 rgba(0, 0, 0, 0.04);
+  border-radius: ${p => p.theme.borderRadius};
+  border: 1px solid ${p => p.theme.colors.border};
+  box-shadow: ${p => ((typeof p.shadow === 'string' && p.shadow) || (p.shadow ? '0 1px 6px 0 rgba(0, 0, 0, 0.04), 0 2px 4px 0 rgba(0, 0, 0, 0.04)' : 'none'))};
   background-color: ${p => p.theme.colors.white};
   
   > *:first-child {
-    border-radius: ${p => p.theme.radius} ${p => p.theme.radius} 0 0;
+    border-radius: ${p => p.theme.borderRadius} ${p => p.theme.borderRadius} 0 0;
   }
   
   > *:last-child {
-    border-radius: 0 0 ${p => p.theme.radius} ${p => p.theme.radius};
+    border-radius: 0 0 ${p => p.theme.borderRadius} ${p => p.theme.borderRadius};
   }
 `;
 
@@ -137,7 +127,6 @@ export const ListTableItem = styled(dynamicListTableItemTag)`
   height: ${p => p.height}px;
   padding: 0 12px;
   background-color: ${p => p.theme.colors.white};
-  ${bootstrapFixHeight}
   
   ${p => (p.clickable && css`
     cursor: pointer;
@@ -170,7 +159,14 @@ export const ListGrid = styled('div')`
 
 export const ListTableItems = styled('div')`
   display: grid;
+  font-family: ${p => p.theme.fontFamily};
 `;
+
+export const FilterWrapper = styled('div')`
+  padding: 12px;
+  background-color: ${p => p.theme.colors.lightGray};
+`;
+
 
 export const ListGridItem = styled('div')`
   display: flex;
@@ -264,6 +260,7 @@ export const Footer = styled('div')`
   font-family: ${p => p.theme.fontFamily};
   color: ${p => p.theme.colors.secondary};
   background-color: ${p => p.theme.colors.darkerBackground};
+  border-top: 1px solid ${p => p.theme.colors.border};
   height: 48px;
   padding: 0 12px;
 `;

@@ -3,7 +3,7 @@ import { observer, inject } from 'mobx-react';
 import TuneIcon from 'react-icons2/mdi/tune';
 
 import Button from '../Button';
-// import Search from '../Search';
+ import Search from '../UI/molecules/Search';
 
 @inject('listStore')
 @observer
@@ -14,9 +14,9 @@ class ListSearch extends Component {
       ...props
     } = this.props;
     return (
-      <input // Search
+      <Search // Search
         current={10}
-        max={120}
+        max={listStore.count}
         debounceTimeout={1000}
         onChange={e => listStore.setSearch(e.target.value)}
         value={listStore.search}
@@ -39,7 +39,7 @@ class ListSearch extends Component {
               view="text"
               size="large"
               bordered={listStore.isOpenFilterBar}
-              onClick={listStore.toggleFilter}
+              onClick={() => listStore.toggleFilter()}
             >
               Фильтр
             </Button>

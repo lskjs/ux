@@ -21,7 +21,7 @@ class PageList extends Component {
   static StickyPanel = ({ children }) => <div>{children}</div>;
   render() {
     const {
-      columns, container, listStore = new ListStore(),
+      shadow, columns, container, listStore = new ListStore(),
       ListItem, FilterForm, createTags, HeaderItem,
     } = this.props;
 
@@ -50,7 +50,7 @@ class PageList extends Component {
     }
     if (container) {
       children = (
-        <ListPaper>
+        <ListPaper shadow={shadow}>
           {children}
         </ListPaper>
       );

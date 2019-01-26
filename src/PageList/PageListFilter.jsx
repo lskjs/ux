@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { toJS } from 'mobx';
 import { inject, observer } from 'mobx-react';
-import { UnmountClosed } from 'react-collapse';
+import FilterCollapse from '../UI/organisms/FilterCollapse';
 import DEV from '../DEV';
+import { FilterWrapper } from './PageList.styles';
 import { contextToProps } from './PageListContext';
 
 @contextToProps('FilterForm')
@@ -13,25 +14,34 @@ class PageListFilter extends Component {
     const {
       FilterForm,
       listStore,
-      container,
+      // container,
     } = this.props;
-
     if (!FilterForm) return <DEV json="!FilterForm" />;
-    let children = (
-      <FilterForm
-        initialValues={toJS(listStore.filter)}
-        onChange={listStore.setFilter}
-      />
+    // let children = (
+    //  <FilterForm
+    //    initialValues={toJS(listStore.filter)}
+    //    onChange={listStore.setFilter}
+    //  />
+    // );
+    //
+    // if (container) {
+    //  children = (
+    //    <FilterCollapse show={listStore.filterShow}>
+    //      {children}
+    //    </FilterCollapse>
+    //  );
+    // }
+    // return children;
+    return (
+      <FilterCollapse show={listStore.filterShow}>
+        <FilterWrapper>
+          <FilterForm
+            initialValues={toJS(listStore.filter)}
+            onChange={listStore.setFilter}
+          />
+        </FilterWrapper>
+      </FilterCollapse>
     );
-
-    if (container) {
-      children = (
-        <UnmountClosed show={listStore.filterShow}>
-          {children}
-        </UnmountClosed>
-      );
-    }
-    return children;
   }
 }
 

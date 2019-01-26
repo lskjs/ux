@@ -18188,3 +18188,6 @@ li.ant-select-tree-treenode-disabled > .ant-select-tree-node-content-wrapper:hov
 .ant-tag {
   margin-bottom: 8px;
 }
+.ant-form-item {
+  width: 100%;
+}

@@ -15,8 +15,8 @@ import Tags from '../../controls/Tags';
 const FormExample2View = (props) => {
   return (
     <Form>
-      <Table columns={['1fr', '1fr', '1fr', '1fr']}>
-        <Row>
+      <Table columns={['repeat(4, 1fr)']} overflow="visible">
+        <Row gap={12}>
           <Col index={0}>
             <FastField {...props.controls.input} />
           </Col>
