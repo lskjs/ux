@@ -7,7 +7,7 @@ import Block from './RadioCards.styles';
 class RadioCards extends PureComponent {
   static propTypes = {
     options: PropTypes.array,
-    // value: PropTypes.boolean,
+    value: PropTypes.any,
     onChange: PropTypes.func,
     validationState: PropTypes.oneOf(['success', 'warning', 'error']),
   }

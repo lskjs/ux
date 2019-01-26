@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { inject, observer } from 'mobx-react';
+import { observer } from 'mobx-react';
 import keyBy from 'lodash/keyBy';
 // import Tooltip from '~/Uapp/components/Tooltip';
 import countries from './countries.json';
@@ -51,6 +51,7 @@ class FlagIcon extends Component {
     );
 
     if (!tooltip) return content;
+    return false;
     // if (__DEV__) {
     //   return (
     //     <Tooltip noStyle id={`country.${country.code}`} overlay={t(`country.${country.code}`)} key={country.code}>

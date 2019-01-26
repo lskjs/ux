@@ -5,7 +5,9 @@
     "document": true,
     "window": true,
     "screen": true,
-    "If": true
+    "If": true,
+    "__CLIENT__": true,
+    "__DEV__": true
   },
   "parserOptions": {
     "ecmaFeatures": {

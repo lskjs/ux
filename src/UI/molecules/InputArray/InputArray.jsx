@@ -42,7 +42,7 @@ class InputArray extends React.Component {
   @autobind
   onChange() {
     const { value } = this.state;
-    this.props.onChange && this.props.onChange((value || []).filter(a => a));
+    if (this.props.onChange) this.props.onChange((value || []).filter(a => a));
   }
 
   @autobind

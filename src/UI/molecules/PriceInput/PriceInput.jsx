@@ -78,25 +78,25 @@ class PriceInput extends Component {
   onChange() {
     const { onChange } = this.props;
     // console.log('onChange', this.store.toJS());
-    onChange && onChange(this.store.toJS());
+    if (onChange) onChange(this.store.toJS());
   }
 
   @debounce(800)
   handleChangeValue(value) {
     // console.log({value});
-    this.store && this.store.set('value', value);
+    if (this.store) this.store.set('value', value);
     this.onChange();
   }
 
   @debounce(800)
   handleChangeResult(value) {
-    this.store && this.store.set('result', value);
+    if (this.store) this.store.set('result', value);
     this.onChange();
   }
 
   @debounce(800)
   handleChangeResult2(value) {
-    this.store && this.store.set('result2', value);
+    if (this.store) this.store.set('result2', value);
     this.onChange();
   }
 

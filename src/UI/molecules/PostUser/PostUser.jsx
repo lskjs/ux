@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import If from 'react-if';
 import PropTypes from 'prop-types';
 import { Wrapper, Title, Subtitle, Avatar, Category, Icon } from './PostUser.styles';
 

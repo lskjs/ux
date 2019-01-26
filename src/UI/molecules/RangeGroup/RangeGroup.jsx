@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import If from 'react-if';
 import PropTypes from 'prop-types';
 import autobind from 'core-decorators/lib/autobind';
 
@@ -67,7 +68,7 @@ class RangeGroup extends PureComponent {
             </If>
             <Slider
               range
-              graphs={stats?.length}
+              graphs={stats?.length} // eslint-disable-line
               onChange={this.handleChange}
               value={sliderValue}
               marks={marks}

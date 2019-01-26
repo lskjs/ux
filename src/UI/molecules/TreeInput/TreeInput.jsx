@@ -27,7 +27,7 @@ class TreeInput extends Component {
   handleChangeDebounced() {
     // console.log('handleChangeDebounced');
     const { onChange } = this.props;
-    onChange && onChange(this.state.value);
+    if (onChange) onChange(this.state.value);
   }
 
   @autobind

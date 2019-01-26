@@ -36,7 +36,8 @@ for (let i = 0; i < countriesCodes.length; i++) {  //eslint-disable-line
 
   // format
   if (c[3]) {
-    allCountries[countryIdx].format = c[3];
+    const [,,, format] = c;
+    allCountries[countryIdx].format = format;
   }
 
   // area codes

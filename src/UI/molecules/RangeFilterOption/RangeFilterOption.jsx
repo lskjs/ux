@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import If from 'react-if';
 import PropTypes from 'prop-types';
 import autobind from 'core-decorators/lib/autobind';
 import { formatter } from '../../../utils/formatter';
@@ -28,8 +29,8 @@ class RangeFilterOption extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      minValue: props.value?.[0] || props.selected?.value[0],
-      maxValue: props.value?.[1] || props.selected?.value[1],
+      minValue: props.value?.[0] || props.selected?.value[0], // eslint-disable-line no-undef
+      maxValue: props.value?.[1] || props.selected?.value[1], // eslint-disable-line no-undef
       minFocused: true,
       maxFocused: false,
     };
@@ -52,7 +53,7 @@ class RangeFilterOption extends PureComponent {
       [`${type}Focused`]: true,
       [`${reverse}Focused`]: false,
     });
-    this[`${type}Ref`]?.focus();
+    this[`${type}Ref`]?.focus(); // eslint-disable-line
   }
   @autobind
   callback(min, max) {
@@ -104,7 +105,7 @@ class RangeFilterOption extends PureComponent {
           stats={stats}
           minProps={{
             innerRef: (e) => {
-              this.minRef = e?.refsInput;
+              this.minRef = e?.refsInput; // eslint-disable-line no-undef
             },
             placeholder: 'Мин.',
             autoFocus: true,
@@ -114,7 +115,7 @@ class RangeFilterOption extends PureComponent {
           }}
           maxProps={{
             innerRef: (e) => {
-              this.maxRef = e?.refsInput;
+              this.maxRef = e?.refsInput; // eslint-disable-line no-undef
             },
             placeholder: 'Макс.',
             onFocus: () => {

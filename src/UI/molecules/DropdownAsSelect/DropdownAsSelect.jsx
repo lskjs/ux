@@ -4,7 +4,7 @@ import cx from 'classnames';
 import autobind from 'core-decorators/lib/autobind';
 import ChevronDownIcon from 'react-icons2/mdi/chevron-down';
 import { Manager, Reference, Popper } from 'react-popper';
-// import Outside from 'react-click-outside';
+import Outside from 'react-click-outside';
 import { contentStyle, popperDisabledStyle, Content, Trigger, Icon } from './DropdownAsSelect.styles';
 
 class SelectFilter extends PureComponent {
@@ -35,7 +35,7 @@ class SelectFilter extends PureComponent {
   openHandler(open) {
     this.setState({ open }, () => {
       this.setState({
-        contentHeight: this.content.current?.scrollHeight || '100%',
+        contentHeight: this.content.current?.scrollHeight || '100%', // eslint-disable-line no-undef
       });
     });
   }
