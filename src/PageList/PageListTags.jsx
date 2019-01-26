@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { toJS } from 'mobx';
 import { inject, observer } from 'mobx-react';
+import Tag from 'antd/lib/tag';
 import isEmpty from 'lodash/isEmpty';
 import map from 'lodash/map';
 
@@ -8,7 +9,6 @@ import { TagsTableWrapper } from './PageList.styles';
 
 import Button from '../Button';
 // import Tag from '~/Uapp/components.v2/molecules/Tag';
-const Tag = 'div';
 
 const createDefaultTags = (filter) => {
   return map(filter, (value, field) => ({
@@ -36,16 +36,20 @@ class PageListTags extends Component {
     return (
       <TagsTableWrapper >
         {createTags(toJS(listStore.filter)).map((config) => {
-          // console.log({ config });
+           console.log({ config });
           const { component, ...tagProps } = config;
           const TagItem = component || Tag;
           return (
             <TagItem
+              closable
+              color="blue"
               {...tagProps}
               onClose={(tag) => {
                 listStore.removeTag(tag);
               }}
-            />
+            >
+              {tagProps.value}
+            </TagItem>
           );
         })}
         <Button

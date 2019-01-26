@@ -263,6 +263,12 @@ export const Footer = styled('div')`
   border-top: 1px solid ${p => p.theme.colors.border};
   height: 48px;
   padding: 0 12px;
+  @media screen and (max-width: 992px) {
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 12px;
+    height: auto;
+  }
 `;
 
 export const FooterRight = styled('div')`
@@ -279,6 +285,10 @@ export const PaginationGroup = styled('div')`
   
   > *:not(:last-child) {
     margin-right: 6px;
+  }
+  @media screen and (max-width: 992px) {
+    margin-top: 12px;
+    justify-content: flex-end;
   }
 `;
 
@@ -303,17 +313,28 @@ export const PaginationPages = styled('div')`
   margin-left: 40px;
   display: flex;
   align-items: center;
+  @media screen and (max-width: 992px) {
+    margin-top: 12px;
+    justify-content: flex-end;
+  }
 `;
 
 export const PaginationWrapper = styled('div')`
   display: flex;
   font-family: ${p => p.theme.fontFamily};
   color: ${p => p.theme.colors.secondary};
+  @media screen and (max-width: 992px) {
+    flex-direction: column;
+  }
 `;
 
 export const PaginationStepper = styled('div')`
   display: flex;
   align-items: center;
+  @media screen and (max-width: 992px) {
+    margin-top: 12px;
+    justify-content: flex-end;
+  }
 `;
 
 export const PaginationSelect = styled('select')`
