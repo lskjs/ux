@@ -1,5 +1,2 @@
-/* // import './styles/lib/cssreset.g.css';
-// import './styles/lib/antdbase.g.css'; */
-@import './styles/lib/antd.g.css';
-@import './styles/lib/bootstrap.g.css';
+@import './styles/index.g.css';
 @import './Form2/controls/Select/Select.g.css';

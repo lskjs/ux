@@ -54,9 +54,7 @@ class PageListTags extends Component {
           view="text"
           bordered
           rounded
-          onClick={() => {
-            listStore.resetTags();
-          }}
+          onClick={listStore.clearFilter}
         >
           Снять все фильтры
         </Button>

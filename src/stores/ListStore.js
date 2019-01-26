@@ -18,6 +18,15 @@ import autobind from 'core-decorators/lib/autobind';
 //   return new Promise(resolve => setTimeout(() => resolve(data.slice(0, max)), 2000));
 // }
 
+
+// if (type === 'create') {
+//   res = await Event.api().create(body);
+//   this.redirect(`/cabinet/events/${res._id}`);
+// } else if (type === 'edit') {
+//   res = await Event.api().update(event._id, body);
+//   this.redirect(`/cabinet/events/${res._id}`);
+// }
+
 const DEBUG = false; // __DEV__ && __CLIENT__
 export default class ListStore {
   @observable list = [];

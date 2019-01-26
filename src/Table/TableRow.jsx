@@ -57,7 +57,6 @@ class TableRow extends Component {
       ...props
     } = this.props;
 
-
     const styles = ['display: grid;'];
     if (gap) styles.push(`grid-column-gap: ${gap}px;`);
     if (height) styles.push(`grid-auto-rows: ${height}px;`);
@@ -89,12 +88,17 @@ class TableRow extends Component {
       // }
     }
 
-
     const styleString = styles.join('\n');
     // console.log(styleString);
     const cssClassName = css(styleString);
     // console.log({ cssClassName });
 
+
+    // if (Array.isArray(children)) {
+    //   children.forEach((col, i) => {
+    //     if (col.props.index === null) col.props.index = i;
+    //   });
+    // }
 
     // const gridTemplateColumns = store.getColumnsWidth(store.columns) || columns || [];
     // if (auto) {

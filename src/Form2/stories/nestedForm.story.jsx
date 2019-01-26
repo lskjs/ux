@@ -36,12 +36,6 @@ const EntityFormView = (props) => {
       <Field {...props.controls.name} />
       <Field {...props.controls.money} />
       <Field {...props.controls.gender} />
-      <OnChangeListener
-        props={props}
-        values={props.values}
-        onChange={props.onChange}
-      />
-      {/* <FormDebug {...props} /> */}
     </Form>
   );
 };

@@ -1,48 +1,30 @@
 import React, { Component } from 'react';
 
-import { ListHeader as ListHeaderStyled } from './PageList.styles';
-import { Consumer } from './PageListContext';
+import DEV from '../DEV';
+import { ListHeader as Container } from './PageList.styles';
+import { contextToProps } from './PageListContext';
 
+@contextToProps('PageList')
 class PageListHeader extends Component {
   render() {
+    const { children, PageList } = this.props;
+    if (!PageList) return <DEV json="!PageList" />;
+    if (children) {
+      return (
+        <Container>
+          {children}
+        </Container>
+      );
+    }
     return (
-      <Consumer>
-        {(PageList) => {
-          console.log({PageList});
-          
-          // const PageList = pageList.constructor;
-          const {
-            FilterForm, createTags, HeaderItem,
-          } = this.props;
-          let { children } = this.props;
-
-          if (!children) {
-            if (!PageList) {
-              if (__DEV__) {
-                return <div>!props.PageList</div>;
-              }
-              return null;
-            }
-            children = (
-              <React.Fragment>
-                <PageList.Search />
-                <PageList.Filter
-                  Form={FilterForm}
-                />
-                <PageList.Tags createTags={createTags} />
-                <PageList.StickyPanel>
-                  <PageList.TableHeader HeaderItem={HeaderItem} />
-                </PageList.StickyPanel>
-              </React.Fragment>
-            );
-          }
-          return (
-            <ListHeaderStyled>
-              {children}
-            </ListHeaderStyled>
-          );
-        }}
-      </Consumer>
+      <Container>
+        <PageList.Search />
+        <PageList.Filter />
+        <PageList.Tags />
+        <PageList.StickyPanel>
+          <PageList.HeaderItemWrapper />
+        </PageList.StickyPanel>
+      </Container>
     );
   }
 }

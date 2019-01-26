@@ -10,6 +10,7 @@ import isEmpty from 'lodash/isEmpty';
 import { withFormik } from 'formik';
 import validate from 'validate.js';
 import Promise from 'bluebird';
+import OnChangeListener from '../Form2/OnChangeListener';
 
 const prepareControls = (ctrls, FormGroup) => {
   const prepared = {};
@@ -74,7 +75,15 @@ const createForm = ({
     controls,
   };
 
-  const WrappedView = props => React.createElement(View, { ...staticProps, ...props });
+  const WrappedView = (props) => {
+    const mergedProps = { ...staticProps, ...props };
+    const formView = React.createElement(View, { ...staticProps, ...props });
+    if (!mergedProps.onChange) return formView;
+    return [
+      formView,
+      React.createElement(OnChangeListener, mergedProps),
+    ];
+  };
 
   const wrapperWithFormik = rawWithFormik || withFormik;
   return wrapperWithFormik({
@@ -103,7 +112,7 @@ const createForm = ({
       setSubmitting,
       props,
       setStatus,
-      status,
+      // status,
       isSubmitting,
     }) => {
       const { onSubmit } = props;

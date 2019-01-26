@@ -1,38 +1,95 @@
 import React, { Component } from 'react';
 import range from 'lodash/range';
+import { observer } from 'mobx-react';
+import Promise from 'bluebird';
+import axios from 'axios';
 
 import Story from '../Story';
-// import repeat from 'lodash/repeat';
-// import ListStore from '../stores/ListStore';
+import { Row, Col } from '../Table';
 import ObserverDEV from '../DEV/ObserverDEV';
 import ListStore from '../stores/PageListStore';
-import { FormExample1 } from '../Form2/stories/examples/FormExample1.story';
+import { FormExample2 as FilterForm } from '../Form2/stories/examples/FormExample2.story';
 
 import PageList from './PageList';
 
+Promise.config({ cancellation: true });
 const api = {
-  find(params, params2) {
-    console.log('api.find', params, params2);
+  async find2({ skip, limit } = {}) {
+    await Promise.delay(2000);
     return {
       count: 1000,
-      data: range(1, 6).map(id => ({ id })),
+      items: range(skip, skip + limit).map(id => ({ id, title: `User ${id + 1}` })),
     };
+  },
+
+  async find({ skip, limit, cancelToken } = {}) {
+    const promise = Promise.delay(2000); // это типа гет запрос
+    cancelToken.token.promise.then(() => promise.cancel());
+    await promise;
+
+    return {
+      count: 1000,
+      items: range(skip, skip + limit).map(id => ({ id, title: `User ${id + 1}` })),
+    };
+  },
+
+
+  async find3({ skip, limit, cancelToken } = {}) {
+    await axios.get('/user/12345', { cancelToken: cancelToken.token });
+    await axios.get('/user/12345', { cancelToken: cancelToken.token });
+    await axios.get('/user/12345', { cancelToken: cancelToken.token });
+    return {
+      count: 1000,
+      items: range(skip, skip + limit).map(id => ({ id, title: `User ${id + 1}` })),
+    };
+    // });
+  },
+
+  find4({ skip, limit } = {}) {
+    return Promise(async (resolve, reject, onCancel) => {
+      const promise = Promise.delay(2000); // это типа гет запрос
+      onCancel(promise.cancel);
+      await promise;
+
+      const promise2 = Promise.delay(2000); // это типа гет запрос
+      onCancel(promise2.cancel);
+      await promise2;
+
+      const promise3 = Promise.delay(2000); // это типа гет запрос
+      onCancel(promise3.cancel);
+      await promise3;
+
+      resolve({
+        count: 1000,
+        items: range(skip, skip + limit).map(id => ({ id, title: `User ${id + 1}` })),
+      });
+    });
   },
 };
 
 const listStore = new ListStore({ api });
+setTimeout(() => {
+  listStore.fetch();
+}, 2000);
 
+const columns = [60, '1fr'];
 
-const ListItem = () => (
-  <div>
-    ListItem
-  </div>
-);
+const ListItem = observer(({ item = {} }) => (
+  <Row>
+    <Col index={0}>
+      {item.id}
+    </Col>
+    <Col index={1}>
+      {item.title}
+    </Col>
+  </Row>
+));
 
 const HeaderItem = () => (
-  <div>
-    HeaderItem
-  </div>
+  <Row>
+    <Col index={0}>id</Col>
+    <Col index={1}>name</Col>
+  </Row>
 );
 
 class Debug extends Component {
@@ -52,10 +109,13 @@ class Debug extends Component {
 export default ({ storiesOf }) => {
   return storiesOf('PageList', module)
     .add('default', () => (
-      <Story>
+      <Story devtools>
         <PageList
           listStore={listStore}
-          Form={FormExample1}
+          HeaderItem={HeaderItem}
+          ListItem={ListItem}
+          FilterForm={FilterForm}
+          columns={columns}
         />
         <Debug store={listStore} />
       </Story>
@@ -71,6 +131,9 @@ export default ({ storiesOf }) => {
       <Story>
         <PageList
           listStore={listStore}
+          HeaderItem={HeaderItem}
+          FilterForm={FilterForm}
+          columns={columns}
         >
           <PageList.Header />
           <Debug store={listStore} />
@@ -101,8 +164,9 @@ export default ({ storiesOf }) => {
       <Story>
         <PageList
           listStore={listStore}
+          FilterForm={FilterForm}
         >
-          <PageList.Filter Form={FormExample1} />
+          <PageList.Filter />
           <Debug store={listStore} />
         </PageList>
       </Story>
@@ -117,13 +181,14 @@ export default ({ storiesOf }) => {
         </PageList>
       </Story>
     ))
-    .add('PageList.TableHeader', () => (
+    .add('PageList.HeaderItemWrapper', () => (
       <Story>
         <PageList
           listStore={listStore}
           HeaderItem={HeaderItem}
+          columns={columns}
         >
-          <PageList.TableHeader />
+          <PageList.HeaderItemWrapper />
           <Debug store={listStore} />
         </PageList>
       </Story>
@@ -132,8 +197,10 @@ export default ({ storiesOf }) => {
       <Story>
         <PageList
           listStore={listStore}
+          ListItem={ListItem}
+          columns={columns}
         >
-          <PageList.Body />
+          <PageList.Body ListItem={ListItem} />
         </PageList>
         <Debug store={listStore} />
       </Story>
@@ -158,21 +225,21 @@ export default ({ storiesOf }) => {
         <Debug store={listStore} />
       </Story>
     ))
-    .add('ListItem', () => (
+    .add('props ListItem', () => (
       <Story>
         <PageList
           ListItem={ListItem}
         />
       </Story>
     ))
-    .add('HeaderItem', () => (
+    .add('props HeaderItem', () => (
       <Story>
         <PageList
           HeaderItem={HeaderItem}
         />
       </Story>
     ))
-    .add('ListItem + HeaderItem + columns', () => (
+    .add('props ListItem + HeaderItem + columns', () => (
       <Story>
         <PageList
           columns={['minmax(180px, 1fr)', 108, 64, 64, 'minmax(84px, 1fr)']}

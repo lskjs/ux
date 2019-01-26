@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 import { ThemeProvider } from 'emotion-theming';
 import { Provider } from 'mobx-react';
 import DevTools from 'mobx-react-devtools';
-import theme from './theme';
+import defaultTheme from './theme';
 import './styles.g.css';
 
 
 class Story extends Component {
   render() {
-    const { children, devtools, locale = 'en' } = this.props;
+    const {
+      children, devtools, locale = 'en', theme = defaultTheme,
+    } = this.props;
     const t = (a) => {
       return a === 'locale' ? locale : a;
     };

@@ -3,50 +3,40 @@ import {
   observable,
   action,
 } from 'mobx';
+import axios from 'axios';
+import Progress from '../utils/Progress';
+
 import Store from './Store';
 import insertArray from '../utils/insertArray';
 
-const DEBUG = false; // __DEV__ && __CLIENT__
+
 export default class ProtoListStore extends Store {
   @observable items = [];
   @observable count = null;
   @observable skip = 0;
+  @observable limit = 10;
   @observable loading = false;
   @observable canFetchNext = false;
   @observable select = {};
 
-  timeout = null;
+  cancelToken = null;
 
   setStateField(item, value) {
     if (['skip', 'limit'].includes(item)) {
       set(this, item, +value || 0);
+    } else {
+      super.setStateField(item, value);
     }
   }
 
-  @action
-  fetchNext(limit = this.limit, skip = (this.skip + this.list.length) || 0) {
-    // __DEV__ && console.log('fetchNext', limit, skip, this);
-    return this.fetch(limit, skip, true);
-  }
-
   getFindParams() {
-    // let sort;
-    // if (!isEmpty(this.sort)) {
-    //   const { direction, field } = this.sort;
-    //   sort = {
-    //     [field]: direction === 'asc' ? 1 : -1,
-    //   };
-    // }
     return {
-      sort: this.sort,
-      sortBy: this.sortBy,
       filter: this.filter,
-      subfilter: this.subfilter,
-      select: this.select,
+      sort: this.sort,
     };
   }
 
-  async find({ skip, limit } = {}) {
+  async find({ skip, limit, cancelToken } = {}) {
     if (!this.api) throw '!api';
     if (!this.api.find) throw '!api.find';
 
@@ -54,6 +44,7 @@ export default class ProtoListStore extends Store {
       ...this.getFindParams(),
       limit,
       skip,
+      cancelToken,
     });
 
     let items;
@@ -73,34 +64,39 @@ export default class ProtoListStore extends Store {
     };
   }
 
+  @action
   setItems(items, { skip } = {}) {
     if (this.cacheable) {
       this.items = insertArray(this.items, items, skip);
-      // if (nextPage) {}
-      // pos
-      // this.items = this.items.concat(items);
     }
     this.items = items;
   }
-  // this.setList(list, { skip, limit, append })
 
   @action
   async fetch(params = {}) {
+    Progress.start();
+    if (this.loading && this.cancelToken) {
+      this.cancelToken.cancel();
+    }
+    this.cancelToken = axios.CancelToken.source();
     this.loading = true;
     try {
-      const { items, count } = await this.find(params);
+      this.findPromise = this.find({
+        skip: this.skip,
+        limit: this.limit,
+        cancelToken: this.cancelToken,
+      });
+      const { items, count } = await this.findPromise;
       this.setItems(items, params);
       this.count = count;
       this.loading = false;
+      Progress.done();
+      this.findPromise = null;
     } catch (err) {
       this.loading = false;
+      this.findPromise = null;
+      Progress.done();
       throw err;
     }
   }
-
-  // @debounce(500)
-  // delayFetch(...args) {
-  //   // __DEV__ && console.log('delayFetch', ...args);
-  //   return this.fetch(...args);
-  // }
 }

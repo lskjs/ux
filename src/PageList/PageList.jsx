@@ -2,51 +2,37 @@ import React, { Component } from 'react';
 import { Provider as MobxProvider } from 'mobx-react';
 
 import ListStore from '../stores/ListStore';
-import Table from '../Table';
-
-import PageListHeader from './PageListHeader';
-import PageListBody from './PageListBody';
-import PageListFooter from './PageListFooter';
-import PageListSearch from './PageListSearch';
-import PageListTags from './PageListTags';
-import PageListTableHeader from './PageListTableHeader';
-import PageListFilter from './PageListFilter';
-
+import { Table } from '../Table';
 import { ListPaper } from './PageList.styles';
 import { Provider } from './PageListContext';
 
 
 class PageList extends Component {
-  static Header = PageListHeader;
-  static Body = PageListBody;
-  static Footer = PageListFooter;
-  static Search = PageListSearch;
-  static Filter = PageListFilter;
-  static Tags = PageListTags;
-  static TableHeader = PageListTableHeader;
+  static Header = require('./PageListHeader').default;
+  static Search = require('./PageListSearch').default;
+  static Filter = require('./PageListFilter').default;
+  static Tags = require('./PageListTags').default;
+  static Body = require('./PageListBody').default;
+  static HeaderItemWrapper = require('./PageListHeaderItemWrapper').default;
+  static Footer = require('./PageListFooter').default;
   static Paginator = require('./PageListPaginator').default;
   // static StickyPanel = PageListStickyPanel;
   static StickyPanel = ({ children }) => <div>{children}</div>;
   render() {
     const {
-      columns, container,
-      ListItem, FilterForm, createTags, HeaderItem, listStore,
+      columns, container, listStore = new ListStore(),
+      ListItem, FilterForm, createTags, HeaderItem,
     } = this.props;
 
-    if (!listStore) return <div>!listStore</div>;
-
+    // if (!listStore) return <DEV json='!listStore' />
 
     let { children } = this.props;
 
     if (!children) {
       children = (
         <React.Fragment>
-          <PageList.Header
-            FilterForm={FilterForm}
-            HeaderItem={HeaderItem}
-            createTags={createTags}
-          />
-          <PageList.Body ListItem={ListItem} />
+          <PageList.Header />
+          <PageList.Body />
           <PageList.Footer />
         </React.Fragment>
       );
@@ -68,18 +54,31 @@ class PageList extends Component {
         </ListPaper>
       );
     }
-
-    // return <MobxProvider listStore={listStore}>
-    // <div>
-    //   PageList
-    //   </div>
-    // </MobxProvider>
     return (
-      <MobxProvider listStore={listStore} pageList={this}>
-        <Provider value={this.constructor}>
+      <Provider
+        value={{
+          pageList: this,
+          PageList: this.constructor,
+
+          Header: this.constructor.Header,
+          Body: this.constructor.Body,
+          Footer: this.constructor.Footer,
+          Search: this.constructor.Search,
+          Filter: this.constructor.Filter,
+          Tags: this.constructor.Tags,
+          HeaderItemWrapper: this.constructor.HeaderItemWrapper,
+          Paginator: this.constructor.Paginator,
+
+          ListItem,
+          FilterForm,
+          createTags,
+          HeaderItem,
+        }}
+      >
+        <MobxProvider listStore={listStore}>
           {children}
-        </Provider>
-      </MobxProvider>
+        </MobxProvider>
+      </Provider>
     );
   }
 }

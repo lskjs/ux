@@ -3,25 +3,15 @@ import { Form, Field } from 'formik';
 import Story from '../../Story';
 import createForm from '../createForm';
 import FormGroup from '../FormGroup';
-import OnChangeListener from '../OnChangeListener';
 import Input from '../controls/Input';
 import FormDebug from '../FormDebug';
 
 
 const OnChangeView = (props) => {
-  const {
-    values,
-    onChange,
-  } = props;
   return (
     <Form>
       <Field {...props.controls.input} />
       <FormDebug {...props} />
-      <OnChangeListener
-        props={props}
-        values={values}
-        onChange={onChange}
-      />
     </Form>
   );
 };
@@ -39,7 +29,7 @@ const OnChangeForm = createForm({
 
 export default ({ storiesOf }) =>
   storiesOf('Form2', module)
-    .add('OnChangeListener ', () => {
+    .add('onChange ', () => {
       return (
         <Story>
           <OnChangeForm

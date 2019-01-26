@@ -18,14 +18,10 @@ class ListSearch extends Component {
         current={10}
         max={120}
         debounceTimeout={1000}
-        onChange={(e) => {
-          listStore.handleChangeSearch(e.target.value);
-        }}
+        onChange={e => listStore.setSearch(e.target.value)}
         value={listStore.search}
         canClear={!!listStore.search}
-        onClear={() => {
-          listStore.handleChangeSearch('');
-        }}
+        onClear={() => listStore.setSearch('')}
         actions={(
           <React.Fragment>
             <Button
@@ -43,7 +39,7 @@ class ListSearch extends Component {
               view="text"
               size="large"
               bordered={listStore.isOpenFilterBar}
-              onClick={() => listStore.toggleFilterBar(listStore.isOpenFilterBar)}
+              onClick={listStore.toggleFilter}
             >
               Фильтр
             </Button>

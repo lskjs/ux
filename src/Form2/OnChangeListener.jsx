@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // import PropTypes from 'prop-types';
 import isEqual from 'lodash/isEqual';
+import DEV from '../DEV';
 
 export default class OnChangeListener extends Component {
   // static contextTypes = {
@@ -22,6 +23,6 @@ export default class OnChangeListener extends Component {
 
   render() {
     const { children } = this.props;
-    return children || <span />;
+    return children || <div /> || <DEV json="OnChangeListener" />;
   }
 }

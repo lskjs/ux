@@ -19,7 +19,7 @@ import {
   PaginationWrapper,
 } from './PageList.styles';
 
-@withTheme
+// @withTheme
 @inject('listStore')
 @observer
 class PageListPaginator extends Component {
@@ -27,10 +27,10 @@ class PageListPaginator extends Component {
     const {
       listStore,
       options = [10, 20, 50, 100],
-      theme,
+      // theme,
     } = this.props;
-    const { count } = listStore;
-    const { from, to } = listStore.getFromTo();
+    const from = listStore.skip + 1;
+    const to = listStore.skip + listStore.limit;
 
     return (
       <PaginationWrapper>
@@ -39,17 +39,15 @@ class PageListPaginator extends Component {
           <PaginationSelect
             name="pagination-size"
             value={listStore.limit}
-            onChange={(e) => {
-              listStore.handleChangeLimit(+e.target.value);
-            }}
+            onChange={e => listStore.setLimit(+e.target.value)}
           >
             {options.map(option => (<option key={option} value={option}>{option}</option>))}
           </PaginationSelect>
         </PaginationStepper>
         <PaginationPages>
           {from}—{to}
-          <If condition={count !== null}>
-           / {count}
+          <If condition={listStore.count !== null}>
+           / {listStore.count}
           </If>
         </PaginationPages>
         <PaginationGroup>
@@ -57,7 +55,7 @@ class PageListPaginator extends Component {
             // hideOnSinglePage={true}
             onChange={listStore.setPage}
             defaultCurrent={listStore.getCurrentPage()}
-            total={listStore.getTotalPage()}
+            total={listStore.count}
             // pageSizeOptions={options}
           />
         </PaginationGroup>
