@@ -1,7 +1,9 @@
 import styled, { css } from 'react-emotion';
+import creacteDynamicTag from '../../../utils/createDynamicTag';
 import removeProps from '../../../utils/removeProps';
 
-const filteredTag = removeProps('div', ['padded', 'paint']);
+const dynamicTag = creacteDynamicTag('div');
+const filteredTag = removeProps(dynamicTag, ['padded', 'paint']);
 
 const paintColors = (p) => {
   switch (p.paint) {

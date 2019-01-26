@@ -2,7 +2,8 @@ import { observable, toJS, action } from 'mobx';
 import isPlainObject from 'lodash/isPlainObject';
 
 const getItemAndId = (...args) => {
-  let id, item;
+  let id,
+    item;
   if (isPlainObject(args[0])) {
     id = args[0]._id;
     item = args[0];

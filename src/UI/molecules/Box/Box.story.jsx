@@ -1,6 +1,7 @@
 import React from 'react';
 import ThemeInjector from '../../../ThemeInjector';
 import Box from './Box';
+import Link from '../../../Link';
 import AnimatedLink from '../AnimatedLink';
 import '../../../styles/lib/antd.g.css';
 import UserBoxFooter from '../UserBoxFooter';
@@ -404,6 +405,13 @@ export default ({ storiesOf }) => (
         <Box image="https://picsum.photos/1280/720/?random" style={{ height: 380 }}>
           <div style={{ height: 240 }} />
           <UserBoxFooter />
+        </Box>
+      </ThemeInjector>
+    ))
+    .add('componentClass', () => (
+      <ThemeInjector>
+        <Box style={{ height: 380 }} paint="primary" componentClass={Link} href="https://vk.com">
+          <div style={{ height: 240 }} />
         </Box>
       </ThemeInjector>
     ))

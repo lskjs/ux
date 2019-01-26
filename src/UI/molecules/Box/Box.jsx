@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-
 import BoxHeader from '../../atoms/BoxHeader';
 import BoxBody from '../../atoms/BoxBody';
 import BoxFooter from '../../atoms/BoxFooter';
@@ -17,6 +16,7 @@ class Box extends PureComponent {
   static Divider = BoxDivider;
   static propTypes = {
     children: PropTypes.any,
+    componentClass: PropTypes.any,
     padded: PropTypes.bool,
     paint: PropTypes.string,
     image: PropTypes.string,
@@ -24,6 +24,7 @@ class Box extends PureComponent {
 
   static defaultProps = {
     children: null,
+    componentClass: 'div',
     padded: false,
     paint: null,
     image: null,
@@ -33,11 +34,13 @@ class Box extends PureComponent {
       children,
       padded,
       paint,
+      componentClass,
       image,
       ...props
     } = this.props;
+    const tag = componentClass || 'div';
     return (
-      <BoxItem padded={padded} paint={paint} image={image} {...props}>
+      <BoxItem padded={padded} paint={paint} image={image} componentClass={tag} {...props}>
         {children}
       </BoxItem>
     );

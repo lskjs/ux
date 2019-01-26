@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import If from 'react-if';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import Close from 'react-icons2/mdi/close';
