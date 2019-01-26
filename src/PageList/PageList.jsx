@@ -16,6 +16,7 @@ class PageList extends Component {
   static HeaderItemWrapper = require('./PageListHeaderItemWrapper').default;
   static Footer = require('./PageListFooter').default;
   static Paginator = require('./PageListPaginator').default;
+  static Blank = require('./PageListBlank').default;
   // static StickyPanel = PageListStickyPanel;
   static StickyPanel = ({ children }) => <div>{children}</div>;
   render() {
@@ -68,6 +69,7 @@ class PageList extends Component {
           Tags: this.constructor.Tags,
           HeaderItemWrapper: this.constructor.HeaderItemWrapper,
           Paginator: this.constructor.Paginator,
+          Blank: this.constructor.Blank,
 
           ListItem,
           FilterForm,
