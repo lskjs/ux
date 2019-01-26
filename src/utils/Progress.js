@@ -16,7 +16,7 @@ NProgress.start = (...args) => {
   try {
     return NProgress._start(...args);
   } catch (err) {
-    console.log('err', err);
+    // console.log('err', err);
   }
 };
 NProgress._done = NProgress.done;
@@ -24,7 +24,7 @@ NProgress.done = (...args) => {
   try {
     return NProgress._done(...args);
   } catch (err) {
-    console.log('err', err);
+    // console.log('err', err);
   }
 };
 
