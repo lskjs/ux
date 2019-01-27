@@ -32,7 +32,7 @@ class ListSearch extends Component {
               bordered={listStore.showFilter}
               onClick={listStore.toggleFilter}
             >
-              Фильтр
+              Фильтр {listStore.hasFilter() && '(*)'}
             </Button>
           </React.Fragment>
         )}

@@ -22,7 +22,7 @@ class PageListHeader extends Component {
         <PageList.Filter />
         <PageList.Tags />
         <PageList.StickyPanel>
-          <PageList.HeaderItemWrapper />
+          <PageList.HeaderItem />
         </PageList.StickyPanel>
       </Container>
     );

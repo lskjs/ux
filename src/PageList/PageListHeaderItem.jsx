@@ -8,7 +8,7 @@ import { contextToProps } from './PageListContext';
 @contextToProps('HeaderItem')
 @inject('listStore')
 @observer
-class PageListHeaderItemWrapper extends Component {
+class PageListHeaderItem extends Component {
   render() {
     let { children } = this.props;
     const { listStore } = this.props;
@@ -32,7 +32,7 @@ class PageListHeaderItemWrapper extends Component {
   }
 }
 
-export default PageListHeaderItemWrapper;
+export default PageListHeaderItem;
 
 
 // import React, { Component } from 'react';

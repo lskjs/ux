@@ -20,7 +20,7 @@ import PageList from './PageList';
 Promise.config({ cancellation: true });
 const api = {
   async find2({ skip, limit } = {}) {
-    await Promise.delay(2000);
+    await Promise.delay(200);
     return {
       count: 1000,
       items: range(skip, skip + limit).map(id => ({ id, title: `User ${id + 1}` })),
@@ -194,16 +194,6 @@ export default ({ storiesOf }) => {
         </PageList>
       </Story>
     ))
-  //   <React.Fragment>
-  //   <PageList.Search />
-  //   <PageList.Filter
-  //     Form={FilterForm}
-  //   />
-  //   <PageList.Tags createTags={createTags} />
-  //   <PageList.StickyPanel>
-  //     <PageList.TableHeader HeaderItem={HeaderItem} />
-  //   </PageList.StickyPanel>
-  // </React.Fragment>
     .add('PageList.Search', () => (
       <Story>
         <PageList
@@ -248,14 +238,14 @@ export default ({ storiesOf }) => {
         </PageList>
       </Story>
     ))
-    .add('PageList.HeaderItemWrapper', () => (
+    .add('PageList.HeaderItem', () => (
       <Story>
         <PageList
           listStore={listStore}
           HeaderItem={HeaderItem}
           columns={columns}
         >
-          <PageList.HeaderItemWrapper />
+          <PageList.HeaderItem />
           <Debug store={listStore} />
         </PageList>
       </Story>

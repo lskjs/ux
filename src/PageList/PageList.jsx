@@ -6,6 +6,8 @@ import { Table } from '../Table';
 import { ListPaper } from './PageList.styles';
 import { Provider } from './PageListContext';
 
+import DefaultTags from './DefaultTags';
+import DefaultTag from './DefaultTag';
 
 class PageList extends Component {
   static Header = require('./PageListHeader').default;
@@ -13,16 +15,18 @@ class PageList extends Component {
   static Filter = require('./PageListFilter').default;
   static Tags = require('./PageListTags').default;
   static Body = require('./PageListBody').default;
-  static HeaderItemWrapper = require('./PageListHeaderItemWrapper').default;
+  static HeaderItem = require('./PageListHeaderItem').default;
   static Footer = require('./PageListFooter').default;
   static Paginator = require('./PageListPaginator').default;
   static Blank = require('./PageListBlank').default;
+
+
   // static StickyPanel = PageListStickyPanel;
   static StickyPanel = ({ children }) => <div>{children}</div>;
   render() {
     const {
       shadow, columns, container, listStore = new ListStore(),
-      ListItem, FilterForm, createTags, HeaderItem,
+      ListItem, FilterForm, HeaderItem, Tags = DefaultTags, Tag = DefaultTag, Body,
     } = this.props;
 
     // if (!listStore) return <DEV json='!listStore' />
@@ -48,33 +52,35 @@ class PageList extends Component {
         </Table>
       );
     }
-    if (container) {
-      children = (
-        <ListPaper shadow={shadow}>
-          {children}
-        </ListPaper>
-      );
-    }
+    // if (container) {
+    children = (
+      <ListPaper shadow={shadow}>
+        {children}
+      </ListPaper>
+    );
+    // }
     return (
       <Provider
         value={{
           pageList: this,
           PageList: this.constructor,
 
-          Header: this.constructor.Header,
-          Body: this.constructor.Body,
-          Footer: this.constructor.Footer,
-          Search: this.constructor.Search,
-          Filter: this.constructor.Filter,
-          Tags: this.constructor.Tags,
-          HeaderItemWrapper: this.constructor.HeaderItemWrapper,
-          Paginator: this.constructor.Paginator,
-          Blank: this.constructor.Blank,
+          // Header: this.constructor.Header,
+          // Body: this.constructor.Body,
+          // Footer: this.constructor.Footer,
+          // Search: this.constructor.Search,
+          // Filter: this.constructor.Filter,
+          // TagsWrapper: this.constructor.TagsWrapper,
+          // HeaderItemWrapper: this.constructor.HeaderItemWrapper,
+          // Paginator: this.constructor.Paginator,
+          // Blank: this.constructor.Blank,
 
           ListItem,
           FilterForm,
-          createTags,
+          Tags,
+          Tag,
           HeaderItem,
+          Body,
         }}
       >
         <MobxProvider listStore={listStore}>

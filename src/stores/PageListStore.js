@@ -1,6 +1,7 @@
-import { observable, action } from 'mobx';
+import { observable } from 'mobx';
 import { autobind } from 'core-decorators';
 import debounce from 'lodash-decorators/debounce';
+import isEmpty from 'lodash/isEmpty';
 import SelectStore from './SelectStore';
 import ProtoListStore from './ProtoListStore';
 
@@ -31,6 +32,10 @@ export default class PageListStore extends ProtoListStore {
   /**
    * Getters and map
    */
+  hasFilter() {
+    return !(isEmpty(this.filter) && isEmpty(this.search));
+  }
+
   getVisibleItems() {
     const items = this.items || [];
     if (!this.cachable) {
@@ -38,6 +43,7 @@ export default class PageListStore extends ProtoListStore {
     }
     return items.slice(this.skip, this.skip + this.limit);
   }
+
 
   map(...args) {
     return this.getVisibleItems().map(...args);
@@ -124,16 +130,16 @@ export default class PageListStore extends ProtoListStore {
     });
   }
 
-  @autobind
-  removeTag(key) {
-    this.setStateAndUpdate({
-      filter: {
-        ...this.filter,
-        [key]: undefined,
-      },
-      skip: 0,
-    });
-  }
+  // @autobind
+  // removeTag(key) {
+  //   this.setStateAndUpdate({
+  //     filter: {
+  //       ...this.filter,
+  //       [key]: undefined,
+  //     },
+  //     skip: 0,
+  //   });
+  // }
 
   /**
    * Пока выбирается только одно поле

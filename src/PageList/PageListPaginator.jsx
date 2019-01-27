@@ -1,17 +1,8 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
-import { withTheme } from 'emotion-theming';
 import Pagination from 'antd/lib/pagination';
-import DEV from '../DEV';
 
-import ChevronRightIcon from 'react-icons2/mdi/chevron-right';
-import ChevronLeftIcon from 'react-icons2/mdi/chevron-left';
-import If from 'react-if';
-
-
-import Button from '../Button';
 import {
-  paginationButtonStyle,
   PaginationGroup,
   PaginationPages,
   PaginationStepper,
@@ -19,7 +10,6 @@ import {
   PaginationWrapper,
 } from './PageList.styles';
 
-// @withTheme
 @inject('listStore')
 @observer
 class PageListPaginator extends Component {
@@ -27,7 +17,6 @@ class PageListPaginator extends Component {
     const {
       listStore,
       options = [10, 20, 50, 100],
-      // theme,
     } = this.props;
     const from = listStore.skip + 1;
     const to = listStore.skip + listStore.limit;
@@ -46,41 +35,15 @@ class PageListPaginator extends Component {
         </PaginationStepper>
         <PaginationPages>
           {from}—{to}
-          <If condition={listStore.count !== null}>
-           / {listStore.count}
-          </If>
+          {listStore.count !== null && ` / ${listStore.count}`}
         </PaginationPages>
         <PaginationGroup>
           <Pagination
-            // hideOnSinglePage={true}
             onChange={listStore.setPage}
             current={listStore.getCurrentPage()}
             total={listStore.count}
-            // pageSizeOptions={options}
           />
         </PaginationGroup>
-
-        {/* <PaginationGroup>
-          <Button
-            disabled={!listStore.canPrevPage()}
-            view="text"
-            className={paginationButtonStyle(theme)}
-            icon={<ChevronLeftIcon />}
-            onClick={listStore.prevPage}
-          />
-          (1)
-          (2)
-          (3)
-          (4)
-          ...
-          <Button
-            disabled={!listStore.canNextPage()}
-            view="text"
-            className={paginationButtonStyle(theme)}
-            icon={<ChevronRightIcon />}
-            onClick={listStore.nextPage}
-          />
-        </PaginationGroup> */}
       </PaginationWrapper>
     );
   }
