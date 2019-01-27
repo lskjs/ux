@@ -107,7 +107,7 @@ export default class ProtoListStore extends Store {
   }
 
   // @action
-  async fetchMore(dir = 1, limit = this.limit) {
+  async fetchMore(dir, limit = this.limit) {
     let skip = dir < 0 ? this.skip - limit : this.skip + this.items.length;
     if (skip < 0) skip = 0;
     if (this.count !== null && skip > this.count) return;

@@ -86,7 +86,7 @@ const api = {
   },
 };
 
-const listStore = new ListStore({ api, skip: 200 });
+const listStore = new ListStore({ api, skip: 20 });
 setTimeout(() => {
   listStore.fetch();
 }, 2000);
@@ -150,6 +150,12 @@ class Debug extends Component {
       <div>
         <button onClick={() => store.fetch()}>
           fetch
+        </button>
+        <button onClick={() => store.fetch({ skip: 5, limit: 5, cache: true })}>
+          fetch 5-10 cache
+        </button>
+        <button onClick={() => store.fetch({ skip: 40, limit: 5, cache: true })}>
+          fetch 40-45 cache
         </button>
         <ObserverDEV json={store} />
       </div>
@@ -290,85 +296,85 @@ export default ({ storiesOf }) => {
         </PageList>
         <Debug store={listStore} />
       </Story>
-    ))
-    // .add('props ListItem', () => (
-    //   <Story>
-    //     <PageList
-    //       ListItem={ListItem}
-    //     />
-    //   </Story>
-    // ))
-    // .add('props HeaderItem', () => (
-    //   <Story>
-    //     <PageList
-    //       HeaderItem={HeaderItem}
-    //     />
-    //   </Story>
-    // ))
-    // .add('props ListItem + HeaderItem + columns', () => (
-    //   <Story>
-    //     <PageList
-    //       columns={['minmax(180px, 1fr)', 108, 64, 64, 'minmax(84px, 1fr)']}
-    //       HeaderItem={HeaderItem}
-    //       ListItem={ListItem}
-    //     />
-    //   </Story>
-    // ))
-    // .add('children - without footer', () => (
-    //   <Story>
-    //     <PageList
-    //       columns={['minmax(180px, 1fr)', 108, 64, 64, 'minmax(84px, 1fr)']}
-    //       ListItem={ListItem}
-    //       HeaderItem={HeaderItem}
-    //     >
-    //       <PageList.Header />
-    //       <PageList.Body />
-    //     </PageList>
-    //   </Story>
-    // ))
-    // .add('custome Header', () => (
-    //   <Story>
-    //     <PageList
-    //       columns={['minmax(180px, 1fr)', 108, 64, 64, 'minmax(84px, 1fr)']}
-    //       ListItem={ListItem}
-    //       HeaderItem={HeaderItem}
-    //     >
-    //       <PageList.Header>
-    //         Custom header
-    //       </PageList.Header>
-    //       <PageList.Body />
-    //       <PageList.Footer />
-    //     </PageList>
-    //   </Story>
-    // ))
-    // .add('custom Header', () => (
-    //   <Story>
-    //     <PageList
-    //       columns={['minmax(180px, 1fr)', 108, 64, 64, 'minmax(84px, 1fr)']}
-    //       ListItem={ListItem}
-    //       HeaderItem={HeaderItem}
-    //     >
-    //       <PageList.Header>
-    //         Custom header
-    //       </PageList.Header>
-    //       <PageList.Body />
-    //       <PageList.Footer />
-    //     </PageList>
-    //   </Story>
-    // ))
-    // .add('custom Body table', () => (
-    //   <Story>
-    //     <PageList
-    //       columns={['minmax(180px, 1fr)', 108, 64, 64, 'minmax(84px, 1fr)']}
-    //       ListItem={ListItem}
-    //       HeaderItem={HeaderItem}
-    //     >
-    //       <PageList.Header />
-    //       <PageList.Body>
-    //         Custom Body
-    //       </PageList.Body>
-    //       <PageList.Footer />
-    //     </PageList>
-    //   </Story>
-    // ));
+    ));
+  // .add('props ListItem', () => (
+  //   <Story>
+  //     <PageList
+  //       ListItem={ListItem}
+  //     />
+  //   </Story>
+  // ))
+  // .add('props HeaderItem', () => (
+  //   <Story>
+  //     <PageList
+  //       HeaderItem={HeaderItem}
+  //     />
+  //   </Story>
+  // ))
+  // .add('props ListItem + HeaderItem + columns', () => (
+  //   <Story>
+  //     <PageList
+  //       columns={['minmax(180px, 1fr)', 108, 64, 64, 'minmax(84px, 1fr)']}
+  //       HeaderItem={HeaderItem}
+  //       ListItem={ListItem}
+  //     />
+  //   </Story>
+  // ))
+  // .add('children - without footer', () => (
+  //   <Story>
+  //     <PageList
+  //       columns={['minmax(180px, 1fr)', 108, 64, 64, 'minmax(84px, 1fr)']}
+  //       ListItem={ListItem}
+  //       HeaderItem={HeaderItem}
+  //     >
+  //       <PageList.Header />
+  //       <PageList.Body />
+  //     </PageList>
+  //   </Story>
+  // ))
+  // .add('custome Header', () => (
+  //   <Story>
+  //     <PageList
+  //       columns={['minmax(180px, 1fr)', 108, 64, 64, 'minmax(84px, 1fr)']}
+  //       ListItem={ListItem}
+  //       HeaderItem={HeaderItem}
+  //     >
+  //       <PageList.Header>
+  //         Custom header
+  //       </PageList.Header>
+  //       <PageList.Body />
+  //       <PageList.Footer />
+  //     </PageList>
+  //   </Story>
+  // ))
+  // .add('custom Header', () => (
+  //   <Story>
+  //     <PageList
+  //       columns={['minmax(180px, 1fr)', 108, 64, 64, 'minmax(84px, 1fr)']}
+  //       ListItem={ListItem}
+  //       HeaderItem={HeaderItem}
+  //     >
+  //       <PageList.Header>
+  //         Custom header
+  //       </PageList.Header>
+  //       <PageList.Body />
+  //       <PageList.Footer />
+  //     </PageList>
+  //   </Story>
+  // ))
+  // .add('custom Body table', () => (
+  //   <Story>
+  //     <PageList
+  //       columns={['minmax(180px, 1fr)', 108, 64, 64, 'minmax(84px, 1fr)']}
+  //       ListItem={ListItem}
+  //       HeaderItem={HeaderItem}
+  //     >
+  //       <PageList.Header />
+  //       <PageList.Body>
+  //         Custom Body
+  //       </PageList.Body>
+  //       <PageList.Footer />
+  //     </PageList>
+  //   </Story>
+  // ));
 };
