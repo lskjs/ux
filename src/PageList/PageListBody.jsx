@@ -18,10 +18,19 @@ class PageListBody extends Component {
     return (
       <ListTableItems {...props} className={Progress.parentClassName}>
         <Progress.Bar id="progress" />
+        {/* 1) загружаем первый раз
+        2) загружаем второй раз, меняя фильтры
+        3) загружаем второй раз, меняя skip, фильтры не меняются
+        4) до загружаем второй раз, используя fetch next / fetch prev
+        */}
         <Spin
           size="large"
           spinning={listStore.loading}
         >
+          {/* 1) совсем пусто, первый раз заходим
+          2) пусто после фетча, фильры выключены
+          3) пусто после фетча, фильтры включены, скип не стоит
+          4) пусто после фетча, фильтры включены, скип стоит */}
           {listStore.map(item => (<ListItem item={item} />))}
         </Spin>
       </ListTableItems>

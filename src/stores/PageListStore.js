@@ -6,10 +6,11 @@ import ProtoListStore from './ProtoListStore';
 
 export default class PageListStore extends ProtoListStore {
   @observable filter = {};
+  @observable showFilter = false;
   @observable tab = null;
   @observable sort = {};
   @observable search = '';
-  @observable showFilter = true;
+  @observable fetched = false;
 
   constructor(...args) {
     super(...args);
@@ -22,8 +23,9 @@ export default class PageListStore extends ProtoListStore {
   }
 
   @debounce(50)
-  update() {
-    this.fetch();
+  async update() {
+    await this.fetch();
+    this.fetched = true;
   }
 
   /**
@@ -86,7 +88,7 @@ export default class PageListStore extends ProtoListStore {
 
   @autobind
   toggleFilter() {
-    this.setStateAndUpdate({
+    this.setState({
       showFilter: !this.showFilter,
     });
   }

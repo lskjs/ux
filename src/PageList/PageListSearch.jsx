@@ -17,7 +17,7 @@ class ListSearch extends Component {
       <Search // Search
         current={10}
         max={listStore.count}
-        debounceTimeout={1000}
+        debounceTimeout={100}
         onChange={e => listStore.setSearch(e.target.value)}
         value={listStore.search}
         canClear={!!listStore.search}
@@ -29,17 +29,8 @@ class ListSearch extends Component {
               paint="primary"
               view="text"
               size="large"
-              onClick={() => listStore.toggleRightSidebar()}
-            >
-              Фильтр
-            </Button>
-            <Button
-              icon={<TuneIcon />}
-              paint="primary"
-              view="text"
-              size="large"
-              bordered={listStore.isOpenFilterBar}
-              onClick={() => listStore.toggleFilter()}
+              bordered={listStore.showFilter}
+              onClick={listStore.toggleFilter}
             >
               Фильтр
             </Button>

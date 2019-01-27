@@ -17,23 +17,8 @@ class PageListFilter extends Component {
       // container,
     } = this.props;
     if (!FilterForm) return <DEV json="!FilterForm" />;
-    // let children = (
-    //  <FilterForm
-    //    initialValues={toJS(listStore.filter)}
-    //    onChange={listStore.setFilter}
-    //  />
-    // );
-    //
-    // if (container) {
-    //  children = (
-    //    <FilterCollapse show={listStore.filterShow}>
-    //      {children}
-    //    </FilterCollapse>
-    //  );
-    // }
-    // return children;
     return (
-      <FilterCollapse show={listStore.filterShow}>
+      <FilterCollapse show={listStore.showFilter}>
         <FilterWrapper>
           <FilterForm
             initialValues={toJS(listStore.filter)}
