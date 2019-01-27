@@ -38,10 +38,10 @@ export default class PageListStore extends ProtoListStore {
 
   getVisibleItems() {
     const items = this.items || [];
-    if (!this.cachable) {
-      return items;
-    }
-    return items.slice(this.skip, this.skip + this.limit);
+    // if (!this.cachable) {
+    return items;
+    // }
+    // return items.slice(this.skip, this.skip + this.limit);
   }
 
 
@@ -129,17 +129,6 @@ export default class PageListStore extends ProtoListStore {
       skip: 0,
     });
   }
-
-  // @autobind
-  // removeTag(key) {
-  //   this.setStateAndUpdate({
-  //     filter: {
-  //       ...this.filter,
-  //       [key]: undefined,
-  //     },
-  //     skip: 0,
-  //   });
-  // }
 
   /**
    * Пока выбирается только одно поле

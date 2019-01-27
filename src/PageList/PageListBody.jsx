@@ -28,14 +28,23 @@ class PageListBody extends Component {
           size="large"
           spinning={listStore.loading}
         >
+          {listStore.canFetchMore(-1) && (
+            <button onClick={() => listStore.fetchMore(-1)}>
+              fetchPrev
+            </button>
+          )}
           <Body style={{ minHeight: 200 }}>
             {/* 1) совсем пусто, первый раз заходим
             2) пусто после фетча, фильры выключены
             3) пусто после фетча, фильтры включены, скип не стоит
             4) пусто после фетча, фильтры включены, скип стоит */}
-            {listStore.map((item, index) => (<ListItem key={item._id || item.id || index} item={item} />))}
+            {listStore.map((item, index) => (item === null ? <button>load</button> : <ListItem key={item._id || item.id || index} item={item} />))}
           </Body>
-
+          {listStore.canFetchMore(1) && (
+            <button onClick={() => listStore.fetchMore(1)}>
+              fetchNext
+            </button>
+          )}
         </Spin>
       </ListTableItems>
 

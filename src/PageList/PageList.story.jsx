@@ -28,7 +28,7 @@ const api = {
   },
 
   async find({ skip, limit, cancelToken } = {}) {
-    const promise = Promise.delay(2000); // это типа гет запрос
+    const promise = Promise.delay(200); // это типа гет запрос
     cancelToken.token.promise.then(() => promise.cancel());
     await promise;
     const count = 1000;
@@ -86,7 +86,7 @@ const api = {
   },
 };
 
-const listStore = new ListStore({ api });
+const listStore = new ListStore({ api, skip: 200 });
 setTimeout(() => {
   listStore.fetch();
 }, 2000);
@@ -160,18 +160,16 @@ class Debug extends Component {
 export default ({ storiesOf }) => {
   return storiesOf('PageList', module)
     .add('default', () => (
-      <Story devtools>
-        <div style={{ padding: 24 }}>
-          <PageList
-            container
-            listStore={listStore}
-            HeaderItem={HeaderItem}
-            ListItem={ListItem}
-            FilterForm={FilterForm}
-            columns={columns}
-          />
-          <Debug store={listStore} />
-        </div>
+      <Story devtools style={{ padding: 24 }}>
+        <PageList
+          container
+          listStore={listStore}
+          HeaderItem={HeaderItem}
+          ListItem={ListItem}
+          FilterForm={FilterForm}
+          columns={columns}
+        />
+        <Debug store={listStore} />
       </Story>
     ))
     // .add('children', () => (
@@ -293,84 +291,84 @@ export default ({ storiesOf }) => {
         <Debug store={listStore} />
       </Story>
     ))
-    .add('props ListItem', () => (
-      <Story>
-        <PageList
-          ListItem={ListItem}
-        />
-      </Story>
-    ))
-    .add('props HeaderItem', () => (
-      <Story>
-        <PageList
-          HeaderItem={HeaderItem}
-        />
-      </Story>
-    ))
-    .add('props ListItem + HeaderItem + columns', () => (
-      <Story>
-        <PageList
-          columns={['minmax(180px, 1fr)', 108, 64, 64, 'minmax(84px, 1fr)']}
-          HeaderItem={HeaderItem}
-          ListItem={ListItem}
-        />
-      </Story>
-    ))
-    .add('children - without footer', () => (
-      <Story>
-        <PageList
-          columns={['minmax(180px, 1fr)', 108, 64, 64, 'minmax(84px, 1fr)']}
-          ListItem={ListItem}
-          HeaderItem={HeaderItem}
-        >
-          <PageList.Header />
-          <PageList.Body />
-        </PageList>
-      </Story>
-    ))
-    .add('custome Header', () => (
-      <Story>
-        <PageList
-          columns={['minmax(180px, 1fr)', 108, 64, 64, 'minmax(84px, 1fr)']}
-          ListItem={ListItem}
-          HeaderItem={HeaderItem}
-        >
-          <PageList.Header>
-            Custom header
-          </PageList.Header>
-          <PageList.Body />
-          <PageList.Footer />
-        </PageList>
-      </Story>
-    ))
-    .add('custom Header', () => (
-      <Story>
-        <PageList
-          columns={['minmax(180px, 1fr)', 108, 64, 64, 'minmax(84px, 1fr)']}
-          ListItem={ListItem}
-          HeaderItem={HeaderItem}
-        >
-          <PageList.Header>
-            Custom header
-          </PageList.Header>
-          <PageList.Body />
-          <PageList.Footer />
-        </PageList>
-      </Story>
-    ))
-    .add('custom Body table', () => (
-      <Story>
-        <PageList
-          columns={['minmax(180px, 1fr)', 108, 64, 64, 'minmax(84px, 1fr)']}
-          ListItem={ListItem}
-          HeaderItem={HeaderItem}
-        >
-          <PageList.Header />
-          <PageList.Body>
-            Custom Body
-          </PageList.Body>
-          <PageList.Footer />
-        </PageList>
-      </Story>
-    ));
+    // .add('props ListItem', () => (
+    //   <Story>
+    //     <PageList
+    //       ListItem={ListItem}
+    //     />
+    //   </Story>
+    // ))
+    // .add('props HeaderItem', () => (
+    //   <Story>
+    //     <PageList
+    //       HeaderItem={HeaderItem}
+    //     />
+    //   </Story>
+    // ))
+    // .add('props ListItem + HeaderItem + columns', () => (
+    //   <Story>
+    //     <PageList
+    //       columns={['minmax(180px, 1fr)', 108, 64, 64, 'minmax(84px, 1fr)']}
+    //       HeaderItem={HeaderItem}
+    //       ListItem={ListItem}
+    //     />
+    //   </Story>
+    // ))
+    // .add('children - without footer', () => (
+    //   <Story>
+    //     <PageList
+    //       columns={['minmax(180px, 1fr)', 108, 64, 64, 'minmax(84px, 1fr)']}
+    //       ListItem={ListItem}
+    //       HeaderItem={HeaderItem}
+    //     >
+    //       <PageList.Header />
+    //       <PageList.Body />
+    //     </PageList>
+    //   </Story>
+    // ))
+    // .add('custome Header', () => (
+    //   <Story>
+    //     <PageList
+    //       columns={['minmax(180px, 1fr)', 108, 64, 64, 'minmax(84px, 1fr)']}
+    //       ListItem={ListItem}
+    //       HeaderItem={HeaderItem}
+    //     >
+    //       <PageList.Header>
+    //         Custom header
+    //       </PageList.Header>
+    //       <PageList.Body />
+    //       <PageList.Footer />
+    //     </PageList>
+    //   </Story>
+    // ))
+    // .add('custom Header', () => (
+    //   <Story>
+    //     <PageList
+    //       columns={['minmax(180px, 1fr)', 108, 64, 64, 'minmax(84px, 1fr)']}
+    //       ListItem={ListItem}
+    //       HeaderItem={HeaderItem}
+    //     >
+    //       <PageList.Header>
+    //         Custom header
+    //       </PageList.Header>
+    //       <PageList.Body />
+    //       <PageList.Footer />
+    //     </PageList>
+    //   </Story>
+    // ))
+    // .add('custom Body table', () => (
+    //   <Story>
+    //     <PageList
+    //       columns={['minmax(180px, 1fr)', 108, 64, 64, 'minmax(84px, 1fr)']}
+    //       ListItem={ListItem}
+    //       HeaderItem={HeaderItem}
+    //     >
+    //       <PageList.Header />
+    //       <PageList.Body>
+    //         Custom Body
+    //       </PageList.Body>
+    //       <PageList.Footer />
+    //     </PageList>
+    //   </Story>
+    // ));
 };

@@ -19,7 +19,7 @@ class PageListPaginator extends Component {
       options = [10, 20, 50, 100],
     } = this.props;
     const from = listStore.skip + 1;
-    const to = listStore.skip + listStore.limit;
+    const to = listStore.skip + listStore.items.length;
 
     return (
       <PaginationWrapper>

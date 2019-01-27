@@ -9,7 +9,7 @@ import './styles.g.css';
 class Story extends Component {
   render() {
     const {
-      children, devtools, locale = 'en', theme = defaultTheme,
+      children, devtools, locale = 'en', theme = defaultTheme, style,
     } = this.props;
     const t = (a) => {
       return a === 'locale' ? locale : a;
@@ -41,11 +41,13 @@ class Story extends Component {
           uapp={uapp}
           {...uapp.provide()}
         >
-          <div style={{
-            // width: '80%',
-            // fontFamily: 'Gotham Pro',
-            // padding: '10px',
-          }}
+          <div
+            style={{
+              // width: '80%',
+              // fontFamily: 'Gotham Pro',
+              // padding: '10px',
+              ...style,
+            }}
           >
             {children}
             {devtools && <DevTools />}

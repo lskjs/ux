@@ -95,7 +95,7 @@ const HeaderItem = ({ toggleSort, sort = {} }) => (
 export default ({ storiesOf }) => {
   return storiesOf('PageList/cases', module)
     .add('case1', () => (
-      <Story devtools>
+      <Story devtools style={{ padding: 24 }}>
         <PageList
           listStore={listStore}
           HeaderItem={HeaderItem}

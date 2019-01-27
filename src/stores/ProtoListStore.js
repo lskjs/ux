@@ -64,28 +64,29 @@ export default class ProtoListStore extends Store {
   }
 
   @action
-  setItems(items, { skip } = {}) {
-    if (this.cacheable) {
-      this.items = insertArray(this.items, items, skip);
+  setItems(items, { skip, cache } = {}) {
+    if (cache) {
+      this.items = insertArray(this.items, items, skip - this.skip);
+    } else {
+      this.items = items;
     }
-    this.items = items;
   }
 
   @action
-  async fetch(params = {}) {
+  async fetch({ skip = this.skip, limit = this.limit, cache } = {}) {
     if (this.loading) this.cancelFetch();
     this.loading = true;
     this.cancelToken = CancelToken.source();
     Progress.start();
-
     try {
       const { items, count } = await this.find({
-        skip: this.skip,
-        limit: this.limit,
+        skip,
+        limit,
         cancelToken: this.cancelToken,
       });
-      this.setItems(items, params);
+      this.setItems(items, { skip, cache });
       this.count = count;
+      if (skip < this.skip) this.skip = skip;
     } finally {
       this.loading = false;
       this.cancelToken = null;
@@ -98,5 +99,19 @@ export default class ProtoListStore extends Store {
     this.loading = false;
     this.cancelToken.cancel();
     Progress.done();
+  }
+
+  canFetchMore(dir = 1) {
+    if (dir < 0) return this.skip !== 0;
+    return this.count === null || this.count > this.skip + this.items.length;
+  }
+
+  // @action
+  async fetchMore(dir = 1, limit = this.limit) {
+    let skip = dir < 0 ? this.skip - limit : this.skip + this.items.length;
+    if (skip < 0) skip = 0;
+    if (this.count !== null && skip > this.count) return;
+    await this.fetch({ cache: true, skip, limit });
+    // if (dir < 0) this.skip = skip;
   }
 }
