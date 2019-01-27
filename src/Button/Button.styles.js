@@ -459,7 +459,6 @@ export const Btn = styled(filteredTag)`
   position: relative;
   text-align: center;
   justify-content: center;
-  pointer-events: auto;
   -webkit-appearance: none !important;
 
   ${(props) => {
@@ -602,6 +601,7 @@ export const Btn = styled(filteredTag)`
   ${props => ((props.view === 'transparent' && props.state === 'processing') && `
     color: transparent !important;
   `)}
+  pointer-events: ${p => (p.state !== 'ready' ? 'none' : 'auto')};
 `;
 
 export const RippleCircle = styled('span')`
@@ -658,6 +658,7 @@ export const State = styled('div')`
   box-sizing: border-box;
   cursor: default !important;
   border-radius: ${p => p.theme.borderSmall};
+  pointer-events: ${p => (p.state !== 'ready' ? 'none' : 'auto')};
   ${(props) => {
     if (props.bordered) {
       return `
@@ -693,7 +694,6 @@ export const State = styled('div')`
     }
   }}
   ${(props) => {
-    if (props.disabled) return viewSolidDisabled;
     switch (props.paint) {
       case 'primary': return primarySolidTheme;
       case 'info': return infoSolidTheme;

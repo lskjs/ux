@@ -255,7 +255,7 @@ class Button extends PureComponent {
         paint={paint}
         view={view}
         block={block}
-        disabled={disabled}
+        disabled={this.getPropsState() === 'ready' && disabled}
         new={isNew}
         state={this.getPropsState()}
         auto={autoMobile}
@@ -284,7 +284,6 @@ class Button extends PureComponent {
           paint={paint}
           view={view}
           state={state}
-          disabled={disabled}
           iconDirection="left"
           bordered={bordered}
           visible={state && state !== 'ready'}
