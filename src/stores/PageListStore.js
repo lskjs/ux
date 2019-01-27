@@ -1,4 +1,4 @@
-import { observable } from 'mobx';
+import { observable, action } from 'mobx';
 import { autobind } from 'core-decorators';
 import debounce from 'lodash-decorators/debounce';
 import SelectStore from './SelectStore';
@@ -115,13 +115,19 @@ export default class PageListStore extends ProtoListStore {
     });
   }
 
-  @autobind
+  // @autobind
+  @action.bound
   clearFilter() {
-    this.setStateAndUpdate({
-      filter: {},
-      search: '',
-      skip: 0,
-    });
+    this.filter.input = '3243534534';
+    delete this.filter.select;
+    // Object.keys(this.filter).forEach((key) => {
+    //   delete this.filter[key];
+    // });
+    // // this.filter = {};
+    // this.setStateAndUpdate({
+    //   search: '',
+    //   skip: 0,
+    // });
   }
 
   @autobind

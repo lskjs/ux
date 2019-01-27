@@ -26,6 +26,11 @@ class PageListFilter extends Component {
             initialValues={toJS(listStore.filter)}
             onChange={listStore.setFilter}
           />
+          <FilterForm
+            enableReinitialize
+            initialValues={toJS(listStore.filter)}
+            onChange={listStore.setFilter}
+          />
         </FilterWrapper>
       </FilterCollapse>
     );

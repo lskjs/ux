@@ -8,6 +8,7 @@ import cx from 'classnames';
 import Promise from 'bluebird';
 import axios from 'axios';
 
+import DEV from '../DEV';
 import Story from '../Story';
 import { Row, Col } from '../Table';
 import ObserverDEV from '../DEV/ObserverDEV';
@@ -119,12 +120,26 @@ const ListItem = observer(({ item = {} }) => (
   </Row>
 ));
 
-const HeaderItem = () => (
+
+const SortDirection = ({ value }) => (value === 1 ? '⬆' : value === -1 ? '⬇' : '⚬');
+
+const HeaderItem = ({ toggleSort, sort = {} }) => (
   <Row className={styleHeight}>
-    <Col index={0}>id</Col>
-    <Col index={1}>name</Col>
-    <Col index={2}>role</Col>
-    <Col index={3}>rating</Col>
+    <Col index={0} onClick={() => toggleSort('id')}>
+      id
+      <SortDirection value={sort.id} />
+    </Col>
+    <Col index={1}>
+      name
+    </Col>
+    <Col index={2} onClick={() => toggleSort('role')}>
+      role
+      <SortDirection value={sort.role} />
+    </Col>
+    <Col index={3} onClick={() => toggleSort('rating')}>
+      rating
+      <SortDirection value={sort.rating} />
+    </Col>
   </Row>
 );
 
@@ -159,13 +174,13 @@ export default ({ storiesOf }) => {
         </div>
       </Story>
     ))
-    .add('children', () => (
-      <Story>
-        <PageList>
-          PageList content
-        </PageList>
-      </Story>
-    ))
+    // .add('children', () => (
+    //   <Story>
+    //     <PageList>
+    //       PageList content
+    //     </PageList>
+    //   </Story>
+    // ))
     .add('PageList.Header', () => (
       <Story>
         <PageList
@@ -249,6 +264,17 @@ export default ({ storiesOf }) => {
         <PageList
           listStore={listStore}
         >
+          <PageList.Footer />
+        </PageList>
+        <Debug store={listStore} />
+      </Story>
+    ))
+    .add('PageList.Footer x2', () => (
+      <Story>
+        <PageList
+          listStore={listStore}
+        >
+          <PageList.Footer />
           <PageList.Footer />
         </PageList>
         <Debug store={listStore} />

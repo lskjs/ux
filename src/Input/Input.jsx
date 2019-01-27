@@ -61,7 +61,9 @@ class Input extends PureComponent {
       this.Block = getBlock(nextProps.componentClass);
     }
     if (nextProps.value !== this.state.value) {
-      this.setState({ value: nextProps.value });
+      let { value } = nextProps;
+      if (value === null || value === undefined) value = '';
+      this.setState({ value });
     }
   }
 

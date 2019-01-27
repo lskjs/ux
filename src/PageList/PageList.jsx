@@ -78,7 +78,9 @@ class PageList extends Component {
         }}
       >
         <MobxProvider listStore={listStore}>
-          {children}
+          <React.Fragment>
+            {children}
+          </React.Fragment>
         </MobxProvider>
       </Provider>
     );

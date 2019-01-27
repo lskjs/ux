@@ -1,11 +1,12 @@
 import React from 'react';
-import { Form, FastField } from 'formik';
+import { Form, FastField, Field } from 'formik';
 
 import Story from '../../../Story';
 import { Table, Col, Row } from '../../../Table';
 
 import createForm from '../../createForm';
 import FormGroup from '../../FormGroup';
+import FormDebug from '../../FormDebug';
 
 import Input from '../../controls/Input';
 import Select from '../../controls/Select';
@@ -13,12 +14,13 @@ import Checkbox from '../../controls/Checkbox';
 import Tags from '../../controls/Tags';
 
 const FormExample2View = (props) => {
+  console.log('props.controls.input', props.controls.input);
   return (
     <Form>
       <Table columns={['repeat(4, 1fr)']} overflow="visible">
         <Row gap={12}>
           <Col index={0}>
-            <FastField {...props.controls.input} />
+            <Field {...props.controls.input} />
           </Col>
           <Col index={1}>
             <FastField {...props.controls.select} />
@@ -31,6 +33,7 @@ const FormExample2View = (props) => {
           </Col>
         </Row>
       </Table>
+      <FormDebug {...props} />
     </Form>
   );
 };

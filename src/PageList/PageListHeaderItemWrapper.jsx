@@ -1,19 +1,28 @@
 
 import React, { Component } from 'react';
+import { inject, observer } from 'mobx-react';
 import { ListTableHeader } from './PageList.styles';
 import DEV from '../DEV';
 import { contextToProps } from './PageListContext';
 
 @contextToProps('HeaderItem')
+@inject('listStore')
+@observer
 class PageListHeaderItemWrapper extends Component {
   render() {
     let { children } = this.props;
+    const { listStore } = this.props;
 
     if (!children) {
       const { HeaderItem } = this.props;
       // console.log({ HeaderItem });
       if (!HeaderItem) return <DEV json="!HeaderItem" />;
-      children = <HeaderItem />;
+      children = (
+        <HeaderItem
+          toggleSort={listStore.toggleSort}
+          sort={listStore.sort}
+        />
+      );
     }
     return (
       <ListTableHeader>

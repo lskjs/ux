@@ -22,29 +22,32 @@ const InputFormView = (props) => {
   );
 };
 
+
+const controls = {
+  input: {
+    title: 'Input',
+    component: Input,
+  },
+  input2: {
+    title: 'Input2',
+    component: Input,
+  },
+  select: {
+    title: 'Select',
+    component: Select,
+    options: ['a', 'b', 'c'],
+  },
+  tags: {
+    title: 'Tags',
+    component: Tags,
+    flat: true,
+    options: ['a', 'b', 'c'],
+  },
+};
 const SampleForm = createForm({
   view: InputFormView,
   FormGroup,
-  controls: {
-    input: {
-      title: 'Input',
-      component: Input,
-    },
-    input2: {
-      title: 'Input2',
-      component: Input,
-    },
-    select: {
-      title: 'Select',
-      component: Select,
-      options: ['a', 'b', 'c'],
-    },
-    tags: {
-      title: 'Tags',
-      component: Tags,
-      options: ['a', 'b', 'c'],
-    },
-  },
+  controls,
 });
 
 class Container extends Component {
@@ -59,22 +62,54 @@ class Container extends Component {
     return (
       <div>
         <table>
-          <tr>
-            <td>
-              <SampleForm
-                enableReinitialize
-                initialValues={this.state}
-                onChange={this.handleChange}
-              />
-            </td>
-            <td>
-              <SampleForm
-                enableReinitialize
-                initialValues={this.state}
-                onChange={this.handleChange}
-              />
-            </td>
-          </tr>
+          <tbody>
+            <tr>
+              <td>
+                <SampleForm
+                  enableReinitialize
+                  initialValues={this.state}
+                  onChange={this.handleChange}
+                />
+              </td>
+              <td>
+                <SampleForm
+                  enableReinitialize
+                  initialValues={this.state}
+                  onChange={this.handleChange}
+                />
+              </td>
+              <td style={{ verticalAlign: 'top' }}>
+                {Object.keys(controls).map((name) => {
+                  return (
+                    <div>
+                      {name} =
+                      <button onClick={() => this.setState({ [name]: 123 })}>
+                        123
+                      </button>
+                      <button onClick={() => this.setState({ [name]: 'asd' })}>
+                        asd
+                      </button>
+                      <button onClick={() => this.setState({ [name]: { asd: 123 } })}>
+                        asd: 123
+                      </button>
+                      <button onClick={() => this.setState({ [name]: [1, 2, 3] })}>
+                        [1,2,3]
+                      </button>
+                      <button onClick={() => this.setState({ [name]: null })}>
+                        null
+                      </button>
+                      <button onClick={() => this.setState({ [name]: undefined })}>
+                        undefined
+                      </button>
+                      <button onClick={() => { delete this.state[name]; this.setState({ q: 1 }); }}>
+                        delete {name}
+                      </button>
+                    </div>
+                  );
+                })}
+              </td>
+            </tr>
+          </tbody>
         </table>
       </div>
     );

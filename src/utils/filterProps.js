@@ -1,5 +1,25 @@
 // https://raw.githubusercontent.com/emotion-js/emotion/master/packages/is-prop-valid/src/props.js
 export const validProps = {
+  //  https://reactjs.org/docs/events.html
+  onCopy: true, onCut: true, onPaste: true,
+  onCompositionEnd: true, onCompositionStart: true, onCompositionUpdate: true,
+  onKeyDown: true, onKeyPress: true, onKeyUp: true,
+  onFocus: true, onBlur: true,
+  onChange: true, onInput: true, onInvalid: true, onSubmit: true,
+  onClick: true, onContextMenu: true, onDoubleClick: true, onDrag: true, onDragEnd: true, onDragEnter: true, onDragExit: true, onDragLeave: true, onDragOver: true, onDragStart: true, onDrop: true, onMouseDown: true, onMouseEnter: true, onMouseLeave: true, onMouseMove: true, onMouseOut: true, onMouseOver: true, onMouseUp: true,
+  onPointerDown: true, onPointerMove: true, onPointerUp: true, onPointerCancel: true, onGotPointerCapture: true, onLostPointerCapture: true, onPointerEnter: true, onPointerLeave: true, onPointerOver: true, onPointerOut: true,
+  onSelect: true,
+  onTouchCancel: true, onTouchEnd: true, onTouchMove: true, onTouchStart: true,
+  onScroll: true,
+  onWheel: true,
+  onAbort: true, onCanPlay: true, onCanPlayThrough: true, onDurationChange: true, onEmptied: true, onEncrypted: true, onEnded: true, onError: true, onLoadedData: true, onLoadedMetadata: true, onLoadStart: true, onPause: true, onPlay: true, onPlaying: true, onProgress: true, onRateChange: true, onSeeked: true, onSeeking: true, onStalled: true, onSuspend: true, onTimeUpdate: true, onVolumeChange: true, onWaiting: true,
+  onLoad: true, onError: true,
+  onAnimationStart: true, onAnimationEnd: true, onAnimationIteration: true,
+  onTransitionEnd: true,
+  onToggle: true,
+  ////
+
+
   // react props
   // https://github.com/facebook/react/blob/5495a7f24aef85ba6937truetrue1ce962673ca9f5fde6/src/renderers/dom/shared/hooks/ReactDOMUnknownPropertyHook.js
   children: true,

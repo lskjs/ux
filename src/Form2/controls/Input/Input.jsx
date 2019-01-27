@@ -6,7 +6,10 @@ const Input = ({
   form,
   ...props
 }) => {
+  console.log({ value: field.value });
+
   return (
+    
     <InputBase
       {...field}
       debounce={0}

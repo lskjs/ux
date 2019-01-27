@@ -29,7 +29,6 @@ class TableCol extends Component {
             : 'flex-start'
       );
     }
-
     return React.createElement(
       componentClass,
       filterProps({

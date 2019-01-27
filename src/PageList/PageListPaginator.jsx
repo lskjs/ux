@@ -54,7 +54,7 @@ class PageListPaginator extends Component {
           <Pagination
             // hideOnSinglePage={true}
             onChange={listStore.setPage}
-            defaultCurrent={listStore.getCurrentPage()}
+            current={listStore.getCurrentPage()}
             total={listStore.count}
             // pageSizeOptions={options}
           />
