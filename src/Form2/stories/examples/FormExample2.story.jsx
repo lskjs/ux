@@ -6,7 +6,7 @@ import { Table, Col, Row } from '../../../Table';
 
 import createForm from '../../createForm';
 import FormGroup from '../../FormGroup';
-import FormDebug from '../../FormDebug';
+// import FormDebug from '../../FormDebug';
 
 import Input from '../../controls/Input';
 import Select from '../../controls/Select';
@@ -14,7 +14,7 @@ import Checkbox from '../../controls/Checkbox';
 import Tags from '../../controls/Tags';
 
 const FormExample2View = (props) => {
-  console.log('props.controls.input', props.controls.input);
+  // console.log('props.controls.input', props.controls.input);
   return (
     <Form>
       <Table columns={['repeat(4, 1fr)']} overflow="visible">
@@ -33,7 +33,7 @@ const FormExample2View = (props) => {
           </Col>
         </Row>
       </Table>
-      <FormDebug {...props} />
+      {/* <FormDebug {...props} /> */}
     </Form>
   );
 };

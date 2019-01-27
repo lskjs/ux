@@ -115,19 +115,13 @@ export default class PageListStore extends ProtoListStore {
     });
   }
 
-  // @autobind
-  @action.bound
+  @autobind
   clearFilter() {
-    this.filter.input = '3243534534';
-    delete this.filter.select;
-    // Object.keys(this.filter).forEach((key) => {
-    //   delete this.filter[key];
-    // });
-    // // this.filter = {};
-    // this.setStateAndUpdate({
-    //   search: '',
-    //   skip: 0,
-    // });
+    this.setStateAndUpdate({
+      filter: {},
+      search: '',
+      skip: 0,
+    });
   }
 
   @autobind

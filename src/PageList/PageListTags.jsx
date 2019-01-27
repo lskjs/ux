@@ -33,10 +33,13 @@ class PageListTags extends Component {
     if (!listStore.search &&
       (!listStore.filter || isEmpty(listStore.filter))
     ) return null;
+
+    const tags = createTags(toJS(listStore.filter));
+    console.log({ tags });
+
     return (
       <TagsTableWrapper >
-        {createTags(toJS(listStore.filter)).map((config, index) => {
-          //  console.log({ config });
+        {tags.map((config, index) => {
           const { component, ...tagProps } = config;
           const TagItem = component || Tag;
           return (
@@ -45,9 +48,7 @@ class PageListTags extends Component {
               closable
               color="blue"
               {...tagProps}
-              onClose={(tag) => {
-                listStore.removeTag(tag);
-              }}
+              onClose={tag => listStore.removeTag(tag)}
             >
               {tagProps.value}
             </TagItem>

@@ -14,26 +14,27 @@ class PageListFilter extends Component {
     const {
       FilterForm,
       listStore,
+      visible,
       // container,
     } = this.props;
     if (!FilterForm) return <DEV json="!FilterForm" />;
-    return (
-      <FilterCollapse show={listStore.showFilter}>
-        <FilterWrapper>
-          <DEV json={toJS(listStore.filter)} />
-          <FilterForm
-            enableReinitialize
-            initialValues={toJS(listStore.filter)}
-            onChange={listStore.setFilter}
-          />
-          <FilterForm
-            enableReinitialize
-            initialValues={toJS(listStore.filter)}
-            onChange={listStore.setFilter}
-          />
-        </FilterWrapper>
-      </FilterCollapse>
+    let children = (
+      <FilterWrapper>
+        <FilterForm
+          enableReinitialize
+          initialValues={toJS(listStore.filter)}
+          onChange={listStore.setFilter}
+        />
+      </FilterWrapper>
     );
+    if (!visible) {
+      children = (
+        <FilterCollapse show={listStore.showFilter}>
+          {children}
+        </FilterCollapse>
+      );
+    }
+    return children;
   }
 }
 

@@ -220,7 +220,20 @@ export default ({ storiesOf }) => {
           listStore={listStore}
           FilterForm={FilterForm}
         >
-          <PageList.Filter />
+          <PageList.Filter visible />
+          <Debug store={listStore} />
+        </PageList>
+      </Story>
+    ))
+    .add('PageList.Filter x2', () => (
+      <Story>
+        <PageList
+          listStore={listStore}
+          FilterForm={FilterForm}
+        >
+          <PageList.Filter visible />
+          <PageList.Filter visible />
+          <PageList.Tags visible />
           <Debug store={listStore} />
         </PageList>
       </Story>
