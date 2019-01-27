@@ -79,6 +79,13 @@ export default class PageListStore extends ProtoListStore {
   }
 
   @autobind
+  setLimit(limit) {
+    this.setStateAndUpdate({
+      limit,
+    });
+  }
+
+  @autobind
   setFilter(values) {
     this.setStateAndUpdate({
       filter: values,

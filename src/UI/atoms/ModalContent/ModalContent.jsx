@@ -7,7 +7,7 @@ import Content from './ModalContent.styles';
 class ModalContent extends PureComponent {
   static propTypes = {
     children: PropTypes.any.isRequired,
-    align: PropTypes.oneOf(['left', 'center', 'right']),
+    align: PropTypes.oneOf(['left', 'center', 'right', 'auto']),
     size: PropTypes.oneOf(['default', 'large']),
   }
   static defaultProps = {

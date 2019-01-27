@@ -31,7 +31,7 @@ class PageListBody extends Component {
           2) пусто после фетча, фильры выключены
           3) пусто после фетча, фильтры включены, скип не стоит
           4) пусто после фетча, фильтры включены, скип стоит */}
-          {listStore.map(item => (<ListItem item={item} />))}
+          {listStore.map((item, index) => (<ListItem key={item._id || item.id || index} item={item} />))}
         </Spin>
       </ListTableItems>
 

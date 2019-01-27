@@ -20,7 +20,9 @@ class PageListFilter extends Component {
     return (
       <FilterCollapse show={listStore.showFilter}>
         <FilterWrapper>
+          <DEV json={toJS(listStore.filter)} />
           <FilterForm
+            enableReinitialize
             initialValues={toJS(listStore.filter)}
             onChange={listStore.setFilter}
           />

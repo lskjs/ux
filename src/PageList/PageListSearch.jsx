@@ -3,7 +3,7 @@ import { observer, inject } from 'mobx-react';
 import TuneIcon from 'react-icons2/mdi/tune';
 
 import Button from '../Button';
- import Search from '../UI/molecules/Search';
+import Search from '../UI/molecules/Search';
 
 @inject('listStore')
 @observer
@@ -14,7 +14,7 @@ class ListSearch extends Component {
       ...props
     } = this.props;
     return (
-      <Search // Search
+      <Search
         current={10}
         max={listStore.count}
         debounceTimeout={100}

@@ -14,7 +14,7 @@ function createDynamicTag(tag = 'div') {
 
   dynamicTag.propTypes = {
     componentClass: PropTypes.any,
-    children: PropTypes.any.isRequired,
+    children: PropTypes.any,
   };
 
   dynamicTag.defaultProps = {

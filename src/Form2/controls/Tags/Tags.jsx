@@ -1,5 +1,32 @@
 import React from 'react';
+import isPlainObject from 'lodash/isPlainObject';
 import TagsPickerBase from '../../../UI/molecules/TagsPicker';
+// import { getNormalizedOptions } from '../Select/utils';
+
+function getNormalizedOptions(options) {
+  return options.map((option) => {
+    if (option && option._id) return option;
+
+    let value;
+    let title;
+    let props;
+
+    if (isPlainObject(option)) {
+      ({ value, title, ...props } = option);
+    } else {
+      value = option;
+      title = option;
+      props = {};
+    }
+
+    return {
+      _id: value,
+      value,
+      title,
+      ...props,
+    };
+  });
+}
 
 const TagsPicker = ({
   field,
@@ -8,26 +35,18 @@ const TagsPicker = ({
   fields,
   ...props
 }) => {
-  const formattedOptions = (options || fields || []).map((option) => {
-    if (option._id) return option;
-    return {
-      _id: option.value,
-      ...option,
-    };
-  });
-  // console.log({formattedOptions});
-
+  const norimalizedOptions = getNormalizedOptions((options || fields || []));
   return (
     <TagsPickerBase
       // {...field}
       {...props}
       onChange={null}
       onSubmit={(value) => {
-        console.log({ value });
+        // console.log({ value });
         form.setFieldValue(field.name, value);
       }}
       value={field.value}
-      fields={formattedOptions}
+      fields={norimalizedOptions}
       // title={field.title}
     />
   );

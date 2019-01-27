@@ -9,6 +9,7 @@ import Progress from '../utils/Progress';
 import Store from './Store';
 import insertArray from '../utils/insertArray';
 
+const { CancelToken } = axios;
 
 export default class ProtoListStore extends Store {
   @observable items = [];
@@ -16,9 +17,7 @@ export default class ProtoListStore extends Store {
   @observable skip = 0;
   @observable limit = 10;
   @observable loading = false;
-  @observable canFetchNext = false;
   @observable select = {};
-
   cancelToken = null;
 
   setStateField(item, value) {
@@ -74,29 +73,30 @@ export default class ProtoListStore extends Store {
 
   @action
   async fetch(params = {}) {
-    Progress.start();
-    if (this.loading && this.cancelToken) {
-      this.cancelToken.cancel();
-    }
-    this.cancelToken = axios.CancelToken.source();
+    if (this.loading) this.cancelFetch();
     this.loading = true;
+    this.cancelToken = CancelToken.source();
+    Progress.start();
+
     try {
-      this.findPromise = this.find({
+      const { items, count } = await this.find({
         skip: this.skip,
         limit: this.limit,
         cancelToken: this.cancelToken,
       });
-      const { items, count } = await this.findPromise;
       this.setItems(items, params);
       this.count = count;
+    } finally {
       this.loading = false;
+      this.cancelToken = null;
       Progress.done();
-      this.findPromise = null;
-    } catch (err) {
-      this.loading = false;
-      this.findPromise = null;
-      Progress.done();
-      throw err;
     }
+  }
+
+  async cancelFetch() {
+    if (!(this.cancelToken && this.cancelToken.cancel)) return;
+    this.loading = false;
+    this.cancelToken.cancel();
+    Progress.done();
   }
 }

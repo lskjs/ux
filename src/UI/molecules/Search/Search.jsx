@@ -8,6 +8,7 @@ import If from 'react-if';
 import CloseIcon from 'react-icons2/mdi/close';
 import Magnify from 'react-icons2/mdi/magnify';
 
+import filterProps from '../../../utils/filterProps';
 import Button from '../../../Button';
 
 import {
@@ -85,7 +86,7 @@ class Search extends PureComponent {
           ref={(e) => { this.input = e; }}
           onChange={this.handleChange}
           onKeyUp={this.handlePress}
-          {...props}
+          {...filterProps(props, Tag)}
         />
         <If condition={max}>
           <Count>

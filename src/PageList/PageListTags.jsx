@@ -35,12 +35,13 @@ class PageListTags extends Component {
     ) return null;
     return (
       <TagsTableWrapper >
-        {createTags(toJS(listStore.filter)).map((config) => {
-           console.log({ config });
+        {createTags(toJS(listStore.filter)).map((config, index) => {
+          //  console.log({ config });
           const { component, ...tagProps } = config;
           const TagItem = component || Tag;
           return (
             <TagItem
+              key={index}
               closable
               color="blue"
               {...tagProps}

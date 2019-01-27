@@ -77,12 +77,23 @@ const createForm = ({
 
   const WrappedView = (props) => {
     const mergedProps = { ...staticProps, ...props };
-    const formView = React.createElement(View, { ...staticProps, ...props });
+    const formView = React.createElement(View, { ...staticProps, ...props, key: 'formView' });
     if (!mergedProps.onChange) return formView;
-    return [
-      formView,
-      React.createElement(OnChangeListener, mergedProps),
-    ];
+    return React.createElement(OnChangeListener, mergedProps, formView);
+    // return [
+    //   formView,
+    //   React.createElement(OnChangeListener, mergedProps, formView),
+    // ];
+    // return (
+    //   <React.Fragment>
+    //     {formView}
+    //     <OnChangeListener {} />
+    //   </React.Fragment>
+    // )
+    // return [
+    //   React.createElement('div', { key: 1 }, formView),
+    //   React.createElement('div', { key: 2 }, React.createElement(OnChangeListener, mergedProps)),
+    // ];
   };
 
   const wrapperWithFormik = rawWithFormik || withFormik;
