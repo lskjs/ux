@@ -15,7 +15,7 @@ class PageListHeaderItem extends Component {
 
     if (!children) {
       const { HeaderItem } = this.props;
-      console.log({ HeaderItem });
+      // console.log({ HeaderItem });
       if (!HeaderItem) return <DEV json="!HeaderItem" />;
       children = (
         <HeaderItem
