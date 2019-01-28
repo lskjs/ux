@@ -97,6 +97,10 @@ export const ListTableHeader = styled('div')`
   font-family: ${p => p.theme.fontFamily};
   background-color: ${p => p.theme.colors.white};
   font-weight: 500;
+  > div > div {
+    display: flex;
+    align-items: center;
+  }
   
   &:hover {
     ${ArrowWrapper} {

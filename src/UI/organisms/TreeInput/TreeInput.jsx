@@ -65,7 +65,7 @@ class TreeInput extends Component {
                 {
                   category.children && category.children.map((game) => {
                     return (
-                      <TreeNode title={game.title} key={game._id} />
+                      <TreeNode title={game.title} key={game.value || game._id} />
                     );
                   })
                 }

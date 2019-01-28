@@ -1,31 +1,54 @@
 import React, { PureComponent } from 'react';
+import { Container, Col } from 'reactstrap';
+import If from 'react-if';
+import PropTypes from 'prop-types';
 
 import {
   Title,
   Lead,
-  Button,
   Muted,
   Wrapper,
+  ImageWrapper,
+  Image,
 } from './CTACentered.styles';
 
 class CTACentered extends PureComponent {
+  static propTypes = {
+    title: PropTypes.string,
+    subtitle: PropTypes.string,
+    actions: PropTypes.any,
+    footer: PropTypes.string,
+  };
+  static defaultProps = {
+    title: null,
+    subtitle: null,
+    actions: null,
+    footer: null,
+  };
   render() {
+    const {
+      title,
+      subtitle,
+      actions,
+      footer,
+    } = this.props;
     return (
       <Wrapper>
-        <div className="container">
-          <div className="col-md-8 mx-auto">
-            <Title>Services We Provide</Title>
+        <ImageWrapper>
+          <Image />
+        </ImageWrapper>
+        <Container>
+          <Col md={12}>
+            <Title>{title}</Title>
             <Lead>
-              Whether {"you're"} experiencing a creative block or need
-              assistance in creating a brand for your new business,
-              {"we're"} at your service.
+              {subtitle}
             </Lead>
-            <div>
-              <Button type="primary">Subscribe</Button>
-            </div>
-            <Muted>No spam! We promise, only the best stuff.</Muted>
-          </div>
-        </div>
+            {actions}
+            <If condition={footer}>
+              <Muted>{footer}</Muted>
+            </If>
+          </Col>
+        </Container>
       </Wrapper>
     );
   }

@@ -24,8 +24,11 @@ function getFieldsKeys(fields = []) {
 
 function getAvailable(fields, values) {
   const availableKeys = Object.keys(getFieldsKeys(fields));
-  const filteredKeys = availableKeys.filter(e => values.includes(e));
-  return filteredKeys;
+  if (values) {
+    const filteredKeys = availableKeys.filter(e => values.includes(e));
+    return filteredKeys;
+  }
+  return null;
 }
 
 class TagsPicker extends PureComponent {

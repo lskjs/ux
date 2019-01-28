@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Badge } from 'antd';
 import { observer, inject } from 'mobx-react';
 import TuneIcon from 'react-icons2/mdi/tune';
 
@@ -24,16 +25,18 @@ class ListSearch extends Component {
         onClear={() => listStore.setSearch('')}
         actions={(
           <React.Fragment>
-            <Button
-              icon={<TuneIcon />}
-              paint="primary"
-              view="text"
-              size="large"
-              bordered={listStore.showFilter}
-              onClick={listStore.toggleFilter}
-            >
-              Фильтр {listStore.hasFilter() && '(*)'}
-            </Button>
+            <Badge count={Object.keys(listStore.filter).length}>
+              <Button
+                icon={<TuneIcon />}
+                paint="primary"
+                view="text"
+                size="large"
+                bordered={listStore.showFilter}
+                onClick={listStore.toggleFilter}
+              >
+                Фильтр {listStore.hasFilter() && '(*)'}
+              </Button>
+            </Badge>
           </React.Fragment>
         )}
         {...props}

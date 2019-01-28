@@ -36,6 +36,11 @@ const TagsPicker = ({
   ...props
 }) => {
   const norimalizedOptions = getNormalizedOptions((options || fields || []));
+  // console.log('props', props);
+  // console.log('options', options);
+  // console.log('fields', fields);
+  // console.log('form', form);
+  
   return (
     <TagsPickerBase
       // {...field}
