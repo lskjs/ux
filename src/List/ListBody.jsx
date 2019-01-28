@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
 import Spin from 'antd/lib/spin';
 import Progress from '../utils/Progress';
-import { ListTableItems } from './PageList.styles';
-import { contextToProps } from './PageListContext';
+import { ListTableItems } from './List.styles';
+import { contextToProps } from './ListContext';
 
 @contextToProps('ListItem', 'Body')
 @inject('listStore')
 @observer
-class PageListBody extends Component {
+class ListBody extends Component {
   render() {
     const {
       listStore,
@@ -61,4 +61,4 @@ class PageListBody extends Component {
   }
 }
 
-export default PageListBody;
+export default ListBody;

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { observer } from 'mobx-react';
 import Story from '../Story';
-import PageList from './PageList';
+import List from './List';
 import range from 'lodash/range';
 // import repeat from 'lodash/repeat';
 // import ListStore from '../stores/ListStore';
 import DEV from '../DEV';
-import ListStore from '../stores/PageListStore';
+import ListStore from '../stores/ListStore';
 import { toJS } from 'mobx';
 import ObserverDEV from '../DEV/ObserverDEV';
 
@@ -49,35 +49,35 @@ const HeaderItem = () => (
 );
 
 module.exports = ({ storiesOf }) => {
-  return storiesOf('PageList/Blank', module)
+  return storiesOf('List/Blank', module)
     .add('no fetch', () => (
       <Story>
-        <PageList
+        <List
           listStore={listStore}
         >
-          <PageList.Body />
+          <List.Body />
           <Debug store={listStore} />
-        </PageList>
+        </List>
       </Story>
     ))
     .add('no data after fetch', () => (
       <Story>
-        <PageList
+        <List
           listStore={listStore}
         >
-          <PageList.Body />
+          <List.Body />
           <Debug store={listStore} />
-        </PageList>
+        </List>
       </Story>
     ))
     .add('no filtered data', () => (
       <Story>
-        <PageList
+        <List
           listStore={listStore}
         >
-          <PageList.Body />
+          <List.Body />
           <Debug store={listStore} />
-        </PageList>
+        </List>
       </Story>
     ));
 };

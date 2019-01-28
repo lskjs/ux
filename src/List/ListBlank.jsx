@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ListTableItems } from './PageList.styles';
+import { ListTableItems } from './List.styles';
 
 class ListPageBlank extends Component {
   render() {

@@ -1,14 +1,14 @@
 
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
-import { ListTableHeader } from './PageList.styles';
+import { ListTableHeader } from './List.styles';
 import DEV from '../DEV';
-import { contextToProps } from './PageListContext';
+import { contextToProps } from './ListContext';
 
 @contextToProps('HeaderItem')
 @inject('listStore')
 @observer
-class PageListHeaderItem extends Component {
+class ListHeaderItem extends Component {
   render() {
     let { children } = this.props;
     const { listStore } = this.props;
@@ -32,28 +32,28 @@ class PageListHeaderItem extends Component {
   }
 }
 
-export default PageListHeaderItem;
+export default ListHeaderItem;
 
 
 // import React, { Component } from 'react';
 
 // import DEV from '../DEV';
-// import { ListTableHeader } from './PageList.styles';
-// import { Consumer } from './PageListContext';
+// import { ListTableHeader } from './List.styles';
+// import { Consumer } from './ListContext';
 
 // export const contextToProps = Context => Component => props => (
 //   <Context.Consumer>{context => <Component {...context} {...props} />}</Context.Consumer>
 // );
 
-// class PageListHeaderItem extends Component {
+// class ListHeaderItem extends Component {
 //   render() {
 //     return (
 //       <Consumer>
-//         {({ pageList }) => {
+//         {({ List }) => {
 //           let { children } = this.props;
 //           if (!children) {
 //             const {
-//               HeaderItem = pageList.props.HeaderItem,
+//               HeaderItem = List.props.HeaderItem,
 //             } = this.props;
 //             if (!HeaderItem) return <DEV json="!HeaderItem" />;
 //             children = <HeaderItem />;
@@ -70,18 +70,18 @@ export default PageListHeaderItem;
 // }
 
 
-// export default PageListHeaderItem;
+// export default ListHeaderItem;
 
 
 // import React, { Component } from 'react';
 
 // import DEV from '../DEV';
-// import { ListTableHeader } from './PageList.styles';
-// import { Consumer } from './PageListContext';
+// import { ListTableHeader } from './List.styles';
+// import { Consumer } from './ListContext';
 // import { inject } from 'mobx-react';
 
 // @inject('HeaderItem')
-// class PageListHeaderItem extends Component {
+// class ListHeaderItem extends Component {
 //   render() {
 //     let { children, HeaderItem } = this.props;
 //     if (!children) {
@@ -97,4 +97,4 @@ export default PageListHeaderItem;
 // }
 
 
-// export default PageListHeaderItem;
+// export default ListHeaderItem;

@@ -13,10 +13,10 @@ import BsRow from 'reactstrap/lib/Row';
 import Story from '../../Story';
 import { Row, Col } from '../../Table';
 
-import ListStore from '../../stores/PageListStore';
+import ListStore from '../../stores/ListStore';
 import { FormExample2 as FilterForm } from '../../Form2/stories/examples/FormExample2.story';
 
-import PageList from '../PageList';
+import List from '../List';
 
 Promise.config({ cancellation: true });
 const api = {
@@ -94,10 +94,10 @@ const HeaderItem = ({ toggleSort, sort = {} }) => (
 
 
 export default ({ storiesOf }) => {
-  return storiesOf('PageList/cases', module)
+  return storiesOf('List/cases', module)
     .add('case2', () => (
       <Story devtools style={{ padding: 24 }}>
-        <PageList
+        <List
           listStore={listStore}
           HeaderItem={HeaderItem}
           Body={Body}

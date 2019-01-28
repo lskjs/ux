@@ -8,11 +8,11 @@ import {
   PaginationStepper,
   PaginationSelect,
   PaginationWrapper,
-} from './PageList.styles';
+} from './List.styles';
 
 @inject('listStore')
 @observer
-class PageListPaginator extends Component {
+class ListPaginator extends Component {
   render() {
     const {
       listStore,
@@ -49,4 +49,4 @@ class PageListPaginator extends Component {
   }
 }
 
-export default PageListPaginator;
+export default ListPaginator;

@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import Button from '../Button';
-import { TagsTableWrapper } from './PageList.styles';
-import { contextToProps } from './PageListContext';
+import { TagsTableWrapper } from './List.styles';
+import { contextToProps } from './ListContext';
 
 @contextToProps('Tags', 'Tag')
 @inject('listStore')
 @observer
-class PageListTags extends Component {
+class ListTags extends Component {
   render() {
     const {
       Tags,
@@ -33,4 +33,4 @@ class PageListTags extends Component {
   }
 }
 
-export default PageListTags;
+export default ListTags;

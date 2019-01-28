@@ -11,7 +11,7 @@ import insertArray from '../utils/insertArray';
 
 const { CancelToken } = axios;
 
-export default class ProtoListStore extends Store {
+export default class FetchStore extends Store {
   @observable items = [];
   @observable count = null;
   @observable skip = 0;
@@ -106,12 +106,10 @@ export default class ProtoListStore extends Store {
     return this.count === null || this.count > this.skip + this.items.length;
   }
 
-  // @action
   async fetchMore(dir, limit = this.limit) {
     let skip = dir < 0 ? this.skip - limit : this.skip + this.items.length;
     if (skip < 0) skip = 0;
     if (this.count !== null && skip > this.count) return;
     await this.fetch({ cache: true, skip, limit });
-    // if (dir < 0) this.skip = skip;
   }
 }

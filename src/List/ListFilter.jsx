@@ -3,13 +3,13 @@ import { toJS } from 'mobx';
 import { inject, observer } from 'mobx-react';
 import FilterCollapse from '../UI/organisms/FilterCollapse';
 import DEV from '../DEV';
-import { FilterWrapper } from './PageList.styles';
-import { contextToProps } from './PageListContext';
+import { FilterWrapper } from './List.styles';
+import { contextToProps } from './ListContext';
 
 @contextToProps('FilterForm')
 @inject('listStore')
 @observer
-class PageListFilter extends Component {
+class ListFilter extends Component {
   render() {
     const {
       FilterForm,
@@ -38,4 +38,4 @@ class PageListFilter extends Component {
   }
 }
 
-export default PageListFilter;
+export default ListFilter;

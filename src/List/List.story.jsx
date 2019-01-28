@@ -12,10 +12,10 @@ import DEV from '../DEV';
 import Story from '../Story';
 import { Row, Col } from '../Table';
 import ObserverDEV from '../DEV/ObserverDEV';
-import ListStore from '../stores/PageListStore';
+import ListStore from '../stores/ListStore';
 import { FormExample2 as FilterForm } from '../Form2/stories/examples/FormExample2.story';
 
-import PageList from './PageList';
+import List from './List';
 
 Promise.config({ cancellation: true });
 const api = {
@@ -164,10 +164,10 @@ class Debug extends Component {
 }
 
 export default ({ storiesOf }) => {
-  return storiesOf('PageList', module)
+  return storiesOf('List', module)
     .add('default', () => (
       <Story devtools style={{ padding: 24 }}>
-        <PageList
+        <List
           container
           listStore={listStore}
           HeaderItem={HeaderItem}
@@ -180,140 +180,140 @@ export default ({ storiesOf }) => {
     ))
     // .add('children', () => (
     //   <Story>
-    //     <PageList>
-    //       PageList content
-    //     </PageList>
+    //     <List>
+    //       List content
+    //     </List>
     //   </Story>
     // ))
-    .add('PageList.Header', () => (
+    .add('List.Header', () => (
       <Story>
-        <PageList
+        <List
           listStore={listStore}
           HeaderItem={HeaderItem}
           FilterForm={FilterForm}
           columns={columns}
         >
-          <PageList.Header />
+          <List.Header />
           <Debug store={listStore} />
-        </PageList>
+        </List>
       </Story>
     ))
-    .add('PageList.Search', () => (
+    .add('List.Search', () => (
       <Story>
-        <PageList
+        <List
           listStore={listStore}
         >
-          <PageList.Search />
+          <List.Search />
           <Debug store={listStore} />
-        </PageList>
+        </List>
       </Story>
     ))
-    .add('PageList.Filter', () => (
+    .add('List.Filter', () => (
       <Story>
-        <PageList
-          listStore={listStore}
-          FilterForm={FilterForm}
-        >
-          <PageList.Filter visible />
-          <Debug store={listStore} />
-        </PageList>
-      </Story>
-    ))
-    .add('PageList.Filter x2', () => (
-      <Story>
-        <PageList
+        <List
           listStore={listStore}
           FilterForm={FilterForm}
         >
-          <PageList.Filter visible />
-          <PageList.Filter visible />
-          <PageList.Tags visible />
+          <List.Filter visible />
           <Debug store={listStore} />
-        </PageList>
+        </List>
       </Story>
     ))
-    .add('PageList.Tags', () => (
+    .add('List.Filter x2', () => (
       <Story>
-        <PageList
+        <List
+          listStore={listStore}
+          FilterForm={FilterForm}
+        >
+          <List.Filter visible />
+          <List.Filter visible />
+          <List.Tags visible />
+          <Debug store={listStore} />
+        </List>
+      </Story>
+    ))
+    .add('List.Tags', () => (
+      <Story>
+        <List
           listStore={listStore}
         >
-          <PageList.Tags />
+          <List.Tags />
           <Debug store={listStore} />
-        </PageList>
+        </List>
       </Story>
     ))
-    .add('PageList.HeaderItem', () => (
+    .add('List.HeaderItem', () => (
       <Story>
-        <PageList
+        <List
           listStore={listStore}
           HeaderItem={HeaderItem}
           columns={columns}
         >
-          <PageList.HeaderItem />
+          <List.HeaderItem />
           <Debug store={listStore} />
-        </PageList>
+        </List>
       </Story>
     ))
-    .add('PageList.Body', () => (
+    .add('List.Body', () => (
       <Story>
-        <PageList
+        <List
           listStore={listStore}
           ListItem={ListItem}
           columns={columns}
         >
-          <PageList.Body ListItem={ListItem} />
-        </PageList>
+          <List.Body ListItem={ListItem} />
+        </List>
         <Debug store={listStore} />
       </Story>
     ))
-    .add('PageList.Footer', () => (
+    .add('List.Footer', () => (
       <Story>
-        <PageList
+        <List
           listStore={listStore}
         >
-          <PageList.Footer />
-        </PageList>
+          <List.Footer />
+        </List>
         <Debug store={listStore} />
       </Story>
     ))
-    .add('PageList.Footer x2', () => (
+    .add('List.Footer x2', () => (
       <Story>
-        <PageList
+        <List
           listStore={listStore}
         >
-          <PageList.Footer />
-          <PageList.Footer />
-        </PageList>
+          <List.Footer />
+          <List.Footer />
+        </List>
         <Debug store={listStore} />
       </Story>
     ))
-    .add('PageList.Paginator', () => (
+    .add('List.Paginator', () => (
       <Story>
-        <PageList
+        <List
           listStore={listStore}
         >
-          <PageList.Paginator />
-        </PageList>
+          <List.Paginator />
+        </List>
         <Debug store={listStore} />
       </Story>
     ));
   // .add('props ListItem', () => (
   //   <Story>
-  //     <PageList
+  //     <List
   //       ListItem={ListItem}
   //     />
   //   </Story>
   // ))
   // .add('props HeaderItem', () => (
   //   <Story>
-  //     <PageList
+  //     <List
   //       HeaderItem={HeaderItem}
   //     />
   //   </Story>
   // ))
   // .add('props ListItem + HeaderItem + columns', () => (
   //   <Story>
-  //     <PageList
+  //     <List
   //       columns={['minmax(180px, 1fr)', 108, 64, 64, 'minmax(84px, 1fr)']}
   //       HeaderItem={HeaderItem}
   //       ListItem={ListItem}
@@ -322,59 +322,59 @@ export default ({ storiesOf }) => {
   // ))
   // .add('children - without footer', () => (
   //   <Story>
-  //     <PageList
+  //     <List
   //       columns={['minmax(180px, 1fr)', 108, 64, 64, 'minmax(84px, 1fr)']}
   //       ListItem={ListItem}
   //       HeaderItem={HeaderItem}
   //     >
-  //       <PageList.Header />
-  //       <PageList.Body />
-  //     </PageList>
+  //       <List.Header />
+  //       <List.Body />
+  //     </List>
   //   </Story>
   // ))
   // .add('custome Header', () => (
   //   <Story>
-  //     <PageList
+  //     <List
   //       columns={['minmax(180px, 1fr)', 108, 64, 64, 'minmax(84px, 1fr)']}
   //       ListItem={ListItem}
   //       HeaderItem={HeaderItem}
   //     >
-  //       <PageList.Header>
+  //       <List.Header>
   //         Custom header
-  //       </PageList.Header>
-  //       <PageList.Body />
-  //       <PageList.Footer />
-  //     </PageList>
+  //       </List.Header>
+  //       <List.Body />
+  //       <List.Footer />
+  //     </List>
   //   </Story>
   // ))
   // .add('custom Header', () => (
   //   <Story>
-  //     <PageList
+  //     <List
   //       columns={['minmax(180px, 1fr)', 108, 64, 64, 'minmax(84px, 1fr)']}
   //       ListItem={ListItem}
   //       HeaderItem={HeaderItem}
   //     >
-  //       <PageList.Header>
+  //       <List.Header>
   //         Custom header
-  //       </PageList.Header>
-  //       <PageList.Body />
-  //       <PageList.Footer />
-  //     </PageList>
+  //       </List.Header>
+  //       <List.Body />
+  //       <List.Footer />
+  //     </List>
   //   </Story>
   // ))
   // .add('custom Body table', () => (
   //   <Story>
-  //     <PageList
+  //     <List
   //       columns={['minmax(180px, 1fr)', 108, 64, 64, 'minmax(84px, 1fr)']}
   //       ListItem={ListItem}
   //       HeaderItem={HeaderItem}
   //     >
-  //       <PageList.Header />
-  //       <PageList.Body>
+  //       <List.Header />
+  //       <List.Body>
   //         Custom Body
-  //       </PageList.Body>
-  //       <PageList.Footer />
-  //     </PageList>
+  //       </List.Body>
+  //       <List.Footer />
+  //     </List>
   //   </Story>
   // ));
 };

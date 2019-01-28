@@ -4,9 +4,9 @@ import DownloadIcon from 'react-icons2/mdi/download';
 import {
   Footer as FooterList,
   FooterRight,
-} from './PageList.styles';
+} from './List.styles';
 
-import PageListPaginator from './PageListPaginator';
+import ListPaginator from './ListPaginator';
 import Button from '../Button';
 
 @inject('listStore')
@@ -25,7 +25,7 @@ class ListFooter extends Component {
           Скачть XLSX
         </Button>
         <FooterRight>
-          <PageListPaginator />
+          <ListPaginator />
         </FooterRight>
       </FooterList>
     );

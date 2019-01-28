@@ -3,25 +3,25 @@ import { Provider as MobxProvider } from 'mobx-react';
 
 import ListStore from '../stores/ListStore';
 import { Table } from '../Table';
-import { ListPaper } from './PageList.styles';
-import { Provider } from './PageListContext';
+import { ListPaper } from './List.styles';
+import { Provider } from './ListContext';
 
 import DefaultTags from './DefaultTags';
 import DefaultTag from './DefaultTag';
 
-class PageList extends Component {
-  static Header = require('./PageListHeader').default;
-  static Search = require('./PageListSearch').default;
-  static Filter = require('./PageListFilter').default;
-  static Tags = require('./PageListTags').default;
-  static Body = require('./PageListBody').default;
-  static HeaderItem = require('./PageListHeaderItem').default;
-  static Footer = require('./PageListFooter').default;
-  static Paginator = require('./PageListPaginator').default;
-  static Blank = require('./PageListBlank').default;
+class List extends Component {
+  static Header = require('./ListHeader').default;
+  static Search = require('./ListSearch').default;
+  static Filter = require('./ListFilter').default;
+  static Tags = require('./ListTags').default;
+  static Body = require('./ListBody').default;
+  static HeaderItem = require('./ListHeaderItem').default;
+  static Footer = require('./ListFooter').default;
+  static Paginator = require('./ListPaginator').default;
+  static Blank = require('./ListBlank').default;
 
 
-  // static StickyPanel = PageListStickyPanel;
+  // static StickyPanel = ListStickyPanel;
   static StickyPanel = ({ children }) => <div>{children}</div>;
   render() {
     const {
@@ -36,9 +36,9 @@ class PageList extends Component {
     if (!children) {
       children = (
         <React.Fragment>
-          <PageList.Header />
-          <PageList.Body />
-          <PageList.Footer />
+          <List.Header />
+          <List.Body />
+          <List.Footer />
         </React.Fragment>
       );
     }
@@ -62,8 +62,8 @@ class PageList extends Component {
     return (
       <Provider
         value={{
-          pageList: this,
-          PageList: this.constructor,
+          List: this,
+          List: this.constructor,
 
           // Header: this.constructor.Header,
           // Body: this.constructor.Body,
@@ -94,28 +94,28 @@ class PageList extends Component {
 }
 
 
-//   <PageList
+//   <List
 // // listStore={pageStore.listStore}
 //     columns={['minmax(180px, 1fr)', 108, 64, 64, 'minmax(84px, 1fr)']}
 // // createTags={createTags}
 //     ListItem={ListItem}
 //     HeaderItem={HeaderItem}
 //   />;
-// <PageList.Header>
-//   <PageList.Search />
-//   <PageList.Filter
+// <List.Header>
+//   <List.Search />
+//   <List.Filter
 //     Form={FilterForm}
 //   />
-//   <PageList.Tags createTags={createChannelsTags} />
-//   <PageList.StickyPanel>
+//   <List.Tags createTags={createChannelsTags} />
+//   <List.StickyPanel>
 //     <HeaderItem />
-//     <PageList.TableHeader HeaderItem={HeaderItem} />
-//   </PageList.StickyPanel>
-// </PageList.Header>
-// <PageList.Body ListItem={ListItem} />
-// <PageList.Footer />
-// </PageList>
+//     <List.TableHeader HeaderItem={HeaderItem} />
+//   </List.StickyPanel>
+// </List.Header>
+// <List.Body ListItem={ListItem} />
+// <List.Footer />
+// </List>
 
 
-export default PageList;
+export default List;
 
