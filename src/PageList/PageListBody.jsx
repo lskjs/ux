@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
+import If from 'react-if';
 import Spin from 'antd/lib/spin';
+import Button from '../Button';
 import Progress from '../utils/Progress';
 import { ListTableItems } from './PageList.styles';
 import { contextToProps } from './PageListContext';
@@ -29,9 +31,14 @@ class PageListBody extends Component {
           spinning={listStore.loading}
         >
           {listStore.canFetchMore(-1) && (
-            <button onClick={() => listStore.fetchMore(-1)}>
-              fetchPrev
-            </button>
+            <Button size="large" paint="default" onClick={() => listStore.fetchMore(-1)} disabled={listStore.loading}>
+              <If condition={listStore.loading}>
+                Loading
+              </If>
+              <If condition={!listStore.loading}>
+                fetchPrev
+              </If>
+            </Button>
           )}
           <Body style={{ minHeight: 200 }}>
             {/* 1) совсем пусто, первый раз заходим
@@ -41,18 +48,23 @@ class PageListBody extends Component {
             {listStore.map((item, index) => {
               if (item === null) {
                 return (
-                  <button onClick={() => listStore.fetch({ skip: listStore.skip + index, limit: 1, cache: 1 })}>
+                  <Button onClick={() => listStore.fetch({ skip: listStore.skip + index, limit: 1, cache: 1 })}>
                     load
-                  </button>
+                  </Button>
                 );
               }
               return <ListItem key={item._id || item.id || index} item={item} />;
             })}
           </Body>
           {listStore.canFetchMore(1) && (
-            <button onClick={() => listStore.fetchMore(1)}>
-              fetchNext
-            </button>
+            <Button size="large" paint="default" onClick={() => listStore.fetchMore(1)} disabled={listStore.loading}>
+              <If condition={listStore.loading}>
+                Loading
+              </If>
+              <If condition={!listStore.loading}>
+                fetchNext
+              </If>
+            </Button>
           )}
         </Spin>
       </ListTableItems>
