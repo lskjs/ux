@@ -46,12 +46,13 @@ const api = {
     ]);
     return {
       count,
-      items: range(skip, skip + limit).map(id => ({
-        id,
-        title: `User ${id + 1}`,
-        rating: random(id, count, true).toFixed(2),
-        role: roles(),
-      })),
+      // data: range(skip, skip + limit).map(id => ({
+      //   id,
+      //   title: `User ${id + 1}`,
+      //   rating: random(id, count, true).toFixed(2),
+      //   role: roles(),
+      // })),
+      items: range(skip, skip + limit).map(_id => ({ _id })),
     };
   },
 
@@ -106,7 +107,7 @@ const itemStyle = css`
   padding: 0 12px;
 `;
 
-const ListItem = observer(({ item = {} }) => (
+const Item = observer(({ item = {} }) => (
   <Row className={cx([styleHeight, itemStyle])}>
     <Col index={0}>
       {item.id}
@@ -174,7 +175,7 @@ export default ({ storiesOf }) => {
           container
           listStore={listStore}
           HeaderItem={HeaderItem}
-          ListItem={ListItem}
+          Item={Item}
           FilterForm={FilterForm}
           columns={columns}
         />
@@ -261,10 +262,10 @@ export default ({ storiesOf }) => {
       <Story>
         <List
           listStore={listStore}
-          ListItem={ListItem}
+          Item={Item}
           columns={columns}
         >
-          <List.Body ListItem={ListItem} />
+          <List.Body Item={Item} />
         </List>
         <Debug store={listStore} />
       </Story>
@@ -300,10 +301,10 @@ export default ({ storiesOf }) => {
         <Debug store={listStore} />
       </Story>
     ));
-  // .add('props ListItem', () => (
+  // .add('props Item', () => (
   //   <Story>
   //     <List
-  //       ListItem={ListItem}
+  //       Item={Item}
   //     />
   //   </Story>
   // ))
@@ -314,12 +315,12 @@ export default ({ storiesOf }) => {
   //     />
   //   </Story>
   // ))
-  // .add('props ListItem + HeaderItem + columns', () => (
+  // .add('props Item + HeaderItem + columns', () => (
   //   <Story>
   //     <List
   //       columns={['minmax(180px, 1fr)', 108, 64, 64, 'minmax(84px, 1fr)']}
   //       HeaderItem={HeaderItem}
-  //       ListItem={ListItem}
+  //       Item={Item}
   //     />
   //   </Story>
   // ))
@@ -327,7 +328,7 @@ export default ({ storiesOf }) => {
   //   <Story>
   //     <List
   //       columns={['minmax(180px, 1fr)', 108, 64, 64, 'minmax(84px, 1fr)']}
-  //       ListItem={ListItem}
+  //       Item={Item}
   //       HeaderItem={HeaderItem}
   //     >
   //       <List.Header />
@@ -339,7 +340,7 @@ export default ({ storiesOf }) => {
   //   <Story>
   //     <List
   //       columns={['minmax(180px, 1fr)', 108, 64, 64, 'minmax(84px, 1fr)']}
-  //       ListItem={ListItem}
+  //       Item={Item}
   //       HeaderItem={HeaderItem}
   //     >
   //       <List.Header>
@@ -354,7 +355,7 @@ export default ({ storiesOf }) => {
   //   <Story>
   //     <List
   //       columns={['minmax(180px, 1fr)', 108, 64, 64, 'minmax(84px, 1fr)']}
-  //       ListItem={ListItem}
+  //       Item={Item}
   //       HeaderItem={HeaderItem}
   //     >
   //       <List.Header>
@@ -369,7 +370,7 @@ export default ({ storiesOf }) => {
   //   <Story>
   //     <List
   //       columns={['minmax(180px, 1fr)', 108, 64, 64, 'minmax(84px, 1fr)']}
-  //       ListItem={ListItem}
+  //       Item={Item}
   //       HeaderItem={HeaderItem}
   //     >
   //       <List.Header />

@@ -37,17 +37,8 @@ export default class ListStore extends FetchStore {
     return !(isEmpty(this.filter) && isEmpty(this.search));
   }
 
-  getVisibleItems() {
-    const items = this.items || [];
-    // if (!this.cachable) {
-    return items;
-    // }
-    // return items.slice(this.skip, this.skip + this.limit);
-  }
-
-
   map(...args) {
-    return this.getVisibleItems().map(...args);
+    return this.items.map(...args);
   }
 
   /**

@@ -36,6 +36,8 @@ export default class FetchStore extends Store {
   }
 
   async find({ skip, limit, cancelToken } = {}) {
+    console.log({this: this});
+    
     if (!this.api) throw '!api';
     if (!this.api.find) throw '!api.find';
 

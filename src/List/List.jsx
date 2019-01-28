@@ -3,6 +3,7 @@ import { Provider as MobxProvider } from 'mobx-react';
 
 import ListStore from '../stores/ListStore';
 import { Table } from '../Table';
+import DEV from '../DEV';
 import { ListPaper } from './List.styles';
 import { Provider } from './ListContext';
 
@@ -25,11 +26,16 @@ class List extends Component {
   static StickyPanel = ({ children }) => <div>{children}</div>;
   render() {
     const {
-      shadow, columns, container, listStore = new ListStore(),
-      ListItem, FilterForm, HeaderItem, Tags = DefaultTags, Tag = DefaultTag, Body,
+      shadow, columns,
+      Item, FilterForm, HeaderItem, Tags = DefaultTags, Tag = DefaultTag, Body,
     } = this.props;
 
-    // if (!listStore) return <DEV json='!listStore' />
+    let { listStore } = this.props;
+
+    if (!listStore) {
+      if (__DEV__) return <DEV json="!listStore" />;
+      listStore = new ListStore();
+    }
 
     let { children } = this.props;
 
@@ -75,7 +81,7 @@ class List extends Component {
           // Paginator: this.constructor.Paginator,
           // Blank: this.constructor.Blank,
 
-          ListItem,
+          Item,
           FilterForm,
           Tags,
           Tag,
@@ -98,7 +104,7 @@ class List extends Component {
 // // listStore={pageStore.listStore}
 //     columns={['minmax(180px, 1fr)', 108, 64, 64, 'minmax(84px, 1fr)']}
 // // createTags={createTags}
-//     ListItem={ListItem}
+//     Item={Item}
 //     HeaderItem={HeaderItem}
 //   />;
 // <List.Header>
@@ -112,7 +118,7 @@ class List extends Component {
 //     <List.TableHeader HeaderItem={HeaderItem} />
 //   </List.StickyPanel>
 // </List.Header>
-// <List.Body ListItem={ListItem} />
+// <List.Body Item={Item} />
 // <List.Footer />
 // </List>
 

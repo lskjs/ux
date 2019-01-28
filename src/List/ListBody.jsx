@@ -2,19 +2,20 @@ import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
 import If from 'react-if';
 import Spin from 'antd/lib/spin';
+import DEV from '../DEV';
 import Button from '../Button';
 import Progress from '../utils/Progress';
 import { ListTableItems } from './List.styles';
 import { contextToProps } from './ListContext';
 
-@contextToProps('ListItem', 'Body')
+@contextToProps('Item', 'Body')
 @inject('listStore')
 @observer
 class ListBody extends Component {
   render() {
     const {
       listStore,
-      ListItem,
+      Item,
       Body = 'div',
       ...props
     } = this.props;
@@ -53,7 +54,8 @@ class ListBody extends Component {
                   </Button>
                 );
               }
-              return <ListItem key={item._id || item.id || index} item={item} />;
+              if (!Item) return <DEV json="!Item" />;
+              return <Item key={item._id || item.id || index} item={item} />;
             })}
           </Body>
           {listStore.canFetchMore(1) && (
