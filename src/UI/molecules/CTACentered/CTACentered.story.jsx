@@ -5,9 +5,9 @@ import Button from '../../../Button';
 
 const articles = [
   {
-    title: 'Services We Provide',
-    subtitle: 'Whether you are experiencing a creative block or needassistance in creating a brand for your new business, we are at your service.',
-    actions: <Button paint="primary">Subscribe</Button>,
+    title: 'Что-то пошло не так',
+    subtitle: 'Not found: /cabinet/company',
+    actions: <Button paint="primary">Вернуться на главную страницу</Button>,
     footer: 'No spam! We promise, only best stuff',
   },
 ];

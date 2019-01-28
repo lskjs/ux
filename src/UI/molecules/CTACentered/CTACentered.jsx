@@ -8,6 +8,8 @@ import {
   Lead,
   Muted,
   Wrapper,
+  ImageWrapper,
+  Image,
 } from './CTACentered.styles';
 
 class CTACentered extends PureComponent {
@@ -32,8 +34,11 @@ class CTACentered extends PureComponent {
     } = this.props;
     return (
       <Wrapper>
+        <ImageWrapper>
+          <Image />
+        </ImageWrapper>
         <Container>
-          <Col md={8} style={{ margin: '0 auto' }}>
+          <Col md={12}>
             <Title>{title}</Title>
             <Lead>
               {subtitle}
