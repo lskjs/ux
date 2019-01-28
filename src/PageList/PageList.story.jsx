@@ -7,6 +7,8 @@ import { css } from 'emotion';
 import cx from 'classnames';
 import Promise from 'bluebird';
 import axios from 'axios';
+import ArrowDown from 'react-icons/lib/md/arrow-drop-down';
+import ArrowUp from 'react-icons/lib/md/arrow-drop-up';
 
 import DEV from '../DEV';
 import Story from '../Story';
@@ -121,7 +123,7 @@ const ListItem = observer(({ item = {} }) => (
 ));
 
 
-const SortDirection = ({ value }) => (value === 1 ? '⬆' : value === -1 ? '⬇' : '⚬');
+const SortDirection = ({ value }) => (value === 1 ? <ArrowDown size={20} /> : value === -1 ? <ArrowUp size={20} /> : '⚬');
 
 const HeaderItem = ({ toggleSort, sort = {} }) => (
   <Row className={styleHeight}>

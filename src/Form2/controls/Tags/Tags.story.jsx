@@ -17,6 +17,7 @@ const TagsFormView = (props) => {
       <Field {...props.controls.tags2} />
       <Field {...props.controls.tags3} />
       <Field {...props.controls.tags4} />
+      <Field {...props.controls.tags5} />
       <FormDebug {...props} />
       <Button onClick={props.handleSubmit}>Submit</Button>
     </Form>
@@ -70,6 +71,46 @@ const TagsForm = createForm({
       title: 'Tags',
       component: Tags,
       options: range(1, 100),
+    },
+    tags5: {
+      title: 'Tree Tags',
+      component: Tags,
+      flat: false,
+      triggerTitle: 'Выбрать теги',
+      options: [
+        {
+          title: 'One',
+          value: 'one',
+          children: [
+            {
+              title: 'One.one',
+              value: 'one.one',
+            },
+            {
+              title: 'One.two',
+              value: 'one.two',
+            },
+          ],
+        },
+        {
+          title: 'Two',
+          value: 'two',
+          children: [
+            {
+              title: 'Two.one',
+              value: 'two.one',
+            },
+            {
+              title: 'Two.two',
+              value: 'two.two',
+            },
+            {
+              title: 'Two.three',
+              value: 'two.three',
+            },
+          ],
+        },
+      ],
     },
   },
 });
