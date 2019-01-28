@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import { Container, Col } from 'reactstrap';
 import If from 'react-if';
 import PropTypes from 'prop-types';
 
@@ -31,8 +32,8 @@ class CTACentered extends PureComponent {
     } = this.props;
     return (
       <Wrapper>
-        <div className="container">
-          <div className="col-md-8 mx-auto">
+        <Container>
+          <Col md={8} style={{ margin: '0 auto' }}>
             <Title>{title}</Title>
             <Lead>
               {subtitle}
@@ -41,8 +42,8 @@ class CTACentered extends PureComponent {
             <If condition={footer}>
               <Muted>{footer}</Muted>
             </If>
-          </div>
-        </div>
+          </Col>
+        </Container>
       </Wrapper>
     );
   }
