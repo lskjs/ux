@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { css } from 'react-emotion';
 import { observer, inject } from 'mobx-react';
 import If from 'react-if';
 import Spin from 'antd/lib/spin';
@@ -7,6 +8,9 @@ import Progress from '../utils/Progress';
 import { ListTableItems } from './List.styles';
 import { contextToProps } from './ListContext';
 
+const buttonStyles = css`
+  border-radius: 0px;
+`;
 @contextToProps('ListItem', 'Body')
 @inject('listStore')
 @observer
@@ -31,7 +35,14 @@ class ListBody extends Component {
           spinning={listStore.loading}
         >
           {listStore.canFetchMore(-1) && (
-            <Button size="large" paint="default" onClick={() => listStore.fetchMore(-1)} disabled={listStore.loading}>
+            <Button
+              bordered
+              size="large"
+              paint="default"
+              onClick={() => listStore.fetchMore(-1)}
+              disabled={listStore.loading}
+              className={buttonStyles}
+            >
               <If condition={listStore.loading}>
                 Loading
               </If>
@@ -57,7 +68,14 @@ class ListBody extends Component {
             })}
           </Body>
           {listStore.canFetchMore(1) && (
-            <Button size="large" paint="default" onClick={() => listStore.fetchMore(1)} disabled={listStore.loading}>
+            <Button
+              bordered
+              size="large"
+              paint="default"
+              onClick={() => listStore.fetchMore(-1)}
+              disabled={listStore.loading}
+              className={buttonStyles}
+            >
               <If condition={listStore.loading}>
                 Loading
               </If>
