@@ -1,7 +1,5 @@
 import styled from 'react-emotion';
 
-import BsButton from 'antd/lib/button';
-
 export const Title = styled('h1')`
   line-height: 1.3;
   color: ${p => (p.theme.colors.darkGray)};
@@ -16,16 +14,6 @@ export const Lead = styled('p')`
   font-weight: 300;
   margin-bottom: 1.5rem;
   font-family: ${p => p.theme.fontFamily};
-`;
-
-export const Button = styled(BsButton)`
-  height: auto;
-  padding: .6em 3.5em;
-  text-transform: uppercase;
-  letter-spacing: .5px;
-  line-height: 2;
-  font-family: ${p => p.theme.fontFamily};
-  font-size: .75rem;
 `;
 
 export const Muted = styled('div')`
