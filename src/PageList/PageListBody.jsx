@@ -3,23 +3,22 @@ import { css } from 'react-emotion';
 import { observer, inject } from 'mobx-react';
 import If from 'react-if';
 import Spin from 'antd/lib/spin';
-import DEV from '../DEV';
 import Button from '../Button';
 import Progress from '../utils/Progress';
-import { ListTableItems } from './List.styles';
-import { contextToProps } from './ListContext';
+import { ListTableItems } from './PageList.styles';
+import { contextToProps } from './PageListContext';
 
 const buttonStyles = css`
   border-radius: 0px;
 `;
-@contextToProps('Item', 'Body')
+@contextToProps('ListItem', 'Body')
 @inject('listStore')
 @observer
-class ListBody extends Component {
+class PageListBody extends Component {
   render() {
     const {
       listStore,
-      Item,
+      ListItem,
       Body = 'div',
       ...props
     } = this.props;
@@ -43,7 +42,6 @@ class ListBody extends Component {
               onClick={() => listStore.fetchMore(-1)}
               disabled={listStore.loading}
               className={buttonStyles}
-              block
             >
               <If condition={listStore.loading}>
                 Loading
@@ -66,8 +64,7 @@ class ListBody extends Component {
                   </Button>
                 );
               }
-              if (!Item) return <DEV json="!Item" />;
-              return <Item key={item._id || item.id || index} item={item} />;
+              return <ListItem key={item._id || item.id || index} item={item} />;
             })}
           </Body>
           {listStore.canFetchMore(1) && (
@@ -78,7 +75,6 @@ class ListBody extends Component {
               onClick={() => listStore.fetchMore(-1)}
               disabled={listStore.loading}
               className={buttonStyles}
-              block
             >
               <If condition={listStore.loading}>
                 Loading
@@ -95,4 +91,4 @@ class ListBody extends Component {
   }
 }
 
-export default ListBody;
+export default PageListBody;
