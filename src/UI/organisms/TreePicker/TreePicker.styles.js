@@ -140,6 +140,7 @@ export const Meta = styled('div')`
     font-stretch: normal;
     line-height: 1.8;
     letter-spacing: -0.1px;
+    cursor: pointer;
     color: ${p => p.theme.colors.primary} !important;
   }
 `;
