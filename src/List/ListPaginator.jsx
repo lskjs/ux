@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
 import Pagination from 'antd/lib/pagination';
+import If from 'react-if';
 
 import {
   PaginationGroup,
@@ -33,17 +34,21 @@ class ListPaginator extends Component {
             {options.map(option => (<option key={option} value={option}>{option}</option>))}
           </PaginationSelect>
         </PaginationStepper>
-        <PaginationPages>
-          {from}—{to}
-          {listStore.count !== null && ` / ${listStore.count}`}
-        </PaginationPages>
-        <PaginationGroup>
-          <Pagination
-            onChange={listStore.setPage}
-            current={listStore.getCurrentPage()}
-            total={listStore.count}
-          />
-        </PaginationGroup>
+        <If condition={listStore.items.length}>
+          <PaginationPages>
+            {from}—{to}
+            {listStore.count !== null && ` / ${listStore.count}`}
+          </PaginationPages>
+        </If>
+        <If condition={listStore.count > 0}>
+          <PaginationGroup>
+            <Pagination
+              onChange={listStore.setPage}
+              current={listStore.getCurrentPage()}
+              total={listStore.count}
+            />
+          </PaginationGroup>
+        </If>
       </PaginationWrapper>
     );
   }

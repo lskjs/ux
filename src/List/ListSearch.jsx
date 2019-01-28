@@ -25,7 +25,8 @@ class ListSearch extends Component {
         onClear={() => listStore.setSearch('')}
         actions={(
           <React.Fragment>
-            <Badge count={Object.keys(listStore.filter).length}>
+            <Badge count={listStore.hasFilter ? 1 : 0}>
+              {/* <Badge count={Object.keys(listStore.filter).length}> */}
               <Button
                 icon={<TuneIcon />}
                 paint="primary"
@@ -34,7 +35,7 @@ class ListSearch extends Component {
                 bordered={listStore.showFilter}
                 onClick={listStore.toggleFilter}
               >
-                Фильтр {listStore.hasFilter() && '(*)'}
+                Фильтр
               </Button>
             </Badge>
           </React.Fragment>

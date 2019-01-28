@@ -1,7 +1,8 @@
-import { observable } from 'mobx';
+import { observable, computed, action } from 'mobx';
 import { autobind } from 'core-decorators';
 import debounce from 'lodash-decorators/debounce';
 import isEmpty from 'lodash/isEmpty';
+import every from 'lodash/every';
 import SelectStore from './SelectStore';
 import FetchStore from './FetchStore';
 
@@ -11,30 +12,30 @@ export default class ListStore extends FetchStore {
   @observable tab = null;
   @observable sort = {};
   @observable search = '';
-  @observable fetched = false;
 
   constructor(...args) {
     super(...args);
     if (!this.selectStore) this.selectStore = new SelectStore();
   }
 
+  @action
   setStateAndUpdate(...args) {
     super.setState(...args);
     this.update();
     return this;
   }
 
-  @debounce(50)
+  @debounce(100)
   async update() {
     await this.fetch();
-    this.fetched = true;
   }
 
   /**
    * Getters and map
    */
-  hasFilter() {
-    return !(isEmpty(this.filter) && isEmpty(this.search));
+  @computed
+  get hasFilter() {
+    return !every(Object.values(this.filter), a => isEmpty(a)) || !isEmpty(this.search);
   }
 
   map(...args) {

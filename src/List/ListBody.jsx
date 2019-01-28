@@ -12,7 +12,7 @@ import { contextToProps } from './ListContext';
 const buttonStyles = css`
   border-radius: 0px;
 `;
-@contextToProps('Item', 'Body')
+@contextToProps('Item', 'Body', 'List', 'show')
 @inject('listStore')
 @observer
 class ListBody extends Component {
@@ -21,6 +21,8 @@ class ListBody extends Component {
       listStore,
       Item,
       Body = 'div',
+      List,
+      show = {},
       ...props
     } = this.props;
     return (
@@ -35,7 +37,7 @@ class ListBody extends Component {
           size="large"
           spinning={listStore.loading}
         >
-          {listStore.canFetchMore(-1) && (
+          <If condition={show.more && listStore.canFetchMore(-1)}>
             <Button
               bordered
               size="large"
@@ -49,15 +51,14 @@ class ListBody extends Component {
                 Loading
               </If>
               <If condition={!listStore.loading}>
-                fetchPrev
+                Загрузить еще
               </If>
             </Button>
-          )}
+          </If>
           <Body style={{ minHeight: 200 }}>
-            {/* 1) совсем пусто, первый раз заходим
-            2) пусто после фетча, фильры выключены
-            3) пусто после фетча, фильтры включены, скип не стоит
-            4) пусто после фетча, фильтры включены, скип стоит */}
+            <If condition={listStore.items.length === 0}>
+              <List.Empty />
+            </If>
             {listStore.map((item, index) => {
               if (item === null) {
                 return (
@@ -70,7 +71,7 @@ class ListBody extends Component {
               return <Item key={item._id || item.id || index} item={item} />;
             })}
           </Body>
-          {listStore.canFetchMore(1) && (
+          <If condition={show.more && listStore.canFetchMore(1)}>
             <Button
               bordered
               size="large"
@@ -84,10 +85,10 @@ class ListBody extends Component {
                 Loading
               </If>
               <If condition={!listStore.loading}>
-                fetchNext
+                Загрузить еще
               </If>
             </Button>
-          )}
+          </If>
         </Spin>
       </ListTableItems>
 

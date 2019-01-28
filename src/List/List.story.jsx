@@ -11,7 +11,7 @@ import ArrowDown from 'react-icons/lib/fa/sort-desc';
 import ArrowUp from 'react-icons/lib/fa/sort-asc';
 import Sort from 'react-icons/lib/fa/sort';
 
-import DEV from '../DEV';
+// import DEV from '../DEV';
 import Story from '../Story';
 import { Row, Col } from '../Table';
 import ObserverDEV from '../DEV/ObserverDEV';
@@ -46,13 +46,13 @@ const api = {
     ]);
     return {
       count,
-      // data: range(skip, skip + limit).map(id => ({
-      //   id,
-      //   title: `User ${id + 1}`,
-      //   rating: random(id, count, true).toFixed(2),
-      //   role: roles(),
-      // })),
-      items: range(skip, skip + limit).map(_id => ({ _id })),
+      data: range(skip, skip + limit).map(id => ({
+        id,
+        title: `User ${id + 1}`,
+        rating: random(id, count, true).toFixed(2),
+        role: roles(),
+      })),
+      // items: range(skip, skip + limit).map(_id => ({ _id })),
     };
   },
 
@@ -91,9 +91,9 @@ const api = {
 };
 
 const listStore = new ListStore({ api, skip: 20 });
-setTimeout(() => {
-  listStore.fetch();
-}, 2000);
+// setTimeout(() => {
+//   listStore.fetch();
+// }, 2000);
 
 const columns = [60, '1fr', '1fr', 60];
 

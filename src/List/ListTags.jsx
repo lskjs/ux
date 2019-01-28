@@ -14,7 +14,7 @@ class ListTags extends Component {
       Tag,
       listStore,
     } = this.props;
-    if (!listStore.hasFilter()) return null;
+    if (!listStore.hasFilter) return null;
     return (
       <TagsTableWrapper >
         <Tags listStore={listStore} Tag={Tag} />

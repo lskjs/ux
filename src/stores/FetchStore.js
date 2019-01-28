@@ -17,6 +17,7 @@ export default class FetchStore extends Store {
   @observable skip = 0;
   @observable limit = 10;
   @observable loading = false;
+  @observable fetchedAt = null;
   @observable select = {};
   cancelToken = null;
 
@@ -88,6 +89,7 @@ export default class FetchStore extends Store {
       });
       this.setItems(items, { skip, cache });
       this.count = count;
+      this.fetchedAt = new Date();
       if (skip < this.skip) this.skip = skip;
     } finally {
       this.loading = false;

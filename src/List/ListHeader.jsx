@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
+import If from 'react-if';
 
 import DEV from '../DEV';
 import { ListHeader as Container } from './List.styles';
 import { contextToProps } from './ListContext';
 
-@contextToProps('List')
+@contextToProps('List', 'show')
 class ListHeader extends Component {
   render() {
-    const { children, List } = this.props;
+    const { children, List, show } = this.props;
     if (!List) return <DEV json="!List" />;
     if (children) {
       return (
@@ -18,7 +19,9 @@ class ListHeader extends Component {
     }
     return (
       <Container>
-        <List.Search />
+        <If condition={show.search}>
+          <List.Search />
+        </If>
         <List.Filter />
         <List.Tags />
         <List.StickyPanel>

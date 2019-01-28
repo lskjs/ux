@@ -34,9 +34,9 @@ class CTACentered extends PureComponent {
     } = this.props;
     return (
       <Wrapper>
-        <ImageWrapper>
+        {/* <ImageWrapper>
           <Image />
-        </ImageWrapper>
+        </ImageWrapper> */}
         <Container>
           <Col md={12}>
             <Title>{title}</Title>

@@ -10,6 +10,16 @@ import { Provider } from './ListContext';
 import DefaultTags from './DefaultTags';
 import DefaultTag from './DefaultTag';
 
+const defaultShow = {
+  search: true,
+  filterButton: true,
+  more: true,
+  infinity: true,
+  footer: true,
+  download: true,
+  paginator: true,
+};
+
 class List extends Component {
   static Header = require('./ListHeader').default;
   static Search = require('./ListSearch').default;
@@ -19,14 +29,13 @@ class List extends Component {
   static HeaderItem = require('./ListHeaderItem').default;
   static Footer = require('./ListFooter').default;
   static Paginator = require('./ListPaginator').default;
-  static Blank = require('./ListBlank').default;
-
+  static Empty = require('./ListEmpty').default;
 
   // static StickyPanel = ListStickyPanel;
   static StickyPanel = ({ children }) => <div>{children}</div>;
   render() {
     const {
-      shadow, columns,
+      shadow, columns, show = {},
       Item, FilterForm, HeaderItem, Tags = DefaultTags, Tag = DefaultTag, Body,
     } = this.props;
 
@@ -68,19 +77,12 @@ class List extends Component {
     return (
       <Provider
         value={{
-          List: this,
+          list: this,
           List: this.constructor,
-
-          // Header: this.constructor.Header,
-          // Body: this.constructor.Body,
-          // Footer: this.constructor.Footer,
-          // Search: this.constructor.Search,
-          // Filter: this.constructor.Filter,
-          // TagsWrapper: this.constructor.TagsWrapper,
-          // HeaderItemWrapper: this.constructor.HeaderItemWrapper,
-          // Paginator: this.constructor.Paginator,
-          // Blank: this.constructor.Blank,
-
+          show: {
+            ...defaultShow,
+            show,
+          },
           Item,
           FilterForm,
           Tags,
