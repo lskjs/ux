@@ -16,7 +16,6 @@ class ListPaginator extends Component {
     } = this.props;
     const from = listStore.skip + 1;
     const to = listStore.skip + listStore.items.length;
-
     return (
       <List.PaginatorWrapper>
         <List.PaginatorStepperWrapper>

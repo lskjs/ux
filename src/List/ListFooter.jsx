@@ -3,7 +3,6 @@ import { inject } from 'mobx-react';
 import DownloadIcon from 'react-icons2/mdi/download';
 import If from 'react-if';
 
-import ListPaginator from './ListPaginator';
 import { contextToProps } from './ListContext';
 
 @contextToProps('List', 'show')
@@ -27,7 +26,7 @@ class ListFooter extends Component {
         </If>
         <If condition={show.paginator}>
           <List.FooterRightWrapper>
-            <ListPaginator />
+            <List.Paginator />
           </List.FooterRightWrapper>
         </If>
       </List.FooterWrapper>

@@ -1,11 +1,40 @@
 import React, { Component } from 'react';
 import { Provider as MobxProvider } from 'mobx-react';
 
+import Search from '../UI/molecules/Search';
 import ListStore from '../stores/ListStore';
+import Button from '../Button';
 import { Table } from '../Table';
 import DEV from '../DEV';
-import { ListPaper } from './List.styles';
+import {
+  Wrapper,
+  BodyWrapper,
+  FilterWrapper,
+  TagsWrapper,
+  HeaderItemWrapper,
+  HeaderWrapper,
+  FooterWrapper,
+  FooterRightWrapper,
+  PaginatorWrapper,
+  PaginatorGroupWrapper,
+  PaginatorPagesWrapper,
+  PaginatorStepperWrapper,
+  PaginatorSelectWrapper,
+} from './List.styles';
 import { Provider } from './ListContext';
+
+import ListSticky from './ListSticky';
+import ListHeader from './ListHeader';
+import ListSearch from './ListSearch';
+import ListFilter from './ListFilter';
+import ListTags from './ListTags';
+import ListBody from './ListBody';
+import ListHeaderItem from './ListHeaderItem';
+import ListFooter from './ListFooter';
+import ListPaginator from './ListPaginator';
+import ListFilterButton from './ListFilterButton';
+import ListEmpty from './ListEmpty';
+
 
 import DefaultTags from './DefaultTags';
 import DefaultTag from './DefaultTag';
@@ -23,36 +52,35 @@ const defaultShow = {
 };
 
 class List extends Component {
-  static Sticky = require('./ListSticky').default;
-  static Header = require('./ListHeader').default;
-  static Search = require('./ListSearch').default;
-  static Filter = require('./ListFilter').default;
-  static Tags = require('./ListTags').default;
-  static Body = require('./ListBody').default;
-  static HeaderItem = require('./ListHeaderItem').default;
-  static Footer = require('./ListFooter').default;
-  static Paginator = require('./ListPaginator').default;
-  static FilterButton = require('./ListFilterButton').default;
-  static Empty = require('./ListEmpty').default;
+  static Sticky = ListSticky;
+  static Header = ListHeader;
+  static Search = ListSearch;
+  static Filter = ListFilter;
+  static Tags = ListTags;
+  static Body = ListBody;
+  static HeaderItem = ListHeaderItem;
+  static Footer = ListFooter;
+  static Paginator = ListPaginator;
+  static FilterButton = ListFilterButton;
+  static Empty = ListEmpty;
 
-  static Button = ({ children }) => children; // Button
-  static SearchWrapper = 'input'; // import Search from '../UI/molecules/Search';
+  static Button = Button;
+  static SearchWrapper = Search;
   // static DownloadButton = ({ children }) => children;
 
-  static Wrapper = ({ children }) => children; // ListPaper
-  static BodyWrapper = ({ children }) => children; // ListTableItems
-  static FilterWrapper = ({ children }) => children; // FilterWrapper
-  static TagsWrapper = ({ children }) => children; // TagsTableWrapper
-  static HeaderItemWrapper = ({ children }) => children; // ListTableHeader
-  static HeaderWrapper = ({ children }) => children; // ListHeader
-  static FooterWrapper = ({ children }) => children; // Footer
-  static FooterRightWrapper = ({ children }) => children; // FooterRight
-  
-  static PaginatorWrapper = ({ children }) => children; // PaginationWrapper
-  static PaginatorGroupWrapper = ({ children }) => children; // PaginationGroup,
-  static PaginatorPagesWrapper = ({ children }) => children; // PaginationPages,
-  static PaginatorStepperWrapper = ({ children }) => children; // PaginationStepper,
-  static PaginatorSelectWrapper = ({ children }) => children; // PaginationSelect,
+  static Wrapper = Wrapper;
+  static BodyWrapper = BodyWrapper;
+  static FilterWrapper = FilterWrapper;
+  static TagsWrapper = TagsWrapper;
+  static HeaderItemWrapper = HeaderItemWrapper;
+  static HeaderWrapper = HeaderWrapper;
+  static FooterWrapper = FooterWrapper;
+  static FooterRightWrapper = FooterRightWrapper;
+  static PaginatorWrapper = PaginatorWrapper;
+  static PaginatorGroupWrapper = PaginatorGroupWrapper;
+  static PaginatorPagesWrapper = PaginatorPagesWrapper;
+  static PaginatorStepperWrapper = PaginatorStepperWrapper;
+  static PaginatorSelectWrapper = PaginatorSelectWrapper;
 
   render() {
     const {
@@ -67,7 +95,7 @@ class List extends Component {
       listStore = new ListStore();
     }
 
-    const List = this.constructor;
+    const List = this.constructor; // eslint-disable-line no-shadow
 
     let { children } = this.props;
 
