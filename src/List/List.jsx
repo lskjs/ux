@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Provider as MobxProvider } from 'mobx-react';
+import { Col } from 'reactstrap';
 
 import ListStore from '../stores/ListStore';
 import { Table } from '../Table';

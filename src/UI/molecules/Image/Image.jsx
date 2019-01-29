@@ -12,6 +12,7 @@ class Image extends PureComponent {
     title: PropTypes.string,
     name: PropTypes.string,
     src: PropTypes.string,
+    
 
     size: PropTypes.number,
     width: PropTypes.number,

@@ -7,9 +7,6 @@ import {
   Title,
   Lead,
   Muted,
-  Wrapper,
-  ImageWrapper,
-  Image,
 } from './CTACentered.styles';
 
 class CTACentered extends PureComponent {
@@ -33,23 +30,18 @@ class CTACentered extends PureComponent {
       footer,
     } = this.props;
     return (
-      <Wrapper>
-        {/* <ImageWrapper>
-          <Image />
-        </ImageWrapper> */}
-        <Container>
-          <Col md={12}>
-            <Title>{title}</Title>
-            <Lead>
-              {subtitle}
-            </Lead>
-            {actions}
-            <If condition={footer}>
-              <Muted>{footer}</Muted>
-            </If>
-          </Col>
-        </Container>
-      </Wrapper>
+      <Container>
+        <Col md={12}>
+          <Title>{title}</Title>
+          <Lead>
+            {subtitle}
+          </Lead>
+          {actions}
+          <If condition={footer}>
+            <Muted>{footer}</Muted>
+          </If>
+        </Col>
+      </Container>
     );
   }
 }

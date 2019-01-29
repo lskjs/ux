@@ -10,7 +10,9 @@ import { ListTableItems } from './List.styles';
 import { contextToProps } from './ListContext';
 
 const buttonStyles = css`
-  border-radius: 0px;
+  border-radius: 0;
+  box-shadow: 0 0 0 1px #e3e3e3;
+  width: 100%;
 `;
 @contextToProps('Item', 'Body', 'List', 'show')
 @inject('listStore')
@@ -27,6 +29,7 @@ class ListBody extends Component {
     } = this.props;
     
     return (
+      
       <ListTableItems {...props} className={Progress.parentClassName}>
         <Progress.Bar id="progress" />
         {/* 1) загружаем первый раз
