@@ -35,6 +35,12 @@ class List extends Component {
   static FilterButton = require('./ListFilterButton').default;
   static Empty = require('./ListEmpty').default;
 
+  static BodyWrapper = ({ children }) => children; // ListTableItems
+  static FilterWrapper = ({ children }) => children; // FilterWrapper
+  static FilterWrapper = ({ children }) => children; // FilterWrapper
+  static Button = ({ children }) => children; // Button
+  static TagsWrapper = ({ children }) => children; // TagsTableWrapper
+
   render() {
     const {
       shadow, columns, show = {},

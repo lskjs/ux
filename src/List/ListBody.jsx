@@ -6,7 +6,6 @@ import Spin from 'antd/lib/spin';
 import DEV from '../DEV';
 import Button from '../Button';
 import Progress from '../utils/Progress';
-import { ListTableItems } from './List.styles';
 import { contextToProps } from './ListContext';
 
 const buttonStyles = css`
@@ -27,7 +26,7 @@ class ListBody extends Component {
     } = this.props;
     
     return (
-      <ListTableItems {...props} className={Progress.parentClassName}>
+      <List.BodyWrapper {...props} className={Progress.parentClassName}>
         <Progress.Bar id="progress" />
         {/* 1) загружаем первый раз
         2) загружаем второй раз, меняя фильтры
@@ -91,8 +90,7 @@ class ListBody extends Component {
             </Button>
           </If>
         </Spin>
-      </ListTableItems>
-
+      </List.BodyWrapper>
     );
   }
 }

@@ -6,12 +6,13 @@ import DEV from '../DEV';
 import { FilterWrapper } from './List.styles';
 import { contextToProps } from './ListContext';
 
-@contextToProps('FilterForm')
+@contextToProps('FilterForm', 'List')
 @inject('listStore')
 @observer
 class ListFilter extends Component {
   render() {
     const {
+      List,
       FilterForm,
       listStore,
       visible,
@@ -19,13 +20,13 @@ class ListFilter extends Component {
     } = this.props;
     if (!FilterForm) return <DEV json="!FilterForm" />;
     let children = (
-      <FilterWrapper>
+      <List.FilterWrapper>
         <FilterForm
           enableReinitialize
           initialValues={toJS(listStore.filter)}
           onChange={listStore.setFilter}
         />
-      </FilterWrapper>
+      </List.FilterWrapper>
     );
     if (!visible) {
       children = (
