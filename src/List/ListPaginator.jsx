@@ -18,7 +18,7 @@ class ListPaginator extends Component {
     const to = listStore.skip + listStore.items.length;
 
     return (
-      <List.PaginatorWrapperWrapper>
+      <List.PaginatorWrapper>
         <List.PaginatorStepperWrapper>
           Показывать:
           <List.PaginatorSelectWrapper
@@ -44,7 +44,7 @@ class ListPaginator extends Component {
             />
           </List.PaginatorGroupWrapper>
         </If>
-      </List.PaginatorWrapperWrapper>
+      </List.PaginatorWrapper>
     );
   }
 }

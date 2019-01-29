@@ -14,7 +14,7 @@ class ListSearch extends Component {
       ...props
     } = this.props;
     return (
-      <List.Search
+      <List.SearchWrapper
         current={10}
         max={listStore.count}
         debounceTimeout={100}

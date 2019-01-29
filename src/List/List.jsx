@@ -36,7 +36,7 @@ class List extends Component {
   static Empty = require('./ListEmpty').default;
 
   static Button = ({ children }) => children; // Button
-  static Search = ({ children }) => children; // import Search from '../UI/molecules/Search';
+  static SearchWrapper = ({ children }) => children; // import Search from '../UI/molecules/Search';
   // static DownloadButton = ({ children }) => children;
 
   static Wrapper = ({ children }) => children; // ListPaper
@@ -47,6 +47,7 @@ class List extends Component {
   static HeaderWrapper = ({ children }) => children; // ListHeader
   static FooterWrapper = ({ children }) => children; // Footer
   static FooterRightWrapper = ({ children }) => children; // FooterRight
+  
   static PaginatorWrapper = ({ children }) => children; // PaginationWrapper
   static PaginatorGroupWrapper = ({ children }) => children; // PaginationGroup,
   static PaginatorPagesWrapper = ({ children }) => children; // PaginationPages,
