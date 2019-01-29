@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
-import Search from '../UI/molecules/Search';
 import { contextToProps } from './ListContext';
 
 @contextToProps('List', 'show')
@@ -15,7 +14,7 @@ class ListSearch extends Component {
       ...props
     } = this.props;
     return (
-      <Search
+      <List.Search
         current={10}
         max={listStore.count}
         debounceTimeout={100}

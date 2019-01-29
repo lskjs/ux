@@ -12,13 +12,13 @@ class ListHeader extends Component {
     if (!List) return <DEV json="!List" />;
     if (children) {
       return (
-        <Container>
+        <List.HeaderWrapper>
           {children}
-        </Container>
+        </List.HeaderWrapper>
       );
     }
     return (
-      <Container>
+      <List.HeaderWrapper>
         <If condition={show.search}>
           <List.Search />
         </If>
@@ -34,7 +34,7 @@ class ListHeader extends Component {
         <If condition={!show.sticky}>
           <List.HeaderItem />
         </If>
-      </Container>
+      </List.HeaderWrapper>
     );
   }
 }

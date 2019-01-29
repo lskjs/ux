@@ -35,15 +35,27 @@ class List extends Component {
   static FilterButton = require('./ListFilterButton').default;
   static Empty = require('./ListEmpty').default;
 
+  static Button = ({ children }) => children; // Button
+  static Search = ({ children }) => children; // import Search from '../UI/molecules/Search';
+  // static DownloadButton = ({ children }) => children;
+
+  static Wrapper = ({ children }) => children; // ListPaper
   static BodyWrapper = ({ children }) => children; // ListTableItems
   static FilterWrapper = ({ children }) => children; // FilterWrapper
-  static FilterWrapper = ({ children }) => children; // FilterWrapper
-  static Button = ({ children }) => children; // Button
   static TagsWrapper = ({ children }) => children; // TagsTableWrapper
+  static HeaderItemWrapper = ({ children }) => children; // ListTableHeader
+  static HeaderWrapper = ({ children }) => children; // ListHeader
+  static FooterWrapper = ({ children }) => children; // Footer
+  static FooterRightWrapper = ({ children }) => children; // FooterRight
+  static PaginatorWrapper = ({ children }) => children; // PaginationWrapper
+  static PaginatorGroupWrapper = ({ children }) => children; // PaginationGroup,
+  static PaginatorPagesWrapper = ({ children }) => children; // PaginationPages,
+  static PaginatorStepperWrapper = ({ children }) => children; // PaginationStepper,
+  static PaginatorSelectWrapper = ({ children }) => children; // PaginationSelect,
 
   render() {
     const {
-      shadow, columns, show = {},
+      columns, show = {},
       Item, FilterForm, HeaderItem, Tags = DefaultTags, Tag = DefaultTag, Body,
     } = this.props;
 
@@ -53,6 +65,8 @@ class List extends Component {
       if (__DEV__) return <DEV json="!listStore" />;
       listStore = new ListStore();
     }
+
+    const List = this.constructor;
 
     let { children } = this.props;
 
@@ -75,18 +89,16 @@ class List extends Component {
         </Table>
       );
     }
-    // if (container) {
     children = (
-      <ListPaper shadow={shadow}>
+      // shadow={shadow}
+      <List.Wrapper>
         {children}
-      </ListPaper>
+      </List.Wrapper>
     );
-    // }
     return (
       <Provider
         value={{
-          list: this,
-          List: this.constructor,
+          List,
           show: {
             ...defaultShow,
             ...show,
@@ -108,30 +120,6 @@ class List extends Component {
     );
   }
 }
-
-
-//   <List
-// // listStore={pageStore.listStore}
-//     columns={['minmax(180px, 1fr)', 108, 64, 64, 'minmax(84px, 1fr)']}
-// // createTags={createTags}
-//     Item={Item}
-//     HeaderItem={HeaderItem}
-//   />;
-// <List.Header>
-//   <List.Search />
-//   <List.Filter
-//     Form={FilterForm}
-//   />
-//   <List.Tags createTags={createChannelsTags} />
-//   <List.StickyPanel>
-//     <HeaderItem />
-//     <List.TableHeader HeaderItem={HeaderItem} />
-//   </List.StickyPanel>
-// </List.Header>
-// <List.Body Item={Item} />
-// <List.Footer />
-// </List>
-
 
 export default List;
 

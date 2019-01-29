@@ -11,16 +11,16 @@ import { contextToProps } from './ListContext';
 const buttonStyles = css`
   border-radius: 0px;
 `;
-@contextToProps('Item', 'Body', 'List', 'show')
+@contextToProps('List', 'Item', 'Body', 'show')
 @inject('listStore')
 @observer
 class ListBody extends Component {
   render() {
     const {
+      List,
       listStore,
       Item,
       Body = 'div',
-      List,
       show = {},
       ...props
     } = this.props;
@@ -55,10 +55,10 @@ class ListBody extends Component {
               </If>
             </Button>
           </If>
+          <If condition={listStore.items.length === 0}>
+            <List.Empty />
+          </If>
           <Body style={{ minHeight: 200 }}>
-            <If condition={listStore.items.length === 0}>
-              <List.Empty />
-            </If>
             {listStore.map((item, index) => {
               if (item === null) {
                 return (

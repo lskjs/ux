@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
-import Button from '../Button';
-import { TagsTableWrapper } from './List.styles';
 import { contextToProps } from './ListContext';
 
 @contextToProps('List', 'Tags', 'Tag')
@@ -10,6 +8,7 @@ import { contextToProps } from './ListContext';
 class ListTags extends Component {
   render() {
     const {
+      List,
       Tags,
       Tag,
       listStore,
@@ -28,7 +27,7 @@ class ListTags extends Component {
         >
           Снять все фильтры
         </List.Button>
-      <List.TagsWrapper >
+      </List.TagsWrapper>
     );
   }
 }

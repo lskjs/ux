@@ -3,10 +3,9 @@ import { toJS } from 'mobx';
 import { inject, observer } from 'mobx-react';
 import FilterCollapse from '../UI/organisms/FilterCollapse';
 import DEV from '../DEV';
-import { FilterWrapper } from './List.styles';
 import { contextToProps } from './ListContext';
 
-@contextToProps('FilterForm', 'List')
+@contextToProps('List', 'FilterForm')
 @inject('listStore')
 @observer
 class ListFilter extends Component {
