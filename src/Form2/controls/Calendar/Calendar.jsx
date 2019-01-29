@@ -11,9 +11,10 @@ const Calendar = ({
   ...props
 }) => {
   let validValue = moment();
-  if (moment.isDate(field.value)) {
+  const isAnyTypeDate = f => (new Date(f)).getTime() > 0;
+  if (moment.isDate(field.value) || isAnyTypeDate(field.value)) {
     validValue = moment(field.value);
-  } else if (moment.isDate(props.defaultValue)) {
+  } else if (moment.isDate(props.defaultValue) || isAnyTypeDate(props.defaultValue)) {
     validValue = moment(props.defaultValue);
   }
   return (
