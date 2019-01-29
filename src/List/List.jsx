@@ -36,7 +36,7 @@ class List extends Component {
   static Empty = require('./ListEmpty').default;
 
   static Button = ({ children }) => children; // Button
-  static SearchWrapper = ({ children }) => children; // import Search from '../UI/molecules/Search';
+  static SearchWrapper = 'input'; // import Search from '../UI/molecules/Search';
   // static DownloadButton = ({ children }) => children;
 
   static Wrapper = ({ children }) => children; // ListPaper
