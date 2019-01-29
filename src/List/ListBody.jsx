@@ -25,6 +25,7 @@ class ListBody extends Component {
       show = {},
       ...props
     } = this.props;
+    
     return (
       <ListTableItems {...props} className={Progress.parentClassName}>
         <Progress.Bar id="progress" />

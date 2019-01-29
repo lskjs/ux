@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
-import { Badge } from 'antd';
 import { observer, inject } from 'mobx-react';
-import TuneIcon from 'react-icons2/mdi/tune';
-
-import Button from '../Button';
 import Search from '../UI/molecules/Search';
+import { contextToProps } from './ListContext';
 
+@contextToProps('List', 'show')
 @inject('listStore')
 @observer
 class ListSearch extends Component {
   render() {
     const {
+      List,
       listStore,
+      show,
       ...props
     } = this.props;
     return (
@@ -23,28 +23,13 @@ class ListSearch extends Component {
         value={listStore.search}
         canClear={!!listStore.search}
         onClear={() => listStore.setSearch('')}
-        actions={(
-          <React.Fragment>
-            <Badge count={listStore.hasFilter ? 1 : 0}>
-              {/* <Badge count={Object.keys(listStore.filter).length}> */}
-              <Button
-                icon={<TuneIcon />}
-                paint="primary"
-                view="text"
-                size="large"
-                bordered={listStore.showFilter}
-                onClick={listStore.toggleFilter}
-              >
-                Фильтр
-              </Button>
-            </Badge>
-          </React.Fragment>
-        )}
+        actions={show.filterButton && <List.FilterButton />}
         {...props}
       />
     );
   }
 }
+
 
 export default ListSearch;
 

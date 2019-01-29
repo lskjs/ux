@@ -11,8 +11,10 @@ import DefaultTags from './DefaultTags';
 import DefaultTag from './DefaultTag';
 
 const defaultShow = {
+  sticky: true,
   search: true,
   filterButton: true,
+  tags: true,
   more: true,
   infinity: true,
   footer: true,
@@ -21,6 +23,7 @@ const defaultShow = {
 };
 
 class List extends Component {
+  static Sticky = require('./ListSticky').default;
   static Header = require('./ListHeader').default;
   static Search = require('./ListSearch').default;
   static Filter = require('./ListFilter').default;
@@ -29,10 +32,9 @@ class List extends Component {
   static HeaderItem = require('./ListHeaderItem').default;
   static Footer = require('./ListFooter').default;
   static Paginator = require('./ListPaginator').default;
+  static FilterButton = require('./ListFilterButton').default;
   static Empty = require('./ListEmpty').default;
 
-  // static StickyPanel = ListStickyPanel;
-  static StickyPanel = ({ children }) => <div>{children}</div>;
   render() {
     const {
       shadow, columns, show = {},
@@ -81,7 +83,7 @@ class List extends Component {
           List: this.constructor,
           show: {
             ...defaultShow,
-            show,
+            ...show,
           },
           Item,
           FilterForm,

@@ -1,10 +1,10 @@
 import Store from './Store';
 
 export default class ApiStore extends Store {
-  async wrapOne(item) {
-    return new this.constructor(item);
+  static wrapOne(item) {
+    return new this(item);
   }
-  async wrap(promise, params = {}) {
+  static async wrap(promise, params = {}) {
     const res = await promise;
     const { data, ...pack } = res;
     const wrap = !(params.wrap === false || params.lean);

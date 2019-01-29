@@ -10,7 +10,7 @@ export default class CrudApi extends Api {
     });
   }
   findOne(_id) {
-    return this.fetch(`${this.base}/find`, {
+    return this.fetch(`${this.base}/findOne`, {
       method: 'GET',
       qs: { _id },
     });

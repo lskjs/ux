@@ -29,21 +29,18 @@ export default class FetchStore extends Store {
     }
   }
 
-  getFindParams() {
+  getFindParams(store) { // eslint-disable-line class-methods-use-this
     return {
-      filter: this.filter,
-      sort: this.sort,
+      filter: store.filter,
+      sort: store.sort,
     };
   }
 
   async find({ skip, limit, cancelToken } = {}) {
-    console.log({this: this});
-    
     if (!this.api) throw '!api';
     if (!this.api.find) throw '!api.find';
-
     const raw = await this.api.find({
-      ...this.getFindParams(),
+      ...this.getFindParams(this),
       limit,
       skip,
       cancelToken,
@@ -52,9 +49,9 @@ export default class FetchStore extends Store {
     let items;
     let count;
     if (Array.isArray(raw)) {
-      console.warn('pack lost, raw != {data}');
+      // console.warn('pack lost, raw != {data}');
       items = raw;
-      count = null;
+      count = raw.count >= 0 ? raw.count : null;
     } else {
       items = raw.data || raw.items || [];
       count = raw.count >= 0 ? raw.count : null;

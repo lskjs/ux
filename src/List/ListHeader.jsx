@@ -23,10 +23,17 @@ class ListHeader extends Component {
           <List.Search />
         </If>
         <List.Filter />
-        <List.Tags />
-        <List.StickyPanel>
+        <If condition={show.tags}>
+          <List.Tags />
+        </If>
+        <If condition={show.sticky}>
+          <List.Sticky>
+            <List.HeaderItem />
+          </List.Sticky>
+        </If>
+        <If condition={!show.sticky}>
           <List.HeaderItem />
-        </List.StickyPanel>
+        </If>
       </Container>
     );
   }
