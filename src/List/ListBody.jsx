@@ -6,7 +6,6 @@ import Spin from 'antd/lib/spin';
 import DEV from '../DEV';
 import Button from '../Button';
 import Progress from '../utils/Progress';
-import { ListTableItems } from './List.styles';
 import { contextToProps } from './ListContext';
 
 const buttonStyles = css`
@@ -14,23 +13,22 @@ const buttonStyles = css`
   box-shadow: 0 0 0 1px #e3e3e3;
   width: 100%;
 `;
-@contextToProps('Item', 'Body', 'List', 'show')
+@contextToProps('List', 'Item', 'Body', 'show')
 @inject('listStore')
 @observer
 class ListBody extends Component {
   render() {
     const {
+      List,
       listStore,
       Item,
       Body = 'div',
-      List,
       show = {},
       ...props
     } = this.props;
-    
+
     return (
-      
-      <ListTableItems {...props} className={Progress.parentClassName}>
+      <List.BodyWrapper {...props} className={Progress.parentClassName}>
         <Progress.Bar id="progress" />
         {/* 1) загружаем первый раз
         2) загружаем второй раз, меняя фильтры
@@ -59,10 +57,10 @@ class ListBody extends Component {
               </If>
             </Button>
           </If>
+          <If condition={listStore.items.length === 0}>
+            <List.Empty />
+          </If>
           <Body style={{ minHeight: 200 }}>
-            <If condition={listStore.items.length === 0}>
-              <List.Empty />
-            </If>
             {listStore.map((item, index) => {
               if (item === null) {
                 return (
@@ -94,8 +92,7 @@ class ListBody extends Component {
             </Button>
           </If>
         </Spin>
-      </ListTableItems>
-
+      </List.BodyWrapper>
     );
   }
 }

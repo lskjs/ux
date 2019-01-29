@@ -1,17 +1,16 @@
 
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
-import { ListTableHeader } from './List.styles';
 import DEV from '../DEV';
 import { contextToProps } from './ListContext';
 
-@contextToProps('HeaderItem')
+@contextToProps('List', 'HeaderItem')
 @inject('listStore')
 @observer
 class ListHeaderItem extends Component {
   render() {
+    const { List, listStore } = this.props;
     let { children } = this.props;
-    const { listStore } = this.props;
 
     if (!children) {
       const { HeaderItem } = this.props;
@@ -25,9 +24,9 @@ class ListHeaderItem extends Component {
       );
     }
     return (
-      <ListTableHeader>
+      <List.HeaderItemWrapper>
         {children}
-      </ListTableHeader>
+      </List.HeaderItemWrapper>
     );
   }
 }

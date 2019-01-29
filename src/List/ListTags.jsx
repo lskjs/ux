@@ -1,24 +1,23 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
-import Button from '../Button';
-import { TagsTableWrapper } from './List.styles';
 import { contextToProps } from './ListContext';
 
-@contextToProps('Tags', 'Tag')
+@contextToProps('List', 'Tags', 'Tag')
 @inject('listStore')
 @observer
 class ListTags extends Component {
   render() {
     const {
+      List,
       Tags,
       Tag,
       listStore,
     } = this.props;
     if (!listStore.hasFilter) return null;
     return (
-      <TagsTableWrapper >
+      <List.TagsWrapper >
         <Tags listStore={listStore} Tag={Tag} />
-        <Button
+        <List.Button
           size="small"
           paint="primary"
           view="text"
@@ -27,8 +26,8 @@ class ListTags extends Component {
           onClick={listStore.clearFilter}
         >
           Снять все фильтры
-        </Button>
-      </TagsTableWrapper>
+        </List.Button>
+      </List.TagsWrapper>
     );
   }
 }

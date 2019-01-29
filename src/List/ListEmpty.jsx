@@ -29,6 +29,12 @@ class ListEmpty extends Component {
     const type = this.getType();
     return (
       <div>
+        {/* 1) загружаем первый раз
+        2) загружаем второй раз, меняя фильтры
+        3) загружаем второй раз, меняя skip, фильтры не меняются
+        4) до загружаем второй раз, используя fetch next / fetch prev
+        */}
+        {/* Loading! */}
         {/* {listStore.hasFilter ? 'hasFilter' : '!hasFilter'} */}
         <If condition={type === 1}>
           совсем пусто, первый раз заходим

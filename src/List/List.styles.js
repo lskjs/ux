@@ -91,7 +91,7 @@ export const ArrowWrapper = styled('div')`
 `;
 
 
-export const ListTableHeader = styled('div')`
+export const HeaderItemWrapper = styled('div')`
   height: 48px;
   padding: 0 12px;
   font-family: ${p => p.theme.fontFamily};
@@ -109,7 +109,7 @@ export const ListTableHeader = styled('div')`
   }
 `;
 
-export const ListPaper = styled('div')`
+export const Wrapper = styled('div')`
   /* display: grid; */
   border-radius: ${p => p.theme.borderRadius};
   border: 1px solid ${p => p.theme.colors.border};
@@ -161,7 +161,7 @@ export const ListGrid = styled('div')`
   align-items: center;
 `;
 
-export const ListTableItems = styled('div')`
+export const BodyWrapper = styled('div')`
   display: grid;
   font-family: ${p => p.theme.fontFamily};
 `;
@@ -258,7 +258,7 @@ export const RatingStars = styled(Rate)`
   line-height: 0;
 `;
 
-export const Footer = styled('div')`
+export const FooterWrapper = styled('div')`
   display: flex;
   align-items: center;
   font-family: ${p => p.theme.fontFamily};
@@ -275,14 +275,14 @@ export const Footer = styled('div')`
   }
 `;
 
-export const FooterRight = styled('div')`
+export const FooterRightWrapper = styled('div')`
   margin-left: auto;
   display: flex;
   align-items: center;
 `;
 
 
-export const PaginationGroup = styled('div')`
+export const PaginatorGroupWrapper = styled('div')`
   margin-left: 40px;
   display: flex;
   align-items: center;
@@ -313,7 +313,7 @@ export const paginationButtonStyle = theme => css`
   }
 `;
 
-export const PaginationPages = styled('div')`
+export const PaginatorPagesWrapper = styled('div')`
   margin-left: 40px;
   display: flex;
   align-items: center;
@@ -323,7 +323,7 @@ export const PaginationPages = styled('div')`
   }
 `;
 
-export const PaginationWrapper = styled('div')`
+export const PaginatorWrapper = styled('div')`
   display: flex;
   font-family: ${p => p.theme.fontFamily};
   color: ${p => p.theme.colors.secondary};
@@ -332,7 +332,7 @@ export const PaginationWrapper = styled('div')`
   }
 `;
 
-export const PaginationStepper = styled('div')`
+export const PaginatorStepperWrapper = styled('div')`
   display: flex;
   align-items: center;
   @media screen and (max-width: 992px) {
@@ -341,7 +341,7 @@ export const PaginationStepper = styled('div')`
   }
 `;
 
-export const PaginationSelect = styled('select')`
+export const PaginatorSelectWrapper = styled('select')`
   background: none;
   border: none;
   outline: none;
@@ -366,7 +366,7 @@ export const TabsTableWrapper = styled('div')`
   display: flex;
   align-items: flex-end;
   
-  /* > ${TabBlock} {
+  /* > TabBlock {
     margin-bottom: -2px;
     
     ul li > * {
@@ -376,7 +376,7 @@ export const TabsTableWrapper = styled('div')`
   } */
 `;
 
-export const ListHeader = styled('div')`
+export const HeaderWrapper = styled('div')`
   /* display: grid; */
   background-color: ${p => p.theme.colors.white};
   
