@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import If from 'react-if';
 import Button from '../Button';
+import T from '../T';
 import Error404 from '../UI/molecules/ErrorComponent/svg/error404';
 import EmptyContainer from '../UI/molecules/EmptyContainer';
 
 
-@inject('listStore')
+@inject('listStore', 't')
 @observer
 class ListEmpty extends Component {
   getType() { //eslint-disable-line
@@ -28,7 +29,7 @@ class ListEmpty extends Component {
     return 4;
   }
   render() {
-    const { listStore } = this.props;
+    const { listStore, t } = this.props;
     const type = this.getType();
     return (
       <div>
@@ -41,28 +42,28 @@ class ListEmpty extends Component {
         {/* {listStore.hasFilter ? 'hasFilter' : '!hasFilter'} */}
         <If condition={type === 1}>
           <EmptyContainer
-            title="Нет данных"
+            title={t('lskList.emptyDataTitle')}
             icon={
               <Error404 height="200" width="100%" />
             }
-            subtitle="Не удалось автоматически загрузить данные."
+            subtitle={t('lskList.emptyDataErrorOne')}
             actions={
               <Button
                 paint="primary"
                 onClick={() => listStore.fetch()}
               >
-                Обновить
+                <T name="lskList.emptyDataReloadButton" />
               </Button>
             }
           />
         </If>
         <If condition={type === 2}>
           <EmptyContainer
-            title="Нет данных"
+            title={t('lskList.emptyDataTitle')}
             icon={
               <Error404 height="200" width="100%" />
             }
-            subtitle="Возможно нужно перезагрузить страницу"
+            subtitle={t('lskList.emptyDataErrorTwo')}
           />
           {/* пусто после фетча, фильры выключены
 
@@ -71,17 +72,17 @@ class ListEmpty extends Component {
         </If>
         <If condition={type === 3}>
           <EmptyContainer
-            title="Ничего не найдено"
+            title={t('lskList.emptyDataTitle')}
             icon={
               <Error404 height="200" width="100%" />
             }
-            subtitle="По вашим критериям ничего не нашлось"
+            subtitle={t('lskList.emptyDataErrorThree')}
             actions={
               <Button
                 paint="primary"
                 onClick={() => listStore.clearFilter()}
               >
-                Сбросить фильтры
+                <T name="lskList.emptyDataResetButton" />
               </Button>
             }
           />
@@ -89,17 +90,17 @@ class ListEmpty extends Component {
         </If>
         <If condition={type === 4}>
           <EmptyContainer
-            title="Нет данных"
+            title={t('lskList.emptyDataTitle')}
             icon={
               <Error404 height="200" width="100%" />
             }
-            subtitle="По вашим критериям ничего не нашлось, перейдите на первую страницу"
+            subtitle={t('lskList.emptyDataErrorFour')}
             actions={
               <Button
                 paint="primary"
                 onClick={() => listStore.setSkip(0)}
               >
-                На первую страницу
+                <T name="lskList.emptyDataToFirstPage" />
               </Button>
             }
           />

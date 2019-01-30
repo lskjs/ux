@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
 import { Badge } from 'antd';
 import TuneIcon from 'react-icons2/mdi/tune';
+import T from '../T';
 import { contextToProps } from './List.context';
 
 @contextToProps('List')
@@ -25,7 +26,7 @@ class FilterButton extends Component {
             bordered={listStore.showFilter}
             onClick={listStore.toggleFilter}
           >
-            Фильтр
+            <T name="lskList.filterButton" />
           </List.Button>
         </Badge>
       </React.Fragment>
