@@ -123,21 +123,21 @@ const Item = observer(({ item = {} }) => (
 
 const HeaderItem = ({ toggleSort, sort = {} }) => (
   <Row className={styleHeight}>
-    <Col index={0} onClick={() => toggleSort('id')}>
-      <List.SortHeader value={sort.id}>
+    <Col index={0}>
+      <List.SortHeader value={sort.id} onClick={() => toggleSort('id')}>
        id
       </List.SortHeader>
     </Col>
     <Col index={1}>
       name
     </Col>
-    <Col index={2} onClick={() => toggleSort('role')}>
-      <List.SortHeader value={sort.role}>
+    <Col index={2}>
+      <List.SortHeader value={sort.role} onClick={() => toggleSort('role')}>
        role
       </List.SortHeader>
     </Col>
-    <Col index={3} onClick={() => toggleSort('rating')}>
-      <List.SortHeader value={sort.rating}>
+    <Col index={3}>
+      <List.SortHeader value={sort.rating} onClick={() => toggleSort('rating')}>
         rating
       </List.SortHeader>
     </Col>
@@ -243,14 +243,14 @@ export default ({ storiesOf }) => {
         </List>
       </Story>
     ))
-    .add('List.HeaderItem', () => (
+    .add('List.HeaderRow', () => (
       <Story>
         <List
           listStore={listStore}
           HeaderItem={HeaderItem}
           columns={columns}
         >
-          <List.HeaderItem />
+          <List.HeaderRow />
           <Debug store={listStore} />
         </List>
       </Story>

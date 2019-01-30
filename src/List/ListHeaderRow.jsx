@@ -7,16 +7,14 @@ import { contextToProps } from './List.context';
 @contextToProps('List', 'HeaderItem')
 @inject('listStore')
 @observer
-class ListHeaderItem extends Component {
+class ListHeaderRow extends Component {
   render() {
     const { List, listStore } = this.props;
     let { children } = this.props;
 
     if (!children) {
       const { HeaderItem } = this.props;
-      // console.log({ HeaderItem });
       if (!HeaderItem) return null; // <DEV json="!HeaderItem" />;
-
       children = (
         <HeaderItem
           toggleSort={listStore.toggleSort}
@@ -32,7 +30,7 @@ class ListHeaderItem extends Component {
   }
 }
 
-export default ListHeaderItem;
+export default ListHeaderRow;
 
 
 // import React, { Component } from 'react';

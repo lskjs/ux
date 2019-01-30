@@ -13,6 +13,8 @@ class ListHeader extends Component {
         </List.HeaderWrapper>
       );
     }
+    console.log('List.HeaderRow', List.HeaderRow);
+    
     return (
       <List.HeaderWrapper>
         <If condition={show.search}>
@@ -24,11 +26,11 @@ class ListHeader extends Component {
         </If>
         <If condition={show.sticky}>
           <List.Sticky>
-            <List.HeaderItem />
+            <List.HeaderRow />
           </List.Sticky>
         </If>
         <If condition={!show.sticky}>
-          <List.HeaderItem />
+          <List.HeaderRow />
         </If>
       </List.HeaderWrapper>
     );

@@ -162,8 +162,12 @@ export const ListGrid = styled('div')`
 `;
 
 export const BodyWrapper = styled('div')`
-  display: grid;
+  /* display: grid; */
   font-family: ${p => p.theme.fontFamily};
+`;
+
+export const ItemsWrapper = styled('div')`
+
 `;
 
 export const FilterWrapper = styled('div')`

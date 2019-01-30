@@ -13,7 +13,7 @@ const buttonStyles = css`
   box-shadow: 0 0 0 1px #e3e3e3;
   width: 100%;
 `;
-@contextToProps('List', 'Item', 'Body', 'show')
+@contextToProps('List', 'Item', 'show')
 @inject('listStore')
 @observer
 class ListBody extends Component {
@@ -22,7 +22,6 @@ class ListBody extends Component {
       List,
       listStore,
       Item,
-      Body = 'div',
       show = {},
       ...props
     } = this.props;
@@ -60,7 +59,7 @@ class ListBody extends Component {
           <If condition={listStore.items.length === 0}>
             <List.Empty />
           </If>
-          <Body>
+          <List.ItemsWrapper>
             {listStore.map((item, index) => {
               if (item === null) {
                 return (
@@ -85,7 +84,7 @@ class ListBody extends Component {
               if (!Item) return <DEV json="!Item" />;
               return <Item key={item._id || item.id || index} item={item} />;
             })}
-          </Body>
+          </List.ItemsWrapper>
           <If condition={show.more && listStore.canFetchMore(1)}>
             <Button
               bordered

@@ -21,7 +21,8 @@ export default class CrudApi extends Api {
       body,
     });
   }
-  update(_id, body) {
+  update({ _id, ...body }) {
+  // update(_id, body) {
     return this.fetch(`${this.base}/update`, {
       method: 'POST',
       qs: { _id },

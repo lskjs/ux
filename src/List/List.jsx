@@ -9,6 +9,7 @@ import DEV from '../DEV';
 import {
   Wrapper,
   BodyWrapper,
+  ItemsWrapper,
   FilterWrapper,
   TagsWrapper,
   HeaderItemWrapper,
@@ -29,7 +30,7 @@ import ListSearch from './ListSearch';
 import ListFilter from './ListFilter';
 import ListTags from './ListTags';
 import ListBody from './ListBody';
-import ListHeaderItem from './ListHeaderItem';
+import ListHeaderRow from './ListHeaderRow';
 import ListFooter from './ListFooter';
 import ListPaginator from './ListPaginator';
 import ListFilterButton from './ListFilterButton';
@@ -60,7 +61,7 @@ class List extends Component {
   static Filter = ListFilter;
   static Tags = ListTags;
   static Body = ListBody;
-  static HeaderItem = ListHeaderItem;
+  static HeaderRow = ListHeaderRow;
   static Footer = ListFooter;
   static Paginator = ListPaginator;
   static FilterButton = ListFilterButton;
@@ -73,6 +74,7 @@ class List extends Component {
 
   static Wrapper = Wrapper;
   static BodyWrapper = BodyWrapper;
+  static ItemsWrapper = ItemsWrapper;
   static FilterWrapper = FilterWrapper;
   static TagsWrapper = TagsWrapper;
   static HeaderItemWrapper = HeaderItemWrapper;
@@ -88,7 +90,7 @@ class List extends Component {
   render() {
     const {
       columns, show: customShow = {},
-      Item, FilterForm, HeaderItem, Tags = DefaultTags, Tag = DefaultTag, Body,
+      Item, FilterForm, HeaderItem, Tags = DefaultTags, Tag = DefaultTag,
     } = this.props;
 
     let { listStore } = this.props;
@@ -110,7 +112,8 @@ class List extends Component {
       Filter: this.props.Filter || this.constructor.Filter,
       Tags: this.props.Tags || this.constructor.Tags,
       Body: this.props.Body || this.constructor.Body,
-      HeaderItem: this.props.HeaderItem || this.constructor.HeaderItem,
+      ItemsWrapper: this.props.ItemsWrapper || this.constructor.ItemsWrapper,
+      HeaderRow: this.props.HeaderRow || this.constructor.HeaderRow, // !!!!!!!!!
       Footer: this.props.Footer || this.constructor.Footer,
       Paginator: this.props.Paginator || this.constructor.Paginator,
       FilterButton: this.props.FilterButton || this.constructor.FilterButton,
@@ -172,7 +175,6 @@ class List extends Component {
           Tags,
           Tag,
           HeaderItem,
-          Body,
         }}
       >
         <MobxProvider listStore={listStore}>
