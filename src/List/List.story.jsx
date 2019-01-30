@@ -10,6 +10,8 @@ import axios from 'axios';
 
 // import DEV from '../DEV';
 import Story from '../Story';
+import Input from '../Input';
+import Button from '../Button';
 import { Row, Col } from '../Table';
 import ObserverDEV from '../DEV/ObserverDEV';
 import ListStore from '../stores/ListStore';
@@ -117,6 +119,43 @@ const Item = observer(({ item = {} }) => (
     </Col>
     <Col index={3}>
       {item.rating}
+    </Col>
+  </Row>
+));
+const EditItem = observer(({ item = {} }) => (
+  <Row className={cx([styleHeight, itemStyle])}>
+    <Col index={0}>
+      {item.title}
+    </Col>
+    <Col index={1}>
+      <Input
+        value={item.title}
+        onChange={(title) => {
+          item.title = title;
+        }}
+      />
+    </Col>
+    <Col index={2}>
+      <Button
+        onClick={() => {
+          listStore.items = listStore.items.filter(({ id }) => {
+            return id !== item.id;
+          });
+          console.log(listStore);
+        }}
+      >
+        Удалить
+      </Button>
+    </Col>
+    <Col index={3}>
+      <Button
+        onClick={() => {
+          const { id } = listStore.items[listStore.items.length - 1];
+          listStore.items.push({ id: id + 1, title: `New ${id + 1}` });
+        }}
+      >
+        Добавить
+      </Button>
     </Col>
   </Row>
 ));
@@ -308,6 +347,19 @@ export default ({ storiesOf }) => {
           FilterForm={FilterForm}
           columns={columns}
           Wrapper={({ children }) => <div style={{ background: 'red' }}>{children}</div>}
+        />
+        <Debug store={listStore} />
+      </Story>
+    ))
+    .add('List Add Remove Edit', () => (
+      <Story devtools style={{ padding: 24 }}>
+        <List
+          container
+          listStore={listStore}
+          HeaderItem={HeaderItem}
+          Item={EditItem}
+          FilterForm={FilterForm}
+          columns={['1fr', '1fr', '1fr', '1fr']}
         />
         <Debug store={listStore} />
       </Story>
