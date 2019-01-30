@@ -7,9 +7,6 @@ import { css } from 'emotion';
 import cx from 'classnames';
 import Promise from 'bluebird';
 import axios from 'axios';
-import ArrowDown from 'react-icons/lib/fa/sort-desc';
-import ArrowUp from 'react-icons/lib/fa/sort-asc';
-import Sort from 'react-icons/lib/fa/sort';
 
 // import DEV from '../DEV';
 import Story from '../Story';
@@ -124,25 +121,25 @@ const Item = observer(({ item = {} }) => (
   </Row>
 ));
 
-
-const SortDirection = ({ value }) => (value === 1 ? <ArrowDown size={14} /> : value === -1 ? <ArrowUp size={14} /> : <Sort size={14} />);
-
 const HeaderItem = ({ toggleSort, sort = {} }) => (
   <Row className={styleHeight}>
     <Col index={0} onClick={() => toggleSort('id')}>
-      id
-      <SortDirection value={sort.id} />
+      <List.SortHeader value={sort.id}>
+       id
+      </List.SortHeader>
     </Col>
     <Col index={1}>
       name
     </Col>
     <Col index={2} onClick={() => toggleSort('role')}>
-      role
-      <SortDirection value={sort.role} />
+      <List.SortHeader value={sort.role}>
+       role
+      </List.SortHeader>
     </Col>
     <Col index={3} onClick={() => toggleSort('rating')}>
-      rating
-      <SortDirection value={sort.rating} />
+      <List.SortHeader value={sort.rating}>
+        rating
+      </List.SortHeader>
     </Col>
   </Row>
 );
@@ -298,6 +295,20 @@ export default ({ storiesOf }) => {
         >
           <List.Paginator />
         </List>
+        <Debug store={listStore} />
+      </Story>
+    ))
+    .add('custom wrappers', () => (
+      <Story devtools style={{ padding: 24 }}>
+        <List
+          container
+          listStore={listStore}
+          HeaderItem={HeaderItem}
+          Item={Item}
+          FilterForm={FilterForm}
+          columns={columns}
+          Wrapper={({ children }) => <div style={{ background: 'red' }}>{children}</div>}
+        />
         <Debug store={listStore} />
       </Story>
     ));

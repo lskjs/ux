@@ -15,7 +15,8 @@ class ListHeaderItem extends Component {
     if (!children) {
       const { HeaderItem } = this.props;
       // console.log({ HeaderItem });
-      if (!HeaderItem) return <DEV json="!HeaderItem" />;
+      if (!HeaderItem) return null; // <DEV json="!HeaderItem" />;
+
       children = (
         <HeaderItem
           toggleSort={listStore.toggleSort}
