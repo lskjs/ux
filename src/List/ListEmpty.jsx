@@ -29,7 +29,7 @@ class ListEmpty extends Component {
     return 4;
   }
   render() {
-    const { listStore, t } = this.props;
+    const { listStore } = this.props;
     const type = this.getType();
     return (
       <div>
@@ -42,11 +42,11 @@ class ListEmpty extends Component {
         {/* {listStore.hasFilter ? 'hasFilter' : '!hasFilter'} */}
         <If condition={type === 1}>
           <EmptyContainer
-            title={t('lskList.emptyDataTitle')}
+            title={<T name="lskList.emptyDataTitle" />}
             icon={
               <Error404 height="200" width="100%" />
             }
-            subtitle={t('lskList.emptyDataErrorOne')}
+            subtitle={<T name="lskList.emptyDataErrorOne" />}
             actions={
               <Button
                 paint="primary"
@@ -59,11 +59,11 @@ class ListEmpty extends Component {
         </If>
         <If condition={type === 2}>
           <EmptyContainer
-            title={t('lskList.emptyDataTitle')}
+            title={<T name="lskList.emptyDataTitle" />}
             icon={
               <Error404 height="200" width="100%" />
             }
-            subtitle={t('lskList.emptyDataErrorTwo')}
+            subtitle={<T name="lskList.emptyDataErrorTwo" />}
           />
           {/* пусто после фетча, фильры выключены
 
@@ -72,11 +72,11 @@ class ListEmpty extends Component {
         </If>
         <If condition={type === 3}>
           <EmptyContainer
-            title={t('lskList.emptyDataTitle')}
+            title={<T name="lskList.emptyDataTitle" />}
             icon={
               <Error404 height="200" width="100%" />
             }
-            subtitle={t('lskList.emptyDataErrorThree')}
+            subtitle={<T name="lskList.emptyDataErrorThree" />}
             actions={
               <Button
                 paint="primary"
@@ -90,11 +90,11 @@ class ListEmpty extends Component {
         </If>
         <If condition={type === 4}>
           <EmptyContainer
-            title={t('lskList.emptyDataTitle')}
+            title={<T name="lskList.emptyDataTitle" />}
             icon={
               <Error404 height="200" width="100%" />
             }
-            subtitle={t('lskList.emptyDataErrorFour')}
+            subtitle={<T name="lskList.emptyDataErrorFour" />}
             actions={
               <Button
                 paint="primary"

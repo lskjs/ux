@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import StatefulButton from '../../../StatefulButton';
 import Button from '../../../Button';
+import T from '../../../T';
 import Modal, { Title, Footer, Content } from '../Modal';
 
 class FilterWrapper extends PureComponent {
@@ -31,14 +32,14 @@ class FilterWrapper extends PureComponent {
             onClick={this.handleSubmit}
             componentClass={Button}
           >
-            Подтвердить
+            <T name="lskComponents.filterWrapperConfirm" />
           </StatefulButton>
           <Button
             paint="primary"
             view="text"
             onClick={() => this.modal.close()}
           >
-            Отменить
+            <T name="lskComponents.filterWrapperCancel" />
           </Button>
         </Footer>
       </Modal>

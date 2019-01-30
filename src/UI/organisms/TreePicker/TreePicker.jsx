@@ -18,6 +18,7 @@ import Modal, {
 } from '../../molecules/Modal';
 
 import TextButton from '../../atoms/TextButton';
+import T from '../../../T';
 import Button from '../../../Button';
 import Input from '../../../Input';
 import TreeInput from '../TreeInput';
@@ -38,7 +39,7 @@ class TreePicker extends Component {
   }
 
   static defaultProps = {
-    children: <Button>Open modal</Button>,
+    children: <Button><T name="lskComponents.treePickerModalTrigger" /></Button>,
     search: '',
     value: null,
     fields: null,

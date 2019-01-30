@@ -8,6 +8,7 @@ const articles = [
     avatar: 'assets/images-demo/avatars/1.jpg',
     author: 'Jason Bourne',
     category: 'Web Design',
+    date: '10 June',
     description: 'Consequuntur hic eum ab consequatur, veniam laudantium placeat pariatur numquam quo voluptatem velit, labore voluptas tempore temporibus vitae tenetur porro eligendi exercitationem fugiat ipsum in ullam. Necessitatibus laboriosam enim ea eos, eveniet corporis impedit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
   },
 ];
