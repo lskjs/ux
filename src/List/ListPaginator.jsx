@@ -17,6 +17,7 @@ class ListPaginator extends Component {
     } = this.props;
     const from = listStore.skip + 1;
     const to = listStore.skip + listStore.items.length;
+    const page = listStore.getCurrentPage();
     return (
       <List.PaginatorWrapper>
         <List.PaginatorStepperWrapper>
@@ -34,6 +35,14 @@ class ListPaginator extends Component {
             {from}—{to}
             {listStore.count !== null && ` / ${listStore.count}`}
           </List.PaginatorPagesWrapper>
+        </If>
+        <If condition={listStore.count === null}>
+          <button disabled={!(page > 1)} onClick={() => listStore.setPage(page - 1)}>
+            {'<'}
+          </button>
+          <button onClick={() => listStore.setPage(page + 1)}>
+            {'>'}
+          </button>
         </If>
         <If condition={listStore.count > 0}>
           <List.PaginatorGroupWrapper>

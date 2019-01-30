@@ -40,6 +40,7 @@ export default class FetchStore extends Store {
     if (!this.api) throw '!api';
     if (!this.api.find) throw '!api.find';
     const raw = await this.api.find({
+      count: 1,
       ...this.getFindParams(this),
       limit,
       skip,
@@ -80,7 +81,6 @@ export default class FetchStore extends Store {
     Progress.start();
     try {
       const { items, count } = await this.find({
-        count: 1,
         skip,
         limit,
         cancelToken: this.cancelToken,
