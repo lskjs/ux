@@ -18170,14 +18170,6 @@ li.ant-select-tree-treenode-disabled > .ant-select-tree-node-content-wrapper:hov
 .ant-calendar-picker > div {
   position: relative;
 }
-.anticon {
-  position: absolute;
-  right: 10%;
-  top: 35%;
-}
-.ant-calendar-picker-clear {
-  margin-right: 15px;
-}
 .ant-tree li span.ant-tree-switcher,
 .ant-tree li span.ant-tree-iconEle {
   display: none !important;
@@ -18205,4 +18197,37 @@ li.ant-select-tree-treenode-disabled > .ant-select-tree-node-content-wrapper:hov
 }
 .ant-form-item {
   width: 100%;
+}
+.ant-calendar-picker:hover .ant-calendar-picker-clear {
+  opacity: 1;
+  pointer-events: auto;
+}
+.ant-calendar-picker-clear {
+  opacity: 0;
+  z-index: 2;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.25);
+  background: #fff;
+  pointer-events: none;
+  cursor: pointer;
+}
+.ant-calendar-picker-icon {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.25);
+  display: inline-block;
+  line-height: 1;
+}
+.ant-calendar-picker-clear,
+.ant-calendar-picker-icon {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  right: 12px;
+  top: 50%;
+  margin-top: -7px;
+  line-height: 14px;
+  font-size: 12px;
+  transition: all 0.3s;
+  user-select: none;
+  z-index: 1;
 }
