@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
-import { contextToProps } from './ListContext';
+import T from '../T';
+import { contextToProps } from './List.context';
 
 @contextToProps('List', 'Tags', 'Tag')
 @inject('listStore')
@@ -25,7 +26,7 @@ class ListTags extends Component {
           rounded
           onClick={listStore.clearFilter}
         >
-          Снять все фильтры
+          <T name="lskList.resetFilterButton" />
         </List.Button>
       </List.TagsWrapper>
     );

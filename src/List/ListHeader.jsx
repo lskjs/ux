@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import If from 'react-if';
-import { contextToProps } from './ListContext';
+import { contextToProps } from './List.context';
 
 @contextToProps('List', 'show')
 class ListHeader extends Component {

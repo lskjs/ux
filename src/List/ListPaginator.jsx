@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
 import Pagination from 'antd/lib/pagination';
 import If from 'react-if';
-import { contextToProps } from './ListContext';
+import T from '../T';
+import { contextToProps } from './List.context';
 
 @contextToProps('List')
 @inject('listStore')
@@ -19,7 +20,7 @@ class ListPaginator extends Component {
     return (
       <List.PaginatorWrapper>
         <List.PaginatorStepperWrapper>
-          Показывать:
+          <T name="lskList.paginatorShow" />
           <List.PaginatorSelectWrapper
             name="pagination-size"
             value={listStore.limit}

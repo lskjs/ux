@@ -1,19 +1,21 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 // import get from 'lodash/get';
 import autobind from 'core-decorators/lib/autobind';
 import CalendarBase from 'antd/es/calendar';
 import moment from 'moment';
 import HighlightedCell from '../../../UI/atoms/HighlightedCell';
 
-class Calendar extends Component {
+class Calendar extends PureComponent {
+  static isAnyTypeDate(f) {
+    return (new Date(f)).getTime() > 0;
+  }
   @autobind
   validationDate(value) {
-    const { field, form, ...props } = this.props;
+    const { field, ...props } = this.props;
     let validValue = moment();
-    const isAnyTypeDate = f => (new Date(f)).getTime() > 0;
-    if (isAnyTypeDate(value) && moment.isDate(value)) {
+    if (this.constructor.isAnyTypeDate(value)) {
       validValue = moment(value);
-    } else if (isAnyTypeDate(props.defaultValue) && moment.isDate(props.defaultValue)) {
+    } else if (this.constructor.isAnyTypeDate(props.defaultValue)) {
       validValue = moment(props.defaultValue);
     }
     return validValue;
@@ -34,7 +36,8 @@ class Calendar extends Component {
           form.setFieldValue(field.name, selectedDate);
         }}
         dateCellRender={(date) => {
-          if ((highlightedDates || [])
+          const dates = (highlightedDates || []).map(d => this.validationDate(d));
+          if ((dates || [])
                 .filter(e => !date.startOf('day')
                   .diff(e.startOf('day'), 'days')).length
               ) {

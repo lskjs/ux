@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Provider as MobxProvider } from 'mobx-react';
+import mapValues from 'lodash/mapValues';
 import Search from '../UI/molecules/Search';
 import ListStore from '../stores/ListStore';
 import Button from '../Button';
@@ -20,7 +21,7 @@ import {
   PaginatorStepperWrapper,
   PaginatorSelectWrapper,
 } from './List.styles';
-import { Provider } from './ListContext';
+import { Provider } from './List.context';
 
 import ListSticky from './ListSticky';
 import ListHeader from './ListHeader';
@@ -97,41 +98,41 @@ class List extends Component {
       listStore = new ListStore();
     }
 
-    const show = {
+    const show = mapValues({
       ...defaultShow,
       ...customShow,
-    };
+    }, Boolean);
 
     const List = {  //eslint-disable-line
-      Sticky: this.constructor.Sticky || this.props.Sticky,
-      Header: this.constructor.Header || this.props.Header,
-      Search: this.constructor.Search || this.props.Search,
-      Filter: this.constructor.Filter || this.props.Filter,
-      Tags: this.constructor.Tags || this.props.Tags,
-      Body: this.constructor.Body || this.props.Body,
-      HeaderItem: this.constructor.HeaderItem || this.props.HeaderItem,
-      Footer: this.constructor.Footer || this.props.Footer,
-      Paginator: this.constructor.Paginator || this.props.Paginator,
-      FilterButton: this.constructor.FilterButton || this.props.FilterButton,
-      Empty: this.constructor.Empty || this.props.Empty,
-      SortHeader: this.constructor.SortHeader || this.props.SortHeader,
+      Sticky: this.props.Sticky || this.constructor.Sticky,
+      Header: this.props.Header || this.constructor.Header,
+      Search: this.props.Search || this.constructor.Search,
+      Filter: this.props.Filter || this.constructor.Filter,
+      Tags: this.props.Tags || this.constructor.Tags,
+      Body: this.props.Body || this.constructor.Body,
+      HeaderItem: this.props.HeaderItem || this.constructor.HeaderItem,
+      Footer: this.props.Footer || this.constructor.Footer,
+      Paginator: this.props.Paginator || this.constructor.Paginator,
+      FilterButton: this.props.FilterButton || this.constructor.FilterButton,
+      Empty: this.props.Empty || this.constructor.Empty,
+      SortHeader: this.props.SortHeader || this.constructor.SortHeader,
 
-      Button: this.constructor.Button || this.props.Button,
-      SearchWrapper: this.constructor.SearchWrapper || this.props.SearchWrapper,
+      Button: this.props.Button || this.constructor.Button,
+      SearchWrapper: this.props.SearchWrapper || this.constructor.SearchWrapper,
 
-      Wrapper: this.constructor.Wrapper || this.props.Wrapper,
-      BodyWrapper: this.constructor.BodyWrapper || this.props.BodyWrapper,
-      FilterWrapper: this.constructor.FilterWrapper || this.props.FilterWrapper,
-      TagsWrapper: this.constructor.TagsWrapper || this.props.TagsWrapper,
-      HeaderItemWrapper: this.constructor.HeaderItemWrapper || this.props.HeaderItemWrapper,
-      HeaderWrapper: this.constructor.HeaderWrapper || this.props.HeaderWrapper,
-      FooterWrapper: this.constructor.FooterWrapper || this.props.FooterWrapper,
-      FooterRightWrapper: this.constructor.FooterRightWrapper || this.props.FooterRightWrapper,
-      PaginatorWrapper: this.constructor.PaginatorWrapper || this.props.PaginatorWrapper,
-      PaginatorGroupWrapper: this.constructor.PaginatorGroupWrapper || this.props.PaginatorGroupWrapper,
-      PaginatorPagesWrapper: this.constructor.PaginatorPagesWrapper || this.props.PaginatorPagesWrapper,
-      PaginatorStepperWrapper: this.constructor.PaginatorStepperWrapper || this.props.PaginatorStepperWrapper,
-      PaginatorSelectWrapper: this.constructor.PaginatorSelectWrapper || this.props.PaginatorSelectWrapper,
+      Wrapper: this.props.Wrapper || this.constructor.Wrapper,
+      BodyWrapper: this.props.BodyWrapper || this.constructor.BodyWrapper,
+      FilterWrapper: this.props.FilterWrapper || this.constructor.FilterWrapper,
+      TagsWrapper: this.props.TagsWrapper || this.constructor.TagsWrapper,
+      HeaderItemWrapper: this.props.HeaderItemWrapper || this.constructor.HeaderItemWrapper,
+      HeaderWrapper: this.props.HeaderWrapper || this.constructor.HeaderWrapper,
+      FooterWrapper: this.props.FooterWrapper || this.constructor.FooterWrapper,
+      FooterRightWrapper: this.props.FooterRightWrapper || this.constructor.FooterRightWrapper,
+      PaginatorWrapper: this.props.PaginatorWrapper || this.constructor.PaginatorWrapper,
+      PaginatorGroupWrapper: this.props.PaginatorGroupWrapper || this.constructor.PaginatorGroupWrapper,
+      PaginatorPagesWrapper: this.props.PaginatorPagesWrapper || this.constructor.PaginatorPagesWrapper,
+      PaginatorStepperWrapper: this.props.PaginatorStepperWrapper || this.constructor.PaginatorStepperWrapper,
+      PaginatorSelectWrapper: this.props.PaginatorSelectWrapper || this.constructor.PaginatorSelectWrapper,
     };
 
     let { children } = this.props;
