@@ -4,6 +4,7 @@ import Icon from 'antd/lib/icon';
 import Input from 'antd/lib/input';
 import Button from 'antd/lib/button';
 import Checkbox from 'antd/lib/checkbox';
+import T from '../../../T';
 import {
   FormContainer,
   WelcomeHeader,
@@ -31,26 +32,40 @@ class LoginScreen extends PureComponent {
         <Col lg={6}>
           <FormWrapper>
             <FormContainer>
-              <h2>Login to Continue</h2>
-              <WelcomeHeader>Welcome back, sign in with your brand account</WelcomeHeader>
+              <h2><T name="lskLogin.header" /></h2>
+              <WelcomeHeader><T name="lskLogin.welcomeHeader" /></WelcomeHeader>
               <FormWrap onSubmit={this.handleSubmit}>
                 <FormItem>
-                  <Input size="large" prefix={<Icon type="user" style={{ fontSize: 13 }} />} placeholder="Username" />
+                  <Input
+                    size="large"
+                    prefix={<Icon type="user" style={{ fontSize: 13 }} />}
+                    placeholder={<T name="lskLogin.userNamePlaceholder" />}
+                  />
                 </FormItem>
                 <FormItem>
-                  <Input size="large" prefix={<Icon type="lock" style={{ fontSize: 13 }} />} type="password" placeholder="Password" />
+                  <Input
+                    size="large"
+                    prefix={<Icon type="lock" style={{ fontSize: 13 }} />}
+                    type="password"
+                    placeholder={<T name="lskLogin.passwordPlaceholder" />}
+                  />
                 </FormItem>
                 <RememberCheckbox>
-                  <Checkbox>Remember me</Checkbox>
+                  <Checkbox><T name="lskLogin.checkbox" /></Checkbox>
                 </RememberCheckbox>
                 <FormItem>
                   <Button type="primary" htmlType="submit" className="btn-cta btn-block">
-                    Log in
+                    <T name="lskLogin.loginButton" />
                   </Button>
                 </FormItem>
               </FormWrap>
-              <AdditionalInfo>{"Don't"} have an account yet? <a href="123">Sign up</a></AdditionalInfo>
-              <AdditionalInfo>Forgot your username or password? <a href="123">Reset password</a></AdditionalInfo>
+              <AdditionalInfo><T name="lskLogin.signupText" /><a href="123"><T name="lskLogin.signup" /></a></AdditionalInfo>
+              <AdditionalInfo>
+                <T name="lskLogin.resetPasswordText" />
+                <a href="123">
+                  <T name="lskLogin.resetPassword" />
+                </a>
+              </AdditionalInfo>
             </FormContainer>
           </FormWrapper>
         </Col>

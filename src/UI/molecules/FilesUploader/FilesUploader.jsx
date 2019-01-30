@@ -8,6 +8,7 @@ import File from 'react-icons2/mdi/file-image';
 import Dropzone from 'react-dropzone';
 import cx from 'classnames';
 import Button from '../../../Button';
+import T from '../../../T';
 import {
   zoneStyle,
   Drop,
@@ -157,7 +158,7 @@ class FilesUploader extends Component {
                     type="button"
                     onClick={this.removeFile}
                   >
-                    Delete file
+                    <T name="lskComponents.filesUploaderButton" />
                   </Button>
                 </If>
               </Actions>

@@ -7,7 +7,10 @@ export default ({ storiesOf }) => (
     .add('Default', () => (
       <div style={{ padding: 60, maxWidth: 400 }}>
         <ThemeInjector>
-          <NumberCard />
+          <NumberCard
+            number={16}
+            text="grown"
+          />
         </ThemeInjector>
       </div>
     ))
