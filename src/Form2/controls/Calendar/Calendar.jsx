@@ -1,22 +1,19 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 // import get from 'lodash/get';
-// import autobind from 'core-decorators/lib/autobind';
+import autobind from 'core-decorators/lib/autobind';
 import CalendarBase from 'antd/es/calendar';
 import moment from 'moment';
 import HighlightedCell from '../../../UI/atoms/HighlightedCell';
 
-class Calendar extends PureComponent {
+class Calendar extends Component {
+  @autobind
   validationDate(value) {
-    const { field, ...props } = this.props;
+    const { field, form, ...props } = this.props;
     let validValue = moment();
     const isAnyTypeDate = f => (new Date(f)).getTime() > 0;
-    console.log(value);
-    if (!value) {
-      return moment(Date.now());
-    }
-    if (moment.isDate(value) || isAnyTypeDate(value)) {
+    if (isAnyTypeDate(value) && moment.isDate(value)) {
       validValue = moment(value);
-    } else if (moment.isDate(props.defaultValue) || isAnyTypeDate(props.defaultValue)) {
+    } else if (isAnyTypeDate(props.defaultValue) && moment.isDate(props.defaultValue)) {
       validValue = moment(props.defaultValue);
     }
     return validValue;
@@ -47,7 +44,7 @@ class Calendar extends PureComponent {
           }
           return '';
         }}
-        value={console.log(this.validationDate(field.value))}
+        value={this.validationDate(field.value)}
         fullscreen={false}
       />
     );
