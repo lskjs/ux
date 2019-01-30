@@ -1,6 +1,6 @@
 import React from 'react';
-import { Form, Field } from 'formik';
 import moment from 'moment';
+import { Form, Field } from 'formik';
 import Story from '../../../Story';
 import createForm from '../../createForm';
 import Calendar from './Calendar';
@@ -10,11 +10,13 @@ import FormDebug from '../../FormDebug';
 const CalendarFormView = (props) => {
   return (
     <Form>
-      <Field {...props.controls.calendar} />
+      <Field {...props.controls.calendar1} />
       <Field {...props.controls.calendar2} />
       <Field {...props.controls.calendar3} />
       <Field {...props.controls.calendar4} />
       <Field {...props.controls.calendar5} />
+      <Field {...props.controls.calendar6} />
+      <Field {...props.controls.calendar7} />
       <FormDebug {...props} />
     </Form>
   );
@@ -24,9 +26,13 @@ const CalendarForm = createForm({
   view: CalendarFormView,
   FormGroup,
   controls: {
-    calendar: {
+    calendar1: {
       title: 'Calendar',
       component: Calendar,
+      // highlightedDates: [
+      //   new Date('2019-01-15'),
+      //   new Date('2019-01-18'),
+      // ],
       highlightedDates: [
         moment('2019-01-15'),
         moment('2019-01-18'),
@@ -35,22 +41,26 @@ const CalendarForm = createForm({
     calendar2: {
       title: 'Calendar string date 2019-01-01',
       component: Calendar,
-      defaultValue: '2019-01-01',
     },
     calendar3: {
-      title: 'Calendar invalid date 2019',
+      title: 'Calendar invalid date "2019"',
       component: Calendar,
-      defaultValue: '2019',
     },
     calendar4: {
-      title: 'Calendar string date in new Date',
+      title: 'new Date',
       component: Calendar,
-      defaultValue: new Date('2019-01-06'),
     },
     calendar5: {
+      title: 'Date.now()',
+      component: Calendar,
+    },
+    calendar6: {
       title: 'Calendar invalid date in new Date',
       component: Calendar,
-      defaultValue: new Date('2019'),
+    },
+    calendar7: {
+      title: 'Calendar with undefined',
+      component: Calendar,
     },
   },
 });
@@ -60,7 +70,17 @@ export default ({ storiesOf }) =>
     .add('Calendar ', () => {
       return (
         <Story>
-          <CalendarForm />
+          <CalendarForm
+            initialValues={{
+              calendar1: null,
+              calendar2: '2019-01-01',
+              calendar3: '2019',
+              calendar4: new Date('2019-01-06'),
+              calendar5: new Date('invalid'),
+              calendar6: Date.now(),
+            }}
+            onChange={values => console.log('onChange', values)}
+          />
         </Story>
       );
     });
