@@ -3,7 +3,7 @@ import { inject } from 'mobx-react';
 import DownloadIcon from 'react-icons2/mdi/download';
 import If from 'react-if';
 
-import { contextToProps } from './ListContext';
+import { contextToProps } from './List.context';
 
 @contextToProps('List', 'show')
 @inject('listStore')

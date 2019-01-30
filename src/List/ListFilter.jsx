@@ -3,7 +3,7 @@ import { toJS } from 'mobx';
 import { inject, observer } from 'mobx-react';
 import FilterCollapse from '../UI/organisms/FilterCollapse';
 import DEV from '../DEV';
-import { contextToProps } from './ListContext';
+import { contextToProps } from './List.context';
 
 @contextToProps('List', 'FilterForm')
 @inject('listStore')

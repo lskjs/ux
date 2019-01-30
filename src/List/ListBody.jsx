@@ -6,7 +6,7 @@ import Spin from 'antd/lib/spin';
 import DEV from '../DEV';
 import Button from '../Button';
 import Progress from '../utils/Progress';
-import { contextToProps } from './ListContext';
+import { contextToProps } from './List.context';
 
 const buttonStyles = css`
   border-radius: 0;

@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import DEV from '../DEV';
-import { contextToProps } from './ListContext';
+import { contextToProps } from './List.context';
 
 @contextToProps('List', 'HeaderItem')
 @inject('listStore')
@@ -39,7 +39,7 @@ export default ListHeaderItem;
 
 // import DEV from '../DEV';
 // import { ListTableHeader } from './List.styles';
-// import { Consumer } from './ListContext';
+// import { Consumer } from './List.context';
 
 // export const contextToProps = Context => Component => props => (
 //   <Context.Consumer>{context => <Component {...context} {...props} />}</Context.Consumer>
@@ -77,7 +77,7 @@ export default ListHeaderItem;
 
 // import DEV from '../DEV';
 // import { ListTableHeader } from './List.styles';
-// import { Consumer } from './ListContext';
+// import { Consumer } from './List.context';
 // import { inject } from 'mobx-react';
 
 // @inject('HeaderItem')

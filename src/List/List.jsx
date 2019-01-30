@@ -21,7 +21,7 @@ import {
   PaginatorStepperWrapper,
   PaginatorSelectWrapper,
 } from './List.styles';
-import { Provider } from './ListContext';
+import { Provider } from './List.context';
 
 import ListSticky from './ListSticky';
 import ListHeader from './ListHeader';

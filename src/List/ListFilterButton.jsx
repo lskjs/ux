@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
 import { Badge } from 'antd';
 import TuneIcon from 'react-icons2/mdi/tune';
-import { contextToProps } from './ListContext';
+import { contextToProps } from './List.context';
 
 @contextToProps('List')
 @inject('listStore')

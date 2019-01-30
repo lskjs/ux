@@ -6,7 +6,7 @@ import Spin from 'antd/lib/spin';
 import Button from '../Button';
 import Progress from '../utils/Progress';
 import { ListTableItems } from './PageList.styles';
-import { contextToProps } from './PageListContext';
+import { contextToProps } from './PageList.context';
 
 const buttonStyles = css`
   border-radius: 0px;
