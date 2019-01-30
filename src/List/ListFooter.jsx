@@ -12,7 +12,6 @@ class ListFooter extends Component {
     const {
       List, listStore, show = {},
     } = this.props;
-    if (!show.footer) return false;
     return (
       <List.FooterWrapper>
         <If condition={show.download}>

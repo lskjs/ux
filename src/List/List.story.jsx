@@ -297,6 +297,20 @@ export default ({ storiesOf }) => {
         </List>
         <Debug store={listStore} />
       </Story>
+    ))
+    .add('custom wrappers', () => (
+      <Story devtools style={{ padding: 24 }}>
+        <List
+          container
+          listStore={listStore}
+          HeaderItem={HeaderItem}
+          Item={Item}
+          FilterForm={FilterForm}
+          columns={columns}
+          Wrapper={({ children }) => <div style={{ background: 'red' }}>{children}</div>}
+        />
+        <Debug store={listStore} />
+      </Story>
     ));
   // .add('props Item', () => (
   //   <Story>

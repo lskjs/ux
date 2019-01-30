@@ -17,7 +17,7 @@ class ListFilter extends Component {
       visible,
       // container,
     } = this.props;
-    if (!FilterForm) return <DEV json="!FilterForm" />;
+    if (!FilterForm) return null; // <DEV json="!FilterForm" />;
     let children = (
       <List.FilterWrapper>
         <FilterForm

@@ -1,19 +1,11 @@
 import React, { Component } from 'react';
 import If from 'react-if';
-
-import DEV from '../DEV';
 import { contextToProps } from './ListContext';
 
 @contextToProps('List', 'show')
 class ListHeader extends Component {
   render() {
     const { List, children, show } = this.props;
-    if (!List) return <DEV json="!List" />;
-    // console.log('List.HeaderWrapper', List.HeaderWrapper);
-    // console.log('List.Search', List.Search);
-    // console.log('List.HeaderWrapper', List.HeaderWrapper);
-    // console.log('List.HeaderWrapper', List.HeaderWrapper);
-    
     if (children) {
       return (
         <List.HeaderWrapper>

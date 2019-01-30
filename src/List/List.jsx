@@ -40,6 +40,7 @@ import DefaultTags from './DefaultTags';
 import DefaultTag from './DefaultTag';
 
 const defaultShow = {
+  header: true,
   sticky: true,
   search: true,
   filterButton: true,
@@ -85,7 +86,7 @@ class List extends Component {
 
   render() {
     const {
-      columns, show = {},
+      columns, show: customShow = {},
       Item, FilterForm, HeaderItem, Tags = DefaultTags, Tag = DefaultTag, Body,
     } = this.props;
 
@@ -96,16 +97,51 @@ class List extends Component {
       listStore = new ListStore();
     }
 
-    const List = this.constructor; // eslint-disable-line no-shadow
+    const show = {
+      ...defaultShow,
+      ...customShow,
+    };
+
+    const List = {  //eslint-disable-line
+      Sticky: this.constructor.Sticky || this.props.Sticky,
+      Header: this.constructor.Header || this.props.Header,
+      Search: this.constructor.Search || this.props.Search,
+      Filter: this.constructor.Filter || this.props.Filter,
+      Tags: this.constructor.Tags || this.props.Tags,
+      Body: this.constructor.Body || this.props.Body,
+      HeaderItem: this.constructor.HeaderItem || this.props.HeaderItem,
+      Footer: this.constructor.Footer || this.props.Footer,
+      Paginator: this.constructor.Paginator || this.props.Paginator,
+      FilterButton: this.constructor.FilterButton || this.props.FilterButton,
+      Empty: this.constructor.Empty || this.props.Empty,
+      SortHeader: this.constructor.SortHeader || this.props.SortHeader,
+
+      Button: this.constructor.Button || this.props.Button,
+      SearchWrapper: this.constructor.SearchWrapper || this.props.SearchWrapper,
+
+      Wrapper: this.constructor.Wrapper || this.props.Wrapper,
+      BodyWrapper: this.constructor.BodyWrapper || this.props.BodyWrapper,
+      FilterWrapper: this.constructor.FilterWrapper || this.props.FilterWrapper,
+      TagsWrapper: this.constructor.TagsWrapper || this.props.TagsWrapper,
+      HeaderItemWrapper: this.constructor.HeaderItemWrapper || this.props.HeaderItemWrapper,
+      HeaderWrapper: this.constructor.HeaderWrapper || this.props.HeaderWrapper,
+      FooterWrapper: this.constructor.FooterWrapper || this.props.FooterWrapper,
+      FooterRightWrapper: this.constructor.FooterRightWrapper || this.props.FooterRightWrapper,
+      PaginatorWrapper: this.constructor.PaginatorWrapper || this.props.PaginatorWrapper,
+      PaginatorGroupWrapper: this.constructor.PaginatorGroupWrapper || this.props.PaginatorGroupWrapper,
+      PaginatorPagesWrapper: this.constructor.PaginatorPagesWrapper || this.props.PaginatorPagesWrapper,
+      PaginatorStepperWrapper: this.constructor.PaginatorStepperWrapper || this.props.PaginatorStepperWrapper,
+      PaginatorSelectWrapper: this.constructor.PaginatorSelectWrapper || this.props.PaginatorSelectWrapper,
+    };
 
     let { children } = this.props;
 
     if (!children) {
       children = (
         <React.Fragment>
-          <List.Header />
+          {show.header && <List.Header />}
           <List.Body />
-          <List.Footer />
+          {show.footer && <List.Footer />}
         </React.Fragment>
       );
     }
@@ -129,10 +165,7 @@ class List extends Component {
       <Provider
         value={{
           List,
-          show: {
-            ...defaultShow,
-            ...show,
-          },
+          show,
           Item,
           FilterForm,
           Tags,
