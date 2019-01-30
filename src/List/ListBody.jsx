@@ -64,8 +64,21 @@ class ListBody extends Component {
             {listStore.map((item, index) => {
               if (item === null) {
                 return (
-                  <Button onClick={() => listStore.fetch({ skip: listStore.skip + index, limit: 1, cache: 1 })}>
-                    load
+                  <Button
+                    bordered
+                    size="large"
+                    paint="default"
+                    onClick={() => listStore.fetch({ skip: listStore.skip + index, limit: 1, cache: 1 })}
+                    disabled={listStore.loading}
+                    className={buttonStyles}
+                    block
+                  >
+                    <If condition={listStore.loading}>
+                      Loading
+                    </If>
+                    <If condition={!listStore.loading}>
+                      Загрузить
+                    </If>
                   </Button>
                 );
               }
