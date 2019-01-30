@@ -80,6 +80,7 @@ export default class FetchStore extends Store {
     Progress.start();
     try {
       const { items, count } = await this.find({
+        count: 1,
         skip,
         limit,
         cancelToken: this.cancelToken,
