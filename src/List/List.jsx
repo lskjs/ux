@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { Provider as MobxProvider } from 'mobx-react';
-import { Col } from 'reactstrap';
-
 import Search from '../UI/molecules/Search';
 import ListStore from '../stores/ListStore';
 import Button from '../Button';
@@ -35,6 +33,7 @@ import ListFooter from './ListFooter';
 import ListPaginator from './ListPaginator';
 import ListFilterButton from './ListFilterButton';
 import ListEmpty from './ListEmpty';
+import ListSortHeader from './ListSortHeader';
 
 
 import DefaultTags from './DefaultTags';
@@ -64,6 +63,7 @@ class List extends Component {
   static Paginator = ListPaginator;
   static FilterButton = ListFilterButton;
   static Empty = ListEmpty;
+  static SortHeader = ListSortHeader;
 
   static Button = Button;
   static SearchWrapper = Search;
