@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { inject } from 'mobx-react';
+import T from '../T';
 import DownloadIcon from 'react-icons2/mdi/download';
 import If from 'react-if';
 
@@ -20,7 +21,7 @@ class ListFooter extends Component {
             iconLeft={<DownloadIcon />}
             onClick={listStore.download}
           >
-            Скачть XLSX
+            <T name="lskList.downloadButton" />
           </List.Button>
         </If>
         <If condition={show.paginator}>

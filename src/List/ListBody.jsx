@@ -4,6 +4,7 @@ import { observer, inject } from 'mobx-react';
 import If from 'react-if';
 import Spin from 'antd/lib/spin';
 import DEV from '../DEV';
+import T from '../T';
 import Button from '../Button';
 import Progress from '../utils/Progress';
 import { contextToProps } from './List.context';
@@ -50,10 +51,10 @@ class ListBody extends Component {
               block
             >
               <If condition={listStore.loading}>
-                Loading
+                <T name="lskList.bodyLoadingButton" />
               </If>
               <If condition={!listStore.loading}>
-                Загрузить еще
+                <T name="lskList.loadMoreButton" />
               </If>
             </Button>
           </If>
@@ -74,10 +75,10 @@ class ListBody extends Component {
                     block
                   >
                     <If condition={listStore.loading}>
-                      Loading
+                      <T name="lskList.bodyLoadingButton" />
                     </If>
                     <If condition={!listStore.loading}>
-                      Загрузить
+                      <T name="lskList.loadMoreButton" />
                     </If>
                   </Button>
                 );
@@ -97,10 +98,10 @@ class ListBody extends Component {
               block
             >
               <If condition={listStore.loading}>
-                Loading
+                <T name="lskList.bodyLoadingButton" />
               </If>
               <If condition={!listStore.loading}>
-                Загрузить еще
+                <T name="lskList.loadMoreButton" />
               </If>
             </Button>
           </If>
