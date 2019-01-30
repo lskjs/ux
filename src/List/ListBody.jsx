@@ -60,7 +60,7 @@ class ListBody extends Component {
           <If condition={listStore.items.length === 0}>
             <List.Empty />
           </If>
-          <Body style={{ minHeight: 200 }}>
+          <Body>
             {listStore.map((item, index) => {
               if (item === null) {
                 return (

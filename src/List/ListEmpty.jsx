@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import If from 'react-if';
+import Button from '../Button';
+import Error404 from '../UI/molecules/ErrorComponent/svg/error404';
+import EmptyContainer from '../UI/molecules/EmptyContainer';
 
 
 @inject('listStore')
@@ -37,28 +40,71 @@ class ListEmpty extends Component {
         {/* Loading! */}
         {/* {listStore.hasFilter ? 'hasFilter' : '!hasFilter'} */}
         <If condition={type === 1}>
-          совсем пусто, первый раз заходим
-
-
-          <button onClick={() => listStore.fetch()}>Попробовать загрузить</button>
+          <EmptyContainer
+            title="Нет данных"
+            icon={
+              <Error404 height="200" width="100%" />
+            }
+            subtitle="Не удалось автоматически загрузить данные."
+            actions={
+              <Button
+                paint="primary"
+                onClick={() => listStore.fetch()}
+              >
+                Обновить
+              </Button>
+            }
+          />
         </If>
         <If condition={type === 2}>
-          пусто после фетча, фильры выключены
+          <EmptyContainer
+            title="Нет данных"
+            icon={
+              <Error404 height="200" width="100%" />
+            }
+            subtitle="Возможно нужно перезагрузить страницу"
+          />
+          {/* пусто после фетча, фильры выключены
 
           Сорян нет данных
-          Возможно ошибка и нужно перезагрузить, а возможно и нет
+          Возможно ошибка и нужно перезагрузить, а возможно и нет */}
         </If>
         <If condition={type === 3}>
-          пусто после фетча, фильтры включены
-
-          <button onClick={() => listStore.clearFilter()}>Сбросить фильтры</button>
+          <EmptyContainer
+            title="Ничего не найдено"
+            icon={
+              <Error404 height="200" width="100%" />
+            }
+            subtitle="По вашим критериям ничего не нашлось"
+            actions={
+              <Button
+                paint="primary"
+                onClick={() => listStore.clearFilter()}
+              >
+                Сбросить фильтры
+              </Button>
+            }
+          />
+          {/* пусто после фетча, фильтры включены */}
         </If>
         <If condition={type === 4}>
-          пусто после фетча, фильтры включены, скип стоит
-
-          Страница почему-то пуста, переключиться на первую
-
-          <button onClick={() => listStore.setSkip(0)}>На первую страницу</button>
+          <EmptyContainer
+            title="Нет данных"
+            icon={
+              <Error404 height="200" width="100%" />
+            }
+            subtitle="По вашим критериям ничего не нашлось, перейдите на первую страницу"
+            actions={
+              <Button
+                paint="primary"
+                onClick={() => listStore.setSkip(0)}
+              >
+                На первую страницу
+              </Button>
+            }
+          />
+          {/* пусто после фетча, фильтры включены, скип стоит
+          Страница почему-то пуста, переключиться на первую */}
         </If>
       </div>
     );
