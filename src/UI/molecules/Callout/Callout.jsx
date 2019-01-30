@@ -1,24 +1,35 @@
 import React, { PureComponent } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { BsCol, Content, FeatureCallout, Title, ContentItem, Button } from './Callout.styles';
 
 class Callout extends PureComponent {
+  static propTypes = {
+    title: PropTypes.string,
+    content: PropTypes.string,
+    buttonText: PropTypes.string,
+  };
+  static defaultProps = {
+    title: null,
+    content: null,
+    buttonText: null,
+  }
   render() {
+    const {
+      title,
+      content,
+      buttonText,
+    } = this.props;
     return (
       <FeatureCallout>
         <BsCol md={6} />
         <div className="container-fluid container-mw-xl">
           <div className="col-12 col-md-6 offset-md-6">
             <Content>
-              <Title>Architecto odit fuga facere</Title>
+              <Title>{title}</Title>
               <ContentItem>
-                Culpa eveniet labore cupiditate at maiores dignissimos,
-                nesciunt quam porro accusantium velit quas?
-                Nam nobis, deleniti inventore consequuntur quos
-                vero voluptatum nostrum error porro mollitia,
-                accusantium distinctio nemo expedita ipsum quisquam laboriosam
+                {content}
               </ContentItem>
-              <Button type="primary">Try it Now</Button>
+              <Button type="primary">{buttonText}</Button>
             </Content>
           </div>
         </div>

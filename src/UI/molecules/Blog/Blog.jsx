@@ -23,6 +23,7 @@ class Blog extends PureComponent {
     categoryLink: PropTypes.string,
     category: PropTypes.string,
     description: PropTypes.string,
+    date: PropTypes.string,
   };
   static defaultProps = {
     title: null,
@@ -33,6 +34,7 @@ class Blog extends PureComponent {
     category: null,
     categoryLink: null,
     description: null,
+    date: null,
   };
   render() {
     const {
@@ -44,6 +46,7 @@ class Blog extends PureComponent {
       category,
       categoryLink,
       description,
+      date,
     } = this.props;
     return (
       <BlogItem>
@@ -51,7 +54,7 @@ class Blog extends PureComponent {
         <BlogInfo>
           <span><Avatar src={avatar} alt="avatar" size={30} /></span>
           <span><AuthorLink href={authorLink} >{author}</AuthorLink></span>
-          <DateItem>10 June</DateItem>
+          <DateItem>{date}</DateItem>
           <Category><CategoryLink href={categoryLink}>{category}</CategoryLink></Category>
         </BlogInfo>
         <Desc>{description}</Desc>

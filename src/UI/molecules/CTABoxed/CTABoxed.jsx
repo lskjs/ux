@@ -5,20 +5,25 @@ import {
   Box,
   Title,
   Content,
-  Button,
   Body,
 } from './CTABoxed.styles';
 
 class CTABoxed extends PureComponent {
   static propTypes = {
     transparent: PropTypes.bool,
+    actions: PropTypes.any,
+    title: PropTypes.string,
   };
   static defaultProps = {
     transparent: false,
+    actions: null,
+    title: null,
   };
   render() {
     const {
       transparent,
+      actions,
+      title,
     } = this.props;
     return (
       <Box transparent={transparent} >
@@ -26,10 +31,8 @@ class CTABoxed extends PureComponent {
           <div className="row">
             <div className="col-lg-8 mx-auto">
               <Content>
-                <Title>Download it now and get up and running in minutes</Title>
-                <div>
-                  <Button type="primary">{"Let's"} start</Button>
-                </div>
+                <Title>{title}</Title>
+                {actions}
               </Content>
             </div>
           </div>
