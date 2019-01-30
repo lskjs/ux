@@ -9,7 +9,7 @@ import FormDebug from '../../FormDebug';
 const DateFormView = (props) => {
   return (
     <Form>
-      <div style={{ position: 'relative', left: '200px' }}>
+      <div style={{ position: 'relative' }}>
         <Field {...props.controls.date} />
         <Field {...props.controls.date2} />
         <FormDebug {...props} />

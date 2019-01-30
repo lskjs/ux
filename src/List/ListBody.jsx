@@ -9,7 +9,9 @@ import Progress from '../utils/Progress';
 import { contextToProps } from './ListContext';
 
 const buttonStyles = css`
-  border-radius: 0px;
+  border-radius: 0;
+  box-shadow: 0 0 0 1px #e3e3e3;
+  width: 100%;
 `;
 @contextToProps('List', 'Item', 'Body', 'show')
 @inject('listStore')
@@ -24,7 +26,7 @@ class ListBody extends Component {
       show = {},
       ...props
     } = this.props;
-    
+
     return (
       <List.BodyWrapper {...props} className={Progress.parentClassName}>
         <Progress.Bar id="progress" />

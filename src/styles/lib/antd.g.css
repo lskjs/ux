@@ -18167,6 +18167,17 @@ li.ant-select-tree-treenode-disabled > .ant-select-tree-node-content-wrapper:hov
     opacity: 0;
   }
 }
+.ant-calendar-picker > div {
+  position: relative;
+}
+.anticon {
+  position: absolute;
+  right: 10%;
+  top: 35%;
+}
+.ant-calendar-picker-clear {
+  margin-right: 15px;
+}
 .ant-tree li span.ant-tree-switcher,
 .ant-tree li span.ant-tree-iconEle {
   display: none !important;
