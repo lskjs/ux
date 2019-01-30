@@ -360,7 +360,7 @@ export const Header = styled('div')`
   }
 `;
 
-export const TabsTableWrapper = styled('div')`
+export const TabsWrapper = styled('div')`
   height: 56px;
   padding: 0 16px;
   display: flex;
@@ -391,7 +391,7 @@ ${p => (p.sticky && css`
     `)}
 `;
 
-export const TagsTableWrapper = styled('div')`
+export const TagsWrapper = styled('div')`
   padding: 8px 14px 4px;
   display: flex;
   
@@ -405,4 +405,3 @@ export const VerticalDivider = styled('div')`
   height: ${p => (p.height || 30)}px;
   background-color: ${p => p.theme.colors.border};
 `;
-
