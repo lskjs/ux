@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Provider as MobxProvider } from 'mobx-react';
+import mapValues from 'lodash/mapValues';
 import Search from '../UI/molecules/Search';
 import ListStore from '../stores/ListStore';
 import Button from '../Button';
@@ -97,10 +98,10 @@ class List extends Component {
       listStore = new ListStore();
     }
 
-    const show = {
+    const show = mapValues({
       ...defaultShow,
       ...customShow,
-    };
+    }, Boolean);
 
     const List = {  //eslint-disable-line
       Sticky: this.constructor.Sticky || this.props.Sticky,
