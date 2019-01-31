@@ -5,4 +5,7 @@ export default styled('div')`
   color: ${p => p.theme.colors.black};
   font-size: 30px;
   padding-bottom: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `;
