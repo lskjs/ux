@@ -23,8 +23,6 @@ class LayoutHeaderChangeLocale extends Component {
           <div style={{
             display: 'inline-block',
             position: 'relative',
-            // width: 32,
-            // height: 32,
           }}
           >
             <FlagIcon code={code} />
