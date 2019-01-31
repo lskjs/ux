@@ -14,10 +14,10 @@ class Story extends Component {
     const t = (a) => {
       return a === 'locale' ? locale : a;
     };
-    const u18 = { t };
+    const i18 = { t };
     const config = {};
     const uapp = {
-      u18,
+      i18,
       t,
       config,
       modules: {
