@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import Dropdown from 'antd/lib/dropdown';
 import FlagIcon from '../../organisms/FlagIcon';
 import LayoutHeaderListItem from '../../atoms/LayoutHeaderListItem';
-// import { DropdownLink /* , AvatarText */ } from './LayoutHeaderChangeLocale.styles';
-import { DropdownLink } from './LayoutHeaderChangeLocale.styles';
+import DropdownLink from './LayoutHeaderChangeLocale.styles';
 
 class LayoutHeaderChangeLocale extends Component {
   static propTypes = {
