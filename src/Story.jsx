@@ -22,7 +22,7 @@ class Story extends Component {
       config,
       modules: {
         upload: {
-          uploadFile: async e => ({ url: e }),
+          uploadFile: async () => ({ url: 'https://picsum.photos/1280/720/?random' }),
         },
         billing: {
           stores: {
@@ -33,7 +33,7 @@ class Story extends Component {
         },
       },
       onError: e => console.error(e),
-      provide: () => ({ t, config }),
+      provide: () => ({ t, config, i18 }),
     };
     // return <div>123</div>
 
