@@ -24,6 +24,8 @@ export default {
     info: '#17a2b8',
     black: '#343a40',
     darkGray: '#212529',
+    facebook: '#335397',
+    twitter: '#00c7f7',
   },
   borderRadius: '6px',
   borderCircle: '50%',
