@@ -41,6 +41,12 @@ export default ({ storiesOf }) => {
       <Story>
         <Button disabled size="large">Большая кнопка</Button>
       </Story>
+    ))
+    .add('Socials', () => (
+      <Story>
+        <Button size="large" paint="facebook">Facebook</Button>
+        <Button size="lagre" paint="twitter">Twitter</Button>
+      </Story>
     ));
 
   storiesOf('Button/Solid/Default', module)

@@ -3,6 +3,7 @@ import { autobind } from 'core-decorators';
 import debounce from 'lodash-decorators/debounce';
 import isEmpty from 'lodash/isEmpty';
 import every from 'lodash/every';
+import map from 'lodash/map';
 import SelectStore from './SelectStore';
 import FetchStore from './FetchStore';
 
@@ -121,6 +122,40 @@ export default class ListStore extends FetchStore {
       search: '',
       skip: 0,
     });
+  }
+
+  toggleSelect(...args) {
+    this.selectStore.toggle(...args);
+  }
+
+  @autobind
+  toggleSelectAll() {
+    if (this.selectStore.globalCheck) {
+      this.unselectAll();
+    } else {
+      this.selectAll();
+    }
+  }
+
+  selectAll() {
+    const items = this.items.filter((item) => {
+      return !this.selectStore.isSelect(item.id);
+    });
+    this.selectStore.selectAll(map(items, 'id'), items);
+    this.selectStore.globalCheck = true;
+  }
+
+  unselectAll() {
+    this.selectStore.unselectAll();
+    this.selectStore.globalCheck = false;
+  }
+
+  @autobind
+  isIndeterminateGlobalSelect() {
+    return (
+      !!this.selectStore.ids.length &&
+      this.items.length !== this.selectStore.ids.length
+    );
   }
 
   /**
