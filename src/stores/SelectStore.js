@@ -5,7 +5,7 @@ const getItemAndId = (...args) => {
   let id,
     item;
   if (isPlainObject(args[0])) {
-    id = args[0]._id;
+    id = args[0].id;
     item = args[0];
   } else {
     id = args[0];
@@ -53,11 +53,11 @@ export default class SelectStore {
 
   @action
   toggle(item) {
-    const isExist = this.isSelect(item._id);
+    const isExist = this.isSelect(item.id);
     if (isExist) {
-      this.unselect(item._id);
+      this.unselect(item.id);
     } else {
-      this.select(item._id, item);
+      this.select(item.id, item);
     }
   }
   //  checked={pageStore.selectStore.ids.indexOf(item._id) !== -1}

@@ -7,6 +7,7 @@ import { css } from 'emotion';
 import cx from 'classnames';
 import Promise from 'bluebird';
 import axios from 'axios';
+import Checkbox from 'antd/lib/checkbox';
 
 // import DEV from '../DEV';
 import Story from '../Story';
@@ -156,6 +157,64 @@ const EditItem = observer(({ item = {} }) => (
       >
         Добавить
       </Button>
+    </Col>
+  </Row>
+));
+
+const SmartCheckbox = observer(({ item }) => {
+  if (!item) {
+    return (
+      <Checkbox
+        indeterminate={listStore.isIndeterminateGlobalSelect()}
+        checked={listStore.selectStore.globalCheck}
+        onClick={listStore.toggleSelectAll}
+      />
+    );
+  }
+  return (
+    <Checkbox
+      checked={listStore.selectStore.isSelect(item.id)}
+      onClick={() => {
+        listStore.toggleSelect(item);
+      }}
+    />
+  );
+});
+
+const SelectItem = observer(({ item = {} }) => (
+  <Row className={cx([styleHeight, itemStyle])}>
+    <Col index={0}>
+      <SmartCheckbox item={item} />
+    </Col>
+    <Col index={1}>
+      {item.id} - {Math.random()}
+    </Col>
+    <Col index={2}>
+      {item.title}
+    </Col>
+    <Col index={3}>
+      {item.role}
+    </Col>
+  </Row>
+));
+
+const SelectHeaderItem = observer(({ toggleSort, sort = {} }) => (
+  <Row className={styleHeight}>
+    <Col index={0}>
+      <SmartCheckbox />
+    </Col>
+    <Col index={1}>
+      <List.SortHeader value={sort.id} onClick={() => toggleSort('id')}>
+       id
+      </List.SortHeader>
+    </Col>
+    <Col index={2}>
+      name
+    </Col>
+    <Col index={3}>
+      <List.SortHeader value={sort.role} onClick={() => toggleSort('role')}>
+       role
+      </List.SortHeader>
     </Col>
   </Row>
 ));
@@ -360,6 +419,17 @@ export default ({ storiesOf }) => {
           Item={EditItem}
           FilterForm={FilterForm}
           columns={['1fr', '1fr', '1fr', '1fr']}
+        />
+        <Debug store={listStore} />
+      </Story>
+    ))
+    .add('List with Select', () => (
+      <Story>
+        <List
+          listStore={listStore}
+          Item={SelectItem}
+          HeaderItem={SelectHeaderItem}
+          columns={columns}
         />
         <Debug store={listStore} />
       </Story>
