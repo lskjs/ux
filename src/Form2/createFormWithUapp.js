@@ -12,10 +12,10 @@ const createFormWithUapp = (callback) => {
   @observer
   class Component2 extends Component {
     render() {
-      const { uapp } = this.props;
+      const { uapp, ...props } = this.props;
       const params = callback(uapp);
       const Component3 = createForm(params);
-      return <Component3 />;
+      return <Component3 {...props} />;
     }
   }
 

@@ -12,10 +12,10 @@ const createFormWithI18 = (callback) => {
   @observer
   class Component2 extends Component {
     render() {
-      const { i18, config } = this.props;
+      const { i18, config, ...props } = this.props;
       const params = callback({ i18, config });
       const Component3 = createForm(params);
-      return <Component3 />;
+      return <Component3 {...props} />;
     }
   }
 
