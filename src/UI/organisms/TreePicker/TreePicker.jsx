@@ -202,7 +202,7 @@ class TreePicker extends Component {
         </Block>
         <InnerBlock>
           <Subtitle>
-            {t('common.selected')} ({value ? value.length : 0 })
+            {t('admin.header.tags')} ({value ? value.length : 0 })
           </Subtitle>
           <Meta>
             <If condition={value && value.length > 0}>
@@ -210,7 +210,7 @@ class TreePicker extends Component {
                 className={clearBtnStyles}
                 onClick={() => this.handleSelect([])}
               >
-                {t('common.cancel')}
+                {t('treePicker.cancel')}
               </TextButton>
             </If>
           </Meta>
@@ -234,7 +234,7 @@ class TreePicker extends Component {
         </Content>
         <Footer>
           <Button paint="primary" onClick={this.handleSubmit}>
-            {t('common.confirm')}
+            {t('billing.done')}
           </Button>
           <Button
             paint="primary"
@@ -244,7 +244,7 @@ class TreePicker extends Component {
               this.modal.close();
             }}
           >
-            {t('common.cancel')}
+            {t('buttons.cancel')}
           </Button>
         </Footer>
       </Modal>
