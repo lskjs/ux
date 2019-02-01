@@ -1,8 +1,24 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import Marker from 'react-icons2/md/room';
 import autobind from 'core-decorators/lib/autobind';
 import GoogleMapReact from 'google-map-react';
+import { css } from 'react-emotion';
+import SearchBox from './SearchBox';
 // import { Icon } from './Geo2.styles';
+
+const markerWrapperStyle = css`
+/* border: 1px red solid; */
+`;
+const markerStyle = css`
+font-size: 48px;
+color: #B71C1C;
+/* border: 1px black solid; */
+position: relative;
+left: -26px;
+top: -53px;
+`;
+
 
 class Geo2 extends Component {
   constructor(props) {
@@ -11,11 +27,17 @@ class Geo2 extends Component {
     // props.field.value[0];
     // props.field.value[0];
     this.state = {
-      zoom: 9,
-      lat: val[1],
-      lng: val[0],
+      // zoom: 9,
+      center: {
+        lat: val[1],
+        lng: val[0],
+      },
+      mapsApiLoaded: false,
+      mapInstance: null,
+      mapsapi: null,
     };
   }
+
 
   // @autobind
   // onCircleInteraction(childKey, childProps, mouse) {
@@ -35,31 +57,65 @@ class Geo2 extends Component {
 
   @autobind
   onChange({ center, zoom }) {
-    const {
-      field, form,
-    } = this.props;
+    const { field, form } = this.props;
     form.setFieldValue(field.name, [center.lng, center.lat]);
     // console.log('onChange', center, zoom);
-
     this.setState({
       center,
-      zoom,
+      // zoom,
     });
   }
 
+  @autobind
+  apiLoaded({ map, maps }) {
+    console.log({ map, maps });
+
+    this.setState({
+      mapsApiLoaded: true,
+      mapInstance: map,
+      mapsApi: maps,
+    });
+  }
+
+
   render() {
-    // const { height, width, apiKey, ...props } = this.props;
     const {
       field, form, height = 300, width = '100%', apiKey, ...props
     } = this.props;
+    const {
+
+      mapsApiLoaded,
+      mapInstance,
+      mapsApi,
+    } = this.state;
+    console.log({ mapsApi });
+
     return (
-      <div style={{ height, width }}>
+      <div style={{ height, width, position: 'relative' }}>
+        {mapsApiLoaded && (
+          <div
+            style={{
+              position: 'absolute',
+              top: '0',
+              left: '0',
+              zIndex: 2,
+            }}
+          >
+            <SearchBox map={mapInstance} mapsApi={mapsApi} onPlacesChanged={console.log}/>
+          </div>
+        )}
         <GoogleMapReact
           // {...this.field}
           // {...props}
           // style={{ height: '100vh', width: 100 }}
 
-          bootstrapURLKeys={apiKey}
+          bootstrapURLKeys={{
+            key: apiKey,
+            language: 'ru',
+            region: 'ru',
+            libraries: 'places',
+          }}
+          // bootstrapURLKeys={`${apiKey}&callback=initMap`}
           // defaultCenter={this.props.center}
           defaultCenter={{
             lat: 59.95,
@@ -69,20 +125,32 @@ class Geo2 extends Component {
           draggable={this.state.draggable}
           onChange={this.onChange}
           center={this.state.center}
-          zoom={this.state.zoom}
+          defaultZoom={9}
+          layerTypes={['TrafficLayer', 'TransitLayer']}
+          options={maps => ({
+            panControl: true,
+            mapTypeControl: false,
+            streetViewControl: false,
+            scrollwheel: true,
+            fullscreenControl: true,
+            // styles: [{ stylers: [{ saturation: -100 }, { gamma: 0.8 }, { lightness: 4 }, { visibility: 'on' }] }],
+          })}
+          yesIWantToUseGoogleMapApiInternals
+          onGoogleApiLoaded={this.apiLoaded}
+          {...props}
+
+          // zoom={this.state.zoom}
+          // {...props}
           // onChildMouseDown={this.onCircleInteraction}
           // onChildMouseUp={this.onCircleInteraction3}
           // onChildMouseMove={this.onCircleInteraction}
           // onChildClick={() => console.log('child click')}
           // onClick={() => console.log('mapClick')}
         >
-          <div
-            className="place"
-          >
-            <Marker />
-            {/* <Icon>
+          <div className={markerWrapperStyle} >
+            <span className={markerStyle} >
               <Marker />
-            </Icon> */}
+            </span>
           </div>
         </GoogleMapReact>
       </div>

@@ -1,10 +1,10 @@
-import React from 'react';
+// import React2 from 'react';
 
-const createNestedFormControl = Component => (props) => {
+const createNestedFormControl = (Component, React) => (props) => {
   const { form, field, ...otherProps } = props;
   const { value } = field;
   return (
-    <Component
+    <Component  //eslint-disable-line
       {...otherProps}
       initialValues={value}
       onChange={(values) => {

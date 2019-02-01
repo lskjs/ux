@@ -23,6 +23,7 @@ class PageBreadcrumbs extends Component {
       ...props
     } = this.props;
     // console.log({ page });
+    console.log('page.state', page.state);
     let metas = get(page, 'state.metas');
     if (reverse) {
       metas = metas.reverse();
