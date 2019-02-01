@@ -15,8 +15,10 @@ class PageBreadcrumbs extends Component {
       children,
       page,
       reverse,
-      omitFirst = true,
-      omitLast = true,
+      omitFirst,
+      omitLast,
+      // omitFirst = true,
+      // omitLast = true,
       items: rawItems,
       ...props
     } = this.props;

@@ -13,8 +13,6 @@ class ListHeader extends Component {
         </List.HeaderWrapper>
       );
     }
-    console.log('List.HeaderRow', List.HeaderRow);
-    
     return (
       <List.HeaderWrapper>
         <If condition={show.search}>
