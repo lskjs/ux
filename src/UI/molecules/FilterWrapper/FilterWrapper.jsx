@@ -32,14 +32,14 @@ class FilterWrapper extends PureComponent {
             onClick={this.handleSubmit}
             componentClass={Button}
           >
-            <T name="lskComponents.filterWrapperConfirm" />
+            <T name="common.confirm" />
           </StatefulButton>
           <Button
             paint="primary"
             view="text"
             onClick={() => this.modal.close()}
           >
-            <T name="lskComponents.filterWrapperCancel" />
+            <T name="common.cancel" />
           </Button>
         </Footer>
       </Modal>

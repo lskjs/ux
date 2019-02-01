@@ -52,7 +52,7 @@ class ListEmpty extends Component {
                 paint="primary"
                 onClick={() => listStore.fetch()}
               >
-                <T name="lskList.emptyDataReloadButton" />
+                <T name="common.refresh" />
               </Button>
             }
           />
