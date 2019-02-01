@@ -1,14 +1,16 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import If from 'react-if';
+import ImageComponent from '../Image';
+import filterProps from '../../../utils/filterProps';
 
 import {
   Wrapper,
-  Image,
+  // Image,
   Body,
   Title,
   ImageContainer,
   TagItem,
-  TitleLink,
   Content,
   Author,
 } from './BlogCardList.styles';
@@ -35,24 +37,39 @@ class BlogCardList extends PureComponent {
   }
   render() {
     const {
-      link,
+      id,
       img,
       title,
-      href,
       tag,
       content,
       author,
+      componentClass,
+      ...props
     } = this.props;
     return (
-      <Wrapper>
-        <ImageContainer href={link}>
-          <Image src={img} alt="Blog cover" />
+      <Wrapper componentClass={componentClass} {...filterProps(props)}>
+        <ImageContainer>
+          <ImageComponent
+            id={id}
+            width="100%"
+            height="100%"
+            src={img}
+            alt={title}
+          />
         </ImageContainer>
         <Body>
-          <TagItem>{tag}</TagItem>
-          <TitleLink href={href} ><Title>{title}</Title></TitleLink>
-          <Content>{content}</Content>
-          <Author>{author}</Author>
+          <If condition={tag}>
+            <TagItem>{tag}</TagItem>
+          </If>
+          <If condition={title}>
+            <Title>{title}</Title>
+          </If>
+          <If condition={content}>
+            <Content>{content}</Content>
+          </If>
+          <If condition={author}>
+            <Author>{author}</Author>
+          </If>
         </Body>
       </Wrapper>
     );

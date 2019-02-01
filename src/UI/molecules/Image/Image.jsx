@@ -12,8 +12,6 @@ class Image extends PureComponent {
     title: PropTypes.string,
     name: PropTypes.string,
     src: PropTypes.string,
-    
-
     size: PropTypes.number,
     width: PropTypes.number,
     height: PropTypes.number,
@@ -130,7 +128,7 @@ class Image extends PureComponent {
       componentClass,
     } = this.props;
 
-    const src = this.props.src || this.props.image;
+    // const src = this.props.src || this.props.image;
     const width = this.props.width || size;
     const height = this.props.height || size;
 
@@ -150,7 +148,7 @@ class Image extends PureComponent {
         className={className}
         style={wrapperStyle}
       >
-        {src != null ? this.renderAsImage() : this.renderAsText()}
+        {this.renderAsImage()}
         { children }
       </Component>
     );
