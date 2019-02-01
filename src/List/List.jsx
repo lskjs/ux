@@ -161,7 +161,7 @@ class List extends Component {
     }
     children = (
       // shadow={shadow}
-      <List.Wrapper>
+      <List.Wrapper style={{ width: '100%' }}>
         {children}
       </List.Wrapper>
     );

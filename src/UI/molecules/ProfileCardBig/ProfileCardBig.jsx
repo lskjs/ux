@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import If from 'react-if';
 // import Icon from 'antd/lib/icon';
 
 import { ProfileCardItem, ProfileCardAvatar/* , SocialIcon */ } from './ProfileCardBig.styles';
@@ -26,10 +27,12 @@ class ProfileCardBig extends PureComponent {
       info,
       sign,
       fixHeight,
+      footer,
+      componentClass,
       ...props
     } = this.props;
     return (
-      <ProfileCardItem fixHeight={fixHeight} {...props}>
+      <ProfileCardItem componentClass={componentClass} fixHeight={fixHeight} {...props}>
         <ProfileCardAvatar
           size={100}
           src={img}
@@ -38,6 +41,11 @@ class ProfileCardBig extends PureComponent {
         <h4>{name}</h4>
         <span>{info}</span>
         <p>{sign}</p>
+        <If condition={footer}>
+          <div>
+            {footer}
+          </div>
+        </If>
         {/* <div>
           <SocialIcon><Icon type="twitter" /></SocialIcon>
           <SocialIcon><Icon type="facebook" /></SocialIcon>

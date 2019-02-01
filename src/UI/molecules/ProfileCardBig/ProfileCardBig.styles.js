@@ -1,8 +1,10 @@
 import styled from 'react-emotion';
 import Avatar from '../../../Avatar';
+import createdynamicTag from '../../../utils/createDynamicTag';
 import removeProps from '../../../utils/removeProps';
 
-const filteredTag = removeProps('article', ['fixHeight']);
+const dynamicTag = createdynamicTag('article');
+const filteredTag = removeProps(dynamicTag, ['fixHeight']);
 
 export const ProfileCardItem = styled(filteredTag)`
   border: 1px solid rgba(0,0,0,.1);
@@ -15,14 +17,20 @@ export const ProfileCardItem = styled(filteredTag)`
   height: ${p => (p.fixHeight ? `${p.fixHeight}px` : 'auto')};
   overflow: hidden;
   font-family: ${p => p.theme.fontFamily};
-  h4 {
+  transition: border-color .2s ease-out;
+  
+  &:hover {
+    color: inherit;
+    border-color: ${p => p.theme.colors.primary};
+  }
+  > h4 {
     margin: 0;
     font-weight: 500;
     font-size: 20px;
     line-height: 26px;
     color: inherit;
   }
-  h4 + span {
+  > h4 + span {
     display: block;
     opacity: .8;
     margin-bottom: 14px;
@@ -30,9 +38,12 @@ export const ProfileCardItem = styled(filteredTag)`
     line-height: 24px;
     color: inherit;
   }
-  p {
+  > p {
     font-size: 14px;
     color: inherit;
+  }
+  > div {
+  
   }
 `;
 

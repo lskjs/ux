@@ -111,6 +111,7 @@ export const HeaderItemWrapper = styled('div')`
 
 export const Wrapper = styled('div')`
   /* display: grid; */
+  width: 100%;
   border-radius: ${p => p.theme.borderRadius};
   border: 1px solid ${p => p.theme.colors.border};
   box-shadow: ${p => ((typeof p.shadow === 'string' && p.shadow) || (p.shadow ? '0 1px 6px 0 rgba(0, 0, 0, 0.04), 0 2px 4px 0 rgba(0, 0, 0, 0.04)' : 'none'))};
