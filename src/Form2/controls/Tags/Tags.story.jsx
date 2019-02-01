@@ -70,12 +70,12 @@ const TagsForm = createForm({
     tags4: {
       title: 'Tags',
       component: Tags,
+      flat: true,
       options: range(1, 100),
     },
     tags5: {
       title: 'Tree Tags',
       component: Tags,
-      flat: false,
       triggerTitle: 'Выбрать теги',
       options: [
         {
@@ -83,12 +83,12 @@ const TagsForm = createForm({
           value: 'one',
           children: [
             {
-              title: 'One.one',
-              value: 'one.one',
+              title: 'One1',
+              value: 'one1',
             },
             {
-              title: 'One.two',
-              value: 'one.two',
+              title: 'One2',
+              value: 'one2',
             },
           ],
         },
@@ -97,16 +97,16 @@ const TagsForm = createForm({
           value: 'two',
           children: [
             {
-              title: 'Two.one',
-              value: 'two.one',
+              title: 'Two1',
+              value: 'two1',
             },
             {
-              title: 'Two.two',
-              value: 'two.two',
+              title: 'Two2',
+              value: 'two2',
             },
             {
-              title: 'Two.three',
-              value: 'two.three',
+              title: 'Two3',
+              value: 'two3',
             },
           ],
         },
