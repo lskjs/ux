@@ -2,7 +2,7 @@ import styled, { css } from 'react-emotion';
 
 import { DebounceInput } from 'react-debounce-input';
 
-import { createDynamicTag } from '~/utils';
+import { createDynamicTag } from '../../../utils';
 
 const dynamicTag = createDynamicTag(DebounceInput);
 
