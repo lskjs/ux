@@ -6,6 +6,7 @@ const filteredTag = removeProps('article', ['fixHeight']);
 
 export const ProfileCardItem = styled(filteredTag)`
   border: 1px solid rgba(0,0,0,.1);
+  color: rgba(0,0,0,.65);
   display: block;
   padding: 1rem;
   border-radius: ${p => p.theme.borderRadius};
@@ -19,11 +20,19 @@ export const ProfileCardItem = styled(filteredTag)`
     font-weight: 500;
     font-size: 20px;
     line-height: 26px;
+    color: inherit;
   }
   h4 + span {
     display: block;
     opacity: .8;
     margin-bottom: 14px;
+    font-size: 14px;
+    line-height: 24px;
+    color: inherit;
+  }
+  p {
+    font-size: 14px;
+    color: inherit;
   }
 `;
 
