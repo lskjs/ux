@@ -1,3 +1,5 @@
+import React from 'react';
+
 const createNestedFormControl = Component => (props) => {
   const { form, field, ...otherProps } = props;
   const { value } = field;
