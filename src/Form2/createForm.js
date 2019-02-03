@@ -10,6 +10,7 @@ import isEmpty from 'lodash/isEmpty';
 import { withFormik } from 'formik';
 import validate from 'validate.js';
 import Promise from 'bluebird';
+import DefaultFormGroup from '../Form2/FormGroup';
 import OnChangeListener from '../Form2/OnChangeListener';
 
 const prepareControls = (ctrls, FormGroup) => {
@@ -66,7 +67,7 @@ const createForm = ({
   controls: rawControls,
   view: View,
   displayName,
-  FormGroup,
+  FormGroup = DefaultFormGroup,
   withFormik: rawWithFormik,
   ...otherProps
 }) => {

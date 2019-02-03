@@ -68,8 +68,6 @@ class Geo2 extends Component {
 
   @autobind
   apiLoaded({ map, maps }) {
-    console.log({ map, maps });
-
     this.setState({
       mapsApiLoaded: true,
       mapInstance: map,
@@ -80,7 +78,7 @@ class Geo2 extends Component {
 
   render() {
     const {
-      field, form, height = 300, width = '100%', apiKey, ...props
+      field, form, height = 300, width = '100%', apiKey, search = true, ...props
     } = this.props;
     const {
 
@@ -88,11 +86,11 @@ class Geo2 extends Component {
       mapInstance,
       mapsApi,
     } = this.state;
-    console.log({ mapsApi });
 
     return (
       <div style={{ height, width, position: 'relative' }}>
-        {mapsApiLoaded && (
+        {apiKey}
+        {search && mapsApiLoaded && (
           <div
             style={{
               position: 'absolute',
@@ -101,7 +99,7 @@ class Geo2 extends Component {
               zIndex: 2,
             }}
           >
-            <SearchBox map={mapInstance} mapsApi={mapsApi} onPlacesChanged={console.log}/>
+            <SearchBox map={mapInstance} mapsApi={mapsApi} onPlacesChanged={console.log} />
           </div>
         )}
         <GoogleMapReact
@@ -113,7 +111,7 @@ class Geo2 extends Component {
             key: apiKey,
             language: 'ru',
             region: 'ru',
-            libraries: 'places',
+            libraries: search ? 'places' : '',
           }}
           // bootstrapURLKeys={`${apiKey}&callback=initMap`}
           // defaultCenter={this.props.center}
