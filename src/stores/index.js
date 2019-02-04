@@ -8,6 +8,7 @@ export default {
 
   FetchStore: require('./FetchStore').default,
   ListStore: require('./ListStore').default,
+  SelectStore: require('./SelectStore').default,
 
   // EntityStore: require('./EntityStore').default,
   // ListStore: require('./ListStore').default,

@@ -36,6 +36,7 @@ import ListPaginator from './ListPaginator';
 import ListFilterButton from './ListFilterButton';
 import ListEmpty from './ListEmpty';
 import ListSortHeader from './ListSortHeader';
+import ListCheckbox from './ListCheckbox';
 
 
 import DefaultTags from './DefaultTags';
@@ -67,6 +68,7 @@ class List extends Component {
   static FilterButton = ListFilterButton;
   static Empty = ListEmpty;
   static SortHeader = ListSortHeader;
+  static Checkbox = ListCheckbox;
 
   static Button = Button;
   static SearchWrapper = Search;
@@ -100,6 +102,8 @@ class List extends Component {
       listStore = new ListStore();
     }
 
+    const { selectStore } = listStore;
+
     const show = mapValues({
       ...defaultShow,
       ...customShow,
@@ -119,6 +123,7 @@ class List extends Component {
       FilterButton: this.props.FilterButton || this.constructor.FilterButton,
       Empty: this.props.Empty || this.constructor.Empty,
       SortHeader: this.props.SortHeader || this.constructor.SortHeader,
+      Checkbox: this.props.Checkbox || this.constructor.Checkbox,
 
       Button: this.props.Button || this.constructor.Button,
       SearchWrapper: this.props.SearchWrapper || this.constructor.SearchWrapper,
@@ -177,7 +182,7 @@ class List extends Component {
           HeaderItem,
         }}
       >
-        <MobxProvider listStore={listStore}>
+        <MobxProvider listStore={listStore} selectStore={selectStore} >
           <React.Fragment>
             {children}
           </React.Fragment>

@@ -28,6 +28,6 @@ export default {
     twitter: '#00c7f7',
   },
   borderRadius: '6px',
-  borderCircle: '50%',
+  borderCircle: '100vw',
   borderSmall: '3px',
 };

@@ -475,6 +475,7 @@ const filteredTag = removeProps(dynamicTag, [
   'onlyIcon',
   'twoIcons',
   'bordered',
+  'rounded',
 ]);
 
 // Если убрать filteredTag, то появляются варнинги
@@ -482,7 +483,7 @@ export const Btn = styled(filteredTag)`
   background-color: #fff;
   border: none;
   outline: none;
-  border-radius: ${p => p.theme.borderSmall};
+  border-radius: ${p => (p.rounded ? p.theme.borderCircle : p.theme.borderSmall)};
   overflow: hidden;
   position: relative;
   text-align: center;
@@ -689,7 +690,7 @@ export const State = styled('div')`
   overflow: hidden;
   box-sizing: border-box;
   cursor: default !important;
-  border-radius: ${p => p.theme.borderSmall};
+  border-radius: ${p => (p.rounded ? p.theme.borderCircle : p.theme.borderSmall)};
   pointer-events: ${p => (p.state !== 'ready' ? 'none' : 'auto')};
   ${(props) => {
     if (props.bordered) {

@@ -63,6 +63,7 @@ class Button extends PureComponent {
     textProcessing: PropTypes.any,
     textError: PropTypes.any,
     autoMobile: PropTypes.bool,
+    rounded: PropTypes.bool,
     style: PropTypes.object,
   }
 
@@ -91,6 +92,7 @@ class Button extends PureComponent {
     textProcessing: null,
     textError: null,
     autoMobile: false,
+    rounded: false,
   }
 
   constructor(props) {
@@ -223,6 +225,7 @@ class Button extends PureComponent {
       iconLeft,
       iconRight,
       bordered,
+      rounded,
       new: isNew,
       type,
       style,
@@ -253,6 +256,7 @@ class Button extends PureComponent {
         type={type}
         componentClass={tag}
         bordered={bordered}
+        rounded={rounded}
         size={size}
         paint={paint}
         view={view}
@@ -286,6 +290,7 @@ class Button extends PureComponent {
           paint={paint}
           view={view}
           state={state}
+          rounded={rounded}
           iconDirection="left"
           bordered={bordered}
           visible={state && state !== 'ready'}
