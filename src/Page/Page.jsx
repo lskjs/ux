@@ -8,7 +8,8 @@ import PageHeader from './PageHeader';
 import PageTitle from './PageTitle';
 import PageBreadcrumbs from './PageBreadcrumbs';
 import PageBody from './PageBody';
-import TitleActions from '../UI/atoms/PageTitleActions';
+import PageTabs from './PageTabs';
+import PageTitleActions from '../UI/atoms/PageTitleActions';
 
 import Block from './Page.styles';
 
@@ -17,8 +18,9 @@ class Page extends PureComponent {
   static Header = PageHeader;
   static Title = PageTitle;
   static Breadcrumbs = PageBreadcrumbs;
-  static TitleActions = TitleActions;
+  static TitleActions = PageTitleActions;
   static Body = PageBody;
+  static Tabs = PageTabs;
 
   static propTypes = {
     children: PropTypes.any,

@@ -91,7 +91,7 @@ class ListBody extends Component {
               bordered
               size="large"
               paint="default"
-              onClick={() => listStore.fetchMore(-1)}
+              onClick={() => listStore.fetchMore(1)}
               disabled={listStore.loading}
               className={buttonStyles}
               block

@@ -89,7 +89,7 @@ class Geo2 extends Component {
 
     return (
       <div style={{ height, width, position: 'relative' }}>
-        {apiKey}
+        {/* {apiKey} */}
         {search && mapsApiLoaded && (
           <div
             style={{

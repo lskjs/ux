@@ -13,6 +13,7 @@ class DateInfo extends Component {
       format = 'l',
       longFormat = 'LLL',
     } = this.props;
+    if (!date) return null;
     return (
       <span title={i18.m(date).format(longFormat)}>
         {i18.m(date).format(format)}
