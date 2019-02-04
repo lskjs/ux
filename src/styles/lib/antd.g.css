@@ -18203,8 +18203,9 @@ li.ant-select-tree-treenode-disabled > .ant-select-tree-node-content-wrapper:hov
   pointer-events: auto;
 }
 .ant-calendar-picker-clear {
+  margin-right: 15px;
   opacity: 0;
-  z-index: 2;
+  z-index: 0;
   font-size: 14px;
   color: rgba(0, 0, 0, 0.25);
   background: #fff;
@@ -18229,5 +18230,55 @@ li.ant-select-tree-treenode-disabled > .ant-select-tree-node-content-wrapper:hov
   font-size: 12px;
   transition: all 0.3s;
   user-select: none;
-  z-index: 1;
+  z-index: 0;
+}
+.ant-form-item-children {
+  position: relative;
+}
+.ant-form-item-children > div > div > input {
+  width: 100%;
+  /* background-color: rgba(255, 255, 255, 0.44); */
+  border: solid 1px #e3e3e3;
+  color: #4a4a4a;
+  font-size: 13px;
+  line-height: 1.43;
+  text-align: left;
+  min-height: 48px;
+  outline: none;
+  box-sizing: border-box;
+  margin: 0;
+  display: block;
+  resize: none;
+  padding: 13px 12px;
+  border-radius: 3px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.ant-form-item-children > div > div > input:focus,
+.ant-form-item-children > div > div > input:active {
+  border-color: #1890ff;
+}
+.ant-form-item-children > div > div > input::-webkit-input-placeholder {
+  opacity: 0.5 !important;
+  color: #9b9b9b !important;
+  font-size: 14px !important;
+  line-height: 1.43 !important;
+}
+.ant-form-item-children > div > div > input::-moz-placeholder {
+  opacity: 0.5 !important;
+  color: #9b9b9b !important;
+  font-size: 14px !important;
+  line-height: 1.43 !important;
+}
+.ant-form-item-children > div > div > input:-moz-placeholder {
+  opacity: 0.5 !important;
+  color: #9b9b9b !important;
+  font-size: 14px !important;
+  line-height: 1.43 !important;
+}
+.ant-form-item-children > div > div > input:-ms-input-placeholder {
+  opacity: 0.5 !important;
+  color: #9b9b9b !important;
+  font-size: 14px !important;
+  line-height: 1.43 !important;
 }

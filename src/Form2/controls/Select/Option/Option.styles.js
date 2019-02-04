@@ -38,6 +38,9 @@ export const Image = styled('img')`
 
 export const Title = styled('div')`
   margin-left: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `;
 
 const filteredTag = removeProps('div', ['color']);

@@ -108,8 +108,8 @@ class TreePicker extends Component {
   }
 
   @autobind
-  handleSearch(e) {
-    this.setState({ search: e });
+  handleSearch(search) {
+    this.setState({ search });
   }
 
   @autobind
@@ -175,7 +175,6 @@ class TreePicker extends Component {
       t,
       clearBtnStyles,
     } = this.props;
-
     let searchedFields = [];
     try {
       searchedFields = this.fuse.search(search);
@@ -197,6 +196,7 @@ class TreePicker extends Component {
           <Magnify />
           <Input
             placeholder={t('treePicker.tags')}
+            value={search}
             onChange={this.handleSearch}
           />
         </Block>
