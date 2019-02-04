@@ -36,6 +36,14 @@ const prepareControls = (ctrls, FormGroup) => {
       ...ctrl,
       component,
     };
+
+    if (prepared[name].required && !prepared[name].validator) {
+      prepared[name].validator = {
+        presence: {
+          allowEmpty: false,
+        },
+      };
+    }
   });
   return prepared;
 };

@@ -75,7 +75,7 @@ const ValidationAsync = createForm({
 });
 
 export default ({ storiesOf }) =>
-  storiesOf('Form2/validation', module)
+  storiesOf('Form2/validator', module)
     .add('async validator', () => {
       return (
         <Story>
