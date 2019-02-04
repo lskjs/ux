@@ -1,14 +1,10 @@
 import React from 'react';
 import { Form, Field } from 'formik';
-import { Button } from 'react-bootstrap';
 import range from 'lodash/range';
 import Story from '../../../Story';
 import createForm from '../../createForm';
 import Tags from './Tags';
-import FormGroup from '../../FormGroup';
 import FormDebug from '../../FormDebug';
-
-import '../../../UI/molecules/Modal/Modal.g.css';
 
 const TagsFormView = (props) => {
   return (
@@ -19,14 +15,12 @@ const TagsFormView = (props) => {
       <Field {...props.controls.tags4} />
       <Field {...props.controls.tags5} />
       <FormDebug {...props} />
-      <Button onClick={props.handleSubmit}>Submit</Button>
     </Form>
   );
 };
 
 const TagsForm = createForm({
   view: TagsFormView,
-  FormGroup,
   controls: {
     tags: {
       title: 'Tags',

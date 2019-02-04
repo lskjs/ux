@@ -3,7 +3,6 @@ import { Form, Field } from 'formik';
 import Story from '../../../Story';
 import createForm from '../../createForm';
 import Date from './Date';
-import FormGroup from '../../FormGroup';
 import FormDebug from '../../FormDebug';
 
 const DateFormView = (props) => {
@@ -20,7 +19,6 @@ const DateFormView = (props) => {
 
 const DateForm = createForm({
   view: DateFormView,
-  FormGroup,
   controls: {
     date: {
       title: 'Date',

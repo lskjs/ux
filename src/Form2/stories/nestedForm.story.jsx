@@ -2,7 +2,6 @@ import React from 'react';
 import { Form, Field } from 'formik';
 import Story from '../../Story';
 import createForm from '../createForm';
-import FormGroup from '../FormGroup';
 import FormDebug from '../FormDebug';
 import OnChangeListener from '../OnChangeListener';
 
@@ -42,7 +41,6 @@ const EntityFormView = (props) => {
 
 const EntityForm = createForm({
   view: EntityFormView,
-  FormGroup,
   controls: {
     name: {
       title: 'Name',
@@ -65,14 +63,6 @@ const EntityForm = createForm({
 const ComplexFormView = (props) => {
   return (
     <Form>
-      {/* <Field {...props.controls.director} />
-      <hr />
-      <hr />
-      <FormDebug {...props} />
-      <hr />
-      <hr />
-      <hr />
-      <hr /> */}
       <h3>ArrayOfEntityForm:</h3>
       <Field {...props.controls.title} />
       <Field {...props.controls.director} />
@@ -84,7 +74,6 @@ const ComplexFormView = (props) => {
 
 const ComplexForm = createForm({
   view: ComplexFormView,
-  FormGroup,
   controls: {
     title: {
       title: 'Номер группы',

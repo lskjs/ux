@@ -1,10 +1,8 @@
 import React from 'react';
-import moment from 'moment';
 import { Form, Field } from 'formik';
 import Story from '../../../Story';
 import createForm from '../../createForm';
 import Calendar from './Calendar';
-import FormGroup from '../../FormGroup';
 import FormDebug from '../../FormDebug';
 
 const CalendarFormView = (props) => {
@@ -24,18 +22,15 @@ const CalendarFormView = (props) => {
 
 const CalendarForm = createForm({
   view: CalendarFormView,
-  FormGroup,
   controls: {
     calendar1: {
       title: 'Calendar',
       component: Calendar,
-      // highlightedDates: [
-      //   new Date('2019-01-15'),
-      //   new Date('2019-01-18'),
-      // ],
       highlightedDates: [
-        moment('2019-01-15'),
-        moment('2019-01-18'),
+        new Date('2019-02-15'),
+        new Date('2019-02-18'),
+        '2019-02-02',
+        Date.now(),
       ],
     },
     calendar2: {

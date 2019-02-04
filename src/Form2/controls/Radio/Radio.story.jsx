@@ -1,10 +1,8 @@
 import React from 'react';
 import { Form, Field } from 'formik';
-// import { Button } from 'react-bootstrap';
 import Story from '../../../Story';
 import createForm from '../../createForm';
 import Radio from './Radio';
-import FormGroup from '../../FormGroup';
 import FormDebug from '../../FormDebug';
 
 const RadioFormView = (props) => {
@@ -14,14 +12,12 @@ const RadioFormView = (props) => {
       <Field {...props.controls.black} />
       <Field {...props.controls.green} />
       <FormDebug {...props} />
-      {/* <Button onClick={handleSubmit}>Submit</Button> */}
     </Form>
   );
 };
 
 const RadioForm = createForm({
   view: RadioFormView,
-  FormGroup,
   controls: {
     blue: {
       title: 'first value',

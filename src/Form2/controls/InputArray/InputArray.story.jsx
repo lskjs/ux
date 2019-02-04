@@ -3,7 +3,6 @@ import { Form, Field } from 'formik';
 import Story from '../../../Story';
 import createForm from '../../createForm';
 import InputArray from './InputArray';
-import FormGroup from '../../FormGroup';
 import FormDebug from '../../FormDebug';
 
 const InputArrayFormView = (props) => {
@@ -17,7 +16,6 @@ const InputArrayFormView = (props) => {
 
 const InputArrayForm = createForm({
   view: InputArrayFormView,
-  FormGroup,
   controls: {
     inputArray: {
       title: 'InputArray',

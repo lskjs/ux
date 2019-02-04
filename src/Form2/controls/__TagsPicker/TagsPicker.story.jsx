@@ -1,27 +1,21 @@
 import React from 'react';
 import { Form, Field } from 'formik';
-import { Button } from 'react-bootstrap';
 import Story from '../../../Story';
 import createForm from '../../createForm';
 import TagsPicker from './TagsPicker';
-import FormGroup from '../../FormGroup';
 import FormDebug from '../../FormDebug';
-
-import '../../../UI/molecules/Modal/Modal.g.css';
 
 const TagsPickerFormView = (props) => {
   return (
     <Form>
       <Field {...props.controls.tagsPicker} />
       <FormDebug {...props} />
-      <Button onClick={props.handleSubmit}>Submit</Button>
     </Form>
   );
 };
 
 const TagsPickerForm = createForm({
   view: TagsPickerFormView,
-  FormGroup,
   controls: {
     tagsPicker: {
       title: 'tagsPicker',

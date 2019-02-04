@@ -91,7 +91,7 @@ class List extends Component {
 
   render() {
     const {
-      columns, show: customShow = {},
+      columns, show: customShow = {}, pageSize = 10,
       Item, FilterForm, HeaderItem, Tags = DefaultTags, Tag = DefaultTag,
     } = this.props;
 
@@ -175,6 +175,7 @@ class List extends Component {
         value={{
           List,
           show,
+          pageSize,
           Item,
           FilterForm,
           Tags,

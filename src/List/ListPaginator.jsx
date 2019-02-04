@@ -5,7 +5,7 @@ import If from 'react-if';
 import T from '../T';
 import { contextToProps } from './List.context';
 
-@contextToProps('List')
+@contextToProps('List', 'pageSize')
 @inject('listStore')
 @observer
 class ListPaginator extends Component {
@@ -13,8 +13,10 @@ class ListPaginator extends Component {
     const {
       List,
       listStore,
-      options = [10, 20, 50, 100],
+      pageSize = 10,
     } = this.props;
+    const { options = [1, 2, 5, 10].map(a => a * pageSize) } = this.props;
+
     const from = listStore.skip + 1;
     const to = listStore.skip + listStore.items.length;
     const page = listStore.getCurrentPage();
@@ -49,6 +51,7 @@ class ListPaginator extends Component {
             <Pagination
               onChange={listStore.setPage}
               current={listStore.getCurrentPage()}
+              pageSize={listStore.limit}
               total={listStore.count}
             />
           </List.PaginatorGroupWrapper>

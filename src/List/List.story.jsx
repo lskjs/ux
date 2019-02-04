@@ -143,7 +143,6 @@ const EditItem = observer(({ item = {} }) => (
           listStore.items = listStore.items.filter(({ id }) => {
             return id !== item.id;
           });
-          console.log(listStore);
         }}
       >
         Удалить
@@ -228,6 +227,9 @@ class Debug extends Component {
     const { store } = this.props;
     return (
       <div>
+        <button onClick={() => this.forceUpdate()}>
+          forceUpdate
+        </button>
         <button onClick={() => store.fetch()}>
           fetch
         </button>

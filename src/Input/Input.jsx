@@ -79,7 +79,7 @@ class Input extends PureComponent {
       value /= displayRate;
     }
     if (regex) {
-      value = value.match(regex);
+      [value] = value.match(regex);
     }
     this.setState({ value });
     this.onChange(value);

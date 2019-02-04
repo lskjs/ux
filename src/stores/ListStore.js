@@ -122,38 +122,6 @@ export default class ListStore extends FetchStore {
       skip: 0,
     });
   }
-
-  // @autobind
-  // toggleSelectAll() {
-  //   if (this.selectStore.globalCheck) {
-  //     this.unselectAll();
-  //   } else {
-  //     this.selectAll();
-  //   }
-  // }
-
-  // selectAll() {
-  //   const items = this.items.filter((item) => {
-  //     return !this.selectStore.isSelect(item.id);
-  //   });
-  //   this.selectStore.selectAll(map(items, 'id'), items);
-  //   this.selectStore.globalCheck = true;
-  // }
-
-  // unselectAll() {
-  //   this.selectStore.unselectAll();
-  //   this.selectStore.globalCheck = false;
-  // }
-
-  // @autobind
-  // isIndeterminateGlobalSelect() {
-  //   return (
-  //     !!this.selectStore.ids.length &&
-  //     this.items.length !== this.selectStore.ids.length &&
-  //     union(this.items.map(i => i._id), this.selectStore.ids).length === this.items.length
-  //   );
-  // }
-
   /**
    * Пока выбирается только одно поле
    * Первый клик - равен -1, те сортирвка по возрастанию (возможно нужно вторым аргументов задавать)

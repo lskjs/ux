@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { inject } from 'mobx-react';
-import T from '../T';
 import DownloadIcon from 'react-icons2/mdi/download';
 import If from 'react-if';
+import T from '../T';
 
 import { contextToProps } from './List.context';
 

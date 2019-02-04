@@ -3,7 +3,6 @@ import { Form, Field } from 'formik';
 import Story from '../../../Story';
 import createForm from '../../createForm';
 import PercentSlider from './PercentSlider';
-import FormGroup from '../../FormGroup';
 import FormDebug from '../../FormDebug';
 
 const PercentSliderFormView = (props) => {
@@ -17,7 +16,6 @@ const PercentSliderFormView = (props) => {
 
 const PercentSliderForm = createForm({
   view: PercentSliderFormView,
-  FormGroup,
   initialValues: {
     slider: 10,
   },

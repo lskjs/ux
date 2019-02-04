@@ -4,7 +4,6 @@ import Story from '../../Story';
 import createForm from '../createForm';
 import Input from '../controls/Input';
 import Select from '../controls/Select';
-import FormGroup from '../FormGroup';
 import FormDebug from '../FormDebug';
 
 const InputFormView = (props) => {
@@ -20,7 +19,6 @@ const InputFormView = (props) => {
 
 const InputForm = createForm({
   view: InputFormView,
-  FormGroup,
   controls: {
     input: {
       title: 'Input',

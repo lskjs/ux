@@ -4,7 +4,6 @@ import { Button } from 'react-bootstrap';
 import Story from '../../../Story';
 import createForm from '../../createForm';
 import Textarea from './Textarea';
-import FormGroup from '../../FormGroup';
 import FormDebug from '../../FormDebug';
 
 const TextareaFormView = (props) => {
@@ -19,14 +18,13 @@ const TextareaFormView = (props) => {
 
 const TextareaForm = createForm({
   view: TextareaFormView,
-  FormGroup,
   controls: {
     textarea: {
       title: 'textarea',
       component: Textarea,
       type: 'textarea',
       minRows: 5,
-      placeholder: 'TextArea  ',
+      placeholder: 'TextArea',
     },
   },
 });

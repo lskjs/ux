@@ -3,7 +3,6 @@ import { Form, Field } from 'formik';
 import Story from '../../../Story';
 import createForm from '../../createForm';
 import PriceConverter from './PriceConverter';
-import FormGroup from '../../FormGroup';
 import FormDebug from '../../FormDebug';
 
 const PriceConverterFormView = (props) => {
@@ -17,7 +16,6 @@ const PriceConverterFormView = (props) => {
 
 const PriceConverterForm = createForm({
   view: PriceConverterFormView,
-  FormGroup,
   controls: {
     priceConverter: {
       title: 'PriceConverter',

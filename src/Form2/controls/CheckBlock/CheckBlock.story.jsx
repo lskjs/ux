@@ -4,7 +4,6 @@ import Story from '../../../Story';
 import createForm from '../../createForm';
 import InputComponent from '../Input';
 import CheckBlock from './CheckBlock';
-import FormGroup from '../../FormGroup';
 import FormDebug from '../../FormDebug';
 
 
@@ -19,7 +18,6 @@ const CheckBlockViewForm = (props) => {
 
 const CheckBlockForm = createForm({
   view: CheckBlockViewForm,
-  FormGroup,
   controls: {
     checkBlock: {
       title: 'checkBlock',

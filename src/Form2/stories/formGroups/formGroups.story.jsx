@@ -38,16 +38,14 @@ const FormExampleView = (props) => {
     values,
   } = props;
   return (
-    <Form>
-      <AntForm layout="horizontal">
-        <Field {...controls.input} />
-        <Field {...controls.input2} />
-        <Field {...controls.input3} />
-        <AntForm.Item>
-          <Button type="primary" onClick={handleSubmit}>Submit</Button>
-        </AntForm.Item>
-        <DEV json={values} />
-      </AntForm>
+    <Form className="ant-form ant-form-horizontal">
+      <Field {...controls.input} />
+      <Field {...controls.input2} />
+      <Field {...controls.input3} />
+      <AntForm.Item>
+        <Button type="primary" onClick={handleSubmit}>Submit</Button>
+      </AntForm.Item>
+      <DEV json={values} />
     </Form>
   );
 };

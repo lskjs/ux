@@ -3,7 +3,7 @@ import { observer, inject } from 'mobx-react';
 import PropTypes from 'prop-types';
 import filterProps from '../utils/filterProps';
 
-import Sticky from '../UI/atoms/Sticky';
+import Sticky from '../Sticky';
 
 @inject('listStore')
 @observer

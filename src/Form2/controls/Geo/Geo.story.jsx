@@ -1,9 +1,7 @@
 import React from 'react';
 import { Form, Field } from 'formik';
-import DEV from '../../../DEV';
 import Story from '../../../Story';
 import createForm from '../../createForm';
-import FormGroup from '../../FormGroup';
 import Geo from './Geo';
 import FormDebug from '../../FormDebug';
 
@@ -20,7 +18,6 @@ const GeoViewForm = (props) => {
 
 const GeoGoogleForm = createForm({
   view: GeoViewForm,
-  FormGroup,
   controls: {
     geo: {
       default: [-122.268783, 37.871263],
@@ -33,7 +30,6 @@ const GeoGoogleForm = createForm({
 
 const GeoMapboxForm = createForm({
   view: GeoViewForm,
-  FormGroup,
   controls: {
     geo: {
       default: [-122.268783, 37.871263],

@@ -4,7 +4,6 @@ import { Button } from 'react-bootstrap';
 import Story from '../../../Story';
 import createForm from '../../createForm';
 import InputComponent from '../../controls/Input';
-import LightFormGroup from '../../LightFormGroup';
 import DEV from '../../../DEV';
 
 
@@ -32,7 +31,6 @@ const ValidationView = (props) => {
 
 const Validation = createForm({
   view: ValidationView,
-  FormGroup: LightFormGroup,
   controls: {
     email: {
       title: 'email',

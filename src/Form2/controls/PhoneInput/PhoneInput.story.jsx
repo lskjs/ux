@@ -3,7 +3,6 @@ import { Form, Field } from 'formik';
 import Story from '../../../Story';
 import createForm from '../../createForm';
 import PhoneInput from './PhoneInput';
-import FormGroup from '../../FormGroup';
 import FormDebug from '../../FormDebug';
 
 import '../../../UI/molecules/PhoneInput/PhoneInput.g.css';
@@ -19,7 +18,6 @@ const PhoneInputFormView = (props) => {
 
 const PhoneInputForm = createForm({
   view: PhoneInputFormView,
-  FormGroup,
   controls: {
     phoneInput: {
       title: 'PhoneInput',

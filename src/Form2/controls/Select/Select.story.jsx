@@ -6,10 +6,8 @@ import CheckMarked from 'react-icons2/mdi/checkbox-marked';
 import RadioBlank from 'react-icons2/mdi/checkbox-blank-circle-outline';
 import RadioSelected from 'react-icons2/mdi/checkbox-marked-circle';
 import range from 'lodash/range';
-import random from 'lodash/random';
 import Story from '../../../Story';
 import createForm from '../../createForm';
-import FormGroup from '../../FormGroup';
 import FormDebug from '../../FormDebug';
 import Select from './Select';
 import FlagIcon from '../../../UI/organisms/FlagIcon';
@@ -61,7 +59,6 @@ const SelectFormView = (props) => {
 
 const SelectForm = createForm({
   view: SelectFormView,
-  FormGroup,
   controls: {
     select: {
       title: 'The Select',

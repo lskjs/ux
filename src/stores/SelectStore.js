@@ -13,8 +13,7 @@ export default class SelectStore extends Store {
     return this.list.length;
   }
 
-  findItemIndex(item = {}) {  //eslint-disable-line
-    return findIndex(this.items, {_id: item._id})
+  findItemIndex(item = {}) {
     return findIndex(this.items, pick(item, [this.idKey]));
   }
 
@@ -26,14 +25,11 @@ export default class SelectStore extends Store {
   toggle(item = {}) {
     const index = this.findItemIndex(item);
 
-    console.log('toggle', index, item);
     if (index >= 0) {
       this.items.splice(index, 1);
     } else {
       this.items.push(item);
     }
-    console.log('toggle', index, item, this.items);
-
   }
 
   globalIsChecked() {
@@ -51,7 +47,7 @@ export default class SelectStore extends Store {
     } else {
       this.listStore.items.forEach((item) => {
         const index = this.findItemIndex(item);
-        if (index >= 0) return; // don't allow duplicates
+        if (index >= 0) return;
         this.toggle(item);
       });
     }

@@ -14,23 +14,24 @@ class ListHeader extends Component {
       );
     }
     return (
-      <List.HeaderWrapper>
+      <React.Fragment>
         <If condition={show.search}>
-          <List.Search />
+          <List.HeaderWrapper>
+            <List.Search />
+          </List.HeaderWrapper>
         </If>
-        <List.Filter />
+        <List.HeaderWrapper >
+          <List.Filter />
+        </List.HeaderWrapper>
         <If condition={show.tags}>
-          <List.Tags />
+          <List.HeaderWrapper >
+            <List.Tags />
+          </List.HeaderWrapper>
         </If>
-        <If condition={show.sticky}>
-          <List.Sticky>
-            <List.HeaderRow />
-          </List.Sticky>
-        </If>
-        <If condition={!show.sticky}>
+        <List.HeaderWrapper sticky={show.sticky}>
           <List.HeaderRow />
-        </If>
-      </List.HeaderWrapper>
+        </List.HeaderWrapper>
+      </React.Fragment>
     );
   }
 }

@@ -4,7 +4,6 @@ import Promise from 'bluebird';
 import Story from '../../Story';
 import createForm from '../createForm';
 import Input from '../controls/Input';
-import FormGroup from '../FormGroup';
 import FormDebug from '../FormDebug';
 
 const InputFormView = (props) => {
@@ -19,7 +18,6 @@ const InputFormView = (props) => {
 
 const DemoForm = createForm({
   view: InputFormView,
-  FormGroup,
   controls: {
     login: {
       title: 'Login',

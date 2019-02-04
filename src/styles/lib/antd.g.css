@@ -18235,9 +18235,9 @@ li.ant-select-tree-treenode-disabled > .ant-select-tree-node-content-wrapper:hov
 .ant-form-item-children {
   position: relative;
 }
-.ant-form-item-children > div > div {
+/* .ant-form-item-children > div > div {
   width: 40%;
-}
+} */
 .ant-form-item-children > div > div > input {
   width: 100%;
   /* background-color: rgba(255, 255, 255, 0.44); */

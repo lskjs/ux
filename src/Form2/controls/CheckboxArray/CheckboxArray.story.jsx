@@ -7,7 +7,6 @@ import Checkbox from '../Checkbox/Checkbox';
 import CheckboxArray from './CheckboxArray';
 import CheckboxDeal from '../../../UI/molecules/CheckboxDeal/CheckboxDeal';
 
-import FormGroup from '../../FormGroup';
 import FormDebug from '../../FormDebug';
 
 const CheckboxArrayFormView = (props) => {
@@ -25,7 +24,6 @@ const CheckboxArrayFormView = (props) => {
 
 const CheckboxArrayForm = createForm({
   view: CheckboxArrayFormView,
-  FormGroup,
   controls: {
     checkboxArray: {
       title: 'checkboxArray',

@@ -5,7 +5,6 @@ import Story from '../../../Story';
 import { Table, Col, Row } from '../../../Table';
 
 import createForm from '../../createForm';
-import FormGroup from '../../FormGroup';
 // import FormDebug from '../../FormDebug';
 
 import Input from '../../controls/Input';
@@ -33,14 +32,12 @@ const FormExample2View = (props) => {
           </Col>
         </Row>
       </Table>
-      {/* <FormDebug {...props} /> */}
     </Form>
   );
 };
 
 export const FormExample2 = createForm({
   view: FormExample2View,
-  FormGroup,
   controls: {
     input: {
       title: 'input',

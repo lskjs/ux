@@ -4,7 +4,6 @@ import { Form, Field } from 'formik';
 import Story from '../../../Story';
 import createForm from '../../createForm';
 import PriceInput from './PriceInput';
-import FormGroup from '../../FormGroup';
 import FormDebug from '../../FormDebug';
 
 const PriceInputFormView = (props) => {
@@ -12,14 +11,12 @@ const PriceInputFormView = (props) => {
     <Form>
       <Field {...props.controls.priceInput} />
       <FormDebug {...props} />
-      {/* <Button onClick={handleSubmit}>Submit</Button> */}
     </Form>
   );
 };
 
 const PriceInputForm = createForm({
   view: PriceInputFormView,
-  FormGroup,
   controls: {
     priceInput: {
       title: 'PriceInput',

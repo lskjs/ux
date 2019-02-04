@@ -3,7 +3,6 @@ import { Form, Field } from 'formik';
 import Story from '../../../Story';
 import createForm from '../../createForm';
 import Image from './Image';
-import FormGroup from '../../FormGroup';
 import FormDebug from '../../FormDebug';
 
 const ImageFormView = (props) => {
@@ -17,7 +16,6 @@ const ImageFormView = (props) => {
 
 const ImageForm = createForm({
   view: ImageFormView,
-  FormGroup,
   controls: {
     image: {
       title: 'Image',

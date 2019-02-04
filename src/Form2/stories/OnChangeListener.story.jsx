@@ -2,7 +2,6 @@ import React from 'react';
 import { Form, Field } from 'formik';
 import Story from '../../Story';
 import createForm from '../createForm';
-import FormGroup from '../FormGroup';
 import Input from '../controls/Input';
 import FormDebug from '../FormDebug';
 
@@ -18,7 +17,6 @@ const OnChangeView = (props) => {
 
 const OnChangeForm = createForm({
   view: OnChangeView,
-  FormGroup,
   controls: {
     input: {
       title: 'Input',

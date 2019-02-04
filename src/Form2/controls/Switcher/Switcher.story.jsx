@@ -4,7 +4,6 @@ import { Button } from 'react-bootstrap';
 import Story from '../../../Story';
 import createForm from '../../createForm';
 import Switcher from './Switcher';
-import FormGroup from '../../FormGroup';
 import FormDebug from '../../FormDebug';
 
 const SwitcherFormView = (props) => {
@@ -12,14 +11,12 @@ const SwitcherFormView = (props) => {
     <Form>
       <Field {...props.controls.switcher} />
       <FormDebug {...props} />
-      <Button onClick={props.handleSubmit}>Submit</Button>
     </Form>
   );
 };
 
 const SwitcherForm = createForm({
   view: SwitcherFormView,
-  FormGroup,
   controls: {
     switcher: {
       title: 'switcher',

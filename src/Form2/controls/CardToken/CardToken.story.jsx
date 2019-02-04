@@ -3,7 +3,6 @@ import { Form, Field } from 'formik';
 import Story from '../../../Story';
 import createForm from '../../createForm';
 import CardToken from './CardToken';
-import FormGroup from '../../FormGroup';
 
 
 const CardTokenFormView = (props) => {
@@ -16,7 +15,6 @@ const CardTokenFormView = (props) => {
 
 const CardTokenForm = createForm({
   view: CardTokenFormView,
-  FormGroup,
   controls: {
     cardToken: {
       title: 'CardToken',

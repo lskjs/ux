@@ -4,7 +4,6 @@ import Button from '../../../Button';
 import Story from '../../../Story';
 import createForm from '../../createForm';
 import InputComponent from '../../controls/Input';
-import FormGroup from '../../FormGroup';
 import DEV from '../../../DEV';
 
 
@@ -52,7 +51,6 @@ const checkEmail = async (data) => {
 
 const ValidationAsync = createForm({
   view: ValidationView,
-  FormGroup,
   controls: {
     email: {
       title: 'email',

@@ -3,7 +3,6 @@ import { Form, Field, FastField } from 'formik';
 import Story from '../../../Story';
 import createForm from '../../createForm';
 import Input from './Input';
-import FormGroup from '../../FormGroup';
 import FormDebug from '../../FormDebug';
 
 const InputFormView = (props) => {
@@ -21,7 +20,6 @@ const InputFormView = (props) => {
 
 const InputForm = createForm({
   view: InputFormView,
-  FormGroup,
   initialValues: {
     input: 'createForm.initialValues',
   },
@@ -40,14 +38,14 @@ const InputForm = createForm({
     input3: {
       title: 'input with regex',
       component: Input,
-      placeholder: 'Only digits',
+      help: 'Only digits',
       regex: /\d*\.?\d*/,
     },
     input4: {
       title: 'input with regex',
       component: Input,
-      placeholder: 'Only english',
-      regex: /^[a-zA-Z ]*/,
+      help: 'Only english',
+      regex: /[a-zA-Z ]*/,
     },
   },
 });

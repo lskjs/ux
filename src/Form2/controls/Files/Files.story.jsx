@@ -3,7 +3,6 @@ import { Form, Field } from 'formik';
 import Story from '../../../Story';
 import createForm from '../../createForm';
 import Files from './Files';
-import FormGroup from '../../FormGroup';
 import FormDebug from '../../FormDebug';
 
 const FilesFormView = (props) => {
@@ -17,7 +16,6 @@ const FilesFormView = (props) => {
 
 const FilesForm = createForm({
   view: FilesFormView,
-  FormGroup,
   controls: {
     files: {
       title: 'Files',

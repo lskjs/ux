@@ -3,7 +3,6 @@ import { Form, Field } from 'formik';
 import Story from '../../Story';
 import createForm from '../createForm';
 import Input from '../controls/Input';
-import FormGroup from '../FormGroup';
 import FormDebug from '../FormDebug';
 
 const InputFormView = (props) => {
@@ -17,7 +16,6 @@ const InputFormView = (props) => {
 
 const InputForm = createForm({
   view: InputFormView,
-  FormGroup,
   controls: {
     input: {
       title: 'Input',
@@ -29,7 +27,6 @@ const InputForm = createForm({
 
 const InputForm2 = createForm({
   view: InputFormView,
-  FormGroup,
   controls: {
     input: {
       title: 'Input',
@@ -41,7 +38,6 @@ const InputForm2 = createForm({
 
 const InputForm3 = createForm({
   view: InputFormView,
-  FormGroup,
   controls: {
     input: {
       title: 'Input',

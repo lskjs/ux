@@ -8,7 +8,6 @@ import Input from '../controls/Input';
 import Select from '../controls/Select';
 import Tags from '../controls/Tags';
 import FormDebug from '../FormDebug';
-import FormGroup from '../FormGroup';
 
 const InputFormView = (props) => {
   return (
@@ -46,7 +45,6 @@ const controls = {
 };
 const SampleForm = createForm({
   view: InputFormView,
-  FormGroup,
   controls,
 });
 
