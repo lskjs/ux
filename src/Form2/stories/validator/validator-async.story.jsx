@@ -1,38 +1,24 @@
 import React from 'react';
 import { Form, Field } from 'formik';
-import Button from '../../../Button';
 import Story from '../../../Story';
 import createForm from '../../createForm';
 import InputComponent from '../../controls/Input';
-import DEV from '../../../DEV';
+import FormDebug from '../../FormDebug';
 
 
 const ValidationView = (props) => {
   const {
-    handleSubmit,
     isSubmitting,
     controls,
-    errors,
-    values,
   } = props;
   return (
     <Form>
       <Field {...controls.email} disabled={isSubmitting} />
       <Field {...controls.password} disabled={isSubmitting} />
-      <Button
-        paint="primary"
-        onClick={handleSubmit}
-        disabled={isSubmitting}
-      >
-        SUBMIT
-      </Button>
-      <br />
-      <br />
-      <br />
       <p>
         Existing emails: some@email.com, someasync@email.com
       </p>
-      <DEV json={{ isSubmitting, errors, values }} />
+      <FormDebug {...props} />
     </Form>
   );
 };
@@ -90,7 +76,7 @@ const ValidationAsync = createForm({
 
 export default ({ storiesOf }) =>
   storiesOf('Form2/validation', module)
-    .add('Custom async validation', () => {
+    .add('async validator', () => {
       return (
         <Story>
           <ValidationAsync

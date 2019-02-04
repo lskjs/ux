@@ -73,8 +73,6 @@ class SearchBox extends Component {
 export default SearchBox;
 
 
-
-
 // class SearchBox {
 //   constructor(props) {
 //     super(props);

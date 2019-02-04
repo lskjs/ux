@@ -1,30 +1,21 @@
 import React from 'react';
 import { Form, Field } from 'formik';
-import { Button } from 'react-bootstrap';
 import Story from '../../../Story';
 import createForm from '../../createForm';
 import InputComponent from '../../controls/Input';
-import DEV from '../../../DEV';
+import FormDebug from '../../FormDebug';
 
 
 const ValidationView = (props) => {
   const {
-    handleSubmit,
     isSubmitting,
     controls,
-    errors,
   } = props;
-  console.log({ props });
   return (
     <Form>
       <Field {...controls.email} disabled={isSubmitting} />
       <Field {...controls.password} disabled={isSubmitting} />
-      <Button onClick={handleSubmit} disabled={isSubmitting}>SUBMIT</Button>
-      <br />
-      <br />
-      <br />
-      props.errors:
-      <DEV json={errors} />
+      <FormDebug {...props} />
     </Form>
   );
 };

@@ -35,6 +35,7 @@ export default ({ storiesOf }) =>
       return (
         <Story>
           <DemoForm
+            onSubmit={(values) => { console.log({ values }); }}
           />
         </Story>
       );
