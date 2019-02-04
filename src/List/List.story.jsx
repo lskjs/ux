@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import range from 'lodash/range';
 import random from 'lodash/random';
 import sample from 'lodash/sample';
+import omit from 'lodash/omit';
 import { observer } from 'mobx-react';
 import { css } from 'emotion';
 import cx from 'classnames';
 import Promise from 'bluebird';
 import axios from 'axios';
-import Checkbox from 'antd/lib/checkbox';
 
 // import DEV from '../DEV';
 import Story from '../Story';
@@ -48,6 +48,7 @@ const api = {
       count,
       data: range(skip, skip + limit).map(id => ({
         id,
+        _id: id,
         title: `User ${id + 1}`,
         rating: random(id, count, true).toFixed(2),
         role: roles(),
@@ -161,30 +162,10 @@ const EditItem = observer(({ item = {} }) => (
   </Row>
 ));
 
-const SmartCheckbox = observer(({ item }) => {
-  if (!item) {
-    return (
-      <Checkbox
-        indeterminate={listStore.isIndeterminateGlobalSelect()}
-        checked={listStore.selectStore.globalCheck}
-        onClick={listStore.toggleSelectAll}
-      />
-    );
-  }
-  return (
-    <Checkbox
-      checked={listStore.selectStore.isSelect(item.id)}
-      onClick={() => {
-        listStore.toggleSelect(item);
-      }}
-    />
-  );
-});
-
 const SelectItem = observer(({ item = {} }) => (
   <Row className={cx([styleHeight, itemStyle])}>
     <Col index={0}>
-      <SmartCheckbox item={item} />
+      <List.Checkbox item={item} />
     </Col>
     <Col index={1}>
       {item.id} - {Math.random()}
@@ -201,7 +182,7 @@ const SelectItem = observer(({ item = {} }) => (
 const SelectHeaderItem = observer(({ toggleSort, sort = {} }) => (
   <Row className={styleHeight}>
     <Col index={0}>
-      <SmartCheckbox />
+      <List.Checkbox global />
     </Col>
     <Col index={1}>
       <List.SortHeader value={sort.id} onClick={() => toggleSort('id')}>
@@ -256,7 +237,8 @@ class Debug extends Component {
         <button onClick={() => store.fetch({ skip: 40, limit: 5, cache: true })}>
           fetch 40-45 cache
         </button>
-        <ObserverDEV json={store} />
+        <ObserverDEV json={omit(store, ['selectStore'])} />
+        <ObserverDEV json={omit(store.selectStore, ['listStore'])} />
       </div>
     );
   }

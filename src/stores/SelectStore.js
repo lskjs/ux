@@ -1,99 +1,67 @@
-import { observable, toJS, action } from 'mobx';
-import isPlainObject from 'lodash/isPlainObject';
+import { observable, action } from 'mobx';
+import findIndex from 'lodash/findIndex';
+import pick from 'lodash/pick';
+import unionBy from 'lodash/unionBy';
+import omit from 'lodash/omit';
+import Store from './Store';
 
-const getItemAndId = (...args) => {
-  let id,
-    item;
-  if (isPlainObject(args[0])) {
-    id = args[0].id;
-    item = args[0];
-  } else {
-    id = args[0];
-    item = args[1];
-  }
-  return { id, item };
-};
-export default class SelectStore {
-  // constructor(state = {}) {
-  //   if (state) this.setState(state);
-  // }
+export default class SelectStore extends Store {
+  idKey = '_id'
+  @observable.shallow items = []; // Массив объектов
 
-  @observable list = []; // Массив объектов
-  @observable ids = []; // Массив ID
-  @observable globalCheck = false;
-  // Добавить item
-  @action.bound
-  select(...args) {
-    const { item, id } = getItemAndId(...args);
-    this.list.push(item);
-    this.ids.push(id);
-  }
-  @action
-  selectAll(ids, items) {
-    ids.forEach((id, i) => {
-      this.ids.push(id);
-      this.list.push(items[i]);
-    });
-  }
-  // Убрать item
-  @action.bound
-  unselect(...args) {
-    const { id } = getItemAndId(...args);
-
-    const i = this.getItemIndex(id);
-    if (i < 0) return;
-    this.list.splice(i, 1);
-    this.ids.splice(i, 1);
-  }
-  // Убрать все items
-  unselectAll() {
-    this.list.clear();
-    this.ids.clear();
-  }
-
-  @action
-  toggle(item) {
-    const isExist = this.isSelect(item.id);
-    if (isExist) {
-      this.unselect(item.id);
-    } else {
-      this.select(item.id, item);
-    }
-  }
-  //  checked={pageStore.selectStore.ids.indexOf(item._id) !== -1}
-  //  checked={selectStore.isSelect(item._id)}
-  //  // onClick={this.toggle}
-  //  onClick={() => selectStore.toggle(item._id, item)}
-  // onClick={() => {
-  //   const isExist = pageStore.selectStore.isSelect(item._id);
-  //   if (isExist) {
-  //     pageStore.selectStore.unselect(item._id);
-  //   } else {
-  //     pageStore.selectStore.select(item._id, item);
-  //   }
-  // }}
-
-  // Проверить есть ли item в списке
-  // @TODO: Andruxa, спросить у Андрея как лучше
-  isSelect(...args) {
-    const { id } = getItemAndId(...args);
-    return this.ids.indexOf(id) !== -1;
-  }
-  // Взять все items
-  getItems() {
-    return this.list;
-  }
-  // Взять число элементов
   getCount() {
     return this.list.length;
   }
-  getItemIndex(id) {
-    return this.ids.indexOf(id);
+
+  findItemIndex(item = {}) {  //eslint-disable-line
+    return findIndex(this.items, {_id: item._id})
+    return findIndex(this.items, pick(item, [this.idKey]));
   }
-  getIds() {
-    return toJS(this.ids);
+
+  isChecked(item) {
+    return this.findItemIndex(item) >= 0;
   }
-  toJS() {
-    return toJS(this.list);
+
+  @action
+  toggle(item = {}) {
+    const index = this.findItemIndex(item);
+
+    console.log('toggle', index, item);
+    if (index >= 0) {
+      this.items.splice(index, 1);
+    } else {
+      this.items.push(item);
+    }
+    console.log('toggle', index, item, this.items);
+
+  }
+
+  globalIsChecked() {
+    return (
+      this.items.length > 0 &&
+      this.items.length >= this.listStore.items.length &&
+      unionBy(this.items, this.listStore.items, this.idKey).length === this.items.length
+    );
+  }
+
+  @action.bound
+  globalToggle() {
+    if (this.globalIsChecked()) {
+      this.items.clear();
+    } else {
+      this.listStore.items.forEach((item) => {
+        const index = this.findItemIndex(item);
+        if (index >= 0) return; // don't allow duplicates
+        this.toggle(item);
+      });
+    }
+  }
+
+  globalIsIndeterminate() {
+    return this.items.length > 0 && !this.globalIsChecked();
+  }
+
+  toJSON() {
+    return omit(this, ['listStore']);
   }
 }
