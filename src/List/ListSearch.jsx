@@ -15,7 +15,7 @@ class ListSearch extends Component {
     } = this.props;
     return (
       <List.SearchWrapper
-        current={10}
+        current={listStore.items.length}
         max={listStore.count}
         debounceTimeout={100}
         onChange={e => listStore.setSearch(e.target.value)}
