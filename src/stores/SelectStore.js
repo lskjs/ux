@@ -21,6 +21,10 @@ export default class SelectStore extends Store {
     return this.findItemIndex(item) >= 0;
   }
 
+  unselectAll() {
+    this.items.clear();
+  }
+
   @action
   toggle(item = {}) {
     const index = this.findItemIndex(item);
