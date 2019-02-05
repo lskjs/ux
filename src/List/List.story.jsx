@@ -380,6 +380,16 @@ export default ({ storiesOf }) => {
         <Debug store={listStore} />
       </Story>
     ))
+    .add('List.Empty', () => (
+      <Story>
+        <List
+          listStore={listStore}
+        >
+          <List.Empty type={1} />
+        </List>
+        <Debug store={listStore} />
+      </Story>
+    ))
     .add('custom wrappers', () => (
       <Story devtools style={{ padding: 24 }}>
         <List

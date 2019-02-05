@@ -11,7 +11,6 @@ import Link from '../Link';
 @observer
 class PageBreadcrumbs extends Component {
   render() {
-    return null;
     const {
       children,
       page,
@@ -32,29 +31,18 @@ class PageBreadcrumbs extends Component {
       key,
       title: meta.title,
       href: meta.url,
+      path: meta.url,
     }));
     items = items.slice(omitFirst ? 1 : 0, omitLast ? items.length - 1 : items.length);
-
-    console.log({ items });
 
     return (
       <Breadcrumbs {...props}>
         {children || (
           <Breadcrumb
             itemRender={(route) => {
-              const { title, href } = route;
-              if (href) {
-                return (
-                  <Link href={href}>
-                    {title}
-                  </Link>
-                );
-              }
-              return (
-                <span>
-                  {title}
-                </span>
-              );
+              const { title, path } = route;
+              if (!path) return title;
+              return (<Link href={path}>{title}</Link>);
             }}
             routes={items}
           />

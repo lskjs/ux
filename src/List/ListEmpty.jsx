@@ -11,7 +11,8 @@ import EmptyContainer from '../UI/molecules/EmptyContainer';
 @observer
 class ListEmpty extends Component {
   getType() { //eslint-disable-line
-    const { listStore } = this.props;
+    const { listStore, type } = this.props;
+    if (type) return type;
     if (!listStore.fetchedAt) {
       return 1;
       // 1) совсем пусто, первый раз заходим

@@ -30,23 +30,22 @@ class ErrorComponent extends PureComponent {
       subtitle,
       actions,
       footer,
+      ...props
     } = this.props;
     return (
-      <React.Fragment>
-        <Wrapper>
-          <If condition={image}>
-            <ImageWrapper>
-              {image}
-            </ImageWrapper>
-          </If>
-          <CTACentered
-            title={title}
-            subtitle={subtitle}
-            actions={actions}
-            footer={footer}
-          />
-        </Wrapper>
-      </React.Fragment>
+      <Wrapper {...props}>
+        <If condition={image}>
+          <ImageWrapper>
+            {image}
+          </ImageWrapper>
+        </If>
+        <CTACentered
+          title={title}
+          subtitle={subtitle}
+          actions={actions}
+          footer={footer}
+        />
+      </Wrapper>
     );
   }
 }
