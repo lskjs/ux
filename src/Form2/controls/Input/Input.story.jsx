@@ -28,6 +28,7 @@ const InputForm = createForm({
       title: 'input',
       component: Input,
       placeholder: 'input placeholder',
+      required: true,
     },
     input2: {
       title: 'input2',

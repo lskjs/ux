@@ -25,6 +25,7 @@ const TextareaForm = createForm({
       type: 'textarea',
       minRows: 5,
       placeholder: 'TextArea',
+      required: true,
     },
   },
 });
