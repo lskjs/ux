@@ -26,3 +26,15 @@ export const Muted = styled('div')`
   opacity: .7;
   font-style: italic;
 `;
+
+export const Wrapper = styled('div')`
+  text-align: ${(p) => {
+    switch (p.align) {
+      case 'left': return 'left';
+      case 'right': return 'right';
+      case 'center': return 'center';
+      default: return 'center';
+    }
+  }}
+  
+`;
