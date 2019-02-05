@@ -24,7 +24,7 @@ class Page extends PureComponent {
 
   static propTypes = {
     children: PropTypes.any,
-    container: PropTypes.boolean,
+    container: PropTypes.bool,
   }
   static defaultProps = {
     children: null,

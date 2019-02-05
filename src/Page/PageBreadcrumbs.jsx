@@ -11,18 +11,16 @@ import Link from '../Link';
 @observer
 class PageBreadcrumbs extends Component {
   render() {
+    return null;
     const {
       children,
       page,
       reverse,
       omitFirst,
       omitLast,
-      // omitFirst = true,
-      // omitLast = true,
       items: rawItems,
       ...props
     } = this.props;
-    // console.log({ page });
     const breadcrumbs = get(page, 'state.meta.show.breadcrumbs', true);
     if (!breadcrumbs) return null;
     let metas = get(page, 'state.metas');
@@ -35,25 +33,10 @@ class PageBreadcrumbs extends Component {
       title: meta.title,
       href: meta.url,
     }));
-    // console.log(111, {items});
     items = items.slice(omitFirst ? 1 : 0, omitLast ? items.length - 1 : items.length);
-    // console.log(222, {items});
-    // [
-    //   {
-    //     path: '',
-    //     title: 'Главная',
-    //   },
-    //   {
-    //     path: 'cabinet',
-    //     title: 'Панель управления',
-    //   },
-    //   {
-    //     path: 'events',
-    //     title: 'Мероприятия',
-    //   },
-    // ];
 
-    // const data = children;
+    console.log({ items });
+
     return (
       <Breadcrumbs {...props}>
         {children || (

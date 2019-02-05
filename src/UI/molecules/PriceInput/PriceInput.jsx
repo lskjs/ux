@@ -32,11 +32,11 @@ class PriceInput extends Component {
     max: PropTypes.number,
     // value: PropTypes.number,
     rate: PropTypes.number,
-    dots: PropTypes.boolean,
-    single: PropTypes.boolean,
-    disabled: PropTypes.boolean,
-    reverse: PropTypes.boolean,
-    required: PropTypes.boolean,
+    dots: PropTypes.bool,
+    single: PropTypes.bool,
+    disabled: PropTypes.bool,
+    reverse: PropTypes.bool,
+    required: PropTypes.bool,
     onChange: PropTypes.string,
   };
   static defaultProps = {
