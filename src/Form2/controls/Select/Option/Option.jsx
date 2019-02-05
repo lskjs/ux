@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import { withTheme } from 'emotion-theming';
-// import MiniUser from './MiniUser';
 // import PropTypes from 'prop-types';
 import { OptionItem, Image, IconWrapper, Title } from './Option.styles';
 

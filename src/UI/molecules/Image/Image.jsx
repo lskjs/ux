@@ -69,6 +69,7 @@ class Image extends PureComponent {
     return Object.assign({
       boxSizing: 'border-box',
       maxWidth: '100%',
+      maxHeight: 500,
       objectFit: 'cover',
       display: 'flex',
       justifyContent: 'center',

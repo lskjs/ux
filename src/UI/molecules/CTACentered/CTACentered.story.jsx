@@ -17,7 +17,15 @@ export default ({ storiesOf }) => (
     .add('Default', () => (
       <div style={{ padding: 60 }}>
         <ThemeInjector>
-          <CTACentered {...articles[0]} />
+          <CTACentered {...articles[0]} align="left" />
+          <br />
+          <br />
+          <br />
+          <CTACentered {...articles[0]} align="center" />
+          <br />
+          <br />
+          <br />
+          <CTACentered {...articles[0]} align="right" />
         </ThemeInjector>
       </div>
     ))

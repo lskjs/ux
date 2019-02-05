@@ -34,6 +34,9 @@ class Button extends PureComponent {
       'success',
       'facebbok',
       'twitter',
+      'vk',
+      'youtube',
+      'telegram',
     ]),
     state: PropTypes.oneOf([
       'processing', 'progress',

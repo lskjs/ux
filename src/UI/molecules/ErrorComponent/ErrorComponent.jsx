@@ -15,6 +15,7 @@ class ErrorComponent extends PureComponent {
     actions: PropTypes.any,
     footer: PropTypes.string,
     image: PropTypes.any,
+    align: PropTypes.string,
   };
   static defaultProps = {
     title: null,
@@ -22,6 +23,7 @@ class ErrorComponent extends PureComponent {
     actions: null,
     footer: null,
     image: null,
+    align: null,
   };
   render() {
     const {
@@ -30,6 +32,7 @@ class ErrorComponent extends PureComponent {
       subtitle,
       actions,
       footer,
+      align,
       ...props
     } = this.props;
     return (
@@ -44,6 +47,7 @@ class ErrorComponent extends PureComponent {
           subtitle={subtitle}
           actions={actions}
           footer={footer}
+          align={align}
         />
       </Wrapper>
     );

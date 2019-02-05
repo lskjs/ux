@@ -18,6 +18,10 @@ export const OptionItem = styled('button')`
   line-height: 3.6;
   letter-spacing: -0.1px;
   color: #4a4a4a;
+  &:focus{
+    background-color: #eff4fa !important;
+    color: #4a4a4a !important;
+  }
   &:hover {
     background-color: #eff4fa !important;
     color: #4a4a4a !important;
