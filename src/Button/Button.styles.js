@@ -402,6 +402,48 @@ const twitterTheme = ({ theme }) => css`
   }
 `;
 
+const youtubeTheme = ({ theme }) => css`
+  color: ${theme.colors.white};
+  background-color: ${theme.colors.youtube};
+  &:hover {
+    color: ${theme.colors.white};
+    background-color: ${theme.colors.danger};
+  }
+
+  &:active {
+    color: ${theme.colors.white};
+    background-color: ${theme.colors.danger};
+  }
+`;
+
+const vkTheme = ({ theme }) => css`
+  color: ${theme.colors.white};
+  background-color: ${theme.colors.vk};
+  &:hover {
+    color: ${theme.colors.white};
+    background-color: ${theme.colors.primary};
+  }
+
+  &:active {
+    color: ${theme.colors.white};
+    background-color: ${theme.colors.primary};
+  }
+`;
+
+const telegramTheme = ({ theme }) => css`
+  color: ${theme.colors.white};
+  background-color: ${theme.colors.telegram};
+  &:hover {
+    color: ${theme.colors.white};
+    background-color: ${theme.colors.primary};
+  }
+
+  &:active {
+    color: ${theme.colors.white};
+    background-color: ${theme.colors.primary};
+  }
+`;
+
 const infoTextTheme = ({ theme }) => css`
   color: ${theme.colors.primary};
   background-color: transparent;
@@ -589,6 +631,9 @@ export const Btn = styled(filteredTag)`
         case 'success': return successSolidTheme;
         case 'facebook': return facebookTheme;
         case 'twitter': return twitterTheme;
+        case 'youtube': return youtubeTheme;
+        case 'vk': return vkTheme;
+        case 'telegram': return telegramTheme;
         default: return defaultSolidTheme;
       }
     } else if (props.view === 'text') {
@@ -600,6 +645,9 @@ export const Btn = styled(filteredTag)`
         case 'success': return successTextTheme;
         case 'facebook': return facebookTheme;
         case 'twitter': return twitterTheme;
+        case 'youtube': return youtubeTheme;
+        case 'vk': return vkTheme;
+        case 'telegram': return telegramTheme;
         default: return defaultTextTheme;
       }
     } else if (props.view === 'transparent') {
@@ -735,6 +783,9 @@ export const State = styled('div')`
       case 'success': return successSolidTheme;
       case 'facebook': return facebookTheme;
       case 'twitter': return twitterTheme;
+      case 'youtube': return youtubeTheme;
+      case 'vk': return vkTheme;
+      case 'telegram': return telegramTheme;
       default: return defaultSolidTheme;
     }
   }}
