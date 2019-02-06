@@ -82,7 +82,31 @@ export default ({ storiesOf, action }) => {
          )}
         </Modal>
       </Story>
-    ));
+    ))
+    .add('5. Children with random div wrappers', () => (
+      <Story>
+        <div>
+          <Title>title</Title>
+          <Subtitle>Subtitle</Subtitle>
+          <div>
+            <Description>Description</Description>
+            <Help>Help</Help>
+            <Image src="https://picsum.photos/1280/720/?random" />
+            <Content>
+              content
+            </Content>
+          </div>
+          <Footer>
+            <Button
+              paint="primary"
+            >
+              OK
+            </Button>
+          </Footer>
+
+        </div>
+      </Story>
+    ))
   // .add('2. With title and wrap', () => (
   //   <Story>
   //     <Modal>
