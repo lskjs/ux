@@ -374,76 +374,6 @@ const warningTextTheme = ({ theme }) => css`
   }
 `;
 
-const facebookTheme = ({ theme }) => css`
-  color: ${theme.colors.white};
-  background-color: ${theme.colors.facebook};
-  &:hover {
-    color: ${theme.colors.white};
-    background-color: ${theme.colors.primary};
-  }
-
-  &:active {
-    color: ${theme.colors.white};
-    background-color: ${theme.colors.primary};
-  }
-`;
-
-const twitterTheme = ({ theme }) => css`
-  color: ${theme.colors.white};
-  background-color: ${theme.colors.twitter};
-  &:hover {
-    color: ${theme.colors.white};
-    background-color: ${theme.colors.primary};
-  }
-
-  &:active {
-    color: ${theme.colors.white};
-    background-color: ${theme.colors.primary};
-  }
-`;
-
-const youtubeTheme = ({ theme }) => css`
-  color: ${theme.colors.white};
-  background-color: ${theme.colors.youtube};
-  &:hover {
-    color: ${theme.colors.white};
-    background-color: ${theme.colors.danger};
-  }
-
-  &:active {
-    color: ${theme.colors.white};
-    background-color: ${theme.colors.danger};
-  }
-`;
-
-const vkTheme = ({ theme }) => css`
-  color: ${theme.colors.white};
-  background-color: ${theme.colors.vk};
-  &:hover {
-    color: ${theme.colors.white};
-    background-color: ${theme.colors.primary};
-  }
-
-  &:active {
-    color: ${theme.colors.white};
-    background-color: ${theme.colors.primary};
-  }
-`;
-
-const telegramTheme = ({ theme }) => css`
-  color: ${theme.colors.white};
-  background-color: ${theme.colors.telegram};
-  &:hover {
-    color: ${theme.colors.white};
-    background-color: ${theme.colors.primary};
-  }
-
-  &:active {
-    color: ${theme.colors.white};
-    background-color: ${theme.colors.primary};
-  }
-`;
-
 const infoTextTheme = ({ theme }) => css`
   color: ${theme.colors.primary};
   background-color: transparent;
@@ -489,18 +419,49 @@ const viewTransparentDisabled = css`
 `;
 
 
-const transparentTheme = css`
-  color: #fff;
+const viewTransparentDisabledDark = css`
+  color: rgba(0, 0, 0, 0.5) !important;
+  background-color: transparent !important;
+  &:hover,
+  &:active {
+    color: rgba(0, 0, 0, 0.5) !important;
+    background-color: transparent !important;
+  }
+  &:focus {
+    color: rgba(0, 0, 0, 0.5) !important;
+    background-color: rgba(0, 0, 0, 0.16) !important;
+  }
+`;
+
+
+
+const transparentTheme = props => css`
+  color: ${props.theme.colors.white};
   background-color: transparent;
 
   &:hover {
-    color: #fff;
+    color: ${props.theme.colors.white};
     background-color: rgba(255, 255, 255, 0.16);
   }
 
   &:active {
-    color: #fff;
+    color: ${props.theme.colors.white};
     background-color: rgba(255, 255, 255, 0.16);
+  }
+`;
+
+const transparentThemeDark = props => css`
+  color: ${props.theme.colors.main};
+  background-color: transparent;
+
+  &:hover {
+    color: ${props.theme.colors.main};
+    background-color: rgba(0, 0, 0, 0.16);
+  }
+
+  &:active {
+    color: ${props.theme.colors.main};
+    background-color: rgba(0, 0, 0, 0.16);
   }
 `;
 
@@ -620,6 +581,7 @@ export const Btn = styled(filteredTag)`
         case 'solid': return viewSolidDisabled;
         case 'text': return viewTextDisabled;
         case 'transparent': return viewTransparentDisabled;
+        case 'transparentDark': return viewTransparentDisabledDark;
         default: return '';
       }
     } else if (props.view === 'solid') {
@@ -629,11 +591,8 @@ export const Btn = styled(filteredTag)`
         case 'warning': return warningSolidTheme;
         case 'danger': return dangerSolidTheme;
         case 'success': return successSolidTheme;
-        case 'facebook': return facebookTheme;
-        case 'twitter': return twitterTheme;
-        case 'youtube': return youtubeTheme;
-        case 'vk': return vkTheme;
-        case 'telegram': return telegramTheme;
+        case 'transparent': return transparentTheme;
+        case 'transparentDark': return transparentThemeDark;
         default: return defaultSolidTheme;
       }
     } else if (props.view === 'text') {
@@ -643,11 +602,8 @@ export const Btn = styled(filteredTag)`
         case 'warning': return warningTextTheme;
         case 'danger': return dangerTextTheme;
         case 'success': return successTextTheme;
-        case 'facebook': return facebookTheme;
-        case 'twitter': return twitterTheme;
-        case 'youtube': return youtubeTheme;
-        case 'vk': return vkTheme;
-        case 'telegram': return telegramTheme;
+        case 'transparent': return transparentTheme;
+        case 'transparentDark': return transparentThemeDark;
         default: return defaultTextTheme;
       }
     } else if (props.view === 'transparent') {
@@ -781,11 +737,6 @@ export const State = styled('div')`
       case 'warning': return warningSolidTheme;
       case 'danger': return dangerSolidTheme;
       case 'success': return successSolidTheme;
-      case 'facebook': return facebookTheme;
-      case 'twitter': return twitterTheme;
-      case 'youtube': return youtubeTheme;
-      case 'vk': return vkTheme;
-      case 'telegram': return telegramTheme;
       default: return defaultSolidTheme;
     }
   }}

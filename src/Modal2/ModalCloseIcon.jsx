@@ -1,13 +1,13 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import Close from 'react-icons2/mdi/close';
 
 import Button from '../Button';
-import closeButtonStyle from '../UI/molecules/Modal/Modal.styles';
+import { closeButtonStyle } from './Modal2.styles';
 
 export default props => (
   <Button
     type="button"
-    paint="primary"
+    paint="transparent"
     icon={<Close />}
     className={closeButtonStyle}
     {...props}

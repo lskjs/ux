@@ -1,162 +1,233 @@
 import React, { Component } from 'react';
-import Modal, { Title, Subtitle, Description, Image, Help, Content, Footer } from './Modal2';
+import Modal from './Modal2';
 import Story from '../Story';
 import Button from '../Button';
 
+const {
+  Title, Subtitle, Description, Image, Help, Content, Footer,
+} = Modal;
+
+const lorem = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
+
 export default ({ storiesOf, action }) => {
   return storiesOf('Modal2', module)
-    .add('1. Widthout wrap', () => (
+    .add('1. Easy use', () => (
       <Story>
         <Modal
+          size="small"
           trigger="trigger"
           title="title"
+          subtitle="subtitle"
+          image="https://picsum.photos/1280/720/?random"
+          content="content"
+          footer="footer"
+          onClose={() => console.log('onClose')}
+          onOpen={() => console.log('onOpen')}
         />
       </Story>
     ))
-    .add('4. Widthout wrap', () => (
+    .add('2. defaultVisible', () => (
       <Story>
         <Modal
+          size="small"
           trigger="trigger"
           title="title"
-          defaultVisible={1}
+          subtitle="subtitle"
+          image="https://picsum.photos/1280/720/?random"
+          content="content"
+          footer="footer"
+          defaultVisible
         />
       </Story>
     ))
-    .add('2. Widthout wrap', () => (
+    .add('3. Children', () => (
       <Story>
         <Modal
           size="small"
           defaultVisible
-          onClose={() => console.log('onClose')}
+        >
+          <Title>title</Title>
+          <Subtitle>Subtitle</Subtitle>
+          <Description>Description</Description>
+          <Help>Help</Help>
+          <Image src="https://picsum.photos/1280/720/?random" />
+          <Content>
+            content
+          </Content>
+          <Footer>
+            <Button
+              paint="primary"
+            >
+              OK
+            </Button>
+          </Footer>
+        </Modal>
+      </Story>
+    ))
+    .add('4. Children as function', () => (
+      <Story>
+        <Modal
+          size="small"
+          defaultVisible
         >
           {({ modal }) => (
             <React.Fragment>
-              <Modal.Title>title</Modal.Title>
-              <Modal.Subtitle>Subtitle</Modal.Subtitle>
-              <Modal.Description>Description</Modal.Description>
-              <Modal.Help>Help</Modal.Help>
-              <Modal.Image src="https://picsum.photos/1280/720/?random" />
-              <Modal.Content>
+              <Title>title</Title>
+              <Subtitle>Subtitle</Subtitle>
+              <Description>Description</Description>
+              <Help>Help</Help>
+              <Image src="https://picsum.photos/1280/720/?random" />
+              <Content>
                 content
-              </Modal.Content>
-              <Modal.Footer>
+              </Content>
+              <Footer>
                 <Button
                   paint="primary"
                   onClick={() => modal.close()}
                 >
                   OK
                 </Button>
-              </Modal.Footer>
+              </Footer>
             </React.Fragment>
          )}
         </Modal>
       </Story>
     ))
-    .add('3. Widthout modal', () => (
+    .add('5. Children with random div wrappers', () => (
       <Story>
-        <Modal.Title>title</Modal.Title>
-        <Modal.Subtitle>Subtitle</Modal.Subtitle>
-        <Modal.Description>Description</Modal.Description>
-        <Modal.Help>Help</Modal.Help>
-        <Modal.Image src="https://picsum.photos/1280/720/?random" />
-        <Modal.Content>
-          content
-        </Modal.Content>
-        <Modal.Footer>
-          <Button
-            paint="primary"
-          >
-            OK
-          </Button>
-        </Modal.Footer>
+        <Modal
+          size="small"
+          defaultVisible
+        >
+          <Title>title</Title>
+          <Subtitle>Subtitle</Subtitle>
+          <div>
+            <Description>Description</Description>
+            <Help>Help</Help>
+            <Image src="https://picsum.photos/1280/720/?random" />
+            <Content>
+              content
+            </Content>
+          </div>
+          <Footer>
+            <Button
+              paint="primary"
+            >
+              OK
+            </Button>
+          </Footer>
+        </Modal>
+      </Story>
+    ))
+    .add('6. Large content', () => (
+      <Story>
+        <Modal
+          size="small"
+          trigger="trigger"
+          title="title"
+          subtitle="subtitle"
+          image="https://picsum.photos/1280/720/?random"
+          content={(
+            <div>
+              {['Title', 'Title2', 'Title3'].map(title => (
+                <React.Fragment key={title}>
+                  <h3>{title}</h3>
+                  <p>{lorem}</p>
+                </React.Fragment>
+            ))}
+            </div>
+          )}
+          footer="footer"
+          defaultVisible
+        />
       </Story>
     ));
   // .add('2. With title and wrap', () => (
   //   <Story>
   //     <Modal>
-  //       <Modal.Trigger>
+  //       <Trigger>
   //         <button>Open modal</button>
-  //       </Modal.Trigger>
-  //       <Modal.Content title="Sample title">
+  //       </Trigger>
+  //       <Content title="Sample title">
   //       Sample content
-  //       </Modal.Content>
+  //       </Content>
   //     </Modal>
   //   </Story>
   // ))
   // .add('3. Trigger close', () => (
   //   <Story>
   //     <Modal>
-  //       <Modal.Trigger>
+  //       <Trigger>
   //         <button>Trigger modal</button>
-  //       </Modal.Trigger>
-  //       <Modal.Content body>
+  //       </Trigger>
+  //       <Content body>
   //       Sample content, and &nbsp;
-  //         <Modal.Trigger type="close">
+  //         <Trigger type="close">
   //           <a>close</a>
-  //         </Modal.Trigger>
-  //       </Modal.Content>
+  //         </Trigger>
+  //       </Content>
   //     </Modal>
   //   </Story>
   // ))
   // .add('4. Full control', () => (
   //   <Story>
   //     <Modal>
-  //       <Modal.Trigger>
+  //       <Trigger>
   //         <button>Open modal</button>
-  //       </Modal.Trigger>
-  //       <Modal.Content>
-  //         <Modal.Header closeButton>
+  //       </Trigger>
+  //       <Content>
+  //         <Header closeButton>
   //         Hello!
-  //         </Modal.Header>
-  //         <Modal.Body>
+  //         </Header>
+  //         <Body>
   //         Some info content
-  //         </Modal.Body>
-  //         <Modal.Footer>
-  //           <Modal.Close>
+  //         </Body>
+  //         <Footer>
+  //           <Close>
   //             <button>CLOSE ME</button>
-  //           </Modal.Close>
-  //         </Modal.Footer>
-  //       </Modal.Content>
+  //           </Close>
+  //         </Footer>
+  //       </Content>
   //     </Modal>
   //   </Story>
   // ))
   // .add('5. Nested', () => (
   //   <Story>
   //     <Modal>
-  //       <Modal.Trigger>
+  //       <Trigger>
   //         <button>Open modal</button>
-  //       </Modal.Trigger>
-  //       <Modal.Content>
-  //         <Modal.Header closeButton>
+  //       </Trigger>
+  //       <Content>
+  //         <Header closeButton>
   //         Hello!
-  //         </Modal.Header>
-  //         <Modal.Body>
+  //         </Header>
+  //         <Body>
   //         Some info content
   //           <Modal>
-  //             <Modal.Trigger>
+  //             <Trigger>
   //               <button>Open new modal</button>
-  //             </Modal.Trigger>
-  //             <Modal.Content>
-  //               <Modal.Header closeButton>
+  //             </Trigger>
+  //             <Content>
+  //               <Header closeButton>
   //               Hello!
-  //               </Modal.Header>
-  //               <Modal.Body>
+  //               </Header>
+  //               <Body>
   //               Some info content
-  //               </Modal.Body>
-  //               <Modal.Footer>
-  //                 <Modal.Close>
+  //               </Body>
+  //               <Footer>
+  //                 <Close>
   //                   <button>CLOSE ME</button>
-  //                 </Modal.Close>
-  //               </Modal.Footer>
-  //             </Modal.Content>
+  //                 </Close>
+  //               </Footer>
+  //             </Content>
   //           </Modal>
-  //         </Modal.Body>
-  //         <Modal.Footer>
-  //           <Modal.Close>
+  //         </Body>
+  //         <Footer>
+  //           <Close>
   //             <button>CLOSE ME</button>
-  //           </Modal.Close>
-  //         </Modal.Footer>
-  //       </Modal.Content>
+  //           </Close>
+  //         </Footer>
+  //       </Content>
   //     </Modal>
   //   </Story>
   // ))
@@ -169,19 +240,19 @@ export default ({ storiesOf, action }) => {
   //           <button onClick={() => this.modal.open()}>Open</button>
   //           <button onClick={() => this.modal.close()}>Close</button>
   //           <Modal ref={modal => this.modal = modal}>
-  //             <Modal.Content>
-  //               <Modal.Header closeButton>
+  //             <Content>
+  //               <Header closeButton>
   //                 Hello!
-  //               </Modal.Header>
-  //               <Modal.Body>
+  //               </Header>
+  //               <Body>
   //                 Some info content
-  //               </Modal.Body>
-  //               <Modal.Footer>
-  //                 <Modal.Close>
+  //               </Body>
+  //               <Footer>
+  //                 <Close>
   //                   <button>CLOSE ME</button>
-  //                 </Modal.Close>
-  //               </Modal.Footer>
-  //             </Modal.Content>
+  //                 </Close>
+  //               </Footer>
+  //             </Content>
   //           </Modal>
   //         </div>
   //       );
@@ -196,26 +267,26 @@ export default ({ storiesOf, action }) => {
   // .add('7. Visible by default', () => (
   //   <Story>
   //     <Modal visible>
-  //       <Modal.Trigger>
+  //       <Trigger>
   //         <button>Open modal</button>
-  //       </Modal.Trigger>
-  //       <Modal.Content>
+  //       </Trigger>
+  //       <Content>
   //         Sample content
-  //       </Modal.Content>
+  //       </Content>
   //     </Modal>
   //   </Story>
   // ))
   // .add('8. e.preventDefault', () => (
   //   <Story>
   //     <Modal>
-  //       <Modal.Trigger>
+  //       <Trigger>
   //         some trigger text, open modal <br />
   //         <button onClick={() => console.log('log1 log1 log1')}>Some console.log into modal and open modal</button>  <br />
   //         <button onClick={(e) => { e.preventDefault(); console.log('log2 log2 log2'); }}>Some console.log into modal  without open modal</button>
-  //       </Modal.Trigger>
-  //       <Modal.Content>
+  //       </Trigger>
+  //       <Content>
   //         Sample content
-  //       </Modal.Content>
+  //       </Content>
   //     </Modal>
   //   </Story>
   // ));
@@ -242,12 +313,12 @@ export default ({ storiesOf, action }) => {
   //       Open async modal
   //     </button>
   //     <Modal emitter={emitter}>
-  //       <Modal.Content>
+  //       <Content>
   //         Sample content
   //         <button onClick={close}>
   //           Close async modal
   //         </button>
-  //       </Modal.Content>
+  //       </Content>
   //     </Modal>
   // </Story>
   //   </div>);

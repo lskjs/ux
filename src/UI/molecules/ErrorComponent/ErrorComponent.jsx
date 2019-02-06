@@ -23,7 +23,7 @@ class ErrorComponent extends PureComponent {
     actions: null,
     footer: null,
     image: null,
-    align: null,
+    align: 'left',
   };
   render() {
     const {
