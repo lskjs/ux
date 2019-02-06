@@ -106,9 +106,7 @@ class Modal2 extends PureComponent {
             {...pick(props, reactModalProps)}
           >
             <If condition={closable}>
-              <Modal.Trigger type="close">
-                <Modal.CloseIcon />
-              </Modal.Trigger>
+              <Modal.CloseIcon onClick={this.close} />
             </If>
             <Modal.InnerWrapper>
               <Modal.Inner

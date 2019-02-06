@@ -5,7 +5,7 @@ import Button from '../Button';
 
 export default ({ storiesOf, action }) => {
   return storiesOf('Modal2', module)
-    .add('1. Widthout wrap', () => (
+    .add('1. Easy use', () => (
       <Story>
         <Modal
           trigger="trigger"
@@ -15,7 +15,7 @@ export default ({ storiesOf, action }) => {
         />
       </Story>
     ))
-    .add('4. Widthout wrap', () => (
+    .add('2. defaultVisible', () => (
       <Story>
         <Modal
           trigger="trigger"
@@ -74,7 +74,7 @@ export default ({ storiesOf, action }) => {
           </Button>
         </Footer>
       </Story>
-    ));
+    ))
   // .add('2. With title and wrap', () => (
   //   <Story>
   //     <Modal>
