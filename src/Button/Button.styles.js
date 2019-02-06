@@ -489,18 +489,49 @@ const viewTransparentDisabled = css`
 `;
 
 
-const transparentTheme = css`
-  color: #fff;
+const viewTransparentDisabledDark = css`
+  color: rgba(0, 0, 0, 0.5) !important;
+  background-color: transparent !important;
+  &:hover,
+  &:active {
+    color: rgba(0, 0, 0, 0.5) !important;
+    background-color: transparent !important;
+  }
+  &:focus {
+    color: rgba(0, 0, 0, 0.5) !important;
+    background-color: rgba(0, 0, 0, 0.16) !important;
+  }
+`;
+
+
+
+const transparentTheme = props => css`
+  color: ${props.theme.colors.white};
   background-color: transparent;
 
   &:hover {
-    color: #fff;
+    color: ${props.theme.colors.white};
     background-color: rgba(255, 255, 255, 0.16);
   }
 
   &:active {
-    color: #fff;
+    color: ${props.theme.colors.white};
     background-color: rgba(255, 255, 255, 0.16);
+  }
+`;
+
+const transparentThemeDark = props => css`
+  color: ${props.theme.colors.main};
+  background-color: transparent;
+
+  &:hover {
+    color: ${props.theme.colors.main};
+    background-color: rgba(0, 0, 0, 0.16);
+  }
+
+  &:active {
+    color: ${props.theme.colors.main};
+    background-color: rgba(0, 0, 0, 0.16);
   }
 `;
 
@@ -620,6 +651,7 @@ export const Btn = styled(filteredTag)`
         case 'solid': return viewSolidDisabled;
         case 'text': return viewTextDisabled;
         case 'transparent': return viewTransparentDisabled;
+        case 'transparentDark': return viewTransparentDisabledDark;
         default: return '';
       }
     } else if (props.view === 'solid') {
@@ -634,6 +666,8 @@ export const Btn = styled(filteredTag)`
         case 'youtube': return youtubeTheme;
         case 'vk': return vkTheme;
         case 'telegram': return telegramTheme;
+        case 'transparent': return transparentTheme;
+        case 'transparentDark': return transparentThemeDark;
         default: return defaultSolidTheme;
       }
     } else if (props.view === 'text') {
@@ -648,6 +682,8 @@ export const Btn = styled(filteredTag)`
         case 'youtube': return youtubeTheme;
         case 'vk': return vkTheme;
         case 'telegram': return telegramTheme;
+        case 'transparent': return transparentTheme;
+        case 'transparentDark': return transparentThemeDark;
         default: return defaultTextTheme;
       }
     } else if (props.view === 'transparent') {

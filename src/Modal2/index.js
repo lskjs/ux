@@ -9,5 +9,5 @@ export { default as Scroll } from '../UI/organisms/ModalScroll';
 export { default as Title } from '../UI/molecules/ModalTitle';
 export { default as Trigger } from './ModalTrigger';
 export { default as Inner } from './ModalInner';
-export { default as InnerWrapper } from './ModalInnerWrapper';
+export { default as InnerWrapper } from './Modal2.styles';
 export { default as CloseIcon } from './ModalCloseIcon';

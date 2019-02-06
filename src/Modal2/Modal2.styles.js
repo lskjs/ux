@@ -3,6 +3,7 @@ import styled, { css } from 'react-emotion';
 export const modalStyle = css`
   margin: 18px auto;
   outline: none;
+  position: relative;
 `;
 
 export const modalSmall = css`
@@ -28,4 +29,12 @@ export const InnerWrapper = styled('div')`
   border-radius: 8px;
   box-shadow: 0 2px 18px rgba(0,0,0,.2);
   overflow: hidden;
+`;
+
+export const closeButtonStyle = css`
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 8px;
+  z-index: 1;
 `;
