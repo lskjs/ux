@@ -18,7 +18,7 @@ const articles = [
   },
 ];
 export default ({ storiesOf }) => (
-  storiesOf('Companies', module)
+  storiesOf('hz/Companies', module)
     .add('Default', () => (
       <Story>
         <Container>

@@ -12,7 +12,7 @@ import UserBoxFooter from './UI/molecules/UserBoxFooter';
 
 
 export default ({ storiesOf }) => (
-  storiesOf('UserPage', module)
+  storiesOf('hz/UserPage', module)
     .add('Default', () => (
       <ThemeInjector>
         <Container>

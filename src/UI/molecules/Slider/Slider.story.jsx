@@ -34,7 +34,7 @@ const marks = {
 };
 
 export default ({ storiesOf }) => (
-  storiesOf('Slider', module)
+  storiesOf('hz/Slider', module)
     .add('default', () => (
       <Slider
         defaultValue={30}

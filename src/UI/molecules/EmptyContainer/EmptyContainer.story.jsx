@@ -4,7 +4,7 @@ import ThemeInjector from '../../../ThemeInjector';
 import EmptyContainer from './EmptyContainer';
 
 module.exports = ({ storiesOf }) =>
-  storiesOf('EmptyContainer', module)
+  storiesOf('hz/EmptyContainer', module)
     .add('EmptyContainer', () => {
       return (
         <ThemeInjector>
