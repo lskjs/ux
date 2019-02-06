@@ -14,13 +14,11 @@ class Calendar extends PureComponent {
     const { field, ...props } = this.props;
     // console.log('date', value);
     let validValue = moment();
-    console.log('start', validValue.toDate(), value);
     if (this.constructor.isAnyTypeDate(value)) {
       validValue = moment(value);
     } else if (this.constructor.isAnyTypeDate(props.defaultValue)) {
       validValue = moment(props.defaultValue);
     }
-    console.log('end', validValue.toDate());
     return validValue;
   }
   render() {

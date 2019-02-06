@@ -5,7 +5,7 @@ import Icon from 'antd/lib/icon';
 import If from 'react-if';
 import T from '../T';
 import { contextToProps } from './List.context';
-import { ArrowButton } from './List.styles';
+import { ArrowButton, ArrowBlock } from './List.styles';
 
 @contextToProps('List', 'pageSize')
 @inject('listStore')
@@ -41,14 +41,14 @@ class ListPaginator extends Component {
           </List.PaginatorPagesWrapper>
         </If>
         <If condition={listStore.count === null}>
-          <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+          <ArrowBlock>
             <ArrowButton disabled={!(page > 1)} onClick={() => listStore.setPage(page - 1)}>
               <Icon type="left" />
             </ArrowButton>
             <ArrowButton onClick={() => listStore.setPage(page + 1)}>
               <Icon type="right" />
             </ArrowButton>
-          </div>
+          </ArrowBlock>
         </If>
         <If condition={listStore.count > 0}>
           <List.PaginatorGroupWrapper>

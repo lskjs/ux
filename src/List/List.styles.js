@@ -424,4 +424,13 @@ export const ArrowButton = styled('button')`
   outline: none;
   list-style: none;
   border: 1px solid #d9d9d9;
+  cursor: pointer;
+`;
+
+export const ArrowBlock = styled('div')`
+  display: flex; 
+  justify-content: flex-end;
+  > button:not(:last-child) {
+    margin-right: 8px;
+  }
 `;

@@ -11,12 +11,12 @@ const markerWrapperStyle = css`
 /* border: 1px red solid; */
 `;
 const markerStyle = css`
-font-size: 48px;
-color: #B71C1C;
-/* border: 1px black solid; */
-position: relative;
-left: -26px;
-top: -53px;
+  font-size: 48px;
+  color: #B71C1C;
+  /* border: 1px black solid; */
+  position: relative;
+  left: -26px;
+  top: -53px;
 `;
 
 
