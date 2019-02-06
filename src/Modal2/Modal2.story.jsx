@@ -40,7 +40,7 @@ export default ({ storiesOf, action }) => {
         />
       </Story>
     ))
-    .add('3. Children JSX', () => (
+    .add('3. Children', () => (
       <Story>
         <Modal
           size="small"
