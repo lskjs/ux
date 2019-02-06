@@ -53,7 +53,7 @@ class ListBody extends Component {
                 <T name="lskList.bodyLoadingButton" />
               </If>
               <If condition={!listStore.loading}>
-                <T name="lskList.loadMoreButton" />
+                <T name="lskList.bodyLoadMoreButton" />
               </If>
             </Button>
           </If>
@@ -77,7 +77,7 @@ class ListBody extends Component {
                       <T name="lskList.bodyLoadingButton" />
                     </If>
                     <If condition={!listStore.loading}>
-                      <T name="lskList.loadMoreButton" />
+                      <T name="lskList.bodyLoadMoreButton" />
                     </If>
                   </Button>
                 );
