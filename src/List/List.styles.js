@@ -295,7 +295,7 @@ export const PaginatorGroupWrapper = styled('div')`
   > *:not(:last-child) {
     margin-right: 6px;
   }
-  @media screen and (max-width: 992px) {
+  @media screen and (max-width: 1317px) {
     margin-top: 12px;
     justify-content: flex-end;
   }
@@ -322,7 +322,7 @@ export const PaginatorPagesWrapper = styled('div')`
   margin-left: 40px;
   display: flex;
   align-items: center;
-  @media screen and (max-width: 992px) {
+  @media screen and (max-width: 1317px) {
     margin-top: 12px;
     justify-content: flex-end;
   }
@@ -332,7 +332,7 @@ export const PaginatorWrapper = styled('div')`
   display: flex;
   font-family: ${p => p.theme.fontFamily};
   color: ${p => p.theme.colors.secondary};
-  @media screen and (max-width: 992px) {
+  @media screen and (max-width: 1317px) {
     flex-direction: column;
   }
 `;
@@ -340,7 +340,7 @@ export const PaginatorWrapper = styled('div')`
 export const PaginatorStepperWrapper = styled('div')`
   display: flex;
   align-items: center;
-  @media screen and (max-width: 992px) {
+  @media screen and (max-width: 1317px) {
     /* margin-top: 12px; */
     justify-content: flex-end;
   }
