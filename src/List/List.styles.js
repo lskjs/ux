@@ -318,7 +318,7 @@ export const paginationButtonStyle = theme => css`
   }
 `;
 
-export const PaginatorPagesWrapper = styled('div')`
+export const PagesWrapper = styled('div')`
   margin-left: 40px;
   display: flex;
   align-items: center;
@@ -337,7 +337,7 @@ export const PaginatorWrapper = styled('div')`
   }
 `;
 
-export const PaginatorStepperWrapper = styled('div')`
+export const StepperWrapper = styled('div')`
   display: flex;
   align-items: center;
   @media screen and (max-width: 1317px) {
@@ -346,7 +346,7 @@ export const PaginatorStepperWrapper = styled('div')`
   }
 `;
 
-export const PaginatorSelectWrapper = styled('select')`
+export const SelectWrapper = styled('select')`
   background: none;
   border: none;
   outline: none;

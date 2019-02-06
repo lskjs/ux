@@ -241,8 +241,8 @@ const primarySolidTheme = ({ theme }) => css`
 `;
 
 const dangerSolidTheme = ({ theme }) => css`
-  color: ${theme.colors.main};
-  background-color: ${theme.colors.darkerBackground};
+  color: ${theme.colors.white};
+  background-color: ${theme.colors.danger};
 
   &:hover {
     color: ${theme.colors.white};
@@ -345,8 +345,8 @@ const primaryTextTheme = ({ theme }) => css`
 `;
 
 const dangerTextTheme = ({ theme }) => css`
-  color: ${theme.colors.danger};
-  background-color: transparent;
+  color: ${theme.colors.white};
+  background-color: ${theme.colors.danger};
 
   &:hover {
     color: ${theme.colors.white};
@@ -432,8 +432,6 @@ const viewTransparentDisabledDark = css`
     background-color: rgba(0, 0, 0, 0.16) !important;
   }
 `;
-
-
 
 const transparentTheme = props => css`
   color: ${props.theme.colors.white};

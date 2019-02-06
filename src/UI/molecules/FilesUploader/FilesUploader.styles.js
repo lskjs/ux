@@ -155,7 +155,7 @@ export const Block = styled('div')`
   border: solid 1px #e3e3e3;
   display: flex;
   flex-direction: column;
-  ${p => (p.error && `
+  ${p => (p.validationState === 'error' && `
     border-color: #da4c5a;
   `)}
   ${p => (p.avatar && `

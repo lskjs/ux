@@ -33,12 +33,16 @@ export const Block = styled('button')`
   height: 26px;
   outline: none;
   flex-shrink: 0;
+  cursor: pointer;
 
   border-radius: 50px;
   background-color: #e3e3e3;
   padding: 4px;
 
   transition: background-color .2s ease;
+  ${p => (p.validationState === 'error' && `
+    background-color: ${p.theme.colors.danger};
+  `)}
   will-change: background-color;
   ${p => (p.checked && `
     background-color: ${p.theme.colors.primary};

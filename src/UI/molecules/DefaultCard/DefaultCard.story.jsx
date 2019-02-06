@@ -3,7 +3,7 @@ import ThemeInjector from '../../../ThemeInjector';
 import DefaultCard from './DefaultCard';
 
 module.exports = ({ storiesOf }) =>
-  storiesOf('DefaultCard', module)
+  storiesOf('hz/DefaultCard', module)
     .add('DefaultCard', () => {
       return (
         <ThemeInjector>

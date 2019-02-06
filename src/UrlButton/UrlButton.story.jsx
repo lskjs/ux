@@ -19,7 +19,7 @@ const uapp = {
 
 
 export default ({ storiesOf }) => {
-  storiesOf('UrlButton', module)
+  storiesOf('Button/UrlButton', module)
     .add('Default', () => (
       <Provider {...uapp.provide()}>
         <UrlButton

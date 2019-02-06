@@ -15,12 +15,10 @@ import {
   HeaderItemWrapper,
   HeaderWrapper,
   FooterWrapper,
-  FooterRightWrapper,
   PaginatorWrapper,
-  PaginatorGroupWrapper,
-  PaginatorPagesWrapper,
-  PaginatorStepperWrapper,
-  PaginatorSelectWrapper,
+  PagesWrapper,
+  StepperWrapper,
+  SelectWrapper,
 } from './List.styles';
 import { Provider } from './List.context';
 
@@ -32,11 +30,11 @@ import ListTags from './ListTags';
 import ListBody from './ListBody';
 import ListHeaderRow from './ListHeaderRow';
 import ListFooter from './ListFooter';
-import ListPaginator from './ListPaginator';
 import ListFilterButton from './ListFilterButton';
 import ListEmpty from './ListEmpty';
 import ListSortHeader from './ListSortHeader';
 import ListCheckbox from './ListCheckbox';
+import ListPaginator from './ListPaginator';
 
 
 import DefaultTags from './DefaultTags';
@@ -44,15 +42,20 @@ import DefaultTag from './DefaultTag';
 
 const defaultShow = {
   header: true,
-  sticky: true,
-  search: true,
-  filterButton: true,
-  tags: true,
-  more: true,
-  infinity: true,
+  /** */ sticky: true,
+  /** */ search: true,
+  /** */ /** */ filterButton: true,
+  /** */ tags: true,
+
+  /** body */
+  /** */ more: true,
+  /** */ infinity: true,
+
   footer: true,
-  download: true,
-  paginator: true,
+  /** */ download: true,
+  /** */ pages: true,
+  /** */ stepper: true,
+  /** */ paginator: true,
 };
 
 class List extends Component {
@@ -82,13 +85,13 @@ class List extends Component {
   static HeaderItemWrapper = HeaderItemWrapper;
   static HeaderWrapper = HeaderWrapper;
   static FooterWrapper = FooterWrapper;
-  static FooterRightWrapper = FooterRightWrapper;
+  // download
+  
+  static PagesWrapper = PagesWrapper; // pages
+  static StepperWrapper = StepperWrapper; // stepper
+  static SelectWrapper = SelectWrapper;
   static PaginatorWrapper = PaginatorWrapper;
-  static PaginatorGroupWrapper = PaginatorGroupWrapper;
-  static PaginatorPagesWrapper = PaginatorPagesWrapper;
-  static PaginatorStepperWrapper = PaginatorStepperWrapper;
-  static PaginatorSelectWrapper = PaginatorSelectWrapper;
-
+  
   render() {
     const {
       columns, show: customShow = {}, pageSize = 10,
@@ -136,11 +139,11 @@ class List extends Component {
       HeaderWrapper: this.props.HeaderWrapper || this.constructor.HeaderWrapper,
       FooterWrapper: this.props.FooterWrapper || this.constructor.FooterWrapper,
       FooterRightWrapper: this.props.FooterRightWrapper || this.constructor.FooterRightWrapper,
+      
       PaginatorWrapper: this.props.PaginatorWrapper || this.constructor.PaginatorWrapper,
-      PaginatorGroupWrapper: this.props.PaginatorGroupWrapper || this.constructor.PaginatorGroupWrapper,
-      PaginatorPagesWrapper: this.props.PaginatorPagesWrapper || this.constructor.PaginatorPagesWrapper,
-      PaginatorStepperWrapper: this.props.PaginatorStepperWrapper || this.constructor.PaginatorStepperWrapper,
-      PaginatorSelectWrapper: this.props.PaginatorSelectWrapper || this.constructor.PaginatorSelectWrapper,
+      PagesWrapper: this.props.PagesWrapper || this.constructor.PagesWrapper,
+      StepperWrapper: this.props.StepperWrapper || this.constructor.StepperWrapper,
+      SelectWrapper: this.props.SelectWrapper || this.constructor.SelectWrapper,
     };
 
     let { children } = this.props;

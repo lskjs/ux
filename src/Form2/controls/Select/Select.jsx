@@ -1,6 +1,7 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import find from 'lodash/find';
 import get from 'lodash/get';
+import isEqual from 'lodash/isEqual';
 import autobind from 'core-decorators/lib/autobind';
 import ReactSelect from 'react-select';
 import ReactAsyncSelect from 'react-select/lib/Async';
@@ -14,9 +15,20 @@ import Option from './Option';
 import CollapsedValueContainer from './CollapsedValueContainer';
 import CollapsedMultiValue from './CollapsedMultiValue';
 
-
-class Select extends PureComponent {
+class Select extends Component {
   state = {};
+  shouldComponentUpdate(nextProps, nextState) {
+    const { state, props } = this;
+    const prevValue = get(props, 'field.value');
+    const nextValue = get(nextProps, 'field.value');
+    // console.log(nextProps);
+    if (!isEqual(nextValue, prevValue)) {
+      return true;
+    } else if (!isEqual(state.option, nextState.option)) {
+      return true;
+    }
+    return false;
+  }
   componentDidMount() {
     const { loadOption, value, async } = this.props;
     if (async && value && loadOption) {

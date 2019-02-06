@@ -3,7 +3,7 @@ import PercentSlider from './PercentSlider';
 import ThemeInjector from '../../../ThemeInjector';
 
 export default ({ storiesOf }) => (
-  storiesOf('PercentSlider', module)
+  storiesOf('hz/PercentSlider', module)
     .add('default', () => (
       <ThemeInjector>
         <PercentSlider />

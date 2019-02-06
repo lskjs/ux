@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import Blank from 'react-icons2/mdi/checkbox-blank-circle-outline';
 import Selected from 'react-icons2/mdi/checkbox-marked-circle';
-import { Icon, Item } from './Radion.styles';
+import { Icon, Item } from './Radio.styles';
 
 class Radio extends PureComponent {
   static propTypes = {

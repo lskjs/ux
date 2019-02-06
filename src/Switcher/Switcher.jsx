@@ -12,10 +12,12 @@ class Switcher extends PureComponent {
   static propTypes = {
     value: PropTypes.bool,
     onChange: PropTypes.func,
+    validationState: PropTypes.oneOf(['success', 'warning', 'error']),
   }
   static defaultProps = {
     value: false,
     onChange: null,
+    validationState: null,
   }
   @autobind handleChange() {
     const { onChange, value } = this.props;
@@ -23,7 +25,7 @@ class Switcher extends PureComponent {
   }
   render() {
     const {
-      value, title, checkedTitle, reversed, styleSwitcher, disabled,
+      value, title, checkedTitle, reversed, styleSwitcher, disabled, validationState,
     } = this.props;
     // let text = t(`common.switch.${value ? 'on' : 'off'}`);
     let text = null;
@@ -43,6 +45,7 @@ class Switcher extends PureComponent {
           onClick={this.handleChange}
           style={styleSwitcher}
           disabled={disabled}
+          validationState={validationState}
         >
           <Handler />
         </Block>
