@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
-import Modal, { Title, Subtitle, Description, Image, Help, Content, Footer } from './Modal2';
+import Modal from './Modal2';
 import Story from '../Story';
 import Button from '../Button';
+
+const {
+  Title, Subtitle, Description, Image, Help, Content, Footer,
+} = Modal;
 
 export default ({ storiesOf, action }) => {
   return storiesOf('Modal2', module)
@@ -10,6 +14,8 @@ export default ({ storiesOf, action }) => {
         <Modal
           trigger="trigger"
           title="title"
+          subtitle="subtitle"
+          image="https://picsum.photos/1280/720/?random"
           content="content"
           footer="footer"
         />
@@ -20,13 +26,34 @@ export default ({ storiesOf, action }) => {
         <Modal
           trigger="trigger"
           title="title"
+          subtitle="subtitle"
+          image="https://picsum.photos/1280/720/?random"
           content="content"
           footer="footer"
           defaultVisible={1}
         />
       </Story>
     ))
-    .add('2. Widthout wrap', () => (
+    .add('3. Children JSX', () => (
+      <Story>
+        <Title>title</Title>
+        <Subtitle>Subtitle</Subtitle>
+        <Description>Description</Description>
+        <Help>Help</Help>
+        <Image src="https://picsum.photos/1280/720/?random" />
+        <Content>
+          content
+        </Content>
+        <Footer>
+          <Button
+            paint="primary"
+          >
+            OK
+          </Button>
+        </Footer>
+      </Story>
+    ))
+    .add('4. Children as function', () => (
       <Story>
         <Modal
           size="small"
@@ -55,26 +82,7 @@ export default ({ storiesOf, action }) => {
          )}
         </Modal>
       </Story>
-    ))
-    .add('3. Widthout modal', () => (
-      <Story>
-        <Title>title</Title>
-        <Subtitle>Subtitle</Subtitle>
-        <Description>Description</Description>
-        <Help>Help</Help>
-        <Image src="https://picsum.photos/1280/720/?random" />
-        <Content>
-          content
-        </Content>
-        <Footer>
-          <Button
-            paint="primary"
-          >
-            OK
-          </Button>
-        </Footer>
-      </Story>
-    ))
+    ));
   // .add('2. With title and wrap', () => (
   //   <Story>
   //     <Modal>
