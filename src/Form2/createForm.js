@@ -128,13 +128,14 @@ const createForm = ({
       // console.log({ defaultValues, props });
       return defaultValues;
     },
-    handleSubmit: async (values, {
-      setSubmitting,
-      props,
-      setStatus,
-      // status,
-      isSubmitting,
-    }) => {
+    handleSubmit: async (values, props2) => {
+      const {
+        setSubmitting,
+        props,
+        setStatus,
+        // status,
+        isSubmitting,
+      } = props2
       const { onSubmit } = props;
 
       // console.log({status, isSubmitting});
@@ -143,7 +144,7 @@ const createForm = ({
         setStatus('progress');
         try {
           if (values) values = avoidNestedFields(values);
-          if (onSubmit) await onSubmit(values, { setSubmitting });
+          if (onSubmit) await onSubmit(values, props2);
           setStatus('success');
         } catch (err) {
           setStatus('error');
