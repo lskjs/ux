@@ -9,7 +9,12 @@ class ProfileCardBig extends PureComponent {
   static propTypes = {
     img: PropTypes.string,
     name: PropTypes.string,
-    info: PropTypes.string,
+    info: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number,
+      PropTypes.element,
+      PropTypes.arrayOf(PropTypes.element),
+    ]),
     sign: PropTypes.string,
     fixHeight: PropTypes.number,
   };

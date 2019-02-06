@@ -23,8 +23,12 @@ class BlogCardList extends PureComponent {
     href: PropTypes.string,
     tag: PropTypes.string,
     content: PropTypes.string,
-    author: PropTypes.string,
-
+    author: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number,
+      PropTypes.element,
+      PropTypes.arrayOf(PropTypes.element),
+    ]),
   }
   static defaultProps = {
     link: null,

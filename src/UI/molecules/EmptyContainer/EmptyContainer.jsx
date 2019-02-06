@@ -7,8 +7,18 @@ import { Title, Subtitle, IconWrapper, ActionsWrapper } from './EmptyContainer.s
 class EmptyContainer extends PureComponent {
   static propTypes = {
     icon: PropTypes.any,
-    title: PropTypes.string.isRequired,
-    subtitle: PropTypes.string,
+    title: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number,
+      PropTypes.element,
+      PropTypes.arrayOf(PropTypes.element),
+    ]).isRequired,
+    subtitle: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number,
+      PropTypes.element,
+      PropTypes.arrayOf(PropTypes.element),
+    ]),
     actions: PropTypes.any,
   };
   static defaultProps = {

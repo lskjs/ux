@@ -13,8 +13,14 @@ class Image extends PureComponent {
     name: PropTypes.string,
     src: PropTypes.string,
     size: PropTypes.number,
-    width: PropTypes.number,
-    height: PropTypes.number,
+    width: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number,
+    ]),
+    height: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number,
+    ]),
 
     // color: PropTypes.string,
     textColor: PropTypes.string,

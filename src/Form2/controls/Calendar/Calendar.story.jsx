@@ -9,12 +9,12 @@ const CalendarFormView = (props) => {
   return (
     <Form>
       <Field {...props.controls.calendar1} />
-      <Field {...props.controls.calendar2} />
+      {/* <Field {...props.controls.calendar2} />
       <Field {...props.controls.calendar3} />
       <Field {...props.controls.calendar4} />
       <Field {...props.controls.calendar5} />
       <Field {...props.controls.calendar6} />
-      <Field {...props.controls.calendar7} />
+      <Field {...props.controls.calendar7} /> */}
       <FormDebug {...props} />
     </Form>
   );
@@ -29,6 +29,7 @@ const CalendarForm = createForm({
       highlightedDates: [
         new Date('2019-02-15'),
         new Date('2019-02-18'),
+        new Date('2019-02-17'),
         '2019-02-02',
         Date.now(),
       ],

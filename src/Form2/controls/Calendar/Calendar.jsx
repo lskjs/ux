@@ -12,12 +12,15 @@ class Calendar extends PureComponent {
   @autobind
   validationDate(value) {
     const { field, ...props } = this.props;
+    // console.log('date', value);
     let validValue = moment();
+    console.log('start', validValue.toDate(), value);
     if (this.constructor.isAnyTypeDate(value)) {
       validValue = moment(value);
     } else if (this.constructor.isAnyTypeDate(props.defaultValue)) {
       validValue = moment(props.defaultValue);
     }
+    console.log('end', validValue.toDate());
     return validValue;
   }
   render() {
@@ -27,6 +30,7 @@ class Calendar extends PureComponent {
       highlightedDates,
       ...props
     } = this.props;
+    // console.log(highlightedDates);
     return (
       <CalendarBase
         {...field}
@@ -37,10 +41,10 @@ class Calendar extends PureComponent {
         }}
         dateCellRender={(date) => {
           const dates = (highlightedDates || []).map(d => this.validationDate(d));
+          // console.log('dates', dates, date);
           if ((dates || [])
-                .filter(e => !date.startOf('day')
-                  .diff(e.startOf('day'), 'days')).length
-              ) {
+                // .filter(e => !date.startOf('day').diff(e.startOf('day'), 'days')).length) {
+                  .filter(e => date.startOf('day').toDate().getTime() === e.startOf('day').toDate().getTime()).length) {
             return (
               <HighlightedCell />
             );
