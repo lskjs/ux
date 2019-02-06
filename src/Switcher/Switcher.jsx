@@ -25,12 +25,12 @@ class Switcher extends PureComponent {
   }
   render() {
     const {
-      value, title, checkedTitle, reversed, styleSwitcher, disabled, validationState,
+      value, label, checkedTitle, reversed, styleSwitcher, disabled, validationState,
     } = this.props;
     // let text = t(`common.switch.${value ? 'on' : 'off'}`);
     let text = null;
-    if (title || checkedTitle) {
-      text = (value && checkedTitle) ? checkedTitle : title;
+    if (label || checkedTitle) {
+      text = (value && checkedTitle) ? checkedTitle : label;
     }
     return (
       <Wrap disabled={disabled}>

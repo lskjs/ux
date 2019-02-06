@@ -62,6 +62,7 @@ const Validation = createForm({
     checkbox: {
       title: 'checkbox',
       component: Checkbox,
+      label: 'checkbox-label',
       required: true,
     },
     radio: {
