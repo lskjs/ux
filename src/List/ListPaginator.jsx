@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
 import Pagination from 'antd/lib/pagination';
+import Icon from 'antd/lib/icon';
 import If from 'react-if';
 import { contextToProps } from './List.context';
-import { PaginatorGroupWrapper } from './List.styles';
+import { PaginatorGroupWrapper, ArrowButton } from './List.styles';
 
 @contextToProps('List', 'pageSize', 'show')
 @inject('listStore')
@@ -18,12 +19,14 @@ class ListPaginator extends Component {
     return (
       <List.PaginatorWrapper>
         <If condition={listStore.count === null}>
-          <button disabled={!(page > 1)} onClick={() => listStore.setPage(page - 1)}>
-            {'<'}
-          </button>
-          <button onClick={() => listStore.setPage(page + 1)}>
-            {'>'}
-          </button>
+          <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+            <ArrowButton disabled={!(page > 1)} onClick={() => listStore.setPage(page - 1)}>
+              <Icon type="left" />
+            </ArrowButton>
+            <ArrowButton onClick={() => listStore.setPage(page + 1)}>
+              <Icon type="right" />
+            </ArrowButton>
+          </div>
         </If>
         <If condition={listStore.count > 0}>
           <PaginatorGroupWrapper>

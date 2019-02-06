@@ -270,9 +270,9 @@ export const FooterWrapper = styled('div')`
   color: ${p => p.theme.colors.secondary};
   background-color: ${p => p.theme.colors.darkerBackground};
   border-top: 1px solid ${p => p.theme.colors.border};
-  height: 48px;
-  padding: 0 12px;
-  @media screen and (max-width: 992px) {
+  height: auto;
+  padding: 8px 12px;
+  @media screen and (max-width: 1317px) {
     flex-direction: column;
     align-items: flex-end;
     padding: 12px;
@@ -295,7 +295,7 @@ export const PaginatorGroupWrapper = styled('div')`
   > *:not(:last-child) {
     margin-right: 6px;
   }
-  @media screen and (max-width: 992px) {
+  @media screen and (max-width: 1317px) {
     margin-top: 12px;
     justify-content: flex-end;
   }
@@ -322,7 +322,7 @@ export const PagesWrapper = styled('div')`
   margin-left: 40px;
   display: flex;
   align-items: center;
-  @media screen and (max-width: 992px) {
+  @media screen and (max-width: 1317px) {
     margin-top: 12px;
     justify-content: flex-end;
   }
@@ -332,7 +332,7 @@ export const PaginatorWrapper = styled('div')`
   display: flex;
   font-family: ${p => p.theme.fontFamily};
   color: ${p => p.theme.colors.secondary};
-  @media screen and (max-width: 992px) {
+  @media screen and (max-width: 1317px) {
     flex-direction: column;
   }
 `;
@@ -340,8 +340,8 @@ export const PaginatorWrapper = styled('div')`
 export const StepperWrapper = styled('div')`
   display: flex;
   align-items: center;
-  @media screen and (max-width: 992px) {
-    margin-top: 12px;
+  @media screen and (max-width: 1317px) {
+    /* margin-top: 12px; */
     justify-content: flex-end;
   }
 `;
@@ -409,4 +409,19 @@ export const VerticalDivider = styled('div')`
   width: 1px;
   height: ${p => (p.height || 30)}px;
   background-color: ${p => p.theme.colors.border};
+`;
+
+
+export const ArrowButton = styled('button')`
+  max-width: 32px;
+  min-width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  text-align: center;
+  transition: all 0.3s;
+  display: inline-block;
+  vertical-align: middle;
+  outline: none;
+  list-style: none;
+  border: 1px solid #d9d9d9;
 `;

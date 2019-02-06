@@ -42,9 +42,19 @@ export default ({ storiesOf }) => {
     ))
     .add('social', () => (
       <Story>
-        <Button size="large">YouTube</Button>
-        <Button size="lagre">VK</Button>
-        <Button size="lagre">Telegram</Button>
+        <Button
+          colors={{
+            color: '#fff',
+            background: '#f70b00',
+            hoverColor: '#fff',
+            hoverBackground: '#990801',
+            activeColor: '#fff',
+            activeBackground: '#990801',
+          }}
+          size="large"
+        >
+          Youtube
+        </Button>
       </Story>
     ));
 };

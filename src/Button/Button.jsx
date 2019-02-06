@@ -63,6 +63,7 @@ class Button extends PureComponent {
     autoMobile: PropTypes.bool,
     rounded: PropTypes.bool,
     style: PropTypes.object,
+    colors: PropTypes.object,
   }
 
   static defaultProps = {
@@ -91,6 +92,7 @@ class Button extends PureComponent {
     textError: null,
     autoMobile: false,
     rounded: false,
+    style: null,
   }
 
   constructor(props) {
@@ -227,6 +229,7 @@ class Button extends PureComponent {
       new: isNew,
       type,
       style,
+      colors,
       ...props
     } = this.props;
     const tag = componentClass || 'button';
@@ -269,6 +272,7 @@ class Button extends PureComponent {
         onClick={!disabled ? onClick : null}
         twoIcons={icoLeft && iconRight}
         style={style}
+        colors={colors}
         {...filterProps(buttonProps, tag)}
         // {...buttonProps}
       >

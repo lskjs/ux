@@ -7,6 +7,8 @@ import cx from 'classnames';
 injectGlobal(`
   .ReactCollapse--rest {
     overflow: visible !important;
+    position: relative;
+    z-index: 11;
   }
 `);
 
@@ -42,12 +44,12 @@ class FilterCollapse extends PureComponent {
 
   componentDidUpdate(prevProps) {
     const { rest, prevShow } = this.state;
-    if (this.props.show !== prevProps.show) {
+    if (prevShow !== prevProps.show) {
       this.toggleRestFilterBar(rest, prevShow);
     }
   }
 
-  toggleRestFilterBar(rest, prevShow) {
+  toggleRestFilterBar(rest, prevShow = false) {
     clearTimeout(this.timeoutId);
     if (prevShow) {
       this.setState({ rest });
