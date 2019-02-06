@@ -10,12 +10,12 @@ import Magnify from 'react-icons2/mdi/magnify';
 import map from 'lodash/map';
 import omit from 'lodash/omit';
 import uniqBy from 'lodash/uniqBy';
-import Modal, {
+import Modal2, {
   Title,
   Subtitle,
   Content,
   Footer,
-} from '../../molecules/Modal';
+} from '../../../Modal2';
 
 import TextButton from '../../atoms/TextButton';
 import T from '../../../T';
@@ -183,7 +183,7 @@ class TreePicker extends Component {
     }
     const tree = searchedFields.length === 0 ? fields : this.deepSearch(searchedFields);
     return (
-      <Modal
+      <Modal2
         size="small"
         trigger={children}
         onClose={this.handleReset}
@@ -247,7 +247,7 @@ class TreePicker extends Component {
             {t('buttons.cancel')}
           </Button>
         </Footer>
-      </Modal>
+      </Modal2>
     );
   }
 }

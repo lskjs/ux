@@ -38,6 +38,7 @@ class TagsPicker extends PureComponent {
     onSubmit: PropTypes.func,
     onChange: PropTypes.func,
     triggerTitle: PropTypes.string,
+    validationState: PropTypes.oneOf(['success', 'warning', 'error']),
     flat: PropTypes.bool,
     disabled: PropTypes.bool,
     readOnly: PropTypes.bool,
@@ -49,6 +50,7 @@ class TagsPicker extends PureComponent {
     onChange: null,
     triggerTitle: 'Select',
     flat: false,
+    validationState: null,
     disabled: false,
     readOnly: false,
   }
@@ -136,7 +138,7 @@ class TagsPicker extends PureComponent {
   }
   render() {
     const {
-      block, triggerTitle, fields, disabled, readOnly,
+      block, triggerTitle, fields, disabled, readOnly, validationState,
     } = this.props;
     const value = this.getValue();
     const fieldsKeys = getFieldsKeys(fields);
@@ -144,7 +146,7 @@ class TagsPicker extends PureComponent {
       ? <Add inverse disabled={disabled} />
       : (
         <Button
-          paint="primary"
+          paint={validationState !== 'error' ? 'primary' : 'danger'}
           block={block}
           iconLeft={<Plus />}
           disabled={disabled}

@@ -52,6 +52,7 @@ const TagsPicker = ({
       }}
       value={field.value}
       fields={norimalizedOptions}
+      validationState={form.errors[field.name] ? 'error' : null}
       // title={field.title}
     />
   );

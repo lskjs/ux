@@ -15,6 +15,7 @@ const Switcher = ({
         form.setFieldValue(field.name, value);
       }}
       value={field.value}
+      validationState={form.errors[field.name] ? 'error' : null}
     />
   );
 };
