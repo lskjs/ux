@@ -42,9 +42,9 @@ export default ({ storiesOf }) => {
     ))
     .add('social', () => (
       <Story>
-        <Button size="large" paint="youtube">YouTube</Button>
-        <Button size="lagre" paint="vk">VK</Button>
-        <Button size="lagre" paint="telegram">Telegram</Button>
+        <Button size="large">YouTube</Button>
+        <Button size="lagre">VK</Button>
+        <Button size="lagre">Telegram</Button>
       </Story>
     ));
 };

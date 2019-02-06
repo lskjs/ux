@@ -374,76 +374,6 @@ const warningTextTheme = ({ theme }) => css`
   }
 `;
 
-const facebookTheme = ({ theme }) => css`
-  color: ${theme.colors.white};
-  background-color: ${theme.colors.facebook};
-  &:hover {
-    color: ${theme.colors.white};
-    background-color: ${theme.colors.primary};
-  }
-
-  &:active {
-    color: ${theme.colors.white};
-    background-color: ${theme.colors.primary};
-  }
-`;
-
-const twitterTheme = ({ theme }) => css`
-  color: ${theme.colors.white};
-  background-color: ${theme.colors.twitter};
-  &:hover {
-    color: ${theme.colors.white};
-    background-color: ${theme.colors.primary};
-  }
-
-  &:active {
-    color: ${theme.colors.white};
-    background-color: ${theme.colors.primary};
-  }
-`;
-
-const youtubeTheme = ({ theme }) => css`
-  color: ${theme.colors.white};
-  background-color: ${theme.colors.youtube};
-  &:hover {
-    color: ${theme.colors.white};
-    background-color: ${theme.colors.danger};
-  }
-
-  &:active {
-    color: ${theme.colors.white};
-    background-color: ${theme.colors.danger};
-  }
-`;
-
-const vkTheme = ({ theme }) => css`
-  color: ${theme.colors.white};
-  background-color: ${theme.colors.vk};
-  &:hover {
-    color: ${theme.colors.white};
-    background-color: ${theme.colors.primary};
-  }
-
-  &:active {
-    color: ${theme.colors.white};
-    background-color: ${theme.colors.primary};
-  }
-`;
-
-const telegramTheme = ({ theme }) => css`
-  color: ${theme.colors.white};
-  background-color: ${theme.colors.telegram};
-  &:hover {
-    color: ${theme.colors.white};
-    background-color: ${theme.colors.primary};
-  }
-
-  &:active {
-    color: ${theme.colors.white};
-    background-color: ${theme.colors.primary};
-  }
-`;
-
 const infoTextTheme = ({ theme }) => css`
   color: ${theme.colors.primary};
   background-color: transparent;
@@ -661,11 +591,6 @@ export const Btn = styled(filteredTag)`
         case 'warning': return warningSolidTheme;
         case 'danger': return dangerSolidTheme;
         case 'success': return successSolidTheme;
-        case 'facebook': return facebookTheme;
-        case 'twitter': return twitterTheme;
-        case 'youtube': return youtubeTheme;
-        case 'vk': return vkTheme;
-        case 'telegram': return telegramTheme;
         case 'transparent': return transparentTheme;
         case 'transparentDark': return transparentThemeDark;
         default: return defaultSolidTheme;
@@ -677,11 +602,6 @@ export const Btn = styled(filteredTag)`
         case 'warning': return warningTextTheme;
         case 'danger': return dangerTextTheme;
         case 'success': return successTextTheme;
-        case 'facebook': return facebookTheme;
-        case 'twitter': return twitterTheme;
-        case 'youtube': return youtubeTheme;
-        case 'vk': return vkTheme;
-        case 'telegram': return telegramTheme;
         case 'transparent': return transparentTheme;
         case 'transparentDark': return transparentThemeDark;
         default: return defaultTextTheme;
@@ -817,11 +737,6 @@ export const State = styled('div')`
       case 'warning': return warningSolidTheme;
       case 'danger': return dangerSolidTheme;
       case 'success': return successSolidTheme;
-      case 'facebook': return facebookTheme;
-      case 'twitter': return twitterTheme;
-      case 'youtube': return youtubeTheme;
-      case 'vk': return vkTheme;
-      case 'telegram': return telegramTheme;
       default: return defaultSolidTheme;
     }
   }}
