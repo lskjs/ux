@@ -639,6 +639,18 @@ export const Btn = styled(filteredTag)`
     color: transparent !important;
   `)}
   pointer-events: ${p => (p.state !== 'ready' ? 'none' : 'auto')};
+  ${p => `
+    color: ${p?.colors?.color};
+    background-color: ${p?.colors?.background};
+    &:hover {
+      color: ${p?.colors?.hoverColor};
+      background-color: ${p?.colors?.hoverBackground};
+    }
+    &:active {
+      color: ${p?.colors?.activeColor};
+      background-color: ${p?.colors?.activeBackground};
+    }
+  `}
 `;
 
 export const RippleCircle = styled('span')`
