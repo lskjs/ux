@@ -17,7 +17,7 @@ import ModalTitle from '../UI/molecules/ModalTitle';
 import ModalTrigger from './ModalTrigger';
 import ModalInner from './ModalInner';
 import ModalCloseIcon from './ModalCloseIcon';
-import { modalStyle, modalSmall, modalNormal, modalLarge, InnerWrapper } from './Modal2.styles';
+import { bodyModalStyle, modalStyle, modalSmall, modalNormal, modalLarge, InnerWrapper } from './Modal2.styles';
 
 import { Provider } from './Modal2.context';
 
@@ -95,6 +95,7 @@ class Modal2 extends PureComponent {
           <ReactModal
             isOpen={this.state.visible}
             onRequestClose={this.close}
+            bodyOpenClassName={bodyModalStyle}
             className={cx({
               [className]: className,
               [modalStyle]: true,

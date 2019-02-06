@@ -31,6 +31,10 @@ export const InnerWrapper = styled('div')`
   overflow: hidden;
 `;
 
+export const bodyModalStyle = css`
+  overflow: hidden;
+`;
+
 export const closeButtonStyle = css`
   position: absolute;
   right: 0;
