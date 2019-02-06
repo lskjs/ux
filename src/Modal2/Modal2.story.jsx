@@ -40,21 +40,26 @@ export default ({ storiesOf, action }) => {
     ))
     .add('3. Children JSX', () => (
       <Story>
-        <Title>title</Title>
-        <Subtitle>Subtitle</Subtitle>
-        <Description>Description</Description>
-        <Help>Help</Help>
-        <Image src="https://picsum.photos/1280/720/?random" />
-        <Content>
-          content
-        </Content>
-        <Footer>
-          <Button
-            paint="primary"
-          >
-            OK
-          </Button>
-        </Footer>
+        <Modal
+          size="small"
+          defaultVisible
+        >
+          <Title>title</Title>
+          <Subtitle>Subtitle</Subtitle>
+          <Description>Description</Description>
+          <Help>Help</Help>
+          <Image src="https://picsum.photos/1280/720/?random" />
+          <Content>
+            content
+          </Content>
+          <Footer>
+            <Button
+              paint="primary"
+            >
+              OK
+            </Button>
+          </Footer>
+        </Modal>
       </Story>
     ))
     .add('4. Children as function', () => (
@@ -113,16 +118,18 @@ export default ({ storiesOf, action }) => {
       </Story>
     ))
     .add('6. Large content', () => (
-      <Modal
-        size="small"
-        trigger="trigger"
-        title="title"
-        subtitle="subtitle"
-        image="https://picsum.photos/1280/720/?random"
-        content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-        footer="footer"
-        defaultVisible
-      />
+      <Story>
+        <Modal
+          size="small"
+          trigger="trigger"
+          title="title"
+          subtitle="subtitle"
+          image="https://picsum.photos/1280/720/?random"
+          content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+          footer="footer"
+          defaultVisible
+        />
+      </Story>
     ));
   // .add('2. With title and wrap', () => (
   //   <Story>
