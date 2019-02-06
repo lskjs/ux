@@ -1,9 +1,10 @@
 import styled, { css } from 'react-emotion';
 
 export const modalStyle = css`
-  margin: 18px auto;
+  margin: auto;
   outline: none;
   position: relative;
+  width: 100%;
 `;
 
 export const modalSmall = css`

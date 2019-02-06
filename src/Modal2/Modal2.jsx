@@ -17,7 +17,14 @@ import ModalTitle from '../UI/molecules/ModalTitle';
 import ModalTrigger from './ModalTrigger';
 import ModalInner from './ModalInner';
 import ModalCloseIcon from './ModalCloseIcon';
-import { bodyModalStyle, modalStyle, modalSmall, modalNormal, modalLarge, InnerWrapper } from './Modal2.styles';
+import {
+  bodyModalStyle,
+  modalStyle,
+  modalSmall,
+  modalNormal,
+  modalLarge,
+  InnerWrapper,
+} from './Modal2.styles';
 
 import { Provider } from './Modal2.context';
 
@@ -25,6 +32,9 @@ const reactModalProps = ['isOpen', 'onAfterOpen', 'onRequestClose', 'closeTimeou
 
 ReactModal.defaultStyles.overlay.backgroundColor = 'rgba(0,0,0,.3)';
 ReactModal.defaultStyles.overlay.overflowY = 'auto';
+ReactModal.defaultStyles.overlay.display = 'flex';
+ReactModal.defaultStyles.overlay.flexDirection = 'column';
+ReactModal.defaultStyles.overlay.padding = '18px 12px';
 
 if (typeof (window) !== 'undefined') {
   ReactModal.setAppElement('body');
