@@ -24,7 +24,7 @@ const Validation = createForm({
     console.log('validate', values, form);
     return {
       password: 'error in validate',
-
+    };
     // form.setFieldError('password', 'error in validate');
   },
   controls: {
