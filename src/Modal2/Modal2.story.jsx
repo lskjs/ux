@@ -12,25 +12,29 @@ export default ({ storiesOf, action }) => {
     .add('1. Easy use', () => (
       <Story>
         <Modal
+          size="small"
           trigger="trigger"
           title="title"
           subtitle="subtitle"
           image="https://picsum.photos/1280/720/?random"
           content="content"
           footer="footer"
+          onClose={() => console.log('onClose')}
+          onOpen={() => console.log('onOpen')}
         />
       </Story>
     ))
     .add('2. defaultVisible', () => (
       <Story>
         <Modal
+          size="small"
           trigger="trigger"
           title="title"
           subtitle="subtitle"
           image="https://picsum.photos/1280/720/?random"
           content="content"
           footer="footer"
-          defaultVisible={1}
+          defaultVisible
         />
       </Story>
     ))
@@ -58,7 +62,6 @@ export default ({ storiesOf, action }) => {
         <Modal
           size="small"
           defaultVisible
-          onClose={() => console.log('onClose')}
         >
           {({ modal }) => (
             <React.Fragment>
@@ -85,7 +88,10 @@ export default ({ storiesOf, action }) => {
     ))
     .add('5. Children with random div wrappers', () => (
       <Story>
-        <div>
+        <Modal
+          size="small"
+          defaultVisible
+        >
           <Title>title</Title>
           <Subtitle>Subtitle</Subtitle>
           <div>
@@ -103,10 +109,21 @@ export default ({ storiesOf, action }) => {
               OK
             </Button>
           </Footer>
-
-        </div>
+        </Modal>
       </Story>
     ))
+    .add('6. Large content', () => (
+      <Modal
+        size="small"
+        trigger="trigger"
+        title="title"
+        subtitle="subtitle"
+        image="https://picsum.photos/1280/720/?random"
+        content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+        footer="footer"
+        defaultVisible
+      />
+    ));
   // .add('2. With title and wrap', () => (
   //   <Story>
   //     <Modal>
