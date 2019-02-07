@@ -18,6 +18,7 @@ import ModalTrigger from './ModalTrigger';
 import ModalInner from './ModalInner';
 import ModalCloseIcon from './ModalCloseIcon';
 import {
+  overlayStyle,
   bodyModalStyle,
   modalStyle,
   modalSmall,
@@ -95,9 +96,10 @@ class Modal2 extends PureComponent {
       CloseIcon: this.constructor.CloseIcon || this.props.CloseIcon,
     };
     const {
-      className, size, closable = true, trigger, ...props
+      className, size, closable = true, trigger, innerRef, ...props
     } = this.props;
     const modal = this;
+    if (innerRef) innerRef(this);
 
     return (
       <Provider value={{ modal, Modal }}>
@@ -113,6 +115,7 @@ class Modal2 extends PureComponent {
               [modalNormal]: size === 'default',
               [modalLarge]: size === 'large',
             })}
+            // overlayClassName={overlayStyle}
             style={{ overlay: { zIndex: 10 } }}
             {...pick(props, reactModalProps)}
           >

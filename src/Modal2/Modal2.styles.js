@@ -1,10 +1,31 @@
 import styled, { css } from 'react-emotion';
 
+export const overlayStyle = css`
+  /* background-color: rgba(0,0,0,.3);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 18px 12px; */
+
+  /* &:before {
+    content: '';
+    flex: 1;
+  }
+  &:after {
+    content: '';
+    flex: 3;
+  } */
+`;
+
 export const modalStyle = css`
   margin: auto;
+  margin-top: 100px;
+  margin-bottom: 200px;
+  /* временно попробуем */
   outline: none;
   position: relative;
   width: 100%;
+  
 `;
 
 export const modalSmall = css`
