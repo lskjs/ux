@@ -21,6 +21,11 @@ class Select extends Component {
     const { state, props } = this;
     const prevValue = get(props, 'field.value');
     const nextValue = get(nextProps, 'field.value');
+    const hasError = nextProps.field && nextProps.field.name && !!get(nextProps.form, `errors.${nextProps.field.name}`);
+    const hadError = this.props.field && this.props.field.name && !!get(this.props.form, `errors.${this.props.field.name}`);
+    if (!isEqual(hadError, hasError)) {
+      return true;
+    }
     // console.log(nextProps);
     if (!isEqual(nextValue, prevValue)) {
       return true;
@@ -70,6 +75,7 @@ class Select extends Component {
   }
   render() {
     const {
+      placeholder = '',
       value: propValue,
       field,
       form,
@@ -86,12 +92,10 @@ class Select extends Component {
     const option = async ? this.state.option : find(normalizedOptions, { value });
     const Component = async ? ReactAsyncSelect : ReactSelect;
     const hasError = field && field.name && !!get(form, `errors.${field.name}`);
-
     const collapsedComponents = {
       ValueContainer: CollapsedValueContainer,
       MultiValue: CollapsedMultiValue,
     };
-
     return (
       <Component
         isClearable={!props.required}
@@ -101,6 +105,7 @@ class Select extends Component {
         cacheOptions={async}
         defaultOptions={async}
         closeMenuOnSelect={!props.isMulti}
+        placeholder={placeholder}
         {...field}
         components={{
           SingleValue,

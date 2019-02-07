@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import getKeys from 'lodash/keys';
 import autobind from 'core-decorators/lib/autobind';
 import get from 'lodash/get';
 import Plus from 'react-icons2/mdi/plus-circle';
@@ -24,6 +25,11 @@ function getFieldsKeys(fields = []) {
 
 function getAvailable(fields, values) {
   const availableKeys = Object.keys(getFieldsKeys(fields));
+  if (typeof values === 'number') {
+    values = toString(values);
+  } else if (typeof values === 'object') {
+    values = toString(get(values, getKeys(values)));
+  }
   if (values) {
     const filteredKeys = availableKeys.filter(e => values.includes(e));
     return filteredKeys;

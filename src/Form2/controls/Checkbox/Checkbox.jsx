@@ -2,6 +2,7 @@ import React from 'react';
 import Help from 'react-icons2/mdi/help-circle';
 import CheckBoxBase from 'antd/lib/checkbox';
 import Tooltip from '../../../Tooltip';
+import Label from './Checkbox.styles';
 
 const CheckBox = ({
   field,
@@ -19,7 +20,12 @@ const CheckBox = ({
         }}
       >
         {props.icon && props.icon}
-        <span className="checkbox-title">{props.label}</span>
+        <Label
+          className="checkbox-title"
+          validationState={form.errors[field.name] ? 'error' : null}
+        >
+          {props.label}
+        </Label>
       </CheckBoxBase>
       {props.control && props.control.help && (
         <Tooltip id={field.name} place="bottom" overlay={props.control.help}>

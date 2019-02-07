@@ -96,7 +96,7 @@ class TreePicker extends Component {
   initFuse(fields) {
     this.fuse = new Fuse(this.getArrays(fields), {
       shouldSort: true,
-      threshold: 0.6,
+      threshold: 0.1,
       location: 0,
       distance: 100,
       maxPatternLength: 32,

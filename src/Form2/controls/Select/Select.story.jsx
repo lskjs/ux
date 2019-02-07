@@ -62,6 +62,7 @@ const SelectForm = createForm({
   controls: {
     select: {
       title: 'The Select',
+      placeholder: 'test',
       component: Select,
       options: range(1, 11).map(id => ({
         value: id,

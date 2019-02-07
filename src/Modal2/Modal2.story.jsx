@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { css } from 'react-emotion';
 import Modal from './Modal2';
 import Story from '../Story';
 import Button from '../Button';
@@ -8,6 +9,10 @@ const {
 } = Modal;
 
 const lorem = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
+
+const style = css`
+  background: red;
+`;
 
 export default ({ storiesOf, action }) => {
   return storiesOf('Modal2', module)
@@ -140,6 +145,35 @@ export default ({ storiesOf, action }) => {
           footer="footer"
           defaultVisible
         />
+      </Story>
+    ))
+    .add('7. Modal with props', () => (
+      <Story>
+        <Modal
+          size="large"
+          trigger={<div>asd</div>}
+          color="#ff0000"
+          className={style}
+          subHeader="subheader"
+        >
+          <Title>title</Title>
+          <Subtitle>Subtitle</Subtitle>
+          <div>
+            <Description>Description</Description>
+            <Help>Help</Help>
+            <Image src="https://picsum.photos/1280/720/?random" />
+            <Content>
+              content
+            </Content>
+          </div>
+          <Footer>
+            <Button
+              paint="primary"
+            >
+              OK
+            </Button>
+          </Footer>
+        </Modal>
       </Story>
     ));
   // .add('2. With title and wrap', () => (
