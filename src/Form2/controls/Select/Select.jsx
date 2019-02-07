@@ -70,6 +70,7 @@ class Select extends Component {
   }
   render() {
     const {
+      placeholder = '',
       value: propValue,
       field,
       form,
@@ -91,7 +92,6 @@ class Select extends Component {
       ValueContainer: CollapsedValueContainer,
       MultiValue: CollapsedMultiValue,
     };
-
     return (
       <Component
         isClearable={!props.required}
@@ -101,6 +101,7 @@ class Select extends Component {
         cacheOptions={async}
         defaultOptions={async}
         closeMenuOnSelect={!props.isMulti}
+        placeholder={placeholder}
         {...field}
         components={{
           SingleValue,
