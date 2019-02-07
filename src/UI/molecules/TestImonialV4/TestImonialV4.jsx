@@ -34,10 +34,10 @@ class TestImonialV4 extends PureComponent {
         <BoxBody>
           <Wrapper>
             <AvatarItem alt="avatar" src={avatar} size={80} />
+            <Author>{name && `${name}, `}{title}</Author>
             <Citation>
               {content}
             </Citation>
-            <Author>{name && `${name}, `}{title}</Author>
           </Wrapper>
         </BoxBody>
       </Box>

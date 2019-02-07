@@ -12,7 +12,7 @@ const createFormWithI18 = (callback) => {
   // @observer
   class Component2 extends Component {
     shouldComponentUpdate(nextProps) {
-      return nextProps.hash && this.props.hash && nextProps.hash !== this.props.hash;
+      return !!(nextProps.hash && this.props.hash && nextProps.hash !== this.props.hash);
     }
     render() {
       const { i18, config, ...props } = this.props;

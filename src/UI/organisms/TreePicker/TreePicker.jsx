@@ -133,9 +133,8 @@ class TreePicker extends Component {
   }
 
   @autobind
-  handleReset(simple) {
-    this.resetToProps();
-    if (!simple) this.modal.close();
+  handleReset() {
+    if (this.modal) this.modal.close();
   }
 
   @autobind
@@ -143,7 +142,6 @@ class TreePicker extends Component {
     const { value } = this.state;
     const { onSubmit } = this.props;
     if (onSubmit) await onSubmit(value);
-    this.resetToProps();
     if (this.modal) this.modal.close();
   }
 
@@ -186,7 +184,7 @@ class TreePicker extends Component {
       <Modal2
         size="small"
         trigger={children}
-        onClose={this.handleReset}
+        onClose={this.resetToProps}
         innerRef={(modal) => {
           this.modal = modal;
         }}
@@ -239,10 +237,7 @@ class TreePicker extends Component {
           <Button
             paint="primary"
             view="text"
-            onClick={() => {
-              this.handleReset();
-              this.modal.close();
-            }}
+            onClick={this.handleReset}
           >
             {t('buttons.cancel')}
           </Button>
