@@ -5,17 +5,20 @@ export const Option = styled('div')`
   display: flex;
   align-items: center;
   overflow: hidden;
-  width: 100%;
   border: none;
 
-
+  
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   font-family: ${p => p.theme.fontFamily};
   font-size: 13px;
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
+  background-color: ${p => p.theme.colors.white};
   letter-spacing: -0.1px;
-  color: #4a4a4a;
+  color: ${p => p.theme.colors.main};
 `;
 
 export const Image = styled('img')`
@@ -26,6 +29,8 @@ export const Image = styled('img')`
 
 export const Title = styled('div')`
   margin-left: ${p => (p.image ? '8px' : '0px')};
+  text-overflow: ellipsis;
+  overflow: hidden;
 `;
 
 export const Icon = styled('div')`

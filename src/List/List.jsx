@@ -86,15 +86,15 @@ class List extends Component {
   static HeaderWrapper = HeaderWrapper;
   static FooterWrapper = FooterWrapper;
   // download
-  
+
   static PagesWrapper = PagesWrapper; // pages
   static StepperWrapper = StepperWrapper; // stepper
   static SelectWrapper = SelectWrapper;
   static PaginatorWrapper = PaginatorWrapper;
-  
+
   render() {
     const {
-      columns, show: customShow = {}, pageSize = 10,
+      columns, show: customShow = {}, pageSize = 10, paginatorProps = {},
       Item, FilterForm, HeaderItem, Tags = DefaultTags, Tag = DefaultTag,
     } = this.props;
 
@@ -139,7 +139,7 @@ class List extends Component {
       HeaderWrapper: this.props.HeaderWrapper || this.constructor.HeaderWrapper,
       FooterWrapper: this.props.FooterWrapper || this.constructor.FooterWrapper,
       FooterRightWrapper: this.props.FooterRightWrapper || this.constructor.FooterRightWrapper,
-      
+
       PaginatorWrapper: this.props.PaginatorWrapper || this.constructor.PaginatorWrapper,
       PagesWrapper: this.props.PagesWrapper || this.constructor.PagesWrapper,
       StepperWrapper: this.props.StepperWrapper || this.constructor.StepperWrapper,
@@ -184,6 +184,7 @@ class List extends Component {
           Tags,
           Tag,
           HeaderItem,
+          paginatorProps,
         }}
       >
         <MobxProvider listStore={listStore} selectStore={selectStore} >

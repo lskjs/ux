@@ -5,8 +5,10 @@ import isEmpty from 'lodash/isEmpty';
 import every from 'lodash/every';
 import SelectStore from './SelectStore';
 import FetchStore from './FetchStore';
+import connectListStore from '../utils/connectListStore';
 
 export default class ListStore extends FetchStore {
+  static connect = connectListStore;
   @observable filter = {};
   @observable showFilter = false;
   @observable tab = null;

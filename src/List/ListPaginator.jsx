@@ -6,7 +6,7 @@ import If from 'react-if';
 import { contextToProps } from './List.context';
 import { PaginatorGroupWrapper, ArrowButton, ArrowBlock } from './List.styles';
 
-@contextToProps('List', 'pageSize', 'show')
+@contextToProps('List', 'paginatorProps')
 @inject('listStore')
 @observer
 class ListPaginator extends Component {
@@ -14,10 +14,11 @@ class ListPaginator extends Component {
     const {
       List,
       listStore,
+      paginatorProps = {},
     } = this.props;
     const page = listStore.getCurrentPage();
     return (
-      <List.PaginatorWrapper>
+      <List.PaginatorWrapper style={{ flexShrink: 0, marginLeft: 10 }}>
         <If condition={listStore.count === null}>
           <ArrowBlock>
             <ArrowButton disabled={!(page > 1)} onClick={() => listStore.setPage(page - 1)}>
@@ -35,6 +36,8 @@ class ListPaginator extends Component {
               current={listStore.getCurrentPage()}
               pageSize={listStore.limit}
               total={listStore.count}
+              showLessItems
+              {...paginatorProps}
             />
           </PaginatorGroupWrapper>
         </If>

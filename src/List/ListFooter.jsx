@@ -3,13 +3,17 @@ import { observer, inject } from 'mobx-react';
 import If from 'react-if';
 import DownloadIcon from 'react-icons2/mdi/download';
 import T from '../T';
+import withResponsive from '../Button/withResponsive';
+import Button from '../Button';
 import { contextToProps } from './List.context';
 import { FooterRightWrapper, SelectWrapper } from './List.styles';
+
+const ResponsiveButton = withResponsive(Button);
 
 @contextToProps('List', 'pageSize', 'show')
 @inject('listStore')
 @observer
-class ListPaginator extends Component {
+class ListFooter extends Component {
   render() {
     const {
       List,
@@ -24,13 +28,20 @@ class ListPaginator extends Component {
     return (
       <List.FooterWrapper>
         <If condition={show.download}>
-          <List.Button
+          <ResponsiveButton
+            view="text"
+            icon={<DownloadIcon />}
+            onClick={listStore.download}
+          >
+            <T name="lskList.downloadButton" />
+          </ResponsiveButton>
+          {/* <List.Button
             view="text"
             iconLeft={<DownloadIcon />}
             onClick={listStore.download}
           >
             <T name="lskList.downloadButton" />
-          </List.Button>
+          </List.Button> */}
         </If>
         <FooterRightWrapper>
           <If condition={show.stepper}>
@@ -46,7 +57,7 @@ class ListPaginator extends Component {
             </List.StepperWrapper>
           </If>
           <If condition={show.pages && listStore.items.length}>
-            <List.PagesWrapper>
+            <List.PagesWrapper style={{ flexShrink: 0, marginLeft: 10 }}>
               {from}—{to}
               {listStore.count !== null && ` / ${listStore.count}`}
             </List.PagesWrapper>
@@ -60,4 +71,4 @@ class ListPaginator extends Component {
   }
 }
 
-export default ListPaginator;
+export default ListFooter;

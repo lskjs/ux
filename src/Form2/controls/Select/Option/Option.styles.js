@@ -11,24 +11,25 @@ export const OptionItem = styled('button')`
   padding-left: 8px;
 
   font-family: ${p => p.theme.fontFamily};
+  background-color: ${p => p.theme.colors.white};
   font-size: 13px;
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
   line-height: 3.6;
   letter-spacing: -0.1px;
-  color: #4a4a4a;
+  color: ${p => p.theme.colors.main};
   &:focus{
     background-color: #eff4fa !important;
-    color: #4a4a4a !important;
+    color: ${p => p.theme.colors.main} !important;
   }
   &:hover {
     background-color: #eff4fa !important;
-    color: #4a4a4a !important;
+    color: ${p => p.theme.colors.main} !important;
   }
   ${p => (p.selected && css`
     background-color: #f0f0ff !important;
-    color: #7070ff !important;
+    color: ${p.theme.colors.primary} !important;
   `)}
 `;
 
