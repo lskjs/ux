@@ -102,7 +102,6 @@ class Select extends Component {
         defaultOptions={async}
         closeMenuOnSelect={!props.isMulti}
         {...field}
-        {...props}
         components={{
           SingleValue,
           Option,
