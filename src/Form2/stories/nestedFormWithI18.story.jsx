@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, Field } from 'formik';
 import Story from '../../Story';
-import createForm from '../createForm';
+import createFormWithI18 from '../createFormWithI18';
 import FormDebug from '../FormDebug';
 
 import Input from '../controls/Input';
@@ -21,7 +21,7 @@ const EntityFormView = (props) => {
   );
 };
 
-const EntityForm = createForm({
+const EntityForm = createFormWithI18(() => ({
   view: EntityFormView,
   controls: {
     name: {
@@ -39,7 +39,7 @@ const EntityForm = createForm({
       options: ['male', 'female'],
     },
   },
-});
+}));
 
 
 const ComplexFormView = (props) => {
@@ -54,7 +54,7 @@ const ComplexFormView = (props) => {
   );
 };
 
-const ComplexForm = createForm({
+const ComplexForm = createFormWithI18(() => ({
   view: ComplexFormView,
   controls: {
     title: {
@@ -73,18 +73,18 @@ const ComplexForm = createForm({
       showAddButton: true,
     },
   },
-});
+}));
 
 export default ({ storiesOf }) =>
   storiesOf('Form2/nestedForm', module)
-    .add('EntityForm', () => {
+    .add('EntityForm i18', () => {
       return (
         <Story devtools>
           <EntityForm />
         </Story>
       );
     })
-    .add('ComplexForm', () => {
+    .add('ComplexForm i18', () => {
       return (
         <Story devtools>
           <ComplexForm />
