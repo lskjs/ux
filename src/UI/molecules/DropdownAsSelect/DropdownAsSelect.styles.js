@@ -49,6 +49,19 @@ export const Trigger = styled('button')`
   position: relative;
   transition: border-color .1s ease-out;
   
+  > div {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: block;
+      &:not(:last-child) {
+        line-height: 46px;
+      }
+      &:last-child {
+        top: -2px;
+      }
+  }
+  
   ${p => (p.disabled && css`
     opacity: .5;
     pointer-events: none;

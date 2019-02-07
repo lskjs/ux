@@ -90,9 +90,9 @@ export const Actions = styled('div')`
 export const Action = styled('div')`
   margin-right: 12px;
   height: 100%;
+  display: flex;
+  align-items: center;
   ${p => (p.additional && css`
-    display: flex;
-    align-items: center;
     padding-left: 12px;
     border-left: 1px solid ${p.theme.colors.border};
     
