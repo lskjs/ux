@@ -8,6 +8,7 @@ const demoStyle = {
   color: 'white',
   fontSize: 36,
 };
+const Item = props => <div style={demoStyle} {...props} />;
 
 export default ({ storiesOf }) => {
   storiesOf('Grid', module)
@@ -15,20 +16,25 @@ export default ({ storiesOf }) => {
       <Story devtools>
         <Grid>
           <Grid.Row>
-            <Grid.Col md={4}>
-              <div style={demoStyle}>
-                Grid.Col 4
-              </div>
+            <Grid.Col lg={6} md={12}>
+              <Item>
+                lg-6 md-12
+              </Item>
             </Grid.Col>
-            <Grid.Col md={4}>
-              <div style={demoStyle}>
-                Grid.Col 4
-              </div>
+            <Grid.Col lg={2} md={4} xs={6}>
+              <Item>
+                lg-2 md-4 xs-6
+              </Item>
             </Grid.Col>
-            <Grid.Col md={4}>
-              <div style={demoStyle}>
-                Grid.Col 4
-              </div>
+            <Grid.Col lg={2} md={4} xs={6}>
+              <Item>
+                lg-2 md-4 xs-6
+              </Item>
+            </Grid.Col>
+            <Grid.Col lg={2} md={4} xs={12}>
+              <Item>
+                lg-2 md-4 xs-12
+              </Item>
             </Grid.Col>
           </Grid.Row>
         </Grid>
@@ -38,35 +44,25 @@ export default ({ storiesOf }) => {
       <Story devtools>
         <Grid>
           <Grid.Row vertical>
-            <Grid.Col md={4}>
-              <div style={demoStyle}>
-                Grid.Col 4
-              </div>
+            <Grid.Col lg={6} md={12}>
+              <Item>
+                lg-6 md-12
+              </Item>
             </Grid.Col>
-            <Grid.Col md={4}>
-              <div style={demoStyle}>
-                Grid.Col 4
-              </div>
+            <Grid.Col lg={2} md={4} xs={6}>
+              <Item>
+                lg-2 md-4 xs-6
+              </Item>
             </Grid.Col>
-            <Grid.Col md={4}>
-              <div style={demoStyle}>
-                Grid.Col 4
-              </div>
+            <Grid.Col lg={2} md={4} xs={6}>
+              <Item>
+                lg-2 md-4 xs-6
+              </Item>
             </Grid.Col>
-            <Grid.Col md={4}>
-              <div style={demoStyle}>
-                Grid.Col 4
-              </div>
-            </Grid.Col>
-            <Grid.Col md={4}>
-              <div style={demoStyle}>
-                Grid.Col 4
-              </div>
-            </Grid.Col>
-            <Grid.Col md={4}>
-              <div style={demoStyle}>
-                Grid.Col 4
-              </div>
+            <Grid.Col lg={2} md={4} xs={12}>
+              <Item>
+                lg-2 md-4 xs-12
+              </Item>
             </Grid.Col>
           </Grid.Row>
         </Grid>
@@ -77,19 +73,19 @@ export default ({ storiesOf }) => {
         <Grid>
           <Grid.Row vertical gap={32}>
             <Grid.Col md={4}>
-              <div style={demoStyle}>
+              <Item>
                 Grid.Col 4
-              </div>
+              </Item>
             </Grid.Col>
             <Grid.Col md={4}>
-              <div style={demoStyle}>
+              <Item>
                 Grid.Col 4
-              </div>
+              </Item>
             </Grid.Col>
             <Grid.Col md={4}>
-              <div style={demoStyle}>
+              <Item>
                 Grid.Col 4
-              </div>
+              </Item>
             </Grid.Col>
           </Grid.Row>
         </Grid>
@@ -100,34 +96,34 @@ export default ({ storiesOf }) => {
         <Grid>
           <Grid.Row vertical gap={6}>
             <Grid.Col md={4}>
-              <div style={demoStyle}>
+              <Item>
                 Grid.Col 4
-              </div>
+              </Item>
             </Grid.Col>
             <Grid.Col md={4}>
-              <div style={demoStyle}>
+              <Item>
                 Grid.Col 4
-              </div>
+              </Item>
             </Grid.Col>
             <Grid.Col md={4}>
-              <div style={demoStyle}>
+              <Item>
                 Grid.Col 4
-              </div>
+              </Item>
             </Grid.Col>
             <Grid.Col md={4}>
-              <div style={demoStyle}>
+              <Item>
                 Grid.Col 4
-              </div>
+              </Item>
             </Grid.Col>
             <Grid.Col md={4}>
-              <div style={demoStyle}>
+              <Item>
                 Grid.Col 4
-              </div>
+              </Item>
             </Grid.Col>
             <Grid.Col md={4}>
-              <div style={demoStyle}>
+              <Item>
                 Grid.Col 4
-              </div>
+              </Item>
             </Grid.Col>
           </Grid.Row>
         </Grid>
@@ -138,19 +134,19 @@ export default ({ storiesOf }) => {
         <Grid>
           <Row>
             <Col md={4}>
-              <div style={demoStyle}>
+              <Item>
                 Col 4
-              </div>
+              </Item>
             </Col>
             <Col md={4}>
-              <div style={demoStyle}>
+              <Item>
                 Col 4
-              </div>
+              </Item>
             </Col>
             <Col md={4}>
-              <div style={demoStyle}>
+              <Item>
                 Col 4
-              </div>
+              </Item>
             </Col>
           </Row>
         </Grid>
