@@ -20,6 +20,7 @@ class ListFilter extends Component {
       <List.FilterWrapper>
         <FilterForm
           enableReinitialize
+          // initialValues={listStore.filter}
           initialValues={toJS(listStore.filter)}
           onChange={listStore.setFilter}
         />
