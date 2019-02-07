@@ -115,6 +115,14 @@ class Select extends Component {
             position: 'relative',
             top: 'inherit',
             transform: 'inherit',
+            flexWrap: 'nowrap',
+          }),
+          valueContainer: base => ({
+            ...base,
+            flexWrap: 'nowrap',
+            whiteSpace: 'nowrap',
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
           }),
           ...styles,
         }}
