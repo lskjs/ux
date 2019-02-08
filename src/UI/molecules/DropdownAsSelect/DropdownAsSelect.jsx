@@ -13,6 +13,7 @@ class SelectFilter extends PureComponent {
     children: PropTypes.any,
     disabled: PropTypes.bool,
     contentWrapperProps: PropTypes.object,
+    onClose: PropTypes.func,
   }
 
   static defaultProps = {
@@ -61,12 +62,20 @@ class SelectFilter extends PureComponent {
       </Content>
     );
   }
-
+  @autobind
+  onClickOutside() {
+    const { open } = this.state;
+    if (!open) return;
+    this.openHandler(false);
+    if (this.props.onClose) {
+      this.props.onClose();
+    }
+  }
   render() {
     const { open } = this.state;
     const { trigger, disabled } = this.props;
     return (
-      <Outside onClickOutside={() => this.openHandler(false)}>
+      <Outside onClickOutside={this.onClickOutside}>
         <Manager>
           <Reference>
             {({ ref }) => (
