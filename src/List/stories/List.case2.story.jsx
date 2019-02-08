@@ -6,8 +6,7 @@ import { observer } from 'mobx-react';
 import { css } from 'emotion';
 import Promise from 'bluebird';
 
-import BsCol from 'reactstrap/lib/Col';
-import BsRow from 'reactstrap/lib/Row';
+import { Row as BsRow, Col as BsCol } from '../../Grid';
 // import { Row as BsRow, Col as BsCol } from 'react-bootstrap';
 
 import Story from '../../Story';

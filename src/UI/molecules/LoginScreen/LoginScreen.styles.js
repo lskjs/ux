@@ -1,6 +1,5 @@
 import styled from 'react-emotion';
-import BsRow from 'reactstrap/lib/Row';
-import BsCol from 'reactstrap/lib/Col';
+import { Row as BsRow, Col as BsCol } from '../../../Grid';
 import Form from 'antd/lib/form';
 import Button from 'antd/lib/button';
 import createDynamicTag from '../../../utils/createDynamicTag';

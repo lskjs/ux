@@ -1,7 +1,6 @@
 import React from 'react';
 import Container from 'reactstrap/lib/Container';
-import Col from 'reactstrap/lib/Col';
-import Row from 'reactstrap/lib/Row';
+import { Col, Row } from './Grid';
 import Story from './Story';
 import './styles/lib/antd.g.css';
 import './styles/lib/bootstrap.g.css';

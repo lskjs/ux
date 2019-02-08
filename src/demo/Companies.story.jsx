@@ -1,8 +1,7 @@
 import React from 'react';
 import SearchIcon from 'react-icons2/mdi/magnify';
 import Container from 'reactstrap/lib/Container';
-import Col from 'reactstrap/lib/Col';
-import Row from 'reactstrap/lib/Row';
+import { Col, Row } from '../Grid';
 import Story from '../Story';
 import Input from '../Input';
 import Button from '../Button';

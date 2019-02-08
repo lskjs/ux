@@ -1,6 +1,5 @@
 import React from 'react';
-import Row from 'reactstrap/lib/Row';
-import Col from 'reactstrap/lib/Col';
+import { Col, Row } from '../Grid';
 import AccountIcon from 'react-icons2/mdi/account';
 import Slide from '../Slide';
 import Button from '../Button';
