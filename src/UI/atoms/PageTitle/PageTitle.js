@@ -3,18 +3,10 @@ import styled from 'react-emotion';
 export default styled('div')`
   font-family: ${p => p.theme.fontFamily};
   font-size: 20px;
-  font-weight: 500;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.8;
+  line-height: 1.2;
   letter-spacing: -0.1px;
-  color: ${p => p.theme.colors.main};
-  /* font-family: ${p => p.theme.fontFamily}; */
-  /* font-size: 20px; */
-  /* line-height: 1.2; */
-  /* letter-spacing: -0.1px; */
   text-align: left;
-  /* color: ${p => p.theme.colors.main}; */
+  color: ${p => p.theme.colors.main};
   margin: 16px 0;
   display: flex;
   align-items: flex-end;
