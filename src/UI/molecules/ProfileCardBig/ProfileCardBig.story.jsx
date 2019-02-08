@@ -1,5 +1,5 @@
 import React from 'react';
-import ThemeInjector from '../../../ThemeInjector';
+import Story from '../../../Story';
 import ProfileCardBig from './ProfileCardBig';
 
 import '../../../styles/lib/antd.g.css';
@@ -7,7 +7,7 @@ import '../../../styles/lib/antd.g.css';
 export default ({ storiesOf }) => (
   storiesOf('ui/ProfileCardBig', module)
     .add('Default', () => (
-      <ThemeInjector>
+      <Story>
         <ProfileCardBig
           img="https://picsum.photos/200"
           name="Jason Bourne"
@@ -15,6 +15,6 @@ export default ({ storiesOf }) => (
           sign="I must confess I'm American (I know… nobody's perfect)"
           // fixHeight={250}
         />
-      </ThemeInjector>
+      </Story>
     ))
 );

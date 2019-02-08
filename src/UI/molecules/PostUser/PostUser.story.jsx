@@ -1,80 +1,70 @@
 import React from 'react';
 import PostUser from './PostUser';
-import ThemeInjector from '../../../ThemeInjector';
+import Story from '../../../Story';
 
 export default ({ storiesOf }) => (
   storiesOf('ui/PostUser', module)
     .add('Default', () => (
-      <ThemeInjector>
-        <div style={{ padding: 60 }}>
-          <PostUser
-            user={{
-              title: 'Имя Фамилия',
-              avatar: 'https://picsum.photos/100/?random',
-            }}
-          />
-        </div>
-      </ThemeInjector>
+      <Story>
+        <PostUser
+          user={{
+            title: 'Имя Фамилия',
+            avatar: 'https://picsum.photos/100/?random',
+          }}
+        />
+      </Story>
     ))
     .add('With role', () => (
-      <ThemeInjector>
-        <div style={{ padding: 60 }}>
-          <PostUser
-            user={{
-              title: 'Имя Фамилия',
-              avatar: 'https://picsum.photos/100/?random',
-            }}
-            subtitle="Модератор"
-          />
-        </div>
-      </ThemeInjector>
+      <Story>
+        <PostUser
+          user={{
+            title: 'Имя Фамилия',
+            avatar: 'https://picsum.photos/100/?random',
+          }}
+          subtitle="Модератор"
+        />
+      </Story>
     ))
     .add('With category', () => (
-      <ThemeInjector>
-        <div style={{ padding: 60 }}>
-          <PostUser
-            user={{
-              title: 'Имя Фамилия',
-              avatar: 'https://picsum.photos/100/?random',
-            }}
-            category={{
-              title: 'Для всех',
-            }}
-          />
-        </div>
-      </ThemeInjector>
+      <Story>
+        <PostUser
+          user={{
+            title: 'Имя Фамилия',
+            avatar: 'https://picsum.photos/100/?random',
+          }}
+          category={{
+            title: 'Для всех',
+          }}
+        />
+      </Story>
     ))
     .add('With category 2', () => (
-      <ThemeInjector>
-        <div style={{ padding: 60 }}>
-          <PostUser
-            user={{
-              title: 'Имя Фамилия',
-              avatar: 'https://picsum.photos/100/?random',
-            }}
-            category={{
-              title: 'Для друзей',
-              color: 'red',
-            }}
-          />
-        </div>
-      </ThemeInjector>
+      <Story>
+        <PostUser
+          user={{
+            title: 'Имя Фамилия',
+            avatar: 'https://picsum.photos/100/?random',
+          }}
+          category={{
+            title: 'Для друзей',
+            color: 'red',
+          }}
+        />
+      </Story>
     ))
 
     .add('With role & category', () => (
-      <ThemeInjector>
-        <div style={{ padding: 60 }}>
-          <PostUser
-            user={{
-              title: 'Имя Фамилия',
-              avatar: 'https://picsum.photos/100/?random',
-            }}
-            subtitle="Модератор"
-            category={{
-              title: 'Для всех',
-            }}
-          />
-        </div>
-      </ThemeInjector>
+      <Story>
+        <PostUser
+          user={{
+            title: 'Имя Фамилия',
+            avatar: 'https://picsum.photos/100/?random',
+          }}
+          subtitle="Модератор"
+          category={{
+            title: 'Для всех',
+          }}
+        />
+      </Story>
     ))
 );

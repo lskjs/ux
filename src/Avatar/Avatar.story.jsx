@@ -1,6 +1,8 @@
 import React from 'react';
-import Avatar from './Avatar';
 import random from 'lodash/random';
+import Avatar from './Avatar';
+import Story from '../Story';
+
 
 const rndNum = random(99);
 const avatarImg = `https://randomuser.me/api/portraits/men/${rndNum}.jpg`;
@@ -17,39 +19,45 @@ const user = () => ({
 export default ({ storiesOf, action, knob }) => {
   return storiesOf('Avatar', module)
     .add('Default as img (title,src)', () => (
-      <Avatar
-        title="John Smith"
-        src={avatarImg}
-      />
+      <Story>
+        <Avatar
+          title="John Smith"
+          src={avatarImg}
+        />
+      </Story>
     ))
     .add('Alternative as User (name,avatar)', () => (
-      <Avatar
-        name="John Smith"
-        avatar={avatarImg}
-      />
+      <Story>
+        <Avatar
+          name="John Smith"
+          avatar={avatarImg}
+        />
+      </Story>
     ))
     .add('Empty', () => (
-      <Avatar />
+      <Story>
+        <Avatar />
+      </Story>
     ))
     .add('props.backgroundColor', () => (
-      <div>
+      <Story>
         <Avatar backgroundColor="#A7226E" title="Purple" />
         <Avatar backgroundColor="#EC2049" title="Pink" />
         <Avatar backgroundColor="#F26B38" title="Orange" />
         <Avatar backgroundColor="#F7DB4F" title="Yellow" />
         <Avatar backgroundColor="#2F9599" title="Blue" />
-      </div>
+      </Story>
     ))
     .add('Empty avatar, colored by random  ', () => (
-      <div>
+      <Story>
         <Avatar />
         <Avatar />
         <Avatar />
         <Avatar />
-      </div>
+      </Story>
     ))
     .add('Colored by title', () => (
-      <div>
+      <Story>
         <p>
           Any titles:
         </p>
@@ -64,10 +72,10 @@ export default ({ storiesOf, action, knob }) => {
         <Avatar title="user 2" />
         <Avatar title="user 3" />
         <Avatar title="user 4" />
-      </div>
+      </Story>
     ))
     .add('Colored by id', () => (
-      <div>
+      <Story>
         <p>
           Any users:
         </p>
@@ -81,28 +89,28 @@ export default ({ storiesOf, action, knob }) => {
         <Avatar title="name 1" id={1} />
         <Avatar title="name 2" id={1} />
         <Avatar title="name 3" id={1} />
-      </div>
+      </Story>
     ))
     .add('No image', () => (
-      <div>
+      <Story>
         <Avatar title="John Smith" />
         <Avatar title="John Smith" textScale={0.5} />
         <Avatar title="John Smith" textScale={2} />
         <Avatar title="John Smith" textScale={4} />
-      </div>
+      </Story>
     ))
     .add('Size', () => (
-      <div>
+      <Story>
         <Avatar {...user()} />
         <Avatar {...user()} size={32} />
         <Avatar {...user()} size={64} />
         <Avatar {...user()} size={100} />
         <Avatar {...user()} width={100} height={50} />
         <Avatar {...user()} width={50} height={100} />
-      </div>
+      </Story>
     ))
     .add('Custom styles', () => (
-      <div>
+      <Story>
         <div>
           <Avatar {...user()} style={{ margin: 10 }} />
           <Avatar {...user()} style={{ padding: 10 }} />
@@ -126,10 +134,10 @@ export default ({ storiesOf, action, knob }) => {
           <Avatar {...user()} innerStyle={{ border: '2px solid #4CAF50' }} />
           <Avatar {...user()} innerStyle={{ border: '4px solid #F44336' }} />
         </div>
-      </div>
+      </Story>
     ))
     .add('Badge', () => (
-      <div>
+      <Story>
         <Avatar {...user()}>
           <Avatar.Badge left top>
             <div style={{
@@ -199,50 +207,56 @@ export default ({ storiesOf, action, knob }) => {
 }}
           />
         </Avatar>
-      </div>
+      </Story>
     ))
     .add('Shape', () => (
-      <div>
+      <Story>
         <Avatar {...user()} shape="circle" />
         <Avatar {...user()} shape="square" />
         <Avatar {...user()} shape="rounded" />
-      </div>
+      </Story>
     ))
     .add('Failed img', () => (
-      <Avatar title="John Smith" src="/failed-img.png" />
+      <Story>
+        <Avatar title="John Smith" src="/failed-img.png" />
+      </Story>
     ))
     .add('No proportional', () => (
-      <div>
+      <Story>
         <Avatar title="John Smith" src={smallImg} />
         <Avatar title="John Smith" src={largeImg} />
         <Avatar title="John Smith" src={noProportionalImg} />
         <Avatar title="John Smith" src={noProportionalImg} width={128} height={64} />
         <Avatar title="John Smith" src={noProportionalImg} shape="rounded" width={128} height={64} />
-      </div>
+      </Story>
     ))
     .add('With tag a', () => (
-      <a href="#"><Avatar {...user()} /></a>
+      <Story>
+        <a href="#"><Avatar {...user()} /></a>
+      </Story>
     ))
     .add('Knobs', () => (
-      <Avatar
-        name={knob.text('Name')}
-        title={knob.text('Title')}
-        avatar={knob.text('Avatar')}
-        src={knob.text('Src')}
-        size={knob.number('Size', 64)}
-        width={knob.number('Width')}
-        height={knob.number('Height')}
-        shape={knob.select('Shape', { cirlce: 'circle', rounded: 'rounded', square: 'square' }, 'circle')}
-        border={knob.boolean('Border')}
-        borderColor={knob.color('Border color')}
-        borderWidth={knob.number('Border width')}
-        borderPadding={knob.number('Border padding')}
-        bgColor={knob.color('Background color')}
-        textColor={knob.color('Text color')}
-        textScale={knob.number('Text size scale')}
-        shadow={knob.boolean('Shadow')}
-        inactive={knob.boolean('Inactive')}
-        style={knob.object('Custom styles', { padding: '10px' })}
-      />
+      <Story>
+        <Avatar
+          name={knob.text('Name')}
+          title={knob.text('Title')}
+          avatar={knob.text('Avatar')}
+          src={knob.text('Src')}
+          size={knob.number('Size', 64)}
+          width={knob.number('Width')}
+          height={knob.number('Height')}
+          shape={knob.select('Shape', { cirlce: 'circle', rounded: 'rounded', square: 'square' }, 'circle')}
+          border={knob.boolean('Border')}
+          borderColor={knob.color('Border color')}
+          borderWidth={knob.number('Border width')}
+          borderPadding={knob.number('Border padding')}
+          bgColor={knob.color('Background color')}
+          textColor={knob.color('Text color')}
+          textScale={knob.number('Text size scale')}
+          shadow={knob.boolean('Shadow')}
+          inactive={knob.boolean('Inactive')}
+          style={knob.object('Custom styles', { padding: '10px' })}
+        />
+      </Story>
     ));
 };

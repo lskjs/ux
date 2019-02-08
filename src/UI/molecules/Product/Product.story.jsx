@@ -1,6 +1,6 @@
 import React from 'react';
 import Product from './Product';
-import ThemeInjector from '../../../ThemeInjector';
+import Story from '../../../Story';
 
 const articles = [
   {
@@ -17,10 +17,8 @@ const articles = [
 export default ({ storiesOf }) => (
   storiesOf('ui/Product', module)
     .add('Product', () => (
-      <div style={{ padding: 60 }}>
-        <ThemeInjector>
-          <Product {...articles[0]} />
-        </ThemeInjector>
-      </div>
+      <Story>
+        <Product {...articles[0]} />
+      </Story>
     ))
 );

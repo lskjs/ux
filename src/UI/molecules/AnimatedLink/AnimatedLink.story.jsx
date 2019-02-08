@@ -1,14 +1,14 @@
 import React from 'react';
 import Link from '../../../Link';
 import AnimatedLink from './AnimatedLink';
-import ThemeInjector from '../../../ThemeInjector';
+import Story from '../../../Story';
 
 import '../../../styles/lib/antd.g.css';
 
 export default ({ storiesOf }) => (
   storiesOf('ui/AnimatedLink', module)
     .add('Default', () => (
-      <ThemeInjector>
+      <Story>
         <AnimatedLink
           href="//google.com"
           target="_blank"
@@ -16,10 +16,10 @@ export default ({ storiesOf }) => (
         >
           Читать дальше
         </AnimatedLink>
-      </ThemeInjector>
+      </Story>
     ))
     .add('Primary', () => (
-      <ThemeInjector>
+      <Story>
         <AnimatedLink
           href="//google.com"
           target="_blank"
@@ -28,10 +28,10 @@ export default ({ storiesOf }) => (
         >
           Читать дальше
         </AnimatedLink>
-      </ThemeInjector>
+      </Story>
     ))
     .add('With Link', () => (
-      <ThemeInjector>
+      <Story>
         <AnimatedLink
           componentClass={Link}
           href="/?selectedKind=BlogCard"
@@ -40,6 +40,6 @@ export default ({ storiesOf }) => (
         >
           Читать дальше
         </AnimatedLink>
-      </ThemeInjector>
+      </Story>
     ))
 );

@@ -1,5 +1,5 @@
 import React from 'react';
-import ThemeInjector from '../../../ThemeInjector';
+import Story from '../../../Story';
 import Box from './Box';
 import Link from '../../../Link';
 import AnimatedLink from '../AnimatedLink';
@@ -10,7 +10,7 @@ import BoxDivider from '../../atoms/BoxDivider';
 export default ({ storiesOf }) => (
   storiesOf('ui/Box', module)
     .add('Default', () => (
-      <ThemeInjector>
+      <Story>
         <Box padded>
           <Box.Header>
             Box Header
@@ -30,10 +30,10 @@ export default ({ storiesOf }) => (
             </AnimatedLink>
           </Box.Footer>
         </Box>
-      </ThemeInjector>
+      </Story>
     ))
     .add('DefaultBadged', () => (
-      <ThemeInjector>
+      <Story>
         <Box padded>
           <Box.Header>
             Box Header
@@ -56,10 +56,10 @@ export default ({ storiesOf }) => (
             </AnimatedLink>
           </Box.Footer>
         </Box>
-      </ThemeInjector>
+      </Story>
     ))
     .add('HeaderLight', () => (
-      <ThemeInjector>
+      <Story>
         <Box>
           <Box.Header padded paint="light">
             Box Header
@@ -82,10 +82,10 @@ export default ({ storiesOf }) => (
             </AnimatedLink>
           </Box.Footer>
         </Box>
-      </ThemeInjector>
+      </Story>
     ))
     .add('BodyLight', () => (
-      <ThemeInjector>
+      <Story>
         <Box>
           <Box.Header padded>
             Box Header
@@ -108,10 +108,10 @@ export default ({ storiesOf }) => (
             </AnimatedLink>
           </Box.Footer>
         </Box>
-      </ThemeInjector>
+      </Story>
     ))
     .add('WithDivider', () => (
-      <ThemeInjector>
+      <Story>
         <Box>
           <Box.Header padded>
             Box Header
@@ -135,10 +135,10 @@ export default ({ storiesOf }) => (
             </AnimatedLink>
           </Box.Footer>
         </Box>
-      </ThemeInjector>
+      </Story>
     ))
     .add('NoBackground', () => (
-      <ThemeInjector>
+      <Story>
         <Box paint="nobackground">
           <Box.Header padded>
             Box Header
@@ -161,10 +161,10 @@ export default ({ storiesOf }) => (
             </AnimatedLink>
           </Box.Footer>
         </Box>
-      </ThemeInjector>
+      </Story>
     ))
     .add('TransparentBox', () => (
-      <ThemeInjector>
+      <Story>
         <Box paint="transparent">
           <Box.Header padded>
             Box Header
@@ -187,10 +187,10 @@ export default ({ storiesOf }) => (
             </AnimatedLink>
           </Box.Footer>
         </Box>
-      </ThemeInjector>
+      </Story>
     ))
     .add('BlackHeader', () => (
-      <ThemeInjector>
+      <Story>
         <Box>
           <Box.Header padded paint="dark">
             Box Header
@@ -213,10 +213,10 @@ export default ({ storiesOf }) => (
             </AnimatedLink>
           </Box.Footer>
         </Box>
-      </ThemeInjector>
+      </Story>
     ))
     .add('BlackBody', () => (
-      <ThemeInjector>
+      <Story>
         <Box>
           <Box.Header padded>
             Box Header
@@ -239,10 +239,10 @@ export default ({ storiesOf }) => (
             </AnimatedLink>
           </Box.Footer>
         </Box>
-      </ThemeInjector>
+      </Story>
     ))
     .add('Black', () => (
-      <ThemeInjector>
+      <Story>
         <Box paint="dark">
           <Box.Header padded>
             Box Header
@@ -265,10 +265,10 @@ export default ({ storiesOf }) => (
             </AnimatedLink>
           </Box.Footer>
         </Box>
-      </ThemeInjector>
+      </Story>
     ))
     .add('Blue', () => (
-      <ThemeInjector>
+      <Story>
         <Box paint="primary">
           <Box.Header padded>
             Box Header
@@ -291,10 +291,10 @@ export default ({ storiesOf }) => (
             </AnimatedLink>
           </Box.Footer>
         </Box>
-      </ThemeInjector>
+      </Story>
     ))
     .add('Aqua', () => (
-      <ThemeInjector>
+      <Story>
         <Box paint="info">
           <Box.Header padded>
             Box Header
@@ -317,10 +317,10 @@ export default ({ storiesOf }) => (
             </AnimatedLink>
           </Box.Footer>
         </Box>
-      </ThemeInjector>
+      </Story>
     ))
     .add('GreenDivided', () => (
-      <ThemeInjector>
+      <Story>
         <Box paint="success">
           <Box.Header padded>
             Box Header
@@ -344,10 +344,10 @@ export default ({ storiesOf }) => (
             </AnimatedLink>
           </Box.Footer>
         </Box>
-      </ThemeInjector>
+      </Story>
     ))
     .add('YellowDivided', () => (
-      <ThemeInjector>
+      <Story>
         <Box paint="warning">
           <Box.Header padded>
             Box Header
@@ -371,10 +371,10 @@ export default ({ storiesOf }) => (
             </AnimatedLink>
           </Box.Footer>
         </Box>
-      </ThemeInjector>
+      </Story>
     ))
     .add('RedDivided', () => (
-      <ThemeInjector>
+      <Story>
         <Box paint="danger">
           <Box.Header padded>
             Box Header
@@ -398,21 +398,21 @@ export default ({ storiesOf }) => (
             </AnimatedLink>
           </Box.Footer>
         </Box>
-      </ThemeInjector>
+      </Story>
     ))
     .add('UserPage', () => (
-      <ThemeInjector>
+      <Story>
         <Box image="https://picsum.photos/1280/720/?random" style={{ height: 380 }}>
           <div style={{ height: 240 }} />
           <UserBoxFooter />
         </Box>
-      </ThemeInjector>
+      </Story>
     ))
     .add('componentClass', () => (
-      <ThemeInjector>
+      <Story>
         <Box style={{ height: 380 }} paint="primary" componentClass={Link} href="https://vk.com">
           <div style={{ height: 240 }} />
         </Box>
-      </ThemeInjector>
+      </Story>
     ))
 );

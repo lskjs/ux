@@ -1,6 +1,6 @@
 import React from 'react';
 import PortfolioCard from './PortfolioCard';
-import ThemeInjector from '../../../ThemeInjector';
+import Story from '../../../Story';
 
 const articles = [
   {
@@ -21,17 +21,13 @@ const articles = [
 export default ({ storiesOf }) => (
   storiesOf('ui/PortfolioCard', module)
     .add('Card1', () => (
-      <div style={{ padding: 60, maxWidth: 400 }}>
-        <ThemeInjector>
-          <PortfolioCard {...articles[0]} />
-        </ThemeInjector>
-      </div>
+      <Story>
+        <PortfolioCard {...articles[0]} />
+      </Story>
     ))
     .add('Card2', () => (
-      <div style={{ padding: 60, maxWidth: 400 }}>
-        <ThemeInjector>
-          <PortfolioCard {...articles[1]} />
-        </ThemeInjector>
-      </div>
+      <Story>
+        <PortfolioCard {...articles[1]} />
+      </Story>
     ))
 );

@@ -1,6 +1,6 @@
 import React from 'react';
 import Feature from './Feature';
-import ThemeInjector from '../../../ThemeInjector';
+import Story from '../../../Story';
 
 const articles = [
   {
@@ -15,10 +15,8 @@ const articles = [
 export default ({ storiesOf }) => (
   storiesOf('ui/Feature', module)
     .add('Default', () => (
-      <div style={{ padding: 60 }}>
-        <ThemeInjector>
-          <Feature {...articles[0]} />
-        </ThemeInjector>
-      </div>
+      <Story>
+        <Feature {...articles[0]} />
+      </Story>
     ))
 );

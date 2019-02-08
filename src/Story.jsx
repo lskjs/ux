@@ -11,6 +11,9 @@ class Story extends Component {
     const {
       children, devtools, locale = 'en', theme = defaultTheme, style,
     } = this.props;
+    const api = {
+      fetch: (...args) => console.log('api.get', ...args),
+    };
     const t = (a) => {
       return a === 'locale' ? locale : a;
     };
@@ -20,6 +23,7 @@ class Story extends Component {
       i18,
       t,
       config,
+      api,
       modules: {
         upload: {
           uploadFile: async () => ({ url: 'https://picsum.photos/1280/720/?random' }),
@@ -33,7 +37,13 @@ class Story extends Component {
         },
       },
       onError: e => console.error(e),
-      provide: () => ({ t, config, i18 }),
+      provide: () => ({
+        t,
+        config,
+        i18,
+        uapp,
+        api,
+      }),
     };
     // return <div>123</div>
 

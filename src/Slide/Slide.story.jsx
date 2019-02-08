@@ -1,156 +1,182 @@
 import React from 'react';
-import Slide from './Slide';
 import repeat from 'lodash/repeat';
+import Slide from './Slide';
+import Story from '../Story';
+
 
 export default ({ storiesOf, action }) => {
   return storiesOf('Slide', module)
     .add('default', () => (
-      <Slide>
-        Default slide
-      </Slide>
+      <Story>
+        <Slide>
+          Default slide
+        </Slide>
+      </Story>
     ))
     .add('full color', () => (
-      <Slide
-        full
-        color="#eee"
-      >
-        Default slide
-      </Slide>
+      <Story>
+        <Slide
+          full
+          color="#eee"
+        >
+          Default slide
+        </Slide>
+      </Story>
     ))
     .add('image', () => (
-      <Slide
-        full
-        image="https://pp.userapi.com/c636819/v636819936/346c3/6xIvJ0BI8rs.jpg"
-      >
-        Try it now
-      </Slide>
+      <Story>
+        <Slide
+          full
+          image="https://pp.userapi.com/c636819/v636819936/346c3/6xIvJ0BI8rs.jpg"
+        >
+          Try it now
+        </Slide>
+      </Story>
     ))
     .add('all directions', () => (
-      <Slide
-        full
-        left="left"
-        right="right"
-        top="top"
-        bottom="bottom"
+      <Story>
+        <Slide
+          full
+          left="left"
+          right="right"
+          top="top"
+          bottom="bottom"
 
-        color="#ff644b"
-        center
-        style={{ color: '#fff' }}
-      >
-        Content
-      </Slide>
+          color="#ff644b"
+          center
+          style={{ color: '#fff' }}
+        >
+          Content
+        </Slide>
+      </Story>
     ))
     .add('full error', () => (
-      <Slide
-        full
-        color="#ff644b"
-        center
-        style={{ color: '#fff' }}
-        bottom="nginx"
-      >
-        <h1>502</h1>
-        <h2>Внутренняя ошибка сервера</h2>
-        <p>Наши специалисты знают о проблеме и уже решают её</p>
-      </Slide>
+      <Story>
+        <Slide
+          full
+          color="#ff644b"
+          center
+          style={{ color: '#fff' }}
+          bottom="nginx"
+        >
+          <h1>502</h1>
+          <h2>Внутренняя ошибка сервера</h2>
+          <p>Наши специалисты знают о проблеме и уже решают её</p>
+        </Slide>
+      </Story>
     ))
 
     .add('large content', () => (
-      <Slide
-        full
-        left="left"
-        right="right"
-        top="top"
-        bottom="bottom"
+      <Story>
+        <Slide
+          full
+          left="left"
+          right="right"
+          top="top"
+          bottom="bottom"
 
-        color="#ff644b"
-        center
-        fixed
-        style={{ color: '#fff' }}
-      >
-        {repeat('Content ', 10000)}
-      </Slide>
+          color="#ff644b"
+          center
+          fixed
+          style={{ color: '#fff' }}
+        >
+          {repeat('Content ', 10000)}
+        </Slide>
+      </Story>
     ))
     .add('fixed', () => (
-      <Slide
-        full
-        left="left"
-        right="right"
-        top={repeat('top ', 100)}
-        bottom="bottom"
-        center
-        style={{ color: '#fff' }}
+      <Story>
+        <Slide
+          full
+          left="left"
+          right="right"
+          top={repeat('top ', 100)}
+          bottom="bottom"
+          center
+          style={{ color: '#fff' }}
 
-        fixed
-      >
-        {repeat('Content ', 100)}
-      </Slide>
+          fixed
+        >
+          {repeat('Content ', 100)}
+        </Slide>
+      </Story>
     ))
     .add('overlay', () => (
-      <Slide
-        full
-        overlay
-        image="https://pp.userapi.com/c636819/v636819936/3474a/g6I0ETjiQ4I.jpg"
-        style={{
-          color: '#fff',
-        }}
-      >
-        <h1>502</h1>
-        <h2>Внутренняя ошибка сервера</h2>
-        <p>Наши специалисты знают о проблеме и уже решают её</p>
-      </Slide>
+      <Story>
+        <Slide
+          full
+          overlay
+          image="https://pp.userapi.com/c636819/v636819936/3474a/g6I0ETjiQ4I.jpg"
+          style={{
+            color: '#fff',
+          }}
+        >
+          <h1>502</h1>
+          <h2>Внутренняя ошибка сервера</h2>
+          <p>Наши специалисты знают о проблеме и уже решают её</p>
+        </Slide>
+      </Story>
     ))
     .add('overlay 2', () => (
-      <Slide
-        full
-        overlay="rgba(255,0,0,0.3)"
-        image="https://pp.userapi.com/c636819/v636819936/3474a/g6I0ETjiQ4I.jpg"
-      >
-        <h1>502</h1>
-        <h2>Внутренняя ошибка сервера</h2>
-        <p>Наши специалисты знают о проблеме и уже решают её</p>
-      </Slide>
+      <Story>
+        <Slide
+          full
+          overlay="rgba(255,0,0,0.3)"
+          image="https://pp.userapi.com/c636819/v636819936/3474a/g6I0ETjiQ4I.jpg"
+        >
+          <h1>502</h1>
+          <h2>Внутренняя ошибка сервера</h2>
+          <p>Наши специалисты знают о проблеме и уже решают её</p>
+        </Slide>
+      </Story>
     ))
     .add('video webm', () => (
-      <Slide
-        full
-        overlay
-        style={{
-          color: '#fff',
-        }}
-        video="http://skill-branch.ru/video-background.webm"
-      >
-        <h1>502</h1>
-        <h2>Внутренняя ошибка сервера</h2>
-        <p>Наши специалисты знают о проблеме и уже решают её</p>
-      </Slide>
+      <Story>
+        <Slide
+          full
+          overlay
+          style={{
+            color: '#fff',
+          }}
+          video="http://skill-branch.ru/video-background.webm"
+        >
+          <h1>502</h1>
+          <h2>Внутренняя ошибка сервера</h2>
+          <p>Наши специалисты знают о проблеме и уже решают её</p>
+        </Slide>
+      </Story>
     ))
     .add('video webm2', () => (
-      <Slide
-        full
-        overlay
-        style={{
-          color: '#fff',
-        }}
-        video="https://akg.moe/videoplayback.webm"
-      >
-        <h1>502</h1>
-        <h2>Внутренняя ошибка сервера</h2>
-        <p>Наши специалисты знают о проблеме и уже решают её</p>
-      </Slide>
+      <Story>
+        <Slide
+          full
+          overlay
+          style={{
+            color: '#fff',
+          }}
+          video="https://akg.moe/videoplayback.webm"
+        >
+          <h1>502</h1>
+          <h2>Внутренняя ошибка сервера</h2>
+          <p>Наши специалисты знают о проблеме и уже решают её</p>
+        </Slide>
+      </Story>
     ))
     .add('video mp4', () => (
-      <Slide
-        full
-        overlay
-        style={{
-          color: '#fff',
-        }}
-        video="http://raw.githubusercontent.com/ronik-design/react-drive-in/master/example/glacier.mp4"
-      >
-        <h1>502</h1>
-        <h2>Внутренняя ошибка сервера</h2>
-        <p>Наши специалисты знают о проблеме и уже решают её</p>
-      </Slide>
+      <Story>
+        <Slide
+          full
+          overlay
+          style={{
+            color: '#fff',
+          }}
+          video="http://raw.githubusercontent.com/ronik-design/react-drive-in/master/example/glacier.mp4"
+        >
+          <h1>502</h1>
+          <h2>Внутренняя ошибка сервера</h2>
+          <p>Наши специалисты знают о проблеме и уже решают её</p>
+        </Slide>
+      </Story>
     ))
     //
     // https://www.youtube.com/watch?v=c-shIOFYCRU
@@ -158,32 +184,36 @@ export default ({ storiesOf, action }) => {
     // https://www.youtube.com/embed/C8PYHjRj-zk
     // https://youtu.be/c-shIOFYCRU?t=3m26s
     .add('video youtube1', () => (
-      <Slide
-        full
-        overlay
-        style={{
-          color: '#fff',
-        }}
-        video="https://youtu.be/c-shIOFYCRU"
-      >
-        <h1>502</h1>
-        <h2>Внутренняя ошибка сервера</h2>
-        <p>Наши специалисты знают о проблеме и уже решают её</p>
-      </Slide>
+      <Story>
+        <Slide
+          full
+          overlay
+          style={{
+            color: '#fff',
+          }}
+          video="https://youtu.be/c-shIOFYCRU"
+        >
+          <h1>502</h1>
+          <h2>Внутренняя ошибка сервера</h2>
+          <p>Наши специалисты знают о проблеме и уже решают её</p>
+        </Slide>
+      </Story>
     ))
     .add('video youtube2', () => (
-      <Slide
-        full
-        overlay
-        style={{
-          color: '#fff',
-        }}
-        video="https://www.youtube.com/embed/W0LHTWG-UmQ"
-      >
-        <h1>502</h1>
-        <h2>Внутренняя ошибка сервера</h2>
-        <p>Наши специалисты знают о проблеме и уже решают её</p>
-      </Slide>
+      <Story>
+        <Slide
+          full
+          overlay
+          style={{
+            color: '#fff',
+          }}
+          video="https://www.youtube.com/embed/W0LHTWG-UmQ"
+        >
+          <h1>502</h1>
+          <h2>Внутренняя ошибка сервера</h2>
+          <p>Наши специалисты знают о проблеме и уже решают её</p>
+        </Slide>
+      </Story>
     ));
   // .add('3 Items gray', () => (
   //   <Slide

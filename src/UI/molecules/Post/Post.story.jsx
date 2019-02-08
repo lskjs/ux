@@ -8,7 +8,7 @@ import IconButton from '../../atoms/IconButton';
 import ButtonGroup from '../../atoms/ButtonGroup';
 import PostUser from '../PostUser';
 import PostCommentCreate from '../PostCommentCreate';
-import ThemeInjector from '../../../ThemeInjector';
+import Story from '../../../Story';
 import Post from './Post';
 
 import '../../../styles/lib/antd.g.css';
@@ -76,77 +76,69 @@ const tags = (
 export default ({ storiesOf }) => (
   storiesOf('ui/Post', module)
     .add('Default', () => (
-      <ThemeInjector>
-        <div style={{ padding: 60 }}>
-          <Post
-            title={title}
-            extra={extra}
-            date="08.08.2008"
-          >
-            Lorem Ipsum - это текст-&quot;рыба&quot;, часто используемый в печати и вэб-дизайне.
-            Lorem Ipsum является стандартной &quot;рыбой&quot;
-            для текстов на латинице с начала XVI века.
-            В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов,
-            используя Lorem Ipsum для распечатки образцов.
-          </Post>
-        </div>
-      </ThemeInjector>
+      <Story>
+        <Post
+          title={title}
+          extra={extra}
+          date="08.08.2008"
+        >
+          Lorem Ipsum - это текст-&quot;рыба&quot;, часто используемый в печати и вэб-дизайне.
+          Lorem Ipsum является стандартной &quot;рыбой&quot;
+          для текстов на латинице с начала XVI века.
+          В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов,
+          используя Lorem Ipsum для распечатки образцов.
+        </Post>
+      </Story>
     ))
     .add('With footer', () => (
-      <ThemeInjector>
-        <div style={{ padding: 60 }}>
-          <Post
-            title={title}
-            extra={extra}
-            date="08.08.2008"
-            footer={footer}
-          >
-            Lorem Ipsum - это текст-&quot;рыба&quot;, часто используемый в печати и вэб-дизайне.
-            Lorem Ipsum является стандартной &quot;рыбой&quot;
-            для текстов на латинице с начала XVI века.
-            В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов,
-            используя Lorem Ipsum для распечатки образцов.
-          </Post>
-        </div>
-      </ThemeInjector>
+      <Story>
+        <Post
+          title={title}
+          extra={extra}
+          date="08.08.2008"
+          footer={footer}
+        >
+          Lorem Ipsum - это текст-&quot;рыба&quot;, часто используемый в печати и вэб-дизайне.
+          Lorem Ipsum является стандартной &quot;рыбой&quot;
+          для текстов на латинице с начала XVI века.
+          В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов,
+          используя Lorem Ipsum для распечатки образцов.
+        </Post>
+      </Story>
     ))
     .add('With footer & comments', () => (
-      <ThemeInjector>
-        <div style={{ padding: 60 }}>
-          <Post
-            title={title}
-            extra={extra}
-            date="08.08.2008"
-            footer={footer}
-            comments={commentsBlock}
-          >
-            Lorem Ipsum - это текст-&quot;рыба&quot;, часто используемый в печати и вэб-дизайне.
-            Lorem Ipsum является стандартной &quot;рыбой&quot;
-            для текстов на латинице с начала XVI века.
-            В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов,
-            используя Lorem Ipsum для распечатки образцов.
-          </Post>
-        </div>
-      </ThemeInjector>
+      <Story>
+        <Post
+          title={title}
+          extra={extra}
+          date="08.08.2008"
+          footer={footer}
+          comments={commentsBlock}
+        >
+          Lorem Ipsum - это текст-&quot;рыба&quot;, часто используемый в печати и вэб-дизайне.
+          Lorem Ipsum является стандартной &quot;рыбой&quot;
+          для текстов на латинице с начала XVI века.
+          В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов,
+          используя Lorem Ipsum для распечатки образцов.
+        </Post>
+      </Story>
     ))
     .add('With footer & comments & tags', () => (
-      <ThemeInjector>
-        <div style={{ padding: 60 }}>
-          <Post
-            title={title}
-            extra={extra}
-            date="08.08.2008"
-            footer={footer}
-            comments={commentsBlock}
-            tags={tags}
-          >
-            Lorem Ipsum - это текст-&quot;рыба&quot;, часто используемый в печати и вэб-дизайне.
-            Lorem Ipsum является стандартной &quot;рыбой&quot;
-            для текстов на латинице с начала XVI века.
-            В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов,
-            используя Lorem Ipsum для распечатки образцов.
-          </Post>
-        </div>
-      </ThemeInjector>
+      <Story>
+        <Post
+          title={title}
+          extra={extra}
+          date="08.08.2008"
+          footer={footer}
+          comments={commentsBlock}
+          tags={tags}
+        >
+          Lorem Ipsum - это текст-&quot;рыба&quot;, часто используемый в печати и вэб-дизайне.
+          Lorem Ipsum является стандартной &quot;рыбой&quot;
+          для текстов на латинице с начала XVI века.
+          В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов,
+          используя Lorem Ipsum для распечатки образцов.
+        </Post>
+      </Story>
     ))
 );
