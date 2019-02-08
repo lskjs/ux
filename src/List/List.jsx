@@ -11,7 +11,7 @@ import {
   BodyWrapper,
   ItemsWrapper,
   FilterWrapper,
-  TagsWrapper,
+  TagsPanelWrapper,
   HeaderItemWrapper,
   HeaderWrapper,
   FooterWrapper,
@@ -26,7 +26,7 @@ import ListSticky from './ListSticky';
 import ListHeader from './ListHeader';
 import ListSearch from './ListSearch';
 import ListFilter from './ListFilter';
-import ListTags from './ListTags';
+import ListTagsPanel from './ListTagsPanel';
 import ListBody from './ListBody';
 import ListHeaderRow from './ListHeaderRow';
 import ListFooter from './ListFooter';
@@ -63,7 +63,7 @@ class List extends Component {
   static Header = ListHeader;
   static Search = ListSearch;
   static Filter = ListFilter;
-  static Tags = ListTags;
+  static TagsPanel = ListTagsPanel;
   static Body = ListBody;
   static HeaderRow = ListHeaderRow;
   static Footer = ListFooter;
@@ -81,7 +81,7 @@ class List extends Component {
   static BodyWrapper = BodyWrapper;
   static ItemsWrapper = ItemsWrapper;
   static FilterWrapper = FilterWrapper;
-  static TagsWrapper = TagsWrapper;
+  static TagsPanelWrapper = TagsPanelWrapper;
   static HeaderItemWrapper = HeaderItemWrapper;
   static HeaderWrapper = HeaderWrapper;
   static FooterWrapper = FooterWrapper;
@@ -117,7 +117,7 @@ class List extends Component {
       Header: this.props.Header || this.constructor.Header,
       Search: this.props.Search || this.constructor.Search,
       Filter: this.props.Filter || this.constructor.Filter,
-      Tags: this.props.Tags || this.constructor.Tags,
+      TagsPanel: this.props.TagsPanel || this.constructor.TagsPanel,
       Body: this.props.Body || this.constructor.Body,
       ItemsWrapper: this.props.ItemsWrapper || this.constructor.ItemsWrapper,
       HeaderRow: this.props.HeaderRow || this.constructor.HeaderRow, // !!!!!!!!!
@@ -134,7 +134,7 @@ class List extends Component {
       Wrapper: this.props.Wrapper || this.constructor.Wrapper,
       BodyWrapper: this.props.BodyWrapper || this.constructor.BodyWrapper,
       FilterWrapper: this.props.FilterWrapper || this.constructor.FilterWrapper,
-      TagsWrapper: this.props.TagsWrapper || this.constructor.TagsWrapper,
+      TagsPanelWrapper: this.props.TagsPanelWrapper || this.constructor.TagsPanelWrapper,
       HeaderItemWrapper: this.props.HeaderItemWrapper || this.constructor.HeaderItemWrapper,
       HeaderWrapper: this.props.HeaderWrapper || this.constructor.HeaderWrapper,
       FooterWrapper: this.props.FooterWrapper || this.constructor.FooterWrapper,

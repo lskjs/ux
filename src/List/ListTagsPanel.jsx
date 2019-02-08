@@ -6,7 +6,7 @@ import { contextToProps } from './List.context';
 @contextToProps('List', 'Tags', 'Tag')
 @inject('listStore')
 @observer
-class ListTags extends Component {
+class ListTagsPanel extends Component {
   render() {
     const {
       List,
@@ -16,7 +16,7 @@ class ListTags extends Component {
     } = this.props;
     if (!listStore.hasFilter) return null;
     return (
-      <List.TagsWrapper >
+      <List.TagsPanelWrapper >
         <Tags listStore={listStore} Tag={Tag} />
         <List.Button
           size="small"
@@ -28,9 +28,9 @@ class ListTags extends Component {
         >
           <T name="lskList.resetFilterButton" />
         </List.Button>
-      </List.TagsWrapper>
+      </List.TagsPanelWrapper>
     );
   }
 }
 
-export default ListTags;
+export default ListTagsPanel;

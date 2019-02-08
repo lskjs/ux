@@ -396,7 +396,7 @@ ${p => (p.sticky && css`
     `)}
 `;
 
-export const TagsWrapper = styled('div')`
+export const TagsPanelWrapper = styled('div')`
   padding: 8px 14px 4px;
   display: flex;
   flex-wrap: wrap;

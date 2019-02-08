@@ -25,7 +25,7 @@ class ListHeader extends Component {
         </List.HeaderWrapper>
         <If condition={show.tags}>
           <List.HeaderWrapper >
-            <List.Tags />
+            <List.TagsPanel />
           </List.HeaderWrapper>
         </If>
         <List.HeaderWrapper sticky={show.sticky}>
