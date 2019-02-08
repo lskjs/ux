@@ -13,7 +13,12 @@ import Modal, { Title, Content, Footer } from '../Modal';
 @observer
 class CardToken extends Component {
   static propTypes = {
-    value: PropTypes.string,
+    value: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number,
+      PropTypes.element,
+      PropTypes.arrayOf(PropTypes.element),
+    ]),
     onSubmit: PropTypes.func,
     onChange: PropTypes.func,
   }

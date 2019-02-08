@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from '../Button';
 import StatefulButton from './StatefulButton';
+import Story from '../Story';
 
 const promisedHandleSubmit = () => new Promise((resolve, reject) => {
   const headsOrTails = () => Math.random() > 0.5;
@@ -14,49 +15,57 @@ const promisedHandleSubmit = () => new Promise((resolve, reject) => {
 export default ({ storiesOf }) => {
   storiesOf('Button/StatefulButton', module)
     .add('Default', () => (
-      <StatefulButton
-        componentClass={Button}
-        onClick={promisedHandleSubmit}
-        paint="primary"
-        size="large"
-      >
-        Умная кнопочка
-      </StatefulButton>
+      <Story>
+        <StatefulButton
+          componentClass={Button}
+          onClick={promisedHandleSubmit}
+          paint="primary"
+          size="large"
+        >
+          Умная кнопочка
+        </StatefulButton>
+      </Story>
     ))
     .add('Loooooong', () => (
-      <StatefulButton
-        componentClass={Button}
-        onClick={promisedHandleSubmit}
-        paint="primary"
-        size="large"
-      >
-       Очень много текста в умной промисифицированной кнопке
-      </StatefulButton>
+      <Story>
+        <StatefulButton
+          componentClass={Button}
+          onClick={promisedHandleSubmit}
+          paint="primary"
+          size="large"
+        >
+        Очень много текста в умной промисифицированной кнопке
+        </StatefulButton>
+      </Story>
     ))
     .add('Custom text', () => (
-      <StatefulButton
-        componentClass={Button}
-        onClick={promisedHandleSubmit}
-        paint="primary"
-        size="large"
-        textProcessing="Загружаем..."
-        textSuccess="Готово"
-        textError="Не повезло"
-      >
-       Очень много текста
-      </StatefulButton>
+      <Story>
+        <StatefulButton
+          componentClass={Button}
+          onClick={promisedHandleSubmit}
+          paint="primary"
+          size="large"
+          textProcessing="Загружаем..."
+          textSuccess="Готово"
+          textError="Не повезло"
+        >
+        Очень много текста
+        </StatefulButton>
+      </Story>
     ))
     .add('Custom content', () => (
-      <StatefulButton
-        componentClass={Button}
-        onClick={promisedHandleSubmit}
-        paint="primary"
-        size="large"
-        contentProcessing="Загружаем..."
-        contentSuccess="Готово"
-        contentError="Не повезло"
-      >
-       Очень много текста
-      </StatefulButton>
+      <Story>
+        <StatefulButton
+          componentClass={Button}
+          onClick={promisedHandleSubmit}
+          paint="primary"
+          size="large"
+          contentProcessing="Загружаем..."
+          contentSuccess="Готово"
+          contentError="Не повезло"
+        >
+        Очень много текста
+        </StatefulButton>
+      </Story>
     ));
 };

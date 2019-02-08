@@ -90,8 +90,8 @@ class Container extends Component {
                       <button onClick={() => this.setState({ [name]: { asd: 123 } })}>
                         asd: 123
                       </button>
-                      <button onClick={() => this.setState({ [name]: [1, 2, 3] })}>
-                        [1,2,3]
+                      <button onClick={() => this.setState({ [name]: ['a', 'b', 'c'] })}>
+                        [a, b, c]
                       </button>
                       <button onClick={() => this.setState({ [name]: null })}>
                         null

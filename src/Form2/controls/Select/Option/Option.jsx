@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { withTheme } from 'emotion-theming';
 import isEqual from 'lodash/isEqual';
 import pick from 'lodash/pick';
 // import PropTypes from 'prop-types';
@@ -7,7 +6,6 @@ import { OptionItem, Image, IconWrapper, Title } from './Option.styles';
 
 // import omit from 'lodash/omit';
 
-@withTheme
 class Option extends Component {
   static sCUFields = [
     'value',
@@ -27,7 +25,7 @@ class Option extends Component {
     const {
       // className,
       data,
-      onFocus,
+      isFocused,
       isSelected,
       selectOption,
       theme,
@@ -36,7 +34,7 @@ class Option extends Component {
     return (
       <OptionItem
         onClick={() => selectOption(data)}
-        onFocus={onFocus}
+        focused={isFocused}
         selected={isSelected}
       >
         <If condition={data.image}>

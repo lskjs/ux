@@ -11,7 +11,7 @@ export const OptionItem = styled('button')`
   padding-left: 8px;
 
   font-family: ${p => p.theme.fontFamily};
-  background-color: ${p => p.theme.colors.white};
+  background-color: ${p => (p.focused ? p.theme.colors.lighterPrimary : p.theme.colors.white)};
   font-size: 13px;
   font-weight: normal;
   font-style: normal;

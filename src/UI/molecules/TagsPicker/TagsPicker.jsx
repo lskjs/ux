@@ -1,6 +1,8 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import getKeys from 'lodash/keys';
+import intersection from 'lodash/intersection';
+import isEqual from 'lodash/isEqual';
 import autobind from 'core-decorators/lib/autobind';
 import get from 'lodash/get';
 import Plus from 'react-icons2/mdi/plus-circle';
@@ -25,16 +27,8 @@ function getFieldsKeys(fields = []) {
 
 function getAvailable(fields, values) {
   const availableKeys = Object.keys(getFieldsKeys(fields));
-  if (typeof values === 'number') {
-    values = toString(values);
-  } else if (typeof values === 'object') {
-    values = toString(get(values, getKeys(values)));
-  }
-  if (values) {
-    const filteredKeys = availableKeys.filter(e => values.includes(e));
-    return filteredKeys;
-  }
-  return null;
+  values = !Array.isArray(values) ? [String(values)] : values;
+  return intersection(availableKeys, values);
 }
 
 class TagsPicker extends PureComponent {
@@ -70,9 +64,10 @@ class TagsPicker extends PureComponent {
   componentWillReceiveProps(next) {
     const { fields, value } = this.props;
     const state = {};
-    const newValue = getAvailable(fields, value);
+    const currentValue = getAvailable(fields, value);
+    const nextValue = getAvailable(next.fields, next.value);
     // if (fields !== next.fields) state.fields = next.fields;
-    if (newValue !== next.value) state.value = getAvailable(next.fields, next.value);
+    if (!isEqual(currentValue, nextValue)) state.value = nextValue;
     this.setState(state);
   }
 
@@ -96,6 +91,8 @@ class TagsPicker extends PureComponent {
 
   @autobind
   handleSubmit(value) {
+    const { fields } = this.props;
+    value = getAvailable(fields, value);
     this.setState({ value }, this.callbackSubmit);
   }
 
@@ -108,8 +105,8 @@ class TagsPicker extends PureComponent {
 
   @autobind
   handleChange(value) {
-    console.log('handleChange', value);
-
+    const { fields } = this.props;
+    value = getAvailable(fields, value);
     this.setState({ value }, this.callbackChange);
   }
 
