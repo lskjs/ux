@@ -153,7 +153,7 @@ export default ({ storiesOf }) => {
     .add('complex', () => (
       <Story style={{ background: '#42cafd' }}>
         <Grid>
-          <Row>
+          <Row vertical>
             <Col md={4}>
               <Item>
               a
@@ -166,20 +166,63 @@ export default ({ storiesOf }) => {
             </Col>
             <Col md={4}>
               <Item>
-                <Grid>
-                  <Row>
-                    <Col md={6}>
-                      <Item style={{ background: '#68977c' }}>
-                       b
-                      </Item>
-                    </Col>
-                    <Col md={6}>
-                      <Item style={{ background: '#68977c' }}>
-                       b
-                      </Item>
-                    </Col>
-                  </Row>
-                </Grid>
+              a
+              </Item>
+            </Col>
+            <Col md={4}>
+              <Item>
+              a
+              </Item>
+            </Col>
+            <Col md={4}>
+              <Item>
+              a
+              </Item>
+            </Col>
+            <Col md={4}>
+              <Item>
+                <Row vertical>
+                  <Col md={6}>
+                    <Item style={{ background: '#68977c' }}>
+                     b
+                    </Item>
+                  </Col>
+                  <Col md={6}>
+                    <Item style={{ background: '#68977c' }}>
+                     b
+                    </Item>
+                  </Col>
+                  <Col md={6}>
+                    <Item style={{ background: '#68977c' }}>
+                     b
+                    </Item>
+                  </Col>
+                  <Col md={6}>
+                    <Item style={{ background: '#68977c' }}>
+                     b
+                    </Item>
+                  </Col>
+                  <Col md={6}>
+                    <Item style={{ background: '#68977c' }}>
+                     b
+                    </Item>
+                  </Col>
+                  <Col md={6}>
+                    <Item style={{ background: '#68977c' }}>
+                     b
+                    </Item>
+                  </Col>
+                  <Col md={6}>
+                    <Item style={{ background: '#68977c' }}>
+                     b
+                    </Item>
+                  </Col>
+                  <Col md={6}>
+                    <Item style={{ background: '#68977c' }}>
+                     b
+                    </Item>
+                  </Col>
+                </Row>
               </Item>
             </Col>
           </Row>
