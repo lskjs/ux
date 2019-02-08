@@ -128,11 +128,12 @@ class RangeFilterOption extends Component {
         this.setState({ prevFocused: 'min' });
       }
       if (type === 'max' && prevFocused === 'min') {
-        this.setState({ prevFocused: 'max' });
-        if (this.props.onClose) {
-          this.props.close();
-          // console.log('CLOSE');
-        }
+        this.setState({ prevFocused: 'max' }, () => {
+          if (this.props.onClose) {
+            this.props.onClose();
+            // console.log('CLOSE');
+          }
+        });
       }
     });
   }
