@@ -2810,6 +2810,10 @@ a.ant-btn-sm {
 .ant-calendar-picker-container {
   z-index: 1;
 }
+.ant-fullcalendar-content {
+  top: 8px;
+  bottom: auto !important;
+}
 .ant-card {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 14px;
@@ -18235,9 +18239,6 @@ li.ant-select-tree-treenode-disabled > .ant-select-tree-node-content-wrapper:hov
 .ant-form-item-children {
   position: relative;
 }
-/* .ant-form-item-children > div > div {
-  width: 40%;
-} */
 .ant-form-item-children > div > div > input {
   width: 100%;
   /* background-color: rgba(255, 255, 255, 0.44); */
@@ -18284,4 +18285,8 @@ li.ant-select-tree-treenode-disabled > .ant-select-tree-node-content-wrapper:hov
   color: #9b9b9b !important;
   font-size: 14px !important;
   line-height: 1.43 !important;
+}
+.ant-layout.ant-layout-has-sider > .ant-layout,
+.ant-layout.ant-layout-has-sider > .ant-layout-content {
+  overflow-x: inherit;
 }

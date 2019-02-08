@@ -1,15 +1,16 @@
 import styled from 'react-emotion';
 
 export default styled('div')`
-  background-color: #dedede;
+  background-color: #e6f7ff;
   height: 24px;
-  z-index: 0;
+  z-index: -1;
   width: 24px;
   color: white;
   position: absolute;
   border-radius: 2px;
   left: 0;
   right: 0;
-  top: -1;
+  top: -6px;
   margin: auto;
+  border: 5px solid #e6f7ff;
 `;

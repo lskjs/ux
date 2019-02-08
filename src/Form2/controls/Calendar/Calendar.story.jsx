@@ -31,6 +31,8 @@ const CalendarForm = createForm({
         new Date('2019-02-18'),
         new Date('2019-02-17'),
         '2019-02-02',
+        '2019-02-03',
+        '2019-02-04',
         Date.now(),
       ],
     },
