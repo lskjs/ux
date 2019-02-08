@@ -25,7 +25,7 @@ import LayoutHeaderUserMenu from '../../molecules/LayoutHeaderUserMenu';
 import LayoutHeader from '../../molecules/LayoutHeader';
 import LayoutSidebar from '../../molecules/LayoutSidebar';
 import ListItem from '../../molecules/ListItem';
-import ThemeInjector from '../../../ThemeInjector';
+import Story from '../../../Story';
 import '../../../styles/lib/antd.g.css';
 import '../../../styles/lib/bootstrap.g.css';
 
@@ -300,52 +300,52 @@ export const fixedLayout = props => (
 export default ({ storiesOf }) => (
   storiesOf('ui/Layout', module)
     .add('Default', () => (
-      <ThemeInjector>
+      <Story>
         <Layout>
           {noFixedLayout({})}
         </Layout>
-      </ThemeInjector>
+      </Story>
     ))
     .add('Fixed sidebar', () => (
-      <ThemeInjector>
+      <Story>
         <Layout fixed={['sidebar']}>
           {noFixedLayout({})}
         </Layout>
-      </ThemeInjector>
+      </Story>
     ))
     .add('Fixed sidebar & header', () => (
-      <ThemeInjector>
+      <Story>
         <Layout fixed={['sidebar', 'header']}>
           {fixedLayout({})}
         </Layout>
-      </ThemeInjector>
+      </Story>
     ))
     .add('Fluid container & all fixed', () => (
-      <ThemeInjector>
+      <Story>
         <Layout fixed={['sidebar', 'header']}>
           {fixedLayout({ fluid: true })}
         </Layout>
-      </ThemeInjector>
+      </Story>
     ))
     .add('Boxed', () => (
-      <ThemeInjector>
+      <Story>
         <Layout boxed>
           {noFixedLayout({})}
         </Layout>
-      </ThemeInjector>
+      </Story>
     ))
     .add('Boxed & Fixed sidebar', () => (
-      <ThemeInjector>
+      <Story>
         <Layout boxed fixed={['sidebar']}>
           {noFixedLayout({})}
         </Layout>
-      </ThemeInjector>
+      </Story>
     ))
     .add('Boxed & Fixed sidebar & header', () => (
-      <ThemeInjector>
+      <Story>
         <Layout boxed fixed={['sidebar', 'header']}>
           {fixedLayout({})}
         </Layout>
-      </ThemeInjector>
+      </Story>
     ))
 );

@@ -1,12 +1,12 @@
 import React from 'react';
-import ThemeInjector from '../../../ThemeInjector';
+import Story from '../../../Story';
 import DefaultCard from './DefaultCard';
 
 module.exports = ({ storiesOf }) =>
   storiesOf('hz/DefaultCard', module)
     .add('DefaultCard', () => {
       return (
-        <ThemeInjector>
+        <Story>
           <DefaultCard
             user={{
               title: 'User 1',
@@ -14,6 +14,6 @@ module.exports = ({ storiesOf }) =>
               rating: 123.3,
             }}
           />
-        </ThemeInjector>
+        </Story>
       );
     });

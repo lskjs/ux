@@ -1,5 +1,6 @@
 import React from 'react'; //eslint-disable-line
 import Slider from './Slider';
+import Story from '../../../Story';
 
 const getFont = fontName => (
   <link
@@ -36,10 +37,12 @@ const marks = {
 export default ({ storiesOf }) => (
   storiesOf('hz/Slider', module)
     .add('default', () => (
-      <Slider
-        defaultValue={30}
-        tipFormatter={formatter}
-      />
+      <Story>
+        <Slider
+          defaultValue={30}
+          tipFormatter={formatter}
+        />
+      </Story>
     ))
 );
 // export default ({ storiesOf, action, knob }) => {

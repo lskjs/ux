@@ -1,12 +1,12 @@
 import React from 'react';
 import UserItem from './UserItem';
-import ThemeInjector from '../../../ThemeInjector';
+import Story from '../../../Story';
 
 
 export default ({ storiesOf }) => (
   storiesOf('ui/UserItem', module)
     .add('default', () => (
-      <ThemeInjector>
+      <Story>
         <UserItem
           user={{
             id: 1,
@@ -14,6 +14,6 @@ export default ({ storiesOf }) => (
             title: 'Hey',
           }}
         />
-      </ThemeInjector>
+      </Story>
     ))
 );

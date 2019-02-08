@@ -1,6 +1,6 @@
 import React from 'react';
 import CalloutRight from './CalloutRight';
-import ThemeInjector from '../../../ThemeInjector';
+import Story from '../../../Story';
 
 const articles = [
   {
@@ -12,10 +12,8 @@ const articles = [
 export default ({ storiesOf }) => (
   storiesOf('ui/CalloutRight', module)
     .add('Default', () => (
-      <div style={{ padding: 60 }}>
-        <ThemeInjector>
-          <CalloutRight {...articles[0]} />
-        </ThemeInjector>
-      </div>
+      <Story>
+        <CalloutRight {...articles[0]} />
+      </Story>
     ))
 );

@@ -1,13 +1,13 @@
 import React from 'react';
 import Icon from 'antd/lib/icon';
-import ThemeInjector from '../../../ThemeInjector';
+import Story from '../../../Story';
 import EmptyContainer from './EmptyContainer';
 
 module.exports = ({ storiesOf }) =>
   storiesOf('hz/EmptyContainer', module)
     .add('EmptyContainer', () => {
       return (
-        <ThemeInjector>
+        <Story>
           <EmptyContainer
             title="Нет событий"
             icon={
@@ -15,6 +15,6 @@ module.exports = ({ storiesOf }) =>
             }
             subtitle="Тут ничего нет...."
           />
-        </ThemeInjector>
+        </Story>
       );
     });

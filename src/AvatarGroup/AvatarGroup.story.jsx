@@ -2,6 +2,7 @@ import React from 'react';
 import range from 'lodash/range';
 import random from 'lodash/random';
 import AvatarGroup from './AvatarGroup';
+import Story from '../Story';
 
 
 const user = () => ({
@@ -24,15 +25,19 @@ const userWithHref = () => ({
 module.exports = function ({ storiesOf, action, knob }) {
   return storiesOf('AvatarGroup', module)
     .add('Items only', () => (
-      <AvatarGroup
-        items={range(5).map(user)}
-      />
+      <Story>
+        <AvatarGroup
+          items={range(5).map(user)}
+        />
+      </Story>
     ))
     .add('Items + limit', () => (
-      <AvatarGroup
-        items={range(5).map(user)}
-        limit={3}
-      />
+      <Story>
+        <AvatarGroup
+          items={range(5).map(user)}
+          limit={3}
+        />
+      </Story>
     ))
     .add('Items + limit2', () => (
       <AvatarGroup
@@ -41,29 +46,33 @@ module.exports = function ({ storiesOf, action, knob }) {
       />
     ))
     .add('Items + count', () => (
-      <AvatarGroup
-        items={range(5).map(user)}
-        count={20}
-      />
+      <Story>
+        <AvatarGroup
+          items={range(5).map(user)}
+          count={20}
+        />
+      </Story>
     ))
     .add('Items + count + limit', () => (
-      <AvatarGroup
-        items={range(5).map(user)}
-        limit={3}
-        count={20}
-      />
+      <Story>
+        <AvatarGroup
+          items={range(5).map(user)}
+          limit={3}
+          count={20}
+        />
+      </Story>
     ))
     .add('Items in order + limit', () => {
       const users = range(5).map((i, a) => ({
         title: (`${i}${a}`),
       }));
       return (
-        <div>
+        <Story>
           <AvatarGroup
             items={users}
             limit={4}
           />
-        </div>
+        </Story>
       );
     })
     .add('Items in order + limit + avatarInnerStyle', () => {
@@ -74,7 +83,7 @@ module.exports = function ({ storiesOf, action, knob }) {
         title: 'John Smith',
       }));
       return (
-        <div>
+        <Story>
           <AvatarGroup
             avatarInnerStyle={{ border: '4px solid rgb(255, 255, 255)' }}
             items={users}
@@ -89,42 +98,50 @@ module.exports = function ({ storiesOf, action, knob }) {
             size={40}
             offset={-0.25}
           />
-        </div>
+        </Story>
       );
     })
     .add('count', () => (
-      <AvatarGroup
-        count={20}
-      />
+      <Story>
+        <AvatarGroup
+          count={20}
+        />
+      </Story>
     ))
     .add('custom avatar size', () => (
-      <AvatarGroup
-        size={20}
+      <Story>
+        <AvatarGroup
+          size={20}
 
-        items={range(5).map(user)}
-        limit={3}
-        count={20}
-      />
+          items={range(5).map(user)}
+          limit={3}
+          count={20}
+        />
+      </Story>
     ))
     .add('custom offset between avatars', () => (
-      <AvatarGroup
-        offset={-0.6}
+      <Story>
+        <AvatarGroup
+          offset={-0.6}
 
-        items={range(15).map(user)}
-        count={20}
-      />
+          items={range(15).map(user)}
+          count={20}
+        />
+      </Story>
     ))
     .add('disable offset between avatars', () => (
-      <AvatarGroup
-        offset={0}
+      <Story>
+        <AvatarGroup
+          offset={0}
 
-        items={range(5).map(user)}
-        limit={3}
-        count={20}
-      />
+          items={range(5).map(user)}
+          limit={3}
+          count={20}
+        />
+      </Story>
     ))
     .add('Items + count + limit + link', () => (
-      <div>
+      <Story>
         <AvatarGroup
           items={range(5).map(userWithLink)}
           limit={3}
@@ -135,6 +152,6 @@ module.exports = function ({ storiesOf, action, knob }) {
           limit={3}
           count={20}
         />
-      </div>
+      </Story>
     ));
 };

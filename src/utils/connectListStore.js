@@ -2,21 +2,41 @@ import { reaction } from 'mobx';
 import getParamsFromQuery from './getParamsFromQuery';
 import getQueryFromParams from './getQueryFromParams';
 
-const defaultGetParams = ({
-  filter, sort, limit, skip,
-}) => ({
-  filter, sort, limit, skip,
+const defaultGetParams = (store) => ({
+  filter: store.filter, 
+  sort: store.sort, 
+  limit: store.limit, 
+  skip: store.skip,
 });
 
 const connectListStore = ({
   page, listStore, query, getParams = defaultGetParams, params: propsDefaultParams,
 }) => {
+  console.log('connectListStore');
+  
   const defaultParams = propsDefaultParams || getParams(listStore);
   if (query) {
     const queryParams = getParamsFromQuery(query, defaultParams);
     listStore.setState(queryParams);
   }
-  return reaction(() => getParams(listStore), params => () => {
+  return reaction(() => {
+    // const params = getParams(listStore);
+    // console.log({params});
+
+    console.log('reaction !!!');
+    
+
+    return {
+      filter: listStore.filter, 
+      sort: listStore.sort, 
+      limit: listStore.limit, 
+      skip: listStore.skip,
+      asdads: Math.random(),
+    };
+    
+  }, params => () => {
+    console.log('reaction run@@@!!');
+    
     page.uapp.history.replace({
       search: `?${getQueryFromParams(params, defaultParams)}`,
       method: 'replaceState',

@@ -1,12 +1,12 @@
 import React from 'react'; //eslint-disable-line
 import PercentSlider from './PercentSlider';
-import ThemeInjector from '../../../ThemeInjector';
+import Story from '../../../Story';
 
 export default ({ storiesOf }) => (
   storiesOf('hz/PercentSlider', module)
     .add('default', () => (
-      <ThemeInjector>
+      <Story>
         <PercentSlider />
-      </ThemeInjector>
+      </Story>
     ))
 );

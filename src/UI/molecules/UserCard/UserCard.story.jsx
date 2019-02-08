@@ -3,7 +3,7 @@ import random from 'lodash/random';
 import Link from '../../../Link';
 
 import UserCard from './UserCard';
-import ThemeInjector from '../../../ThemeInjector';
+import Story from '../../../Story';
 import '../../../styles/lib/antd.g.css';
 
 const user = () => ({
@@ -19,8 +19,8 @@ const user = () => ({
 export default ({ storiesOf }) => (
   storiesOf('ui/UserCard', module)
     .add('default', () => (
-      <ThemeInjector>
+      <Story>
         <UserCard {...user()} />
-      </ThemeInjector>
+      </Story>
     ))
 );

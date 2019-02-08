@@ -2,7 +2,7 @@ import React from 'react';
 import Container from 'reactstrap/lib/Container';
 import Col from 'reactstrap/lib/Col';
 import Row from 'reactstrap/lib/Row';
-import ThemeInjector from './ThemeInjector';
+import Story from './Story';
 import './styles/lib/antd.g.css';
 import './styles/lib/bootstrap.g.css';
 import Button from './Button';
@@ -14,7 +14,7 @@ import UserBoxFooter from './UI/molecules/UserBoxFooter';
 export default ({ storiesOf }) => (
   storiesOf('hz/UserPage', module)
     .add('Default', () => (
-      <ThemeInjector>
+      <Story>
         <Container>
           <Page>
             <Page.Title>
@@ -84,6 +84,6 @@ export default ({ storiesOf }) => (
             </Row>
           </Page>
         </Container>
-      </ThemeInjector>
+      </Story>
     ))
 );

@@ -1,6 +1,6 @@
 import React from 'react';
 import TestImonialV4 from './TestImonialV4';
-import ThemeInjector from '../../../ThemeInjector';
+import Story from '../../../Story';
 import '../../../styles/lib/antd.g.css';
 
 const articles = [
@@ -15,10 +15,8 @@ const articles = [
 export default ({ storiesOf }) => (
   storiesOf('ui/TestImonialV4', module)
     .add('default', () => (
-      <div style={{ padding: 60, backgroundColor: 'red' }}>
-        <ThemeInjector>
-          <TestImonialV4 {...articles[0]} />
-        </ThemeInjector>
-      </div>
+      <Story>
+        <TestImonialV4 {...articles[0]} />
+      </Story>
     ))
 );

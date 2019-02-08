@@ -1,6 +1,6 @@
 import React from 'react';
 import CTACentered from './CTACentered';
-import ThemeInjector from '../../../ThemeInjector';
+import Story from '../../../Story';
 import Button from '../../../Button';
 
 const articles = [
@@ -15,18 +15,16 @@ const articles = [
 export default ({ storiesOf }) => (
   storiesOf('ui/CTACentered', module)
     .add('Default', () => (
-      <div style={{ padding: 60 }}>
-        <ThemeInjector>
-          <CTACentered {...articles[0]} align="left" />
-          <br />
-          <br />
-          <br />
-          <CTACentered {...articles[0]} align="center" />
-          <br />
-          <br />
-          <br />
-          <CTACentered {...articles[0]} align="right" />
-        </ThemeInjector>
-      </div>
+      <Story>
+        <CTACentered {...articles[0]} align="left" />
+        <br />
+        <br />
+        <br />
+        <CTACentered {...articles[0]} align="center" />
+        <br />
+        <br />
+        <br />
+        <CTACentered {...articles[0]} align="right" />
+      </Story>
     ))
 );
