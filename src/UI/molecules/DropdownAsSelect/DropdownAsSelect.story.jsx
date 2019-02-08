@@ -25,6 +25,7 @@ export default ({ storiesOf }) => {
       <Story>
         <DropdownAsSelect
           id="demo"
+          // ref={(e) => { this.dropdown = e; }}
           trigger={(
             <FilterValue>Значение</FilterValue>
           )}
@@ -34,6 +35,10 @@ export default ({ storiesOf }) => {
             onChange={(e) => {
               console.log(e);
             }}
+            // onClose={() => {
+            //   console.log('Меня зыкрывают', this.dropdown);
+            //   this.dropdown.openHandler(false);
+            // }}
             min={10000}
             max={2000000}
             stats={[

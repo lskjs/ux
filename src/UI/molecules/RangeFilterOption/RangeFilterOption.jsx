@@ -33,6 +33,7 @@ class RangeFilterOption extends PureComponent {
       maxValue: props.value?.[1] || props.selected?.value[1], // eslint-disable-line no-undef
       minFocused: true,
       maxFocused: false,
+      prevFocused: 'max',
     };
   }
   @autobind
@@ -42,8 +43,18 @@ class RangeFilterOption extends PureComponent {
       [`${type}Value`]: value,
     }, () => {
       this.handleFocus(reverse);
-      const { minValue, maxValue } = this.state;
+      const { minValue, maxValue, prevFocused } = this.state;
       this.callback(minValue, maxValue);
+      if (type === 'min') {
+        this.setState({ prevFocused: 'min' });
+      }
+      if (type === 'max' && prevFocused === 'min') {
+        this.setState({ prevFocused: 'max' });
+        if (this.props.onClose) {
+          this.props.close();
+          // console.log('CLOSE');
+        }
+      }
     });
   }
   @autobind

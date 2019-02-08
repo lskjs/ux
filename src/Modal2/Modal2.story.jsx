@@ -150,11 +150,22 @@ export default ({ storiesOf, action }) => {
     .add('7. Modal with props', () => (
       <Story>
         <Modal
+          // title="asd"
           size="large"
+          // children={<Button>asd</Button>}
+          // subHeader={<Button>asd</Button>}
+          // closeComponent={() => console.log('closeComponent')}
           trigger={<div>asd</div>}
-          color="#ff0000"
+          // color="#ff0000"
           className={style}
-          subHeader="subheader"
+          closable={false}
+          // closeOnBackdrop={false}
+          // body="asd"
+          // disabled
+          // small
+          // onEdit={() => console.log('onEdit')}
+          onClose={() => console.log('onClose')}
+          onOpen={() => console.log('onOpen')}
         >
           <Title>title</Title>
           <Subtitle>Subtitle</Subtitle>
@@ -165,6 +176,7 @@ export default ({ storiesOf, action }) => {
             <Content>
               content
             </Content>
+
           </div>
           <Footer>
             <Button
