@@ -9,12 +9,12 @@ export default styled('div')`
   line-height: 1.8;
   letter-spacing: -0.1px;
   color: ${p => p.theme.colors.main};
-  /* font-family: ${p => p.theme.fontFamily};
-  font-size: 20px;
-  line-height: 1.2;
-  letter-spacing: -0.1px;
+  /* font-family: ${p => p.theme.fontFamily}; */
+  /* font-size: 20px; */
+  /* line-height: 1.2; */
+  /* letter-spacing: -0.1px; */
   text-align: left;
-  color: ${p => p.theme.colors.main};
+  /* color: ${p => p.theme.colors.main}; */
   margin: 16px 0;
   display: flex;
   align-items: flex-end;
@@ -23,5 +23,5 @@ export default styled('div')`
   position: relative;
   @media screen and (max-width: 450px) {
     align-items: center !important;
-  } */
+  }
 `;
