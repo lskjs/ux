@@ -20,7 +20,7 @@ class PageBreadcrumbs extends Component {
       items: rawItems,
       ...props
     } = this.props;
-    const breadcrumbs = get(page, 'state.meta.show.breadcrumbs', true);
+    const breadcrumbs = get(page, 'state.show.breadcrumbs', true);
     if (!breadcrumbs) return null;
     let metas = get(page, 'state.metas');
     if (reverse) {
