@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import { toJS } from 'mobx';
 import { observer, inject } from 'mobx-react';
 import filter from 'lodash/filter';
-import isEmpty from '../utils/isEmpty';
-
 import { Badge } from 'antd';
 import TuneIcon from 'react-icons2/mdi/tune';
+import isEmpty from '../utils/isEmpty';
 import T from '../T';
 import { contextToProps } from './List.context';
 
