@@ -23,7 +23,7 @@ class ListTagsPanel extends Component {
           paint="primary"
           view="text"
           bordered
-          rounded
+          // rounded
           onClick={listStore.clearFilter}
         >
           <T name="lskList.resetFilterButton" />

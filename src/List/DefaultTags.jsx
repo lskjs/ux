@@ -34,4 +34,4 @@ const DefaultTags = ({ listStore, Tag }) => {
 
   return tags.map(tag => <Tag {...tag} />);
 };
-export default DefaultTags;
+export default observer(DefaultTags);
