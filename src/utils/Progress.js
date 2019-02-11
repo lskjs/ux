@@ -1,7 +1,9 @@
 import React from 'react';
+// import createNprogress from './nprogress';
 import NProgress from 'nprogress';
 
-NProgress.configure({ // перенести куда нибудь
+NProgress._configure = NProgress.configure;
+NProgress.configure = (props = {}) => NProgress._configure({ // перенести куда нибудь
   minimum: 0.2,
   easing: 'ease',
   speed: 300,
@@ -10,6 +12,8 @@ NProgress.configure({ // перенести куда нибудь
   trickleRate: 0.1,
   trickleSpeed: 500,
   parent: '#progress',
+  // parent: 'body',
+  ...props,
 });
 NProgress._start = NProgress.start;
 NProgress.start = (...args) => {

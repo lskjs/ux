@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Form from 'antd/lib/form';
-import hash from 'object-hash';
-
+import FormError from './FormError';
 
 class FormGroup extends Component {
   render() {
@@ -9,26 +8,28 @@ class FormGroup extends Component {
       field,
       form,
       children,
+      htmlId,
       ...props
     } = this.props;
 
+    // console.log({field, props});
+    
     // {errors.twitter &&
     //   touched.twitter &&
     const errorMessage = form && form.errors && form.errors[field.name];
-    const fieldId = `field__${hash(field.name)}`;
     return (
       <Form.Item
-        htmlId={fieldId}
-        key={fieldId}
+        key={htmlId}
         required={props.required}
         // label={field.heading ? field.heading.children : props.title}
         // label={props.label ? props.label : props.title}
         label={props.title}
-        help={errorMessage || props.help}
+        help={props.help}
         validateStatus={errorMessage ? 'error' : null}
       >
-        {/* <div id={fieldId} className="smooth" /> */}
+        <div id={htmlId} />
         {children}
+        {errorMessage && <FormError>{errorMessage}</FormError>}
       </Form.Item>
     );
   }

@@ -1,1 +1,1 @@
-export { default } from './Geo';
+export { default } from '../Geo2';

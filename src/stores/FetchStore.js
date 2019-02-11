@@ -78,7 +78,7 @@ export default class FetchStore extends Store {
     if (this.loading) this.cancelFetch();
     this.loading = true;
     this.cancelToken = CancelToken.source();
-    Progress.start();
+    this.progress && this.progress.start();
     try {
       const { items, count } = await this.find({
         skip,
@@ -92,7 +92,7 @@ export default class FetchStore extends Store {
     } finally {
       this.loading = false;
       this.cancelToken = null;
-      Progress.done();
+      this.progress && this.progress.done();
     }
   }
 
@@ -100,7 +100,7 @@ export default class FetchStore extends Store {
     if (!(this.cancelToken && this.cancelToken.cancel)) return;
     this.loading = false;
     this.cancelToken.cancel();
-    Progress.done();
+    this.progress && this.progress.done();
   }
 
   canFetchMore(dir = 1) {

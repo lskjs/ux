@@ -1,5 +1,3 @@
-import get from 'lodash/get';
-
 function parse(json) {
   try {
     return JSON.parse(json);
@@ -8,19 +6,15 @@ function parse(json) {
   }
 }
 
-export default function getParamsFromQuery(query, ctx) {
-  const params = {
-    ...get(ctx, 'config.lists', {}),
-    subfilter: parse(get(query, 'subfilter')) || {},
-    filter: parse(get(query, 'filter')) || {},
-    sort: parse(get(query, 'sort')) || {},
-    sortBy: get(query, 'sortBy'),
+export default function getParamsFromQuery(query = {}, defaultParams = {}) {
+  const params = {};
+  if (query.filter && parse(query.filter)) params.filter = parse(query.filter);
+  if (query.sort && parse(query.sort)) params.sort = parse(query.sort);
+  if (query.sortBy) params.sortBy = query.sortBy;
+  if (+query.skip) params.skip = +query.skip;
+  if (+query.limit) params.limit = +query.limit;
+  return {
+    ...defaultParams,
+    ...params,
   };
-  if (+get(query, 'skip')) {
-    params.skip = +get(query, 'skip');
-  }
-  if (+get(query, 'limit')) {
-    params.limit = +get(query, 'limit');
-  }
-  return params;
 }

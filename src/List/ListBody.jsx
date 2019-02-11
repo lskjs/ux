@@ -3,10 +3,10 @@ import { css } from 'react-emotion';
 import { observer, inject } from 'mobx-react';
 import If from 'react-if';
 import Spin from 'antd/lib/spin';
+import Progress from '../Progress';
 import DEV from '../DEV';
 import T from '../T';
 import Button from '../Button';
-import Progress from '../utils/Progress';
 import { contextToProps } from './List.context';
 
 const buttonStyles = css`
@@ -28,8 +28,9 @@ class ListBody extends Component {
     } = this.props;
 
     return (
-      <List.BodyWrapper {...props} className={Progress.parentClassName}>
-        <Progress.Bar id="progress" />
+      <List.BodyWrapper {...props}>
+        {__DEV__ && <Progress value={listStore.loading ? 60 : null} />}
+        {/* <Progress.Bar id="progress" /> */}
         {/* 1) загружаем первый раз
         2) загружаем второй раз, меняя фильтры
         3) загружаем второй раз, меняя skip, фильтры не меняются

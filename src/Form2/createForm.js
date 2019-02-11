@@ -5,13 +5,17 @@ import pickBy from 'lodash/pickBy';
 import isFunction from 'lodash/isFunction';
 import map from 'lodash/map';
 import get from 'lodash/get';
+import some from 'lodash/some';
 import cloneDeep from 'lodash/cloneDeep';
 import isEmpty from 'lodash/isEmpty';
 import { withFormik } from 'formik';
 import validate from 'validate.js';
 import Promise from 'bluebird';
+import scroll from '../utils/scroll';
+import getError from './getError';
 import DefaultFormGroup from '../Form2/FormGroup';
 import OnChangeListener from '../Form2/OnChangeListener';
+import getControlHtmlId from './getControlHtmlId';
 
 const prepareControls = (ctrls, FormGroup) => {
   const prepared = {};
@@ -37,11 +41,11 @@ const prepareControls = (ctrls, FormGroup) => {
       component,
     };
 
-    if (prepared[name].required && !prepared[name].validator) {
-      prepared[name].validator = {
-        presence: {
-          allowEmpty: false,
-        },
+    prepared[name].htmlId = getControlHtmlId(prepared[name]);
+    if (!prepared[name].validator) prepared[name].validator = {};
+    if (prepared[name].required && !prepared[name].validator.presence) {
+      prepared[name].validator.presence = {
+        allowEmpty: false,
       };
     }
   });
@@ -133,9 +137,10 @@ const createForm = ({
         setSubmitting,
         props,
         setStatus,
+        setFieldError,
         // status,
         isSubmitting,
-      } = props2
+      } = props2;
       const { onSubmit } = props;
 
       // console.log({status, isSubmitting});
@@ -147,15 +152,20 @@ const createForm = ({
           if (onSubmit) await onSubmit(values, props2);
           setStatus('success');
         } catch (err) {
+          setFieldError('onSubmit', getError(err).message);
+          scroll.scrollTo(`#${getControlHtmlId('onSubmit')}`);
+          // console.log({err});
           setStatus('error');
         }
         setSubmitting(false);
         setTimeout(() => {
           setStatus(null);
         }, 1000);
+      } else {
+        console.log('STRANGE!!!!!!!');
       }
     },
-    handleChange: (values, { /* setSubmitting, */ props3/* , form  */ }) => {
+    handleChange: (values, { /* setSubmitting, */ props: props3/* , form  */ }) => {
       // console.log('Form2.handleChange', values, props, props3);
       try {
         const onChange = get(this, 'props.onChange') || get(props3, 'onChange');
@@ -220,17 +230,21 @@ const createForm = ({
         }
       });
 
+      some(Object.keys(errors), key => scroll.scrollTo(`#${getControlHtmlId(controls[key])}`));
 
       // throw if errors
+      // const error = new Error('Validate error');
+      // error.errors = errors;
       if (!isEmpty(errors)) throw errors;
-      try {
-        // this.handleChange(values);
-        const onChange = get(this, 'props.onChange') || get(otherProps, 'onChange');
-        // const { onChange } = props;
-        if (onChange) onChange(values);
-      } catch (err) {
-        console.log('onChange err', err);
-      }
+      // if (!isEmpty(errors)) return errors;
+      // try {
+      //   // this.handleChange(values);
+      //   const onChange = get(this, 'props.onChange') || get(otherProps, 'onChange');
+      //   // const { onChange } = props;
+      //   if (onChange) onChange(values);
+      // } catch (err) {
+      //   console.log('onChange err', err);
+      // }
     },
     validateOnChange: false,
     validateOnBlur: false,
