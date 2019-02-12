@@ -23,7 +23,7 @@ npm run storybook
 
 Код можно посмотреть тут: https://github.com/rstacruz/nprogress
 
-Однако, техническая реализация nprogress для реакта оставляет желать лучшего, по этой причине необходимо взять за основу библиотеку Nanobar, и поверх нее написать компонент, чтобы перенять у nprogress визуальное поведение.
+Техническая реализация nprogress для реакта оставляет желать лучшего, по этой причине необходимо взять за основу библиотеку Nanobar, и поверх нее написать компонент, чтобы перенять у nprogress визуальное поведение.
 
 В lsk-general уже есть прототип реализации компонента и пример storybook'а. Можно написать все своими силами или переработать то, что уже есть. Пример желаемого API компонента тут: [lsk-general/Progress.story.jsx at master · isuvorov/lsk-general · GitHub](https://github.com/isuvorov/lsk-general/blob/master/src/Progress/Progress.story.jsx)
 
