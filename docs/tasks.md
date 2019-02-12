@@ -15,7 +15,7 @@ npm run storybook
 
 Есть три задачи, каждая последующая с увеличением сложности:
 
-## 1. Компонент **Progress**
+## 1. Компонент Progress
 Хорошо реализована библиотека: Nprogress.
 Пример можно посмотреть тут: http://ricostacruz.com/nprogress/
 Код можно посмотреть тут: https://github.com/rstacruz/nprogress
