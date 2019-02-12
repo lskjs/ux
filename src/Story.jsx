@@ -3,10 +3,14 @@ import { ThemeProvider } from 'emotion-theming';
 import { Provider } from 'mobx-react';
 import DevTools from 'mobx-react-devtools';
 import defaultTheme from './theme';
+import Performance from './DEV/Performance';
 import './styles.g.css';
 
-
 class Story extends Component {
+  componentDidMount() {
+    window.story = this;
+    if (window.parent) window.parent.story = this;
+  }
   render() {
     const {
       children, devtools, locale = 'en', theme = defaultTheme, style,
@@ -45,28 +49,28 @@ class Story extends Component {
         api,
       }),
     };
-    // return <div>123</div>
-
     return (
-      <ThemeProvider theme={theme}>
-        <Provider
-          uapp={uapp}
-          {...uapp.provide()}
-        >
-          <div
-            style={{
+      <Performance>
+        <ThemeProvider theme={theme}>
+          <Provider
+            uapp={uapp}
+            {...uapp.provide()}
+          >
+            <div
+              style={{
               // border: '30px #000 solid',
               // width: '80%',
               // fontFamily: 'Gotham Pro',
               // padding: '10px',
               ...style,
             }}
-          >
-            {children}
-            {devtools && <DevTools />}
-          </div>
-        </Provider>
-      </ThemeProvider>
+            >
+              {children}
+              {devtools && <DevTools />}
+            </div>
+          </Provider>
+        </ThemeProvider>
+      </Performance>
 
     );
   }

@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { injectGlobal } from 'emotion';
-import { UnmountClosed } from 'react-collapse';
+import { Collapse as ReactCollapse, UnmountClosed } from 'react-collapse';
 import cx from 'classnames';
 
 injectGlobal(`
@@ -12,7 +12,8 @@ injectGlobal(`
   }
 `);
 
-class FilterCollapse extends PureComponent {
+
+class Collapse extends PureComponent {
   static propTypes = {
     show: PropTypes.bool,
     children: PropTypes.element.isRequired,
@@ -62,9 +63,25 @@ class FilterCollapse extends PureComponent {
 
   render() {
     const { show, rest } = this.state;
-    const { children } = this.props;
+    const { children, type } = this.props;
+    let Wrapper;
+
+    if (type === 'collapse') {
+      Wrapper = ReactCollapse;
+    } else if (type === 'collapseUnmount') {
+      Wrapper = UnmountClosed;
+    } else {
+      const style = {};
+      if (!show) style.display = 'none';
+      return (
+        <div style={style}>
+          {children}
+        </div>
+      );
+    }
+
     return (
-      <UnmountClosed
+      <Wrapper
         isOpened={show}
         forceInitialAnimation
         onRest={() => {
@@ -80,9 +97,9 @@ class FilterCollapse extends PureComponent {
         }}
       >
         {children}
-      </UnmountClosed>
+      </Wrapper>
     );
   }
 }
 
-export default FilterCollapse;
+export default Collapse;

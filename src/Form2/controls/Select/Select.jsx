@@ -17,6 +17,12 @@ import CollapsedMultiValue from './CollapsedMultiValue';
 
 class Select extends Component {
   state = {};
+  componentDidMount() {
+    const { loadOption, value, async } = this.props;
+    if (async && value && loadOption) {
+      this.initOption();
+    }
+  }
   shouldComponentUpdate(nextProps, nextState) {
     const { state, props } = this;
     const prevValue = get(props, 'field.value');
@@ -33,12 +39,6 @@ class Select extends Component {
       return true;
     }
     return false;
-  }
-  componentDidMount() {
-    const { loadOption, value, async } = this.props;
-    if (async && value && loadOption) {
-      this.initOption();
-    }
   }
   async initOption() {
     const { loadOption, value } = this.props;
@@ -90,14 +90,14 @@ class Select extends Component {
     const normalizedOptions = getNormalizedOptions(options, props);
     const value = getOptionValue(field ? field.value : propValue);
     const option = async ? this.state.option : find(normalizedOptions, { value });
-    const Component = async ? ReactAsyncSelect : ReactSelect;
+    const SelectComponent = async ? ReactAsyncSelect : ReactSelect;
     const hasError = field && field.name && !!get(form, `errors.${field.name}`);
     const collapsedComponents = {
       ValueContainer: CollapsedValueContainer,
       MultiValue: CollapsedMultiValue,
     };
     return (
-      <Component
+      <SelectComponent
         isClearable={!props.required}
         arrowRenderer={e => (e.isOpen ? <Up /> : <Down />)}
         error={hasError}
@@ -107,6 +107,7 @@ class Select extends Component {
         closeMenuOnSelect={!props.isMulti}
         placeholder={placeholder}
         {...field}
+        {...props}
         components={{
           SingleValue,
           Option,

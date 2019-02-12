@@ -20,6 +20,8 @@ const SelectFormView = (props) => {
       <Field {...props.controls.select} />
       <Field {...props.controls.select2} />
       <Field {...props.controls.select3} />
+      <Field {...props.controls.select4} />
+      <Field {...props.controls.select5} />
       <Field {...props.controls.radio} />
       <hr />
       <h1>Мультиселекты</h1>
@@ -77,7 +79,6 @@ const SelectForm = createForm({
       options: range(1, 11).map(id => ({
         value: id,
       })),
-      placeholder: 'placeholder 2',
     },
     select3: {
       title: 'The Select3: options as stings',
@@ -88,7 +89,11 @@ const SelectForm = createForm({
       title: 'The Select4',
       component: Select,
       options: ['one', 'two'],
-      placeholder: 'placeholder',
+    },
+    select5: {
+      title: 'The Large select5',
+      component: Select,
+      options: range(1, 300),
     },
     // ///
     multiselect: {
@@ -491,7 +496,7 @@ export default ({ storiesOf }) =>
   storiesOf('Form2/controls', module)
     .add('Select ', () => {
       return (
-        <Story>
+        <Story devtools perf>
           <SelectForm
             initialValues={{
               select4: 'two',
@@ -503,7 +508,7 @@ export default ({ storiesOf }) =>
     })
     .add('Select with i18', () => {
       return (
-        <Story>
+        <Story devtools perf>
           <SelectFormWithI18
             initialValues={{
               select4: 'two',
