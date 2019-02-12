@@ -20,9 +20,9 @@ npm run storybook
 Пример можно посмотреть тут: http://ricostacruz.com/nprogress/
 Код можно посмотреть тут: https://github.com/rstacruz/nprogress
 
-Однако техническая реализация nprogress для реакта оставляет желать лучшего, по этой причине необходимо взять за основу библиотеку Nanobar и поверх нее написать компонент, чтобы перенять у nprogress визуальное поведение.
+Однако, техническая реализация nprogress для реакта оставляет желать лучшего, по этой причине необходимо взять за основу библиотеку Nanobar, и поверх нее написать компонент, чтобы перенять у nprogress визуальное поведение.
 
-В lsk-general уже есть прототип реализации компонента, и пример storybook'а. Можно написать все своими силами, или переработать то, что уже есть. Пример желаемого API компонента тут: [lsk-general/Progress.story.jsx at master · isuvorov/lsk-general · GitHub](https://github.com/isuvorov/lsk-general/blob/master/src/Progress/Progress.story.jsx)
+В lsk-general уже есть прототип реализации компонента и пример storybook'а. Можно написать все своими силами или переработать то, что уже есть. Пример желаемого API компонента тут: [lsk-general/Progress.story.jsx at master · isuvorov/lsk-general · GitHub](https://github.com/isuvorov/lsk-general/blob/master/src/Progress/Progress.story.jsx)
 
 Чего нет в nanobar, но что хотелось бы (список требуемых улучшений):
 - плавность;
@@ -50,6 +50,4 @@ npm run storybook
 - возможно, это 2 компонента (UploadImage для загрузки файла, CropImage для редактирования изображения).
 
 
-
-
-Необходимо реализовать компонент, и сделать pull request в репозиторий.
+Необходимо реализовать компонент и сделать pull request в репозиторий.
