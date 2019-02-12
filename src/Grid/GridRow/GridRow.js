@@ -1,6 +1,6 @@
 import styled, { css } from 'react-emotion';
-import Col from '../Col';
-import removeProps from '../../../utils/removeProps';
+import GridCol from '../GridCol';
+import removeProps from '../../utils/removeProps';
 
 const filter = removeProps('div', ['vertical', 'gap']);
 export default styled(filter)`
@@ -13,7 +13,7 @@ export default styled(filter)`
   ${p => (p.vertical && css`
     margin-top: -${p.gap || p.theme.gridGap}px;
     margin-bottom: -${p.gap || p.theme.gridGap}px;
-    > ${Col} {
+    > ${GridCol} {
       padding-top: ${p.gap || p.theme.gridGap}px;
       padding-bottom: ${p.gap || p.theme.gridGap}px;
       ${p.gap && css`

@@ -4,8 +4,6 @@ import { observer, inject } from 'mobx-react';
 import If from 'react-if';
 import Spin from 'antd/lib/spin';
 import Progress from '../Progress';
-import DEV from '../DEV';
-import Performance from '../DEV/Performance';
 import T from '../T';
 import Button from '../Button';
 import { contextToProps } from './List.context';
@@ -15,7 +13,7 @@ const buttonStyles = css`
   box-shadow: 0 0 0 1px #e3e3e3;
   width: 100%;
 `;
-@contextToProps('List', 'Item', 'show')
+@contextToProps('List', 'show')
 @inject('listStore')
 @observer
 class ListBody extends Component {
@@ -23,7 +21,6 @@ class ListBody extends Component {
     const {
       List,
       listStore,
-      Item,
       show = {},
       ...props
     } = this.props;
@@ -62,34 +59,7 @@ class ListBody extends Component {
           <If condition={listStore.items.length === 0}>
             <List.Empty />
           </If>
-          <List.ItemsWrapper>
-            <Performance name="List.Items" disabled={!__DEV__}>
-              {listStore.map((item, index) => {
-                if (item === null) {
-                  return (
-                    <Button
-                      bordered
-                      size="large"
-                      paint="default"
-                      onClick={() => listStore.fetch({ skip: listStore.skip + index, limit: 1, cache: 1 })}
-                      disabled={listStore.loading}
-                      className={buttonStyles}
-                      block
-                    >
-                      <If condition={listStore.loading}>
-                        <T name="lskList.bodyLoadingButton" />
-                      </If>
-                      <If condition={!listStore.loading}>
-                        <T name="lskList.bodyLoadMoreButton" />
-                      </If>
-                    </Button>
-                  );
-                }
-                if (!Item) return <DEV json="!Item" />;
-                return <Item key={item._id || item.id || index} item={item} />;
-              })}
-            </Performance>
-          </List.ItemsWrapper>
+          <List.Items />
           <If condition={show.more && listStore.canFetchMore(1)}>
             <Button
               bordered

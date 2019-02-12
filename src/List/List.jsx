@@ -28,6 +28,7 @@ import ListSearch from './ListSearch';
 import ListFilter from './ListFilter';
 import ListTagsPanel from './ListTagsPanel';
 import ListBody from './ListBody';
+import ListItems from './ListItems';
 import ListHeaderRow from './ListHeaderRow';
 import ListFooter from './ListFooter';
 import ListFilterButton from './ListFilterButton';
@@ -65,6 +66,7 @@ class List extends Component {
   static Filter = ListFilter;
   static TagsPanel = ListTagsPanel;
   static Body = ListBody;
+  static Items = ListItems;
   static HeaderRow = ListHeaderRow;
   static Footer = ListFooter;
   static Paginator = ListPaginator;
@@ -119,7 +121,7 @@ class List extends Component {
       Filter: this.props.Filter || this.constructor.Filter,
       TagsPanel: this.props.TagsPanel || this.constructor.TagsPanel,
       Body: this.props.Body || this.constructor.Body,
-      ItemsWrapper: this.props.ItemsWrapper || this.constructor.ItemsWrapper,
+      Items: this.props.Items || this.constructor.Items,
       HeaderRow: this.props.HeaderRow || this.constructor.HeaderRow, // !!!!!!!!!
       Footer: this.props.Footer || this.constructor.Footer,
       Paginator: this.props.Paginator || this.constructor.Paginator,
@@ -133,6 +135,7 @@ class List extends Component {
 
       Wrapper: this.props.Wrapper || this.constructor.Wrapper,
       BodyWrapper: this.props.BodyWrapper || this.constructor.BodyWrapper,
+      ItemsWrapper: this.props.ItemsWrapper || this.constructor.ItemsWrapper,
       FilterWrapper: this.props.FilterWrapper || this.constructor.FilterWrapper,
       TagsPanelWrapper: this.props.TagsPanelWrapper || this.constructor.TagsPanelWrapper,
       HeaderItemWrapper: this.props.HeaderItemWrapper || this.constructor.HeaderItemWrapper,

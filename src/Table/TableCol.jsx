@@ -20,8 +20,8 @@ class TableCol extends Component {
 
     const otherStyle = {};
     if (index !== null) otherStyle.gridColumn = index + 1;
-    otherStyle.display = 'flex';
     // otherStyle.flex = 1;
+    otherStyle.display = 'flex';
     if (align) {
       otherStyle.justifyContent = (
         align === 'right' ? 'flex-end' : // eslint-disable-line

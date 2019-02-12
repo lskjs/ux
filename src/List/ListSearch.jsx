@@ -3,15 +3,12 @@ import { observer, inject } from 'mobx-react';
 import { contextToProps } from './List.context';
 
 @contextToProps('List', 'show')
-@inject('listStore')
+@inject('listStore', 'i18')
 @observer
 class ListSearch extends Component {
   render() {
     const {
-      List,
-      listStore,
-      show,
-      ...props
+      i18, List, listStore, show, ...props
     } = this.props;
     return (
       <List.SearchWrapper
@@ -19,10 +16,11 @@ class ListSearch extends Component {
         max={listStore.count}
         debounceTimeout={100}
         onChange={e => listStore.setSearch(e.target.value)}
-        value={listStore.search}
+        value={listStore.search || ''}
         canClear={!!listStore.search}
-        onClear={() => listStore.setSearch('')}
+        onClear={() => listStore.setSearch(null)}
         actions={show.filterButton && <List.FilterButton />}
+        placeholder={i18.t('lskList.searchPlaceholder')}
         {...props}
       />
     );
