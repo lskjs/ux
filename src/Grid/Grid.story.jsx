@@ -1,6 +1,6 @@
 import React from 'react';
 import Story from '../Story';
-import Grid, { Row, Col } from './Grid';
+import { Container, Row, Col } from './Grid';
 
 const defaultStyle = {
   height: 100,
@@ -14,7 +14,7 @@ export default ({ storiesOf }) => {
   storiesOf('Grid', module)
     .add('Default', () => (
       <Story style={{ background: '#42cafd' }}>
-        <Grid>
+        <Container>
           <Row>
             <Col lg={6} md={12}>
               <Item>
@@ -37,12 +37,12 @@ export default ({ storiesOf }) => {
               </Item>
             </Col>
           </Row>
-        </Grid>
+        </Container>
       </Story>
     ))
     .add('Vertical offsets', () => (
       <Story style={{ background: '#42cafd' }}>
-        <Grid>
+        <Container>
           <Row vertical>
             <Col lg={6} md={12}>
               <Item>
@@ -65,12 +65,12 @@ export default ({ storiesOf }) => {
               </Item>
             </Col>
           </Row>
-        </Grid>
+        </Container>
       </Story>
     ))
     .add('Custom gap', () => (
       <Story style={{ background: '#42cafd' }}>
-        <Grid>
+        <Container>
           <Row vertical gap={32}>
             <Col md={4}>
               <Item>
@@ -88,12 +88,12 @@ export default ({ storiesOf }) => {
               </Item>
             </Col>
           </Row>
-        </Grid>
+        </Container>
       </Story>
     ))
     .add('Vertical offsets with custom gap', () => (
       <Story style={{ background: '#42cafd' }}>
-        <Grid>
+        <Container>
           <Row vertical gap={6}>
             <Col md={4}>
               <Item>
@@ -126,7 +126,7 @@ export default ({ storiesOf }) => {
               </Item>
             </Col>
           </Row>
-        </Grid>
+        </Container>
       </Story>
     ))
     .add('without container', () => (
@@ -152,7 +152,7 @@ export default ({ storiesOf }) => {
     ))
     .add('complex', () => (
       <Story style={{ background: '#42cafd' }}>
-        <Grid>
+        <Container>
           <Row vertical>
             <Col md={4}>
               <Item>
@@ -226,7 +226,7 @@ export default ({ storiesOf }) => {
               </Item>
             </Col>
           </Row>
-        </Grid>
+        </Container>
       </Story>
     ));
 };

@@ -28,4 +28,5 @@ export default {
   borderRadius: '6px',
   borderCircle: '100vw',
   borderSmall: '3px',
+  gridGap: 15,
 };

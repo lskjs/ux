@@ -1,1 +1,1 @@
-export { Row, Col, default } from './Grid';
+export { Row, Col, Container, default } from './Grid';
