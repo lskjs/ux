@@ -21,8 +21,8 @@ class ListFooter extends Component {
       show,
       pageSize = 10,
     } = this.props;
+    if (listStore.count <= 0) return false;
     const { options = [1, 2, 5, 10].map(a => a * pageSize) } = this.props;
-
     const from = listStore.skip + 1;
     const to = listStore.skip + listStore.items.length;
     return (
