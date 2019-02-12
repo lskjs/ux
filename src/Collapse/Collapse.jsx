@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import autobind from 'core-decorators/lib/autobind';
 import PropTypes from 'prop-types';
 import { injectGlobal } from 'emotion';
 import { Collapse as ReactCollapse, UnmountClosed } from 'react-collapse';
@@ -50,6 +51,13 @@ class Collapse extends PureComponent {
     }
   }
 
+  @autobind
+  handleRenderer({ current, to }) {
+    const { rest } = this.state;
+    if (current !== to && !rest) return;
+    this.toggleRestFilterBar(true);
+  }
+
   toggleRestFilterBar(rest, prevShow = false) {
     clearTimeout(this.timeoutId);
     if (prevShow) {
@@ -79,11 +87,11 @@ class Collapse extends PureComponent {
         </div>
       );
     }
-
     return (
       <Wrapper
         isOpened={show}
-        forceInitialAnimation
+        forceInitialAnimation={type === 'collapseUnmount'}
+        onRender={this.handleRenderer}
         onRest={() => {
           if (show) {
             this.toggleRestFilterBar(true);
