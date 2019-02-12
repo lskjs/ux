@@ -39,27 +39,6 @@ class RangeFilterOption extends Component {
       maxDisabledValues: this.getMaxDisabledValues(props),
     };
   }
-  shouldComponentUpdate(nextProps, nextState) {
-    // console.log(nextProps, nextState);
-    const { minFocused, maxFocused } = this.state;
-    if (!isEqual(minFocused, nextState.minFocused)) {
-      return true;
-    }
-    if (!isEqual(maxFocused, nextState.maxFocused)) {
-      return true;
-    }
-    const prevMinDisabledValues = this.state.minDisabledValues;
-    const minDisabledValues = nextState.minDisabledValues;
-    if (!isEqual(prevMinDisabledValues, minDisabledValues)) {
-      return true;
-    }
-    const prevMaxDisabledValues = this.state.maxDisabledValues;
-    const maxDisabledValues = nextState.maxDisabledValues;
-    if (!isEqual(prevMaxDisabledValues, maxDisabledValues)) {
-      return true;
-    }
-    return false;
-  }
   componentWillReceiveProps(props) {
     let hasChanges = false;
     const minDisabledValues = this.getMinDisabledValues(props, this.state);
@@ -74,8 +53,29 @@ class RangeFilterOption extends Component {
       this.setState({
         minDisabledValues,
         maxDisabledValues,
-      })
+      });
     }
+  }
+  shouldComponentUpdate(nextProps, nextState) {
+    // console.log(nextProps, nextState);
+    const { minFocused, maxFocused } = this.state;
+    if (!isEqual(minFocused, nextState.minFocused)) {
+      return true;
+    }
+    if (!isEqual(maxFocused, nextState.maxFocused)) {
+      return true;
+    }
+    const prevMinDisabledValues = this.state.minDisabledValues;
+    const { minDisabledValues } = nextState;
+    if (!isEqual(prevMinDisabledValues, minDisabledValues)) {
+      return true;
+    }
+    const prevMaxDisabledValues = this.state.maxDisabledValues;
+    const { maxDisabledValues } = nextState;
+    if (!isEqual(prevMaxDisabledValues, maxDisabledValues)) {
+      return true;
+    }
+    return false;
   }
   getMaxValue(props, state) {
     if (!state || typeof state.maxValue !== 'number') {
@@ -99,7 +99,7 @@ class RangeFilterOption extends Component {
       if (value > Number(maxValue)) {
         values.push(value);
       }
-    })
+    });
     return values;
   }
   getMaxDisabledValues(props, state) {
@@ -112,7 +112,7 @@ class RangeFilterOption extends Component {
       if (value < Number(minValue)) {
         values.push(value);
       }
-    })
+    });
     return values;
   }
   @autobind
@@ -167,7 +167,7 @@ class RangeFilterOption extends Component {
   }
   render() {
     const {
-      minFocused, maxFocused, minValue, maxValue, minDisabledValues, maxDisabledValues
+      minFocused, maxFocused, minValue, maxValue, minDisabledValues, maxDisabledValues,
     } = this.state;
     const {
       min, max, stats, quickValues, footer,

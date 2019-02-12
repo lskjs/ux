@@ -13,7 +13,7 @@ export const ValueItem = styled(removeProps('button', ['align']))`
   border: none;
   outline: none;
   padding: 0 12px;
-  color: ${p => (p.disabled ? p.theme.colors.lightGray : p.theme.colors.main)};
+  color: ${p => (p.disabled ? p.theme.colors.secondary : p.theme.colors.main)};
   background-color: ${p => p.theme.colors.white};
   display: flex;
   align-items: center;

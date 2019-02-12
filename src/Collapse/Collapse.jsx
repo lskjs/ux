@@ -6,6 +6,9 @@ import { Collapse as ReactCollapse, UnmountClosed } from 'react-collapse';
 import cx from 'classnames';
 
 injectGlobal(`
+  .ReactCollapse--collapse {
+    will-change: height;
+  }
   .ReactCollapse--rest {
     overflow: visible !important;
     position: relative;
