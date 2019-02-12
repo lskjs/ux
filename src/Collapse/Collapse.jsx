@@ -1,10 +1,14 @@
 import React, { PureComponent } from 'react';
+import autobind from 'core-decorators/lib/autobind';
 import PropTypes from 'prop-types';
 import { injectGlobal } from 'emotion';
-import { UnmountClosed } from 'react-collapse';
+import { Collapse as ReactCollapse, UnmountClosed } from 'react-collapse';
 import cx from 'classnames';
 
 injectGlobal(`
+  .ReactCollapse--collapse {
+    will-change: height;
+  }
   .ReactCollapse--rest {
     overflow: visible !important;
     position: relative;
@@ -12,7 +16,8 @@ injectGlobal(`
   }
 `);
 
-class FilterCollapse extends PureComponent {
+
+class Collapse extends PureComponent {
   static propTypes = {
     show: PropTypes.bool,
     children: PropTypes.element.isRequired,
@@ -49,6 +54,13 @@ class FilterCollapse extends PureComponent {
     }
   }
 
+  @autobind
+  handleRenderer({ current, to }) {
+    const { rest } = this.state;
+    if (current !== to && !rest) return;
+    this.toggleRestFilterBar(true);
+  }
+
   toggleRestFilterBar(rest, prevShow = false) {
     clearTimeout(this.timeoutId);
     if (prevShow) {
@@ -62,11 +74,27 @@ class FilterCollapse extends PureComponent {
 
   render() {
     const { show, rest } = this.state;
-    const { children } = this.props;
+    const { children, type } = this.props;
+    let Wrapper;
+
+    if (type === 'collapse') {
+      Wrapper = ReactCollapse;
+    } else if (type === 'collapseUnmount') {
+      Wrapper = UnmountClosed;
+    } else {
+      const style = {};
+      if (!show) style.display = 'none';
+      return (
+        <div style={style}>
+          {children}
+        </div>
+      );
+    }
     return (
-      <UnmountClosed
+      <Wrapper
         isOpened={show}
-        forceInitialAnimation
+        forceInitialAnimation={type === 'collapseUnmount'}
+        onRender={this.handleRenderer}
         onRest={() => {
           if (show) {
             this.toggleRestFilterBar(true);
@@ -80,9 +108,9 @@ class FilterCollapse extends PureComponent {
         }}
       >
         {children}
-      </UnmountClosed>
+      </Wrapper>
     );
   }
 }
 
-export default FilterCollapse;
+export default Collapse;

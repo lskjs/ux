@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { toJS } from 'mobx';
 import { inject, observer } from 'mobx-react';
-import FilterCollapse from '../UI/organisms/FilterCollapse';
+import Collapse from '../Collapse';
 import { contextToProps } from './List.context';
 
 @contextToProps('List', 'FilterForm')
@@ -16,22 +16,19 @@ class ListFilter extends Component {
       // container,
     } = this.props;
     if (!FilterForm) return null; // <DEV json="!FilterForm" />;
-    let children = (
-      <List.FilterWrapper>
-        <FilterForm
-          enableReinitialize
+
+    return (
+      <Collapse show={listStore.showFilter} type="collapse">
+        <List.FilterWrapper>
+          <FilterForm
+            enableReinitialize
           // initialValues={listStore.filter}
-          initialValues={toJS(listStore.filter)}
-          onChange={listStore.setFilter}
-        />
-      </List.FilterWrapper>
+            initialValues={toJS(listStore.filter)}
+            onChange={listStore.setFilter}
+          />
+        </List.FilterWrapper>
+      </Collapse>
     );
-    children = (
-      <FilterCollapse show={listStore.showFilter}>
-        {children}
-      </FilterCollapse>
-    );
-    return children;
   }
 }
 

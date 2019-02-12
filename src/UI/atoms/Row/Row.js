@@ -7,18 +7,18 @@ export default styled(filter)`
   box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
-  margin-right: -${p => (p.gap || 15)}px;
-  margin-left: -${p => (p.gap || 15)}px;
+  margin-right: -${p => (p.gap || p.theme.gridGap)}px;
+  margin-left: -${p => (p.gap || p.theme.gridGap)}px;
   
   ${p => (p.vertical && css`
-    margin-top: -${p.gap || 15}px;
-    margin-bottom: -${p.gap || 15}px;
+    margin-top: -${p.gap || p.theme.gridGap}px;
+    margin-bottom: -${p.gap || p.theme.gridGap}px;
     > ${Col} {
-      padding-top: ${p.gap || 15}px;
-      padding-bottom: ${p.gap || 15}px;
+      padding-top: ${p.gap || p.theme.gridGap}px;
+      padding-bottom: ${p.gap || p.theme.gridGap}px;
       ${p.gap && css`
-        padding-left: ${p.gap || 15}px;
-        padding-right: ${p.gap || 15}px;
+        padding-left: ${p.gap || p.theme.gridGap}px;
+        padding-right: ${p.gap || p.theme.gridGap}px;
       `}
     }
   `)}

@@ -476,8 +476,8 @@ export default styled(filter)`
   position: relative;
   width: 100%;
   min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: ${p => p.theme.gridGap}px;
+  padding-left: ${p => p.theme.gridGap}px;
   
   ${(p) => {
     if (p.xs && !['number', 'string'].includes(typeof p.xs)) {
