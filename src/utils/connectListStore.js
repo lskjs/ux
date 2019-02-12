@@ -2,7 +2,7 @@ import { autorun, toJS } from 'mobx';
 import getParamsFromQuery from './getParamsFromQuery';
 import getQueryFromParams from './getQueryFromParams';
 
-const defaultGetParams = store => ({
+export const defaultGetParams = store => ({
   filter: toJS(store.filter),
   sort: toJS(store.sort),
   limit: store.limit,
