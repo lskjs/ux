@@ -19,7 +19,8 @@ export const Item = styled('div')`
   will-change: opacity;
   cursor: pointer;
   display: flex;
-  width: 100%;
+  /* width: 100%; */
+  border-radius: 8px;
   line-height: 1.2;
   text-decoration: none;
   align-items: flex-start;
@@ -41,8 +42,11 @@ export const Item = styled('div')`
     border-radius: 50%;
     height: 40px;
     width: 40px;
-    padding: 10px;
-    ${p => (p.itemType === 'notify.error' && 'padding: 8px 10px')};
+    padding: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    ${p => (p.itemType === 'notify.error' && 'padding: 1px 3px 4px 3px')};
   }
   .notify-text {
     font-size: 11px;
@@ -54,6 +58,13 @@ export const Item = styled('div')`
     overflow: hidden;
     word-break: break-word;
     width: 215px;
+  }
+  .notify-item {
+    display: flex;
+  }
+  .notify-info {
+    padding-left: 10px;
+
   }
 
   &:hover {
@@ -79,9 +90,38 @@ export const Item = styled('div')`
           }
         `;
       case 'notify.warning':
-        return '';
+        return `
+          background-color: #fe9902 !important;
+          color: white !important;
+          &:hover {
+            background-color: #fe9902 !important;
+            box-shadow: none !important;
+            cursor: default !important;
+            text-decoration: none !important;
+          }
+        `;
       case 'notify.success':
-        return '';
+        return `
+          background-color: #50cc58 !important;
+          color: white !important;
+          &:hover {
+            background-color: #50cc58 !important;
+            box-shadow: none !important;
+            cursor: default !important;
+            text-decoration: none !important;
+          }
+        `;
+      case 'notify.info':
+        return `
+          background-color: #7070ff !important;
+          color: white !important;
+          &:hover {
+            background-color: #7070ff !important;
+            box-shadow: none !important;
+            cursor: default !important;
+            text-decoration: none !important;
+          }
+        `;
       default: return '';
     }
   }}

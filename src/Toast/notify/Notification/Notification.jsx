@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import get from 'lodash/get';
+import If from 'react-if';
 import ErrorIcon from '../error';
 import WarningIcon from '../warning';
 import InfoIcon from '../info';
@@ -44,6 +45,7 @@ class Notification extends Component {
   renderInner() {
     const { item = {}, t } = this.props;
     const { type, info } = item;
+    console.log(info);
     const superType = (type && type.substr(0, type.indexOf('.'))) || '';
     const opponent = this.getOpponent();
 
@@ -135,6 +137,7 @@ class Notification extends Component {
       ...item,
       ...(item.info || {}),
     });
+
     if (superType === 'notify') {
       const { title, text } = info;
       data.title = title;
@@ -152,10 +155,10 @@ class Notification extends Component {
         data.image = <InfoIcon size={20} />;
       }
     }
-
     // if (typeof data.image !== 'string') data.image = '';
     if (typeof data.title !== 'string') data.title = '';
     if (typeof data.text !== 'string') data.text = '';
+
     return (
       <div className="notify-item">
         <If condition={data.image}>
@@ -186,7 +189,6 @@ class Notification extends Component {
   render() {
     const { standalone, item = {}, transparent } = this.props;
     const href = standalone ? null : this.getHref();
-
     return (
       <div aria-hidden onClick={() => item.view && item.view()}>
         <NotifyItem
