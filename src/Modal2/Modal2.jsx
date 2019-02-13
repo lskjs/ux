@@ -36,6 +36,7 @@ ReactModal.defaultStyles.overlay.overflowY = 'auto';
 ReactModal.defaultStyles.overlay.display = 'flex';
 ReactModal.defaultStyles.overlay.flexDirection = 'column';
 ReactModal.defaultStyles.overlay.padding = '18px 12px';
+ReactModal.defaultStyles.overlay.zIndex = 12;
 
 if (typeof (window) !== 'undefined') {
   ReactModal.setAppElement('body');
@@ -116,7 +117,6 @@ class Modal2 extends PureComponent {
               [modalLarge]: size === 'large',
             })}
             // overlayClassName={overlayStyle}
-            style={{ overlay: { zIndex: 10 } }}
             {...pick(props, reactModalProps)}
           >
             <If condition={closable}>

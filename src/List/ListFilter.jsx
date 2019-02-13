@@ -21,6 +21,7 @@ class ListFilter extends Component {
       <Collapse show={listStore.showFilter} type="collapse">
         <List.FilterWrapper>
           <FilterForm
+            class
             enableReinitialize
           // initialValues={listStore.filter}
             initialValues={toJS(listStore.filter)}
