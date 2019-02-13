@@ -10,6 +10,7 @@ import Promise from 'bluebird';
 import axios from 'axios';
 
 // import DEV from '../DEV';
+import Link from '../Link';
 import Story from '../Story';
 import Input from '../Input';
 import Button from '../Button';
@@ -165,6 +166,22 @@ const SelectItem = observer(({ item = {} }) => (
   <Row className={cx([styleHeight, itemStyle])}>
     <Col index={0}>
       <List.Checkbox item={item} />
+    </Col>
+    <Col index={1}>
+      {item.id} - {Math.random()}
+    </Col>
+    <Col index={2}>
+      {item.title}
+    </Col>
+    <Col index={3}>
+      {item.role}
+    </Col>
+  </Row>
+));
+const SelectLinkItem = observer(({ item = {} }) => (
+  <Row className={cx([styleHeight, itemStyle])} componentClass={Link} href="https://google.com" clickable>
+    <Col index={0}>
+      <List.Checkbox item={item} style={{ marginBottom: 0 }} />
     </Col>
     <Col index={1}>
       {item.id} - {Math.random()}
@@ -345,6 +362,18 @@ export default ({ storiesOf }) => {
           columns={columns}
         >
           <List.Body Item={Item} />
+        </List>
+        <Debug store={listStore} />
+      </Story>
+    ))
+    .add('List.Checkbox', () => (
+      <Story>
+        <List
+          listStore={listStore}
+          Item={SelectLinkItem}
+          columns={columns}
+        >
+          <List.Body Item={SelectLinkItem} />
         </List>
         <Debug store={listStore} />
       </Story>
