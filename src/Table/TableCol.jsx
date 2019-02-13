@@ -29,6 +29,13 @@ class TableCol extends Component {
             : 'flex-start'
       );
     }
+    if (props.stopPropagation && !props.onClick) {
+      props.onClick = (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+      };
+    }
+
     return React.createElement(
       componentClass,
       filterProps({

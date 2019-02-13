@@ -8,6 +8,13 @@ import { contextToProps } from './List.context';
 @inject('listStore')
 @observer
 class ListFilter extends Component {
+  constructor() {
+    super();
+    this.form = React.createRef();
+    setTimeout(() => {
+      console.log('this.form', this.form);
+    }, 1000);
+  }
   render() {
     const {
       List,
@@ -21,6 +28,7 @@ class ListFilter extends Component {
       <Collapse show={listStore.showFilter} type="collapse">
         <List.FilterWrapper>
           <FilterForm
+            ref={this.form}
             enableReinitialize
           // initialValues={listStore.filter}
             initialValues={toJS(listStore.filter)}
