@@ -24,7 +24,6 @@ class Button extends PureComponent {
       'small',
       'default',
       'large',
-      'extra small',
     ]),
     paint: PropTypes.oneOf([
       'default',
