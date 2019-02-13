@@ -5,6 +5,7 @@ import autobind from 'core-decorators/lib/autobind';
 import Menu from 'antd/lib/menu';
 import If from 'react-if';
 import Horizontal from '../../atoms/Horizontal';
+import ItemTitle from '../../atoms/ItemTitle';
 import TinyLabel from '../../atoms/TinyLabel';
 import { blockStyle } from './AdminMenu.styles';
 
@@ -88,7 +89,7 @@ class AdminMenu extends PureComponent {
   renderLabel(item, sub) {
     return (
       <Horizontal verticalAlign="center">
-        {item.title}
+        <ItemTitle>{item.title}</ItemTitle>
         <TinyLabel pullRight={sub} sticky={!sub}>{item.label}</TinyLabel>
       </Horizontal>
     );
