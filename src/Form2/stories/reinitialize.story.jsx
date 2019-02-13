@@ -8,6 +8,7 @@ import Input from '../controls/Input';
 import Select from '../controls/Select';
 import Tags from '../controls/Tags';
 import FormDebug from '../FormDebug';
+import PercentSlider from '../controls/PercentSlider/PercentSlider';
 
 const InputFormView = (props) => {
   return (
@@ -16,6 +17,7 @@ const InputFormView = (props) => {
       <Field {...props.controls.input2} />
       <Field {...props.controls.select} />
       <Field {...props.controls.tags} />
+      <Field {...props.controls.slider} />
       <FormDebug {...props} />
     </Form>
   );
@@ -41,6 +43,10 @@ const controls = {
     component: Tags,
     flat: true,
     options: ['a', 'b', 'c'],
+  },
+  slider: {
+    title: 'PercentSlider',
+    component: PercentSlider,
   },
 };
 const SampleForm = createForm({
@@ -81,6 +87,9 @@ class Container extends Component {
                   return (
                     <div>
                       {name} =
+                      <button onClick={() => this.setState({ [name]: 0 })}>
+                        0
+                      </button>
                       <button onClick={() => this.setState({ [name]: 123 })}>
                         123
                       </button>
