@@ -93,7 +93,7 @@ export const ArrowWrapper = styled('div')`
 
 export const HeaderItemWrapper = styled('div')`
   height: 48px;
-  padding: 0 12px;
+  padding: 0 ${p => p.theme.tablePadding}px;
   font-family: ${p => p.theme.fontFamily};
   background-color: ${p => p.theme.colors.white};
   font-weight: 500;
@@ -168,11 +168,13 @@ export const BodyWrapper = styled('div')`
 `;
 
 export const ItemsWrapper = styled('div')`
-
+  > .table-gird-row {
+    padding: 0 ${p => p.theme.tablePadding}px;
+  }
 `;
 
 export const FilterWrapper = styled('div')`
-  padding: 12px;
+  padding: 16px 12px 0;
   background-color: ${p => p.theme.colors.lightGray};
 `;
 
@@ -271,11 +273,11 @@ export const FooterWrapper = styled('div')`
   background-color: ${p => p.theme.colors.darkerBackground};
   border-top: 1px solid ${p => p.theme.colors.border};
   height: auto;
-  padding: 8px 12px;
+  padding: 8px ${p => p.theme.tablePadding}px;
   @media screen and (max-width: 1317px) {
     flex-direction: column;
     align-items: flex-end;
-    padding: 12px;
+    padding: 12px ${p => p.theme.tablePadding}px;
     height: auto;
   }
 `;
