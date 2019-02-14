@@ -13,6 +13,7 @@ class Image extends PureComponent {
     name: PropTypes.string,
     src: PropTypes.string,
     size: PropTypes.number,
+    objectFit: PropTypes.string,
     width: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.number,
@@ -41,6 +42,7 @@ class Image extends PureComponent {
     size: 64,
     width: 'auto',
     height: 'auto',
+    objectFit: 'cover',
 
     // backgroundColor: '#838383',
     textColor: '#d9d9d9',
@@ -59,6 +61,7 @@ class Image extends PureComponent {
       // textScale,
       innerStyle,
       textColor,
+      objectFit,
       // src,
     } = this.props;
 
@@ -76,7 +79,7 @@ class Image extends PureComponent {
       boxSizing: 'border-box',
       maxWidth: '100%',
       maxHeight: 500,
-      objectFit: 'cover',
+      objectFit,
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',

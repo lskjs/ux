@@ -42,6 +42,7 @@ class TagsPicker extends PureComponent {
     flat: PropTypes.bool,
     disabled: PropTypes.bool,
     readOnly: PropTypes.bool,
+    maxLength: PropTypes.number,
   }
   static defaultProps = {
     fields: [],
@@ -53,6 +54,7 @@ class TagsPicker extends PureComponent {
     validationState: null,
     disabled: false,
     readOnly: false,
+    maxLength: null,
   }
   constructor(props) {
     super(props);
@@ -141,7 +143,7 @@ class TagsPicker extends PureComponent {
   }
   render() {
     const {
-      block, triggerTitle, fields, disabled, readOnly, validationState,
+      block, triggerTitle, fields, disabled, readOnly, validationState, maxLength,
     } = this.props;
     const value = this.getValue();
     const fieldsKeys = getFieldsKeys(fields);
@@ -162,15 +164,17 @@ class TagsPicker extends PureComponent {
         {/* <DEV json={fields} /> */}
         <If condition={value.length > 0}>
           <TagsWrapper>
-            {value.filter(item => !(!get(fieldsKeys, `${item}.title`) && __DEV__)).map(item => (
-              <Tag
-                key={item}
-                id={item}
-                onClose={!readOnly ? () => this.handleDeleteTag(item) : null}
-                disabled={disabled}
-              >
-                {get(fieldsKeys, `${item}.title`, '???')}
-              </Tag>
+            {(maxLength ? value.splice(0, maxLength) : value)
+              .filter(item => !(!get(fieldsKeys, `${item}.title`) && __DEV__))
+              .map(item => (
+                <Tag
+                  key={item}
+                  id={item}
+                  onClose={!readOnly ? () => this.handleDeleteTag(item) : null}
+                  disabled={disabled}
+                >
+                  {get(fieldsKeys, `${item}.title`, '???')}
+                </Tag>
             ))}
             <If condition={!readOnly}>
               {disabled ? trigger : this.renderModal(trigger)}
