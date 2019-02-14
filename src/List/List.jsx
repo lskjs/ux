@@ -60,6 +60,8 @@ const defaultShow = {
 };
 
 class List extends Component {
+  static Tag = DefaultTag;
+  static Tags = DefaultTags;
   static Sticky = ListSticky;
   static Header = ListHeader;
   static Search = ListSearch;
@@ -97,7 +99,7 @@ class List extends Component {
   render() {
     const {
       columns, show: customShow = {}, pageSize = 10, paginatorProps = {},
-      Item, FilterForm, HeaderItem, Tags = DefaultTags, Tag = DefaultTag,
+      Item, FilterForm, HeaderItem, Tags = this.constructor.Tags, Tag = this.constructor.Tag,
     } = this.props;
 
     let { listStore } = this.props;
@@ -141,7 +143,6 @@ class List extends Component {
       HeaderItemWrapper: this.props.HeaderItemWrapper || this.constructor.HeaderItemWrapper,
       HeaderWrapper: this.props.HeaderWrapper || this.constructor.HeaderWrapper,
       FooterWrapper: this.props.FooterWrapper || this.constructor.FooterWrapper,
-      FooterRightWrapper: this.props.FooterRightWrapper || this.constructor.FooterRightWrapper,
 
       PaginatorWrapper: this.props.PaginatorWrapper || this.constructor.PaginatorWrapper,
       PagesWrapper: this.props.PagesWrapper || this.constructor.PagesWrapper,

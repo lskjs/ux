@@ -3,11 +3,26 @@ import PropTypes from 'prop-types';
 import Dropdown from 'antd/lib/dropdown';
 import If from 'react-if';
 import Fire from 'react-icons2/mdi/fire';
+import { css } from 'emotion';
 import Avatar from '../../../Avatar';
 import LayoutHeaderListItem from '../../atoms/LayoutHeaderListItem';
 // import { DropdownLink /* , AvatarText */ } from './LayoutHeaderUserMenu.styles';
 import { DropdownLink, AvatarText } from './LayoutHeaderUserMenu.styles';
 
+export const badgeClass = css`
+  width: 16px;
+  height: 16px;
+  background-color: #f6781b;
+  border-radius: 100px;
+  font-size: 24px;
+  color: #fff;
+  display: flex;
+  margin: -9px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+
+`;
 class LayoutHeaderUserMenu extends Component {
   static propTypes = {
     user: PropTypes.object.isRequired,
@@ -36,12 +51,9 @@ class LayoutHeaderUserMenu extends Component {
               src={user.avatar}
               title={user.title || user.name}
             >
-              <If condition={user.role === 'admim'}>
-                <Avatar.Badge left bottom>
-                  {/* <Badge> */}
-                  {/* <Crown /> */}
+              <If condition={user.role === 'admin'}>
+                <Avatar.Badge className={badgeClass} right bottom>
                   <Fire />
-                  {/* </Badge> */}
                 </Avatar.Badge>
               </If>
             </Avatar>

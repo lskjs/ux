@@ -12,12 +12,13 @@ class ListTagsPanel extends Component {
       List,
       Tags,
       Tag,
+      form,
       listStore,
     } = this.props;
     if (!listStore.hasFilter) return null;
     return (
       <List.TagsPanelWrapper >
-        <Tags listStore={listStore} Tag={Tag} />
+        <Tags listStore={listStore} Tag={Tag} form={form} />
         <List.Button
           size="small"
           paint="primary"

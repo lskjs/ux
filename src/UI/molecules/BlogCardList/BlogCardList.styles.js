@@ -8,10 +8,13 @@ export const ImageContainer = styled(dynamicTag)`
   flex: 0 0 100%;
   max-width: 100%;
   height: 100%;
+  padding: 12px;
+  background-color: ${p => p.theme.colors.lighterPrimary};
   @media screen and (min-width: 768px) {
     flex: 0 0 30%;
     max-width: 30%;
     height: inherit;
+    padding: 12px 0;
   }
 `;
 
@@ -54,6 +57,9 @@ export const Title = styled('h4')`
   font-family: ${p => p.theme.fontFamily};
   line-height: 1.3125;
   margin: 16px 0 10px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 `;
 
 export const Content = styled('div')`
@@ -66,11 +72,7 @@ export const Author = styled('div')`
   padding-top: 24px;
   border-top: 1px solid rgba(0,0,0,.1);
   padding-top: 26px;
-  font-size: 14px;
   font-family: ${p => p.theme.fontFamily};
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  font-weight: 500;
 `;
 
 export const Wrapper = styled(dynamicTag)`
@@ -83,6 +85,6 @@ export const Wrapper = styled(dynamicTag)`
   flex-direction: column;
   @media screen and (min-width: 768px) {
     flex-direction: row;
-    min-height: 230px;
+    height: 235px;
   }
 `;

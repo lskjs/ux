@@ -1,9 +1,11 @@
 import { autorun, toJS } from 'mobx';
+import Promise from 'bluebird';
 import omit from 'lodash/omit';
 import getParamsFromQuery from './getParamsFromQuery';
 import getQueryFromParams from './getQueryFromParams';
 
-const DEBUG = false; // __DEV__;
+const DEBUG = __DEV__;
+// DEBUG = false;
 
 const omitKeys = ['filter', 'sort', 'sortBy', 'search', 'skip', 'limit'];
 
@@ -15,7 +17,7 @@ export const defaultGetParams = store => ({
   search: toJS(store.search),
 });
 
-const connectListStore = ({
+const connectListStore = async ({
   page, listStore, query, getParams = defaultGetParams, params: propsDefaultParams,
 }) => {
   const defaultParams = propsDefaultParams || getParams(listStore);
@@ -26,7 +28,8 @@ const connectListStore = ({
     listStore.setState(queryParams);
   }
 
-  return autorun(() => {
+  await Promise.delay(1000);
+  const remove = autorun(async () => {
     const params = {
       ...omit(query, omitKeys),
       ...getParams(listStore),
@@ -39,11 +42,19 @@ const connectListStore = ({
     let string = getQueryFromParams(params, defaultParams);
     if (string) string = `?${string}`;
 
+
+    await Promise.delay(1000);
     page.uapp.history.replace({
       search: string,
       method: 'replaceState',
     });
   });
+
+  if (__DEV__) {
+    setTimeout(remove, 30000);
+  }
+
+  return remove;
 };
 
 

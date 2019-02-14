@@ -10,6 +10,11 @@ export default ({ storiesOf }) => (
         <Loading />
       </Story>
     ))
+    .add('Loading full', () => (
+      <Story>
+        <Loading full />
+      </Story>
+    ))
     .add('LoadingDots', () => (
       <Story>
         <LoadingDots />

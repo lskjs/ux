@@ -1,6 +1,6 @@
 import React from 'react';
 import Story from '../Story';
-import { Container, Row, Col } from './Grid';
+import { Container, Row, Col } from './index';
 
 const defaultStyle = {
   height: 100,

@@ -1,10 +1,12 @@
-import SmoothScroll from 'smooth-scroll';
+import SmoothScroll from './smooth-scroll';
 
 const scroll = new SmoothScroll('a[smooth*="#"]', {
   speed: 1000,
   easing: 'easeOutCubic',
   offset: 300,
 });
+
+
 
 scroll.scrollTo = function scrollTo(id) {
   console.log('scrollTo', id);

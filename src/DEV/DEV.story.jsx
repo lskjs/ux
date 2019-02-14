@@ -1,16 +1,21 @@
 import React from 'react';
 import DEV from './DEV';
+import Story from '../Story';
 // import ObserverDEV from './ObserverDEV';
 
 export default ({ storiesOf, action }) => (
-  storiesOf('A', module)
+  storiesOf('DEV', module)
     .add('children', () => (
-      <DEV>
-        Empty
-      </DEV>
+      <Story>
+        <DEV>
+          Empty
+        </DEV>
+      </Story>
     ))
     .add('json', () => (
-      <DEV json={{ test: 123 }} />
+      <Story>
+        <DEV json={{ test: 123 }} />
+      </Story>
     ))
 );
 

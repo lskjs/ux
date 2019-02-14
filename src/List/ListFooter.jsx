@@ -6,7 +6,8 @@ import T from '../T';
 import withResponsive from '../Button/withResponsive';
 import Button from '../Button';
 import { contextToProps } from './List.context';
-import { FooterRightWrapper, SelectWrapper } from './List.styles';
+import { SelectWrapper } from './List.styles';
+import { Container, Item, Left } from './TableFooter';
 
 const ResponsiveButton = withResponsive(Button);
 
@@ -27,45 +28,57 @@ class ListFooter extends Component {
     const to = listStore.skip + listStore.items.length;
     return (
       <List.FooterWrapper>
-        <If condition={show.download}>
-          <ResponsiveButton
-            view="text"
-            icon={<DownloadIcon />}
-            onClick={listStore.download}
-          >
-            <T name="lskList.downloadButton" />
-          </ResponsiveButton>
-          {/* <List.Button
-            view="text"
-            iconLeft={<DownloadIcon />}
-            onClick={listStore.download}
-          >
-            <T name="lskList.downloadButton" />
-          </List.Button> */}
-        </If>
-        <FooterRightWrapper>
+        <Container>
+          <Left>
+            <If condition={show.download}>
+              <Item>
+                <ResponsiveButton
+                  view="text"
+                  icon={<DownloadIcon />}
+                  onClick={listStore.download}
+                >
+                  <T name="lskList.downloadButton" />
+                </ResponsiveButton>
+                {/* <List.Button
+                  view="text"
+                  iconLeft={<DownloadIcon />}
+                  onClick={listStore.download}
+                >
+                  <T name="lskList.downloadButton" />
+                </List.Button> */}
+              </Item>
+            </If>
+          </Left>
+
           <If condition={show.stepper}>
-            <List.StepperWrapper>
-              <T name="lskList.paginatorShow" />
-              <SelectWrapper
-                name="pagination-size"
-                value={listStore.limit}
-                onChange={e => listStore.setLimit(+e.target.value)}
-              >
-                {options.map(option => (<option key={option} value={option}>{option}</option>))}
-              </SelectWrapper>
-            </List.StepperWrapper>
+            <Item>
+              <List.StepperWrapper>
+                <T name="lskList.paginatorShow" />
+                <SelectWrapper
+                  name="pagination-size"
+                  value={listStore.limit}
+                  onChange={e => listStore.setLimit(+e.target.value)}
+                >
+                  {options.map(option => (<option key={option} value={option}>{option}</option>))}
+                </SelectWrapper>
+              </List.StepperWrapper>
+            </Item>
           </If>
           <If condition={show.pages && listStore.items.length}>
-            <List.PagesWrapper style={{ flexShrink: 0, marginLeft: 10 }}>
-              {from}—{to}
-              {listStore.count !== null && ` / ${listStore.count}`}
-            </List.PagesWrapper>
+            <Item>
+              <List.PagesWrapper>
+                {from}—{to}
+                {listStore.count !== null && ` / ${listStore.count}`}
+              </List.PagesWrapper>
+            </Item>
           </If>
           <If condition={show.paginator}>
-            <List.Paginator />
+            <Item>
+              <List.Paginator />
+            </Item>
           </If>
-        </FooterRightWrapper>
+        </Container>
+
       </List.FooterWrapper>
     );
   }
