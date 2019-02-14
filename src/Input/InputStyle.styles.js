@@ -1,11 +1,13 @@
 import styled from 'react-emotion';
 
 export const LeftWrapper = styled('div')`
-  
+  display: flex;
+  align-items: center;
 `;
 
 export const RightWrapper = styled('div')`
-  
+  display: flex;
+  align-items: center;
 `;
 
 export const InputBox = styled('div')`

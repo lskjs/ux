@@ -1,5 +1,6 @@
 import React from 'react';
 import { Form, Field, FastField } from 'formik';
+import UsdIcon from 'react-icons2/mdi/currency-usd';
 import Story from '../../../Story';
 import createForm from '../../createForm';
 import Input from './Input';
@@ -12,6 +13,7 @@ const InputFormView = (props) => {
       <Field {...props.controls.input2} />
       <Field {...props.controls.input3} />
       <Field {...props.controls.input4} />
+      <Field {...props.controls.input5} />
       <FastField {...props.controls.input2} title="FastField/input2" />
       <FormDebug {...props} />
     </Form>
@@ -47,6 +49,12 @@ const InputForm = createForm({
       component: Input,
       help: 'Only english',
       regex: /[a-zA-Z ]*/,
+    },
+    input5: {
+      title: 'input with $ icon',
+      component: Input,
+      leftIcon: <UsdIcon size={28} />,
+      placeholder: 'input placeholder',
     },
   },
 });
