@@ -112,7 +112,7 @@ export const HeaderItemWrapper = styled('div')`
 export const Wrapper = styled('div')`
   /* display: grid; */
   width: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
   border-radius: ${p => p.theme.borderRadius};
   border: 1px solid ${p => p.theme.colors.border};
   background-color: ${p => p.theme.colors.white};

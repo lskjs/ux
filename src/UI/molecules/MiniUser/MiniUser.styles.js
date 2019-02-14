@@ -6,10 +6,9 @@ const dynamicTag = createDynamicTag('div');
 
 export const Title = styled('div')`
   font-family: ${p => p.theme.fontFamily};
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: -0.1px;
   text-align: left;
-  color: #9b9b9b;
 
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -29,11 +28,12 @@ export const Block = styled(dynamicTag)`
   display: flex;
   align-items: center;
   overflow: hidden;
+  color: ${p => p.theme.colors.main};
   ${p => (p.normal && `
     ${Title} {
       font-size: 13px;
       line-height: 1.43;
-      color: #4a4a4a;
+      color: ${p.theme.colors.main};
     }
   `)}
   ${p => (p.tiny && `
@@ -41,7 +41,7 @@ export const Block = styled(dynamicTag)`
       font-size: 10px;
       line-height: 1.8;
       text-align: left;
-      color: #4a4a4a;
+      color: ${p.theme.colors.main};
     }
     ${AvatarWrapper} {
       margin-right: 4px;
