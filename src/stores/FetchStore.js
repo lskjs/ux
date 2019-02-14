@@ -12,6 +12,14 @@ import insertArray from '../utils/insertArray';
 
 const { CancelToken } = axios;
 
+function getFindParams(store) {
+  return {
+    search: store.search,
+    filter: store.filter,
+    sort: store.sort,
+  };
+}
+
 export default class FetchStore extends Store {
   @observable items = [];
   @observable count = null;
@@ -30,19 +38,15 @@ export default class FetchStore extends Store {
     }
   }
 
-  getFindParams(store) { // eslint-disable-line class-methods-use-this
-    return {
-      filter: store.filter,
-      sort: store.sort,
-    };
-  }
-
   async find({ skip, limit, cancelToken } = {}) {
     if (!this.api) throw '!api';
     if (!this.api.find) throw '!api.find';
+    let params = getFindParams(this);
+    if (this.getFindParams) params = this.getFindParams(this, params);
     const raw = await this.api.find({
       count: 1,
-      ...omitEmpty(this.getFindParams(this)),
+      params,
+      ...omitEmpty(params),
       limit,
       skip,
       cancelToken,

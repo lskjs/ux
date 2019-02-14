@@ -4,7 +4,7 @@ import omit from 'lodash/omit';
 import getParamsFromQuery from './getParamsFromQuery';
 import getQueryFromParams from './getQueryFromParams';
 
-let DEBUG = __DEV__;
+const DEBUG = __DEV__;
 // DEBUG = false;
 
 const omitKeys = ['filter', 'sort', 'sortBy', 'search', 'skip', 'limit'];
@@ -29,7 +29,7 @@ const connectListStore = async ({
   }
 
   await Promise.delay(1000);
-  return autorun(async () => {
+  const remove = autorun(async () => {
     const params = {
       ...omit(query, omitKeys),
       ...getParams(listStore),
@@ -49,6 +49,12 @@ const connectListStore = async ({
       method: 'replaceState',
     });
   });
+
+  if (__DEV__) {
+    setTimeout(remove, 30000);
+  }
+
+  return remove;
 };
 
 
