@@ -59,6 +59,7 @@ class BlogCardList extends PureComponent {
             height="100%"
             src={img}
             alt={title}
+            objectFit="contain"
           />
         </ImageContainer>
         <Body>
