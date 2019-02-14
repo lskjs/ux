@@ -13,12 +13,14 @@ const buttonStyles = css`
   box-shadow: 0 0 0 1px #e3e3e3;
   width: 100%;
 `;
-@contextToProps('List', 'Item')
+@contextToProps('List', 'Item', 'debug')
 @inject('listStore')
 @observer
 class ListItems extends Component {
   render() {
-    const { List, listStore, Item } = this.props;
+    const {
+      List, listStore, Item, debug,
+    } = this.props;
     return (
       <List.ItemsWrapper>
         <Performance name="List.Items" disabled={!__DEV__}>

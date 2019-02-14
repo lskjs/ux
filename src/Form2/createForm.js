@@ -92,22 +92,14 @@ const createForm = ({
   const WrappedView = (props) => {
     const mergedProps = { ...staticProps, ...props };
     const formView = React.createElement(View, { ...staticProps, ...props, key: 'formView' });
-    if (!mergedProps.onChange) return formView;
+    const { onChange } = mergedProps;
+    if (!onChange) return formView;
+    if (flatten) {
+      mergedProps.onChange = (values, ...args) => {
+        onChange(avoidNestedFields(values), ...args);
+      };
+    }
     return React.createElement(OnChangeListener, mergedProps, formView);
-    // return [
-    //   formView,
-    //   React.createElement(OnChangeListener, mergedProps, formView),
-    // ];
-    // return (
-    //   <React.Fragment>
-    //     {formView}
-    //     <OnChangeListener {} />
-    //   </React.Fragment>
-    // )
-    // return [
-    //   React.createElement('div', { key: 1 }, formView),
-    //   React.createElement('div', { key: 2 }, React.createElement(OnChangeListener, mergedProps)),
-    // ];
   };
 
   const wrapperWithFormik = rawWithFormik || withFormik;
@@ -164,19 +156,6 @@ const createForm = ({
         }, 1000);
       } else {
         console.log('STRANGE!!!!!!!');
-      }
-    },
-    handleChange: (values, { /* setSubmitting, */ props: props3/* , form  */ }) => {
-      // console.log('Form2.handleChange', values, props, props3);
-      try {
-        const onChange = get(this, 'props.onChange') || get(props3, 'onChange');
-        console.log('values1', values);
-        
-        if (values && flatten) values = avoidNestedFields(values);
-        console.log('values2', values);
-        if (onChange) onChange(values);
-      } catch (err) {
-        console.log('onChange err', err);
       }
     },
     getValidators: (ctrls) => {
