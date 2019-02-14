@@ -57,7 +57,7 @@ const replaceSymbols = (str, oldSymbol, newSymbol = '') => {
   return str.replace(re, newSymbol);
 };
 
-const avoidNestedFields = (values) => {
+export const avoidNestedFields = (values) => {
   let newValues = {};
 
   forEach(values, (value, oldKey) => {
