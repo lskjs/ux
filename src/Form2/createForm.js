@@ -81,6 +81,7 @@ const createForm = ({
   displayName,
   FormGroup = DefaultFormGroup,
   withFormik: rawWithFormik,
+  flatten = true,
   ...otherProps
 }) => {
   const controls = prepareControls(rawControls, FormGroup);
@@ -148,7 +149,7 @@ const createForm = ({
       if (!isSubmitting) {
         setStatus('progress');
         try {
-          if (values) values = avoidNestedFields(values);
+          if (values && flatten) values = avoidNestedFields(values);
           if (onSubmit) await onSubmit(values, props2);
           setStatus('success');
         } catch (err) {
@@ -169,6 +170,10 @@ const createForm = ({
       // console.log('Form2.handleChange', values, props, props3);
       try {
         const onChange = get(this, 'props.onChange') || get(props3, 'onChange');
+        console.log('values1', values);
+        
+        if (values && flatten) values = avoidNestedFields(values);
+        console.log('values2', values);
         if (onChange) onChange(values);
       } catch (err) {
         console.log('onChange err', err);

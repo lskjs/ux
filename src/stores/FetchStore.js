@@ -45,7 +45,6 @@ export default class FetchStore extends Store {
     if (this.getFindParams) params = this.getFindParams(this, params);
     const raw = await this.api.find({
       count: 1,
-      params,
       ...omitEmpty(params),
       limit,
       skip,

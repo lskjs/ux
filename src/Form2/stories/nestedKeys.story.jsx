@@ -12,6 +12,7 @@ const InputFormView = (props) => {
       <Field {...props.controls.input} />
       <Field {...props.controls.dependent} />
       <Field {...props.controls['test.input']} />
+      <Field {...props.controls.input3} />
       <FormDebug {...props} />
     </Form>
   );
@@ -44,15 +45,24 @@ const InputForm = createForm({
       initialValue: 'createForm.controls.initialValue',
       component: Input,
     },
+    input3: {
+      key: 'test@input',
+      title: 'Not nested field',
+      initialValue: 'createForm.controls.initialValue',
+      component: Input,
+    },
   },
 });
 
 export default ({ storiesOf }) =>
-  storiesOf('Form2/nestedKeys', module)
-    .add('key', () => {
+  storiesOf('Form2', module)
+    .add('nestedKeys', () => {
       return (
         <Story>
-          <InputForm onSubmit={(values) => { console.log({ values }); }} />
+          <InputForm
+            onChange={(values) => { console.log('onChange', values); }}
+            onSubmit={(values) => { console.log('onSubmit', values); }}
+          />
         </Story>
       );
     });
