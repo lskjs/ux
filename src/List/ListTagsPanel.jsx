@@ -20,7 +20,7 @@ class ListTagsPanel extends Component {
       <List.TagsPanelWrapper >
         <Tags listStore={listStore} Tag={Tag} form={form} />
         <List.Button
-          size="small"
+          size="extraSmall"
           paint="primary"
           view="text"
           bordered

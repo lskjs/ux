@@ -88,6 +88,19 @@ const smallSize = css`
   letter-spacing: -0.1px;
 `;
 
+const xsmallSize = css`
+  padding: 5px 8px;
+  min-width: 48px;
+  height: 22px;
+  font-weight: 600;
+
+  font-size: 11px;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: -0.1px;
+`;
+
 const iconButtonLeft = props => css`
   display: flex;
   align-items: center;
@@ -542,7 +555,18 @@ export const Btn = styled(filteredTag)`
             ${Icon} {
               font-size: 20px;
             }
-            
+
+          `}
+          ${props.size === 'extraSmall' && `
+            padding-top: 3px;
+            padding-bottom: 3px;
+            padding-right: 3px;
+            padding-left: 3px;
+
+            ${Icon} {
+              font-size: 16px;
+            }
+
           `}
           padding: 11px 12px;
           min-width: auto;
@@ -564,6 +588,7 @@ export const Btn = styled(filteredTag)`
     switch (props.size) {
       case 'large': return largeSize;
       case 'small': return smallSize;
+      case 'extraSmall': return xsmallSize;
       default: return defaultSize;
     }
   }}
@@ -739,6 +764,7 @@ export const State = styled('div')`
     switch (props.size) {
       case 'large': return largeSize;
       case 'small': return smallSize;
+      case 'extraSmall': return xsmallSize;
       default: return defaultSize;
     }
   }}
