@@ -63,8 +63,11 @@ export const Title = styled('h4')`
 `;
 
 export const Content = styled('div')`
-  padding: 0 0 13px;
+  padding: 0;
   flex: 1;
+  height: 46px;
+  overflow: hidden;
+  margin-bottom: 13px;
   font-family: ${p => p.theme.fontFamily};
 `;
 

@@ -21,6 +21,7 @@ class Button extends PureComponent {
     children: PropTypes.any,
     bordered: PropTypes.bool,
     size: PropTypes.oneOf([
+      'extraSmall',
       'small',
       'default',
       'large',
