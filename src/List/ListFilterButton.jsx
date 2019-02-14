@@ -17,7 +17,6 @@ class FilterButton extends Component {
     const {
       List, listStore,
     } = this.props;
-
     const badge = listStore.hasFilter ? filter(toJS(listStore.filter), a => !isEmpty(a)).length : 0;
 
     // console.log('Object.keys(listStore.filter)', Object.keys(listStore.filter));
@@ -32,7 +31,8 @@ class FilterButton extends Component {
             paint="primary"
             view="text"
             size="large"
-            bordered={listStore.showFilter}
+            bordered
+            style={{ backgroundColor: listStore.showFilter ? '#F0F0FF' : '' }}
             onClick={listStore.toggleFilter}
           >
             <T name="lskList.filterButton" />
