@@ -541,6 +541,7 @@ export const Btn = styled(filteredTag)`
             ${Icon} {
               font-size: 20px;
             }
+            
           `}
           padding: 11px 12px;
           min-width: auto;

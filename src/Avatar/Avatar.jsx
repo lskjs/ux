@@ -211,11 +211,13 @@ export default class Avatar extends PureComponent {
 }
 
 Avatar.Badge = (props) => {
+  const {
+    componentClass: Wrap, left, top, right, bottom, ...props2
+  } = props;
   const offset = '7%';
   const style = {
     position: 'absolute',
   };
-  const Wrap = props.componentClass;
 
   ['left', 'top', 'right', 'bottom'].forEach((dir) => {
     if (!props[dir]) return;
@@ -229,7 +231,7 @@ Avatar.Badge = (props) => {
   });
 
   return (
-    <div style={style}>
+    <div style={style} {...props2}>
       {props.children}
     </div>
   );

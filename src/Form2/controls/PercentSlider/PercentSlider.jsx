@@ -9,10 +9,10 @@ const PercentSlider = ({
   return (
     <PercentSliderBase
       {...field}
-      {...props}
       onChange={(value) => {
         form.setFieldValue(field.name, value);
       }}
+      {...props}
     />
   );
 };

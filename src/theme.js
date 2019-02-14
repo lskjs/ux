@@ -29,4 +29,5 @@ export default {
   borderCircle: '100vw',
   borderSmall: '3px',
   gridGap: 15,
+  tablePadding: 8,
 };

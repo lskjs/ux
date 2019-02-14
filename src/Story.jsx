@@ -58,7 +58,7 @@ class Story extends Component {
           >
             <div
               style={{
-              // border: '30px #000 solid',
+              border: '30px #eee solid',
               // width: '80%',
               // fontFamily: 'Gotham Pro',
               // padding: '10px',

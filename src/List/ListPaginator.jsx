@@ -18,7 +18,7 @@ class ListPaginator extends Component {
     } = this.props;
     const page = listStore.getCurrentPage();
     return (
-      <List.PaginatorWrapper style={{ flexShrink: 0, marginLeft: 10 }}>
+      <List.PaginatorWrapper>
         <If condition={listStore.count === null}>
           <ArrowBlock>
             <ArrowButton disabled={!(page > 1)} onClick={() => listStore.setPage(page - 1)}>

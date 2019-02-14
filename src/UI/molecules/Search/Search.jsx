@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+ import React, { PureComponent } from 'react';
 import autobind from 'core-decorators/lib/autobind';
 import DebounceInput from 'react-debounce-input';
 import PropTypes from 'prop-types';

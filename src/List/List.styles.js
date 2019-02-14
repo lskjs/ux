@@ -1,5 +1,4 @@
 import styled, { css } from 'react-emotion';
-import Rate from 'antd/lib/rate';
 import createDynamicTag from '../utils/createDynamicTag';
 // import TabBlock from '~/Uapp/components.v2/atoms/TabBlock';
 
@@ -93,7 +92,7 @@ export const ArrowWrapper = styled('div')`
 
 export const HeaderItemWrapper = styled('div')`
   height: 48px;
-  padding: 0 12px;
+  padding: 0 ${p => p.theme.tablePadding}px;
   font-family: ${p => p.theme.fontFamily};
   background-color: ${p => p.theme.colors.white};
   font-weight: 500;
@@ -164,186 +163,55 @@ export const ListGrid = styled('div')`
 
 export const BodyWrapper = styled('div')`
   /* display: grid; */
-  font-family: ${p => p.theme.fontFamily};
 `;
 
 export const ItemsWrapper = styled('div')`
-
+  > .table-gird-row {
+    padding: 0 ${p => p.theme.tablePadding}px;
+  }
 `;
 
 export const FilterWrapper = styled('div')`
-  padding: 12px;
+  padding: 16px 12px 0;
   background-color: ${p => p.theme.colors.lightGray};
 `;
 
 
-export const ListGridItem = styled('div')`
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  
-  grid-column: ${p => (p.column || 1)};
-  grid-row: ${p => (p.row || 1)};
-  
-  font-family: ${p => p.theme.fontFamily};
-  font-size: 13px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.54;
-  letter-spacing: -0.1px;
-  color: ${p => p.theme.colors.main};
-  justify-content: ${(p) => {
-    switch (p.align) {
-      case 'right': return 'flex-end';
-      case 'center': return 'center';
-      default: return 'flex-start';
-    }
-  }};
-`;
 
-const dynamicHeaderTitleTag = createDynamicTag('div');
-export const HeaderTitle = styled(dynamicHeaderTitleTag)`
-  font-family: ${p => p.theme.fontFamily};
-  font-size: 11px;
-  font-weight: 500;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.27;
-  overflow: hidden;
-  letter-spacing: -0.1px;
-  color: ${p => p.theme.colors.main};
-  display: flex;
-  align-items: center;
-  outline: none;
-  background: none;
-  border: none;
-  padding: 0;
-  grid-column: ${p => (p.column || 1)};
-  grid-row: ${p => (p.row || 1)};
-`;
-
-export const YouTubeLink = styled('a')`
-  font-size: 32px;
-  color: ${p => p.theme.colors.primary};
-  transition: color .2s ease;
-  will-change: color;
-  cursor: pointer;
-  outline: none;
-  
-  &:hover {
-    color: ${p => p.theme.colors.danger};
-  }
-  
-  > svg {
-    display: flex;
-  }
-`;
-
-export const RatingWrapper = styled('div')`
-  display: flex;
-  align-items: center;
-`;
-
-export const RatingValue = styled('div')`
-  font-family: ${p => p.theme.fontFamily};
-  font-size: 15px;
-  font-weight: 500;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.33;
-  letter-spacing: -0.1px;
-  color: ${p => p.theme.colors.main};
-  margin-right: 6px;
-`;
-
-export const RatingStars = styled(Rate)`
-  color: ${p => p.theme.colors.darkerBackground};
-  font-size: 12px;
-  line-height: 0;
-`;
 
 export const FooterWrapper = styled('div')`
-  display: flex;
-  align-items: center;
+  /* display: flex; */
+  /* align-items: center; */
   font-family: ${p => p.theme.fontFamily};
+  font-size: 13px;
   color: ${p => p.theme.colors.secondary};
-  background-color: ${p => p.theme.colors.darkerBackground};
+  /* background-color: ${p => p.theme.colors.darkerBackground}; */
   border-top: 1px solid ${p => p.theme.colors.border};
-  height: auto;
-  padding: 8px 12px;
-  @media screen and (max-width: 1317px) {
+  /* height: auto; */
+  padding: 8px ${p => p.theme.tablePadding}px;
+  /* @media screen and (max-width: 1317px) {
     flex-direction: column;
     align-items: flex-end;
-    padding: 12px;
+    padding: 12px ${p => p.theme.tablePadding}px;
     height: auto;
-  }
-`;
-
-export const FooterRightWrapper = styled('div')`
-  margin-left: auto;
-  display: flex;
-  align-items: center;
+  } */
 `;
 
 
 export const PaginatorGroupWrapper = styled('div')`
-  margin-left: 40px;
-  display: flex;
-  align-items: center;
   
-  > *:not(:last-child) {
-    margin-right: 6px;
-  }
-  @media screen and (max-width: 1317px) {
-    margin-top: 12px;
-    justify-content: flex-end;
-  }
-`;
-
-export const paginationButtonStyle = theme => css`
-  color: ${theme.colors.secondary};
-  
-  padding-top: 6px !important;
-  padding-bottom: 6px !important;
-  padding-right: 6px !important;
-  padding-left: 6px !important;
-  
-  > div:last-child {
-    font-size: 28px;
-  }
-  
-  &[disabled] {
-    color: #cdcdcd !important;
-  }
 `;
 
 export const PagesWrapper = styled('div')`
-  margin-left: 40px;
-  display: flex;
-  align-items: center;
-  @media screen and (max-width: 1317px) {
-    margin-top: 12px;
-    justify-content: flex-end;
-  }
 `;
 
 export const PaginatorWrapper = styled('div')`
-  display: flex;
-  font-family: ${p => p.theme.fontFamily};
+  /* font-family: ${p => p.theme.fontFamily}; */
   color: ${p => p.theme.colors.secondary};
-  @media screen and (max-width: 1317px) {
-    flex-direction: column;
-  }
 `;
 
 export const StepperWrapper = styled('div')`
-  display: flex;
-  align-items: center;
-  @media screen and (max-width: 1317px) {
-    /* margin-top: 12px; */
-    justify-content: flex-end;
-  }
+  
 `;
 
 export const SelectWrapper = styled('select')`
@@ -353,33 +221,6 @@ export const SelectWrapper = styled('select')`
   margin-left: 6px;
 `;
 
-export const Header = styled('div')`
-  margin: 12px 0 16px;
-  
-  > *:not(:last-child) {
-    margin: 0 0 16px !important;
-  }
-  
-  > *:last-child {
-    margin: 0 !important;
-  }
-`;
-
-export const TabsWrapper = styled('div')`
-  height: 56px;
-  padding: 0 16px;
-  display: flex;
-  align-items: flex-end;
-  
-  /* > TabBlock {
-    margin-bottom: -2px;
-    
-    ul li > * {
-      padding: 16px 4px 21px;
-      font-size: 13px !important;
-    }
-  } */
-`;
 
 export const HeaderWrapper = styled('div')`
   /* display: grid; */
@@ -403,12 +244,6 @@ export const TagsPanelWrapper = styled('div')`
   > button {
     margin-bottom: 4px;
   }
-`;
-
-export const VerticalDivider = styled('div')`
-  width: 1px;
-  height: ${p => (p.height || 30)}px;
-  background-color: ${p => p.theme.colors.border};
 `;
 
 

@@ -19,7 +19,7 @@ export const Button = styled('button')`
   outline: none;
   position: absolute;
   top: 0;
-  left: 16px;
+  left: ${p => p.theme.tablePadding}px;
   bottom: 0;
   margin: auto 0;
   > svg {
@@ -56,7 +56,7 @@ const placeholderStyle = p => css`
 export const Input = styled(dynamicTag)`
   width: 100%;
   height: 56px;
-  padding: 0 0 0 48px;
+  padding: 0 0 0 ${p => `calc(${p.theme.tablePadding || 0}px + 34px)`};
   border: none;
   outline: none;
   background: none;

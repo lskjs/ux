@@ -4,6 +4,7 @@ import {
   action,
 } from 'mobx';
 import axios from 'axios';
+import omitEmpty from '../utils/omitEmpty';
 import Progress from '../utils/Progress';
 
 import Store from './Store';
@@ -41,7 +42,7 @@ export default class FetchStore extends Store {
     if (!this.api.find) throw '!api.find';
     const raw = await this.api.find({
       count: 1,
-      ...this.getFindParams(this),
+      ...omitEmpty(this.getFindParams(this)),
       limit,
       skip,
       cancelToken,

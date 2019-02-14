@@ -5,8 +5,6 @@ import createForm from '../../createForm';
 import Geo from './Geo2';
 import FormDebug from '../../FormDebug';
 
-import './Geo2.g.css';
-
 const GeoViewForm = (props) => {
   return (
     <Form>
