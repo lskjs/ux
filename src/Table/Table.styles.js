@@ -23,18 +23,18 @@ export const ItemRowWrapper = styled('div')`
   background-color: ${p => p.theme.colors.white};
   transition: background-color .2s ease-out;
   will-change: background-color;
-  
+
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  
+
   &:hover {
     background-color: ${p => p.theme.colors.lighterPrimary};
   }
   ${p => (p.clickable && `
     cursor: pointer;
   `)}
-  
+
 `;
 
 export const ItemColWrapper = styled('div')`

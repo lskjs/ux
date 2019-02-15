@@ -176,7 +176,6 @@ const iconButtonSingle = props => css`
 
     ${Icon} {
       font-size: 20px;
-      padding-right: 8px;
     }
   `}
   ${props.size === 'default' && `
@@ -687,7 +686,7 @@ export const RippleCircle = styled('span')`
   width: 0;
   height: 0;
   border-radius: ${p => p.theme.borderCircle};
-  background: rgba(255, 255, 255, .40);
+  background: rgba(0, 0, 0, .10);
 `;
 
 const aRipple = keyframes`
