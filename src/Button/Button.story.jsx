@@ -1,4 +1,5 @@
 import React from 'react';
+import { Badge, Icon } from 'antd';
 import Button from './Button';
 import Story from '../Story';
 
@@ -55,6 +56,56 @@ export default ({ storiesOf }) => {
         >
           Youtube
         </Button>
+      </Story>
+    ))
+    .add('badge', () => (
+      <Story>
+        <Badge count={5}>
+          <Button paint="primary">Default</Button>
+        </Badge>
+        <br />
+        <br />
+        <Badge count={0} showZero>
+          <Button paint="primary">Default</Button>
+        </Badge>
+        <br />
+        <br />
+        <Badge count={<Icon type="clock-circle" style={{ color: '#f5222d' }} />}>
+          <Button paint="primary">Default</Button>
+        </Badge>
+        <br />
+        <br />
+        <Badge count={1000} overflowCount={999}>
+          <Button paint="primary">Default</Button>
+        </Badge>
+        <br />
+        <br />
+        <Badge count={109} style={{ backgroundColor: '#52c41a' }}>
+          <Button paint="primary">Default</Button>
+        </Badge>
+      </Story>
+    ))
+    .add('dot badge', () => (
+      <Story>
+        <Badge dot>
+          <Button paint="primary">Default</Button>
+        </Badge>
+      </Story>
+    ))
+    .add('badge with title', () => (
+      <Story>
+        <Badge count={5} title="Custom hover text">
+          <Button paint="primary">Default</Button>
+        </Badge>
+      </Story>
+    ))
+    .add('badge status', () => (
+      <Story>
+        <Badge status="success" />
+        <Badge status="error" />
+        <Badge status="default" />
+        <Badge status="processing" />
+        <Badge status="warning" />
       </Story>
     ));
 };
