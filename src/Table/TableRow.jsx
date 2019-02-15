@@ -92,7 +92,7 @@ class TableRow extends Component {
     const styleString = styles.join('\n');
     // console.log(styleString);
     const cssClassName = css(styleString);
-    const defautlClassName = 'table-gird-row';
+    const defaultClassName = 'table-gird-row';
     // console.log({ cssClassName });
 
 
@@ -127,7 +127,7 @@ class TableRow extends Component {
     // return <div>dsvfbng</div>
     const subProps = {
       ...props,
-      className: cx([className, cssClassName, defautlClassName]),
+      className: cx([className, cssClassName, defaultClassName]),
     };
 
     return React.createElement(
