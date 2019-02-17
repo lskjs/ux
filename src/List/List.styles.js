@@ -269,3 +269,10 @@ export const ArrowBlock = styled('div')`
     margin-right: 8px;
   }
 `;
+
+export const SelectRowWrapper = styled('div')`
+  cursor: pointer;
+  ${p => (p.checked && css`
+    border: 2px red solid;
+  `)}
+`;

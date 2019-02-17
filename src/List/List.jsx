@@ -19,9 +19,11 @@ import {
   PagesWrapper,
   StepperWrapper,
   SelectWrapper,
+  SelectRowWrapper,
 } from './List.styles';
 import { Provider } from './List.context';
 
+import ListSelectRow from './ListSelectRow';
 import ListSticky from './ListSticky';
 import ListHeader from './ListHeader';
 import ListSearch from './ListSearch';
@@ -76,6 +78,7 @@ class List extends Component {
   static Empty = ListEmpty;
   static SortHeader = ListSortHeader;
   static Checkbox = ListCheckbox;
+  static SelectRow = ListSelectRow;
 
   static Button = Button;
   static SearchWrapper = Search;
@@ -94,6 +97,7 @@ class List extends Component {
   static PagesWrapper = PagesWrapper; // pages
   static StepperWrapper = StepperWrapper; // stepper
   static SelectWrapper = SelectWrapper;
+  static SelectRowWrapper = SelectRowWrapper;
   static PaginatorWrapper = PaginatorWrapper;
 
   render() {
@@ -131,6 +135,7 @@ class List extends Component {
       Empty: this.props.Empty || this.constructor.Empty,
       SortHeader: this.props.SortHeader || this.constructor.SortHeader,
       Checkbox: this.props.Checkbox || this.constructor.Checkbox,
+      SelectRow: this.props.SelectRow || this.constructor.SelectRow,
 
       Button: this.props.Button || this.constructor.Button,
       SearchWrapper: this.props.SearchWrapper || this.constructor.SearchWrapper,
@@ -148,6 +153,7 @@ class List extends Component {
       PagesWrapper: this.props.PagesWrapper || this.constructor.PagesWrapper,
       StepperWrapper: this.props.StepperWrapper || this.constructor.StepperWrapper,
       SelectWrapper: this.props.SelectWrapper || this.constructor.SelectWrapper,
+      SelectRowWrapper: this.props.SelectRowWrapper || this.constructor.SelectRowWrapper,
     };
 
     let { children } = this.props;

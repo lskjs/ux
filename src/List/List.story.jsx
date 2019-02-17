@@ -14,7 +14,7 @@ import Link from '../Link';
 import Story from '../Story';
 import Input from '../Input';
 import Button from '../Button';
-import { Row, Col } from '../Table';
+import { Row, Col, ItemRow, ItemCol, HeaderRow, HeaderCol } from './Table';
 import ObserverDEV from '../DEV/ObserverDEV';
 import ListStore from '../stores/ListStore';
 import { FormExample2 as FilterForm } from '../Form2/stories/examples/FormExample2.story';
@@ -93,9 +93,9 @@ const api = {
 };
 
 const listStore = new ListStore({ api, skip: 20 });
-// setTimeout(() => {
-//   listStore.fetch();
-// }, 2000);
+setTimeout(() => {
+  listStore.fetch();
+}, 2000);
 
 const columns = [60, '1fr', '1fr', 60];
 
@@ -163,57 +163,101 @@ const EditItem = observer(({ item = {} }) => (
 ));
 
 const SelectItem = observer(({ item = {} }) => (
-  <Row className={cx([styleHeight, itemStyle])}>
-    <Col index={0}>
+  <ItemRow>
+    <ItemCol index={0}>
       <List.Checkbox item={item} />
-    </Col>
-    <Col index={1}>
+    </ItemCol>
+    <ItemCol index={1}>
       {item.id} - {Math.random()}
-    </Col>
-    <Col index={2}>
+    </ItemCol>
+    <ItemCol index={2}>
       {item.title}
-    </Col>
-    <Col index={3}>
+    </ItemCol>
+    <ItemCol index={3}>
       {item.role}
-    </Col>
-  </Row>
+    </ItemCol>
+  </ItemRow>
 ));
+// componentClass={Link}
+
 const SelectLinkItem = observer(({ item = {} }) => (
-  <Row className={cx([styleHeight, itemStyle])} componentClass={Link} href="https://google.com" clickable>
-    <Col index={0}>
-      <List.Checkbox item={item} style={{ marginBottom: 0 }} />
-    </Col>
-    <Col index={1}>
-      {item.id} - {Math.random()}
-    </Col>
-    <Col index={2}>
-      {item.title}
-    </Col>
-    <Col index={3}>
-      {item.role}
-    </Col>
-  </Row>
+  <List.SelectRow item={item} componentClass={Link} href="https://google.com">
+    <ItemRow clickable>
+      <ItemCol index={0}>
+        <List.Checkbox item={item} />
+      </ItemCol>
+      <ItemCol index={1}>
+        {item.id} - {Math.random()}
+      </ItemCol>
+      <ItemCol index={2}>
+        {item.title}
+      </ItemCol>
+      <ItemCol index={3}>
+        {item.role}
+      </ItemCol>
+    </ItemRow>
+  </List.SelectRow>
+));
+// componentClass={Link}
+
+
+const SelectLinkItem2 = observer(({ item = {} }) => (
+  <Link href="https://google.com">
+    <Row>
+      <Col index={0}>
+        {/* <List.Checkbox item={item} /> */}
+      </Col>
+      <Col index={1}>
+        {item.id} - {Math.random()}
+      </Col>
+      <Col index={2}>
+        {item.title}
+      </Col>
+      <Col index={3}>
+        {item.role}
+      </Col>
+    </Row>
+  </Link>
+));
+
+const SelectLinkItem3 = observer(({ item = {} }) => (
+  <List.SelectRow item={item}>
+    <Row>
+      <Col index={0}>
+        <List.Checkbox item={item} />
+      </Col>
+      <Col index={1}>
+        {item.id} - {Math.random()}
+      </Col>
+      <Col index={2}>
+        {item.title}
+      </Col>
+      <Col index={3}>
+        {item.role}
+      </Col>
+    </Row>
+  </List.SelectRow>
 ));
 
 const SelectHeaderItem = observer(({ toggleSort, sort = {} }) => (
-  <Row className={styleHeight}>
-    <Col index={0}>
+  <HeaderRow>
+    <HeaderCol index={0}>
       <List.Checkbox global />
-    </Col>
-    <Col index={1}>
-      <List.SortHeader value={sort.id} onClick={() => toggleSort('id')}>
+    </HeaderCol>
+    <HeaderCol index={1}>
+      <List.SortHeader style={{ background: '#eee' }} value={sort.id} onClick={() => toggleSort('id')}>
        id
       </List.SortHeader>
-    </Col>
-    <Col index={2}>
+    </HeaderCol>
+    <HeaderCol index={2}>
       name
-    </Col>
-    <Col index={3}>
-      <List.SortHeader value={sort.role} onClick={() => toggleSort('role')}>
-       role
-      </List.SortHeader>
-    </Col>
-  </Row>
+    </HeaderCol>
+    <List.SortHeader value={sort.role} onClick={() => toggleSort('role')}>
+      <HeaderCol index={3} style={{ background: '#eee' }}>
+        role
+      </HeaderCol>
+    </List.SortHeader>
+  </HeaderRow>
 ));
 
 const HeaderItem = ({ toggleSort, sort = {} }) => (
@@ -370,11 +414,9 @@ export default ({ storiesOf }) => {
       <Story>
         <List
           listStore={listStore}
-          Item={SelectLinkItem}
+          Item={SelectItem}
           columns={columns}
-        >
-          <List.Body Item={SelectLinkItem} />
-        </List>
+        />
         <Debug store={listStore} />
       </Story>
     ))
@@ -451,6 +493,39 @@ export default ({ storiesOf }) => {
         <List
           listStore={listStore}
           Item={SelectItem}
+          HeaderItem={SelectHeaderItem}
+          columns={columns}
+        />
+        <Debug store={listStore} />
+      </Story>
+    ))
+    .add('List with SelectLinkItem', () => (
+      <Story>
+        <List
+          listStore={listStore}
+          Item={SelectLinkItem}
+          HeaderItem={SelectHeaderItem}
+          columns={columns}
+        />
+        <Debug store={listStore} />
+      </Story>
+    ))
+    .add('List with SelectLinkItem2', () => (
+      <Story>
+        <List
+          listStore={listStore}
+          Item={SelectLinkItem2}
+          HeaderItem={SelectHeaderItem}
+          columns={columns}
+        />
+        <Debug store={listStore} />
+      </Story>
+    ))
+    .add('List with SelectLinkItem3', () => (
+      <Story>
+        <List
+          listStore={listStore}
+          Item={SelectLinkItem3}
           HeaderItem={SelectHeaderItem}
           columns={columns}
         />

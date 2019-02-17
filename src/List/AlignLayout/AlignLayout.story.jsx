@@ -1,9 +1,9 @@
 import React from 'react';
 import Story from '../../Story';
-import { Container, Left, Item, Right } from './TableFooter';
+import { Container, Left, Item, Right } from './AlignLayout';
 // const Content = <>
 export default ({ storiesOf }) => (
-  storiesOf('hz/TableFooter', module)
+  storiesOf('List/AlignLayout', module)
     .add('Default', () => (
       <Story>
         <Container>
