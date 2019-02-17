@@ -3,6 +3,7 @@
 
 build
 dist
+distRelease
 database.sqlite
 node_modules
 ncp-debug.log
