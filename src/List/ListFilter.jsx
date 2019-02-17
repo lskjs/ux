@@ -14,7 +14,8 @@ class ListFilter extends Component {
     super();
     this.form = React.createRef();
     setTimeout(() => {
-      console.log('this.form', this.form);
+
+      __DEV__ && console.log('this.form', this.form);
     }, 1000);
   }
   render() {

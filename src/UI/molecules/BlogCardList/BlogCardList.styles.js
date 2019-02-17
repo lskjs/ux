@@ -9,7 +9,7 @@ export const ImageContainer = styled(dynamicTag)`
   max-width: 100%;
   height: 100%;
   padding: 12px;
-  background-color: ${p => p.theme.colors.lighterPrimary};
+  /* background-color: ${p => p.theme.colors.lighterPrimary}; */
   @media screen and (min-width: 768px) {
     flex: 0 0 30%;
     max-width: 30%;
@@ -74,7 +74,7 @@ export const Content = styled('div')`
 export const Author = styled('div')`
   padding-top: 24px;
   border-top: 1px solid rgba(0,0,0,.1);
-  padding-top: 26px;
+  padding-top: 27px;
   font-family: ${p => p.theme.fontFamily};
 `;
 
