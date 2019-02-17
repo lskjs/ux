@@ -97,10 +97,12 @@ class Select extends Component {
       ValueContainer: CollapsedValueContainer,
       MultiValue: CollapsedMultiValue,
     };
+    const nullOption = find(normalizedOptions, { value });
+    const defaultIsClearable = !props.required && !nullOption;
     return (
       <SelectComponent
         blurInputOnSelect={blurInputOnSelect}
-        isClearable={!props.required}
+        isClearable={defaultIsClearable}
         arrowRenderer={e => (e.isOpen ? <Up /> : <Down />)}
         error={hasError}
         classNamePrefix="react-select"
