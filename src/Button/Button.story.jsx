@@ -1,6 +1,7 @@
 import React from 'react';
 import { Badge, Icon } from 'antd';
 import Button from './Button';
+import ButtonGroup from './ButtonGroup';
 import Story from '../Story';
 
 export default ({ storiesOf }) => {
@@ -97,6 +98,21 @@ export default ({ storiesOf }) => {
         <Badge count={5} title="Custom hover text">
           <Button paint="primary">Default</Button>
         </Badge>
+        <Badge status="processing" count={5} title="Custom hover text">
+          <Button paint="primary">Default</Button>
+        </Badge>
+      </Story>
+    ))
+    .add('ButtonGroup', () => (
+      <Story>
+        <ButtonGroup>
+          <Button>Default</Button>
+          <Button paint="primary">Primary</Button>
+          <Button paint="info">Info</Button>
+          <Button paint="success">Success</Button>
+          <Button paint="warning">Warning</Button>
+          <Button paint="danger">Danger</Button>
+        </ButtonGroup>
       </Story>
     ))
     .add('badge status', () => (

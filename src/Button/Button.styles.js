@@ -781,3 +781,28 @@ export const State = styled('div')`
     background-color: transparent !important;
   `)}
 `;
+
+
+// РЕАЛИЗОВАТЬ
+// https://github.com/twbs/bootstrap/blob/ff29c1224c20b8fcf2d1e7c28426470f1dc3e40d/scss/_button-group.scss
+export const ButtonGroup = styled('div')`
+  width: 100%;
+  position: relative;
+  display: inline-flex;
+  vertical-align: middle; 
+
+
+  & > * {
+    position: relative;
+    flex: 1 1 auto;
+
+    /* @include hover {
+      z-index: 1;
+    } */
+    &:focus,
+    &:active,
+    &.active {
+      z-index: 1;
+    }
+  }
+`;
