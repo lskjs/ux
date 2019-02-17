@@ -97,11 +97,14 @@ class Select extends Component {
       ValueContainer: CollapsedValueContainer,
       MultiValue: CollapsedMultiValue,
     };
-    const nullOption = find(normalizedOptions, { value });
+    const nullOption = find(normalizedOptions, o => o.value == null);
     const defaultIsClearable = !props.required && !nullOption;
+    // console.log({ defaultIsClearable }, !props.required, !nullOption, nullOption);
+
     return (
       <SelectComponent
         blurInputOnSelect={blurInputOnSelect}
+        // isClearable={defaultIsClearable}
         isClearable={defaultIsClearable}
         arrowRenderer={e => (e.isOpen ? <Up /> : <Down />)}
         error={hasError}
