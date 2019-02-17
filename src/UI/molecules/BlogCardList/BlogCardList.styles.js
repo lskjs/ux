@@ -78,6 +78,7 @@ export const Author = styled('div')`
   font-family: ${p => p.theme.fontFamily};
 `;
 
+
 export const Wrapper = styled(dynamicTag)`
   border: 1px solid rgba(0,0,0,.1);
   background: ${p => p.theme.colors.white};
