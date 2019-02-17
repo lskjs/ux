@@ -75,6 +75,7 @@ class Select extends Component {
   }
   render() {
     const {
+      blurInputOnSelect = true,
       placeholder = '',
       value: propValue,
       field,
@@ -98,6 +99,7 @@ class Select extends Component {
     };
     return (
       <SelectComponent
+        blurInputOnSelect={blurInputOnSelect}
         isClearable={!props.required}
         arrowRenderer={e => (e.isOpen ? <Up /> : <Down />)}
         error={hasError}
@@ -136,7 +138,7 @@ class Select extends Component {
           [className]: !!className,
           'has-error': hasError,
         })}
-        value={option}
+        value={option || null}
         loadOptions={this.loadOptions}
         onChange={this.handleChange}
         options={async ? null : normalizedOptions}

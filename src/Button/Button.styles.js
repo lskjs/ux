@@ -176,7 +176,6 @@ const iconButtonSingle = props => css`
 
     ${Icon} {
       font-size: 20px;
-      padding-right: 8px;
     }
   `}
   ${props.size === 'default' && `

@@ -27,10 +27,9 @@ class FilterButton extends Component {
         {/* <Badge count={listStore.hasFilter ? 1 : 0}> */}
         <Badge count={badge}>
           <List.Button
-            icon={<TuneIcon />}
+            iconLeft={<TuneIcon />}
             paint="primary"
             view="text"
-            size="large"
             bordered
             style={{ backgroundColor: listStore.showFilter ? '#F0F0FF' : '' }}
             onClick={listStore.toggleFilter}

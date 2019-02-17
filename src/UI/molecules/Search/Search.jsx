@@ -106,7 +106,7 @@ class Search extends PureComponent {
             </Action>
           </If>
           <If condition={actions}>
-            <Action additional>
+            <Action additional divide={max || canClear}>
               {actions}
             </Action>
           </If>

@@ -13,8 +13,8 @@ import PercentSlider from '../controls/PercentSlider/PercentSlider';
 const InputFormView = (props) => {
   return (
     <Form>
-      <Field {...props.controls.input} />
-      <Field {...props.controls.input2} />
+      {/* <Field {...props.controls.input} />
+      <Field {...props.controls.input2} /> */}
       <Field {...props.controls.select} />
       <Field {...props.controls.tags} />
       <Field {...props.controls.slider} />
