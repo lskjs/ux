@@ -1,9 +1,9 @@
 import React, { PureComponent } from 'react';
 // import get from 'lodash/get';
 import autobind from 'core-decorators/lib/autobind';
-import CalendarBase from 'antd/es/calendar';
 import moment from 'moment';
 import HighlightedCell from '../../../UI/atoms/HighlightedCell';
+import CalendarBase from './antd-calendar';
 
 class Calendar extends PureComponent {
   static isAnyTypeDate(f) {
