@@ -22,7 +22,7 @@ class ListCheckbox extends Component {
         indeterminate={global && selectStore.globalIsIndeterminate()}
         checked={global ? selectStore.globalIsChecked() : selectStore.isChecked(item)}
         onClick={this.handleClick}
-        style={{ marginBottom: 0 }}
+        style={{ marginBottom: 1 }}
       />
     );
   }
