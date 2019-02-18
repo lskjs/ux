@@ -1,10 +1,9 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import range from 'lodash/range';
 
-import Pulse from './BallPulse.styles';
+import ClipRotate from './BallClipRotate.styles';
 
-class BallPulse extends PureComponent {
+class BallClipRotate extends PureComponent {
   static propTypes = {
     color: PropTypes.string,
   };
@@ -16,10 +15,8 @@ class BallPulse extends PureComponent {
       color,
     } = this.props;
     return (
-      <div>
-        {range(3).map(i => <Pulse key={i} color={color} />)}
-      </div>
+      <ClipRotate color={color} />
     );
   }
 }
-export default BallPulse;
+export default BallClipRotate;

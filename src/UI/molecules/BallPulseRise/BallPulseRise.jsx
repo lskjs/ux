@@ -1,11 +1,10 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import range from 'lodash/range';
-import GridBall from '../../atoms/GrigBall';
 
-import Wrapper from './BallGridPulse.styles';
+import PulseRise from './BallPulseRise.styles';
 
-class BallGridPulse extends PureComponent {
+class BallPulseRise extends PureComponent {
   static propTypes = {
     color: PropTypes.string,
   };
@@ -17,10 +16,10 @@ class BallGridPulse extends PureComponent {
       color,
     } = this.props;
     return (
-      <Wrapper>
-        {range(9).map(i => <GridBall key={i} color={color} />)}
-      </Wrapper>
+      <div>
+        {range(5).map(i => <PulseRise key={i} color={color} />)}
+      </div>
     );
   }
 }
-export default BallGridPulse;
+export default BallPulseRise;
