@@ -97,7 +97,7 @@ class Modal2 extends PureComponent {
       CloseIcon: this.constructor.CloseIcon || this.props.CloseIcon,
     };
     const {
-      className, size, closable = true, trigger, innerRef, ...props
+      className, size = 'default', closable = true, trigger, innerRef, ...props
     } = this.props;
     const modal = this;
     if (innerRef) innerRef(this);
