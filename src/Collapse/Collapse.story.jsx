@@ -29,6 +29,11 @@ class Container extends Component {
 
 export default ({ storiesOf }) => {
   storiesOf('Collapse', module)
+    .add('default', () => (
+      <Story>
+        <Container />
+      </Story>
+    ))
     .add('collapseUnmount', () => (
       <Story>
         <Container type="collapseUnmount" />
