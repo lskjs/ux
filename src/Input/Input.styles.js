@@ -1,4 +1,5 @@
-import styled from 'react-emotion';
+import styled, { css } from 'react-emotion';
+
 
 export default (component = 'input') => (
   styled(component)`

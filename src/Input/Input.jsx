@@ -12,6 +12,7 @@ import {
   InputBox,
   LeftWrapper,
   RightWrapper,
+  currencyInput,
 } from './InputStyle.styles';
 
 
@@ -72,7 +73,7 @@ class Input extends PureComponent {
 
   @autobind
   handleChange(e) {
-    const { regex } = this.props;
+    const { regex, numeric } = this.props;
     let value = e;
     if (!(typeof value === 'number' || typeof value === 'string') && value) {
       value = value.target ? value.target.value : value;
@@ -80,6 +81,9 @@ class Input extends PureComponent {
     const { displayRate } = this.props;
     if (typeof displayRate === 'number') {
       value /= displayRate;
+    }
+    if (numeric) {
+      value = value.replace(/\D+/, '');
     }
     if (regex) {
       [value] = value.match(regex);
@@ -134,6 +138,9 @@ class Input extends PureComponent {
         </If>
         <If condition={numeric}>
           <CurrencyFormat
+            className={currencyInput}
+            value={typeof displayRate === 'number' ? value * displayRate : value}
+            onChange={this.handleChange}
             thousandSeparator
             decimalSeparator="."
             prefix="$"
