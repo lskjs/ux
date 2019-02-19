@@ -60,9 +60,8 @@ const InputForm = createForm({
     input6: {
       title: 'Only currency',
       component: Input,
-      leftIcon: <UsdIcon size={28} />,
       placeholder: 'input placeholder',
-      regex: /\d*\.?\d{1,2}/,
+      numeric: true,
     },
   },
 });

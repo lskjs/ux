@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import debounce from 'lodash/debounce';
 import autobind from 'core-decorators/lib/autobind';
+import CurrencyFormat from 'react-currency-format';
 
 // import getBlock from './Input.styles';
 import If from 'react-if';
@@ -26,6 +27,7 @@ class Input extends PureComponent {
     rightIcon: PropTypes.any,
     className: PropTypes.string,
     regex: PropTypes.string,
+    numeric: PropTypes.bool,
   }
   static defaultProps = {
     validationState: null,
@@ -38,6 +40,7 @@ class Input extends PureComponent {
     rightIcon: null,
     className: null,
     regex: null,
+    numeric: false,
   }
   constructor(props) {
     super(props);
@@ -89,6 +92,7 @@ class Input extends PureComponent {
     const {
       className,
       block,
+      numeric,
       validationState,
       componentClass,
       disabled,
@@ -101,30 +105,41 @@ class Input extends PureComponent {
     const { value } = this.state;
     const { Block } = this;
     return (
-      <InputBox>
-        <If condition={leftIcon}>
-          <LeftWrapper>
-            {leftIcon}
-          </LeftWrapper>
+      <React.Fragment>
+        <If condition={!numeric}>
+          <InputBox>
+            <If condition={leftIcon}>
+              <LeftWrapper>
+                {leftIcon}
+              </LeftWrapper>
+            </If>
+            <Block
+              iconLeft={leftIcon}
+              iconRight={rightIcon}
+              innerRef={innerRef}
+              validationState={validationState}
+              block={block}
+              disabled={disabled}
+              className={className}
+              {...filterProps(otherProps, Block)}
+              value={typeof displayRate === 'number' ? value * displayRate : value}
+              onChange={this.handleChange}
+            />
+            <If condition={rightIcon}>
+              <RightWrapper>
+                {rightIcon}
+              </RightWrapper>
+            </If>
+          </InputBox>
         </If>
-        <Block
-          iconLeft={leftIcon}
-          iconRight={rightIcon}
-          innerRef={innerRef}
-          validationState={validationState}
-          block={block}
-          disabled={disabled}
-          className={className}
-          {...filterProps(otherProps, Block)}
-          value={typeof displayRate === 'number' ? value * displayRate : value}
-          onChange={this.handleChange}
-        />
-        <If condition={rightIcon}>
-          <RightWrapper>
-            {rightIcon}
-          </RightWrapper>
+        <If condition={numeric}>
+          <CurrencyFormat
+            thousandSeparator
+            decimalSeparator="."
+            prefix="$"
+          />
         </If>
-      </InputBox>
+      </React.Fragment>
     );
   }
 }
