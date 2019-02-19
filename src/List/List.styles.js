@@ -176,9 +176,6 @@ export const FilterWrapper = styled('div')`
   background-color: ${p => p.theme.colors.lightGray};
 `;
 
-
-
-
 export const FooterWrapper = styled('div')`
   /* display: flex; */
   /* align-items: center; */
@@ -238,7 +235,7 @@ ${p => (p.sticky && css`
 `;
 
 export const TagsPanelWrapper = styled('div')`
-  padding: 8px 14px 4px;
+  padding: ${p => p.theme.tablePadding}px ${p => p.theme.tablePadding}px 4px;
   display: flex;
   flex-wrap: wrap;
   > button {
