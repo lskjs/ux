@@ -1,5 +1,7 @@
 import { observable, computed, action } from 'mobx';
 import { autobind } from 'core-decorators';
+import { toJS } from 'mobx';
+import downloadjs from 'downloadjs';
 import debounce from 'lodash-decorators/debounce';
 import isEmpty from 'lodash/isEmpty';
 import every from 'lodash/every';
@@ -139,5 +141,11 @@ export default class ListStore extends FetchStore {
       },
       skip: 0,
     });
+  }
+
+  @autobind
+  download() {
+    const data = JSON.stringify(toJS(this.items));
+    downloadjs(data, 'file.json', 'text/plain');
   }
 }
