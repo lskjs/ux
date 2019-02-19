@@ -231,6 +231,7 @@ class Button extends PureComponent {
       type,
       style,
       colors,
+      onlyIcon,
       ...props
     } = this.props;
     const tag = componentClass || 'button';
@@ -269,7 +270,7 @@ class Button extends PureComponent {
         auto={autoMobile}
         className={className}
         iconDirection={iconDirection}
-        onlyIcon={icon && !children}
+        onlyIcon={onlyIcon || (icon && !children)}
         onClick={!disabled ? onClick : null}
         twoIcons={icoLeft && iconRight}
         style={style}
