@@ -97,6 +97,8 @@ class Image extends PureComponent {
   renderAsImage() {
     const title = this.props.title || this.props.name;
     const src = this.props.src || this.props.image;
+    const { ...props } = this.props;
+
     return (
       <ReactImageFallback
         src={src}
@@ -105,6 +107,7 @@ class Image extends PureComponent {
         style={this.getInnerStyle()}
         alt={title}
         title={title}
+        {...props}
       />
     );
   }

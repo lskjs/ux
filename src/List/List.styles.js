@@ -270,6 +270,8 @@ export const ArrowBlock = styled('div')`
 export const SelectRowWrapper = styled('div')`
   cursor: pointer;
   ${p => (p.checked && css`
-    border: 2px red solid;
+    > .table-gird-row {
+      background-color: ${p.theme.colors.lightPrimary};
+    }
   `)}
 `;

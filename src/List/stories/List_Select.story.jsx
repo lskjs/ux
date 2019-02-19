@@ -32,7 +32,11 @@ const SelectHeaderItem = observer(({ toggleSort, sort = {} }) => (
 ));
 
 const SelectItem = observer(({ item = {} }) => (
-  <ItemRow>
+  <ItemRow
+    // clickable
+    // checked={listStore.selectStore.isChecked(item)}
+    // onClick={() => listStore.selectStore.toggle(item)}
+  >
     <ItemCol index={0}>
       <List.Checkbox item={item} />
     </ItemCol>
