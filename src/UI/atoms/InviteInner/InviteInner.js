@@ -1,7 +1,7 @@
 import styled from 'react-emotion';
 
 export default styled('div')`
-  font-size: 20;
+  font-size: 20px;
   line-height: 1.2;
   letter-spacing: -0.1;
   text-align: left;

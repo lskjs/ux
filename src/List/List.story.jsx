@@ -163,7 +163,11 @@ const EditItem = observer(({ item = {} }) => (
 ));
 
 const SelectItem = observer(({ item = {} }) => (
-  <ItemRow clickable onClick={() => listStore.selectStore.toggle(item)}>
+  <ItemRow
+    clickable
+    checked={listStore.selectStore.isChecked(item)}
+    onClick={() => listStore.selectStore.toggle(item)}
+  >
     <ItemCol index={0}>
       <List.Checkbox item={item} />
     </ItemCol>
