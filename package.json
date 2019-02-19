@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/general",
-  "version": "0.15.195",
+  "version": "0.15.196",
   "author": "isuvorov",
   "license": "MIT",
   "dependencies": {
@@ -26,6 +26,7 @@
     "rc-queue-anim": "^1.6.11",
     "react-click-outside": "github:tj/react-click-outside",
     "react-collapse": "4.0.3",
+    "react-currency-format": "^1.0.0",
     "react-custom-scrollbars": "4.2.1",
     "react-debounce-input": "3.2.0",
     "react-drive-in2": "1.8.1",
