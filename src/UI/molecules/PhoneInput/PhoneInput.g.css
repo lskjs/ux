@@ -801,6 +801,7 @@
   overflow-y: scroll;
   border-radius: 0 0 3px 3px;
   top: 37px;
+  text-align: left;
 }
 .react-tel-input .country-list .flag {
   display: inline-block;

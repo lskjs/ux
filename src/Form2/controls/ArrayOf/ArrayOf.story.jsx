@@ -4,11 +4,13 @@ import Story from '../../../Story';
 import createForm from '../../createForm';
 import ArrayOf from './ArrayOf';
 import Input from '../Input/Input';
+import Radio from '../Radio';
 import FormDebug from '../../FormDebug';
 
 const ArrayOfFormView = (props) => {
   return (
     <Form>
+      <Field {...props.controls.inputArray4} />
       <Field {...props.controls.inputArray} />
       <FastField {...props.controls.inputArray} title="FastField/inputArray" />
       <hr />
@@ -48,6 +50,20 @@ const ArrayOfForm = createForm({
       showRemoveButton: true,
       showAddButton: true,
       addButton: 'Добавить input',
+    },
+    inputArray4: {
+      title: 'inputArray4',
+      component: ArrayOf,
+      itemComponent: Radio,
+      itemProps: [
+        {
+          title: 'checkBlock',
+          component: CheckBlock,
+          info: 'this is info',
+          children: 'This is children',
+          block: true,
+        },
+      ],
     },
   },
 });
