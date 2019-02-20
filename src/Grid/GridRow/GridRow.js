@@ -9,7 +9,7 @@ export default styled(filter)`
   flex-wrap: wrap;
   margin-right: -${p => (p.gap || p.theme.gridGap)}px;
   margin-left: -${p => (p.gap || p.theme.gridGap)}px;
-  
+
   ${p => (p.vertical && css`
     margin-top: -${p.gap || p.theme.gridGap}px;
     margin-bottom: -${p.gap || p.theme.gridGap}px;

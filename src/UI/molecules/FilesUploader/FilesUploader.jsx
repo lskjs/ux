@@ -4,7 +4,7 @@ import If from 'react-if';
 import autobind from 'core-decorators/lib/autobind';
 import Promise from 'bluebird';
 import PropTypes from 'prop-types';
-import File from 'react-icons2/mdi/file-image';
+import FileIcon from 'react-icons2/mdi/file-image';
 import Dropzone from 'react-dropzone';
 import cx from 'classnames';
 import Button from '../../../Button';
@@ -20,6 +20,9 @@ import {
   Header,
   Block,
 } from './FilesUploader.styles';
+import { Row, Col } from '../../../Grid';
+import Box from '../Box';
+import File from '../File';
 
 @inject(s => ({
   upload: s.uapp.modules.upload,
@@ -77,7 +80,7 @@ class FilesUploader extends Component {
       const res = await Promise.map(files, file => (
         upload.uploadFile(file)
       ));
-      value = res[0] && res[0].url;
+      value = res.map(e => e.url);
       if (onSubmit) onSubmit(value);
     } catch (err) {
       if (onError) onError(err);
@@ -112,71 +115,90 @@ class FilesUploader extends Component {
       className,
       ...otherProps
     } = this.props;
+    console.log(value);
     return (
-      <Dropzone
-        {...otherProps}
-        className={cx({
-          [zoneStyle]: true,
-          [className]: className,
-        })}
-        disableClick
-        multiple={false}
-        ref={(e) => { this.zone = e; }}
-        onDrop={this.onDrop}
-        onDragEnter={() => this.onDragged(true)}
-        onDragLeave={() => this.onDragged(false)}
-      >
-        <If condition={dragged}>
-          <Drop>
-            <DropText>
-              {dropText || t('upload.dropFiles')}
-            </DropText>
-            <DropIcon>
-              <File />
-            </DropIcon>
-          </Drop>
-        </If>
-        <If condition={!dragged}>
-          <Block
-            validationState={validationState}
-          >
-            <Header>
-              <Info>
-                {info || t('upload.infoFiles')}
-              </Info>
-              <Actions>
-                <If condition={!value}>
-                  <Button
-                    type="button"
-                    onClick={() => this.zone.open()}
-                  >
-                    {buttonText || t('upload.buttonFiles')}
-                  </Button>
-                </If>
+      <React.Fragment>
+        <Dropzone
+          {...otherProps}
+          className={cx({
+            [zoneStyle]: true,
+            [className]: className,
+          })}
+          disableClick
+          // multiple={false}
+          ref={(e) => { this.zone = e; }}
+          onDrop={this.onDrop}
+          onDragEnter={() => this.onDragged(true)}
+          onDragLeave={() => this.onDragged(false)}
+        >
+          <If condition={dragged}>
+            <Drop>
+              <DropText>
+                {dropText || t('upload.dropFiles')}
+              </DropText>
+              <DropIcon>
+                <FileIcon />
+              </DropIcon>
+            </Drop>
+          </If>
+          <If condition={!dragged}>
+            <Block
+              validationState={validationState}
+            >
+              <Header>
+                <Info>
+                  {info || t('upload.infoFiles')}
+                </Info>
+                <Actions>
+                  <If condition={!value}>
+                    <Button
+                      type="button"
+                      onClick={() => this.zone.open()}
+                    >
+                      {buttonText || t('upload.buttonFiles')}
+                    </Button>
+                  </If>
+                  <If condition={value?.length}>
+                    <Button
+                      type="button"
+                      onClick={this.removeFile}
+                    >
+                      <T name="lskComponents.filesUploaderButton" />
+                    </Button>
+                  </If>
+                </Actions>
+              </Header>
+              {/* <Footer>
                 <If condition={value}>
                   <Button
                     type="button"
+                    paint="danger"
                     onClick={this.removeFile}
                   >
-                    <T name="lskComponents.filesUploaderButton" />
+                    Delete file
                   </Button>
                 </If>
-              </Actions>
-            </Header>
-            {/* <Footer>
-              <If condition={value}>
-                <Button
-                  type="button"
-                  paint="danger"
-                  onClick={this.removeFile}
-                >
-                  Delete file
-                </Button>
-              </If>
-            </Footer> */}
-          </Block>
+              </Footer> */}
+            </Block>
+          </If>
+        </Dropzone>
+        <If condition={Array.isArray(value)}>
+          <Box paint="transparent">
+            <Box.Header padded>
+              <T name="lskComponents.filesCount" count={value.length} />
+            </Box.Header>
+            <Box.Body padded>
+              <Row vertical gap={8}>
+                {value.map((e, i) => (
+                  <Col key={i} sm={4}> {/* eslint-disable-line react/no-array-index-key */}
+                    <File url={e} />
+                  </Col>
+                ))}
+              </Row>
+            </Box.Body>
+          </Box>
         </If>
-      </Dropzone>
+      </React.Fragment>
     );
   }
 }
