@@ -51,20 +51,6 @@ const ArrayOfForm = createForm({
       showAddButton: true,
       addButton: 'Добавить input',
     },
-    inputArray4: {
-      title: 'inputArray4',
-      component: ArrayOf,
-      itemComponent: Radio,
-      itemProps: [
-        {
-          title: 'checkBlock',
-          component: CheckBlock,
-          info: 'this is info',
-          children: 'This is children',
-          block: true,
-        },
-      ],
-    },
   },
 });
 
