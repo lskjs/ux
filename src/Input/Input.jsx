@@ -69,7 +69,7 @@ class Input extends PureComponent {
 
   @autobind
   handleChange(e) {
-    const { regex, numeric } = this.props;
+    const { regex } = this.props;
     let value = e;
     if (!(typeof value === 'number' || typeof value === 'string') && value) {
       value = value.target ? value.target.value : value;
@@ -77,9 +77,6 @@ class Input extends PureComponent {
     const { displayRate } = this.props;
     if (typeof displayRate === 'number') {
       value /= displayRate;
-    }
-    if (numeric) {
-      value = value.replace(/\D+/, '');
     }
     if (regex) {
       [value] = value.match(regex);
