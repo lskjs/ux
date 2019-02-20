@@ -4,6 +4,7 @@
   "author": "isuvorov",
   "license": "MIT",
   "dependencies": {
+    "animated-scroll-to": "^1.2.2",
     "axios": "0.18.0",
     "babel-plugin-emotion": "9.2.11",
     "classnames": "2.2.6",
@@ -45,7 +46,6 @@
     "slate": "^0.44.10",
     "slate-md-serializer": "5.2.3",
     "slate-react": "^0.21.16",
-    "smooth-scroll": "15.0.0",
     "validate.js": "0.12.0"
   },
   "peerDependencies": {
