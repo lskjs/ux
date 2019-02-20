@@ -20,7 +20,7 @@ class FormGroup extends Component {
     return (
       <Form.Item
         key={htmlId}
-        required={props.required}
+        required={props.required || props._required}
         // label={field.heading ? field.heading.children : props.title}
         // label={props.label ? props.label : props.title}
         label={props.title}

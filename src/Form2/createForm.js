@@ -5,6 +5,7 @@ import pickBy from 'lodash/pickBy';
 import isFunction from 'lodash/isFunction';
 import map from 'lodash/map';
 import get from 'lodash/get';
+import omit from 'lodash/omit';
 import some from 'lodash/some';
 import cloneDeep from 'lodash/cloneDeep';
 import isEmpty from 'lodash/isEmpty';
@@ -35,21 +36,37 @@ const prepareControls = (ctrls, FormGroup) => {
       ({ component } = ctrl);
     }
 
-    prepared[name] = {
+    const control = {
       name: ctrl.key || name,
       ...ctrl,
       component,
     };
 
-    prepared[name].htmlId = getControlHtmlId(prepared[name]);
-    if (!prepared[name].validator) prepared[name].validator = {};
-    if (prepared[name].required && !prepared[name].validator.presence) {
-      prepared[name].validator.presence = {
+    control.htmlId = getControlHtmlId(control);
+    if (!control.validator) control.validator = {};
+    if (control.required && !control.validator.presence) {
+      control._required = control.required;
+      delete control.required;
+      control.validator.presence = {
         allowEmpty: false,
       };
     }
+    if (control.type === 'email' && !control.validator.email) {
+      control._type = control.type;
+      delete control.type;
+      control.validator.email = true;
+    }
+    prepared[name] = control;
   });
-  return prepared;
+
+  return {
+    ...prepared,
+    get: (key) => {
+      const control = prepared[key];
+      if (!control) return { component: 'div' };
+      return control;
+    },
+  };
 };
 
 const replaceSymbols = (str, oldSymbol, newSymbol = '') => {
