@@ -5,9 +5,10 @@ import autobind from 'core-decorators/lib/autobind';
 import ChevronDownIcon from 'react-icons2/mdi/chevron-down';
 import { Manager, Reference, Popper } from 'react-popper';
 import Outside from 'react-click-outside';
-import { contentStyle, popperDisabledStyle, Content, Trigger, Icon } from './DropdownAsSelect.styles';
+import { contentStyle, popperDisabledStyle, Content, Trigger as TriggerStyled, Icon } from './DropdownAsSelect.styles';
 
 class SelectFilter extends PureComponent {
+  static Trigger = TriggerStyled;
   static propTypes = {
     trigger: PropTypes.any,
     children: PropTypes.any,
@@ -21,6 +22,7 @@ class SelectFilter extends PureComponent {
     children: null,
     disabled: false,
     contentWrapperProps: {},
+    onClose: null,
   }
 
   constructor(props) {
@@ -30,6 +32,16 @@ class SelectFilter extends PureComponent {
       contentHeight: '100%',
     };
     this.content = React.createRef();
+  }
+
+  @autobind
+  onClickOutside() {
+    const { open } = this.state;
+    if (!open) return;
+    this.openHandler(false);
+    if (this.props.onClose) {
+      this.props.onClose();
+    }
   }
 
   @autobind
@@ -62,18 +74,11 @@ class SelectFilter extends PureComponent {
       </Content>
     );
   }
-  @autobind
-  onClickOutside() {
-    const { open } = this.state;
-    if (!open) return;
-    this.openHandler(false);
-    if (this.props.onClose) {
-      this.props.onClose();
-    }
-  }
+
   render() {
     const { open } = this.state;
     const { trigger, disabled } = this.props;
+    const { Trigger } = this.constructor;
     return (
       <Outside onClickOutside={this.onClickOutside}>
         <Manager>
