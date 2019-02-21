@@ -23,7 +23,7 @@ export const SearchWrapper = styled('div')`
   border: 1px solid ${p => p.theme.colors.border};
   width: 240px;
   overflow: hidden;
-  
+
   > svg {
     font-size: 24px;
     color: ${p => p.theme.colors.primary};
@@ -48,7 +48,7 @@ export const SearchInput = styled('input')`
   line-height: 1.54;
   letter-spacing: normal;
   color: ${p => p.theme.colors.main};
-  
+
   ::-webkit-input-placeholder {
     color: ${p => p.theme.colors.secondary};
     font-family: ${p => p.theme.fontFamily};
@@ -100,7 +100,7 @@ export const HeaderItemWrapper = styled('div')`
     display: flex;
     align-items: center;
   }
-  
+
   &:hover {
     ${ArrowWrapper} {
       opacity: 1;
@@ -115,11 +115,11 @@ export const Wrapper = styled('div')`
   border-radius: ${p => p.theme.borderRadius};
   border: 1px solid ${p => p.theme.colors.border};
   background-color: ${p => p.theme.colors.white};
-  
+
   > *:first-child {
     border-radius: ${p => p.theme.borderRadius} ${p => p.theme.borderRadius} 0 0;
   }
-  
+
   > *:last-child {
     border-radius: 0 0 ${p => p.theme.borderRadius} ${p => p.theme.borderRadius};
   }
@@ -131,7 +131,7 @@ export const ListTableItem = styled(dynamicListTableItemTag)`
   height: ${p => p.height}px;
   padding: 0 12px;
   background-color: ${p => p.theme.colors.white};
-  
+
   ${p => (p.clickable && css`
     cursor: pointer;
     transition: background-color .2s ease;
@@ -140,7 +140,7 @@ export const ListTableItem = styled(dynamicListTableItemTag)`
       background-color: ${p.theme.colors.lighterPrimary};
     }
   `)}
-  
+
   &:not(:last-child) {
     border-bottom: 1px solid ${p => p.theme.colors.border};
   }
@@ -157,7 +157,7 @@ export const ListGrid = styled('div')`
     const str = p.columns.join(' ');
     return str;
   }};
-  
+
   align-items: center;
 `;
 
@@ -172,7 +172,7 @@ export const ItemsWrapper = styled('div')`
 `;
 
 export const FilterWrapper = styled('div')`
-  padding: 16px 12px 0;
+  padding: 22px 12px 0;
   background-color: ${p => p.theme.colors.lightGray};
 `;
 
@@ -196,7 +196,7 @@ export const FooterWrapper = styled('div')`
 
 
 export const PaginatorGroupWrapper = styled('div')`
-  
+
 `;
 
 export const PagesWrapper = styled('div')`
@@ -208,7 +208,7 @@ export const PaginatorWrapper = styled('div')`
 `;
 
 export const StepperWrapper = styled('div')`
-  
+
 `;
 
 export const SelectWrapper = styled('select')`
@@ -222,11 +222,11 @@ export const SelectWrapper = styled('select')`
 export const HeaderWrapper = styled('div')`
   /* display: grid; */
   background-color: ${p => p.theme.colors.white};
-  
+
   > * {
     border-bottom: 1px solid ${p => p.theme.colors.border};
   }
-  
+
 ${p => (p.sticky && css`
     position: sticky;
     top: ${p.offset || 0}px;
@@ -260,7 +260,7 @@ export const ArrowButton = styled('button')`
 `;
 
 export const ArrowBlock = styled('div')`
-  display: flex; 
+  display: flex;
   justify-content: flex-end;
   > button:not(:last-child) {
     margin-right: 8px;

@@ -1,28 +1,26 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import range from 'lodash/range';
-import GridBall from '../../atoms/GrigBall';
+import SpinLine from '../../atoms/SpinLine';
 
-import Wrapper from './BallGridPulse.styles';
+import Wrapper from './LineSpin.styles';
 
-class BallGridPulse extends PureComponent {
+class LineSpin extends PureComponent {
   static propTypes = {
     color: PropTypes.string,
-    type: PropTypes.string.isRequired,
   };
   static defaultProps = {
     color: '#fff',
-  }
+  };
   render() {
     const {
       color,
-      type,
     } = this.props;
     return (
       <Wrapper>
-        {range(9).map(i => <GridBall key={i} color={color} type={type} />)}
+        {range(8).map(i => <SpinLine key={i} color={color} />)}
       </Wrapper>
     );
   }
 }
-export default BallGridPulse;
+export default LineSpin;
