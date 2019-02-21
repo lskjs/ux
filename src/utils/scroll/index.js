@@ -1,4 +1,4 @@
-import animateScrollTo from 'animated-scroll-to';
+import animateScrollTo from './animated-scroll-to';
 
 const defaultOptions = {
   // duration of the scroll per 1000px, default 500
@@ -13,7 +13,7 @@ const defaultOptions = {
   // DOM element to scroll, default window
   // Pass a reference to a DOM object
   // Example: document.querySelector('#element-to-scroll'),
-  element: window,
+  // element: window,
 
   // Additional offset value that gets added to the desiredOffset.  This is
   // useful when passing a DOM object as the desiredOffset and wanting to adjust

@@ -1,0 +1,4 @@
+{
+  "browser": "animated-scroll-to.client",
+  "main": "animated-scroll-to.server"
+}
