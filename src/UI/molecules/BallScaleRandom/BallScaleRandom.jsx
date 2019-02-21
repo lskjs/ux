@@ -1,14 +1,12 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import range from 'lodash/range';
-import GridBall from '../../atoms/GrigBall';
 
-import Wrapper from './BallGridPulse.styles';
+import { Wrapper, Ball } from './BallScaleRandom.styles';
 
-class BallGridPulse extends PureComponent {
+class BallScaleRandom extends PureComponent {
   static propTypes = {
     color: PropTypes.string,
-    type: PropTypes.string.isRequired,
   };
   static defaultProps = {
     color: '#fff',
@@ -16,13 +14,12 @@ class BallGridPulse extends PureComponent {
   render() {
     const {
       color,
-      type,
     } = this.props;
     return (
       <Wrapper>
-        {range(9).map(i => <GridBall key={i} color={color} type={type} />)}
+        {range(3).map(i => <Ball key={i} color={color} />)}
       </Wrapper>
     );
   }
 }
-export default BallGridPulse;
+export default BallScaleRandom;
