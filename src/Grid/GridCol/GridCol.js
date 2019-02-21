@@ -5,7 +5,7 @@ import removeProps from '../../utils/removeProps';
 const defaultStyle = css`
   flex-basis: 0;
   flex-grow: 1;
-  max-width: 100%; 
+  max-width: 100%;
 `;
 
 const autoStyle = css`
@@ -476,9 +476,10 @@ export default styled(filter)`
   position: relative;
   width: 100%;
   min-height: 1px;
+  flex-shrink: 0;
   padding-right: ${p => p.theme.gridGap}px;
   padding-left: ${p => p.theme.gridGap}px;
-  
+
   ${(p) => {
     if (p.xs && !['number', 'string'].includes(typeof p.xs)) {
       return defaultStyle;
@@ -500,7 +501,7 @@ export default styled(filter)`
       default: return '';
     }
   }}
-    
+
   ${(p) => {
     if (p.sm && !['number', 'string'].includes(typeof p.sm)) {
       return defaultSmallStyle;
@@ -522,8 +523,8 @@ export default styled(filter)`
       default: return '';
     }
   }}
-  
-    
+
+
   ${(p) => {
     if (p.md && !['number', 'string'].includes(typeof p.md)) {
       return defaultMediumStyle;
@@ -545,7 +546,7 @@ export default styled(filter)`
       default: return '';
     }
   }}
-    
+
   ${(p) => {
     if (p.lg && !['number', 'string'].includes(typeof p.lg)) {
       return defaultLargeStyle;
@@ -567,7 +568,7 @@ export default styled(filter)`
       default: return '';
     }
   }}
-  
+
   ${(p) => {
     if (p.xl && !['number', 'string'].includes(typeof p.xl)) {
       return defaultExtraStyle;

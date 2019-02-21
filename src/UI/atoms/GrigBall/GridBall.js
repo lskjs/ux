@@ -15,6 +15,15 @@ const scale = keyframes`
   }
 `;
 
+const beat = keyframes`
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+`;
+
 function count(n = 10, start = 1) { // eslint-disable-line consistent-return
   const list = range(start, n).map(i => `
       &:nth-child(${i}) {
@@ -34,7 +43,17 @@ export default styled('div')`
     background-color: ${p => p.color};
     animation-fill-mode: both;
     float: left;
-    animation-name: ${scale};
+    ${(p) => {
+    switch (p.type) {
+      case 'beat':
+        return `
+          animation-name: ${beat};`;
+      default:
+        return `
+          animation-name: ${scale};`;
+    }
+  }}
+    
     display: inline-block;
     animation-iteration-count: infinite;
 `;

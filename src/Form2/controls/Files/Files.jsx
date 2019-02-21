@@ -14,6 +14,7 @@ const FilesUploader = ({
       {...props}
       validationState={form.errors[field.name] ? 'error' : null}
       onSubmit={(value) => {
+        console.log(value);
         form.setFieldValue(field.name, value);
       }}
       onError={() => onError?.(form.errors[field.name])} // this.globalError
@@ -24,4 +25,3 @@ const FilesUploader = ({
 };
 
 export default FilesUploader;
-

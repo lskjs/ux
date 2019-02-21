@@ -30,7 +30,9 @@ class Story extends Component {
       api,
       modules: {
         upload: {
-          uploadFile: async () => ({ url: 'https://picsum.photos/1280/720/?random' }),
+          uploadFile: async (e) => {
+            return { url: e.name };
+          },
         },
         billing: {
           stores: {

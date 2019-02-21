@@ -8,6 +8,7 @@ import Wrapper from './BallGridPulse.styles';
 class BallGridPulse extends PureComponent {
   static propTypes = {
     color: PropTypes.string,
+    type: PropTypes.string.isRequired,
   };
   static defaultProps = {
     color: '#fff',
@@ -15,10 +16,11 @@ class BallGridPulse extends PureComponent {
   render() {
     const {
       color,
+      type,
     } = this.props;
     return (
       <Wrapper>
-        {range(9).map(i => <GridBall key={i} color={color} />)}
+        {range(9).map(i => <GridBall key={i} color={color} type={type} />)}
       </Wrapper>
     );
   }
