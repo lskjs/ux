@@ -137,6 +137,7 @@ class AdminMenu extends PureComponent {
         theme={theme}
       >
         {items.map((item) => {
+          if (item === 'divider') return <Divider key={`${item.key}-${item}`} />;
           if (item.submenu) {
             return (
               <SubMenu
