@@ -7,11 +7,13 @@ import cx from 'classnames';
 
 injectGlobal(`
   .ReactCollapse--collapse {
-    will-change: height;
+    will-change: height, border-bottom;
+    border-bottom: none !important;
   }
   .ReactCollapse--rest {
     overflow: visible !important;
     position: relative;
+    border-bottom: 1px solid #e3e3e3 !important;
     z-index: 11;
   }
 `);

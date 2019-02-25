@@ -11,7 +11,7 @@ import { allCountries } from './countriesData';
 import isNumberValid from './isNumberValid';
 import Input from '../../../Input';
 
-const isModernBrowser = Boolean(__CLIENT__ && document.createElement('input').setSelectionRange);
+const isModernBrowser = Boolean(__CLIENT__ && typeof document !== 'undefined' && document.createElement('input').setSelectionRange);
 
 
 const keys = {

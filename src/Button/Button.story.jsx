@@ -3,6 +3,7 @@ import { Badge, Icon } from 'antd';
 import Button from './Button';
 import ButtonGroup from './ButtonGroup';
 import Story from '../Story';
+import socialColors from '../utils/socialColors';
 
 export default ({ storiesOf }) => {
   storiesOf('Button', module)
@@ -45,17 +46,39 @@ export default ({ storiesOf }) => {
     .add('social', () => (
       <Story>
         <Button
-          colors={{
-            color: '#fff',
-            background: '#f70b00',
-            hoverColor: '#fff',
-            hoverBackground: '#990801',
-            activeColor: '#fff',
-            activeBackground: '#990801',
-          }}
+          colors={socialColors.youtube}
           size="large"
+          block
         >
           Youtube
+        </Button>
+        <Button
+          colors={socialColors.facebook}
+          size="large"
+          block
+        >
+          Facebook
+        </Button>
+        <Button
+          colors={socialColors.twitter}
+          size="large"
+          block
+        >
+          Twitter
+        </Button>
+        <Button
+          colors={socialColors.vk}
+          size="large"
+          block
+        >
+          VK
+        </Button>
+        <Button
+          colors={socialColors.telegram}
+          size="large"
+          block
+        >
+          Telegram
         </Button>
       </Story>
     ))
