@@ -5,6 +5,7 @@ import moment from 'moment';
 import HighlightedCell from '../../../UI/atoms/HighlightedCell';
 import CalendarBase from './antd-calendar';
 
+
 class Calendar extends PureComponent {
   static isAnyTypeDate(f) {
     return (new Date(f)).getTime() > 0;
@@ -19,6 +20,19 @@ class Calendar extends PureComponent {
       validValue = moment(new Date(props.defaultValue));
     }
     return validValue;
+  }
+  @autobind
+  disabledDate(current) {
+    const { highlightedDates } = this.props;
+    current = (moment(current)).startOf('day').valueOf();
+
+    for (let highDate of highlightedDates) {
+      highDate = moment(highDate).startOf('day').valueOf();
+      if (highDate === current) {
+        return false;
+      }
+    }
+    return true;
   }
   render() {
     const {
@@ -51,6 +65,7 @@ class Calendar extends PureComponent {
           if (isValid) return <HighlightedCell />;
           return '';
         }}
+        disabledDate={this.disabledDate}
         value={this.validationDate(field.value)}
         fullscreen={false}
       />

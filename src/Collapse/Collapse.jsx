@@ -71,7 +71,7 @@ class Collapse extends PureComponent {
     }
     this.timeoutId = setTimeout(() => {
       this.setState({ rest });
-    }, 1000);
+    }, 500);
   }
 
   render() {
