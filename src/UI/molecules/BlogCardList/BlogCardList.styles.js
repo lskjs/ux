@@ -9,6 +9,8 @@ export const ImageContainer = styled(dynamicTag)`
   max-width: 100%;
   height: 100%;
   padding: 12px;
+  max-height: 235px;
+  overflow: hidden;
   /* background-color: ${p => p.theme.colors.lighterPrimary}; */
   @media screen and (min-width: 768px) {
     flex: 0 0 30%;
@@ -33,9 +35,10 @@ export const Body = styled('div')`
 `;
 
 export const Image = styled('img')`
+  height: 100%;
   width: 100%;
   max-width: 100%;
-  object-fit: cover;
+  object-fit: ${p => p.objectFit || 'cover'};
   @media screen and (min-width: 768px) {
     height: 100%;
     border-radius: ${p => p.theme.borderRadius} 0 0 ${p => p.theme.borderRadius};
