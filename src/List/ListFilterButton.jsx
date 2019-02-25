@@ -27,6 +27,7 @@ class FilterButton extends Component {
         {/* <Badge count={listStore.hasFilter ? 1 : 0}> */}
         <Badge count={badge}>
           <List.Button
+            className="d-none d-lg-flex"
             iconLeft={<TuneIcon />}
             paint="primary"
             view="text"

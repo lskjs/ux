@@ -14,3 +14,4 @@ export default styled('div')`
   margin: auto;
   border: 5px solid #e6f7ff;
 `;
+
