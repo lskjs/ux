@@ -1,4 +1,4 @@
-import React, { Component, PureComponent } from 'react';
+import React, { Component } from 'react';
 import isFunction from 'lodash/isFunction';
 import { inject, observer } from 'mobx-react';
 import createForm from './createForm';
