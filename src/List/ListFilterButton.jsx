@@ -7,9 +7,9 @@ import If from 'react-if';
 import TuneIcon from 'react-icons2/mdi/tune';
 import isEmpty from '../utils/isEmpty';
 import T from '../T';
+// import withResponsive from '../Button/withResponsive';
 import ListFilterModal from './ListFilterModal';
 import { contextToProps } from './List.context';
-import { filterButton } from './List.styles';
 
 @contextToProps('List', 'isFilterModal')
 @inject('listStore')
@@ -20,31 +20,36 @@ class FilterButton extends Component {
       List, listStore, isFilterModal,
     } = this.props;
     const badge = listStore.hasFilter ? filter(toJS(listStore.filter), a => !isEmpty(a)).length : 0;
-    const button = (
-      <Badge count={badge}>
-        <List.Button
-          className={filterButton}
-          iconLeft={<TuneIcon />}
-          paint="primary"
-          view="text"
-          bordered
-          style={{ backgroundColor: listStore.showFilter ? '#F0F0FF' : '' }}
-          onClick={isFilterModal ? null : listStore.toggleFilter}
-        >
-          <T name="lskList.filterButton" />
-        </List.Button>
-      </Badge>
-    );
+    // const Button = withResponsive(List.Button);
+
     return (
       <React.Fragment>
         <If condition={isFilterModal}>
           <ListFilterModal>
-            {button}
+            <Badge count={badge} className="d-md-none">
+              <List.Button
+                icon={<TuneIcon />}
+                paint="primary"
+                view="text"
+                bordered
+                style={{ backgroundColor: listStore.showFilter ? '#F0F0FF' : '' }}
+                onClick={listStore.showFilter ? listStore.toggleFilter : null}
+              />
+            </Badge>
           </ListFilterModal>
         </If>
-        <If condition={!isFilterModal}>
-          {button}
-        </If>
+        <Badge count={badge} className={isFilterModal ? 'd-none d-md-flex' : null}>
+          <List.Button
+            iconLeft={<TuneIcon />}
+            paint="primary"
+            view="text"
+            bordered
+            style={{ backgroundColor: listStore.showFilter ? '#F0F0FF' : '' }}
+            onClick={listStore.toggleFilter}
+          >
+            <T name="lskList.filterButton" />
+          </List.Button>
+        </Badge>
       </React.Fragment>
     );
   }

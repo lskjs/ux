@@ -284,16 +284,4 @@ export const modalStyle = css`
   }
 `;
 
-export const modalButton = css`
-  display: flex;
-  @media screen and (min-width: 768px){
-    display: none;
-  }
-`;
 
-export const filterButton = css`
-  display: flex;
-  @media screen and (max-width: 768px){
-    display: none;
-  }
-`;
