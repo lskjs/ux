@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
-import TuneIcon from 'react-icons2/mdi/tune';
-import T from '../T';
 import { contextToProps } from './List.context';
-import Button from '../Button';
-import ListFilterModal from './ListFilterModal';
 
 @contextToProps('List', 'show', 'FilterForm')
 @inject('listStore', 'i18')
@@ -14,6 +10,7 @@ class ListSearch extends Component {
     const {
       i18, List, listStore, show, FilterForm, ...props
     } = this.props;
+    console.log(this.props);
     return (
       <List.SearchWrapper
         current={listStore.items.length}
@@ -23,23 +20,7 @@ class ListSearch extends Component {
         value={listStore.search || ''}
         canClear={!!listStore.search}
         onClear={() => listStore.setSearch(null)}
-        // actions={show.filterButton && <List.FilterButton />}
-        actions={show.filterButton &&
-          <React.Fragment>
-            <ListFilterModal>
-              <Button
-                className="d-lg-none"
-                iconLeft={<TuneIcon />}
-                paint="primary"
-                view="text"
-                bordered
-              >
-                <T name="lskList.filterButton" />
-              </Button>
-            </ListFilterModal>
-            <List.FilterButton />
-          </React.Fragment>
-        }
+        actions={show.filterButton && <List.FilterButton />}
         placeholder={i18.t('lskList.searchPlaceholder')}
         {...props}
       />

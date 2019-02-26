@@ -1,9 +1,14 @@
 import React from 'react';
+import Plus from 'react-icons2/mdi/plus';
+
 import { Badge, Icon } from 'antd';
 import Button from './Button';
 import ButtonGroup from './ButtonGroup';
 import Story from '../Story';
 import socialColors from '../utils/socialColors';
+import withResponsive from './withResponsive';
+
+const ResponsiveButton = withResponsive(Button);
 
 export default ({ storiesOf }) => {
   storiesOf('Button', module)
@@ -136,6 +141,17 @@ export default ({ storiesOf }) => {
           <Button paint="warning">Warning</Button>
           <Button paint="danger">Danger</Button>
         </ButtonGroup>
+      </Story>
+    ))
+    .add('withResponsive', () => (
+      <Story>
+        <ResponsiveButton
+          paint="primary"
+          size="small"
+          icon={<Plus />}
+        >
+          Responsive
+        </ResponsiveButton>
       </Story>
     ))
     .add('badge status', () => (

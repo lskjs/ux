@@ -18290,3 +18290,7 @@ li.ant-select-tree-treenode-disabled > .ant-select-tree-node-content-wrapper:hov
 .ant-layout.ant-layout-has-sider > .ant-layout-content {
   overflow-x: inherit;
 }
+.ant-fullcalendar-disabled-cell > .ant-fullcalendar-date > .ant-fullcalendar-value:hover,
+.ant-fullcalendar-disabled-cell > .ant-fullcalendar-date > .ant-fullcalendar-value:active {
+  background-color: transparent;
+}
