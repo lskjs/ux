@@ -103,7 +103,7 @@ class List extends Component {
   render() {
     const {
       debug, columns, show: customShow = {}, pageSize = 10, paginatorProps = {},
-      Item, FilterForm, HeaderItem, Tags = this.constructor.Tags, Tag = this.constructor.Tag,
+      Item, FilterForm, HeaderItem, Tags = this.constructor.Tags, Tag = this.constructor.Tag, isFilterModal,
     } = this.props;
 
     let { listStore } = this.props;
@@ -194,6 +194,7 @@ class List extends Component {
           Tags,
           Tag,
           HeaderItem,
+          isFilterModal,
           paginatorProps,
           debug,
         }}

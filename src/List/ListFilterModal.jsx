@@ -7,6 +7,7 @@ import Modal, {
   Title,
   Content,
 } from '../Modal2';
+import { modalStyle } from './List.styles';
 
 @contextToProps('FilterForm')
 @inject('listStore')
@@ -18,14 +19,13 @@ class ListFilterModal extends Component {
     } = this.props;
     return (
       <Modal
-        size="large"
         trigger={children}
       >
         {() => {
           return (
             <React.Fragment>
               <Title><T name="lskList.filterButton" /></Title>
-              <Content>
+              <Content className={modalStyle}>
                 <FilterForm
                   ref={this.form}
                   enableReinitialize
