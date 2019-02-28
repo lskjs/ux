@@ -18294,3 +18294,7 @@ li.ant-select-tree-treenode-disabled > .ant-select-tree-node-content-wrapper:hov
 .ant-fullcalendar-disabled-cell > .ant-fullcalendar-date > .ant-fullcalendar-value:active {
   background-color: transparent;
 }
+.ant-fullcalendar-cell > .ant-fullcalendar-date > .ant-fullcalendar-value {
+  position: relative;
+  z-index: 1;
+}
