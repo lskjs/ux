@@ -46,7 +46,7 @@ export default (component = 'input') => (
       opacity: 0.5 !important;
       color: #9b9b9b !important;
       font-family: ${p => p.theme.fontFamily};
-      font-size: 14px !important;
+      font-size: 13px !important;
       line-height: 1.43 !important;
     }
 
@@ -54,7 +54,7 @@ export default (component = 'input') => (
       opacity: 0.5 !important;
       color: #9b9b9b !important;
       font-family: ${p => p.theme.fontFamily};
-      font-size: 14px !important;
+      font-size: 13px !important;
       line-height: 1.43 !important;
     }
 
@@ -62,7 +62,7 @@ export default (component = 'input') => (
       opacity: 0.5 !important;
       color: #9b9b9b !important;
       font-family: ${p => p.theme.fontFamily};
-      font-size: 14px !important;
+      font-size: 13px !important;
       line-height: 1.43 !important;
     }
 
@@ -70,7 +70,7 @@ export default (component = 'input') => (
       opacity: 0.5 !important;
       color: #9b9b9b !important;
       font-family: ${p => p.theme.fontFamily};
-      font-size: 14px !important;
+      font-size: 13px !important;
       line-height: 1.43 !important;
     }
 
