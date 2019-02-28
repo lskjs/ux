@@ -174,10 +174,14 @@
 
 .ant-layout.ant-layout-has-sider > .ant-layout,
 .ant-layout.ant-layout-has-sider > .ant-layout-content {
-  overflow-x: inherit;
+  overflow-x: hidden !important;
 }
 
 .ant-fullcalendar-disabled-cell > .ant-fullcalendar-date > .ant-fullcalendar-value:hover,
 .ant-fullcalendar-disabled-cell > .ant-fullcalendar-date > .ant-fullcalendar-value:active {
   background-color: transparent;
+}
+.ant-fullcalendar-cell > .ant-fullcalendar-date > .ant-fullcalendar-value {
+  position: relative;
+  z-index: 1;
 }

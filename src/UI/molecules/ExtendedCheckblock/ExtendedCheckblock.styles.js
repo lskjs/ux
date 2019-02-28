@@ -36,11 +36,17 @@ export const Block = styled('div')`
   &:not(:last-child) {
     margin-bottom: 8px;
   }
+  ${p => (p.hasChildren && `
+    ${General} {
+      > * {
+        margin-bottom: 0 !important;
+      }
+    }
+  `)}
   ${p => (p.checked && `
     ${General} {
       > * {
         border-radius: 3px 3px 0 0;
-        margin-bottom: 0 !important;
       }
     }
     ${Additional} {
