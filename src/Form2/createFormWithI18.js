@@ -9,7 +9,7 @@ const createFormWithI18 = (callback) => {
   }
 
   @inject('i18', 'config', 'user')
-  @observer
+  // @observer
   class Component2 extends Component {
     shouldComponentUpdate(nextProps) {
       return !!(nextProps.hash && this.props.hash && nextProps.hash !== this.props.hash);

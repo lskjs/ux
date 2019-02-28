@@ -23,8 +23,9 @@ class Calendar extends PureComponent {
   }
   @autobind
   disabledDate(current) {
-    const { highlightedDates } = this.props;
+    const { highlightedDates = [] } = this.props;
     current = (moment(current)).startOf('day').valueOf();
+    if (!Array.isArray(highlightedDates)) return false;
 
     for (let highDate of highlightedDates) {
       highDate = moment(highDate).startOf('day').valueOf();

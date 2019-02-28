@@ -1,23 +1,23 @@
 import React, { Component } from 'react';
 import { toJS } from 'mobx';
 import { inject, observer } from 'mobx-react';
+import If from 'react-if';
 import Collapse from '../Collapse';
 import { contextToProps } from './List.context';
-import If from 'react-if';
 import DEV from '../DEV';
 
 @contextToProps('List', 'FilterForm', 'debug')
 @inject('listStore')
 @observer
 class ListFilter extends Component {
-  constructor() {
-    super();
-    this.form = React.createRef();
-    setTimeout(() => {
+  // constructor() {
+  //   super();
+  //   this.form = React.createRef();
+  //   setTimeout(() => {
 
-      __DEV__ && console.log('this.form', this.form);
-    }, 1000);
-  }
+  //     __DEV__ && console.log('this.form', this.form);
+  //   }, 1000);
+  // }
   render() {
     const {
       List,

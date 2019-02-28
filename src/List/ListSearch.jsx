@@ -10,7 +10,6 @@ class ListSearch extends Component {
     const {
       i18, List, listStore, show, FilterForm, ...props
     } = this.props;
-    console.log(this.props);
     return (
       <List.SearchWrapper
         current={listStore.items.length}
