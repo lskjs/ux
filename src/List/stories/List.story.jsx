@@ -117,7 +117,6 @@ export default ({ storiesOf }) => {
           Item={Item}
           FilterForm={FilterForm}
           columns={columns}
-          isFilterModal
         />
         <DebugListStore store={listStore} />
       </Story>
