@@ -8,7 +8,7 @@ import { contextToProps } from './List.context';
 class ListSearch extends Component {
   render() {
     const {
-      i18, List, listStore, show, FilterForm, ...props
+      i18, List, listStore, show, ...props
     } = this.props;
     return (
       <List.SearchWrapper

@@ -55,6 +55,7 @@ class Modal2 extends PureComponent {
   static InnerWrapper = InnerWrapper;
   static CloseIcon = ModalCloseIcon;
   static Inner = ModalInner;
+  static defaultStyles = ReactModal.defaultStyles;
 
   constructor(props) {
     super(props);
