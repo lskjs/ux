@@ -7,6 +7,7 @@ import createForm from '../createForm';
 import Input from '../controls/Input';
 import Select from '../controls/Select';
 import Tags from '../controls/Tags';
+import PhoneInput from '../controls/PhoneInput';
 import FormDebug from '../FormDebug';
 import PercentSlider from '../controls/PercentSlider/PercentSlider';
 
@@ -18,6 +19,7 @@ const InputFormView = (props) => {
       <Field {...props.controls.select} />
       <Field {...props.controls.tags} />
       <Field {...props.controls.slider} />
+      <Field {...props.controls.phone} />
       <FormDebug {...props} />
     </Form>
   );
@@ -47,6 +49,10 @@ const controls = {
   slider: {
     title: 'PercentSlider',
     component: PercentSlider,
+  },
+  phone: {
+    title: 'PhoneInput',
+    component: PhoneInput,
   },
 };
 const SampleForm = createForm({

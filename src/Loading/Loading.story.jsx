@@ -1,24 +1,20 @@
 import React from 'react';
-import Story from '../Story';
+import ReloadIcon from 'react-icons2/mdi/reload';
 import Loading from './Loading';
-import LoadingDots from '../LoadingDots';
+import Story from '../Story';
 
 export default ({ storiesOf }) => (
   storiesOf('Loading', module)
-    .add('Loading', () => (
+    .add('svg default', () => (
       <Story>
-        <Loading />
+        <Loading type="svg" />
       </Story>
     ))
-    .add('Loading full', () => (
+    .add('custom', () => (
       <Story>
-        <Loading full />
-      </Story>
-    ))
-    .add('LoadingDots', () => (
-      <Story>
-        <LoadingDots />
+        <Loading
+          icon={<ReloadIcon />}
+        />
       </Story>
     ))
 );
-

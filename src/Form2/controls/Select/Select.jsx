@@ -128,7 +128,7 @@ class Select extends Component {
         classNamePrefix="react-select"
         cacheOptions={async}
         defaultOptions={async}
-        closeMenuOnSelect={!isMulti}
+        closeMenuOnSelect={false}
         placeholder={placeholder}
         isMulti={isMulti}
         {...field}
