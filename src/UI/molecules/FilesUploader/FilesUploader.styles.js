@@ -148,7 +148,6 @@ padding: 12px 16px;
 
 export const Block = styled('div')`
   width: 100%;
-  height: 138px;
   padding: 0;
   border-radius: 3px;
   background-color: #ffffff;

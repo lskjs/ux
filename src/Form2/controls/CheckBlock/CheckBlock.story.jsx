@@ -20,7 +20,7 @@ const CheckBlockForm = createForm({
   view: CheckBlockViewForm,
   controls: {
     checkBlock: {
-      title: 'checkBlock',
+      // title: 'checkBlock',
       component: CheckBlock,
       label: 'test',
       info: 'this is info',

@@ -13,7 +13,7 @@ const CheckBlock = ({
     onChange: (value) => {
       form.setFieldValue(field.name, value);
     },
-    label: props.title || props.name,
+    label: props.label || props.title || props.name,
     info: props.info,
   };
   return (
