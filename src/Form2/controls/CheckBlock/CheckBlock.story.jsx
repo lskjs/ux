@@ -24,6 +24,7 @@ const CheckBlockForm = createForm({
       component: CheckBlock,
       label: 'test',
       info: 'this is info',
+      // children: 'asd',
       block: true,
     },
     input: {

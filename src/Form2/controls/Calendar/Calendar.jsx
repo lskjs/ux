@@ -27,10 +27,12 @@ class Calendar extends PureComponent {
     current = (moment(current)).startOf('day').valueOf();
     if (!Array.isArray(highlightedDates)) return false;
 
-    for (let highDate of highlightedDates) {
-      highDate = moment(highDate).startOf('day').valueOf();
-      if (highDate === current) {
-        return false;
+    if (highlightedDates) {
+      for (let highDate of highlightedDates) {
+        highDate = moment(highDate).startOf('day').valueOf();
+        if (highDate === current) {
+          return false;
+        }
       }
     }
     return true;
