@@ -28,7 +28,7 @@ class ListFilter extends Component {
       // container,
     } = this.props;
     if (!FilterForm) return null; // <DEV json="!FilterForm" />;
-    const isFilterModal = 1;
+    const isFilterModal = 0;
     const { showFilter } = listStore;
     // const showFilter = 1;
     return (
