@@ -22,6 +22,7 @@ const PhoneInputForm = createForm({
     phoneInput: {
       title: 'PhoneInput',
       component: PhoneInput,
+      defaultCountry: null,
     },
   },
 });
