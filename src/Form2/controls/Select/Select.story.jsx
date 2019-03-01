@@ -328,7 +328,7 @@ const SelectForm = createForm({
         value: id,
         title: `The ${id}`,
       })),
-      menuIsOpen: true,
+      // menuIsOpen: true,
     },
     select2: {
       title: 'The Select2: without title',

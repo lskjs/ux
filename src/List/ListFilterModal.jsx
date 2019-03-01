@@ -15,28 +15,25 @@ import { modalStyle } from './List.styles';
 class ListFilterModal extends Component {
   render() {
     const {
-      listStore, FilterForm, children,
+      listStore, FilterForm, children, ...props
     } = this.props;
     return (
       <Modal
         trigger={children}
+        {...props}
       >
-        {() => {
-          return (
-            <React.Fragment>
-              <Title><T name="lskList.filterButton" /></Title>
-              <Content className={modalStyle}>
-                <FilterForm
-                  ref={this.form}
-                  enableReinitialize
-                // initialValues={listStore.filter}
-                  initialValues={toJS(listStore.filter)}
-                  onChange={listStore.setFilter}
-                />
-              </Content>
-            </React.Fragment>
-          );
-        }}
+        {() => (
+          <React.Fragment>
+            <Title><T name="lskList.filterButton" /></Title>
+            <Content className={modalStyle}>
+              <FilterForm
+                enableReinitialize
+                initialValues={toJS(listStore.filter)}
+                onChange={listStore.setFilter}
+              />
+            </Content>
+          </React.Fragment>
+        )}
       </Modal>
     );
   }
