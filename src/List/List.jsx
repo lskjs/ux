@@ -48,6 +48,7 @@ const defaultShow = {
   /** */ sticky: true,
   /** */ search: true,
   /** */ /** */ filterButton: true,
+  /** */ /** */ filterModal: true,
   /** */ tags: true,
 
   /** body */

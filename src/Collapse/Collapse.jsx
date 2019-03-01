@@ -75,8 +75,8 @@ class Collapse extends PureComponent {
   }
 
   render() {
+    const { children, type, ...props } = this.props;
     const { show, rest } = this.state;
-    const { children, type } = this.props;
     let Wrapper;
 
     if (type === 'collapse') {
@@ -94,6 +94,7 @@ class Collapse extends PureComponent {
     }
     return (
       <Wrapper
+        {...props}
         isOpened={show}
         forceInitialAnimation={type === 'collapseUnmount'}
         onRender={this.handleRenderer}

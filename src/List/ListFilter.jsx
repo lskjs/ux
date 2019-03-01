@@ -4,6 +4,7 @@ import { inject, observer } from 'mobx-react';
 import If from 'react-if';
 import Collapse from '../Collapse';
 import { contextToProps } from './List.context';
+import ListFilterModal from './ListFilterModal';
 import DEV from '../DEV';
 
 @contextToProps('List', 'FilterForm', 'debug')
@@ -27,22 +28,40 @@ class ListFilter extends Component {
       // container,
     } = this.props;
     if (!FilterForm) return null; // <DEV json="!FilterForm" />;
-
+    const isFilterModal = 1;
+    const { showFilter } = listStore;
+    // const showFilter = 1;
     return (
-      <Collapse show={listStore.showFilter} type="collapse">
-        <List.FilterWrapper>
-          <FilterForm
-            ref={this.form}
-            enableReinitialize
-          // initialValues={listStore.filter}
-            initialValues={toJS(listStore.filter)}
-            onChange={listStore.setFilter}
+      <React.Fragment>
+        <If condition={isFilterModal}>
+          <ListFilterModal
+            className="d-md-none"
+            // overlayClassName="d-md-none"
+            // overlayClassName="hjkbhkj"
+            visible={showFilter}
+            onClose={listStore.toggleFilter}
           />
-          <If condition={debug}>
-            <DEV json={listStore.filter} />
-          </If>
-        </List.FilterWrapper>
-      </Collapse>
+        </If>
+        <div className={isFilterModal ? 'd-none d-md-block' : null}>
+          <Collapse
+            show={showFilter}
+            type="collapse"
+          >
+            <List.FilterWrapper>
+              <FilterForm
+                ref={this.form}
+                enableReinitialize
+              // initialValues={listStore.filter}
+                initialValues={toJS(listStore.filter)}
+                onChange={listStore.setFilter}
+              />
+              <If condition={debug}>
+                <DEV json={listStore.filter} />
+              </If>
+            </List.FilterWrapper>
+          </Collapse>
+        </div>
+      </React.Fragment>
     );
   }
 }

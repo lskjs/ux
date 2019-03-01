@@ -61,6 +61,13 @@ class Modal2 extends PureComponent {
     this.state = { visible: props.defaultVisible };
   }
 
+  static getDerivedStateFromProps(props) {
+    if (typeof props.visible === 'undefined') return null;
+    return {
+      visible: props.visible,
+    };
+  }
+
   @autobind
   toggle() {
     if (this.state.visible) {
