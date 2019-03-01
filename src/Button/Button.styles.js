@@ -102,7 +102,7 @@ const xsmallSize = css`
 `;
 
 const iconButtonLeft = props => css`
-  display: flex;
+  display: ${props.block ? 'flex' : 'inline-flex'};
   align-items: center;
   ${props.size === 'large' && `
     padding-left: 9px;
@@ -134,7 +134,7 @@ const iconButtonLeft = props => css`
 `;
 
 const iconButtonRight = props => css`
-  display: flex;
+  display: ${props.block ? 'flex' : 'inline-flex'};
   align-items: center;
   ${props.size === 'large' && `
     padding-top: 9px;
@@ -166,16 +166,16 @@ const iconButtonRight = props => css`
 `;
 
 const iconButtonSingle = props => css`
-  display: flex;
+  display: ${props.block ? 'flex' : 'inline-flex'};
   align-items: center;
   ${props.size === 'large' && `
-    padding-top: 12px !important;
-    padding-bottom: 12px !important;
-    padding-right: 12px !important;
-    padding-left: 12px !important;
+    padding-top: 6px !important;
+    padding-bottom: 6px !important;
+    padding-right: 6px !important;
+    padding-left: 6px !important;
 
     ${Icon} {
-      font-size: 20px;
+      font-size: 26px;
     }
   `}
   ${props.size === 'default' && `
@@ -227,6 +227,7 @@ const defaultSolidTheme = props => css`
   }
 
   ${props.disabled && `
+    pointer-events: none;
     color: rgba(74, 74, 74, 0.5) !important;
     background-color: rgba(255, 255, 255, 0.5) !important;
     &:hover,
@@ -314,6 +315,7 @@ const successSolidTheme = ({ theme }) => css`
 `;
 
 const viewTextDisabled = css`
+  pointer-events: none;
   color: rgba(74, 74, 74, 0.5) !important;
   background-color: transparent !important;
   &:hover,
@@ -418,6 +420,7 @@ const successTextTheme = ({ theme }) => css`
 `;
 
 const viewTransparentDisabled = css`
+  pointer-events: none;
   color: rgba(255, 255, 255, 0.5) !important;
   background-color: transparent !important;
   &:hover,
@@ -433,6 +436,7 @@ const viewTransparentDisabled = css`
 
 
 const viewTransparentDisabledDark = css`
+  pointer-events: none;
   color: rgba(0, 0, 0, 0.5) !important;
   background-color: transparent !important;
   &:hover,
@@ -523,7 +527,7 @@ export const Btn = styled(filteredTag)`
           ${Icon} {
             margin-left: 0;
           }
-          display: flex;
+          display: ${props.block ? 'flex' : 'inline-flex'};
           align-items: center;
           ${props.size === 'large' && `
             padding-top: 9px;
@@ -638,6 +642,7 @@ export const Btn = styled(filteredTag)`
   }}
   ${props => (props.disabled && `
     cursor: not-allowed !important;
+    pointer-events: none !important;
   `)}
   ${props => (props.block && `
     width: 100%;

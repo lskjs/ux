@@ -44,6 +44,7 @@ class Button extends PureComponent {
       'solid',
       'text',
       'transparent',
+      'transparentDark',
     ]),
     type: PropTypes.string,
     componentClass: PropTypes.any,
