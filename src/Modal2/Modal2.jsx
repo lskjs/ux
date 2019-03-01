@@ -3,7 +3,9 @@ import If from 'react-if';
 import cx from 'classnames';
 import pick from 'lodash/pick';
 import omit from 'lodash/omit';
+import merge from 'lodash/merge';
 import ReactModal from 'react-modal';
+import Outside from 'react-click-outside';
 import autobind from 'core-decorators/lib/autobind';
 
 import ModalSubtitle from '../UI/atoms/ModalSubtitle';
@@ -18,7 +20,6 @@ import ModalTrigger from './ModalTrigger';
 import ModalInner from './ModalInner';
 import ModalCloseIcon from './ModalCloseIcon';
 import {
-  overlayStyle,
   bodyModalStyle,
   modalStyle,
   modalSmall,
@@ -31,12 +32,25 @@ import { Provider } from './Modal2.context';
 
 const reactModalProps = ['isOpen', 'onAfterOpen', 'onRequestClose', 'closeTimeoutMS', 'style', 'contentLabel', 'portalClassName', 'overlayClassName', 'className', 'bodyOpenClassName', 'htmlOpenClassName', 'ariaHideApp', 'shouldFocusAfterRender', 'shouldCloseOnOverlayClick', 'shouldCloseOnEsc', 'shouldReturnFocusAfterClose', 'role', 'parentSelector', 'aria', 'data', 'overlayRef', 'contentRef'];
 
-ReactModal.defaultStyles.overlay.backgroundColor = 'rgba(0,0,0,.3)';
-ReactModal.defaultStyles.overlay.overflowY = 'auto';
-ReactModal.defaultStyles.overlay.display = 'flex';
-ReactModal.defaultStyles.overlay.flexDirection = 'column';
-ReactModal.defaultStyles.overlay.padding = '18px 12px';
-ReactModal.defaultStyles.overlay.zIndex = 12;
+ReactModal.defaultStyles = {
+  overlay: {
+    ...ReactModal.defaultStyles.overlay,
+    backgroundColor: 'rgba(0,0,0,.3)',
+    display: 'flex',
+    flexDirection: 'column',
+    zIndex: 2030,
+  },
+  content: {
+    ...ReactModal.defaultStyles.content,
+    background: 'none',
+    border: 'none',
+    padding: '20px 15px',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+  },
+};
 
 if (typeof (window) !== 'undefined') {
   ReactModal.setAppElement('body');
@@ -105,7 +119,7 @@ class Modal2 extends PureComponent {
       CloseIcon: this.constructor.CloseIcon || this.props.CloseIcon,
     };
     const {
-      className, size = 'default', closable = true, trigger, innerRef, ...props
+      className, size = 'default', closable = true, trigger, innerRef, style, ...props
     } = this.props;
     const modal = this;
     if (innerRef) innerRef(this);
@@ -117,24 +131,29 @@ class Modal2 extends PureComponent {
             isOpen={this.state.visible}
             onRequestClose={this.close}
             bodyOpenClassName={bodyModalStyle}
-            className={cx({
-              [className]: className,
-              [modalStyle]: true,
-              [modalSmall]: size === 'small',
-              [modalNormal]: size === 'default',
-              [modalLarge]: size === 'large',
-            })}
-            // overlayClassName={overlayStyle}
+            htmlOpenClassName={bodyModalStyle}
+            style={merge(style, Modal2.defaultStyles)}
             {...pick(props, reactModalProps)}
           >
-            <If condition={closable}>
-              <Modal.CloseIcon onClick={this.close} />
-            </If>
-            <Modal.InnerWrapper>
-              <Modal.Inner
-                {...omit(props, reactModalProps)}
-              />
-            </Modal.InnerWrapper>
+            <Outside
+              onClickOutside={this.close}
+              className={cx({
+                [className]: className,
+                [modalStyle]: true,
+                [modalSmall]: size === 'small',
+                [modalNormal]: size === 'default',
+                [modalLarge]: size === 'large',
+              })}
+            >
+              <If condition={closable}>
+                <Modal.CloseIcon onClick={this.close} />
+              </If>
+              <Modal.InnerWrapper>
+                <Modal.Inner
+                  {...omit(props, reactModalProps)}
+                />
+              </Modal.InnerWrapper>
+            </Outside>
           </ReactModal>
           <If condition={trigger}>
             <Modal.Trigger type="open">{trigger}</Modal.Trigger>
