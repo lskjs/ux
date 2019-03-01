@@ -8,7 +8,7 @@ import ReactAsyncSelect from 'react-select/lib/Async';
 import cx from 'classnames';
 import Up from 'react-icons2/mdi/chevron-up';
 import Down from 'react-icons2/mdi/chevron-down';
-import { getOptionValue, getReverseOptionValue, getNormalizedOptions } from './utils';
+import { getOptionValue, getReverseOptionValue, getNormalizedOptions, NULL_STRING } from './utils';
 
 import SingleValue from './SingleValue';
 import Option from './Option';
@@ -114,9 +114,10 @@ class Select extends Component {
       ValueContainer: CollapsedValueContainer,
       MultiValue: CollapsedMultiValue,
     };
-    const nullOption = find(normalizedOptions, o => o.value == null);
+    const nullOption = find(normalizedOptions, o => o.value === NULL_STRING);
+
     const defaultIsClearable = !props.required && !nullOption;
-    // console.log({ defaultIsClearable }, !props.required, !nullOption, nullOption);
+    console.log({ defaultIsClearable }, props.required, !!nullOption, !props.required, !nullOption, nullOption, props.isClearable, normalizedOptions);
     return (
       <SelectComponent
         blurInputOnSelect={blurInputOnSelect}
