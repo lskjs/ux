@@ -32,20 +32,28 @@ const defaultOptions = {
   horizontal: true,
 };
 
-export default {
-  scrollTo(id, options = defaultOptions) {
-    if (__DEV__) console.log('smooth-scroll.scrollTo', id);
-    // return false;
-    try {
+export default function scrollTo(id, options) {
+  if (__DEV__) console.log('scrollTo', id);
+  // return false;
+  try {
+    let value;
+    if (typeof id === 'number') {
+      value = id;
+    } else if (typeof id === 'string') {
       const anchor = document.querySelector(id);
       if (!anchor) return false;
-      // animateScrollTo(anchor, options);
-      animateScrollTo(anchor, {
-        offset: -200,
-      });
-      return true;
-    } catch (err) {
-      return false;
+    } else {
+      value = id;
     }
-  },
-};
+    // animateScrollTo(anchor, options);
+    animateScrollTo(value, {
+      // ...defaultOptions,
+      offset: -200,
+      ...options,
+    });
+    return true;
+  } catch (err) {
+    return false;
+  }
+}
+

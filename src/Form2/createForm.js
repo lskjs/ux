@@ -5,14 +5,13 @@ import pickBy from 'lodash/pickBy';
 import isFunction from 'lodash/isFunction';
 import map from 'lodash/map';
 import get from 'lodash/get';
-import omit from 'lodash/omit';
 import some from 'lodash/some';
 import cloneDeep from 'lodash/cloneDeep';
 import isEmpty from 'lodash/isEmpty';
 import { withFormik } from 'formik';
 import validate from 'validate.js';
 import Promise from 'bluebird';
-import scroll from '../utils/scroll';
+import scrollTo from '../utils/scrollTo';
 import getError from './getError';
 import DefaultFormGroup from '../Form2/FormGroup';
 import OnChangeListener from '../Form2/OnChangeListener';
@@ -163,7 +162,7 @@ const createForm = ({
           setStatus('success');
         } catch (err) {
           setFieldError('onSubmit', getError(err).message);
-          scroll.scrollTo(`#${getControlHtmlId('onSubmit')}`);
+          scrollTo(`#${getControlHtmlId('onSubmit')}`);
           // console.log({err});
           setStatus('error');
         }
