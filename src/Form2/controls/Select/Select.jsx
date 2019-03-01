@@ -86,11 +86,28 @@ class Select extends Component {
       className,
       components = {},
       styles = {},
+      isMulti,
       ...props
     } = this.props;
     const normalizedOptions = getNormalizedOptions(options, props);
     const value = getOptionValue(field ? field.value : propValue);
-    const option = async ? this.state.option : find(normalizedOptions, { value });
+    let option;
+    if (async) {
+      ({ option } = this.state);
+    } else if (!isMulti) {
+      option = find(normalizedOptions, { value });
+    } else if (isMulti) {
+      if (Array.isArray(this.state.option)) {
+        const values = this.state.option.map((el) => {
+          return el.value;
+        });
+        option = normalizedOptions.filter((el) => {
+          return values.includes(el.value);
+        });
+      } else {
+        option = [];
+      }
+    }
     const SelectComponent = async ? ReactAsyncSelect : ReactSelect;
     const hasError = field && field.name && !!get(form, `errors.${field.name}`);
     const collapsedComponents = {
@@ -100,7 +117,6 @@ class Select extends Component {
     const nullOption = find(normalizedOptions, o => o.value == null);
     const defaultIsClearable = !props.required && !nullOption;
     // console.log({ defaultIsClearable }, !props.required, !nullOption, nullOption);
-
     return (
       <SelectComponent
         blurInputOnSelect={blurInputOnSelect}
@@ -111,8 +127,9 @@ class Select extends Component {
         classNamePrefix="react-select"
         cacheOptions={async}
         defaultOptions={async}
-        closeMenuOnSelect={!props.isMulti}
+        closeMenuOnSelect={!isMulti}
         placeholder={placeholder}
+        isMulti={isMulti}
         {...field}
         {...props}
         components={{
