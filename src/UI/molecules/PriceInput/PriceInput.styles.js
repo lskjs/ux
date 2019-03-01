@@ -5,12 +5,12 @@ import { FormGroup } from 'react-bootstrap';
 export const InlineGroup = styled(FormGroup)`
   flex: 1;
   margin-bottom: 24px;
-  &:first-child {
+  /* &:first-child {
     margin-right: 12px;
   }
   &:last-child {
     margin-left: 12px;
-  }
+  } */
   @media screen and (max-width: 470px) {
     margin-left: 0 !important;
     margin-right: 0 !important;
