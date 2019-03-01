@@ -81,6 +81,7 @@ class ExtendedCheckblock extends PureComponent {
         checked={value}
         disabled={disabled}
         hasChildren={children}
+        type="button"
       >
         <General>
           <Item
