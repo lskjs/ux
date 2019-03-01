@@ -20,6 +20,9 @@ class ListFilterModal extends Component {
     return (
       <Modal
         trigger={children}
+        style={{
+          overlay: Modal.defaultStyles.overlay,
+        }}
         {...props}
       >
         {() => (

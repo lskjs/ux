@@ -36,8 +36,7 @@ class ListFilter extends Component {
         <If condition={isFilterModal}>
           <ListFilterModal
             className="d-md-none"
-            // overlayClassName="d-md-none"
-            // overlayClassName="hjkbhkj"
+            overlayClassName="d-md-none"
             visible={showFilter}
             onClose={listStore.toggleFilter}
           />
