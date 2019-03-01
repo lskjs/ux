@@ -117,11 +117,13 @@ class Select extends Component {
     const nullOption = find(normalizedOptions, o => o.value === NULL_STRING);
 
     const defaultIsClearable = !props.required && !nullOption;
-    console.log({ defaultIsClearable }, props.required, !!nullOption, !props.required, !nullOption, nullOption, props.isClearable, normalizedOptions);
+    const defaultIsSearchable = options.length > 10;
+    // console.log({ defaultIsClearable }, props.required, !!nullOption, !props.required, !nullOption, nullOption, props.isClearable, normalizedOptions);
     return (
       <SelectComponent
         blurInputOnSelect={blurInputOnSelect}
         // isClearable={defaultIsClearable}
+        isSearchable={defaultIsSearchable}
         isClearable={defaultIsClearable}
         arrowRenderer={e => (e.isOpen ? <Up /> : <Down />)}
         error={hasError}
