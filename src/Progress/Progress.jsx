@@ -1,17 +1,17 @@
 
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import Nanobar from 'nanobar';
-
+ 
 class Progress extends Component {
   nanobar = null;
-  state = { value: null };
+  state = { value: null, speed: null, global };
 
-  // static propTypes = {
-  //   progress: PropTypes.number.isRequired,
-  //   mountOnBody: PropTypes.bool,
-  //   className: PropTypes.string,
-  // };
+  static propTypes = {
+    progress: PropTypes.number.isRequired,
+    global: PropTypes.bool,
+    speed: PropTypes.number,
+  };
 
   constructor() {
     super();
@@ -19,25 +19,23 @@ class Progress extends Component {
   }
 
   componentDidMount() {
-    const { value, mountOnBody, className } = this.props;
-    // console.log(this.bar);
+    const { value, speed, global } = this.props;
 
     this.nanobar = new Nanobar({
-      classname: className,
-      target: mountOnBody
-        ? null
-        : this.bar.parentNode,
+      target: nano
     });
 
-    // this.setState({ value });
     this.state.value = value;
+    this.state.speed = speed;
     this.nanobar.go(value);
 
     this.timeout = setInterval(() => {
-      const value = this.state.value + 1;
+      const value = this.state.value + speed;
       this.setState({ value });
       this.nanobar.go(value);
     }, 1000);
+    global ? this.nanobar.el.style.position = 'fixed' 
+    : this.nanobar.el.parentNode.parentNode.style.position = 'relative'
   }
 
   componentWillReceiveProps({ value }) {
@@ -53,7 +51,9 @@ class Progress extends Component {
 
   render() {
     return (
-      <span ref={this.bar} />
+      <div id="nano" className="nano">
+        <span ref={this.bar} />
+      </div>
     );
   }
 }
