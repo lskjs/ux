@@ -362,6 +362,8 @@ const SelectForm = createForm({
         id,
         title: `User ${id}`,
       })),
+      hideSelectedOptions: false,
+      blurInputOnSelect: false,
     },
     multiselect2: {
       title: 'multiselect2: isMulti & hideSelectedOptions',
@@ -433,6 +435,7 @@ const SelectForm = createForm({
       component: Select,
       isMulti: true,
       hideSelectedOptions: false,
+      blurInputOnSelect: false,
       collapsed: true,
       options: range(1, 11).map(id => ({
         value: id,
