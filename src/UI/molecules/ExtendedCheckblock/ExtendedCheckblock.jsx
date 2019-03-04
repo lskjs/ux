@@ -73,6 +73,7 @@ class ExtendedCheckblock extends PureComponent {
       disabled,
       block,
       type,
+      height,
     } = this.props;
     const checkIcon = type === 'checkbox' ? <CheckboxCheck /> : <RadioCheck />;
     const blankIcon = type === 'checkbox' ? <CheckboxBlank /> : <RadioBlank />;
@@ -90,6 +91,7 @@ class ExtendedCheckblock extends PureComponent {
             onClick={this.handleClick}
             disabled={disabled}
             type="button"
+            style={{ height }}
           >
             <Header>
               <Icon>

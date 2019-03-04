@@ -78,7 +78,8 @@ export const Item = styled('button')`
   padding: 10px 8px 12px;
   outline: none;
   width: auto;
-  display: inline-block;
+  display: inline-flex;
+  flex-direction: column;
   margin-bottom: 8px;
   &:hover {
     background-color: #eff4fa;
