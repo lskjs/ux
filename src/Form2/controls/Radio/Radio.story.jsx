@@ -8,9 +8,13 @@ import FormDebug from '../../FormDebug';
 const RadioFormView = (props) => {
   return (
     <Form>
-      <Field {...props.controls.blue} />
-      <Field {...props.controls.black} />
-      <Field {...props.controls.green} />
+      <Field {...props.controls.get('blue')} />
+      <Field {...props.controls.get('black')} />
+      <Field {...props.controls.get('green')} />
+      
+      <Field {...props.controls.get('colors', 'blue')} />
+      <Field {...props.controls.get('colors', 'black')} />
+      <Field {...props.controls.get('colors', 'green')} />
       <FormDebug {...props} />
     </Form>
   );
@@ -20,19 +24,40 @@ const RadioForm = createForm({
   view: RadioFormView,
   controls: {
     blue: {
-      title: 'first value',
       component: Radio,
-      id: 1,
+      key: 'color',
+      value: 'blue',
+      title: 'first value',
     },
     black: {
-      title: 'second value',
       component: Radio,
-      id: 2,
+      key: 'color',
+      value: 'black',
+      title: 'second value',
     },
     green: {
-      title: 'third value',
       component: Radio,
-      id: 3,
+      key: 'color',
+      value: 'green',
+      title: 'third value',
+    },
+    color2: {
+      component: Radio,
+      title: 'Цвета',
+      options: [
+        {
+          value: 'blue',
+          title: 'first value',
+        },
+        {
+          value: 'black',
+          title: 'second value',
+        },
+        {
+          value: 'green',
+          title: 'third value',
+        },
+      ],
     },
   },
 });
