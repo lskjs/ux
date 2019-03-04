@@ -175,7 +175,8 @@ export const FilterWrapper = styled('div')`
   padding: 22px 12px 0;
   background-color: ${p => p.theme.colors.lightGray};
   position: relative;
-  bottom: 1px;
+  bottom: 1px
+  margin-top: 1px;
 `;
 
 export const FooterWrapper = styled('div')`
@@ -226,7 +227,7 @@ export const HeaderWrapper = styled('div')`
   background-color: ${p => p.theme.colors.white};
 
   > * {
-    border-bottom: 1px solid ${p => p.theme.colors.border};
+    box-shadow: inset 0 -1px 0 ${p => p.theme.colors.border};
   }
 
 ${p => (p.sticky && css`
