@@ -4,13 +4,13 @@ import Story from '../../../Story';
 import createForm from '../../createForm';
 import Radio from './Radio';
 import FormDebug from '../../FormDebug';
-import Switcher from '../../../Switcher/Switcher';
-import getOptions from '../../../getOptions';
+// import Switcher from '../../../Switcher/Switcher';
+// import getOptions from '../../../getOptions';
 
 const RadioFormView = (props) => {
   return (
     <Form>
-      {getOptions(props.controls.get('colors')).map(optionControl => (
+      {/* {getOptions(props.controls.get('colors')).map(optionControl => (
         <div>
           <div>
             <div>
@@ -18,7 +18,7 @@ const RadioFormView = (props) => {
             </div>
           </div>
         </div>
-      ))}
+      ))} */}
 
       <Field {...props.controls.get('colors', 'blue')} />
       <Field {...props.controls.get('colors', 'black')} />
