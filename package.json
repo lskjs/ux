@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/general",
-  "version": "0.15.244",
+  "version": "0.15.249",
   "author": "isuvorov",
   "license": "MIT",
   "dependencies": {
@@ -25,7 +25,6 @@
     "prismjs": "^1.15.0",
     "prop-types": "15.6.2",
     "rc-queue-anim": "^1.6.11",
-    "react-click-outside": "github:tj/react-click-outside",
     "react-collapse": "4.0.3",
     "react-currency-format": "^1.0.0",
     "react-custom-scrollbars": "4.2.1",

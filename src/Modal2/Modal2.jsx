@@ -5,9 +5,7 @@ import pick from 'lodash/pick';
 import omit from 'lodash/omit';
 import merge from 'lodash/merge';
 import ReactModal from 'react-modal';
-import Outside from 'react-click-outside';
 import autobind from 'core-decorators/lib/autobind';
-
 import ModalSubtitle from '../UI/atoms/ModalSubtitle';
 import ModalDescription from '../UI/atoms/ModalDescription';
 import ModalContent from '../UI/atoms/ModalContent';
@@ -19,6 +17,8 @@ import ModalTitle from '../UI/molecules/ModalTitle';
 import ModalTrigger from './ModalTrigger';
 import ModalInner from './ModalInner';
 import ModalCloseIcon from './ModalCloseIcon';
+import Outside from '../utils/react-click-outside';
+
 import {
   bodyModalStyle,
   modalStyle,

@@ -4,7 +4,8 @@ import cx from 'classnames';
 import autobind from 'core-decorators/lib/autobind';
 import ChevronDownIcon from 'react-icons2/mdi/chevron-down';
 import { Manager, Reference, Popper } from 'react-popper';
-import Outside from 'react-click-outside';
+
+import Outside from '../../../utils/react-click-outside';
 import { contentStyle, popperDisabledStyle, Content, Trigger as TriggerStyled, Icon } from './DropdownAsSelect.styles';
 
 class SelectFilter extends PureComponent {
@@ -92,13 +93,13 @@ class SelectFilter extends PureComponent {
                 type="button"
               >
                 {trigger}
-                <Icon>
+                  <Icon>
                   <ChevronDownIcon />
                 </Icon>
               </Trigger>
             )}
           </Reference>
-          <Popper
+            <Popper
             placement="bottom"
             eventsEnabled={open}
             modifiers={{
