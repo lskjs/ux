@@ -18,8 +18,12 @@ import CollapsedMultiValue from './CollapsedMultiValue';
 class Select extends Component {
   state = {};
   componentDidMount() {
-    const { loadOption, value, async } = this.props;
+    const {
+      loadOption, field, async, isMulti,
+    } = this.props;
+    const value = get(field, 'value');
     if (async && value && loadOption) {
+      if (isMulti && !value.length) return;
       this.initOption();
     }
   }
@@ -41,7 +45,8 @@ class Select extends Component {
     return false;
   }
   async initOption() {
-    const { loadOption, value } = this.props;
+    const { loadOption, field } = this.props;
+    const { value } = field;
     const option = await loadOption(value);
     this.setState({ option, initOption: true }); // eslint-disable-line react/no-unused-state
   }
@@ -90,8 +95,11 @@ class Select extends Component {
       ...props
     } = this.props;
     const normalizedOptions = getNormalizedOptions(options, props);
-    const value = getOptionValue(field ? field.value : propValue);
     let option;
+    let value;
+    if (!async) {
+      value = getOptionValue(field ? field.value : propValue);
+    }
     if (async) {
       ({ option } = this.state);
     } else if (!isMulti) {

@@ -35,6 +35,7 @@ const SelectFormView = (props) => {
       <h1>Асинхронные селекты</h1>
       <Field {...props.controls.asyncSelect} />
       <Field {...props.controls.asyncSelect2} />
+      <Field {...props.controls.asyncMultiSelect} />
       <hr />
       <h1>Кастомный дизайн</h1>
       <Field {...props.controls.games} />
@@ -517,13 +518,36 @@ const SelectForm = createForm({
           }))), 50);
         });
       },
-      // return range(start, start + 10).map(value => ({
-      //   value,
-      //   id: value,
-      //   image: `https://picsum.photos/40/40/?image=${value}`,
-      //   title: `User ${value}`,
-      // }));
-      // },
+    },
+    asyncMultiSelect: {
+      title: 'The asyncMultiSelect',
+      component: Select,
+      async: true,
+      isMulti: true,
+      loadOption: async (values) => {
+        if (Array.isArray(values)) {
+          return values.map((value) => {
+            return {
+              value,
+              id: value,
+              image: `https://picsum.photos/40/40/?image=${value}`,
+              label: `User ${value}`,
+            };
+          });
+        }
+        return [];
+      },
+      loadOptions: async (searchValue = '') => {
+        const start = searchValue.length;
+        return new Promise((resolve) => {
+          setTimeout(() => resolve(range(start, start + 10).map(value => ({
+            value,
+            id: value,
+            image: `https://picsum.photos/40/40/?image=${value}`,
+            title: `User ${value}`,
+          }))), 50);
+        });
+      },
     },
     asyncSelect2: {
       title: 'The asyncSelect2',
@@ -774,6 +798,8 @@ export default ({ storiesOf }) =>
             initialValues={{
               select4: 'two',
               asyncSelect2: 99,
+              asyncSelect: 1,
+              asyncMultiSelect: [4],
             }}
           />
         </Story>
