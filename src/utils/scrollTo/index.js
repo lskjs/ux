@@ -33,11 +33,13 @@ const defaultOptions = {
 };
 
 export default function scrollTo(id, options) {
-  if (__DEV__) console.log('scrollTo', id);
+  // if (__DEV__) console.log('scrollTo', id);
   // return false;
   try {
     let value;
-    if (typeof id === 'number') {
+    if (id == null) {
+      return false;
+    } else if (typeof id === 'number') {
       value = id;
     } else if (typeof id === 'string') {
       const anchor = document.querySelector(id);

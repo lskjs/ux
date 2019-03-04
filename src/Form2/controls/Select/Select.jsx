@@ -117,7 +117,7 @@ class Select extends Component {
     const nullOption = find(normalizedOptions, o => o.value === NULL_STRING);
 
     const defaultIsClearable = !props.required && !nullOption;
-    const defaultIsSearchable = options.length > 10;
+    const defaultIsSearchable = options && options.length > 10;
     // console.log({ defaultIsClearable }, props.required, !!nullOption, !props.required, !nullOption, nullOption, props.isClearable, normalizedOptions);
     return (
       <SelectComponent
