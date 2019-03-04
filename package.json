@@ -107,7 +107,8 @@
     "build-less": "lessc --js src/styles/src/antd/antd.less src/styles/lib/antd.g.css && lessc --js src/styles/src/antd/antdbase.less src/styles/lib/antdbase.g.css",
     "build-sass": "node-sass src/styles/src/bootstrap/bootstrap.scss src/styles/lib/bootstrap.g.css",
     "build-styles": "npm run build-less && npm run build-sass",
-    "prepublish": "npx npm-auto-version",
+    "prepublish2": "npx npm-auto-version",
+    "prepublish": "npm version patch",
     "postpublish": "git push origin --tags"
   }
 }
