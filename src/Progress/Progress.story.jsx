@@ -22,21 +22,65 @@ export default ({ storiesOf }) => (
     .add('50%', () => (
       <Story>
         <Wrapper>
-          <Progress value={50} speed={10} />
+          <Progress value={50} />
         </Wrapper>
       </Story>
     ))
     .add('isLoading', () => (
       <Story>
         <Wrapper>
-          <Progress value={30} speed={10} isLoading />
+          <Progress isLoading />
         </Wrapper>
       </Story>
     ))
-    .add('global', () => (
+    .add('isLoading from 30', () => (
       <Story>
         <Wrapper>
-          <Progress value={30} speed={1} isLoading global />
+          <Progress value={30} isLoading />
+        </Wrapper>
+      </Story>
+    ))
+    .add('deep wrapping', () => (
+      <Story>
+        <Wrapper>
+          <div>
+            aaaaa
+            <div>
+              bbbb
+              <div>
+                ccccc
+                <div>
+                  dddd
+                  <Progress value={30} isLoading />
+                  wwwwww
+                </div>
+                xxxxxx
+              </div>
+              yyyyy
+            </div>
+            zzzzz
+          </div>
+        </Wrapper>
+      </Story>
+    ))
+    .add('isLoading global', () => (
+      <Story>
+        <Wrapper>
+          <Progress isLoading global />
+        </Wrapper>
+      </Story>
+    ))
+    .add('custom speed', () => (
+      <Story>
+        <Wrapper>
+          <Progress value={30} speed={10} isLoading global />
+        </Wrapper>
+      </Story>
+    ))
+    .add('custom color', () => (
+      <Story>
+        <Wrapper>
+          <Progress value={30} speed={10} isLoading global color="#0000ff" />
         </Wrapper>
       </Story>
     ))
