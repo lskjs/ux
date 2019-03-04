@@ -23,10 +23,13 @@ class Calendar extends PureComponent {
   }
   @autobind
   disabledDate(current) {
-    const { highlightedDates = [] } = this.props;
+    const { highlightedDates = [], futureOnly } = this.props;
     current = (moment(current)).startOf('day').valueOf();
     if (!Array.isArray(highlightedDates)) return false;
 
+    if (futureOnly) {
+      return current < Date.now();
+    }
     if (highlightedDates) {
       for (let highDate of highlightedDates) {
         highDate = moment(highDate).startOf('day').valueOf();
