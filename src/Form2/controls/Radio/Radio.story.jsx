@@ -4,14 +4,22 @@ import Story from '../../../Story';
 import createForm from '../../createForm';
 import Radio from './Radio';
 import FormDebug from '../../FormDebug';
+import Switcher from '../../../Switcher/Switcher';
+import getOptions from '../../../getOptions';
 
 const RadioFormView = (props) => {
   return (
     <Form>
-      <Field {...props.controls.get('blue')} />
-      <Field {...props.controls.get('black')} />
-      <Field {...props.controls.get('green')} />
-      
+      {getOptions(props.controls.get('colors')).map(optionControl => (
+        <div>
+          <div>
+            <div>
+              <Field {...optionControl} />
+            </div>
+          </div>
+        </div>
+      ))}
+
       <Field {...props.controls.get('colors', 'blue')} />
       <Field {...props.controls.get('colors', 'black')} />
       <Field {...props.controls.get('colors', 'green')} />
@@ -23,6 +31,52 @@ const RadioFormView = (props) => {
 const RadioForm = createForm({
   view: RadioFormView,
   controls: {
+    // confirm: {
+    //   component: Bool,
+    //   view: Checkbox,
+    //   title: 'Privacy policy',
+    // },
+    // notification: {
+    //   component: Bool,
+    //   view: Switcher,
+    //   title: 'Enable notifications',
+    // },
+    // cpm: {
+    //   component: Bool,
+    //   view: Checkblock,
+    //   title: 'Is CPM offer',
+    // },
+    // colors: {
+    //   component: Group,
+    //   view: Checkbox,
+    //   multi: true,
+    //   options: [
+    //     {
+    //       value: '#ff0000',
+    //       title: 'Red',
+    //     },
+    //     {
+    //       value: '#00ff00',
+    //       title: 'Green',
+    //     },
+    //     {
+    //       value: '#0000ff',
+    //       title: 'Blue',
+    //     },
+    //   ],
+    // },
+    // adtypes: {
+    //   component: Group,
+    //   multi: true,
+    //   view: Checkblock,
+    //   options: ['preroll', 'postroll', 'midroll'],
+    // },
+    // adtype: {
+    //   component: Group,
+    //   view: Radio,
+    //   options: ['preroll', 'postroll', 'midroll'],
+    // },
+
     blue: {
       component: Radio,
       key: 'color',
