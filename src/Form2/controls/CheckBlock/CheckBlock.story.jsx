@@ -27,6 +27,7 @@ const CheckBlockForm = createForm({
       info: 'this is info',
       // children: 'asd',
       block: true,
+      type: 'radio',
     },
     input: {
       title: 'Input',

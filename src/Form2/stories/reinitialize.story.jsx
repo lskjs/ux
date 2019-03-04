@@ -6,12 +6,11 @@ import Story from '../../Story';
 import createForm from '../createForm';
 import Input from '../controls/Input';
 import Select from '../controls/Select';
+import CheckBlock from '../controls/CheckBlock';
 import Tags from '../controls/Tags';
 import PhoneInput from '../controls/PhoneInput';
 import FormDebug from '../FormDebug';
 import PercentSlider from '../controls/PercentSlider/PercentSlider';
-
-import CheckBlock from '../../Form2/controls/CheckBlock';
 
 const InputFormView = (props) => {
   return (
@@ -59,12 +58,12 @@ const controls = {
   },
   checkBlock: {
     // title: 'checkBlock',
-    type: 'radio',
     component: CheckBlock,
     label: 'test',
     info: 'this is info',
     // children: 'asd',
     block: true,
+    type: 'radio',
   },
 };
 const SampleForm = createForm({

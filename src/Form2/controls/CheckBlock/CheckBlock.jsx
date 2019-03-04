@@ -21,6 +21,7 @@ const CheckBlock = ({
       {...field}
       {...props}
       {...props2}
+      onChange={props.onChange || props2.onChange}
       children={props.children}  //eslint-disable-line
     />
   );
