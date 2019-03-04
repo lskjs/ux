@@ -11,6 +11,8 @@ import PhoneInput from '../controls/PhoneInput';
 import FormDebug from '../FormDebug';
 import PercentSlider from '../controls/PercentSlider/PercentSlider';
 
+import CheckBlock from '../../Form2/controls/CheckBlock';
+
 const InputFormView = (props) => {
   return (
     <Form>
@@ -20,6 +22,7 @@ const InputFormView = (props) => {
       <Field {...props.controls.tags} />
       <Field {...props.controls.slider} />
       <Field {...props.controls.phone} />
+      <Field {...props.controls.checkBlock} />
       <FormDebug {...props} />
     </Form>
   );
@@ -53,6 +56,15 @@ const controls = {
   phone: {
     title: 'PhoneInput',
     component: PhoneInput,
+  },
+  checkBlock: {
+    // title: 'checkBlock',
+    type: 'radio',
+    component: CheckBlock,
+    label: 'test',
+    info: 'this is info',
+    // children: 'asd',
+    block: true,
   },
 };
 const SampleForm = createForm({
@@ -116,6 +128,12 @@ class Container extends Component {
                       </button>
                       <button onClick={() => { delete this.state[name]; this.setState({ q: 1 }); }}>
                         delete {name}
+                      </button>
+                      <button onClick={() => this.setState({ [name]: true })}>
+                        true {name}
+                      </button>
+                      <button onClick={() => this.setState({ [name]: false })}>
+                        false {name}
                       </button>
                     </div>
                   );

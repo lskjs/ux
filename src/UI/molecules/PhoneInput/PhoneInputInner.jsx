@@ -57,7 +57,6 @@ class ReactPhoneInput extends Component {
     const inputNumber = this.props.value || '';
     const onlyCountries = excludeCountries(getOnlyCountries(props.onlyCountries), props.excludeCountries);
     const selectedCountryGuess = find(onlyCountries, { iso2: this.props.defaultCountry }) || { iso2: onlyCountries[0].iso2 };
-    console.log(selectedCountryGuess);
     const selectedCountryGuessIndex = findIndex(allCountries, selectedCountryGuess);
     const dialCode = (
       selectedCountryGuess

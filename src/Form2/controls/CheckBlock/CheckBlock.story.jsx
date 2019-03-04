@@ -21,6 +21,7 @@ const CheckBlockForm = createForm({
   controls: {
     checkBlock: {
       // title: 'checkBlock',
+      type: 'radio',
       component: CheckBlock,
       label: 'test',
       info: 'this is info',
