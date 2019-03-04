@@ -109,6 +109,7 @@
     "build-styles": "npm run build-less && npm run build-sass",
     "prepublish2": "npx npm-auto-version",
     "prepublish": "npm version patch",
+    "patch": "npm version patch",
     "postpublish": "git push origin --tags"
   }
 }
