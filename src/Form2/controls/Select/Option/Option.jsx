@@ -36,6 +36,7 @@ class Option extends Component {
         onClick={() => selectOption(data)}
         focused={isFocused}
         selected={isSelected}
+        type="button"
       >
         <If condition={data.image}>
           {typeof data.image === 'string' ? <Image src={data.image} /> : data.image}
