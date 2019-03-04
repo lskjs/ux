@@ -175,7 +175,7 @@ export const FilterWrapper = styled('div')`
   padding: 22px 12px 0;
   background-color: ${p => p.theme.colors.lightGray};
   position: relative;
-  bottom: 1px
+  bottom: 1px;
   margin-top: 1px;
 `;
 
