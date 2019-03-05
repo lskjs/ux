@@ -3,7 +3,7 @@ import Story from '../../../Story';
 import Notification from './Notification';
 
 export default ({ storiesOf }) => {
-  storiesOf('Notification', module)
+  storiesOf('Toast/Notification', module)
     .add('Error', () => (
       <Story>
         <Notification
