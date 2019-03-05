@@ -133,7 +133,7 @@ export default ({ storiesOf }) => {
     ))
     .add('ButtonGroup', () => (
       <Story>
-        <ButtonGroup>
+        <ButtonGroup flexDirection="column">
           <Button>Default</Button>
           <Button paint="primary">Primary</Button>
           <Button paint="info">Info</Button>

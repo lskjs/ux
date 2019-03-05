@@ -5,11 +5,6 @@ import LoaderIcon from './LoaderIcon';
 
 const styles = {
   inner: {
-    position: 'fixed',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
     zIndex: 3000,
     backgroundColor: 'rgba(255, 255, 255, 0.95)',
     display: 'flex',
@@ -41,11 +36,13 @@ class Loading extends PureComponent {
     text: PropTypes.any,
     icon: PropTypes.any,
     iconPath: PropTypes.string,
+    full: PropTypes.bool,
   }
   static defaultProps = {
     disabled: false,
     icon: <LoaderIcon />,
     iconPath: null,
+    full: false,
     text: <T name="lskComponents.fullScreenLoader.loading" />,
   }
   render() {
@@ -54,6 +51,7 @@ class Loading extends PureComponent {
       iconPath,
       disabled,
       text,
+      full,
     } = this.props;
     if (disabled) return false;
     let iconComponent = (
@@ -69,6 +67,16 @@ class Loading extends PureComponent {
           style={styles.icon}
         />
       );
+    }
+    if (full) {
+      styles.inner = {
+        ...styles.inner,
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+      };
     }
     return (
       <div style={styles.inner}>

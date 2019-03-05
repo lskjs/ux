@@ -43,6 +43,7 @@ class FlagIcon extends Component {
       <img
         style={{
           height: '16px',
+          border: '1px solid #e3e3e3',
         }}
         src={flag}
         alt={t(`country.${country.code}`)}
