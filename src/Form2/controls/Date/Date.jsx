@@ -10,9 +10,9 @@ const DatePicker = (data) => {
     form,
     ranged,
     t,
+    futureOnly,
     ...props
   } = data;
-
   const dateFormat = t && t('format.date') || 'DD.MM.YYYY';
   const locale = t && t('locale') || 'ru';
   let value = field.value && moment(new Date(field.value), dateFormat, locale) || null; // eslint-disable-line
@@ -40,10 +40,10 @@ const DatePicker = (data) => {
     };
   }
   let disabledDate = () => false;
-  if (field.futureOnly) {
+  if (futureOnly) {
     disabledDate = (current) => {
       // Can not select days before today and today
-      return current && current.valueOf() < (Date.now() - (24 * 60 * 60 * 1000));
+      return current.valueOf() < Date.now();
     };
   }
   return (

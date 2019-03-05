@@ -1,10 +1,10 @@
 import React from 'react';
 import { Form, Field, FastField } from 'formik';
 import UsdIcon from 'react-icons2/mdi/currency-usd';
-import CurrencyFormat from 'react-currency-format';
 import Story from '../../../Story';
 import createForm from '../../createForm';
 import Input from './Input';
+import currency from './formats/currency';
 import FormDebug from '../../FormDebug';
 
 const InputFormView = (props) => {
@@ -61,12 +61,9 @@ const InputForm = createForm({
     input6: {
       title: 'Only currency',
       component: Input,
+      format: currency,
       placeholder: 'input placeholder',
-      numeric: true,
-      thousandSeparator: true,
-      decimalSeparator: '.',
       leftIcon: <UsdIcon size={28} />,
-      componentClass: CurrencyFormat,
     },
   },
 });

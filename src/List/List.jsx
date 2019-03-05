@@ -104,7 +104,7 @@ class List extends Component {
   render() {
     const {
       debug, columns, show: customShow = {}, pageSize = 10, paginatorProps = {},
-      Item, FilterForm, HeaderItem, Tags = this.constructor.Tags, Tag = this.constructor.Tag, isFilterModal,
+      Item, FilterForm, HeaderItem, Tags = this.constructor.Tags, Tag = this.constructor.Tag, isFilterModal, filterProps,
     } = this.props;
 
     let { listStore } = this.props;
@@ -198,6 +198,7 @@ class List extends Component {
           isFilterModal,
           paginatorProps,
           debug,
+          filterProps,
         }}
       >
         <MobxProvider listStore={listStore} selectStore={selectStore} >
