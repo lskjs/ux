@@ -5,7 +5,7 @@ import InputBase from '../../../Input';
 const Input = ({
   field,
   form,
-  numeric,
+  format = () => ({}),
   ...props
 }) => {
   const hasError = field && field.name && !!get(form, `errors.${field.name}`);
@@ -16,11 +16,10 @@ const Input = ({
       {...props}
       regex={props.regex}
       style={{ border: hasError ? '1px solid red' : '' }}
-      // leftIcon={<Icon color="#0088cc" size={24} />}
       onChange={(value) => {
-        if (numeric) value = parseFloat(value.replace(/[^\w.?]+/g, ''));
         form.setFieldValue(field.name, value);
       }}
+      {...format({ field, form, ...props })}
     />
   );
 };

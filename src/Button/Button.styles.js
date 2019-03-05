@@ -794,8 +794,8 @@ export const ButtonGroup = styled('div')`
   width: 100%;
   position: relative;
   display: inline-flex;
-  vertical-align: middle; 
-
+  vertical-align: middle;
+  flex-direction: ${p => p.flexDirection};
 
   & > * {
     position: relative;

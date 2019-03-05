@@ -13,6 +13,7 @@ export const Title = styled('div')`
 export const CloseWrapper = styled('button')`
   background: transparent;
   border: none;
+  cursor: pointer;
   outline: none;
   color: ${p => p.theme.colors.primary};
   padding: 5px;
@@ -31,6 +32,7 @@ export const TagItem = styled('div')`
   padding: 9px 8px;
   display: inline-flex;
   align-items: center;
+  cursor: default;
   justify-content: center;
   min-width: 64px;
   ${p => (p.disabled && `

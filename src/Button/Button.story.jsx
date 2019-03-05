@@ -133,7 +133,7 @@ export default ({ storiesOf }) => {
     ))
     .add('ButtonGroup', () => (
       <Story>
-        <ButtonGroup>
+        <ButtonGroup flexDirection="column">
           <Button>Default</Button>
           <Button paint="primary">Primary</Button>
           <Button paint="info">Info</Button>
@@ -161,6 +161,11 @@ export default ({ storiesOf }) => {
         <Badge status="default" />
         <Badge status="processing" />
         <Badge status="warning" />
+      </Story>
+    ))
+    .add('without ripple', () => (
+      <Story>
+        <Button isRipple={false} paint="primary">Primary</Button>
       </Story>
     ));
 };

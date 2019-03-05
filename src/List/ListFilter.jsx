@@ -7,7 +7,7 @@ import { contextToProps } from './List.context';
 import ListFilterModal from './ListFilterModal';
 import DEV from '../DEV';
 
-@contextToProps('List', 'FilterForm', 'debug')
+@contextToProps('List', 'FilterForm', 'debug', 'filterProps')
 @inject('listStore')
 @observer
 class ListFilter extends Component {
@@ -25,6 +25,7 @@ class ListFilter extends Component {
       FilterForm,
       listStore,
       debug,
+      filterProps,
       // container,
     } = this.props;
     if (!FilterForm) return null; // <DEV json="!FilterForm" />;
@@ -48,6 +49,7 @@ class ListFilter extends Component {
           >
             <List.FilterWrapper>
               <FilterForm
+                {...filterProps}
                 ref={this.form}
                 enableReinitialize
               // initialValues={listStore.filter}
