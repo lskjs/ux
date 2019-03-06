@@ -44,6 +44,8 @@ const SelectFormView = (props) => {
       <Field {...props.controls.countries} />
       <Field {...props.controls.userSelect} />
       <hr />
+      <h1>initialValue - баг</h1>
+      <Field {...props.controls.get('info.bug1')} />
       <hr />
       <hr />
       <select>
@@ -571,6 +573,25 @@ const SelectForm = createForm({
         });
       },
     },
+    'info.bug1': {
+      title: 'offerEdit.type.title',
+      component: Select,
+      initialValue: 'fixed',
+      options: [
+        {
+          value: 'fixed',
+          label: 'offerEdit.type.fixed',
+          info: 'offerEdit.type.fixedInfo',
+          help: 'offerEdit.type.fixedHelp',
+        },
+        {
+          value: 'cpm',
+          label: 'offerEdit.type.cpm',
+          info: 'offerEdit.type.cpmInfo',
+          help: 'offerEdit.type.cpmHelp',
+        },
+      ],
+    },
   },
 });
 
@@ -812,6 +833,7 @@ export default ({ storiesOf }) =>
             initialValues={{
               select4: 'two',
               asyncSelect2: 99,
+              info: {},
             }}
           />
         </Story>
