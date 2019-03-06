@@ -7,7 +7,7 @@ export default ({ storiesOf }) => (
   storiesOf('Loading', module)
     .add('svg default', () => (
       <Story>
-        <Loading type="svg" />
+        <Loading type="svg" full />
       </Story>
     ))
     .add('custom', () => (

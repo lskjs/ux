@@ -3,14 +3,24 @@ import PropTypes from 'prop-types';
 import T from '../T';
 import LoaderIcon from './LoaderIcon';
 
+const innerStyle = {
+  zIndex: 3000,
+  backgroundColor: 'rgba(255, 255, 255, 0.95)',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  color: '#4a4a4a',
+};
+
 const styles = {
-  inner: {
-    zIndex: 3000,
-    backgroundColor: 'rgba(255, 255, 255, 0.95)',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    color: '#4a4a4a',
+  inner: innerStyle,
+  innerFull: {
+    ...innerStyle,
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
   },
   box: {
     color: '#4a4a4a',
@@ -68,18 +78,8 @@ class Loading extends PureComponent {
         />
       );
     }
-    if (full) {
-      styles.inner = {
-        ...styles.inner,
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-      };
-    }
     return (
-      <div style={styles.inner}>
+      <div style={full ? styles.innerFull : styles.inner}>
         <div style={styles.box}>
           {iconComponent}
           <div style={styles.text}>
