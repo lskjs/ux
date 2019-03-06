@@ -24,18 +24,18 @@ class GroupOf extends Component {
     }));
   }
   isChecked(option) {
-    const { field: { value }, multi = false } = this.props;
+    const { field: { value }, isMulti = false } = this.props;
     // const value = field && field.value;
     const optionValue = getReverseOptionValue(option.value);
-    if (multi) {
+    if (isMulti) {
       return (value || []).includes(optionValue);
     }
     return value === optionValue;
   }
   handleChange({ option, checked }) {
-    const { form, field, multi = false } = this.props;
+    const { form, field, isMulti = false } = this.props;
     const optionValue = getReverseOptionValue(option.value);
-    if (!multi) {
+    if (!isMulti) {
       if (checked) {
         form.setFieldValue(field.name, optionValue);
       } else {

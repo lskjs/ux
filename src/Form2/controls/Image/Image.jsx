@@ -10,6 +10,7 @@ const ImageUploader = ({
   form,
   onError,
   components,
+  isMulti,
   ...props
 }) => {
   const Body = components.Body || ImageUploader.defaultProps.components.Body;
@@ -18,6 +19,7 @@ const ImageUploader = ({
     <Files
       {...field}
       {...props}
+      multiple={isMulti}
       onSubmit={value => form.setFieldValue(field.name, value)}
       onError={() => onError?.(form.errors[field.name])} // this.globalError
       validationState={form.errors[field.name] ? 'error' : null}
