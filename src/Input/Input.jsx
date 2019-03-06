@@ -25,7 +25,7 @@ class Input extends PureComponent {
     leftIcon: PropTypes.any,
     rightIcon: PropTypes.any,
     className: PropTypes.string,
-    regex: PropTypes.string,
+    regex: PropTypes.regexp,
   }
   static defaultProps = {
     validationState: null,

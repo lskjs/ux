@@ -2,7 +2,8 @@ import React from 'react';
 import NotificationSystem from 'react-notification-system';
 import Story from '../Story';
 import Button from '../Button';
-
+import notify from './notifyStyles.styles';
+import Notification from './notify/Notification';
 
 export default ({ storiesOf }) => {
   storiesOf('Toast/NotificationSystem', module)
@@ -39,6 +40,33 @@ export default ({ storiesOf }) => {
             onClick={() => toast({ type: 'info', title: 'title', text: 'text' })}
           >
             info
+          </Button>
+        </Story>
+      );
+    })
+    .add('with children', () => {
+      const notificationSystem = React.createRef();
+      const toast = () => notificationSystem.current.addNotification({
+        autoDismiss: 0,
+        level: 'success',
+        children: <Notification item={{
+            type: 'notify.success',
+            info: {
+              title: 'Success title',
+              text: 'Success text',
+            },
+          }}
+        />,
+      });
+      return (
+        <Story>
+          <NotificationSystem ref={notificationSystem} style={notify} />
+
+          <Button
+            paint="success"
+            onClick={() => toast({ type: 'success', title: 'title', text: 'text' })}
+          >
+            success
           </Button>
         </Story>
       );

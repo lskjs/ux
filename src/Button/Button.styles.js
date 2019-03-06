@@ -795,7 +795,13 @@ export const ButtonGroup = styled('div')`
   position: relative;
   display: inline-flex;
   vertical-align: middle;
-  flex-direction: ${p => p.flexDirection};
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    ${Btn} {
+      margin: 8px 0 8px 0;
+    }
+  }
 
   & > * {
     position: relative;

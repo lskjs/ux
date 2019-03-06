@@ -13,7 +13,6 @@ class FormGroup extends Component {
     } = this.props;
 
     // console.log({field, props});
-    
     // {errors.twitter &&
     //   touched.twitter &&
     const errorMessage = form && form.errors && form.errors[field.name];
@@ -26,6 +25,7 @@ class FormGroup extends Component {
         label={props.title}
         help={props.help}
         validateStatus={errorMessage ? 'error' : null}
+        style={{ textAlign: 'left' }}
       >
         <div id={htmlId} />
         {children}

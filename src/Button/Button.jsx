@@ -7,6 +7,7 @@ import omit from 'lodash/omit';
 import If from 'react-if';
 import LoadingDots from '../LoadingDots';
 import filterProps from '../utils/filterProps';
+import isTouchDevice from '../utils/isTouchDevice';
 import {
   Btn,
   Text,
@@ -96,7 +97,7 @@ class Button extends PureComponent {
     autoMobile: false,
     rounded: false,
     style: null,
-    isRipple: true,
+    isRipple: !isTouchDevice(),
   }
 
   constructor(props) {

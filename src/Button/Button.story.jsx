@@ -167,5 +167,13 @@ export default ({ storiesOf }) => {
       <Story>
         <Button isRipple={false} paint="primary">Primary</Button>
       </Story>
+    ))
+    .add('button group', () => (
+      <Story>
+        <ButtonGroup>
+          <Button isRipple={false} paint="primary">Primary</Button>
+          <Button isRipple={false} paint="primary">Primary</Button>
+        </ButtonGroup>
+      </Story>
     ));
 };

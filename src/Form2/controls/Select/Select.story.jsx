@@ -8,6 +8,7 @@ import RadioSelected from 'react-icons2/mdi/checkbox-marked-circle';
 import range from 'lodash/range';
 import keys from 'lodash/keys';
 
+import Modal, { Title, Content } from '../../../Modal2';
 import Story from '../../../Story';
 import createForm from '../../createForm';
 import FormDebug from '../../FormDebug';
@@ -25,7 +26,7 @@ const SelectFormView = (props) => {
       <Field {...props.controls.select4} />
       <Field {...props.controls.select5} />
       <Field {...props.controls.radio} />
-      <hr />
+      {/* <hr />
       <h1>Мультиселекты</h1>
       <Field {...props.controls.multiselect} />
       <Field {...props.controls.multiselect2} />
@@ -52,7 +53,7 @@ const SelectFormView = (props) => {
         <option value="mercedes">Mercedes</option>
         <option value="audi">Audi</option>
       </select>
-      <FormDebug {...props} />
+      <FormDebug {...props} /> */}
     </Form>
   );
 };
@@ -814,6 +815,18 @@ export default ({ storiesOf }) =>
               asyncSelect2: 99,
             }}
           />
+        </Story>
+      );
+    })
+    .add('Modal select', () => {
+      return (
+        <Story devtools perf>
+          <Modal trigger={<div>asd</div>}>
+            <Title>asd</Title>
+            <Content>
+              <SelectForm />
+            </Content>
+          </Modal>
         </Story>
       );
     });
