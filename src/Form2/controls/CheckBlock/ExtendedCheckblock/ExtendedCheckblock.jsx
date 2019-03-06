@@ -45,8 +45,8 @@ class ExtendedCheckblock extends PureComponent {
   }
   @autobind
   handleClick() {
-    const { onChange, value } = this.props;
-    if (onChange) onChange(!value);
+    const { onChange, value, type } = this.props;
+    if (onChange) onChange(type === 'radio' ? true : !value);
   }
   render() {
     const {
