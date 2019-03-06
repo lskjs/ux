@@ -77,7 +77,7 @@ export const Item = styled('button')`
   border: solid 1px #e3e3e3;
   padding: 10px 8px 12px;
   outline: none;
-  width: auto;
+  width: 100%;
   display: inline-flex;
   flex-direction: column;
   margin-bottom: 8px;

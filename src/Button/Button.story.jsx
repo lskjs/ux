@@ -1,5 +1,10 @@
 import React from 'react';
 import Plus from 'react-icons2/mdi/plus';
+import Facebook from 'react-icons2/mdi/facebook-box';
+import Twitter from 'react-icons2/mdi/twitter-circle';
+import Vk from 'react-icons2/mdi/vk';
+import Youtube from 'react-icons2/mdi/youtube';
+import Telegram from 'react-icons2/mdi/telegram';
 
 import { Badge, Icon } from 'antd';
 import Button from './Button';
@@ -85,6 +90,11 @@ export default ({ storiesOf }) => {
         >
           Telegram
         </Button>
+        <Button icon={<Facebook />} colors={socialColors.facebook} />
+        <Button icon={<Twitter />} colors={socialColors.twitter} />
+        <Button icon={<Vk />} colors={socialColors.vk} />
+        <Button icon={<Telegram />} colors={socialColors.telegram} />
+        <Button icon={<Youtube />} colors={socialColors.youtube} />
       </Story>
     ))
     .add('badge', () => (

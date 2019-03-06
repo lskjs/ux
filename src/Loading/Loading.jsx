@@ -3,19 +3,22 @@ import PropTypes from 'prop-types';
 import T from '../T';
 import LoaderIcon from './LoaderIcon';
 
-const innerStyle = {
-  zIndex: 3000,
-  backgroundColor: 'rgba(255, 255, 255, 0.95)',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  color: '#4a4a4a',
-};
-
 const styles = {
-  inner: innerStyle,
+  inner: {
+    zIndex: 3000,
+    backgroundColor: 'rgba(255, 255, 255, 0.95)',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: '#4a4a4a',
+  },
   innerFull: {
-    ...innerStyle,
+    zIndex: 3000,
+    backgroundColor: 'rgba(255, 255, 255, 0.95)',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: '#4a4a4a',
     position: 'fixed',
     top: 0,
     left: 0,

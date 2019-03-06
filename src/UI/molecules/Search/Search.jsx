@@ -100,7 +100,6 @@ class Search extends PureComponent {
                 icon={<CloseIcon />}
                 paint="primary"
                 view="text"
-                size="large"
                 onClick={onClear}
               />
             </Action>

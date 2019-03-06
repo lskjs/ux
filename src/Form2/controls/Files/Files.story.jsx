@@ -22,12 +22,12 @@ const FilesForm = createForm({
     files: {
       title: 'Files',
       component: Files,
-      multiple: true,
+      isMulti: true,
     },
     files2: {
       title: 'Files custom',
       component: Files,
-      multiple: true,
+      isMulti: true,
       type: 'image',
       components: {
         Body,

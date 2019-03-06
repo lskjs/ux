@@ -71,7 +71,7 @@ const RadioForm = createForm({
     colors: {
       component: GroupOf,
       itemComponent: Checkbox,
-      multi: true,
+      isMulti: true,
       title: 'Выбор цветов',
       required: true,
       options: [
@@ -96,7 +96,7 @@ const RadioForm = createForm({
       key: 'colors',
       component: GroupOf,
       itemComponent: Radio,
-      multi: true,
+      isMulti: true,
       title: 'Очень странный одноразовый выборный',
       required: true,
       options: [
@@ -119,7 +119,7 @@ const RadioForm = createForm({
     },
     videoTypes: {
       component: GroupOf,
-      multi: true,
+      isMulti: true,
       title: 'Виды съемки',
       required: true,
       // itemComponent: Checkblock,

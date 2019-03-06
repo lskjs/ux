@@ -18308,3 +18308,12 @@ li.ant-select-tree-treenode-disabled > .ant-select-tree-node-content-wrapper:hov
 .ant-badge-count {
   min-width: 7px;
 }
+.ant-radio-inner:after {
+  left: 4px !important;
+  top: 4px !important;
+}
+.ant-checkbox-checked:after,
+.ant-radio-checked:after {
+  top: -1px;
+  left: -1px;
+}
