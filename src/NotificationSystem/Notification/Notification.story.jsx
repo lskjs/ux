@@ -1,9 +1,9 @@
 import React from 'react';
-import Story from '../../../Story';
+import Story from '../../Story';
 import Notification from './Notification';
 
 export default ({ storiesOf }) => {
-  storiesOf('Toast/Notification', module)
+  storiesOf('NotificationSystem/Notification', module)
     .add('Error', () => (
       <Story>
         <Notification

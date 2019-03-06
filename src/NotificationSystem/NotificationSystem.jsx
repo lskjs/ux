@@ -2,7 +2,8 @@ import React, { PureComponent } from 'react';
 import ReactNotificationSystem from 'react-notification-system';
 import autobind from 'core-decorators/lib/autobind';
 
-import Notification from '../../../Toast/notify/Notification';
+import Notification from './Notification';
+import prepareNotificationData from './prepareNotificationData';
 import notify from './notifyStyles.styles';
 
 class NotificationSystem extends PureComponent {
@@ -10,16 +11,24 @@ class NotificationSystem extends PureComponent {
     super(props);
     this.notificationSystem = React.createRef();
   }
+
   @autobind
-  toast({ type, info }) {
+  toast(rawData) {
+    const {
+      type = 'info', level, children, autoDismiss = 0, ...info
+    } = prepareNotificationData(rawData, { defaultType: 'success' }) || {};
+
     this.notificationSystem.current.addNotification({
-      autoDismiss: 0,
+      autoDismiss,
       level: type,
-      children: <Notification item={{
-          type: `notify.${type}`,
-          info,
-        }}
-      />,
+      children: children || (
+        <Notification
+          item={{
+            type: `notify.${type}`,
+            info,
+          }}
+        />
+      ),
     });
   }
   render() {

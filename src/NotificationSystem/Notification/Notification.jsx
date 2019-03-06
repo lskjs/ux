@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import get from 'lodash/get';
 import If from 'react-if';
-import ErrorIcon from '../error';
-import WarningIcon from '../warning';
-import InfoIcon from '../info';
-import SuccessIcon from '../success';
-import NotifyItem from '../NotifyItem';
+import ErrorIcon from './svg/error';
+import WarningIcon from './svg/warning';
+import InfoIcon from './svg/info';
+import SuccessIcon from './svg/success';
+import NotifyItem from './NotifyItem';
 
 const systemUser = {
   _id: 'bg',

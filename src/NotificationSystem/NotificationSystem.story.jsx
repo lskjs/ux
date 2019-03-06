@@ -1,18 +1,18 @@
 import React from 'react';
-import NotificationSystem from 'react-notification-system';
+import NotificationSystem from './NotificationSystem';
 import Story from '../Story';
 import Button from '../Button';
 import notify from './notifyStyles.styles';
-import Notification from './notify/Notification';
+import Notification from './Notification';
 
 export default ({ storiesOf }) => {
-  storiesOf('Toast/NotificationSystem', module)
+  storiesOf('NotificationSystem', module)
     .add('default', () => {
       const notificationSystem = React.createRef();
-      const toast = () => notificationSystem.current.addNotification({
-        message: 'Notification message',
-        level: 'success',
-      });
+      const toast = (obj) => {
+        console.log({ notificationSystem });
+        notificationSystem.current.toast(obj);
+      };
       return (
         <Story>
           <NotificationSystem ref={notificationSystem} />

@@ -1,4 +1,7 @@
-export default function (rawData, defaultType = 'info') {
+import React from 'react';
+import T from '../T';
+
+export default function (rawData, { defaultType = 'info' }) {
   let data = {};
   if (typeof rawData === 'string') {
     data.title = rawData;
@@ -25,9 +28,9 @@ export default function (rawData, defaultType = 'info') {
   }
   if (!data.title) {
     if (data.type === 'error') {
-      data.title = this.t('notifications.default.error');
+      data.title = <T name="common.error" />;
     } else {
-      data.title = this.t('notifications.default.success');
+      data.title = <T name="common.success" />;
     }
   }
 
