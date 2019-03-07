@@ -5,6 +5,7 @@ import pick from 'lodash/pick';
 import omit from 'lodash/omit';
 import merge from 'lodash/merge';
 import ReactModal from 'react-modal';
+import isTouchDevice from '../utils/isTouchDevice';
 import autobind from 'core-decorators/lib/autobind';
 import ModalSubtitle from '../UI/atoms/ModalSubtitle';
 import ModalDescription from '../UI/atoms/ModalDescription';
@@ -71,6 +72,10 @@ class Modal2 extends PureComponent {
   static Inner = ModalInner;
   static defaultStyles = ReactModal.defaultStyles;
 
+  static propTypes = {
+
+  }
+
   constructor(props) {
     super(props);
     this.state = { visible: props.defaultVisible };
@@ -98,9 +103,13 @@ class Modal2 extends PureComponent {
     if (this.props.onOpen) this.props.onOpen();
   }
   @autobind
-  close() {
-    this.setState({ visible: false });
-    if (this.props.onClose) this.props.onClose();
+  close(event) {
+    if (__CLIENT__) {
+      const isModalSelector = event.target.classList[0] === 'ReactModal__Content';
+      if (!isModalSelector) return;
+      this.setState({ visible: false });
+      if (this.props.onClose) this.props.onClose();
+    }
   }
 
   render() {
@@ -119,7 +128,14 @@ class Modal2 extends PureComponent {
       CloseIcon: this.constructor.CloseIcon || this.props.CloseIcon,
     };
     const {
-      className, size = 'default', closable = true, trigger, innerRef, style, ...props
+      className,
+      size = 'default',
+      closable = true,
+      trigger,
+      innerRef,
+      style,
+      closeOnBackdrop = !isTouchDevice(),
+      ...props
     } = this.props;
     const modal = this;
     if (innerRef) innerRef(this);
@@ -136,7 +152,7 @@ class Modal2 extends PureComponent {
             {...pick(props, reactModalProps)}
           >
             <Outside
-              onClickOutside={this.close}
+              onClickOutside={closeOnBackdrop ? this.close : null}
               className={cx({
                 [className]: className,
                 [modalStyle]: true,
