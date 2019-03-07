@@ -1,7 +1,7 @@
 import React from 'react';
 import Form from 'antd/lib/form';
 import Button from '../Button';
-import getControlHtmlId from './getControlHtmlId';
+import getControlHtmlId from './createForm/getControlHtmlId';
 import FormError from './FormError';
 
 export default ({

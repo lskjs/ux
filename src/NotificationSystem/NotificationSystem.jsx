@@ -15,7 +15,7 @@ class NotificationSystem extends PureComponent {
   @autobind
   toast(rawData) {
     const {
-      type = 'info', level, children, autoDismiss = 0, ...info
+      type = 'info', level, children, autoDismiss, ...info
     } = prepareNotificationData(rawData, { defaultType: 'success' }) || {};
 
     this.notificationSystem.current.addNotification({
