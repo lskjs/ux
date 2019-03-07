@@ -105,8 +105,10 @@ class Modal2 extends PureComponent {
   @autobind
   close(event) {
     if (__CLIENT__) {
-      const isModalSelector = event.target.classList[0] === 'ReactModal__Content';
-      if (!isModalSelector) return;
+      if (event.path) {
+        const isModalSelector = event.target.classList[0] === 'ReactModal__Content';
+        if (!isModalSelector) return;
+      }
       this.setState({ visible: false });
       if (this.props.onClose) this.props.onClose();
     }
