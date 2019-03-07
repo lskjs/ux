@@ -1,5 +1,4 @@
 import React from 'react';
-import get from 'lodash/get';
 import moment from 'moment';
 import 'moment/locale/ru';
 import DatePickerBase from '../../../UI/molecules/Datepicker';
@@ -50,7 +49,7 @@ const DatePicker = (data) => {
     <DatePickerBase
       {...field}
       {...props}
-      id={field.name}
+      id={(field.name || '').replace(/\./g, '')}
       ranged={ranged}
       validationState={form.errors[field.name] ? 'error' : null}
       onChange={change}
