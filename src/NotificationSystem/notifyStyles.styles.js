@@ -5,6 +5,7 @@ export default {
       boxShadow: 'none',
       padding: 0,
       borderRadius: 10,
+      borderTop: 'none',
     },
   },
   Dismiss: {
@@ -12,6 +13,7 @@ export default {
       backgroundColor: 'transparent',
       color: 'white',
       zIndex: 1,
+      paddingTop: 5,
     },
   },
 };

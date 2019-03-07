@@ -25,19 +25,19 @@ export default ({ storiesOf }) => {
           </Button>
           <Button
             paint="warning"
-            onClick={() => toast({ type: 'warning', title: 'title', text: 'text' })}
+            onClick={() => toast({ type: 'warning', title: 'title', text: 'text', autoDismiss: 5 })}
           >
             warning
           </Button>
           <Button
             paint="danger"
-            onClick={() => toast({ type: 'danger', title: 'title', text: 'text' })}
+            onClick={() => toast({ type: 'danger', title: 'title', text: 'text', autoDismiss: 10 })}
           >
             danger
           </Button>
           <Button
             paint="info"
-            onClick={() => toast({ type: 'info', title: 'title', text: 'text' })}
+            onClick={() => toast({ type: 'info', title: 'title', text: 'text', autoDismiss: 15 })}
           >
             info
           </Button>

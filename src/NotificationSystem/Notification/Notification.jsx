@@ -45,7 +45,6 @@ class Notification extends Component {
   renderInner() {
     const { item = {}, t } = this.props;
     const { type, info } = item;
-    console.log(info);
     const superType = (type && type.substr(0, type.indexOf('.'))) || '';
     const opponent = this.getOpponent();
 

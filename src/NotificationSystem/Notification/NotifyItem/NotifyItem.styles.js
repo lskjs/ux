@@ -67,6 +67,25 @@ export const Item = styled('div')`
 
   }
 
+  .notify-timeline {
+    width: 100%;
+    height: 4px;
+    background-image: linear-gradient(to right, rgba(75, 134, 198, 0.0), #7070ff),
+                      linear-gradient(#f0f5fa, #f0f5fa);
+
+    animation-name: notifyTime;
+    animation-duration: 4s;
+  }
+
+  @keyframes notifyTime {
+    from {
+      width: 0%;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
   &:hover {
     text-decoration: none;
   }
@@ -85,7 +104,7 @@ export const Item = styled('div')`
           &:hover {
             background-color: #ee1e31 !important;
             box-shadow: none !important;
-            cursor: default !important;
+            cursor: pointer !important;
             text-decoration: none !important;
           }
         `;
@@ -96,7 +115,7 @@ export const Item = styled('div')`
           &:hover {
             background-color: #fe9902 !important;
             box-shadow: none !important;
-            cursor: default !important;
+            cursor: pointer !important;
             text-decoration: none !important;
           }
         `;
@@ -107,7 +126,7 @@ export const Item = styled('div')`
           &:hover {
             background-color: #50cc58 !important;
             box-shadow: none !important;
-            cursor: default !important;
+            cursor: pointer !important;
             text-decoration: none !important;
           }
         `;
@@ -118,7 +137,7 @@ export const Item = styled('div')`
           &:hover {
             background-color: #7070ff !important;
             box-shadow: none !important;
-            cursor: default !important;
+            cursor: pointer !important;
             text-decoration: none !important;
           }
         `;
