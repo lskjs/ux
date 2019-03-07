@@ -103,14 +103,16 @@ class Modal2 extends PureComponent {
     if (this.props.onOpen) this.props.onOpen();
   }
   @autobind
-  close(event) {
+  close() {
+    this.setState({ visible: false });
+    if (this.props.onClose) this.props.onClose();
+  }
+  @autobind
+  backdropClose(event) {
     if (__CLIENT__) {
-      if (event.path) {
-        const isModalSelector = event.target.classList[0] === 'ReactModal__Content';
-        if (!isModalSelector) return;
-      }
-      this.setState({ visible: false });
-      if (this.props.onClose) this.props.onClose();
+      const isModalSelector = event?.target?.classList?.[0] === 'ReactModal__Content';
+      if (!isModalSelector) return;
+      this.close();
     }
   }
 
@@ -154,7 +156,7 @@ class Modal2 extends PureComponent {
             {...pick(props, reactModalProps)}
           >
             <Outside
-              onClickOutside={closeOnBackdrop ? this.close : null}
+              onClickOutside={closeOnBackdrop && this.backdropClose}
               className={cx({
                 [className]: className,
                 [modalStyle]: true,
