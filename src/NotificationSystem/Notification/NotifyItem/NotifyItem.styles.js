@@ -46,7 +46,7 @@ export const Item = styled('div')`
     display: flex;
     align-items: center;
     justify-content: center;
-    ${p => (p.itemType === 'notify.error' && 'padding: 1px 3px 4px 3px')};
+    ${p => (p.type === 'error' && 'padding: 1px 3px 4px 3px')};
   }
   .notify-text {
     font-size: 11px;
@@ -77,8 +77,8 @@ export const Item = styled('div')`
     text-decoration: none;
   }
   ${(p) => {
-    switch (p.itemType) {
-      case 'notify.error':
+    switch (p.type) {
+      case 'error':
         return `
           background-color: #ee1e31 !important;
           color: white !important;
@@ -89,7 +89,7 @@ export const Item = styled('div')`
             text-decoration: none !important;
           }
         `;
-      case 'notify.warning':
+      case 'warning':
         return `
           background-color: #fe9902 !important;
           color: white !important;
@@ -100,7 +100,7 @@ export const Item = styled('div')`
             text-decoration: none !important;
           }
         `;
-      case 'notify.success':
+      case 'success':
         return `
           background-color: #50cc58 !important;
           color: white !important;
@@ -111,7 +111,7 @@ export const Item = styled('div')`
             text-decoration: none !important;
           }
         `;
-      case 'notify.info':
+      case 'info':
         return `
           background-color: #7070ff !important;
           color: white !important;

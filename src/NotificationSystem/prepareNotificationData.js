@@ -16,7 +16,6 @@ export default function (rawData, { defaultType = 'info' }) {
   }
 
   if (data.type === 'danger') {
-    if (__DEV__) console.error('deprecated type danger', data);  //eslint-disable-line
     data.type = 'error';
   }
 
@@ -25,13 +24,6 @@ export default function (rawData, { defaultType = 'info' }) {
   }
   if (!data.text && rawData && rawData.message) {
     data.text = rawData.message;
-  }
-  if (!data.title) {
-    if (data.type === 'error') {
-      data.title = <T name="common.error" />;
-    } else {
-      data.title = <T name="common.success" />;
-    }
   }
 
   return data;

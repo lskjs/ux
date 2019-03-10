@@ -7,26 +7,24 @@ import { Right, Item } from './NotifyItem.styles';
 class NotifyItem extends PureComponent {
   static propTypes = {
     unread: pT.bool,
-    standalone: pT.bool,
     children: pT.any.isRequired,
     href: pT.string,
-    itemType: pT.string.isRequired,
+    type: pT.string.isRequired,
   }
   static defaultProps = {
     unread: false,
-    standalone: false,
-    href: '#',
   }
   render() {
-    const { standalone, href, unread, children, itemType } = this.props;
-    const Tag = standalone ? 'div' : Link;
+    const {
+      href, unread, children, type,
+    } = this.props;
+    const Tag = href ? Link : 'div';
     return (
       <Item
         componentClass={Tag}
-        {...(!standalone ? { href } : {})}
+        href={href}
         unread={unread}
-        standalone={standalone}
-        itemType={itemType}
+        type={type}
       >
         <Right>
           {children}

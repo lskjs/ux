@@ -57,7 +57,6 @@
     "prop-types": "^15.6.2"
   },
   "devDependencies": {
-    "react-dom": "16.5.2",
     "@babel/cli": "7.0.0-beta.42",
     "@babel/core": "7.0.0-beta.42",
     "@babel/node": "7.0.0-beta.42",
@@ -92,7 +91,9 @@
     "node-sass": "4.11.0",
     "postcss-loader": "2.1.5",
     "react-bootstrap": "0.32.4",
+    "react-dom": "16.5.2",
     "react-hot-loader": "4.2.0",
+    "react-styleguidist": "^9.0.4",
     "storybox": "1.0.3",
     "webpack": "4.16.5"
   },

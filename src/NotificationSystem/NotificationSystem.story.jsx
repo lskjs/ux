@@ -10,28 +10,30 @@ export default ({ storiesOf }) => {
     .add('default', () => {
       const notificationSystem = React.createRef();
       const toast = (obj) => {
-        console.log({ notificationSystem });
         notificationSystem.current.toast(obj);
       };
       return (
         <Story>
           <NotificationSystem ref={notificationSystem} />
-
           <Button
             paint="success"
-            onClick={() => toast({ type: 'success', title: 'title', text: 'text' })}
+            onClick={() => toast({
+              type: 'success', title: 'title', text: 'text', onClick: () => console.log('onClick'),
+            })}
           >
             success
           </Button>
           <Button
             paint="warning"
-            onClick={() => toast({ type: 'warning', title: 'title', text: 'text' })}
+            onClick={() => toast({
+              type: 'warning', title: 'title', text: 'text', href: '/cabinet/qweqweqwe',
+            })}
           >
             warning
           </Button>
           <Button
             paint="danger"
-            onClick={() => toast({ type: 'danger', title: 'title', text: 'text' })}
+            onClick={() => toast({ type: 'error', title: 'title', text: 'text' })}
           >
             danger
           </Button>
@@ -40,6 +42,18 @@ export default ({ storiesOf }) => {
             onClick={() => toast({ type: 'info', title: 'title', text: 'text' })}
           >
             info
+          </Button>
+          <Button
+            paint="danger"
+            onClick={() => toast({ type: 'error' })}
+          >
+            danger2
+          </Button>
+          <Button
+            paint="success"
+            onClick={() => toast({ type: 'success' })}
+          >
+            success2
           </Button>
         </Story>
       );

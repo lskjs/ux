@@ -18,14 +18,14 @@ const ResponsiveButton = withResponsive(Button);
 export default ({ storiesOf }) => {
   storiesOf('Button', module)
     .add('paint', () => (
-      <Story>
+      <React.Fragment>
         <Button>Default</Button>
         <Button paint="primary">Primary</Button>
         <Button paint="info">Info</Button>
         <Button paint="success">Success</Button>
         <Button paint="warning">Warning</Button>
         <Button paint="danger">Danger</Button>
-      </Story>
+      </React.Fragment>
     ))
     .add('size', () => (
       <Story>

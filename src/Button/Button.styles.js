@@ -1,6 +1,12 @@
 import styled, { css, keyframes } from 'react-emotion';
+import get from 'lodash/get';
 import createDynamicTag from '../utils/createDynamicTag';
 import removeProps from '../utils/removeProps';
+import defaultTheme from '../theme';
+
+const themeGet = (theme, path) => {
+  return get(theme, path, get(defaultTheme, path));
+};
 
 const iconLeft = css`
   margin-right: 8px;
@@ -240,77 +246,77 @@ const defaultSolidTheme = props => css`
 `;
 
 const primarySolidTheme = ({ theme }) => css`
-  color: ${theme.colors.white};
-  background-color: ${theme.colors.primary};
+  color: ${themeGet(theme, 'colors.white')};
+  background-color: ${themeGet(theme, 'colors.primary')};
 
   &:hover {
-    color: ${theme.colors.white};
-    background-color: ${theme.colors.darkPrimary};
+    color: ${themeGet(theme, 'colors.white')};
+    background-color: ${themeGet(theme, 'colors.darkPrimary')};
   }
 
   &:active {
-    color: ${theme.colors.white};
-    background-color: ${theme.colors.darkPrimary};
+    color: ${themeGet(theme, 'colors.white')};
+    background-color: ${themeGet(theme, 'colors.darkPrimary')};
   }
 `;
 
 const dangerSolidTheme = ({ theme }) => css`
-  color: ${theme.colors.white};
-  background-color: ${theme.colors.danger};
+  color: ${themeGet(theme, 'colors.white')};
+  background-color: ${themeGet(theme, 'colors.danger')};
 
   &:hover {
-    color: ${theme.colors.white};
-    background-color: ${theme.colors.danger};
+    color: ${themeGet(theme, 'colors.white')};
+    background-color: ${themeGet(theme, 'colors.danger')};
   }
 
   &:active {
-    color: ${theme.colors.white};
-    background-color: ${theme.colors.darkDanger};
+    color: ${themeGet(theme, 'colors.white')};
+    background-color: ${themeGet(theme, 'colors.darkDanger')};
   }
 `;
 
 const warningSolidTheme = ({ theme }) => css`
   color: #4a4a4a;
-  background-color: ${theme.colors.warning};
+  background-color: ${themeGet(theme, 'colors.warning')};
 
   &:hover {
     color: #4a4a4a;
-    background-color: ${theme.colors.darkWarning};
+    background-color: ${themeGet(theme, 'colors.darkWarning')};
   }
 
   &:active {
     color: #4a4a4a;
-    background-color: ${theme.colors.darkWarning};
+    background-color: ${themeGet(theme, 'colors.darkWarning')};
   }
 `;
 
 const infoSolidTheme = ({ theme }) => css`
-  color: ${theme.colors.white};
-  background-color: ${theme.colors.primary};
+  color: ${themeGet(theme, 'colors.white')};
+  background-color: ${themeGet(theme, 'colors.primary')};
 
   &:hover {
-    color: ${theme.colors.white};
-    background-color: ${theme.colors.darkPrimary};
+    color: ${themeGet(theme, 'colors.white')};
+    background-color: ${themeGet(theme, 'colors.darkPrimary')};
   }
 
   &:active {
-    color: ${theme.colors.white};
-    background-color: ${theme.colors.darkPrimary};
+    color: ${themeGet(theme, 'colors.white')};
+    background-color: ${themeGet(theme, 'colors.darkPrimary')};
   }
 `;
 
 const successSolidTheme = ({ theme }) => css`
-  color: ${theme.colors.white};
-  background-color: ${theme.colors.success};
+  color: ${themeGet(theme, 'colors.white')};
+  background-color: ${themeGet(theme, 'colors.success')};
 
   &:hover {
-    color: ${theme.colors.white};
-    background-color: ${theme.colors.darkSuccess};
+    color: ${themeGet(theme, 'colors.white')};
+    background-color: ${themeGet(theme, 'colors.darkSuccess')};
   }
 
   &:active {
-    color: ${theme.colors.white};
-    background-color: ${theme.colors.darkSuccess};
+    color: ${themeGet(theme, 'colors.white')};
+    background-color: ${themeGet(theme, 'colors.darkSuccess')};
   }
 `;
 
@@ -345,77 +351,77 @@ const defaultTextTheme = css`
 `;
 
 const primaryTextTheme = ({ theme }) => css`
-  color: ${theme.colors.primary};
+  color: ${themeGet(theme, 'colors.primary')};
   background-color: transparent;
 
   &:hover {
-    color: ${theme.colors.primary};
-    background-color: ${theme.colors.lighterPrimary};
+    color: ${themeGet(theme, 'colors.primary')};
+    background-color: ${themeGet(theme, 'colors.lighterPrimary')};
   }
 
   &:active {
-    color: ${theme.colors.primary};
-    background-color: ${theme.colors.lighterPrimary};
+    color: ${themeGet(theme, 'colors.primary')};
+    background-color: ${themeGet(theme, 'colors.lighterPrimary')};
   }
 `;
 
 const dangerTextTheme = ({ theme }) => css`
-  color: ${theme.colors.white};
-  background-color: ${theme.colors.danger};
+  color: ${themeGet(theme, 'colors.white')};
+  background-color: ${themeGet(theme, 'colors.danger')};
 
   &:hover {
-    color: ${theme.colors.white};
-    background-color: ${theme.colors.danger};
+    color: ${themeGet(theme, 'colors.white')};
+    background-color: ${themeGet(theme, 'colors.danger')};
   }
 
   &:active {
-    color: ${theme.colors.white};
-    background-color: ${theme.colors.danger};
+    color: ${themeGet(theme, 'colors.white')};
+    background-color: ${themeGet(theme, 'colors.danger')};
   }
 `;
 
 const warningTextTheme = ({ theme }) => css`
-  color: ${theme.colors.warning};
+  color: ${themeGet(theme, 'colors.warning')};
   background-color: transparent;
 
   &:hover {
-    color: ${theme.colors.white};
-    background-color: ${theme.colors.warning};
+    color: ${themeGet(theme, 'colors.white')};
+    background-color: ${themeGet(theme, 'colors.warning')};
   }
 
   &:active {
-    color: ${theme.colors.white};
-    background-color: ${theme.colors.warning};
+    color: ${themeGet(theme, 'colors.white')};
+    background-color: ${themeGet(theme, 'colors.warning')};
   }
 `;
 
 const infoTextTheme = ({ theme }) => css`
-  color: ${theme.colors.primary};
+  color: ${themeGet(theme, 'colors.primary')};
   background-color: transparent;
 
   &:hover {
-    color: ${theme.colors.white};
-    background-color: ${theme.colors.primary};
+    color: ${themeGet(theme, 'colors.white')};
+    background-color: ${themeGet(theme, 'colors.primary')};
   }
 
   &:active {
-    color: ${theme.colors.white};
-    background-color: ${theme.colors.primary};
+    color: ${themeGet(theme, 'colors.white')};
+    background-color: ${themeGet(theme, 'colors.primary')};
   }
 `;
 
 const successTextTheme = ({ theme }) => css`
-  color: ${theme.colors.success};
+  color: ${themeGet(theme, 'colors.success')};
   background-color: transparent;
 
   &:hover {
-    color: ${theme.colors.white};
-    background-color: ${theme.colors.success};
+    color: ${themeGet(theme, 'colors.white')};
+    background-color: ${themeGet(theme, 'colors.success')};
   }
 
   &:active {
-    color: ${theme.colors.white};
-    background-color: ${theme.colors.success};
+    color: ${themeGet(theme, 'colors.white')};
+    background-color: ${themeGet(theme, 'colors.success')};
   }
 `;
 
@@ -450,32 +456,32 @@ const viewTransparentDisabledDark = css`
   }
 `;
 
-const transparentTheme = props => css`
-  color: ${props.theme.colors.white};
+const transparentTheme = ({ theme = defaultTheme }) => css`
+  color: ${themeGet(theme, 'colors.white')};
   background-color: transparent;
 
   &:hover {
-    color: ${props.theme.colors.white};
+    color: ${themeGet(theme, 'colors.white')};
     background-color: rgba(255, 255, 255, 0.16);
   }
 
   &:active {
-    color: ${props.theme.colors.white};
+    color: ${themeGet(theme, 'colors.white')};
     background-color: rgba(255, 255, 255, 0.16);
   }
 `;
 
-const transparentThemeDark = props => css`
-  color: ${props.theme.colors.main};
+const transparentThemeDark = ({ theme = defaultTheme }) => css`
+  color: ${themeGet(theme, 'colors.main')};
   background-color: transparent;
 
   &:hover {
-    color: ${props.theme.colors.main};
+    color: ${themeGet(theme, 'colors.main')};
     background-color: rgba(0, 0, 0, 0.16);
   }
 
   &:active {
-    color: ${props.theme.colors.main};
+    color: ${themeGet(theme, 'colors.main')};
     background-color: rgba(0, 0, 0, 0.16);
   }
 `;

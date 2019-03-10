@@ -3,9 +3,11 @@ import isEmpty from 'lodash/isEmpty';
 import validate from 'validate.js';
 import Promise from 'bluebird';
 
-const DEBUG = __DEV__;
+const DEBUG = true;
 
-export default ({ validators, customValidators, onError, controls }) => async (values) => {
+export default ({
+  validators, customValidators, onError, controls,
+}) => async (values) => {
   if (DEBUG) console.log('Form2 validate', values, validators, customValidators);
   const errors = {};
 
@@ -20,7 +22,7 @@ export default ({ validators, customValidators, onError, controls }) => async (v
     });
   }
 
-  console.log({ errors });
+  if (DEBUG) console.log({ errors });
 
 
   // validate by custom functions
@@ -36,7 +38,7 @@ export default ({ validators, customValidators, onError, controls }) => async (v
     }
   });
 
-  console.log('errors', errors, isEmpty(errors));
+  // if (DEBUG) console.log('errors', errors, isEmpty(errors));
   if (!isEmpty(errors)) {
     if (onError) {
       onError({ errors, controls });

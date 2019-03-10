@@ -3,56 +3,41 @@ import Story from '../../Story';
 import Notification from './Notification';
 
 export default ({ storiesOf }) => {
-  storiesOf('NotificationSystem/Notification', module)
-    .add('Error', () => (
+  storiesOf('NotificationSystem', module)
+    .add('Notification', () => (
       <Story>
         <Notification
-          item={{
-            type: 'notify.error',
-            info: {
-              title: 'Error title',
-              text: 'Error text',
-            },
-          }}
+          type="error"
+          title="Error title"
+          text="Error text"
         />
-      </Story>
-    ))
-    .add('Success', () => (
-      <Story>
         <Notification
-          item={{
-            type: 'notify.success',
-            info: {
-              title: 'Success title',
-              text: 'Success text',
-            },
-          }}
+          type="success"
+          title="Success title"
+          text="Success text"
         />
-      </Story>
-    ))
-    .add('Info', () => (
-      <Story>
         <Notification
-          item={{
-            type: 'notify.info',
-            info: {
-              title: 'Info title',
-              text: 'Info text',
-            },
-          }}
+          type="info"
+          title="Info title"
+          text="Info text"
         />
-      </Story>
-    ))
-    .add('Warning', () => (
-      <Story>
         <Notification
-          item={{
-            type: 'notify.warning',
-            info: {
-              title: 'Warning title',
-              text: 'Warning text',
-            },
-          }}
+          type="warning"
+          title="Warning title"
+          text="Warning text"
+        />
+        <Notification />
+        <Notification
+          href="/cabinet"
+          type="info"
+          title="With href"
+          text="With href"
+        />
+        <Notification
+          onClick={() => console.log('onClick')}
+          type="info"
+          title="With onClick"
+          text="With onClick"
         />
       </Story>
     ));

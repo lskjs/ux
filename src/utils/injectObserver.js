@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import pick from 'lodash/pick';
 
-export default fields => (createComponent) => {
-  @inject([...fields])
+export default (fields, creator) => {
+  @inject(...fields)
   @observer
   class Component2 extends Component {
     shouldComponentUpdate(nextProps) {
@@ -12,10 +12,10 @@ export default fields => (createComponent) => {
     }
     render() {
       const props = pick(this.props, fields);
-      return React.createComponent(createComponent(props), props);
+      const Component3 = creator(props);
+      return React.createElement(Component3, this.props);
     }
   }
-
   return Component2;
 };
 
