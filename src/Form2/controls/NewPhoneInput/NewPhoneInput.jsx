@@ -1,19 +1,21 @@
 import React from 'react';
 // import { Field, Form } from 'formik';
-import NewPhoneInput from '../../../UI/molecules/NewPhoneInput/NewPhoneInput';
+import NewPhoneInner from './NewPhoneInner';
 
-const CustomInputComponent = ({
+
+const NewPhoneInput = ({
   field, // { name, value, onChange, onBlur }
   form,
+  defaultCountry,
   ...props
 }) => {
   return (
     <React.Fragment>
-      <NewPhoneInput
+      <NewPhoneInner
         {...field}
         {...props}
         onChange={(value) => {
-          form.setFieldValue(field.name, value);
+          form.setFieldValue(field.name, value.replace(/\D+/g, ''));
         }}
       />
       {/* <input type="text" {...field} {...props} /> */}
@@ -23,4 +25,4 @@ const CustomInputComponent = ({
   );
 };
 
-export default CustomInputComponent;
+export default NewPhoneInput;

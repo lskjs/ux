@@ -39,6 +39,7 @@
     "react-image-fallback": "7.0.1",
     "react-motion": "0.5.2",
     "react-numeric-input": "2.2.3",
+    "react-phone-input-2": "^2.8.0",
     "react-phone-number-input": "^2.3.7",
     "react-popper": "^1.3.3",
     "react-select": "2.1.2",

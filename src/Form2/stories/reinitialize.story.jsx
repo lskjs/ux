@@ -52,6 +52,10 @@ const controls = {
     title: 'PercentSlider',
     component: PercentSlider,
   },
+  sliderlol: {
+    title: 'PercenssstSlider',
+    component: PercentSlider,
+  },
   phone: {
     title: 'PhoneInput',
     component: PhoneInput,
