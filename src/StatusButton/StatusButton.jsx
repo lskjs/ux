@@ -121,7 +121,7 @@ class StatusButton extends PureComponent {
     tag: Button,
   };
   static propTypes = {
-    status: React.PropTypes.string,
+    status: PropTypes.string,
     children: PropTypes.any,
     promise: PropTypes.any,
     bsStyle: PropTypes.string,

@@ -112,6 +112,7 @@
     "prepublish2": "npx npm-auto-version",
     "prepublish3": "npm version patch",
     "patch3": "npm version patch",
-    "postpublish3": "git push origin --tags"
+    "postpublish3": "git push origin --tags",
+    "styleguidist": "npx styleguidist server"
   }
 }
