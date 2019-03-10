@@ -21,7 +21,6 @@ const NewPhoneInputForm = createForm({
     NewPhoneInput: {
       title: 'NewPhoneInput',
       component: NewPhoneInput,
-      defaultCountry: null,
     },
   },
 });
@@ -40,7 +39,7 @@ export default ({ storiesOf }) => (
     ))
     .add('placeholder', () => (
       <Story>
-        <NewPhoneInputForm defaultCountry="af" />
+        <NewPhoneInputForm placeholder="Введите номер!" />
       </Story>
     ))
 );
