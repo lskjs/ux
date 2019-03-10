@@ -90,11 +90,13 @@ export default ({ storiesOf }) => {
         >
           Telegram
         </Button>
-        <Button icon={<Facebook />} colors={socialColors.facebook} />
-        <Button icon={<Twitter />} colors={socialColors.twitter} />
-        <Button icon={<Vk />} colors={socialColors.vk} />
-        <Button icon={<Telegram />} colors={socialColors.telegram} />
-        <Button icon={<Youtube />} colors={socialColors.youtube} />
+        <ButtonGroup padded>
+          <Button icon={<Facebook />} colors={socialColors.facebook} />
+          <Button icon={<Twitter />} colors={socialColors.twitter} />
+          <Button icon={<Vk />} colors={socialColors.vk} />
+          <Button icon={<Telegram />} colors={socialColors.telegram} />
+          <Button icon={<Youtube />} colors={socialColors.youtube} />
+        </ButtonGroup>
       </Story>
     ))
     .add('badge', () => (
@@ -143,7 +145,7 @@ export default ({ storiesOf }) => {
     ))
     .add('ButtonGroup', () => (
       <Story>
-        <ButtonGroup flexDirection="column">
+        <ButtonGroup block>
           <Button>Default</Button>
           <Button paint="primary">Primary</Button>
           <Button paint="info">Info</Button>

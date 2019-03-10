@@ -801,9 +801,16 @@ export const ButtonGroup = styled('div')`
   position: relative;
   display: inline-flex;
   vertical-align: middle;
-
+  flex-wrap: wrap;
+  ${p => p.padded && css`
+    ${Btn} {
+      margin: 5px;
+    }
+  `}
   @media screen and (max-width: 768px) {
-    flex-direction: column;
+    ${p => p.block && css`
+      flex-direction: column;
+    `}
     ${Btn} {
       margin: 8px 0 8px 0;
     }
@@ -811,7 +818,9 @@ export const ButtonGroup = styled('div')`
 
   & > * {
     position: relative;
-    flex: 1 1 auto;
+    ${p => p.block && css`
+      flex: 1 1 auto;
+    `}
 
     /* @include hover {
       z-index: 1;

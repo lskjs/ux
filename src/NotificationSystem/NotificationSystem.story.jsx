@@ -55,6 +55,18 @@ export default ({ storiesOf }) => {
           >
             success2
           </Button>
+          <Button
+            paint="success"
+            onClick={() => toast({ type: 'success', autoDismiss: 5 })}
+          >
+            autoDismiss: 5
+          </Button>
+          <Button
+            paint="success"
+            onClick={() => toast({ type: 'success', autoDismiss: 15 })}
+          >
+            autoDismiss: 15
+          </Button>
         </Story>
       );
     })

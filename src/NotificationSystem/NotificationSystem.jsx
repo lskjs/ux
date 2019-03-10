@@ -27,10 +27,24 @@ class NotificationSystem extends PureComponent {
       autoDismiss,
       level: type,
       children: children || (
-        <Notification
-          type={type}
-          {...info}
-        />
+        <div style={{ borderRadius: 50, position: 'relative' }}>
+          <div
+            className="notify-timeline"
+            style={{
+              animationDuration: autoDismiss !== null ? `${autoDismiss}s` : '5s',
+              background: 'white',
+              opacity: 0.6,
+              paddingTop: 2,
+              position: 'absolute',
+              borderRadius: '250px 250px 50px 0',
+              zIndex: 1,
+            }}
+          />
+          <Notification
+            type={type}
+            {...info}
+          />
+        </div>
       ),
     });
   }

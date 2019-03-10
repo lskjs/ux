@@ -1,5 +1,8 @@
 export default function isTouchDevice() {
-  const el = document.createElement('div');
-  el.setAttribute('ongesturestart', 'return;');
-  return typeof el.ongesturestart === 'function';
+  if (typeof window !== 'undefined') {
+    const el = window.document.createElement('div');
+    el.setAttribute('ongesturestart', 'return;');
+    return typeof el.ongesturestart === 'function';
+  }
+  return false;
 }

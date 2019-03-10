@@ -26,6 +26,7 @@ const SelectFormView = (props) => {
       <Field {...props.controls.select4} />
       <Field {...props.controls.select5} />
       <Field {...props.controls.radio} />
+      <Field {...props.controls.get('info.initialValue')} />
       {/* <hr />
       <h1>Мультиселекты</h1>
       <Field {...props.controls.multiselect} />
@@ -593,6 +594,27 @@ const SelectForm = createForm({
         },
       ],
     },
+    'info.initialValue': {
+      component: Select,
+      title: 'offerEdit.visibility',
+      placeholder: 'offer.placeholders.title',
+      format: Boolean,
+      initialValue: true,
+      options: [
+        {
+          // icon: <AccountMulti />,
+          title: 'offer.type.public',
+          description: 'offer.type.publicInfo',
+          value: true,
+        },
+        {
+          // icon: <Account />,
+          title: 'offer.type.private',
+          description: 'offer.type.privateInfo',
+          value: false,
+        },
+      ],
+    },
   },
 });
 
@@ -834,7 +856,7 @@ export default ({ storiesOf }) =>
             initialValues={{
               select4: 'two',
               asyncSelect2: 99,
-              info: {},
+              // info: {},
             }}
           />
         </Story>

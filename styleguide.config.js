@@ -26,7 +26,8 @@ module.exports = {
     {
       name: 'UI Components',
       // content: 'docs/ui.md',
-      components: 'src/Button/*.jsx',
+      components: 'src/*/*.jsx',
+      // components: 'src/Button/*.jsx',
       exampleMode: 'expand', // 'hide' | 'collapse' | 'expand'
       usageMode: 'expand', // 'hide' | 'collapse' | 'expand'
     },
