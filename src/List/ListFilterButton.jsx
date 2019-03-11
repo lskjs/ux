@@ -24,6 +24,7 @@ class FilterButton extends Component {
       <ResponsiveButton
         icon={<TuneIcon />}
         paint="primary"
+        size="small"
         view="text"
         bordered
         style={{ backgroundColor: listStore.showFilter ? '#F0F0FF' : '' }}
@@ -34,7 +35,10 @@ class FilterButton extends Component {
       <React.Fragment>
         {/*  className={isFilterModal ? 'd-none d-md-flex' : null} */}
         <Badge count={badge}>
-          <Button onClick={listStore.toggleFilter}>
+          <Button
+            size="small"
+            onClick={listStore.toggleFilter}
+          >
             <T name="lskList.filterButton" />
           </Button>
         </Badge>

@@ -34,6 +34,25 @@ export default ({ storiesOf }) => {
         <Button paint="primary" size="large">large</Button>
       </Story>
     ))
+    .add('small', () => (
+      <Story>
+        <Button paint="primary" size="small">Primary</Button>
+        <Button paint="danger" size="small">Danger</Button>
+        <Button paint="info" size="small">Info</Button>
+        <Button paint="success" size="small">Success</Button>
+        <Button paint="warning" size="small">Warning</Button>
+        <br />
+        <Button paint="primary" size="small">Laaaaaaaaaaaaaaaaaarge text</Button>
+        <br />
+        <Button iconLeft={<Facebook />} paint="primary" size="small">small</Button>
+        <br />
+        <Button iconRight={<Twitter />} paint="primary" size="small">small</Button>
+        <br />
+        <Button icon={<Telegram />} paint="primary" size="small" />
+        <br />
+        <Button iconLeft={<Facebook />} iconRight={<Twitter />} paint="primary" size="small">small</Button>
+      </Story>
+    ))
     .add('props', () => (
       <Story>
         <Button paint="primary" >Default</Button>

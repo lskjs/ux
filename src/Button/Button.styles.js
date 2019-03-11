@@ -83,11 +83,11 @@ const defaultSize = css`
 `;
 
 const smallSize = css`
-  padding: 9px 12px;
+  padding: 10px 8px;
   min-width: 48px;
 
-  font-size: 11px;
-  font-weight: bold;
+  font-size: 13px;
+  font-weight: 500;
   font-style: normal;
   font-stretch: normal;
   line-height: normal;
@@ -129,12 +129,12 @@ const iconButtonLeft = props => css`
     }
   `}
   ${props.size === 'small' && `
-    padding-left: 9px;
+    padding-left: 8px;
     padding-top: 6px;
     padding-bottom: 6px;
 
     ${Icon} {
-      font-size: 20px;
+      font-size: 24px;
     }
   `}
 `;
@@ -163,10 +163,10 @@ const iconButtonRight = props => css`
   ${props.size === 'small' && `
     padding-top: 6px;
     padding-bottom: 6px;
-    padding-right: 6px;
+    padding-right: 8px;
 
     ${Icon} {
-      font-size: 20px;
+      font-size: 24px;
     }
   `}
 `;
@@ -201,7 +201,7 @@ const iconButtonSingle = props => css`
     padding-left: 8px !important;
 
     ${Icon} {
-      font-size: 18px;
+      font-size: 20px;
     }
   `}
 `;
