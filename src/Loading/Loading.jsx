@@ -1,20 +1,20 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import If from 'react-if';
 import T from '../T';
 import LoaderIcon from './LoaderIcon';
-import { isAbsolute } from 'path';
 
 const styles = {
   inner: {
     zIndex: 3000,
-    display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     color: '#4a4a4a',
     position: 'absolute',
     width: '100%',
     height: '100%',
-    display: 'block',
+    maxHeight: 400,
+    display: 'flex',
     top: 0,
     left: 0,
   },
@@ -26,6 +26,7 @@ const styles = {
     justifyContent: 'center',
     color: '#4a4a4a',
     position: 'fixed',
+    padding: '32px 12px',
     top: 0,
     left: 0,
     right: 0,
@@ -33,7 +34,6 @@ const styles = {
   },
   box: {
     color: '#4a4a4a',
-    padding: 12,
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -50,7 +50,7 @@ const styles = {
   overlay: {
     clear: 'both',
     overflow: 'hidden',
-    opacity: .2,
+    opacity: 0.2,
     userSelect: 'none',
     pointerEvents: 'none',
   },
@@ -67,15 +67,19 @@ class Loading extends PureComponent {
     iconPath: PropTypes.string,
     full: PropTypes.bool,
     children: PropTypes.any,
+    fontName: PropTypes.string,
   }
+
   static defaultProps = {
     disabled: false,
     icon: <LoaderIcon />,
     iconPath: null,
     full: false,
     children: null,
+    fontName: '\'Gotham Pro\', Helvetica, Arial',
     text: <T name="lskComponents.fullScreenLoader.loading" />,
   }
+
   render() {
     const {
       icon,
@@ -84,8 +88,10 @@ class Loading extends PureComponent {
       text,
       full,
       children,
+      fontName,
+      ...props
     } = this.props;
-    if (disabled) return false;
+    if (disabled) return children;
     let iconComponent = (
       <div style={styles.icon}>
         {icon}
@@ -101,13 +107,15 @@ class Loading extends PureComponent {
       );
     }
     return (
-      <div style={styles.container}>
+      <div style={styles.container} {...props}>
         <div style={full ? styles.innerFull : styles.inner}>
           <div style={styles.box}>
             {iconComponent}
-            <div style={styles.text}>
-              {text}
-            </div>
+            <If condition={text}>
+              <div style={Object.assign(fontName ? { fontFamily: fontName } : {}, styles.text)}>
+                {text}
+              </div>
+            </If>
           </div>
         </div>
         <If condition={children}>
