@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { css } from 'react-emotion';
 import { observer, inject } from 'mobx-react';
 import If from 'react-if';
-import Spin from 'antd/lib/spin';
+import Loading from '../Loading';
 import Progress from '../Progress';
 import T from '../T';
 import Button from '../Button';
@@ -13,6 +13,7 @@ const buttonStyles = css`
   box-shadow: 0 0 0 1px #e3e3e3;
   width: 100%;
 `;
+
 @contextToProps('List', 'show')
 @inject('listStore')
 @observer
@@ -34,9 +35,10 @@ class ListBody extends Component {
         3) загружаем второй раз, меняя skip, фильтры не меняются
         4) до загружаем второй раз, используя fetch next / fetch prev
         */}
-        <Spin
-          size="large"
-          spinning={listStore.loading}
+        <Loading
+          text={null}
+          icon={<List.LoaderIcon />}
+          disabled={!listStore.loading}
         >
           <If condition={show.more && listStore.canFetchMore(-1)}>
             <Button
@@ -78,7 +80,7 @@ class ListBody extends Component {
               </If>
             </Button>
           </If>
-        </Spin>
+        </Loading>
       </List.BodyWrapper>
     );
   }

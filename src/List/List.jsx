@@ -39,7 +39,7 @@ import ListSortHeader from './ListSortHeader';
 import ListCheckbox from './ListCheckbox';
 import ListPaginator from './ListPaginator';
 
-
+import DefaultLoader from './DefaultLoader';
 import DefaultTags from './DefaultTags';
 import DefaultTag from './DefaultTag';
 
@@ -65,6 +65,7 @@ const defaultShow = {
 class List extends Component {
   static Tag = DefaultTag;
   static Tags = DefaultTags;
+  static LoaderIcon = DefaultLoader;
   static Sticky = ListSticky;
   static Header = ListHeader;
   static Search = ListSearch;
@@ -122,6 +123,7 @@ class List extends Component {
     }, Boolean);
 
     const List = {  //eslint-disable-line
+      LoaderIcon: this.props.LoaderIcon || this.constructor.LoaderIcon,
       Sticky: this.props.Sticky || this.constructor.Sticky,
       Header: this.props.Header || this.constructor.Header,
       Search: this.props.Search || this.constructor.Search,
