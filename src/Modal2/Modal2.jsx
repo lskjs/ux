@@ -4,9 +4,8 @@ import cx from 'classnames';
 import pick from 'lodash/pick';
 import omit from 'lodash/omit';
 import merge from 'lodash/merge';
-import ReactModal from 'react-modal';
-import isTouchDevice from '../utils/isTouchDevice';
 import autobind from 'core-decorators/lib/autobind';
+import ReactModal from 'react-modal';
 import ModalSubtitle from '../UI/atoms/ModalSubtitle';
 import ModalDescription from '../UI/atoms/ModalDescription';
 import ModalContent from '../UI/atoms/ModalContent';
@@ -18,7 +17,6 @@ import ModalTitle from '../UI/molecules/ModalTitle';
 import ModalTrigger from './ModalTrigger';
 import ModalInner from './ModalInner';
 import ModalCloseIcon from './ModalCloseIcon';
-import Outside from '../utils/react-click-outside';
 
 import {
   bodyModalStyle,
@@ -79,6 +77,7 @@ class Modal2 extends PureComponent {
   constructor(props) {
     super(props);
     this.state = { visible: props.defaultVisible };
+    this.body = React.createRef();
   }
 
   static getDerivedStateFromProps(props) {
@@ -107,14 +106,6 @@ class Modal2 extends PureComponent {
     this.setState({ visible: false });
     if (this.props.onClose) this.props.onClose();
   }
-  @autobind
-  backdropClose(event) {
-    if (__CLIENT__) {
-      const isModalSelector = event?.target?.classList?.[0] === 'ReactModal__Content';
-      if (!isModalSelector) return;
-      this.close();
-    }
-  }
 
   render() {
     const Modal = {
@@ -138,16 +129,25 @@ class Modal2 extends PureComponent {
       trigger,
       innerRef,
       style,
-      closeOnBackdrop = !isTouchDevice(),
       ...props
     } = this.props;
     const modal = this;
     if (innerRef) innerRef(this);
-
     return (
       <Provider value={{ modal, Modal }}>
         <React.Fragment>
           <ReactModal
+            ref={(e) => { this._modal = e; }}
+            contentRef={(e) => {
+              if (__CLIENT__ && e) {
+                e.onclick = (event) => {
+                  if (!event.path.includes(this.body.current)) {
+                    this._modal.portal.shouldClose = true;
+                    this._modal.portal.handleOverlayOnClick(event);
+                  }
+                };
+              }
+            }}
             isOpen={this.state.visible}
             onRequestClose={this.close}
             bodyOpenClassName={bodyModalStyle}
@@ -155,8 +155,9 @@ class Modal2 extends PureComponent {
             style={merge(style, Modal2.defaultStyles)}
             {...pick(props, reactModalProps)}
           >
-            <Outside
-              onClickOutside={closeOnBackdrop && this.backdropClose}
+            <div
+              aria-hidden
+              ref={this.body}
               className={cx({
                 [className]: className,
                 [modalStyle]: true,
@@ -173,7 +174,7 @@ class Modal2 extends PureComponent {
                   {...omit(props, reactModalProps)}
                 />
               </Modal.InnerWrapper>
-            </Outside>
+            </div>
           </ReactModal>
           <If condition={trigger}>
             <Modal.Trigger type="open">{trigger}</Modal.Trigger>
