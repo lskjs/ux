@@ -6,8 +6,7 @@ import wrapView from './wrapView';
 import createMapPropsToValues from './createMapPropsToValues';
 import createHandleSubmit from './createHandleSubmit';
 import createValidate from './createValidate';
-
-const DEBUG = __DEV__;
+import DEBUG from './_debug';
 
 export default ({
   OnChangeListener = React.Fragment,

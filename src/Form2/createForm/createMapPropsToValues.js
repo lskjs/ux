@@ -1,8 +1,7 @@
 import set from 'lodash/set';
 import get from 'lodash/get';
 import cloneDeep from 'lodash/cloneDeep';
-
-const DEBUG = __DEV__;
+import DEBUG from './_debug';
 
 export default ({ controls }) => (props) => {
   if (DEBUG) console.log('Form2 mapPropsToValues', props, controls ); // eslint-disable-line
