@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/general",
-  "version": "0.15.267",
+  "version": "0.15.268",
   "author": "isuvorov",
   "license": "MIT",
   "dependencies": {
@@ -77,7 +77,6 @@
     "css-loader": "0.28.11",
     "eslint": "4.19.1",
     "eslint-config-airbnb": "16.1.0",
-    
     "eslint-loader": "2.0.0",
     "eslint-plugin-import": "2.12.0",
     "eslint-plugin-jsx-a11y": "6.0.3",
