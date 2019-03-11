@@ -6,9 +6,9 @@ import Story from '../../Story';
 import createForm from '../createForm';
 import Input from '../controls/Input';
 import Select from '../controls/Select';
-import CheckBlock from '../controls/CheckBlock';
 import Tags from '../controls/Tags';
 import PhoneInput from '../controls/PhoneInput';
+import NewPhoneInput from '../controls/NewPhoneInput';
 import FormDebug from '../FormDebug';
 import PercentSlider from '../controls/PercentSlider/PercentSlider';
 
@@ -21,7 +21,7 @@ const InputFormView = (props) => {
       <Field {...props.controls.tags} />
       <Field {...props.controls.slider} />
       <Field {...props.controls.phone} />
-      <Field {...props.controls.checkBlock} />
+      <Field {...props.controls.newphone} />
       <FormDebug {...props} />
     </Form>
   );
@@ -52,18 +52,17 @@ const controls = {
     title: 'PercentSlider',
     component: PercentSlider,
   },
+  sliderlol: {
+    title: 'PercenssstSlider',
+    component: PercentSlider,
+  },
   phone: {
     title: 'PhoneInput',
     component: PhoneInput,
   },
-  checkBlock: {
-    // title: 'checkBlock',
-    component: CheckBlock,
-    label: 'test',
-    info: 'this is info',
-    // children: 'asd',
-    block: true,
-    type: 'radio',
+  newphone: {
+    title: 'NewPhoneInput',
+    component: NewPhoneInput,
   },
 };
 const SampleForm = createForm({
@@ -127,12 +126,6 @@ class Container extends Component {
                       </button>
                       <button onClick={() => { delete this.state[name]; this.setState({ q: 1 }); }}>
                         delete {name}
-                      </button>
-                      <button onClick={() => this.setState({ [name]: true })}>
-                        true {name}
-                      </button>
-                      <button onClick={() => this.setState({ [name]: false })}>
-                        false {name}
                       </button>
                     </div>
                   );

@@ -2,15 +2,21 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import T from '../T';
 import LoaderIcon from './LoaderIcon';
+import { isAbsolute } from 'path';
 
 const styles = {
   inner: {
     zIndex: 3000,
-    backgroundColor: 'rgba(255, 255, 255, 0.95)',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     color: '#4a4a4a',
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    display: 'block',
+    top: 0,
+    left: 0,
   },
   innerFull: {
     zIndex: 3000,
@@ -41,6 +47,16 @@ const styles = {
   text: {
     textAlign: 'center',
   },
+  overlay: {
+    clear: 'both',
+    overflow: 'hidden',
+    opacity: .2,
+    userSelect: 'none',
+    pointerEvents: 'none',
+  },
+  container: {
+    position: 'relative',
+  }
 };
 
 class Loading extends PureComponent {
@@ -50,12 +66,14 @@ class Loading extends PureComponent {
     icon: PropTypes.any,
     iconPath: PropTypes.string,
     full: PropTypes.bool,
+    children: PropTypes.any,
   }
   static defaultProps = {
     disabled: false,
     icon: <LoaderIcon />,
     iconPath: null,
     full: false,
+    children: null,
     text: <T name="lskComponents.fullScreenLoader.loading" />,
   }
   render() {
@@ -65,6 +83,7 @@ class Loading extends PureComponent {
       disabled,
       text,
       full,
+      children,
     } = this.props;
     if (disabled) return false;
     let iconComponent = (
@@ -82,13 +101,20 @@ class Loading extends PureComponent {
       );
     }
     return (
-      <div style={full ? styles.innerFull : styles.inner}>
-        <div style={styles.box}>
-          {iconComponent}
-          <div style={styles.text}>
-            {text}
+      <div style={styles.container}>
+        <div style={full ? styles.innerFull : styles.inner}>
+          <div style={styles.box}>
+            {iconComponent}
+            <div style={styles.text}>
+              {text}
+            </div>
           </div>
         </div>
+        <If condition={children}>
+          <div style={styles.overlay}>
+            {children}
+          </div>
+        </If>
       </div>
     );
   }

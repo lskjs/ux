@@ -72,7 +72,7 @@ const largeSize = props => css`
 `;
 
 const defaultSize = css`
-  padding: 12px 17px 14px 16px;
+  padding: 13px 16px;
   font-size: 13px;
   font-weight: 500;
   font-style: normal;

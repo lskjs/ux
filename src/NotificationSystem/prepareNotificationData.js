@@ -1,6 +1,3 @@
-import React from 'react';
-import T from '../T';
-
 export default function (rawData, { defaultType = 'info' }) {
   let data = {};
   if (typeof rawData === 'string') {

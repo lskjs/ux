@@ -5,7 +5,7 @@ import onError from './createForm/onError';
 import FormGroup from './FormGroup';
 
 export default createCreateForm({
-  // OnChangeListener,
+  OnChangeListener,
   FormGroup,
   withFormik,
   onError,

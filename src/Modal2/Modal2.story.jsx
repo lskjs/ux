@@ -187,6 +187,67 @@ export default ({ storiesOf, action }) => {
           </Footer>
         </Modal>
       </Story>
+    ))
+    .add('8. Nested modals', () => (
+      <Story>
+        <Modal
+          size="small"
+          trigger="trigger"
+          title="title"
+          subtitle="subtitle"
+          image="https://picsum.photos/1280/720/?random"
+          content={(
+            <Modal
+              size="large"
+              trigger="trigger"
+              title="title"
+              subtitle="subtitle"
+              image="https://picsum.photos/1280/720/?random"
+              content={(
+                <Modal
+                  trigger="trigger"
+                  title="title"
+                  subtitle="subtitle"
+                  image="https://picsum.photos/1280/720/?random"
+                  content={(
+                    <Modal
+                      size="small"
+                      trigger="trigger"
+                      title="title"
+                      subtitle="subtitle"
+                      image="https://picsum.photos/1280/720/?random"
+                      content={(
+                        <Modal
+                          trigger="trigger"
+                          title="title"
+                          subtitle="subtitle"
+                          image="https://picsum.photos/1280/720/?random"
+                          content="nested"
+                          footer="nested footer"
+                          onClose={() => console.log('onClose')}
+                          onOpen={() => console.log('onOpen')}
+                        />
+                      )}
+                      footer="nested footer"
+                      onClose={() => console.log('onClose')}
+                      onOpen={() => console.log('onOpen')}
+                    />
+                  )}
+                  footer="nested footer"
+                  onClose={() => console.log('onClose')}
+                  onOpen={() => console.log('onOpen')}
+                />
+              )}
+              footer="nested footer"
+              onClose={() => console.log('onClose')}
+              onOpen={() => console.log('onOpen')}
+            />
+          )}
+          footer="footer"
+          onClose={() => console.log('onClose')}
+          onOpen={() => console.log('onOpen')}
+        />
+      </Story>
     ));
   // .add('2. With title and wrap', () => (
   //   <Story>
