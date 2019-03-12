@@ -6,6 +6,12 @@ import WarningIcon from './svg/warning';
 import InfoIcon from './svg/info';
 import SuccessIcon from './svg/success';
 import NotifyItem from './NotifyItem';
+import NotifyAvatar from '../../UI/atoms/NotifyAvatar';
+import NotifyInfo from '../../UI/atoms/NotifyInfo';
+import NotifyTitle from '../../UI/atoms/NotifyTitle';
+import NotifyText from '../../UI/atoms/NotifyText';
+import NotifyItemInner from '../../UI/atoms/NotifyItemInner';
+
 
 class Notification extends Component {
   getDefaultImage() {
@@ -32,42 +38,38 @@ class Notification extends Component {
     } = this.props;
 
     return (
-      <div aria-hidden onClick={onClick}>
+      <React.Fragment aria-hidden onClick={onClick}>
         <NotifyItem
           // unread
           // unread={transparent ? false : !(item.viewedAt)}
           href={href}
           type={type}
         >
-          <div className="notify-item">
-            <div className="notify-avatar">
+          <NotifyItemInner>
+            <NotifyAvatar>
               {image || this.getDefaultImage()}
-            </div>
-            <div className="notify-info">
-              <div className="notify-content">
-                <span className="notify-info-entity">
-                  <If condition={title}>
-                    <span className="notify-title">
-                      {title}
-                    </span>
-                  </If>
-                  <If condition={!title && type === 'error'}>
-                    <T name="common.error" />
-                  </If>
-                  <If condition={!title && type !== 'error'}>
-                    <T name="common.success" />
-                  </If>
-                  <If condition={text}>
-                    <div className="notify-text">
-                      {text}
-                    </div>
-                  </If>
-                </span>
-              </div>
-            </div>
-          </div>
+            </NotifyAvatar>
+            <NotifyInfo>
+              <If condition={title}>
+                <NotifyTitle>
+                  {title}
+                </NotifyTitle>
+              </If>
+              <If condition={!title && type === 'error'}>
+                <T name="common.error" />
+              </If>
+              <If condition={!title && type !== 'error'}>
+                <T name="common.success" />
+              </If>
+              <If condition={text}>
+                <NotifyText>
+                  {text}
+                </NotifyText>
+              </If>
+            </NotifyInfo>
+          </NotifyItemInner>
         </NotifyItem>
-      </div>
+      </React.Fragment>
     );
   }
 }
