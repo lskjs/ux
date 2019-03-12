@@ -34,6 +34,8 @@ class Button extends PureComponent {
       'danger',
       'info',
       'success',
+      'transparent',
+      'transparentDark',
     ]),
     state: PropTypes.oneOf([
       'processing', 'progress',
