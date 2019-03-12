@@ -10,6 +10,7 @@ import { Badge, Icon } from 'antd';
 import Button from './Button';
 import ButtonGroup from './ButtonGroup';
 import Story from '../Story';
+import Link from '../Link';
 import socialColors from '../utils/socialColors';
 import withResponsive from './withResponsive';
 
@@ -17,6 +18,16 @@ const ResponsiveButton = withResponsive(Button);
 
 export default ({ storiesOf }) => {
   storiesOf('Button', module)
+    .add('default', () => (
+      <React.Fragment>
+        <Button
+          componentClass={Link}
+          href="/cabinet"
+        >
+          Link
+        </Button>
+      </React.Fragment>
+    ))
     .add('paint', () => (
       <React.Fragment>
         <Button>Default</Button>
