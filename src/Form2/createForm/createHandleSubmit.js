@@ -1,7 +1,7 @@
 import avoidNestedFields from './avoidNestedFields';
 import getError from '../../utils/getError';
+import DEBUG from './_debug';
 
-const DEBUG = __DEV__;
 
 export default ({ flatten }) => async (values, props2) => {
   const {

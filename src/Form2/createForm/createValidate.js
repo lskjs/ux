@@ -2,8 +2,7 @@ import forEach from 'lodash/forEach';
 import isEmpty from 'lodash/isEmpty';
 import validate from 'validate.js';
 import Promise from 'bluebird';
-
-const DEBUG = true;
+import DEBUG from './_debug';
 
 export default ({
   validators, customValidators, onError, controls,

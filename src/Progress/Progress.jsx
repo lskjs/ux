@@ -2,7 +2,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Nanobar from 'nanobar';
+import get from 'lodash/get';
+import { withTheme } from 'emotion-theming';
 
+@withTheme
 class Progress extends Component {
   static defaultProps = {
     isLoading: false,
@@ -10,7 +13,8 @@ class Progress extends Component {
     speed: 2,
     height: 2,
     value: null,
-    color: '#9e5262',
+    shadow: true,
+    // color: null,
   }
 
   static propTypes = {
@@ -52,13 +56,17 @@ class Progress extends Component {
 
   bar = React.createRef();
   styleSetting() {
+    const { theme } = this.props;
+    const { color = get(theme, 'colors.primary', '#1890ff'), shadow } = this.props;
+    // console.log({color});
+
     this.nanobar.el.children[0].style.cssText = `height: ${this.props.height}px;
                                                  background: black;
-                                                 box-shadow: 0 0 12px ${this.props.color}, 0 0 5px ${this.props.color};
+                                                 ${shadow ? `box-shadow: 0 0 12px ${color}, 0 0 5px ${color};` : ''}
                                                  overflow: hidden;
                                                  max-width: 100%; 
                                                  position: absolute !important;
-                                                 background-color: ${this.props.color};
+                                                 background-color: ${color};
                                                  top: 0;
                                                  left: 0;`;
   }

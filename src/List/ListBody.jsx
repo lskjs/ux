@@ -26,8 +26,9 @@ class ListBody extends Component {
     } = this.props;
 
     return (
-      <List.BodyWrapper {...props}>
-        {__DEV__ && <Progress value={listStore.loading ? 60 : null} />}
+      <List.BodyWrapper {...props} style={{ position: 'relative' }}>
+        {__DEV__ && <Progress isLoading={listStore.loading} value={30} shadow={false} />}
+        {/* {__DEV__ && <Progress value={listStore.loading ? 60 : null} />} */}
         {/* <Progress.Bar id="progress" /> */}
         {/* 1) загружаем первый раз
         2) загружаем второй раз, меняя фильтры
