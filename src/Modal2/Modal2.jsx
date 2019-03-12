@@ -164,7 +164,7 @@ class Modal2 extends PureComponent {
                 [className]: className,
                 [modalStyle]: true,
                 [modalSmall]: sizes.is(size, 'small'),
-                [modalNormal]: sizes.is(size, 'default'),
+                [modalNormal]: sizes.is(size, 'medium'),
                 [modalLarge]: sizes.is(size, 'large'),
               })}
             >
