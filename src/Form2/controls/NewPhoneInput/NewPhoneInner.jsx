@@ -1,11 +1,9 @@
 import React from 'react';
+import PhoneInput from 'react-phone-input-2';
 import styled from 'react-emotion';
 import PropTypes from 'prop-types';
-import PhoneInput from 'react-phone-input-2';
-import { inject, observer } from 'mobx-react';
 
 const Container = styled.div`
-
   .flag-dropdown{
     border: 1px solid #1890ff;
     background: none;
@@ -15,8 +13,6 @@ const Container = styled.div`
   }
 `;
 
-@inject('t')
-@observer
 class NewPhoneInner extends React.Component {
   static propTypes = {
     value: PropTypes.string,
