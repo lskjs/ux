@@ -65,33 +65,20 @@ class Progress extends Component {
   }
 
   styleSetting() {
-<<<<<<< HEAD
-    const { height, color } = this.props;
-    this.nanobar.el.children[0].style.cssText = `
-      height: ${height}px;
-      background: black;
-      box-shadow: 0 0 12px ${color}, 0 0 5px ${color};
-      overflow: hidden;
-      max-width: 100%; 
-      position: absolute !important;
-      background-color: ${color};
-      top: 0;
-      left: 0;`;
-=======
     const { theme } = this.props;
     const { color = get(theme, 'colors.primary', '#1890ff'), shadow } = this.props;
     // console.log({color});
 
-    this.nanobar.el.children[0].style.cssText = `height: ${this.props.height}px;
-                                                 background: black;
-                                                 ${shadow ? `box-shadow: 0 0 12px ${color}, 0 0 5px ${color};` : ''}
-                                                 overflow: hidden;
-                                                 max-width: 100%; 
-                                                 position: absolute !important;
-                                                 background-color: ${color};
-                                                 top: 0;
-                                                 left: 0;`;
->>>>>>> origin
+    this.nanobar.el.children[0].style.cssText =
+    `height: ${this.props.height}px;
+    background: black;
+    ${shadow ? `box-shadow: 0 0 12px ${color}, 0 0 5px ${color};` : ''}
+    overflow: hidden;
+    max-width: 100%; 
+    position: absolute !important;
+    background-color: ${color};
+    top: 0;
+    left: 0;`;
   }
 
   render() {
