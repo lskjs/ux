@@ -17,6 +17,7 @@ import ModalTitle from '../UI/molecules/ModalTitle';
 import ModalTrigger from './ModalTrigger';
 import ModalInner from './ModalInner';
 import ModalCloseIcon from './ModalCloseIcon';
+import sizes from '../utils/sizes';
 
 import {
   bodyModalStyle,
@@ -126,6 +127,7 @@ class Modal2 extends PureComponent {
       className,
       size = 'default',
       closable = true,
+      disabled,
       trigger,
       innerRef,
       style,
@@ -161,9 +163,9 @@ class Modal2 extends PureComponent {
               className={cx({
                 [className]: className,
                 [modalStyle]: true,
-                [modalSmall]: size === 'small',
-                [modalNormal]: size === 'default',
-                [modalLarge]: size === 'large',
+                [modalSmall]: sizes.is(size, 'small'),
+                [modalNormal]: sizes.is(size, 'default'),
+                [modalLarge]: sizes.is(size, 'large'),
               })}
             >
               <If condition={closable}>
