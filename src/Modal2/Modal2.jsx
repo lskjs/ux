@@ -1,6 +1,9 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import If from 'react-if';
 import cx from 'classnames';
+import uniq from 'lodash/uniq';
+import filter from 'lodash/filter';
 import pick from 'lodash/pick';
 import omit from 'lodash/omit';
 import merge from 'lodash/merge';
@@ -72,7 +75,51 @@ class Modal2 extends PureComponent {
   static defaultStyles = ReactModal.defaultStyles;
 
   static propTypes = {
+    defaultVisible: PropTypes.bool,
+    onOpen: PropTypes.func,
+    onClose: PropTypes.func,
+    closable: PropTypes.bool,
+    Title: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+    Subtitle: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+    Image: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+    Content: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+    Description: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+    Help: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+    Scroll: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+    Footer: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+    Trigger: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+    Inner: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+    InnerWrapper: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+    CloseIcon: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+    className: PropTypes.string,
+    size: PropTypes.oneOf(uniq(filter(sizes, e => typeof e === 'string'))),
+    trigger: PropTypes.any,
+    innerRef: PropTypes.func,
+    style: PropTypes.object,
+  }
 
+  static defaultProps = {
+    defaultVisible: false,
+    onOpen: null,
+    onClose: null,
+    closable: true,
+    Title: null,
+    Subtitle: null,
+    Image: null,
+    Content: null,
+    Description: null,
+    Help: null,
+    Scroll: null,
+    Footer: null,
+    Trigger: null,
+    Inner: null,
+    InnerWrapper: null,
+    CloseIcon: null,
+    className: null,
+    size: sizes.medium,
+    trigger: null,
+    innerRef: null,
+    style: {},
   }
 
   constructor(props) {
@@ -91,7 +138,7 @@ class Modal2 extends PureComponent {
   @autobind
   toggle() {
     if (this.state.visible) {
-      this.close();
+      if (this.props.closable) this.close();
     } else {
       this.open();
     }
@@ -104,30 +151,30 @@ class Modal2 extends PureComponent {
   }
   @autobind
   close() {
+    if (!this.props.closable) return;
     this.setState({ visible: false });
     if (this.props.onClose) this.props.onClose();
   }
 
   render() {
     const Modal = {
-      Title: this.constructor.Title || this.props.Title,
-      Subtitle: this.constructor.Subtitle || this.props.Subtitle,
-      Image: this.constructor.Image || this.props.Image,
-      Content: this.constructor.Content || this.props.Content,
-      Description: this.constructor.Description || this.props.Description,
-      Help: this.constructor.Help || this.props.Help,
-      Scroll: this.constructor.Scroll || this.props.Scroll,
-      Footer: this.constructor.Footer || this.props.Footer,
-      Trigger: this.constructor.Trigger || this.props.Trigger,
-      Inner: this.constructor.Inner || this.props.Inner,
-      InnerWrapper: this.constructor.InnerWrapper || this.props.InnerWrapper,
-      CloseIcon: this.constructor.CloseIcon || this.props.CloseIcon,
+      Title: this.props.Title || this.constructor.Title,
+      Subtitle: this.props.Subtitle || this.constructor.Subtitle,
+      Image: this.props.Image || this.constructor.Image,
+      Content: this.props.Content || this.constructor.Content,
+      Description: this.props.Description || this.constructor.Description,
+      Help: this.props.Help || this.constructor.Help,
+      Scroll: this.props.Scroll || this.constructor.Scroll,
+      Footer: this.props.Footer || this.constructor.Footer,
+      Trigger: this.props.Trigger || this.constructor.Trigger,
+      Inner: this.props.Inner || this.constructor.Inner,
+      InnerWrapper: this.props.InnerWrapper || this.constructor.InnerWrapper,
+      CloseIcon: this.props.CloseIcon || this.constructor.CloseIcon,
     };
     const {
       className,
       size = 'default',
       closable = true,
-      disabled,
       trigger,
       innerRef,
       style,
@@ -139,8 +186,8 @@ class Modal2 extends PureComponent {
       <Provider value={{ modal, Modal }}>
         <React.Fragment>
           <ReactModal
-            ref={(e) => { this._modal = e; }}
-            contentRef={(e) => {
+            ref={closable ? (e) => { this._modal = e; } : null}
+            contentRef={closable ? (e) => {
               if (__CLIENT__ && e) {
                 e.onclick = (event) => {
                   if (!event.path.includes(this.body.current)) {
@@ -149,9 +196,9 @@ class Modal2 extends PureComponent {
                   }
                 };
               }
-            }}
+            } : null}
             isOpen={this.state.visible}
-            onRequestClose={this.close}
+            onRequestClose={closable && this.close}
             bodyOpenClassName={bodyModalStyle}
             htmlOpenClassName={bodyModalStyle}
             style={merge(style, Modal2.defaultStyles)}
@@ -159,7 +206,7 @@ class Modal2 extends PureComponent {
           >
             <div
               aria-hidden
-              ref={this.body}
+              ref={closable && this.body}
               className={cx({
                 [className]: className,
                 [modalStyle]: true,
@@ -172,9 +219,7 @@ class Modal2 extends PureComponent {
                 <Modal.CloseIcon onClick={this.close} />
               </If>
               <Modal.InnerWrapper>
-                <Modal.Inner
-                  {...omit(props, reactModalProps)}
-                />
+                <Modal.Inner {...omit(props, reactModalProps)} />
               </Modal.InnerWrapper>
             </div>
           </ReactModal>
