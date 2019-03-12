@@ -34,42 +34,40 @@ class Notification extends Component {
 
   render() {
     const {
-      href, onClick, type, title, text, image,
+      href, type, title, text, image,
     } = this.props;
 
     return (
-      <React.Fragment aria-hidden onClick={onClick}>
-        <NotifyItem
-          // unread
-          // unread={transparent ? false : !(item.viewedAt)}
-          href={href}
-          type={type}
-        >
-          <NotifyItemInner>
-            <NotifyAvatar>
-              {image || this.getDefaultImage()}
-            </NotifyAvatar>
-            <NotifyInfo>
-              <If condition={title}>
-                <NotifyTitle>
-                  {title}
-                </NotifyTitle>
-              </If>
-              <If condition={!title && type === 'error'}>
-                <T name="common.error" />
-              </If>
-              <If condition={!title && type !== 'error'}>
-                <T name="common.success" />
-              </If>
-              <If condition={text}>
-                <NotifyText>
-                  {text}
-                </NotifyText>
-              </If>
-            </NotifyInfo>
-          </NotifyItemInner>
-        </NotifyItem>
-      </React.Fragment>
+      <NotifyItem
+        // unread
+        // unread={transparent ? false : !(item.viewedAt)}
+        href={href}
+        type={type}
+      >
+        <NotifyItemInner>
+          <NotifyAvatar>
+            {image || this.getDefaultImage()}
+          </NotifyAvatar>
+          <NotifyInfo>
+            <If condition={title}>
+              <NotifyTitle>
+                {title}
+              </NotifyTitle>
+            </If>
+            <If condition={!title && type === 'error'}>
+              <T name="common.error" />
+            </If>
+            <If condition={!title && type !== 'error'}>
+              <T name="common.success" />
+            </If>
+            <If condition={text}>
+              <NotifyText>
+                {text}
+              </NotifyText>
+            </If>
+          </NotifyInfo>
+        </NotifyItemInner>
+      </NotifyItem>
     );
   }
 }

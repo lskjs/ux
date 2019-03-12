@@ -23,7 +23,7 @@ class NotificationSystem extends PureComponent {
   @autobind
   toast(rawData) {
     const {
-      type = 'info', level, children, autoDismiss = 5, href, ...info
+      type = 'info', level, children, autoDismiss = 5, href, onClick, ...info
     } = prepareNotificationData(rawData, { defaultType: 'success' });
 
     this.notificationSystem.current.addNotification({
@@ -35,6 +35,7 @@ class NotificationSystem extends PureComponent {
           target="_blank"
           rel="noopener noreferrer"
           style={{ textDecoration: 'none' }}
+          onClick={onClick}
         >
           <NotifyTimelineWrapper>
             <NotifyTimeline
