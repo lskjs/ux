@@ -366,8 +366,8 @@ const primaryTextTheme = ({ theme }) => css`
 `;
 
 const dangerTextTheme = ({ theme }) => css`
-  color: ${themeGet(theme, 'colors.white')};
-  background-color: ${themeGet(theme, 'colors.danger')};
+  color: ${themeGet(theme, 'colors.danger')};
+  background-color: ${themeGet(theme, 'colors.white')};
 
   &:hover {
     color: ${themeGet(theme, 'colors.white')};
@@ -805,22 +805,40 @@ export const ButtonGroup = styled('div')`
   ${p => p.padded && css`
     ${Btn} {
       margin: 5px;
-    }
-  `}
+    }`}
   @media screen and (max-width: 768px) {
     ${p => p.block && css`
-      flex-direction: column;
-    `}
+      flex-direction: column;`}
     ${Btn} {
       margin: 8px 0 8px 0;
     }
   }
+  ${p => p.panel && css`
+    > button {
+      &:first-child {
+        border-radius: 3px 0 0 3px;
+      }
+      &:last-child {
+        border-radius: 0 3px 3px 0;
+      }
+      border-radius: 0;
+    }
+  `}
+  /* ${p => !p.panel && css`
+    ${Btn} {
+      margin: 0 4px;
+      &:first-child {
+        margin-left: 0;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }`} */
 
   & > * {
     position: relative;
     ${p => p.block && css`
-      flex: 1 1 auto;
-    `}
+      flex: 1 1 auto;`}
 
     /* @include hover {
       z-index: 1;

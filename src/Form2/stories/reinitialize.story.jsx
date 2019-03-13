@@ -11,6 +11,7 @@ import PhoneInput from '../controls/PhoneInput';
 import NewPhoneInput from '../controls/NewPhoneInput';
 import FormDebug from '../FormDebug';
 import PercentSlider from '../controls/PercentSlider/PercentSlider';
+import Files from '../controls/Files';
 
 const InputFormView = (props) => {
   return (
@@ -22,6 +23,7 @@ const InputFormView = (props) => {
       <Field {...props.controls.slider} />
       <Field {...props.controls.phone} />
       <Field {...props.controls.newphone} />
+      <Field {...props.controls.files} />
       <FormDebug {...props} />
     </Form>
   );
@@ -63,6 +65,10 @@ const controls = {
   newphone: {
     title: 'NewPhoneInput',
     component: NewPhoneInput,
+  },
+  files: {
+    title: 'Files',
+    component: Files,
   },
 };
 const SampleForm = createForm({
@@ -126,6 +132,9 @@ class Container extends Component {
                       </button>
                       <button onClick={() => { delete this.state[name]; this.setState({ q: 1 }); }}>
                         delete {name}
+                      </button>
+                      <button onClick={() => this.setState({ [name]: ['https://www.image.ie/images/no-image.png', 'https://www.image.ie/images/no-image.png', 'https://www.image.ie/images/no-image.png'] })}>
+                        files
                       </button>
                     </div>
                   );

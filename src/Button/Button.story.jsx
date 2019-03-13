@@ -223,5 +223,32 @@ export default ({ storiesOf }) => {
           <Button isRipple={false} paint="primary">Primary</Button>
         </ButtonGroup>
       </Story>
+    ))
+    .add('button group panel', () => (
+      <Story>
+        <ButtonGroup panel>
+          <Button isRipple={false} paint="primary">Primary</Button>
+          <Button isRipple={false} paint="primary">Primary</Button>
+          <Button isRipple={false} paint="primary">Primary</Button>
+        </ButtonGroup>
+      </Story>
+    ))
+    .add('button group block', () => (
+      <Story>
+        <ButtonGroup block>
+          <Button isRipple={false} paint="primary">Primary</Button>
+          <Button isRipple={false} paint="primary">Primary</Button>
+          <Button isRipple={false} paint="primary">Primary</Button>
+        </ButtonGroup>
+      </Story>
+    ))
+    .add('button group circle', () => (
+      <Story>
+        <ButtonGroup>
+          <Button icon={<Telegram />} paint="primary" />
+          <Button icon={<Facebook />} paint="primary" />
+          <Button icon={<Vk />} paint="primary" />
+        </ButtonGroup>
+      </Story>
     ));
 };
