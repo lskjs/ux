@@ -1,5 +1,7 @@
 import React from 'react';
 import Story from '../Story';
+import { Row, Col } from '../Grid';
+
 import ScaleRippleMulti from './ScaleRippleMulti';
 import ScaleRipple from './ScaleRipple';
 import LineSpin from './LineSpin';
@@ -23,127 +25,207 @@ import BallClipRotateMultiple from './BallClipRotateMultiple';
 import BallClipRotate from './BallClipRotate';
 import BallBeat from './BallBeat';
 
-
+const Box = ({ children }) => <div style={{ border: '1px black dotted', width: 100, height: 100 }}>{children}</div>;
+const Name = 'div';
+const color = '#000';
 export default ({ storiesOf }) => (
-  storiesOf('hz/Loaders', module)
-    .add('Default', () => (
+  storiesOf('Loaders', module)
+    .add('default', () => (
       <Story>
-        <LineSpin color="#fff" />
-      </Story>
-    ))
-    .add('ScaleRipple', () => (
-      <Story>
-        <ScaleRipple color="#fff" type="rapid" />
-      </Story>
-    ))
-    .add('ScaleRippleMulti', () => (
-      <Story>
-        <ScaleRippleMulti color="#fff" />
-      </Story>
-    ))
-    .add('LineScaleRandom', () => (
-      <Story>
-        <LineScaleRandom color="#fff" />
-      </Story>
-    ))
-    .add('LineScale', () => (
-      <Story>
-        <LineScale color="#fff" />
-      </Story>
-    ))
-    .add('LinePulseOut', () => (
-      <Story>
-        <div style={{ padding: 30 }}>
-          <LinePulseOut color="#fff" type="default" />
-        </div>
-        <div style={{ padding: 30 }}>
-          <LinePulseOut color="#fff" type="rapid" />
-        </div>
-      </Story>
-    ))
-    .add('BallsZigZagDeflect', () => (
-      <Story>
-        <BallsZigZagDeflect color="#fff" />
-      </Story>
-    ))
-    .add('BallsZigZag', () => (
-      <Story>
-        <BallsZigZag color="#fff" />
-      </Story>
-    ))
-    .add('BallsTriangleTrace', () => (
-      <Story>
-        <BallsTriangleTrace color="#fff" />
-      </Story>
-    ))
-    .add('BallSpin', () => (
-      <Story>
-        <BallSpin color="#fff" />
-      </Story>
-    ))
-    .add('BallScaleRandom', () => (
-      <Story>
-        <BallScaleRandom color="#fff" />
-      </Story>
-    ))
-    .add('BallScaleMulti', () => (
-      <Story>
-        <BallScaleMulti color="#fff" />
-      </Story>
-    ))
-    .add('BallScale', () => (
-      <Story>
-        <BallScale color="#fff" />
-      </Story>
-    ))
-    .add('BallRotate', () => (
-      <Story>
-        <BallRotate color="#fff" />
-      </Story>
-    ))
-    .add('BallPulseSync', () => (
-      <Story>
-        <BallPulseSync color="#fff" />
-      </Story>
-    ))
-    .add('BallPulseRise', () => (
-      <Story>
-        <BallPulseRise color="#fff" />
-      </Story>
-    ))
-    .add('BallPulse', () => (
-      <Story>
-        <BallPulse color="#fff" />
-      </Story>
-    ))
-    .add('BallGridPulse', () => (
-      <Story>
-        <div style={{ padding: 30 }}>
-          <BallGridPulse color="#fff" />
-        </div>
-        <div style={{ padding: 30 }}>
-          <BallGridPulse color="#fff" type="beat" />
-        </div>
-      </Story>
-    ))
-    .add('BallClipRotatePulse', () => (
-      <Story>
-        <BallClipRotatePulse color="#fff" />
-      </Story>
-    ))
-    .add('BallClipRotateMultiple', () => (
-      <Story>
-        <BallClipRotateMultiple color="#fff" />
-      </Story>
-    ))
-    .add('BallClipRotate', () => (
-      <Story>
-        <BallClipRotate color="#fff" />
-      </Story>
-    ))
-    .add('BallBeat', () => (
-      <Story>
-        <BallBeat color="#fff" />
+        <Row>
+          <Col md={2}>
+            <Box>
+              {/* <LineSpin color={color} /> */}
+            </Box>
+            <Name>
+              {'<LineSpin />'}
+            </Name>
+          </Col>
+          <Col md={2}>
+            <Box>
+              <ScaleRipple color={color} type="rapid" />
+            </Box>
+            <Name>
+              {'<ScaleRipple type="rapid" />'}
+            </Name>
+          </Col>
+          <Col md={2}>
+            <Box>
+              <ScaleRippleMulti color={color} />
+            </Box>
+            <Name>
+              {'<ScaleRippleMulti />'}
+            </Name>
+          </Col>
+          <Col md={2}>
+            <Box>
+              <LineScaleRandom color={color} />
+            </Box>
+            <Name>
+              {'<LineScaleRandom />'}
+            </Name>
+          </Col>
+          <Col md={2}>
+            <Box>
+              <LineScale color={color} />
+            </Box>
+            <Name>
+              {'<LineScale />'}
+            </Name>
+          </Col>
+          <Col md={2}>
+            <Box>
+              <LinePulseOut color={color} type="default" />
+            </Box>
+            <Name>
+              {'<LinePulseOut type="default" />'}
+            </Name>
+          </Col>
+          <Col md={2}>
+            <Box>
+              <LinePulseOut color={color} type="rapid" />
+            </Box>
+            <Name>
+              {'<LinePulseOut type="rapid" />'}
+            </Name>
+          </Col>
+          <Col md={2}>
+            <Box>
+              <BallsZigZagDeflect color={color} />
+            </Box>
+            <Name>
+              {'<BallsZigZagDeflect />'}
+            </Name>
+          </Col>
+          <Col md={2}>
+            <Box>
+              <BallsZigZag color={color} />
+            </Box>
+            <Name>
+              {'<BallsZigZag />'}
+            </Name>
+          </Col>
+          <Col md={2}>
+            <Box>
+              <BallsTriangleTrace color={color} />
+            </Box>
+            <Name>
+              {'<BallsTriangleTrace />'}
+            </Name>
+          </Col>
+          <Col md={2}>
+            <Box>
+              <BallSpin color={color} />
+            </Box>
+            <Name>
+              {'<BallSpin />'}
+            </Name>
+          </Col>
+          <Col md={2}>
+            <Box>
+              <BallScaleRandom color={color} />
+            </Box>
+            <Name>
+              {'<BallScaleRandom />'}
+            </Name>
+          </Col>
+          <Col md={2}>
+            <Box>
+              <BallScaleMulti color={color} />
+            </Box>
+            <Name>
+              {'<BallScaleMulti />'}
+            </Name>
+          </Col>
+          <Col md={2}>
+            <Box>
+              <BallScale color={color} />
+            </Box>
+            <Name>
+              {'<BallScale />'}
+            </Name>
+          </Col>
+          <Col md={2}>
+            <Box>
+              {/* <BallRotate color={color} /> */}
+            </Box>
+            <Name>
+              {'<BallRotate />'}
+            </Name>
+          </Col>
+          <Col md={2}>
+            <Box>
+              <BallPulseSync color={color} />
+            </Box>
+            <Name>
+              {'<BallPulseSync />'}
+            </Name>
+          </Col>
+          <Col md={2}>
+            <Box>
+              <BallPulseRise color={color} />
+            </Box>
+            <Name>
+              {'<BallPulseRise />'}
+            </Name>
+          </Col>
+          <Col md={2}>
+            <Box>
+              <BallPulse color={color} />
+            </Box>
+            <Name>
+              {'<BallPulse />'}
+            </Name>
+          </Col>
+          <Col md={2}>
+            <Box>
+              <BallGridPulse color={color} />
+            </Box>
+            <Name>
+              {'<BallGridPulse />'}
+            </Name>
+          </Col>
+          <Col md={2}>
+            <Box>
+              <BallGridPulse color={color} type="beat" />
+            </Box>
+            <Name>
+              {'<BallGridPulse type="beat" />'}
+            </Name>
+          </Col>
+          <Col md={2}>
+            <Box>
+              <BallClipRotatePulse color={color} />
+            </Box>
+            <Name>
+              {'<BallClipRotatePulse />'}
+            </Name>
+          </Col>
+          <Col md={2}>
+            <Box>
+              <BallClipRotateMultiple color={color} />
+            </Box>
+            <Name>
+              {'<BallClipRotateMultiple />'}
+            </Name>
+          </Col>
+          <Col md={2}>
+            <Box>
+              <BallClipRotate color={color} />
+            </Box>
+            <Name>
+              {'<BallClipRotate />'}
+            </Name>
+          </Col>
+          <Col md={2}>
+            <Box>
+              <BallBeat color={color} />
+            </Box>
+            <Name>
+              {'<BallBeat />'}
+            </Name>
+          </Col>
+        </Row>
       </Story>
     ))
 );
