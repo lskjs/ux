@@ -28,7 +28,6 @@ class FilterButton extends Component {
         size="small"
         view="text"
         bordered
-        style={{ backgroundColor: listStore.showFilter ? '#F0F0FF' : '' }}
         {...props}
       />
     );
@@ -39,7 +38,6 @@ class FilterButton extends Component {
           <Button
             size="small"
             onClick={listStore.toggleFilter}
-            style={{ backgroundColor: listStore.showFilter ? '#F0F0FF' : '' }}
           >
             <T name="lskList.filterButton" />
           </Button>
