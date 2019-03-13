@@ -9,6 +9,7 @@ export const OptionItem = styled('button')`
   border: none;
   height: 48px;
   padding-left: 8px;
+  z-index: 111111;
 
   font-family: ${p => p.theme.fontFamily};
   background-color: ${p => (p.focused ? '#F0F0FF' : p.theme.colors.white)};

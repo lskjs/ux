@@ -10,6 +10,7 @@ import { Badge, Icon } from 'antd';
 import Button from './Button';
 import ButtonGroup from './ButtonGroup';
 import Story from '../Story';
+import Link from '../Link';
 import socialColors from '../utils/socialColors';
 import withResponsive from './withResponsive';
 
@@ -17,6 +18,16 @@ const ResponsiveButton = withResponsive(Button);
 
 export default ({ storiesOf }) => {
   storiesOf('Button', module)
+    .add('default', () => (
+      <React.Fragment>
+        <Button
+          componentClass={Link}
+          href="/cabinet"
+        >
+          Link
+        </Button>
+      </React.Fragment>
+    ))
     .add('paint', () => (
       <React.Fragment>
         <Button>Default</Button>
@@ -34,6 +45,25 @@ export default ({ storiesOf }) => {
         <Button paint="primary" size="large">large</Button>
       </Story>
     ))
+    .add('small', () => (
+      <Story>
+        <Button paint="primary" size="small">Primary</Button>
+        <Button paint="danger" size="small">Danger</Button>
+        <Button paint="info" size="small">Info</Button>
+        <Button paint="success" size="small">Success</Button>
+        <Button paint="warning" size="small">Warning</Button>
+        <br />
+        <Button paint="primary" size="small">Laaaaaaaaaaaaaaaaaarge text</Button>
+        <br />
+        <Button iconLeft={<Facebook />} paint="primary" size="small">small</Button>
+        <br />
+        <Button iconRight={<Twitter />} paint="primary" size="small">small</Button>
+        <br />
+        <Button icon={<Telegram />} paint="primary" size="small" />
+        <br />
+        <Button iconLeft={<Facebook />} iconRight={<Twitter />} paint="primary" size="small">small</Button>
+      </Story>
+    ))
     .add('props', () => (
       <Story>
         <Button paint="primary" >Default</Button>
@@ -41,6 +71,12 @@ export default ({ storiesOf }) => {
         <Button paint="primary" view="text" >view=text</Button>
         <Button paint="primary" block >block</Button>
         <Button paint="primary" disabled >disabled</Button>
+        <hr />
+        <Button paint="danger" >Default</Button>
+        <Button paint="danger" view="transparent" >view=transparent</Button>
+        <Button paint="danger" view="text" >view=text</Button>
+        <Button paint="danger" block >block</Button>
+        <Button paint="danger" disabled >disabled</Button>
       </Story>
     ))
     .add('disabled', () => (
@@ -185,6 +221,44 @@ export default ({ storiesOf }) => {
         <ButtonGroup>
           <Button isRipple={false} paint="primary">Primary</Button>
           <Button isRipple={false} paint="primary">Primary</Button>
+        </ButtonGroup>
+      </Story>
+    ))
+    .add('button group panel', () => (
+      <Story>
+        <ButtonGroup panel>
+          <Button paint="primary">Primary</Button>
+          <Button paint="danger">Danger</Button>
+          <Button paint="primary">Primary</Button>
+        </ButtonGroup>
+      </Story>
+    ))
+    .add('button group block', () => (
+      <Story>
+        <ButtonGroup block>
+          <Button paint="primary">Primary</Button>
+          <Button paint="primary">Primary</Button>
+          <Button paint="primary">Primary</Button>
+        </ButtonGroup>
+      </Story>
+    ))
+    .add('button group circle', () => (
+      <Story>
+        <ButtonGroup>
+          <Button icon={<Telegram />} paint="primary" />
+          <Button icon={<Facebook />} paint="primary" />
+          <Button icon={<Vk />} paint="primary" />
+        </ButtonGroup>
+      </Story>
+    ))
+    .add('button group wrapper', () => (
+      <Story>
+        <ButtonGroup panel>
+          <Button paint="primary">Primary</Button>
+          <div>
+            <Button paint="danger">Danger</Button>
+          </div>
+          <Button paint="primary">Primary</Button>
         </ButtonGroup>
       </Story>
     ));

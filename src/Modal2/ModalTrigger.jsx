@@ -19,7 +19,8 @@ class ModalTrigger extends Component { // eslint-disable-line
 
   @autobind
   handleClick(e) {
-    const { modal, type } = this.props;
+    const { modal, type, disabled } = this.props;
+    if (disabled) return;
     if (e.isDefaultPrevented()) return;
     if (type === 'open') {
       modal.open();

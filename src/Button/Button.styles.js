@@ -83,11 +83,11 @@ const defaultSize = css`
 `;
 
 const smallSize = css`
-  padding: 9px 12px;
+  padding: 10px 8px;
   min-width: 48px;
 
-  font-size: 11px;
-  font-weight: bold;
+  font-size: 13px;
+  font-weight: 500;
   font-style: normal;
   font-stretch: normal;
   line-height: normal;
@@ -129,12 +129,12 @@ const iconButtonLeft = props => css`
     }
   `}
   ${props.size === 'small' && `
-    padding-left: 9px;
+    padding-left: 8px;
     padding-top: 6px;
     padding-bottom: 6px;
 
     ${Icon} {
-      font-size: 20px;
+      font-size: 24px;
     }
   `}
 `;
@@ -163,10 +163,10 @@ const iconButtonRight = props => css`
   ${props.size === 'small' && `
     padding-top: 6px;
     padding-bottom: 6px;
-    padding-right: 6px;
+    padding-right: 8px;
 
     ${Icon} {
-      font-size: 20px;
+      font-size: 24px;
     }
   `}
 `;
@@ -201,7 +201,7 @@ const iconButtonSingle = props => css`
     padding-left: 8px !important;
 
     ${Icon} {
-      font-size: 18px;
+      font-size: 20px;
     }
   `}
 `;
@@ -366,8 +366,8 @@ const primaryTextTheme = ({ theme }) => css`
 `;
 
 const dangerTextTheme = ({ theme }) => css`
-  color: ${themeGet(theme, 'colors.white')};
-  background-color: ${themeGet(theme, 'colors.danger')};
+  color: ${themeGet(theme, 'colors.danger')};
+  background-color: ${themeGet(theme, 'colors.white')};
 
   &:hover {
     color: ${themeGet(theme, 'colors.white')};
@@ -805,22 +805,40 @@ export const ButtonGroup = styled('div')`
   ${p => p.padded && css`
     ${Btn} {
       margin: 5px;
-    }
-  `}
+    }`}
   @media screen and (max-width: 768px) {
     ${p => p.block && css`
-      flex-direction: column;
-    `}
+      flex-direction: column;`}
     ${Btn} {
       margin: 8px 0 8px 0;
     }
   }
+  ${p => p.panel && css`
+    button {
+      &:first-child {
+        border-radius: 3px 0 0 3px;
+      }
+      &:last-child {
+        border-radius: 0 3px 3px 0;
+      }
+      border-radius: 0;
+    }
+  `}
+  /* ${p => !p.panel && css`
+    ${Btn} {
+      margin: 0 4px;
+      &:first-child {
+        margin-left: 0;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }`} */
 
   & > * {
     position: relative;
     ${p => p.block && css`
-      flex: 1 1 auto;
-    `}
+      flex: 1 1 auto;`}
 
     /* @include hover {
       z-index: 1;

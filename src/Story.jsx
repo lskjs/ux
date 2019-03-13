@@ -15,6 +15,7 @@ class Story extends Component {
     const {
       children, devtools, locale = 'en', theme = defaultTheme, style,
     } = this.props;
+    const user = {};
     const api = {
       fetch: (...args) => console.log('api.get', ...args),
     };
@@ -25,6 +26,7 @@ class Story extends Component {
     const config = {};
     const uapp = {
       i18,
+      user,
       t,
       config,
       api,
@@ -47,6 +49,7 @@ class Story extends Component {
         t,
         config,
         i18,
+        user,
         uapp,
         api,
       }),
