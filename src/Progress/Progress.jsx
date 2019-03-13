@@ -38,7 +38,7 @@ class Progress extends Component {
 
     this.styleSetting();
     this.nanobar.go(this.state.valueProgress);
-    this.nanobar.el.style.cssText = 'position: absolute; left: 0; top: 0;';
+    this.nanobar.el.style.cssText = 'position: absolute; left: 0; top: 0; z-index: 1;';
     this.timeout = setInterval(() => {
       this.styleSetting();
       if (isLoading) { this.setState({ valueProgress: this.state.valueProgress + this.props.speed }); }
