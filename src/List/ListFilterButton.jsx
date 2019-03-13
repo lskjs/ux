@@ -34,7 +34,7 @@ class FilterButton extends Component {
     return (
       <React.Fragment>
         {/*  className={isFilterModal ? 'd-none d-md-flex' : null} */}
-        <Badge style={{ backgroundColor: '#7070ff' }} count={badge}>
+        <Badge count={badge}>
           <Button
             size="small"
             onClick={listStore.toggleFilter}
