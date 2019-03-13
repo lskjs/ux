@@ -814,7 +814,7 @@ export const ButtonGroup = styled('div')`
     }
   }
   ${p => p.panel && css`
-    > button {
+    button {
       &:first-child {
         border-radius: 3px 0 0 3px;
       }
