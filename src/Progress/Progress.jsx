@@ -12,7 +12,7 @@ class Progress extends Component {
     speed: PropTypes.number,
     value: PropTypes.number,
     height: PropTypes.number,
-    color: PropTypes.string,
+    // color: PropTypes.string,
     isLoading: PropTypes.bool,
   };
 
@@ -22,7 +22,7 @@ class Progress extends Component {
     speed: 2,
     height: 2,
     value: null,
-    shadow: true,
+    // shadow: true,
     // color: null,
   }
 
@@ -46,22 +46,23 @@ class Progress extends Component {
 
 
   bar = React.createRef();
-
+  handleEvent = () => {
+    console.log('sdsd');
+    this.nanobar.el.children[0].style.cssText =
+    `height: 200px;
+    background-color: red;`;
+  }
   int() {
-    const { global, isLoading } = this.props;
+    const { global, isLoading, speed } = this.props;
     this.styleSetting();
     this.nanobar.go(this.state.valueProgress);
-    this.nanobar.el.style.cssText = 'position: absolute; left: 0; top: 0;';
+    this.nanobar.el.style.cssText = 'position: absolute; left: 0; top: 0;  z-index: 1;';
     this.timeout = setInterval(() => {
       this.styleSetting();
-      if (isLoading) { this.setState({ valueProgress: this.state.valueProgress + this.props.speed }); }
+      if (isLoading) { this.setState({ valueProgress: this.state.valueProgress + speed }); }
       this.nanobar.go(this.state.valueProgress);
     }, 1000);
-    if (global) { this.nanobar.el.style.cssText = 'position: fixed; left: 0; top: 0;'; }
-  }
-
-  foo = () => {
-    this.nanobar.el.style.cssText = 'border: 1px solid red;';
+    if (global) { this.nanobar.el.style.cssText = 'position: fixed; left: 0; top: 0; z-index: 1;'; }
   }
 
   styleSetting() {
@@ -71,7 +72,6 @@ class Progress extends Component {
 
     this.nanobar.el.children[0].style.cssText =
     `height: ${this.props.height}px;
-    background: black;
     ${shadow ? `box-shadow: 0 0 12px ${color}, 0 0 5px ${color};` : ''}
     overflow: hidden;
     max-width: 100%; 
