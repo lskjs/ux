@@ -9,14 +9,15 @@ import Modal, {
 } from '../Modal2';
 import { modalStyle } from './List.styles';
 
-@contextToProps('FilterForm')
+@contextToProps('FilterForm', 'filterProps')
 @inject('listStore')
 @observer
 class ListFilterModal extends Component {
   render() {
     const {
-      listStore, FilterForm, children, ...props
+      listStore, filterProps, FilterForm, children, ...props
     } = this.props;
+    const values = toJS(listStore.filter);
     return (
       <Modal
         trigger={children}
@@ -30,8 +31,10 @@ class ListFilterModal extends Component {
             <Title><T name="lskList.filterButton" /></Title>
             <Content className={modalStyle}>
               <FilterForm
+                {...filterProps}
                 enableReinitialize
-                initialValues={toJS(listStore.filter)}
+                initialValues={values}
+                hash={values}
                 onChange={listStore.setFilter}
               />
             </Content>

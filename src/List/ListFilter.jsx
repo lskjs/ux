@@ -30,8 +30,10 @@ class ListFilter extends Component {
     } = this.props;
     if (!FilterForm) return null; // <DEV json="!FilterForm" />;
     const isFilterModal = 0;
+    // const isFilterModal = 1;
     const { showFilter } = listStore;
     // const showFilter = 1;
+    const values = toJS(listStore.filter);
     return (
       <React.Fragment>
         <If condition={isFilterModal}>
@@ -50,10 +52,9 @@ class ListFilter extends Component {
             <List.FilterWrapper>
               <FilterForm
                 {...filterProps}
-                ref={this.form}
                 enableReinitialize
-              // initialValues={listStore.filter}
-                initialValues={toJS(listStore.filter)}
+                initialValues={values}
+                hash={values}
                 onChange={listStore.setFilter}
               />
               <If condition={debug}>

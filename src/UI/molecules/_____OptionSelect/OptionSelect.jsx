@@ -19,6 +19,9 @@ class OptionSelect extends PureComponent {
       theme,
       // ...props
     } = this.props;
+    const { Icon } = data;
+    console.log({Icon});
+    
     return (
       <Option
         onClick={() => selectOption(data)}
@@ -28,9 +31,10 @@ class OptionSelect extends PureComponent {
         <If condition={data.image}>
           {typeof data.image === 'string' ? <Image src={data.image} /> : data.image}
         </If>
-        <If condition={data.icon}>
+        <If condition={data.icon || Icon}>
           <IconWrapper color={data.iconColor || theme.colors.secondary}>
-            {(isSelected && data.iconActive) ? data.iconActive : data.icon}
+            <Icon />
+            {(isSelected && data.iconActive) ? data.iconActive : (data.icon || <Icon />)}
           </IconWrapper>
         </If>
         <Title>

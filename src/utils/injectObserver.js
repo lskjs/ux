@@ -8,7 +8,11 @@ export default (fields, creator) => {
   @observer
   class Component2 extends Component {
     shouldComponentUpdate(nextProps) {
-      return !!(nextProps.hash && this.props.hash && nextProps.hash !== this.props.hash);
+      if (nextProps.hash || this.props.hash) return nextProps.hash !== this.props.hash;
+      return false;
+      // return !!(
+      //   nextProps.initialValues !== this.props.initialValues
+      // );
     }
     render() {
       const props = pick(this.props, fields);
