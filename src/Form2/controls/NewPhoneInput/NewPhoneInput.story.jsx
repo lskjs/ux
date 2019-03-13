@@ -10,9 +10,8 @@ const NewPhoneInputFormView = (props) => {
   return (
     <Form>
       <Field {...props.control('phone')} />
-      <Field {...props.control('phone2')} />
+      <Field {...props.control('phone1')} />
       <Field {...props.control('phone3')} />
-      <Field {...props.control('phone4')} />
       <FormDebug {...props} />
     </Form>
   );
@@ -22,33 +21,22 @@ const NewPhoneInputForm = createForm({
   view: NewPhoneInputFormView,
   controls: {
     phone: {
-      title: 'default',
-      component: NewPhoneInput,
-    },
-    phone2: {
       title: 'defaultCountry',
       component: NewPhoneInput,
+      defaultCountry: 'fr',
+    },
+    phone1: {
+      title: 'Поиск по странам',
+      component: NewPhoneInput,
       defaultCountry: 'ru',
+      enableSearchField: true,
     },
     phone3: {
-      title: 'placeholder',
+      title: 'Регион и пример локализации',
       component: NewPhoneInput,
-      placeholder: 'Введите номер!',
-    },
-    phone4: {
-      title: 'NewPhoneInput',
-      component: NewPhoneInput,
-      defaultCountry: 'ru',
-    },
-    phone5: {
-      title: 'NewPhoneInput',
-      component: NewPhoneInput,
-      defaultCountry: 'ru',
-    },
-    phone6: {
-      title: 'NewPhoneInput',
-      component: NewPhoneInput,
-      defaultCountry: 'ru',
+      defaultCountry: 'fr',
+      regions: 'europe',
+      localization: { Germany: 'Deutschland', Spain: 'España' },
     },
   },
 });
@@ -59,9 +47,7 @@ export default ({ storiesOf }) => (
       <Story>
         <NewPhoneInputForm
           initialValues={{
-            phone4: 'sfkjghkjsdhfgkjhsdjkf',
-            phone5: 873459876349857983475897398579834,
-            phone6: [{ asd: 1231231 }],
+            phone6: 'uhuhuhuhuht',
           }}
         />
       </Story>

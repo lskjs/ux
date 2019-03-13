@@ -60,6 +60,13 @@ export default ({ storiesOf }) => (
         </Wrapper>
       </Story>
     ))
+    .add('shadow', () => (
+      <Story>
+        <Wrapper>
+          <Progress value={30} isLoading shadow />
+        </Wrapper>
+      </Story>
+    ))
     .add('deep wrapping', () => (
       <Story>
         <Wrapper>
@@ -108,6 +115,7 @@ export default ({ storiesOf }) => (
       <Story>
         <Wrapper>
           <Progress value={10} speed={5} isLoading height={7} />
+          <button onClick={this.handleEvent} >global</button>
         </Wrapper>
       </Story>
     ))
