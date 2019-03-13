@@ -11,7 +11,6 @@ class FormGroup extends Component {
       htmlId,
       ...props
     } = this.props;
-
     // console.log({field, props});
     // {errors.twitter &&
     //   touched.twitter &&

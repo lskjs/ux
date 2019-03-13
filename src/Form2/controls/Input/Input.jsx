@@ -12,6 +12,7 @@ const Input = ({
   return (
     <InputBase
       {...field}
+      value={field.value || ''}
       debounce={0}
       {...props}
       regex={props.regex}

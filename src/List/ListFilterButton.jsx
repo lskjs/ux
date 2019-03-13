@@ -18,6 +18,7 @@ class FilterButton extends Component {
     const {
       List, listStore,
     } = this.props;
+    console.log(this.props);
     const badge = listStore.hasFilter ? filter(toJS(listStore.filter), a => !isEmpty(a)).length : 0;
     const ResponsiveButton = withResponsive(List.Button);
     const Button = props => (
@@ -27,14 +28,13 @@ class FilterButton extends Component {
         size="small"
         view="text"
         bordered
-        style={{ backgroundColor: listStore.showFilter ? '#F0F0FF' : '' }}
         {...props}
       />
     );
     return (
       <React.Fragment>
         {/*  className={isFilterModal ? 'd-none d-md-flex' : null} */}
-        <Badge style={{ backgroundColor: '#7070ff' }} count={badge}>
+        <Badge count={badge}>
           <Button
             size="small"
             onClick={listStore.toggleFilter}
