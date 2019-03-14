@@ -3,6 +3,7 @@ import Editor from './Editor';
 import Editor2 from './Editor2';
 import Editor3 from './Editor3';
 import Editor4 from './Editor4';
+import Editor5 from './Editor5';
 import Story from '../Story';
 import markdownToValue from './markdownToValue';
 import jsonToValue from './jsonToValue';
@@ -50,6 +51,16 @@ export default ({ storiesOf, action }) => (
       <Story>
         <Editor4
           value={value}
+        />
+      </Story>
+    ))
+    .add('Editor5 ', () => (
+      <Story>
+        <Editor5
+          initialValue={value}
+          onChange={(values) => {
+            console.log(values)
+          }}
         />
       </Story>
     ))
