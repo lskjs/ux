@@ -47,7 +47,8 @@
     "slate-html-serializer": "^0.7.36",
     "slate-md-serializer": "5.2.3",
     "slate-react": "^0.21.16",
-    "validate.js": "0.12.0"
+    "validate.js": "0.12.0",
+    "xlsx-populate": "^1.19.1"
   },
   "peerDependencies": {
     "react-bootstrap": "^0.32.4",
