@@ -18171,6 +18171,9 @@ li.ant-select-tree-treenode-disabled > .ant-select-tree-node-content-wrapper:hov
     opacity: 0;
   }
 }
+body {
+  height: auto;
+}
 .ant-calendar-picker > div {
   position: relative;
 }
