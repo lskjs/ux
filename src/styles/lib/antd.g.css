@@ -18323,3 +18323,6 @@ li.ant-select-tree-treenode-disabled > .ant-select-tree-node-content-wrapper:hov
 .ant-fullcalendar-header .ant-radio-group {
   display: none !important;
 }
+.ant-drawer {
+  z-index: 10000;
+}

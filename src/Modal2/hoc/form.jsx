@@ -5,6 +5,7 @@ import Button from '../../Button';
 import createForm from '../../Form2/createForm';
 import Submit from '../../Form2/FormSubmit';
 import T from '../../T';
+import { hocFooter } from '../Modal2.styles';
 
 const createView = ({ Modal, controlsOrder }) => ({
   title, subtitle, image, content, control, errors, status,
@@ -27,7 +28,7 @@ const createView = ({ Modal, controlsOrder }) => ({
       >
         <T name="common.submit" />
       </Submit>
-      <Modal.Trigger>
+      <Modal.Trigger className={hocFooter}>
         <Button
           paint="danger"
           view="text"
