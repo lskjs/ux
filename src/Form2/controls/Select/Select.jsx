@@ -16,7 +16,7 @@ import CollapsedValueContainer from './CollapsedValueContainer';
 import CollapsedMultiValue from './CollapsedMultiValue';
 
 class Select extends Component {
-  state = {};
+  state = {}
   componentDidMount() {
     const {
       loadOption, field, async, isMulti,
@@ -105,12 +105,9 @@ class Select extends Component {
     } else if (!isMulti) {
       option = find(normalizedOptions, { value });
     } else if (isMulti) {
-      if (Array.isArray(this.state.option)) {
-        const values = this.state.option.map((el) => {
-          return el.value;
-        });
+      if (Array.isArray(value)) {
         option = normalizedOptions.filter((el) => {
-          return values.includes(el.value);
+          return value.includes(el.value);
         });
       } else {
         option = [];
@@ -123,7 +120,6 @@ class Select extends Component {
       MultiValue: CollapsedMultiValue,
     };
     const nullOption = find(normalizedOptions, o => o.value === NULL_STRING);
-
     const defaultIsClearable = !props.required && !nullOption;
     const defaultIsSearchable = options && options.length > 10;
     // console.log({ defaultIsClearable }, props.required, !!nullOption, !props.required, !nullOption, nullOption, props.isClearable, normalizedOptions);
