@@ -7,7 +7,6 @@ import { withTheme } from 'emotion-theming';
 
 @withTheme
 class Progress extends Component {
-<<<<<<< HEAD
   static propTypes = {
     global: PropTypes.bool,
     speed: PropTypes.number,
@@ -17,8 +16,6 @@ class Progress extends Component {
     isLoading: PropTypes.bool,
   };
 
-=======
->>>>>>> 3ee0984b3b5cada889d94c4b2e7dd0bdde40b6c7
   static defaultProps = {
     isLoading: false,
     global: false,
@@ -29,53 +26,38 @@ class Progress extends Component {
     // color: null,
   }
 
-  static propTypes = {
-    global: PropTypes.bool,
-    speed: PropTypes.number,
-    value: PropTypes.number,
-    height: PropTypes.number,
-    color: PropTypes.string,
-    isLoading: PropTypes.bool,
+  state = {
+    value: this.props.value,
   };
 
-  state = { valueProgress: this.props.value };
+  static getDerivedStateFromProps(props, state) {
+    if (props.value !== state.value) {
+      return {
+        value: props.value,
+      };
+    }
+    return null;
+  }
 
   componentDidMount() {
-    const { global, isLoading } = this.props;
     this.nanobar = new Nanobar({
       target: this.bar.current,
     });
-
-    if (global) { this.nanobar.el.style.position = 'fixed'; }
-
-<<<<<<< HEAD
-
-  bar = React.createRef();
-  handleEvent = () => {
-    console.log('sdsd');
-    this.nanobar.el.children[0].style.cssText =
-    `height: 200px;
-    background-color: red;`;
+    this.init();
+    this.renderNanobar();
+    window.progress = this;
   }
-  int() {
-    const { global, isLoading, speed } = this.props;
-    this.styleSetting();
-    this.nanobar.go(this.state.valueProgress);
-    this.nanobar.el.style.cssText = 'position: absolute; left: 0; top: 0;  z-index: 1;';
-=======
-    this.styleSetting();
-    this.nanobar.go(this.state.valueProgress);
-    this.nanobar.el.style.cssText = 'position: absolute; left: 0; top: 0; z-index: 1;';
->>>>>>> 3ee0984b3b5cada889d94c4b2e7dd0bdde40b6c7
-    this.timeout = setInterval(() => {
-      this.styleSetting();
-      if (isLoading) { this.setState({ valueProgress: this.state.valueProgress + speed }); }
-      this.nanobar.go(this.state.valueProgress);
-    }, 1000);
-<<<<<<< HEAD
-    if (global) { this.nanobar.el.style.cssText = 'position: fixed; left: 0; top: 0; z-index: 1;'; }
-=======
-    if (global) { this.nanobar.el.style.cssText = 'position: fixed; left: 0; top: 0;'; }
+  componentDidUpdate(prevProps) {
+    if (prevProps.isLoading && !this.props.isLoading) {
+      clearInterval(this.timeout);
+    }
+    if (!prevProps.isLoading && this.props.isLoading) {
+      this.init();
+    }
+    // if (prevProps.value !== this.props.value) {
+    //   this.setState({ value: this.props.value });
+    // }
+    this.renderNanobar();
   }
 
 
@@ -83,36 +65,48 @@ class Progress extends Component {
     const { el } = this.nanobar;
     el.parentNode.removeChild(el);
     clearInterval(this.timeout);
->>>>>>> 3ee0984b3b5cada889d94c4b2e7dd0bdde40b6c7
   }
-
+  init() {
+    const { isLoading } = this.props;
+    if (isLoading) {
+      this.timeout = setInterval(() => {
+        const { speed } = this.props;
+        let value = this.state.value + speed;
+        if (value < 0) value = 0;
+        if (value > 100) {
+          value = 100;
+          clearInterval(this.timeout);
+        }
+        this.setState({ value });
+      }, 1000);
+    }
+  }
   bar = React.createRef();
-  styleSetting() {
-    const { theme } = this.props;
-    const { color = get(theme, 'colors.primary', '#1890ff'), shadow } = this.props;
-    // console.log({color});
 
-<<<<<<< HEAD
-    this.nanobar.el.children[0].style.cssText =
-    `height: ${this.props.height}px;
-    ${shadow ? `box-shadow: 0 0 12px ${color}, 0 0 5px ${color};` : ''}
-    overflow: hidden;
-    max-width: 100%; 
-    position: absolute !important;
-    background-color: ${color};
-    top: 0;
-    left: 0;`;
-=======
-    this.nanobar.el.children[0].style.cssText = `height: ${this.props.height}px;
-                                                 background: black;
-                                                 ${shadow ? `box-shadow: 0 0 12px ${color}, 0 0 5px ${color};` : ''}
-                                                 overflow: hidden;
-                                                 max-width: 100%; 
-                                                 position: absolute !important;
-                                                 background-color: ${color};
-                                                 top: 0;
-                                                 left: 0;`;
->>>>>>> 3ee0984b3b5cada889d94c4b2e7dd0bdde40b6c7
+
+  renderNanobar() {
+    const { theme, global } = this.props;
+    const { value } = this.state;
+    const { color = get(theme, 'colors.primary', '#1890ff'), shadow, top = 0 } = this.props;
+    const container = this.nanobar.el;
+    const bar = this.nanobar.el.children[0];
+
+    container.style.cssText = `position: ${global ? 'fixed' : 'absolute'}; left: 0; top: ${top};  z-index: 1;`;
+    console.log('container.style.cssText', container.style.cssText);
+
+    bar.style.cssText = `
+      height: ${this.props.height}px;
+      ${shadow ? `box-shadow: 0 0 12px ${color}, 0 0 5px ${color};` : ''}
+      overflow: hidden;
+      max-width: 100%; 
+      position: absolute !important;
+      background-color: ${color};
+      top: 0;
+      left: 0;
+    `;
+    if (value != null) {
+      this.nanobar.go(value);
+    }
   }
 
   render() {

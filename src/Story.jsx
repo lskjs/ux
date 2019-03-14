@@ -4,6 +4,7 @@ import { Provider } from 'mobx-react';
 import DevTools from 'mobx-react-devtools';
 import defaultTheme from './theme';
 import Performance from './DEV/Performance';
+import State from './DEV/State';
 import './styles.g.css';
 
 class Story extends Component {
@@ -13,7 +14,7 @@ class Story extends Component {
   }
   render() {
     const {
-      children, devtools, locale = 'en', theme = defaultTheme, style,
+      children, devtools, locale = 'en', theme = defaultTheme, style, state = {},
     } = this.props;
     const user = {};
     const api = {
@@ -70,7 +71,9 @@ class Story extends Component {
               ...style,
             }}
             >
-              {children}
+              <State {...state}>
+                {children}
+              </State>
               {devtools && <DevTools />}
             </div>
           </Provider>

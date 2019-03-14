@@ -15,8 +15,6 @@ export default ({
 }) => (configOrFn) => {
   let config;
   if (isFunction(configOrFn)) {
-    console.log('creatorConfig', creatorConfig);
-    
     config = configOrFn({});
     // config = inject(configOrFn);
   } else {

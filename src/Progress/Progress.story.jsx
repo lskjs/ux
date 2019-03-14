@@ -111,42 +111,31 @@ export default ({ storiesOf }) => (
         </Wrapper>
       </Story>
     ))
-    .add('method', () => (
-      <Story>
-        <Wrapper>
-          <Progress value={10} speed={5} isLoading height={7} />
-          <button onClick={this.handleEvent} >global</button>
-        </Wrapper>
+    .add('variable props height', () => (
+      <Story state={{ global: false, value: 30 }}>
+        {({ global, value }, setState) => (
+          <Wrapper>
+            <div>
+              <button onClick={() => setState({ global: !global })}>
+                   global = {global ? 'true' : 'false'}
+              </button>
+              <button onClick={() => setState({ value: 0 })}>
+                  value = 0
+              </button>
+              <button onClick={() => setState({ value: value + 5 })}>
+                  value ++
+              </button>
+              <Progress
+                value={value}
+                speed={5}
+                isLoading
+                global={global}
+                height={7}
+              />
+            </div>
+          </Wrapper>
+        )}
       </Story>
     ))
-
-    .add('variable props height', () => {
-      // eslint-disable-next-line react/no-multi-comp
-      class Increment extends Component {
-        state = { global: true }
-        toggleglobal = () => {
-          console.log(this.state.global);
-          this.setState({
-            global: !this.state.global,
-          });
-        }
-        render() {
-          return (
-            <div>
-              <button onClick={this.toggleglobal} >global</button>
-              <button>value ++ </button>
-              <Progress value={this.state.value} speed={5} isLoading global={this.state.global} height={7} />
-            </div>
-          );
-        }
-      }
-      return (
-        <Story>
-          <Wrapper>
-            <Increment />
-          </Wrapper>
-        </Story>
-      );
-    })
 );
 // {this.state.global ? 'true' : 'false'}
