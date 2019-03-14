@@ -22,7 +22,7 @@ const download = async (workbook, name = 'out') => {
     window.URL.revokeObjectURL(url);
     document.body.removeChild(a);
   }
-}
+};
 
 export default generateFromJSON;
 
