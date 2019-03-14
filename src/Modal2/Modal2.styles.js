@@ -45,3 +45,10 @@ export const closeButtonStyle = css`
   margin: 8px;
   z-index: 1;
 `;
+
+export const hocFooter = css`
+  .ant-form-item {
+    width: auto !important;
+    margin-bottom: 0 !important;
+  }
+`;

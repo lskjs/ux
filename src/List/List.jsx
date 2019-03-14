@@ -81,7 +81,7 @@ class List extends Component {
   static SortHeader = ListSortHeader;
   static Checkbox = ListCheckbox;
   static SelectRow = ListSelectRow;
-
+  static isFilterModal = true;
   static Button = Button;
   static SearchWrapper = Search;
   // static DownloadButton = ({ children }) => children;
@@ -105,9 +105,9 @@ class List extends Component {
   render() {
     const {
       debug, columns, show: customShow = {}, pageSize = 10, paginatorProps = {},
-      Item, FilterForm, HeaderItem, Tags = this.constructor.Tags, Tag = this.constructor.Tag, isFilterModal, filterProps,
+      Item, FilterForm, HeaderItem, Tags = this.constructor.Tags, Tag = this.constructor.Tag, filterProps,
     } = this.props;
-
+    const isFilterModal = this.props.isFilterModal || this.constructor.isFilterModal;
     let { listStore } = this.props;
 
     if (!listStore) {

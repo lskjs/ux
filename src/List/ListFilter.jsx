@@ -27,16 +27,15 @@ class ListFilter extends Component {
       listStore,
       debug,
       filterProps,
+      isFilterModal,
       // container,
     } = this.props;
     if (!FilterForm) return null; // <DEV json="!FilterForm" />;
-    // const isFilterModal = 1;
     const { showFilter } = listStore;
-    // const showFilter = 1;
     const values = toJS(listStore.filter);
     return (
       <React.Fragment>
-        <If condition={isTouchDevice()}>
+        <If condition={isFilterModal && isTouchDevice()}>
           <ListFilterModal
             className="d-md-none"
             overlayClassName="d-md-none"
@@ -44,7 +43,7 @@ class ListFilter extends Component {
             onClose={listStore.toggleFilter}
           />
         </If>
-        <div className={isTouchDevice() ? 'd-none d-md-block' : null}>
+        <div className={(isFilterModal && isTouchDevice()) ? 'd-none d-md-block' : ''}>
           <Collapse
             show={showFilter}
             type="collapse"
