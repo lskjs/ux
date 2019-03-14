@@ -2,6 +2,9 @@ import styled, { css } from 'react-emotion';
 
 export const modalStyle = css`
   margin: 60px auto;
+  @media screen and (max-width: 576px){
+    margin-top: 0;
+  }
   outline: none;
   position: relative;
   width: 100%;
