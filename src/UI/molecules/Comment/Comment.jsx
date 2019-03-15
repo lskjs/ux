@@ -15,7 +15,7 @@ import {
 class Comment extends PureComponent {
   render() {
     const {
-      user,
+      user = {},
       children,
       date,
       componentClass,
