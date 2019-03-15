@@ -21,6 +21,7 @@ import ModalTrigger from './ModalTrigger';
 import ModalInner from './ModalInner';
 import ModalCloseIcon from './ModalCloseIcon';
 import sizes from '../utils/sizes';
+import isTouchDevice from '../utils/isTouchDevice';
 
 import {
   bodyModalStyle,
@@ -124,7 +125,7 @@ class Modal2 extends PureComponent {
 
   constructor(props) {
     super(props);
-    this.state = { visible: props.defaultVisible };
+    this.state = { visible: props.defaultVisible, counter: 1 };
     this.body = React.createRef();
   }
 
@@ -133,6 +134,17 @@ class Modal2 extends PureComponent {
     return {
       visible: props.visible,
     };
+  }
+
+  componentDidMount() {
+    // TODO: Hack. Убрать когда-нибудь
+    /* eslint-disable */
+    if (isTouchDevice()) {
+      setInterval(() => {
+        this.setState({ counter: this.state.counter + 1 });
+      }, 500);
+    }
+    /* eslint-enable */
   }
 
   @autobind
@@ -204,6 +216,7 @@ class Modal2 extends PureComponent {
             style={merge(style, Modal2.defaultStyles)}
             {...pick(props, reactModalProps)}
           >
+            <span style={{ opacity: 0 }}>{this.state.counter}</span>
             <div
               aria-hidden
               ref={closable && this.body}
