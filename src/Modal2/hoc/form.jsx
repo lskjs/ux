@@ -1,4 +1,5 @@
 import React from 'react';
+import If from 'react-if';
 import { Form, Field } from 'formik';
 import DefaultModal from '../../Modal2';
 import Button from '../../Button';
@@ -22,11 +23,13 @@ const createView = ({ Modal, controlsOrder }) => ({
         <Field key={controlName} {...control(controlName)} />
       ))}
     </Modal.Content>
-    <Modal.Footer>
-      <FormSubmitError
-        errors={errors}
-      />
-      <ButtonGroup>
+    <Modal.Footer style={{ flexDirection: 'column' }}>
+      <If condition={Object.keys(errors).length}>
+        <FormSubmitError
+          errors={errors}
+        />
+      </If>
+      <ButtonGroup padded>
         <FormSubmitButton
           paint="primary"
           status={status}
