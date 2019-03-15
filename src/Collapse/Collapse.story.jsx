@@ -12,9 +12,7 @@ class Container extends Component {
     return (
       <div>
         <Collapse show={this.state.show} type={type}>
-          <div>asd</div>
-          <div>asd</div>
-          <div>asd</div>
+          <Button paint="primary">asd</Button>
         </Collapse>
         <Button
           paint="primary"
