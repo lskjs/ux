@@ -33,7 +33,7 @@ const createView = ({ Modal, controlsOrder }) => ({
           paint="danger"
           view="text"
         >
-          <T name="common.no" />
+          <T name="common.cancel" />
         </Button>
       </Modal.Trigger>
     </Modal.Footer>
