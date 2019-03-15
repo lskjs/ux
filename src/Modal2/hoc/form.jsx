@@ -2,8 +2,10 @@ import React from 'react';
 import { Form, Field } from 'formik';
 import DefaultModal from '../../Modal2';
 import Button from '../../Button';
+import ButtonGroup from '../../Button/ButtonGroup';
 import createForm from '../../Form2/createForm';
-import Submit from '../../Form2/FormSubmit';
+import FormSubmitButton from '../../Form2/FormSubmitButton';
+import FormSubmitError from '../../Form2/FormSubmitError';
 import T from '../../T';
 // import { hocFooter } from '../Modal2.styles';
 
@@ -21,21 +23,25 @@ const createView = ({ Modal, controlsOrder }) => ({
       ))}
     </Modal.Content>
     <Modal.Footer>
-      <Submit
-        paint="primary"
+      <FormSubmitError
         errors={errors}
-        status={status}
-      >
-        <T name="common.submit" />
-      </Submit>
-      <Modal.Trigger>
-        <Button
-          paint="danger"
-          view="text"
+      />
+      <ButtonGroup>
+        <FormSubmitButton
+          paint="primary"
+          status={status}
         >
-          <T name="common.cancel" />
-        </Button>
-      </Modal.Trigger>
+          <T name="common.submit" />
+        </FormSubmitButton>
+        <Modal.Trigger>
+          <Button
+            paint="danger"
+            view="text"
+          >
+            <T name="common.cancel" />
+          </Button>
+        </Modal.Trigger>
+      </ButtonGroup>
     </Modal.Footer>
   </Form>
 );
