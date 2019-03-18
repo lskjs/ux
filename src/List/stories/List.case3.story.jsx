@@ -32,6 +32,7 @@ const HeaderItem = ({ toggleSort, sort = {}, index = createIndex() }) => (
     </HeaderCol>
   </HeaderRow>
 );
+
 const Item = observer(({ item = {}, index = createIndex() }) => (
   <ItemRow>
     <ItemCol index={index()}>
@@ -51,7 +52,7 @@ const Item = observer(({ item = {}, index = createIndex() }) => (
 
 export default ({ storiesOf }) => {
   return storiesOf('List', module)
-    .add('default', () => (
+    .add('case3: custom wrappers', () => (
       <Story devtools style={{ padding: 24 }}>
         <List
           container
@@ -60,6 +61,7 @@ export default ({ storiesOf }) => {
           Item={Item}
           FilterForm={FilterForm}
           columns={columns}
+          Wrapper={({ children }) => <div style={{ background: 'red' }}>{children}</div>}
         />
         <DebugListStore store={listStore} />
       </Story>

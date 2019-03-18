@@ -32,7 +32,8 @@ const HeaderItem = ({ toggleSort, sort = {}, index = createIndex() }) => (
     </HeaderCol>
   </HeaderRow>
 );
-const Item = observer(({ item = {}, index = createIndex() }) => (
+
+const LargeItem = observer(({ item = {}, index = createIndex() }) => (
   <ItemRow>
     <ItemCol index={index()}>
       {item.id}
@@ -51,13 +52,13 @@ const Item = observer(({ item = {}, index = createIndex() }) => (
 
 export default ({ storiesOf }) => {
   return storiesOf('List', module)
-    .add('default', () => (
+    .add('case5: large item', () => (
       <Story devtools style={{ padding: 24 }}>
         <List
           container
           listStore={listStore}
           HeaderItem={HeaderItem}
-          Item={Item}
+          Item={LargeItem}
           FilterForm={FilterForm}
           columns={columns}
         />
