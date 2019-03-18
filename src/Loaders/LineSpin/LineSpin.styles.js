@@ -23,7 +23,7 @@ function count(n = 9, start = 1) { // eslint-disable-line consistent-return
   return css(list.join('\n'));
 }
 
-export const LineSpin = styled('div')`
+export const SpinLine = styled('div')`
   ${count()}
   animation-fill-mode: both;
   position: absolute;

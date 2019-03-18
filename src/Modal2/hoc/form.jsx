@@ -1,4 +1,5 @@
 import React from 'react';
+import If from 'react-if';
 import { Form, Field } from 'formik';
 import DefaultModal from '../../Modal2';
 import Button from '../../Button';
@@ -22,11 +23,13 @@ const createView = ({ Modal, controlsOrder }) => ({
         <Field key={controlName} {...control(controlName)} />
       ))}
     </Modal.Content>
-    <Modal.Footer>
-      <FormSubmitError
-        errors={errors}
-      />
-      <ButtonGroup>
+    <Modal.Footer style={{ flexDirection: 'column' }}>
+      <If condition={Object.keys(errors).length}>
+        <FormSubmitError
+          errors={errors}
+        />
+      </If>
+      <ButtonGroup padded>
         <FormSubmitButton
           paint="primary"
           status={status}
@@ -52,6 +55,7 @@ export default ({
   controls,
   controlsOrder = Object.keys(controls),
   view = createView({ Modal, controls, controlsOrder }),
+
   ...params
 } = {}) => {
   const ModalForm = createForm({
@@ -61,22 +65,24 @@ export default ({
 
   return ({
     ref = React.createRef(), onSubmit, children, inner, ...props
-  }) => (
-    <Modal
-      ref={ref}
-      {...params}
-      {...props}
-      trigger={children}
-    >
-      <ModalForm
+  }) => {
+    return (
+      <Modal
+        ref={ref}
         {...params}
         {...props}
-        onSubmit={async (...args) => {
-          await onSubmit(...args);
-          ref.current.close();
-        }}
-      />
-    </Modal>
-  );
+        trigger={children}
+      >
+        <ModalForm
+          {...params}
+          {...props}
+          onSubmit={async (...args) => {
+            await onSubmit(...args);
+            ref.current.close();
+          }}
+        />
+      </Modal>
+    );
+  }
 };
 

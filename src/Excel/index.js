@@ -1,1 +1,1 @@
-export default from './spreadsheet';
+export { default } from './spreadsheet';

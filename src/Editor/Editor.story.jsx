@@ -8,11 +8,13 @@ import Story from '../Story';
 import markdownToValue from './markdownToValue';
 import jsonToValue from './jsonToValue';
 import md from './example.md';
+import md2 from './example2.md';
 // import ObserverDEV from './ObserverDEV';
 
 const value = jsonToValue(require('./value'));
 
 const initialValue = markdownToValue(md);
+const initialValue2 = markdownToValue(md2);
 
 
 export default ({ storiesOf, action }) => (
@@ -54,12 +56,21 @@ export default ({ storiesOf, action }) => (
         />
       </Story>
     ))
-    .add('Editor5 ', () => (
+    .add('Editor5 blank', () => (
       <Story>
         <Editor5
-          initialValue={value}
           onChange={(values) => {
-            console.log(values)
+            console.log(values);
+          }}
+        />
+      </Story>
+    ))
+    .add('Editor5 default', () => (
+      <Story>
+        <Editor5
+          initialValue={initialValue2}
+          onChange={(values) => {
+            console.log(values);
           }}
         />
       </Story>
