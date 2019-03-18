@@ -11,21 +11,20 @@ export default ({ storiesOf }) => (
     ))
     .add('custom height', () => (
       <Story>
-        <Flags height="55" />
+        <Flags height={55} />
       </Story>
     ))
     .add('another country', () => (
       <Story>
-        <Flags country="FR" />
+        <Flags country="fr" />
       </Story>
     ))
     .add('more', () => (
       <Story>
         <Flags country="FR" />
-        <Flags country="UK" />
+        <Flags country="uk" />
         <Flags country="BL" />
-        <Flags country="AF" />
+        <Flags country="ru" />
       </Story>
     ))
 );
-

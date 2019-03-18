@@ -19,10 +19,18 @@ const buttonStyles = css`
 @inject('listStore')
 @observer
 class ListBody extends Component {
+  state = {
+    active: false,
+  };
+  loadMoreData = () => {
+    this.setState({ active: true });
+    this.props.listStore.fetchMore(1);
+  }
+
   loadDataScroll = (isVisible) => {
-    if (isVisible) {
+    const { active } = this.state;
+    if (active && isVisible) {
       this.props.listStore.fetchMore(1);
-      console.log('КЧАУ');
     }
   }
   render() {
@@ -52,7 +60,7 @@ class ListBody extends Component {
               bordered
               size="large"
               paint="default"
-              onClick={() => listStore.fetchMore(-1)}
+              onClick={this.loadMoreData}
               disabled={listStore.loading}
               className={buttonStyles}
               block
@@ -72,13 +80,13 @@ class ListBody extends Component {
           <If condition={show.more && listStore.canFetchMore(1)}>
             <VisibilitySensor
               onChange={this.loadDataScroll}
-              offset={{ direction: 'bottom', value: -200 }}
+              offset={{ bottom: -200 }}
             >
               <Button
                 bordered
                 size="large"
                 paint="default"
-                onClick={() => listStore.fetchMore(1)}
+                onClick={this.loadMoreData}
                 disabled={listStore.loading}
                 className={buttonStyles}
                 block

@@ -11,7 +11,9 @@ const NewPhoneInputFormView = (props) => {
     <Form>
       <Field {...props.control('phone')} />
       <Field {...props.control('phone1')} />
+      <Field {...props.control('phone2')} />
       <Field {...props.control('phone3')} />
+      <Field {...props.control('phone4')} />
       <FormDebug {...props} />
     </Form>
   );
@@ -38,6 +40,10 @@ const NewPhoneInputForm = createForm({
       regions: 'europe',
       localization: { Germany: 'Deutschland', Spain: 'España' },
     },
+    phone4: {
+      title: 'Регион и пример локализации',
+      component: NewPhoneInput,
+    },
   },
 });
 
@@ -47,6 +53,8 @@ export default ({ storiesOf }) => (
       <Story>
         <NewPhoneInputForm
           initialValues={{
+            input: '+7 (917) 123 1234',
+            phone: '+7 (917) 123 1234',
             phone6: 'uhuhuhuhuht',
           }}
         />
