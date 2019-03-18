@@ -55,6 +55,7 @@ export default ({
   controls,
   controlsOrder = Object.keys(controls),
   view = createView({ Modal, controls, controlsOrder }),
+
   ...params
 } = {}) => {
   const ModalForm = createForm({
@@ -64,22 +65,24 @@ export default ({
 
   return ({
     ref = React.createRef(), onSubmit, children, inner, ...props
-  }) => (
-    <Modal
-      ref={ref}
-      {...params}
-      {...props}
-      trigger={children}
-    >
-      <ModalForm
+  }) => {
+    return (
+      <Modal
+        ref={ref}
         {...params}
         {...props}
-        onSubmit={async (...args) => {
-          await onSubmit(...args);
-          ref.current.close();
-        }}
-      />
-    </Modal>
-  );
+        trigger={children}
+      >
+        <ModalForm
+          {...params}
+          {...props}
+          onSubmit={async (...args) => {
+            await onSubmit(...args);
+            ref.current.close();
+          }}
+        />
+      </Modal>
+    );
+  }
 };
 

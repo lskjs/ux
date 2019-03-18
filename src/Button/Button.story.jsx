@@ -5,7 +5,6 @@ import Twitter from 'react-icons2/mdi/twitter-circle';
 import Vk from 'react-icons2/mdi/vk';
 import Youtube from 'react-icons2/mdi/youtube';
 import Telegram from 'react-icons2/mdi/telegram';
-
 import { Badge, Icon } from 'antd';
 import Button from './Button';
 import ButtonGroup from './ButtonGroup';

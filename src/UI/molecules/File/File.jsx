@@ -19,6 +19,7 @@ class File extends Component {
     const { url } = this.props;
     const type = this.constructor.determineType(url);
     const Icon = fileTypes[type];
+    const fileName = url.substring(url.lastIndexOf('/') + 1);
     return (
       <Box
         componentClass="a"
@@ -38,7 +39,7 @@ class File extends Component {
             >
               {type}
             </Typography>
-            <Typography className={urlStyle}>{url}</Typography>
+            <Typography className={urlStyle}>{fileName}</Typography>
           </Col>
         </Row>
       </Box>
