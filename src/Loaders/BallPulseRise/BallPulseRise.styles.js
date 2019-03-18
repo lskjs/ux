@@ -40,7 +40,7 @@ const riseOdd = keyframes`
 
 export default styled('div')`
   display: inline-block;
-  background-color: #fff;
+  background-color: ${p => p.color};
   width: 15px;
   height: 15px;
   border-radius: 100%;

@@ -25,9 +25,21 @@ import BallClipRotateMultiple from './BallClipRotateMultiple';
 import BallClipRotate from './BallClipRotate';
 import BallBeat from './BallBeat';
 
-const Box = ({ children }) => <div style={{ border: '1px black dotted', width: 100, height: 100 }}>{children}</div>;
+const styles = {
+  display: 'flex',
+  flex: '0 1 auto',
+  flexDirection: 'column',
+  flexGrow: 1,
+  flexShrink: 0,
+  height: 200,
+  alignItems: 'center',
+  justifyContent: 'center',
+  border: '1px black dotted',
+};
+const Box = ({ children }) => <div style={styles}>{children}</div>;
 const Name = 'div';
-const color = '#000';
+const color = '#1890ff';
+
 export default ({ storiesOf }) => (
   storiesOf('Loaders', module)
     .add('default', () => (
@@ -35,7 +47,7 @@ export default ({ storiesOf }) => (
         <Row>
           <Col md={2}>
             <Box>
-              {/* <LineSpin color={color} /> */}
+              <LineSpin color={color} />
             </Box>
             <Name>
               {'<LineSpin />'}
@@ -147,7 +159,7 @@ export default ({ storiesOf }) => (
           </Col>
           <Col md={2}>
             <Box>
-              {/* <BallRotate color={color} /> */}
+              <BallRotate color={color} />
             </Box>
             <Name>
               {'<BallRotate />'}

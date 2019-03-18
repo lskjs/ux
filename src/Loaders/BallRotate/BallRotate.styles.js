@@ -16,7 +16,7 @@ export const Wrapper = styled('div')`
   position: relative;
 `;
 
-export default styled('div')`
+export const RotateBall = styled('div')`
   animation-fill-mode: both;
   background-color: ${p => p.color};
   width: 15px;
