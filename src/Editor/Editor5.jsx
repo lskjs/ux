@@ -103,9 +103,16 @@ class RichEditor extends Component {
   getMarkdown = () => mdSerializer.serialize(this.editor.current.state.value);
   getHTML = () => htmlSerializer.serialize(this.editor.current.state.value);
   getValue = () => this.editor.current?.state?.value || defaultValue;
-  hasMark = type => Mark.isMark(type); // TODO: Не работает
-  hasBlock = type => Block.isBlock(type); // TODO: Не работает
+  hasMark = (type) => {
+    const value = this.getValue();
+    return value.activeMarks.some(mark => mark.type == type);
+  }
+  hasBlock = (type) => {
+    const value = this.getValue();
+    return value.blocks.some(node => node.type == type);
+  }
   handleChange = (value) => {
+    this.forceUpdate();
     const values = {
       html: this.getHTML(),
       markdown: this.getMarkdown(),
