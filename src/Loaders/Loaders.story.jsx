@@ -24,10 +24,21 @@ import BallClipRotatePulse from './BallClipRotatePulse';
 import BallClipRotateMultiple from './BallClipRotateMultiple';
 import BallClipRotate from './BallClipRotate';
 import BallBeat from './BallBeat';
+import Box from '../UI/molecules/Box';
 
-const Box = ({ children }) => <div style={{ border: '1px black dotted', width: 100, height: 100 }}>{children}</div>;
+// const Box = ({ children }) => <div style={{ border: '1px black dotted', width: 100, height: 100 }}>{children}</div>;
 const Name = 'div';
-const color = '#000';
+const color = '#1890ff';
+const styles = {
+  display: 'flex',
+  flex: '0 1 auto',
+  flexDirection: 'column',
+  flexGrow: 1,
+  flexShrink: 0,
+  height: 200,
+  alignItems: 'center',
+  justifyContent: 'center',
+};
 export default ({ storiesOf }) => (
   storiesOf('Loaders', module)
     .add('default', () => (
@@ -35,7 +46,9 @@ export default ({ storiesOf }) => (
         <Row>
           <Col md={2}>
             <Box>
-              {/* <LineSpin color={color} /> */}
+              <div style={styles}>
+                <LineSpin color={color} />
+              </div>
             </Box>
             <Name>
               {'<LineSpin />'}
@@ -43,7 +56,9 @@ export default ({ storiesOf }) => (
           </Col>
           <Col md={2}>
             <Box>
-              <ScaleRipple color={color} type="rapid" />
+              <div style={styles}>
+                <ScaleRipple color={color} type="rapid" />
+              </div>
             </Box>
             <Name>
               {'<ScaleRipple type="rapid" />'}
@@ -51,7 +66,9 @@ export default ({ storiesOf }) => (
           </Col>
           <Col md={2}>
             <Box>
-              <ScaleRippleMulti color={color} />
+              <div style={styles}>
+                <ScaleRippleMulti color={color} />
+              </div>
             </Box>
             <Name>
               {'<ScaleRippleMulti />'}
@@ -59,7 +76,9 @@ export default ({ storiesOf }) => (
           </Col>
           <Col md={2}>
             <Box>
-              <LineScaleRandom color={color} />
+              <div style={styles}>
+                <LineScaleRandom color={color} />
+              </div>
             </Box>
             <Name>
               {'<LineScaleRandom />'}
@@ -67,7 +86,9 @@ export default ({ storiesOf }) => (
           </Col>
           <Col md={2}>
             <Box>
-              <LineScale color={color} />
+              <div style={styles}>
+                <LineScale color={color} />
+              </div>
             </Box>
             <Name>
               {'<LineScale />'}
@@ -75,7 +96,9 @@ export default ({ storiesOf }) => (
           </Col>
           <Col md={2}>
             <Box>
-              <LinePulseOut color={color} type="default" />
+              <div style={styles}>
+                <LinePulseOut color={color} type="default" />
+              </div>
             </Box>
             <Name>
               {'<LinePulseOut type="default" />'}
@@ -83,7 +106,9 @@ export default ({ storiesOf }) => (
           </Col>
           <Col md={2}>
             <Box>
-              <LinePulseOut color={color} type="rapid" />
+              <div style={styles}>
+                <LinePulseOut color={color} type="rapid" />
+              </div>
             </Box>
             <Name>
               {'<LinePulseOut type="rapid" />'}
@@ -91,7 +116,9 @@ export default ({ storiesOf }) => (
           </Col>
           <Col md={2}>
             <Box>
-              <BallsZigZagDeflect color={color} />
+              <div style={styles}>
+                <BallsZigZagDeflect color={color} />
+              </div>
             </Box>
             <Name>
               {'<BallsZigZagDeflect />'}
@@ -99,7 +126,9 @@ export default ({ storiesOf }) => (
           </Col>
           <Col md={2}>
             <Box>
-              <BallsZigZag color={color} />
+              <div style={styles}>
+                <BallsZigZag color={color} />
+              </div>
             </Box>
             <Name>
               {'<BallsZigZag />'}
@@ -107,7 +136,9 @@ export default ({ storiesOf }) => (
           </Col>
           <Col md={2}>
             <Box>
-              <BallsTriangleTrace color={color} />
+              <div style={styles}>
+                <BallsTriangleTrace color={color} />
+              </div>
             </Box>
             <Name>
               {'<BallsTriangleTrace />'}
@@ -115,7 +146,9 @@ export default ({ storiesOf }) => (
           </Col>
           <Col md={2}>
             <Box>
-              <BallSpin color={color} />
+              <div style={styles}>
+                <BallSpin color={color} />
+              </div>
             </Box>
             <Name>
               {'<BallSpin />'}
@@ -123,7 +156,9 @@ export default ({ storiesOf }) => (
           </Col>
           <Col md={2}>
             <Box>
-              <BallScaleRandom color={color} />
+              <div style={styles}>
+                <BallScaleRandom color={color} />
+              </div>
             </Box>
             <Name>
               {'<BallScaleRandom />'}
@@ -131,7 +166,9 @@ export default ({ storiesOf }) => (
           </Col>
           <Col md={2}>
             <Box>
-              <BallScaleMulti color={color} />
+              <div style={styles}>
+                <BallScaleMulti color={color} />
+              </div>
             </Box>
             <Name>
               {'<BallScaleMulti />'}
@@ -139,7 +176,9 @@ export default ({ storiesOf }) => (
           </Col>
           <Col md={2}>
             <Box>
-              <BallScale color={color} />
+              <div style={styles}>
+                <BallScale color={color} />
+              </div>
             </Box>
             <Name>
               {'<BallScale />'}
@@ -147,7 +186,9 @@ export default ({ storiesOf }) => (
           </Col>
           <Col md={2}>
             <Box>
-              {/* <BallRotate color={color} /> */}
+              <div style={styles}>
+                <BallRotate color={color} />
+              </div>
             </Box>
             <Name>
               {'<BallRotate />'}
@@ -155,7 +196,9 @@ export default ({ storiesOf }) => (
           </Col>
           <Col md={2}>
             <Box>
-              <BallPulseSync color={color} />
+              <div style={styles}>
+                <BallPulseSync color={color} />
+              </div>
             </Box>
             <Name>
               {'<BallPulseSync />'}
@@ -163,7 +206,9 @@ export default ({ storiesOf }) => (
           </Col>
           <Col md={2}>
             <Box>
-              <BallPulseRise color={color} />
+              <div style={styles}>
+                <BallPulseRise color={color} />
+              </div>
             </Box>
             <Name>
               {'<BallPulseRise />'}
@@ -171,7 +216,9 @@ export default ({ storiesOf }) => (
           </Col>
           <Col md={2}>
             <Box>
-              <BallPulse color={color} />
+              <div style={styles}>
+                <BallPulse color={color} />
+              </div>
             </Box>
             <Name>
               {'<BallPulse />'}
@@ -179,7 +226,9 @@ export default ({ storiesOf }) => (
           </Col>
           <Col md={2}>
             <Box>
-              <BallGridPulse color={color} />
+              <div style={styles}>
+                <BallGridPulse color={color} />
+              </div>
             </Box>
             <Name>
               {'<BallGridPulse />'}
@@ -187,7 +236,9 @@ export default ({ storiesOf }) => (
           </Col>
           <Col md={2}>
             <Box>
-              <BallGridPulse color={color} type="beat" />
+              <div style={styles}>
+                <BallGridPulse color={color} type="beat" />
+              </div>
             </Box>
             <Name>
               {'<BallGridPulse type="beat" />'}
@@ -195,7 +246,9 @@ export default ({ storiesOf }) => (
           </Col>
           <Col md={2}>
             <Box>
-              <BallClipRotatePulse color={color} />
+              <div style={styles}>
+                <BallClipRotatePulse color={color} />
+              </div>
             </Box>
             <Name>
               {'<BallClipRotatePulse />'}
@@ -203,7 +256,9 @@ export default ({ storiesOf }) => (
           </Col>
           <Col md={2}>
             <Box>
-              <BallClipRotateMultiple color={color} />
+              <div style={styles}>
+                <BallClipRotateMultiple color={color} />
+              </div>
             </Box>
             <Name>
               {'<BallClipRotateMultiple />'}
@@ -211,7 +266,9 @@ export default ({ storiesOf }) => (
           </Col>
           <Col md={2}>
             <Box>
-              <BallClipRotate color={color} />
+              <div style={styles}>
+                <BallClipRotate color={color} />
+              </div>
             </Box>
             <Name>
               {'<BallClipRotate />'}
@@ -219,7 +276,9 @@ export default ({ storiesOf }) => (
           </Col>
           <Col md={2}>
             <Box>
-              <BallBeat color={color} />
+              <div style={styles}>
+                <BallBeat color={color} />
+              </div>
             </Box>
             <Name>
               {'<BallBeat />'}
