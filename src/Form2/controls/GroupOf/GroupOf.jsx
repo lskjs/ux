@@ -1,9 +1,25 @@
 import React, { Component } from 'react';
 import isFunction from 'lodash/isFunction';
+import PropTypes from 'prop-types';
 import { getOptionValue, getReverseOptionValue, getNormalizedOptions, NULL_STRING } from '../Select/utils';
 
 const DefaultItemComponent = () => 'itemComponent';
 class GroupOf extends Component {
+  static propTypes = {
+    /** выбрать несколько чекбоксов/радиобатонов  */
+    isMulti: PropTypes.bool,
+    /** Обезательное ли поле?  */
+    required: PropTypes.bool,
+    title: PropTypes.string,
+    label: PropTypes.string.isRequired,
+    value: PropTypes.string,
+  }
+  static defaultProps = {
+    isMulti: false,
+    required: true,
+    title: '',
+    value: '',
+  }
   getOptions() {
     const {
       options = [], itemComponent: ItemComponent = DefaultItemComponent, itemProps, ...props

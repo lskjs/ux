@@ -13,8 +13,10 @@ import Story from '../Story';
 import Link from '../Link';
 import socialColors from '../utils/socialColors';
 import withResponsive from './withResponsive';
+import withSure from './withSure';
 
 const ResponsiveButton = withResponsive(Button);
+const WithSureButton = withSure(Button);
 
 export default ({ storiesOf }) => {
   storiesOf('Button', module)
@@ -206,11 +208,14 @@ export default ({ storiesOf }) => {
       <Story>
         <WithSureButton
           paint="primary"
+          title="Dele2222ting"
+          content="Are you s2222ure"
+          status="success"
+          BtnText="Кнопка"
           size="small"
           icon={<Plus />}
-        >
-          Sure
-        </WithSureButton>
+          onSubmit={() => console.log('yes')}
+        />
       </Story>
     ))
     .add('badge status', () => (

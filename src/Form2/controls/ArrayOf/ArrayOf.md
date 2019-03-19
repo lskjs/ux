@@ -1,3 +1,7 @@
+ArrayOf example:
+
+```js
+
 import React from 'react';
 import { Form, Field, FastField } from 'formik';
 import Story from '../../../Story';
@@ -34,7 +38,7 @@ const ArrayOfForm = createForm({
       showRemoveButton: true,
       autoAddLastItem: true,
       maxCount: 5,
-      minCount: 2,
+      minCount: 4,
     },
     inputArray2: {
       title: 'inputArray2',
@@ -54,20 +58,13 @@ const ArrayOfForm = createForm({
   },
 });
 
-export default ({ storiesOf }) =>
-  storiesOf('Form2/controls', module)
-    .add('ArrayOf ', () => {
-      return (
-        <Story>
-          <ArrayOfForm
-            initialValues={{
-            inputArray: [
-              1122221,
-              222222,
-            ],
-          }}
-          />
-        </Story>
-      );
-    });
 
+<ArrayOfForm
+            initialValues={{
+              inputArray: [
+                111,
+                222,
+              ],
+            }}
+          />
+```

@@ -20,4 +20,3 @@ const CheckboxesList = ({
 };
 
 export default CheckboxesList;
-

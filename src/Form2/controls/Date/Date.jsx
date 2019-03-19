@@ -1,7 +1,9 @@
 import React from 'react';
 import moment from 'moment';
 import 'moment/locale/ru';
+import PropTypes from 'prop-types';
 import DatePickerBase from '../../../UI/molecules/Datepicker';
+
 
 const DatePicker = (data) => {
   const {
@@ -62,6 +64,17 @@ const DatePicker = (data) => {
     />
   );
 };
+
+
+// DatePicker.propTypes = {
+//   ranged: PropTypes.bool,
+//   futureOnly: PropTypes.bool,
+// };
+
+// DatePicker.defaultProps = {
+//   ranged: PropTypes.bool,
+//   futureOnly: PropTypes.bool,
+// };
 
 export default DatePicker;
 

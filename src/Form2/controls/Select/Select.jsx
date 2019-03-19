@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import find from 'lodash/find';
 import get from 'lodash/get';
+import PropTypes from 'prop-types';
 import isEqual from 'lodash/isEqual';
 import autobind from 'core-decorators/lib/autobind';
 import ReactSelect from 'react-select';
@@ -9,13 +10,37 @@ import cx from 'classnames';
 import Up from 'react-icons2/mdi/chevron-up';
 import Down from 'react-icons2/mdi/chevron-down';
 import { getOptionValue, getReverseOptionValue, getNormalizedOptions, NULL_STRING } from './utils';
-
 import SingleValue from './SingleValue';
 import Option from './Option';
 import CollapsedValueContainer from './CollapsedValueContainer';
 import CollapsedMultiValue from './CollapsedMultiValue';
 
 class Select extends Component {
+  static propTypes = {
+    /** option */
+    options: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number,
+    ]),
+    value: PropTypes.string,
+    // value: PropTypes.oneOfType([
+    //   PropTypes.string,
+    //   PropTypes.number,
+    // ]),
+    title: PropTypes.string,
+    /** Мультиселект  */
+    isMulti: PropTypes.bool,
+    /** асинхронная загрузка  */
+    async: PropTypes.bool,
+  }
+  static defaultProps = {
+    options: 'hello',
+    title: 'hello',
+    isMulti: false,
+    async: false,
+    value: 'hello',
+
+  }
   state = {};
   componentDidMount() {
     const {

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 import Marker from 'react-icons2/md/room';
 import autobind from 'core-decorators/lib/autobind';
 import GoogleMapReact from 'google-map-react';
@@ -21,6 +22,15 @@ const markerStyle = css`
 
 
 class Geo2 extends Component {
+  static propTypes = {
+    /** Настроить приближение  */
+    defaultZoom: PropTypes.number,
+    /** Ключ  */
+    apiKey: PropTypes.string.isRequired,
+  }
+  static defaultProps = {
+    defaultZoom: 9,
+  }
   constructor(props) {
     super(props);
     const val = props.field.value || [59.95, 30.33];

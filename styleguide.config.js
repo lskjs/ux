@@ -26,7 +26,8 @@ module.exports = {
     {
       name: 'UI Components',
       // content: 'docs/ui.md',
-      components: 'src/*/*.jsx',
+      components: 'src/Form2/controls/**/*.jsx',
+      // components: 'src/*/*.jsx',
       ignore: ['**/__tests__/**', '**/*.test.{js,jsx,ts,tsx}', '**/*.spec.{js,jsx,ts,tsx}', '**/*.d.ts', '**/*story.{js,jsx}'],
       // components: 'src/Button/*.jsx',
       exampleMode: 'expand', // 'hide' | 'collapse' | 'expand'

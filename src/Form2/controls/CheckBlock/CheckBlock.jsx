@@ -42,4 +42,3 @@ const BaseExtendedCheckblock = ({ checked, view, ...props }) => (
 );
 
 export default props => <Bool {...props} componentClass={BaseExtendedCheckblock} />;
-

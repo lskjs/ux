@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 // import get from 'lodash/get';
+import PropTypes from 'prop-types';
 import autobind from 'core-decorators/lib/autobind';
 import moment from 'moment';
 import HighlightedCell from '../../../UI/atoms/HighlightedCell';
@@ -7,6 +8,20 @@ import CalendarBase from './antd-calendar';
 
 
 class Calendar extends PureComponent {
+  static propTypes = {
+    /** Если не нужны прошедшие даты */
+    futureOnly: PropTypes.bool,
+    /** Выбор даты */
+    highlightedDates: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.instanceOf(),
+      PropTypes.func,
+    ]),
+  }
+  static defaultProps = {
+    futureOnly: true,
+    highlightedDates: null,
+  }
   static isAnyTypeDate(f) {
     return (new Date(f)).getTime() > 0;
   }
