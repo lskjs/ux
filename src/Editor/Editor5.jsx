@@ -15,9 +15,11 @@ import Heading4 from 'react-icons2/mdi/format-header-4';
 import Heading5 from 'react-icons2/mdi/format-header-5';
 import Heading6 from 'react-icons2/mdi/format-header-6';
 import Paragraph from 'react-icons2/mdi/format-paragraph';
+import Link from 'react-icons2/mdi/link';
 import Quote from 'react-icons2/mdi/format-quote-open';
 import OrderedList from 'react-icons2/mdi/format-list-numbers';
 import BulletedList from 'react-icons2/mdi/format-list-bulleted';
+import Image from 'react-icons2/mdi/file-image';
 
 import { Button, Icon, Toolbar, EditorWrapper } from './components';
 import renderMark from './renderMark';
@@ -45,6 +47,25 @@ const rules = [
   },
 ];
 
+const schema = {
+  document: {
+    last: { type: 'paragraph' },
+    normalize: (editor, { code, node, child }) => {
+      switch (code) {
+        case 'last_child_type_invalid': {
+          const paragraph = Block.create('paragraph')
+          return editor.insertNodeByKey(node.key, node.nodes.size, paragraph)
+        }
+      }
+    },
+  },
+  blocks: {
+    image: {
+      isVoid: true,
+    },
+  },
+};
+
 const mdSerializer = new MDSerializer();
 const htmlSerializer = new HTMLSerializer({ rules });
 
@@ -54,18 +75,16 @@ class RichEditor extends Component {
     this.state = {
       value: props.initialValue || defaultValue,
     };
-    this.editor = React.createRef();
   }
   onClickMark = (event, type) => {
     event.preventDefault();
-    this.editor.current.toggleMark(type);
+    this.editor.toggleMark(type);
   }
   onClickBlock = (event, type) => {
     event.preventDefault();
 
     const { editor } = this;
-    const { current } = editor;
-    const { value } = current;
+    const { value } = editor;
     const { document } = value;
 
     // Handle everything but list buttons.
@@ -74,12 +93,12 @@ class RichEditor extends Component {
       const isList = this.hasBlock('list-item');
 
       if (isList) {
-        current
+        editor
           .setBlocks(isActive ? DEFAULT_NODE : type)
           .unwrapBlock('bulleted-list')
           .unwrapBlock('ordered-list');
       } else {
-        current.setBlocks(isActive ? DEFAULT_NODE : type);
+        editor.setBlocks(isActive ? DEFAULT_NODE : type);
       }
     } else {
       // Handle the extra wrapping required for list buttons.
@@ -89,21 +108,59 @@ class RichEditor extends Component {
       });
 
       if (isList && isType) {
-        current
+        editor
           .setBlocks(DEFAULT_NODE)
           .unwrapBlock('bulleted-list')
           .unwrapBlock('ordered-list');
       } else if (isList) {
-        current
+        editor
           .unwrapBlock(type === 'bulleted-list' ? 'ordered-list' : 'bulleted-list')
           .wrapBlock(type);
       } else {
-        current.setBlocks('list-item').wrapBlock(type);
+        editor.setBlocks('list-item').wrapBlock(type);
       }
     }
   }
   getMarkdown = () => mdSerializer.serialize(this.state.value);
   getHTML = () => htmlSerializer.serialize(this.state.value);
+  handleClickLink = (e) => {
+    e.preventDefault();
+    const { editor } = this;
+    const { value } = this.state;
+    const hasLinks = this.hasLinks();
+
+    if (hasLinks) {
+      editor.command(this.unwrapLink);
+    } else if (value.selection.isExpanded) {
+      const href = window.prompt('Enter the URL of the link:');
+
+      if (href == null) {
+        return;
+      }
+
+      editor.command(this.wrapLink, href);
+    } else {
+      const href = window.prompt('Enter the URL of the link:');
+
+      if (href == null) {
+        return;
+      }
+
+      const text = window.prompt('Enter the text for the link:');
+
+      if (text == null) {
+        return;
+      }
+
+      editor.insertText(text).moveFocusBackward(text.length).command(this.wrapLink, href);
+    }
+  }
+  handleClickImage = (e) => {
+    e.preventDefault();
+    const src = window.prompt('Enter the URL of the image:')
+    if (!src) return;
+    this.editor.command(this.insertImage, src);
+  }
   hasMark = (type) => {
     const { value } = this.state;
     return value.activeMarks.some(mark => mark.type == type);
@@ -111,6 +168,10 @@ class RichEditor extends Component {
   hasBlock = (type) => {
     const { value } = this.state;
     return value.blocks.some(node => node.type == type);
+  }
+  hasLinks = () => {
+    const { value } = this.state;
+    return value.inlines.some(inline => inline.type === 'link');
   }
   handleChange = ({ value }) => {
     this.setState({ value }, () => {
@@ -122,6 +183,24 @@ class RichEditor extends Component {
         this.props.onChange(values);
       }
     });
+  }
+  insertImage = (editor, src) => {
+    this.editor.insertBlock({
+      type: 'image',
+      data: { src },
+    });
+  }
+  wrapLink = (editor, href) => {
+    this.editor.wrapInline({
+      type: 'link',
+      data: { href },
+    });
+  }
+  unwrapLink = () => {
+    this.editor.unwrapInline('link');
+  }
+  ref = (editor) => {
+    this.editor = editor;
   }
   renderMarkButton = (type, icon) => {
     const isActive = this.hasMark(type);
@@ -135,7 +214,7 @@ class RichEditor extends Component {
       </Button>
     );
   }
-  renderBlockButton = (type, icon) => {
+  renderBlockButton = (type, icon, customHandler) => {
     let isActive = this.hasBlock(type);
 
     if (['numbered-list', 'bulleted-list', 'ordered-list'].includes(type)) {
@@ -144,12 +223,14 @@ class RichEditor extends Component {
         const parent = document.getParent(blocks.first().key);
         isActive = this.hasBlock('list-item') && parent && parent.type === type;
       }
+    } else if (type === 'link') {
+      isActive = this.hasLinks();
     }
 
     return (
       <Button
         active={isActive}
-        onMouseDown={event => this.onClickBlock(event, type)}
+        onMouseDown={event => (customHandler ? customHandler(event, type) : this.onClickBlock(event, type))}
       >
         <Icon>{icon}</Icon>
       </Button>
@@ -175,9 +256,12 @@ class RichEditor extends Component {
           {this.renderBlockButton('block-quote', <Quote />)}
           {this.renderBlockButton('ordered-list', <OrderedList />)}
           {this.renderBlockButton('bulleted-list', <BulletedList />)}
+          {this.renderBlockButton('link', <Link />, this.handleClickLink)}
+          {this.renderBlockButton('image', <Image />, this.handleClickImage)}
         </Toolbar>
         <Editor
-          ref={this.editor}
+          ref={this.ref}
+          schema={schema}
           value={this.state.value}
           renderMark={renderMark}
           renderNode={renderNode}
