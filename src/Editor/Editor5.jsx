@@ -52,6 +52,9 @@ const htmlSerializer = new HTMLSerializer({ rules });
 class RichEditor extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      value: props.initialValue || defaultValue,
+    };
     this.editor = React.createRef();
   }
   onClickMark = (event, type) => {
@@ -100,27 +103,26 @@ class RichEditor extends Component {
       }
     }
   }
-  getMarkdown = () => mdSerializer.serialize(this.editor.current.state.value);
-  getHTML = () => htmlSerializer.serialize(this.editor.current.state.value);
-  getValue = () => this.editor.current?.state?.value || defaultValue;
+  getMarkdown = () => mdSerializer.serialize(this.state.value);
+  getHTML = () => htmlSerializer.serialize(this.state.value);
   hasMark = (type) => {
-    const value = this.getValue();
+    const { value } = this.state;
     return value.activeMarks.some(mark => mark.type == type);
   }
   hasBlock = (type) => {
-    const value = this.getValue();
+    const { value } = this.state;
     return value.blocks.some(node => node.type == type);
   }
-  handleChange = (value) => {
-    this.forceUpdate();
-    const values = {
-      html: this.getHTML(),
-      markdown: this.getMarkdown(),
-      value,
-    };
-    if (this.props.onChange) {
-      this.props.onChange(values);
-    }
+  handleChange = ({ value }) => {
+    this.setState({ value }, () => {
+      const values = {
+        html: this.getHTML(),
+        markdown: this.getMarkdown(),
+      };
+      if (this.props.onChange) {
+        this.props.onChange(values);
+      }
+    });
   }
   renderMarkButton = (type, icon) => {
     const isActive = this.hasMark(type);
@@ -138,7 +140,7 @@ class RichEditor extends Component {
     let isActive = this.hasBlock(type);
 
     if (['numbered-list', 'bulleted-list', 'ordered-list'].includes(type)) {
-      const { document, blocks } = this.getValue();
+      const { value: { document, blocks } } = this.state;
       if (blocks.size > 0) {
         const parent = document.getParent(blocks.first().key);
         isActive = this.hasBlock('list-item') && parent && parent.type === type;
@@ -155,7 +157,7 @@ class RichEditor extends Component {
     );
   }
   render() {
-    const { initialValue, onChange, ...props } = this.props;
+    const { onChange, ...props } = this.props;
     return (
       <EditorWrapper>
         <Toolbar>
@@ -177,7 +179,7 @@ class RichEditor extends Component {
         </Toolbar>
         <Editor
           ref={this.editor}
-          defaultValue={initialValue || defaultValue}
+          value={this.state.value}
           renderMark={renderMark}
           renderNode={renderNode}
           onChange={this.handleChange}
