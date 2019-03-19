@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Block, Mark } from 'slate';
 import { Editor } from 'slate-react';
 import MDSerializer from 'slate-md-serializer';
 import HTMLSerializer from 'slate-html-serializer';
@@ -26,7 +25,6 @@ import renderNode from './renderNode';
 import jsonToValue from './jsonToValue';
 
 const defaultValue = jsonToValue(require('./initialValue'));
-const mdSerializer = new MDSerializer();
 const DEFAULT_NODE = 'paragraph';
 
 const rules = [
@@ -47,6 +45,7 @@ const rules = [
   },
 ];
 
+const mdSerializer = new MDSerializer();
 const htmlSerializer = new HTMLSerializer({ rules });
 
 class RichEditor extends Component {

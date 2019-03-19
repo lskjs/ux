@@ -4,7 +4,7 @@ export const Icon = styled('button')`
   background: none;
   outline: none;
   border: none;
-  color: ${p => p.theme.colors.primary};
+  color: ${p => (p.isActive ? p.theme.colors.primary : p.theme.colors.gray)};
   font-size: 24px;
   margin: 0;
   padding: 0;
