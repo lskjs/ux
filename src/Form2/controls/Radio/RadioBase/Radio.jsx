@@ -67,7 +67,7 @@ class Radio extends PureComponent {
           onChange={this.handleSelect}
           disabled={disabled}
         />
-        <Icon type="button" onClick={this.handleSelect} disabled={disabled}>
+        <Icon isActive={checked} type="button" onClick={this.handleSelect} disabled={disabled}>
           {checked ? <Selected /> : <Blank />}
           <label // eslint-disable-line
             htmlFor={id}

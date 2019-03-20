@@ -64,7 +64,7 @@ export const Icon = styled('div')`
   font-size: 24px;
   display: flex;
   flex-shrink: 0;
-  color: ${p => p.theme.colors.primary};
+  color: ${p => (p.isActive ? p.theme.colors.primary : p.theme.colors.gray)};
   margin-right: 12px;
   > svg {
     display: flex;

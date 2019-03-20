@@ -87,7 +87,7 @@ class ExtendedCheckblock extends PureComponent {
             style={{ height }}
           >
             <Header>
-              <Icon>
+              <Icon isActive={!!value}>
                 {value ? checkIcon : blankIcon}
               </Icon>
               <Label>{label}</Label>

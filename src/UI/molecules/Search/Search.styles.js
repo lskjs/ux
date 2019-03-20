@@ -88,11 +88,12 @@ export const Actions = styled('div')`
 `;
 
 export const Action = styled('div')`
-  margin-right: 12px;
+  margin-right: 6px;
   display: flex;
   align-items: center;
   ${p => (p.additional && css`
-    padding-left: 12px;
+    padding-left: 16px;
+    margin-right: 12px;
     border-left: 1px solid ${p.theme.colors.border};
     ${!p.divide && 'border-left-color: transparent;'}
 

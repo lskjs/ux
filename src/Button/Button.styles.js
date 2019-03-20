@@ -191,7 +191,7 @@ const iconButtonSingle = props => css`
     padding-left: 10px !important;
 
     ${Icon} {
-      font-size: 20px;
+      font-size: 24px;
     }
   `}
   ${props.size === 'small' && `

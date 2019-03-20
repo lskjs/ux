@@ -35,6 +35,7 @@ const DefaultBody = ({
             <If condition={!value}>
               <Button
                 type="button"
+                paint="primary"
                 onClick={() => refZone.current?.open()}
               >
                 <T name="upload.buttonFiles" />
@@ -43,6 +44,7 @@ const DefaultBody = ({
             <If condition={value?.length}>
               <Button
                 type="button"
+                paint="primary"
                 onClick={onRemoveFiles}
               >
                 <T name="lskComponents.filesUploaderButton" />
