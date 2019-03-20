@@ -18,7 +18,6 @@ class FilterButton extends Component {
     const {
       List, listStore,
     } = this.props;
-    console.log(this.props);
     const badge = listStore.hasFilter ? filter(toJS(listStore.filter), a => !isEmpty(a)).length : 0;
     const ResponsiveButton = withResponsive(List.Button);
     const Button = props => (

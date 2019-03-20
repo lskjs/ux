@@ -12,14 +12,6 @@ import isTouchDevice from '../utils/isTouchDevice';
 @inject('listStore')
 @observer
 class ListFilter extends Component {
-  // constructor() {
-  //   super();
-  //   this.form = React.createRef();
-  //   setTimeout(() => {
-
-  //     __DEV__ && console.log('this.form', this.form);
-  //   }, 1000);
-  // }
   render() {
     const {
       List,
