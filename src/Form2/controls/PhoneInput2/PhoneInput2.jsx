@@ -11,7 +11,14 @@ const Container = styled.div`
   }
   .react-tel-input .country-list .country {
     padding: 0px 10px;
-  } 
+    font-weight: normal;
+  }
+  .country-name {
+    font-weight: normal;
+  }
+  .react-tel-input .country-list {
+    margin: 0px;
+  }
 `;
 
 export default ({ field, form, ...props }) => (

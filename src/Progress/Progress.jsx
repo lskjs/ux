@@ -91,7 +91,6 @@ class Progress extends Component {
     const bar = this.nanobar.el.children[0];
 
     container.style.cssText = `position: ${global ? 'fixed' : 'absolute'}; left: 0; top: ${top};  z-index: 1;`;
-    console.log('container.style.cssText', container.style.cssText);
 
     bar.style.cssText = `
       height: ${this.props.height}px;

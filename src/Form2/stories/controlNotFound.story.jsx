@@ -16,7 +16,7 @@ const InputFormView = (props) => {
 
 const DemoForm = createForm({
   view: InputFormView,
-  controls: {
+  control: {
     login: {
       title: 'Login',
       component: Input,

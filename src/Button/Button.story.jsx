@@ -13,10 +13,8 @@ import Story from '../Story';
 import Link from '../Link';
 import socialColors from '../utils/socialColors';
 import withResponsive from './withResponsive';
-import withSure from './withSure';
 
 const ResponsiveButton = withResponsive(Button);
-const WithSureButton = withSure(Button);
 
 export default ({ storiesOf }) => {
   storiesOf('Button', module)

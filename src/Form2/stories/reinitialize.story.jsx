@@ -8,7 +8,7 @@ import Input from '../controls/Input';
 import Select from '../controls/Select';
 import Tags from '../controls/Tags';
 import PhoneInput from '../controls/PhoneInput';
-import NewPhoneInput from '../controls/NewPhoneInput';
+import PhoneInput2 from '../controls/PhoneInput2';
 import FormDebug from '../FormDebug';
 import PercentSlider from '../controls/PercentSlider/PercentSlider';
 import Files from '../controls/Files';
@@ -63,8 +63,8 @@ const controls = {
     component: PhoneInput,
   },
   newphone: {
-    title: 'NewPhoneInput',
-    component: NewPhoneInput,
+    title: 'PhoneInput2',
+    component: PhoneInput2,
   },
   files: {
     title: 'Files',

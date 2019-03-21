@@ -8,20 +8,6 @@ import CalendarBase from './antd-calendar';
 
 
 class Calendar extends PureComponent {
-  static propTypes = {
-    /** Если не нужны прошедшие даты */
-    futureOnly: PropTypes.bool,
-    /** Выбор даты */
-    highlightedDates: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.instanceOf(),
-      PropTypes.func,
-    ]),
-  }
-  static defaultProps = {
-    futureOnly: true,
-    highlightedDates: null,
-  }
   static isAnyTypeDate(f) {
     return (new Date(f)).getTime() > 0;
   }
