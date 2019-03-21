@@ -22,15 +22,6 @@ const markerStyle = css`
 
 
 class Geo2 extends Component {
-  static propTypes = {
-    /** Настроить приближение  */
-    defaultZoom: PropTypes.number,
-    /** Ключ  */
-    apiKey: PropTypes.string.isRequired,
-  }
-  static defaultProps = {
-    defaultZoom: 9,
-  }
   constructor(props) {
     super(props);
     const val = props.field.value || [59.95, 30.33];

@@ -15,26 +15,6 @@ const DefaultRemoveButton = props => <IconCircleButton {...props}><CloseIcon /><
 const DefaultAddButton = props => <IconCircleButton {...props} />;
 
 class ArrayOf extends Component {
-  static propTypes = {
-    value: PropTypes.number.isRequired,
-    /** Показать кнопку удаления */
-    showRemoveButton: PropTypes.bool,
-    /** Автоматически добавить последний элемент */
-    autoAddLastItem: PropTypes.bool,
-    /** Максимальное количество полей */
-    maxCount: PropTypes.number,
-    /** Минимальное количество полей */
-    minCount: PropTypes.number,
-    /** Начальное значение полей */
-    itemInitialValue: PropTypes.string,
-  }
-  static defaultProps = {
-    showRemoveButton: true,
-    autoAddLastItem: true,
-    maxCount: 5,
-    minCount: 4,
-    itemInitialValue: '',
-  }
   // shouldComponentUpdate(nextProps, nextState) {
   //   return !isEqual(nextProps.value, this.props.value) || !isEqual(nextState.value, this.state.value);
   // }
