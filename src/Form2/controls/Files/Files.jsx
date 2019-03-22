@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Files from '../../../UI/molecules/Files';
+import Files from './FilesBase';
 
 import DefaultBody from './DefaultBody';
 import DefaultFooter from './DefaultFooter';

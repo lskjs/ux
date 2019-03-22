@@ -3,7 +3,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import autobind from 'core-decorators/lib/autobind';
 import moment from 'moment';
-import HighlightedCell from '../../../UI/atoms/HighlightedCell';
+import HighlightedCell from './HighlightedCell';
 import CalendarBase from './antd-calendar';
 
 

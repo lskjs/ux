@@ -1,8 +1,8 @@
 import React from 'react';
 import If from 'react-if';
 import T from '../../../T';
-import Box from '../../../UI/molecules/Box';
-import File from '../../../UI/molecules/File';
+import Box from './Box';
+import File from './File';
 import { Col, Row } from '../../../Grid';
 
 const DefaultFooter = ({ value }) => (

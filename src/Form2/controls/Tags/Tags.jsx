@@ -1,6 +1,6 @@
 import React from 'react';
 import isPlainObject from 'lodash/isPlainObject';
-import TagsPickerBase from '../../../UI/molecules/TagsPicker';
+import TagsPickerBase from './TagsPicker';
 // import { getNormalizedOptions } from '../Select/utils';
 
 function getNormalizedOptions(options) {
