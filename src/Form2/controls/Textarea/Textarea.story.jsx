@@ -6,15 +6,13 @@ import createForm from '../../createForm';
 import Textarea from './Textarea';
 import FormDebug from '../../FormDebug';
 
-const TextareaFormView = (props) => {
-  return (
-    <Form>
-      <Field {...props.control('textarea')} />
-      <FormDebug {...props} />
-      <Button onClick={props.handleSubmit}>Submit</Button>
-    </Form>
-  );
-};
+const TextareaFormView = props => (
+  <Form>
+    <Field {...props.control('textarea')} />
+    <FormDebug {...props} />
+    <Button onClick={props.handleSubmit}>Submit</Button>
+  </Form>
+);
 
 const TextareaForm = createForm({
   view: TextareaFormView,

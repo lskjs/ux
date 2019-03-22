@@ -6,14 +6,13 @@ import createForm from '../../createForm';
 import RadioCards from './RadioCards';
 import FormDebug from '../../FormDebug';
 
-const RadioCardsFormView = (props) => {
-  return (
-    <Form>
-      <Field {...props.control('radioCards')} />
-      <FormDebug {...props} />
-    </Form>
-  );
-};
+const RadioCardsFormView = props => (
+  <Form>
+    <Field {...props.control('radioCards')} />
+    <FormDebug {...props} />
+  </Form>
+);
+
 
 const RadioCardsForm = createForm({
   view: RadioCardsFormView,

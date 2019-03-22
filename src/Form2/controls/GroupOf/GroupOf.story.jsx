@@ -15,33 +15,30 @@ import Camera from 'react-icons2/mdi/camcorder';
 // import Switcher from '../../../Switcher/Switcher';
 // import getOptions from '../../../getOptions';
 
-const RadioFormView = (props) => {
-  const colorsControl = props.controls.get('colors');
+const RadioFormView = props => (
   // const colorsOptions = getOptions(colorsControl);
-  return (
-    <Form>
-      <Field {...props.controls.get('color')} />
-      <Field {...props.controls.get('adtype')} />
-      <Field {...props.controls.get('dealType')} />
-      <hr />
-      <Field {...props.controls.get('colors')} />
-      <Field {...props.controls.get('colors2')} />
-      <Field
-        {...colorsControl}
-        render2={({ options }) => (
-          <div style={{ border: '1px black solid' }}>
-            {options.map(({ Component, option }) => (
-              <div style={{ border: `1px ${option.value} dotted` }}><Component /></div>
-            ))}
-          </div>
-        )}
-      />
-      <hr />
-      <Field {...props.controls.get('videoTypes')} itemProps={{ style: { display: 'block' } }} />
-      <FormDebug {...props} />
-    </Form>
-  );
-};
+  <Form>
+    <Field {...props.controls.get('color')} />
+    <Field {...props.controls.get('adtype')} />
+    <Field {...props.controls.get('dealType')} />
+    <hr />
+    <Field {...props.controls.get('colors')} />
+    <Field {...props.controls.get('colors2')} />
+    <Field
+      {...props.controls.get('colors')}
+      render2={({ options }) => (
+        <div style={{ border: '1px black solid' }}>
+          {options.map(({ Component, option }) => (
+            <div style={{ border: `1px ${option.value} dotted` }}><Component /></div>
+          ))}
+        </div>
+      )}
+    />
+    <hr />
+    <Field {...props.controls.get('videoTypes')} itemProps={{ style: { display: 'block' } }} />
+    <FormDebug {...props} />
+  </Form>
+);
 
 const RadioForm = createForm({
   view: RadioFormView,

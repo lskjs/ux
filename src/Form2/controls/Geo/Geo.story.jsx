@@ -5,14 +5,14 @@ import createForm from '../../createForm';
 import Geo from './Geo';
 import FormDebug from '../../FormDebug';
 
-const GeoViewForm = (props) => {
-  return (
-    <Form>
-      <Field {...props.control('geo')} />
-      <FormDebug {...props} />
-    </Form>
-  );
-};
+const GeoViewForm = props => (
+  <Form>
+    <Field {...props.control('geo')} />
+    <FormDebug {...props} />
+    <p>Правильно?</p>
+  </Form>
+);
+
 
 const GeoGoogleForm = createForm({
   view: GeoViewForm,
