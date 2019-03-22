@@ -5,14 +5,12 @@ import createForm from '../../createForm';
 import Input from '../../controls/Input';
 import FormDebug from '../../FormDebug';
 
-const InputFormView = (props) => {
-  return (
-    <Form>
-      <Field {...props.controls.notFound} />
-      <FormDebug {...props} />
-    </Form>
-  );
-};
+const InputFormView = props => (
+  <Form>
+    <Field {...props.control('notFound')} />
+    <FormDebug {...props} />
+  </Form>
+);
 
 const DemoForm = createForm({
   view: InputFormView,
