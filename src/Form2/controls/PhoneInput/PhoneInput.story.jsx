@@ -8,6 +8,16 @@ import PhoneInput from './PhoneInput';
 import Input from '../Input';
 import FormDebug from '../../FormDebug';
 
+const Container = styled.div`
+  .flag-dropdown{
+    border: 1px solid #1890ff;
+    background: none;
+  }
+  .form-control:focus{
+    font-size: 1.1em;
+  }
+`;
+
 const PhoneInputFormView = (props) => {
   return (
     <Form>
@@ -25,7 +35,7 @@ const PhoneInputFormView = (props) => {
   );
 };
 
-const PhoneInputInputForm = createForm({
+const PhoneInputForm = createForm({
   view: PhoneInputFormView,
   controls: {
     input: {
@@ -58,22 +68,11 @@ const PhoneInputInputForm = createForm({
 });
 
 
-const Container = styled.div`
-  .flag-dropdown{
-    border: 1px solid #1890ff;
-    background: none;
-  }
-  .form-control:focus{
-    font-size: 1.1em;
-  }
-`;
-
-
 export default ({ storiesOf }) => (
   storiesOf('Form2/controls', module)
     .add('PhoneInput', () => (
       <Story>
-        <PhoneInputInputForm
+        <PhoneInputForm
           initialValues={{
             input: '+7 (917) 123 1234',
             phone: '+7 (917) 123 1234',

@@ -2,7 +2,7 @@ import React from 'react';
 import { Form, Field } from 'formik';
 import Story from '../../../Story';
 import createForm from '../../createForm';
-import Geo from './Geo2';
+import Geo from './Geo';
 import FormDebug from '../../FormDebug';
 
 const GeoViewForm = (props) => {
@@ -28,7 +28,7 @@ const GeoGoogleForm = createForm({
 
 export default ({ storiesOf }) =>
   storiesOf('Form2/controls', module)
-    .add('Geo2', () => {
+    .add('Geo', () => {
       return (
         <Story>
           <GeoGoogleForm

@@ -2,24 +2,24 @@ import React from 'react';
 import { Form, Field } from 'formik';
 import Story from '../../../Story';
 import createForm from '../../createForm';
-import PhoneInput from './PhoneInput';
+import PhoneInputOld from './PhoneInputOld';
 import FormDebug from '../../FormDebug';
 
-const PhoneInputFormView = (props) => {
+const PhoneInputOldFormView = (props) => {
   return (
     <Form>
-      <Field {...props.controls.phoneInput} />
+      <Field {...props.controls.phoneInputOld} />
       <FormDebug {...props} />
     </Form>
   );
 };
 
-const PhoneInputForm = createForm({
-  view: PhoneInputFormView,
+const PhoneInputOldForm = createForm({
+  view: PhoneInputOldFormView,
   controls: {
-    phoneInput: {
-      title: 'PhoneInput',
-      component: PhoneInput,
+    phoneInputOld: {
+      title: 'PhoneInputOld',
+      component: PhoneInputOld,
       defaultCountry: 'ru',
     },
   },
@@ -27,10 +27,10 @@ const PhoneInputForm = createForm({
 
 export default ({ storiesOf }) =>
   storiesOf('Form2/controls', module)
-    .add('PhoneInput ', () => {
+    .add('PhoneInputOld ', () => {
       return (
         <Story>
-          <PhoneInputForm />
+          <PhoneInputOldForm />
         </Story>
       );
     });

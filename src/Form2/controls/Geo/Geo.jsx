@@ -6,7 +6,7 @@ import autobind from 'core-decorators/lib/autobind';
 import GoogleMapReact from 'google-map-react';
 import { css } from 'react-emotion';
 import SearchBox from './SearchBox';
-// import { Icon } from './Geo2.styles';
+// import { Icon } from './Geo.styles';
 
 const markerWrapperStyle = css`
 /* border: 1px red solid; */
@@ -21,7 +21,7 @@ const markerStyle = css`
 `;
 
 
-class Geo2 extends Component {
+class Geo extends Component {
   constructor(props) {
     super(props);
     const val = props.field.value || [59.95, 30.33];
@@ -157,7 +157,7 @@ class Geo2 extends Component {
   }
 }
 
-export default Geo2;
+export default Geo;
 
 
 // const {

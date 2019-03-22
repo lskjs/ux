@@ -3,7 +3,6 @@ import { Form, Field } from 'formik';
 // import { Button } from 'react-bootstrap';
 import Story from '../../../Story';
 import createForm from '../../createForm';
-import Checkbox from '../Checkbox/Checkbox';
 import CheckboxArray from './CheckboxArray';
 import CheckboxDeal from '../../../UI/molecules/CheckboxDeal/CheckboxDeal';
 
@@ -91,7 +90,7 @@ const CheckboxArrayForm = createForm({
 });
 
 export default ({ storiesOf }) =>
-  storiesOf('Form2/controls', module)
+  storiesOf('Form2/controls_remove', module)
     .add('CheckboxArray ', () => {
       return (
         <Story>
