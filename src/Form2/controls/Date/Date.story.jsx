@@ -5,7 +5,7 @@ import createForm from '../../createForm';
 import Date from './Date';
 import FormDebug from '../../FormDebug';
 
-const DateFormView = props =>  (
+const DateFormView = props => (
   <Form>
     <div style={{ position: 'relative' }}>
       <Field {...props.control('date')} />
