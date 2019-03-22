@@ -9,7 +9,6 @@ const GeoViewForm = props => (
   <Form>
     <Field {...props.control('geo')} />
     <FormDebug {...props} />
-    <p>Правильно?</p>
   </Form>
 );
 
