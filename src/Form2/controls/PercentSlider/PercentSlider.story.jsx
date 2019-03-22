@@ -5,14 +5,13 @@ import createForm from '../../createForm';
 import PercentSlider from './PercentSlider';
 import FormDebug from '../../FormDebug';
 
-const PercentSliderFormView = (props) => {
-  return (
-    <Form>
-      <Field {...props.control('slider')} />
-      <FormDebug {...props} />
-    </Form>
-  );
-};
+const PercentSliderFormView = props => (
+  <Form>
+    <Field {...props.control('slider')} />
+    <FormDebug {...props} />
+  </Form>
+);
+
 
 const PercentSliderForm = createForm({
   view: PercentSliderFormView,

@@ -11,25 +11,23 @@ import Desktop from 'react-icons2/mdi/desktop-mac';
 import Camera from 'react-icons2/mdi/camcorder';
 
 
-const CheckboxFormView = (props) => {
-  return (
-    <Form>
-      <Checkbox label="test" />
-      <Checkbox checked />
-      <Checkbox checked={false} />
-      <Checkbox value />
-      <Checkbox value={false} />
-      <Checkbox onChange={value => console.log({ value })} />
-      <hr />
-      <Field {...props.controls.get('blue')} />
-      <Field {...props.controls.get('black')} />
-      <Field {...props.controls.get('black')} />
-      <hr />
-      <Field {...props.controls.get('screen')} />
-      <FormDebug {...props} />
-    </Form>
-  );
-};
+const CheckboxFormView = props => (
+  <Form>
+    <Checkbox label="test" />
+    <Checkbox checked />
+    <Checkbox checked={false} />
+    <Checkbox value />
+    <Checkbox value={false} />
+    <Checkbox onChange={value => console.log({ value })} />
+    <hr />
+    <Field {...props.controls.get('blue')} />
+    <Field {...props.controls.get('black')} />
+    <Field {...props.controls.get('black')} />
+    <hr />
+    <Field {...props.controls.get('screen')} />
+    <FormDebug {...props} />
+  </Form>
+);
 
 const CheckboxForm = createForm({
   view: CheckboxFormView,

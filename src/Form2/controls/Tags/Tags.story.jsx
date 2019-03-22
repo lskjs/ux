@@ -6,19 +6,17 @@ import createForm from '../../createForm';
 import Tags from './Tags';
 import FormDebug from '../../FormDebug';
 
-const TagsFormView = (props) => {
-  return (
-    <Form>
-      <Field {...props.control('tags')} />
-      <Field {...props.control('tags1')} />
-      <Field {...props.control('tags2')} />
-      <Field {...props.control('tags3')} />
-      <Field {...props.control('tags4')} />
-      <Field {...props.control('tags5')} />
-      <FormDebug {...props} />
-    </Form>
-  );
-};
+const TagsFormView = props => (
+  <Form>
+    <Field {...props.control('tags')} />
+    <Field {...props.control('tags1')} />
+    <Field {...props.control('tags2')} />
+    <Field {...props.control('tags3')} />
+    <Field {...props.control('tags4')} />
+    <Field {...props.control('tags5')} />
+    <FormDebug {...props} />
+  </Form>
+);
 
 const TagsForm = createForm({
   view: TagsFormView,

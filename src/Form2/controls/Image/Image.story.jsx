@@ -6,15 +6,13 @@ import Image from './Image';
 import FormDebug from '../../FormDebug';
 import Footer from '../Files/DefaultFooter';
 
-const ImageFormView = (props) => {
-  return (
-    <Form>
-      <Field {...props.control('image')} />
-      <Field {...props.control('image2')} />
-      <FormDebug {...props} />
-    </Form>
-  );
-};
+const ImageFormView = props => (
+  <Form>
+    <Field {...props.control('image')} />
+    <Field {...props.control('image2')} />
+    <FormDebug {...props} />
+  </Form>
+);
 
 const ImageForm = createForm({
   view: ImageFormView,

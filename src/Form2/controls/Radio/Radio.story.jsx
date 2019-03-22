@@ -6,16 +6,15 @@ import Radio from './Radio';
 import Checkbox from '../Checkbox';
 import FormDebug from '../../FormDebug';
 
-const RadioFormView = (props) => {
-  return (
-    <Form>
-      <Field {...props.control('blue')} />
-      <Field {...props.control('blue')} />
-      <Field {...props.control('blueCheckbox')} />
-      <FormDebug {...props} />
-    </Form>
-  );
-};
+const RadioFormView = props => (
+  <Form>
+    <Field {...props.control('blue')} />
+    <Field {...props.control('blue')} />
+    <Field {...props.control('blueCheckbox')} />
+    <FormDebug {...props} />
+  </Form>
+);
+
 
 const RadioForm = createForm({
   view: RadioFormView,

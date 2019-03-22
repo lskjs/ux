@@ -18,22 +18,20 @@ const Container = styled.div`
   }
 `;
 
-const PhoneInputFormView = (props) => {
-  return (
-    <Form>
-      <Field {...props.control('input')} />
-      <Field {...props.control('phone')} />
-      <Field {...props.control('phone1')} />
-      <Field {...props.control('phone2')} />
-      <Field {...props.control('phone3')} />
+const PhoneInputFormView = props => (
+  <Form>
+    <Field {...props.control('input')} />
+    <Field {...props.control('phone')} />
+    <Field {...props.control('phone1')} />
+    <Field {...props.control('phone2')} />
+    <Field {...props.control('phone3')} />
+    <Field {...props.control('phone4')} />
+    <Container>
       <Field {...props.control('phone4')} />
-      <Container>
-        <Field {...props.control('phone4')} />
-      </Container>
-      <FormDebug {...props} />
-    </Form>
-  );
-};
+    </Container>
+    <FormDebug {...props} />
+  </Form>
+);
 
 const PhoneInputForm = createForm({
   view: PhoneInputFormView,
