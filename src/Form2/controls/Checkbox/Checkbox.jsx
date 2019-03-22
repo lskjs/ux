@@ -22,7 +22,7 @@ BaseCheckbox.propTypes = {
 
 BaseCheckbox.defaultProps = {
   name: 'checkbox',
-}
+};
 
 export default props => <Bool {...props} componentClass={BaseCheckbox} />;
 
