@@ -45,12 +45,14 @@ export default (ctrls, FormGroup) => {
 
   const get = (key) => {
     const control = controls[key];
-    if (__DEV__) {
-      return {
-        component: React.createElement('div', {}, `!control = ${key}`),
-      };
+    if (!control) {
+      if (__DEV__) {
+        return {
+          component: () => React.createElement('div', {}, `!control = ${key}`),
+        };
+      }
+      return { component: 'div' };
     }
-    if (!control) return { component: 'div' };
     return control;
   };
 
