@@ -1,5 +1,5 @@
 import React from 'react';
-import PercentSliderBase from '../../../UI/molecules/PercentSlider';
+import PercentSliderBase from './PercentSliderBase';
 
 const PercentSlider = ({
   field,

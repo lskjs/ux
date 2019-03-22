@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import 'moment/locale/ru';
 import PropTypes from 'prop-types';
-import DatePickerBase from '../../../UI/molecules/Datepicker';
+import DatePickerBase from './Datepicker';
 
 
 const DatePicker = (data) => {

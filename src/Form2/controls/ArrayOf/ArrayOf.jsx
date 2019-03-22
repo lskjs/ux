@@ -8,7 +8,7 @@ import CloseIcon from 'react-icons2/mdi/close';
 import If from 'react-if';
 import DebugJson from '../DebugJson';
 import IconCircleButton from '../../../UI/atoms/IconCircleButton';
-import Horizontal from '../../../UI/atoms/Horizontal';
+import Horizontal from './Horizontal';
 
 
 const DefaultRemoveButton = props => <IconCircleButton {...props}><CloseIcon /></IconCircleButton>;

@@ -1,6 +1,6 @@
 import React from 'react';
 import debounce from 'lodash.debounce';
-import RangeBase from '../../../UI/molecules/RangeGroup';
+import RangeBase from './RangeGroup';
 
 const Range = ({
   field,
