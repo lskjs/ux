@@ -19,12 +19,6 @@ const buttonStyles = css`
 @inject('listStore')
 @observer
 class ListBody extends Component {
-  loadDataScroll = (isVisible) => {
-    if (isVisible) {
-      this.props.listStore.fetchMore(1);
-      console.log('КЧАУ');
-    }
-  }
   render() {
     const {
       List,
@@ -32,6 +26,7 @@ class ListBody extends Component {
       show = {},
       ...props
     } = this.props;
+    const ButtonWrapper = show.autoload ? VisibilitySensor : React.Fragment;
     return (
       <List.BodyWrapper {...props} style={{ position: 'relative' }}>
         {__DEV__ && <Progress isLoading={listStore.loading} value={30} shadow={false} />}
@@ -70,8 +65,8 @@ class ListBody extends Component {
           </If>
           <List.Items />
           <If condition={show.more && listStore.canFetchMore(1)}>
-            <VisibilitySensor
-              onChange={this.loadDataScroll}
+            <ButtonWrapper
+              onChange={() => listStore.fetchMore(1)}
               offset={{ direction: 'bottom', value: -200 }}
             >
               <Button
@@ -90,7 +85,7 @@ class ListBody extends Component {
                   <T name="lskList.loadMoreButton" />
                 </If>
               </Button>
-            </VisibilitySensor>
+            </ButtonWrapper>
           </If>
         </Loading>
       </List.BodyWrapper>

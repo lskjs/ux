@@ -9,9 +9,9 @@ import FormDebug from '../../FormDebug';
 const RadioFormView = (props) => {
   return (
     <Form>
-      <Field {...props.controls.get('blue')} />
-      <Field {...props.controls.get('blue')} />
-      <Field {...props.controls.get('blueCheckbox')} />
+      <Field {...props.control('blue')} />
+      <Field {...props.control('blue')} />
+      <Field {...props.control('blueCheckbox')} />
       <FormDebug {...props} />
     </Form>
   );

@@ -201,20 +201,6 @@ export default ({ storiesOf }) => {
         </ResponsiveButton>
       </Story>
     ))
-    .add('withSure', () => (
-      <Story>
-        <WithSureButton
-          paint="primary"
-          title="Dele2222ting"
-          content="Are you s2222ure"
-          status="success"
-          BtnText="Кнопка"
-          size="small"
-          icon={<Plus />}
-          onSubmit={() => console.log('yes')}
-        />
-      </Story>
-    ))
     .add('badge status', () => (
       <Story>
         <Badge status="success" />

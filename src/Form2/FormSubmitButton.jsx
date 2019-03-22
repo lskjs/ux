@@ -17,7 +17,7 @@ export default ({
       <T name="buttons.waiting" />
     </If>
     <If condition={!isSubmitting}>
-      {children}
+      {children || <T name="common.submit" />}
     </If>
   </Component>
 );
