@@ -11,7 +11,6 @@ const ArrayOfFormView = (props) => {
   return (
     <Form>
       <Field {...props.control('inputArray')} />
-      <Field {...props.control('inputArray')} />
       <FastField {...props.control('inputArray')} title="FastField/inputArray" />
       <hr />
       <Field {...props.control('inputArray')} />
