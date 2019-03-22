@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form, Field } from 'formik';
-import { Button } from 'react-bootstrap';
+// import { Button } from 'react-bootstrap';
 import Story from '../../../Story';
 import createForm from '../../createForm';
 import Textarea from './Textarea';
@@ -10,7 +10,6 @@ const TextareaFormView = props => (
   <Form>
     <Field {...props.control('textarea')} />
     <FormDebug {...props} />
-    <Button onClick={props.handleSubmit}>Submit</Button>
   </Form>
 );
 
