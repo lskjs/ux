@@ -8,6 +8,7 @@ database.sqlite
 node_modules
 ncp-debug.log
 npm-debug.log
+debug.log
 .idea
 tools/_webpack.config.js
 .history/

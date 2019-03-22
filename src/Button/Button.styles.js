@@ -670,9 +670,9 @@ export const Btn = styled(filteredTag)`
     min-width: auto;
     border-radius: 50px;
   `)}
-  ${props => ((props.view === 'transparent' && props.state === 'processing') && `
+  /* ${props => ((props.view === 'transparent' && props.state === 'processing') && `
     color: transparent !important;
-  `)}
+  `)} */
   pointer-events: ${p => (p.state !== 'ready' ? 'none' : 'auto')};
   ${p => `
     color: ${p?.colors?.color};
@@ -788,9 +788,9 @@ export const State = styled('div')`
       default: return defaultSolidTheme;
     }
   }}
-  ${props => ((props.view === 'transparent' && props.state === 'processing') && `
+  /* ${props => ((props.view === 'transparent' && props.state === 'processing') && `
     background-color: transparent !important;
-  `)}
+  `)} */
 `;
 
 

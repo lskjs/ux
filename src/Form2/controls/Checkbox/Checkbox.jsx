@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import AntCheckbox from 'antd/lib/checkbox';
 import Label from './Checkbox.styles';
 import Bool from './Bool';
@@ -14,6 +15,14 @@ const BaseCheckbox = ({ onChange, validationState, ...props }) => (
     </Label>
   </AntCheckbox>
 );
+
+BaseCheckbox.propTypes = {
+  name: PropTypes.string,
+};
+
+BaseCheckbox.defaultProps = {
+  name: 'checkbox',
+}
 
 export default props => <Bool {...props} componentClass={BaseCheckbox} />;
 

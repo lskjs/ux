@@ -19,4 +19,3 @@ const CardToken = ({
 };
 
 export default CardToken;
-

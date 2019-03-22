@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 // import get from 'lodash/get';
+import PropTypes from 'prop-types';
 import autobind from 'core-decorators/lib/autobind';
 import moment from 'moment';
 import HighlightedCell from '../../../UI/atoms/HighlightedCell';

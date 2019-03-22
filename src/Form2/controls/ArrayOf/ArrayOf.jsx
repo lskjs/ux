@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import autobind from 'core-decorators/lib/autobind';
 import isArray from 'lodash/isArray';
+import PropTypes from 'prop-types';
 import { Field } from 'formik';
 import Tooltip from 'antd/lib/tooltip';
 import CloseIcon from 'react-icons2/mdi/close';
@@ -13,7 +14,7 @@ import Horizontal from '../../../UI/atoms/Horizontal';
 const DefaultRemoveButton = props => <IconCircleButton {...props}><CloseIcon /></IconCircleButton>;
 const DefaultAddButton = props => <IconCircleButton {...props} />;
 
-class ArrayOf extends React.Component {
+class ArrayOf extends Component {
   // shouldComponentUpdate(nextProps, nextState) {
   //   return !isEqual(nextProps.value, this.props.value) || !isEqual(nextState.value, this.state.value);
   // }

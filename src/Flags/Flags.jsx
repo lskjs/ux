@@ -32,4 +32,3 @@ class Flags extends PureComponent {
 }
 
 export default Flags;
-

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import isFunction from 'lodash/isFunction';
+import PropTypes from 'prop-types';
 import { getOptionValue, getReverseOptionValue, getNormalizedOptions, NULL_STRING } from '../Select/utils';
 
 const DefaultItemComponent = () => 'itemComponent';

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { css } from 'react-emotion';
 import { observer, inject } from 'mobx-react';
 import If from 'react-if';
+import VisibilitySensor from 'react-visibility-sensor';
 import Loading from '../Loading';
 import Progress from '../Progress';
 import T from '../T';
@@ -18,6 +19,12 @@ const buttonStyles = css`
 @inject('listStore')
 @observer
 class ListBody extends Component {
+  loadDataScroll = (isVisible) => {
+    if (isVisible) {
+      this.props.listStore.fetchMore(1);
+      console.log('КЧАУ');
+    }
+  }
   render() {
     const {
       List,
@@ -25,7 +32,6 @@ class ListBody extends Component {
       show = {},
       ...props
     } = this.props;
-
     return (
       <List.BodyWrapper {...props} style={{ position: 'relative' }}>
         {__DEV__ && <Progress isLoading={listStore.loading} value={30} shadow={false} />}
@@ -64,22 +70,27 @@ class ListBody extends Component {
           </If>
           <List.Items />
           <If condition={show.more && listStore.canFetchMore(1)}>
-            <Button
-              bordered
-              size="large"
-              paint="default"
-              onClick={() => listStore.fetchMore(1)}
-              disabled={listStore.loading}
-              className={buttonStyles}
-              block
+            <VisibilitySensor
+              onChange={this.loadDataScroll}
+              offset={{ direction: 'bottom', value: -200 }}
             >
-              <If condition={listStore.loading}>
-                <T name="lskList.bodyLoadingButton" />
-              </If>
-              <If condition={!listStore.loading}>
-                <T name="lskList.loadMoreButton" />
-              </If>
-            </Button>
+              <Button
+                bordered
+                size="large"
+                paint="default"
+                onClick={() => listStore.fetchMore(1)}
+                disabled={listStore.loading}
+                className={buttonStyles}
+                block
+              >
+                <If condition={listStore.loading}>
+                  <T name="lskList.bodyLoadingButton" />
+                </If>
+                <If condition={!listStore.loading}>
+                  <T name="lskList.loadMoreButton" />
+                </If>
+              </Button>
+            </VisibilitySensor>
           </If>
         </Loading>
       </List.BodyWrapper>
