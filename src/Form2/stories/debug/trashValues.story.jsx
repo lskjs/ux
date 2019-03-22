@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import autobind from 'core-decorators/lib/autobind';
 
 import Story from '../../../Story';
-import AllControlsForm from './AllControlsForm';
+import AllControlsForm, { controls } from './AllControlsForm';
 
 class Container extends Component {
   state = {
