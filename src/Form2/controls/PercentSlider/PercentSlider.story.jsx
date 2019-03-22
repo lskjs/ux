@@ -8,7 +8,7 @@ import FormDebug from '../../FormDebug';
 const PercentSliderFormView = (props) => {
   return (
     <Form>
-      <Field {...props.controls.slider} />
+      <Field {...props.control('slider')} />
       <FormDebug {...props} />
     </Form>
   );

@@ -8,7 +8,7 @@ import FormDebug from '../../FormDebug';
 const RangeFormView = (props) => {
   return (
     <Form>
-      <Field {...props.controls.range} />
+      <Field {...props.control('range')} />
       <FormDebug {...props} />
     </Form>
   );

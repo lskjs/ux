@@ -42,7 +42,7 @@ class ArrayOf extends Component {
   //   });
   // }
 
-  // @autobind
+  // @autobind 
   // onBlurHandler(i) {
   //   if (this.state.value.length > 1) {
   //     if (this.state.value[i] === '') {

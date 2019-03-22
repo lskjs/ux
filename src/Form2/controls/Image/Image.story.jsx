@@ -9,8 +9,8 @@ import Footer from '../Files/DefaultFooter';
 const ImageFormView = (props) => {
   return (
     <Form>
-      <Field {...props.controls.image} />
-      <Field {...props.controls.image2} />
+      <Field {...props.control('image')} />
+      <Field {...props.control('image2')} />
       <FormDebug {...props} />
     </Form>
   );
