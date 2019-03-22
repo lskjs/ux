@@ -9,7 +9,7 @@ import FormDebug from '../../FormDebug';
 const TextareaFormView = (props) => {
   return (
     <Form>
-      <Field {...props.controls.textarea} />
+      <Field {...props.control('textarea')} />
       <FormDebug {...props} />
       <Button onClick={props.handleSubmit}>Submit</Button>
     </Form>

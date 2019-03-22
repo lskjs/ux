@@ -9,7 +9,7 @@ import FormDebug from '../../FormDebug';
 const RadioCardsFormView = (props) => {
   return (
     <Form>
-      <Field {...props.controls.radioCards} />
+      <Field {...props.control('radioCards')} />
       <FormDebug {...props} />
     </Form>
   );

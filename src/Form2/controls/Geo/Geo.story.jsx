@@ -8,7 +8,7 @@ import FormDebug from '../../FormDebug';
 const GeoViewForm = (props) => {
   return (
     <Form>
-      <Field {...props.controls.geo} />
+      <Field {...props.control('geo')} />
       <FormDebug {...props} />
     </Form>
   );

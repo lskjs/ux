@@ -9,8 +9,8 @@ const DateFormView = (props) => {
   return (
     <Form>
       <div style={{ position: 'relative' }}>
-        <Field {...props.controls.date} />
-        <Field {...props.controls.date2} />
+        <Field {...props.control('date')} />
+        <Field {...props.control('date2')} />
         <FormDebug {...props} />
       </div>
     </Form>
