@@ -1,6 +1,6 @@
 import XlsxPopulate from 'xlsx-populate/browser/xlsx-populate';
 
-const generateFromJSON = async (json) => {
+export const generateFromJSON = async (json) => {
   const workbook = await XlsxPopulate.fromBlankAsync();
   const sheet = workbook.sheet('Sheet1');
   sheet.cell('A1').value(json);
@@ -8,7 +8,7 @@ const generateFromJSON = async (json) => {
   return workbook;
 };
 
-const download = async (workbook, name = 'out') => {
+export const downloadFile = async (workbook, name = 'filename') => {
   const blob = await workbook.outputAsync();
   if (window.navigator && window.navigator.msSaveOrOpenBlob) {
     window.navigator.msSaveOrOpenBlob(blob, `${name}.xlsx`);
@@ -24,6 +24,10 @@ const download = async (workbook, name = 'out') => {
   }
 };
 
-export default generateFromJSON;
+export default async ({ type = 'xlsx', name = 'filename', data }) => {
+  if (type === 'xlsx') {
+    const workbook = await generateFromJSON(data, name);
+    downloadFile(workbook);
+  }
+};
 
-export { download };
