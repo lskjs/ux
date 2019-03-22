@@ -111,7 +111,7 @@
   "scripts": {
     "dev": "DEBUG=1 DIST=dist npm run babel-build -- --watch",
     "release": "rm -rf distRelease && npm version patch && DIST=distRelease npm run babel-build && npm publish --access=public distRelease && git push && git push origin --tags",
-    "release-docs": "./scripts/release-docs.sh",
+    "release-docs": "env NODE_OPTIONS=--max_old_space_size=8192 ./scripts/release-docs.sh",
     "babel-build": "mkdir -p $DIST && cp {package.json,package-lock.json,README.md} $DIST/ && npx babel src --out-dir $DIST --source-maps inline --copy-files",
     "release_old": "sh -c 'npm publish --access=public'",
     "storybook": "start-storybook -p 9001 -c .storybook",
