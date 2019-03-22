@@ -10,11 +10,10 @@ import FormDebug from '../../FormDebug';
 const ArrayOfFormView = (props) => {
   return (
     <Form>
-      <Field {...props.controls.inputArray4} />
-      <Field {...props.controls.inputArray} />
-      <FastField {...props.controls.inputArray} title="FastField/inputArray" />
+      <Field {...props.control('inputArray')} />
+      <FastField {...props.control('inputArray')} title="FastField/inputArray" />
       <hr />
-      <Field {...props.controls.inputArray} />
+      <Field {...props.control('inputArray')} />
       <FormDebug {...props} />
     </Form>
   );

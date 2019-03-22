@@ -18,67 +18,63 @@ import FlagIcon from '../../../UI/organisms/FlagIcon';
 import countriesList from '../../../UI/organisms/FlagIcon/countriesList';
 import createFormWithI18 from '../../createFormWithI18';
 
-const SelectFormView = (props) => {
-  return (
-    <Form>
-      <h1>Обычные селекты</h1>
-      <Field {...props.controls.select} />
-      <Field {...props.controls.select2} />
-      <Field {...props.controls.select3} />
-      <Field {...props.controls.select4} />
-      <Field {...props.controls.select5} />
-      <Field {...props.controls.radio} />
-      <Field {...props.controls.get('info.initialValue')} />
-      <Performance name="countries">
-        <Field {...props.controls.countries} />
-      </Performance>
-      <Performance name="countries2">
-        <Field {...props.controls.countries} />
-      </Performance>
-      <Performance name="countries3">
-        <Field {...props.controls.countries} />
-      </Performance>
-      <Performance name="countries4">
-        <Field {...props.controls.countries} />
-      </Performance>
-      <Performance name="countries5">
-        <Field {...props.controls.countries} />
-      </Performance>
-      {/* <hr />
-      <h1>Мультиселекты</h1>
-      <Field {...props.controls.multiselect} />
-      <Field {...props.controls.multiselect2} />
-      <Field {...props.controls.multiselect3} />
-      <Field {...props.controls.checkboxes} />
-      <hr />
-      <h1>Асинхронные селекты</h1>
-      <Field {...props.controls.asyncSelect} />
-      <Field {...props.controls.asyncSelect2} />
-      <Field {...props.controls.asyncMultiSelect} />
-      <hr />
-      <h1>Кастомный дизайн</h1>
-      <Field {...props.controls.games} />
-      <Field {...props.controls.games2} />
-      <Field {...props.controls.flag} />
-      <Field {...props.controls.countries} />
-      <Field {...props.controls.userSelect} />
-      <hr />
-      <h1>initialValue - баг</h1>
-      <Field {...props.controls.get('info.bug1')} />
-      <hr />
-      <hr />
-      <select>
-        <option value="volvo">Volvo</option>
-        <option value="saab">Saab</option>
-        <option value="mercedes">Mercedes</option>
-        <option value="audi">Audi</option>
-      </select>
-      <FormDebug {...props} /> */}
-    </Form>
-  );
-};
-
-
+const SelectFormView = props => (
+  <Form>
+    <h1>Обычные селекты</h1>
+    <Field {...props.control('select')} />
+    <Field {...props.control('select2')} />
+    <Field {...props.control('select3')} />
+    <Field {...props.control('select4')} />
+    <Field {...props.control('select5')} />
+    <Field {...props.controls.radio} />
+    <Field {...props.controls.get('info.initialValue')} />
+    <Performance name="countries">
+      <Field {...props.control('countries')} />
+    </Performance>
+    <Performance name="countries2">
+      <Field {...props.control('countries')} />
+    </Performance>
+    <Performance name="countries3">
+      <Field {...props.control('countries')} />
+    </Performance>
+    <Performance name="countries4">
+      <Field {...props.control('countries')} />
+    </Performance>
+    <Performance name="countries5">
+      <Field {...props.control('countries')} />
+    </Performance>
+    {/* <hr />
+    <h1>Мультиселекты</h1>
+    <Field {...props.control('multiselect')} />
+    <Field {...props.control('multiselect2')} />
+    <Field {...props.control('multiselect3')} />
+    <Field {...props.control('checkboxes')} />
+    <hr />
+    <h1>Асинхронные селекты</h1>
+    <Field {...props.control('asyncSelect')} />
+    <Field {...props.control('asyncSelect2')} />
+    <Field {...props.control('asyncMultiSelect')} />
+    <hr />
+    <h1>Кастомный дизайн</h1>
+    <Field {...props.control('games')} />
+    <Field {...props.control('games2')} />
+    <Field {...props.control('flag')} />
+    <Field {...props.control('countries')} />
+    <Field {...props.control('userSelect')} />
+    <hr />
+    <h1>initialValue - баг</h1>
+    <Field {...props.controls.get('info.bug1')} />
+    <hr />
+    <hr />
+    <select>
+      <option value="volvo">Volvo</option>
+      <option value="saab">Saab</option>
+      <option value="mercedes">Mercedes</option>
+      <option value="audi">Audi</option>
+    </select>
+    <FormDebug {...props} /> */}
+  </Form>
+);
 
 // const ValueContainer = ({ children, selectProps, ...props }) => {
 //   const chl = [children[0][0] || children[0], children[1]];

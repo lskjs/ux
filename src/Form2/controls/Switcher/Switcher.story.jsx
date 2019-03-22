@@ -6,18 +6,16 @@ import createForm from '../../createForm';
 import Switcher from './Switcher';
 import FormDebug from '../../FormDebug';
 
-const SwitcherFormView = (props) => {
-  return (
-    <Form>
-      <Field {...props.controls.switcher} />
-      <Field {...props.controls.switcher2} />
-      <Field {...props.controls.switcher3} />
-      <Field {...props.controls.switcher4} />
-      <Field {...props.controls.switcher5} />
-      <FormDebug {...props} />
-    </Form>
-  );
-};
+const SwitcherFormView = props => (
+  <Form>
+    <Field {...props.control('switcher')} />
+    <Field {...props.control('switcher2')} />
+    <Field {...props.control('switcher3')} />
+    <Field {...props.control('switcher4')} />
+    <Field {...props.control('switcher5')} />
+    <FormDebug {...props} />
+  </Form>
+);
 
 const SwitcherForm = createForm({
   view: SwitcherFormView,

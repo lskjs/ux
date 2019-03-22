@@ -8,13 +8,13 @@ import FormDebug from '../../FormDebug';
 const CalendarFormView = (props) => {
   return (
     <Form>
-      <Field {...props.controls.calendar1} />
-      {/* <Field {...props.controls.calendar2} />
-      <Field {...props.controls.calendar3} />
-      <Field {...props.controls.calendar4} />
-      <Field {...props.controls.calendar5} />
-      <Field {...props.controls.calendar6} />
-      <Field {...props.controls.calendar7} /> */}
+      <Field {...props.control('calendar1')} />
+      {/* <Field {...props.control('calendar2')} />
+      <Field {...props.control('calendar3')} />
+      <Field {...props.control('calendar4')} />
+      <Field {...props.control('calendar5')} />
+      <Field {...props.control('calendar6')} />
+      <Field {...props.control('calendar7')} /> */}
       <FormDebug {...props} />
     </Form>
   );

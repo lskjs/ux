@@ -7,20 +7,18 @@ import Input from './Input';
 import currency from './formats/currency';
 import FormDebug from '../../FormDebug';
 
-const InputFormView = (props) => {
-  return (
-    <Form>
-      <Field {...props.controls.input} />
-      <Field {...props.controls.input2} />
-      <Field {...props.controls.input3} />
-      <Field {...props.controls.input4} />
-      <Field {...props.controls.input5} />
-      <Field {...props.controls.input6} />
-      <FastField {...props.controls.input2} title="FastField/input2" />
-      <FormDebug {...props} />
-    </Form>
-  );
-};
+const InputFormView = props => (
+  <Form>
+    <Field {...props.control('input')} />
+    <Field {...props.control('input2')} />
+    <Field {...props.control('input3')} />
+    <Field {...props.control('input4')} />
+    <Field {...props.control('input5')} />
+    <Field {...props.control('input6')} />
+    <FastField {...props.controls.input2} title="FastField/input2" />
+    <FormDebug {...props} />
+  </Form>
+);
 
 const InputForm = createForm({
   view: InputFormView,

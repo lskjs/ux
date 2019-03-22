@@ -1,20 +1,17 @@
 import React from 'react';
 import { Form, Field } from 'formik';
-import { Button } from 'react-bootstrap';
+// import { Button } from 'react-bootstrap';
 import Story from '../../../Story';
 import createForm from '../../createForm';
 import Textarea from './Textarea';
 import FormDebug from '../../FormDebug';
 
-const TextareaFormView = (props) => {
-  return (
-    <Form>
-      <Field {...props.controls.textarea} />
-      <FormDebug {...props} />
-      <Button onClick={props.handleSubmit}>Submit</Button>
-    </Form>
-  );
-};
+const TextareaFormView = props => (
+  <Form>
+    <Field {...props.control('textarea')} />
+    <FormDebug {...props} />
+  </Form>
+);
 
 const TextareaForm = createForm({
   view: TextareaFormView,

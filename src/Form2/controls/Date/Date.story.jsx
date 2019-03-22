@@ -5,17 +5,15 @@ import createForm from '../../createForm';
 import Date from './Date';
 import FormDebug from '../../FormDebug';
 
-const DateFormView = (props) => {
-  return (
-    <Form>
-      <div style={{ position: 'relative' }}>
-        <Field {...props.controls.date} />
-        <Field {...props.controls.date2} />
-        <FormDebug {...props} />
-      </div>
-    </Form>
-  );
-};
+const DateFormView = props =>  (
+  <Form>
+    <div style={{ position: 'relative' }}>
+      <Field {...props.control('date')} />
+      <Field {...props.control('date2')} />
+      <FormDebug {...props} />
+    </div>
+  </Form>
+);
 
 const DateForm = createForm({
   view: DateFormView,

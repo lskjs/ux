@@ -5,14 +5,12 @@ import createForm from '../../createForm';
 import Range from './Range';
 import FormDebug from '../../FormDebug';
 
-const RangeFormView = (props) => {
-  return (
-    <Form>
-      <Field {...props.controls.range} />
-      <FormDebug {...props} />
-    </Form>
-  );
-};
+const RangeFormView = props => (
+  <Form>
+    <Field {...props.control('range')} />
+    <FormDebug {...props} />
+  </Form>
+);
 
 const RangeForm = createForm({
   view: RangeFormView,

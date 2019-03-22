@@ -6,15 +6,13 @@ import CheckBlock from './CheckBlock';
 import FormDebug from '../../FormDebug';
 
 
-const CheckBlockViewForm = (props) => {
-  return (
-    <Form>
-      <Field {...props.controls.get('radio')} />
-      <Field {...props.controls.get('checkbox')} />
-      <FormDebug {...props} />
-    </Form>
-  );
-};
+const CheckBlockViewForm = props => (
+  <Form>
+    <Field {...props.controls.get('radio')} />
+    <Field {...props.controls.get('checkbox')} />
+    <FormDebug {...props} />
+  </Form>
+);
 
 const CheckBlockForm = createForm({
   view: CheckBlockViewForm,
