@@ -1,80 +1,8 @@
 import React, { Component } from 'react';
-import { Form, Field } from 'formik';
 import autobind from 'core-decorators/lib/autobind';
 
-import Story from '../../Story';
-import createForm from '../createForm';
-import Input from '../controls/Input';
-import Select from '../controls/Select';
-import Tags from '../controls/Tags';
-import PhoneInput from '../controls/PhoneInput';
-// import PhoneInput2 from '../controls/PhoneInput2';
-import FormDebug from '../FormDebug';
-import PercentSlider from '../controls/PercentSlider/PercentSlider';
-import Files from '../controls/Files';
-
-const InputFormView = (props) => {
-  return (
-    <Form>
-      {/* <Field {...props.controls.input} />
-      <Field {...props.controls.input2} /> */}
-      <Field {...props.controls.select} />
-      <Field {...props.controls.tags} />
-      <Field {...props.controls.slider} />
-      <Field {...props.controls.phone} />
-      <Field {...props.controls.newphone} />
-      <Field {...props.controls.files} />
-      <FormDebug {...props} />
-    </Form>
-  );
-};
-
-
-const controls = {
-  input: {
-    title: 'Input',
-    component: Input,
-  },
-  input2: {
-    title: 'Input2',
-    component: Input,
-  },
-  select: {
-    title: 'Select',
-    component: Select,
-    options: ['a', 'b', 'c'],
-  },
-  tags: {
-    title: 'Tags',
-    component: Tags,
-    flat: true,
-    options: ['a', 'b', 'c'],
-  },
-  slider: {
-    title: 'PercentSlider',
-    component: PercentSlider,
-  },
-  sliderlol: {
-    title: 'PercenssstSlider',
-    component: PercentSlider,
-  },
-  phone: {
-    title: 'PhoneInput',
-    component: PhoneInput,
-  },
-  // newphone: {
-  //   title: 'PhoneInput2',
-  //   component: PhoneInput2,
-  // },
-  files: {
-    title: 'Files',
-    component: Files,
-  },
-};
-const SampleForm = createForm({
-  view: InputFormView,
-  controls,
-});
+import Story from '../../../Story';
+import AllControlsForm from './AllControlsForm';
 
 class Container extends Component {
   state = {
@@ -91,14 +19,7 @@ class Container extends Component {
           <tbody>
             <tr>
               <td>
-                <SampleForm
-                  enableReinitialize
-                  initialValues={this.state}
-                  onChange={this.handleChange}
-                />
-              </td>
-              <td>
-                <SampleForm
+                <AllControlsForm
                   enableReinitialize
                   initialValues={this.state}
                   onChange={this.handleChange}
@@ -156,8 +77,8 @@ class Container extends Component {
 
 
 export default ({ storiesOf }) =>
-  storiesOf('Form2', module)
-    .add('reinitialize', () => {
+  storiesOf('Form2/debug', module)
+    .add('trashValues', () => {
       return (
         <Story>
           <Container />
