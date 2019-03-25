@@ -8,10 +8,8 @@
     "access": "public"
   },
   "repository": "https://github.com/lskjs/ux/tree/master/packages/ui-dev",
-  "keywords": [
-  ],
-  "dependencies": {
-  },
+  "keywords": [],
+  "dependencies": {},
   "scripts": {
     "postversion": "../../scripts/pack-release.sh"
   }
