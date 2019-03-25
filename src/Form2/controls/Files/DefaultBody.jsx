@@ -32,7 +32,7 @@ const DefaultBody = ({
             <T name="upload.infoFiles" />
           </Info>
           <Actions>
-            <If condition={!value}>
+            <If condition={!value || value?.length === 0}>
               <Button
                 type="button"
                 paint="primary"

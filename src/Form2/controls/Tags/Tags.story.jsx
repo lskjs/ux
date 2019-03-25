@@ -14,6 +14,7 @@ const TagsFormView = props => (
     <Field {...props.control('tags3')} />
     <Field {...props.control('tags4')} />
     <Field {...props.control('tags5')} />
+    <Field {...props.control('sortTags')} />
     <FormDebug {...props} />
   </Form>
 );
@@ -26,6 +27,31 @@ const TagsForm = createForm({
       component: Tags,
       triggerTitle: 'Выбрать теги',
       flat: true,
+      options: [
+        {
+          value: 'one',
+          title: 'Один',
+        },
+        {
+          value: 'two',
+          title: 'Два',
+        },
+        {
+          value: 'three',
+          title: 'Три',
+        },
+        {
+          value: 'four',
+          title: 'Четыре',
+        },
+      ],
+    },
+    sortTags: {
+      title: 'Sortred Tags',
+      component: Tags,
+      triggerTitle: 'Выбрать теги',
+      flat: true,
+      sort: true,
       options: [
         {
           value: 'one',

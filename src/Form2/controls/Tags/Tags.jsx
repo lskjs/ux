@@ -3,6 +3,7 @@ import isPlainObject from 'lodash/isPlainObject';
 import TagsPickerBase from './TagsPicker';
 // import { getNormalizedOptions } from '../Select/utils';
 
+
 function getNormalizedOptions(options) {
   return options.map((option) => {
     if (option && option._id) return option;
@@ -33,6 +34,7 @@ const TagsPicker = ({
   form,
   options,
   fields,
+  sort,
   ...props
 }) => {
   const norimalizedOptions = getNormalizedOptions((options || fields || []));
@@ -45,6 +47,7 @@ const TagsPicker = ({
       // {...field}
       {...props}
       onChange={null}
+      sort={sort}
       onSubmit={(value) => {
         // console.log({ value });
         form.setFieldValue(field.name, value);
