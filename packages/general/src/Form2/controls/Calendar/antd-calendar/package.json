@@ -1,0 +1,4 @@
+{
+  "browser": "antd-calendar.client",
+  "main": "antd-calendar.server"
+}
