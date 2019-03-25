@@ -1,13 +1,13 @@
 {
-  "name": "@lskjs/utils",
+  "name": "@lskjs/mobx",
   "version": "0.29.0",
-  "description": "LSK ux subrepo: utils",
+  "description": "LSK ux subrepo: mobx",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
-  "repository": "https://github.com/lskjs/ux/tree/master/packages/utils",
+  "repository": "https://github.com/lskjs/ux/tree/master/packages/mobx",
   "keywords": [
   ],
   "dependencies": {
