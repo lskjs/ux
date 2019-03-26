@@ -1,5 +1,5 @@
 if (typeof window !== 'undefined') {
-  module.exports = { default: require('react-phone-input-2').default };
+  module.exports = require('react-phone-input-2').default;
 } else {
-  module.exports = { default: () => null };
+  module.exports = () => null;
 }
