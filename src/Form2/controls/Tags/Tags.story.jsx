@@ -51,7 +51,7 @@ const TagsForm = createForm({
       component: Tags,
       triggerTitle: 'Выбрать теги',
       flat: true,
-      sort: true,
+      sortable: true,
       options: [
         {
           value: 'one',

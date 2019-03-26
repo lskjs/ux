@@ -133,11 +133,11 @@ class TagsPicker extends PureComponent {
   @autobind
   renderModal(trigger) {
     const {
-      flat, title, onChange, fields, createTag, sort,
+      flat, title, onChange, fields, createTag, sortable,
     } = this.props;
     // const { fields } = this.state;
     const value = this.getValue();
-    if (sort) {
+    if (sortable) {
       fields.sort(this.compareVal);
     }
 

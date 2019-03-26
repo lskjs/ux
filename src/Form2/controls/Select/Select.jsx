@@ -56,12 +56,23 @@ class Select extends Component {
       // console.log('loadOptions');
       const { loadOptions, ...props } = this.props;
       const options = await loadOptions(...args);
+
       // console.log({ options });
       return getNormalizedOptions(options, props);
     } catch (err) {
       if (__DEV__) console.error('Form2/Select loadOptions error', err); // eslint-disable-line no-console
       return [];
     }
+  }
+  @autobind
+  compareVal(currentValue, nextValue) {
+    if (currentValue.title > nextValue.title) {
+      return 1;
+    }
+    if (currentValue.title < nextValue.title) {
+      return -1;
+    }
+    return 0;
   }
   @autobind
   handleChange(option) {
@@ -85,6 +96,7 @@ class Select extends Component {
       value: propValue,
       field,
       form,
+      sortable,
       async,
       options,
       collapsed,
@@ -94,6 +106,9 @@ class Select extends Component {
       isMulti,
       ...props
     } = this.props;
+    if (sortable) {
+      options.sort(this.compareVal);
+    }
     const normalizedOptions = getNormalizedOptions(options, props);
     let option;
     let value;

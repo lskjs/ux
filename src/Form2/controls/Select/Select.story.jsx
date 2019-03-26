@@ -22,6 +22,7 @@ const SelectFormView = props => (
   <Form>
     <h1>Обычные селекты</h1>
     <Field {...props.control('select')} />
+    <Field {...props.control('selectSort')} />
     <Field {...props.control('select2')} />
     <Field {...props.control('select3')} />
     <Field {...props.control('select4')} />
@@ -86,6 +87,31 @@ const SelectFormView = props => (
 const SelectForm = createForm({
   view: SelectFormView,
   controls: {
+    selectSort: {
+      title: 'Sorted Select',
+      placeholder: 'test',
+      component: Select,
+      sortable: true,
+      options: [
+        {
+          value: 'two',
+          title: 'Два',
+        },
+        {
+          value: 'one',
+          title: 'Один',
+        },
+        {
+          value: 'three',
+          title: 'Три',
+        },
+        {
+          value: 'four',
+          title: 'Четыре',
+        },
+      ],
+      // menuIsOpen: true,
+    },
     select: {
       title: 'The Select',
       placeholder: 'test',
