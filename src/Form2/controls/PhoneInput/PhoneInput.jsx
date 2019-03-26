@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'react-emotion';
-import PhoneInput from 'react-phone-input-2';
+import PhoneInput from './react-phone-input-2';
 
 const Container = styled.div`
   .react-tel-input .flag-dropdown:hover .selected-flag{ 
