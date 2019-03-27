@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import autobind from 'core-decorators/lib/autobind';
+import autobind from '@lskjs/autobind';
 import isArray from 'lodash/isArray';
 import PropTypes from 'prop-types';
 import { Field } from 'formik';

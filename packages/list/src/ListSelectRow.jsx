@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
-import autobind from 'core-decorators/lib/autobind';
+import autobind from '@lskjs/autobind';
 import { contextToProps } from './List.context';
 
 @contextToProps('List')

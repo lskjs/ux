@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import autobind from 'core-decorators/lib/autobind';
+import autobind from '@lskjs/autobind';
 import If from 'react-if';
 // import Divider from 'antd/lib/divider';
 import Icon from 'antd/lib/icon';

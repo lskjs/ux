@@ -1,6 +1,6 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
-import autobind from 'core-decorators/lib/autobind';
+import autobind from '@lskjs/autobind';
 import isEqual from 'lodash/isEqual';
 import isEmpty from 'lodash/isEmpty';
 import DebounceInput from 'react-debounce-input';

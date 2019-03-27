@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import autobind from 'core-decorators/lib/autobind';
+import autobind from '@lskjs/autobind';
 import PropTypes from 'prop-types';
 import { inject, observer } from 'mobx-react';
 import DatePicker from 'antd/lib/date-picker';

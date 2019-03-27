@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import If from 'react-if';
 import PropTypes from 'prop-types';
 import { inject, observer } from 'mobx-react';
-import autobind from 'core-decorators/lib/autobind';
+import autobind from '@lskjs/autobind';
 import { debounce } from 'lodash-decorators';
 import DebounceInput from 'react-debounce-input';
 

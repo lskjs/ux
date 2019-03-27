@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import autobind from 'core-decorators/lib/autobind';
+import autobind from '@lskjs/autobind';
 
 import Story from '../../../Story';
 import AllControlsForm, { controls } from './AllControlsForm';

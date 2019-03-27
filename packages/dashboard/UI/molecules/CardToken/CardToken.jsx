@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { inject, observer } from 'mobx-react';
 import CreditCard from 'react-icons2/mdi/credit-card';
-import autobind from 'core-decorators/lib/autobind';
+import autobind from '@lskjs/autobind';
 import InputGroup from '../InputGroup';
 import Input from '../../../Input';
 import Button from '../../../Button';

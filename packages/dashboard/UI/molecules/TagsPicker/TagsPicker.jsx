@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import getKeys from 'lodash/keys';
 import intersection from 'lodash/intersection';
 import isEqual from 'lodash/isEqual';
-import autobind from 'core-decorators/lib/autobind';
+import autobind from '@lskjs/autobind';
 import get from 'lodash/get';
 import Plus from 'react-icons2/mdi/plus-circle';
 import If from 'react-if';

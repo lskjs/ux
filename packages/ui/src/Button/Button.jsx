@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import autobind from 'core-decorators/lib/autobind';
+import autobind from '@lskjs/autobind';
 import CheckIcon from 'react-icons2/mdi/check';
 import CloseIcon from 'react-icons2/mdi/close';
 import PropTypes from 'prop-types';

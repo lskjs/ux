@@ -7,7 +7,7 @@ import filter from 'lodash/filter';
 import pick from 'lodash/pick';
 import omit from 'lodash/omit';
 import merge from 'lodash/merge';
-import autobind from 'core-decorators/lib/autobind';
+import autobind from '@lskjs/autobind';
 import ReactModal from 'react-modal';
 import ModalSubtitle from '../UI/atoms/ModalSubtitle';
 import ModalDescription from '../UI/atoms/ModalDescription';

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import isEqual from 'lodash/isEqual';
 import If from 'react-if';
 import PropTypes from 'prop-types';
-import autobind from 'core-decorators/lib/autobind';
+import autobind from '@lskjs/autobind';
 import { formatter } from '../../../utils/formatter';
 import RangeGroup from '../RangeGroup';
 import { Wrapper, Values, ValueItem } from './RangeFilterOption.styles';

@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 import Slider from 'react-slick';
-import autobind from 'core-decorators/lib/autobind';
+import autobind from '@lskjs/autobind';
 import { Container, ButtonRight } from './Carousel.style';
 
 

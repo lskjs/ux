@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import autobind from 'core-decorators/lib/autobind';
+import autobind from '@lskjs/autobind';
 import If from 'react-if';
 
 import CheckboxBlank from 'react-icons2/mdi/checkbox-blank-outline';
@@ -114,7 +114,7 @@ class ExtendedCheckblock extends PureComponent {
 export default ExtendedCheckblock;
 // import React, { PureComponent } from 'react';
 // import PropTypes from 'prop-types';
-// import autobind from 'core-decorators/lib/autobind';
+// import autobind from '@lskjs/autobind';
 // import If from 'react-if';
 
 // import CheckboxBlank from 'react-icons2/mdi/checkbox-blank-outline';

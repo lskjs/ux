@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import autobind from 'core-decorators/lib/autobind';
+import autobind from '@lskjs/autobind';
 import { debounce } from 'lodash-decorators';
 import { inject, observer } from 'mobx-react';
 import uniq from 'lodash/uniq';

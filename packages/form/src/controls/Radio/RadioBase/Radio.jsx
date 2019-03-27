@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import autobind from 'core-decorators/lib/autobind';
+import autobind from '@lskjs/autobind';
 import PropTypes from 'prop-types';
 
 import Blank from 'react-icons2/mdi/checkbox-blank-circle-outline';

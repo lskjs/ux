@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import Checkbox from 'antd/lib/checkbox';
-import autobind from 'core-decorators/lib/autobind';
+import autobind from '@lskjs/autobind';
 
 @inject('selectStore')
 @observer

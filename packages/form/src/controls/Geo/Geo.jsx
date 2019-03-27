@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import Marker from 'react-icons2/md/room';
-import autobind from 'core-decorators/lib/autobind';
+import autobind from '@lskjs/autobind';
 import GoogleMapReact from 'google-map-react';
 import { css } from 'react-emotion';
 import SearchBox from './SearchBox';

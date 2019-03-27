@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import If from 'react-if';
 import PropTypes from 'prop-types';
-import autobind from 'core-decorators/lib/autobind';
+import autobind from '@lskjs/autobind';
 import get from 'lodash/get';
 import Plus from 'react-icons2/mdi/plus-circle';
 

@@ -1,5 +1,5 @@
  import React, { PureComponent } from 'react';
-import autobind from 'core-decorators/lib/autobind';
+import autobind from '@lskjs/autobind';
 import DebounceInput from 'react-debounce-input';
 import PropTypes from 'prop-types';
 import get from 'lodash/get';

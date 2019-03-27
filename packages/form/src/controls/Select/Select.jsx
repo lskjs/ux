@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import find from 'lodash/find';
 import get from 'lodash/get';
 import isEqual from 'lodash/isEqual';
-import autobind from 'core-decorators/lib/autobind';
+import autobind from '@lskjs/autobind';
 import ReactSelect from 'react-select';
 import ReactAsyncSelect from 'react-select/lib/Async';
 import cx from 'classnames';
