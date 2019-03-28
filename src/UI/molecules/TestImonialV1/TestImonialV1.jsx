@@ -1,6 +1,8 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import truncate from 'lodash/truncate';
 import Avatar from '../../../Avatar';
+import Link from '../../../Link';
 import {
   Content,
   Meta,
@@ -17,6 +19,7 @@ class TestImonialV1 extends PureComponent {
     name: PropTypes.string,
     title: PropTypes.string,
     color: PropTypes.string,
+    link: PropTypes.string,
   };
   static defaultProps = {
     content: null,
@@ -24,6 +27,7 @@ class TestImonialV1 extends PureComponent {
     name: null,
     title: null,
     color: null,
+    link: null,
   };
   render() {
     const {
@@ -32,6 +36,7 @@ class TestImonialV1 extends PureComponent {
       name,
       color,
       title,
+      link,
     } = this.props;
     return (
       <div>
@@ -41,6 +46,18 @@ class TestImonialV1 extends PureComponent {
             <AuthorImg> <Avatar title={name} alt="avatar" src={avatar} size={60} /> </AuthorImg>
             <div>
               <div>{name}</div>
+              <Link
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  color: '#1890ff',
+                  fontSize: 12,
+                  textDecoration: 'none',
+                }}
+              >
+                {truncate(link, 180)}
+              </Link>
               <AuthorDesc>{title}</AuthorDesc>
             </div>
           </InfoHolder>
