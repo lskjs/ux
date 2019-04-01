@@ -114,7 +114,7 @@
     "release-docs": "env NODE_OPTIONS=--max_old_space_size=8192 ./scripts/release-docs.sh",
     "babel-build": "mkdir -p $DIST && cp {package.json,package-lock.json,README.md} $DIST/ && npx babel src --out-dir $DIST --source-maps inline --copy-files",
     "release_old": "sh -c 'npm publish --access=public'",
-    "storybook": "start-storybook -p 9001 -c .storybook",
+    "storybook": "env NODE_OPTIONS=--max_old_space_size=4096 start-storybook -p 9001 -c .storybook",
     "eslint": "eslint --ext .jsx,.js src --fix",
     "build-storybook": "env NODE_OPTIONS=--max_old_space_size=4096 build-storybook -c .storybook -o .out",
     "deploy-storybook": "env NODE_OPTIONS=--max_old_space_size=4096 storybook-to-ghpages",

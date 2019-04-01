@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Container from 'reactstrap/lib/Container';
+import { Provider } from 'mobx-react';
 // import Container from '../../atoms/PageContainer';
 // import Title from '../../atoms/PageTitle';
 // import Breadcrumbs from '../../atoms/PageBreadcrumbs';
@@ -17,7 +18,7 @@ class Page extends PureComponent {
   static Container = Container;
   static Header = PageHeader;
   static Title = PageTitle;
-  static Breadcrumbs = PageBreadcrumbs;
+  static Breadcrumbs = props => <PageBreadcrumbs reverse {...props} />;
   static TitleActions = PageTitleActions;
   static Body = PageBody;
   static Tabs = PageTabs;
@@ -34,22 +35,32 @@ class Page extends PureComponent {
     const {
       children,
       container,
+      page,
       ...props
     } = this.props;
 
-    let data = children;
+    let content = children;
+
     if (container) {
-      data = (
+      content = (
         <Container>
-          {data}
+          {content}
         </Container>
       );
     }
-    return (
+    content = (
       <Block {...props}>
-        {data}
+        {content}
       </Block>
     );
+    if (page) {
+      content = (
+        <Provider page={page}>
+          {content}
+        </Provider>
+      );
+    }
+    return content;
   }
 }
 

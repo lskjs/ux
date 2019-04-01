@@ -3,7 +3,24 @@ import Story from '../Story';
 import Page from './Page';
 // import repeat from 'lodash/repeat';
 
-export default ({ storiesOf, action }) => {
+const createPage = ({ metas }) => ({ state: { metas, meta: metas[metas.length - 1] } });
+
+const metas = [
+  { title: 'The Site Name', show: false },
+  { title: 'Cabinet', show: false },
+  { title: 'Users' },
+  { title: 'User Demonstration' },
+  { title: 'Edit demo' },
+];
+const page = createPage({ metas });
+
+const metas2 = [
+  { title: 'The Site Name', show: false },
+  { title: 'Cabinet', show: false },
+  { title: 'Users' },
+];
+
+export default ({ storiesOf }) => {
   return storiesOf('Page', module)
     .add('default', () => (
       <Story>
@@ -12,18 +29,47 @@ export default ({ storiesOf, action }) => {
         </Page>
       </Story>
     ))
-    .add('default 2', () => (
+    .add('Page.Header', () => (
       <Story>
-        <Page>
-          Default Page 2
+        <Page page={page}>
+          <Page.Header />
         </Page>
       </Story>
     ))
-    .add('default 3', () => (
+    .add('Page.Header 2', () => (
       <Story>
-        <Page>
-          Default Page 3
+        <Page page={createPage({ metas: metas2 })}>
+          <Page.Header />
         </Page>
+      </Story>
+    ))
+    .add('Page.Title', () => (
+      <Story>
+        <Page page={page}>
+          <Page.Title />
+        </Page>
+      </Story>
+    ))
+    .add('Page.Breadcrumbs', () => (
+      <Story>
+        <Page page={page}>
+          <Page.Breadcrumbs />
+        </Page>
+      </Story>
+    ))
+    .add('Page.Header custom', () => (
+      <Story>
+        <Page page={page}>
+          <Page.Header>
+            <Page.Breadcrumbs omitLast />
+            <Page.Title />
+          </Page.Header>
+        </Page>
+      </Story>
+    ))
+    .add('Page', () => (
+      <Story>
+        <Page />
       </Story>
     ));
 };

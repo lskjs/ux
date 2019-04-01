@@ -22,7 +22,7 @@ class PageBreadcrumbs extends Component {
     } = this.props;
     const breadcrumbs = get(page, 'state.show.breadcrumbs', true);
     if (!breadcrumbs) return null;
-    let metas = get(page, 'state.metas');
+    let metas = get(page, 'state.metas', []).filter(meta => meta.show !== false);
     if (reverse) {
       metas = metas.reverse();
     }
@@ -34,6 +34,9 @@ class PageBreadcrumbs extends Component {
       path: meta.url,
     }));
     items = items.slice(omitFirst ? 1 : 0, omitLast ? items.length - 1 : items.length);
+
+    // removeIfSingle
+    if (items.length <= 1) return null;
 
     return (
       <Breadcrumbs {...props}>

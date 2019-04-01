@@ -17,7 +17,7 @@ class PageHeader extends PureComponent {
       <div {...props}>
         {children || (
           <React.Fragment>
-            <PageTitle actions={actions} />
+            <PageTitle actions={actions} omitLast />
             <PageBreadcrumbs />
             {tabs && <PageTabs tab={tab} tabs={tabs} onClick={onChangeTab} />}
           </React.Fragment>
