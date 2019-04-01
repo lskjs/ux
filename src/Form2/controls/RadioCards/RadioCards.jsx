@@ -1,6 +1,6 @@
 import React from 'react';
 import get from 'lodash/get';
-import RadioCardsBase from './RadioCards';
+import RadioCardsBase from './RadioCardsBase/RadioCards';
 
 const RadioCards = ({
   field,
