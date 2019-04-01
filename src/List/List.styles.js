@@ -1,5 +1,6 @@
 import styled, { css } from 'react-emotion';
 import createDynamicTag from '../utils/createDynamicTag';
+import { Row } from '../Grid';
 // import TabBlock from '~/Uapp/components.v2/atoms/TabBlock';
 
 export const Title = styled('div')`
@@ -163,6 +164,10 @@ export const ListGrid = styled('div')`
 
 export const BodyWrapper = styled('div')`
   /* display: grid; */
+`;
+
+export const BodyWrapperPadded = styled(Row)`
+  padding: 12px 0;
 `;
 
 export const ItemsWrapper = styled('div')`

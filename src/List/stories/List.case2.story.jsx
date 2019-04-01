@@ -5,8 +5,9 @@ import sample from 'lodash/sample';
 import { observer } from 'mobx-react';
 import { css } from 'emotion';
 import Promise from 'bluebird';
+import { BodyWrapperPadded } from '../List.styles';
 
-import { Row as BsRow, Col as BsCol } from '../../Grid';
+import { Col as BsCol } from '../../Grid';
 // import { Row as BsRow, Col as BsCol } from 'react-bootstrap';
 
 import Story from '../../Story';
@@ -66,9 +67,6 @@ const ListItem = observer(({ item = {} }) => (
   </BsCol>
 ));
 
-const Body = BsRow;
-
-
 const SortDirection = ({ value }) => (value === 1 ? '⬆' : value === -1 ? '⬇' : '⚬');
 
 const HeaderItem = ({ toggleSort, sort = {} }) => (
@@ -99,7 +97,7 @@ export default ({ storiesOf }) => {
         <List
           listStore={listStore}
           HeaderItem={HeaderItem}
-          Body={Body}
+          Body={BodyWrapperPadded}
           ListItem={ListItem}
           FilterForm={FilterForm}
           columns={columns}
