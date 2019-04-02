@@ -1,6 +1,8 @@
 import styled from 'react-emotion';
 
 export default styled('div')`
+  font-weight: bold;
+  padding-top: 10px;
   font-family: ${p => p.theme.fontFamily};
   font-weight: 400;
   font-size: 16px;
