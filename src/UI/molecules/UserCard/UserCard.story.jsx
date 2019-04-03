@@ -1,6 +1,7 @@
 import React from 'react';
 import random from 'lodash/random';
 import Link from '../../../Link';
+import Button from '../../../Button';
 
 import UserCard from './UserCard';
 import Story from '../../../Story';
@@ -15,7 +16,7 @@ const user = () => ({
   position: 'Managing partner - DELTA2020',
   buttonTitle: 'Запрос',
   info: 'asdasdasdasdasdasdasd asdasdasdasd asd asdasd asdasdasd asd asdasdasdvv asdasdvasd asdasdasdasd asdasdasdasd asdvasd v',
-  footer: 'http://php-web.info/articles/video-info/otlichiya-4k-full-hd-uhd/',
+  footer: <Button paint="primary">View Profile</Button>,
 });
 
 export default ({ storiesOf }) => (

@@ -4,7 +4,7 @@ export default styled('div')`
   color: #343434;
   font-weight: 500;
   font-size: 14px;
-  padding: 4px;
+  padding: 10px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
