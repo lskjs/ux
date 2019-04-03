@@ -1,7 +1,8 @@
 import styled from 'react-emotion';
 
 export default styled('div')`
-  font-weight: bold;
-  text-align: center;
-  padding-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5px;
 `;
