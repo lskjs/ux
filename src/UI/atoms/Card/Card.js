@@ -7,4 +7,5 @@ export default styled(dynamicTag)`
   background-color: #efefef;
   padding: 16px;
   display: block;
+  cursor: pointer;
 `;
