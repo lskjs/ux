@@ -14,13 +14,15 @@ class DownloadButton extends PureComponent {
     filename: PropTypes.string,
     limit: PropTypes.number,
     maxCount: PropTypes.number,
+    children: PropTypes.any,
   }
   static defaultProps = {
     markupProps: {},
     downloadAll: false,
     filename: 'filename',
-    limit: 25,
+    limit: 50,
     maxCount: 10000,
+    children: 'Download',
   }
   static markupToMatrix({ markup, items, props }) {
     return zip(...markup.map(([title, fn]) => {
@@ -35,7 +37,7 @@ class DownloadButton extends PureComponent {
   async downloadAll() {
     const { listStore, limit, maxCount } = this.props;
     const listStoreAll = new listStore.constructor(listStore);
-    const maxItemsCount = listStoreAll.count > maxCount ? maxCount - limit : listStoreAll.count - limit;
+    const maxItemsCount = listStoreAll.count > maxCount ? maxCount : listStoreAll.count;
     await Promise.mapSeries(Array(Math.round(maxItemsCount / limit)).fill(), async () => {
       await listStoreAll.fetchMore(1, limit);
     });
@@ -53,7 +55,8 @@ class DownloadButton extends PureComponent {
     downloadExcel({ name: this.props.filename, data });
   }
   render() {
-    return (<Button onClick={this.handleClick} paint="primary" {...this.props}>Download</Button>);
+    const { children, ...buttonProps } = this.props;
+    return (<Button onClick={this.handleClick} paint="primary" {...buttonProps}>{children}</Button>);
   }
 }
 

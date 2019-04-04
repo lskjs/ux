@@ -62,7 +62,7 @@ export default ({ storiesOf, action }) => (
     ))
     .add('download all', () => (
       <Story>
-        <DownloadButton listStore={listStore} markup={markup} markupProps={markupProps} downloadAll filename="all" />
+        <DownloadButton listStore={listStore} markup={markup} markupProps={markupProps} downloadAll filename="all">Download all</DownloadButton>
       </Story>
     ))
 );
