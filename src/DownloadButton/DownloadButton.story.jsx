@@ -4,7 +4,7 @@ import DownloadButton from './DownloadButton';
 
 import ListStore from '../stores/ListStore';
 
-const data = Array(50).fill().map((_, i) => ({
+const data = Array(500).fill().map((_, i) => ({
   index: i,
   field1: 'value1',
   field2: 'value2',
