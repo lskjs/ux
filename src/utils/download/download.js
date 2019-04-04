@@ -26,8 +26,8 @@ export const downloadFile = async (workbook, name = 'filename') => {
 
 export default async ({ type = 'xlsx', name = 'filename', data }) => {
   if (type === 'xlsx') {
-    const workbook = await generateFromJSON(data, name);
-    downloadFile(workbook);
+    const workbook = await generateFromJSON(data);
+    downloadFile(workbook, name);
   }
 };
 

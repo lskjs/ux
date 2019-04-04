@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import autobind from 'core-decorators/lib/autobind';
 import zip from 'lodash/zip';
 import Button from '../Button';
 import downloadExcel from '../utils/download';
 
-class DownloadButton extends Component {
+class DownloadButton extends PureComponent {
   static propTypes = {
     listStore: PropTypes.object.isRequired,
     markup: PropTypes.array.isRequired,
@@ -53,7 +53,7 @@ class DownloadButton extends Component {
       props: markupProps,
       items,
     });
-    downloadExcel({ name: 'audit', data });
+    downloadExcel({ name: this.props.filename, data });
   }
   render() {
     return (<Button onClick={this.handleClick} paint="primary" {...this.props}>Download</Button>);
