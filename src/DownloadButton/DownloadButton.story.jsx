@@ -6,15 +6,15 @@ import ListStore from '../stores/ListStore';
 
 const data = Array(50).fill().map((_, i) => ({
   index: i,
-  field1: `value${i}`,
-  field2: `value${i}`,
-  field3: `value${i}`,
-  field4: `value${i}`,
-  field5: `value${i}`,
-  field6: `value${i}`,
-  field7: `value${i}`,
-  field8: `value${i}`,
-  field9: `value${i}`,
+  field1: 'value1',
+  field2: 'value2',
+  field3: 'value3',
+  field4: 'value4',
+  field5: 'value5',
+  field6: 'value6',
+  field7: 'value7',
+  field8: 'value8',
+  field9: 'value9',
 }));
 
 const indexToValue = (fieldName) => {

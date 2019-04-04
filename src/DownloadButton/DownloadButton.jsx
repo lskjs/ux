@@ -35,10 +35,9 @@ class DownloadButton extends PureComponent {
   async downloadAll() {
     const { listStore, limit, maxCount } = this.props;
     const listStoreAll = new listStore.constructor(listStore);
-    const maxItemsCount = listStoreAll.count > maxCount ? maxCount : listStoreAll.count;
-    return Promise.mapSeries(Array(Math.round(maxItemsCount / limit)).fill(), async (_, index) => {
-      const skip = index * limit;
-      await listStoreAll.fetch({ skip, limit });
+    const maxItemsCount = listStoreAll.count > maxCount ? maxCount - limit : listStoreAll.count - limit;
+    return Promise.mapSeries(Array(Math.round(maxItemsCount / limit)).fill(), async () => {
+      await listStoreAll.fetchMore(1, limit);
       return listStoreAll.items;
     }).reduce((prev, cur) => {
       return prev.concat(cur);
