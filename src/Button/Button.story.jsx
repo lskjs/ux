@@ -5,6 +5,10 @@ import Twitter from 'react-icons2/mdi/twitter-circle';
 import Vk from 'react-icons2/mdi/vk';
 import Youtube from 'react-icons2/mdi/youtube';
 import Telegram from 'react-icons2/mdi/telegram';
+import EyeIcon from 'react-icons2/mdi/eye';
+import PencilIcon from 'react-icons2/mdi/pencil';
+import LoginIcon from 'react-icons2/mdi/login';
+import CalendarMultiIcon from 'react-icons2/mdi/calendar-multiple';
 import { Badge, Icon } from 'antd';
 import Button from './Button';
 import ButtonGroup from './ButtonGroup';
@@ -12,6 +16,7 @@ import Story from '../Story';
 import Link from '../Link';
 import socialColors from '../utils/socialColors';
 import withResponsive from './withResponsive';
+
 
 const ResponsiveButton = withResponsive(Button);
 
@@ -258,6 +263,46 @@ export default ({ storiesOf }) => {
             <Button paint="danger">Danger</Button>
           </div>
           <Button paint="primary">Primary</Button>
+        </ButtonGroup>
+      </Story>
+    ))
+    .add('button group wrapper2', () => (
+      <Story style={{ width: 100 }}>
+        <ButtonGroup>
+          <Button
+            componentClass={Link}
+            href="/asd"
+            paint="info"
+            size="small"
+            view="text"
+            icon={<EyeIcon />}
+          />
+          <Button
+            componentClass={Link}
+            href="/admin/eventUsers"
+            qs={{ filter: { userId: 123 } }}
+            paint="primary"
+            size="small"
+            view="text"
+            icon={<CalendarMultiIcon />}
+          />
+          <Button
+            componentClass="a"
+            target="_blank"
+            href={`/api/admin/login?_id=${123}`}
+            paint="warning"
+            size="small"
+            view="text"
+            icon={<LoginIcon />}
+          />
+          <Button
+            componentClass={Link}
+            href="/edit"
+            paint="warning"
+            size="small"
+            view="text"
+            icon={<PencilIcon />}
+          />
         </ButtonGroup>
       </Story>
     ));

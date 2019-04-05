@@ -13,12 +13,16 @@ class TableTest extends Component {
         // gap={24}
         // headerHeight={48}
         // itemHeight={64}
-        // cellStyle={{
+        // cellStyle={{ 
         //   border: '1px red solid',
         // }}
         // columns={['24px', '24px', 'minmax(180px, 1fr)', '108px', '64px', '64px', 'minmax(84px, 1fr)']}
         columns={{
           0: ['24px', '24px', 'minmax(180px, 1fr)', '108px', '64px', '64px', 'minmax(84px, 1fr)'],
+          760: ['24px', '24px', 'minmax(180px, 1fr)', '108px', 0, '64px', 'minmax(84px, 1fr)'],
+          720: ['24px', '24px', 'minmax(180px, 1fr)', '108px', 0, 0, 'minmax(84px, 1fr)'],
+          660: ['24px', '24px', 'minmax(180px, 1fr)', 0, 0, 0, 'minmax(84px, 1fr)'],
+          400: ['24px', '24px', 'minmax(180px, 1fr)', 0, 0, 0, 'minmax(84px, 1fr)'],
           800: ['24px', '24px', 0, 0, 0, 0, 'minmax(84px, 1fr)'],
         }}
         // columns={(width) => ['24px', 'minmax(180px, 1fr)', '108px', '64px', '64px', 'minmax(84px, 1fr)']}
