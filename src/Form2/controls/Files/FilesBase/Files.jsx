@@ -97,6 +97,13 @@ class Files extends Component {
       if (onSubmit) onSubmit(null);
     });
   }
+
+  @autobind
+  removeItemFiles() {
+    const { value, item } = this.props;
+    console.log('value:', value, ';', 'item:', item, ';', 'value item в методе');
+    this.setState({ value: value.splice(1, item) });
+  }
   render() {
     const { dragged, value } = this.state;
     const {
@@ -121,6 +128,7 @@ class Files extends Component {
       info,
       buttonText,
       onRemoveFiles: this.removeFiles,
+      onRemoveItemFiles: this.removeItemFiles,
       dropText,
       multiple,
       type,

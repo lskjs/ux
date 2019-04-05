@@ -49,11 +49,11 @@ export default ({ storiesOf }) =>
             initialValues={{
               files: [
                 'https://pp.userapi.com/c636819/v636819936/346c3/6xIvJ0BI8rs.jpg',
-                'https://picsum.photos/300/200',
+                'https://avatanplus.com/files/resources/mid/56bced54bd17f152d1ff1327.png',
               ],
               files3: [
                 'https://pp.userapi.com/c636819/v636819936/346c3/6xIvJ0BI8rs.jpg',
-                'https://picsum.photos/300/200',
+                'https://avatanplus.com/files/resources/mid/56bced54bd17f152d1ff1327.png',
               ],
             }}
           />

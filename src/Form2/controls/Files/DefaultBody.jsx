@@ -32,7 +32,7 @@ const DefaultBody = ({
             <T name="upload.infoFiles" />
           </Info>
           <Actions>
-            <If condition={!value || value?.length === 0}>
+            <If condition={!value}>
               <Button
                 type="button"
                 paint="primary"
@@ -45,9 +45,25 @@ const DefaultBody = ({
               <Button
                 type="button"
                 paint="primary"
+                onClick={() => refZone.current?.open()}
+              >
+                <T name="upload.buttonFiles" />
+              </Button>
+              <Button
+                type="button"
+                paint="primary"
                 onClick={onRemoveFiles}
               >
-                <T name="lskComponents.filesUploaderButton" />
+                <T name="lskComponents.onRemoveFiles" />
+              </Button>
+            </If>
+            <If condition={value?.length === 0}>
+              <Button
+                type="button"
+                paint="primary"
+                onClick={() => refZone.current?.open()}
+              >
+                <T name="upload.buttonFiles" />
               </Button>
             </If>
           </Actions>
