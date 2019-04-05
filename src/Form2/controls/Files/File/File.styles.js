@@ -18,7 +18,7 @@ export const containerStyle = css`
   }
 
   ${Row} {
-    align-items: center;
+    text-align: center;
     margin: 0 auto;
   }
 `;
@@ -58,7 +58,7 @@ export const RemoveButton = styled('button')`
   opacity: 0.7;
   color: red;
   position: absolute;
-  top: -11px;
+  top: -6px;
   right: -6px;
   padding: 2px;
   margin: 0;
@@ -69,8 +69,8 @@ export const RemoveButton = styled('button')`
 `;
 
 export const PrewImage = styled('img')`
-  width: 40px;
-  height: 40px;
+  width: 70px;
+  height: 70px;
   object-fit: cover;
   display: flex;
   margin: 0 auto;

@@ -15,7 +15,7 @@ const DefaultFooter = ({ value }) => (
       <Box.Body padded>
         <Row vertical gap={8}>
           {(Array.isArray(value) ? value : [value]).map((e, i) => (
-            <Col key={i} sm={4}> {/* eslint-disable-line react/no-array-index-key */}
+            <Col key={i} xs={12} lg={4} sm={7} md={5} > {/* eslint-disable-line react/no-array-index-key */}
               <File url={e} item={i} value={value} />
             </Col>
           ))}

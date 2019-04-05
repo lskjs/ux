@@ -36,10 +36,10 @@ class File extends Component {
         className={containerStyle}
       >
         <Row>
-          <Col xs={4} className={CenterFile}>
-            { urlImage ? <PrewImage src={url} alt={fileName} /> : <Icon size={32} />}
+          <Col xs={7} md={5} sm={5} className={CenterFile}>
+            { urlImage ? <PrewImage src={url} alt={fileName} /> : <Icon size={64} />}
           </Col>
-          <Col xs={8}>
+          <Col xs={5} md={7} sm={7}>
             <Typography
               color="#9b9b9b"
               variant="caption"
