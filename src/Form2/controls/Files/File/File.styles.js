@@ -41,8 +41,13 @@ export const urlStyle = css`
 
 export const CenterFile = css`
   text-align: center;
+  padding: 0px;
 `;
 
+export const ReSizeIcon = css`
+  width: 140px;
+  height: 100px;
+`;
 
 export const FileInfo = styled.div`
   margin: 0 auto;
@@ -69,7 +74,7 @@ export const RemoveButton = styled('button')`
 `;
 
 export const PrewImage = styled('img')`
-  width: 70px;
+  max-width: 100%;
   height: 70px;
   object-fit: cover;
   display: flex;

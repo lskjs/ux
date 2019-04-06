@@ -5,7 +5,7 @@ import fileTypes from '../../../../utils/fileTypes';
 import Box from '../Box';
 import { Row, Col } from '../../../../Grid/index';
 import Typography from './Typography';
-import { containerStyle, typeStyle, urlStyle, PrewImage, RemoveButton, CenterFile } from './File.styles';
+import { containerStyle, typeStyle, urlStyle, PrewImage, RemoveButton, CenterFile, ReSizeIcon } from './File.styles';
 
 class File extends Component {
   static determineType(url) {
@@ -37,7 +37,7 @@ class File extends Component {
       >
         <Row>
           <Col xs={7} md={5} sm={5} className={CenterFile}>
-            { urlImage ? <PrewImage src={url} alt={fileName} /> : <Icon size={64} />}
+            { urlImage ? <PrewImage src={url} alt={fileName} /> : <Icon size={70} className={ReSizeIcon} />}
           </Col>
           <Col xs={5} md={7} sm={7}>
             <Typography
