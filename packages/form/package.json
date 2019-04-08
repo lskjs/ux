@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/form",
-  "version": "0.30.2",
+  "version": "0.31.0",
   "description": "LSK ux subrepo: form",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
