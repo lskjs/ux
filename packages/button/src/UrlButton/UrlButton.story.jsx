@@ -1,7 +1,7 @@
 import React from 'react';
+import Story from '@lskjs/dev/Story';
 import Button from '../Button';
 import UrlButton from './UrlButton';
-import Story from '../Story';
 
 // import '../../../Root/Storybook.g.css';
 
@@ -19,4 +19,3 @@ export default ({ storiesOf }) => {
       </Story>
     ));
 };
-

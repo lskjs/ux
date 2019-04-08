@@ -6,11 +6,11 @@ import Vk from 'react-icons2/mdi/vk';
 import Youtube from 'react-icons2/mdi/youtube';
 import Telegram from 'react-icons2/mdi/telegram';
 import { Badge, Icon } from 'antd';
+import Story from '@lskjs/dev/Story';
+import socialColors from '@lskjs/utils/socialColors';
 import Button from './Button';
 import ButtonGroup from './ButtonGroup';
-import Story from '../Story';
-import Link from '../Link';
-import socialColors from '@lskjs/utils/socialColors';
+// import Link from '../Link';
 import withResponsive from './withResponsive';
 
 const ResponsiveButton = withResponsive(Button);
@@ -20,7 +20,7 @@ export default ({ storiesOf }) => {
     .add('default', () => (
       <React.Fragment>
         <Button
-          componentClass={Link}
+          componentClass="a"
           href="/cabinet"
         >
           Link
@@ -65,17 +65,17 @@ export default ({ storiesOf }) => {
     ))
     .add('props', () => (
       <Story>
-        <Button paint="primary" >Default</Button>
-        <Button paint="primary" view="transparent" >view=transparent</Button>
-        <Button paint="primary" view="text" >view=text</Button>
-        <Button paint="primary" block >block</Button>
-        <Button paint="primary" disabled >disabled</Button>
+        <Button paint="primary">Default</Button>
+        <Button paint="primary" view="transparent">view=transparent</Button>
+        <Button paint="primary" view="text">view=text</Button>
+        <Button paint="primary" block>block</Button>
+        <Button paint="primary" disabled>disabled</Button>
         <hr />
-        <Button paint="danger" >Default</Button>
-        <Button paint="danger" view="transparent" >view=transparent</Button>
-        <Button paint="danger" view="text" >view=text</Button>
-        <Button paint="danger" block >block</Button>
-        <Button paint="danger" disabled >disabled</Button>
+        <Button paint="danger">Default</Button>
+        <Button paint="danger" view="transparent">view=transparent</Button>
+        <Button paint="danger" view="text">view=text</Button>
+        <Button paint="danger" block>block</Button>
+        <Button paint="danger" disabled>disabled</Button>
       </Story>
     ))
     .add('disabled', () => (

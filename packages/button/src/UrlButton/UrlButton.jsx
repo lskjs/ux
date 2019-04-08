@@ -4,7 +4,7 @@ import autobind from '@lskjs/autobind';
 import omit from 'lodash/omit';
 import { inject, observer } from 'mobx-react';
 import filterProps from '@lskjs/utils/filterProps';
-import StatefulButton from '../../StatefulButton';
+import StatefulButton from '../StatefulButton';
 
 @inject('api', 'uapp')
 @observer

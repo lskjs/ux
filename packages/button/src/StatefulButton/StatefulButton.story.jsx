@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from '../Button';
 import StatefulButton from './StatefulButton';
-import Story from '../../Story';
+import Story from '@lskjs/dev/Story';
 
 const promisedHandleSubmit = () => new Promise((resolve, reject) => {
   const headsOrTails = () => Math.random() > 0.5;
