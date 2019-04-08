@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
+/* eslint import/no-extraneous-dependencies: 0 */
+import React from 'react';
 import { css } from 'react-emotion';
+import Story from '@lskjs/dev/Story';
+import Button from '@lskjs/button';
 import Modal from './Modal2';
-import Story from '../Story';
-import Button from '../Button';
 
 const {
   Title, Subtitle, Description, Image, Help, Content, Footer, Trigger,
@@ -14,8 +15,8 @@ const style = css`
   background: red;
 `;
 
-export default ({ storiesOf, action }) => {
-  return storiesOf('Modal2', module)
+export default ({ storiesOf }) => (
+  storiesOf('Modal2', module)
     .add('1. Easy use', () => (
       <Story>
         <Modal
@@ -250,7 +251,7 @@ export default ({ storiesOf, action }) => {
           onOpen={() => console.log('onOpen')}
         />
       </Story>
-    ));
+    ))
   // .add('2. With title and wrap', () => (
   //   <Story>
   //     <Modal>
@@ -432,4 +433,4 @@ export default ({ storiesOf, action }) => {
   // </Story>
   //   </div>);
   // });
-};
+);

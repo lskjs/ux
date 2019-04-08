@@ -9,5 +9,4 @@ export { default as Help } from './components/ModalHelp';
 export { default as Scroll } from './components/ModalScroll';
 export { default as Trigger } from './components/ModalTrigger';
 export { default as Inner } from './components/ModalInner';
-export { default as InnerWrapper } from './Modal2.styles';
 export { default as CloseIcon } from './components/ModalCloseIcon';

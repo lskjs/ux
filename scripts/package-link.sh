@@ -23,5 +23,5 @@ npm link \
   @lskjs/uapp  \
   @lskjs/ui  \
   @lskjs/upload  \
-  @lskjs/utils && \ 
+  @lskjs/utils && \
 cd ..

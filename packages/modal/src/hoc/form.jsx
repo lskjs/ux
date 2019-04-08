@@ -1,13 +1,14 @@
+/* eslint import/no-extraneous-dependencies: 0 */
 import React from 'react';
 import If from 'react-if';
 import { Form, Field } from 'formik';
-import DefaultModal from '../../Modal2';
-import Button from '../../Button';
-import ButtonGroup from '../../Button/ButtonGroup';
-import createForm from '../../Form2/createForm';
-import FormSubmitButton from '../../Form2/FormSubmitButton';
-import FormSubmitError from '../../Form2/FormSubmitError';
-import T from '../../T';
+import Button from '@lskjs/ui/Button';
+import ButtonGroup from '@lskjs/button/ButtonGroup';
+import createForm from '@lskjs/form/createForm';
+import FormSubmitButton from '@lskjs/form/FormSubmitButton';
+import FormSubmitError from '@lskjs/form/FormSubmitError';
+import T from '@lskjs/ui/T';
+import DefaultModal from '../Modal2';
 // import { hocFooter } from '../Modal2.styles';
 
 const createView = ({ Modal, controlsOrder }) => ({

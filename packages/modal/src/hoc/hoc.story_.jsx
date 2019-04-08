@@ -1,3 +1,4 @@
+/* eslint import/no-extraneous-dependencies: 0 */
 import React from 'react';
 import Input from '@lskjs/form/controls/Input';
 import Textarea from '@lskjs/form/controls/Textarea';

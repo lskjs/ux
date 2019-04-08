@@ -1,8 +1,9 @@
+/* eslint import/no-extraneous-dependencies: 0 */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import autobind from '@lskjs/autobind';
 import filterProps from '@lskjs/utils/filterProps';
-import { contextToProps } from './Modal2.context';
+import { contextToProps } from '../../Modal2.context';
 
 @contextToProps('modal', 'Modal')
 class ModalTrigger extends Component { // eslint-disable-line

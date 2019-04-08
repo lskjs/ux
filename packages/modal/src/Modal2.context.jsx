@@ -1,3 +1,4 @@
+/* eslint import/no-extraneous-dependencies: 0 */
 import React from 'react';
 import createContextToProps from '@lskjs/utils/createContextToProps';
 

@@ -1,7 +1,8 @@
+/* eslint import/no-extraneous-dependencies: 0 */
 import React from 'react';
-import DefaultModal from '../../Modal2';
-import Button from '../../Button';
-import T from '../../T';
+import Button from '@lskjs/button';
+import T from '@lskjs/ui/T';
+import DefaultModal from '../Modal2';
 
 // / Modal = ,
 export default ({ Modal = DefaultModal, ...params } = {}) => ({

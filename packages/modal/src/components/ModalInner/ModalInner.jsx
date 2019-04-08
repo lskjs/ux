@@ -1,6 +1,7 @@
+/* eslint import/no-extraneous-dependencies: 0 */
 import React, { PureComponent } from 'react';
 import isFunction from 'lodash/isFunction';
-import { contextToProps } from './Modal2.context';
+import { contextToProps } from '../../Modal2.context';
 
 @contextToProps('Modal', 'modal')
 class ModalInner extends PureComponent { // eslint-disable-line

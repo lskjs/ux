@@ -1,3 +1,4 @@
+/* eslint import/no-extraneous-dependencies: 0 */
 import styled, { css } from 'react-emotion';
 
 export const modalStyle = css`
