@@ -10,7 +10,7 @@
     "release": "lerna publish --skip-npm",
     "bootstrap": "lerna exec -- npm run bootstrap",
     "build": "lerna exec -- npm run build",
-    "watch": "lerna exec -- npm run dev",
+    "watch": "lerna run --parallel watch",
     "link": "lerna exec -- npm run link",
     "bump": "lerna exec -- npm run bump",
     "storybook": "./scripts/storybook.sh",

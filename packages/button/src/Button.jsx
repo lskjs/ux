@@ -113,7 +113,7 @@ class Button extends PureComponent {
   }
 
   componentDidMount() {
-    if (__CLIENT__) {
+    if (typeof window !== 'undefined') {
       if (!this.props.disabled && this.props.isRipple) {
         const condition = this.isBrowser('safari') || this.isBrowser('firefox');
         this.ripple.current.addEventListener(condition ? 'click' : 'mousedown', this.clickListener);
@@ -122,7 +122,7 @@ class Button extends PureComponent {
   }
 
   componentWillUnmount() {
-    if (__CLIENT__) {
+    if (typeof window !== 'undefined') {
       if (!this.props.disabled && this.props.isRipple) {
         const condition = this.isBrowser('safari') || this.isBrowser('firefox');
         this.ripple.current.removeEventListener(condition ? 'click' : 'mousedown', this.clickListener);
