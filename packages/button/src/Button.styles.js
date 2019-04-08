@@ -2,7 +2,7 @@
 import styled, { css, keyframes } from 'react-emotion';
 import createDynamicTag from '@lskjs/utils/createDynamicTag';
 import removeProps from '@lskjs/utils/removeProps';
-import getTheme from '@lskjs/dev/getTheme';
+import getTheme from '@lskjs/theme/getTheme';
 
 const iconLeft = css`
   margin-right: 8px;
