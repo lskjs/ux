@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import { ThemeProvider } from 'emotion-theming';
 import { Provider } from 'mobx-react';
 import DevTools from 'mobx-react-devtools';
-import defaultTheme from './theme';
+import defaultTheme from '@lskjs/theme/theme';
 import Performance from './DEV/Performance';
 import State from './DEV/State';
-import './styles.g.css';
 
 class Story extends Component {
   componentDidMount() {
