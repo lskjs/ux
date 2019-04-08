@@ -46,12 +46,12 @@ class CardToken extends Component {
   }
   @autobind handleSubmit(value) {
     const { uapp } = this.props;
-    const { token, errorMsgs } = value;
+    const { token, errorMsgs = [] } = value;
     if (!token) uapp.onError('!token');
     if (errorMsgs.length) {
       uapp.toast({
         type: 'error',
-        text: errorMsgs?.join(', '),
+        text: errorMsgs.join(', '),
       });
     }
     this.setState({ value: token }, this.callbackSubmit);
