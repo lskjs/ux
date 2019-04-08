@@ -1,6 +1,6 @@
 /* eslint import/no-extraneous-dependencies: 0 */
 import styled from 'react-emotion';
-import getTheme from '@lskjs/dev/getTheme';
+import getTheme from '@lskjs/theme/getTheme';
 import removeProps from '@lskjs/dev/removeProps';
 
 export default styled(removeProps('h2', ['align']))`

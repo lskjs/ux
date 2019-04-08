@@ -5,7 +5,7 @@ import { css } from 'react-emotion';
 import { withTheme } from 'emotion-theming';
 import { Scrollbars } from 'react-custom-scrollbars';
 import cx from 'classnames';
-import getTheme from '@lskjs/dev/getTheme';
+import getTheme from '@lskjs/theme/getTheme';
 
 @withTheme
 class ModalScroll extends PureComponent {
