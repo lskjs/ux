@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import autobind from '@lskjs/autobind';
 import isArray from 'lodash/isArray';
 import PropTypes from 'prop-types';
 import { Field } from 'formik';
@@ -15,6 +14,11 @@ const DefaultRemoveButton = props => <IconCircleButton {...props}><CloseIcon /><
 const DefaultAddButton = props => <IconCircleButton {...props} />;
 
 class ArrayOf extends Component {
+  constructor(props) {
+    super(props);
+    this.removeButtonHandler = this.removeButtonHandler.bind(this);
+    this.addButtonHandler = this.addButtonHandler.bind(this);
+  }
   // shouldComponentUpdate(nextProps, nextState) {
   //   return !isEqual(nextProps.value, this.props.value) || !isEqual(nextState.value, this.state.value);
   // }
@@ -24,13 +28,11 @@ class ArrayOf extends Component {
   //   this.onChange();
   // }
 
-  // @autobind
   // onChange() {
   //   const { value } = this.state;
   //   this.props.onChange && this.props.onChange((value || []).filter(a => a));
   // }
 
-  // @autobind
   // onChangeHandler(i, val) {
   //   const value = [...this.state.value];
   //   value[i] = val;
@@ -42,7 +44,6 @@ class ArrayOf extends Component {
   //   });
   // }
 
-  // @autobind 
   // onBlurHandler(i) {
   //   if (this.state.value.length > 1) {
   //     if (this.state.value[i] === '') {
@@ -81,7 +82,6 @@ class ArrayOf extends Component {
   }
 
 
-  @autobind
   removeButtonHandler(key) {
     const { form, field } = this.props;
 
@@ -100,7 +100,6 @@ class ArrayOf extends Component {
     ]);
   }
 
-  @autobind
   addButtonHandler() {
     const { form, field, itemInitialValue = null } = this.props;
     // console.log({ form, field });

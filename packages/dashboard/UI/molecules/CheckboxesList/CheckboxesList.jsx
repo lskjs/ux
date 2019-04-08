@@ -27,6 +27,8 @@ class CheckboxesList extends PureComponent {
     this.state = {
       selected: props.selected,
     };
+    this.handleSelect = this.handleSelect.bind(this);
+    this.callback = this.callback.bind(this);
   }
   componentWillReceiveProps(next) {
     const { selected } = this.props;
@@ -34,7 +36,7 @@ class CheckboxesList extends PureComponent {
       this.setState({ selected: next.selected });
     }
   }
-  @autobind handleSelect(id) {
+  handleSelect(id) {
     const { selected = [] } = this.state;
     const isExists = selected.includes(id);
     let arr = cloneDeep(selected);
@@ -45,7 +47,7 @@ class CheckboxesList extends PureComponent {
     }
     this.setState({ selected: arr }, this.callback);
   }
-  @autobind callback() {
+  callback() {
     const { selected } = this.state;
     const { onChange } = this.props;
     if (onChange) onChange(selected);

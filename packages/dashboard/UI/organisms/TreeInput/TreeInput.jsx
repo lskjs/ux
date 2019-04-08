@@ -16,6 +16,9 @@ class TreeInput extends Component {
     this.state = {
       value: props.value || [],
     };
+    this.handleSetStateWithDebouncedCallback = this.handleSetStateWithDebouncedCallback.bind(this);
+    this.handleCheck = this.handleCheck.bind(this);
+    this.handleSelect = this.handleSelect.bind(this);
   }
 
   componentWillReceiveProps({ value }) {
@@ -31,14 +34,12 @@ class TreeInput extends Component {
     if (onChange) onChange(this.state.value);
   }
 
-  @autobind
   handleSetStateWithDebouncedCallback(value) {
     this.setState({ value: uniq(value) }, () => {
       this.handleChangeDebounced();
     });
   }
 
-  @autobind
   handleCheck(value) {
     const { flat = false } = this.props;
     if (!flat) {
@@ -47,7 +48,6 @@ class TreeInput extends Component {
     this.handleSetStateWithDebouncedCallback(value);
   }
 
-  @autobind
   handleSelect(value) {
     const { flat = false, fields } = this.props;
     if (!flat) {

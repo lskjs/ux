@@ -29,7 +29,10 @@ class Datepicker extends Component {
     validationState: null,
     ranged: false,
   }
-  @autobind
+  constructor(props) {
+    super(props);
+    this.getCalendarContainer = this.getCalendarContainer.bind(this);
+  }
   getCalendarContainer() {
     const { id } = this.props;
     if (!__CLIENT__ && !id) return false;

@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import Checkbox from 'antd/lib/checkbox';
-import autobind from '@lskjs/autobind';
 
 @inject('selectStore')
 @observer
 class ListCheckbox extends Component {
-  @autobind
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
   handleClick() {
     const { selectStore, item, global } = this.props;
     if (global) {

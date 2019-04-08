@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import autobind from '@lskjs/autobind';
 import Menu from 'antd/lib/menu';
 import If from 'react-if';
 import Horizontal from '../../atoms/Horizontal';
@@ -52,13 +51,19 @@ class AdminMenu extends PureComponent {
     block: false,
   }
 
-  @autobind
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+    this.renderLink = this.renderLink.bind(this);
+    this.renderLabel = this.renderLabel.bind(this);
+    this.renderItem = this.renderItem.bind(this);
+  }
+
   handleClick(e) {
     const { onChange } = this.props;
     if (onChange) onChange(e.keyPath);
   }
 
-  @autobind
   renderLink(item, children) {
     return (
       <React.Fragment>
@@ -85,7 +90,6 @@ class AdminMenu extends PureComponent {
     );
   }
 
-  @autobind
   renderLabel(item, sub) {
     return (
       <Horizontal verticalAlign="center">
@@ -95,7 +99,6 @@ class AdminMenu extends PureComponent {
     );
   }
 
-  @autobind
   renderItem(item, sub = false) {
     const renderBody = (
       <React.Fragment>

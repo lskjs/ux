@@ -2,12 +2,14 @@
 
 import React, { Component } from 'react';
 import Slider from 'react-slick';
-import autobind from '@lskjs/autobind';
 import { Container, ButtonRight } from './Carousel.style';
 
 
 export default class Carousel extends Component {
-  @autobind
+  constructor(props) {
+    super(props);
+    this.next = this.next.bind(this);
+  }
   next() {
     this.slider.slickNext();
   }

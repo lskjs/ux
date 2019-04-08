@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
 // import get from 'lodash/get';
 import PropTypes from 'prop-types';
-import autobind from '@lskjs/autobind';
 import moment from 'moment';
 import HighlightedCell from './HighlightedCell';
 import CalendarBase from './antd-calendar';
@@ -11,7 +10,13 @@ class Calendar extends PureComponent {
   static isAnyTypeDate(f) {
     return (new Date(f)).getTime() > 0;
   }
-  @autobind
+
+  constructor(props) {
+    super(props);
+    this.validationDate = this.validationDate.bind(this);
+    this.disabledDate = this.disabledDate.bind(this);
+  }
+
   validationDate(value) {
     const { field, ...props } = this.props;
     let validValue = moment(new Date());
@@ -22,7 +27,7 @@ class Calendar extends PureComponent {
     }
     return validValue;
   }
-  @autobind
+
   disabledDate(current) {
     const { highlightedDates = [], futureOnly } = this.props;
     current = (moment(current)).startOf('day').valueOf();

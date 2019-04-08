@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
-import autobind from '@lskjs/autobind';
 
 import Story from '../../../Story';
 import AllControlsForm, { controls } from './AllControlsForm';
 
 class Container extends Component {
-  state = {
-    input: 'demo',  // eslint-disable-line
+  constructor(props) {
+    super(props);
+    this.state = {
+      input: 'demo',
+    };
+    this.handleChange = this.handleChange.bind(this);
   }
-  @autobind
   handleChange(values) {
     this.setState(values);
   }

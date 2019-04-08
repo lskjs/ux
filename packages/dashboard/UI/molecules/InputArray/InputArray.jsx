@@ -1,6 +1,5 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
-import autobind from '@lskjs/autobind';
 import isEqual from 'lodash/isEqual';
 import isEmpty from 'lodash/isEmpty';
 import DebounceInput from 'react-debounce-input';
@@ -20,6 +19,9 @@ class InputArray extends React.Component {
       value,
       // maxCount: this.props.maxCount,
     };
+    this.onChange = this.onChange.bind(this);
+    this.onChangeHandler = this.onChangeHandler.bind(this);
+    this.onBlurHandler = this.onBlurHandler.bind(this);
   }
 
   //
@@ -39,13 +41,11 @@ class InputArray extends React.Component {
     this.onChange();
   }
 
-  @autobind
   onChange() {
     const { value } = this.state;
     if (this.props.onChange) this.props.onChange((value || []).filter(a => a));
   }
 
-  @autobind
   onChangeHandler(i, val) {
     const value = [...this.state.value];
     value[i] = val;
@@ -57,7 +57,6 @@ class InputArray extends React.Component {
     });
   }
 
-  @autobind
   onBlurHandler(i) {
     if (this.state.value.length > 1) {
       if (this.state.value[i] === '') {

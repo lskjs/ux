@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import autobind from '@lskjs/autobind';
 import PropTypes from 'prop-types';
 import { injectGlobal } from 'emotion';
 import { Collapse as ReactCollapse, UnmountClosed } from 'react-collapse';
@@ -47,6 +46,7 @@ class Collapse extends PureComponent {
       prevShow: false,
       show: props.show,
     };
+    this.handleRenderer = this.handleRenderer.bind(this);
   }
 
   componentDidUpdate(prevProps) {
@@ -56,7 +56,6 @@ class Collapse extends PureComponent {
     }
   }
 
-  @autobind
   handleRenderer({ current, to }) {
     const { rest } = this.state;
     if (current !== to && !rest) return;

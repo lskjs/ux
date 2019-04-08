@@ -1,8 +1,6 @@
 /* eslint import/no-unresolved: 0, import/extensions: 0 */
 import React, { Component } from 'react';
 import If from 'react-if';
-import autobind from '@lskjs/autobind';
-
 import PropTypes from 'prop-types';
 import { inject, observer } from 'mobx-react';
 import Fuse from 'fuse.js';
@@ -52,6 +50,14 @@ class TreePicker extends Component {
       search: props.search,
       value: props.value,
     };
+    this.initFuse = this.initFuse.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
+    this.handleSelect = this.handleSelect.bind(this);
+    this.callbackChange = this.callbackChange.bind(this);
+    this.resetToProps = this.resetToProps.bind(this);
+    this.handleReset = this.handleReset.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.deepSearch = this.deepSearch.bind(this);
     this.initFuse(props.fields);
   }
 
@@ -92,7 +98,6 @@ class TreePicker extends Component {
     return titles;
   }
 
-  @autobind
   initFuse(fields) {
     this.fuse = new Fuse(this.getArrays(fields), {
       shouldSort: true,
@@ -107,23 +112,19 @@ class TreePicker extends Component {
     });
   }
 
-  @autobind
   handleSearch(search) {
     this.setState({ search });
   }
 
-  @autobind
   handleSelect(value) {
     this.setState({ value }, this.callbackChange);
   }
 
-  @autobind
   callbackChange() {
     const { onChange } = this.props;
     if (onChange) onChange(this.state.value);
   }
 
-  @autobind
   resetToProps() {
     const { value, search } = this.props;
     this.setState({
@@ -132,12 +133,10 @@ class TreePicker extends Component {
     });
   }
 
-  @autobind
   handleReset() {
     if (this.modal) this.modal.close();
   }
 
-  @autobind
   async handleSubmit() {
     const { value } = this.state;
     const { onSubmit } = this.props;
@@ -145,7 +144,6 @@ class TreePicker extends Component {
     if (this.modal) this.modal.close();
   }
 
-  @autobind
   deepSearch(searchedFields, fields = this.props.fields || [], searchedFieldIds) {
     if (!searchedFieldIds) {
       searchedFieldIds = map(searchedFields, '_id');

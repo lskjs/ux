@@ -31,21 +31,24 @@ class InputRange extends PureComponent {
     this.state = {
       value: props.value,
     };
+    this.changeFrom = this.changeFrom.bind(this);
+    this.changeTo = this.changeTo.bind(this);
+    this.callback = this.callback.bind(this);
   }
   componentWillReceiveProps(next) {
     if (this.props.value[0] !== next.value[0] || this.props.value[1] !== next.value[1]) {
       this.setState({ value: next.value });
     }
   }
-  @autobind changeFrom(e) {
+  changeFrom(e) {
     const { value } = this.state;
     this.setState({ value: [e, value[1]] }, this.callback);
   }
-  @autobind changeTo(e) {
+  changeTo(e) {
     const { value } = this.state;
     this.setState({ value: [value[0], e] }, this.callback);
   }
-  @autobind callback() {
+  callback() {
     const { value } = this.state;
     const { onChange } = this.props;
     if (onChange) onChange(value);

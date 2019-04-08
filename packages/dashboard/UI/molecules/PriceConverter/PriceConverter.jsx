@@ -36,6 +36,10 @@ class PriceConverter extends Component {
       type: props.value.type || PriceConverter.defaultProps.value.type,
       value: props.value.price || PriceConverter.defaultProps.value.price,
     };
+    this.handleChangePrice = this.handleChangePrice.bind(this);
+    this.handleChangeAction = this.handleChangeAction.bind(this);
+    this.handleClearValue = this.handleClearValue.bind(this);
+    this.callback = this.callback.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -52,16 +56,6 @@ class PriceConverter extends Component {
     }
   }
 
-  // @autobind
-  // handleChange(val, action) {
-  //   const { type, value } = this.state;
-  //   if ((action === type) || (val === value)) return;
-  //   const state = { type, value };
-  //   if (typeof val === 'number') state.value = val;
-  //   if (action) state.type = action;
-  //   this.setState(state, this.callback);
-  // }
-  @autobind
   handleChangePrice(newValue) {
     const { value } = this.state;
     // console.log({ newValue, value });
@@ -71,7 +65,6 @@ class PriceConverter extends Component {
     this.setState(state, this.callback);
   }
 
-  @autobind
   handleChangeAction(newType) {
     const { type } = this.state;
     if ((newType === type)) return;
@@ -80,12 +73,10 @@ class PriceConverter extends Component {
     this.setState(state, this.callback);
   }
 
-  @autobind
   handleClearValue() {
     this.setState({ value: '' }, this.callback);
   }
 
-  @autobind
   callback() {
     const { value, type } = this.state;
     const { onChange } = this.props;

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import autobind from '@lskjs/autobind';
 import PropTypes from 'prop-types';
 import { inject, observer } from 'mobx-react';
 import DatePicker from 'antd/lib/date-picker';
@@ -29,7 +28,10 @@ class Datepicker extends Component {
     validationState: null,
     ranged: false,
   }
-  @autobind
+  constructor(props) {
+    super(props);
+    this.getCalendarContainer = this.getCalendarContainer.bind(this);
+  }
   getCalendarContainer() {
     const { id } = this.props;
     if (!__CLIENT__ && !id) return false;

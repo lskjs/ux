@@ -32,12 +32,15 @@ class LayoutHeader extends Component {
     onCloseMobile: null,
     noMenu: false,
   }
-  @autobind
+  constructor(props) {
+    super(props);
+    this.onToggleCollapsed = this.onToggleCollapsed.bind(this);
+    this.onToggleHiddenMobile = this.onToggleHiddenMobile.bind(this);
+  }
   onToggleCollapsed() {
     const { onCollapsed, collapsed } = this.props;
     if (onCollapsed) onCollapsed(!collapsed);
   }
-  @autobind
   onToggleHiddenMobile() {
     const { onCloseMobile, mobileHidden } = this.props;
     if (onCloseMobile) onCloseMobile(!mobileHidden);

@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import ReactNotificationSystem from 'react-notification-system';
-import autobind from '@lskjs/autobind';
 import Link from '../Link';
 import NotifyTimelineWrapper from '../UI/atoms/NotifyTimelineWrapper';
 import NotifyTimeline from '../UI/atoms/NotifyTimeline';
@@ -13,14 +12,14 @@ class NotificationSystem extends PureComponent {
   constructor(props) {
     super(props);
     this.notificationSystem = React.createRef();
+    this.addNotification = this.addNotification.bind(this);
+    this.toast = this.toast.bind(this);
   }
 
-  @autobind
   addNotification(...args) {
     this.notificationSystem.current.addNotification(...args);
   }
 
-  @autobind
   toast(rawData, config) {
     const {
       type = 'info', level, children, autoDismiss = 5, href, onClick, ...info

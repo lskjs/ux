@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import autobind from '@lskjs/autobind';
 import { debounce } from 'lodash-decorators';
 import { inject, observer } from 'mobx-react';
 import uniq from 'lodash/uniq';
@@ -15,6 +14,7 @@ class TreeInput extends Component {
     this.state = {
       value: props.value || [],
     };
+    this.handleChange = this.handleChange.bind(this);
   }
 
   componentWillReceiveProps({ value }) {
@@ -30,7 +30,6 @@ class TreeInput extends Component {
     if (onChange) onChange(this.state.value);
   }
 
-  @autobind
   handleChange(value) {
     const { flat = false } = this.props;
     // чистим от категорий игр

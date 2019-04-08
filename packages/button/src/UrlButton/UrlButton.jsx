@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import autobind from '@lskjs/autobind';
 import omit from 'lodash/omit';
 import { inject, observer } from 'mobx-react';
 import filterProps from '@lskjs/utils/filterProps';
@@ -22,7 +21,12 @@ class UrlButton extends Component {
     url: null,
   };
 
-  @autobind
+  constructor(props) {
+    super(props);
+    this.onClick = this.onClick.bind(this);
+    this.onError = this.onError.bind(this);
+  }
+
   async onClick() {
     const { api, url, onSuccess } = this.props;
     const res = await api.fetch(url);
@@ -31,7 +35,6 @@ class UrlButton extends Component {
     }
   }
 
-  @autobind
   onError(err) {
     const { uapp } = this.props;
     uapp.onError(err);

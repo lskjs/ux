@@ -8,7 +8,6 @@ import filter from 'lodash/filter';
 import pick from 'lodash/pick';
 import omit from 'lodash/omit';
 import merge from 'lodash/merge';
-import autobind from '@lskjs/autobind';
 import ReactModal from 'react-modal';
 import sizes from '@lskjs/utils/sizes';
 import isTouchDevice from '@lskjs/utils/isTouchDevice';
@@ -128,6 +127,9 @@ class Modal2 extends PureComponent {
     super(props);
     this.state = { visible: props.defaultVisible, counter: 1 };
     this.body = React.createRef();
+    this.toggle = this.toggle.bind(this);
+    this.open = this.open.bind(this);
+    this.close = this.close.bind(this);
   }
 
   static getDerivedStateFromProps(props) {
@@ -148,7 +150,6 @@ class Modal2 extends PureComponent {
     /* eslint-enable */
   }
 
-  @autobind
   toggle() {
     if (this.state.visible) {
       if (this.props.closable) this.close();
@@ -157,12 +158,10 @@ class Modal2 extends PureComponent {
     }
   }
 
-  @autobind
   open() {
     this.setState({ visible: true });
     if (this.props.onOpen) this.props.onOpen();
   }
-  @autobind
   close() {
     if (!this.props.closable) return;
     this.setState({ visible: false });

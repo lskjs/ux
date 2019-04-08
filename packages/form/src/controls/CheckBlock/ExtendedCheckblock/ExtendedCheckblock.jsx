@@ -43,7 +43,12 @@ class ExtendedCheckblock extends PureComponent {
     disabled: false,
     type: 'checkbox',
   }
-  @autobind
+
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
   handleClick() {
     const { onChange, value, type } = this.props;
     if (onChange) onChange(type === 'radio' ? true : !value);
@@ -170,10 +175,10 @@ export default ExtendedCheckblock;
 //       this.setState({ value: next.value });
 //     }
 //   }
-//   @autobind handleClick() {
+//   handleClick() {
 //     this.setState({ value: !this.state.value }, this.callback);
 //   }
-//   @autobind callback() {
+//   callback() {
 //     const { onChange } = this.props;
 //     const { value } = this.state;
 //     if (onChange) onChange(value);

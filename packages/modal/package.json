@@ -36,6 +36,7 @@
     "emotion": "9.2.12",
     "formik": "1.5.2",
     "lodash": "4.17.11",
+    "mobx": "5.9.4",
     "mobx-react": "5.4.3",
     "mobx-react-devtools": "6.1.1",
     "prop-types": "15.7.2",

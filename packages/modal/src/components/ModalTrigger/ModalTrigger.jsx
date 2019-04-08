@@ -17,8 +17,11 @@ class ModalTrigger extends Component { // eslint-disable-line
   //   id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   //   children: PropTypes.any,
   // };
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
 
-  @autobind
   handleClick(e) {
     const { modal, type, disabled } = this.props;
     if (disabled) return;

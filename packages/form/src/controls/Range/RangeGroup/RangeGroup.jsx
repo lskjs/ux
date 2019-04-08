@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
 import If from 'react-if';
 import PropTypes from 'prop-types';
-import autobind from '@lskjs/autobind';
 
 import InputRange from '../InputRange';
 import Slider from '../Slider';
@@ -20,14 +19,16 @@ class RangeGroup extends PureComponent {
     this.state = {
       value: props.value,
     };
+    this.handleChange = this.handleChange.bind(this);
+    this.callback = this.callback.bind(this);
   }
   componentWillReceiveProps(next) {
     if (this.props.value !== next.value) this.setState({ value: next.value });
   }
-  @autobind handleChange(value) {
+  handleChange(value) {
     this.setState({ value }, this.callback);
   }
-  @autobind callback() {
+  callback() {
     const { onChange } = this.props;
     if (onChange) onChange(this.state.value);
   }

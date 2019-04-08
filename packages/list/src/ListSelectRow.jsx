@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
-import autobind from '@lskjs/autobind';
 import { contextToProps } from './List.context';
 
 @contextToProps('List')
 @inject('selectStore')
 @observer
 class ListSelectRow extends Component {
-  @autobind
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
   handleClick() {
     const { selectStore, item } = this.props;
     selectStore.toggle(item);

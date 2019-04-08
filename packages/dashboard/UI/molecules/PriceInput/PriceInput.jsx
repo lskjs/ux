@@ -59,15 +59,14 @@ class PriceInput extends Component {
     this.store = new PriceInputStore(props);
     this.store2 = new PriceInputStore({
       rate: 0.85,
-
     });
+    this.onInputFilterValue = this.onInputFilterValue.bind(this);
   }
 
   componentWillReceiveProps(props) {
     this.store.update(props);
   }
 
-  @autobind
   onInputFilterValue(e) {
     // this.props.filter
     const dots = !this.props.dots ? '\\.\\,' : '';// this.dots// \.\,

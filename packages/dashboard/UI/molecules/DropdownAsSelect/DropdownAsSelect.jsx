@@ -33,9 +33,11 @@ class SelectFilter extends PureComponent {
       contentHeight: '100%',
     };
     this.content = React.createRef();
+    this.onClickOutside = this.onClickOutside.bind(this);
+    this.openHandler = this.openHandler.bind(this);
+    this.renderContent = this.renderContent.bind(this);
   }
 
-  @autobind
   onClickOutside() {
     const { open } = this.state;
     if (!open) return;
@@ -45,7 +47,6 @@ class SelectFilter extends PureComponent {
     }
   }
 
-  @autobind
   openHandler(open) {
     this.setState({ open }, () => {
       this.setState({
@@ -54,7 +55,6 @@ class SelectFilter extends PureComponent {
     });
   }
 
-  @autobind
   renderContent({ ref, style, placement }) {
     const { open, contentHeight } = this.state;
     const { children, contentWrapperProps } = this.props;

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import Marker from 'react-icons2/md/room';
-import autobind from '@lskjs/autobind';
 import GoogleMapReact from 'google-map-react';
 import { css } from 'react-emotion';
 import SearchBox from './SearchBox';
@@ -37,10 +36,12 @@ class Geo extends Component {
       mapInstance: null,
       mapsapi: null,
     };
+    this.onChange = this.onChange.bind(this);
+    this.apiLoaded = this.apiLoaded.bind(this);
   }
 
 
-  // @autobind
+  //
   // onCircleInteraction(childKey, childProps, mouse) {
   //   this.setState({
   //     draggable: false,
@@ -50,13 +51,12 @@ class Geo extends Component {
   //   console.log('onCircleInteraction called with', childProps);
   // }
 
-  // @autobind
   // onCircleInteraction3(childKey, childProps) {
   //   this.setState({ draggable: true });
   //   console.log('onCircleInteraction called with', childProps);
   // }
 
-  @autobind
+
   onChange({ center, zoom }) {
     const { field, form } = this.props;
     form.setFieldValue(field.name, [center.lng, center.lat]);
@@ -67,7 +67,7 @@ class Geo extends Component {
     });
   }
 
-  @autobind
+
   apiLoaded({ map, maps }) {
     this.setState({
       mapsApiLoaded: true,

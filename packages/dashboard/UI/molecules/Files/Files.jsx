@@ -54,6 +54,9 @@ class Files extends Component {
       dragged: false,
     };
     this.zone = React.createRef();
+    this.onDrop = this.onDrop.bind(this);
+    this.onDragged = this.onDragged.bind(this);
+    this.removeFiles = this.removeFiles.bind(this);
   }
   componentWillReceiveProps(next) {
     const { value } = this.props;
@@ -61,7 +64,7 @@ class Files extends Component {
       this.setState({ value: next.value });
     }
   }
-  @autobind
+
   async onDrop(files = []) {
     const {
       onSubmit,
@@ -86,11 +89,11 @@ class Files extends Component {
     }
     this.setState({ value, dragged: false });
   }
-  @autobind
+
   onDragged(dragged) {
     this.setState({ dragged });
   }
-  @autobind
+
   removeFiles() {
     const { onSubmit } = this.props;
     this.setState({ value: null }, () => {

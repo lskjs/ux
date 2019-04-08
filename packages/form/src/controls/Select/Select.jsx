@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import find from 'lodash/find';
 import get from 'lodash/get';
 import isEqual from 'lodash/isEqual';
-import autobind from '@lskjs/autobind';
 import ReactSelect from 'react-select';
 import ReactAsyncSelect from 'react-select/lib/Async';
 import cx from 'classnames';
@@ -16,7 +15,12 @@ import CollapsedValueContainer from './CollapsedValueContainer';
 import CollapsedMultiValue from './CollapsedMultiValue';
 
 class Select extends Component {
-  state = {}
+  constructor(props) {
+    super(props);
+    this.state = {};
+    this.loadOptions = this.loadOptions.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
   componentDidMount() {
     const {
       loadOption, field, async, isMulti,
@@ -50,7 +54,7 @@ class Select extends Component {
     const option = await loadOption(value);
     this.setState({ option, initOption: true }); // eslint-disable-line react/no-unused-state
   }
-  @autobind
+
   async loadOptions(...args) {
     try {
       // console.log('loadOptions');
@@ -63,7 +67,7 @@ class Select extends Component {
       return [];
     }
   }
-  @autobind
+
   handleChange(option) {
     const { form, field, onChange } = this.props;
     this.setState({ option, initOption: false }); // eslint-disable-line react/no-unused-state

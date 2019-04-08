@@ -38,6 +38,10 @@ class RangeFilterOption extends Component {
       // minDisabledValues: this.getMinDisabledValues(props),
       maxDisabledValues: this.getMaxDisabledValues(props),
     };
+    this.selectShortValue = this.selectShortValue.bind(this);
+    this.handleFocus = this.handleFocus.bind(this);
+    this.callback = this.callback.bind(this);
+    this.handleChangeRange = this.handleChangeRange.bind(this);
   }
   componentWillReceiveProps(props) {
     let hasChanges = false;
@@ -117,7 +121,7 @@ class RangeFilterOption extends Component {
     });
     return values;
   }
-  @autobind
+
   selectShortValue(value, type) {
     const reverse = type === 'min' ? 'max' : 'min';
     this.setState({
@@ -139,7 +143,7 @@ class RangeFilterOption extends Component {
       }
     });
   }
-  @autobind
+
   handleFocus(type) {
     const reverse = type === 'min' ? 'max' : 'min';
     this.setState({
@@ -150,7 +154,7 @@ class RangeFilterOption extends Component {
       this[`${type}Ref`].focus(); // eslint-disable-line
     }
   }
-  @autobind
+
   callback(min, max) {
     const { onChange } = this.props;
     onChange({
@@ -158,7 +162,7 @@ class RangeFilterOption extends Component {
       value: [min, max],
     });
   }
-  @autobind
+
   handleChangeRange([min, max]) {
     this.setState({
       minValue: min,

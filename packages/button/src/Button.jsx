@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import autobind from '@lskjs/autobind';
 import CheckIcon from 'react-icons2/mdi/check';
 import CloseIcon from 'react-icons2/mdi/close';
 import PropTypes from 'prop-types';
@@ -110,6 +109,10 @@ class Button extends PureComponent {
       isRippleActive: false,
     };
     this.ripple = React.createRef();
+    this.getButtonStateTheme = this.getButtonStateTheme.bind(this);
+    this.clickListener = this.clickListener.bind(this);
+    this.endAnimationRipple = this.endAnimationRipple.bind(this);
+    this.renderIcon = this.renderIcon.bind(this);
   }
 
   componentDidMount() {
@@ -141,7 +144,6 @@ class Button extends PureComponent {
     return state;
   }
 
-  @autobind
   getButtonStateTheme() {
     switch (this.getPropsState()) {
       case 'processing':
@@ -187,7 +189,6 @@ class Button extends PureComponent {
     }
   }
 
-  @autobind
   clickListener(e) {
     if (!this.props.disabled && this.props.isRipple) {
       this.circle.style.top = `${e.offsetY}px`;
@@ -201,14 +202,12 @@ class Button extends PureComponent {
     return document.documentElement.className.includes(name);
   }
 
-  @autobind
   endAnimationRipple() {
     if (!this.props.disabled && this.props.isRipple) {
       this.setState({ isRippleActive: false });
     }
   }
 
-  @autobind
   renderIcon(icon, dir) {
     return (
       <Icon direction={dir}>

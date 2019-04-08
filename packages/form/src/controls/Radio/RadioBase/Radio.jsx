@@ -28,6 +28,7 @@ class Radio extends PureComponent {
     this.state = {
       checked,
     };
+    this.handleSelect = this.handleSelect.bind(this);
   }
   componentWillReceiveProps(next) {
     const { checked } = this.props;
@@ -35,7 +36,7 @@ class Radio extends PureComponent {
       this.setState({ checked: next.checked });
     }
   }
-  @autobind
+
   handleSelect() {
     const { onChange } = this.props;
     onChange(true);

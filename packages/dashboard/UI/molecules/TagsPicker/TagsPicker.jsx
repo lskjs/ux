@@ -62,6 +62,14 @@ class TagsPicker extends PureComponent {
       // fields: props.fields,
       value: getAvailable(props.fields, props.value),
     };
+    this.getValue = this.getValue.bind(this);
+    this.handleDeleteTag = this.handleDeleteTag.bind(this);
+    this.callbackCombo = this.callbackCombo.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.callbackSubmit = this.callbackSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.callbackChange = this.callbackChange.bind(this);
+    this.renderModal = this.renderModal.bind(this);
   }
   componentWillReceiveProps(next) {
     const { fields, value } = this.props;
@@ -73,53 +81,45 @@ class TagsPicker extends PureComponent {
     this.setState(state);
   }
 
-  @autobind
   getValue() {
     const { value } = this.state;
     return !Array.isArray(value) ? [value] : value;
   }
 
-  @autobind
   handleDeleteTag(id) {
     const { value } = this.state;
     this.setState({ value: value.filter(e => e !== id) }, this.callbackCombo);
   }
 
-  @autobind
   callbackCombo() {
     this.callbackChange();
     this.callbackSubmit();
   }
 
-  @autobind
   handleSubmit(value) {
     const { fields } = this.props;
     value = getAvailable(fields, value);
     this.setState({ value }, this.callbackSubmit);
   }
 
-  @autobind
   callbackSubmit() {
     const { onSubmit } = this.props;
     const { value } = this.state;
     if (onSubmit) onSubmit(value);
   }
 
-  @autobind
   handleChange(value) {
     const { fields } = this.props;
     value = getAvailable(fields, value);
     this.setState({ value }, this.callbackChange);
   }
 
-  @autobind
   callbackChange() {
     const { onChange } = this.props;
     const { value } = this.state;
     if (onChange) onChange(value);
   }
 
-  @autobind
   renderModal(trigger) {
     const {
       flat, title, onChange, fields, createTag,
