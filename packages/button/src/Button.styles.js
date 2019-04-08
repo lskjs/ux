@@ -2,11 +2,9 @@ import styled, { css, keyframes } from 'react-emotion';
 import get from 'lodash/get';
 import createDynamicTag from '@lskjs/utils/createDynamicTag';
 import removeProps from '@lskjs/utils/removeProps';
-import defaultTheme from '../theme';
+import defaultTheme from '@lskjs/dev/theme';
 
-const themeGet = (theme, path) => {
-  return get(theme, path, get(defaultTheme, path));
-};
+const themeGet = (theme, path) => get(theme, path, get(defaultTheme, path));
 
 const iconLeft = css`
   margin-right: 8px;
@@ -675,15 +673,15 @@ export const Btn = styled(filteredTag)`
   `)} */
   pointer-events: ${p => (p.state !== 'ready' ? 'none' : 'auto')};
   ${p => `
-    color: ${p?.colors?.color};
-    background-color: ${p?.colors?.background};
+    color: ${themeGet(p, 'colors.color')};
+    background-color: ${themeGet(p, 'colors.background')};
     &:hover {
-      color: ${p?.colors?.hoverColor};
-      background-color: ${p?.colors?.hoverBackground};
+      color: ${themeGet(p, 'colors.hoverColor')};
+      background-color: ${themeGet(p, 'colors.hoverBackground')};
     }
     &:active {
-      color: ${p?.colors?.activeColor};
-      background-color: ${p?.colors?.activeBackground};
+      color: ${themeGet(p, 'colors.activeColor')};
+      background-color: ${themeGet(p, 'colors.activeBackground')};
     }
   `}
 `;
