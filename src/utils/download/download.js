@@ -31,7 +31,7 @@ export const downloadFile = async (workbook, name = 'filename') => {
   }
 };
 
-const download = async ({ type = 'xlsx', name = 'filename', data }) => {
+export const generateFile = async ({ type = 'xlsx', name = 'filename', data }) => {
   if (type === 'xlsx') {
     const workbook = await generateFromJSON(data);
     downloadFile(workbook, name);
@@ -51,7 +51,7 @@ const downloadAllFromList = async ({ listStore, limit, maxCount }) => {
   return listStoreAll.items;
 };
 
-export const downloadFromMarkup = async ({
+export const download = async ({
   listStore, limit = 50, maxCount = 10000, markup = [], markupProps = {}, name, all = false,
 }) => {
   const items = await (all ? downloadAllFromList({ listStore, limit, maxCount }) : downloadFromList(listStore));
@@ -60,7 +60,7 @@ export const downloadFromMarkup = async ({
     props: markupProps,
     items,
   });
-  download({ name, data });
+  generateFile({ name, data });
 };
 
 export default download;
