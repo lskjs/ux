@@ -12,7 +12,7 @@ import { Row as BsRow, Col as BsCol } from '../../Grid';
 import Story from '../../Story';
 import { Row, Col } from '../../Table';
 
-import ListStore from '../../stores/ListStore';
+import ListStore from '@lskjs/mobx/stores/ListStore';
 import { FormExample2 as FilterForm } from '../../Form2/stories/examples/FormExample2.story';
 
 import List from '../List';

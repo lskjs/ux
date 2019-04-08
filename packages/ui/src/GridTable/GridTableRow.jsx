@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
 
-import filterProps from '../utils/filterProps';
+import filterProps from '@lskjs/utils/filterProps';
 import aggregateClassName from './aggregateClassName';
 
 @inject('gridTableStore')

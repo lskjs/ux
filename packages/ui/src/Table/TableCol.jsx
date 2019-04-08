@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import { css } from 'react-emotion';
 import cx from 'classnames';
-import filterProps from '../utils/filterProps';
+import filterProps from '@lskjs/utils/filterProps';
 
 @inject('overflow')
 @observer

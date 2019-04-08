@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import DefaultTag from 'antd/lib/tag';
-import filterProps from '../utils/filterProps';
+import filterProps from '@lskjs/utils/filterProps';
 
 class Tags extends PureComponent {
   static propTypes = {

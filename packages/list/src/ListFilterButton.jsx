@@ -5,8 +5,8 @@ import filter from 'lodash/filter';
 import { Badge } from 'antd';
 // import If from 'react-if';
 import TuneIcon from 'react-icons2/mdi/tune';
-import isEmpty from '../utils/isEmpty';
-import T from '../T';
+import isEmpty from '@lskjs/utils/isEmpty';
+import T from '@lskjs/ui/T';
 import withResponsive from '../Button/withResponsive';
 import { contextToProps } from './List.context';
 

@@ -4,7 +4,7 @@ import { observer, inject } from 'mobx-react';
 import If from 'react-if';
 import DEV from '../DEV';
 import Performance from '../DEV/Performance';
-import T from '../T';
+import T from '@lskjs/ui/T';
 import Button from '../Button';
 import { contextToProps } from './List.context';
 

@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import ReactDriveIn from 'react-drive-in2';
 import If from 'react-if';
-import isIE from '../utils/isIE';
-import Component from '../Component';
+import isIE from '@lskjs/utils/isIE';
 import {
   Content,
   Middle,

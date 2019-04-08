@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import If from 'react-if';
 import Button from '../Button';
-import T from '../T';
+import T from '@lskjs/ui/T';
 import Error404 from '../UI/molecules/ErrorComponent/svg/error404';
 import EmptyContainer from '../UI/molecules/EmptyContainer';
 

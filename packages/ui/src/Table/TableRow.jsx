@@ -5,7 +5,7 @@ import cx from 'classnames';
 import isArray from 'lodash/isArray';
 import forEach from 'lodash/forEach';
 
-import filterProps from '../utils/filterProps';
+import filterProps from '@lskjs/utils/filterProps';
 
 
 // const defaultStyle = ({ theme }) => css`

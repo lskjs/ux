@@ -1,0 +1,37 @@
+{
+  "name": "@lskjs/button",
+  "version": "0.30.1",
+  "description": "LSK ux subrepo: button",
+  "author": "Igor Suvorov <hi@isuvorov.com>",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": "https://github.com/lskjs/ux/tree/master/packages/button",
+  "keywords": [],
+  "dependencies": {
+    "animated-scroll-to": "^1.2.2"
+  },
+  "scripts": {
+    "dev": "npm run watch",
+    "postversion": "npm run release",
+    "lint:js": "../../scripts/package-lint-js.sh",
+    "bootstrap": "../../scripts/package-bootstrap.sh",
+    "build": "../../scripts/package-build.sh",
+    "watch": "../../scripts/package-watch.sh",
+    "link": "../../scripts/package-link.sh",
+    "bump": "../../scripts/package-bump.sh",
+    "release": "../../scripts/package-release.sh",
+    "storybook": "../../scripts/package-storybook.sh"
+  },
+  "devDependencies": {
+    "@lskjs/autobind": "^0.32.0",
+    "@lskjs/utils": "^0.32.0",
+    "antd": "^3.16.2",
+    "i": "^0.3.6",
+    "mobx-react": "^5.4.3",
+    "npm": "^6.9.0",
+    "react-icons2": "^2.5.0",
+    "react-if": "^3.1.3"
+  }
+}

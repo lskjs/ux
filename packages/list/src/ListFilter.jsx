@@ -6,7 +6,7 @@ import Collapse from '../Collapse';
 import { contextToProps } from './List.context';
 import ListFilterModal from './ListFilterModal';
 import DEV from '../DEV';
-import isTouchDevice from '../utils/isTouchDevice';
+import isTouchDevice from '@lskjs/utils/isTouchDevice';
 
 @contextToProps('List', 'FilterForm', 'debug', 'filterProps')
 @inject('listStore')

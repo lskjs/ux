@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
 import { toJS } from 'mobx';
-import T from '../T';
+import T from '@lskjs/ui/T';
 import { contextToProps } from './List.context';
 import Modal, {
   Title,

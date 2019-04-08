@@ -3,7 +3,7 @@ import random from 'lodash/random';
 import sample from 'lodash/sample';
 import Promise from 'bluebird';
 import axios from 'axios';
-import ListStore from '../../stores/ListStore';
+import ListStore from '@lskjs/mobx/stores/ListStore';
 
 Promise.config({ cancellation: true });
 const api = {

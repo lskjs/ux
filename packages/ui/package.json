@@ -18,6 +18,50 @@
     "watch": "../../scripts/package-watch.sh",
     "link": "../../scripts/package-link.sh",
     "bump": "../../scripts/package-bump.sh",
-    "release": "../../scripts/package-release.sh"
+    "release": "../../scripts/package-release.sh",
+    "storybook": "../../scripts/package-storybook.sh"
+  },
+  "dependencies": {
+    "nanobar": "^0.4.2",
+    "react-if": "^3.1.3",
+    "react-image-fallback": "^8.0.0"
+  },
+  "devDependencies": {
+    "@lskjs/autobind": "^0.32.0",
+    "@lskjs/utils": "^0.32.0",
+    "antd": "^3.16.2",
+    "emotion": "^10.0.9",
+    "formik": "^1.5.2",
+    "mobx": "^5.9.4",
+    "mobx-react": "^5.4.3",
+    "mobx-react-devtools": "^6.1.1",
+    "react-collapse": "^4.0.3",
+    "react-drive-in2": "^1.8.1",
+    "react-emotion": "^10.0.0",
+    "react-icon-base": "^2.1.2",
+    "react-icons2": "^2.5.0",
+    "react-motion": "^0.5.2",
+    "react-notification-system": "^0.2.17",
+    "react-slick": "^0.23.2",
+    "react-world-flags": "^1.3.0"
+  },
+  "peerDependencies": {
+    "@lskjs/autobind": "^0.32.0",
+    "@lskjs/utils": "^0.32.0",
+    "antd": "^3.16.2",
+    "emotion": "^10.0.9",
+    "formik": "^1.5.2",
+    "mobx": "^5.9.4",
+    "mobx-react": "^5.4.3",
+    "mobx-react-devtools": "^6.1.1",
+    "react-collapse": "^4.0.3",
+    "react-drive-in2": "^1.8.1",
+    "react-emotion": "^10.0.0",
+    "react-icon-base": "^2.1.2",
+    "react-icons2": "^2.5.0",
+    "react-motion": "^0.5.2",
+    "react-notification-system": "^0.2.17",
+    "react-slick": "^0.23.2",
+    "react-world-flags": "^1.3.0"
   }
 }

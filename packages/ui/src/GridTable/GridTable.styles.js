@@ -1,5 +1,5 @@
 import styled, { css } from 'react-emotion';
-import createDynamicTag from '../utils/createDynamicTag';
+import createDynamicTag from '@lskjs/utils/createDynamicTag';
 
 export const Header = styled('div')`
   display: grid;

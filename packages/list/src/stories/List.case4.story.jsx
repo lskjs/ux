@@ -1,14 +1,16 @@
 import React from 'react';
 import { observer } from 'mobx-react';
-import Story from '../../Story';
-import Input from '../../Input';
-import Button from '../../Button';
-import { ItemRow, ItemCol, HeaderRow, HeaderCol } from '../Table';
-import { FormExample2 as FilterForm } from '../../Form2/stories/examples/FormExample2.story';
+import Story from '@lskjs/ui/Story';
+import Input from '@lskjs/ui/Input';
+import Button from '@lskjs/ui/Button';
+import { FormExample2 as FilterForm } from '@lskjs/form/stories/examples/FormExample2.story';
+import { createIndex } from '@lskjs/ui/GridTable/index';
+import {
+  ItemRow, ItemCol, HeaderRow, HeaderCol,
+} from '../Table';
 
 import List from '../List';
 import listStore from './listStore';
-import { createIndex } from '../../GridTable/index';
 import DebugListStore from './DebugListStore';
 
 const HeaderItem = ({ toggleSort, sort = {}, index = createIndex() }) => (
@@ -51,9 +53,7 @@ const EditItem = observer(({ item = {}, index = createIndex() }) => (
       <Button
         paint="danger"
         onClick={() => {
-          listStore.items = listStore.items.filter(({ id }) => {
-            return id !== item.id;
-          });
+          listStore.items = listStore.items.filter(({ id }) => id !== item.id);
         }}
       >
         Удалить
@@ -73,19 +73,17 @@ const EditItem = observer(({ item = {}, index = createIndex() }) => (
   </ItemRow>
 ));
 
-export default ({ storiesOf }) => {
-  return storiesOf('List', module)
-    .add('case4: List Add Remove Edit', () => (
-      <Story devtools style={{ padding: 24 }}>
-        <List
-          container
-          listStore={listStore}
-          HeaderItem={HeaderItem}
-          Item={EditItem}
-          FilterForm={FilterForm}
-          columns={['1fr', '1fr', '1fr', '1fr']}
-        />
-        <DebugListStore store={listStore} />
-      </Story>
-    ));
-};
+export default ({ storiesOf }) => storiesOf('List', module)
+  .add('case4: List Add Remove Edit', () => (
+    <Story devtools style={{ padding: 24 }}>
+      <List
+        container
+        listStore={listStore}
+        HeaderItem={HeaderItem}
+        Item={EditItem}
+        FilterForm={FilterForm}
+        columns={['1fr', '1fr', '1fr', '1fr']}
+      />
+      <DebugListStore store={listStore} />
+    </Story>
+  ));

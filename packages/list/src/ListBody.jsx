@@ -3,10 +3,10 @@ import { css } from 'react-emotion';
 import { observer, inject } from 'mobx-react';
 import If from 'react-if';
 import VisibilitySensor from 'react-visibility-sensor';
-import Loading from '../Loading';
-import Progress from '../Progress';
-import T from '../T';
-import Button from '../Button';
+import Loading from '@lskjs/ui/Loading';
+import Progress from '@lskjs/ui/Progress';
+import T from '@lskjs/ui/T';
+import Button from '@lskjs/ui/Button';
 import { contextToProps } from './List.context';
 
 const buttonStyles = css`

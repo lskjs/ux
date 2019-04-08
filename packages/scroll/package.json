@@ -21,6 +21,7 @@
     "watch": "../../scripts/package-watch.sh",
     "link": "../../scripts/package-link.sh",
     "bump": "../../scripts/package-bump.sh",
-    "release": "../../scripts/package-release.sh"
+    "release": "../../scripts/package-release.sh",
+    "storybook": "../../scripts/package-storybook.sh"
   }
 }
