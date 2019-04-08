@@ -17,7 +17,7 @@ export default ({
   } catch (err) {
     if (DEBUG) console.log('Form2 validate.async', err);
     forEach(err, (error, name) => {
-      errors[name] = error?.[0];
+      errors[name] = error && error.length && error[0];
     });
   }
 

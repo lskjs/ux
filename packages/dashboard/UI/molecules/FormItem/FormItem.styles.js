@@ -1,4 +1,5 @@
 import styled from 'react-emotion';
+import getTheme from '@lskjs/theme/getTheme';
 
 export const TitleWrapper = styled('div')`
   display: flex;
@@ -17,7 +18,7 @@ export const TitleWrapper = styled('div')`
   font-stretch: normal;
   line-height: 1.67;
   letter-spacing: -0.1px;
-  color: ${p => p.theme?.colors?.main};
+  color: ${p => getTheme(p.theme, 'colors.main')};
   margin-bottom: 4px;
 `;
 
@@ -29,7 +30,7 @@ export const ContentWrapper = styled('div')`
 `;
 
 export const HelpWrapper = styled('div')`
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   font-size: 11px;
   font-weight: normal;
   font-style: normal;

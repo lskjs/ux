@@ -144,9 +144,9 @@ class Files extends Component {
           onDragEnter={() => this.onDragged(true)}
           onDragLeave={() => this.onDragged(false)}
         >
-          {children?.(childrenProps)}
+          {children && children(childrenProps)}
         </Dropzone>
-        {footer?.(childrenProps)}
+        {footer && footer(childrenProps)}
       </React.Fragment>
     );
   }

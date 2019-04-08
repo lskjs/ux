@@ -23,8 +23,16 @@ const DatePicker = (data) => {
 
   if (ranged) {
     value = [
-      field.value?.[0] && moment(new Date(field.value[0])) || null,
-      field.value?.[1] && moment(new Date(field.value[1])) || null,
+      (field.value
+        && field.value.length
+        && field.value[0]
+        && moment(new Date(field.value[0]))
+      ) || null,
+      (field.value
+        && field.value.length
+        && field.value[1]
+        && moment(new Date(field.value[1]))
+      ) || null,
     ];
     change = async (range) => {
       form.setFieldValue(field.name, range);

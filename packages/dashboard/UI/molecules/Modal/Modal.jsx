@@ -132,7 +132,7 @@ class Modal extends PureComponent {
             {...contentProps}
           >
             <If condition={closable}>
-              {closeComponent?.(this.modal) || (
+              {closeComponent && closeComponent(this.modal) || (
                 <Button
                   type="button"
                   paint="primary"

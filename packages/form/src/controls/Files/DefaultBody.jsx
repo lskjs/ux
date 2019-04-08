@@ -36,12 +36,12 @@ const DefaultBody = ({
               <Button
                 type="button"
                 paint="primary"
-                onClick={() => refZone.current?.open()}
+                onClick={() => refZone.current && refZone.current.open()}
               >
                 <T name="upload.buttonFiles" />
               </Button>
             </If>
-            <If condition={value?.length}>
+            <If condition={value && value.length}>
               <Button
                 type="button"
                 paint="primary"

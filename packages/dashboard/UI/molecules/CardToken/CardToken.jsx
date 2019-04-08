@@ -101,14 +101,14 @@ class CardToken extends Component {
     widget.addEventListener('tokenCreateError', (err) => {
       uapp.toast({
         type: 'error',
-        text: err?.errorMsgs?.join(', '),
+        text: err && err.errorMsgs && err.errorMsgs.join(', '),
       });
     });
   }
   @autobind async handleOpen() {
     const { uapp } = this.props;
     const res = await uapp.modules.billing.stores.Transactions.getCardTokenSign();
-    this.initWidget(res?.data);
+    this.initWidget(res && res.data);
   }
   @autobind renderModal(trigger) {
     const { title, onChange, t } = this.props;
@@ -150,7 +150,7 @@ class CardToken extends Component {
   render() {
     const { block, t } = this.props;
     const value = this.getValue();
-    const trigger = value?.number
+    const trigger = value && value.number
       ? (
         <InputGroup disabled uniform>
           <InputGroup.Addon icon style={{ color: '#7070ff' }}>

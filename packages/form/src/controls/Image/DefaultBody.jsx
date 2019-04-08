@@ -55,7 +55,7 @@ const DefaultBody = ({
             <Actions>
               <Button
                 type="button"
-                onClick={() => refZone.current?.open()}
+                onClick={() => refZone.current && refZone.current.open()}
               >
                 <T name="upload.buttonImage" />
               </Button>

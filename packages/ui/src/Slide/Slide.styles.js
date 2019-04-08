@@ -1,4 +1,5 @@
 import styled, { css } from 'react-emotion';
+import getTheme from '@lskjs/theme/getTheme';
 
 const bg = css`
   width: 100%;
@@ -70,7 +71,7 @@ export const SlideFrame = styled('div')`
 
   ${props => (props.fixed && `
     ${Content} {
-      ${props.theme?.mixins?.grid};
+      ${getTheme(props.theme, 'mixins.grid')};
     }
   `)}
 

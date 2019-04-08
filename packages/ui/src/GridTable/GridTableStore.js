@@ -113,7 +113,7 @@ class GridTableStore extends Store {
   }
 
   getColumnProp(columnIndex, prop) {
-    return this.columns[columnIndex]?.[prop];
+    return this.columns[columnIndex] && this.columns[columnIndex][prop];
   }
 
   getColumnsWidth() {
