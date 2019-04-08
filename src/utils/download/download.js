@@ -1,4 +1,11 @@
 import XlsxPopulate from 'xlsx-populate/browser/xlsx-populate';
+import zip from 'lodash/zip';
+
+const markupToMatrix = ({ markup, items, props }) => {
+  return zip(...markup.map(([title, fn]) => {
+    return [title, ...items.map(el => fn({ item: el, ...props }))];
+  }));
+};
 
 export const generateFromJSON = async (json) => {
   const workbook = await XlsxPopulate.fromBlankAsync();
@@ -24,10 +31,37 @@ export const downloadFile = async (workbook, name = 'filename') => {
   }
 };
 
-export default async ({ type = 'xlsx', name = 'filename', data }) => {
+const download = async ({ type = 'xlsx', name = 'filename', data }) => {
   if (type === 'xlsx') {
     const workbook = await generateFromJSON(data);
     downloadFile(workbook, name);
   }
 };
+
+const downloadFromList = (listStore) => {
+  return listStore.items;
+};
+
+const downloadAllFromList = async ({ listStore, limit, maxCount }) => {
+  const listStoreAll = new listStore.constructor(listStore);
+  const maxItemsCount = listStoreAll.count > maxCount ? maxCount : listStoreAll.count;
+  await Promise.mapSeries(Array(Math.round(maxItemsCount / limit)).fill(), async () => {
+    await listStoreAll.fetchMore(1, limit);
+  });
+  return listStoreAll.items;
+};
+
+export const downloadFromMarkup = async ({
+  listStore, limit = 50, maxCount = 10000, markup = [], markupProps = {}, name, all = false,
+}) => {
+  const items = await (all ? downloadAllFromList({ listStore, limit, maxCount }) : downloadFromList(listStore));
+  const data = markupToMatrix({
+    markup,
+    props: markupProps,
+    items,
+  });
+  download({ name, data });
+};
+
+export default download;
 
