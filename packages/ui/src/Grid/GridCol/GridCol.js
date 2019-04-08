@@ -1,5 +1,5 @@
 import styled, { css } from 'react-emotion';
-import removeProps from ''@lskjs/utils/removeProps';
+import removeProps from '@lskjs/utils/removeProps';
 
 /* default */
 const defaultStyle = css`

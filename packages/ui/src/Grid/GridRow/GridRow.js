@@ -1,6 +1,6 @@
 import styled, { css } from 'react-emotion';
 import GridCol from '../GridCol';
-import removeProps from ''@lskjs/utils/removeProps';
+import removeProps from '@lskjs/utils/removeProps';
 
 const filter = removeProps('div', ['vertical', 'gap']);
 export default styled(filter)`
