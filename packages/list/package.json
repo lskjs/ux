@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/list",
-  "version": "0.30.2",
+  "version": "0.30.5",
   "description": "LSK ux subrepo: list",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -16,7 +16,7 @@
   "devDependencies": {
     "@lskjs/autobind": "^0.32.0",
     "@lskjs/mobx": "^0.32.0",
-    "@lskjs/ui": "^0.30.2",
+    "@lskjs/ui": "^0.30.5",
     "@lskjs/utils": "^0.32.0",
     "antd": "^3.16.2",
     "axios": "^0.18.0",
