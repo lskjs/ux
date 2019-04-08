@@ -34,6 +34,7 @@
     "@lskjs/utils": "0.32.2",
     "classnames": "2.2.6",
     "emotion": "9.2.12",
+    "mobx": "5.9.4",
     "formik": "1.5.2",
     "lodash": "4.17.11",
     "mobx-react": "5.4.3",
