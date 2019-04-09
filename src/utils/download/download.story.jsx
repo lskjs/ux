@@ -1,5 +1,5 @@
 import React from 'react';
-import download, { downloadFromMarkup } from './download';
+import download, { generateFile } from './download';
 import Story from '../../Story';
 import DEV from '../../DEV';
 import StatefulButton from '../../StatefulButton';
@@ -66,7 +66,7 @@ export default ({ storiesOf }) => (
     .add('download', () => (
       <Story>
         <DEV json={defaultData} />
-        <button onClick={() => download({ name: 'file', data: defaultData })}>
+        <button onClick={() => generateFile({ name: 'file', data: defaultData })}>
           Download spreadsheet
         </button>
       </Story>
@@ -75,7 +75,7 @@ export default ({ storiesOf }) => (
         <StatefulButton
           componentClass={Button}
           paint="primary"
-          onClick={() => downloadFromMarkup({
+          onClick={() => download({
             listStore, markup, markupProps, name: 'default',
           })}
         >
@@ -88,7 +88,7 @@ export default ({ storiesOf }) => (
         <StatefulButton
           componentClass={Button}
           paint="primary"
-          onClick={() => downloadFromMarkup({
+          onClick={() => download({
             listStore, markup, markupProps, name: 'all', all: true,
           })}
         >

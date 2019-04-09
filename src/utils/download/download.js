@@ -44,6 +44,8 @@ const downloadFromList = (listStore) => {
 
 const downloadAllFromList = async ({ listStore, limit, maxCount }) => {
   const listStoreAll = new listStore.constructor(listStore);
+  listStoreAll.skip = 0;
+  listStoreAll.items = [];
   const maxItemsCount = listStoreAll.count > maxCount ? maxCount : listStoreAll.count;
   await Promise.mapSeries(Array(Math.round(maxItemsCount / limit)).fill(), async () => {
     await listStoreAll.fetchMore(1, limit);
@@ -51,7 +53,7 @@ const downloadAllFromList = async ({ listStore, limit, maxCount }) => {
   return listStoreAll.items;
 };
 
-export const download = async ({
+const download = async ({
   listStore, limit = 50, maxCount = 10000, markup = [], markupProps = {}, name, all = false,
 }) => {
   const items = await (all ? downloadAllFromList({ listStore, limit, maxCount }) : downloadFromList(listStore));
