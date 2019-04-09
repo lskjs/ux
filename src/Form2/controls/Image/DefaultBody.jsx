@@ -30,7 +30,7 @@ const DefaultBody = ({
   type = 'image',
   avatar,
 }) => {
-  console.log(value, type);
+  // console.log(value, type);
   return (
     <React.Fragment>
       <If condition={dragged}>

@@ -9,7 +9,6 @@ const DefaultBody = ({
   dragged,
   value,
   refZone,
-  onRemoveFiles,
   validationState,
 }) => (
   <React.Fragment>
@@ -32,10 +31,11 @@ const DefaultBody = ({
             <T name="upload.infoFiles" />
           </Info>
           <Actions>
-            <If condition={!value || value?.length === 0}>
+            <If condition={!value}>
               <Button
                 type="button"
                 paint="primary"
+                bordered
                 onClick={() => refZone.current?.open()}
               >
                 <T name="upload.buttonFiles" />
@@ -45,9 +45,18 @@ const DefaultBody = ({
               <Button
                 type="button"
                 paint="primary"
-                onClick={onRemoveFiles}
+                onClick={() => refZone.current?.open()}
               >
-                <T name="lskComponents.filesUploaderButton" />
+                <T name="upload.buttonFiles" />
+              </Button>
+            </If>
+            <If condition={value?.length === 0}>
+              <Button
+                type="button"
+                paint="primary"
+                onClick={() => refZone.current?.open()}
+              >
+                <T name="upload.buttonFiles" />
               </Button>
             </If>
           </Actions>

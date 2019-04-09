@@ -6,7 +6,15 @@ const filteredTag = removeProps('section', ['padded', 'paint']);
 
 export default styled(filteredTag)`
   line-height: 2.15em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   font-weight: 600;
+  @media (max-width: 540px) {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
   font-family: ${p => p.theme.fontFamily};
   ${p => (p.padded && css`
     padding: 12px 20px;
