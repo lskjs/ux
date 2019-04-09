@@ -65,7 +65,7 @@ class StatefulButton extends PureComponent {
     this.isMounted = false;
   }
 
-  //@autobind
+  @autobind
   onClick(e) {
     if (this.getButtonState() === 'ready') {
       const {
@@ -110,7 +110,7 @@ class StatefulButton extends PureComponent {
     this.privateTimeoutId = action;
   }
 
-  //@autobind
+  @autobind
   getButtonState() {
     return this.props.state
       || this.state.internalState
@@ -121,7 +121,7 @@ class StatefulButton extends PureComponent {
   privateResetInternalStateAfterProcessing;
   privateIsMounted;
 
-  //@autobind
+  @autobind
   doResetInternalState() {
     if (this.isMounted) {
       this.setState({
@@ -130,7 +130,7 @@ class StatefulButton extends PureComponent {
     }
   }
 
-  //@autobind
+  @autobind
   doResetInternalStateAfterTimer() {
     this.timeoutId = setTimeout(() => {
       this.timeoutId = null;

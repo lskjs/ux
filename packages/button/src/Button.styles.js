@@ -503,7 +503,7 @@ export const Btn = styled(filteredTag)`
   background-color: #fff;
   border: none;
   outline: none;
-  border-radius: ${p => (p.rounded ? p.theme.borderCircle : p.theme.borderSmall)};
+  border-radius: ${p => (p.rounded ? getTheme(p.theme, 'borderCircle') : getTheme(p.theme, 'borderSmall'))};
   overflow: hidden;
   position: relative;
   text-align: center;
@@ -581,7 +581,7 @@ export const Btn = styled(filteredTag)`
     }
     return '';
   }}
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
 
   transition: color .2s ease, background-color .2s ease;
   will-change: color, background-color;
@@ -692,7 +692,7 @@ export const RippleCircle = styled('span')`
   opacity: 0;
   width: 0;
   height: 0;
-  border-radius: ${p => p.theme.borderCircle};
+  border-radius: ${p => getTheme(p.theme, 'borderCircle')};
   background: rgba(0, 0, 0, .10);
 `;
 
@@ -737,7 +737,7 @@ export const State = styled('div')`
   overflow: hidden;
   box-sizing: border-box;
   cursor: default !important;
-  border-radius: ${p => (p.rounded ? p.theme.borderCircle : p.theme.borderSmall)};
+  border-radius: ${p => (p.rounded ? getTheme(p.theme, 'borderCircle') : getTheme(p.theme, 'borderSmall'))};
   pointer-events: ${p => (p.state !== 'ready' ? 'none' : 'auto')};
   ${(props) => {
     if (props.bordered) {

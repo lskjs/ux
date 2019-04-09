@@ -5,9 +5,9 @@ import CloseIcon from 'react-icons2/mdi/close';
 import PropTypes from 'prop-types';
 import omit from 'lodash/omit';
 import If from 'react-if';
-// import LoadingDots from '../LoadingDots';
 import filterProps from '@lskjs/utils/filterProps';
 import isTouchDevice from '@lskjs/utils/isTouchDevice';
+import LoadingDots from './components/LoadingDots';
 import {
   Btn,
   Text,
@@ -16,8 +16,6 @@ import {
   Ripple,
   RippleCircle,
 } from './Button.styles';
-
-const LoadingDots = () => '<LoadingDots />';
 
 class Button extends PureComponent {
   static propTypes = {
