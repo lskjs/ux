@@ -16,6 +16,14 @@ const DefaultItemComponent = ({ src, title }) => (
   <img src={src} alt={title} />
 );
 
+const normalizeItems = (items = []) => (
+  items.map((item) => {
+    if (typeof item === 'string') return { src: item };
+    const { url, ...other } = item;
+    return { src: url, ...other };
+  })
+);
+
 
 export default class Carousel extends Component {
   static propTypes = {
@@ -66,9 +74,12 @@ export default class Carousel extends Component {
     return (
       <Container>
         <Slider {...settings} {...props}>
-          {items.map((item, i) => (
+          {normalizeItems(items).map((item, i) => (
             <ItemSlider key={item.key || i}>
-              <Wrapper itemWidth={itemWidth} itemHeight={itemHeight}>
+              <Wrapper
+                itemWidth={itemWidth}
+                itemHeight={itemHeight}
+              >
                 <ItemComponent
                   {...item}
                 />
