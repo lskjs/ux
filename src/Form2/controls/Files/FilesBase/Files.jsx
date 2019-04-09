@@ -98,12 +98,6 @@ class Files extends Component {
     });
   }
 
-  @autobind
-  removeItemFiles() {
-    const { value, item } = this.props;
-    console.log('value:', value, ';', 'item:', item, ';', 'value item в методе');
-    this.setState({ value: value.splice(1, item) });
-  }
   render() {
     const { dragged, value } = this.state;
     const {

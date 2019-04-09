@@ -1,12 +1,12 @@
 import styled, { css } from 'react-emotion';
-import { Row } from '../../../../Grid';
 
 export const containerStyle = css`
+  display: flex;
+  flex-direction: row;
   padding: 12px;
   text-decoration: none;
   cursor: pointer;
   outline: none;
-  display: block;
   transition: background-color .2s ease-out;
   &:hover,
   &:focus,
@@ -15,11 +15,6 @@ export const containerStyle = css`
   }
   &:hover {
     background-color: #f5f5f5;
-  }
-
-  ${Row} {
-    text-align: center;
-    margin: 0 auto;
   }
 `;
 
@@ -30,7 +25,6 @@ export const typeStyle = css`
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-  margin: 0 auto;
 `;
 
 export const urlStyle = css`
@@ -39,21 +33,14 @@ export const urlStyle = css`
   white-space: nowrap;
 `;
 
-export const CenterFile = css`
-  text-align: center;
-  padding: 0px;
+export const centerFile = css`
+  width: 100px;
 `;
 
-export const ReSizeIcon = css`
-  width: 140px;
-  height: 100px;
-`;
-
-export const FileInfo = styled.div`
-  margin: 0 auto;
+export const Info = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  padding-left: 20px;
 `;
 
 export const RemoveButton = styled('button')`
@@ -61,10 +48,10 @@ export const RemoveButton = styled('button')`
   border: none;
   outline: none;
   opacity: 0.7;
-  color: red;
+  color: ${props => props.theme.colors.danger};
   position: absolute;
-  top: -6px;
-  right: -6px;
+  top: 3px;
+  right: 3px;
   padding: 2px;
   margin: 0;
   font-size: 24px;
@@ -73,11 +60,18 @@ export const RemoveButton = styled('button')`
   cursor: pointer;
 `;
 
-export const PrewImage = styled('img')`
-  max-width: 100%;
+export const PreviewImage = styled('img')`
+  width: 100px;
   height: 70px;
   object-fit: cover;
   display: flex;
   margin: 0 auto;
+  text-align: center;
 `;
 
+export const PreviewContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-basis: 70px;
+`;

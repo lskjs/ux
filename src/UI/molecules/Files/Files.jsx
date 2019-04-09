@@ -62,7 +62,7 @@ class Files extends Component {
     }
   }
   @autobind
-  async onDrop(files = []) {
+  async onDrop(files = '') {
     const {
       onSubmit,
       upload,

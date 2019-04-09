@@ -3,9 +3,17 @@ import autobind from 'core-decorators/lib/autobind';
 import Remove from 'react-icons2/mdi/close-circle-outline';
 import fileTypes from '../../../../utils/fileTypes';
 import Box from '../Box';
-import { Row, Col } from '../../../../Grid/index';
 import Typography from './Typography';
-import { containerStyle, typeStyle, urlStyle, PrewImage, RemoveButton, CenterFile, ReSizeIcon } from './File.styles';
+import {
+  containerStyle,
+  typeStyle,
+  urlStyle,
+  PreviewImage,
+  RemoveButton,
+  PreviewContainer,
+  Info,
+  centerFile,
+} from './File.styles';
 
 class File extends Component {
   static determineType(url) {
@@ -35,24 +43,30 @@ class File extends Component {
         componentClass="div"
         className={containerStyle}
       >
-        <Row>
-          <Col xs={7} md={5} sm={5} className={CenterFile}>
-            { urlImage ? <PrewImage src={url} alt={fileName} /> : <Icon size={70} className={ReSizeIcon} />}
-          </Col>
-          <Col xs={5} md={7} sm={7}>
-            <Typography
-              color="#9b9b9b"
-              variant="caption"
-              className={typeStyle}
-            >
-              {type}
-            </Typography>
-            <Typography className={urlStyle}>{fileName}</Typography>
-            <RemoveButton>
-              <Remove onClick={this.removeFile} />
-            </RemoveButton>
-          </Col>
-        </Row>
+        <PreviewContainer>
+          { urlImage ?
+            <PreviewImage
+              src={url}
+              alt={fileName}
+            /> :
+            <Icon
+              size={64}
+              className={centerFile}
+            />}
+        </PreviewContainer>
+        <Info>
+          <Typography
+            color="#9b9b9b"
+            variant="caption"
+            className={typeStyle}
+          >
+            {type}
+          </Typography>
+          <Typography className={urlStyle}>{fileName}</Typography>
+        </Info>
+        <RemoveButton>
+          <Remove onClick={this.removeFile} />
+        </RemoveButton>
       </Box>
     );
   }
