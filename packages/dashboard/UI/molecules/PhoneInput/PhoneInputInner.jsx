@@ -11,7 +11,7 @@ import { allCountries } from './countriesData';
 import isNumberValid from './isNumberValid';
 import Input from '../../../Input';
 
-const isModernBrowser = Boolean(__CLIENT__ && typeof document !== 'undefined' && document.createElement('input').setSelectionRange);
+const isModernBrowser = Boolean(typeof window !== 'undefined' && typeof document !== 'undefined' && document.createElement('input').setSelectionRange);
 
 
 const keys = {
@@ -110,7 +110,7 @@ class ReactPhoneInput extends Component {
   }
 
   componentDidMount() {
-    if (__CLIENT__) {
+    if (typeof window !== 'undefined') {
       document.addEventListener('keydown', this.handleKeydown);
       this.updateDropdownWidth();
     }
@@ -125,7 +125,7 @@ class ReactPhoneInput extends Component {
   }
 
   componentWillUnmount() {
-    if (__CLIENT__) document.removeEventListener('keydown', this.handleKeydown);
+    if (typeof window !== 'undefined') document.removeEventListener('keydown', this.handleKeydown);
   }
 
   getNumber() {
@@ -210,7 +210,7 @@ class ReactPhoneInput extends Component {
   }
 
   scrollTo(country, middle) {
-    if (!__CLIENT__) return;
+    if (typeof window === 'undefined') return;
     if (!country) return;
 
     const container = ReactDOM.findDOMNode(this.refs.flagDropdownList); // eslint-disable-line

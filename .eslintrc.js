@@ -19,17 +19,15 @@ const res =  {
     }
   },
   globals: {
-    __SERVER__: true,
-    __CLIENT__: true,
     __DEV__: true,
   },
   rules: {
-    'class-methods-use-this': 'off',    
-    'global-require': 'off',    
-    'lines-between-class-members': 'off',    
-    'func-names': 'off',    
-    'no-underscore-dangle': 'off',    
-    'no-throw-literal': 'off',    
+    'class-methods-use-this': 'off',
+    'global-require': 'off',
+    'lines-between-class-members': 'off',
+    'func-names': 'off',
+    'no-underscore-dangle': 'off',
+    'no-throw-literal': 'off',
   },
   settings: {
     "import/resolver": {

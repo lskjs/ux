@@ -201,7 +201,7 @@ class Modal2 extends PureComponent {
           <ReactModal
             ref={closable ? (e) => { this._modal = e; } : null}
             contentRef={closable ? (e) => {
-              if (__CLIENT__ && e) {
+              if (typeof window !== 'undefined' && e) {
                 e.onclick = (event) => {
                   if (!event.path.includes(this.body.current)) {
                     this._modal.portal.shouldClose = true;

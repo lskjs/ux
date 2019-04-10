@@ -28,7 +28,7 @@ export default function (rawData = {}) {
       />
     );
   }
-  if (__CLIENT__ && data.sound && typeof Audio === 'function') {
+  if (typeof window !== 'undefined' && data.sound && typeof Audio === 'function') {
     const audio = new Audio(sound); // eslint-disable-line
     audio.play();
   }

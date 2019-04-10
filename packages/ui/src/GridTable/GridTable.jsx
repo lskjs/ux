@@ -8,10 +8,10 @@ class GridTable extends Component {  //eslint-disable-line
     this.store = new GridTableStore(props);
   }
   componentDidMount() {
-    if (__CLIENT__) this.store.addListener();
+    if (typeof window !== 'undefined') this.store.addListener();
   }
   componentWillUnmount() {
-    if (__CLIENT__) this.store.removeListener();
+    if (typeof window !== 'undefined') this.store.removeListener();
   }
   render() {
     const { children } = this.props;
