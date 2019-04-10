@@ -22,7 +22,7 @@
     "storybook": "../../scripts/package-storybook.sh"
   },
   "peerDependencies": {
-    "@lskjs/theme": "0.31.5",
+    "@lskjs/theme": "*",
     "lodash": "4.17.11",
     "mobx": "5.9.4",
     "mobx-react": "5.4.3",

@@ -9,9 +9,7 @@
   },
   "repository": "https://github.com/lskjs/ux/tree/master/packages/scroll",
   "keywords": [],
-  "dependencies": {
-    "animated-scroll-to": "^1.2.2"
-  },
+  "dependencies": {},
   "scripts": {
     "dev": "npm run watch",
     "postversion": "npm run release",
@@ -23,5 +21,19 @@
     "bump": "../../scripts/package-bump.sh",
     "release": "../../scripts/package-release.sh",
     "storybook": "../../scripts/package-storybook.sh"
+  },
+  "peerDependencies": {
+    "@lskjs/dev": "*",
+    "animated-scroll-to": "1.2.2",
+    "@lskjs/theme": "*",
+    "lodash": "4.17.11",
+    "mobx": "5.9.4",
+    "mobx-react": "5.4.3",
+    "mobx-react-devtools": "6.1.1"
+  },
+  "devDependencies": {
+    "@lskjs/dev": "0.31.9",
+    "animated-scroll-to": "1.2.2",
+    "lodash": "4.17.11"
   }
 }

@@ -22,8 +22,13 @@
     "storybook": "../../scripts/package-storybook.sh"
   },
   "peerDependencies": {
-    "@lskjs/dev": "0.31.8",
-    "xlsx-populate": "1.19.1"
+    "@lskjs/dev": "*",
+    "xlsx-populate": "1.19.1",
+    "@lskjs/theme": "*",
+    "lodash": "4.17.11",
+    "mobx": "5.9.4",
+    "mobx-react": "5.4.3",
+    "mobx-react-devtools": "6.1.1"
   },
   "devDependencies": {
     "@lskjs/dev": "^0.31.9",
