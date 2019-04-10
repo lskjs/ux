@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/downloads",
-  "version": "0.31.9",
+  "version": "0.31.10",
   "description": "LSK ux subrepo: download",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -23,15 +23,15 @@
   },
   "peerDependencies": {
     "@lskjs/dev": "*",
-    "xlsx-populate": "1.19.1",
     "@lskjs/theme": "*",
     "lodash": "4.17.11",
     "mobx": "5.9.4",
     "mobx-react": "5.4.3",
-    "mobx-react-devtools": "6.1.1"
+    "mobx-react-devtools": "6.1.1",
+    "xlsx-populate": "1.19.1"
   },
   "devDependencies": {
-    "@lskjs/dev": "^0.31.9",
+    "@lskjs/dev": "^0.31.10",
     "xlsx-populate": "1.19.1"
   }
 }
