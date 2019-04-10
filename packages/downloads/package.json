@@ -18,6 +18,11 @@
     "watch": "../../scripts/package-watch.sh",
     "link": "../../scripts/package-link.sh",
     "bump": "../../scripts/package-bump.sh",
-    "release": "../../scripts/package-release.sh"
+    "release": "../../scripts/package-release.sh",
+    "storybook": "../../scripts/package-storybook.sh"
+  },
+  "devDependencies": {
+    "@lskjs/dev": "0.31.7",
+    "xlsx-populate": "1.19.1"
   }
 }

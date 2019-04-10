@@ -1,7 +1,7 @@
 import React from 'react';
 import download from './download';
 import Story from '@lskjs/dev/Story';
-import DEV from '../../DEV';
+import DEV from '@lskjs/dev/DEV';
 
 const data = [
   ['title1', 'title2', 'title 3'],
