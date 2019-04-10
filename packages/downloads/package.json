@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/downloads",
-  "version": "0.31.7",
+  "version": "0.31.8",
   "description": "LSK ux subrepo: download",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -22,7 +22,7 @@
     "storybook": "../../scripts/package-storybook.sh"
   },
   "devDependencies": {
-    "@lskjs/dev": "0.31.7",
+    "@lskjs/dev": "^0.31.8",
     "xlsx-populate": "1.19.1"
   }
 }
