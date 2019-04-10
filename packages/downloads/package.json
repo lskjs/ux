@@ -21,8 +21,12 @@
     "release": "../../scripts/package-release.sh",
     "storybook": "../../scripts/package-storybook.sh"
   },
+  "peerDependencies": {
+    "@lskjs/dev": "0.31.8",
+    "xlsx-populate": "1.19.1"
+  },
   "devDependencies": {
-    "@lskjs/dev": "^0.31.8",
+    "@lskjs/dev": "0.31.8",
     "xlsx-populate": "1.19.1"
   }
 }
