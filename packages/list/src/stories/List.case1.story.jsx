@@ -7,7 +7,7 @@ import { css } from 'emotion';
 import cx from 'classnames';
 import Promise from 'bluebird';
 
-import Story from '../../Story';
+import Story from '@lskjs/dev/Story';
 import { Row, Col } from '../../Table';
 import ListStore from '@lskjs/mobx/stores/ListStore';
 import { FormExample2 as FilterForm } from '../../Form2/stories/examples/FormExample2.story';

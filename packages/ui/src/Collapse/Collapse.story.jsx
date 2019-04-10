@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Button from '../Button';
+import Button from '@lskjs/button';
 import Collapse from './Collapse';
-import Story from '../Story';
+import Story from '@lskjs/dev/Story';
 
 class Container extends Component {
   state = {

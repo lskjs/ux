@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, Field } from 'formik';
 import Promise from 'bluebird';
-import Story from '../../Story';
+import Story from '@lskjs/dev/Story';
 import createForm from '../createForm';
 import Input from '../controls/Input';
 import FormDebug from '../FormDebug';

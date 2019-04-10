@@ -2,7 +2,7 @@ import React from 'react';
 import { observer } from 'mobx-react';
 import { css } from 'emotion';
 import cx from 'classnames';
-import Story from '../../Story';
+import Story from '@lskjs/dev/Story';
 import { Row, Col, ItemRow, ItemCol, HeaderRow, HeaderCol } from '../Table';
 import { FormExample2 as FilterForm } from '../../Form2/stories/examples/FormExample2.story';
 

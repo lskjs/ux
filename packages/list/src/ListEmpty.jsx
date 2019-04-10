@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import If from 'react-if';
-import Button from '../Button';
+import Button from '@lskjs/button';
 import T from '@lskjs/ui/T';
 import Error404 from '../UI/molecules/ErrorComponent/svg/error404';
 import EmptyContainer from '../UI/molecules/EmptyContainer';

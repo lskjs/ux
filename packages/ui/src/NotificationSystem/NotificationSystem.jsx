@@ -2,8 +2,8 @@ import React, { PureComponent } from 'react';
 import ReactNotificationSystem from 'react-notification-system';
 import autobind from '@lskjs/autobind';
 import Link from '../Link';
-import NotifyTimelineWrapper from '../UI/atoms/NotifyTimelineWrapper';
-import NotifyTimeline from '../UI/atoms/NotifyTimeline';
+import NotifyTimelineWrapper from './components/NotifyTimelineWrapper';
+import NotifyTimeline from './components/NotifyTimeline';
 
 import Notification from './Notification';
 import prepareNotificationData from './prepareNotificationData';

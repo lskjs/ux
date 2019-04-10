@@ -5,12 +5,12 @@ import ErrorIcon from './svg/error';
 import WarningIcon from './svg/warning';
 import InfoIcon from './svg/info';
 import SuccessIcon from './svg/success';
-import NotifyItem from './NotifyItem';
-import NotifyAvatar from '../../UI/atoms/NotifyAvatar';
-import NotifyInfo from '../../UI/atoms/NotifyInfo';
-import NotifyTitle from '../../UI/atoms/NotifyTitle';
-import NotifyText from '../../UI/atoms/NotifyText';
-import NotifyItemInner from '../../UI/atoms/NotifyItemInner';
+import NotifyItem from './components/NotifyItem';
+import NotifyAvatar from './components/NotifyAvatar';
+import NotifyInfo from './components/NotifyInfo';
+import NotifyTitle from './components/NotifyTitle';
+import NotifyText from './components/NotifyText';
+import NotifyItemInner from './components/NotifyItemInner';
 
 
 class Notification extends Component {

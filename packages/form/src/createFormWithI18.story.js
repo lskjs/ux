@@ -2,7 +2,7 @@ import React from 'react';
 import { Form, Field, FastField } from 'formik';
 import createFormWithI18 from './createFormWithI18';
 import Input from '../Form2/controls/Input';
-import Story from '../Story';
+import Story from '@lskjs/dev/Story';
 import FormDebug from './FormDebug';
 
 const InputFormView = (props) => {

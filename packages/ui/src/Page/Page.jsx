@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 // import Container from '../../atoms/PageContainer';
 // import Title from '../../atoms/PageTitle';
 // import Breadcrumbs from '../../atoms/PageBreadcrumbs';
-import PageHeader from './PageHeader';
-import PageTitle from './PageTitle';
-import PageBreadcrumbs from './PageBreadcrumbs';
-import PageBody from './PageBody';
-import PageTabs from './PageTabs';
-import PageTitleActions from '../UI/atoms/PageTitleActions';
+import PageHeader from './components/PageHeader';
+import PageTitle from './components/PageTitle';
+import PageBreadcrumbs from './components/PageBreadcrumbs';
+import PageBody from './components/PageBody';
+import PageTabs from './components/PageTabs';
+import PageTitleActions from './components/PageTitleActions';
 
 import Block from './Page.styles';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import random from 'lodash/random';
 import Avatar from './Avatar';
-import Story from '../Story';
+import Story from '@lskjs/dev/Story';
 
 
 const rndNum = random(99);
@@ -234,29 +234,29 @@ export default ({ storiesOf, action, knob }) => {
       <Story>
         <a href="#"><Avatar {...user()} /></a>
       </Story>
-    ))
-    .add('Knobs', () => (
-      <Story>
-        <Avatar
-          name={knob.text('Name')}
-          title={knob.text('Title')}
-          avatar={knob.text('Avatar')}
-          src={knob.text('Src')}
-          size={knob.number('Size', 64)}
-          width={knob.number('Width')}
-          height={knob.number('Height')}
-          shape={knob.select('Shape', { cirlce: 'circle', rounded: 'rounded', square: 'square' }, 'circle')}
-          border={knob.boolean('Border')}
-          borderColor={knob.color('Border color')}
-          borderWidth={knob.number('Border width')}
-          borderPadding={knob.number('Border padding')}
-          bgColor={knob.color('Background color')}
-          textColor={knob.color('Text color')}
-          textScale={knob.number('Text size scale')}
-          shadow={knob.boolean('Shadow')}
-          inactive={knob.boolean('Inactive')}
-          style={knob.object('Custom styles', { padding: '10px' })}
-        />
-      </Story>
     ));
+  // .add('Knobs', () => (
+  //   <Story>
+  //     <Avatar
+  //       name={knob.text('Name')}
+  //       title={knob.text('Title')}
+  //       avatar={knob.text('Avatar')}
+  //       src={knob.text('Src')}
+  //       size={knob.number('Size', 64)}
+  //       width={knob.number('Width')}
+  //       height={knob.number('Height')}
+  //       shape={knob.select('Shape', { cirlce: 'circle', rounded: 'rounded', square: 'square' }, 'circle')}
+  //       border={knob.boolean('Border')}
+  //       borderColor={knob.color('Border color')}
+  //       borderWidth={knob.number('Border width')}
+  //       borderPadding={knob.number('Border padding')}
+  //       bgColor={knob.color('Background color')}
+  //       textColor={knob.color('Text color')}
+  //       textScale={knob.number('Text size scale')}
+  //       shadow={knob.boolean('Shadow')}
+  //       inactive={knob.boolean('Inactive')}
+  //       style={knob.object('Custom styles', { padding: '10px' })}
+  //     />
+  //   </Story>
+  // ));
 };

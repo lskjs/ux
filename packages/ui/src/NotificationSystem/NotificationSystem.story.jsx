@@ -1,7 +1,7 @@
 import React from 'react';
 import NotificationSystem from './NotificationSystem';
-import Story from '../Story';
-import Button from '../Button';
+import Story from '@lskjs/dev/Story';
+import Button from '@lskjs/button';
 import notify from './notifyStyles.styles';
 import Notification from './Notification';
 

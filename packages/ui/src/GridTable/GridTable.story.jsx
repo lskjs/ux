@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Story from '../Story';
+import Story from '@lskjs/dev/Story';
 import range from 'lodash/range';
 import { withTheme } from 'emotion-theming';
 

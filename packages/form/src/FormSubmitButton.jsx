@@ -1,6 +1,6 @@
 import React from 'react';
 import If from 'react-if';
-import Button from '../Button';
+import Button from '@lskjs/button';
 import T from '../T';
 
 export default ({

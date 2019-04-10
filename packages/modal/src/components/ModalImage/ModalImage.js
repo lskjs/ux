@@ -1,7 +1,7 @@
 /* eslint import/no-extraneous-dependencies: 0 */
 import styled from 'react-emotion';
 import getTheme from '@lskjs/theme/getTheme';
-import removeProps from '@lskjs/dev/removeProps';
+import removeProps from '@lskjs/utils/removeProps';
 
 export default styled(removeProps('div', ['src', 'color']))`
   position: relative;

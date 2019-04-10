@@ -1,6 +1,6 @@
 import React from 'react';
 import { observer } from 'mobx-react';
-import Story from '../../Story';
+import Story from '@lskjs/dev/Story';
 import { ItemRow, ItemCol, HeaderRow, HeaderCol } from '../Table';
 import { FormExample2 as FilterForm } from '../../Form2/stories/examples/FormExample2.story';
 

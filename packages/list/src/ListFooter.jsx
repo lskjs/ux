@@ -4,7 +4,7 @@ import If from 'react-if';
 import DownloadIcon from 'react-icons2/mdi/download';
 import T from '@lskjs/ui/T';
 import withResponsive from '../Button/withResponsive';
-import Button from '../Button';
+import Button from '@lskjs/button';
 import { contextToProps } from './List.context';
 import { SelectWrapper } from './List.styles';
 import { Container, Item, Left } from './AlignLayout';

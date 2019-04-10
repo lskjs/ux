@@ -1,8 +1,9 @@
 import styled from 'react-emotion';
+import getTheme from '@lskjs/theme/getTheme';
 
 export default styled('main')`
   width: 100%;
-  background-color: ${p => p.theme.colors.mainBackground};
+  background-color: ${p => getTheme(p.theme, 'colors.mainBackground')};
   padding: 4px 8px 24px;
   display: flex;
   flex-direction: column;
@@ -17,12 +18,12 @@ export default styled('main')`
 
 
 export const PageTitle = styled('div')`
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   font-size: 20px;
   line-height: 1.2;
   letter-spacing: -0.1px;
   text-align: left;
-  color: ${p => p.theme.colors.main};
+  color: ${p => getTheme(p.theme, 'colors.main')};
   margin: 16px 0;
   display: flex;
   align-items: flex-end;

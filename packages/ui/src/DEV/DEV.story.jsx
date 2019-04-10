@@ -1,6 +1,6 @@
 import React from 'react';
 import DEV from './DEV';
-import Story from '../Story';
+import Story from '@lskjs/dev/Story';
 // import ObserverDEV from './ObserverDEV';
 
 export default ({ storiesOf, action }) => (

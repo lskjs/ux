@@ -2,7 +2,7 @@ import React from 'react';
 import { observer } from 'mobx-react';
 
 import Link from '../../Link';
-import Story from '../../Story';
+import Story from '@lskjs/dev/Story';
 import { Row, Col, ItemRow, ItemCol, HeaderRow, HeaderCol } from '../Table';
 
 import List from '../List';

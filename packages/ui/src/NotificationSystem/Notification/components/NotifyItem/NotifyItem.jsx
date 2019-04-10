@@ -1,15 +1,15 @@
 import React, { PureComponent } from 'react';
-import pT from 'prop-types';
-import Link from '../../../Link';
+import PropTypes from 'prop-types';
+import Link from '../../../../Link';
 import { Right, Item } from './NotifyItem.styles';
 
 
 class NotifyItem extends PureComponent {
-  static propTypes = {
-    unread: pT.bool,
-    children: pT.any.isRequired,
-    href: pT.string,
-    type: pT.string.isRequired,
+  static proPropTypesypes = {
+    unread: PropTypes.bool,
+    children: PropTypes.any.isRequired,
+    href: PropTypes.string,
+    type: PropTypes.string.isRequired,
   }
   static defaultProps = {
     unread: false,

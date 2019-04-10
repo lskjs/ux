@@ -1,7 +1,7 @@
 import React from 'react';
 import repeat from 'lodash/repeat';
 import Slide from './Slide';
-import Story from '../Story';
+import Story from '@lskjs/dev/Story';
 
 
 export default ({ storiesOf, action }) => {

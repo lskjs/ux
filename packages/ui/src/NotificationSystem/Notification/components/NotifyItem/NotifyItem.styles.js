@@ -1,4 +1,5 @@
 import styled from 'react-emotion';
+import getTheme from '@lskjs/theme/getTheme';
 
 export const Left = styled('div')`
   width: 40px;
@@ -24,10 +25,10 @@ export const Item = styled('div')`
   line-height: 1.2;
   text-decoration: none;
   align-items: flex-start;
-  font-family: ${p => p.theme.fontFamily};
- 
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
+
   * {
-    color: ${p => p.theme.colors.white} !important;
+    color: ${p => getTheme(p.theme, 'colors.white')} !important;
   }
 
   &:hover {
@@ -91,6 +92,4 @@ export const Item = styled('div')`
   ${p => (p.unread && `
     background-color: #ddebf9;
   `)}
-  
 `;
-

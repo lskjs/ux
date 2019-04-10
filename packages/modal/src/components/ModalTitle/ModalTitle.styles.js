@@ -1,7 +1,7 @@
 /* eslint import/no-extraneous-dependencies: 0 */
 import styled, { css } from 'react-emotion';
 import getTheme from '@lskjs/theme/getTheme';
-import removeProps from '@lskjs/dev/removeProps';
+import removeProps from '@lskjs/utils/removeProps';
 
 export const Title = styled(removeProps('div', ['align']))`
   padding: 11px 44px 11px 16px;

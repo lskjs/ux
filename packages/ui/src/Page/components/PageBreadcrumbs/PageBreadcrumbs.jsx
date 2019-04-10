@@ -4,8 +4,8 @@ import Breadcrumb from 'antd/lib/breadcrumb';
 import get from 'lodash/get';
 import cloneDeep from 'lodash/cloneDeep';
 // import Container from '../../atoms/PageContainer';
-import Breadcrumbs from '../UI/atoms/PageBreadcrumbs';
-import Link from '../Link';
+import Breadcrumbs from './components/PageBreadcrumbs';
+import Link from '../../../Link';
 
 @inject('page')
 @observer

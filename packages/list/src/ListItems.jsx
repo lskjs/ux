@@ -5,7 +5,7 @@ import If from 'react-if';
 import DEV from '../DEV';
 import Performance from '../DEV/Performance';
 import T from '@lskjs/ui/T';
-import Button from '../Button';
+import Button from '@lskjs/button';
 import { contextToProps } from './List.context';
 
 const buttonStyles = css`

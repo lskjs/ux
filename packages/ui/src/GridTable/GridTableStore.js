@@ -3,7 +3,7 @@ import { observable, toJS, action } from 'mobx';
 import isFunction from 'lodash/isFunction';
 // import { debounce } from 'lodash-decorators';
 import debounce from 'lodash-decorators/debounce';
-import Store from '@lskjs/utils/Store';
+import Store from '@lskjs/mobx/stores/Store';
 
 
 class GridTableStore extends Store {

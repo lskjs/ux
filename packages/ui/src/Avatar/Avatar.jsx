@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import isNull from 'lodash/isNull';
 import isString from 'lodash/isString';
 import ReactImageFallback from 'react-image-fallback';
 // import PureComponent from 'lsk-general/General/PureComponent';
-import PureComponent from '../PureComponent';
 import Link from '../Link';
 
 // import gifSpinner from './img/loading.gif';

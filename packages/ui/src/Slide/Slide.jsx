@@ -76,7 +76,7 @@ export default class Slide extends Component {
     // https://www.youtube.com/embed/C8PYHjRj-zk
     // https://youtu.be/c-shIOFYCRU?t=3m26s
     //
-    if (video.indexOf('youtube.com') !== -1 || video.indexOf('youtu.be') !== -1) {
+    if ((video && video.indexOf('youtube.com') !== -1) || (video && video.indexOf('youtu.be') !== -1)) {
       const code = video
         .split('watch?v=').pop()
         .split('/').pop()

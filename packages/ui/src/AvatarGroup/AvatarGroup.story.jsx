@@ -2,7 +2,7 @@ import React from 'react';
 import range from 'lodash/range';
 import random from 'lodash/random';
 import AvatarGroup from './AvatarGroup';
-import Story from '../Story';
+import Story from '@lskjs/dev/Story';
 
 
 const user = () => ({

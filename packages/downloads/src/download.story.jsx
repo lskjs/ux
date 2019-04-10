@@ -1,6 +1,6 @@
 import React from 'react';
 import download from './download';
-import Story from '../../Story';
+import Story from '@lskjs/dev/Story';
 import DEV from '../../DEV';
 
 const data = [

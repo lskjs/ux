@@ -3,7 +3,7 @@ import { Provider as MobxProvider } from 'mobx-react';
 import mapValues from 'lodash/mapValues';
 import Search from '../UI/molecules/Search';
 import ListStore from '@lskjs/mobx/stores/ListStore';
-import Button from '../Button';
+import Button from '@lskjs/button';
 import { Table } from '../Table';
 import DEV from '../DEV';
 import {

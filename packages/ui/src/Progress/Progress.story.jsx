@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Story from '../Story';
+import Story from '@lskjs/dev/Story';
 import Progress from './Progress';
 
 class Wrapper extends Component {

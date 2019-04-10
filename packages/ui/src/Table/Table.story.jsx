@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import range from 'lodash/range';
-import Story from '../Story';
+import Story from '@lskjs/dev/Story';
 
 import { Table, Row, Col } from './index';
 

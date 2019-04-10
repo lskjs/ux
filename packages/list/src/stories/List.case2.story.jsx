@@ -9,7 +9,7 @@ import Promise from 'bluebird';
 import { Row as BsRow, Col as BsCol } from '../../Grid';
 // import { Row as BsRow, Col as BsCol } from 'react-bootstrap';
 
-import Story from '../../Story';
+import Story from '@lskjs/dev/Story';
 import { Row, Col } from '../../Table';
 
 import ListStore from '@lskjs/mobx/stores/ListStore';

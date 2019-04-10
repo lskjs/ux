@@ -5,6 +5,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import DefaultAvatar from '../Avatar';
 import merge from 'lodash/merge';
+import If from 'react-if';
 import isEqual from 'lodash/isEqual';
 
 export default class AvatarGroup extends PureComponent {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { observer } from 'mobx-react';
 import QueueAnim from 'rc-queue-anim';
-import Story from '../../Story';
+import Story from '@lskjs/dev/Story';
 import { Row, Col } from '../../Grid';
 import { ItemRow, ItemCol, HeaderRow, HeaderCol, createIndex } from '../Table';
 import { FormExample2 as FilterForm } from '../../Form2/stories/examples/FormExample2.story';
