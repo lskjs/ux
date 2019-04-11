@@ -14,15 +14,30 @@ class ListSelectRow extends Component {
   }
   render() {
     const {
-      List, selectStore, item, componentClass: Tag = 'div', className, ...props
+      List,
+      selectStore,
+      item,
+      componentClass,
+      className,
+      ...props
     } = this.props;
 
     if (!selectStore.length) {
-      return (<Tag className={className} {...props} />);
+      return (
+        <List.HoverRow
+          componentClass={componentClass}
+          className={className}
+          {...props}
+        />
+      );
     }
     const checked = selectStore.isChecked(item);
     return (
-      <List.SelectRowWrapper className={className} onClick={this.handleClick} checked={checked}>
+      <List.SelectRowWrapper
+        className={className}
+        onClick={this.handleClick}
+        checked={checked}
+      >
         {props.children}
       </List.SelectRowWrapper>
     );

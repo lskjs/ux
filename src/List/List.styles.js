@@ -130,7 +130,7 @@ const dynamicListTableItemTag = createDynamicTag('div');
 export const ListTableItem = styled(dynamicListTableItemTag)`
   display: block;
   height: ${p => p.height}px;
-  padding: 0 12px;
+  padding: 0 ${p => p.theme.tablePadding}px;
   background-color: ${p => p.theme.colors.white};
 
   ${p => (p.clickable && css`
@@ -177,7 +177,7 @@ export const ItemsWrapper = styled('div')`
 `;
 
 export const FilterWrapper = styled('div')`
-  padding: 22px 12px 0;
+  padding: 22px ${p => p.theme.tablePadding}px 0;
   background-color: ${p => p.theme.colors.lightGray};
   position: relative;
   bottom: 1px;
@@ -275,8 +275,40 @@ export const ArrowBlock = styled('div')`
   }
 `;
 
+const hoverTag = createDynamicTag('div');
+export const HoverRowWrapper = styled(hoverTag)`
+  cursor: pointer;
+  display: block;
+  > .table-gird-row {
+    background-color: ${p => p.theme.colors.white};
+    transition: background-color .2s ease-out;
+    will-change: background-color;
+  }
+  ${p => (p.bordered && css`
+    &:not(:last-of-type) {
+      border-bottom: 1px solid ${p.theme.colors.border};
+    }
+  `)}
+  &:hover {
+    > .table-gird-row {
+      background-color: ${p => p.theme.colors.lighterPrimary};
+    }
+  }
+`;
+
 export const SelectRowWrapper = styled('div')`
   cursor: pointer;
+  display: block;
+  > .table-gird-row {
+    background-color: ${p => p.theme.colors.white};
+    transition: background-color .2s ease-out;
+    will-change: background-color;
+  }
+  ${p => (p.bordered && css`
+    &:not(:last-of-type) {
+      border-bottom: 1px solid ${p.theme.colors.border};
+    }
+  `)}
   ${p => (p.checked && css`
     > .table-gird-row {
       background-color: ${p.theme.colors.lightPrimary};

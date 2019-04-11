@@ -18,8 +18,8 @@ export const Button = styled('button')`
   border: none;
   outline: none;
   position: absolute;
-  top: 0;
-  left: ${p => p.theme.tablePadding}px;
+  top: -4px;
+  left: ${p => (p.theme.tablePadding - 4)}px;
   bottom: 0;
   margin: auto 0;
   > svg {
@@ -47,7 +47,7 @@ export const Count = styled('div')`
 const placeholderStyle = p => css`
   font-family: ${p.theme.fontFamily};
   font-size: 13px;
-  font-weight: 500;
+  font-weight: normal;
   line-height: 56px;
   text-align: left;
   color: ${p.theme.colors.secondary};
@@ -56,7 +56,7 @@ const placeholderStyle = p => css`
 export const Input = styled(dynamicTag)`
   width: 100%;
   height: 56px;
-  padding: 0 0 0 ${p => `calc(${p.theme.tablePadding || 0}px + 34px)`};
+  padding: 0 0 0 ${p => `calc(${p.theme.tablePadding || 0}px + 29px)`};
   border: none;
   outline: none;
   background: none;
@@ -64,7 +64,7 @@ export const Input = styled(dynamicTag)`
   font-family: ${p => p.theme.fontFamily};
   font-size: 13px;
   text-align: left;
-  font-weight: 500;
+  font-weight: normal;
   color: ${p => p.theme.colors.main};
   &::-webkit-input-placeholder {
     ${placeholderStyle}
@@ -93,7 +93,7 @@ export const Action = styled('div')`
   align-items: center;
   ${p => (p.additional && css`
     padding-left: 16px;
-    margin-right: 12px;
+    margin-right: ${p.theme.tablePadding}px;
     border-left: 1px solid ${p.theme.colors.border};
     ${!p.divide && 'border-left-color: transparent;'}
 
