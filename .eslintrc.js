@@ -1,6 +1,6 @@
 var path = require('path');
 // const user = process.env.USER;
-// const warn = user === 'isuvorov' ? 'off' : 'warn';
+const warn = user === 'isuvorov' ? 'off' : 'error';
 
 const res =  {
   parser: 'babel-eslint',
@@ -19,15 +19,18 @@ const res =  {
     }
   },
   globals: {
+    __SERVER__: true,
+    __CLIENT__: true,
     __DEV__: true,
   },
   rules: {
-    'class-methods-use-this': 'off',
-    'global-require': 'off',
-    'lines-between-class-members': 'off',
-    'func-names': 'off',
-    'no-underscore-dangle': 'off',
-    'no-throw-literal': 'off',
+    'class-methods-use-this': 'off',    
+    // 'global-require': 'off',    
+    'lines-between-class-members': 'off',    
+    'func-names': 'off',    
+    'no-underscore-dangle': 'off',    
+    'no-throw-literal': 'off',    
+    'react/prop-types': warn,    
   },
   settings: {
     "import/resolver": {

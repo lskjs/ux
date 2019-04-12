@@ -6,6 +6,10 @@ rm -rf .babelrc.js && \
 cp ../../.babelrc.js . && \
 rm -rf .eslintrc.js && \
 cp ../../.eslintrc-package.js .eslintrc.js && \
+rm -rf .storybook && \
+cp -R ../../.storybook/.storybook-package .storybook && \
+rm -rf ../../.gitignone && \
+cp ../../.gitignone . && \
 rm -rf node_modules && \
 npm i && \
 mkdir -p node_modules && \

@@ -29,4 +29,6 @@ npm link \
   @lskjs/ui \
   @lskjs/upload \
   @lskjs/utils \
+  @lskjs/dev \
+  @lskjs/scroll \
 && cd ..
