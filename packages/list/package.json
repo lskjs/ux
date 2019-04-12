@@ -40,6 +40,7 @@
     "antd": "^3.16.2",
     "axios": "^0.18.0",
     "bluebird": "^3.5.4",
+    "classnames": "^2.2.6",
     "emotion": "^9.2.10",
     "formik": "^1.5.2",
     "lodash": "^4.17.11",
@@ -50,6 +51,8 @@
     "prop-types": "^15.7.2",
     "rc-queue-anim": "^1.6.12",
     "react": "^16.8.6",
+    "react-collapse": "^4.0.3",
+    "react-custom-scrollbars": "^4.2.1",
     "react-emotion": "^9.2.10",
     "react-icons2": "^2.5.0",
     "validate.js": "^0.12.0"
@@ -57,6 +60,7 @@
   "peerDependencies": {
     "@lskjs/autobind": "^0.32.0",
     "@lskjs/button": "^0.31.10",
+    "@lskjs/dashboard": "^0.31.9",
     "@lskjs/dev": "^0.31.10",
     "@lskjs/form": "^0.31.9",
     "@lskjs/mobx": "^0.32.0",
@@ -67,6 +71,7 @@
     "antd": "^3.16.2",
     "axios": "^0.18.0",
     "bluebird": "^3.5.4",
+    "classnames": "^2.2.6",
     "emotion": "^9.2.10",
     "formik": "^1.5.2",
     "lodash": "^4.17.11",

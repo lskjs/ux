@@ -25,7 +25,13 @@ const res =  {
     __DEV__: true,
   },
   rules: {
-    'max-len': [2, 120],    
+    'max-len': [
+      'error',
+      {
+        code: 120,
+        ignoreComments: true,
+      }
+    ],   
     'class-methods-use-this': 'off',    
     // 'global-require': 'off',    
     'lines-between-class-members': 'off',    
@@ -35,6 +41,7 @@ const res =  {
     // 
     'react/prop-types': error,    
     'react/forbid-prop-types': error,    
+    // 'react/button-has-type': error,    
     'object-curly-newline': 'off', // очень странное правило, почитать почему 
   },
   settings: {

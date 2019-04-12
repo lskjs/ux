@@ -1,12 +1,11 @@
 import React from 'react';
 import { observer } from 'mobx-react';
 import Story from '@lskjs/dev/Story';
-import { ItemRow, ItemCol, HeaderRow, HeaderCol } from '../Table';
-import { FormExample2 as FilterForm } from '../../Form2/stories/examples/FormExample2.story';
+import { ItemRow, ItemCol, HeaderRow, HeaderCol, createIndex } from '../Table';
+import FilterForm from './FilterForm';
 
 import List from '../List';
 import listStore from './listStore';
-import { createIndex } from '../../GridTable/index';
 import DebugListStore from './DebugListStore';
 
 const columns = [60, '1fr', '1fr', 60];
@@ -50,20 +49,18 @@ const Item = observer(({ item = {}, index = createIndex() }) => (
   </ItemRow>
 ));
 
-export default ({ storiesOf }) => {
-  return storiesOf('List', module)
-    .add('case3: custom wrappers', () => (
-      <Story devtools style={{ padding: 24 }}>
-        <List
-          container
-          listStore={listStore}
-          HeaderItem={HeaderItem}
-          Item={Item}
-          FilterForm={FilterForm}
-          columns={columns}
-          Wrapper={({ children }) => <div style={{ background: 'red' }}>{children}</div>}
-        />
-        <DebugListStore store={listStore} />
-      </Story>
-    ));
-};
+export default ({ storiesOf }) => storiesOf('List', module)
+  .add('case3: custom wrappers', () => (
+    <Story devtools style={{ padding: 24 }}>
+      <List
+        container
+        listStore={listStore}
+        HeaderItem={HeaderItem}
+        Item={Item}
+        FilterForm={FilterForm}
+        columns={columns}
+        Wrapper={({ children }) => <div style={{ background: 'red' }}>{children}</div>}
+      />
+      <DebugListStore store={listStore} />
+    </Story>
+  ));

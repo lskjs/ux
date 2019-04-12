@@ -8,9 +8,9 @@ import cx from 'classnames';
 import Promise from 'bluebird';
 
 import Story from '@lskjs/dev/Story';
-import { Row, Col } from '../../Table';
+import { Row, Col } from '@lskjs/ui/Table';
 import ListStore from '@lskjs/mobx/stores/ListStore';
-import { FormExample2 as FilterForm } from '../../Form2/stories/examples/FormExample2.story';
+import FilterForm from './FilterForm';
 
 import List from '../List';
 
@@ -69,7 +69,7 @@ const ListItem = observer(({ item = {} }) => (
 ));
 
 
-const SortDirection = ({ value }) => (value === 1 ? '⬆' : value === -1 ? '⬇' : '⚬');
+const SortDirection = ({ value }) => (value === 1 ? '⬆' : value === -1 ? '⬇' : '⚬'); // eslint-disable-line no-nested-ternary
 
 const HeaderItem = ({ toggleSort, sort = {} }) => (
   <Row className={styleHeight}>
@@ -92,17 +92,15 @@ const HeaderItem = ({ toggleSort, sort = {} }) => (
 );
 
 
-export default ({ storiesOf }) => {
-  return storiesOf('List/cases', module)
-    .add('case1', () => (
-      <Story devtools style={{ padding: 24 }}>
-        <List
-          listStore={listStore}
-          HeaderItem={HeaderItem}
-          ListItem={ListItem}
-          FilterForm={FilterForm}
-          columns={columns}
-        />
-      </Story>
-    ));
-};
+export default ({ storiesOf }) => storiesOf('List/cases', module)
+  .add('case1', () => (
+    <Story devtools style={{ padding: 24 }}>
+      <List
+        listStore={listStore}
+        HeaderItem={HeaderItem}
+        ListItem={ListItem}
+        FilterForm={FilterForm}
+        columns={columns}
+      />
+    </Story>
+  ));

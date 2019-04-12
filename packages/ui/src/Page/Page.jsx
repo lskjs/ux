@@ -1,9 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-// import Container from 'reactstrap/lib/Container';
-// import Container from '../../atoms/PageContainer';
-// import Title from '../../atoms/PageTitle';
-// import Breadcrumbs from '../../atoms/PageBreadcrumbs';
+import { Container } from '../Grid';
 import PageHeader from './components/PageHeader';
 import PageTitle from './components/PageTitle';
 import PageBreadcrumbs from './components/PageBreadcrumbs';
@@ -14,7 +11,7 @@ import PageTitleActions from './components/PageTitleActions';
 import Block from './Page.styles';
 
 class Page extends PureComponent {
-  static Container = ({ children }) => children;
+  static Container = Container;
   static Header = PageHeader;
   static Title = PageTitle;
   static Breadcrumbs = PageBreadcrumbs;

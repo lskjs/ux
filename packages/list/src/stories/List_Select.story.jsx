@@ -123,45 +123,45 @@ const SelectLinkItem3 = observer(({ item = {} }) => (
 export default ({ storiesOf }) => storiesOf('List/Select', module)
   .add('List with Select', () => (
     <Story>
-        <List
-          listStore={listStore}
-          Item={SelectItem}
-          HeaderItem={SelectHeaderItem}
-          columns={columns}
-        />
-        <DebugListStore store={listStore} />
-      </Story>
+      <List
+        listStore={listStore}
+        Item={SelectItem}
+        HeaderItem={SelectHeaderItem}
+        columns={columns}
+      />
+      <DebugListStore store={listStore} />
+    </Story>
   ))
   .add('List with SelectLinkItem', () => (
     <Story>
-        <List
-          listStore={listStore}
-          Item={SelectLinkItem}
-          HeaderItem={SelectHeaderItem}
-          columns={columns}
-        />
-        <DebugListStore store={listStore} />
-      </Story>
+      <List
+        listStore={listStore}
+        Item={SelectLinkItem}
+        HeaderItem={SelectHeaderItem}
+        columns={columns}
+      />
+      <DebugListStore store={listStore} />
+    </Story>
   ))
   .add('List with SelectLinkItem2', () => (
     <Story>
-        <List
-          listStore={listStore}
-          Item={SelectLinkItem2}
-          HeaderItem={SelectHeaderItem}
-          columns={columns}
-        />
-        <DebugListStore store={listStore} />
-      </Story>
+      <List
+        listStore={listStore}
+        Item={SelectLinkItem2}
+        HeaderItem={SelectHeaderItem}
+        columns={columns}
+      />
+      <DebugListStore store={listStore} />
+    </Story>
   ))
   .add('List with SelectLinkItem3', () => (
     <Story>
-        <List
-          listStore={listStore}
-          Item={SelectLinkItem3}
-          HeaderItem={SelectHeaderItem}
-          columns={columns}
-        />
-        <DebugListStore store={listStore} />
-      </Story>
+      <List
+        listStore={listStore}
+        Item={SelectLinkItem3}
+        HeaderItem={SelectHeaderItem}
+        columns={columns}
+      />
+      <DebugListStore store={listStore} />
+    </Story>
   ));

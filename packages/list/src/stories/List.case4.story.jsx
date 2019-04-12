@@ -1,18 +1,12 @@
 import React from 'react';
 import { observer } from 'mobx-react';
 import Story from '@lskjs/dev/Story';
-// import Input from '@lskjs/ui/Input';
 import Button from '@lskjs/button';
-import { createIndex } from '@lskjs/ui/GridTable/index';
-import {
-  ItemRow, ItemCol, HeaderRow, HeaderCol,
-} from '../Table';
+import { ItemRow, ItemCol, HeaderRow, HeaderCol, createIndex } from '../Table';
 import List from '../List';
 import FilterForm from './FilterForm';
 import listStore from './listStore';
 import DebugListStore from './DebugListStore';
-
-const Input = 'input';
 
 const HeaderItem = ({ toggleSort, sort = {}, index = createIndex() }) => (
   <HeaderRow>
@@ -43,12 +37,17 @@ const EditItem = observer(({ item = {}, index = createIndex() }) => (
       {item.title}
     </ItemCol>
     <ItemCol index={index()}>
-      <Input
+      <input onChange={(title) => {
+        // eslint-disable-next-line no-param-reassign
+        item.title = title;
+      }}
+      />
+      {/* <Input
         value={item.title}
         onChange={(title) => {
           item.title = title;
         }}
-      />
+      /> */}
     </ItemCol>
     <ItemCol index={index()}>
       <Button

@@ -1,2 +1,2 @@
-export { Table, Row, Col, Tr, Td, createIndex } from '../../Table';
-export { HeaderRow, ItemRow, SelectedRow, HeaderCol, ItemCol } from './ColsAndRows';
+export { Table, Row, Col, Tr, Td, createIndex } from '@lskjs/ui/Table';
+export { HeaderRow, ItemRow, HeaderCol, ItemCol } from './ColsAndRows';

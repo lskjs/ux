@@ -64,7 +64,7 @@ const ListItem = observer(({ item = {} }) => (
 const Body = BsRow;
 
 
-const SortDirection = ({ value }) => (value === 1 ? '⬆' : value === -1 ? '⬇' : '⚬');
+const SortDirection = ({ value }) => (value === 1 ? '⬆' : value === -1 ? '⬇' : '⚬');  //eslint-disable-line
 
 const HeaderItem = ({ toggleSort, sort = {} }) => (
   <Row className={styleHeight}>
@@ -89,14 +89,14 @@ const HeaderItem = ({ toggleSort, sort = {} }) => (
 
 export default ({ storiesOf }) => storiesOf('List/cases', module)
   .add('case2: custom header with sortdirection', () => (
-      <Story devtools style={{ padding: 24 }}>
-        <List
-          listStore={listStore}
-          HeaderItem={HeaderItem}
-          Body={Body}
-          ListItem={ListItem}
-          FilterForm={FilterForm}
-          columns={columns}
-        />
-      </Story>
+    <Story devtools style={{ padding: 24 }}>
+      <List
+        listStore={listStore}
+        HeaderItem={HeaderItem}
+        Body={Body}
+        ListItem={ListItem}
+        FilterForm={FilterForm}
+        columns={columns}
+      />
+    </Story>
   ));
