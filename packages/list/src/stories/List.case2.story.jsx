@@ -5,16 +5,11 @@ import sample from 'lodash/sample';
 import { observer } from 'mobx-react';
 import { css } from 'emotion';
 import Promise from 'bluebird';
-
-import { Row as BsRow, Col as BsCol } from '../../Grid';
-// import { Row as BsRow, Col as BsCol } from 'react-bootstrap';
-
+import { Row as BsRow, Col as BsCol } from '@lskjs/ui/Grid';
 import Story from '@lskjs/dev/Story';
-import { Row, Col } from '../../Table';
-
+import { Row, Col } from '@lskjs/ui/Table';
 import ListStore from '@lskjs/mobx/stores/ListStore';
-import { FormExample2 as FilterForm } from '../../Form2/stories/examples/FormExample2.story';
-
+import FilterForm from './FilterForm';
 import List from '../List';
 
 Promise.config({ cancellation: true });
@@ -92,9 +87,8 @@ const HeaderItem = ({ toggleSort, sort = {} }) => (
 );
 
 
-export default ({ storiesOf }) => {
-  return storiesOf('List/cases', module)
-    .add('case2: custom header with sortdirection', () => (
+export default ({ storiesOf }) => storiesOf('List/cases', module)
+  .add('case2: custom header with sortdirection', () => (
       <Story devtools style={{ padding: 24 }}>
         <List
           listStore={listStore}
@@ -105,5 +99,4 @@ export default ({ storiesOf }) => {
           columns={columns}
         />
       </Story>
-    ));
-};
+  ));

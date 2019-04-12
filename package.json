@@ -34,7 +34,7 @@
     "test:cli": "npm --prefix lib/cli run test",
     "error": "echo 123 && exit 1",
     "dev2": "concurrently --kill-others \"npm dev:ts\" \"npm dev:js\"",
-    "custom": "lerna exec --scope @lskjs/ui -- \\$LERNA_ROOT_PATH/scripts/package-watch.sh",
+    "custom": "lerna exec --scope @lskjs/button -- npm run lint:js",
     "custom2": "lerna exec --scope @lskjs/general -- \\$LERNA_ROOT_PATH/scripts/package-watch.sh"
   },
   "files": [

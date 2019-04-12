@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
 import { toJS } from 'mobx';
 import T from '@lskjs/ui/T';
-import { contextToProps } from './List.context';
 import Modal, {
   Title,
   Content,
-} from '../Modal2';
+} from '@lskjs/modal';
+import { contextToProps } from './List.context';
 import { modalStyle } from './List.styles';
 
 @contextToProps('FilterForm', 'filterProps')

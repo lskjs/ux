@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '@lskjs/button';
+import Button from '../Button';
 import StatefulButton from './StatefulButton';
 import Story from '@lskjs/dev/Story';
 

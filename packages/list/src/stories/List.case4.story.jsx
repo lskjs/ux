@@ -1,17 +1,18 @@
 import React from 'react';
 import { observer } from 'mobx-react';
 import Story from '@lskjs/dev/Story';
-import Input from '@lskjs/ui/Input';
+// import Input from '@lskjs/ui/Input';
 import Button from '@lskjs/button';
-import { FormExample2 as FilterForm } from '@lskjs/form/stories/examples/FormExample2.story';
 import { createIndex } from '@lskjs/ui/GridTable/index';
 import {
   ItemRow, ItemCol, HeaderRow, HeaderCol,
 } from '../Table';
-
 import List from '../List';
+import FilterForm from './FilterForm';
 import listStore from './listStore';
 import DebugListStore from './DebugListStore';
+
+const Input = 'input';
 
 const HeaderItem = ({ toggleSort, sort = {}, index = createIndex() }) => (
   <HeaderRow>

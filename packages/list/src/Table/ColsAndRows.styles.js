@@ -1,6 +1,4 @@
 import styled, { css } from 'react-emotion';
-import createDynamicTag from '../../utils/createDynamicTag';
-import removeProps from '../../utils/removeProps';
 
 // const tag = removeProps(createDynamicTag('div'), []);
 const tag = 'div';
@@ -53,4 +51,3 @@ export const ItemColWrapper = styled(tag)`
   ${p => (p.clickable && cursorPointer)}
   ${p => (p.full && fullStyle)}
 `;
-

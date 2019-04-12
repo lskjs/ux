@@ -7,7 +7,7 @@ import { Badge } from 'antd';
 import TuneIcon from 'react-icons2/mdi/tune';
 import isEmpty from '@lskjs/utils/isEmpty';
 import T from '@lskjs/ui/T';
-import withResponsive from '../Button/withResponsive';
+import withResponsive from '@lskjs/button/withResponsive';
 import { contextToProps } from './List.context';
 
 @contextToProps('List', 'isFilterModal')

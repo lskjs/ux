@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
 import PropTypes from 'prop-types';
-import filterProps from '../utils/filterProps';
-
-import Sticky from '../Sticky';
+import filterProps from '@lskjs/utils/filterProps';
+import Sticky from '@lskjs/ui/Sticky';
 
 @inject('listStore')
 @observer

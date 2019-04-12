@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Provider as MobxProvider } from 'mobx-react';
 import mapValues from 'lodash/mapValues';
-import Search from '../UI/molecules/Search';
 import ListStore from '@lskjs/mobx/stores/ListStore';
 import Button from '@lskjs/button';
-import { Table } from '../Table';
-import DEV from '../DEV';
+import { Table } from '@lskjs/ui/Table';
+import DEV from '@lskjs/dev/DEV';
+import Search from '../UI/molecules/Search';
 import {
   Wrapper,
   BodyWrapper,
@@ -203,7 +203,7 @@ class List extends Component {
           filterProps,
         }}
       >
-        <MobxProvider listStore={listStore} selectStore={selectStore} >
+        <MobxProvider listStore={listStore} selectStore={selectStore}>
           <React.Fragment>
             {children}
           </React.Fragment>
@@ -214,4 +214,3 @@ class List extends Component {
 }
 
 export default List;
-

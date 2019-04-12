@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
-import DEV from '../DEV';
+import DEV from '@lskjs/dev/DEV';
 import { contextToProps } from './List.context';
 
 @contextToProps('List', 'HeaderItem')

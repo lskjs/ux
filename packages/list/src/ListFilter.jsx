@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { toJS } from 'mobx';
 import { inject, observer } from 'mobx-react';
 import If from 'react-if';
-import Collapse from '../Collapse';
+import isTouchDevice from '@lskjs/utils/isTouchDevice';
+import DEV from '@lskjs/dev/DEV';
+import Collapse from '@lskjs/ui/Collapse';
 import { contextToProps } from './List.context';
 import ListFilterModal from './ListFilterModal';
-import DEV from '../DEV';
-import isTouchDevice from '@lskjs/utils/isTouchDevice';
 
 @contextToProps('List', 'FilterForm', 'debug', 'filterProps')
 @inject('listStore')

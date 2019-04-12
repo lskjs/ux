@@ -1,5 +1,5 @@
 import styled, { css } from 'react-emotion';
-import createDynamicTag from '../utils/createDynamicTag';
+import createDynamicTag from '@lskjs/utils/createDynamicTag';
 // import TabBlock from '~/Uapp/components.v2/atoms/TabBlock';
 
 export const Title = styled('div')`
