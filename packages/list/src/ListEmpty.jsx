@@ -3,8 +3,8 @@ import { inject, observer } from 'mobx-react';
 import If from 'react-if';
 import Button from '@lskjs/button';
 import T from '@lskjs/ui/T';
-import Error404 from '@lskjs/ui/Error/icons/error404';
-import EmptyContainer from '@lskjs/ui/Error/EmptyContainer';
+import Error404 from '@lskjs/ui/SlideContent/icons/error404';
+import SlideContent from '@lskjs/ui/SlideContent';
 
 
 @inject('listStore', 't')
@@ -42,7 +42,7 @@ class ListEmpty extends Component {
         {/* Loading! */}
         {/* {listStore.hasFilter ? 'hasFilter' : '!hasFilter'} */}
         <If condition={type === 1}>
-          <EmptyContainer
+          <SlideContent
             title={<T name="lskList.emptyDataTitle" />}
             icon={
               <Error404 height="200" width="100%" />
@@ -59,7 +59,7 @@ class ListEmpty extends Component {
           />
         </If>
         <If condition={type === 2}>
-          <EmptyContainer
+          <SlideContent
             title={<T name="lskList.emptyDataTitle" />}
             icon={
               <Error404 height="200" width="100%" />
@@ -72,7 +72,7 @@ class ListEmpty extends Component {
           Возможно ошибка и нужно перезагрузить, а возможно и нет */}
         </If>
         <If condition={type === 3}>
-          <EmptyContainer
+          <SlideContent
             title={<T name="lskList.emptyDataTitle" />}
             icon={
               <Error404 height="200" width="100%" />
@@ -90,7 +90,7 @@ class ListEmpty extends Component {
           {/* пусто после фетча, фильтры включены */}
         </If>
         <If condition={type === 4}>
-          <EmptyContainer
+          <SlideContent
             title={<T name="lskList.emptyDataTitle" />}
             icon={
               <Error404 height="200" width="100%" />
