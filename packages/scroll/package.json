@@ -25,6 +25,22 @@
     "animated-scroll-to": "1.2.2"
   },
   "devDependencies": {
-    "@lskjs/dev": "^0.31.11"
+    "@lskjs/dev": "^0.31.11",
+    "@lskjs/theme": "^0.31.11",
+    "emotion-theming": "9.1.2",
+    "lodash": "4.17.11",
+    "mobx": "5.9.4",
+    "mobx-react": "5.4.3",
+    "mobx-react-devtools": "6.1.1",
+    "react": "^16.8.6"
+  },
+  "peerDependencies": {
+    "@lskjs/theme": "*",
+    "emotion-theming": "*",
+    "lodash": "*",
+    "mobx": "*",
+    "mobx-react": "*",
+    "mobx-react-devtools": "*",
+    "react": "*"
   }
 }
