@@ -31,14 +31,13 @@
     "validate.js": "0.12.0"
   },
   "devDependencies": {
-    "@babel/plugin-proposal-class-properties": "7.4.0",
     "@lskjs/autobind": "0.32.2",
-    "@lskjs/button": "^0.31.14",
-    "@lskjs/dev": "^0.31.14",
-    "@lskjs/modal": "^0.31.14",
+    "@lskjs/button": "^0.31.1",
+    "@lskjs/dev": "^0.31.1",
+    "@lskjs/modal": "^0.31.1",
     "@lskjs/scroll": "0.31.13",
-    "@lskjs/theme": "^0.31.14",
-    "@lskjs/ui": "^0.31.14",
+    "@lskjs/theme": "^0.31.1",
+    "@lskjs/ui": "^0.31.1",
     "@lskjs/utils": "0.32.2",
     "antd": "3.16.2",
     "bluebird": "3.5.4",
@@ -90,7 +89,6 @@
     "react-dom": "*",
     "react-emotion": "*",
     "react-icons2": "*",
-    "react-if": "*",
-    "@babel/plugin-proposal-class-properties": "*"
+    "react-if": "*"
   }
 }
