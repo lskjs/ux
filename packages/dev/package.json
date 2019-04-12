@@ -21,6 +21,7 @@
     "release": "../../scripts/package-release.sh",
     "storybook": "../../scripts/package-storybook.sh"
   },
+  "dependencies": {},
   "devDependencies": {
     "@lskjs/theme": "^0.31.11",
     "emotion-theming": "9.1.2",
@@ -31,12 +32,6 @@
     "react": "^16.8.6"
   },
   "peerDependencies": {
-    "@lskjs/theme": "*",
-    "emotion-theming": "*",
-    "lodash": "*",
-    "mobx": "*",
-    "mobx-react": "*",
-    "mobx-react-devtools": "*",
-    "react": "*"
+    "@lskjs/theme": "*"
   }
 }

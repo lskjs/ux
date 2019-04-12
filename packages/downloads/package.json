@@ -30,7 +30,7 @@
     "mobx-react-devtools": "6.1.1",
     "xlsx-populate": "1.19.1"
   },
-  "devDependencies": {
+  "dependencies": {
     "@lskjs/dev": "^0.31.11",
     "xlsx-populate": "1.19.1"
   }
