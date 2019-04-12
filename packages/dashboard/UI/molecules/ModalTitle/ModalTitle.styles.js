@@ -1,5 +1,5 @@
 import styled, { css } from 'react-emotion';
-import removeProps from '../../../utils/removeProps';
+import removeProps from '@lskjs/utils/removeProps';
 
 export const Title = styled(removeProps('div', ['align']))`
   padding: 11px 44px 11px 16px;

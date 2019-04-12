@@ -5,7 +5,7 @@ import CreditCard from 'react-icons2/mdi/credit-card';
 import autobind from '@lskjs/autobind';
 import InputGroup from '../InputGroup';
 import Input from '../../../Input';
-import Button from '../../../Button';
+import Button from '@lskjs/button';
 import StatefulButton from '../../../StatefulButton';
 import Modal, { Title, Content, Footer } from '../Modal';
 

@@ -10,7 +10,7 @@ import Story from '@lskjs/dev/Story';
 import socialColors from '@lskjs/utils/socialColors';
 import Button from './Button';
 import ButtonGroup from './ButtonGroup';
-// import Link from '../Link';
+// import Link from '@lskjs/ui/Link';
 import withResponsive from './withResponsive';
 
 const ResponsiveButton = withResponsive(Button);

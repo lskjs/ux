@@ -1,5 +1,5 @@
 import avoidNestedFields from './avoidNestedFields';
-import getError from '../../utils/getError';
+import getError from '@lskjs/utils/getError';
 import DEBUG from './_debug';
 
 

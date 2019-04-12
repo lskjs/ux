@@ -9,7 +9,7 @@ import Tags from '../../molecules/Tags';
 import TagsWrapper from '../../atoms/TagsWrapper';
 import Add from '../../atoms/IconCircleButton';
 import TreePicker from '../TreePicker';
-import Button from '../../../Button';
+import Button from '@lskjs/button';
 
 function getFieldsKeys(fields = []) {
   const keys = {};

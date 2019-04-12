@@ -12,7 +12,7 @@ import Tag from '../Tag';
 import TagsWrapper from '../TagsWrapper';
 import Add from '../../atoms/IconCircleButton';
 import TreePicker from '../../organisms/TreePicker';
-import Button from '../../../Button';
+import Button from '@lskjs/button';
 
 function getFieldsKeys(fields = []) {
   const keys = {};

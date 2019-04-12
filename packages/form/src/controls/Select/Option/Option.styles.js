@@ -1,5 +1,5 @@
 import styled, { css } from 'react-emotion';
-import { removeProps } from '../../../../utils';
+import removeProps from '@lskjs/utils/removeProps';
 
 export const OptionItem = styled('button')`
   display: flex;

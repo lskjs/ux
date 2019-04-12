@@ -1,7 +1,7 @@
 import React from 'react';
-import Story from '../../../Story';
-import DEV from '../../../DEV';
-import Performance from '../../../DEV/Performance';
+import Story from '@lskjs/dev/Story';
+import DEV from '@lskjs/dev/DEV';
+import Performance from '@lskjs/dev/Performance';
 import AllControlsForm from './AllControlsForm';
 
 export default ({ storiesOf }) =>

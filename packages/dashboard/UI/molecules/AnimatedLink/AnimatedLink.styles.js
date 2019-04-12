@@ -1,7 +1,7 @@
 import styled, { css } from 'react-emotion';
 import Icon from 'antd/lib/icon';
-import createDynamicTag from '../../../utils/createDynamicTag';
-import removeProps from '../../../utils/removeProps';
+import createDynamicTag from '@lskjs/utils/createDynamicTag';
+import removeProps from '@lskjs/utils/removeProps';
 
 
 const dynamicTag = createDynamicTag('a');
@@ -31,7 +31,7 @@ export const ALink = styled(filteredTag)`
     text-decoration: none;
     color: ${paintColors};
   }
-  
+
   &:hover {
     &:after {
       width: 100%;

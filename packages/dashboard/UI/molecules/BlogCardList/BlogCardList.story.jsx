@@ -1,9 +1,7 @@
 import React from 'react';
 import range from 'lodash/range';
 import BlogCardList from './BlogCardList';
-import ThemeInjector from '../../../ThemeInjector';
-
-import '../../../styles/lib/antd.g.css';
+import Story from '@lskjs/dev/Story';
 
 const articles = [
   {
@@ -62,7 +60,7 @@ export default ({ storiesOf }) => (
   storiesOf('ui/BlogCardList', module)
     .add('BlogCardList', () => (
       <div>
-        {range(5).map(i => <div style={{ padding: 60 }}><ThemeInjector><BlogCardList {...articles[i]} /></ThemeInjector></div>)}
+        {range(5).map(i => <div style={{ padding: 60 }}><Story><BlogCardList {...articles[i]} /></Story></div>)}
       </div>
     ))
 );

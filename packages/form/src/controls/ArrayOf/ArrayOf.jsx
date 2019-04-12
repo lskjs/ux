@@ -7,7 +7,7 @@ import Tooltip from 'antd/lib/tooltip';
 import CloseIcon from 'react-icons2/mdi/close';
 import If from 'react-if';
 import DebugJson from '../DebugJson';
-import IconCircleButton from '../../../UI/atoms/IconCircleButton';
+import IconCircleButton from '@lskjs/button/IconCircleButton';
 import Horizontal from './Horizontal';
 
 
@@ -42,7 +42,7 @@ class ArrayOf extends Component {
   //   });
   // }
 
-  // @autobind 
+  // @autobind
   // onBlurHandler(i) {
   //   if (this.state.value.length > 1) {
   //     if (this.state.value[i] === '') {

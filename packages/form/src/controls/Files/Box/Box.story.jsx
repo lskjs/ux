@@ -1,10 +1,9 @@
 import React from 'react';
-import Story from '../../../../Story';
+import Story from '@lskjs/dev/Story';
 import Box from './Box';
-import Link from '../../../../Link';
-import AnimatedLink from '../../../../UI/molecules/AnimatedLink';
-import '../../../../styles/lib/antd.g.css';
-import UserBoxFooter from '../../../../UI/molecules/UserBoxFooter';
+import Link from '@lskjs/ui/Link';
+import AnimatedLink from '@lskjs/ui/AnimatedLink';
+import UserBoxFooter from '@lskjs/ui/UserBoxFooter';
 import BoxDivider from './BoxDivider';
 
 export default ({ storiesOf }) => (

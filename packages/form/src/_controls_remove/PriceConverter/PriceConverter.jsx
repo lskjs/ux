@@ -1,6 +1,5 @@
 import React from 'react';
-import get from 'lodash/get';
-import PriceConverterBase from '../../../UI/molecules/PriceConverter';
+import PriceConverterBase from '../../components/PriceConverter';
 
 const PriceConverter = ({
   field,

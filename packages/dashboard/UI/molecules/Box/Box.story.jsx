@@ -1,7 +1,7 @@
 import React from 'react';
-import Story from '../../../Story';
+import Story from '@lskjs/dev/Story';
 import Box from './Box';
-import Link from '../../../Link';
+import Link from '@lskjs/ui/Link';
 import AnimatedLink from '../AnimatedLink';
 import '../../../styles/lib/antd.g.css';
 import UserBoxFooter from '../UserBoxFooter';

@@ -4,7 +4,7 @@ import Icon from 'antd/lib/icon';
 import Input from 'antd/lib/input';
 import Button from 'antd/lib/button';
 import Checkbox from 'antd/lib/checkbox';
-import T from '../../../T';
+import T from '@lskjs/ui/T';
 import {
   FormContainer,
   WelcomeHeader,

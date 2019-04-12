@@ -1,6 +1,6 @@
 import React from 'react';
 import get from 'lodash/get';
-import Feedback from '../../../Feedback';
+import Feedback from '@lskjs/ui/Feedback';
 
 const Rating = ({
   field,

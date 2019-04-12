@@ -1,15 +1,16 @@
 import React from 'react';
 import { Form, Field } from 'formik';
-import Story from '../../../Story';
+import Story from '@lskjs/dev/Story';
 import createForm from '../../createForm';
 import Date from './Date';
 import FormDebug from '../../FormDebug';
 
-const DateFormView = props =>  (
+const DateFormView = props => (
   <Form>
     <div style={{ position: 'relative' }}>
       <Field {...props.control('date')} />
       <Field {...props.control('date2')} />
+      <Field {...props.control('date3')} />
       <FormDebug {...props} />
     </div>
   </Form>
@@ -28,6 +29,11 @@ const DateForm = createForm({
       title: 'Date',
       component: Date,
       futureOnly: true,
+    },
+    date3: {
+      title: 'Date',
+      component: Date,
+      showTime: true,
     },
   },
 });

@@ -1,7 +1,7 @@
 import React from 'react';
-import Button from '../../../Button';
+import Button from '@lskjs/button';
 import CTAInline from './CTAInline';
-import Story from '../../../Story';
+import Story from '@lskjs/dev/Story';
 
 export default ({ storiesOf }) => (
   storiesOf('ui/CTAInline', module)

@@ -2,8 +2,8 @@ import React from 'react';
 import If from 'react-if';
 import File from 'react-icons2/mdi/file-image';
 import Remove from 'react-icons2/mdi/close-circle-outline';
-import T from '../../../T';
-import Avatar from '../../../Avatar';
+import T from '@lskjs/ui/T';
+import Avatar from '@lskjs/ui/Avatar';
 
 import {
   Drop,
@@ -30,7 +30,7 @@ const DefaultBody = ({
   type = 'image',
   avatar,
 }) => {
-  console.log(value, type);
+  // console.log(value, type);
   return (
     <React.Fragment>
       <If condition={dragged}>

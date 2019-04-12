@@ -1,6 +1,5 @@
 import React from 'react';
-import get from 'lodash/get';
-import PriceInputBase from '../../../UI/molecules/PriceInput';
+import PriceInputBase from '../../components/PriceInput';
 
 const PriceInput = ({
   field,

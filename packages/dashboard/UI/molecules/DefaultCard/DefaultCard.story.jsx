@@ -1,5 +1,5 @@
 import React from 'react';
-import Story from '../../../Story';
+import Story from '@lskjs/dev/Story';
 import DefaultCard from './DefaultCard';
 
 module.exports = ({ storiesOf }) =>

@@ -2,9 +2,9 @@ import React from 'react';
 import random from 'lodash/random';
 
 import Offer from './Offer';
-import Link from '../../../Link';
+import Link from '@lskjs/ui/Link';
 import MiniUser from '../MiniUser';
-import Story from '../../../Story';
+import Story from '@lskjs/dev/Story';
 import '../../../styles/lib/antd.g.css';
 
 export default ({ storiesOf }) => (

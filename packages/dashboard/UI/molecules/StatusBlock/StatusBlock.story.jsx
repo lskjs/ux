@@ -1,6 +1,6 @@
 import React from 'react';
 import StatusBlock from './StatusBlock';
-import Story from '../../../Story';
+import Story from '@lskjs/dev/Story';
 import '../../../styles/lib/antd.g.css';
 
 

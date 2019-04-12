@@ -1,11 +1,11 @@
 import React from 'react';
 import { Form, Field } from 'formik';
-import Story from '../../../Story';
+import Story from '@lskjs/dev/Story';
 import createForm from '../../createForm';
 import Checkbox from './Checkbox';
 import FormDebug from '../../FormDebug';
 
-import T from '../../../T';
+import T from '@lskjs/ui/T';
 import Account from 'react-icons2/mdi/account-box-outline';
 import Desktop from 'react-icons2/mdi/desktop-mac';
 import Camera from 'react-icons2/mdi/camcorder';

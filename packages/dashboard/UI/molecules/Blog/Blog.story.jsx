@@ -1,6 +1,6 @@
 import React from 'react';
 import Blog from './Blog';
-import ThemeInjector from '../../../ThemeInjector';
+import Story from '@lskjs/dev/Story';
 
 const articles = [
   {
@@ -17,9 +17,9 @@ export default ({ storiesOf }) => (
   storiesOf('ui/Blog', module)
     .add('Default', () => (
       <div style={{ padding: 60 }}>
-        <ThemeInjector>
+        <Story>
           <Blog {...articles[0]} />
-        </ThemeInjector>
+        </Story>
       </div>
     ))
 );

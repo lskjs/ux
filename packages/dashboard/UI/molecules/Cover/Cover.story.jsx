@@ -1,7 +1,7 @@
 import React from 'react';
 import Col from 'reactstrap/lib/Col';
 import Cover from './Cover';
-import Story from '../../../Story';
+import Story from '@lskjs/dev/Story';
 
 
 export default ({ storiesOf }) => (

@@ -1,19 +1,16 @@
 import React from 'react';
 import { Form, Field, FastField } from 'formik';
-import Story from '../../../Story';
+import Story from '@lskjs/dev/Story';
 import createForm from '../../createForm';
 import GroupOf from './GroupOf';
 import Radio from '../Radio';
 import Checkbox from '../Checkbox';
 import Checkblock from '../CheckBlock';
 import FormDebug from '../../FormDebug';
-import T from '../../../T';
+import T from '@lskjs/ui/T';
 import Account from 'react-icons2/mdi/account-box-outline';
 import Desktop from 'react-icons2/mdi/desktop-mac';
 import Camera from 'react-icons2/mdi/camcorder';
-
-// import Switcher from '../../../Switcher/Switcher';
-// import getOptions from '../../../getOptions';
 
 const RadioFormView = props => (
   // const colorsOptions = getOptions(colorsControl);

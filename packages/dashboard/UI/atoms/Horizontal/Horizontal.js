@@ -1,6 +1,6 @@
 import styled from 'react-emotion';
-import createDynamicTag from '../../../utils/createDynamicTag';
-import removeProps from '../../../utils/removeProps';
+import createDynamicTag from '@lskjs/utils/createDynamicTag';
+import removeProps from '@lskjs/utils/removeProps';
 
 const dynamicTag = createDynamicTag('div');
 const filteredTag = removeProps(dynamicTag, ['verticalAlign', 'align']);

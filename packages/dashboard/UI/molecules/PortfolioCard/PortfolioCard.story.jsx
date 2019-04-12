@@ -1,6 +1,6 @@
 import React from 'react';
 import PortfolioCard from './PortfolioCard';
-import Story from '../../../Story';
+import Story from '@lskjs/dev/Story';
 
 const articles = [
   {

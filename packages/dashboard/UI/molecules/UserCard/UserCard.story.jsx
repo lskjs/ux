@@ -1,9 +1,9 @@
 import React from 'react';
 import random from 'lodash/random';
-import Link from '../../../Link';
+import Link from '@lskjs/ui/Link';
 
 import UserCard from './UserCard';
-import Story from '../../../Story';
+import Story from '@lskjs/dev/Story';
 import '../../../styles/lib/antd.g.css';
 
 const user = () => ({

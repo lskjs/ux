@@ -1,25 +1,6 @@
 import React from 'react';
-import styled from 'react-emotion';
-import PhoneInput from 'react-phone-input-2';
-
-const Container = styled.div`
-  .react-tel-input .flag-dropdown:hover .selected-flag{ 
-    background: none; 
-  }
-  .react-tel-input .flag-dropdown.open-dropdown .selected-flag{
-    background: none; 
-  }
-  .react-tel-input .country-list .country {
-    padding: 0px 10px;
-    font-weight: normal;
-  }
-  .country-name {
-    font-weight: normal;
-  }
-  .react-tel-input .country-list {
-    margin: 0px;
-  }
-`;
+import PhoneInput from './react-phone-input-2';
+import Container from './PhoneInput.style';
 
 export default ({ field, form, ...props }) => (
   <Container>

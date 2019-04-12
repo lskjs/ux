@@ -1,6 +1,6 @@
 import React from 'react';
 import UserItem from './UserItem';
-import Story from '../../../Story';
+import Story from '@lskjs/dev/Story';
 
 
 export default ({ storiesOf }) => (

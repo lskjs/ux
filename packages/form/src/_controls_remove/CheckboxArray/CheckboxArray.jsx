@@ -1,5 +1,5 @@
 import React from 'react';
-import CheckboxesListBase from '../../../UI/molecules/CheckboxesList';
+import CheckboxesListBase from '../../components/CheckboxesList';
 
 const CheckboxesList = ({
   field,

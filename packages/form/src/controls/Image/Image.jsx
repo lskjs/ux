@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Files from '../Files/Files';
+import Files from '../Files/FilesBase';
 
 import DefaultBody from './DefaultBody';
 import DefaultFooter from './DefaultFooter';

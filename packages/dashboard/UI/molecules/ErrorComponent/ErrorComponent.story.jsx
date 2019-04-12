@@ -3,8 +3,8 @@ import Error404 from './svg/error404';
 import Error403 from './svg/error403';
 import Error500 from './svg/error500';
 import ErrorComponent from './ErrorComponent';
-import Story from '../../../Story';
-import Button from '../../../Button';
+import Story from '@lskjs/dev/Story';
+import Button from '@lskjs/button';
 
 const articles = [
   {

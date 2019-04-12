@@ -1,6 +1,6 @@
 import React from 'react';
 import get from 'lodash/get';
-import SwitcherBase from '../../../Switcher';
+import BaseSwitcher from '../../components/BaseSwitcher';
 
 const Switcher = ({
   field,
@@ -8,7 +8,7 @@ const Switcher = ({
   ...props
 }) => {
   return (
-    <SwitcherBase
+    <BaseSwitcher
       {...field}
       {...props}
       onChange={(value) => {

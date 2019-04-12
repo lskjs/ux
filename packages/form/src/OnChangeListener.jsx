@@ -1,7 +1,7 @@
 import { Component } from 'react';
 // import PropTypes from 'prop-types';
 import isEqual from 'lodash/isEqual';
-// import DEV from '../DEV';
+// import DEV from '@lskjs/dev/DEV';
 
 export default class OnChangeListener extends Component {
   // static contextTypes = {

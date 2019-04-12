@@ -1,6 +1,6 @@
 import React from 'react';
 import EventFooter from './EventFooter';
-import Story from '../../../Story';
+import Story from '@lskjs/dev/Story';
 
 export default ({ storiesOf }) => (
   storiesOf('ui/EventFooter', module)

@@ -1,5 +1,5 @@
 import styled, { css } from 'react-emotion';
-import removeProps from '../../../utils/removeProps';
+import removeProps from '@lskjs/utils/removeProps';
 /*
 
 .search-box {
@@ -85,11 +85,11 @@ export const Inner = styled('div')`
 const filteredIconWrapper = removeProps('div', ['right']);
 export const IconWrapper = styled(filteredIconWrapper)`
   padding: 8px 0 4px 10px;
-  
+
   .anticon {
     padding: 0;
   }
-  
+
   ${p => (p.right && css`
     position: relative;
     top: 2px;
@@ -103,7 +103,7 @@ export const Bar = styled('span')`
   bottom: 0;
   left: 5%;
   font-family: ${p => p.theme.fontFamily};
-  
+
   &:before,
   &:after {
     position: absolute;
@@ -135,7 +135,7 @@ export const Input = styled(filteredInput)`
   &:focus {
     outline: none;
   }
-  
+
   &:focus ~ ${Bar}:before,
   &:focus ~ ${Bar}:after {
     width: 50%;
@@ -148,7 +148,7 @@ export const searchStyle = css`
   height: 60px;
   line-height: 24px;
   padding: 10px 0;
-  
+
   .anticon {
     line-height: normal !important;
   }

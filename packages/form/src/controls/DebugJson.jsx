@@ -1,6 +1,6 @@
 import React from 'react';
 // import get from 'lodash/get';
-import DEV from '../../DEV';
+import DEV from '@lskjs/dev/DEV';
 
 export default props => (
   <DEV json={props} />

@@ -1,8 +1,8 @@
 import styled from 'react-emotion';
-import { Row as BsRow, Col as BsCol } from '../../../Grid';
+import { Row as BsRow, Col as BsCol } from '@lskjs/ui/Grid';
 import Form from 'antd/lib/form';
 import Button from 'antd/lib/button';
-import createDynamicTag from '../../../utils/createDynamicTag';
+import createDynamicTag from '@lskjs/utils/createDynamicTag';
 
 const dynamicTag = createDynamicTag('a');
 

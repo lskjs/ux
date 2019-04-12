@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import StatefulButton from '../../../StatefulButton';
-import Button from '../../../Button';
-import T from '../../../T';
+import Button from '@lskjs/button';
+import T from '@lskjs/ui/T';
 import Modal, { Title, Footer, Content } from '../Modal';
 
 class FilterWrapper extends PureComponent {

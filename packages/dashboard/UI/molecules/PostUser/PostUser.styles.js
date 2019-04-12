@@ -2,8 +2,8 @@ import styled from 'react-emotion';
 import AntAvatar from 'antd/lib/avatar';
 import AntIcon from 'antd/lib/icon';
 
-import removeProps from '../../../utils/removeProps';
-import createDynamicTag from '../../../utils/createDynamicTag';
+import removeProps from '@lskjs/utils/removeProps';
+import createDynamicTag from '@lskjs/utils/createDynamicTag';
 
 export const Wrapper = styled('div')`
   display: flex;

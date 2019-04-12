@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import If from 'react-if';
-import T from '../T';
+import T from '@lskjs/ui/T';
 import LoaderIcon from './LoaderIcon';
 
 const styles = {

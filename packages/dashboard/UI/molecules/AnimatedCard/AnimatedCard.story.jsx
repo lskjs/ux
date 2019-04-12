@@ -2,7 +2,7 @@ import React from 'react';
 import { Col, Row } from 'reactstrap';
 import QueueAnim from 'rc-queue-anim';
 import AnimatedCard from './AnimatedCard';
-import Story from '../../../Story';
+import Story from '@lskjs/dev/Story';
 
 import '../../../styles/lib/antd.g.css';
 

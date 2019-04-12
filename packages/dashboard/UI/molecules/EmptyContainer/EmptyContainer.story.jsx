@@ -1,6 +1,6 @@
 import React from 'react';
 import Icon from 'antd/lib/icon';
-import Story from '../../../Story';
+import Story from '@lskjs/dev/Story';
 import EmptyContainer from './EmptyContainer';
 
 module.exports = ({ storiesOf }) =>

@@ -1,7 +1,7 @@
 import React from 'react';
 import CTACentered from './CTACentered';
-import Story from '../../../Story';
-import Button from '../../../Button';
+import Story from '@lskjs/dev/Story';
+import Button from '@lskjs/button';
 
 const articles = [
   {

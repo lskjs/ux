@@ -3,7 +3,7 @@ import QueueAnim from 'rc-queue-anim';
 import BlogCard from './BlogCard';
 import { FlexItem, FlexContainer } from './BlogCard.styles';
 import AnimatedLink from '../AnimatedLink';
-import ThemeInjector from '../../../ThemeInjector';
+import Story from '@lskjs/dev/Story';
 import '../../../styles/lib/antd.g.css';
 
 const articles = [
@@ -56,7 +56,7 @@ const articles = [
 export default ({ storiesOf }) => (
   storiesOf('ui/BlogCard', module)
     .add('BlogCard', () => (
-      <ThemeInjector>
+      <Story>
         <BlogCard
           {...articles[0]}
           style={{ width: 280 }}
@@ -70,10 +70,10 @@ export default ({ storiesOf }) => (
             Read More
           </AnimatedLink>
         </BlogCard>
-      </ThemeInjector>
+      </Story>
     ))
     .add('BlogCard2', () => (
-      <ThemeInjector>
+      <Story>
         <FlexContainer>
           {
                 articles.map((article, i) => (
@@ -90,6 +90,6 @@ export default ({ storiesOf }) => (
                 ))
               }
         </FlexContainer>
-      </ThemeInjector>
+      </Story>
     ))
 );

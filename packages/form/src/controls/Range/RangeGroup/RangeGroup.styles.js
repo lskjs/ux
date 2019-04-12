@@ -1,5 +1,5 @@
 import styled from 'react-emotion';
-import { removeProps } from '../../../../utils';
+import removeProps from '@lskjs/utils/removeProps';
 
 export const Graph = styled('div')`
   height: 52px;

@@ -7,12 +7,12 @@ import autobind from '@lskjs/autobind';
 import get from 'lodash/get';
 import Plus from 'react-icons2/mdi/plus-circle';
 import If from 'react-if';
+import Add from '@lskjs/button/IconCircleButton';
+import Button from '@lskjs/button';
 
 import Tag from '../Tag';
 import TagsWrapper from '../TagsWrapper';
-import Add from '../../../../UI/atoms/IconCircleButton';
 import TreePicker from '../TreePicker';
-import Button from '../../../../Button';
 
 function getFieldsKeys(fields = []) {
   const keys = {};
@@ -92,6 +92,17 @@ class TagsPicker extends PureComponent {
   }
 
   @autobind
+  compareVal(currentValue, nextValue) {
+    if (currentValue.title > nextValue.title) {
+      return 1;
+    }
+    if (currentValue.title < nextValue.title) {
+      return -1;
+    }
+    return 0;
+  }
+
+  @autobind
   handleSubmit(value) {
     const { fields } = this.props;
     value = getAvailable(fields, value);
@@ -122,10 +133,13 @@ class TagsPicker extends PureComponent {
   @autobind
   renderModal(trigger) {
     const {
-      flat, title, onChange, fields, createTag,
+      flat, title, onChange, fields, createTag, sortable,
     } = this.props;
     // const { fields } = this.state;
     const value = this.getValue();
+    if (sortable) {
+      fields.sort(this.compareVal);
+    }
 
     return (
       <TreePicker
@@ -147,6 +161,7 @@ class TagsPicker extends PureComponent {
     } = this.props;
     const value = this.getValue();
     const fieldsKeys = getFieldsKeys(fields);
+
     const trigger = value.length > 0
       ? <Add inverse disabled={disabled} />
       : (

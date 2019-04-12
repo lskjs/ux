@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import Close from 'react-icons2/mdi/close';
 
-import Button from '../../../Button';
+import Button from '@lskjs/button';
 import LskModal from '../../../Modal';
 import ModalSubtitle from '../../atoms/ModalSubtitle';
 import ModalDescription from '../../atoms/ModalDescription';

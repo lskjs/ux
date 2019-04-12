@@ -3,7 +3,7 @@ import { css } from 'react-emotion';
 import { observer, inject } from 'mobx-react';
 import If from 'react-if';
 import DEV from '@lskjs/dev/DEV';
-import Performance from '@lskjs/dev/DEV/Performance';
+import Performance from '@lskjs/dev/Performance';
 import T from '@lskjs/ui/T';
 import Button from '@lskjs/button';
 import { contextToProps } from './List.context';

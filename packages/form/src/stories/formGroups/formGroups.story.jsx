@@ -3,8 +3,8 @@ import { Form, Field } from 'formik';
 import AntForm from 'antd/lib/form';
 import Button from 'antd/lib/button';
 
-import Story from '../../../Story';
-import DEV from '../../../DEV';
+import Story from '@lskjs/dev/Story';
+import DEV from '@lskjs/dev/DEV';
 import createForm from '../../createForm';
 import FormGroup from '../../FormGroup';
 import SimpleFormGroup from '../../SimpleFormGroup';

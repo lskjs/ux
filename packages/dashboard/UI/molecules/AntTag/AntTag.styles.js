@@ -1,6 +1,6 @@
 import styled, { css } from 'react-emotion';
 import { Tag } from 'antd/lib';
-import removeProps from '../../../utils/removeProps';
+import removeProps from '@lskjs/utils/removeProps';
 
 export default styled(removeProps(Tag, ['isHref']))`
   pointer-events: none;

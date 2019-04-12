@@ -1,7 +1,7 @@
 import React from 'react';
 import Textarea from 'react-textarea-autosize';
 import get from 'lodash/get';
-import Input from '../../../Input';
+import BaseInput from '../../components/BaseInput';
 
 const TextArea = ({
   field,
@@ -10,7 +10,7 @@ const TextArea = ({
 }) => {
   const hasError = field && field.name && !!get(form, `errors.${field.name}`);
   return (
-    <Input
+    <BaseInput
       minRows={3}
       {...field}
       debounce={0}

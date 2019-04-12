@@ -1,5 +1,5 @@
 import styled, { css } from 'react-emotion';
-import removeProps from '../../../utils/removeProps';
+import removeProps from '@lskjs/utils/removeProps';
 
 const filter = removeProps('div', ['sticky', 'pullRight']);
 export default styled(filter)`
@@ -17,14 +17,14 @@ export default styled(filter)`
   text-align: center;
   padding: 0 4px;
   color: ${p => p.theme.colors.white};
-  
+
   ${p => (p.sticky && css`
     position: absolute;
     top: 4px;
     right: 0;
     box-shadow: 0 0 0 2px #3a3a44;
   `)}
-  
+
   ${p => (p.pullRight && css`
     margin-left: auto;
   `)}

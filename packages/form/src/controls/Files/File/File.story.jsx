@@ -1,7 +1,7 @@
 import React from 'react';
 import File from './File';
-import { Row, Col } from '../../../../Grid';
-import Story from '../../../../Story';
+import { Row, Col } from '@lskjs/ui/Grid';
+import Story from '@lskjs/dev/Story';
 
 const urls = [
   'https://i.imgur.com/7UGNCWK.jpg',

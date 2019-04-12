@@ -1,7 +1,7 @@
 import React from 'react';
 import CTABoxed from './CTABoxed';
-import Button from '../../../Button';
-import Story from '../../../Story';
+import Button from '@lskjs/button';
+import Story from '@lskjs/dev/Story';
 
 export default ({ storiesOf }) => (
   storiesOf('ui/CTABoxed', module)

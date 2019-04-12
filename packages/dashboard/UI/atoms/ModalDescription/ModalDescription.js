@@ -1,5 +1,5 @@
 import styled from 'react-emotion';
-import removeProps from '../../../utils/removeProps';
+import removeProps from '@lskjs/utils/removeProps';
 
 export default styled(removeProps('p', ['align']))`
   padding: 8px 16px 0;

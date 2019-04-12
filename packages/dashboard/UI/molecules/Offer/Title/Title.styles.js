@@ -1,6 +1,6 @@
 import styled from 'react-emotion';
 
-import { createDynamicTag } from '../../../../utils';
+import createDynamicTag from '@lskjs/utils/createDynamicTag';
 
 const dynamicTag = createDynamicTag('h4');
 
@@ -13,7 +13,7 @@ export default styled(dynamicTag)`
   letter-spacing: -0.1px;
   text-align: left;
   color: ${p => p.theme.colors.main};
-  
+
   text-decoration: none;
   white-space: nowrap;
   text-overflow: ellipsis;

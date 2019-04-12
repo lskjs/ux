@@ -1,7 +1,7 @@
 import React from 'react';
 import If from 'react-if';
 import Form from 'antd/lib/form';
-import Notice from '../UI/molecules/Notice';
+import Notice from '@lskjs/ui/Notice';
 import getControlHtmlId from './createForm/getControlHtmlId';
 import FormError from './FormError';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form, Field, FastField } from 'formik';
-import Story from '../../../Story';
+import Story from '@lskjs/dev/Story';
 import createForm from '../../createForm';
 import ArrayOf from './ArrayOf';
 import Input from '../Input/Input';

@@ -1,5 +1,5 @@
 import styled from 'react-emotion';
-import removeProps from '../../../utils/removeProps';
+import removeProps from '@lskjs/utils/removeProps';
 
 const filteredTag = removeProps('div', ['color', 'background']);
 

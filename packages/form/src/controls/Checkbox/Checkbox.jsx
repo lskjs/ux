@@ -4,7 +4,7 @@ import AntCheckbox from 'antd/lib/checkbox';
 import Label from './Checkbox.styles';
 import Bool from './Bool';
 
-const BaseCheckbox = ({ onChange, validationState, ...props }) => (
+export const BaseCheckbox = ({ onChange, validationState, ...props }) => (
   <AntCheckbox
     {...props}
     onChange={({ target: { checked } }) => onChange(checked)}

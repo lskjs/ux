@@ -1,5 +1,5 @@
 import { css } from 'react-emotion';
-import { Row } from '../../../Grid';
+import { Row } from '@lskjs/ui/Grid';
 
 export const containerStyle = css`
   padding: 12px;

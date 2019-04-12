@@ -1,6 +1,6 @@
 // import React from 'react';
 // import { Form, Field } from 'formik';
-// import Story from '../../../Story';
+// import Story from '@lskjs/dev/Story';
 // import createForm from '../../createForm';
 // import EditorComponent from '../../controls/Editor';
 // import FormGroup from '../../FormGroup';

@@ -9,7 +9,7 @@ import CloseIcon from 'react-icons2/mdi/close';
 import Magnify from 'react-icons2/mdi/magnify';
 
 import filterProps from '../../../utils/filterProps';
-import Button from '../../../Button';
+import Button from '@lskjs/button';
 
 import {
   Block,

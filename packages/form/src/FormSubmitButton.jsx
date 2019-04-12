@@ -1,7 +1,7 @@
 import React from 'react';
 import If from 'react-if';
 import Button from '@lskjs/button';
-import T from '../T';
+import T from '@lskjs/ui/T';
 
 export default ({
   componentClass: Component = Button, errors, isSubmitting, status, children, ...props

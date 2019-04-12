@@ -1,6 +1,6 @@
 import React from 'react';
 import TestImonialV2 from './TestImonialV2';
-import Story from '../../../Story';
+import Story from '@lskjs/dev/Story';
 import '../../../styles/lib/antd.g.css';
 
 const articles = [

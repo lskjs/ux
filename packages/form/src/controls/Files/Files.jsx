@@ -21,9 +21,6 @@ const FilesUploader = ({
       {...props}
       multiple={isMulti}
       onSubmit={value => form.setFieldValue(field.name, value)}
-      onError={() => onError && onError(form.errors[field.name])} // this.globalError
-      validationState={form.errors[field.name] ? 'error' : null}
-      // files={field.value}
       onBlur={null}
       footer={Footer}
     >

@@ -25,7 +25,7 @@ import LayoutHeaderUserMenu from '../../molecules/LayoutHeaderUserMenu';
 import LayoutHeader from '../../molecules/LayoutHeader';
 import LayoutSidebar from '../../molecules/LayoutSidebar';
 import ListItem from '../../molecules/ListItem';
-import Story from '../../../Story';
+import Story from '@lskjs/dev/Story';
 import '../../../styles/lib/antd.g.css';
 import '../../../styles/lib/bootstrap.g.css';
 

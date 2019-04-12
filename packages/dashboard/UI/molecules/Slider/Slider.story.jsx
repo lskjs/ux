@@ -1,6 +1,6 @@
 import React from 'react'; //eslint-disable-line
 import Slider from './Slider';
-import Story from '../../../Story';
+import Story from '@lskjs/dev/Story';
 
 const getFont = fontName => (
   <link

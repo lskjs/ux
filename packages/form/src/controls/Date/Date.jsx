@@ -12,9 +12,15 @@ const DatePicker = (data) => {
     ranged,
     t,
     futureOnly,
+    showTime,
     ...props
   } = data;
-  const dateFormat = t && t('format.date') || 'DD.MM.YYYY';
+  let dateFormat;
+  if (!showTime) {
+    dateFormat = t && t('format.date') || 'DD.MM.YYYY';
+  } else {
+    dateFormat = t && t('format.dateTime') || 'DD.MM.YYYY HH:mm';
+  }
   const locale = t && t('locale') || 'ru';
   let value = field.value && moment(new Date(field.value), dateFormat, locale) || null; // eslint-disable-line
   let change = (val) => {
@@ -23,16 +29,8 @@ const DatePicker = (data) => {
 
   if (ranged) {
     value = [
-      (field.value
-        && field.value.length
-        && field.value[0]
-        && moment(new Date(field.value[0]))
-      ) || null,
-      (field.value
-        && field.value.length
-        && field.value[1]
-        && moment(new Date(field.value[1]))
-      ) || null,
+      (field.value && field.value.length && field.value[0] && moment(new Date(field.value[0]))) || null,
+      (field.value && field.value.length && field.value[1] && moment(new Date(field.value[1]))) || null,
     ];
     change = async (range) => {
       form.setFieldValue(field.name, range);
@@ -59,6 +57,7 @@ const DatePicker = (data) => {
     <DatePickerBase
       {...field}
       {...props}
+      showTime={showTime}
       id={(field.name || '').replace(/\./g, '')}
       ranged={ranged}
       validationState={form.errors[field.name] ? 'error' : null}

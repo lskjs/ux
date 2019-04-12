@@ -1,6 +1,6 @@
 import React from 'react';
-import Story from '../../../Story';
-import Link from '../../../Link';
+import Story from '@lskjs/dev/Story';
+import Link from '@lskjs/ui/Link';
 import AntTag from './AntTag';
 
 export default ({ storiesOf }) => (

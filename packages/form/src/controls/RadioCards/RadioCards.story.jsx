@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, Field } from 'formik';
 import Icon from 'react-icons2/mdi/magnify';
-import Story from '../../../Story';
+import Story from '@lskjs/dev/Story';
 import createForm from '../../createForm';
 import RadioCards from './RadioCards';
 import FormDebug from '../../FormDebug';

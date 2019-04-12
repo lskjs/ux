@@ -8,7 +8,7 @@ import IconButton from '../../atoms/IconButton';
 import ButtonGroup from '../../atoms/ButtonGroup';
 import PostUser from '../PostUser';
 import PostCommentCreate from '../PostCommentCreate';
-import Story from '../../../Story';
+import Story from '@lskjs/dev/Story';
 import Post from './Post';
 
 import '../../../styles/lib/antd.g.css';

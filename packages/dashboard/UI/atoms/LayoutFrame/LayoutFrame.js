@@ -2,7 +2,7 @@ import styled, { css } from 'react-emotion';
 import Layout from 'antd/lib/layout';
 import Sider from '../../molecules/LayoutSidenav/LayoutSidenav.styles';
 import LayoutSidebarContainer from '../LayoutSidebarContainer';
-import removeProps from '../../../utils/removeProps';
+import removeProps from '@lskjs/utils/removeProps';
 
 const filteredTag = removeProps(Layout, ['boxed', 'fixed']);
 
@@ -17,7 +17,7 @@ const sideBarFixedStyle = css`
   ${LayoutSidebarContainer},
   ${Sider} {
     height: 100vh;
-  
+
     & + .ant-layout {
       height: 100vh;
     }
@@ -42,11 +42,11 @@ export default styled(filteredTag)`
   transition: max-width .35s ease;
 
   &.ant-layout {
-    align-items: stretch; 
+    align-items: stretch;
     min-height: 100vh;
     ${p => p.boxed && boxedStyle}
   }
-  
+
   ${(p) => {
     if (!p.fixed) return '';
     if (

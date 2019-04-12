@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, Field } from 'formik';
 // import { Button } from 'react-bootstrap';
-import Story from '../../../Story';
+import Story from '@lskjs/dev/Story';
 import createForm from '../../createForm';
 import Textarea from './Textarea';
 import FormDebug from '../../FormDebug';

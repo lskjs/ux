@@ -18,8 +18,8 @@ import Modal2, {
 } from '../../../../Modal2';
 
 import TextButton from './TextButton';
-import T from '../../../../T';
-import Button from '../../../../Button';
+import T from '@lskjs/ui/T';
+import Button from '@lskjs/button';
 import Input from '../../../../Input';
 import TreeInput from '../TreeInput';
 

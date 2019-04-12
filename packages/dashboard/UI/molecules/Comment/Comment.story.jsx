@@ -1,6 +1,6 @@
 import React from 'react';
 import Comment from './Comment';
-import Story from '../../../Story';
+import Story from '@lskjs/dev/Story';
 
 const user = {
   _id: 1,

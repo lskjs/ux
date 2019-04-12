@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, Field, FastField } from 'formik';
 import UsdIcon from 'react-icons2/mdi/currency-usd';
-import Story from '../../../Story';
+import Story from '@lskjs/dev/Story';
 import createForm from '../../createForm';
 import Input from './Input';
 import currency from './formats/currency';

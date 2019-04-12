@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, Field } from 'formik';
 import range from 'lodash/range';
-import Story from '../../../Story';
+import Story from '@lskjs/dev/Story';
 import createForm from '../../createForm';
 import Tags from './Tags';
 import FormDebug from '../../FormDebug';
@@ -14,6 +14,7 @@ const TagsFormView = props => (
     <Field {...props.control('tags3')} />
     <Field {...props.control('tags4')} />
     <Field {...props.control('tags5')} />
+    <Field {...props.control('sortTags')} />
     <FormDebug {...props} />
   </Form>
 );
@@ -26,6 +27,31 @@ const TagsForm = createForm({
       component: Tags,
       triggerTitle: 'Выбрать теги',
       flat: true,
+      options: [
+        {
+          value: 'one',
+          title: 'Один',
+        },
+        {
+          value: 'two',
+          title: 'Два',
+        },
+        {
+          value: 'three',
+          title: 'Три',
+        },
+        {
+          value: 'four',
+          title: 'Четыре',
+        },
+      ],
+    },
+    sortTags: {
+      title: 'Sortred Tags',
+      component: Tags,
+      triggerTitle: 'Выбрать теги',
+      flat: true,
+      sortable: true,
       options: [
         {
           value: 'one',

@@ -1,6 +1,6 @@
 import React from 'react';
 import ProductList from './ProductList';
-import Story from '../../../Story';
+import Story from '@lskjs/dev/Story';
 
 const articles = [
   {

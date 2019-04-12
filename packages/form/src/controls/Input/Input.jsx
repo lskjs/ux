@@ -1,6 +1,6 @@
 import React from 'react';
 import get from 'lodash/get';
-import InputBase from '../../../Input';
+import BaseInput from '../../components/BaseInput';
 
 const Input = ({
   field,
@@ -10,7 +10,7 @@ const Input = ({
 }) => {
   const hasError = field && field.name && !!get(form, `errors.${field.name}`);
   return (
-    <InputBase
+    <BaseInput
       {...field}
       value={field.value || ''}
       debounce={0}

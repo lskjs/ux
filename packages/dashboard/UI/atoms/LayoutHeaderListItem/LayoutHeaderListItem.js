@@ -1,5 +1,5 @@
 import styled from 'react-emotion';
-import createDynamicTag from '../../../utils/createDynamicTag';
+import createDynamicTag from '@lskjs/utils/createDynamicTag';
 
 const dynamicTag = createDynamicTag('a');
 
@@ -13,7 +13,7 @@ export default styled(dynamicTag)`
   border: none;
   outline: none;
   cursor: pointer;
-  
+
   &:not(:last-child) {
     margin-right: .5rem;
   }
@@ -33,7 +33,7 @@ export default styled(dynamicTag)`
 
   .anticon {
     display: inline-block;
-    
+
     font-size: 1rem;
     line-height: normal;
     padding: 0 4px;

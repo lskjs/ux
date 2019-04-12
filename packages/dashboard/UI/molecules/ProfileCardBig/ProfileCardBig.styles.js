@@ -1,7 +1,7 @@
 import styled from 'react-emotion';
 import Avatar from '../../../Avatar';
-import createdynamicTag from '../../../utils/createDynamicTag';
-import removeProps from '../../../utils/removeProps';
+import createdynamicTag from '@lskjs/utils/createDynamicTag';
+import removeProps from '@lskjs/utils/removeProps';
 
 const dynamicTag = createdynamicTag('article');
 const filteredTag = removeProps(dynamicTag, ['fixHeight']);
@@ -18,7 +18,7 @@ export const ProfileCardItem = styled(filteredTag)`
   overflow: hidden;
   font-family: ${p => p.theme.fontFamily};
   transition: border-color .2s ease-out;
-  
+
   &:hover {
     color: inherit;
     border-color: ${p => p.theme.colors.primary};
@@ -43,7 +43,7 @@ export const ProfileCardItem = styled(filteredTag)`
     color: inherit;
   }
   > div {
-  
+
   }
 `;
 

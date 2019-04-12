@@ -1,7 +1,7 @@
 import React from 'react';
-import Link from '../../../Link';
+import Link from '@lskjs/ui/Link';
 import AnimatedLink from './AnimatedLink';
-import Story from '../../../Story';
+import Story from '@lskjs/dev/Story';
 
 import '../../../styles/lib/antd.g.css';
 

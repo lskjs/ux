@@ -1,6 +1,6 @@
 import styled, { css } from 'react-emotion';
-import createDynamicTag from '../../../utils/createDynamicTag';
-import removeProps from '../../../utils/removeProps';
+import createDynamicTag from '@lskjs/utils/createDynamicTag';
+import removeProps from '@lskjs/utils/removeProps';
 
 const dynamicTag = createDynamicTag('button');
 const filteredTag = removeProps(dynamicTag, [

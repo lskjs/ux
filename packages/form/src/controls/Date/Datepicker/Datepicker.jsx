@@ -32,7 +32,7 @@ class Datepicker extends Component {
   @autobind
   getCalendarContainer() {
     const { id } = this.props;
-    if (typeof window === 'undefined' && !id) return false;
+    if (!__CLIENT__ && !id) return false;
     return document.querySelector(`.datepicker-${id}`)
       || document.querySelector('.container')
       || document.body;

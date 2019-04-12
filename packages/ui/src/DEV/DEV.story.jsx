@@ -1,5 +1,5 @@
 import React from 'react';
-import DEV from './DEV';
+import DEV from '@lskjs/dev/DEV';
 import Story from '@lskjs/dev/Story';
 // import ObserverDEV from './ObserverDEV';
 

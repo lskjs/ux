@@ -97,6 +97,7 @@ class Files extends Component {
       if (onSubmit) onSubmit(null);
     });
   }
+
   render() {
     const { dragged, value } = this.state;
     const {
@@ -121,6 +122,7 @@ class Files extends Component {
       info,
       buttonText,
       onRemoveFiles: this.removeFiles,
+      onRemoveItemFiles: this.removeItemFiles,
       dropText,
       multiple,
       type,

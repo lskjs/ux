@@ -8,20 +8,21 @@ import RadioSelected from 'react-icons2/mdi/checkbox-marked-circle';
 import range from 'lodash/range';
 import keys from 'lodash/keys';
 
-import Modal, { Title, Content } from '../../../Modal2';
-import Story from '../../../Story';
+import Modal, { Title, Content } from '@lskjs/modal';
+import Story from '@lskjs/dev/Story';
 import createForm from '../../createForm';
 import FormDebug from '../../FormDebug';
-import Performance from '../../../DEV/Performance';
+import Performance from '@lskjs/dev/Performance';
 import Select from './Select';
-import FlagIcon from '../../../UI/organisms/FlagIcon';
-import countriesList from '../../../UI/organisms/FlagIcon/countriesList';
+import FlagIcon from '@lskjs/ui/Flags';
+import countriesList from './countriesList';
 import createFormWithI18 from '../../createFormWithI18';
 
 const SelectFormView = props => (
   <Form>
     <h1>Обычные селекты</h1>
     <Field {...props.control('select')} />
+    <Field {...props.control('selectSort')} />
     <Field {...props.control('select2')} />
     <Field {...props.control('select3')} />
     <Field {...props.control('select4')} />
@@ -86,6 +87,31 @@ const SelectFormView = props => (
 const SelectForm = createForm({
   view: SelectFormView,
   controls: {
+    selectSort: {
+      title: 'Sorted Select',
+      placeholder: 'test',
+      component: Select,
+      sortable: true,
+      options: [
+        {
+          value: 'two',
+          title: 'Два',
+        },
+        {
+          value: 'one',
+          title: 'Один',
+        },
+        {
+          value: 'three',
+          title: 'Три',
+        },
+        {
+          value: 'four',
+          title: 'Четыре',
+        },
+      ],
+      // menuIsOpen: true,
+    },
     select: {
       title: 'The Select',
       placeholder: 'test',
@@ -239,12 +265,12 @@ const SelectForm = createForm({
         {
           title: 'Russia',
           value: 'one',
-          icon: <FlagIcon code="ru" />,
+          icon: <FlagIcon country="ru" />,
         },
         {
           title: 'Britain',
           value: 'two',
-          icon: <FlagIcon code="gb" />,
+          icon: <FlagIcon country="gb" />,
         },
       ],
     },
@@ -256,7 +282,7 @@ const SelectForm = createForm({
           {
             title: value,
             value,
-            icon: <FlagIcon code={value} />,
+            icon: <FlagIcon country={value} />,
           }
         );
       }),
@@ -529,12 +555,12 @@ const SelectFormWithI18 = createFormWithI18(({ i18 }) => ({
         {
           title: 'Russia',
           value: 'one',
-          icon: <FlagIcon code="ru" />,
+          icon: <FlagIcon country="ru" />,
         },
         {
           title: 'Britain',
           value: 'two',
-          icon: <FlagIcon code="gb" />,
+          icon: <FlagIcon country="gb" />,
         },
       ],
     },
@@ -577,8 +603,8 @@ const SelectFormWithI18 = createFormWithI18(({ i18 }) => ({
             title: value,
             // title: i18.t(`countries.${value}`),
             value,
-            // icon: () => '@', // <FlagIcon code={value} />,
-            Icon: () => <FlagIcon code={value} />,
+            // icon: () => '@', // <FlagIcon country={value} />,
+            Icon: () => <FlagIcon country={value} />,
           }
         );
       }),

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Form, Field } from 'formik';
 // import { Button } from 'react-bootstrap';
-import Story from '../../../Story';
+import Story from '@lskjs/dev/Story';
 import createForm from '../../createForm';
 import CheckboxArray from './CheckboxArray';
-import CheckboxDeal from '../../../UI/molecules/CheckboxDeal/CheckboxDeal';
+import CheckboxDeal from '../../components/CheckboxDeal';
 
 import FormDebug from '../../FormDebug';
 

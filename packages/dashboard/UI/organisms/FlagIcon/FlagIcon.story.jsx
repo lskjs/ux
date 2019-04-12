@@ -1,6 +1,6 @@
 import React from 'react';
 import range from 'lodash/range';
-import Story from '../../../Story';
+import Story from '@lskjs/dev/Story';
 import countriesList from './countriesList';
 import FlagIcon from './FlagIcon';
 const countries = Object.keys(countriesList);

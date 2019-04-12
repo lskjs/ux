@@ -1,7 +1,7 @@
 import React from 'react';
 import RangeFilterOption from '../RangeFilterOption';
 import { formatter } from '../../../utils/formatter';
-import Story from '../../../Story';
+import Story from '@lskjs/dev/Story';
 import DropdownAsSelect from './DropdownAsSelect';
 import FilterValue from '../../atoms/FilterValue';
 
