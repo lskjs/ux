@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/downloads",
-  "version": "0.31.12",
+  "version": "0.31.13",
   "description": "LSK ux subrepo: download",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -25,7 +25,7 @@
     "xlsx-populate": "1.19.1"
   },
   "devDependencies": {
-    "@lskjs/dev": "^0.31.12"
+    "@lskjs/dev": "^0.31.13"
   },
   "peerDependencies": {
     "@lskjs/dev": "*"

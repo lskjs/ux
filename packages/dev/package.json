@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/dev",
-  "version": "0.31.12",
+  "version": "0.31.13",
   "description": "LSK ux subrepo: ui-dev",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -22,7 +22,7 @@
     "storybook": "../../scripts/package-storybook.sh"
   },
   "devDependencies": {
-    "@lskjs/theme": "^0.31.12",
+    "@lskjs/theme": "^0.31.13",
     "emotion-theming": "9.1.2",
     "lodash": "4.17.11",
     "mobx": "5.9.4",
