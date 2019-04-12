@@ -1,0 +1,7 @@
+.cache
+.idea
+.vscode
+**/node_modules
+packages/*/build
+packages/*/release
+lerna-debug.log

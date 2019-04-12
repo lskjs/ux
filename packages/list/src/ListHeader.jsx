@@ -20,11 +20,11 @@ class ListHeader extends Component {
             <List.Search />
           </List.HeaderWrapper>
         </If>
-        <List.HeaderWrapper >
+        <List.HeaderWrapper>
           <List.Filter />
         </List.HeaderWrapper>
         <If condition={show.tags}>
-          <List.HeaderWrapper >
+          <List.HeaderWrapper>
             <List.TagsPanel />
           </List.HeaderWrapper>
         </If>
@@ -37,4 +37,3 @@ class ListHeader extends Component {
 }
 
 export default ListHeader;
-

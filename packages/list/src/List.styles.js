@@ -276,7 +276,7 @@ export const SelectRowWrapper = styled('div')`
     > .table-gird-row {
       background-color: ${p.theme.colors.lightPrimary};
     }
-  `)}
+    `)}
 `;
 
 export const modalStyle = css`
@@ -284,5 +284,3 @@ export const modalStyle = css`
     display: block !important;
   }
 `;
-
-

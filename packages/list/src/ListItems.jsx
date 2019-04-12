@@ -13,13 +13,13 @@ const buttonStyles = css`
   box-shadow: 0 0 0 1px #e3e3e3;
   width: 100%;
 `;
-@contextToProps('List', 'Item', 'debug')
+@contextToProps('List', 'Item')
 @inject('listStore')
 @observer
 class ListItems extends Component {
   render() {
     const {
-      List, listStore, Item, debug,
+      List, listStore, Item,
     } = this.props;
     return (
       <List.ItemsWrapper>
@@ -31,7 +31,9 @@ class ListItems extends Component {
                   bordered
                   size="large"
                   paint="default"
-                  onClick={() => listStore.fetch({ skip: listStore.skip + index, limit: 1, cache: 1 })}
+                  onClick={() => (
+                    listStore.fetch({ skip: listStore.skip + index, limit: 1, cache: 1 })
+                  )}
                   disabled={listStore.loading}
                   className={buttonStyles}
                   block

@@ -1,8 +1,7 @@
 import React from 'react';
 import { observer } from 'mobx-react';
-
-import Link from '../../Link';
 import Story from '@lskjs/dev/Story';
+import Link from '@lskjs/ui/Link';
 import { Row, Col, ItemRow, ItemCol, HeaderRow, HeaderCol } from '../Table';
 
 import List from '../List';
@@ -32,16 +31,16 @@ const SelectHeaderItem = observer(({ toggleSort, sort = {} }) => (
 ));
 
 const SelectItem = observer(({ item = {} }) => (
-  <ItemRow
-    // clickable
-    // checked={listStore.selectStore.isChecked(item)}
-    // onClick={() => listStore.selectStore.toggle(item)}
-  >
+  <ItemRow>
     <ItemCol index={0}>
       <List.Checkbox item={item} />
     </ItemCol>
     <ItemCol index={1}>
-      {item.id} - {Math.random()}
+      {item.id}
+      {' '}
+-
+      {' '}
+      {Math.random()}
     </ItemCol>
     <ItemCol index={2}>
       {item.title}
@@ -59,7 +58,11 @@ const SelectLinkItem = observer(({ item = {} }) => (
         <List.Checkbox item={item} />
       </ItemCol>
       <ItemCol index={1}>
-        {item.id} - {Math.random()}
+        {item.id}
+        {' '}
+-
+        {' '}
+        {Math.random()}
       </ItemCol>
       <ItemCol index={2}>
         {item.title}
@@ -78,7 +81,11 @@ const SelectLinkItem2 = observer(({ item = {} }) => (
         {/* <List.Checkbox item={item} /> */}
       </Col>
       <Col index={1}>
-        {item.id} - {Math.random()}
+        {item.id}
+        {' '}
+-
+        {' '}
+        {Math.random()}
       </Col>
       <Col index={2}>
         {item.title}
@@ -97,7 +104,11 @@ const SelectLinkItem3 = observer(({ item = {} }) => (
         <List.Checkbox item={item} />
       </Col>
       <Col index={1}>
-        {item.id} - {Math.random()}
+        {item.id}
+        {' '}
+-
+        {' '}
+        {Math.random()}
       </Col>
       <Col index={2}>
         {item.title}
@@ -109,10 +120,9 @@ const SelectLinkItem3 = observer(({ item = {} }) => (
   </List.SelectRow>
 ));
 
-export default ({ storiesOf }) => {
-  return storiesOf('List/Select', module)
-    .add('List with Select', () => (
-      <Story>
+export default ({ storiesOf }) => storiesOf('List/Select', module)
+  .add('List with Select', () => (
+    <Story>
         <List
           listStore={listStore}
           Item={SelectItem}
@@ -121,9 +131,9 @@ export default ({ storiesOf }) => {
         />
         <DebugListStore store={listStore} />
       </Story>
-    ))
-    .add('List with SelectLinkItem', () => (
-      <Story>
+  ))
+  .add('List with SelectLinkItem', () => (
+    <Story>
         <List
           listStore={listStore}
           Item={SelectLinkItem}
@@ -132,9 +142,9 @@ export default ({ storiesOf }) => {
         />
         <DebugListStore store={listStore} />
       </Story>
-    ))
-    .add('List with SelectLinkItem2', () => (
-      <Story>
+  ))
+  .add('List with SelectLinkItem2', () => (
+    <Story>
         <List
           listStore={listStore}
           Item={SelectLinkItem2}
@@ -143,9 +153,9 @@ export default ({ storiesOf }) => {
         />
         <DebugListStore store={listStore} />
       </Story>
-    ))
-    .add('List with SelectLinkItem3', () => (
-      <Story>
+  ))
+  .add('List with SelectLinkItem3', () => (
+    <Story>
         <List
           listStore={listStore}
           Item={SelectLinkItem3}
@@ -154,5 +164,4 @@ export default ({ storiesOf }) => {
         />
         <DebugListStore store={listStore} />
       </Story>
-    ));
-};
+  ));

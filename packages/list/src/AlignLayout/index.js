@@ -1,1 +1,1 @@
-export { Container, Left, Item, Right, ItemLeft, ItemRight } from './AlignLayout';
+export { Container, Left, Item, Right } from './AlignLayout';

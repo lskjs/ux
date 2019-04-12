@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { Provider as MobxProvider } from 'mobx-react';
 import mapValues from 'lodash/mapValues';
+import get from 'lodash/get';
 import ListStore from '@lskjs/mobx/stores/ListStore';
 import Button from '@lskjs/button';
 import { Table } from '@lskjs/ui/Table';
 import DEV from '@lskjs/dev/DEV';
-import Search from '../UI/molecules/Search';
+import DefaultSearchWrapper from './DefaultSearchWrapper';
 import {
   Wrapper,
   BodyWrapper,
@@ -42,6 +43,10 @@ import ListPaginator from './ListPaginator';
 import DefaultLoader from './DefaultLoader';
 import DefaultTags from './DefaultTags';
 import DefaultTag from './DefaultTag';
+
+const getProp = (obj, name) => (
+  get(obj, `props.${name}`, get(obj, `constructor.${name}`))
+);
 
 const defaultShow = {
   header: true,
@@ -83,7 +88,7 @@ class List extends Component {
   static SelectRow = ListSelectRow;
   static isFilterModal = true;
   static Button = Button;
-  static SearchWrapper = Search;
+  static SearchWrapper = DefaultSearchWrapper;
   // static DownloadButton = ({ children }) => children;
 
   static Wrapper = Wrapper;
@@ -105,9 +110,10 @@ class List extends Component {
   render() {
     const {
       debug, columns, show: customShow = {}, pageSize = 10, paginatorProps = {},
-      Item, FilterForm, HeaderItem, Tags = this.constructor.Tags, Tag = this.constructor.Tag, filterProps,
+      Item, FilterForm, HeaderItem,
+      Tags = this.constructor.Tags, Tag = this.constructor.Tag, filterProps,
     } = this.props;
-    const isFilterModal = this.props.isFilterModal || this.constructor.isFilterModal;
+    const isFilterModal = getProp(this, 'isFilterModal');
     let { listStore } = this.props;
 
     if (!listStore) {
@@ -123,40 +129,40 @@ class List extends Component {
     }, Boolean);
 
     const List = {  //eslint-disable-line
-      LoaderIcon: this.props.LoaderIcon || this.constructor.LoaderIcon,
-      Sticky: this.props.Sticky || this.constructor.Sticky,
-      Header: this.props.Header || this.constructor.Header,
-      Search: this.props.Search || this.constructor.Search,
-      Filter: this.props.Filter || this.constructor.Filter,
-      TagsPanel: this.props.TagsPanel || this.constructor.TagsPanel,
-      Body: this.props.Body || this.constructor.Body,
-      Items: this.props.Items || this.constructor.Items,
-      HeaderRow: this.props.HeaderRow || this.constructor.HeaderRow, // !!!!!!!!!
-      Footer: this.props.Footer || this.constructor.Footer,
-      Paginator: this.props.Paginator || this.constructor.Paginator,
-      FilterButton: this.props.FilterButton || this.constructor.FilterButton,
-      Empty: this.props.Empty || this.constructor.Empty,
-      SortHeader: this.props.SortHeader || this.constructor.SortHeader,
-      Checkbox: this.props.Checkbox || this.constructor.Checkbox,
-      SelectRow: this.props.SelectRow || this.constructor.SelectRow,
+      LoaderIcon: getProp(this, 'LoaderIcon'),
+      Sticky: getProp(this, 'Sticky'),
+      Header: getProp(this, 'Header'),
+      Search: getProp(this, 'Search'),
+      Filter: getProp(this, 'Filter'),
+      TagsPanel: getProp(this, 'TagsPanel'),
+      Body: getProp(this, 'Body'),
+      Items: getProp(this, 'Items'),
+      HeaderRow: getProp(this, 'HeaderRow'), // !!!!!!!!!
+      Footer: getProp(this, 'Footer'),
+      Paginator: getProp(this, 'Paginator'),
+      FilterButton: getProp(this, 'FilterButton'),
+      Empty: getProp(this, 'Empty'),
+      SortHeader: getProp(this, 'SortHeader'),
+      Checkbox: getProp(this, 'Checkbox'),
+      SelectRow: getProp(this, 'SelectRow'),
 
-      Button: this.props.Button || this.constructor.Button,
-      SearchWrapper: this.props.SearchWrapper || this.constructor.SearchWrapper,
+      Button: getProp(this, 'Button'),
+      SearchWrapper: getProp(this, 'SearchWrapper'),
 
-      Wrapper: this.props.Wrapper || this.constructor.Wrapper,
-      BodyWrapper: this.props.BodyWrapper || this.constructor.BodyWrapper,
-      ItemsWrapper: this.props.ItemsWrapper || this.constructor.ItemsWrapper,
-      FilterWrapper: this.props.FilterWrapper || this.constructor.FilterWrapper,
-      TagsPanelWrapper: this.props.TagsPanelWrapper || this.constructor.TagsPanelWrapper,
-      HeaderItemWrapper: this.props.HeaderItemWrapper || this.constructor.HeaderItemWrapper,
-      HeaderWrapper: this.props.HeaderWrapper || this.constructor.HeaderWrapper,
-      FooterWrapper: this.props.FooterWrapper || this.constructor.FooterWrapper,
+      Wrapper: getProp(this, 'Wrapper'),
+      BodyWrapper: getProp(this, 'BodyWrapper'),
+      ItemsWrapper: getProp(this, 'ItemsWrapper'),
+      FilterWrapper: getProp(this, 'FilterWrapper'),
+      TagsPanelWrapper: getProp(this, 'TagsPanelWrapper'),
+      HeaderItemWrapper: getProp(this, 'HeaderItemWrapper'),
+      HeaderWrapper: getProp(this, 'HeaderWrapper'),
+      FooterWrapper: getProp(this, 'FooterWrapper'),
 
-      PaginatorWrapper: this.props.PaginatorWrapper || this.constructor.PaginatorWrapper,
-      PagesWrapper: this.props.PagesWrapper || this.constructor.PagesWrapper,
-      StepperWrapper: this.props.StepperWrapper || this.constructor.StepperWrapper,
-      SelectWrapper: this.props.SelectWrapper || this.constructor.SelectWrapper,
-      SelectRowWrapper: this.props.SelectRowWrapper || this.constructor.SelectRowWrapper,
+      PaginatorWrapper: getProp(this, 'PaginatorWrapper'),
+      PagesWrapper: getProp(this, 'PagesWrapper'),
+      StepperWrapper: getProp(this, 'StepperWrapper'),
+      SelectWrapper: getProp(this, 'SelectWrapper'),
+      SelectRowWrapper: getProp(this, 'SelectRowWrapper'),
     };
 
     let { children } = this.props;

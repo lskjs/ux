@@ -4,7 +4,7 @@ import { css } from 'emotion';
 import cx from 'classnames';
 import Story from '@lskjs/dev/Story';
 import { Row, Col, ItemRow, ItemCol, HeaderRow, HeaderCol } from '../Table';
-import { FormExample2 as FilterForm } from '../../Form2/stories/examples/FormExample2.story';
+import FilterForm from './FilterForm';
 
 import List from '../List';
 import { createIndex } from '../../GridTable/index';
@@ -46,7 +46,11 @@ const SelectItem = observer(({ item = {}, index = createIndex() }) => (
       <List.Checkbox item={item} />
     </ItemCol>
     <ItemCol index={index()}>
-      {item.id} - {Math.random()}
+      {item.id}
+      {' '}
+-
+      {' '}
+      {Math.random()}
     </ItemCol>
     <ItemCol index={index()}>
       {item.title}
@@ -81,9 +85,8 @@ const HeaderItem = ({ toggleSort, sort = {} }) => (
 );
 
 
-export default ({ storiesOf }) => {
-  return storiesOf('List/parts', module)
-    .add('List.Header', () => (
+export default ({ storiesOf }) => storiesOf('List/parts', module)
+  .add('List.Header', () => (
       <Story>
         <List
           listStore={listStore}
@@ -95,8 +98,8 @@ export default ({ storiesOf }) => {
           <DebugListStore store={listStore} />
         </List>
       </Story>
-    ))
-    .add('List.Search', () => (
+  ))
+  .add('List.Search', () => (
       <Story>
         <List
           listStore={listStore}
@@ -105,8 +108,8 @@ export default ({ storiesOf }) => {
           <DebugListStore store={listStore} />
         </List>
       </Story>
-    ))
-    .add('List.Filter', () => (
+  ))
+  .add('List.Filter', () => (
       <Story>
         <List
           listStore={listStore}
@@ -116,8 +119,8 @@ export default ({ storiesOf }) => {
           <DebugListStore store={listStore} />
         </List>
       </Story>
-    ))
-    .add('List.Filter x2', () => (
+  ))
+  .add('List.Filter x2', () => (
       <Story>
         <List
           listStore={listStore}
@@ -129,8 +132,8 @@ export default ({ storiesOf }) => {
           <DebugListStore store={listStore} />
         </List>
       </Story>
-    ))
-    .add('List.Tags', () => (
+  ))
+  .add('List.Tags', () => (
       <Story>
         <List
           listStore={listStore}
@@ -139,8 +142,8 @@ export default ({ storiesOf }) => {
           <DebugListStore store={listStore} />
         </List>
       </Story>
-    ))
-    .add('List.HeaderRow', () => (
+  ))
+  .add('List.HeaderRow', () => (
       <Story>
         <List
           listStore={listStore}
@@ -151,8 +154,8 @@ export default ({ storiesOf }) => {
           <DebugListStore store={listStore} />
         </List>
       </Story>
-    ))
-    .add('List.Body', () => (
+  ))
+  .add('List.Body', () => (
       <Story>
         <List
           listStore={listStore}
@@ -163,8 +166,8 @@ export default ({ storiesOf }) => {
         </List>
         <DebugListStore store={listStore} />
       </Story>
-    ))
-    .add('List.Checkbox', () => (
+  ))
+  .add('List.Checkbox', () => (
       <Story>
         <List
           listStore={listStore}
@@ -173,8 +176,8 @@ export default ({ storiesOf }) => {
         />
         <DebugListStore store={listStore} />
       </Story>
-    ))
-    .add('List.Footer', () => (
+  ))
+  .add('List.Footer', () => (
       <Story>
         <List
           listStore={listStore}
@@ -183,8 +186,8 @@ export default ({ storiesOf }) => {
         </List>
         <DebugListStore store={listStore} />
       </Story>
-    ))
-    .add('List.Footer x2', () => (
+  ))
+  .add('List.Footer x2', () => (
       <Story>
         <List
           listStore={listStore}
@@ -194,8 +197,8 @@ export default ({ storiesOf }) => {
         </List>
         <DebugListStore store={listStore} />
       </Story>
-    ))
-    .add('List.Paginator', () => (
+  ))
+  .add('List.Paginator', () => (
       <Story>
         <List
           listStore={listStore}
@@ -204,8 +207,8 @@ export default ({ storiesOf }) => {
         </List>
         <DebugListStore store={listStore} />
       </Story>
-    ))
-    .add('List.Empty', () => (
+  ))
+  .add('List.Empty', () => (
       <Story>
         <List
           listStore={listStore}
@@ -214,5 +217,4 @@ export default ({ storiesOf }) => {
         </List>
         <DebugListStore store={listStore} />
       </Story>
-    ));
-};
+  ));

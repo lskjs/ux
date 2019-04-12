@@ -3,8 +3,8 @@ import { inject, observer } from 'mobx-react';
 import If from 'react-if';
 import Button from '@lskjs/button';
 import T from '@lskjs/ui/T';
-import Error404 from '../UI/molecules/ErrorComponent/svg/error404';
-import EmptyContainer from '../UI/molecules/EmptyContainer';
+import Error404 from '@lskjs/ui/Error/icons/error404';
+import EmptyContainer from '@lskjs/ui/Error/EmptyContainer';
 
 
 @inject('listStore', 't')
@@ -48,14 +48,14 @@ class ListEmpty extends Component {
               <Error404 height="200" width="100%" />
             }
             subtitle={<T name="lskList.emptyDataErrorOne" />}
-            actions={
+            actions={(
               <Button
                 paint="primary"
                 onClick={() => listStore.fetch()}
               >
                 <T name="common.refresh" />
               </Button>
-            }
+            )}
           />
         </If>
         <If condition={type === 2}>
@@ -78,14 +78,14 @@ class ListEmpty extends Component {
               <Error404 height="200" width="100%" />
             }
             subtitle={<T name="lskList.emptyDataErrorThree" />}
-            actions={
+            actions={(
               <Button
                 paint="primary"
                 onClick={() => listStore.clearFilter()}
               >
                 <T name="lskList.emptyDataResetButton" />
               </Button>
-            }
+            )}
           />
           {/* пусто после фетча, фильтры включены */}
         </If>
@@ -96,14 +96,14 @@ class ListEmpty extends Component {
               <Error404 height="200" width="100%" />
             }
             subtitle={<T name="lskList.emptyDataErrorFour" />}
-            actions={
+            actions={(
               <Button
                 paint="primary"
                 onClick={() => listStore.setSkip(0)}
               >
                 <T name="lskList.emptyDataToFirstPage" />
               </Button>
-            }
+            )}
           />
           {/* пусто после фетча, фильтры включены, скип стоит
           Страница почему-то пуста, переключиться на первую */}

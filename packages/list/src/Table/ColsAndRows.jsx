@@ -1,7 +1,6 @@
 import React from 'react';
-import { inject, observer } from 'mobx-react';
+import { Row, Col } from '@lskjs/ui/Table';
 import { HeaderRowWrapper, HeaderColWrapper, ItemRowWrapper, ItemColWrapper } from './ColsAndRows.styles';
-import { Row, Col } from '../../Table';
 
 
 const stopPropagation = (e) => {

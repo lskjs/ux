@@ -2,14 +2,14 @@ import React from 'react';
 import { observer } from 'mobx-react';
 import QueueAnim from 'rc-queue-anim';
 import Story from '@lskjs/dev/Story';
-import { Row, Col } from '../../Grid';
+import BlogCard from '@lskjs/dashboard/BlogCard';
+import { Row, Col } from '@lskjs/ui/Grid';
 import { ItemRow, ItemCol, HeaderRow, HeaderCol, createIndex } from '../Table';
-import { FormExample2 as FilterForm } from '../../Form2/stories/examples/FormExample2.story';
+import FilterForm from './FilterForm';
 
 import List from '../List';
 import listStore from './listStore';
 import DebugListStore from './DebugListStore';
-import BlogCard from '../../UI/molecules/BlogCard/BlogCard';
 
 const columns = [60, '1fr', '1fr', 60];
 const HeaderItem = ({ toggleSort, sort = {}, index = createIndex() }) => (
@@ -74,16 +74,16 @@ const AnimatedGridItemsWrapper = props => (
 //  key={index()}>
 
 const GridItem = observer(({ item = {} }) => (
-  <Col xl={3} lg={4} md={6} key={item._id} >
+  <Col xl={3} lg={4} md={6} key={item._id}>
     <BlogCard
       {...{
-          img: 'http://iarouse.com/dist-react-ant-design/v1.1.4/assets/images-demo/assets/600_400-1.jpg',
-          date: 'May 1st',
-          title: item.title,
-          content: 'Be yourself; everyone else is already taken.',
-          tag: 'Quotes',
-          author: 'Oscar Wilde',
-        }}
+        img: 'http://iarouse.com/dist-react-ant-design/v1.1.4/assets/images-demo/assets/600_400-1.jpg',
+        date: 'May 1st',
+        title: item.title,
+        content: 'Be yourself; everyone else is already taken.',
+        tag: 'Quotes',
+        author: 'Oscar Wilde',
+      }}
     />
     {/* {item.id}
       {item.title}
@@ -92,47 +92,45 @@ const GridItem = observer(({ item = {} }) => (
   </Col>
 ));
 
-export default ({ storiesOf }) => {
-  return storiesOf('List/Item', module)
-    .add('table', () => (
-      <Story devtools style={{ padding: 24 }}>
-        <List
-          container
-          listStore={listStore}
-          HeaderItem={HeaderItem}
-          Item={Item}
-          FilterForm={FilterForm}
-          columns={columns}
-        />
-        <DebugListStore store={listStore} />
-      </Story>
-    ))
-    .add('grid', () => (
-      <Story devtools style={{ padding: 24 }}>
-        <List
-          container
-          listStore={listStore}
-          HeaderItem={HeaderItem}
-          ItemsWrapper={GridItemsWrapper}
-          Item={GridItem}
-          FilterForm={FilterForm}
-          columns={columns}
-        />
-        <DebugListStore store={listStore} />
-      </Story>
-    ))
-    .add('animated grid', () => (
-      <Story devtools style={{ padding: 24 }}>
-        <List
-          container
-          listStore={listStore}
-          HeaderItem={HeaderItem}
-          ItemsWrapper={AnimatedGridItemsWrapper}
-          Item={GridItem}
-          FilterForm={FilterForm}
-          columns={columns}
-        />
-        <DebugListStore store={listStore} />
-      </Story>
-    ));
-};
+export default ({ storiesOf }) => storiesOf('List/Item', module)
+  .add('table', () => (
+    <Story devtools style={{ padding: 24 }}>
+      <List
+        container
+        listStore={listStore}
+        HeaderItem={HeaderItem}
+        Item={Item}
+        FilterForm={FilterForm}
+        columns={columns}
+      />
+      <DebugListStore store={listStore} />
+    </Story>
+  ))
+  .add('grid', () => (
+    <Story devtools style={{ padding: 24 }}>
+      <List
+        container
+        listStore={listStore}
+        HeaderItem={HeaderItem}
+        ItemsWrapper={GridItemsWrapper}
+        Item={GridItem}
+        FilterForm={FilterForm}
+        columns={columns}
+      />
+      <DebugListStore store={listStore} />
+    </Story>
+  ))
+  .add('animated grid', () => (
+    <Story devtools style={{ padding: 24 }}>
+      <List
+        container
+        listStore={listStore}
+        HeaderItem={HeaderItem}
+        ItemsWrapper={AnimatedGridItemsWrapper}
+        Item={GridItem}
+        FilterForm={FilterForm}
+        columns={columns}
+      />
+      <DebugListStore store={listStore} />
+    </Story>
+  ));

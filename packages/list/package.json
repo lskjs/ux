@@ -22,12 +22,14 @@
     "storybook": "../../scripts/package-storybook.sh"
   },
   "dependencies": {
+    "react-debounce-input": "^3.2.0",
     "react-if": "^3.1.3",
     "react-visibility-sensor": "^5.0.2"
   },
   "devDependencies": {
     "@lskjs/autobind": "^0.32.0",
     "@lskjs/button": "^0.31.10",
+    "@lskjs/dashboard": "^0.31.9",
     "@lskjs/dev": "^0.31.10",
     "@lskjs/form": "^0.31.9",
     "@lskjs/mobx": "^0.32.0",
@@ -58,6 +60,7 @@
     "@lskjs/dev": "^0.31.10",
     "@lskjs/form": "^0.31.9",
     "@lskjs/mobx": "^0.32.0",
+    "@lskjs/modal": "^0.31.10",
     "@lskjs/theme": "^0.31.9",
     "@lskjs/ui": "^0.31.10",
     "@lskjs/utils": "^0.32.2",
@@ -70,6 +73,8 @@
     "lodash-decorators": "^6.0.1",
     "mobx": "^5.9.4",
     "mobx-react": "^5.4.3",
+    "mobx-react-devtools": "^6.1.1",
+    "prop-types": "^15.7.2",
     "rc-queue-anim": "^1.6.12",
     "react": "^16.8.6",
     "react-emotion": "^9.2.10",

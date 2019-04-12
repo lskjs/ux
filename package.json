@@ -34,7 +34,7 @@
     "test:cli": "npm --prefix lib/cli run test",
     "error": "echo 123 && exit 1",
     "dev2": "concurrently --kill-others \"npm dev:ts\" \"npm dev:js\"",
-    "custom": "lerna exec --scope @lskjs/button -- npm run lint:js",
+    "custom": "lerna exec --scope @lskjs/list -- npm run lint:js",
     "custom2": "lerna exec --scope @lskjs/general -- \\$LERNA_ROOT_PATH/scripts/package-watch.sh"
   },
   "files": [
@@ -81,6 +81,7 @@
     "prettier": "^1.16.4",
     "pretty-quick": "^1.10.0",
     "react": "^16.8.6",
+    "react-custom-scrollbars": "^4.2.1",
     "react-test-renderer": "^16.8.6",
     "remark": "^10.0.1",
     "remark-cli": "^6.0.1",
