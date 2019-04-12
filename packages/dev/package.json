@@ -31,6 +31,12 @@
     "react": "^16.8.6"
   },
   "peerDependencies": {
-    "@lskjs/theme": "*"
+    "@lskjs/theme": "*",
+    "emotion-theming": "*",
+    "lodash": "*",
+    "mobx": "*",
+    "mobx-react": "*",
+    "mobx-react-devtools": "*",
+    "react": "*"
   }
 }
