@@ -8,12 +8,13 @@ import get from 'lodash/get';
 import Plus from 'react-icons2/mdi/plus-circle';
 import If from 'react-if';
 
-import Tag from '../Tag';
 import Tags from '@lskjs/ui/Tags';
-import TagsWrapper from '../TagsWrapper';
-import Add from '../../../../UI/atoms/IconCircleButton';
-import TreePicker from '../TreePicker';
 import Button from '@lskjs/button';
+import Tag from '../Tag';
+import TagsWrapper from '../TagsWrapper';
+import TreePicker from '../TreePicker';
+// import Add from '../../../../UI/atoms/IconCircleButton';
+const Add = 'Add';
 
 function getFieldsKeys(fields = []) {
   const keys = {};

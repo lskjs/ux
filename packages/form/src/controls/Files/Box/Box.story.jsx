@@ -1,9 +1,9 @@
 import React from 'react';
 import Story from '@lskjs/dev/Story';
-import Box from './Box';
 import Link from '@lskjs/ui/Link';
-import AnimatedLink from '@lskjs/ui/AnimatedLink';
-import UserBoxFooter from '@lskjs/ui/UserBoxFooter';
+import Box from './Box';
+// import AnimatedLink from '@lskjs/ui/AnimatedLink';
+// import UserBoxFooter from '@lskjs/ui/UserBoxFooter';
 import BoxDivider from './BoxDivider';
 
 export default ({ storiesOf }) => (
@@ -20,13 +20,13 @@ export default ({ storiesOf }) => (
             Tenetur, quasi nam.
           </Box.Body>
           <Box.Footer>
-            <AnimatedLink
+            <Link
               href="//google.com"
               target="_blank"
               icon="arrow-right"
             >
               Link
-            </AnimatedLink>
+            </Link>
           </Box.Footer>
         </Box>
       </Story>
@@ -46,13 +46,13 @@ export default ({ storiesOf }) => (
             Tenetur, quasi nam.
           </Box.Body>
           <Box.Footer>
-            <AnimatedLink
+            <Link
               href="//google.com"
               target="_blank"
               icon="arrow-right"
             >
               Link
-            </AnimatedLink>
+            </Link>
           </Box.Footer>
         </Box>
       </Story>
@@ -72,13 +72,13 @@ export default ({ storiesOf }) => (
           Magnam optio voluptates ipsam.
           </Box.Body>
           <Box.Footer padded>
-            <AnimatedLink
+            <Link
               href="//google.com"
               target="_blank"
               icon="arrow-right"
             >
               Link
-            </AnimatedLink>
+            </Link>
           </Box.Footer>
         </Box>
       </Story>
@@ -98,13 +98,13 @@ export default ({ storiesOf }) => (
           Magnam optio voluptates ipsam.
           </Box.Body>
           <Box.Footer padded>
-            <AnimatedLink
+            <Link
               href="//google.com"
               target="_blank"
               icon="arrow-right"
             >
               Link
-            </AnimatedLink>
+            </Link>
           </Box.Footer>
         </Box>
       </Story>
@@ -125,13 +125,13 @@ export default ({ storiesOf }) => (
           Magnam optio voluptates ipsam.
           </Box.Body>
           <Box.Footer padded>
-            <AnimatedLink
+            <Link
               href="//google.com"
               target="_blank"
               icon="arrow-right"
             >
               Link
-            </AnimatedLink>
+            </Link>
           </Box.Footer>
         </Box>
       </Story>
@@ -151,13 +151,13 @@ export default ({ storiesOf }) => (
           Magnam optio voluptates ipsam.
           </Box.Body>
           <Box.Footer padded>
-            <AnimatedLink
+            <Link
               href="//google.com"
               target="_blank"
               icon="arrow-right"
             >
               Link
-            </AnimatedLink>
+            </Link>
           </Box.Footer>
         </Box>
       </Story>
@@ -177,13 +177,13 @@ export default ({ storiesOf }) => (
           Magnam optio voluptates ipsam.
           </Box.Body>
           <Box.Footer padded>
-            <AnimatedLink
+            <Link
               href="//google.com"
               target="_blank"
               icon="arrow-right"
             >
               Link
-            </AnimatedLink>
+            </Link>
           </Box.Footer>
         </Box>
       </Story>
@@ -203,13 +203,13 @@ export default ({ storiesOf }) => (
           Magnam optio voluptates ipsam.
           </Box.Body>
           <Box.Footer padded>
-            <AnimatedLink
+            <Link
               href="//google.com"
               target="_blank"
               icon="arrow-right"
             >
               Link
-            </AnimatedLink>
+            </Link>
           </Box.Footer>
         </Box>
       </Story>
@@ -229,13 +229,13 @@ export default ({ storiesOf }) => (
           Magnam optio voluptates ipsam.
           </Box.Body>
           <Box.Footer padded>
-            <AnimatedLink
+            <Link
               href="//google.com"
               target="_blank"
               icon="arrow-right"
             >
               Link
-            </AnimatedLink>
+            </Link>
           </Box.Footer>
         </Box>
       </Story>
@@ -255,13 +255,13 @@ export default ({ storiesOf }) => (
           Magnam optio voluptates ipsam.
           </Box.Body>
           <Box.Footer padded>
-            <AnimatedLink
+            <Link
               href="//google.com"
               target="_blank"
               icon="arrow-right"
             >
               Link
-            </AnimatedLink>
+            </Link>
           </Box.Footer>
         </Box>
       </Story>
@@ -281,13 +281,13 @@ export default ({ storiesOf }) => (
           Magnam optio voluptates ipsam.
           </Box.Body>
           <Box.Footer padded>
-            <AnimatedLink
+            <Link
               href="//google.com"
               target="_blank"
               icon="arrow-right"
             >
               Link
-            </AnimatedLink>
+            </Link>
           </Box.Footer>
         </Box>
       </Story>
@@ -307,13 +307,13 @@ export default ({ storiesOf }) => (
           Magnam optio voluptates ipsam.
           </Box.Body>
           <Box.Footer padded>
-            <AnimatedLink
+            <Link
               href="//google.com"
               target="_blank"
               icon="arrow-right"
             >
               Link
-            </AnimatedLink>
+            </Link>
           </Box.Footer>
         </Box>
       </Story>
@@ -334,13 +334,13 @@ export default ({ storiesOf }) => (
           Magnam optio voluptates ipsam.
           </Box.Body>
           <Box.Footer padded>
-            <AnimatedLink
+            <Link
               href="//google.com"
               target="_blank"
               icon="arrow-right"
             >
               Link
-            </AnimatedLink>
+            </Link>
           </Box.Footer>
         </Box>
       </Story>
@@ -361,13 +361,13 @@ export default ({ storiesOf }) => (
           Magnam optio voluptates ipsam.
           </Box.Body>
           <Box.Footer padded>
-            <AnimatedLink
+            <Link
               href="//google.com"
               target="_blank"
               icon="arrow-right"
             >
               Link
-            </AnimatedLink>
+            </Link>
           </Box.Footer>
         </Box>
       </Story>
@@ -388,25 +388,25 @@ export default ({ storiesOf }) => (
           Magnam optio voluptates ipsam.
           </Box.Body>
           <Box.Footer padded>
-            <AnimatedLink
+            <Link
               href="//google.com"
               target="_blank"
               icon="arrow-right"
             >
               Link
-            </AnimatedLink>
+            </Link>
           </Box.Footer>
         </Box>
       </Story>
     ))
-    .add('UserPage', () => (
-      <Story>
-        <Box image="https://picsum.photos/1280/720/?random" style={{ height: 380 }}>
-          <div style={{ height: 240 }} />
-          <UserBoxFooter />
-        </Box>
-      </Story>
-    ))
+    // .add('UserPage', () => (
+    //   <Story>
+    //     <Box image="https://picsum.photos/1280/720/?random" style={{ height: 380 }}>
+    //       <div style={{ height: 240 }} />
+    //       <UserBoxFooter />
+    //     </Box>
+    //   </Story>
+    // ))
     .add('componentClass', () => (
       <Story>
         <Box style={{ height: 380 }} paint="primary" componentClass={Link} href="https://vk.com">

@@ -2,10 +2,10 @@ import React, { PureComponent } from 'react';
 import autobind from '@lskjs/autobind';
 import PropTypes from 'prop-types';
 import Numeric from 'react-numeric-input';
-
-import Input from '../../../../Input';
+import filterProps from '@lskjs/utils/filterProps';
+import Input from '../../../components/BaseInput';
+// import Input from '@lskjs/ui/Input';
 import { elInput, El, Block } from './InputRange.styles';
-import filterProps from '../../../../utils/filterProps';
 
 class InputRange extends PureComponent {
   static propTypes = {

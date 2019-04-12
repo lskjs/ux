@@ -11,7 +11,7 @@ import { allCountries } from './countriesData';
 import isNumberValid from './isNumberValid';
 import Input from '../BaseInput';
 
-const isModernBrowser = Boolean(__CLIENT__ && typeof document !== 'undefined' && document.createElement('input').setSelectionRange);
+const isModernBrowser = Boolean(typeof window !== 'undefined' && typeof document !== 'undefined' && document.createElement('input').setSelectionRange);
 
 
 const keys = {
@@ -46,9 +46,7 @@ function excludeCountries(selectedCountries, excludedCountries) {
   if (excludedCountries.length === 0) {
     return selectedCountries;
   }
-  return filter(selectedCountries, (selCountry) => {
-    return !includes(excludedCountries, selCountry.iso2);
-  });
+  return filter(selectedCountries, selCountry => !includes(excludedCountries, selCountry.iso2));
 }
 
 class ReactPhoneInput extends Component {
@@ -67,11 +65,7 @@ class ReactPhoneInput extends Component {
       this.formatNumber(dialCode + inputNumber.replace(/\D/g, ''), selectedCountryGuess
         ? selectedCountryGuess.format : null)
     );
-    const preferredCountries = filter(allCountries, (country) => {
-      return some(this.props.preferredCountries, (preferredCountry) => {
-        return preferredCountry === country.iso2;
-      });
-    });
+    const preferredCountries = filter(allCountries, country => some(this.props.preferredCountries, (preferredCountry) => preferredCountry === country.iso2));
     this.getNumber = this.getNumber.bind(this);
     this.getValue = this.getValue.bind(this);
     this.resetNumber = this.resetNumber.bind(this);
@@ -117,8 +111,8 @@ class ReactPhoneInput extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.defaultCountry &&
-        nextProps.defaultCountry !== this.state.defaultCountry) {
+    if (nextProps.defaultCountry
+        && nextProps.defaultCountry !== this.state.defaultCountry) {
       this.updateDefaultCountry(nextProps.defaultCountry);
     }
     this.updateDropdownWidth();
@@ -571,9 +565,7 @@ ReactPhoneInput.prototype._searchCountry = memoize(function (queryString) {
     return null;
   }
   // don't include the preferred countries in search
-  const probableCountries = filter(this.state.onlyCountries, (country) => {
-    return startsWith(country.name.toLowerCase(), queryString.toLowerCase());
-  }, this);
+  const probableCountries = filter(this.state.onlyCountries, country => startsWith(country.name.toLowerCase(), queryString.toLowerCase()), this);
   return probableCountries[0];
 });
 

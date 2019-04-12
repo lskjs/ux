@@ -10,18 +10,13 @@ import Magnify from 'react-icons2/mdi/magnify';
 import map from 'lodash/map';
 import omit from 'lodash/omit';
 import uniqBy from 'lodash/uniqBy';
-import Modal2, {
-  Title,
-  Subtitle,
-  Content,
-  Footer,
-} from '../../../../Modal2';
-
-import TextButton from './TextButton';
 import T from '@lskjs/ui/T';
 import Button from '@lskjs/button';
-import Input from '../../../../Input';
+import Modal2, { Title, Subtitle, Content, Footer } from '@lskjs/modal';
+
+import TextButton from './TextButton';
 import TreeInput from '../TreeInput';
+import Input from '../../../components/BaseInput';
 
 import { Block, ScrollContent, Meta, InnerBlock } from './TreePicker.styles';
 
@@ -200,7 +195,11 @@ class TreePicker extends Component {
         </Block>
         <InnerBlock>
           <Subtitle>
-            {t('admin.header.tags')} ({value ? value.length : 0 })
+            {t('admin.header.tags')}
+            {' '}
+(
+            {value ? value.length : 0 }
+)
           </Subtitle>
           <Meta>
             <If condition={value && value.length > 0}>
