@@ -3,8 +3,8 @@ import { ThemeProvider } from 'emotion-theming';
 import { Provider } from 'mobx-react';
 import DevTools from 'mobx-react-devtools';
 import defaultTheme from '@lskjs/theme/theme';
-import Performance from './DEV/Performance';
-import State from './DEV/State';
+import Performance from './Performance';
+import State from './State';
 
 class Story extends Component {
   componentDidMount() {
@@ -19,9 +19,7 @@ class Story extends Component {
     const api = {
       fetch: (...args) => console.log('api.get', ...args),
     };
-    const t = (a) => {
-      return a === 'locale' ? locale : a;
-    };
+    const t = a => (a === 'locale' ? locale : a);
     const i18 = { t };
     const config = {};
     const uapp = {
@@ -32,9 +30,7 @@ class Story extends Component {
       api,
       modules: {
         upload: {
-          uploadFile: async (e) => {
-            return { url: e.name };
-          },
+          uploadFile: async e => ({ url: e.name }),
         },
         billing: {
           stores: {
@@ -63,12 +59,12 @@ class Story extends Component {
           >
             <div
               style={{
-              border: '30px #eee solid',
-              // width: '80%',
-              // fontFamily: 'Gotham Pro',
-              // padding: '10px',
-              ...style,
-            }}
+                border: '30px #eee solid',
+                // width: '80%',
+                // fontFamily: 'Gotham Pro',
+                // padding: '10px',
+                ...style,
+              }}
             >
               <State {...state}>
                 {children}

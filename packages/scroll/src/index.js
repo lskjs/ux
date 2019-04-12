@@ -39,7 +39,7 @@ export default function scrollTo(id, options) {
     let value;
     if (id == null) {
       return false;
-    } else if (typeof id === 'number') {
+    } if (typeof id === 'number') {
       value = id;
     } else if (typeof id === 'string') {
       const anchor = document.querySelector(id);
@@ -58,4 +58,3 @@ export default function scrollTo(id, options) {
     return false;
   }
 }
-

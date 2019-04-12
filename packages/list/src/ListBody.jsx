@@ -6,7 +6,7 @@ import VisibilitySensor from 'react-visibility-sensor';
 import Loading from '@lskjs/ui/Loading';
 import Progress from '@lskjs/ui/Progress';
 import T from '@lskjs/ui/T';
-import Button from '@lskjs/ui/Button';
+import Button from '@lskjs/button';
 import { contextToProps } from './List.context';
 
 const buttonStyles = css`

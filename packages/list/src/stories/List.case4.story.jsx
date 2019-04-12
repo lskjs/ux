@@ -1,8 +1,8 @@
 import React from 'react';
 import { observer } from 'mobx-react';
-import Story from '@lskjs/ui/Story';
+import Story from '@lskjs/dev/Story';
 import Input from '@lskjs/ui/Input';
-import Button from '@lskjs/ui/Button';
+import Button from '@lskjs/button';
 import { FormExample2 as FilterForm } from '@lskjs/form/stories/examples/FormExample2.story';
 import { createIndex } from '@lskjs/ui/GridTable/index';
 import {
