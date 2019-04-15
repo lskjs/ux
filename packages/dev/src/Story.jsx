@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { ThemeProvider } from 'emotion-theming';
 import { Provider } from 'mobx-react';
 import DevTools from 'mobx-react-devtools';
-import defaultTheme from '@lskjs/theme/theme';
+import defaultTheme from '@lskjs/theme';
 import injectStyles from '@lskjs/css';
 import Performance from './Performance';
 import State from './State';
