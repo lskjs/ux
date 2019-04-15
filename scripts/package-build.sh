@@ -8,7 +8,7 @@ if [ -d "src/styles" ]
 then
 mkdir -p ${DIST:-build/styles}
 cp -R src/styles/lib ${DIST:-build/styles}/
-cp src/styles/index.g.css ${DIST:-build/styles}/
+cp src/styles/index.css ${DIST:-build/styles}/
 fi
 
 # cp {package.json,package-lock.json,README.md} ${DIST:-build}/ && \

@@ -1,15 +1,10 @@
 import React, { Component } from 'react';
-import { injectGlobal } from 'react-emotion';
 import { ThemeProvider } from 'emotion-theming';
 import { Provider } from 'mobx-react';
 import DevTools from 'mobx-react-devtools';
 import defaultTheme from '@lskjs/theme/theme';
 import Performance from './Performance';
 import State from './State';
-
-import styles from './styles/index.g.css';
-
-injectGlobal(styles);
 
 class Story extends Component {
   componentDidMount() {

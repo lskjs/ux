@@ -1,13 +1,13 @@
 {
-  "name": "@lskjs/dev",
+  "name": "@lskjs/css",
   "version": "0.33.3",
-  "description": "LSK ux subrepo: ui-dev",
+  "description": "LSK ux subrepo: css",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
-  "repository": "https://github.com/lskjs/ux/tree/master/packages/ui-dev",
+  "repository": "https://github.com/lskjs/ux/tree/master/packages/css",
   "keywords": [],
   "scripts": {
     "dev": "npm run watch",
@@ -22,23 +22,9 @@
     "storybook": "../../scripts/package-storybook.sh"
   },
   "devDependencies": {
-    "@lskjs/theme": "^0.33.3",
-    "emotion": "9.2.12",
-    "emotion-theming": "9.1.2",
-    "lodash": "4.17.11",
-    "mobx": "5.9.4",
-    "mobx-react": "5.4.3",
-    "mobx-react-devtools": "6.1.1",
-    "react": "^16.8.6"
+    "emotion": "9.2.12"
   },
   "peerDependencies": {
-    "@lskjs/theme": "*",
-    "emotion": "*",
-    "emotion-theming": "*",
-    "lodash": "*",
-    "mobx": "*",
-    "mobx-react": "*",
-    "mobx-react-devtools": "*",
-    "react": "*"
+    "emotion": "*"
   }
 }
