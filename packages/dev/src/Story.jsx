@@ -6,6 +6,8 @@ import defaultTheme from '@lskjs/theme/theme';
 import Performance from './Performance';
 import State from './State';
 
+import './styles/index.g.css';
+
 class Story extends Component {
   componentDidMount() {
     window.story = this;

@@ -7,7 +7,6 @@ import {
   Block,
   CheckBoxWrapper,
   Title,
-  PriceWrapper,
 } from './CheckboxDeal.styles';
 
 class CheckboxDeal extends Component {
@@ -36,14 +35,6 @@ class CheckboxDeal extends Component {
         <Title>
           {item.title}
         </Title>
-        <If condition={item.price}>
-          <PriceWrapper>
-            {/* <Price
-              value={item.price}
-              format="fullPrice"
-            /> */}
-          </PriceWrapper>
-        </If>
       </Block>
     );
   }

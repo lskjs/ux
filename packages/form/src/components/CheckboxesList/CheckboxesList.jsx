@@ -56,7 +56,6 @@ class CheckboxesList extends PureComponent {
     const { selected } = this.state;
     const { data, height, itemComponent } = this.props;
     const Item = itemComponent || Checkbox;
-    // console.log(data);
     return (
       <Block>
         <Scrollbars
@@ -65,30 +64,32 @@ class CheckboxesList extends PureComponent {
           autoHeight
           autoHeightMax={height}
         >
-          {data.map((element) => {
-            const props = {
-              ...(!itemComponent ? {
-                ...element,
-                children: element.title,
-                onChange: this.handleSelect,
-                checked: selected.includes(element.value || element._id),
-              } : {
-                item: {
+          <div>
+            {data.map((element) => {
+              const props = {
+                ...(!itemComponent ? {
                   ...element,
-                  _id: element.value,
-                  title: element.title,
-                },
-                onChange: this.handleSelect,
-                checked: selected.includes(element.value || element._id),
-              }),
-            };
-            return (
-              <Item
-                key={element.value || element._id}
-                {...props}
-              />
-            );
-          })}
+                  children: element.title,
+                  onChange: this.handleSelect,
+                  checked: selected.includes(element.value || element._id),
+                } : {
+                  item: {
+                    ...element,
+                    _id: element.value,
+                    title: element.title,
+                  },
+                  onChange: this.handleSelect,
+                  checked: selected.includes(element.value || element._id),
+                }),
+              };
+              return (
+                <Item
+                  key={element.value || element._id}
+                  {...props}
+                />
+              );
+            })}
+          </div>
         </Scrollbars>
       </Block>
     );
