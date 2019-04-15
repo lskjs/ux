@@ -6,9 +6,9 @@ cp README.md ${DIST:-build}/
 
 if [ -d "src/styles" ]
 then
-mkdir -p ${DIST:-build/styles}
-cp -R src/styles/lib ${DIST:-build/styles}/
-cp src/styles/index.css ${DIST:-build/styles}/
+mkdir -p ${DIST:-build}/styles
+cp -R src/styles/lib ${DIST:-build}/styles/
+cp src/styles/index.css ${DIST:-build}/styles/
 fi
 
 # cp {package.json,package-lock.json,README.md} ${DIST:-build}/ && \
