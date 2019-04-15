@@ -30,6 +30,7 @@
     "@lskjs/autobind": "^0.32.0",
     "@lskjs/button": "^0.33.7",
     "@lskjs/dev": "^0.33.7",
+    "@lskjs/css": "^0.33.7",
     "@lskjs/mobx": "0.32.2",
     "@lskjs/theme": "^0.33.7",
     "@lskjs/utils": "0.32.2",
@@ -54,6 +55,7 @@
   "peerDependencies": {
     "@lskjs/autobind": "^0.32.0",
     "@lskjs/utils": "^0.32.0",
+    "@lskjs/css": "*",
     "antd": "^3.16.2",
     "emotion": "9.2.10",
     "formik": "^1.5.2",

@@ -27,6 +27,7 @@
   "devDependencies": {
     "@lskjs/autobind": "^0.32.0",
     "@lskjs/dev": "^0.33.7",
+    "@lskjs/css": "^0.33.7",
     "@lskjs/theme": "^0.33.7",
     "@lskjs/utils": "^0.32.2",
     "antd": "^3.16.2",
@@ -42,6 +43,7 @@
   "peerDependencies": {
     "@lskjs/autobind": "*",
     "@lskjs/dev": "*",
+    "@lskjs/css": "*",
     "@lskjs/theme": "*",
     "@lskjs/utils": "*",
     "classnames": "*",

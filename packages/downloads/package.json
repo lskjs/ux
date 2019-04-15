@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "@lskjs/dev": "^0.33.7",
+    "@lskjs/css": "^0.33.7",
     "@lskjs/theme": "^0.33.7",
     "emotion-theming": "9.1.2",
     "lodash": "4.17.11",
@@ -36,6 +37,7 @@
   },
   "peerDependencies": {
     "@lskjs/dev": "*",
+    "@lskjs/css": "*",
     "@lskjs/theme": "*",
     "emotion-theming": "*",
     "lodash": "*",
