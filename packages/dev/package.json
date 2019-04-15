@@ -22,6 +22,7 @@
     "storybook": "../../scripts/package-storybook.sh"
   },
   "devDependencies": {
+    "@lskjs/css": "0.33.4",
     "@lskjs/theme": "^0.33.4",
     "emotion": "9.2.12",
     "emotion-theming": "9.1.2",
@@ -39,6 +40,7 @@
     "mobx": "*",
     "mobx-react": "*",
     "mobx-react-devtools": "*",
-    "react": "*"
+    "react": "*",
+    "@lskjs/css": "*"
   }
 }
