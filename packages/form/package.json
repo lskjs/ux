@@ -19,7 +19,8 @@
     "link": "../../scripts/package-link.sh",
     "bump": "../../scripts/package-bump.sh",
     "release": "../../scripts/package-release.sh",
-    "storybook": "../../scripts/package-storybook.sh"
+    "storybook": "../../scripts/package-storybook.sh",
+    "styleguide": "../../scripts/package-styleguide.sh"
   },
   "dependencies": {
     "google-map-react": "1.1.4",

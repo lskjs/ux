@@ -34,5 +34,5 @@ module.exports = {
       usageMode: 'expand', // 'hide' | 'collapse' | 'expand'
     },
   ],
-  webpackConfig: require('./tools/webpack.config')[0],
+  // webpackConfig: require('./tools/webpack.config')[0],
 };
