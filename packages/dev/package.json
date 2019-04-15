@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/dev",
-  "version": "0.33.4",
+  "version": "0.33.5",
   "description": "LSK ux subrepo: ui-dev",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "@lskjs/css": "0.33.4",
-    "@lskjs/theme": "^0.33.4",
+    "@lskjs/theme": "^0.33.5",
     "emotion": "9.2.12",
     "emotion-theming": "9.1.2",
     "lodash": "4.17.11",
@@ -33,6 +33,7 @@
     "react": "^16.8.6"
   },
   "peerDependencies": {
+    "@lskjs/css": "*",
     "@lskjs/theme": "*",
     "emotion": "*",
     "emotion-theming": "*",
@@ -40,7 +41,6 @@
     "mobx": "*",
     "mobx-react": "*",
     "mobx-react-devtools": "*",
-    "react": "*",
-    "@lskjs/css": "*"
+    "react": "*"
   }
 }
