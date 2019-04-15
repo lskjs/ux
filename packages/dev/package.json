@@ -23,16 +23,20 @@
   },
   "devDependencies": {
     "@lskjs/theme": "^0.33.1",
+    "emotion": "9.2.12",
     "emotion-theming": "9.1.2",
     "lodash": "4.17.11",
     "mobx": "5.9.4",
     "mobx-react": "5.4.3",
     "mobx-react-devtools": "6.1.1",
-    "react": "^16.8.6"
+    "react": "^16.8.6",
+    "react-emotion": "9.2.12"
   },
   "peerDependencies": {
     "@lskjs/theme": "*",
     "emotion-theming": "*",
+    "react-emotion": "*",
+    "emotion": "*",
     "lodash": "*",
     "mobx": "*",
     "mobx-react": "*",
