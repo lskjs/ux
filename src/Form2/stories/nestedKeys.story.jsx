@@ -9,10 +9,14 @@ import FormDebug from '../FormDebug';
 const InputFormView = (props) => {
   return (
     <Form>
-      <Field {...props.controls.input} />
-      <Field {...props.controls.dependent} />
-      <Field {...props.controls['test.input']} />
-      <Field {...props.controls.input3} />
+      <Field {...props.control('input')} />
+      <Field {...props.control('dependent')} />
+      <Field {...props.control('test.input')} />
+      <Field {...props.control('input3')} />
+      ====
+      <Field {...props.control('test.select')} />
+      <Field {...props.control('inputSelect')} />
+      <Field {...props.control('inputSelect2')} />
       <FormDebug {...props} />
     </Form>
   );
@@ -49,6 +53,25 @@ const InputForm = createForm({
       key: 'test@input',
       title: 'Not nested field',
       initialValue: 'createForm.controls.initialValue',
+      component: Input,
+    },
+    'test.select': {
+      key: 'test@select',
+      title: 'Not nested field',
+      options: ['111', '222', '333', '444'],
+      // initialValue: 'createForm.controls.initialValue',
+      component: Select,
+    },
+    inputSelect: {
+      key: 'test@select',
+      title: 'Select mirror',
+      // initialValue: 'createForm.controls.initialValue',
+      component: Input,
+    },
+    inputSelect2: {
+      key: 'test@select',
+      title: 'Select mirror',
+      // initialValue: 'createForm.controls.initialValue',
       component: Input,
     },
   },

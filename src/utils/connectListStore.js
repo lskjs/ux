@@ -17,7 +17,7 @@ export const defaultGetParams = store => ({
 });
 
 const connectListStore = async ({
-  page, listStore, query, getParams = defaultGetParams, params: propsDefaultParams,
+  page, listStore, query, getParams = defaultGetParams, params: propsDefaultParams, onChange,
 }) => {
   const defaultParams = propsDefaultParams || getParams(listStore);
   DEBUG && console.log('connectListStore', query, defaultParams);
@@ -38,6 +38,8 @@ const connectListStore = async ({
 
       ...omit(query, omitKeys),
     });
+    if (onChange) onChange({ params });
+
 
     let string = getQueryFromParams(params, defaultParams);
     if (string) string = `?${string}`;

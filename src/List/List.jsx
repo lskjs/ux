@@ -104,7 +104,7 @@ class List extends Component {
 
   render() {
     const {
-      debug, columns, show: customShow = {}, pageSize = 10, paginatorProps = {},
+      id, debug, columns, show: customShow = {}, pageSize = 10, paginatorProps = {},
       Item, FilterForm, HeaderItem, Tags = this.constructor.Tags, Tag = this.constructor.Tag, filterProps,
     } = this.props;
     const isFilterModal = this.props.isFilterModal || this.constructor.isFilterModal;
@@ -182,7 +182,7 @@ class List extends Component {
     }
     children = (
       // shadow={shadow}
-      <List.Wrapper style={{ width: '100%' }}>
+      <List.Wrapper style={{ width: '100%' }} id={id || 'lsk-list-top'}>
         {children}
       </List.Wrapper>
     );
@@ -190,6 +190,7 @@ class List extends Component {
       <Provider
         value={{
           List,
+          id,
           show,
           pageSize,
           Item,

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import autobind from 'core-decorators/lib/autobind';
 import Remove from 'react-icons2/mdi/close-circle-outline';
-import fileTypes from '..//fileTypes';
+import fileTypes from '../fileTypes';
 import Box from '../Box';
 import Typography from '../Typography';
 import {

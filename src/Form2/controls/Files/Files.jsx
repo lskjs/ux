@@ -5,6 +5,13 @@ import Files from './FilesBase';
 import DefaultBody from './DefaultBody';
 import DefaultFooter from './DefaultFooter';
 
+const getArray = val => (
+  val == null ? [] : ( // eslint-disable-line no-nested-ternary
+    Array.isArray(val) ?
+      val : [val]
+  )
+);
+
 const FilesUploader = ({
   field,
   form,
@@ -20,7 +27,14 @@ const FilesUploader = ({
       {...field}
       {...props}
       multiple={isMulti}
-      onSubmit={value => form.setFieldValue(field.name, value)}
+      onSubmit={(incomeValues) => {
+        if (!isMulti) form.setFieldValue(field.name, incomeValues);
+        const values = [
+          ...getArray(field.value),
+          ...getArray(incomeValues),
+        ];
+        form.setFieldValue(field.name, values);
+      }}
       // onError={() => onError?.(form.errors[field.name])} // this.globalError
       // validationState={form.errors[field.name] ? 'error' : null}
       // files={field.value}
