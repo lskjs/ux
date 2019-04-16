@@ -44,6 +44,7 @@ class BlogCardList extends PureComponent {
       id,
       img,
       imgObjectFit = 'cover',
+      imgObjectPosition = 'left',
       title,
       tag,
       content,
@@ -61,6 +62,7 @@ class BlogCardList extends PureComponent {
             src={img}
             alt={title}
             objectFit={imgObjectFit}
+            objectPosition={imgObjectPosition}
           />
         </ImageContainer>
         <Body>
