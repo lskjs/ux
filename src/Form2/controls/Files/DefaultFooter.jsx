@@ -3,7 +3,7 @@ import If from 'react-if';
 import Button from '../../../Button';
 import T from '../../../T';
 import Box from './Box';
-import File from './File';
+import File from './component/GridFile';
 import { Col, Row } from '../../../Grid';
 
 
@@ -12,7 +12,7 @@ const DefaultFooter = ({ value, onRemoveFiles }) => (
     <Box paint="transparent">
       <Box.Header padded>
         <T name="lskComponents.filesCount" count={Array.isArray(value) ? value.length : 1} />
-        <If condition={value?.length}>
+        <If condition={value && value.length}>
           <Button
             type="button"
             paint="danger"
