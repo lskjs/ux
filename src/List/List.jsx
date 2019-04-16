@@ -20,6 +20,7 @@ import {
   StepperWrapper,
   SelectWrapper,
   SelectRowWrapper,
+  HoverRowWrapper,
 } from './List.styles';
 import { Provider } from './List.context';
 
@@ -81,6 +82,7 @@ class List extends Component {
   static SortHeader = ListSortHeader;
   static Checkbox = ListCheckbox;
   static SelectRow = ListSelectRow;
+  static HoverRow = HoverRowWrapper;
   static isFilterModal = true;
   static Button = Button;
   static SearchWrapper = Search;
@@ -139,6 +141,7 @@ class List extends Component {
       SortHeader: this.props.SortHeader || this.constructor.SortHeader,
       Checkbox: this.props.Checkbox || this.constructor.Checkbox,
       SelectRow: this.props.SelectRow || this.constructor.SelectRow,
+      HoverRow: this.props.HoverRow || this.constructor.HoverRow,
 
       Button: this.props.Button || this.constructor.Button,
       SearchWrapper: this.props.SearchWrapper || this.constructor.SearchWrapper,
