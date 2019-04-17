@@ -4,10 +4,10 @@ import Breadcrumb from 'antd/lib/breadcrumb';
 import get from 'lodash/get';
 import cloneDeep from 'lodash/cloneDeep';
 // import Container from '../../atoms/PageContainer';
-import Breadcrumbs from '../UI/atoms/PageBreadcrumbs';
+
 import Link from '../Link';
 
-@inject('page')
+@inject('Page', 'page')
 @observer
 class PageBreadcrumbs extends Component {
   render() {
@@ -18,6 +18,7 @@ class PageBreadcrumbs extends Component {
       omitFirst,
       omitLast,
       items: rawItems,
+      Page,
       ...props
     } = this.props;
     const breadcrumbs = get(page, 'state.show.breadcrumbs', true);
@@ -39,7 +40,7 @@ class PageBreadcrumbs extends Component {
     if (items.length <= 1) return null;
 
     return (
-      <Breadcrumbs {...props}>
+      <Page.PageBreadcrumbsWrapper {...props}>
         {children || (
           <Breadcrumb
             itemRender={(route) => {
@@ -50,7 +51,7 @@ class PageBreadcrumbs extends Component {
             routes={items}
           />
         )}
-      </Breadcrumbs>
+      </Page.PageBreadcrumbsWrapper>
     );
   }
 }

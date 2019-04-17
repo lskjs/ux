@@ -4,7 +4,7 @@ import Container from 'reactstrap/lib/Container';
 import { Provider } from 'mobx-react';
 // import Container from '../../atoms/PageContainer';
 // import Title from '../../atoms/PageTitle';
-// import Breadcrumbs from '../../atoms/PageBreadcrumbs';
+import Breadcrumbs from '../UI/atoms/PageBreadcrumbs';
 import PageHeader from './PageHeader';
 import PageTitle from './PageTitle';
 import PageBreadcrumbs from './PageBreadcrumbs';
@@ -12,16 +12,21 @@ import PageBody from './PageBody';
 import PageTabs from './PageTabs';
 import PageTitleActions from '../UI/atoms/PageTitleActions';
 
-import Block from './Page.styles';
+import Block, { PageTitle as PageTitleWrapper } from './Page.styles';
 
 class Page extends PureComponent {
   static Container = Container;
+  static Content = Block;
   static Header = PageHeader;
   static Title = PageTitle;
   static Breadcrumbs = props => <PageBreadcrumbs reverse {...props} />;
   static TitleActions = PageTitleActions;
   static Body = PageBody;
   static Tabs = PageTabs;
+  static PageTitleWrapper = PageTitleWrapper;
+  static PageHeaderWrapper = 'div';
+  static PageBodyWrapper = 'div';
+  static PageBreadcrumbsWrapper = Breadcrumbs;
 
   static propTypes = {
     children: PropTypes.any,
@@ -40,27 +45,42 @@ class Page extends PureComponent {
     } = this.props;
 
     let content = children;
-
+    const Page = {
+      Container: this.constructor.Container,
+      Header: this.constructor.Header,
+      Content: this.constructor.Content,
+      Title: this.constructor.Title,
+      Breadcrumbs: this.constructor.Breadcrumbs,
+      TitleActions: this.constructor.TitleActions,
+      Body: this.constructor.Body,
+      Tabs: this.constructor.Tabs,
+      PageHeaderWrapper: this.constructor.PageHeaderWrapper,
+      PageBodyWrapper: this.constructor.PageBodyWrapper,
+      PageTitleWrapper: this.constructor.PageTitleWrapper,
+    };
     if (container) {
       content = (
-        <Container>
+        <Page.Container>
           {content}
-        </Container>
+        </Page.Container>
       );
     }
     content = (
-      <Block {...props}>
+      <Page.Content {...props}>
         {content}
-      </Block>
+      </Page.Content>
     );
+    const providers = {
+      Page,
+    };
     if (page) {
-      content = (
-        <Provider page={page}>
-          {content}
-        </Provider>
-      );
+      providers.page = page;
     }
-    return content;
+    return (
+      <Provider {...providers}>
+        {content}
+      </Provider>
+    );
   }
 }
 

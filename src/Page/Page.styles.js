@@ -7,6 +7,7 @@ export default styled('main')`
   display: flex;
   flex-direction: column;
   position: relative;
+  box-sizing: border-box;
   ${p => (p.dark && `
     background-color: #f0f0f0;
   `)}
