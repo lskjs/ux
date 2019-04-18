@@ -57,6 +57,7 @@
     "react-custom-scrollbars": "^4.2.1",
     "react-emotion": "^9.2.10",
     "react-icons2": "^2.5.0",
+    "react-motion": "0.5.2",
     "validate.js": "^0.12.0"
   },
   "peerDependencies": {
@@ -87,6 +88,7 @@
     "react": "^16.8.6",
     "react-emotion": "^9.2.10",
     "react-icons2": "^2.5.0",
-    "validate.js": "^0.12.0"
+    "validate.js": "^0.12.0",
+    "react-motion": "0.5.2"
   }
 }
