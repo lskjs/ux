@@ -1,6 +1,6 @@
-const baseJson = require('../../scripts/package.json');
+const json = require(process.cwd() + '/package.json');
+const baseJson = require(__dirname + '/package.json');
 
-const json = require('./package.json');
 
 
 const newJson = {
@@ -12,4 +12,4 @@ const newJson = {
   },
 };
 
-require('fs').writeFileSync('./package.json', JSON.stringify(newJson));
+require('fs').writeFileSync('./package.json', JSON.stringify(newJson, null, 2));

@@ -5,6 +5,10 @@ module.exports = async ({ config, mode }) => {
     loader: require.resolve('babel-loader'),
   });
   config.resolve.extensions.push('.ts', '.tsx');
+  const transformRuntimeIndex = babelrc.plugins.indexOf('@babel/plugin-transform-runtime');
+  if (transformRuntimeIndex >= 0) {
+    babelrc.plugins.splice(transformRuntimeIndex, 1);
+  }
   config.module.rules[0].use[0].options.plugins = babelrc.plugins;
   // config.module.rules[0].use[0].options.plugins.push('emotion');
   return config;
