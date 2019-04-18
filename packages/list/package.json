@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/list",
-  "version": "0.33.9",
+  "version": "0.33.10",
   "description": "LSK ux subrepo: list",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -29,15 +29,15 @@
   },
   "devDependencies": {
     "@lskjs/autobind": "^0.32.0",
-    "@lskjs/button": "^0.33.9",
-    "@lskjs/css": "^0.33.9",
-    "@lskjs/dashboard": "^0.33.9",
-    "@lskjs/dev": "^0.33.9",
-    "@lskjs/form": "^0.33.9",
+    "@lskjs/button": "^0.33.10",
+    "@lskjs/css": "^0.33.10",
+    "@lskjs/dashboard": "^0.33.10",
+    "@lskjs/dev": "^0.33.10",
+    "@lskjs/form": "^0.33.10",
     "@lskjs/mobx": "^0.32.0",
-    "@lskjs/modal": "^0.33.9",
-    "@lskjs/theme": "^0.33.9",
-    "@lskjs/ui": "^0.33.9",
+    "@lskjs/modal": "^0.33.10",
+    "@lskjs/theme": "^0.33.10",
+    "@lskjs/ui": "^0.33.10",
     "@lskjs/utils": "^0.32.2",
     "antd": "^3.16.2",
     "axios": "^0.18.0",
@@ -88,7 +88,7 @@
     "react": "^16.8.6",
     "react-emotion": "^9.2.10",
     "react-icons2": "^2.5.0",
-    "validate.js": "^0.12.0",
-    "react-motion": "0.5.2"
+    "react-motion": "0.5.2",
+    "validate.js": "^0.12.0"
   }
 }
