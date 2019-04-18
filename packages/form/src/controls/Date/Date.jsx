@@ -3,7 +3,11 @@ import moment from 'moment';
 import 'moment/locale/ru';
 import PropTypes from 'prop-types';
 import DatePickerBase from './Datepicker';
+import globalStyles from './Date.styles';
+import { globalStylesCalendar } from '../Calendar/Calendar.styles';
 
+globalStyles();
+globalStylesCalendar();
 
 const DatePicker = (data) => {
   const {

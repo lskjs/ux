@@ -8,6 +8,7 @@ npm link @lskjs/build
 npm link @lskjs/button
 npm link @lskjs/dashboard
 npm link @lskjs/db
+npm link @lskjs/css
 npm link @lskjs/dev
 npm link @lskjs/downloads
 npm link @lskjs/form

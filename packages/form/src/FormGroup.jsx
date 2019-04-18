@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import Form from 'antd/lib/form';
 import FormError from './FormError';
+import { globalStylesFormItem } from './Form.styles';
+
+globalStylesFormItem();
 
 class FormGroup extends Component {
   render() {

@@ -9938,12 +9938,12 @@ textarea.ant-input {
   padding: 1px 7px;
   height: 24px;
 }
-.ant-input-group-lg .ant-select-selection--single {
-  height: 40px;
-}
-.ant-input-group-sm .ant-select-selection--single {
-  height: 24px;
-}
+  .ant-input-group-lg .ant-select-selection--single {
+    height: 40px;
+  }
+  .ant-input-group-sm .ant-select-selection--single {
+    height: 24px;
+  }
 .ant-input-group .ant-input-affix-wrapper {
   display: table-cell;
   width: 100%;

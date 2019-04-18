@@ -5,7 +5,10 @@ import autobind from '@lskjs/autobind';
 import moment from 'moment';
 import HighlightedCell from './HighlightedCell';
 import CalendarBase from './antd-calendar';
+import { globalStylesCalendar, globalStylesFullCalendar } from './Calendar.styles';
 
+globalStylesCalendar();
+globalStylesFullCalendar();
 
 class Calendar extends PureComponent {
   static isAnyTypeDate(f) {

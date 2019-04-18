@@ -5,6 +5,8 @@ import createForm from '../../createForm';
 import Date from './Date';
 import FormDebug from '../../FormDebug';
 
+window.__CLIENT__ = true;
+
 const DateFormView = props => (
   <Form>
     <div style={{ position: 'relative' }}>
