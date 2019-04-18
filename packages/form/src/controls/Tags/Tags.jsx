@@ -1,8 +1,10 @@
 import React from 'react';
 import isPlainObject from 'lodash/isPlainObject';
 import TagsPickerBase from './TagsPicker';
+import globalStyles from './Tags.styles';
 // import { getNormalizedOptions } from '../Select/utils';
 
+globalStyles();
 
 function getNormalizedOptions(options) {
   return options.map((option) => {

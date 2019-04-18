@@ -1,5 +1,8 @@
 import React from 'react';
 import PercentSliderBase from './PercentSliderBase';
+import globalStyles from './PercentSlider.styles';
+
+globalStyles();
 
 const PercentSlider = ({
   field,

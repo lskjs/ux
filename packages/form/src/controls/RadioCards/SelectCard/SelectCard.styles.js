@@ -27,7 +27,7 @@ export const Radio = styled('div')`
   justify-content: center;
   > svg {
     display: flex;
-    font-size: 13px;
+    font-size: 16px;
   }
 `;
 

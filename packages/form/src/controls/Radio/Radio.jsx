@@ -3,6 +3,9 @@ import AntRadio from 'antd/lib/radio';
 import RadioBase from './RadioBase';
 import Bool from '../Checkbox/Bool';
 import Label from '../Checkbox/Checkbox.styles';
+import globalStyles from './Radio.styles';
+
+globalStyles();
 
 // export default (...props) => <Bool {...props} componentClass={AntRadio} />;
 
