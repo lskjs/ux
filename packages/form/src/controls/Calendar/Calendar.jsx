@@ -1,14 +1,13 @@
 import React, { PureComponent } from 'react';
 // import get from 'lodash/get';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
+import CalendarBase from 'react-calendar';
 import autobind from '@lskjs/autobind';
-import moment from 'moment';
-import HighlightedCell from './HighlightedCell';
-import CalendarBase from './antd-calendar';
-import { globalStylesCalendar, globalStylesFullCalendar } from './Calendar.styles';
+// import moment from 'moment';
+// import HighlightedCell from './HighlightedCell';
+import { highlightedStyle, calendarStyles } from './highlightedStyle';
 
-globalStylesCalendar();
-globalStylesFullCalendar();
+calendarStyles();
 
 class Calendar extends PureComponent {
   static isAnyTypeDate(f) {
@@ -17,38 +16,20 @@ class Calendar extends PureComponent {
   @autobind
   validationDate(value) {
     const { field, ...props } = this.props;
-    let validValue = moment(new Date());
+    let validValue = new Date();
     if (this.constructor.isAnyTypeDate(value)) {
-      validValue = moment(new Date(value));
+      validValue = new Date(value);
     } else if (this.constructor.isAnyTypeDate(props.defaultValue)) {
-      validValue = moment(new Date(props.defaultValue));
+      validValue = new Date(props.defaultValue);
     }
     return validValue;
-  }
-  @autobind
-  disabledDate(current) {
-    const { highlightedDates = [], futureOnly } = this.props;
-    current = (moment(current)).startOf('day').valueOf();
-    if (!Array.isArray(highlightedDates)) return false;
-
-    if (futureOnly) {
-      return current < Date.now();
-    }
-    if (highlightedDates) {
-      for (let highDate of highlightedDates) {
-        highDate = moment(highDate).startOf('day').valueOf();
-        if (highDate === current) {
-          return false;
-        }
-      }
-    }
-    return true;
   }
   render() {
     const {
       field,
       form,
       highlightedDates,
+      futureOnly,
       ...props
     } = this.props;
     return (
@@ -57,31 +38,20 @@ class Calendar extends PureComponent {
         {...props}
         onChange={(value) => {
           const selectedDate = new Date(value);
+          console.log(value);
           form.setFieldValue(field.name, selectedDate);
         }}
-        dateCellRender={(date) => {
+        tileClassName={({ date }) => {
           const dates = (highlightedDates || []).map(d => this.validationDate(d));
-          const isValid = !!dates
-            .filter(e =>
-              date
-                .startOf('day')
-                .toDate()
-                .getTime()
-              ===
-              e
-                .startOf('day')
-                .toDate()
-                .getTime()).length;
-          if (isValid) return <HighlightedCell />;
+          const isValid = !!dates.filter(e => date.toDateString() === e.toDateString()).length;
+          if (isValid) return highlightedStyle;
           return '';
         }}
-        disabledDate={this.disabledDate}
         value={this.validationDate(field.value)}
-        fullscreen={false}
+        minDate={futureOnly ? new Date() : null}
       />
     );
   }
 }
 
 export default Calendar;
-

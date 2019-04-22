@@ -9,12 +9,12 @@ const CalendarFormView = (props) => {
   return (
     <Form>
       <Field {...props.control('calendar1')} />
-      {/* <Field {...props.control('calendar2')} />
+      <Field {...props.control('calendar2')} />
       <Field {...props.control('calendar3')} />
       <Field {...props.control('calendar4')} />
       <Field {...props.control('calendar5')} />
       <Field {...props.control('calendar6')} />
-      <Field {...props.control('calendar7')} /> */}
+      <Field {...props.control('calendar7')} />
       <FormDebug {...props} />
     </Form>
   );
@@ -26,7 +26,7 @@ const CalendarForm = createForm({
     calendar1: {
       title: 'Calendar',
       component: Calendar,
-      futureOnly: true,
+      // futureOnly: true,
       highlightedDates: [
         new Date('2019-02-15'),
         new Date('2019-02-18'),
@@ -35,7 +35,7 @@ const CalendarForm = createForm({
         '2019-03-13',
         '2019-02-04',
         '2019-02-13',
-        Date.now(),
+        new Date(),
       ],
     },
     calendar2: {
@@ -73,7 +73,7 @@ export default ({ storiesOf }) =>
           <CalendarForm
             initialValues={{
               calendar1: null,
-              calendar2: '2019-01-01',
+              calendar2: '2019-01-02',
               calendar3: '2019',
               calendar4: new Date('2019-01-06'),
               calendar5: new Date('invalid'),

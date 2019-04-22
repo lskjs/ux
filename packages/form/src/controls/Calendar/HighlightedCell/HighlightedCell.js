@@ -6,7 +6,7 @@ export default styled('div')`
   z-index: 0;
   width: 24px;
   color: white;
-  position: absolute;
+  /* position: absolute; */
   border-radius: 2px;
   left: 0;
   right: 0;
