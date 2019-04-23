@@ -3,6 +3,7 @@ import React, { PureComponent } from 'react';
 // import PropTypes from 'prop-types';
 import CalendarBase from 'react-calendar/dist/entry.nostyle';
 import autobind from '@lskjs/autobind';
+import moment from 'moment';
 // import moment from 'moment';
 // import HighlightedCell from './HighlightedCell';
 import { highlightedStyle, calendarStyles } from './highlightedStyle';
@@ -37,8 +38,9 @@ class Calendar extends PureComponent {
         {...field}
         {...props}
         onChange={(value) => {
-          const selectedDate = new Date(value);
-          console.log(value);
+          const selectedDate = new Date(moment(value).format('YYYY-MM-DD'));
+          // const selectedDate = new Date(value);
+          // console.log(value, selectedDate);
           form.setFieldValue(field.name, selectedDate);
         }}
         tileClassName={({ date }) => {

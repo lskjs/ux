@@ -3,26 +3,32 @@ import { Form, Field } from 'formik';
 import Story from '@lskjs/dev/Story';
 import createForm from '../../createForm';
 import Calendar from './Calendar';
+import Input from '../Input';
 import FormDebug from '../../FormDebug';
 
-const CalendarFormView = (props) => {
-  return (
-    <Form>
-      <Field {...props.control('calendar1')} />
-      <Field {...props.control('calendar2')} />
-      <Field {...props.control('calendar3')} />
-      <Field {...props.control('calendar4')} />
-      <Field {...props.control('calendar5')} />
-      <Field {...props.control('calendar6')} />
-      <Field {...props.control('calendar7')} />
-      <FormDebug {...props} />
-    </Form>
-  );
-};
+window.__DEV__ = true;
+
+const CalendarFormView = props => (
+  <Form>
+    <Field {...props.control('calendar1')} />
+    <Field {...props.control('calendar2')} />
+    <Field {...props.control('calendar3')} />
+    <Field {...props.control('calendar4')} />
+    <Field {...props.control('calendar5')} />
+    <Field {...props.control('calendar6')} />
+    <Field {...props.control('calendar7')} />
+    <Field {...props.control('date')} />
+    <FormDebug {...props} />
+  </Form>
+);
 
 const CalendarForm = createForm({
   view: CalendarFormView,
   controls: {
+    date: {
+      title: 'Date',
+      component: Input,
+    },
     calendar1: {
       title: 'Calendar',
       component: Calendar,
@@ -65,22 +71,20 @@ const CalendarForm = createForm({
   },
 });
 
-export default ({ storiesOf }) =>
-  storiesOf('Form2/controls', module)
-    .add('Calendar ', () => {
-      return (
-        <Story>
-          <CalendarForm
-            initialValues={{
-              calendar1: null,
-              calendar2: '2019-01-02',
-              calendar3: '2019',
-              calendar4: new Date('2019-01-06'),
-              calendar5: new Date('invalid'),
-              calendar6: Date.now(),
-            }}
-            onChange={values => console.log('onChange', values)}
-          />
-        </Story>
-      );
-    });
+export default ({ storiesOf }) => storiesOf('Form2/controls', module)
+  .add('Calendar ', () => (
+    <Story>
+      <CalendarForm
+        initialValues={{
+          date: new Date(),
+          calendar1: null,
+          calendar2: '2019-01-02',
+          calendar3: '2019',
+          calendar4: new Date('2019-01-06'),
+          // calendar5: new Date('invalid'),
+          calendar6: Date.now(),
+        }}
+        onChange={values => console.log('onChange', values)}
+      />
+    </Story>
+  ));
