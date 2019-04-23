@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 // import get from 'lodash/get';
 // import PropTypes from 'prop-types';
-import CalendarBase from 'react-calendar';
+import CalendarBase from 'react-calendar/dist/entry.nostyle';
 import autobind from '@lskjs/autobind';
 // import moment from 'moment';
 // import HighlightedCell from './HighlightedCell';
