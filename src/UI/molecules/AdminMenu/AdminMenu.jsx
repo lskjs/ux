@@ -7,7 +7,9 @@ import If from 'react-if';
 import Horizontal from '../../atoms/Horizontal';
 import ItemTitle from '../../atoms/ItemTitle';
 import TinyLabel from '../../atoms/TinyLabel';
-import { blockStyle } from './AdminMenu.styles';
+import { blockStyle, injectStyles } from './AdminMenu.styles';
+
+injectStyles();
 
 const { SubMenu, ItemGroup, Divider } = Menu;
 
@@ -60,8 +62,14 @@ class AdminMenu extends PureComponent {
 
   @autobind
   renderLink(item, children) {
+    console.log(item, children);
     return (
       <React.Fragment>
+        <If condition={!item.href && item.componentClass}>
+          <item.componentClass>
+            {children}
+          </item.componentClass>
+        </If>
         <If condition={item.href && item.componentClass}>
           <item.componentClass
             href={item.href}
@@ -101,10 +109,6 @@ class AdminMenu extends PureComponent {
       <React.Fragment>
         <If condition={item.label}>
           {this.renderLabel(item, sub)}
-          <Horizontal verticalAlign="center">
-            {item.title}
-            <TinyLabel pullRight={sub} sticky={!sub}>{item.label}</TinyLabel>
-          </Horizontal>
         </If>
         <If condition={!item.label}>
           {item.title}
@@ -112,7 +116,7 @@ class AdminMenu extends PureComponent {
       </React.Fragment>
     );
     return (
-      <Menu.Item key={item.key}>
+      <Menu.Item key={item.key} onClick={item.onClick}>
         {this.renderLink(item, renderBody)}
       </Menu.Item>
     );
@@ -137,7 +141,11 @@ class AdminMenu extends PureComponent {
         theme={theme}
       >
         {items.map((item) => {
-          if (item === 'divider') return <Divider key={`${item.key}-${item}`} />;
+          if (item === 'divider' && mode !== 'horizontal') {
+            return <Divider key={`${item.key}-${item}`} />;
+          } else if (item === 'divider') {
+            return null;
+          }
           if (item.submenu) {
             return (
               <SubMenu

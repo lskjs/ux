@@ -74,17 +74,18 @@ export const injectStyles = () => injectGlobal`
     -webkit-transition: background 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), padding 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
     transition: background 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), padding 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
   }
-  .ant-menu-item > a {
+  .ant-menu-item a {
     display: block;
     color: rgba(0, 0, 0, 0.65);
-  }
-  .ant-menu-item > a:hover {
-    color: #1890ff;
-  }
-  .ant-menu-item > a:focus {
     text-decoration: none;
   }
-  .ant-menu-item > a:before {
+  .ant-menu-item a:hover {
+    color: #1890ff;
+  }
+  .ant-menu-item a:focus {
+    text-decoration: none;
+  }
+  .ant-menu-item a:before {
     position: absolute;
     background-color: transparent;
     top: 0;
@@ -118,8 +119,8 @@ export const injectStyles = () => injectGlobal`
   .ant-menu-item-selected {
     color: #1890ff;
   }
-  .ant-menu-item-selected > a,
-  .ant-menu-item-selected > a:hover {
+  .ant-menu-item-selected a,
+  .ant-menu-item-selected a:hover {
     color: #1890ff;
   }
   .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
@@ -205,6 +206,9 @@ export const injectStyles = () => injectGlobal`
     overflow: hidden;
     padding: 0;
     line-height: 0;
+    background-color: rgba(0, 0, 0, 0.08);
+  }
+  .ant-menu.ant-menu-dark > .ant-menu-item-divider {
     background-color: rgba(255, 255, 255, 0.08);
   }
   .ant-menu-submenu-popup {
@@ -213,7 +217,7 @@ export const injectStyles = () => injectGlobal`
     z-index: 1050;
     background: #fff;
   }
-  .submenu-title-wrapper > a {
+  .submenu-title-wrapper a {
     color: inherit;
   }
   .ant-menu-submenu-popup .submenu-title-wrapper {
@@ -333,9 +337,9 @@ export const injectStyles = () => injectGlobal`
   .ant-menu-vertical-right .ant-menu-submenu-selected {
     color: #1890ff;
   }
-  .ant-menu-vertical .ant-menu-submenu-selected > a,
-  .ant-menu-vertical-left .ant-menu-submenu-selected > a,
-  .ant-menu-vertical-right .ant-menu-submenu-selected > a {
+  .ant-menu-vertical .ant-menu-submenu-selected a,
+  .ant-menu-vertical-left .ant-menu-submenu-selected a,
+  .ant-menu-vertical-right .ant-menu-submenu-selected a {
     color: #1890ff;
   }
   .ant-menu-horizontal {
@@ -364,17 +368,17 @@ export const injectStyles = () => injectGlobal`
     border-bottom: 2px solid #1890ff;
     color: #1890ff;
   }
-  .ant-menu-horizontal > .ant-menu-item > a {
+  .ant-menu-horizontal > .ant-menu-item a {
     display: block;
     color: rgba(0, 0, 0, 0.65);
   }
-  .ant-menu-horizontal > .ant-menu-item > a:hover {
+  .ant-menu-horizontal > .ant-menu-item a:hover {
     color: #1890ff;
   }
-  .ant-menu-horizontal > .ant-menu-item > a:before {
+  .ant-menu-horizontal > .ant-menu-item a:before {
     bottom: -2px;
   }
-  .ant-menu-horizontal > .ant-menu-item-selected > a {
+  .ant-menu-horizontal > .ant-menu-item-selected a {
     color: #1890ff;
   }
   .ant-menu-horizontal:after {
@@ -552,8 +556,8 @@ export const injectStyles = () => injectGlobal`
     background: none;
     border-color: transparent !important;
   }
-  .ant-menu-item-disabled > a,
-  .ant-menu-submenu-disabled > a {
+  .ant-menu-item-disabled a,
+  .ant-menu-submenu-disabled a {
     color: rgba(0, 0, 0, 0.25) !important;
     pointer-events: none;
   }
@@ -606,12 +610,12 @@ export const injectStyles = () => injectGlobal`
     top: 0;
     margin-top: 0;
   }
-  .ant-menu-dark.ant-menu-horizontal > .ant-menu-item > a:before {
+  .ant-menu-dark.ant-menu-horizontal > .ant-menu-item a:before {
     bottom: 0;
   }
   .ant-menu-dark .ant-menu-item,
   .ant-menu-dark .ant-menu-item-group-title,
-  .ant-menu-dark .ant-menu-item > a {
+  .ant-menu-dark .ant-menu-item a {
     color: rgba(255, 255, 255, 0.8);
   }
   .ant-menu-dark.ant-menu-inline,
@@ -651,13 +655,13 @@ export const injectStyles = () => injectGlobal`
   .ant-menu-dark .ant-menu-sub .ant-menu-item:hover {
     background-color: rgba(255, 255, 255, 0.05);
   }
-  
-  .ant-menu-dark .ant-menu-item:hover > a,
-  .ant-menu-dark .ant-menu-item-active > a,
-  .ant-menu-dark .ant-menu-submenu-active > a,
-  .ant-menu-dark .ant-menu-submenu-open > a,
-  .ant-menu-dark .ant-menu-submenu-selected > a,
-  .ant-menu-dark .ant-menu-submenu-title:hover > a {
+
+  .ant-menu-dark .ant-menu-item:hover a,
+  .ant-menu-dark .ant-menu-item-active a,
+  .ant-menu-dark .ant-menu-submenu-active a,
+  .ant-menu-dark .ant-menu-submenu-open a,
+  .ant-menu-dark .ant-menu-submenu-selected a,
+  .ant-menu-dark .ant-menu-submenu-title:hover a {
     color: #fff;
   }
   .ant-menu-dark .ant-menu-item:hover > .ant-menu-submenu-title > .ant-menu-submenu-arrow,
@@ -714,12 +718,12 @@ export const injectStyles = () => injectGlobal`
   .ant-menu-dark .ant-menu-item-selected:after {
     border-right: 0;
   }
-  .ant-menu-dark .ant-menu-item-selected > a,
-  .ant-menu-dark .ant-menu-item-selected > a:hover {
+  .ant-menu-dark .ant-menu-item-selected a,
+  .ant-menu-dark .ant-menu-item-selected a:hover {
     color: #fff;
   }
-  .ant-menu.ant-menu-dark .ant-menu-item-selected, 
-  .ant-menu.ant-menu-dark .ant-menu-submenu-selected {  
+  .ant-menu.ant-menu-dark .ant-menu-item-selected,
+  .ant-menu.ant-menu-dark .ant-menu-submenu-selected {
     box-shadow: inset 0 -2px 0 0 #fff;
   }
   .ant-menu-submenu-popup.ant-menu-dark .ant-menu-item-selected {
@@ -727,8 +731,8 @@ export const injectStyles = () => injectGlobal`
   }
   .ant-menu-dark .ant-menu-item-disabled,
   .ant-menu-dark .ant-menu-submenu-disabled,
-  .ant-menu-dark .ant-menu-item-disabled > a,
-  .ant-menu-dark .ant-menu-submenu-disabled > a {
+  .ant-menu-dark .ant-menu-item-disabled a,
+  .ant-menu-dark .ant-menu-submenu-disabled a {
     opacity: 0.8;
     color: rgba(255, 255, 255, 0.35) !important;
   }
@@ -741,5 +745,18 @@ export const injectStyles = () => injectGlobal`
   .ant-menu-dark .ant-menu-item-disabled > .ant-menu-submenu-title > .ant-menu-submenu-arrow:after,
   .ant-menu-dark .ant-menu-submenu-disabled > .ant-menu-submenu-title > .ant-menu-submenu-arrow:after {
     background: rgba(255, 255, 255, 0.35) !important;
+  }
+  .submenu-title-wrapper a {
+    text-decoration: none;
+  }
+  .ant-menu-vertical .ant-menu-item,
+  .ant-menu-vertical-left .ant-menu-item,
+  .ant-menu-item-group-title .ant-menu-vertical-right .ant-menu-item,
+  .ant-menu-inline .ant-menu-item,
+  .ant-menu-vertical .ant-menu-submenu-title,
+  .ant-menu-vertical-left .ant-menu-submenu-title,
+  .ant-menu-vertical-right .ant-menu-submenu-title,
+  .ant-menu-inline .ant-menu-submenu-title {
+    box-sizing: border-box;
   }
 `;
