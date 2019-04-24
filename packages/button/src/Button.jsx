@@ -21,6 +21,7 @@ class Button extends PureComponent {
   static propTypes = {
     children: PropTypes.any,
     bordered: PropTypes.bool,
+    borderColor: PropTypes.string,
     size: PropTypes.oneOf([
       'extraSmall',
       'small',
@@ -77,6 +78,7 @@ class Button extends PureComponent {
     paint: 'default',
     view: 'solid',
     bordered: false,
+    borderColor: null,
     type: 'button',
     style: {},
     componentClass: 'button',
@@ -232,6 +234,7 @@ class Button extends PureComponent {
       iconLeft,
       iconRight,
       bordered,
+      borderColor,
       rounded,
       new: isNew,
       type,
@@ -266,6 +269,7 @@ class Button extends PureComponent {
         type={type}
         componentClass={tag}
         bordered={bordered}
+        borderColor={borderColor}
         rounded={rounded}
         size={size}
         paint={paint}
@@ -304,6 +308,7 @@ class Button extends PureComponent {
           rounded={rounded}
           iconDirection="left"
           bordered={bordered}
+          borderColor={borderColor}
           visible={state && state !== 'ready'}
         >
           {content}

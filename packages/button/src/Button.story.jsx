@@ -260,5 +260,13 @@ export default ({ storiesOf }) => {
           <Button paint="primary">Primary</Button>
         </ButtonGroup>
       </Story>
+    ))
+    .add('Button with border', () => (
+      <Story>
+        <Button bordered paint="primary" view="text"> Button with border </Button>
+        <br />
+        <br />
+        <Button bordered borderColor="#fafa" paint="primary" view="text"> Button with custom border </Button>
+      </Story>
     ));
 };

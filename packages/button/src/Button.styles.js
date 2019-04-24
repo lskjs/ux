@@ -495,6 +495,7 @@ const filteredTag = removeProps(dynamicTag, [
   'onlyIcon',
   'twoIcons',
   'bordered',
+  'borderColor',
   'rounded',
 ]);
 
@@ -502,6 +503,7 @@ const filteredTag = removeProps(dynamicTag, [
 export const Btn = styled(filteredTag)`
   background-color: #fff;
   border: none;
+  box-shadow: ${p => ((p.bordered && p.borderColor && `0 0 0 2px ${p.borderColor}`) || (p.bordered && '0 0 0 2px'))};
   outline: none;
   border-radius: ${p => (p.rounded ? getTheme(p.theme, 'borderCircle') : getTheme(p.theme, 'borderSmall'))};
   overflow: hidden;
@@ -509,15 +511,6 @@ export const Btn = styled(filteredTag)`
   text-align: center;
   justify-content: center;
   -webkit-appearance: none !important;
-
-  ${(props) => {
-    if (props.bordered) {
-      return `
-        box-shadow: 0 0 0 1px;
-      `;
-    }
-    return '';
-  }}
 
   ${(props) => {
     if (props.auto) {
