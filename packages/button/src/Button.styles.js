@@ -503,7 +503,7 @@ const filteredTag = removeProps(dynamicTag, [
 export const Btn = styled(filteredTag)`
   background-color: #fff;
   border: none;
-  box-shadow: ${p => ((p.bordered && p.borderColor && `0 0 0 2px ${p.borderColor}`) || (p.bordered && '0 0 0 2px'))};
+  box-shadow: ${p => ((p.bordered && p.borderColor && `0 0 0 1px ${p.borderColor}`) || (p.bordered && '0 0 0 1px'))};
   outline: none;
   border-radius: ${p => (p.rounded ? getTheme(p.theme, 'borderCircle') : getTheme(p.theme, 'borderSmall'))};
   overflow: hidden;
