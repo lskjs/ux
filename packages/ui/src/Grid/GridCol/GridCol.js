@@ -1,4 +1,5 @@
 import styled, { css } from 'react-emotion';
+import getTheme from '@lskjs/theme/getTheme';
 import removeProps from '@lskjs/utils/removeProps';
 
 /* default */
@@ -477,8 +478,8 @@ export default styled(filter)`
   width: 100%;
   min-height: 1px;
   flex-shrink: 0;
-  padding-right: ${p => p.theme.gridGap}px;
-  padding-left: ${p => p.theme.gridGap}px;
+  padding-right: ${p => getTheme(p.theme, 'gridGap')}px;
+  padding-left: ${p => getTheme(p.theme, 'gridGap')}px;
 
   ${(p) => {
     if (p.xs && !['number', 'string'].includes(typeof p.xs)) {
