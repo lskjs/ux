@@ -1,1 +1,1 @@
-export { default } from './ErrorComponent';
+export { default } from './SlideContent';
