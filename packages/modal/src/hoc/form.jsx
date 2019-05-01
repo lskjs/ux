@@ -2,7 +2,7 @@
 import React from 'react';
 import If from 'react-if';
 import { Form, Field } from 'formik';
-import Button from '@lskjs/ui/Button';
+import Button from '@lskjs/button';
 import ButtonGroup from '@lskjs/button/ButtonGroup';
 import createForm from '@lskjs/form/createForm';
 import FormSubmitButton from '@lskjs/form/FormSubmitButton';
