@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import Slider from 'react-slick';
 import PropTypes from 'prop-types';
 import {
@@ -25,7 +25,7 @@ const normalizeItems = (items = []) => (
 );
 
 
-export default class Carousel extends Component {
+class Carousel extends PureComponent {
   static propTypes = {
     slidesToScroll: PropTypes.number,
     itemWidth: PropTypes.number,
@@ -71,6 +71,7 @@ export default class Carousel extends Component {
       nextArrow,
       prevArrow,
     };
+    console.log('lel');
     return (
       <Container>
         <Slider {...settings} {...props}>
@@ -91,3 +92,5 @@ export default class Carousel extends Component {
     );
   }
 }
+
+export default Carousel;
