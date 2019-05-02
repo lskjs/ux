@@ -24,7 +24,6 @@ const normalizeItems = (items = []) => (
   })
 );
 
-
 class Carousel extends PureComponent {
   static propTypes = {
     slidesToScroll: PropTypes.number,
@@ -71,7 +70,7 @@ class Carousel extends PureComponent {
       nextArrow,
       prevArrow,
     };
-    console.log('lel');
+
     return (
       <Container>
         <Slider {...settings} {...props}>
