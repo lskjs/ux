@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/dashboard",
-  "version": "0.33.14",
+  "version": "0.33.19",
   "description": "LSK ux subrepo: dashboard",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "@lskjs/autobind": "^0.33.15",
-    "@lskjs/ui": "^0.33.18",
+    "@lskjs/ui": "^0.33.19",
     "@lskjs/utils": "^0.33.15",
     "antd": "^3.17.0",
     "emotion": "^10.0.9",
