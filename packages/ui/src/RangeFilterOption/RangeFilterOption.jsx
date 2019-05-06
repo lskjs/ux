@@ -79,13 +79,13 @@ class RangeFilterOption extends Component {
   }
   getMaxValue(props, state) {
     if (!state || typeof state.maxValue !== 'number') {
-      return props.value?.[1] || props.selected?.value[1];
+      return get(props, 'value.1') || get(props, 'selected.value.1');
     }
     return state.maxValue;
   }
   getMinValue(props, state) {
     if (!state || typeof state.minValue !== 'number') {
-      return props.value?.[0] || props.selected?.value[0];
+      return get(props, 'value.0') || get(props, 'selected.value.0');
     }
     return state.minValue;
   }
@@ -144,7 +144,9 @@ class RangeFilterOption extends Component {
       [`${type}Focused`]: true,
       [`${reverse}Focused`]: false,
     });
-    this[`${type}Ref`]?.focus(); // eslint-disable-line
+    if (this[`${type}Ref`]) {
+      this[`${type}Ref`].focus();
+    }
   }
   @autobind
   callback(min, max) {
@@ -198,7 +200,7 @@ class RangeFilterOption extends Component {
           stats={stats}
           minProps={{
             innerRef: (e) => {
-              this.minRef = e?.refsInput; // eslint-disable-line no-undef
+              this.minRef = e && e.refsInput; // eslint-disable-line no-undef
             },
             placeholder: 'Мин.',
             autoFocus: true,
@@ -208,7 +210,7 @@ class RangeFilterOption extends Component {
           }}
           maxProps={{
             innerRef: (e) => {
-              this.maxRef = e?.refsInput; // eslint-disable-line no-undef
+              this.maxRef = e && e.refsInput; // eslint-disable-line no-undef
             },
             placeholder: 'Макс.',
             onFocus: () => {
