@@ -28,6 +28,10 @@ class Story extends Component {
       t,
       config,
       api,
+      isAdmin: () => true,
+      getCalculation: () => ({
+        feeRate: 0.2,
+      }),
       modules: {
         upload: {
           uploadFile: async e => ({ url: e.name }),
