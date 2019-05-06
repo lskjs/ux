@@ -51,7 +51,9 @@ class SelectFilter extends PureComponent {
   openHandler(open) {
     this.setState({ open }, () => {
       this.setState({
-        contentHeight: this.content.current?.scrollHeight || '100%', // eslint-disable-line no-undef
+        contentHeight: this.content.current
+          ? this.content.current.scrollHeight
+          : '100%',
       });
     });
   }
