@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import isEqual from 'lodash/isEqual';
 import If from 'react-if';
+import get from 'lodash/get';
 import PropTypes from 'prop-types';
 import autobind from '@lskjs/autobind';
 import formatter from '@lskjs/utils/formatter';
