@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/form",
-  "version": "0.33.27",
+  "version": "0.33.28",
   "description": "LSK ux subrepo: form",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -43,7 +43,7 @@
     "@lskjs/modal": "^0.33.27",
     "@lskjs/scroll": "0.31.13",
     "@lskjs/theme": "^0.33.24",
-    "@lskjs/ui": "^0.33.27",
+    "@lskjs/ui": "^0.33.28",
     "@lskjs/utils": "0.32.2",
     "antd": "3.16.2",
     "bluebird": "3.5.4",
