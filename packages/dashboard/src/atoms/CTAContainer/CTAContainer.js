@@ -1,6 +1,6 @@
 import styled from 'react-emotion';
 
-import Col from 'reactstrap/lib/Col';
+const Col = 'div'; // import Col from 'reactstrap/lib/Col';
 
 export default styled(Col)`
   color: ${p => (p.theme.colors.white)};

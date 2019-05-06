@@ -1,6 +1,6 @@
 import React from 'react';
 import Tag from 'antd/lib/tag';
-import Avatar from '../../../Avatar';
+import Avatar from '@lskjs/ui/Avatar';
 
 export const notificationsData = [
   {

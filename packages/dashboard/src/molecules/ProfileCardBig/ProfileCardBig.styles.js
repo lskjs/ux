@@ -1,5 +1,5 @@
 import styled from 'react-emotion';
-import Avatar from '../../../Avatar';
+import Avatar from '@lskjs/ui/Avatar';
 import createdynamicTag from '@lskjs/utils/createDynamicTag';
 import removeProps from '@lskjs/utils/removeProps';
 

@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import Slide from '../../../Slide';
+import Slide from '@lskjs/ui/Slide';
 import CoverTitle from '../../atoms/CoverTitle';
 import CoverSubtitle from '../../atoms/CoverSubtitle';
 import CoverDivider from '../../atoms/CoverDivider';

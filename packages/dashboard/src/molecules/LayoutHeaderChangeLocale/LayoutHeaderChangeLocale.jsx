@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Dropdown from 'antd/lib/dropdown';
-import FlagIcon from '../../organisms/FlagIcon';
+import FlagIcon from '@lskjs/ui/Flag';
 import LayoutHeaderListItem from '../../atoms/LayoutHeaderListItem';
 import DropdownLink from './LayoutHeaderChangeLocale.styles';
 

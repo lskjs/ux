@@ -1,5 +1,5 @@
 import React from 'react';
-import Col from 'reactstrap/lib/Col';
+const Col = 'div'; // import Col from 'reactstrap/lib/Col';
 import Cover from './Cover';
 import Story from '@lskjs/dev/Story';
 

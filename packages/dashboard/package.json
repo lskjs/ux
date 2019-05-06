@@ -23,5 +23,28 @@
     "release:docs": "../../scripts/package-release-docs.sh",
     "storybook": "../../scripts/package-storybook.sh",
     "styleguide": "../../scripts/package-styleguide.sh"
+  },
+  "dependencies": {
+    "react-if": "^3.4.0"
+  },
+  "devDependencies": {
+    "@lskjs/autobind": "^0.33.15",
+    "@lskjs/ui": "^0.33.18",
+    "@lskjs/utils": "^0.33.15",
+    "antd": "^3.17.0",
+    "emotion": "^10.0.9",
+    "moment": "^2.24.0",
+    "react-emotion": "^10.0.0",
+    "react-icons2": "^2.5.0"
+  },
+  "peerDependencies": {
+    "@lskjs/autobind": "*",
+    "@lskjs/ui": "*",
+    "@lskjs/utils": "*",
+    "antd": "*",
+    "emotion": "*",
+    "moment": "*",
+    "react-emotion": "*",
+    "react-icons2": "*"
   }
 }

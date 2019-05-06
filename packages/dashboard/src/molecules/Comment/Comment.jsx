@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import If from 'react-if';
 import moment from 'moment';
-import Avatar from '../../../Avatar';
+import Avatar from '@lskjs/ui/Avatar';
 import Typography from '../../atoms/Typography';
 import {
   CommentWrapper,

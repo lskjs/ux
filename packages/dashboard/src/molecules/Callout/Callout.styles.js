@@ -1,5 +1,5 @@
 import styled from 'react-emotion';
-import Col from 'reactstrap/lib/Col';
+const Col = 'div'; // import Col from 'reactstrap/lib/Col';
 
 import BsButton from 'antd/lib/button';
 

@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import If from 'react-if';
-import Image from '../Image';
-import filterProps from '../../../utils/filterProps';
+import Image from '@lskjs/ui/Image';
+import filterProps from '@lskjs/utils/filterProps';
 
 import {
   Wrapper,

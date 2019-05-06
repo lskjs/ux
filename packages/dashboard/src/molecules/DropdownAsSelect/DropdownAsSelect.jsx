@@ -5,7 +5,7 @@ import autobind from '@lskjs/autobind';
 import ChevronDownIcon from 'react-icons2/mdi/chevron-down';
 import { Manager, Reference, Popper } from 'react-popper';
 
-import Outside from '../../../utils/react-click-outside';
+import Outside from '@lskjs/utils/react-click-outside';
 import { contentStyle, popperDisabledStyle, Content, Trigger as TriggerStyled, Icon } from './DropdownAsSelect.styles';
 
 class SelectFilter extends PureComponent {

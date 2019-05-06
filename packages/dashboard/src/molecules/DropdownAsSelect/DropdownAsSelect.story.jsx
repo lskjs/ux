@@ -1,6 +1,6 @@
 import React from 'react';
 import RangeFilterOption from '../RangeFilterOption';
-import { formatter } from '../../../utils/formatter';
+import { formatter } from '@lskjs/utils/formatter';
 import Story from '@lskjs/dev/Story';
 import DropdownAsSelect from './DropdownAsSelect';
 import FilterValue from '../../atoms/FilterValue';

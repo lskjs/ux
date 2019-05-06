@@ -10,6 +10,7 @@ rm -rf node_modules &&  npm i && mkdir -p node_modules && \
 cp -R package.json build && \
 cp -R package-lock.json build && \
 cp -R node_modules build && \
+cd build && npm link && cd .. \
 
 # $DIR/package-link.sh && \
 # cp -R node_modules build && \

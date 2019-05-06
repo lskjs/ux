@@ -10,7 +10,7 @@ import { inject, observer } from 'mobx-react';
 import USD from 'react-icons2/mdi/currency-usd';
 import EUR from 'react-icons2/mdi/currency-eur';
 import RUB from 'react-icons2/mdi/currency-rub';
-import { toShort, formatter, numberWithSpaces } from '../../../utils/formatter';
+import { toShort, formatter, numberWithSpaces } from '@lskjs/utils/formatter';
 
 
 const getSign = (currency) => {

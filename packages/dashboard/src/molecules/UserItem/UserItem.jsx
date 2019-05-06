@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import Avatar from '../../../Avatar';
+import Avatar from '@lskjs/ui/Avatar';
 import { Title, AvatarWrapper, Block } from './UserItem.styles';
-import filterProps from '../../../utils/filterProps';
+import filterProps from '@lskjs/utils/filterProps';
 
 class UserItem extends PureComponent {
   static propTypes = {

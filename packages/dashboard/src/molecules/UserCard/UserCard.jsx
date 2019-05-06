@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import If from 'react-if';
 import PropTypes from 'prop-types';
-import Avatar from '../../../Avatar';
+import Avatar from '@lskjs/ui/Avatar';
 import UserTitle from '../../atoms/UserTitle';
 import UserPosition from '../../atoms/UserPosition';
 import AvatarWrapper from '../../atoms/AvatarWrapper';

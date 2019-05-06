@@ -8,7 +8,7 @@ import If from 'react-if';
 import CloseIcon from 'react-icons2/mdi/close';
 import Magnify from 'react-icons2/mdi/magnify';
 
-import filterProps from '../../../utils/filterProps';
+import filterProps from '@lskjs/utils/filterProps';
 import Button from '@lskjs/button';
 
 import {

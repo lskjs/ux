@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import Avatar from '../../../Avatar';
+import Avatar from '@lskjs/ui/Avatar';
 import {
   Content,
   Meta,

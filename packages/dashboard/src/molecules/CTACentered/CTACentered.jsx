@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { Container, Col } from 'reactstrap';
+// import { Container, Col } from 'reactstrap';
 import If from 'react-if';
 import PropTypes from 'prop-types';
 
@@ -39,20 +39,23 @@ class CTACentered extends PureComponent {
       align,
     } = this.props;
     return (
-      <Container>
-        <Col md={12}>
-          <Wrapper align={align}>
-            <Title>{title}</Title>
-            <Lead>
-              {subtitle}
-            </Lead>
-            {actions}
-            <If condition={footer}>
-              <Muted>{footer}</Muted>
-            </If>
-          </Wrapper>
-        </Col>
-      </Container>
+      // <Container>
+      //   <Col md={12}>
+      <div>
+        <Wrapper align={align}>
+          <Title>{title}</Title>
+          <Lead>
+            {subtitle}
+          </Lead>
+          {actions}
+          <If condition={footer}>
+            <Muted>{footer}</Muted>
+          </If>
+        </Wrapper>
+      </div>
+
+    //   </Col>
+    // </Container>
     );
   }
 }
