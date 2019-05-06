@@ -21,6 +21,7 @@ import {
   StepperWrapper,
   SelectWrapper,
   SelectRowWrapper,
+  HoverRowWrapper,
 } from './List.styles';
 import { Provider } from './List.context';
 
@@ -86,6 +87,7 @@ class List extends Component {
   static SortHeader = ListSortHeader;
   static Checkbox = ListCheckbox;
   static SelectRow = ListSelectRow;
+  static HoverRow = HoverRowWrapper;
   static isFilterModal = true;
   static Button = Button;
   static SearchWrapper = DefaultSearchWrapper;
@@ -145,6 +147,7 @@ class List extends Component {
       SortHeader: getProp(this, 'SortHeader'),
       Checkbox: getProp(this, 'Checkbox'),
       SelectRow: getProp(this, 'SelectRow'),
+      HoverRow: getProp(this, 'HoverRow'),
 
       Button: getProp(this, 'Button'),
       SearchWrapper: getProp(this, 'SearchWrapper'),
