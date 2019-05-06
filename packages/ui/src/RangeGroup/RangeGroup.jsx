@@ -51,12 +51,12 @@ class RangeGroup extends PureComponent {
       [min]: min,
       [max]: max,
     };
-    const maxStatsValue = stats?.length ? Math.max(...stats) : 0;
+    const maxStatsValue = stats && stats.length ? Math.max(...stats) : 0;
     return (
       <React.Fragment>
         <If condition={slider !== false}>
           <div style={{ marginBottom: 10, marginTop: 30 }}>
-            <If condition={stats?.length}>
+            <If condition={stats && stats.length}>
               <Graph>
                 {stats.map((item, i) => (
                   <GraphItem
@@ -68,7 +68,7 @@ class RangeGroup extends PureComponent {
             </If>
             <Slider
               range
-              graphs={stats?.length} // eslint-disable-line
+              graphs={stats && stats.length} // eslint-disable-line
               onChange={this.handleChange}
               value={sliderValue}
               marks={marks}
