@@ -36,6 +36,7 @@
     "@lskjs/button": "^0.33.24",
     "@lskjs/css": "^0.33.24",
     "@lskjs/dev": "^0.33.24",
+    "@lskjs/form": "0.33.27",
     "@lskjs/mobx": "0.33.5",
     "@lskjs/theme": "^0.33.24",
     "@lskjs/utils": "0.33.17",
