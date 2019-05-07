@@ -5,11 +5,11 @@ import removeProps from '@lskjs/utils/removeProps';
 import getTheme from '@lskjs/theme/getTheme';
 
 const iconLeft = css`
-  margin-right: 8px;
+  margin-right: 10px;
 `;
 
 const iconRight = css`
-  margin-left: 8px;
+  margin-left: 13px;
 `;
 
 const iconSingle = css`
@@ -47,6 +47,17 @@ export const Icon = styled('div')`
   `)}
 `;
 
+const xlargeSize = css`
+  padding: 16px 17px;
+  font-size: 15px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.08;
+  letter-spacing: -0.1px;
+  min-width: 104px;
+`;
+
 const largeSize = props => css`
   ${props.new ? `
     padding: 15px 16px;
@@ -57,7 +68,7 @@ const largeSize = props => css`
     line-height: 1.08;
     letter-spacing: -0.1px;
   ` : `
-    padding: 15px 16px;
+    padding: 17px 16px;
     font-size: 13px;
     font-weight: 500;
     font-style: normal;
@@ -116,18 +127,18 @@ const iconButtonLeft = props => css`
     }
   `}
   ${props.size === 'default' && `
-    padding-top: 9px;
-    padding-bottom: 9px;
+    padding-top: 11px;
+    padding-bottom: 11px;
     padding-left: 12px;
 
     ${Icon} {
-      font-size: 22px;
+      font-size: 18px;
     }
   `}
   ${props.size === 'small' && `
-    padding-left: 8px;
-    padding-top: 6px;
-    padding-bottom: 6px;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 
     ${Icon} {
       font-size: 24px;
@@ -148,12 +159,12 @@ const iconButtonRight = props => css`
     }
   `}
   ${props.size === 'default' && `
-    padding-right: 12px;
-    padding-top: 9px;
-    padding-bottom: 9px;
+    padding-right: 14px;
+    padding-top: 13px;
+    padding-bottom: 13px;
 
     ${Icon} {
-      font-size: 22px;
+      font-size: 12px;
     }
   `}
   ${props.size === 'small' && `
@@ -181,13 +192,13 @@ const iconButtonSingle = props => css`
     }
   `}
   ${props.size === 'default' && `
-    padding-top: 10px !important;
-    padding-bottom: 10px !important;
-    padding-right: 10px !important;
-    padding-left: 10px !important;
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+    padding-right: 12px !important;
+    padding-left: 12px !important;
 
     ${Icon} {
-      font-size: 24px;
+      font-size: 16px;
     }
   `}
   ${props.size === 'small' && `
@@ -248,6 +259,11 @@ const primarySolidTheme = ({ theme }) => css`
   &:hover {
     color: ${getTheme(theme, 'colors.white')};
     background-color: ${getTheme(theme, 'colors.darkPrimary')};
+  }
+
+  &:focus {
+    color: ${getTheme(theme, 'colors.white')};
+    background-color: ${getTheme(theme, 'colors.focusPrimary')};
   }
 
   &:active {
@@ -353,6 +369,11 @@ const primaryTextTheme = ({ theme }) => css`
   &:hover {
     color: ${getTheme(theme, 'colors.primary')};
     background-color: ${getTheme(theme, 'colors.lighterPrimary')};
+  }
+
+  &:focus {
+    color: ${getTheme(theme, 'colors.primary')};
+    background-color: ${getTheme(theme, 'colors.focusPrimaryText')};
   }
 
   &:active {
@@ -524,6 +545,16 @@ export const Btn = styled(filteredTag)`
           }
           display: ${props.block ? 'flex' : 'inline-flex'};
           align-items: center;
+          ${props.size === 'extraLarge' && `
+            padding-top: 9px;
+            padding-bottom: 9px;
+            padding-right: 9px;
+            padding-left: 9px;
+
+            ${Icon} {
+              font-size: 24px;
+            }
+          `}
           ${props.size === 'large' && `
             padding-top: 9px;
             padding-bottom: 9px;
@@ -587,6 +618,7 @@ export const Btn = styled(filteredTag)`
       case 'large': return largeSize;
       case 'small': return smallSize;
       case 'extraSmall': return xsmallSize;
+      case 'extraLarge': return xlargeSize;
       default: return defaultSize;
     }
   }}
