@@ -9,7 +9,7 @@ const iconLeft = css`
 `;
 
 const iconRight = css`
-  margin-left: 13px;
+  margin-left: 10px;
 `;
 
 const iconSingle = css`
@@ -79,7 +79,7 @@ const largeSize = props => css`
 `;
 
 const defaultSize = css`
-  padding: 13px 16px;
+  padding: 13px 11px;
   font-size: 13px;
   font-weight: 500;
   font-style: normal;
@@ -137,8 +137,8 @@ const iconButtonLeft = props => css`
   `}
   ${props.size === 'small' && `
     padding-left: 5px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 6px;
+    padding-bottom: 6px;
 
     ${Icon} {
       font-size: 24px;
@@ -160,11 +160,11 @@ const iconButtonRight = props => css`
   `}
   ${props.size === 'default' && `
     padding-right: 14px;
-    padding-top: 13px;
-    padding-bottom: 13px;
+    padding-top: 11px;
+    padding-bottom: 11px;
 
     ${Icon} {
-      font-size: 12px;
+      font-size: 18px;
     }
   `}
   ${props.size === 'small' && `
@@ -215,8 +215,19 @@ const iconButtonSingle = props => css`
 
 
 const viewSolidDisabled = css`
-  background-color: rgb(243, 243, 243) !important;
-  color: rgb(158, 158, 158) !important;
+  background-color: rgb(242, 243, 250) !important;
+  color: rgb(205, 205, 205) !important;
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: rgb(243, 243, 243) !important;
+    color: rgb(158, 158, 158) !important;
+  }
+`;
+
+const viewBaseDisabled = css`
+  background-color: rgb(242, 243, 250) !important;
+  color: rgb(205, 205, 205) !important;
   &:hover,
   &:active,
   &:focus {
@@ -252,13 +263,73 @@ const defaultSolidTheme = props => css`
   `}
 `;
 
+const dangerBaseTheme = ({ theme }) => css`
+  color: ${getTheme(theme, 'colors.main')};
+  background-color: ${getTheme(theme, 'colors.lighterGray')};
+
+  &:hover {
+    color: ${getTheme(theme, 'colors.white')};
+    background-color: ${getTheme(theme, 'colors.danger')};
+  }
+
+  &:focus {
+    color: ${getTheme(theme, 'colors.white')};
+    background-color: ${getTheme(theme, 'colors.darkerDanger')};
+  }
+
+  &:active {
+    color: ${getTheme(theme, 'colors.white')};
+    background-color: ${getTheme(theme, 'colors.danger')};
+  }
+`;
+
+const warningBaseTheme = ({ theme }) => css`
+  color: ${getTheme(theme, 'colors.main')};
+  background-color: ${getTheme(theme, 'colors.lighterGray')};
+
+  &:hover {
+    color: ${getTheme(theme, 'colors.white')};
+    background-color: ${getTheme(theme, 'colors.warning')};
+  }
+
+  &:focus {
+    color: ${getTheme(theme, 'colors.white')};
+    background-color: ${getTheme(theme, 'colors.darkerWarning')};
+  }
+
+  &:active {
+    color: ${getTheme(theme, 'colors.white')};
+    background-color: ${getTheme(theme, 'colors.warning')};
+  }
+`;
+
+const successBaseTheme = ({ theme }) => css`
+  color: ${getTheme(theme, 'colors.main')};
+  background-color: ${getTheme(theme, 'colors.lighterGray')};
+
+  &:hover {
+    color: ${getTheme(theme, 'colors.white')};
+    background-color: ${getTheme(theme, 'colors.success')};
+  }
+
+  &:focus {
+    color: ${getTheme(theme, 'colors.white')};
+    background-color: ${getTheme(theme, 'colors.darkerSuccess')};
+  }
+
+  &:active {
+    color: ${getTheme(theme, 'colors.white')};
+    background-color: ${getTheme(theme, 'colors.success')};
+  }
+`;
+
 const primarySolidTheme = ({ theme }) => css`
   color: ${getTheme(theme, 'colors.white')};
   background-color: ${getTheme(theme, 'colors.primary')};
 
   &:hover {
     color: ${getTheme(theme, 'colors.white')};
-    background-color: ${getTheme(theme, 'colors.darkPrimary')};
+    background-color: ${getTheme(theme, 'colors.darkestPrimary')};
   }
 
   &:focus {
@@ -332,10 +403,32 @@ const successSolidTheme = ({ theme }) => css`
   }
 `;
 
-const viewTextDisabled = css`
+const commonSolidTheme = ({ theme }) => css`
+  color: ${getTheme(theme, 'colors.main')};
+  background-color: ${getTheme(theme, 'colors.lighterGray')};
+
+  &:hover {
+    color: ${getTheme(theme, 'colors.main')};
+    background-color: ${getTheme(theme, 'colors.darkerGray')};
+  }
+  &:focus {
+    color: ${getTheme(theme, 'colors.main')};
+    background-color: ${getTheme(theme, 'colors.darkestGray')};
+  }
+  &:active {
+    color: ${getTheme(theme, 'colors.main')};
+    background-color: ${getTheme(theme, 'colors.darkerGray')};
+  }
+`;
+
+const viewTextDisabled = props => css`
   pointer-events: none;
-  color: rgba(74, 74, 74, 0.5) !important;
-  background-color: transparent !important;
+  /* color: rgba(74, 74, 74, 0.5) !important; */
+  ${props.bordered && `
+    background-color: rgb(242, 243, 250) !important;
+    box-shadow: none;
+  `}
+  color: rgb(205,205,205) !important;
   &:hover,
   &:active {
     color: rgba(74, 74, 74, 0.5) !important;
@@ -635,6 +728,7 @@ export const Btn = styled(filteredTag)`
       switch (props.view) {
         case 'solid': return viewSolidDisabled;
         case 'text': return viewTextDisabled;
+        case 'base': return viewBaseDisabled;
         case 'transparent': return viewTransparentDisabled;
         case 'transparentDark': return viewTransparentDisabledDark;
         default: return '';
@@ -646,6 +740,7 @@ export const Btn = styled(filteredTag)`
         case 'warning': return warningSolidTheme;
         case 'danger': return dangerSolidTheme;
         case 'success': return successSolidTheme;
+        case 'common': return commonSolidTheme;
         case 'transparent': return transparentTheme;
         case 'transparentDark': return transparentThemeDark;
         default: return defaultSolidTheme;
@@ -660,6 +755,17 @@ export const Btn = styled(filteredTag)`
         case 'transparent': return transparentTheme;
         case 'transparentDark': return transparentThemeDark;
         default: return defaultTextTheme;
+      }
+    } else if (props.view === 'base') {
+      switch (props.paint) {
+        case 'primary': return primaryBaseTheme;
+        case 'info': return infoBaseTheme;
+        case 'warning': return warningBaseTheme;
+        case 'danger': return dangerBaseTheme;
+        case 'success': return successBaseTheme;
+        case 'transparent': return transparentTheme;
+        case 'transparentDark': return transparentThemeDark;
+        default: return defaultBaseTheme;
       }
     } else if (props.view === 'transparent') {
       return transparentTheme;
@@ -805,6 +911,7 @@ export const State = styled('div')`
       case 'info': return infoSolidTheme;
       case 'warning': return warningSolidTheme;
       case 'danger': return dangerSolidTheme;
+      case 'common': return commonSolidTheme;
       case 'success': return successSolidTheme;
       default: return defaultSolidTheme;
     }

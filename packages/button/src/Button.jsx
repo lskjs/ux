@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import autobind from '@lskjs/autobind';
 import CheckIcon from 'react-icons2/mdi/check';
-import CloseIcon from 'react-icons2/mdi/close';
+// import CloseIcon from 'react-icons2/mdi/close';
 import PropTypes from 'prop-types';
 import omit from 'lodash/omit';
 import If from 'react-if';
@@ -34,6 +34,7 @@ class Button extends PureComponent {
       'warning',
       'danger',
       'info',
+      'common',
       'success',
       'transparent',
       'transparentDark',
@@ -47,6 +48,7 @@ class Button extends PureComponent {
     view: PropTypes.oneOf([
       'solid',
       'text',
+      'base',
       'transparent',
       'transparentDark',
     ]),
@@ -158,11 +160,12 @@ class Button extends PureComponent {
         };
       case 'success':
         return {
-          paint: 'success',
+          // paint: 'success',
+          paint: 'primary',
           content: this.props.contentSuccess || (
             <React.Fragment>
               <Icon direction={this.props.textSuccess ? 'left' : 'single'}>
-                <CheckIcon />
+                <CheckIcon size={32} />
               </Icon>
               {this.props.textSuccess}
             </React.Fragment>
@@ -173,9 +176,9 @@ class Button extends PureComponent {
           paint: 'danger',
           content: this.props.contentError || (
             <React.Fragment>
-              <Icon direction={this.props.textError ? 'left' : 'single'}>
+              {/* <Icon direction={this.props.textError ? 'left' : 'single'}>
                 <CloseIcon />
-              </Icon>
+              </Icon> */}
               {this.props.textError}
             </React.Fragment>
           ),
