@@ -1,8 +1,6 @@
-import { Component } from React from 'react';
+import React, { Component } from 'react';
 import range from 'lodash/range';
 import Story from '@lskjs/dev/Story';
-import LayoutHeader from './LayoutHeader';
-
 
 import autobind from 'core-decorators/lib/autobind';
 import PropTypes from 'prop-types';
@@ -28,6 +26,7 @@ import LayoutHeader from '@lskjs/general/ui/molecules/LayoutHeader';
 import ListItem from '@lskjs/general/ui/molecules/ListItem';
 import LocaleTitle from '@lskjs/general/ui/atoms/LocaleTitle';
 import T from '@lskjs/ui/T';
+import LayoutHeader from './LayoutHeader';
 
 import { notificationsData, messagesData, tasksData } from './Header.mock';
 
@@ -168,7 +167,7 @@ export default ({ storiesOf }) => (
               <HeaderDropdown>
                 <If condition={user.name}>
                   <Menu.Item key="4" className="d-block d-md-none">
-                    <T name="components.headerSignedAs" /> 
+                    <T name="components.headerSignedAs" />
                     <strong>{user.name}</strong>
                   </Menu.Item>
                   <Menu.Divider className="d-block d-md-none" />
@@ -181,13 +180,15 @@ export default ({ storiesOf }) => (
                 </Menu.Item>
                 <Menu.Item key="0">
                   <a href="#!">
-                    <Icon type="info-circle-o" />About
-                  </a>
+                    <Icon type="info-circle-o" />
+About
+                                    </a>
                 </Menu.Item>
                 <Menu.Item key="2">
                   <a href="#!">
-                    <Icon type="question-circle-o" />Need Help?
-                  </a>
+                    <Icon type="question-circle-o" />
+Need Help?
+                                    </a>
                 </Menu.Item>
                 <Menu.Divider />
                 <Menu.Item key="3">
