@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import range from 'lodash/range';
 import Story from '@lskjs/dev/Story';
-import autobind from 'core-decorators/lib/autobind';
+import autobind from '@lskjs/autobind';
 import PropTypes from 'prop-types';
 import List from 'antd/lib/list';
 import Menu from 'antd/lib/menu';

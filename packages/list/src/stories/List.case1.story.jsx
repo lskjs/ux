@@ -7,12 +7,15 @@ import { css } from 'emotion';
 import cx from 'classnames';
 import Promise from 'bluebird';
 
+// import polyfill from '@lskjs/utils/polyfill';
 import Story from '@lskjs/dev/Story';
 import { Row, Col } from '@lskjs/ui/Table';
 import ListStore from '@lskjs/mobx/stores/ListStore';
 import FilterForm from './FilterForm';
 
 import List from '../List';
+
+// polyfill();
 
 Promise.config({ cancellation: true });
 const api = {
