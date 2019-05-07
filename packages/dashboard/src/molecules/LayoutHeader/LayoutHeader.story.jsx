@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import range from 'lodash/range';
 import Story from '@lskjs/dev/Story';
-
 import autobind from 'core-decorators/lib/autobind';
 import PropTypes from 'prop-types';
 import List from 'antd/lib/list';
@@ -11,22 +10,20 @@ import Tooltip from 'antd/lib/tooltip';
 import Badge from 'antd/lib/badge';
 import { inject, observer } from 'mobx-react';
 import Link from '@lskjs/ui/Link';
-
 import FlagIcon from '@lskjs/ui/Flag';
-import HeaderDropdown from '@lskjs/general/ui/atoms/HeaderDropdown';
-import LayoutNotificationIcon from '@lskjs/general/ui/atoms/LayoutNotificationIcon';
-import LayoutHeaderListItem from '@lskjs/general/ui/atoms/LayoutHeaderListItem';
-import ListFooterItem from '@lskjs/general/ui/atoms/ListFooterItem';
-import LayoutHeaderChangeLocale from '@lskjs/general/ui/molecules/LayoutHeaderChangeLocale';
-import LayoutHeaderNotifications from '@lskjs/general/ui/molecules/LayoutHeaderNotifications';
-import LayoutHeaderNotificationsContent from '@lskjs/general/ui/molecules/LayoutHeaderNotificationsContent';
-import LayoutHeaderSearchBox from '@lskjs/general/ui/molecules/LayoutHeaderSearchBox';
-import LayoutHeaderUserMenu from '@lskjs/general/ui/molecules/LayoutHeaderUserMenu';
-import LayoutHeader from '@lskjs/general/ui/molecules/LayoutHeader';
-import ListItem from '@lskjs/general/ui/molecules/ListItem';
-import LocaleTitle from '@lskjs/general/ui/atoms/LocaleTitle';
 import T from '@lskjs/ui/T';
-import LayoutHeader from './LayoutHeader';
+import HeaderDropdown from '../../atoms/HeaderDropdown';
+import LayoutNotificationIcon from '../../atoms/LayoutNotificationIcon';
+import LayoutHeaderListItem from '../../atoms/LayoutHeaderListItem';
+import ListFooterItem from '../../atoms/ListFooterItem';
+import LayoutHeaderChangeLocale from '../LayoutHeaderChangeLocale';
+import LayoutHeaderNotifications from '../LayoutHeaderNotifications';
+import LayoutHeaderNotificationsContent from '../LayoutHeaderNotificationsContent';
+import LayoutHeaderSearchBox from '../LayoutHeaderSearchBox';
+import LayoutHeaderUserMenu from '../LayoutHeaderUserMenu';
+import LayoutHeader from '.';
+import ListItem from '../ListItem';
+import LocaleTitle from '../../atoms/LocaleTitle';
 
 import { notificationsData, messagesData, tasksData } from './Header.mock';
 
@@ -182,13 +179,13 @@ export default ({ storiesOf }) => (
                   <a href="#!">
                     <Icon type="info-circle-o" />
 About
-                                    </a>
+                  </a>
                 </Menu.Item>
                 <Menu.Item key="2">
                   <a href="#!">
                     <Icon type="question-circle-o" />
 Need Help?
-                                    </a>
+                  </a>
                 </Menu.Item>
                 <Menu.Divider />
                 <Menu.Item key="3">
