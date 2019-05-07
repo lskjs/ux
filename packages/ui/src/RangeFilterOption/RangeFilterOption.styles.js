@@ -36,3 +36,7 @@ export const ValueItem = styled(removeProps('button', ['align']))`
     }
   `)}
 `;
+
+export const outsideWrapperStyle = css`
+  position: relative;
+`;
