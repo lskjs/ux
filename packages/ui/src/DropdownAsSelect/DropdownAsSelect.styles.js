@@ -34,6 +34,9 @@ export const Icon = styled('div')`
   }
 `;
 
+export const outsideWrapperStyle = css`
+  position: relative;
+`;
 
 export const Trigger = styled('button')`
   width: 100%;
