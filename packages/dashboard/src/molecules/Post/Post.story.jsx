@@ -11,7 +11,7 @@ import PostCommentCreate from '../PostCommentCreate';
 import Story from '@lskjs/dev/Story';
 import Post from './Post';
 
-import '../../../styles/lib/antd.g.css';
+
 
 const user = {
   title: 'Имя Фамилия',

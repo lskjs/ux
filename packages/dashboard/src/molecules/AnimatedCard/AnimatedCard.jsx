@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import If from 'react-if';
 import PropTypes from 'prop-types';
-import Image from '../Image';
+import Image from '@lskjs/ui/Image';
 import {
   ACard,
   Info,

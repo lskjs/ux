@@ -1,11 +1,12 @@
 import React from 'react';
-import Container from 'reactstrap/lib/Container';
+// import Container from 'reactstrap/lib/Container';
 import Menu from 'antd/lib/menu';
 import Icon from 'antd/lib/icon';
 import AntLayout from 'antd/lib/layout';
 import Tooltip from 'antd/lib/tooltip';
 import Badge from 'antd/lib/badge';
 import List from 'antd/lib/list';
+import Story from '@lskjs/dev/Story';
 import LayoutSidenavBrand from '../../atoms/LayoutSidenavBrand';
 import LayoutSidenavContent from '../../atoms/LayoutSidenavContent';
 import LayoutSidenavFooter from '../../atoms/LayoutSidenavFooter';
@@ -25,9 +26,8 @@ import LayoutHeaderUserMenu from '../../molecules/LayoutHeaderUserMenu';
 import LayoutHeader from '../../molecules/LayoutHeader';
 import LayoutSidebar from '../../molecules/LayoutSidebar';
 import ListItem from '../../molecules/ListItem';
-import Story from '@lskjs/dev/Story';
-import '../../../styles/lib/antd.g.css';
-import '../../../styles/lib/bootstrap.g.css';
+
+// import '../../../styles/lib/bootstrap.g.css';
 
 import Layout from './Layout';
 import { notificationsData, messagesData, tasksData, contentData } from './Layout.mock';

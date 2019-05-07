@@ -1,10 +1,9 @@
 import React from 'react';
-import { Col, Row } from 'reactstrap';
+import { Col, Row } from '@lskjs/ui/Grid';
 import QueueAnim from 'rc-queue-anim';
-import AnimatedCard from './AnimatedCard';
 import Story from '@lskjs/dev/Story';
+import AnimatedCard from './AnimatedCard';
 
-import '../../../styles/lib/antd.g.css';
 
 export default ({ storiesOf }) => (
   storiesOf('ui/AnimatedCard', module)

@@ -1,8 +1,8 @@
 import styled, { css } from 'react-emotion';
 import Layout from 'antd/lib/layout';
+import removeProps from '@lskjs/utils/removeProps';
 import Sider from '../../molecules/LayoutSidenav/LayoutSidenav.styles';
 import LayoutSidebarContainer from '../LayoutSidebarContainer';
-import removeProps from '@lskjs/utils/removeProps';
 
 const filteredTag = removeProps(Layout, ['boxed', 'fixed']);
 

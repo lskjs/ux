@@ -3,7 +3,7 @@ import Link from '@lskjs/ui/Link';
 import AnimatedLink from './AnimatedLink';
 import Story from '@lskjs/dev/Story';
 
-import '../../../styles/lib/antd.g.css';
+
 
 export default ({ storiesOf }) => (
   storiesOf('ui/AnimatedLink', module)

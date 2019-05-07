@@ -2,7 +2,7 @@ import React from 'react';
 import Story from '@lskjs/dev/Story';
 import ProfileCardBig from './ProfileCardBig';
 
-import '../../../styles/lib/antd.g.css';
+
 
 export default ({ storiesOf }) => (
   storiesOf('ui/ProfileCardBig', module)

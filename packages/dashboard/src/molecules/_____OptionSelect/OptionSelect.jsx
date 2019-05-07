@@ -20,8 +20,6 @@ class OptionSelect extends PureComponent {
       // ...props
     } = this.props;
     const { Icon } = data;
-    console.log({Icon});
-    
     return (
       <Option
         onClick={() => selectOption(data)}

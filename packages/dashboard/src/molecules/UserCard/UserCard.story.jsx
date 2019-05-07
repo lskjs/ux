@@ -4,7 +4,7 @@ import Link from '@lskjs/ui/Link';
 
 import UserCard from './UserCard';
 import Story from '@lskjs/dev/Story';
-import '../../../styles/lib/antd.g.css';
+
 
 const user = () => ({
   id: random(99),

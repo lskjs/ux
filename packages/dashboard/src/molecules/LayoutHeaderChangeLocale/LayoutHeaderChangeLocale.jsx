@@ -25,7 +25,7 @@ class LayoutHeaderChangeLocale extends Component {
             position: 'relative',
           }}
           >
-            <FlagIcon code={code} />
+            <FlagIcon code={code === 'en' ? 'gb' : code} />
           </div>
         </DropdownLink>
       </LayoutHeaderListItem>
