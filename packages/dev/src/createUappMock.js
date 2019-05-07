@@ -6,7 +6,7 @@ export default function createUappMock({ locale }) {
   const t = a => (a === 'locale' ? locale : a);
   const i18 = { t };
   const config = {};
-  const uapp = {
+  return {
     i18,
     user,
     t,
