@@ -14,7 +14,7 @@ export default styled(filter)`
   ${p => (p.vertical && css`
     margin-top: -${p.gap || getTheme(p.theme, 'gridGap')}px;
     margin-bottom: -${p.gap || getTheme(p.theme, 'gridGap')}px;
-    > ${GridCol} {
+    > div {
       padding-top: ${p.gap || getTheme(p.theme, 'gridGap')}px;
       padding-bottom: ${p.gap || getTheme(p.theme, 'gridGap')}px;
       ${p.gap && css`
