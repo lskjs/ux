@@ -47,7 +47,7 @@
     "@lskjs/scroll": "0.33.38",
     "@lskjs/theme": "^0.33.38",
     "@lskjs/ui": "^0.33.38",
-    "@lskjs/utils": "0.33.22",
+    "@lskjs/utils": "0.33.23",
     "antd": "3.16.2",
     "bluebird": "3.5.4",
     "classnames": "2.2.6",
