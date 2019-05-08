@@ -18,6 +18,7 @@ class Page extends PureComponent {
   static TitleActions = PageTitleActions;
   static Body = PageBody;
   static Tabs = PageTabs;
+  static Block = Block;
 
   static propTypes = {
     children: PropTypes.any,
@@ -43,9 +44,9 @@ class Page extends PureComponent {
       );
     }
     return (
-      <Block {...props}>
+      <Page.Block {...props}>
         {data}
-      </Block>
+      </Page.Block>
     );
   }
 }
