@@ -9,11 +9,13 @@ import cx from 'classnames';
 import Up from 'react-icons2/mdi/chevron-up';
 import Down from 'react-icons2/mdi/chevron-down';
 import { getOptionValue, getReverseOptionValue, getNormalizedOptions, NULL_STRING } from './utils';
-
+import injectStyles from './Select.styles';
 import SingleValue from './SingleValue';
 import Option from './Option';
 import CollapsedValueContainer from './CollapsedValueContainer';
 import CollapsedMultiValue from './CollapsedMultiValue';
+
+injectStyles();
 
 class Select extends Component {
   state = {}
