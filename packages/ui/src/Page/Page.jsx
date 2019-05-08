@@ -1,5 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import omit from 'lodash/omit';
+import autobind from '@lskjs/autobind';
 import { Container } from '../Grid';
 import PageHeader from './components/PageHeader';
 import PageTitle from './components/PageTitle';
@@ -18,7 +20,6 @@ class Page extends PureComponent {
   static TitleActions = PageTitleActions;
   static Body = PageBody;
   static Tabs = PageTabs;
-  static Block = Block;
 
   static propTypes = {
     children: PropTypes.any,
@@ -28,11 +29,18 @@ class Page extends PureComponent {
     children: null,
     container: false,
   }
+  @autobind
+  renderBlock(data) {
+    return (
+      <Block {...omit(this.props, ['children', 'container'])}>
+        {data}
+      </Block>
+    );
+  }
   render() {
     const {
       children,
       container,
-      ...props
     } = this.props;
 
     let data = children;
@@ -43,11 +51,7 @@ class Page extends PureComponent {
         </Container>
       );
     }
-    return (
-      <Page.Block {...props}>
-        {data}
-      </Page.Block>
-    );
+    return this.renderBlock(data);
   }
 }
 
