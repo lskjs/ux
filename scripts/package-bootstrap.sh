@@ -4,16 +4,13 @@ DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 # pre link
 rm -rf release && \
 rm -rf build && mkdir -p build && \
-cd build && npm link && cd .. \
 
-rm -rf node_modules &&  npm i && mkdir -p node_modules && \
+rm -rf node_modules && npm i && mkdir -p node_modules && \
 cp -R package.json build && \
 cp -R package-lock.json build && \
-cp -R node_modules build && \
-cd build && npm link && cd .. \
+npm run bootstrap:nodemodules
+npm run link:me
 
-# $DIR/package-link.sh && \
-# cp -R node_modules build && \
 echo "OK"
 
 
