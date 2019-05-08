@@ -24,13 +24,14 @@ class Link extends PureComponent {
   };
 
   static contextTypes = {
-    history: PropTypes.object.isRequired,
+    linkProvider: PropTypes.object,
+    history: PropTypes.object,
   };
 
   @autobind
   handleClick(e) {
     const { onClick, target, to, href, qs } = this.props;
-    const { history } = this.props;
+    const { linkProvider, history } = this.context;
     if (isMiddleClickEvent(e)) {
       return;
     }
@@ -45,21 +46,17 @@ class Link extends PureComponent {
 
     if (history) {
       history.push(url);
+    } else if (linkProvider) {
+      linkProvider.onClick(url, e);
     } else {
-      console.error('Link without history'); // eslint-disable-line no-console
+      console.error('Link without linkProvider (history)'); // eslint-disable-line no-console
       window.location = url;
     }
   }
 
   render() {
-    const {
-      to,
-      href,
-      qs,
-      children,
-      ...props
-    } = this.props;
-    const url = this.getHref();
+    const { to, href, qs, children, ...props } = this.props;
+    const url = composeUrl({ url: to || href, qs });
     return <a href={url} {...props} onClick={this.handleClick}>{children}</a>;
   }
 }

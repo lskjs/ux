@@ -1,88 +1,24 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import isArray from 'lodash/isArray';
-import isPlainObject from 'lodash/isPlainObject';
-import map from 'lodash/map';
-import isAbsoluteUrl from '@lskjs/utils/isAbsoluteUrl';
-import isMiddleClickEvent from '@lskjs/utils/isMiddleClickEvent';
-import isModifiedEvent from '@lskjs/utils/isModifiedEvent';
-import isLeftClickEvent from '@lskjs/utils/isLeftClickEvent';
 
-
-class Link extends PureComponent {
-  static defaultProps = {
-    children: null,
-    onClick: null,
-    to: null,
-    href: null,
-  }
+class LinkProvider extends Component {
   static propTypes = {
-    to: PropTypes.string,
-    href: PropTypes.string,
-    children: PropTypes.node,
-    onClick: PropTypes.func,
+    onClick: PropTypes.object.isRequired,
   };
 
-  static contextTypes = {
-    history: PropTypes.object.isRequired,
+  static childContextTypes = {
+    linkProvider: PropTypes.object.isRequired,
   };
 
-  getHref() {
-    const { to, href, qs } = this.props;
-    let toOrHref = to || href;
-    if (qs) {
-      if (toOrHref.indexOf('?') === -1) {
-        toOrHref += '?';
-      } else {
-        toOrHref += '&';
-      }
-      toOrHref += map(qs, (val, key) => {
-        if (!(isArray(val) || isPlainObject(val))) return [key, val].join('=');
-        return [key, JSON.stringify(val)].join('=');
-      }).join('&');
-    }
-    return toOrHref;
+  getChildContext() {
+    const { onClick } = this.props;
+    return { linkProvider: { qwe: 123, onClick } };
   }
-  handleClick = (e) => {
-    if (isMiddleClickEvent(e)) {
-      return;
-    }
-
-    if (this.props.onClick) {
-      this.props.onClick(e);
-    }
-
-    if (isModifiedEvent(e) || !isLeftClickEvent(e)) {
-      return;
-    }
-
-    if (e.defaultPrevented === true) {
-      return;
-    }
-
-    const url = this.getHref();
-    if (url == null) {
-      return;
-    }
-    if (this.props.target === '_blank' || isAbsoluteUrl(url)) {
-      return;
-    }
-    e.preventDefault();
-
-    this.context.history.push(url);
-  };
 
   render() {
-    const {
-      to,
-      href,
-      qs,
-      children,
-      ...props
-    } = this.props;
-    const url = this.getHref();
-    return <a href={url} {...props} onClick={this.handleClick}>{children}</a>;
+    const { children } = this.props;
+    return children;
   }
 }
 
-export default Link;
+export default LinkProvider;

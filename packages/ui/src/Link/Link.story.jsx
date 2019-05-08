@@ -1,6 +1,7 @@
 import React from 'react';
 import Story from '@lskjs/dev/Story';
 import Link from './Link';
+import LinkProvider from './LinkProvider';
 
 export default ({ storiesOf }) => (
   storiesOf('Link', module)
@@ -100,6 +101,29 @@ export default ({ storiesOf }) => (
             Link /test?user=[Object]
           </Link>
         </p>
+      </Story>
+    ))
+    .add('LinkProvider', () => (
+      <Story>
+        <LinkProvider
+          onClick={(url, event) => {
+            console.log('linkProvider.onClick: ', url, event);
+          }}
+        >
+          <div>
+            <Link
+              href="/test"
+              qs={{
+                user: {
+                  name: 'Igor Suvorov',
+                  username: 'isuvorov',
+                },
+              }}
+            >
+              Link /test?user=[Object]
+            </Link>
+          </div>
+        </LinkProvider>
       </Story>
     ))
 );
