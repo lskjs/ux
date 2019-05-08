@@ -10,6 +10,7 @@
     "release": "lerna publish --skip-npm",
     "bootstrap": "lerna exec -- npm run bootstrap",
     "update": "lerna exec -- npm run update",
+    "update-force": "lerna exec -- ../../scripts/package-update.sh",
     "build": "lerna exec -- npm run build",
     "watch": "lerna run --parallel watch",
     "link": "lerna exec -- npm run link",
@@ -35,7 +36,7 @@
     "test:cli": "npm --prefix lib/cli run test",
     "error": "echo 123 && exit 1",
     "dev2": "concurrently --kill-others \"npm dev:ts\" \"npm dev:js\"",
-    "custom": "lerna exec --scope @lskjs/list -- npm run lint:js",
+    "custom": "lerna exec --scope @lskjs/ui -- \\$LERNA_ROOT_PATH/scripts/package-watch.sh",
     "custom2": "lerna exec --scope @lskjs/general -- \\$LERNA_ROOT_PATH/scripts/package-watch.sh"
   },
   "files": [
