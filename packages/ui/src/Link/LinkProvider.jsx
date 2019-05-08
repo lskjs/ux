@@ -3,21 +3,21 @@ import PropTypes from 'prop-types';
 import isArray from 'lodash/isArray';
 import isPlainObject from 'lodash/isPlainObject';
 import map from 'lodash/map';
-import autobind from '@lskjs/autobind';
 import isAbsoluteUrl from '@lskjs/utils/isAbsoluteUrl';
 import isMiddleClickEvent from '@lskjs/utils/isMiddleClickEvent';
 import isModifiedEvent from '@lskjs/utils/isModifiedEvent';
 import isLeftClickEvent from '@lskjs/utils/isLeftClickEvent';
-import composeUrl from '@lskjs/utils/composeUrl';
 
 
 class Link extends PureComponent {
   static defaultProps = {
     children: null,
     onClick: null,
+    to: null,
     href: null,
   }
   static propTypes = {
+    to: PropTypes.string,
     href: PropTypes.string,
     children: PropTypes.node,
     onClick: PropTypes.func,
@@ -27,29 +27,50 @@ class Link extends PureComponent {
     history: PropTypes.object.isRequired,
   };
 
-  @autobind
-  handleClick(e) {
-    const { onClick, target, to, href, qs } = this.props;
-    const { history } = this.props;
+  getHref() {
+    const { to, href, qs } = this.props;
+    let toOrHref = to || href;
+    if (qs) {
+      if (toOrHref.indexOf('?') === -1) {
+        toOrHref += '?';
+      } else {
+        toOrHref += '&';
+      }
+      toOrHref += map(qs, (val, key) => {
+        if (!(isArray(val) || isPlainObject(val))) return [key, val].join('=');
+        return [key, JSON.stringify(val)].join('=');
+      }).join('&');
+    }
+    return toOrHref;
+  }
+  handleClick = (e) => {
     if (isMiddleClickEvent(e)) {
       return;
     }
 
-    if (onClick) onClick(e);
-    if (e.defaultPrevented === true) return;
-    if (isModifiedEvent(e) || !isLeftClickEvent(e)) return;
-    const url = composeUrl({ url: to || href, qs });
-    if (url == null) return;
-    if (target === '_blank' || isAbsoluteUrl(url)) return;
+    if (this.props.onClick) {
+      this.props.onClick(e);
+    }
+
+    if (isModifiedEvent(e) || !isLeftClickEvent(e)) {
+      return;
+    }
+
+    if (e.defaultPrevented === true) {
+      return;
+    }
+
+    const url = this.getHref();
+    if (url == null) {
+      return;
+    }
+    if (this.props.target === '_blank' || isAbsoluteUrl(url)) {
+      return;
+    }
     e.preventDefault();
 
-    if (history) {
-      history.push(url);
-    } else {
-      console.error('Link without history'); // eslint-disable-line no-console
-      window.location = url;
-    }
-  }
+    this.context.history.push(url);
+  };
 
   render() {
     const {

@@ -1,8 +1,6 @@
 import React from 'react';
 import Image from './Image';
 import Story from '@lskjs/dev/Story';
-import '../../../styles/lib/antd.g.css';
-
 
 export default ({ storiesOf }) => (
   storiesOf('ui/Image', module)
