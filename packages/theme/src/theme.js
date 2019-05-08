@@ -32,6 +32,12 @@ export default {
     darkerGray: '#e2e4ee',
     darkestGray: '#cbcedc',
   },
+  layout: {
+    phone: 540,
+    tablet: 720,
+    smallDesktop: 960,
+    largeDesktop: 1140,
+  },
   borderRadius: '6px',
   borderCircle: '100vw',
   borderSmall: '4px',
