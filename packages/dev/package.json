@@ -14,10 +14,13 @@
     "postversion": "npm run release",
     "lint:js": "../../scripts/package-lint-js.sh",
     "bootstrap": "../../scripts/package-bootstrap.sh",
+    "bootstrap:nodemodules": "../../scripts/package-bootstrap-nodemodules.sh",
     "update": "../../scripts/package-update.sh",
     "build": "../../scripts/package-build.sh",
     "watch": "../../scripts/package-watch.sh",
     "link": "../../scripts/package-link.sh",
+    "link:me": "../../scripts/package-link-me.sh",
+    "link:all": "../../scripts/package-link-all.sh",
     "bump": "../../scripts/package-bump.sh",
     "release": "../../scripts/package-release.sh",
     "release:docs": "../../scripts/package-release-docs.sh",
@@ -25,6 +28,7 @@
     "styleguide": "../../scripts/package-styleguide.sh"
   },
   "devDependencies": {
+    "@lskjs/utils": "^0.33.22",
     "@lskjs/css": "^0.33.34",
     "@lskjs/theme": "^0.33.38",
     "emotion": "9.2.12",
@@ -36,8 +40,9 @@
     "react": "^16.8.6"
   },
   "peerDependencies": {
-    "@lskjs/css": "*",
-    "@lskjs/theme": "*",
+    "@lskjs/utils": "^0.33.22",
+    "@lskjs/css": "^0.33.34",
+    "@lskjs/theme": "^0.33.38",
     "emotion": "*",
     "emotion-theming": "*",
     "lodash": "*",
