@@ -6,10 +6,12 @@ const filter = removeProps('div', ['fluid']);
 export default styled(filter)`
     box-sizing: border-box;
     width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
+    @media (max-width: 575px) {
+      padding-right: 15px;
+      padding-left: 15px;
+    }
     @media print {
       min-width: 992px !important;
     }
