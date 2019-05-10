@@ -16,7 +16,6 @@ export default styled('main')`
   `)}
 `;
 
-
 export const PageTitle = styled('div')`
   font-family: ${p => getTheme(p.theme, 'fontFamily')};
   font-size: 26px;

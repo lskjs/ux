@@ -1,12 +1,14 @@
 import React, { PureComponent } from 'react';
+import { inject } from 'mobx-react';
 
+@inject('Page')
 class PageBody extends PureComponent {
   render() {
-    const { children, ...props } = this.props;
+    const { Page, children, ...props } = this.props;
     return (
-      <div {...props}>
+      <Page.PageBodyWrapper {...props}>
         {children}
-      </div>
+      </Page.PageBodyWrapper>
     );
   }
 }

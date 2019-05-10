@@ -1,11 +1,14 @@
 import React, { PureComponent } from 'react';
+import { inject } from 'mobx-react';
 import PageTitle from '../PageTitle';
 import PageBreadcrumbs from '../PageBreadcrumbs';
 import PageTabs from '../PageTabs';
 
+@inject('Page')
 class PageHeader extends PureComponent {
   render() {
     const {
+      Page,
       children,
       actions,
       tabs,
@@ -14,7 +17,7 @@ class PageHeader extends PureComponent {
       ...props
     } = this.props;
     return (
-      <div {...props}>
+      <Page.PageHeaderWrapper {...props}>
         {children || (
           <React.Fragment>
             <PageTitle actions={actions} />
@@ -22,7 +25,7 @@ class PageHeader extends PureComponent {
             {tabs && <PageTabs tab={tab} tabs={tabs} onClick={onChangeTab} />}
           </React.Fragment>
         )}
-      </div>
+      </Page.PageHeaderWrapper>
     );
   }
 }
