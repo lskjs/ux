@@ -24,9 +24,11 @@ class Button extends PureComponent {
     borderColor: PropTypes.string,
     size: PropTypes.oneOf([
       'extraSmall',
+      'verySmall',
       'small',
       'default',
       'large',
+      'extraLarge',
     ]),
     paint: PropTypes.oneOf([
       'default',
