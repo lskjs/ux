@@ -27,7 +27,7 @@ export const PageTitle = styled('div')`
 
   text-align: left;
   color: ${p => getTheme(p.theme, 'colors.main')};
-  margin: 20px 0 0;
+  margin: 8px 0 0;
   display: flex;
   align-items: flex-end;
   min-height: 40px;
