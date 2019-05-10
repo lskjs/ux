@@ -14,6 +14,7 @@ import {
   FilterWrapper,
   TagsPanelWrapper,
   HeaderItemWrapper,
+  SearchResultsWrapper,
   HeaderWrapper,
   FooterWrapper,
   PaginatorWrapper,
@@ -25,6 +26,7 @@ import {
 } from './List.styles';
 import { Provider } from './List.context';
 
+import ListSearchResults from './ListSearchResults';
 import ListSelectRow from './ListSelectRow';
 import ListSticky from './ListSticky';
 import ListHeader from './ListHeader';
@@ -50,18 +52,19 @@ const getProp = (obj, name) => (
 );
 
 const defaultShow = {
-  header: true,
+  /** */ header: true,
   /** */ sticky: true,
   /** */ search: true,
-  /** */ /** */ filterButton: true,
-  /** */ /** */ filterModal: true,
+  /** */ searchResults: true,
+  /** */ filterButton: true,
+  /** */ filterModal: true,
   /** */ tags: true,
 
   /** body */
   /** */ more: true,
   /** */ infinity: true,
 
-  footer: true,
+  /** */ footer: true,
   /** */ download: true,
   /** */ pages: true,
   /** */ stepper: true,
@@ -90,7 +93,9 @@ class List extends Component {
   static HoverRow = HoverRowWrapper;
   static isFilterModal = true;
   static Button = Button;
+  static SearchResults = ListSearchResults;
   static SearchWrapper = DefaultSearchWrapper;
+  static SearchResultsWrapper = SearchResultsWrapper;
   // static DownloadButton = ({ children }) => children;
 
   static Wrapper = Wrapper;
@@ -150,7 +155,9 @@ class List extends Component {
       HoverRow: getProp(this, 'HoverRow'),
 
       Button: getProp(this, 'Button'),
+      SearchResults: getProp(this, 'SearchResults'),
       SearchWrapper: getProp(this, 'SearchWrapper'),
+      SearchResultsWrapper: getProp(this, 'SearchResultsWrapper'),
 
       Wrapper: getProp(this, 'Wrapper'),
       BodyWrapper: getProp(this, 'BodyWrapper'),
