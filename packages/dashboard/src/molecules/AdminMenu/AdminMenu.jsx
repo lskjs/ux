@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import autobind from '@lskjs/autobind';
+import Link from '@lskjs/ui/Link';
 import Menu from 'antd/lib/menu';
 import If from 'react-if';
 import Horizontal from '../../atoms/Horizontal';
@@ -62,34 +63,18 @@ class AdminMenu extends PureComponent {
 
   @autobind
   renderLink(item, children) {
-    console.log(item, children);
+    const { componentClass: Component = Link, href, hrefProps = {}, props = {} } = item;
+    const composedProps = {
+      href,
+      ...hrefProps,
+      ...props,
+    };
     return (
-      <React.Fragment>
-        <If condition={!item.href && item.componentClass}>
-          <item.componentClass>
-            {children}
-          </item.componentClass>
-        </If>
-        <If condition={item.href && item.componentClass}>
-          <item.componentClass
-            href={item.href}
-            {...(item.hrefProps || {})}
-          >
-            {children}
-          </item.componentClass>
-        </If>
-        <If condition={item.href && !item.componentClass}>
-          <a
-            href={item.href}
-            {...(item.hrefProps || {})}
-          >
-            {children}
-          </a>
-        </If>
-        <If condition={!item.href && !item.componentClass}>
-          {children}
-        </If>
-      </React.Fragment>
+      <Component
+        {...composedProps}
+      >
+        {children}
+      </Component>
     );
   }
 
@@ -143,7 +128,8 @@ class AdminMenu extends PureComponent {
         {items.map((item) => {
           if (item === 'divider' && mode !== 'horizontal') {
             return <Divider key={`${item.key}-${item}`} />;
-          } else if (item === 'divider') {
+          }
+          if (item === 'divider') {
             return null;
           }
           if (item.submenu) {
