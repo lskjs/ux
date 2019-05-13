@@ -80,23 +80,31 @@ class AdminMenu extends PureComponent {
 
   @autobind
   renderLabel(item, sub) {
+    const { icon, title, label } = item;
     return (
       <Horizontal verticalAlign="center">
-        <ItemTitle>{item.title}</ItemTitle>
-        <TinyLabel pullRight={sub} sticky={!sub}>{item.label}</TinyLabel>
+        {/* <ItemTitle> */}
+        {icon}
+        {/* </ItemTitle> */}
+        <ItemTitle>{title}</ItemTitle>
+        <TinyLabel pullRight={sub} sticky={!sub}>{label}</TinyLabel>
       </Horizontal>
     );
   }
 
   @autobind
   renderItem(item, sub = false) {
+    const { icon, label, title } = item;
     const renderBody = (
       <React.Fragment>
-        <If condition={item.label}>
+        <If condition={label}>
           {this.renderLabel(item, sub)}
         </If>
-        <If condition={!item.label}>
-          {item.title}
+        <If condition={!label}>
+          <React.Fragment>
+            {icon}
+            {title}
+          </React.Fragment>
         </If>
       </React.Fragment>
     );

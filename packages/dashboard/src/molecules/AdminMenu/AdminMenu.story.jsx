@@ -4,6 +4,22 @@ import Link from '@lskjs/ui/Link';
 import Story from '@lskjs/dev/Story';
 import AdminMenu from './AdminMenu';
 import Modal from '@lskjs/modal';
+import Icon from 'antd/lib/icon';
+
+// const SidenavModalSidebarMenuModal = ({ innerRef, children }) => (
+//   <Modal
+//     innerRef={(e) => { if (innerRef) innerRef(e); }}
+//     size="small"
+//     trigger={children}
+//     title="title"
+//     subtitle="subtitle"
+//     image="https://picsum.photos/1280/720/?random"
+//     content="content"
+//     footer="footer"
+//     onClose={() => console.log('onClose')}
+//     onOpen={() => console.log('onOpen')}
+//   />
+// );
 
 const SidenavModal = ({ innerRef, children }) => (
   <Modal
@@ -407,6 +423,114 @@ module.exports = ({ storiesOf }) =>
               onChange={e => console.log(e)} // eslint-disable-line no-console
             />
           </div>
+        </Story>
+      );
+    })
+    .add('Left Menu', () => {
+      return (
+        <Story>
+          <AdminMenu
+            theme="light"
+            mode="vertical"
+            items={[
+              {
+                key: '/cabinet/profile',
+                isSelected: ({ req }) => true,
+                href: '/cabinet/profile',
+                componentClass: Link,
+                icon: <Icon type="user" />,
+                title: 'Profile',
+              },
+              {
+                key: '/cabinet/events',
+                href: '/cabinet/events',
+                componentClass: Link,
+                icon: <Icon type="schedule" />,
+                title: "Events",
+              },
+              {
+                key: '/cabinet/users',
+                href: '/cabinet/users',
+                componentClass: Link,
+                icon: <Icon type="team" />,
+                title: 'Users',
+              },
+              {
+                key: '/cabinet/companies',
+                href: '/cabinet/companies',
+                componentClass: Link,
+                icon: <Icon type="bank" />,
+                title: 'Companies',
+              },
+              'divider',
+              {
+                key: '/admin/users',
+                href: '/admin/users',
+                componentClass: Link,
+                icon: <Icon type="team" />,
+                title: 'Admin Users',
+              },
+              {
+                key: '/admin/companies',
+                href: '/admin/companies',
+                componentClass: Link,
+                icon: <Icon type="bank" />,
+                title: 'Admin Companies',
+              },
+              {
+                key: '/admin/events',
+                href: '/admin/events',
+                componentClass: Link,
+                icon: <Icon type="schedule" />,
+                title:  'Admin Events',
+              },
+              {
+                key: '/admin/eventUsers',
+                href: '/admin/eventUsers',
+                componentClass: Link,
+                icon: <Icon type="user" />,
+                title:  'Admin Users', 
+              },
+              'divider',
+              {
+                componentClass: () => <SidenavModal>SidenavModal</SidenavModal>,
+              },
+            ]}
+            onChange={e => console.log(e)} // eslint-disable-line no-console
+          />
+        </Story>
+      );
+    })
+    .add('Bottom Menu', () => {
+      return (
+        <Story>
+          <AdminMenu
+            theme="light"
+            items={[
+              {
+                key: '/cabinet/profile',
+                icon: <Icon type="user" />,
+                title: 'Profile',
+              },
+              {
+                key: '/cabinet/events',
+                isSelected: () => true,
+                icon: <Icon type="schedule" />,
+                title: 'Events',
+              },
+              {
+                key: '/cabinet/users',
+                icon: <Icon type="team" />,
+                title: 'Users',
+              },
+              {
+                key: '/cabinet/companies',
+                icon: <Icon type="bank" />,
+                title: 'Companies',
+              },
+            ]}
+            onChange={e => console.log(e)} // eslint-disable-line no-console
+          />
         </Story>
       );
     })
