@@ -27,6 +27,7 @@
     "storybook": "../../scripts/package-storybook.sh",
     "styleguide": "../../scripts/package-styleguide.sh"
   },
+  "dependencies": {},
   "devDependencies": {
     "@lskjs/css": "^0.33.41",
     "@lskjs/theme": "^0.33.41",
@@ -40,8 +41,8 @@
     "react": "^16.8.6"
   },
   "peerDependencies": {
-    "@lskjs/css": "^0.33.34",
-    "@lskjs/theme": "^0.33.38",
+    "@lskjs/css": "^0.33.41",
+    "@lskjs/theme": "^0.33.41",
     "@lskjs/utils": "^0.33.23",
     "emotion": "*",
     "emotion-theming": "*",
