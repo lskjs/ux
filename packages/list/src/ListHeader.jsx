@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import If from 'react-if';
+import { inject, observer } from 'mobx-react';
 import { contextToProps } from './List.context';
 
 @contextToProps('List', 'show')
+@inject('listStore')
+@observer
 class ListHeader extends Component {
   render() {
-    const { List, children, show } = this.props;
+    const { List, children, listStore, show } = this.props;
     if (children) {
       return (
         <List.HeaderWrapper>
@@ -26,6 +29,11 @@ class ListHeader extends Component {
         <If condition={show.tags}>
           <List.HeaderWrapper>
             <List.TagsPanel />
+          </List.HeaderWrapper>
+        </If>
+        <If condition={show.searchResults && listStore.hasFilter}>
+          <List.HeaderWrapper>
+            <List.SearchResults />
           </List.HeaderWrapper>
         </If>
         <List.HeaderWrapper sticky={show.sticky}>

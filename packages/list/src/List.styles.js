@@ -244,7 +244,7 @@ ${p => (p.sticky && css`
 `;
 
 export const TagsPanelWrapper = styled('div')`
-  padding: ${p => getTheme(p.theme, 'tablePadding')}px ${p => getTheme(p.theme, 'tablePadding')}px 4px;
+  padding: 8px ${p => getTheme(p.theme, 'tablePadding')}px;
   display: flex;
   flex-wrap: wrap;
   > button {
@@ -321,4 +321,16 @@ export const modalStyle = css`
   > form > div {
     display: block !important;
   }
+`;
+
+export const SearchResultsWrapper = styled('div')`
+  padding: ${p => getTheme(p.theme, 'tablePadding')}px;
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
+  font-size: 13px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.23;
+  letter-spacing: -0.1px;
+  color: ${p => getTheme(p.theme, 'colors.main')};
 `;

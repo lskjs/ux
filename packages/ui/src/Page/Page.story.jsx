@@ -8,7 +8,38 @@ export default ({ storiesOf, action }) => {
     .add('default', () => (
       <Story>
         <Page>
-          Default Page
+          <Page.Header>
+            <Page.Breadcrumbs
+              page={{ show: { breadcrumbs: true } }}
+              items={[
+                {
+                  title: 'Дом',
+                  href: '/home',
+                },
+                {
+                  title: 'Элемент',
+                  href: '/home/element',
+                },
+              ]}
+            />
+            <Page.Title page={{ state: { meta: { title: 'Элемент' } } }} />
+          </Page.Header>
+          <Page.Tabs
+            tabs={[
+              {
+                key: 'tab1',
+                title: 'Таб 1',
+              },
+              {
+                key: 'tab2',
+                title: 'Таб 2',
+              },
+            ]}
+            page={{ state: { meta: { tab: 'tab1' } } }}
+          />
+          <Page.Body>
+            Default Page
+          </Page.Body>
         </Page>
       </Story>
     ))

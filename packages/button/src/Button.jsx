@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import autobind from '@lskjs/autobind';
 import CheckIcon from 'react-icons2/mdi/check';
-// import CloseIcon from 'react-icons2/mdi/close';
+import CloseIcon from 'react-icons2/mdi/close';
 import PropTypes from 'prop-types';
 import omit from 'lodash/omit';
 import If from 'react-if';
@@ -24,9 +24,11 @@ class Button extends PureComponent {
     borderColor: PropTypes.string,
     size: PropTypes.oneOf([
       'extraSmall',
+      'verySmall',
       'small',
       'default',
       'large',
+      'extraLarge',
     ]),
     paint: PropTypes.oneOf([
       'default',
@@ -176,9 +178,11 @@ class Button extends PureComponent {
           paint: 'danger',
           content: this.props.contentError || (
             <React.Fragment>
-              {/* <Icon direction={this.props.textError ? 'left' : 'single'}>
-                <CloseIcon />
-              </Icon> */}
+              <If condition={!this.props.textError}>
+                <Icon direction={this.props.textError ? 'left' : 'single'}>
+                  <CloseIcon />
+                </Icon>
+              </If>
               {this.props.textError}
             </React.Fragment>
           ),

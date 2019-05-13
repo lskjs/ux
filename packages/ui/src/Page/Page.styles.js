@@ -16,15 +16,18 @@ export default styled('main')`
   `)}
 `;
 
-
 export const PageTitle = styled('div')`
   font-family: ${p => getTheme(p.theme, 'fontFamily')};
-  font-size: 20px;
-  line-height: 1.2;
+  font-size: 26px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 2.15;
   letter-spacing: -0.1px;
+
   text-align: left;
   color: ${p => getTheme(p.theme, 'colors.main')};
-  margin: 16px 0;
+  margin: 8px 0 0;
   display: flex;
   align-items: flex-end;
   min-height: 40px;

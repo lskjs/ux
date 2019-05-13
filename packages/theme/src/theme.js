@@ -22,6 +22,7 @@ export default {
     warning: '#ffc53d',
     darkWarning: '#ddb800',
     lightWarning: '#fff7cd',
+    lighterBackground: '#f4f5fb',
     mainBackground: '#f5f5f5',
     darkerBackground: '#fff',
     gray: '#595959',

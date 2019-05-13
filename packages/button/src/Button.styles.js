@@ -89,8 +89,20 @@ const defaultSize = css`
   min-width: 104px;
 `;
 
+const verySmallSize = css`
+  padding: 9.5px 8px;
+  min-width: 48px;
+
+  font-size: 11px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: -0.08461539px;
+`;
+
 const smallSize = css`
-  padding: 10px 8px;
+  padding: 10.5px 8px;
   min-width: 48px;
 
   font-size: 13px;
@@ -626,6 +638,11 @@ export const Btn = styled(filteredTag)`
   justify-content: center;
   -webkit-appearance: none !important;
 
+  ${props => props.twoIcons && `
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  `}
+
   ${(props) => {
     if (props.auto) {
       return `
@@ -679,6 +696,17 @@ export const Btn = styled(filteredTag)`
             }
 
           `}
+          ${props.size === 'verySmall' && `
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-right: 5px;
+            padding-left: 5px;
+
+            ${Icon} {
+              font-size: 18px;
+            }
+
+          `}
           ${props.size === 'extraSmall' && `
             padding-top: 3px;
             padding-bottom: 3px;
@@ -710,6 +738,7 @@ export const Btn = styled(filteredTag)`
     switch (props.size) {
       case 'large': return largeSize;
       case 'small': return smallSize;
+      case 'verySmall': return verySmallSize;
       case 'extraSmall': return xsmallSize;
       case 'extraLarge': return xlargeSize;
       default: return defaultSize;
@@ -919,6 +948,7 @@ export const State = styled('div')`
   /* ${props => ((props.view === 'transparent' && props.state === 'processing') && `
     background-color: transparent !important;
   `)} */
+
 `;
 
 
@@ -943,11 +973,15 @@ export const ButtonGroup = styled('div')`
   }
   ${p => p.panel && css`
     button {
+      min-width: 72px;
+      font-size: 11px;
+      line-height: 1.41;
+      box-shadow: 0 0 0 1px ${getTheme(p.theme, 'colors.border')};
       &:first-child {
-        border-radius: 3px 0 0 3px;
+        border-radius: 4px 0 0 4px;
       }
       &:last-child {
-        border-radius: 0 3px 3px 0;
+        border-radius: 0 4px 4px 0;
       }
       border-radius: 0;
     }
