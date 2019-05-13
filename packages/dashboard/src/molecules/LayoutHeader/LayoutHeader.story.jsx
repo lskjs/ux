@@ -25,89 +25,9 @@ import LayoutHeader from '.';
 import ListItem from '../ListItem';
 import LocaleTitle from '../../atoms/LocaleTitle';
 
-import { notificationsData, messagesData, tasksData } from './Header.mock';
+// import { notificationsData, messagesData, tasksData } from './Header.mock';
 
-const tabs = [
-  {
-    key: 'notifications',
-    title: i18.t('notification.menu.notify', { count: 4 }),
-    icon: 'notification',
-    content: (
-      <List
-        footer={(
-          <ListFooterItem href="#!">
-            <T name="components.headerReadAll" />
-            <Icon type="arrow-right" />
-          </ListFooterItem>
-        )}
-        itemLayout="horizontal"
-        dataSource={notificationsData}
-        renderItem={item => (
-          <List.Item>
-            <ListItem
-              icon={item.icon}
-              iconProps={item.iconProps}
-              title={item.title}
-              date={item.datetime}
-            />
-          </List.Item>
-        )}
-      />
-    ),
-  },
-  {
-    key: 'messages',
-    title: i18.t('notification.menu.messages', { count: 3 }),
-    icon: 'message',
-    content: (
-      <List
-        footer={(
-          <ListFooterItem href="#!">
-            <T name="components.headerReadAll" />
-            <Icon type="arrow-right" />
-          </ListFooterItem>
-        )}
-        itemLayout="horizontal"
-        dataSource={messagesData}
-        renderItem={item => (
-          <List.Item>
-            <ListItem
-              leftComponent={item.leftComponent}
-              title={item.title}
-              description={item.desc}
-              date={item.datetime}
-            />
-          </List.Item>
-        )}
-      />
-    ),
-  },
-  {
-    key: 'tasks',
-    title: i18.t('notification.menu.tasks', { count: 4 }),
-    icon: 'profile',
-    content: (
-      <List
-        footer={(
-          <ListFooterItem href="#!">
-            <T name="components.headerReadAll" />
-            <Icon type="arrow-right" />
-          </ListFooterItem>
-        )}
-        itemLayout="horizontal"
-        dataSource={tasksData}
-        renderItem={item => (
-          <List.Item>
-            <ListItem
-              title={item.title}
-              description={item.desc}
-            />
-          </List.Item>
-        )}
-      />
-    ),
-  },
-];
+const user = {};
 
 const props = {
   // collapsed: layoutStore.collapsed,
@@ -126,6 +46,17 @@ const props = {
   ),
 };
 
+const i18 = {
+  t: e => e,
+};
+
+const uapp = {
+  setLocale2: e => e,
+};
+
+const config = {
+  locales: [],
+};
 
 export default ({ storiesOf }) => (
   storiesOf('molecules', module)

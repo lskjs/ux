@@ -34,6 +34,7 @@
     "@lskjs/autobind": "^0.33.20",
     "@lskjs/button": "^0.33.45",
     "@lskjs/dev": "^0.33.45",
+    "@lskjs/modal": "0.33.45",
     "@lskjs/theme": "^0.33.45",
     "@lskjs/ui": "^0.33.49",
     "@lskjs/utils": "^0.33.23",
@@ -45,9 +46,11 @@
     "moment": "^2.24.0",
     "rc-queue-anim": "^1.6.12",
     "react": "^16.8.6",
+    "react-custom-scrollbars": "4.2.1",
     "react-drive-in2": "^1.8.1",
     "react-emotion": "9.2.10",
-    "react-icons2": "^2.5.0"
+    "react-icons2": "^2.5.0",
+    "react-world-flags": "1.3.0"
   },
   "peerDependencies": {
     "@lskjs/autobind": "*",
