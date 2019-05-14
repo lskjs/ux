@@ -1,11 +1,12 @@
 import React from 'react';
 import { Row, Col } from '@lskjs/ui/Grid';
 import GridFile from '../GridFile';
+import normilizeFiles from '../normilizeFiles';
 // import { GridFiles } from './GridFiles.styles';
 
 const GridFiles = ({ items }) => (
   <Row>
-    {items.map((item, i) => (
+    {normilizeFiles(items).map((item, i) => (
       <Col
         key={i} // eslint-disable-line react/no-array-index-key
         xs={12}
@@ -14,7 +15,7 @@ const GridFiles = ({ items }) => (
         md={6}
       >
         <GridFile
-          item={item}
+          {...item}
         />
       </Col>
     ))}

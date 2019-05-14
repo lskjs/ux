@@ -1,27 +1,16 @@
 import React from 'react';
-import {
-  Wrapper,
-  Items,
-  Memory,
-  Button,
-  LineFilesWrapper,
-} from './LineFiles.styles';
+import { LineFilesWrapper } from './LineFiles.styles';
 
+import normilizeFiles from '../normilizeFiles';
+import LineFile from '../LineFile';
 
-const LineFiles = ({ files }) => (
+const LineFiles = ({ items }) => (
   <LineFilesWrapper>
-    {files.map((file, i) => (
-      <Wrapper key={i}>
-        <Items>
-        Приложенные файлы:
-          {' '}
-          {file.amount}
-        </Items>
-        <Memory>
-          {`(${file.size})`}
-        </Memory>
-        <Button>Скачать</Button>
-      </Wrapper>
+    {normilizeFiles(items).map((item, i) => (
+      <LineFile
+        key={i} // eslint-disable-line react/no-array-index-key
+        {...item}
+      />
     ))}
   </LineFilesWrapper>
 );

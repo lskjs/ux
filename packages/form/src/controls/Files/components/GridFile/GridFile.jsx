@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import autobind from '@lskjs/autobind';
 import Remove from 'react-icons2/mdi/close-circle-outline';
-import fileTypes from '../fileTypes';
 import Box from '../Box';
+import fileTypes from '../fileTypes';
 import Typography from '../Typography';
 import {
   containerStyle,
@@ -16,14 +16,8 @@ import {
 } from './GridFile.styles';
 
 class GridFile extends Component {
-  static determineType(url) {
-    let [, ext] = url.match(/.+\.(\w+)\??.*$/) || [];
-    const isType = Object.keys(fileTypes).includes(ext);
-    if (!isType) ext = 'other';
-    return ext;
-  }
   shouldComponentUpdate(nextProps) {
-    return this.props.url !== nextProps.url;
+    return this.props.src !== nextProps.src;
   }
 
   @autobind
@@ -33,22 +27,20 @@ class GridFile extends Component {
   }
 
   render() {
-    const { url } = this.props;
-    const type = this.constructor.determineType(url);
+    const { src = '', title, image, type } = this.props;
+    // const type = this.constructor.determineType(src);
     const Icon = fileTypes[type];
-    const fileName = url.substring(url.lastIndexOf('/') + 1);
-    const urlImage = url.match(/[^/]+(jpg|jpeg|exif|bmp|png|gif|tiff|webp|heif)$/);
     return (
       <Box
         componentClass="div"
         className={containerStyle}
       >
         <PreviewContainer>
-          { urlImage
+          { image
             ? (
               <PreviewImage
-                src={url}
-                alt={fileName}
+                src={src}
+                alt={title}
               />
             )
             : (
@@ -66,7 +58,7 @@ class GridFile extends Component {
           >
             {type}
           </Typography>
-          <Typography className={urlStyle}>{fileName}</Typography>
+          <Typography className={urlStyle}>{title}</Typography>
         </Info>
         <RemoveButton>
           <Remove onClick={this.removeFile} />

@@ -8,21 +8,21 @@ import {
 } from './LineFile.styles';
 
 
-const LineFile = ({ files }) => (
+const LineFile = ({ title, size }) => (
   <LineFilesWrapper>
-    {files.map((file, i) => (
-      <Wrapper key={i}>
-        <Items>
+    <Wrapper>
+      <Items>
         Приложенные файлы:
-          {' '}
-          {file.amount}
-        </Items>
+        {' '}
+        {title}
+      </Items>
+      {size && (
         <Memory>
-          {`(${file.size})`}
+          {`(${size})`}
         </Memory>
-        <Button>Скачать</Button>
-      </Wrapper>
-    ))}
+      )}
+      <Button>Скачать</Button>
+    </Wrapper>
   </LineFilesWrapper>
 );
 

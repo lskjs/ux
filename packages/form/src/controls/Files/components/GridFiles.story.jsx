@@ -11,7 +11,10 @@ export default ({ storiesOf }) => (
     .add('GridFile', () => (
       <Story>
         <GridFile
-          items={items[0]}
+          {...items[0]}
+        />
+        <GridFile
+          {...items[1]}
         />
       </Story>
     ))
@@ -25,7 +28,10 @@ export default ({ storiesOf }) => (
     .add('LineFile', () => (
       <Story>
         <LineFile
-          items={items[0]}
+          {...items[0]}
+        />
+        <LineFile
+          {...items[1]}
         />
       </Story>
     ))
