@@ -47,6 +47,7 @@ class RadioButtonGroup extends PureComponent {
       <ButtonGroup panel {...omit(props, ['onChange'])}>
         {options.map(item => (
           <Button
+            size="small"
             paint={this.state.show === item.value ? paint : 'default'}
             onClick={() => {
               this.onChange(item.value);
