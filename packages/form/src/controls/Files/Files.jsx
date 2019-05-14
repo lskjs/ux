@@ -5,6 +5,12 @@ import Files from './FilesBase';
 import DefaultBody from './DefaultBody';
 import DefaultFooter from './DefaultFooter';
 
+const getArray = val => (
+  val == null ? [] : ( // eslint-disable-line no-nested-ternary
+    Array.isArray(val) ? val : [val]
+  )
+);
+
 const FilesUploader = ({
   field,
   form,
@@ -13,14 +19,46 @@ const FilesUploader = ({
   isMulti,
   ...props
 }) => {
+  // console.log(1111, { field });
+  // const defaultValue = field.value;
   const Body = components.Body || FilesUploader.defaultProps.components.Body;
   const Footer = components.Footer || FilesUploader.defaultProps.components.Footer;
   return (
     <Files
-      {...field}
+      // {...field}
+      value2={field.value}
       {...props}
       multiple={isMulti}
-      onSubmit={value => form.setFieldValue(field.name, value)}
+      onSubmit={(incomeValues) => {
+        // console.log(222, { field, defaultValue });
+        if (incomeValues === null) {
+          if (isMulti) {
+            form.setFieldValue(field.name, []);
+          } else {
+            form.setFieldValue(field.name, null);
+          }
+          return;
+        }
+
+        if (!isMulti) {
+          form.setFieldValue(field.name, incomeValues);
+          return;
+        }
+        const values = [
+          ...getArray(field.value),
+          ...getArray(incomeValues),
+        ];
+        // console.log('field.value', field.value);
+        // console.log('getArray(field.value)', getArray(field.value));
+        // console.log('incomeValues', incomeValues);
+        // console.log('getArray(incomeValues)', getArray(incomeValues));
+        // {incomeValues, values},
+
+        form.setFieldValue(field.name, values);
+      }}
+      // onError={() => onError?.(form.errors[field.name])} // this.globalError
+      // validationState={form.errors[field.name] ? 'error' : null}
+      // files={field.value}
       onBlur={null}
       footer={Footer}
     >

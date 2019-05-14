@@ -3,8 +3,8 @@ import If from 'react-if';
 import Button from '@lskjs/button';
 import T from '@lskjs/ui/T';
 import { Col, Row } from '@lskjs/ui/Grid';
-import Box from './Box';
-import File from './File';
+import Box from './components/Box';
+import File from './components/GridFile';
 
 
 const DefaultFooter = ({ value, onRemoveFiles }) => (
@@ -27,7 +27,13 @@ const DefaultFooter = ({ value, onRemoveFiles }) => (
       <Box.Body>
         <Row vertical gap={8}>
           {(Array.isArray(value) ? value : [value]).map((e, i) => (
-            <Col key={i} xs={12} lg={4} sm={6} md={6}> {/* eslint-disable-line react/no-array-index-key */}
+            <Col
+              key={i} // eslint-disable-line react/no-array-index-key
+              xs={12}
+              lg={4}
+              sm={6}
+              md={6}
+            >
               <File url={e} item={i} value={value} />
             </Col>
           ))}

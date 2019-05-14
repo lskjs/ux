@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import autobind from '@lskjs/autobind';
 import Remove from 'react-icons2/mdi/close-circle-outline';
-import fileTypes from './fileTypes';
+import fileTypes from '../fileTypes';
 import Box from '../Box';
-import Typography from './Typography';
+import Typography from '../Typography';
 import {
   containerStyle,
   typeStyle,
@@ -13,9 +13,9 @@ import {
   PreviewContainer,
   Info,
   centerFile,
-} from './File.styles';
+} from './GridFile.styles';
 
-class File extends Component {
+class GridFile extends Component {
   static determineType(url) {
     let [, ext] = url.match(/.+\.(\w+)\??.*$/) || [];
     const isType = Object.keys(fileTypes).includes(ext);
@@ -44,15 +44,19 @@ class File extends Component {
         className={containerStyle}
       >
         <PreviewContainer>
-          { urlImage ?
-            <PreviewImage
-              src={url}
-              alt={fileName}
-            /> :
-            <Icon
-              size={64}
-              className={centerFile}
-            />}
+          { urlImage
+            ? (
+              <PreviewImage
+                src={url}
+                alt={fileName}
+              />
+            )
+            : (
+              <Icon
+                size={64}
+                className={centerFile}
+              />
+            )}
         </PreviewContainer>
         <Info>
           <Typography
@@ -72,5 +76,4 @@ class File extends Component {
   }
 }
 
-export default File;
-
+export default GridFile;

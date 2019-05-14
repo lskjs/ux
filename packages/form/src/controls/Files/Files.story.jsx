@@ -21,12 +21,12 @@ const FilesForm = createForm({
   view: FilesFormView,
   controls: {
     files: {
-      title: 'Files 1',
+      title: 'Files1: isMulti',
       component: Files,
       isMulti: true,
     },
     files2: {
-      title: 'Files2 custom',
+      title: 'Files2: isMulti, custom body',
       component: Files,
       isMulti: true,
       type: 'image',
@@ -52,36 +52,33 @@ const FilesForm = createForm({
   },
 });
 
-export default ({ storiesOf }) =>
-  storiesOf('Form2/controls', module)
-    .add('Files ', () => {
-      return (
-        <Story>
-          <FilesForm
-            initialValues={{
-              files: [
-                'https://pp.userapi.com/c636819/v636819936/346c3/6xIvJ0BI8rs.jpg',
-                'https://avatanplus.com/files/resources/mid/56bced54bd17f152d1ff1327.png',
-                'https://a.d-cd.net/8dabadas-960.jpg',
-                'http://www.setwalls.ru/download.php?file=201306/2560x1440/setwalls.ru-58752.jpg',
-                'http://krasa.tk/wp-content/uploads/2015/11/face.jpg',
-                'https://millionstatusov.ru/pic/statpic/all/58e61335ec518.jpg',
-                'https://hz.ru/asd.png',
-                '//cdn.mgbeta.ru/frz/abpage-favicon.png',
-                '//cdn.mgbeta.ru/abp/_abpage.css',
-              ],
-              files3: [
-                'https://pp.userapi.com/c636819/v636819936/346c3/6xIvJ0BI8rs.jpg',
-                'https://avatanplus.com/files/resources/mid/56bced54bd17f152d1ff1327.png',
-                'https://a.d-cd.net/8dabadas-960.jpg',
-                'http://www.setwalls.ru/download.php?file=201306/2560x1440/setwalls.ru-58752.jpg',
-                'http://krasa.tk/wp-content/uploads/2015/11/face.jpg',
-                'https://millionstatusov.ru/pic/statpic/all/58e61335ec518.jpg',
-              ],
-              files4: [],
-              files5: null,
-            }}
-          />
-        </Story>
-      );
-    });
+export default ({ storiesOf }) => storiesOf('Form2/controls', module)
+  .add('Files ', () => (
+    <Story>
+      <FilesForm
+        initialValues={{
+          files: [
+            'https://pp.userapi.com/c636819/v636819936/346c3/6xIvJ0BI8rs.jpg',
+            'https://avatanplus.com/files/resources/mid/56bced54bd17f152d1ff1327.png',
+            'https://a.d-cd.net/8dabadas-960.jpg',
+            'http://www.setwalls.ru/download.php?file=201306/2560x1440/setwalls.ru-58752.jpg',
+            'http://krasa.tk/wp-content/uploads/2015/11/face.jpg',
+            'https://millionstatusov.ru/pic/statpic/all/58e61335ec518.jpg',
+            'https://hz.ru/asd.png',
+            '//cdn.mgbeta.ru/frz/abpage-favicon.png',
+            '//cdn.mgbeta.ru/abp/_abpage.css',
+          ],
+          files3: [
+            'https://pp.userapi.com/c636819/v636819936/346c3/6xIvJ0BI8rs.jpg',
+            'https://avatanplus.com/files/resources/mid/56bced54bd17f152d1ff1327.png',
+            'https://a.d-cd.net/8dabadas-960.jpg',
+            'http://www.setwalls.ru/download.php?file=201306/2560x1440/setwalls.ru-58752.jpg',
+            'http://krasa.tk/wp-content/uploads/2015/11/face.jpg',
+            'https://millionstatusov.ru/pic/statpic/all/58e61335ec518.jpg',
+          ],
+          files4: [],
+          files5: null,
+        }}
+      />
+    </Story>
+  ));

@@ -13,14 +13,16 @@ const LineFile = ({ files }) => (
     {files.map((file, i) => (
       <Wrapper key={i}>
         <Items>
-        Приложенные файлы: {file.amount}
+        Приложенные файлы:
+          {' '}
+          {file.amount}
         </Items>
         <Memory>
-         ({file.size})
+          {`(${file.size})`}
         </Memory>
         <Button>Скачать</Button>
       </Wrapper>
-  ))}
+    ))}
   </LineFilesWrapper>
 );
 

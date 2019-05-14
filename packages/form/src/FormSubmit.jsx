@@ -8,4 +8,3 @@ export default props => (
     <FormSubmitButton {...props} />
   </React.Fragment>
 );
-

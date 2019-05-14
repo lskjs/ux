@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { inject, observer } from 'mobx-react';
 import autobind from '@lskjs/autobind';
 import Promise from 'bluebird';
-import PropTypes from 'prop-types';
+import isFunction from 'lodash/isFunction';
 import Dropzone from 'react-dropzone';
 import cx from 'classnames';
 import zoneStyle from './Files.styles';
+
 
 @inject(s => ({
   upload: s.uapp.modules.upload,
@@ -50,17 +52,17 @@ class Files extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: props.value,
+      // value: props.value,
       dragged: false,
     };
     this.zone = React.createRef();
   }
-  componentWillReceiveProps(next) {
-    const { value } = this.props;
-    if (value !== next.value) {
-      this.setState({ value: next.value });
-    }
-  }
+  // componentWillReceiveProps(next) {
+  //   const { value } = this.props;
+  //   if (value !== next.value) {
+  //     this.setState({ value: next.value });
+  //   }
+  // }
   @autobind
   async onDrop(files = []) {
     const {
@@ -84,7 +86,7 @@ class Files extends Component {
         console.error('Files.onDrop', '!onError', onError, err); // eslint-disable-line
       }
     }
-    this.setState({ value, dragged: false });
+    this.setState({ dragged: false });
   }
   @autobind
   onDragged(dragged) {
@@ -92,14 +94,17 @@ class Files extends Component {
   }
   @autobind
   removeFiles() {
+    // console.log('removeFiles');
     const { onSubmit } = this.props;
-    this.setState({ value: null }, () => {
-      if (onSubmit) onSubmit(null);
-    });
+    if (onSubmit) onSubmit(null);
+    // this.setState({ value: null }, () => {
+    //   if (onSubmit) onSubmit(null);
+    // });
   }
 
   render() {
-    const { dragged, value } = this.state;
+    const { dragged } = this.state;
+    const { value2 } = this.props;
     const {
       info,
       dropText,
@@ -118,7 +123,7 @@ class Files extends Component {
       validationState,
       refZone: this.zone,
       dragged,
-      value,
+      value: value2,
       info,
       buttonText,
       onRemoveFiles: this.removeFiles,
@@ -146,9 +151,9 @@ class Files extends Component {
           onDragEnter={() => this.onDragged(true)}
           onDragLeave={() => this.onDragged(false)}
         >
-          {event => (children ? children(Object.assign(event, childrenProps)) : '')}
+          {isFunction(children) ? children(childrenProps) : children}
         </Dropzone>
-        {footer ? footer(childrenProps) : ''}
+        {isFunction(footer) ? footer(childrenProps) : footer}
       </React.Fragment>
     );
   }
