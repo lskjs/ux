@@ -10,7 +10,7 @@ export default {
     darkestPrimary: '#5f5fe9',
     lightPrimary: '#91d5ff',
     lighterPrimary: '#e6f7ff',
-    focusPrimary: '#5555cf',
+    focusPrimary: '#40a9ff',
     focusPrimaryText: '#dedeff',
     border: '#e3e3e3',
     success: '#66bb6a',
