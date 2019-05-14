@@ -9,6 +9,7 @@ export default normalizeFiles([
   {
     url: 'http://shiz.co/beatlescode/assets/hereComesTheSun.mp3',
   },
+  'https://platform.incircle.co.uk/storage/5c9a8cf1bc6a0d0014350b26/1554025768348_266.pdf',
   'https://i.imgur.com/7UGNCWK.jpg',
   {
     url: 'http://shiz.co/beatlescode/assets/hereComesTheSun.mp3',

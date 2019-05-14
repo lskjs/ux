@@ -28,8 +28,7 @@ class GridFile extends Component {
 
   render() {
     const { src = '', title, image, type } = this.props;
-    // const type = this.constructor.determineType(src);
-    const Icon = fileTypes[type];
+    const Icon = fileTypes[type] || fileTypes.other;
     return (
       <Box
         componentClass="div"
