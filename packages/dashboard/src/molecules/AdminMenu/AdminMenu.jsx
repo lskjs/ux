@@ -103,7 +103,7 @@ class AdminMenu extends PureComponent {
         <If condition={!label}>
           <React.Fragment>
             {icon}
-            {title}
+            <span>{title}</span>
           </React.Fragment>
         </If>
       </React.Fragment>
