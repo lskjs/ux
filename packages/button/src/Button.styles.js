@@ -638,6 +638,7 @@ export const Btn = styled(filteredTag)`
   justify-content: center;
   -webkit-appearance: none !important;
   text-decoration: none !important;
+  display: ${p => (p.block ? 'block' : 'inline-block')};
 
   ${props => props.twoIcons && `
     padding-top: 10px !important;
