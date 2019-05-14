@@ -102,7 +102,7 @@ const verySmallSize = css`
 `;
 
 const smallSize = css`
-  padding: 10.5px 8px;
+  padding: 10.5px 7.53px;
   min-width: 48px;
 
   font-size: 13px;
@@ -148,7 +148,7 @@ const iconButtonLeft = props => css`
     }
   `}
   ${props.size === 'small' && `
-    padding-left: 5px;
+    padding-left: 6.35px;
     padding-top: 6px;
     padding-bottom: 6px;
 
@@ -578,6 +578,24 @@ const viewTransparentDisabledDark = css`
   }
 `;
 
+const shadowTheme = ({ theme }) => css`
+  padding: 20px !important;
+  color: ${getTheme(theme, 'colors.main')};
+  box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.16);
+
+  &:hover {
+    box-shadow: 0 16px 20px 0 rgba(0, 0, 0, 0.2);
+    background-color: ${getTheme(theme, 'colors.white')};
+    color: ${getTheme(theme, 'colors.primary')};
+  }
+
+  &:focus {
+    box-shadow: 0 16px 20px 0 rgba(0, 0, 0, 0.2);
+    background-color: ${getTheme(theme, 'colors.lighterPrimary')};
+    color: ${getTheme(theme, 'colors.primary')};
+  }
+`;
+
 const transparentTheme = ({ theme }) => css`
   color: ${getTheme(theme, 'colors.white')};
   background-color: transparent;
@@ -798,6 +816,8 @@ export const Btn = styled(filteredTag)`
         case 'transparentDark': return transparentThemeDark;
         default: return defaultBaseTheme;
       }
+    } else if (props.view === 'shadow') {
+      return shadowTheme;
     } else if (props.view === 'transparent') {
       return transparentTheme;
     } else {

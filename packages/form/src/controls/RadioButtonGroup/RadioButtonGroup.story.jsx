@@ -17,7 +17,6 @@ const RadioButtonGroupForm = createForm({
   controls: {
     RadioButtonGroup: {
       component: RadioButtonGroup,
-      title: 'RadioButtonGroup',
       options: [
         {
           value: 'byDate',
@@ -36,11 +35,11 @@ const RadioButtonGroupForm = createForm({
   },
 });
 
-export default ({ storiesOf }) => storiesOf('Form2/controls', module).add(
-  'RadioButtonGroup',
-  () => (
-    <Story>
-      <RadioButtonGroupForm />
-    </Story>
-  ),
-);
+export default ({ storiesOf }) => {
+  storiesOf('Form2/controls', module)
+    .add('RadioButtonGroup', () => (
+      <Story>
+        <RadioButtonGroupForm />
+      </Story>
+    ));
+};
