@@ -9,6 +9,7 @@ export const flexStyle = css`
   display: flex;
   > li {
     flex: 1;
+    text-align: center;
   }
 `;
 
