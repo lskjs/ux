@@ -92,13 +92,19 @@ class Files extends Component {
     this.setState({ dragged });
   }
   @autobind
-  removeFiles() {
-    // console.log('removeFiles');
+  remove({ src } = {}) {
+    const { onSubmit } = this.props;
+    if (onSubmit) {
+      onSubmit({ // хуйня, но что поделать?
+        type: 'remove',
+        src,
+      });
+    }
+  }
+  @autobind
+  removeAll() {
     const { onSubmit } = this.props;
     if (onSubmit) onSubmit(null);
-    // this.setState({ value: null }, () => {
-    //   if (onSubmit) onSubmit(null);
-    // });
   }
 
   render() {
@@ -110,6 +116,7 @@ class Files extends Component {
       buttonText,
       validationState,
       multiple,
+      showPreview,
       className,
       children,
       footer,
@@ -125,10 +132,11 @@ class Files extends Component {
       value: value2,
       info,
       buttonText,
-      onRemoveFiles: this.removeFiles,
-      onRemoveItemFiles: this.removeItemFiles,
+      onRemoveAll: this.removeAll,
+      onRemove: this.remove,
       dropText,
       multiple,
+      showPreview,
       type,
       avatar: {
         id,

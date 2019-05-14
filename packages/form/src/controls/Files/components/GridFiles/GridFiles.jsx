@@ -4,7 +4,7 @@ import GridFile from '../GridFile';
 import normilizeFiles from '../normilizeFiles';
 // import { GridFiles } from './GridFiles.styles';
 
-const GridFiles = ({ items }) => {
+const GridFiles = ({ items, ...props }) => {
   const normilizedFiles = normilizeFiles(items);
   return (
     <Row>
@@ -18,6 +18,7 @@ const GridFiles = ({ items }) => {
         >
           <GridFile
             {...item}
+            {...props}
           />
         </Col>
       ))}
