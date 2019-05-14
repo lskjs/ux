@@ -637,6 +637,7 @@ export const Btn = styled(filteredTag)`
   text-align: center;
   justify-content: center;
   -webkit-appearance: none !important;
+  text-decoration: none !important;
 
   ${props => props.twoIcons && `
     padding-top: 10px !important;
