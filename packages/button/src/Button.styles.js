@@ -341,7 +341,7 @@ const primarySolidTheme = ({ theme }) => css`
 
   &:hover {
     color: ${getTheme(theme, 'colors.white')};
-    background-color: ${getTheme(theme, 'colors.darkestPrimary')};
+    background-color: ${getTheme(theme, 'colors.darkPrimary')};
   }
 
   &:focus {
