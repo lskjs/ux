@@ -27,6 +27,7 @@ const DefaultBody = ({
   refZone,
   onRemoveFiles,
   validationState,
+  showPreview = true,
   type = 'image',
   avatar,
 }) => {
@@ -61,34 +62,36 @@ const DefaultBody = ({
               </Button>
             </Actions>
           </Header>
-          <Footer
-            style={(value && type === 'image') ? {
-              backgroundImage: `url(${value})`,
-            } : {}}
-          >
-            <If condition={!value || type === 'avatar'}>
-              <IconFooter>
-                <If condition={type === 'image'}>
-                  <File />
-                </If>
-                <If condition={type === 'avatar'}>
-                  <Avatar size={116} src={value} title={avatar.title} id={avatar.id} />
-                </If>
-              </IconFooter>
-              <PlaceholderFooter>
-                <T name="upload.placeholderImage" />
-              </PlaceholderFooter>
-            </If>
-            <If condition={type === 'image' && value}>
-              <Overlay />
-              <RemoveButton
-                type="button"
-                onClick={onRemoveFiles}
-              >
-                <Remove />
-              </RemoveButton>
-            </If>
-          </Footer>
+          <If condition={showPreview}>
+            <Footer
+              style={(value && type === 'image') ? {
+                backgroundImage: `url(${value})`,
+              } : {}}
+            >
+              <If condition={!value || type === 'avatar'}>
+                <IconFooter>
+                  <If condition={type === 'image'}>
+                    <File />
+                  </If>
+                  <If condition={type === 'avatar'}>
+                    <Avatar size={116} src={value} title={avatar.title} id={avatar.id} />
+                  </If>
+                </IconFooter>
+                <PlaceholderFooter>
+                  <T name="upload.placeholderImage" />
+                </PlaceholderFooter>
+              </If>
+              <If condition={type === 'image' && value}>
+                <Overlay />
+                <RemoveButton
+                  type="button"
+                  onClick={onRemoveFiles}
+                >
+                  <Remove />
+                </RemoveButton>
+              </If>
+            </Footer>
+          </If>
         </Block>
       </If>
     </React.Fragment>

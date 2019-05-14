@@ -8,7 +8,6 @@ import Dropzone from 'react-dropzone';
 import cx from 'classnames';
 import zoneStyle from './Files.styles';
 
-
 @inject(s => ({
   upload: s.uapp.modules.upload,
 }))
