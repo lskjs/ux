@@ -5,6 +5,13 @@ export const blockStyle = css`
   width: calc(100% - 12px);
 `;
 
+export const flexStyle = css`
+  display: flex;
+  > li {
+    flex: 1;
+  }
+`;
+
 export const injectStyles = () => injectGlobal`
   .ant-menu {
     font-family: 'Gotham Pro', Helvetica, Arial;

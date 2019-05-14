@@ -8,7 +8,7 @@ import If from 'react-if';
 import Horizontal from '../../atoms/Horizontal';
 import ItemTitle from '../../atoms/ItemTitle';
 import TinyLabel from '../../atoms/TinyLabel';
-import { blockStyle, injectStyles } from './AdminMenu.styles';
+import { flexStyle, blockStyle, injectStyles } from './AdminMenu.styles';
 
 injectStyles();
 
@@ -44,6 +44,7 @@ class AdminMenu extends PureComponent {
     mode: PropTypes.oneOf(['vertical', 'horizontal', 'inline']),
     theme: PropTypes.oneOf(['light', 'dark']),
     block: PropTypes.bool,
+    flex: PropTypes.bool,
   }
 
   static defaultProps = {
@@ -53,6 +54,7 @@ class AdminMenu extends PureComponent {
     mode: 'horizontal',
     theme: 'dark',
     block: false,
+    flex: false,
   }
 
   @autobind
@@ -122,11 +124,13 @@ class AdminMenu extends PureComponent {
       theme,
       items,
       block,
+      flex,
     } = this.props;
     return (
       <Menu
         className={cx({
           [blockStyle]: block,
+          [flexStyle]: flex,
         })}
         onClick={this.handleClick}
         selectedKeys={active}
