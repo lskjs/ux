@@ -32,7 +32,7 @@ class SingleValue extends Component {
               {data.icon}
             </Icon>
           </If>
-          <If condition={data.image}>
+          <If condition={!!data.image}>
             {typeof data.image === 'string' ? <Image src={data.image} /> : data.image}
           </If>
           <Title image={data.image}>
