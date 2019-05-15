@@ -11,6 +11,6 @@ export const Graph = styled('div')`
 export const GraphItem = styled(removeProps('div', ['height']))`
   flex-grow: 1;
   border-radius: 2px 2px 0px 0px;
-  background-color: ${p => p.theme.colors.darkerBackground};
+  background-color: ${p => getTheme(p.theme, 'colors.darkerBackground')};
   height: ${p => p.height};
 `;

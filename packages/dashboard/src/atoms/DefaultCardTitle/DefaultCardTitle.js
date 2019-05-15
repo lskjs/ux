@@ -1,8 +1,9 @@
 import styled from 'react-emotion';
+import getTheme from '@lskjs/theme/getTheme';
 
 export default styled('div')`
   text-align: center;
-  color: ${p => p.theme.colors.black};
+  color: ${p => getTheme(p.theme, 'colors.black')};
   font-size: 30px;
   padding-bottom: 5px;
   overflow: hidden;

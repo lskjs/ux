@@ -17,12 +17,12 @@ export const Button = styled('button')`
   outline: none;
   position: absolute;
   top: 0;
-  left: ${p => p.theme.tablePadding}px;
+  left: ${p => getTheme(p.theme, 'tablePadding')}px;
   bottom: 0;
   margin: auto 0;
   > svg {
     display: flex;
-    color: ${p => p.theme.colors.primary};
+    color: ${p => getTheme(p.theme, 'colors.primary')};
     font-size: 24px;
   }
 `;
@@ -35,7 +35,7 @@ export const Count = styled('div')`
   flex-shrink: 0;
 
   opacity: 0.5;
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   font-size: 13px;
   line-height: 1.0;
   text-align: right;
@@ -43,7 +43,7 @@ export const Count = styled('div')`
 `;
 
 const placeholderStyle = p => css`
-  font-family: ${p.theme.fontFamily};
+  font-family: ${getTheme(p.theme, 'fontFamily')};
   font-size: 13px;
   font-weight: 500;
   line-height: 56px;
@@ -59,11 +59,11 @@ export const Input = styled(dynamicTag)`
   outline: none;
   background: none;
 
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   font-size: 13px;
   text-align: left;
   font-weight: 500;
-  color: ${p => p.theme.colors.main};
+  color: ${p => getTheme(p.theme, 'colors.main')};
   &::-webkit-input-placeholder {
     ${placeholderStyle}
   }

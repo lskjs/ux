@@ -15,7 +15,7 @@ export const Drop = styled('div')`
   height: 132px;
   border-radius: 3px;
   background-color: #ffffff;
-  border: solid 3px ${p => p.theme.colors.primary};
+  border: solid 3px ${p => getTheme(p.theme, 'colors.primary')};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,16 +26,16 @@ export const Drop = styled('div')`
 `;
 
 export const DropText = styled('div')`
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   font-size: 20px;
   text-align: center;
-  color: ${p => p.theme.colors.primary};
+  color: ${p => getTheme(p.theme, 'colors.primary')};
   margin-bottom: 18px;
   width: 70%;
 `;
 
 export const DropIcon = styled('div')`
-  color: ${p => p.theme.colors.primary};
+  color: ${p => getTheme(p.theme, 'colors.primary')};
   font-size: 64px;
   > svg {
     display: flex;
@@ -71,15 +71,15 @@ export const RemoveButton = styled('button')`
 
 export const PlaceholderFooter = styled('div')`
   opacity: 0.5;
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   font-size: 11px;
   letter-spacing: -0.1px;
   text-align: center;
-  color: ${p => p.theme.colors.primary};
+  color: ${p => getTheme(p.theme, 'colors.primary')};
 `;
 
 export const IconFooter = styled('div')`
-  color: ${p => p.theme.colors.primary};
+  color: ${p => getTheme(p.theme, 'colors.primary')};
   opacity: 0.5;
   font-size: 64px;
   margin-bottom: 24px;
@@ -92,7 +92,7 @@ export const IconFooter = styled('div')`
 export const Footer = styled('div')`
   height: 200px;
   width: 100%;
-  background-color: ${p => p.theme.colors.lighterPrimary};
+  background-color: ${p => getTheme(p.theme, 'colors.lighterPrimary')};
   position: relative;
   display: flex;
   flex-direction: column;
@@ -108,11 +108,11 @@ export const Button = styled('button')`
   padding: 12px 20px;
   border-radius: 3px;
   background-color: rgba(155, 155, 155, 0.12);
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   font-size: 13px;
   line-height: 1;
   text-align: center;
-  color: ${p => p.theme.colors.primary};
+  color: ${p => getTheme(p.theme, 'colors.primary')};
   border: none;
   outline: none;
   cursor: pointer;
@@ -135,7 +135,7 @@ export const Info = styled('div')`
   letter-spacing: -0.1px;
   text-align: left;
   color: #4a4a4a;
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   margin-bottom: 32px;
 `;
 

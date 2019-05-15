@@ -2,6 +2,7 @@ import styled from 'react-emotion';
 import Avatar from '@lskjs/ui/Avatar';
 import createdynamicTag from '@lskjs/utils/createDynamicTag';
 import removeProps from '@lskjs/utils/removeProps';
+import getTheme from '@lskjs/theme/getTheme';
 
 const dynamicTag = createdynamicTag('article');
 const filteredTag = removeProps(dynamicTag, ['fixHeight']);
@@ -11,17 +12,17 @@ export const ProfileCardItem = styled(filteredTag)`
   color: rgba(0,0,0,.65);
   display: block;
   padding: 1rem;
-  border-radius: ${p => p.theme.borderRadius};
-  background-color: ${p => p.theme.colors.white};
+  border-radius: ${p => getTheme(p.theme, 'borderRadius')};
+  background-color: ${p => getTheme(p.theme, 'colors.white')};
   text-align: center;
   height: ${p => (p.fixHeight ? `${p.fixHeight}px` : 'auto')};
   overflow: hidden;
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   transition: border-color .2s ease-out;
 
   &:hover {
     color: inherit;
-    border-color: ${p => p.theme.colors.primary};
+    border-color: ${p => getTheme(p.theme, 'colors.primary')};
   }
   > h4 {
     margin: 0;
@@ -62,7 +63,7 @@ export const SocialIcon = styled('a')`
   font-size: 14px;
   height: 30px;
   width: 30px;
-  border-radius: ${p => p.theme.borderCircle};
+  border-radius: ${p => getTheme(p.theme, 'borderCircle')};
   padding: 0;
   display: inline-block;
   text-align: center;

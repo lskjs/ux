@@ -24,7 +24,7 @@ export const El = styled('div')`
     border-radius: 4px !important;
     min-height: 36px !important;
     &:focus {
-      border-color: ${p => p.theme.colors.primary} !important;
+      border-color: ${p => getTheme(p.theme, 'colors.primary')} !important;
     }
     &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
       font-size: 11px !important;
@@ -53,7 +53,7 @@ export const ElPlace = styled('div')`
   display: flex;
   align-items: center;
   
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   font-size: 13px;
   line-height: 1.43;
   text-align: left;

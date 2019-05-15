@@ -29,7 +29,7 @@ export const TitleWrapper = styled(dynamicTag)`
 `;
 
 export const DateWrapper = styled('span')`
-  color: ${p => p.theme.colors.secondary};
+  color: ${p => getTheme(p.theme, 'colors.secondary')};
   font-size: 12px;
   padding-left: 12px;
   font-weight: normal;

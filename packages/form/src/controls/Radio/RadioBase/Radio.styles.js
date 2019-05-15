@@ -34,7 +34,7 @@ export const Item = styled('div')`
     line-height: 1.43;
     letter-spacing: -0.1px;
     text-align: left;
-    font-family: ${p => p.theme.fontFamily};
+    font-family: ${p => getTheme(p.theme, 'fontFamily')};
     color: #4a4a4a;
     cursor: pointer;
   }

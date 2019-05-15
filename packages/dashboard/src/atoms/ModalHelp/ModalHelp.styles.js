@@ -1,10 +1,11 @@
 import styled from 'react-emotion';
 import removeProps from '@lskjs/utils/removeProps';
+import getTheme from '@lskjs/theme/getTheme';
 
 export default styled(removeProps('div', ['align']))`
   padding: 12px 16px 32px;
   position: relative;
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   text-align: ${props => props.align};
   display: flex;
   flex-direction: column;
@@ -21,8 +22,8 @@ export default styled(removeProps('div', ['align']))`
   font-stretch: normal;
   line-height: 1.43;
   letter-spacing: -0.1px;
-  color: ${p => p.theme.colors.main};
-  background-color: ${p => p.theme.colors.darkerBackground};
+  color: ${p => getTheme(p.theme, 'colors.main')};
+  background-color: ${p => getTheme(p.theme, 'colors.darkerBackground')};
 
   > * {
     padding-left: 0 !important;

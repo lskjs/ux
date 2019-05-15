@@ -41,7 +41,7 @@ const smallStyle = css`
 
 
 export default styled('div')`
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   text-align: ${p => (p.align || 'left')};
   color: ${p => (p.color || p.theme.colors.main)};
   white-space: ${p => (p.wrap || 'initial')};

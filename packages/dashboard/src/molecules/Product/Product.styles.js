@@ -1,6 +1,6 @@
 import styled, { css } from 'react-emotion';
-
 import createDynamicTag from '@lskjs/utils/createDynamicTag';
+import getTheme from '@lskjs/theme/getTheme';
 
 const dynamicTag = createDynamicTag('a');
 
@@ -17,7 +17,7 @@ export const CardImage = styled(dynamicTag)`
 export const ItemCard = styled('div')`
   position: relative;
   transition: 0.2s linear;
-  border-radius: ${p => p.theme.borderRadius};
+  border-radius: ${p => getTheme(p.theme, 'borderRadius')};
   &:hover {
     box-shadow: 0 0 15px rgba(0,0,0, .1);
   }
@@ -31,21 +31,21 @@ export const Image = styled('img')`
 export const CardBody = styled('div')`
   position: relative;
   padding: 30px 15px;
-  font-family: ${p => p.theme.fontFamily};
-  border-radius: 0 0 ${p => p.theme.borderRadius} ${p => p.theme.borderRadius};
-  color: ${p => (p.theme.colors.darkGray)};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
+  border-radius: 0 0 ${p => getTheme(p.theme, 'borderRadius')} ${p => getTheme(p.theme, 'borderRadius')};
+  color: ${p => (getTheme(p.theme, 'colors.darkGray'))};
   background-color: ${p => (p.theme.colors.white)};
 `;
 
 export const CardTitle = styled('title')`
   font-size: 16px;
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   display: block;
 `;
 
 export const TitleLink = styled(dynamicTag)`
-  color: ${p => (p.theme.colors.darkGray)};
-  font-family: ${p => p.theme.fontFamily};
+  color: ${p => (getTheme(p.theme, 'colors.darkGray'))};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   font-weight: 500;
   text-decoration: none;
 `;
@@ -53,13 +53,13 @@ export const TitleLink = styled(dynamicTag)`
 export const TitleSp = styled('span')`
   display: block;
   font-size: 12px;
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   opacity: .5;
 `;
 
 export const CardPrice = styled('div')`
   position: absolute;
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   top: 30px;
   right: 15px;
 `;

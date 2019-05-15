@@ -1,4 +1,5 @@
 import styled, { css } from 'react-emotion';
+import getTheme from '@lskjs/theme/getTheme';
 
 const topLeft = css`
   top: 25px;
@@ -34,8 +35,8 @@ export default styled('div')`
   text-align: center;
   line-height: 50px;
   letter-spacing: 1px;
-  color: ${p => p.theme.colors.white};
-  background-color: ${p => (p.color || p.theme.colors.darkGray)};
+  color: ${p => getTheme(p.theme, 'colors.white')};
+  background-color: ${p => (p.color || getTheme(p.theme, 'colors.darkGray'))};
   
   ${(p) => {
     switch (p.position) {

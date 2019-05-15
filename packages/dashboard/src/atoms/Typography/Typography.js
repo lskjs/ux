@@ -1,4 +1,5 @@
 import styled, { css } from 'react-emotion';
+import getTheme from '@lskjs/theme/getTheme';
 
 const title = css`
   font-size: 16px;
@@ -41,7 +42,7 @@ const smallStyle = css`
 
 
 export default styled('div')`
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   text-align: ${p => (p.align || 'left')};
   color: ${p => (p.color || p.theme.colors.main)};
   white-space: ${p => (p.wrap || 'initial')};

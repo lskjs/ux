@@ -1,11 +1,11 @@
 import styled, { css } from 'react-emotion';
-
+import getTheme from '@lskjs/theme/getTheme';
 import removeProps from '@lskjs/utils/removeProps';
 
 const filteredTag = removeProps('section', ['padded', 'paint']);
 
 export default styled(filteredTag)`
-    font-family: ${p => p.theme.fontFamily};
+    font-family: ${p => getTheme(p.theme, 'fontFamily')};
     line-height: 2.15em;
     font-size: 12px;
     font-weight: 600;

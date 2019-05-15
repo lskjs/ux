@@ -22,7 +22,7 @@ const paintColors = (p) => {
 export const ALink = styled(filteredTag)`
   position: relative;
   display: inline-block;
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   text-decoration: none;
   color: ${paintColors};
   &:hover,

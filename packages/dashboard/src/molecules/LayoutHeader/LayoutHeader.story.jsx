@@ -12,6 +12,7 @@ import { inject, observer } from 'mobx-react';
 import Link from '@lskjs/ui/Link';
 import FlagIcon from '@lskjs/ui/Flag';
 import T from '@lskjs/ui/T';
+import If from 'react-if';
 import HeaderDropdown from '../../atoms/HeaderDropdown';
 import LayoutNotificationIcon from '../../atoms/LayoutNotificationIcon';
 import LayoutHeaderListItem from '../../atoms/LayoutHeaderListItem';
@@ -58,6 +59,8 @@ const config = {
   locales: [],
 };
 
+const tabs = [];
+
 export default ({ storiesOf }) => (
   storiesOf('molecules', module)
     .add('LayoutHeader/1', () => (
@@ -68,7 +71,7 @@ export default ({ storiesOf }) => (
             <LayoutHeaderSearchBox right placeholder={i18.t('header.search.placeholder')} />
             <LayoutHeaderNotifications
               content={(
-                <LayoutHeaderNotificationsContent tabs={this.getNotificationsMenuTabs()} />
+                <LayoutHeaderNotificationsContent tabs={tabs} />
               )}
             >
               <LayoutHeaderListItem href="#!">

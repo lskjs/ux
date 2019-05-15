@@ -1,10 +1,11 @@
 import styled from 'react-emotion';
 import removeProps from '@lskjs/utils/removeProps';
+import getTheme from '@lskjs/theme/getTheme';
 
 export default styled(removeProps('p', ['align']))`
   padding: 8px 16px 0;
   margin: 0;
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   font-size: 13px;
   font-weight: normal;
   font-style: normal;

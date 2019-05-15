@@ -13,7 +13,7 @@ export const Content = styled('div')`
   width: 100%;
   border-radius: 4px;
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.24);
-  background-color: ${p => p.theme.colors.white};
+  background-color: ${p => getTheme(p.theme, 'colors.white')};
   z-index: 1;
   height: ${p => p.height}px;
 `;
@@ -45,8 +45,8 @@ export const Trigger = styled('button')`
   font-size: 13px;
   text-align: left;
   letter-spacing: -0.1px;
-  font-family: ${p => p.theme.fontFamily};
-  background-color: ${p => p.theme.colors.white};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
+  background-color: ${p => getTheme(p.theme, 'colors.white')};
   border: 1px solid ${p => (p.open ? `${p.theme.colors.primary} !important` : p.theme.colors.border)};
   padding: 0;
   outline: none;

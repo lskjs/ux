@@ -1,16 +1,17 @@
 import styled from 'react-emotion';
 import Layout from 'antd/lib/layout';
+import getTheme from '@lskjs/theme/getTheme';
 import LayoutFooterElement from '../LayoutFooterElement';
 
 const { Footer } = Layout;
 
 export default styled(Footer)`
   line-height: 1.25rem;
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   padding: 1.625rem 30px;
 
   a {
-    color: ${p => p.theme.colors.darkGray};
+    color: ${p => getTheme(p.theme, 'colors.darkGray')};
     opacity: .6;
 
     &:hover {

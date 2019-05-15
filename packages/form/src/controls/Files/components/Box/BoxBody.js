@@ -5,7 +5,7 @@ import removeProps from '@lskjs/utils/removeProps';
 const filteredTag = removeProps('section', ['padded', 'paint']);
 
 export default styled(filteredTag)`
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   ${p => (p.padded && css`
     padding: 1.25rem;
   `)}

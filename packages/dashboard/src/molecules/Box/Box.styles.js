@@ -56,9 +56,9 @@ export default styled(filteredTag)`
   position: relative;
   display: flex;
   flex-direction: column;
-  font-family: ${p => p.theme.fontFamily};
-  border-radius: ${p => p.theme.borderRadius};
-  border: 1px solid ${p => p.theme.colors.border};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
+  border-radius: ${p => getTheme(p.theme, 'borderRadius')};
+  border: 1px solid ${p => getTheme(p.theme, 'colors.border')};
   ${p => (p.padded && css`
     padding: 1.625rem;
     line-height: 1.85em;
@@ -66,11 +66,11 @@ export default styled(filteredTag)`
   `)}
   ${paintColors}
   > section:first-child {
-    border-radius: ${p => p.theme.borderRadius} ${p => p.theme.borderRadius} 0 0;
+    border-radius: ${p => getTheme(p.theme, 'borderRadius')} ${p => getTheme(p.theme, 'borderRadius')} 0 0;
   }
 
   > section:last-child {
-    border-radius: 0 0 ${p => p.theme.borderRadius} ${p => p.theme.borderRadius};
+    border-radius: 0 0 ${p => getTheme(p.theme, 'borderRadius')} ${p => getTheme(p.theme, 'borderRadius')};
   }
   ${p => (p.image && css`
     background-image: ${`url(${p.image})`};
@@ -80,4 +80,3 @@ export default styled(filteredTag)`
     border-radius: ${p.theme.borderRadius}
   `)}
 `;
-

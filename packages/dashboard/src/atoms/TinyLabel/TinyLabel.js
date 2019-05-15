@@ -1,6 +1,6 @@
 import styled, { css } from 'react-emotion';
-import getTheme from '@lskjs/theme/getTheme';
 import removeProps from '@lskjs/utils/removeProps';
+import getTheme from '@lskjs/theme/getTheme';
 
 const filter = removeProps('div', ['sticky', 'pullRight']);
 export default styled(filter)`

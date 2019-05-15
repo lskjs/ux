@@ -1,12 +1,13 @@
 import styled, { css } from 'react-emotion';
 import Avatar from '@lskjs/ui/Avatar';
+import getTheme from '@lskjs/theme/getTheme';
 
 export const Wrapper = styled('div')`
   position: relative;
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   padding: 48px 16px 54px;
   text-align: center;
-  border-radius: ${p => p.theme.borderRadius};
+  border-radius: ${p => getTheme(p.theme, 'borderRadius')};
   margin-bottom: 34px;
   ${(p) => {
     switch (p.paint) {
@@ -56,12 +57,12 @@ export const Content = styled('div')`
     font-size: 54px;
     line-height: .2;
   }
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
 `;
 
 export const Citate = styled('cite')`
   opacity: .7;
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
 `;
 
 export const AuthorImg = styled('div')`
@@ -74,14 +75,14 @@ export const AuthorImg = styled('div')`
   margin-bottom: -34px;
   padding: 4px;
   background-color: #f5f5f5;
-  border-radius: ${p => p.theme.borderCircle};
-  font-family: ${p => p.theme.fontFamily};
+  border-radius: ${p => getTheme(p.theme, 'borderCircle')};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
 `;
 
 export const AvatarItem = styled(Avatar)`
   max-width: 100%;
-  border-radius: ${p => p.theme.borderCircle};
+  border-radius: ${p => getTheme(p.theme, 'borderCircle')};
   width: 30px;
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   height: auto;
 `;

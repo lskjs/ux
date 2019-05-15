@@ -11,7 +11,7 @@ export const Title = styled('p')`
   line-height: 1.33;
   letter-spacing: 0.2px;
   text-align: center;
-  color: ${p => p.theme.colors.main};
+  color: ${p => getTheme(p.theme, 'colors.main')};
   margin: 0 0 12px;
 
   transition: color .2s ease;
@@ -101,9 +101,9 @@ export const Action = styled('button')`
   display: flex;
   align-items: center;
 
-  border: 1px solid ${p => p.theme.colors.border};
+  border: 1px solid ${p => getTheme(p.theme, 'colors.border')};
 
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   font-size: 11px;
   font-weight: bold;
   font-style: normal;

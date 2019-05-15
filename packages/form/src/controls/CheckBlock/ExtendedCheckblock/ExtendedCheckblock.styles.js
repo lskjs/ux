@@ -1,7 +1,7 @@
 import styled from 'react-emotion';
 
 export const Additional = styled('div')`
-  background-color: ${p => p.theme.colors.mainBackground};
+  background-color: ${p => getTheme(p.theme, 'colors.mainBackground')};
   border: solid 1px #e3e3e3;
   border-top: none;
   border-radius: 0 0 3px 3px;
@@ -120,7 +120,7 @@ export const Header = styled('div')`
 `;
 
 export const Label = styled('div')`
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   font-size: 13px;
   line-height: 1.43;
   letter-spacing: -0.1px;
@@ -135,7 +135,7 @@ export const Footer = styled('div')`
 `;
 
 export const Info = styled('div')`
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   font-size: 13px;
   line-height: 1.43;
   letter-spacing: -0.1px;

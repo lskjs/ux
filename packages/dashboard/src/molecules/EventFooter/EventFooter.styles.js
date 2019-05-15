@@ -7,7 +7,7 @@ export const EventFooterItem = styled('div')`
   position: relative;
   background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0.5) 100%);
   margin-bottom: -1px;
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
 
   @media screen and (max-width: 992px) {
     flex-direction: column;
@@ -18,7 +18,7 @@ export const EventFooterItem = styled('div')`
 export const AvatarContainer = styled('div')`
   position: relative;
   padding: 12px 12px 12px 24px;
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
 `;
 
 export const ButtonContainer = styled('div')`
@@ -28,7 +28,7 @@ export const ButtonContainer = styled('div')`
   justify-content: flex-end;
   flex-wrap: wrap;
   align-items: flex-start;
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   @media screen and (max-width: 768px) {
     margin-left: 0;
   }
@@ -38,7 +38,7 @@ export const Content = styled('div')`
   display: flex;
   width: 100%;
   overflow: hidden;
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   @media screen and (max-width: 992px) {
     flex-direction: column;
   }
@@ -46,10 +46,10 @@ export const Content = styled('div')`
 
 export const TextContainer = styled('div')`
   padding-left: 36px;
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   overflow: hidden;
   width: 100%;
-  color: ${p => p.theme.colors.white};
+  color: ${p => getTheme(p.theme, 'colors.white')};
   margin: auto 0;
 `;
 
@@ -61,5 +61,5 @@ export const TextItem = styled('div')`
     font-weight: 500;
     white-space: nowrap;
   }
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
 `;

@@ -1,6 +1,7 @@
 import styled, { css } from 'react-emotion';
 import createDynamicTag from '@lskjs/utils/createDynamicTag';
 import removeProps from '@lskjs/utils/removeProps';
+import getTheme from '@lskjs/theme/getTheme';
 
 const dynamicTag = createDynamicTag('button');
 const filteredTag = removeProps(dynamicTag, [
@@ -14,8 +15,8 @@ export default styled(filteredTag)`
   width: ${p => (p.small ? 22 : 24)}px;
   height: ${p => (p.small ? 22 : 24)}px;
   border-radius: 100px;
-  background-color: ${p => p.theme.colors.lighterPrimary};
-  color: ${p => p.theme.colors.primary};
+  background-color: ${p => getTheme(p.theme, 'colors.lighterPrimary')};
+  color: ${p => getTheme(p.theme, 'colors.primary')};
   display: flex;
   font-size: 18px;
   align-items: center;
@@ -44,7 +45,7 @@ export default styled(filteredTag)`
   `)}
 
   &:hover {
-    background-color: ${p => p.theme.colors.primary};
+    background-color: ${p => getTheme(p.theme, 'colors.primary')};
     color: white;
   }
 

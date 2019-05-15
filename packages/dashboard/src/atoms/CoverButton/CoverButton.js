@@ -1,5 +1,6 @@
 import styled from 'react-emotion';
 import BsButton from 'antd/lib/button';
+import getTheme from '@lskjs/theme/getTheme';
 
 export default styled(BsButton)`
   height: auto;
@@ -7,6 +8,6 @@ export default styled(BsButton)`
   text-transform: uppercase;
   letter-spacing: .5px;
   line-height: 2;
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   font-size: .75rem;
 `;

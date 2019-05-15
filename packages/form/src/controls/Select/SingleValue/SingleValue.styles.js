@@ -11,14 +11,14 @@ export const Option = styled('div')`
   width: 100%;
   white-space: nowrap;
   text-overflow: ellipsis;
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   font-size: 13px;
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
-  background-color: ${p => p.theme.colors.white};
+  background-color: ${p => getTheme(p.theme, 'colors.white')};
   letter-spacing: -0.1px;
-  color: ${p => p.theme.colors.main};
+  color: ${p => getTheme(p.theme, 'colors.main')};
 `;
 
 export const Image = styled('img')`

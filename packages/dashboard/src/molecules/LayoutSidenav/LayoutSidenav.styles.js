@@ -1,5 +1,6 @@
 import styled from 'react-emotion';
 import Layout from 'antd/lib/layout';
+import getTheme from '@lskjs/theme/getTheme';
 import LayoutSidenavFooter from '../../atoms/LayoutSidenavFooter';
 import LayoutSidenavBrand from '../../atoms/LayoutSidenavBrand';
 import LayoutSidenavHeader from '../../atoms/LayoutSidenavHeader';
@@ -9,9 +10,9 @@ const { Sider: AntSider } = Layout;
 export default styled(AntSider)`
   display: flex;
   flex-direction: column;
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   display: none;
-  background-color: ${p => p.theme.colors.white};
+  background-color: ${p => getTheme(p.theme, 'colors.white')};
   
   @media screen and (min-width: 768px) {
     display: flex !important;

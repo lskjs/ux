@@ -2,7 +2,7 @@ import styled from 'react-emotion';
 
 export const Header = styled('div')`
   width: 278px;
-  background-color: ${p => p.theme.colors.lighterPrimary};
+  background-color: ${p => getTheme(p.theme, 'colors.lighterPrimary')};
   display: flex;
   align-items: center;
   justify-content: center;

@@ -1,9 +1,10 @@
 import styled from 'react-emotion';
+import getTheme from '@lskjs/theme/getTheme';
 
 export default styled('div')`
   padding-left: 0;
   list-style: none;
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   display: flex;
   align-items: center;
   line-height: 60px;
