@@ -1,5 +1,7 @@
 import React, { PureComponent } from 'react';
 import omit from 'lodash/omit';
+import theme from '@lskjs/theme';
+import getTheme from '@lskjs/theme/getTheme';
 import { autobind } from '@lskjs/autobind';
 import { PropTypes } from 'prop-types';
 import ButtonGroup from '@lskjs/button/ButtonGroup';
@@ -44,11 +46,19 @@ class RadioButtonGroup extends PureComponent {
       ...props
     } = this.props;
     return (
-      <ButtonGroup panel {...omit(props, ['onChange'])}>
+      <ButtonGroup
+        panel
+        {...omit(props, ['onChange'])}
+      >
         {options.map(item => (
           <Button
             size="small"
             paint={this.state.show === item.value ? paint : 'default'}
+            style={{
+              boxShadow: this.state.show === item.value
+                ? `0 0 0 1px ${getTheme(theme, `colors.${paint}`)}`
+                : '0 0 0 1px #eee',
+            }}
             onClick={() => {
               this.onChange(item.value);
             }}
