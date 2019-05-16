@@ -34,7 +34,7 @@ export default styled(Footer)`
     &:after {
       content: '';
       position: absolute;
-      background-color: ${p => `rgba(${p.theme.colors.black}, .2)`};
+      background-color: ${p => `rgba(${getTheme(p.theme, 'colors.black')}, .2)`};
       position: absolute;
       top: 50%;
       right: 0;

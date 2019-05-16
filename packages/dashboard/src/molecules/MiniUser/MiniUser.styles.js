@@ -33,7 +33,7 @@ export const Block = styled(dynamicTag)`
     ${Title} {
       font-size: 13px;
       line-height: 1.43;
-      color: ${p.theme.colors.main};
+      color: ${getTheme(p.theme, 'colors.main')};
     }
   `)}
   ${p => (p.tiny && `
@@ -41,7 +41,7 @@ export const Block = styled(dynamicTag)`
       font-size: 10px;
       line-height: 1.8;
       text-align: left;
-      color: ${p.theme.colors.main};
+      color: ${getTheme(p.theme, 'colors.main')};
     }
     ${AvatarWrapper} {
       margin-right: 4px;

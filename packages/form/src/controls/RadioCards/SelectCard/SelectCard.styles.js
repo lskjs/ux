@@ -74,10 +74,10 @@ export const Block = styled('button')`
   padding: 0;
   cursor: pointer;
   ${p => (p.checked && `
-    border-color: ${p.theme.colors.primary};
+    border-color: ${getTheme(p.theme, 'colors.primary')};
     ${Radio} {
       border: none;
-      background-color: ${p.theme.colors.primary};
+      background-color: ${getTheme(p.theme, 'colors.primary')};
     }
   `)}
   ${(p) => {

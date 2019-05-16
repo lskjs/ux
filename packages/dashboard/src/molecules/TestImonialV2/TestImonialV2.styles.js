@@ -13,36 +13,36 @@ export const Wrapper = styled('div')`
     switch (p.paint) {
       case 'light':
         return css`
-          background-color: ${p.theme.colors.secondary};
-          color: ${p.theme.colors.main};`;
+          background-color: ${getTheme(p.theme, 'colors.secondary')};
+          color: ${getTheme(p.theme, 'colors.main')};`;
       case 'dark':
         return css`
-          background-color: ${p.theme.colors.black};
-          color: ${p.theme.colors.white};`;
+          background-color: ${getTheme(p.theme, 'colors.black')};
+          color: ${getTheme(p.theme, 'colors.white')};`;
       case 'primary':
         return css`
-          background-color: ${p.theme.colors.primary};
-          color: ${p.theme.colors.white};`;
+          background-color: ${getTheme(p.theme, 'colors.primary')};
+          color: ${getTheme(p.theme, 'colors.white')};`;
       case 'info':
         return css`
-          background-color: ${p.theme.colors.info};
-          color: ${p.theme.colors.white};`;
+          background-color: ${getTheme(p.theme, 'colors.info')};
+          color: ${getTheme(p.theme, 'colors.white')};`;
       case 'success':
         return css`
-          background-color: ${p.theme.colors.success};
-          color: ${p.theme.colors.white};`;
+          background-color: ${getTheme(p.theme, 'colors.success')};
+          color: ${getTheme(p.theme, 'colors.white')};`;
       case 'warning':
         return css`
-          background-color: ${p.theme.colors.warning};
-          color: ${p.theme.colors.main};`;
+          background-color: ${getTheme(p.theme, 'colors.warning')};
+          color: ${getTheme(p.theme, 'colors.main')};`;
       case 'danger':
         return css`
-          background-color: ${p.theme.colors.danger};
-          color: ${p.theme.colors.white};`;
+          background-color: ${getTheme(p.theme, 'colors.danger')};
+          color: ${getTheme(p.theme, 'colors.white')};`;
       default:
         return css`
-          background-color: ${p.theme.colors.white};
-          color: ${p.theme.colors.main}; `;
+          background-color: ${getTheme(p.theme, 'colors.white')};
+          color: ${getTheme(p.theme, 'colors.main')}; `;
     }
   }}
 `;

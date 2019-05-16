@@ -55,7 +55,7 @@ export const Item = styled('div')`
   }}  
 ${p => (p.selected && `
     ${Icon} {
-      color: ${p.theme.colors.primary};
+      color: ${getTheme(p.theme, 'colors.primary')};
       cursor: default;
     }
     label {
@@ -74,7 +74,7 @@ ${p => (p.selected && `
     }
     cursor: not-allowed;
     &:hover label {
-      color: ${p.theme.colors.primary};
+      color: ${getTheme(p.theme, 'colors.primary')};
     }
     `)}
 `;

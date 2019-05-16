@@ -51,7 +51,7 @@ export const ALink = styled(filteredTag)`
     transition: width .25s;
     background: ${paintColors};
     ${p => (p.paint === 'primary' && css`
-      border-color: ${p.theme.colors.primary};
+      border-color: ${getTheme(p.theme, 'colors.primary')};
     `)}
   }
 `;

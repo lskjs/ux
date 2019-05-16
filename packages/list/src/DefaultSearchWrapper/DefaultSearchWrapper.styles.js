@@ -48,13 +48,13 @@ const placeholderStyle = p => css`
   font-weight: 500;
   line-height: 56px;
   text-align: left;
-  color: ${p.theme.colors.secondary};
+  color: ${getTheme(p.theme, 'colors.secondary')};
 `;
 
 export const Input = styled(dynamicTag)`
   width: 100%;
   height: 56px;
-  padding: 0 0 0 ${p => `calc(${p.theme.tablePadding || 0}px + 34px)`};
+  padding: 0 0 0 ${p => `calc(${getTheme(p.theme, 'tablePadding || 0}px + 34px)`')};
   border: none;
   outline: none;
   background: none;
@@ -92,7 +92,7 @@ export const Action = styled('div')`
   ${p => (p.additional && css`
     padding-left: 16px;
     margin-right: 12px;
-    border-left: 1px solid ${p.theme.colors.border};
+    border-left: 1px solid ${getTheme(p.theme, 'colors.border')};
     ${!p.divide && 'border-left-color: transparent;'}
 
     > *:not(:last-child) {

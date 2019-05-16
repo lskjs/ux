@@ -1,6 +1,6 @@
 import styled from 'react-emotion';
-
 import removeProps from '@lskjs/utils/removeProps';
+import getTheme from '@lskjs/theme/getTheme';
 
 const filteredTag = removeProps('div');
 

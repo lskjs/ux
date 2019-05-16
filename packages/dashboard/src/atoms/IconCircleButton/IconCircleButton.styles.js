@@ -35,12 +35,12 @@ export default styled(filteredTag)`
 
   &:hover {
     ${p => (!p.small && css`
-      box-shadow: 0 0 0 8px ${p.theme.colors.lightPrimary};
+      box-shadow: 0 0 0 8px ${getTheme(p.theme, 'colors.lightPrimary')};
     `)}
   }
 
   ${p => (p.active && css`
-    background-color: ${p.theme.colors.primary};
+    background-color: ${getTheme(p.theme, 'colors.primary')};
     color: white;
   `)}
 
@@ -54,16 +54,16 @@ export default styled(filteredTag)`
   }
 
   ${p => (p.inverse && css`
-    background-color: ${p.theme.colors.primary};
+    background-color: ${getTheme(p.theme, 'colors.primary')};
     color: white;
 
     ${p.active && css`
-      background-color: ${p.theme.colors.primary};
+      background-color: ${getTheme(p.theme, 'colors.primary')};
       color: white;
     `}
 
     &:hover {
-      background-color: ${p.theme.colors.primary};
+      background-color: ${getTheme(p.theme, 'colors.primary')};
       color: white;
     }
 

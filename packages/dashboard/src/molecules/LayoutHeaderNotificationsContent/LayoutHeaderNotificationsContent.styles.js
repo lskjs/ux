@@ -14,7 +14,7 @@ export default styled('div')`
     padding: .75rem 1.5rem;
     transition: background-color .2s;
     &:hover {
-      background-color: ${p => `rgba(${p.theme.colors.info}, .08)`};
+      background-color: ${p => `rgba(${getTheme(p.theme, 'colors.info')}, .08)`};
       cursor: pointer;
     }
   }

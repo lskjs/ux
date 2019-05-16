@@ -16,7 +16,7 @@ export const fullStyle = css`
 export const clickableStyle = p => css`
   ${cursorPointer}
   &:hover {
-    background-color: ${p.theme.colors.lighterPrimary};
+    background-color: ${getTheme(p.theme, 'colors.lighterPrimary')};
   }
 `;
 export const HeaderRowWrapper = styled(tag)`
