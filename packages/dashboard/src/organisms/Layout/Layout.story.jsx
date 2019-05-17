@@ -27,7 +27,7 @@ import LayoutHeader from '../../molecules/LayoutHeader';
 import LayoutSidebar from '../../molecules/LayoutSidebar';
 import ListItem from '../../molecules/ListItem';
 
-import '@lskjs/css/lib/bootstrap.g.css';
+import '@lskjs/css/lib/bootstrap.css';
 // import '../../../styles/lib/bootstrap.g.css';
 
 import Layout from './Layout';
