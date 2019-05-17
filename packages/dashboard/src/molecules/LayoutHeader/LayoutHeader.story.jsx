@@ -114,13 +114,13 @@ export default ({ storiesOf }) => (
                   <Menu.Item key="0">
                     <a href="#!">
                       <Icon type="info-circle-o" />
-  About
+                      About
                     </a>
                   </Menu.Item>
                   <Menu.Item key="2">
                     <a href="#!">
                       <Icon type="question-circle-o" />
-  Need Help?
+                      Need Help?
                     </a>
                   </Menu.Item>
                   <Menu.Divider />

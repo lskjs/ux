@@ -27,6 +27,7 @@ import LayoutHeader from '../../molecules/LayoutHeader';
 import LayoutSidebar from '../../molecules/LayoutSidebar';
 import ListItem from '../../molecules/ListItem';
 
+import '@lskjs/css/lib/bootstrap.g.css';
 // import '../../../styles/lib/bootstrap.g.css';
 
 import Layout from './Layout';
@@ -41,7 +42,9 @@ const notificationTabs = [
       <List
         footer={(
           <ListFooterItem href="#!">
-            Читать всё <Icon type="arrow-right" />
+            Читать всё
+            {' '}
+            <Icon type="arrow-right" />
           </ListFooterItem>
         )}
         itemLayout="horizontal"
@@ -67,7 +70,9 @@ const notificationTabs = [
       <List
         footer={(
           <ListFooterItem href="#!">
-            Читать всё <Icon type="arrow-right" />
+            Читать всё
+            {' '}
+            <Icon type="arrow-right" />
           </ListFooterItem>
         )}
         itemLayout="horizontal"
@@ -93,7 +98,9 @@ const notificationTabs = [
       <List
         footer={(
           <ListFooterItem href="#!">
-            Читать всё <Icon type="arrow-right" />
+            Читать всё
+            {' '}
+            <Icon type="arrow-right" />
           </ListFooterItem>
         )}
         itemLayout="horizontal"
@@ -148,26 +155,32 @@ const header = (
         >
           <HeaderDropdown>
             <Menu.Item key="4" className="d-block d-md-none">
-              Signed in as <strong>User</strong>
+              Signed in as
+              {' '}
+              <strong>User</strong>
             </Menu.Item>
             <Menu.Divider className="d-block d-md-none" />
             <Menu.Item key="1" disabled>
-              <Icon type="setting" />Settings
+              <Icon type="setting" />
+Settings
             </Menu.Item>
             <Menu.Item key="0">
               <a href="#!">
-                <Icon type="info-circle-o" />About
+                <Icon type="info-circle-o" />
+About
               </a>
             </Menu.Item>
             <Menu.Item key="2">
               <a href="#!">
-                <Icon type="question-circle-o" />Need Help?
+                <Icon type="question-circle-o" />
+Need Help?
               </a>
             </Menu.Item>
             <Menu.Divider />
             <Menu.Item key="3">
               <a href="#!">
-                <Icon type="logout" />Sign out
+                <Icon type="logout" />
+Sign out
               </a>
             </Menu.Item>
           </HeaderDropdown>
@@ -194,10 +207,14 @@ const content = props => (
 const footer = (
   <LayoutFooter>
     <LayoutFooterElement>
-      © 2018 <LayoutFooterBrand target="_blank" rel="noopener noreferrer" href="//google.ru">Brand</LayoutFooterBrand>
+      © 2018
+      {' '}
+      <LayoutFooterBrand target="_blank" rel="noopener noreferrer" href="//google.ru">Brand</LayoutFooterBrand>
     </LayoutFooterElement>
     <LayoutFooterElement>
-      Built with Love <Icon type="heart-o" />
+      Built with Love
+      {' '}
+      <Icon type="heart-o" />
     </LayoutFooterElement>
   </LayoutFooter>
 );
@@ -237,7 +254,12 @@ const sidebar = (
         </Menu.Item>
         <Menu.SubMenu
           key="submenu"
-          title={<span><Icon type="appstore" /><span>Navigation Two</span></span>}
+          title={(
+            <span>
+              <Icon type="appstore" />
+              <span>Navigation Two</span>
+            </span>
+)}
         >
           <Menu.Item key="5">Option 5</Menu.Item>
           <Menu.Item key="6">Option 6</Menu.Item>
@@ -265,7 +287,13 @@ const sidebar = (
     <LayoutSidenavFooter>
       <a target="_blank" href="//google.ru" rel="noopener noreferrer">
         <Icon type="question-circle" />
-        <span className="nav-text"><span>Help</span> & <span>Support</span></span>
+        <span className="nav-text">
+          <span>Help</span>
+          {' '}
+&
+          {' '}
+          <span>Support</span>
+        </span>
       </a>
     </LayoutSidenavFooter>
   </LayoutSidebar>
