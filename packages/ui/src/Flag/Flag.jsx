@@ -7,7 +7,7 @@ import ReactWorldFlag from 'react-world-flags';
 class Flag extends PureComponent {
   static propTypes = {
     country: PropTypes.string,
-    height: PropTypes.string,
+    height: PropTypes.number,
   }
   static defaultProps = {
     country: 'gb',

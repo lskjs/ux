@@ -1,5 +1,8 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { css } from 'react-emotion';
+import theme from '@lskjs/theme';
+import getTheme from '@lskjs/theme/getTheme';
 import autobind from '@lskjs/autobind';
 import omit from 'lodash/omit';
 import filterProps from '@lskjs/utils/filterProps';
@@ -169,6 +172,11 @@ class StatefulButton extends PureComponent {
 
   render() {
     const { componentClass: Tag, innerComponentClass } = this.props;
+    const style = css`
+      &:focus {
+        background-color: ${getTheme(theme, `colors.${this.props.paint}`)};
+      }
+    `;
     const buttonProps = omit(this.props, [
       'stableSuccess',
       'timerMillis',
@@ -185,6 +193,7 @@ class StatefulButton extends PureComponent {
       <Tag
         onClick={this.onClick}
         state={this.getButtonState()}
+        className={style}
         {...filterProps(buttonProps, Tag)}
         // {...buttonProps}
       />

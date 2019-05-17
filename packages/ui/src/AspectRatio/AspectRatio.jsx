@@ -12,7 +12,7 @@ const AspectRatio = ({ ratio, children, ...props }) => (
 
 AspectRatio.propTypes = {
   ratio: PropTypes.oneOf(['1:1', '4:3', '16:9', '21:9']),
-  children: PropTypes.instanceOf(PropTypes.any).isRequired,
+  children: PropTypes.any.isRequired,
 };
 
 AspectRatio.defaultProps = {
