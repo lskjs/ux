@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import FlagIcon from '../../Flags';
+import Flag from '../../Flag';
 import T from '../../T';
 import BaseFilterTag from './BaseFilterTag';
 
@@ -9,7 +9,7 @@ class CountryFilterTag extends Component { //eslint-disable-line
     return (
       <BaseFilterTag {...props}>
         {`${title}: `}
-        <FlagIcon
+        <Flag
           code={code}
           style={{ width: 22, height: 15, margin: '0 4px' }}
         />

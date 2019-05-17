@@ -14,7 +14,7 @@ import createForm from '../../createForm';
 import FormDebug from '../../FormDebug';
 import Performance from '@lskjs/dev/Performance';
 import Select from './Select';
-import FlagIcon from '@lskjs/ui/Flags';
+import Flag from '@lskjs/ui/Flag';
 import countriesList from './countriesList';
 import createFormWithI18 from '../../createFormWithI18';
 
@@ -265,12 +265,12 @@ const SelectForm = createForm({
         {
           title: 'Russia',
           value: 'one',
-          icon: <FlagIcon country="ru" />,
+          icon: <Flag country="ru" />,
         },
         {
           title: 'Britain',
           value: 'two',
-          icon: <FlagIcon country="gb" />,
+          icon: <Flag country="gb" />,
         },
       ],
     },
@@ -282,7 +282,7 @@ const SelectForm = createForm({
           {
             title: value,
             value,
-            icon: <FlagIcon country={value} />,
+            icon: <Flag country={value} />,
           }
         );
       }),
@@ -555,12 +555,12 @@ const SelectFormWithI18 = createFormWithI18(({ i18 }) => ({
         {
           title: 'Russia',
           value: 'one',
-          icon: <FlagIcon country="ru" />,
+          icon: <Flag country="ru" />,
         },
         {
           title: 'Britain',
           value: 'two',
-          icon: <FlagIcon country="gb" />,
+          icon: <Flag country="gb" />,
         },
       ],
     },
@@ -603,8 +603,8 @@ const SelectFormWithI18 = createFormWithI18(({ i18 }) => ({
             title: value,
             // title: i18.t(`countries.${value}`),
             value,
-            // icon: () => '@', // <FlagIcon country={value} />,
-            Icon: () => <FlagIcon country={value} />,
+            // icon: () => '@', // <Flag country={value} />,
+            Icon: () => <Flag country={value} />,
           }
         );
       }),

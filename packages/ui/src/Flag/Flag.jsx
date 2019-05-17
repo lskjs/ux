@@ -1,10 +1,10 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import Flag from 'react-world-flags';
+import ReactWorldFlag from 'react-world-flags';
 // import { css } from 'emotion';
 
 
-class Flags extends PureComponent {
+class Flag extends PureComponent {
   static propTypes = {
     country: PropTypes.string,
     height: PropTypes.string,
@@ -16,7 +16,7 @@ class Flags extends PureComponent {
   render() {
     const { country, height, ...props } = this.props;
     return (
-      <Flag
+      <ReactWorldFlag
         code={country.toUpperCase()}
         height={height}
       //   className={css`
@@ -31,4 +31,4 @@ class Flags extends PureComponent {
   }
 }
 
-export default Flags;
+export default Flag;
