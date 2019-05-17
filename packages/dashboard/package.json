@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/dashboard",
-  "version": "0.33.62",
+  "version": "0.33.65",
   "description": "LSK ux subrepo: dashboard",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
