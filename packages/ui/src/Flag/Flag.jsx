@@ -10,14 +10,15 @@ class Flag extends PureComponent {
     height: PropTypes.string,
   }
   static defaultProps = {
-    country: 'ru',
+    country: 'gb',
     height: 16,
   }
   render() {
-    const { country, height, ...props } = this.props;
+    const { country, code, height, ...props } = this.props;
+    const countryOrCode = code || country || 'gb';
     return (
       <ReactWorldFlag
-        code={country.toUpperCase()}
+        code={countryOrCode.toUpperCase()}
         height={height}
       //   className={css`
       //    border: 2px solid black;

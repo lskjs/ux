@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Dropdown from 'antd/lib/dropdown';
-import FlagIcon from '@lskjs/ui/Flag';
+import Flag from '@lskjs/ui/Flag';
 import LayoutHeaderListItem from '../../atoms/LayoutHeaderListItem';
 import DropdownLink from './LayoutHeaderChangeLocale.styles';
 
@@ -25,7 +25,7 @@ class LayoutHeaderChangeLocale extends Component {
             position: 'relative',
           }}
           >
-            <FlagIcon code={code === 'en' ? 'gb' : code} />
+            {code && <Flag code={code === 'en' ? 'gb' : code} />}
           </div>
         </DropdownLink>
       </LayoutHeaderListItem>
