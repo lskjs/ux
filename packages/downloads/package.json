@@ -33,12 +33,12 @@
   "devDependencies": {
     "@lskjs/css": "^0.33.66",
     "@lskjs/dev": "^0.33.66",
-    "@lskjs/theme": "^0.33.66",
-    "emotion-theming": "9.1.2",
-    "lodash": "4.17.11",
-    "mobx": "5.9.4",
-    "mobx-react": "5.4.3",
-    "mobx-react-devtools": "6.1.1",
+    "@lskjs/theme": "^0.33.62",
+    "emotion-theming": "^9.1.2",
+    "lodash": "^4.17.11",
+    "mobx": "^5.9.4",
+    "mobx-react": "^5.4.3",
+    "mobx-react-devtools": "^6.1.1",
     "react": "^16.8.6"
   },
   "peerDependencies": {

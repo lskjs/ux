@@ -29,7 +29,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "emotion": "9.2.12"
+    "emotion": "^9.2.12"
   },
   "peerDependencies": {
     "emotion": "*"
