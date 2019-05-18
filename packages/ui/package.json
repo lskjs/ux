@@ -36,12 +36,12 @@
     "react-popper": "1.3.3"
   },
   "devDependencies": {
-    "@lskjs/autobind": "^0.33.20",
+    "@lskjs/autobind": "^0.34.0",
     "@lskjs/button": "^0.33.67",
     "@lskjs/css": "^0.33.67",
     "@lskjs/dev": "^0.33.67",
     "@lskjs/theme": "^0.33.67",
-    "@lskjs/utils": "0.33.23",
+    "@lskjs/utils": "0.34.0",
     "antd": "^3.16.2",
     "emotion": "9.2.10",
     "formik": "^1.5.2",
@@ -60,9 +60,9 @@
     "react-world-flags": "^1.3.0"
   },
   "peerDependencies": {
-    "@lskjs/autobind": "^0.33.20",
+    "@lskjs/autobind": "^0.34.0",
     "@lskjs/css": "*",
-    "@lskjs/utils": "^0.33.23",
+    "@lskjs/utils": "^0.34.0",
     "antd": "^3.16.2",
     "emotion": "9.2.10",
     "formik": "^1.5.2",

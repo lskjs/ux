@@ -31,14 +31,14 @@
     "react-if": "^3.4.0"
   },
   "devDependencies": {
-    "@lskjs/autobind": "^0.33.20",
+    "@lskjs/autobind": "^0.34.0",
     "@lskjs/button": "^0.33.67",
     "@lskjs/css": "^0.33.67",
     "@lskjs/dev": "^0.33.67",
     "@lskjs/modal": "^0.33.67",
     "@lskjs/theme": "^0.33.67",
     "@lskjs/ui": "^0.33.67",
-    "@lskjs/utils": "^0.33.23",
+    "@lskjs/utils": "^0.34.0",
     "antd": "^3.17.0",
     "emotion": "^9.2.10",
     "mobx": "^5.9.4",

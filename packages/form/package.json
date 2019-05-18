@@ -27,9 +27,6 @@
     "storybook": "../../scripts/package-storybook.sh",
     "styleguide": "../../scripts/package-styleguide.sh"
   },
-  "newdependencies": {
-    "react-dropzone": "10.1.3"
-  },
   "dependencies": {
     "google-map-react": "^1.1.4",
     "react-calendar": "^2.18.1",
@@ -42,7 +39,7 @@
   },
   "devDependencies": {
     "@babel/polyfill": "^7.4.3",
-    "@lskjs/autobind": "^0.33.20",
+    "@lskjs/autobind": "^0.34.0",
     "@lskjs/button": "^0.33.67",
     "@lskjs/css": "^0.33.67",
     "@lskjs/dev": "^0.33.67",
@@ -50,7 +47,7 @@
     "@lskjs/scroll": "^0.33.67",
     "@lskjs/theme": "^0.33.67",
     "@lskjs/ui": "^0.33.67",
-    "@lskjs/utils": "^0.33.23",
+    "@lskjs/utils": "^0.34.0",
     "antd": "^3.16.2",
     "bluebird": "^3.5.4",
     "classnames": "^2.2.6",
@@ -79,6 +76,9 @@
     "react-motion": "^0.5.2",
     "react-notification-system": "^0.2.17",
     "react-numeric-input": "^2.2.3"
+  },
+  "newdependencies": {
+    "react-dropzone": "10.1.3"
   },
   "peerDependencies": {
     "@lskjs/autobind": "*",
