@@ -45,6 +45,7 @@ export default styled(filteredTag)`
   &.ant-layout {
     align-items: stretch;
     min-height: 100vh;
+    flex-direction: row;
     ${p => p.boxed && boxedStyle}
   }
 
