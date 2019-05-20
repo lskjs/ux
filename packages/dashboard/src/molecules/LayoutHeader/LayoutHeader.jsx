@@ -61,20 +61,22 @@ class LayoutHeader extends Component {
                 {/* <Divider type="vertical" key="line" /> */}
               </If>
               <If condition={!noMenu}>
-                <LayoutHeaderListItem
-                  componentClass="button"
-                  onClick={this.onToggleCollapsed}
-                  className="d-none d-md-inline-block"
-                >
-                  <Icon type={collapsed ? 'menu-unfold' : 'menu-fold'} />
-                </LayoutHeaderListItem>
-                <LayoutHeaderListItem
-                  componentClass="button"
-                  className="d-md-none"
-                  onClick={this.onToggleHiddenMobile}
-                >
-                  <Icon type={mobileHidden ? 'menu-unfold' : 'menu-fold'} />
-                </LayoutHeaderListItem>
+                <React.Fragment>
+                  <LayoutHeaderListItem
+                    componentClass="button"
+                    onClick={this.onToggleCollapsed}
+                    className="d-none d-md-inline-block"
+                  >
+                    <Icon type={collapsed ? 'menu-unfold' : 'menu-fold'} />
+                  </LayoutHeaderListItem>
+                  <LayoutHeaderListItem
+                    componentClass="button"
+                    className="d-md-none"
+                    onClick={this.onToggleHiddenMobile}
+                  >
+                    <Icon type={mobileHidden ? 'menu-unfold' : 'menu-fold'} />
+                  </LayoutHeaderListItem>
+                </React.Fragment>
               </If>
               {pullLeft}
             </LayoutHeaderList>
