@@ -1,4 +1,5 @@
 import styled from 'react-emotion';
+import getTheme from '@lskjs/theme/getTheme';
 
 export const Additional = styled('div')`
   background-color: ${p => getTheme(p.theme, 'colors.mainBackground')};
@@ -64,7 +65,7 @@ export const Icon = styled('div')`
   font-size: 24px;
   display: flex;
   flex-shrink: 0;
-  color: ${p => (p.isActive ? p.theme.colors.primary : p.theme.colors.gray)};
+  color: ${p => (p.isActive ? getTheme(p.theme, 'colors.primary') : getTheme(p.theme, 'colors.gray'))};
   margin-right: 12px;
   > svg {
     display: flex;

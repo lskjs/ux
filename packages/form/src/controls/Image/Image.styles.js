@@ -1,4 +1,5 @@
 import styled, { css } from 'react-emotion';
+import getTheme from '@lskjs/theme/getTheme';
 
 export const zoneStyle = css`
   width: 270px;

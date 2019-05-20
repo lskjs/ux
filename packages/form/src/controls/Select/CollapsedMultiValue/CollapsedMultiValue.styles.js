@@ -1,4 +1,5 @@
 import styled from 'react-emotion';
+import getTheme from '@lskjs/theme/getTheme';
 
 export const Value = styled('span')`
   color: ${p => getTheme(p.theme, 'colors.primary')};

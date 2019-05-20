@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import OverlayTrigger from 'react-bootstrap/lib/OverlayTrigger';
-import Tooltip from 'react-bootstrap/lib/Tooltip';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Tooltip from 'react-bootstrap/Tooltip';
 import autobind from '@lskjs/autobind';
 import round from 'lodash/round';
 import get from 'lodash/get';

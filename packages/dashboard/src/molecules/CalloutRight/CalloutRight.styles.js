@@ -1,7 +1,8 @@
 import styled from 'react-emotion';
+import getTheme from '@lskjs/theme/getTheme';
+import BsButton from 'antd/lib/button';
 
 const Col = 'div'; // import Col from 'reactstrap/lib/Col';
-import BsButton from 'antd/lib/button';
 
 export const BsCol = styled(Col)`
   min-height: 300px;
@@ -72,7 +73,7 @@ export const Button = styled(BsButton)`
 export const FeatureCallout = styled('div')`
   position: relative;
   font-family: ${p => getTheme(p.theme, 'fontFamily')};
-  background-color: ${p => (p.theme.colors.white)};
+  background-color: ${p => getTheme(p.theme, 'colors.white')};
   ${Content} {
     @media (min-width: 768px) { padding-left: 32px; }
     @media (min-width: 1200px) { padding-left: 48px; }

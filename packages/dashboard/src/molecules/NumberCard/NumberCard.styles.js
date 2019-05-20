@@ -5,7 +5,7 @@ export const Card = styled('div')`
   display: flex;
   min-height: 120px;
   padding: 1rem;
-  background-color: ${p => (p.theme.colors.white)};
+  background-color: ${p => getTheme(p.theme, 'colors.white')};
   border-radius: ${p => getTheme(p.theme, 'borderRadius')};
   text-align: center;
   align-items: center;
@@ -35,7 +35,7 @@ export const IconButton = styled('span')`
     }
   }
   background-color: #66bb6a;
-  color: ${p => (p.theme.colors.white)};
+  color: ${p => getTheme(p.theme, 'colors.white')};
 `;
 
 export const BoxNum = styled('p')`
@@ -46,6 +46,6 @@ export const BoxNum = styled('p')`
 `;
 
 export const TextMuted = styled('p')`
-  color: ${p => (p.theme.colors.gray600)};
+  color: ${p => getTheme(p.theme, 'colors.gray600')};
   font-family: ${p => getTheme(p.theme, 'fontFamily')};
 `;

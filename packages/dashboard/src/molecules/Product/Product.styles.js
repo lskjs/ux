@@ -9,7 +9,7 @@ export const CardImage = styled(dynamicTag)`
   text-decoration: none;
   padding: 30px 15px;
   height: 300px;
-  border-radius: ${p => (p.theme.borderRadius)} ${p => (p.theme.borderRadius)} 0 0;
+  border-radius: ${p => getTheme(p.theme, 'borderRadius')} ${p => getTheme(p.theme, 'borderRadius')} 0 0;
   background-color: rgba(0,0,0, .035);
   text-align: center;
 `;
@@ -34,7 +34,7 @@ export const CardBody = styled('div')`
   font-family: ${p => getTheme(p.theme, 'fontFamily')};
   border-radius: 0 0 ${p => getTheme(p.theme, 'borderRadius')} ${p => getTheme(p.theme, 'borderRadius')};
   color: ${p => (getTheme(p.theme, 'colors.darkGray'))};
-  background-color: ${p => (p.theme.colors.white)};
+  background-color: ${p => getTheme(p.theme, 'colors.white')};
 `;
 
 export const CardTitle = styled('title')`
@@ -66,7 +66,7 @@ export const CardPrice = styled('div')`
 
 export const StrikeTroughItem = styled('div')`
   display: block;
-  color: ${p => (p.theme.colors.gray600)};
+  color: ${p => getTheme(p.theme, 'colors.gray600')};
   ${p => (p.oldPrice && css`
     opacity: .5;
     text-decoration: line-through;

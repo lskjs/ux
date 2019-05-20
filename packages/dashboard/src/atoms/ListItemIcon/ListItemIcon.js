@@ -13,9 +13,9 @@ export default styled(filteredTag)`
   line-height: 35px;
   display: inline-block;
   text-align: center;
-  border-radius: ${p => (p.theme.borderCircle)};
+  border-radius: ${p => getTheme(p.theme, 'borderCircle')};
   color: ${p => (p.color || getTheme(p.theme, 'colors.darkGray'))};
-  background-color: ${p => (p.background || p.theme.colors.white)};
+  background-color: ${p => (p.background || getTheme(p.theme, 'colors.white'))};
   i {
     line-height: 35px;
   }

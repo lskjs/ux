@@ -1,5 +1,6 @@
 import styled from 'react-emotion';
 import createDynamicTag from '@lskjs/utils/createDynamicTag';
+import getTheme from '@lskjs/theme/getTheme';
 
 export const CommentWrapper = styled('div')`
   display: flex;

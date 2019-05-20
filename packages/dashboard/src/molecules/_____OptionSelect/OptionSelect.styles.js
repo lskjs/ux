@@ -1,5 +1,6 @@
 import styled, { css } from 'react-emotion';
 import removeProps from '@lskjs/utils/removeProps';
+import getTheme from '@lskjs/theme/getTheme';
 
 export const Option = styled('button')`
   display: flex;

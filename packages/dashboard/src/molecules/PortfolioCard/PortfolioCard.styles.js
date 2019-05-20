@@ -32,7 +32,7 @@ export const CardInfo = styled('div')`
   font-family: ${p => getTheme(p.theme, 'fontFamily')};
   z-index: 1;
   padding: 26px;
-  color: ${p => (p.theme.colors.white)};
+  color: ${p => getTheme(p.theme, 'colors.white')};
   ${(p) => {
     switch (p.position) {
       case 'bottom':
@@ -50,7 +50,7 @@ export const CardInfo = styled('div')`
 
 export const CardName = styled('h4')`
   margin: 0;
-  color: ${p => (p.theme.colors.white)};
+  color: ${p => getTheme(p.theme, 'colors.white')};
   font-size: 20px;
   font-weight: 200;
   font-family: ${p => getTheme(p.theme, 'fontFamily')};

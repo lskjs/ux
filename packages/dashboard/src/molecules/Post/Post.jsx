@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import If from 'react-if';
 import PostTags from '../../atoms/PostTags';
@@ -9,7 +9,7 @@ import PostDate from '../../atoms/PostDate';
 import PostActions from '../../atoms/PostActions';
 import Card from './Post.styles';
 
-class Post extends Component {
+class Post extends PureComponent {
   static propTypes = {
     children: PropTypes.any.isRequired,
     title: PropTypes.any,

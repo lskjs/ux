@@ -10,7 +10,7 @@ export const Content = styled('div')`
   font-size: 14px;
   line-height: 1.8;
   border-radius: ${p => getTheme(p.theme, 'borderRadius')};
-  background-color: ${p => (p.color || p.theme.colors.white)};
+  background-color: ${p => (p.color || getTheme(p.theme, 'colors.white'))};
   &:after {
     content: "";
     position: absolute;
@@ -18,7 +18,7 @@ export const Content = styled('div')`
     left: 20px;
     border-right: 30px solid transparent;
     border-top: 30px solid;
-    border-top-color: ${p => (p.color || p.theme.colors.white)};
+    border-top-color: ${p => (p.color || getTheme(p.theme, 'colors.white'))};
     border-bottom-color: transparent !important;
     border-left-color: transparent !important;
     border-right-color: transparent !important;

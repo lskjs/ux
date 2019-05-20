@@ -69,17 +69,17 @@ export const SocialIcon = styled('a')`
   text-align: center;
   margin-left: 4зч;
   &:hover {
-    color: ${p => (p.theme.colors.white)};
+    color: ${p => getTheme(p.theme, 'colors.white')};
     text-decoration: none;
     background-color: #717a82;
   };
   &:focus {
-    color: ${p => (p.theme.colors.white)};
+    color: ${p => getTheme(p.theme, 'colors.white')};
     text-decoration: none;
     background-color: #717a82;
   };
   &:active {
-    color: ${p => (p.theme.colors.white)};
+    color: ${p => getTheme(p.theme, 'colors.white')};
     text-decoration: none;
     background-color: #717a82;
   }

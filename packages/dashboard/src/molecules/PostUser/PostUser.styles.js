@@ -40,7 +40,7 @@ const removedList = ['color'];
 
 const filteredIcon = removeProps(AntIcon, removedList);
 export const Icon = styled(filteredIcon)`
-  color: ${p => (p.color || p.theme.colors.gray600)};
+  color: ${p => (p.color || getTheme(p.theme, 'colors.gray600'))};
   font-size: 12px;
 `;
 
@@ -51,5 +51,5 @@ export const Category = styled(filteredCategory)`
   font-family: ${p => getTheme(p.theme, 'fontFamily')};
   margin: 5px 0 5px 5px;
   font-weight: 400;
-  color: ${p => (p.color || p.theme.colors.gray600)};
+  color: ${p => (p.color || getTheme(p.theme, 'colors.gray600'))};
 `;

@@ -1,4 +1,5 @@
 import styled from 'react-emotion';
+import getTheme from '@lskjs/theme/getTheme';
 
 export const Title = styled('div')`
   font-family: ${p => getTheme(p.theme, 'fontFamily')};

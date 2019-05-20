@@ -27,7 +27,7 @@ export const CardImage = styled(dynamicTag)`
 `;
 
 export const CardBody = styled('div')`
-  border-radius: 0 ${p => (p.theme.borderRadius)} ${p => (p.theme.borderRadius)} 0;
+  border-radius: 0 ${p => getTheme(p.theme, 'borderRadius')} ${p => getTheme(p.theme, 'borderRadius')} 0;
   width: 50%;
   height: 100%;
   position: absolute;
@@ -36,7 +36,7 @@ export const CardBody = styled('div')`
   right: 0;
   padding: 40px 30px;
   color: ${p => (getTheme(p.theme, 'colors.darkGray'))};
-  background-color: ${p => (p.theme.colors.white)};
+  background-color: ${p => getTheme(p.theme, 'colors.white')};
 `;
 
 export const CardTitle = styled('div')`
@@ -53,7 +53,7 @@ export const CardPrice = styled('div')`
 
 export const StrikeThroughItem = styled('span')`
 display: block;
-color: ${p => (p.theme.colors.gray600)};
+color: ${p => getTheme(p.theme, 'colors.gray600')};
 ${p => (p.isPierced && css`
   opacity: .5;
   text-decoration: line-through;

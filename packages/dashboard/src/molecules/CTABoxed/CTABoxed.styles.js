@@ -1,12 +1,12 @@
 import styled from 'react-emotion';
-
+import getTheme from '@lskjs/theme/getTheme';
 import BsButton from 'antd/lib/button';
 
 export const Box = styled('div')`
   position: relative;
   border: 1px solid rgba(0,0,0,.1);
   border-radius: ${p => getTheme(p.theme, 'borderRadius')};
-  background-color: ${p => (p.theme.colors.white)};
+  background-color: ${p => getTheme(p.theme, 'colors.white')};
   ${p => (p.transparent && `
     background-color: transparent;
   `)}
@@ -21,7 +21,7 @@ export const Title = styled('div')`
 
 export const Content = styled('div')`
   display: flex;
-  justify-content: space-between
+  justify-content: space-between;
   font-family: ${p => getTheme(p.theme, 'fontFamily')};;
   align-items: center;
   font-size: 1.25rem;

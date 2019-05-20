@@ -55,7 +55,7 @@ const placeholderStyle = p => css`
 export const Input = styled(dynamicTag)`
   width: 100%;
   height: 56px;
-  padding: 0 0 0 ${p => `calc(${getTheme(p.theme, 'tablePadding') || 0}px + 34px)`};
+  padding: 0 0 0 ${p => `calc(${getTheme(p.theme, 'tablePadding', 0)}px + 34px)`};
   border: none;
   outline: none;
   background: none;

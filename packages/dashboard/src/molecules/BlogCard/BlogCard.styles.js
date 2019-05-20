@@ -1,4 +1,5 @@
 import styled from 'react-emotion';
+import getTheme from '@lskjs/theme/getTheme';
 
 export const Wrapper = styled('article')`
   border: 1px solid ${p => getTheme(p.theme, 'colors.border')};
