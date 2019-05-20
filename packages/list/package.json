@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/list",
-  "version": "0.34.4",
+  "version": "0.34.5",
   "description": "LSK ux subrepo: list",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -38,7 +38,7 @@
     "@lskjs/css": "^0.34.3",
     "@lskjs/dashboard": "^0.34.4",
     "@lskjs/dev": "^0.34.3",
-    "@lskjs/form": "^0.34.4",
+    "@lskjs/form": "^0.34.5",
     "@lskjs/mobx": "^0.34.0",
     "@lskjs/modal": "^0.34.3",
     "@lskjs/theme": "^0.34.3",
