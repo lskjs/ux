@@ -1,6 +1,7 @@
 import styled, { css } from 'react-emotion';
 import Layout from 'antd/lib/layout';
 import removeProps from '@lskjs/utils/removeProps';
+import getTheme from '@lskjs/theme/getTheme';
 import Sider from '../../molecules/LayoutSidenav/LayoutSidenav.styles';
 import LayoutSidebarContainer from '../LayoutSidebarContainer';
 
@@ -38,7 +39,7 @@ const allFixed = css`
 export default styled(filteredTag)`
   max-width: 100%;
   margin: auto;
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   transition: max-width .35s ease;
 
   &.ant-layout {

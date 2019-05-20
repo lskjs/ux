@@ -1,5 +1,6 @@
 import styled from 'react-emotion';
 import createDynamicTag from '@lskjs/utils/createDynamicTag';
+import getTheme from '@lskjs/theme/getTheme';
 
 const dynamicTag = createDynamicTag('a');
 
@@ -13,7 +14,7 @@ export default styled(dynamicTag)`
   text-decoration: none;
   border: none;
   outline: none;
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   &:hover {
     color: rgba(0,0,0,.87);
     background-color: rgba(33,37,41,.03);

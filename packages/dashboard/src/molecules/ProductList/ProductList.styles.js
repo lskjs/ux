@@ -1,13 +1,14 @@
 import styled, { css } from 'react-emotion';
 import createDynamicTag from '@lskjs/utils/createDynamicTag';
+import getTheme from '@lskjs/theme/getTheme';
 
 const dynamicTag = createDynamicTag('a');
 
 export const ItemCard = styled('div')`
   position: relative;
   transition: 0.2s linear;
-  border-radius: ${p => p.theme.borderRadius};
-  font-family: ${p => p.theme.fontFamily};
+  border-radius: ${p => getTheme(p.theme, 'borderRadius')};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   &:hover {
     box-shadow: 0 0 15px rgba(0,0,0, .1);
   }
@@ -16,43 +17,43 @@ export const ItemCard = styled('div')`
 export const CardImage = styled(dynamicTag)`
   display: block;
   text-decoration: none;
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   padding: 30px 15px;
   height: 300px;
   width: 50%;
-  border-radius: ${p => p.theme.borderRadius} 0 0 ${p => p.theme.borderRadius};
+  border-radius: ${p => getTheme(p.theme, 'borderRadius')} 0 0 ${p => getTheme(p.theme, 'borderRadius')};
   background-color: rgba(0,0,0, .035);;
   text-align: center;
 `;
 
 export const CardBody = styled('div')`
-  border-radius: 0 ${p => (p.theme.borderRadius)} ${p => (p.theme.borderRadius)} 0;
+  border-radius: 0 ${p => getTheme(p.theme, 'borderRadius')} ${p => getTheme(p.theme, 'borderRadius')} 0;
   width: 50%;
   height: 100%;
   position: absolute;
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   top: 0;
   right: 0;
   padding: 40px 30px;
-  color: ${p => (p.theme.colors.darkGray)};
-  background-color: ${p => (p.theme.colors.white)};
+  color: ${p => (getTheme(p.theme, 'colors.darkGray'))};
+  background-color: ${p => getTheme(p.theme, 'colors.white')};
 `;
 
 export const CardTitle = styled('div')`
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   font-size: 1rem;
 `;
 
 export const CardPrice = styled('div')`
   position: absolute;
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   top: 30px;
   right: 30px;
 `;
 
 export const StrikeThroughItem = styled('span')`
 display: block;
-color: ${p => (p.theme.colors.gray600)};
+color: ${p => getTheme(p.theme, 'colors.gray600')};
 ${p => (p.isPierced && css`
   opacity: .5;
   text-decoration: line-through;
@@ -74,7 +75,7 @@ export const Divider = styled('div')`
 export const CardDesc = styled('p')`
   margin: 0 25% 3em 0;
   opacity: .7;
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
 `;
 
 export const Image = styled('img')`
@@ -83,16 +84,15 @@ export const Image = styled('img')`
 `;
 
 export const TitleLink = styled(dynamicTag)`
-  color: ${p => (p.theme.colors.darkGray)};
+  color: ${p => (getTheme(p.theme, 'colors.darkGray'))};
   font-weight: 500;
   text-decoration: none;
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
 `;
 
 export const TitleSpan = styled('span')`
   display: block;
   font-size: .75rem;
   opacity: .5;
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
 `;
-

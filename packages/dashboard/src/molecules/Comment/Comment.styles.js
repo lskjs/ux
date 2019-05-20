@@ -1,5 +1,6 @@
 import styled from 'react-emotion';
 import createDynamicTag from '@lskjs/utils/createDynamicTag';
+import getTheme from '@lskjs/theme/getTheme';
 
 export const CommentWrapper = styled('div')`
   display: flex;
@@ -29,7 +30,7 @@ export const TitleWrapper = styled(dynamicTag)`
 `;
 
 export const DateWrapper = styled('span')`
-  color: ${p => p.theme.colors.secondary};
+  color: ${p => getTheme(p.theme, 'colors.secondary')};
   font-size: 12px;
   padding-left: 12px;
   font-weight: normal;

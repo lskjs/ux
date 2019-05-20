@@ -101,7 +101,8 @@ class PriceConverter extends Component {
     return (
       <Frame>
         <Title>
-          <T name="priceConverter.title" />, $
+          <T name="priceConverter.title" />
+          , $
         </Title>
         <InputWrapper>
           <Input

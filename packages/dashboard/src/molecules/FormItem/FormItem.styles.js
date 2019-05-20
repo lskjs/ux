@@ -11,7 +11,7 @@ export const TitleWrapper = styled('div')`
   will-change: color;
   pointer-events: none;
 
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   font-size: 12px;
   font-weight: 500;
   font-style: normal;

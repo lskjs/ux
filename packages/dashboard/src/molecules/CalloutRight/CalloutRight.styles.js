@@ -1,7 +1,8 @@
 import styled from 'react-emotion';
+import getTheme from '@lskjs/theme/getTheme';
+import BsButton from 'antd/lib/button';
 
 const Col = 'div'; // import Col from 'reactstrap/lib/Col';
-import BsButton from 'antd/lib/button';
 
 export const BsCol = styled(Col)`
   min-height: 300px;
@@ -17,12 +18,12 @@ export const BsCol = styled(Col)`
   }
   background-image: url('https://picsum.photos/200');
   margin-left: 50%;
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
 `;
 
 export const Content = styled('div')`
   padding: 3em 0;
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   @media (min-width: 768px) {
     padding-top: 96px;
     padding-bottom: 96px;
@@ -39,7 +40,7 @@ export const Content = styled('div')`
 
 export const Title = styled('h2')`
   font-size: 24px;
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   margin-top: 0;
   @media (min-width: 768px) {
     font-size: 32px;
@@ -52,7 +53,7 @@ export const Title = styled('h2')`
 export const ContentItem = styled('div')`
   line-height: 1.5;
   hyphens: none;
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   margin: 26px 0;
   @media (min-width: 768px) {
     line-height: 1.5;
@@ -62,7 +63,7 @@ export const ContentItem = styled('div')`
 export const Button = styled(BsButton)`
   height: auto;
   padding: 10px 56px;
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   text-transform: uppercase;
   letter-spacing: .5px;
   line-height: 2;
@@ -71,8 +72,8 @@ export const Button = styled(BsButton)`
 
 export const FeatureCallout = styled('div')`
   position: relative;
-  font-family: ${p => p.theme.fontFamily};
-  background-color: ${p => (p.theme.colors.white)};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
+  background-color: ${p => getTheme(p.theme, 'colors.white')};
   ${Content} {
     @media (min-width: 768px) { padding-left: 32px; }
     @media (min-width: 1200px) { padding-left: 48px; }

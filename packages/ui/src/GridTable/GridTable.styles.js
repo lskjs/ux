@@ -1,12 +1,13 @@
 import styled, { css } from 'react-emotion';
 import createDynamicTag from '@lskjs/utils/createDynamicTag';
+// import getTheme from '@lskjs/theme/getTheme';
 
 export const Header = styled('div')`
   display: grid;
-  /* background-color: ${p => p.theme.colors.white};
+  /* background-color: ${p => getTheme(p.theme, 'colors.white')};
   
   > * {
-    border-bottom: 1px solid ${p => p.theme.colors.border};
+    border-bottom: 1px solid ${p => getTheme(p.theme, 'colors.border')};
   }
   
   ${p => (p.sticky && css`
@@ -18,7 +19,7 @@ export const Header = styled('div')`
 
 const dynamicThTag = createDynamicTag('div');
 export const Th = styled(dynamicThTag)`
-  /* font-family: ${p => p.theme.fontFamily};
+  /* font-family: ${p => getTheme(p.theme, 'fontFamily')};
   font-size: 11px;
   font-weight: 500;
   font-style: normal;
@@ -26,7 +27,7 @@ export const Th = styled(dynamicThTag)`
   line-height: 1.27;
   overflow: hidden;
   letter-spacing: -0.1px;
-  color: ${p => p.theme.colors.main};
+  color: ${p => getTheme(p.theme, 'colors.main')};
   display: flex;
   align-items: center;
   outline: none;
@@ -64,14 +65,14 @@ export const Td = styled('div')`
   grid-column: ${p => (p.column || 1)};
   grid-row: ${p => (p.row || 1)};
   
-  /* font-family: ${p => p.theme.fontFamily};
+  /* font-family: ${p => getTheme(p.theme, 'fontFamily')};
   font-size: 13px;
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
   line-height: 1.54;
   letter-spacing: -0.1px;
-  color: ${p => p.theme.colors.main}; */
+  color: ${p => getTheme(p.theme, 'colors.main')}; */
   justify-content: ${(p) => {
     switch (p.align) {
       case 'right': return 'flex-end';
@@ -86,7 +87,7 @@ export const ArrowWrapper = styled('div')`
   font-size: 13px;
   height: 14px;
   margin: 0 4px;
-  color: ${p => p.theme.colors.primary};
+  color: ${p => getTheme(p.theme, 'colors.primary')};
 
   transition: transform .2s ease, opacity .2s ease;
   will-change: transform, opacity;

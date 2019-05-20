@@ -191,7 +191,7 @@ export const FooterWrapper = styled('div')`
   font-family: ${p => getTheme(p.theme, 'fontFamily')};
   font-size: 13px;
   color: ${p => getTheme(p.theme, 'colors.secondary')};
-  /* background-color: ${p => p.theme.colors.darkerBackground}; */
+  /* background-color: ${p => getTheme(p.theme, 'colors.darkerBackground')}; */
   border-top: 1px solid ${p => getTheme(p.theme, 'colors.border')};
   /* height: auto; */
   padding: 8px ${p => getTheme(p.theme, 'tablePadding')}px;
@@ -212,7 +212,7 @@ export const PagesWrapper = styled('div')`
 `;
 
 export const PaginatorWrapper = styled('div')`
-  /* font-family: ${p => p.theme.fontFamily}; */
+  /* font-family: ${p => getTheme(p.theme, 'fontFamily')}; */
   color: ${p => getTheme(p.theme, 'colors.secondary')};
 `;
 

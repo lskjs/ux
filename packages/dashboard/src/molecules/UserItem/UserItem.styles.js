@@ -1,11 +1,11 @@
 import styled from 'react-emotion';
-
 import createDynamicTag from '@lskjs/utils/createDynamicTag';
+import getTheme from '@lskjs/theme/getTheme';
 
 const dynamicTag = createDynamicTag('div');
 
 export const Title = styled('div')`
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   font-size: 15px;
   letter-spacing: -0.1px;
   text-align: left;

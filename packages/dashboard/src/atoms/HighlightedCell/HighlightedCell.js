@@ -14,4 +14,3 @@ export default styled('div')`
   margin: auto;
   outline: 5px solid #e6f7ff;
 `;
-

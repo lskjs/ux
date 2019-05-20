@@ -2,6 +2,7 @@ import styled, { css } from 'react-emotion';
 import Icon from 'antd/lib/icon';
 import createDynamicTag from '@lskjs/utils/createDynamicTag';
 import removeProps from '@lskjs/utils/removeProps';
+import getTheme from '@lskjs/theme/getTheme';
 
 
 const dynamicTag = createDynamicTag('a');
@@ -10,19 +11,18 @@ const filteredTag = removeProps(dynamicTag, [
 ]);
 
 const paintColors = (p) => {
-  const { colors } = p.theme;
   switch (p.paint) {
     case 'primary':
-      return colors.primary;
+      return getTheme(p.theme, 'colors.primary');
     default:
-      return colors.default;
+      return getTheme(p.theme, 'colors.default');
   }
 };
 
 export const ALink = styled(filteredTag)`
   position: relative;
   display: inline-block;
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   text-decoration: none;
   color: ${paintColors};
   &:hover,
@@ -51,7 +51,7 @@ export const ALink = styled(filteredTag)`
     transition: width .25s;
     background: ${paintColors};
     ${p => (p.paint === 'primary' && css`
-      border-color: ${p.theme.colors.primary};
+      border-color: ${getTheme(p.theme, 'colors.primary')};
     `)}
   }
 `;

@@ -23,6 +23,9 @@ export default ({ storiesOf }) => (
         <GridFiles
           items={items}
         />
+        {/* <GridFiles
+          items={["https://localhost:3000/storage/5c59b44c18d8f218d0f803b8/1553875666774_772.png", "https://incircle.isuvorov.com/storage/5c59b44c18d8f218d0f803b8/1556655294307_69.png"]}
+        /> */}
       </Story>
     ))
     .add('LineFile', () => (

@@ -1,4 +1,5 @@
 import styled from 'react-emotion';
+import getTheme from '@lskjs/theme/getTheme';
 
 export default styled('div')`
   min-height: 48px;
@@ -10,7 +11,7 @@ export default styled('div')`
   width: 100%;
   padding: 13px;
 
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   font-size: 11px;
   font-weight: normal;
   font-style: normal;

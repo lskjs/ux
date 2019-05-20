@@ -1,4 +1,5 @@
 import styled, { css } from 'react-emotion';
+import getTheme from '@lskjs/theme/getTheme';
 import removeProps from '../../../utils/removeProps';
 
 const filter = removeProps('div', ['sticky', 'pullRight']);
@@ -6,8 +7,8 @@ export default styled(filter)`
   min-width: 12px;
   height: 14px;
   border-radius: 4px;
-  background-color: ${p => p.theme.colors.danger};
-  font-family: ${p => p.theme.fontFamily};
+  background-color: ${p => getTheme(p.theme, 'colors.danger')};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   font-size: 10px;
   font-weight: bold;
   font-style: normal;
@@ -16,7 +17,7 @@ export default styled(filter)`
   letter-spacing: normal;
   text-align: center;
   padding: 0 4px;
-  color: ${p => p.theme.colors.white};
+  color: ${p => getTheme(p.theme, 'colors.white')};
   
   ${p => (p.sticky && css`
     position: absolute;

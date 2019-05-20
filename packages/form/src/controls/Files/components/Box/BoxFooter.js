@@ -1,11 +1,11 @@
 import styled, { css } from 'react-emotion';
-
 import removeProps from '@lskjs/utils/removeProps';
+import getTheme from '@lskjs/theme/getTheme';
 
 const filteredTag = removeProps('section', ['padded', 'paint']);
 
 export default styled(filteredTag)`
-    font-family: ${p => p.theme.fontFamily};
+    font-family: ${p => getTheme(p.theme, 'fontFamily')};
     line-height: 2.15em;
     font-size: 12px;
     font-weight: 600;
@@ -19,32 +19,32 @@ export default styled(filteredTag)`
     switch (p.paint) {
       case 'light':
         return css` 
-          background-color: ${p.theme.colors.lightGray}; 
-          color: ${p.theme.colors.main};`;
+          background-color: ${getTheme(p.theme, 'colors.lightGray')}; 
+          color: ${getTheme(p.theme, 'colors.main')};`;
       case 'dark':
         return css` 
-          background-color: ${p.theme.colors.black}; 
-          color: ${p.theme.colors.white};`;
+          background-color: ${getTheme(p.theme, 'colors.black')}; 
+          color: ${getTheme(p.theme, 'colors.white')};`;
       case 'primary':
         return css` 
-          background-color: ${p.theme.colors.primary}; 
-          color: ${p.theme.colors.white};`;
+          background-color: ${getTheme(p.theme, 'colors.primary')}; 
+          color: ${getTheme(p.theme, 'colors.white')};`;
       case 'info':
         return css` 
-          background-color: ${p.theme.colors.info}; 
-          color: ${p.theme.colors.white};`;
+          background-color: ${getTheme(p.theme, 'colors.info')}; 
+          color: ${getTheme(p.theme, 'colors.white')};`;
       case 'success':
         return css` 
-          background-color: ${p.theme.colors.success}; 
-          color: ${p.theme.colors.white};`;
+          background-color: ${getTheme(p.theme, 'colors.success')}; 
+          color: ${getTheme(p.theme, 'colors.white')};`;
       case 'warning':
         return css` 
-          background-color: ${p.theme.colors.warning}; 
-          color: ${p.theme.colors.main};`;
+          background-color: ${getTheme(p.theme, 'colors.warning')}; 
+          color: ${getTheme(p.theme, 'colors.main')};`;
       case 'danger':
         return css` 
-          background-color: ${p.theme.colors.danger}; 
-          color: ${p.theme.colors.white};`;
+          background-color: ${getTheme(p.theme, 'colors.danger')}; 
+          color: ${getTheme(p.theme, 'colors.white')};`;
       default:
         return '';
     }

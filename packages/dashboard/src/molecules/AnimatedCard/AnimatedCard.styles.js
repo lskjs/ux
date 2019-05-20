@@ -1,7 +1,7 @@
 import styled from 'react-emotion';
 import createDynamicTag from '@lskjs/utils/createDynamicTag';
 import removeProps from '@lskjs/utils/removeProps';
-
+import getTheme from '@lskjs/theme/getTheme';
 
 const dynamicTag = createDynamicTag('div');
 const filteredTag = removeProps(dynamicTag, [
@@ -19,7 +19,7 @@ export const Block = styled('div')`
   backface-visibility: hidden;
   padding: 20px;
   height: 50px;
-  background-color: ${p => (p.paint ? p.paint : p.theme.colors.primary)};
+  background-color: ${p => (p.paint ? p.paint : getTheme(p.theme, 'colors.primary'))};
   opacity: 0;
   transition: all .35s ease-in-out;
 `;
@@ -29,7 +29,7 @@ export const InfoMask = styled('div')`
   content: "";
   position: absolute;
   height: 100%;
-  background-color: ${p => (p.paint ? p.paint : p.theme.colors.primary)};
+  background-color: ${p => (p.paint ? p.paint : getTheme(p.theme, 'colors.primary'))};
   left: 0;
   right: 0;
   padding-bottom: 100%;

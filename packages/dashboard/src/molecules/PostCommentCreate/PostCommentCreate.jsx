@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import IconButton from '../../atoms/IconButton';
 import { Wrapper, Avatar, Input } from './PostCommentCreate.styles';
 
-class PostCommentCreate extends Component {
+class PostCommentCreate extends PureComponent {
   render() {
     const { user, onSend, ...props } = this.props;
     return (

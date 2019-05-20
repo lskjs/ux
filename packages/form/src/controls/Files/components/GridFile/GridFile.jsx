@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import autobind from '@lskjs/autobind';
 import Remove from 'react-icons2/mdi/close-circle-outline';
+import If from 'react-if';
 import Box from '../Box';
 import fileTypes from '../fileTypes';
 import Typography from '../Typography';
@@ -21,13 +22,16 @@ class GridFile extends Component {
   }
 
   @autobind
-  removeFile() {
-    const { value, item } = this.props;
-    value.splice(item, 1);
+  remove() {
+    const { onRemove, key, src } = this.props;
+
+    if (onRemove) {
+      onRemove({ key, src });
+    }
   }
 
   render() {
-    const { src = '', title, image, type } = this.props;
+    const { src = '', title, image, type, onRemove } = this.props;
     const Icon = fileTypes[type] || fileTypes.other;
     return (
       <Box
@@ -59,9 +63,11 @@ class GridFile extends Component {
           </Typography>
           <Typography className={urlStyle}>{title}</Typography>
         </Info>
-        <RemoveButton>
-          <Remove onClick={this.removeFile} />
-        </RemoveButton>
+        <If condition={onRemove}>
+          <RemoveButton>
+            <Remove onClick={this.remove} />
+          </RemoveButton>
+        </If>
       </Box>
     );
   }

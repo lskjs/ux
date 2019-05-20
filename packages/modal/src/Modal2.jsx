@@ -237,7 +237,7 @@ class Modal2 extends PureComponent {
               </Modal.InnerWrapper>
             </div>
           </ReactModal>
-          <If condition={trigger}>
+          <If condition={!!trigger}>
             <Modal.Trigger type="open">{trigger}</Modal.Trigger>
           </If>
         </React.Fragment>

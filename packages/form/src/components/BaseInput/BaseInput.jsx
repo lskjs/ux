@@ -23,7 +23,7 @@ class Input extends PureComponent {
     leftIcon: PropTypes.any,
     rightIcon: PropTypes.any,
     className: PropTypes.string,
-    regex: PropTypes.regexp,
+    regex: PropTypes.any,
   }
   static defaultProps = {
     validationState: null,
@@ -100,7 +100,7 @@ class Input extends PureComponent {
     const { Block } = this;
     return (
       <InputBox>
-        <If condition={leftIcon}>
+        <If condition={!!leftIcon}>
           <LeftWrapper>
             {leftIcon}
           </LeftWrapper>
@@ -117,7 +117,7 @@ class Input extends PureComponent {
           value={typeof displayRate === 'number' ? value * displayRate : value}
           onChange={this.handleChange}
         />
-        <If condition={rightIcon}>
+        <If condition={!!rightIcon}>
           <RightWrapper>
             {rightIcon}
           </RightWrapper>

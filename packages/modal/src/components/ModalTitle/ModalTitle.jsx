@@ -20,7 +20,7 @@ class ModalTitle extends PureComponent {
     const { children, align, onBack } = this.props;
     return (
       <Title align={align} className="modal-title">
-        <If condition={onBack}>
+        <If condition={!!onBack}>
           <Button
             className={buttonStyle}
             paint="primary"

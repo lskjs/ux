@@ -12,6 +12,7 @@ import { inject, observer } from 'mobx-react';
 import Link from '@lskjs/ui/Link';
 import FlagIcon from '@lskjs/ui/Flag';
 import T from '@lskjs/ui/T';
+import If from 'react-if';
 import HeaderDropdown from '../../atoms/HeaderDropdown';
 import LayoutNotificationIcon from '../../atoms/LayoutNotificationIcon';
 import LayoutHeaderListItem from '../../atoms/LayoutHeaderListItem';
@@ -58,78 +59,82 @@ const config = {
   locales: [],
 };
 
+const tabs = [];
+
 export default ({ storiesOf }) => (
   storiesOf('molecules', module)
     .add('LayoutHeader/1', () => (
-      <LayoutHeader
-        {...props}
-        pullRight={(
-          <React.Fragment>
-            <LayoutHeaderSearchBox right placeholder={i18.t('header.search.placeholder')} />
-            <LayoutHeaderNotifications
-              content={(
-                <LayoutHeaderNotificationsContent tabs={this.getNotificationsMenuTabs()} />
-              )}
-            >
-              <LayoutHeaderListItem href="#!">
-                <Badge count={1234}>
-                  <LayoutNotificationIcon type="bell" />
-                </Badge>
-              </LayoutHeaderListItem>
-            </LayoutHeaderNotifications>
-            <LayoutHeaderChangeLocale code={i18.locale}>
-              <HeaderDropdown>
-                {config.locales.map(item => (
-                  <Menu.Item key={item} onClick={() => uapp.setLocale2(item)}>
-                    <FlagIcon code={item} />
-                    <LocaleTitle>
-                      <T name={`locales.${item}`} />
-                    </LocaleTitle>
+      <Story>
+        <LayoutHeader
+          {...props}
+          pullRight={(
+            <React.Fragment>
+              <LayoutHeaderSearchBox right placeholder={i18.t('header.search.placeholder')} />
+              <LayoutHeaderNotifications
+                content={(
+                  <LayoutHeaderNotificationsContent tabs={tabs} />
+                )}
+              >
+                <LayoutHeaderListItem href="#!">
+                  <Badge count={1234}>
+                    <LayoutNotificationIcon type="bell" />
+                  </Badge>
+                </LayoutHeaderListItem>
+              </LayoutHeaderNotifications>
+              <LayoutHeaderChangeLocale code={i18.locale}>
+                <HeaderDropdown>
+                  {config.locales.map(item => (
+                    <Menu.Item key={item} onClick={() => uapp.setLocale2(item)}>
+                      <FlagIcon code={item} />
+                      <LocaleTitle>
+                        <T name={`locales.${item}`} />
+                      </LocaleTitle>
+                    </Menu.Item>
+                  ))}
+                </HeaderDropdown>
+              </LayoutHeaderChangeLocale>
+              <LayoutHeaderUserMenu
+                user={user}
+              >
+                <HeaderDropdown>
+                  <If condition={user.name}>
+                    <Menu.Item key="4" className="d-block d-md-none">
+                      <T name="components.headerSignedAs" />
+                      <strong>{user.name}</strong>
+                    </Menu.Item>
+                    <Menu.Divider className="d-block d-md-none" />
+                  </If>
+                  <Menu.Item key="1" disabled>
+                    <Link href="/cabinet/profile">
+                      <Icon type="setting" />
+                      <T name="components.headerProfile" />
+                    </Link>
                   </Menu.Item>
-                ))}
-              </HeaderDropdown>
-            </LayoutHeaderChangeLocale>
-            <LayoutHeaderUserMenu
-              user={user}
-            >
-              <HeaderDropdown>
-                <If condition={user.name}>
-                  <Menu.Item key="4" className="d-block d-md-none">
-                    <T name="components.headerSignedAs" />
-                    <strong>{user.name}</strong>
+                  <Menu.Item key="0">
+                    <a href="#!">
+                      <Icon type="info-circle-o" />
+                        About
+                    </a>
                   </Menu.Item>
-                  <Menu.Divider className="d-block d-md-none" />
-                </If>
-                <Menu.Item key="1" disabled>
-                  <Link href="/cabinet/profile">
-                    <Icon type="setting" />
-                    <T name="components.headerProfile" />
-                  </Link>
-                </Menu.Item>
-                <Menu.Item key="0">
-                  <a href="#!">
-                    <Icon type="info-circle-o" />
-About
-                  </a>
-                </Menu.Item>
-                <Menu.Item key="2">
-                  <a href="#!">
-                    <Icon type="question-circle-o" />
-Need Help?
-                  </a>
-                </Menu.Item>
-                <Menu.Divider />
-                <Menu.Item key="3">
-                  <Link href="/auth/logout">
-                    <Icon type="logout" />
-                    <T name="components.headerLogout" />
-                  </Link>
-                </Menu.Item>
-              </HeaderDropdown>
-            </LayoutHeaderUserMenu>
-          </React.Fragment>
-        )}
-      />
+                  <Menu.Item key="2">
+                    <a href="#!">
+                      <Icon type="question-circle-o" />
+                        Need Help?
+                    </a>
+                  </Menu.Item>
+                  <Menu.Divider />
+                  <Menu.Item key="3">
+                    <Link href="/auth/logout">
+                      <Icon type="logout" />
+                      <T name="components.headerLogout" />
+                    </Link>
+                  </Menu.Item>
+                </HeaderDropdown>
+              </LayoutHeaderUserMenu>
+            </React.Fragment>
+          )}
+        />
+      </Story>
     ))
     .add('LayoutHeader/2', () => (
       <LayoutHeader

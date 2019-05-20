@@ -59,7 +59,10 @@ class LoginScreen extends PureComponent {
                   </Button>
                 </FormItem>
               </FormWrap>
-              <AdditionalInfo><T name="lskLogin.signupText" /><a href="123"><T name="lskLogin.signup" /></a></AdditionalInfo>
+              <AdditionalInfo>
+                <T name="lskLogin.signupText" />
+                <a href="123"><T name="lskLogin.signup" /></a>
+              </AdditionalInfo>
               <AdditionalInfo>
                 <T name="lskLogin.resetPasswordText" />
                 <a href="123">

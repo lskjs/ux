@@ -1,4 +1,5 @@
 import styled from 'react-emotion';
+import getTheme from '@lskjs/theme/getTheme';
 
 export default styled('section')`
   margin-bottom: 4rem;
@@ -6,5 +7,5 @@ export default styled('section')`
   text-align: center;
   font-weight: 400;
   color: #000;
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
 `;

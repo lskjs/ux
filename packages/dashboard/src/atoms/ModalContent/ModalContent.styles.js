@@ -1,5 +1,6 @@
 import styled from 'react-emotion';
 import removeProps from '@lskjs/utils/removeProps';
+import getTheme from '@lskjs/theme/getTheme';
 
 export default styled(removeProps('div', ['align', 'size']))`
   padding: ${(props) => {
@@ -9,7 +10,7 @@ export default styled(removeProps('div', ['align', 'size']))`
     }
   }};
   position: relative;
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   text-align: ${props => props.align};
   display: flex;
   flex-direction: column;

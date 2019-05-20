@@ -1,7 +1,8 @@
 import styled from 'react-emotion';
+import getTheme from '@lskjs/theme/getTheme';
 
 export const Additional = styled('div')`
-  background-color: ${p => p.theme.colors.mainBackground};
+  background-color: ${p => getTheme(p.theme, 'colors.mainBackground')};
   border: solid 1px #e3e3e3;
   border-top: none;
   border-radius: 0 0 3px 3px;
@@ -64,7 +65,7 @@ export const Icon = styled('div')`
   font-size: 24px;
   display: flex;
   flex-shrink: 0;
-  color: ${p => (p.isActive ? p.theme.colors.primary : p.theme.colors.gray)};
+  color: ${p => (p.isActive ? getTheme(p.theme, 'colors.primary') : getTheme(p.theme, 'colors.gray'))};
   margin-right: 12px;
   > svg {
     display: flex;
@@ -120,7 +121,7 @@ export const Header = styled('div')`
 `;
 
 export const Label = styled('div')`
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   font-size: 13px;
   line-height: 1.43;
   letter-spacing: -0.1px;
@@ -135,7 +136,7 @@ export const Footer = styled('div')`
 `;
 
 export const Info = styled('div')`
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   font-size: 13px;
   line-height: 1.43;
   letter-spacing: -0.1px;

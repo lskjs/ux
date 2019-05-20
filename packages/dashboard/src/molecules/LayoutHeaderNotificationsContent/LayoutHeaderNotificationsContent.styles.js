@@ -1,4 +1,5 @@
 import styled from 'react-emotion';
+import getTheme from '@lskjs/theme/getTheme';
 
 export default styled('div')`
   .ant-tabs-nav .ant-tabs-tab {
@@ -13,7 +14,7 @@ export default styled('div')`
     padding: .75rem 1.5rem;
     transition: background-color .2s;
     &:hover {
-      background-color: ${p => `rgba(${p.theme.colors.info}, .08)`};
+      background-color: ${p => `rgba(${getTheme(p.theme, 'colors.info')}, .08)`};
       cursor: pointer;
     }
   }
@@ -29,8 +30,8 @@ export default styled('div')`
       transition: all .2s;
 
       &:hover {
-        color: ${p => p.theme.colors.darkGray};
-        background-color: ${p => `rgba(${p.theme.colors.darkGray}, .03)`};
+        color: ${p => getTheme(p.theme, 'colors.darkGray')};
+        background-color: ${p => `rgba(${getTheme(p.theme, 'colors.darkGray')}, .03)`};
       }
     }
   }

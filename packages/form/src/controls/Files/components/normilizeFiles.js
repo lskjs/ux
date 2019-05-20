@@ -9,10 +9,13 @@ function determineType(src) {
 }
 
 export const normalizeFile = (item) => {
-  if (typeof item === 'string') return { src: item };
-  const { url, type, src: initSrc, image, ...props } = item;
-
-  const src = initSrc || url || '';
+  let src;
+  if (typeof item === 'string') {
+    src = item || '';
+  } else {
+    src = item.src || item.url || '';
+  }
+  const { type, image, ...props } = item;
 
   if (!props.title) {
     props.title = src.substring(src.lastIndexOf('/') + 1);

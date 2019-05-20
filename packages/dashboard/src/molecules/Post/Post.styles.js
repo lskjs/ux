@@ -1,12 +1,13 @@
 import styled, { css } from 'react-emotion';
 import Card from 'antd/lib/card';
-import PostActions from '../../atoms/PostActions';
 import removeProps from '@lskjs/utils/removeProps';
+import getTheme from '@lskjs/theme/getTheme';
+import PostActions from '../../atoms/PostActions';
 
 const filteredTag = removeProps(Card, ['withActions']);
 export default styled(filteredTag)`
-  font-family: ${p => p.theme.fontFamily};
-  border-radius: ${p => p.theme.borderRadius};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
+  border-radius: ${p => getTheme(p.theme, 'borderRadius')};
 
   ${p => (p.withActions && css`
     ${PostActions} {

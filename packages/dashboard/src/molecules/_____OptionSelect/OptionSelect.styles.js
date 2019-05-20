@@ -1,5 +1,6 @@
 import styled, { css } from 'react-emotion';
 import removeProps from '@lskjs/utils/removeProps';
+import getTheme from '@lskjs/theme/getTheme';
 
 export const Option = styled('button')`
   display: flex;
@@ -10,7 +11,7 @@ export const Option = styled('button')`
   height: 48px;
   padding-left: 8px;
 
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   font-size: 13px;
   font-weight: normal;
   font-style: normal;

@@ -9,6 +9,7 @@ import Footer from '../Files/DefaultFooter';
 const ImageFormView = props => (
   <Form>
     <Field {...props.control('image')} />
+    <Field {...props.control('image1')} />
     <Field {...props.control('image2')} />
     <FormDebug {...props} />
   </Form>
@@ -21,6 +22,11 @@ const ImageForm = createForm({
       title: 'Image',
       component: Image,
     },
+    image1: {
+      title: 'Image 1',
+      component: Image,
+      showPreview: false,
+    },
     image2: {
       title: 'Image custom',
       component: Image,
@@ -31,12 +37,11 @@ const ImageForm = createForm({
   },
 });
 
-export default ({ storiesOf }) =>
+export default ({ storiesOf }) => (
   storiesOf('Form2/controls', module)
-    .add('Image ', () => {
-      return (
-        <Story>
-          <ImageForm />
-        </Story>
-      );
-    });
+    .add('Image ', () => (
+      <Story>
+        <ImageForm />
+      </Story>
+    ))
+);

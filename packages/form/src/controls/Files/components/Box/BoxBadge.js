@@ -1,11 +1,12 @@
 import styled, { css } from 'react-emotion';
+import getTheme from '@lskjs/theme/getTheme';
 
 export default styled('div')`
   position: absolute;
   right: 1rem;
   top: 1rem;
   padding: .375rem .6rem;
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   display: inline-block;
   font-size: 75%;
   font-weight: 700;

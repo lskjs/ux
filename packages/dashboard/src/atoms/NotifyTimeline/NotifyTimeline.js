@@ -1,4 +1,5 @@
 import styled from 'react-emotion';
+import getTheme from '@lskjs/theme/getTheme';
 
 export default styled('div')`
   width: 100%;
@@ -18,7 +19,7 @@ export default styled('div')`
     }
   }
 
-  background: ${p => p.theme.colors.white};
+  background: ${p => getTheme(p.theme, 'colors.white')};
   animation-duration: ${p => `${p.animationDuration}s`};
   opacity: 0.6;
   padding-top: 2px;

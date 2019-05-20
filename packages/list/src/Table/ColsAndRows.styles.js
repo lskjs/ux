@@ -1,4 +1,5 @@
 import styled, { css } from 'react-emotion';
+import getTheme from '@lskjs/theme/getTheme';
 
 // const tag = removeProps(createDynamicTag('div'), []);
 const tag = 'div';
@@ -16,11 +17,11 @@ export const fullStyle = css`
 export const clickableStyle = p => css`
   ${cursorPointer}
   &:hover {
-    background-color: ${p.theme.colors.lighterPrimary};
+    background-color: ${getTheme(p.theme, 'colors.lighterPrimary')};
   }
 `;
 export const HeaderRowWrapper = styled(tag)`
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   font-size: 12px;
   height: 48px;
   ${p => (p.clickable && clickableStyle)}
@@ -35,8 +36,8 @@ export const ItemRowWrapper = styled(tag)`
   padding: 0 12px;
   height: 56px;
   align-items: center;
-  font-family: ${p => p.theme.fontFamily};
-  background-color: ${p => p.theme.colors.white};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
+  background-color: ${p => getTheme(p.theme, 'colors.white')};
   transition: background-color .2s ease-out;
   will-change: background-color;
 

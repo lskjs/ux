@@ -1,12 +1,13 @@
 import styled from 'react-emotion';
 import createDynamicTag from '@lskjs/utils/createDynamicTag';
+import getTheme from '@lskjs/theme/getTheme';
 
 const dynamicTag = createDynamicTag('a');
 
 export default styled(dynamicTag)`
   display: inline-block;
   padding: 0 .875rem;
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   margin: 0;
   transition: all .3s;
   background-color: transparent;

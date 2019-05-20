@@ -1,21 +1,22 @@
 import styled from 'react-emotion';
+import getTheme from '@lskjs/theme/getTheme';
 
 export const Value = styled('div')`
   margin-top: -9px;
   font-weight: 500;
   font-size: 14px;
   margin-right: 12px;
-  font-family: ${p => p.theme.fontFamily};
-  color: ${p => p.theme.colors.primary};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
+  color: ${p => getTheme(p.theme, 'colors.primary')};
 `;
 
 export const SliderWrapper = styled('div')`
   width: 100%;
   .ant-slider .ant-slider-track {
-    background-color: ${p => p.theme.colors.primary};
+    background-color: ${p => getTheme(p.theme, 'colors.primary')};
   }
   .ant-slider .ant-slider-handle {
-    border: solid 2px ${p => p.theme.colors.primary};
+    border: solid 2px ${p => getTheme(p.theme, 'colors.primary')};
   }
 `;
 
@@ -41,7 +42,7 @@ export const Wrapper = styled('div')`
 
   .ant-slider-track {
     height: 2px !important;
-    background-color: ${p => p.theme.colors.primary} !important;
+    background-color: ${p => getTheme(p.theme, 'colors.primary')} !important;
     top: 0 !important;
   }
 
@@ -57,14 +58,14 @@ export const Wrapper = styled('div')`
    border: none !important;
    background-color: #7070ff !important;
    outline: none !important;
-   box-shadow: 0 0 0 1px ${p => p.theme.colors.primary};
+   box-shadow: 0 0 0 1px ${p => getTheme(p.theme, 'colors.primary')};
 
    transition: box-shadow .2s ease-out !important;
    will-change: box-shadow;
   }
 
   .ant-slider-handle:hover {
-   box-shadow: 0 0 0 6px ${p => p.theme.colors.primary};
+   box-shadow: 0 0 0 6px ${p => getTheme(p.theme, 'colors.primary')};
    transform: scale(1) !important;
   }
 
@@ -100,7 +101,7 @@ export const Wrapper = styled('div')`
   }
 
   .ant-slider-mark-text-active {
-    color: ${p => p.theme.colors.primary} !important;
+    color: ${p => getTheme(p.theme, 'colors.primary')} !important;
   }
 
   .ant-slider-dot {
@@ -113,6 +114,6 @@ export const Wrapper = styled('div')`
   }
 
   .ant-slider-dot-active {
-    background-color: ${p => p.theme.colors.primary} !important;
+    background-color: ${p => getTheme(p.theme, 'colors.primary')} !important;
   }
 `;

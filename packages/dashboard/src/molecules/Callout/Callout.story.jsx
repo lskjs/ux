@@ -1,6 +1,6 @@
 import React from 'react';
-import Callout from './Callout';
 import Story from '@lskjs/dev/Story';
+import Callout from './Callout';
 
 const articles = [
   {

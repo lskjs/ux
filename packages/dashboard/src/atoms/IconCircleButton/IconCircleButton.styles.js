@@ -1,6 +1,7 @@
 import styled, { css } from 'react-emotion';
 import createDynamicTag from '@lskjs/utils/createDynamicTag';
 import removeProps from '@lskjs/utils/removeProps';
+import getTheme from '@lskjs/theme/getTheme';
 
 const dynamicTag = createDynamicTag('button');
 const filteredTag = removeProps(dynamicTag, [
@@ -14,8 +15,8 @@ export default styled(filteredTag)`
   width: ${p => (p.small ? 22 : 24)}px;
   height: ${p => (p.small ? 22 : 24)}px;
   border-radius: 100px;
-  background-color: ${p => p.theme.colors.lighterPrimary};
-  color: ${p => p.theme.colors.primary};
+  background-color: ${p => getTheme(p.theme, 'colors.lighterPrimary')};
+  color: ${p => getTheme(p.theme, 'colors.primary')};
   display: flex;
   font-size: 18px;
   align-items: center;
@@ -34,17 +35,17 @@ export default styled(filteredTag)`
 
   &:hover {
     ${p => (!p.small && css`
-      box-shadow: 0 0 0 8px ${p.theme.colors.lightPrimary};
+      box-shadow: 0 0 0 8px ${getTheme(p.theme, 'colors.lightPrimary')};
     `)}
   }
 
   ${p => (p.active && css`
-    background-color: ${p.theme.colors.primary};
+    background-color: ${getTheme(p.theme, 'colors.primary')};
     color: white;
   `)}
 
   &:hover {
-    background-color: ${p => p.theme.colors.primary};
+    background-color: ${p => getTheme(p.theme, 'colors.primary')};
     color: white;
   }
 
@@ -53,16 +54,16 @@ export default styled(filteredTag)`
   }
 
   ${p => (p.inverse && css`
-    background-color: ${p.theme.colors.primary};
+    background-color: ${getTheme(p.theme, 'colors.primary')};
     color: white;
 
     ${p.active && css`
-      background-color: ${p.theme.colors.primary};
+      background-color: ${getTheme(p.theme, 'colors.primary')};
       color: white;
     `}
 
     &:hover {
-      background-color: ${p.theme.colors.primary};
+      background-color: ${getTheme(p.theme, 'colors.primary')};
       color: white;
     }
 

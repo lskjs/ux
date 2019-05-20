@@ -1,8 +1,7 @@
 import styled, { css } from 'react-emotion';
-
 import { DebounceInput } from 'react-debounce-input';
-
 import createDynamicTag from '@lskjs/utils/createDynamicTag';
+import getTheme from '@lskjs/theme/getTheme';
 
 const dynamicTag = createDynamicTag(DebounceInput);
 
@@ -19,12 +18,12 @@ export const Button = styled('button')`
   outline: none;
   position: absolute;
   top: 0;
-  left: ${p => p.theme.tablePadding}px;
+  left: ${p => getTheme(p.theme, 'tablePadding')}px;
   bottom: 0;
   margin: auto 0;
   > svg {
     display: flex;
-    color: ${p => p.theme.colors.primary};
+    color: ${p => getTheme(p.theme, 'colors.primary')};
     font-size: 24px;
   }
 `;
@@ -37,7 +36,7 @@ export const Count = styled('div')`
   flex-shrink: 0;
 
   opacity: 0.5;
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   font-size: 13px;
   line-height: 1.0;
   text-align: right;
@@ -45,27 +44,27 @@ export const Count = styled('div')`
 `;
 
 const placeholderStyle = p => css`
-  font-family: ${p.theme.fontFamily};
+  font-family: ${getTheme(p.theme, 'fontFamily')};
   font-size: 13px;
   font-weight: 500;
   line-height: 56px;
   text-align: left;
-  color: ${p.theme.colors.secondary};
+  color: ${getTheme(p.theme, 'colors.secondary')};
 `;
 
 export const Input = styled(dynamicTag)`
   width: 100%;
   height: 56px;
-  padding: 0 0 0 ${p => `calc(${p.theme.tablePadding || 0}px + 34px)`};
+  padding: 0 0 0 ${p => `calc(${getTheme(p.theme, 'tablePadding || 0}px + 34px)`')};
   border: none;
   outline: none;
   background: none;
 
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   font-size: 13px;
   text-align: left;
   font-weight: 500;
-  color: ${p => p.theme.colors.main};
+  color: ${p => getTheme(p.theme, 'colors.main')};
   &::-webkit-input-placeholder {
     ${placeholderStyle}
   }
@@ -94,7 +93,7 @@ export const Action = styled('div')`
   ${p => (p.additional && css`
     padding-left: 16px;
     margin-right: 12px;
-    border-left: 1px solid ${p.theme.colors.border};
+    border-left: 1px solid ${getTheme(p.theme, 'colors.border')};
     ${!p.divide && 'border-left-color: transparent;'}
 
     > *:not(:last-child) {

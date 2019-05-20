@@ -1,4 +1,5 @@
 import styled from 'react-emotion';
+import getTheme from '@lskjs/theme/getTheme';
 
 export default styled('div')`
   border-width: 1px 0 0 0;
@@ -9,5 +10,5 @@ export default styled('div')`
   border-color: #1890ff;
   width: 2.5rem;
   display: inline-block;
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
 `;

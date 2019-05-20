@@ -1,9 +1,10 @@
 import styled from 'react-emotion';
+import getTheme from '@lskjs/theme/getTheme';
 
 export const Title = styled('div')`
   font-size: 1.25rem;
   font-weight: 300;
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
 `;
 
 export const Content = styled('div')`
@@ -11,7 +12,7 @@ export const Content = styled('div')`
   justify-content: space-between;
   align-items: center;
   font-size: 1.25rem;
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   font-weight: 300;
   ${Title} {
     margin: 0;

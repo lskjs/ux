@@ -1,8 +1,9 @@
 import styled from 'react-emotion';
+import getTheme from '@lskjs/theme/getTheme';
 
 export const Header = styled('div')`
   width: 278px;
-  background-color: ${p => p.theme.colors.lighterPrimary};
+  background-color: ${p => getTheme(p.theme, 'colors.lighterPrimary')};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -74,10 +75,10 @@ export const Block = styled('button')`
   padding: 0;
   cursor: pointer;
   ${p => (p.checked && `
-    border-color: ${p.theme.colors.primary};
+    border-color: ${getTheme(p.theme, 'colors.primary')};
     ${Radio} {
       border: none;
-      background-color: ${p.theme.colors.primary};
+      background-color: ${getTheme(p.theme, 'colors.primary')};
     }
   `)}
   ${(p) => {

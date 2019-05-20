@@ -1,8 +1,9 @@
 import styled, { injectGlobal } from 'react-emotion';
+import getTheme from '@lskjs/theme/getTheme';
 
 export default styled('span')`
   ${p => (p.validationState === 'error' && `
-    color: ${p.theme.colors.danger};
+    color: ${getTheme(p.theme, 'colors.danger')};
   `)}
 `;
 

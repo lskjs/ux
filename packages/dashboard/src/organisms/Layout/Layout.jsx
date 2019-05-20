@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import LayoutFrame from '../../atoms/LayoutFrame';
 
-class Layout extends Component {
+class Layout extends PureComponent {
   static propTypes = {
     boxed: PropTypes.bool,
     fixed: PropTypes.array,

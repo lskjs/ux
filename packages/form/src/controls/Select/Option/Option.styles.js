@@ -1,5 +1,6 @@
 import styled, { css } from 'react-emotion';
 import removeProps from '@lskjs/utils/removeProps';
+import getTheme from '@lskjs/theme/getTheme';
 
 export const OptionItem = styled('button')`
   display: flex;
@@ -11,7 +12,7 @@ export const OptionItem = styled('button')`
   padding-left: 8px;
   z-index: 111111;
 
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => getTheme(p.theme, 'fontFamily')};
   background-color: ${p => (p.focused ? '#F0F0FF' : p.theme.colors.white)};
   font-size: 13px;
   font-weight: normal;
@@ -19,14 +20,14 @@ export const OptionItem = styled('button')`
   font-stretch: normal;
   line-height: 3.6;
   letter-spacing: -0.1px;
-  color: ${p => p.theme.colors.main};
+  color: ${p => getTheme(p.theme, 'colors.main')};
   &:focus{
     background-color: #ffffff !important;
-    color: ${p => p.theme.colors.main} !important;
+    color: ${p => getTheme(p.theme, 'colors.main')} !important;
   }
   &:hover {
     background-color: #F0F0FF !important;
-    color: ${p => p.theme.colors.main} !important;
+    color: ${p => getTheme(p.theme, 'colors.main')} !important;
   }
   ${p => (p.selected && css`
     background-color: #ffffff !important;
