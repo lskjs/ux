@@ -4,11 +4,12 @@ import { TitleWrapper } from '../FormItem.styles';
 
 class FormTitle extends React.PureComponent {
   static propTypes = {
-    children: PropTypes.any.isRequired,
+    children: PropTypes.any,
     required: PropTypes.bool,
   }
   static defaultProps = {
     required: false,
+    children: null,
   }
 
   render() {

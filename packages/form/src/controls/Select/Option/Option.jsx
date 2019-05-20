@@ -41,10 +41,10 @@ class Option extends Component {
         selected={isSelected}
         type="button"
       >
-        <If condition={data.image}>
+        <If condition={!!data.image}>
           {typeof data.image === 'string' ? <Image src={data.image} /> : data.image}
         </If>
-        <If condition={data.icon || Icon}>
+        <If condition={!!data.icon || !!Icon}>
           <IconWrapper color={data.iconColor || theme.colors.secondary}>
             {(isSelected && data.iconActive) ? data.iconActive : (Icon ? <Icon /> : data.icon)}
           </IconWrapper>
