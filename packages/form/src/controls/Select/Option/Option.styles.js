@@ -13,7 +13,7 @@ export const OptionItem = styled('button')`
   z-index: 111111;
 
   font-family: ${p => getTheme(p.theme, 'fontFamily')};
-  background-color: ${p => (p.focused ? '#F0F0FF' : p.theme.colors.white)};
+  background-color: ${p => (p.focused ? '#F0F0FF' : getTheme(p.theme, 'colors.white'))};
   font-size: 13px;
   font-weight: normal;
   font-style: normal;
