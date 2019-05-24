@@ -50,8 +50,9 @@ class RadioButtonGroup extends PureComponent {
         panel
         {...omit(props, ['onChange'])}
       >
-        {options.map(item => (
+        {options.map((item, index) => (
           <Button
+            key={index} // eslint-disable-line react/no-array-index-key
             size="small"
             paint={this.state.show === item.value ? paint : 'default'}
             style={{
