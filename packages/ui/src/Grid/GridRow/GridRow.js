@@ -11,16 +11,19 @@ export default styled(filter)`
   margin-right: -${p => (p.gap || getTheme(p.theme, 'gridGap'))}px;
   margin-left: -${p => (p.gap || getTheme(p.theme, 'gridGap'))}px;
 
+  ${p => p.gap && css`
+    > div {
+        padding-left: ${p.gap || getTheme(p.theme, 'gridGap')}px;
+        padding-right: ${p.gap || getTheme(p.theme, 'gridGap')}px;
+    }
+  `}
+
   ${p => (p.vertical && css`
     margin-top: -${p.gap || getTheme(p.theme, 'gridGap')}px;
     margin-bottom: -${p.gap || getTheme(p.theme, 'gridGap')}px;
     > div {
       padding-top: ${p.gap || getTheme(p.theme, 'gridGap')}px;
       padding-bottom: ${p.gap || getTheme(p.theme, 'gridGap')}px;
-      ${p.gap && css`
-        padding-left: ${p.gap || getTheme(p.theme, 'gridGap')}px;
-        padding-right: ${p.gap || getTheme(p.theme, 'gridGap')}px;
-      `}
     }
   `)}
 `;
