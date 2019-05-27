@@ -467,6 +467,24 @@ const defaultTextTheme = css`
   }
 `;
 
+const commonTextTheme = ({ theme }) => css`
+  color: ${getTheme(theme, 'colors.main')};
+  background-color: transparent;
+
+  &:hover {
+    color: ${getTheme(theme, 'colors.main')};
+    background-color: ${getTheme(theme, 'colors.lighterGray')};
+  }
+  &:focus {
+    color: ${getTheme(theme, 'colors.main')};
+    background-color: ${getTheme(theme, 'colors.darkerGray')};
+  }
+  &:active {
+    color: ${getTheme(theme, 'colors.main')};
+    background-color: ${getTheme(theme, 'colors.lighterGray')};
+  }
+`;
+
 const primaryTextTheme = ({ theme }) => css`
   color: ${getTheme(theme, 'colors.primary')};
   background-color: transparent;
@@ -801,6 +819,7 @@ export const Btn = styled(filteredTag)`
         case 'warning': return warningTextTheme;
         case 'danger': return dangerTextTheme;
         case 'success': return successTextTheme;
+        case 'common': return commonTextTheme;
         case 'transparent': return transparentTheme;
         case 'transparentDark': return transparentThemeDark;
         default: return defaultTextTheme;
