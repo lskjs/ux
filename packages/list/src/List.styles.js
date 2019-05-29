@@ -312,7 +312,7 @@ export const SelectRowWrapper = styled('div')`
   `)}
   ${p => (p.checked && css`
     > .table-gird-row {
-      background-color: ${getTheme(p.theme, 'colors.lightPrimary')};
+      background-color: ${getTheme(p.theme, 'colors.semiPrimary')};
     }
   `)}
 `;
