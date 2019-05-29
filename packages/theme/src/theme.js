@@ -7,6 +7,7 @@ export default {
     lightGray: '#f8f9fa',
     primary: '#1890ff',
     darkPrimary: '#096dd9',
+    semiPrimary: '#CFCFFF',
     lightPrimary: '#91d5ff',
     lighterPrimary: '#e6f7ff',
     focusPrimary: '#40a9ff',

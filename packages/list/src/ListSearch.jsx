@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
+import { formatter } from '@lskjs/utils/formatter';
 import { contextToProps } from './List.context';
 
 @contextToProps('List', 'show', 'FilterForm')
@@ -13,7 +14,7 @@ class ListSearch extends Component {
     return (
       <List.SearchWrapper
         current={listStore.items.length}
-        max={listStore.count}
+        max={formatter(listStore.count)}
         debounceTimeout={100}
         onChange={e => listStore.setSearch(e.target.value)}
         value={listStore.search || ''}
