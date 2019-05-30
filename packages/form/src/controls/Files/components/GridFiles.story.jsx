@@ -14,6 +14,7 @@ export default ({ storiesOf }) => (
           {...items[0]}
         />
         <GridFile
+          link
           {...items[1]}
         />
       </Story>
@@ -21,6 +22,10 @@ export default ({ storiesOf }) => (
     .add('GridFiles', () => (
       <Story>
         <GridFiles
+          items={items}
+        />
+        <GridFiles
+          link
           items={items}
         />
         {/* <GridFiles

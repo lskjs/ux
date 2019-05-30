@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import autobind from '@lskjs/autobind';
+import Link from '@lskjs/ui/Link';
 import Remove from 'react-icons2/mdi/close-circle-outline';
 import If from 'react-if';
 import Box from '../Box';
@@ -31,9 +32,10 @@ class GridFile extends Component {
   }
 
   render() {
-    const { src = '', title, image, type, onRemove } = this.props;
+    const { src = '', title, image, type, onRemove, link } = this.props;
     const Icon = fileTypes[type] || fileTypes.other;
-    return (
+
+    const res = (
       <Box
         componentClass="div"
         className={containerStyle}
@@ -69,6 +71,14 @@ class GridFile extends Component {
           </RemoveButton>
         </If>
       </Box>
+    );
+
+    if (!link) return res;
+
+    return (
+      <Link href={src} target="_blank">
+        {res}
+      </Link>
     );
   }
 }

@@ -1,3 +1,3 @@
-import sure from '@lskjs/modal/sure';
+import sure from '@lskjs/modal/hoc/sure';
 
 export default sure;
