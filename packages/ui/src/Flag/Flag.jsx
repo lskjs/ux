@@ -16,6 +16,9 @@ class Flag extends PureComponent {
   render() {
     const { country, code, height, ...props } = this.props;
     const countryOrCode = code || country || 'gb';
+    if (countryOrCode === 'uk' || countryOrCode === 'en') {
+      countryOrCode = 'gb';
+    }
     return (
       <ReactWorldFlag
         code={countryOrCode.toUpperCase()}
