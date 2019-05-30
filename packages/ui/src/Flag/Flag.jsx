@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import ReactWorldFlag from 'react-world-flags';
 // import { css } from 'emotion';
 
-
 class Flag extends PureComponent {
   static propTypes = {
     country: PropTypes.string,
@@ -15,7 +14,7 @@ class Flag extends PureComponent {
   }
   render() {
     const { country, code, height, ...props } = this.props;
-    const countryOrCode = code || country || 'gb';
+    let countryOrCode = code || country || 'gb';
     if (countryOrCode === 'uk' || countryOrCode === 'en') {
       countryOrCode = 'gb';
     }
