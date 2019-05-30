@@ -65,10 +65,10 @@ export default ({
   });
 
   return ({
-    ref = React.createRef(), onSubmit, children, inner, ...props
+    innerRef = React.createRef(), onSubmit, children, inner, ...props
   }) => (
     <Modal
-      ref={ref}
+      ref={innerRef}
       {...params}
       {...props}
       trigger={children}
@@ -78,7 +78,7 @@ export default ({
         {...props}
         onSubmit={async (...args) => {
           await onSubmit(...args);
-          ref.current.close();
+          innerRef.current.close();
         }}
       />
     </Modal>

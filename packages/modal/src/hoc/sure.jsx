@@ -6,18 +6,18 @@ import DefaultModal from '../Modal2';
 
 // / Modal = ,
 export default ({ Modal = DefaultModal, ...params } = {}) => ({
-  ref = React.createRef(), onSubmit, children, inner, ...props
+  innerRef = React.createRef(), onSubmit, children, inner, ...props
 }) => (
   <Modal
     size="small"
-    ref={ref}
+    ref={innerRef}
     footer={(
       <React.Fragment>
         <Button
           paint="primary"
           onClick={async () => {
             await onSubmit();
-            ref.current.close();
+            innerRef.current.close();
           }}
         >
           <T name="common.yes" />

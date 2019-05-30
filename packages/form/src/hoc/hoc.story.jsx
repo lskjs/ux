@@ -1,5 +1,5 @@
 /* eslint import/no-extraneous-dependencies: 0 */
-import React from 'react';
+import React, { createRef } from 'react';
 import Story from '@lskjs/dev/Story';
 import Button from '@lskjs/button';
 import Input from '../controls/Input';
@@ -11,9 +11,11 @@ export default ({ storiesOf }) => (
   storiesOf('Modal2/hoc', module)
     .add('Are you sure', () => {
       const SureModal = sure();
+      const innerRef = createRef();
       return (
         <Story>
           <SureModal
+            innerRef={innerRef}
             title="Deleting"
             content="Are you sure"
             onSubmit={() => console.log('yes')}
@@ -25,6 +27,12 @@ export default ({ storiesOf }) => (
               Удалить
             </Button>
           </SureModal>
+          <button onClick={() => {
+            innerRef.current.open();
+          }}
+          >
+            Open by ref
+          </button>
         </Story>
       );
     })
@@ -43,9 +51,11 @@ export default ({ storiesOf }) => (
           },
         },
       });
+      const innerRef = createRef();
       return (
         <Story>
           <FormModal
+            innerRef={innerRef}
             title="Request"
             content="Do you want"
             onSubmit={values => console.log('yes', values)}
@@ -57,6 +67,12 @@ export default ({ storiesOf }) => (
               Send bio
             </Button>
           </FormModal>
+          <button onClick={() => {
+            innerRef.current.open();
+          }}
+          >
+            Open by ref
+          </button>
         </Story>
       );
     })
