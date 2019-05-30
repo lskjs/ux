@@ -54,7 +54,7 @@ const ArrayOfForm = createForm({
 });
 
 export default ({ storiesOf }) =>
-  storiesOf('Form2/controls', module)
+  storiesOf('controls', module)
     .add('ArrayOf ', () => {
       return (
         <Story>

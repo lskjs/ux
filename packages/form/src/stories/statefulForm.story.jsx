@@ -46,7 +46,7 @@ function createSubmit(probability = 0.5, delay = 2000) {
 }
 
 export default ({ storiesOf }) =>
-  storiesOf('Form2/statefulForm', module)
+  storiesOf('statefulForm', module)
     .add('success', () => {
       return (
         <Story>

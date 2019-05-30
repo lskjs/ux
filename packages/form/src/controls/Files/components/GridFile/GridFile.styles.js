@@ -43,7 +43,7 @@ export const Info = styled.div`
   padding-left: 20px;
 `;
 
-export const RemoveButton = styled('button')`
+export const RemoveButton = styled('span')`
   background: none;
   border: none;
   outline: none;

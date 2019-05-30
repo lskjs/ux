@@ -43,7 +43,7 @@ export const FormExample3 = createForm({
 });
 
 export default ({ storiesOf }) =>
-  storiesOf('Form2/examples', module)
+  storiesOf('examples', module)
     .add('FormExample4', () => {
       return (
         <Story>

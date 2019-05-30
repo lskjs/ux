@@ -35,7 +35,7 @@ const marks = {
 };
 
 export default ({ storiesOf }) => (
-  storiesOf('Form2/components/Slider', module)
+  storiesOf('components/Slider', module)
     .add('default', () => (
       <Story>
         <Slider

@@ -10,16 +10,14 @@ import ArrayOf from '../controls/ArrayOf';
 import createNestedFormControl from '../createNestedFormControl';
 
 
-const EntityFormView = (props) => {
-  return (
-    <Form>
-      <h3>EntityForm:</h3>
-      <Field {...props.controls.name} />
-      <Field {...props.controls.money} />
-      <Field {...props.controls.gender} />
-    </Form>
-  );
-};
+const EntityFormView = props => (
+  <Form>
+    <h3>EntityForm:</h3>
+    <Field {...props.controls.name} />
+    <Field {...props.controls.money} />
+    <Field {...props.controls.gender} />
+  </Form>
+);
 
 const EntityForm = createForm({
   view: EntityFormView,
@@ -42,17 +40,15 @@ const EntityForm = createForm({
 });
 
 
-const ComplexFormView = (props) => {
-  return (
-    <Form>
-      <h3>ArrayOfEntityForm:</h3>
-      <Field {...props.controls.title} />
-      <Field {...props.controls.director} />
-      <Field {...props.controls.users} />
-      <FormDebug {...props} />
-    </Form>
-  );
-};
+const ComplexFormView = props => (
+  <Form>
+    <h3>ArrayOfEntityForm:</h3>
+    <Field {...props.controls.title} />
+    <Field {...props.controls.director} />
+    <Field {...props.controls.users} />
+    <FormDebug {...props} />
+  </Form>
+);
 
 const ComplexForm = createForm({
   view: ComplexFormView,
@@ -75,20 +71,14 @@ const ComplexForm = createForm({
   },
 });
 
-export default ({ storiesOf }) =>
-  storiesOf('Form2/nestedForm', module)
-    .add('EntityForm', () => {
-      return (
-        <Story devtools>
-          <EntityForm />
-        </Story>
-      );
-    })
-    .add('ComplexForm', () => {
-      return (
-        <Story devtools>
-          <ComplexForm />
-        </Story>
-      );
-    });
-
+export default ({ storiesOf }) => storiesOf('nestedForm', module)
+  .add('EntityForm', () => (
+    <Story devtools>
+      <EntityForm />
+    </Story>
+  ))
+  .add('ComplexForm', () => (
+    <Story devtools>
+      <ComplexForm />
+    </Story>
+  ));

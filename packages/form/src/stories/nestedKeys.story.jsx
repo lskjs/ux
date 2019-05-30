@@ -55,7 +55,7 @@ const InputForm = createForm({
 });
 
 export default ({ storiesOf }) =>
-  storiesOf('Form2', module)
+  storiesOf('Form', module)
     .add('nestedKeys', () => {
       return (
         <Story>

@@ -67,7 +67,7 @@ const InputForm = createForm({
 });
 
 export default ({ storiesOf }) =>
-  storiesOf('Form2/controls', module)
+  storiesOf('controls', module)
     .add('Input', () => {
       return (
         <Story>

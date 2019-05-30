@@ -67,7 +67,7 @@ export const FormExample4 = createFormWithI18(({ i18 }) => ({
 }));
 
 export default ({ storiesOf }) =>
-  storiesOf('Form2/examples', module)
+  storiesOf('examples', module)
     .add('example4 with i18', () => {
       // console.log('FormExample4', FormExample4);
       return (

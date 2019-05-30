@@ -636,7 +636,7 @@ const SelectFormWithI18 = createFormWithI18(({ i18 }) => ({
 
 
 export default ({ storiesOf }) =>
-  storiesOf('Form2/controls', module)
+  storiesOf('controls', module)
     .add('Select ', () => {
       return (
         <Story devtools perf>

@@ -180,7 +180,7 @@ const RadioForm = createForm({
 });
 
 export default ({ storiesOf }) =>
-  storiesOf('Form2/controls', module)
+  storiesOf('controls', module)
     .add('GroupOf ', () => {
       return (
         <Story>

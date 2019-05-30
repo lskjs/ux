@@ -18,7 +18,8 @@ export default function createUappMock({ locale }) {
     }),
     modules: {
       upload: {
-        uploadFile: async e => ({ url: e.name }),
+        uploadFile: async e => ({ url: '//picsum.photos/1280/720/?random' }),
+        // uploadFile: async e => ({ url: e.name }),
       },
       billing: {
         stores: {

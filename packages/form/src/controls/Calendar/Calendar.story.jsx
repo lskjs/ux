@@ -71,7 +71,7 @@ const CalendarForm = createForm({
   },
 });
 
-export default ({ storiesOf }) => storiesOf('Form2/controls', module)
+export default ({ storiesOf }) => storiesOf('controls', module)
   .add('Calendar ', () => (
     <Story>
       <CalendarForm

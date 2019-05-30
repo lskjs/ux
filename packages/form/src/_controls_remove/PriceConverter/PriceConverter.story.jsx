@@ -25,7 +25,7 @@ const PriceConverterForm = createForm({
 });
 
 export default ({ storiesOf }) =>
-  storiesOf('Form2/controls_remove', module)
+  storiesOf('controls_remove', module)
     .add('PriceConverter ', () => {
       return (
         <Story>

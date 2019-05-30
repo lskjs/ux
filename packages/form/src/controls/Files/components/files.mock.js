@@ -2,7 +2,7 @@ import normalizeFiles from './normilizeFiles';
 
 export default normalizeFiles([
   {
-    title: 'tilte',
+    title: 'title',
     url: 'http://shiz.co/beatlescode/assets/hereComesTheSun.mp3',
     size: 10000,
   },

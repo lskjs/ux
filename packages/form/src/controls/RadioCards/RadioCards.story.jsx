@@ -38,7 +38,7 @@ const RadioCardsForm = createForm({
 });
 
 export default ({ storiesOf }) =>
-  storiesOf('Form2/controls', module)
+  storiesOf('controls', module)
     .add('RadioCards ', () => {
       return (
         <Story>
