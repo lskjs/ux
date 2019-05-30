@@ -26,8 +26,11 @@ class RadioButtonGroup extends PureComponent {
     onChange: () => {},
   }
 
-  state = {
-    show: '',
+  constructor(props) {
+    super(props);
+    this.state = {
+      show: props.value,
+    };
   }
 
   onChange(value) {
