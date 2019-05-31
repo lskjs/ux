@@ -158,7 +158,7 @@ export const ButtonRight = styled.button`
   background-color: #ffffff;
   border-radius: 50%;
   position: absolute;
-  top: 31%;
+  top: 37%;
   font-size: 2em;
   background-repeat: no-repeat;
   border: none;
@@ -186,7 +186,7 @@ export const ButtonLeft = styled.button`
   background-color: #ffffff;
   border-radius: 50%;
   position: absolute;
-  top: 31%;
+  top: 37%;
   right: 2%;
   border: none;
   width: 56px;
