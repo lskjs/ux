@@ -79,6 +79,16 @@ export default ({ storiesOf }) => (
         />
       </Story>
     ))
+    .add('Custom non variable', () => (
+      <Story>
+        <Carousel
+          variableWidth={false}
+          items={items}
+          itemWidth={200}
+          itemHeight={250}
+        />
+      </Story>
+    ))
     .add('Custom height/weight', () => (
       <Story>
         <Carousel
