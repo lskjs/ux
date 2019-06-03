@@ -239,14 +239,10 @@ export const ArrowRight = styled.i`
 `;
 
 
-export const Wrapper = styled.article(({ itemWidth = '200px', itemHeight = '200px' }) => ({
-  margin: '0 auto',
-  height: itemHeight,
-  width: itemWidth,
-}));
+export const Wrapper = styled.article``;
 
 export const ItemSlider = styled.div`
-  margin: 5px;
+  margin: 0;
 `;
 
 export const AnotherButtonRight = styled.button`

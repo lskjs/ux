@@ -106,10 +106,7 @@ class Carousel extends PureComponent {
         <Slider {...settings} {...props}>
           {normalizeItems(items).map((item, i) => (
             <ItemSlider key={item.key || i}>
-              <Wrapper
-                itemWidth={itemWidth}
-                itemHeight={itemHeight}
-              >
+              <Wrapper>
                 <ItemComponent
                   {...item}
                 />
