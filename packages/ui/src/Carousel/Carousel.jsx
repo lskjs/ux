@@ -87,8 +87,8 @@ class Carousel extends PureComponent {
       arrows: true,
       infinite: false,
       initialSlide: 0,
-      slidesToScroll: variableWidth ? Math.floor(1142 / itemWidth) - 1 : slidesToScroll,
-      slidesToShow: variableWidth ? Math.floor(1142 / itemWidth) - 1 : 1,
+      slidesToScroll: variableWidth ? Math.floor(1142 / itemWidth) : slidesToScroll,
+      slidesToShow: variableWidth ? Math.floor(1142 / itemWidth) : 1,
       variableWidth: false,
       adaptiveHeight: true,
       nextArrow,
@@ -96,8 +96,8 @@ class Carousel extends PureComponent {
       responsive: variableWidth ? range(keysWidths.length).map(e => keysWidths[e]).map(wd => ({
         breakpoint: Number(wd),
         settings: {
-          slidesToShow: Math.floor(widths[wd] / itemWidth) - 1,
-          slidesToScroll: Math.floor(widths[wd] / itemWidth) - 1,
+          slidesToShow: Math.floor(widths[wd] / itemWidth),
+          slidesToScroll: Math.floor(widths[wd] / itemWidth),
         },
       })).reverse() : [],
     };
