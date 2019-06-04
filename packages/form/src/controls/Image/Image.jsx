@@ -19,6 +19,7 @@ const ImageUploader = ({
     <Files
       {...field}
       {...props}
+      value2={field.value}
       multiple={isMulti}
       onSubmit={value => form.setFieldValue(field.name, value)}
       onError={() => onError && onError(form.errors[field.name])} // this.globalError
