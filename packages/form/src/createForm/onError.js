@@ -5,9 +5,8 @@ import getControlHtmlId from './getControlHtmlId';
 export default ({ errors, controls }) => {
   some(Object.keys(errors), (key) => {
     const id = `#${getControlHtmlId(controls[key])}`;
-    console.log({ id });
-    scrollTo(id, { debug: 1 });
+    scrollTo(id);
   });
-  console.error('Form2.onError', errors);
+  console.error('Form.onError', errors);
   throw errors;
 };
