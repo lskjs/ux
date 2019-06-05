@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createRef } from 'react';
 import { Form, Field } from 'formik';
 import Story from '@lskjs/dev/Story';
 import createForm from '../createForm';
@@ -24,6 +24,7 @@ const EntityForm = createForm({
   controls: {
     name: {
       title: 'Name',
+      required: true,
       component: Input,
     },
     money: {
@@ -55,6 +56,7 @@ const ComplexForm = createForm({
   controls: {
     title: {
       title: 'Номер группы',
+      required: true,
       component: Input,
     },
     director: {
@@ -67,6 +69,7 @@ const ComplexForm = createForm({
       component: ArrayOf,
       itemComponent: createNestedFormControl(EntityForm),
       showAddButton: true,
+      showRemoveButton: true,
     },
   },
 });
@@ -77,8 +80,14 @@ export default ({ storiesOf }) => storiesOf('nestedForm', module)
       <EntityForm />
     </Story>
   ))
-  .add('ComplexForm', () => (
+  .add('ComplexForm', ({ ref = createRef() }) => (
     <Story devtools>
-      <ComplexForm />
+      <ComplexForm
+        ref={ref}
+        onSubmit={(values) => {
+          console.log('ComplexForm.onSubmit', values);
+          console.log('ref', ref);
+        }}
+      />
     </Story>
   ));

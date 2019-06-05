@@ -9,4 +9,3 @@ release-*
 packages/*/build
 packages/*/release
 packages/*/release-*
-_remove

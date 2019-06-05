@@ -11,6 +11,9 @@ const createNestedFormControl = (Component, React = React2) => ({ children, ...p
       onChange: (values) => {
         form.setFieldValue(field.name, values);
       },
+      onSubmit: (values) => {
+        form.setFieldValue(field.name, values);
+      },
     },
     children,
   );

@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@babel/polyfill": "^7.4.3",
-    "@lskjs/autobind": "^0.34.0",
+    "@lskjs/autobind": "^0.34.2",
     "@lskjs/button": "^0.34.17",
     "@lskjs/css": "^0.34.17",
     "@lskjs/dev": "^0.34.17",
@@ -47,7 +47,7 @@
     "@lskjs/scroll": "^0.34.17",
     "@lskjs/theme": "^0.34.17",
     "@lskjs/ui": "^0.34.19",
-    "@lskjs/utils": "^0.34.0",
+    "@lskjs/utils": "^0.34.2",
     "antd": "^3.16.2",
     "bluebird": "^3.5.4",
     "classnames": "^2.2.6",
