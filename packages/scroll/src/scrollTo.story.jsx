@@ -1,8 +1,11 @@
 import React from 'react';
 import range from 'lodash/range';
 import Story from '@lskjs/dev/Story';
-import scrollTo from '.';
+import scrollTo, { setDefaultOptions } from '.';
 
+setDefaultOptions({
+  debug: 1,
+});
 
 export default ({ storiesOf }) => (
   storiesOf('utils', module)

@@ -45,7 +45,13 @@ export const defaultOptions = {
 
 setDefaultOptions(defaultOptions);
 
-export default function scrollTo(id, options) {
+
+export default function scrollTo(id, incomeOptions = {}) {
+  const options = {
+    ...getDefaultOptions(),
+    ...incomeOptions,
+  };
+
   try {
     if (options.debug) console.log('scrollTo ', id);
     let value;
@@ -59,10 +65,7 @@ export default function scrollTo(id, options) {
     } else {
       value = id;
     }
-    animateScrollTo(value, {
-      ...getDefaultOptions(),
-      ...options,
-    });
+    animateScrollTo(value, options);
     return true;
   } catch (err) {
     if (options.debug) console.error('scrollTo error', err);
