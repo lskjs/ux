@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import { toJS } from 'mobx';
 import { inject, observer } from 'mobx-react';
 import If from 'react-if';
 import isTouchDevice from '@lskjs/utils/isTouchDevice';
@@ -24,7 +23,6 @@ class ListFilter extends Component {
     } = this.props;
     if (!FilterForm) return null; // <DEV json="!FilterForm" />;
     const { showFilter } = listStore;
-    // const values = toJS(listStore.filter);
     return (
       <React.Fragment>
         <If condition={isFilterModal && isTouchDevice()}>

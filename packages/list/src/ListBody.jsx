@@ -26,7 +26,7 @@ class ListBody extends Component {
       show = {},
       ...props
     } = this.props;
-    const ButtonWrapper = show.autoload ? VisibilitySensor : React.Fragment;
+    const ButtonWrapper = show.autoload ? VisibilitySensor : 'div';
     return (
       <List.BodyWrapper {...props} style={{ position: 'relative' }}>
         {__DEV__ && <Progress isLoading={listStore.loading} value={30} shadow={false} />}

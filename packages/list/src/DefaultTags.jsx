@@ -13,6 +13,7 @@ const DefaultTags = ({ listStore, Tag }) => {
   if (!isEmpty(listStore.search)) {
     tags.push({
       key: '_search',
+      id: '_search',
       children: listStore.search,
       onClose: () => listStore.setSearch(undefined),
     });
@@ -23,6 +24,7 @@ const DefaultTags = ({ listStore, Tag }) => {
     if (isEmpty(value)) return;
     tags.push({
       key,
+      id: key,
       children: `${key}: ${value}`,
       onClose: () => listStore.setFilter({
         ...listStore.filter,
@@ -32,6 +34,6 @@ const DefaultTags = ({ listStore, Tag }) => {
   });
   // console.log(listStore, { tags });
 
-  return tags.map(tag => <Tag {...tag} />);
+  return tags.map(tag => <Tag key={tag.key} {...tag} />);
 };
 export default observer(DefaultTags);

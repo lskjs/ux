@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
-import { toJS } from 'mobx';
 import T from '@lskjs/ui/T';
 import Modal, {
   Title,
@@ -17,7 +16,6 @@ class ListFilterModal extends Component {
     const {
       listStore, filterProps, FilterForm, children, ...props
     } = this.props;
-    const values = toJS(listStore.filter);
     return (
       <Modal
         trigger={children}
@@ -33,8 +31,8 @@ class ListFilterModal extends Component {
               <FilterForm
                 {...filterProps}
                 enableReinitialize
-                initialValues={values}
-                hash={values}
+                initialValues={listStore.filter}
+                hash={listStore.filter}
                 onChange={listStore.setFilter}
               />
             </Content>
