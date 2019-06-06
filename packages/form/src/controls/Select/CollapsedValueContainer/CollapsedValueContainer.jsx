@@ -3,7 +3,7 @@ import { ValueContainer as DefaultValueContainer } from 'react-select/lib/compon
 
 const CollapsedValueContainer = ({ children, selectProps, ...props }) => {
   const chl = [
-    (children && children.length && children[0].length && children[0][0])
+    (children && children.length && children[0] && children[0].length && children[0][0])
       || (children && children.length && children[0]),
     children && children.length && children[1]];
   return (
