@@ -1,7 +1,10 @@
 import React, { PureComponent } from 'react';
+import { observer } from 'mobx-react';
 import Slider from 'react-slick';
 import PropTypes from 'prop-types';
+import Lightbox from 'react-image-lightbox';
 import range from 'lodash/range';
+import 'react-image-lightbox/style.css';
 import {
   Container,
   ButtonRight,
@@ -34,6 +37,7 @@ const normalizeItems = (items = []) => (
   })
 );
 
+@observer
 class Carousel extends PureComponent {
   static propTypes = {
     slidesToScroll: PropTypes.number,
@@ -58,6 +62,14 @@ class Carousel extends PureComponent {
     prevArrow: <ButtonLeft><ArrowLeft /></ButtonLeft>,
     items: [],
   }
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      photoIndex: 0,
+      isOpen: false,
+    };
+  }
 
   render() {
     const {
@@ -78,6 +90,8 @@ class Carousel extends PureComponent {
       720: 678,
       540: 498,
     };
+
+    const { isOpen, photoIndex } = this.state;
 
     const keysWidths = Object.keys(widths);
 
@@ -106,7 +120,7 @@ class Carousel extends PureComponent {
         <Slider {...settings} {...props}>
           {normalizeItems(items).map((item, i) => (
             <ItemSlider key={item.key || i}>
-              <Wrapper>
+              <Wrapper onClick={() => this.setState({ isOpen: true, photoIndex: i })}>
                 <ItemComponent
                   {...item}
                 />
@@ -114,6 +128,20 @@ class Carousel extends PureComponent {
             </ItemSlider>
           ))}
         </Slider>
+        {isOpen && (
+          <Lightbox
+            mainSrc={items[photoIndex]}
+            nextSrc={items[(photoIndex + 1) % items.length]}
+            prevSrc={items[(photoIndex + items.length - 1) % items.length]}
+            onCloseRequest={() => this.setState({ isOpen: false })}
+            onMovePrevRequest={() => this.setState({
+              photoIndex: (photoIndex + items.length - 1) % items.length,
+            })}
+            onMoveNextRequest={() => this.setState({
+              photoIndex: (photoIndex + 1) % items.length,
+            })}
+          />
+        )}
       </Container>
     );
   }
