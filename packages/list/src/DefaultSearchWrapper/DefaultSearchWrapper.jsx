@@ -81,6 +81,7 @@ class Search extends PureComponent {
         </ButtonStyled>
         <Input
           componentClass={Tag}
+          debounceTimeout={500}
           ref={(e) => { this.input = e; }}
           onChange={this.handleChange}
           onKeyUp={this.handlePress}

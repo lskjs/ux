@@ -1,4 +1,3 @@
-import cloneDeep from 'lodash/cloneDeep';
 import sortBy from 'lodash/sortBy';
 import isPlainObject from 'lodash/isPlainObject';
 import isString from 'lodash/isString';
@@ -16,7 +15,10 @@ export const getOptionTitle = option => option.label || option.title || option.v
 export const getNormalizedOptions = (options = [], props = {}) => {
   let preOptions = [];
   if (options) {
-    preOptions = cloneDeep(options).map(option => (isSimple(option) ? { value: option } : option));
+    options.forEach((option) => {
+      const item = (isSimple(option) ? { value: option } : option);
+      preOptions.push(item);
+    });
     if (props.sortOptions) {
       preOptions = sortBy(preOptions, getOptionTitle);
     }
