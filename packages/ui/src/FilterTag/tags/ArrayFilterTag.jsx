@@ -9,7 +9,8 @@ class ArrayFilterTag extends Component { //eslint-disable-line
     const items = value.map(getValue);
     return (
       <BaseFilterTag {...props}>
-        {`${title}: `}
+        {title}
+        {': '}
         <Join items={items} glue=", " />
       </BaseFilterTag>
     );

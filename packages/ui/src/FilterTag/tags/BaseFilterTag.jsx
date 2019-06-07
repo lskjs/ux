@@ -35,6 +35,7 @@ class BaseFilterTag extends Component {
     return (
       <Tag
         onClose={this.onClose}
+        name={name}
         {...props}
       >
         {children}

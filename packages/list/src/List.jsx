@@ -118,7 +118,7 @@ class List extends Component {
     const {
       debug, columns, show: customShow = {}, pageSize = 10, paginatorProps = {},
       Item, FilterForm, HeaderItem,
-      Tags = this.constructor.Tags, Tag = this.constructor.Tag, filterProps,
+      filterProps,
     } = this.props;
     const isFilterModal = getProp(this, 'isFilterModal');
     let { listStore } = this.props;
@@ -141,6 +141,8 @@ class List extends Component {
       Header: getProp(this, 'Header'),
       Search: getProp(this, 'Search'),
       Filter: getProp(this, 'Filter'),
+      Tag: getProp(this, 'Tag'),
+      Tags: getProp(this, 'Tags'),
       TagsPanel: getProp(this, 'TagsPanel'),
       Body: getProp(this, 'Body'),
       Items: getProp(this, 'Items'),
@@ -210,8 +212,6 @@ class List extends Component {
           pageSize,
           Item,
           FilterForm,
-          Tags,
-          Tag,
           HeaderItem,
           isFilterModal,
           paginatorProps,

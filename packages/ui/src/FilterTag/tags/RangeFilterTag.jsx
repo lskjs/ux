@@ -11,7 +11,8 @@ const RangeFilterTag = ({ title, value, ...props }) => {
   if (!Array.isArray(value)) return null;
   return (
     <BaseFilterTag {...props}>
-      {`${title}:`}
+      {title}
+      {': '}
       <Join items={val} glue=" - " />
     </BaseFilterTag>
   );

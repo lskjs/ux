@@ -3,22 +3,21 @@ import { inject, observer } from 'mobx-react';
 import T from '@lskjs/ui/T';
 import { contextToProps } from './List.context';
 
-@contextToProps('List', 'Tags', 'Tag')
+@contextToProps('List', 'filterProps')
 @inject('listStore')
 @observer
 class ListTagsPanel extends Component {
   render() {
     const {
       List,
-      Tags,
-      Tag,
       form,
       listStore,
+      filterProps,
     } = this.props;
     if (!listStore.hasFilter) return null;
     return (
       <List.TagsPanelWrapper>
-        <Tags listStore={listStore} Tag={Tag} form={form} />
+        <List.Tags listStore={listStore} Tag={List.Tag} form={form} {...filterProps} />
         <List.Button
           size="extraSmall"
           paint="primary"
