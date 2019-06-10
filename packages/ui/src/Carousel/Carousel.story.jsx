@@ -71,6 +71,11 @@ export default ({ storiesOf }) => (
         <Carousel items={items} />
       </Story>
     ))
+    .add('with lightbox', () => (
+      <Story>
+        <Carousel items={items} lightBox />
+      </Story>
+    ))
     .add('ItemComponent', () => (
       <Story>
         <Carousel

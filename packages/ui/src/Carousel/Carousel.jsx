@@ -1,7 +1,9 @@
 import React, { PureComponent } from 'react';
 import Slider from 'react-slick';
 import PropTypes from 'prop-types';
+import { observer } from 'mobx-react';
 import range from 'lodash/range';
+import Lightbox from 'react-image-lightbox';
 import {
   Container,
   ButtonRight,
@@ -10,8 +12,10 @@ import {
   ArrowRight,
   Wrapper,
   ItemSlider,
+  globalStylesLightbox,
 } from './Carousel.style';
 
+globalStylesLightbox();
 
 const DefaultItemComponent = ({ src, title }) => (
   <img src={src} alt={title} />
@@ -34,6 +38,7 @@ const normalizeItems = (items = []) => (
   })
 );
 
+@observer
 class Carousel extends PureComponent {
   static propTypes = {
     slidesToScroll: PropTypes.number,
@@ -45,6 +50,7 @@ class Carousel extends PureComponent {
     items: PropTypes.array, // eslint-disable-line react/forbid-prop-types
     variableWidth: PropTypes.bool,
     ItemComponent: PropTypes.any, // eslint-disable-line react/forbid-prop-types
+    lightBox: PropTypes.bool,
   }
 
   static defaultProps = {
@@ -57,6 +63,16 @@ class Carousel extends PureComponent {
     nextArrow: <ButtonRight><ArrowRight /></ButtonRight>,
     prevArrow: <ButtonLeft><ArrowLeft /></ButtonLeft>,
     items: [],
+    lightBox: false,
+  }
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      photoIndex: 0,
+      isOpen: false,
+    };
   }
 
   render() {
@@ -70,6 +86,7 @@ class Carousel extends PureComponent {
       itemWidth,
       itemHeight,
       variableWidth,
+      lightBox,
       ...props
     } = this.props;
 
@@ -78,6 +95,8 @@ class Carousel extends PureComponent {
       720: 678,
       540: 498,
     };
+
+    const { isOpen, photoIndex } = this.state;
 
     const keysWidths = Object.keys(widths);
 
@@ -106,7 +125,7 @@ class Carousel extends PureComponent {
         <Slider {...settings} {...props}>
           {normalizeItems(items).map((item, i) => (
             <ItemSlider key={item.key || i}>
-              <Wrapper>
+              <Wrapper onClick={() => this.setState({ isOpen: true, photoIndex: i })}>
                 <ItemComponent
                   {...item}
                 />
@@ -114,6 +133,21 @@ class Carousel extends PureComponent {
             </ItemSlider>
           ))}
         </Slider>
+        {isOpen && lightBox && (
+          <Lightbox
+            mainSrc={items[photoIndex].src || items[photoIndex]}
+            nextSrc={items[(photoIndex + 1) % items.length].src || items[(photoIndex + 1) % items.length]}
+            prevSrc={items[(photoIndex + items.length - 1) % items.length].src
+              || items[(photoIndex + items.length - 1) % items.length]}
+            onCloseRequest={() => this.setState({ isOpen: false })}
+            onMovePrevRequest={() => this.setState({
+              photoIndex: (photoIndex + items.length - 1) % items.length,
+            })}
+            onMoveNextRequest={() => this.setState({
+              photoIndex: (photoIndex + 1) % items.length,
+            })}
+          />
+        )}
       </Container>
     );
   }
