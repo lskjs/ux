@@ -18206,7 +18206,7 @@ body {
 .ant-form-item {
   width: 100%;
 }
-.ant-calendar-picker:hover .ant-calendar-picker-clear {
+.ant-calendar-picker.ant-calendar-picker-clear {
   opacity: 1;
   pointer-events: auto;
 }

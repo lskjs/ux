@@ -1,5 +1,5 @@
 import React from 'react';
-import Notification from './notify/Notification';
+import Notification from './Notification';
 
 export default function (rawData = {}) {
   const data = this.prepareNotificationData(rawData, 'success') || {};
