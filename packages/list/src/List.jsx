@@ -4,6 +4,7 @@ import mapValues from 'lodash/mapValues';
 import get from 'lodash/get';
 import ListStore from '@lskjs/mobx/stores/ListStore';
 import Button from '@lskjs/button';
+import scroll from '@lskjs/scroll';
 import { Table } from '@lskjs/ui/Table';
 import DEV from '@lskjs/dev/DEV';
 import DefaultSearchWrapper from './DefaultSearchWrapper';
@@ -114,6 +115,18 @@ class List extends Component {
   static SelectRowWrapper = SelectRowWrapper;
   static PaginatorWrapper = PaginatorWrapper;
 
+  componentDidMount() {
+    const { listStore } = this.props;
+    if (listStore && listStore.subscribe) {
+      this.unsubscribe = listStore.subscribe((before, after) => {
+        console.log('subscribe', before, after);
+        scroll(0); // TODO: перемещаться в самый верх таблицы, а не страницы
+      });
+    }
+  }
+  componentWillUnmount() {
+    if (this.unsubscribe) this.unsubscribe();
+  }
   render() {
     const {
       debug, columns, show: customShow = {}, pageSize = 10, paginatorProps = {},

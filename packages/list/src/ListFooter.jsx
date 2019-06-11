@@ -68,7 +68,7 @@ class ListFooter extends Component {
             <Item>
               <List.PagesWrapper>
                 {from}
-—
+                —
                 {to}
                 {listStore.count !== null && ` / ${listStore.count}`}
               </List.PagesWrapper>

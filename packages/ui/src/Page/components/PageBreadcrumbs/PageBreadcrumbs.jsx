@@ -22,7 +22,7 @@ class PageBreadcrumbs extends Component {
     } = this.props;
     const breadcrumbs = get(page, 'state.show.breadcrumbs', true);
     if (!breadcrumbs) return null;
-    let metas = get(page, 'state.metas');
+    let metas = cloneDeep(get(page, 'state.metas'));
     if (reverse) {
       metas = metas.reverse();
     }
