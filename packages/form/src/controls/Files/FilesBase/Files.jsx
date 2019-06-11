@@ -10,6 +10,7 @@ import zoneStyle from './Files.styles';
 
 @inject(s => ({
   upload: s.uapp.modules.upload,
+  uapp: s.uapp,
 }))
 @observer
 class Files extends Component {
@@ -50,6 +51,7 @@ class Files extends Component {
   }
   constructor(props) {
     super(props);
+    this.notificationSystem = React.createRef();
     this.state = {
       // value: props.value,
       dragged: false,
@@ -69,6 +71,7 @@ class Files extends Component {
       upload,
       onError,
       multiple,
+      uapp,
     } = this.props;
     if (!upload) return;
     let value = null;
@@ -81,9 +84,7 @@ class Files extends Component {
       if (onSubmit) onSubmit(value);
     } catch (err) {
       if (onError) onError(err);
-      else {
-        console.error('Files.onDrop', '!onError', onError, err); // eslint-disable-line
-      }
+      else uapp.onError(err);
     }
     this.setState({ dragged: false });
   }
