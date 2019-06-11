@@ -51,7 +51,6 @@ class Files extends Component {
   }
   constructor(props) {
     super(props);
-    this.notificationSystem = React.createRef();
     this.state = {
       // value: props.value,
       dragged: false,
