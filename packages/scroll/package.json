@@ -44,7 +44,7 @@
   },
   "peerDependencies": {
     "@lskjs/css": "*",
-    "@lskjs/dev": "^0.34.32",
+    "@lskjs/dev": "^0.34.33",
     "@lskjs/theme": "*",
     "@lskjs/utils": "^0.34.8",
     "emotion-theming": "*",

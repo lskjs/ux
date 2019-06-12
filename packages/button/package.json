@@ -32,8 +32,8 @@
   },
   "devDependencies": {
     "@lskjs/autobind": "^0.34.8",
-    "@lskjs/css": "^0.34.32",
-    "@lskjs/dev": "^0.34.32",
+    "@lskjs/css": "^0.34.33",
+    "@lskjs/dev": "^0.34.33",
     "@lskjs/theme": "^0.34.31",
     "@lskjs/utils": "^0.34.8",
     "antd": "^3.16.2",

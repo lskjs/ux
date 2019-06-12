@@ -41,7 +41,7 @@
     "react": "^16.8.6"
   },
   "peerDependencies": {
-    "@lskjs/css": "^0.34.32",
+    "@lskjs/css": "^0.34.33",
     "@lskjs/theme": "^0.34.31",
     "@lskjs/utils": "^0.34.8",
     "emotion": "*",
