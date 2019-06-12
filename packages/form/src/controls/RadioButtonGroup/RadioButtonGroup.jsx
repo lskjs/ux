@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import omit from 'lodash/omit';
 import theme from '@lskjs/theme';
+import { css } from 'react-emotion';
 import getTheme from '@lskjs/theme/getTheme';
 import { autobind } from '@lskjs/autobind';
 import { PropTypes } from 'prop-types';
@@ -15,6 +16,7 @@ class RadioButtonGroup extends PureComponent {
       title: PropTypes.string,
     })),
     value: PropTypes.string,
+    active: PropTypes.string,
     paint: PropTypes.string,
     onChange: PropTypes.func,
   }
@@ -22,6 +24,7 @@ class RadioButtonGroup extends PureComponent {
   static defaultProps = {
     options: [],
     value: null,
+    active: null,
     paint: 'primary',
     onChange: () => {},
   }
@@ -29,7 +32,7 @@ class RadioButtonGroup extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      show: props.value,
+      show: props.active || props.value,
     };
   }
 
@@ -46,6 +49,7 @@ class RadioButtonGroup extends PureComponent {
       options,
       value,
       paint,
+      active,
       ...props
     } = this.props;
     return (
