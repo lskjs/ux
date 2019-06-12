@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/modal",
-  "version": "0.34.32",
+  "version": "0.34.36",
   "description": "LSK ux subrepo: modal",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -33,9 +33,9 @@
   "devDependencies": {
     "@lskjs/autobind": "^0.34.8",
     "@lskjs/button": "^0.34.33",
-    "@lskjs/css": "^0.34.33",
-    "@lskjs/dev": "^0.34.33",
-    "@lskjs/theme": "^0.34.31",
+    "@lskjs/css": "^0.34.36",
+    "@lskjs/dev": "^0.34.36",
+    "@lskjs/theme": "^0.34.36",
     "@lskjs/ui": "^0.34.33",
     "@lskjs/utils": "0.34.8",
     "classnames": "2.2.6",
