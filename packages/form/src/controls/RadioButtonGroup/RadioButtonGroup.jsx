@@ -52,11 +52,6 @@ class RadioButtonGroup extends PureComponent {
       active,
       ...props
     } = this.props;
-    const radioButtonGroupStyle = css`
-      &:focus {
-        background-color: ${getTheme(theme, `colors.${paint}`)};
-      }
-    `;
     return (
       <ButtonGroup
         panel
@@ -72,7 +67,6 @@ class RadioButtonGroup extends PureComponent {
                 ? `0 0 0 1px ${getTheme(theme, `colors.${paint}`)}`
                 : '0 0 0 1px #eee',
             }}
-            className={radioButtonGroupStyle}
             onClick={() => {
               this.onChange(item.value);
             }}
