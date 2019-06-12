@@ -17,6 +17,7 @@ const RadioButtonGroupForm = createForm({
   controls: {
     RadioButtonGroup: {
       component: RadioButtonGroup,
+      active: 'byDate',
       options: [
         {
           value: 'byDate',

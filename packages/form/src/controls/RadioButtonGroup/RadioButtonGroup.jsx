@@ -16,6 +16,7 @@ class RadioButtonGroup extends PureComponent {
       title: PropTypes.string,
     })),
     value: PropTypes.string,
+    active: PropTypes.string,
     paint: PropTypes.string,
     onChange: PropTypes.func,
   }
@@ -23,6 +24,7 @@ class RadioButtonGroup extends PureComponent {
   static defaultProps = {
     options: [],
     value: null,
+    active: null,
     paint: 'primary',
     onChange: () => {},
   }
@@ -30,7 +32,7 @@ class RadioButtonGroup extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      show: props.value,
+      show: props.active || props.value,
     };
   }
 
@@ -47,6 +49,7 @@ class RadioButtonGroup extends PureComponent {
       options,
       value,
       paint,
+      active,
       ...props
     } = this.props;
     const radioButtonGroupStyle = css`
