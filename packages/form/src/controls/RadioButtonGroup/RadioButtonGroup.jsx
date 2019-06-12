@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import omit from 'lodash/omit';
 import theme from '@lskjs/theme';
+import { css } from 'react-emotion';
 import getTheme from '@lskjs/theme/getTheme';
 import { autobind } from '@lskjs/autobind';
 import { PropTypes } from 'prop-types';
@@ -48,6 +49,11 @@ class RadioButtonGroup extends PureComponent {
       paint,
       ...props
     } = this.props;
+    const radioButtonGroupStyle = css`
+      &:focus {
+        background-color: ${getTheme(theme, `colors.${paint}`)};
+      }
+    `;
     return (
       <ButtonGroup
         panel
@@ -63,6 +69,7 @@ class RadioButtonGroup extends PureComponent {
                 ? `0 0 0 1px ${getTheme(theme, `colors.${paint}`)}`
                 : '0 0 0 1px #eee',
             }}
+            className={radioButtonGroupStyle}
             onClick={() => {
               this.onChange(item.value);
             }}
