@@ -72,6 +72,8 @@ const defaultShow = {
   /** */ paginator: true,
 };
 
+const DEBUG = false;
+
 class List extends Component {
   static Tag = DefaultTag;
   static Tags = DefaultTags;
@@ -119,7 +121,7 @@ class List extends Component {
     const { listStore } = this.props;
     if (listStore && listStore.subscribe) {
       this.unsubscribe = listStore.subscribe((before, after) => {
-        console.log('subscribe', before, after);
+        if (DEBUG) console.log('listStore.subscribe', before, after); // eslint-disable-line no-console
         scroll(0); // TODO: перемещаться в самый верх таблицы, а не страницы
       });
     }
