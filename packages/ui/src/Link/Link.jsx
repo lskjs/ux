@@ -1,8 +1,5 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import isArray from 'lodash/isArray';
-import isPlainObject from 'lodash/isPlainObject';
-import map from 'lodash/map';
 import autobind from '@lskjs/autobind';
 import isAbsoluteUrl from '@lskjs/utils/isAbsoluteUrl';
 import isMiddleClickEvent from '@lskjs/utils/isMiddleClickEvent';
