@@ -46,7 +46,7 @@ export const Count = styled('div')`
 const placeholderStyle = p => css`
   font-family: ${getTheme(p.theme, 'fontFamily')};
   font-size: 13px;
-  font-weight: 500;
+  font-weight: normal;
   line-height: 56px;
   text-align: left;
   color: ${getTheme(p.theme, 'colors.secondary')};
@@ -63,8 +63,8 @@ export const Input = styled(dynamicTag)`
   font-family: ${p => getTheme(p.theme, 'fontFamily')};
   font-size: 13px;
   text-align: left;
-  font-weight: 500;
-  color: ${p => getTheme(p.theme, 'colors.main')};
+  font-weight: normal;
+  color: ${p => getTheme(p.theme, 'colors.secondary')};
   &::-webkit-input-placeholder {
     ${placeholderStyle}
   }
