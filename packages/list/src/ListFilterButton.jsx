@@ -4,10 +4,10 @@ import { observer, inject } from 'mobx-react';
 import filter from 'lodash/filter';
 import { Badge } from 'antd';
 // import If from 'react-if';
-import TuneIcon from 'react-icons2/mdi/tune';
 import isEmpty from '@lskjs/utils/isEmpty';
 import T from '@lskjs/ui/T';
 import withResponsive from '@lskjs/button/withResponsive';
+import FilterIcon from './FilterIcon';
 import { contextToProps } from './List.context';
 
 @contextToProps('List', 'isFilterModal')
@@ -22,7 +22,7 @@ class FilterButton extends Component {
     const ResponsiveButton = withResponsive(List.Button);
     const Button = props => (
       <ResponsiveButton
-        icon={<TuneIcon />}
+        icon={<FilterIcon />}
         paint="primary"
         size="small"
         view="text"
