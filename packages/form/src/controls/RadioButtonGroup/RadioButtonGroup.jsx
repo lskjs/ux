@@ -1,13 +1,9 @@
 import React, { PureComponent } from 'react';
 import omit from 'lodash/omit';
-import theme from '@lskjs/theme';
-import { css } from 'react-emotion';
-import getTheme from '@lskjs/theme/getTheme';
-import { autobind } from '@lskjs/autobind';
-import { PropTypes } from 'prop-types';
+import PropTypes from 'prop-types';
 import ButtonGroup from '@lskjs/button/ButtonGroup';
-import Button from '@lskjs/button';
 import Bool from '../Checkbox/Bool';
+import StyledButton from './RadioButtonGroup.styles';
 
 class RadioButtonGroup extends PureComponent {
   static propTypes = {
@@ -16,7 +12,6 @@ class RadioButtonGroup extends PureComponent {
       title: PropTypes.string,
     })),
     value: PropTypes.string,
-    active: PropTypes.string,
     paint: PropTypes.string,
     onChange: PropTypes.func,
   }
@@ -24,21 +19,12 @@ class RadioButtonGroup extends PureComponent {
   static defaultProps = {
     options: [],
     value: null,
-    active: null,
     paint: 'primary',
-    onChange: () => {},
-  }
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      show: props.active || props.value,
-    };
+    onChange: null,
   }
 
   onChange(value) {
     const { onChange } = this.props;
-    this.setState({ show: value });
     if (onChange) {
       onChange(value);
     }
@@ -49,7 +35,6 @@ class RadioButtonGroup extends PureComponent {
       options,
       value,
       paint,
-      active,
       ...props
     } = this.props;
     return (
@@ -58,21 +43,18 @@ class RadioButtonGroup extends PureComponent {
         {...omit(props, ['onChange'])}
       >
         {options.map((item, index) => (
-          <Button
+          <StyledButton
             key={index} // eslint-disable-line react/no-array-index-key
             size="small"
-            paint={this.state.show === item.value ? paint : 'default'}
-            style={{
-              boxShadow: this.state.show === item.value
-                ? `0 0 0 1px ${getTheme(theme, `colors.${paint}`)}`
-                : '0 0 0 1px #eee',
-            }}
+            type="button"
+            paint={value === item.value ? paint : 'default'}
+            active={value === item.value}
             onClick={() => {
               this.onChange(item.value);
             }}
           >
             {item.title}
-          </Button>
+          </StyledButton>
         ))}
       </ButtonGroup>
     );
