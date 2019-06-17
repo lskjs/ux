@@ -16,7 +16,13 @@ export const getNormalizedOptions = (options = [], props = {}) => {
   let preOptions = [];
   if (options) {
     options.forEach((option) => {
-      const item = (isSimple(option) ? { value: option } : option);
+      let item = (isSimple(option) ? { value: option } : option);
+      if (props.asyncItem && typeof props.asyncItem === 'object') {
+        item = {
+          ...props.asyncItem,
+          ...item,
+        };
+      }
       preOptions.push(item);
     });
     if (props.sortOptions) {

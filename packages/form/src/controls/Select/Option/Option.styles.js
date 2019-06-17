@@ -22,12 +22,12 @@ export const OptionItem = styled('button')`
   letter-spacing: -0.1px;
   color: ${p => getTheme(p.theme, 'colors.main')};
   &:focus{
-    background-color: #ffffff !important;
-    color: ${p => getTheme(p.theme, 'colors.main')} !important;
+    background-color: #F0F0FF !important;
+    color: ${p => getTheme(p.theme, 'colors.main')};
   }
   &:hover {
     background-color: #F0F0FF !important;
-    color: ${p => getTheme(p.theme, 'colors.main')} !important;
+    color: ${p => getTheme(p.theme, 'colors.main')};
   }
   ${p => (p.selected && css`
     background-color: #ffffff !important;
