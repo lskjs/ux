@@ -96,7 +96,7 @@ class Search extends PureComponent {
           <If condition={canClear}>
             <Action>
               <Button
-                icon={<CloseIcon />}
+                icon={<CloseIcon width="24px" height="24px" />}
                 paint="primary"
                 view="text"
                 onClick={onClear}
