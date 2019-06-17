@@ -109,7 +109,7 @@ class Carousel extends PureComponent {
       slidesToScroll: variableWidth ? Math.floor(1142 / itemWidth) : slidesToScroll,
       slidesToShow: variableWidth ? Math.floor(1142 / itemWidth) : 1,
       variableWidth: false,
-      // adaptiveHeight: true
+      adaptiveHeight: true,
       nextArrow,
       prevArrow,
       responsive: variableWidth ? range(keysWidths.length).map(e => keysWidths[e]).map(wd => ({
@@ -127,6 +127,7 @@ class Carousel extends PureComponent {
             <ItemSlider key={item.key || i}>
               <Wrapper onClick={() => this.setState({ isOpen: true, photoIndex: i })} itemHeight={itemHeight}>
                 <ItemComponent
+                  itemHeight={itemHeight}
                   {...item}
                 />
               </Wrapper>

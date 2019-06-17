@@ -1,6 +1,84 @@
 import styled from 'react-emotion';
 import { injectGlobal } from 'emotion';
 
+
+export const ButtonRight = styled.button`
+  position: relative;
+  width: 75px;
+  background-color: transparent;
+  height: 100%;
+  top: 0px;
+  right: 0px;
+  font-size: 2em;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  right: 0px;
+  z-index: 1;
+  outline: none;
+  visibility: hidden;
+  opacity: .7;
+  transition-duration: .3s;
+  &:hover{
+    opacity: 1;
+  }
+`;
+
+export const ButtonLeft = styled.button`
+  position: relative;
+  background-color: transparent;
+  top: 0px;
+  left: 0px;
+  width: 75px;
+  height: 100%;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+  outline: none;
+  border: none !important;
+  visibility: hidden;
+  opacity: .7;
+  transition-duration: .3s;
+  &:hover{
+    opacity: 1;
+  }
+`;
+
+export const ArrowLeft = styled.i`
+  border-radius: 50%;
+  background-image: url("https://image.flaticon.com/icons/svg/25/25322.svg");
+  background-position: -5px 13px;
+  background-size: 47px 16px;
+  background-repeat: no-repeat;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  border: none !important;
+  display: block;
+  margin-left: 8px;
+  background-color: #fff;
+  box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.2);
+`;
+
+export const ArrowRight = styled.i`
+  border-radius: 50%;
+  background-image: url("https://image.flaticon.com/icons/svg/25/25638.svg");
+  background-position: -2px 13px;
+  background-size: 46px 17px;
+  background-repeat: no-repeat;
+  background-repeat: no-repeat;
+  display: block;
+  width: 40px;
+  margin-left: 29px;
+  height: 40px;
+  background-color: #fff;
+  box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.2);
+`;
+
 export const globalStylesLightbox = () => injectGlobal`
   @keyframes closeWindow {
     0% {
@@ -498,93 +576,6 @@ export const Container = styled.div`
     background-size: 330px;
   }
 `;
-
-export const ButtonRight = styled.button`
-  width: 56px;
-  height: 56px;
-  background-color: #ffffff;
-  border-radius: 50%;
-  position: absolute;
-  top: 37%;
-  font-size: 2em;
-  background-repeat: no-repeat;
-  border: none;
-  cursor: pointer;
-  outline: none;
-  transform: translateX(-50%) translateX(30px);
-  display: none;
-  right: -2%;
-  z-index: 1;
-  outline: none;
-  @media (max-width: 1469px) {
-    right: -3%;
-  }
-  @media (max-width: 513px) {
-    right: -5%;
-  }
-  @media (max-width: 669px) {
-    right: -4%;
-  }
-  visibility: hidden;
-  box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.2);
-`;
-
-export const ButtonLeft = styled.button`
-  background-color: #ffffff;
-  border-radius: 50%;
-  position: absolute;
-  top: 37%;
-  right: 2%;
-  border: none;
-  width: 56px;
-  height: 56px;
-  box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.2);
-  background-color: #ffffff;
-  background-repeat: no-repeat;
-  border-radius: 50%;
-  cursor: pointer;
-  outline: none;
-  display: none;
-  left: 2%;
-  transform: translateX(-50%) translateX(-30px);
-  z-index: 2;
-  outline: none;
-  @media (max-width: 1017px) {
-    left: 4%;
-  }
-  @media (max-width: 889px) {
-    left: 5%;
-  }
-  @media (max-width: 633px) {
-    left: 7%;
-  }
-  @media (max-width: 450px) {
-    left: 8%;
-  }
-  visibility: hidden;
-`;
-
-export const ArrowLeft = styled.i`
-  background-image: url("https://image.flaticon.com/icons/svg/109/109617.svg");
-  background-position: -6px 14px;
-  background-size: 65px 27px;
-  background-repeat: no-repeat;
-  transform: rotate(180deg);
-  display: block;
-  width: 100%;
-  height: 100%;
-`;
-
-export const ArrowRight = styled.i`
-  background-image: url("https://image.flaticon.com/icons/svg/109/109617.svg");
-  background-position: -6px 14px;
-  background-size: 65px 27px;
-  background-repeat: no-repeat;
-  display: block;
-  width: 100%;
-  height: 100%;
-`;
-
 
 export const Wrapper = styled.article`;
   height: ${p => (`${p.itemHeight}px`)};

@@ -57,7 +57,7 @@ const items = [
 const zeroItem = [];
 
 const ItemComponent = ({ title }) => (
-  <div>
+  <div style={{ border: '1px solid red' }}>
     <p>{title}</p>
     <p>{title}</p>
     <b>Другой Элемент</b>
