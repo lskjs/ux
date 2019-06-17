@@ -483,10 +483,9 @@ export const Container = styled.div`
     padding: 10px 20px;
   }
 
-  /* .slides .slide img {
-    max-width: 100%;
+  .slides .slide img {
     object-fit: cover;
-  } */
+  }
 
   .hidden {
     position: absolute;
@@ -587,7 +586,9 @@ export const ArrowRight = styled.i`
 `;
 
 
-export const Wrapper = styled.article``;
+export const Wrapper = styled.article`;
+  height: ${p => (`${p.itemHeight}px`)};
+`;
 
 export const ItemSlider = styled.div`
   margin: 0;
