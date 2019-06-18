@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { inject, observer } from 'mobx-react';
 import If from 'react-if';
 import Button from '@lskjs/button';
@@ -29,6 +29,28 @@ class ListEmpty extends Component {
 
     return 4;
   }
+  renderTitle() {
+    return <T name="lskList.emptyDataTitle" />;
+  }
+  renderSubtitle() {
+    const type = this.getType();
+    return (
+      <Fragment>
+        <If condition={type === 1}>
+          <T name="lskList.emptyDataErrorOne" />
+        </If>
+        <If condition={type === 2}>
+          <T name="lskList.emptyDataErrorTwo" />
+        </If>
+        <If condition={type === 3}>
+          <T name="lskList.emptyDataErrorThree" />
+        </If>
+        <If condition={type === 4}>
+          <T name="lskList.emptyDataErrorFour" />
+        </If>
+      </Fragment>
+    );
+  }
   render() {
     const { listStore } = this.props;
     const type = this.getType();
@@ -43,11 +65,11 @@ class ListEmpty extends Component {
         {/* {listStore.hasFilter ? 'hasFilter' : '!hasFilter'} */}
         <If condition={type === 1}>
           <EmptyContainer
-            title={<T name="lskList.emptyDataTitle" />}
+            title={this.renderTitle()}
             icon={
               <Error404 height="200" width="100%" />
             }
-            subtitle={<T name="lskList.emptyDataErrorOne" />}
+            subtitle={this.renderSubtitle()}
             actions={(
               <Button
                 paint="primary"
@@ -64,7 +86,7 @@ class ListEmpty extends Component {
             icon={
               <Error404 height="200" width="100%" />
             }
-            subtitle={<T name="lskList.emptyDataErrorTwo" />}
+            subtitle={this.renderSubtitle()}
           />
           {/* пусто после фетча, фильры выключены
 
@@ -77,7 +99,7 @@ class ListEmpty extends Component {
             icon={
               <Error404 height="200" width="100%" />
             }
-            subtitle={<T name="lskList.emptyDataErrorThree" />}
+            subtitle={this.renderSubtitle()}
             actions={(
               <Button
                 paint="primary"
@@ -95,7 +117,7 @@ class ListEmpty extends Component {
             icon={
               <Error404 height="200" width="100%" />
             }
-            subtitle={<T name="lskList.emptyDataErrorFour" />}
+            subtitle={this.renderSubtitle()}
             actions={(
               <Button
                 paint="primary"
