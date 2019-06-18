@@ -35,6 +35,20 @@ const checkEmail = async (data) => {
   }));
 };
 
+const checkUrl = async (data) => {
+  const regex = /^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#-]+\/?)*$/;
+
+  return new Promise(((resolve, reject) => {
+    setTimeout(() => {
+      if (!data.match(regex)) {
+        reject(new Error('Not url!'));
+      } else {
+        resolve();
+      }
+    }, 1000);
+  }));
+};
+
 const ValidationAsync = createForm({
   view: ValidationView,
   controls: {
@@ -50,6 +64,13 @@ const ValidationAsync = createForm({
         checkEmail: (value) => {
           if (value === 'some@email.com') return 'email already exists';
           return '';
+        },
+        checkUrlAsync: async (value) => {
+          try {
+            return checkUrl(value);
+          } catch (err) {
+            return err.message;
+          }
         },
         checkEmailAsync: async (value) => {
           try {
