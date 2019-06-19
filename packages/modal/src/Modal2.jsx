@@ -3,6 +3,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import If from 'react-if';
 import cx from 'classnames';
+import get from 'lodash/get';
 import uniq from 'lodash/uniq';
 import filter from 'lodash/filter';
 import pick from 'lodash/pick';
@@ -203,7 +204,10 @@ class Modal2 extends PureComponent {
             contentRef={closable ? (e) => {
               if (typeof window !== 'undefined' && e) {
                 e.onclick = (event) => {
-                  if (!event.path.includes(this.body.current)) {
+                  if (!event || !event.target || !event.target.className) return;
+                  const str = event.target.className;
+                  if (typeof str !== 'string') return;
+                  if (str.includes('ReactModal__Content')) {
                     this._modal.portal.shouldClose = true;
                     this._modal.portal.handleOverlayOnClick(event);
                   }
