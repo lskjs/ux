@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/downloads",
-  "version": "0.34.42",
+  "version": "0.34.45",
   "description": "LSK ux subrepo: download",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -31,9 +31,9 @@
     "xlsx-populate": "1.19.1"
   },
   "devDependencies": {
-    "@lskjs/css": "^0.34.41",
-    "@lskjs/dev": "^0.34.42",
-    "@lskjs/theme": "^0.34.42",
+    "@lskjs/css": "^0.34.45",
+    "@lskjs/dev": "^0.34.45",
+    "@lskjs/theme": "^0.34.45",
     "emotion-theming": "^9.1.2",
     "lodash": "^4.17.11",
     "mobx": "^5.9.4",
