@@ -295,13 +295,26 @@ export const HoverRowWrapper = styled(hoverTag)`
       background-color: ${p => getTheme(p.theme, 'colors.lighterPrimary')};
     }
   }
+  ${p => (p.checked && css`
+    > .table-gird-row {
+      background-color: ${getTheme(p.theme, 'colors.semiPrimary')};
+    }
+  `)}
 `;
 
 export const SelectRowWrapper = styled('div')`
   cursor: pointer;
   display: block;
+  &:not(:last-child) {
+    border-bottom: 1px solid ${p => getTheme(p.theme, 'colors.border')};
+  }
   > .table-gird-row {
     background-color: ${p => getTheme(p.theme, 'colors.white')};
+    transition: background-color .2s ease-out;
+    will-change: background-color;
+  }
+  > .table-gird-row:hover {
+    background-color: ${p => getTheme(p.theme, 'colors.lighterPrimary')};
     transition: background-color .2s ease-out;
     will-change: background-color;
   }
