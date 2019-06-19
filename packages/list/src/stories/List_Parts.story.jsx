@@ -1,14 +1,152 @@
-import React from 'react';
-import { observer } from 'mobx-react';
+import React, { Fragment } from 'react';
+import { observer, inject } from 'mobx-react';
+import Button from '@lskjs/button';
+import If from 'react-if';
+import T from '@lskjs/ui/T';
+import Error404 from '@lskjs/ui/SlideContent/icons/error404';
+import EmptyContainer from '@lskjs/ui/EmptyContainer';
 import { css } from 'emotion';
 import cx from 'classnames';
 import Story from '@lskjs/dev/Story';
+import ListEmpty from '../ListEmpty';
 import { Row, Col, ItemRow, ItemCol, createIndex } from '../Table';
 import FilterForm from './FilterForm';
 
 import List from '../List';
 import DebugListStore from './DebugListStore';
 import listStore from './listStore';
+
+@inject('listStore', 't')
+@observer
+class EmptyCustom extends ListEmpty {
+  getType() { //eslint-disable-line
+    const { listStore, type } = this.props;
+    if (type) return type;
+    if (!listStore.fetchedAt) {
+      return 1;
+    }
+    if (!listStore.hasFilter) {
+      return 2;
+    }
+    if (!listStore.skip) {
+      return 3;
+    }
+    return 4;
+  }
+  renderTitle() {
+    return <T name="lskList.someTranslate" />;
+  }
+  render() {
+    const { listStore } = this.props;
+    const type = this.getType();
+    return (
+      <EmptyContainer
+        title={<T name="lskList.emptyDataTitle" />}
+        icon={
+          <Error404 height="200" width="100%" />
+        }
+        // subtitle={this.renderSubtitle()}
+        actions={(
+          <Button
+            paint="primary"
+            onClick={() => listStore.setSkip(0)}
+          >
+            <T name="lskList.emptyDataToFirstPage" />
+          </Button>
+        )}
+      />
+    );
+  }
+}
+
+@inject('listStore', 't')
+@observer
+class EmptyCustom1 extends EmptyCustom {
+  getType() { //eslint-disable-line
+    const { listStore, type } = this.props;
+    if (type) return type;
+    if (!listStore.fetchedAt) {
+      return 1;
+    }
+    if (!listStore.hasFilter) {
+      return 2;
+    }
+    if (!listStore.skip) {
+      return 3;
+    }
+    return 4;
+  }
+  renderTitle() {
+    return <T name="lskList.someTranslate" />;
+  }
+  render() {
+    const { listStore } = this.props;
+    const type = this.getType();
+    return (
+      <EmptyContainer
+        title={<T name="lskList.emptyDataTitle" />}
+        icon={
+          <Error404 height="200" width="100%" />
+        }
+        // subtitle={this.renderSubtitle()}
+        actions={(
+          <Button
+            paint="primary"
+            onClick={() => listStore.setSkip(0)}
+          >
+            <T name="lskList.emptyDataToFirstPage" />
+          </Button>
+        )}
+      />
+    );
+  }
+}
+
+@inject('listStore', 't')
+@observer
+class EmptyCustom2 extends EmptyCustom1 {
+  getType() { //eslint-disable-line
+    const { listStore, type } = this.props;
+    if (type) return type;
+    if (!listStore.fetchedAt) {
+      return 1;
+    }
+    if (!listStore.hasFilter) {
+      return 2;
+    }
+    if (!listStore.skip) {
+      return 3;
+    }
+    return 4;
+  }
+  renderTitle() {
+    return <T name="lskList.someTranslate2" />;
+  }
+  render() {
+    const { listStore } = this.props;
+    const type = this.getType();
+    return (
+      <EmptyContainer
+        title={<T name="lskList.emptyDataTitle" />}
+        icon={
+          <Error404 height="200" width="100%" />
+        }
+        // subtitle={this.renderSubtitle()}
+        actions={(
+          <Fragment>
+            <Button
+              paint="primary"
+              onClick={() => listStore.setSkip(0)}
+            >
+              <T name="lskList.emptyDataToFirstPage" />
+            </Button>
+            <div>Text</div>
+          </Fragment>
+        )}
+      />
+    );
+  }
+}
 
 const columns = [60, '1fr', '1fr', 60];
 
@@ -213,6 +351,16 @@ export default ({ storiesOf }) => storiesOf('List/parts', module)
         listStore={listStore}
       >
         <List.Empty type={1} />
+      </List>
+      <DebugListStore store={listStore} />
+    </Story>
+  ))
+  .add('List.Empty Custom Text', () => (
+    <Story>
+      <List
+        listStore={listStore}
+      >
+        <EmptyCustom2 type={1} />
       </List>
       <DebugListStore store={listStore} />
     </Story>

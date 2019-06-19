@@ -82,7 +82,7 @@ class ListEmpty extends Component {
         </If>
         <If condition={type === 2}>
           <EmptyContainer
-            title={<T name="lskList.emptyDataTitle" />}
+            title={this.renderTitle()}
             icon={
               <Error404 height="200" width="100%" />
             }
@@ -95,7 +95,7 @@ class ListEmpty extends Component {
         </If>
         <If condition={type === 3}>
           <EmptyContainer
-            title={<T name="lskList.emptyDataTitle" />}
+            title={this.renderTitle()}
             icon={
               <Error404 height="200" width="100%" />
             }
@@ -113,7 +113,7 @@ class ListEmpty extends Component {
         </If>
         <If condition={type === 4}>
           <EmptyContainer
-            title={<T name="lskList.emptyDataTitle" />}
+            title={this.renderTitle()}
             icon={
               <Error404 height="200" width="100%" />
             }
