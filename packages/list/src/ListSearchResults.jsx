@@ -16,6 +16,7 @@ class ListSearchResults extends Component {
   render() {
     const { List, listStore } = this.props;
     // lskList.searchResultsCount = Найдено {{count}} результатов
+    if (listStore.count === null) return false;
     return (
       <List.SearchResultsWrapper>
         <T name="lskList.searchResultsCount" count={listStore.count} />
