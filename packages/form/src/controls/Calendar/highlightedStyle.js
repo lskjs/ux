@@ -1,11 +1,11 @@
 import { injectGlobal, css } from 'react-emotion';
 
 export const highlightedStyle = css`
-  background-color: #e6f7ff !important;
+  background-color: rgba(215, 202, 50, 0.5) !important;
   border-radius: 2px;
-  outline: 5px solid #e6f7ff;
+  outline: 5px solid rgba(215, 202, 50, 0.5);
   &:hover {
-    background: rgba(215, 202, 50, 0.5) !important;
+    background: rgb(230, 230, 230) !important;
   }
   &:not(:focus) {
     color: black;
@@ -14,7 +14,7 @@ export const highlightedStyle = css`
 
 export const calendarStyles = () => injectGlobal`
   .react-calendar__tile--active {
-    background: #006edc;
+    background: rgba(215, 202, 50, 0.5);
     color: black !important;
   }
   .react-calendar {
