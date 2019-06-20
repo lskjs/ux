@@ -5,7 +5,7 @@ export const highlightedStyle = css`
   border-radius: 2px;
   outline: 5px solid #e6f7ff;
   &:hover {
-    background: rgb(230, 230, 230) !important;
+    background: rgba(215, 202, 50, 0.5) !important;
   }
   &:not(:focus) {
     color: black;
@@ -136,7 +136,7 @@ export const calendarStyles = () => injectGlobal`
 
       &--active {
         @bgcolor: rgb(0, 110, 220);
-        background: #006edc !important;
+        background: #d4e0de !important;
         color: white !important;
 
         &:enabled {
