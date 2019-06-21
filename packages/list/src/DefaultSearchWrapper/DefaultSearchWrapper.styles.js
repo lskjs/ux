@@ -1,9 +1,11 @@
 import styled, { css } from 'react-emotion';
 import { DebounceInput } from 'react-debounce-input';
 import createDynamicTag from '@lskjs/utils/createDynamicTag';
+import removeProps from '@lskjs/utils/removeProps';
 import getTheme from '@lskjs/theme/getTheme';
 
 const dynamicTag = createDynamicTag(DebounceInput);
+const filteredTag = removeProps(dynamicTag, ['FilterForm']);
 
 export const Block = styled('div')`
   display: flex;
@@ -52,7 +54,7 @@ const placeholderStyle = p => css`
   color: ${getTheme(p.theme, 'colors.secondary')};
 `;
 
-export const Input = styled(dynamicTag)`
+export const Input = styled(filteredTag)`
   width: 100%;
   height: 56px;
   padding: 0 0 0 ${p => `calc(${getTheme(p.theme, 'tablePadding', 0)}px + 34px)`};

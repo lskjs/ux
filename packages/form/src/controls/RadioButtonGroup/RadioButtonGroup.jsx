@@ -8,8 +8,8 @@ import StyledButton from './RadioButtonGroup.styles';
 class RadioButtonGroup extends PureComponent {
   static propTypes = {
     options: PropTypes.arrayOf(PropTypes.shape({
-      value: PropTypes.string,
-      title: PropTypes.string,
+      value: PropTypes.any,
+      title: PropTypes.any,
     })),
     value: PropTypes.string,
     paint: PropTypes.string,

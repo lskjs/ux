@@ -9,8 +9,8 @@ import { contextToProps } from './List.context';
 @observer
 class ListSearchResults extends Component {
   static propTypes = {
-    List: PropTypes.instanceOf(PropTypes.object).isRequired,
-    listStore: PropTypes.instanceOf(PropTypes.object).isRequired,
+    List: PropTypes.object.isRequired, 
+    listStore: PropTypes.object.isRequired,
   }
 
   render() {
