@@ -49,7 +49,7 @@ class Notification extends Component {
             {image || this.getDefaultImage()}
           </NotifyAvatar>
           <NotifyInfo>
-            <If condition={title}>
+            <If condition={!!title}>
               <NotifyTitle>
                 {title}
               </NotifyTitle>
@@ -60,7 +60,7 @@ class Notification extends Component {
             <If condition={!title && type !== 'error'}>
               <T name="common.success" />
             </If>
-            <If condition={text}>
+            <If condition={!!text}>
               <NotifyText>
                 {text}
               </NotifyText>

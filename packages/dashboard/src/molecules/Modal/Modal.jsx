@@ -119,7 +119,7 @@ class Modal extends PureComponent {
         }}
         {...props}
       >
-        <If condition={trigger}>
+        <If condition={!!trigger}>
           <LskModal.Trigger>
             {trigger}
           </LskModal.Trigger>

@@ -8,7 +8,7 @@ import Rating from '../../atoms/DefaultCardRating';
 
 class DefaultCard extends PureComponent {
   static propTypes = {
-    user: PropTypes.any,
+    user: PropTypes.any, // eslint-disable-line react/forbid-prop-types
   };
   static defaultProps = {
     user: PropTypes.any,
@@ -17,13 +17,13 @@ class DefaultCard extends PureComponent {
     const { user } = this.props;
     return (
       <Box paint="light" padded>
-        <If condition={user.title}>
+        <If condition={!!user.title}>
           <Title>{user.title}</Title>
         </If>
-        <If condition={user.position}>
+        <If condition={!!user.position}>
           <Position>{user.position}</Position>
         </If>
-        <If condition={user.rating}>
+        <If condition={!!user.rating}>
           <Rating>{user.rating}</Rating>
         </If>
       </Box>

@@ -47,13 +47,13 @@ class UserCard extends PureComponent {
             innerStyle={{ border: '6px solid #d68345' }}
           />
         </AvatarWrapper>
-        <If condition={title}>
+        <If condition={!!title}>
           <UserTitle>{title}</UserTitle>
         </If>
-        <If condition={position}>
+        <If condition={!!position}>
           <UserPosition>{position}</UserPosition>
         </If>
-        <If condition={footer}>
+        <If condition={!!footer}>
           {footer}
         </If>
       </Card>

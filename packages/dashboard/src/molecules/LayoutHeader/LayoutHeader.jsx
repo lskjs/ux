@@ -56,7 +56,7 @@ class LayoutHeader extends Component {
         <LayoutHeaderInner>
           <LayoutHeaderLeft>
             <LayoutHeaderList>
-              <If condition={logo}>
+              <If condition={!!logo}>
                 {logo}
                 {/* <Divider type="vertical" key="line" /> */}
               </If>
@@ -81,7 +81,7 @@ class LayoutHeader extends Component {
               {pullLeft}
             </LayoutHeaderList>
           </LayoutHeaderLeft>
-          <If condition={pullRight}>
+          <If condition={!!pullRight}>
             <LayoutHeaderRight>
               <LayoutHeaderList>
                 {pullRight}

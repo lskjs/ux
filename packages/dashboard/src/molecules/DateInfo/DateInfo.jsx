@@ -19,7 +19,7 @@ class DateInfo extends Component {
     return (
       <span title={i18.m(value).format(longFormat)}>
         {i18.m(value).format(format)}
-        <If condition={time}>
+        <If condition={!!time}>
           <div>
             {i18.m(value).format('LTS')}
           </div>

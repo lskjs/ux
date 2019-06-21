@@ -46,7 +46,7 @@ class ProfileCardBig extends PureComponent {
         <h4>{name}</h4>
         <span>{info}</span>
         <p>{sign}</p>
-        <If condition={footer}>
+        <If condition={!!footer}>
           <div>
             {footer}
           </div>

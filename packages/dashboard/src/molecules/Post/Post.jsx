@@ -43,12 +43,12 @@ class Post extends PureComponent {
         title={title}
         extra={(
           <PostExtra>
-            <If condition={date}>
+            <If condition={!!date}>
               <PostDate>
                 {date}
               </PostDate>
             </If>
-            <If condition={extra}>
+            <If condition={!!extra}>
               <PostActions>
                 {extra}
               </PostActions>
@@ -56,18 +56,18 @@ class Post extends PureComponent {
           </PostExtra>
         )}
       >
-        <If condition={tags}>
+        <If condition={!!tags}>
           <PostTags>
             {tags}
           </PostTags>
         </If>
         {children}
-        <If condition={footer}>
+        <If condition={!!footer}>
           <PostFooter>
             {footer}
           </PostFooter>
         </If>
-        <If condition={comments}>
+        <If condition={!!comments}>
           <PostComments>
             {comments}
           </PostComments>

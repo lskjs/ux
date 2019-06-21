@@ -13,7 +13,7 @@ class AnimatedLink extends PureComponent {
     return (
       <ALink paint={paint} {...props}>
         {children}
-        <If condition={icon}>
+        <If condition={!!icon}>
           <AIcon type={icon} />
         </If>
       </ALink>

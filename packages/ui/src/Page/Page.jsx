@@ -30,8 +30,8 @@ class Page extends PureComponent {
   static PageBodyWrapper = 'div';
 
   static propTypes = {
-    children: PropTypes.instanceOf(PropTypes.any),
-    page: PropTypes.instanceOf(PropTypes.object),
+    children: PropTypes.any, // eslint-disable-line react/forbid-prop-types
+    page: PropTypes.object, // eslint-disable-line react/forbid-prop-types
     container: PropTypes.bool,
   }
 

@@ -33,7 +33,7 @@ export default ({ errors }) => (
   <Form.Item
     validateStatus={errors ? 'error' : null}
   >
-    <If condition={errors.onSubmit}>
+    <If condition={!!errors.onSubmit}>
       {/* <FormError id={getControlHtmlId('onSubmit')}>{errors.onSubmit}</FormError> */}
       <Notice>
         <FormError id={getControlHtmlId('onSubmit')}>

@@ -48,7 +48,7 @@ class SlideContent extends PureComponent {
     } = this.props;
     return (
       <Wrapper {...props}>
-        <If condition={image}>
+        <If condition={!!image}>
           <ImageWrapper>
             {image}
           </ImageWrapper>
@@ -56,23 +56,23 @@ class SlideContent extends PureComponent {
         <Container>
           <Col md={12}>
             <ContentWrapper align={align}>
-              <If condition={icon}>
+              <If condition={!!icon}>
                 <IconWrapper>
                   {icon}
                 </IconWrapper>
               </If>
-              <If condition={title}>
+              <If condition={!!title}>
                 <Title>
                   {subtitle}
                 </Title>
               </If>
-              <If condition={subtitle}>
+              <If condition={!!subtitle}>
                 <Subtitle>
                   {subtitle}
                 </Subtitle>
               </If>
               {actions}
-              <If condition={footer}>
+              <If condition={!!footer}>
                 <Footer>
                   {footer}
                 </Footer>

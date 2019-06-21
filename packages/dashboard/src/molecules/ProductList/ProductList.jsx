@@ -58,7 +58,7 @@ class ProductList extends PureComponent {
             <TitleSpan>{category}</TitleSpan>
           </CardTitle>
           <CardPrice>
-            <If condition={oldPrice}>
+            <If condition={!!oldPrice}>
               <StrikeThroughItem isPierced={oldPrice}>{oldPrice}</StrikeThroughItem>
             </If>
             <StrikeThroughItem>{price}</StrikeThroughItem>
