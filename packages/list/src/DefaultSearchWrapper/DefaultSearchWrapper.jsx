@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
 import DebounceInput from 'react-debounce-input';
 import PropTypes from 'prop-types';
-import get from 'lodash/get';
 import If from 'react-if';
 import CloseIcon from 'react-icons2/mdi/close';
 import Magnify from 'react-icons2/mdi/magnify';
@@ -20,29 +19,35 @@ import {
 
 class Search extends PureComponent {
   static propTypes = {
-    componentClass: PropTypes.any,
+    componentClass: PropTypes.any, // eslint-disable-line react/forbid-prop-types
     current: PropTypes.number,
     max: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     canClear: PropTypes.bool,
     onClear: PropTypes.func,
-    actions: PropTypes.any,
+    onChange: PropTypes.func,
+    value: PropTypes.string,
+    actions: PropTypes.any, // eslint-disable-line react/forbid-prop-types
   }
   static defaultProps = {
     componentClass: DebounceInput,
     current: 0,
+    value: '',
     max: null,
     canClear: false,
     actions: null,
     onClear: null,
+    onChange: null,
   }
   @autobind
   handleChange(event) {
-    const { onChange } = this.props;
+    const { onChange, value: propValue } = this.props;
     let value = '';
     if (typeof event === 'string') {
       value = event;
-    } else if (get(event, 'target.value')) {
+    } else if (event.target && event.target.value) {
       ({ value } = event.target);
+    } else if (!event.target) {
+      value = propValue;
     }
     if (onChange) onChange(value);
   }

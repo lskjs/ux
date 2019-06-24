@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import get from 'lodash/get';
 import { observer, inject } from 'mobx-react';
 import { formatter } from '@lskjs/utils/formatter';
 import { contextToProps } from './List.context';
@@ -16,7 +17,7 @@ class ListSearch extends Component {
         current={listStore.items.length}
         max={formatter(listStore.count)}
         debounceTimeout={100}
-        onChange={e => listStore.setSearch(e.target.value)}
+        onChange={e => listStore.setSearch(get(e, 'target.value', e))}
         value={listStore.search || ''}
         canClear={!!listStore.search}
         onClear={() => listStore.setSearch(null)}
