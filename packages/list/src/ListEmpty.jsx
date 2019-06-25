@@ -32,8 +32,7 @@ class ListEmpty extends Component {
   renderTitle() {
     return <T name="lskList.emptyDataTitle" />;
   }
-  renderSubtitle() {
-    const type = this.getType();
+  renderSubtitle(type) {
     return (
       <Fragment>
         <If condition={type === 1}>
@@ -69,7 +68,7 @@ class ListEmpty extends Component {
             icon={
               <Error404 height="200" width="100%" />
             }
-            subtitle={this.renderSubtitle()}
+            subtitle={this.renderSubtitle(type)}
             actions={(
               <Button
                 paint="primary"
@@ -82,11 +81,11 @@ class ListEmpty extends Component {
         </If>
         <If condition={type === 2}>
           <EmptyContainer
-            title={<T name="lskList.emptyDataTitle" />}
+            title={this.renderTitle()}
             icon={
               <Error404 height="200" width="100%" />
             }
-            subtitle={this.renderSubtitle()}
+            subtitle={this.renderSubtitle(type)}
           />
           {/* пусто после фетча, фильры выключены
 
@@ -95,11 +94,11 @@ class ListEmpty extends Component {
         </If>
         <If condition={type === 3}>
           <EmptyContainer
-            title={<T name="lskList.emptyDataTitle" />}
+            title={this.renderTitle()}
             icon={
               <Error404 height="200" width="100%" />
             }
-            subtitle={this.renderSubtitle()}
+            subtitle={this.renderSubtitle(type)}
             actions={(
               <Button
                 paint="primary"
@@ -113,11 +112,11 @@ class ListEmpty extends Component {
         </If>
         <If condition={type === 4}>
           <EmptyContainer
-            title={<T name="lskList.emptyDataTitle" />}
+            title={this.renderTitle()}
             icon={
               <Error404 height="200" width="100%" />
             }
-            subtitle={this.renderSubtitle()}
+            subtitle={this.renderSubtitle(type)}
             actions={(
               <Button
                 paint="primary"
