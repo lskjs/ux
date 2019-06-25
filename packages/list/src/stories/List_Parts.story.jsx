@@ -1,14 +1,49 @@
 import React from 'react';
 import { observer } from 'mobx-react';
+import Button from '@lskjs/button';
+import T from '@lskjs/ui/T';
+import Error404 from '@lskjs/ui/SlideContent/icons/error404';
+import EmptyContainer from '@lskjs/ui/EmptyContainer';
 import { css } from 'emotion';
 import cx from 'classnames';
 import Story from '@lskjs/dev/Story';
+import ListEmpty from '../ListEmpty';
 import { Row, Col, ItemRow, ItemCol, createIndex } from '../Table';
 import FilterForm from './FilterForm';
 
 import List from '../List';
 import DebugListStore from './DebugListStore';
 import listStore from './listStore';
+
+
+class EmptyCustom extends ListEmpty {
+  renderTitle() {
+    return 'Кастомный тайтл';
+  }
+  render() {
+    return (
+      <EmptyContainer
+        title={this.renderTitle()}
+        icon={
+          <Error404 height="200" width="100%" />
+        }
+        subtitle="СУПЕР КАСТОМНЫЙ САБТАЙТЛ"
+        actions={(
+          <Button
+            paint="primary"
+            onClick={() => listStore.fetch()}
+          >
+            <T name="common.refresh" />
+          </Button>
+        )}
+      />
+    );
+  }
+}
+
+class CustomList extends List {
+  static Empty = EmptyCustom;
+}
 
 const columns = [60, '1fr', '1fr', 60];
 
@@ -216,4 +251,20 @@ export default ({ storiesOf }) => storiesOf('List/parts', module)
       </List>
       <DebugListStore store={listStore} />
     </Story>
-  ));
+  ))
+  .add('List.Empty Custom Text', () => {
+    class EmptyCustomTitle extends EmptyCustom {
+      renderTitle() {
+        return 'Супер кастом тайтл';
+      }
+    }
+    return (
+      <Story>
+        <CustomList
+          listStore={listStore}
+          Empty={EmptyCustomTitle}
+        />
+        <DebugListStore store={listStore} />
+      </Story>
+    );
+  });
