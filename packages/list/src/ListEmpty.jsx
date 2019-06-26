@@ -1,4 +1,5 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { inject, observer } from 'mobx-react';
 import If from 'react-if';
 import Button from '@lskjs/button';
@@ -6,11 +7,17 @@ import T from '@lskjs/ui/T';
 import Error404 from '@lskjs/ui/SlideContent/icons/error404';
 import EmptyContainer from '@lskjs/ui/EmptyContainer';
 
+export class ListEmptyPure extends Component {
+  static propTypes = {
+    listStore: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+    type: PropTypes.any, // eslint-disable-line react/forbid-prop-types
+  }
 
-@inject('listStore', 't')
-@observer
-class ListEmpty extends Component {
-  getType() { //eslint-disable-line
+  static defaultProps = {
+    type: null,
+  }
+
+  getType() {
     const { listStore, type } = this.props;
     if (type) return type;
     if (!listStore.fetchedAt) {
@@ -29,30 +36,58 @@ class ListEmpty extends Component {
 
     return 4;
   }
+
   renderTitle() {
     return <T name="lskList.emptyDataTitle" />;
   }
-  renderSubtitle() {
-    const type = this.getType();
-    return (
-      <Fragment>
-        <If condition={type === 1}>
-          <T name="lskList.emptyDataErrorOne" />
-        </If>
-        <If condition={type === 2}>
-          <T name="lskList.emptyDataErrorTwo" />
-        </If>
-        <If condition={type === 3}>
-          <T name="lskList.emptyDataErrorThree" />
-        </If>
-        <If condition={type === 4}>
-          <T name="lskList.emptyDataErrorFour" />
-        </If>
-      </Fragment>
-    );
+
+  renderSubtitle(type) {
+    switch (type) {
+      case 1: return <T name="lskList.emptyDataErrorOne" />;
+      case 2: return <T name="lskList.emptyDataErrorTwo" />;
+      case 3: return <T name="lskList.emptyDataErrorThree" />;
+      case 4: return <T name="lskList.emptyDataErrorFour" />;
+      default: return '';
+    }
   }
-  render() {
+
+  renderAction(type) {
     const { listStore } = this.props;
+    if (!listStore) return null;
+    switch (type) {
+      case 1:
+        return (
+          <Button
+            paint="primary"
+            onClick={() => listStore.fetch()}
+          >
+            <T name="buttons.refresh" />
+          </Button>
+        );
+      case 3:
+        return (
+          <Button
+            paint="primary"
+            onClick={() => listStore.clearFilter()}
+          >
+            <T name="lskList.emptyDataResetButton" />
+          </Button>
+        );
+      case 4:
+        return (
+          <Button
+            paint="primary"
+            onClick={() => listStore.setSkip(0)}
+          >
+            <T name="lskList.emptyDataToFirstPage" />
+          </Button>
+        );
+      default:
+        return null;
+    }
+  }
+
+  render() {
     const type = this.getType();
     return (
       <div>
@@ -69,24 +104,18 @@ class ListEmpty extends Component {
             icon={
               <Error404 height="200" width="100%" />
             }
-            subtitle={this.renderSubtitle()}
-            actions={(
-              <Button
-                paint="primary"
-                onClick={() => listStore.fetch()}
-              >
-                <T name="common.refresh" />
-              </Button>
-            )}
+            subtitle={this.renderSubtitle(type)}
+            actions={this.renderAction(type)}
           />
         </If>
         <If condition={type === 2}>
           <EmptyContainer
-            title={<T name="lskList.emptyDataTitle" />}
+            title={this.renderTitle()}
             icon={
               <Error404 height="200" width="100%" />
             }
             subtitle={this.renderSubtitle()}
+            actions={this.renderAction(type)}
           />
           {/* пусто после фетча, фильры выключены
 
@@ -95,19 +124,12 @@ class ListEmpty extends Component {
         </If>
         <If condition={type === 3}>
           <EmptyContainer
-            title={<T name="lskList.emptyDataTitle" />}
+            title={this.renderTitle()}
             icon={
               <Error404 height="200" width="100%" />
             }
-            subtitle={this.renderSubtitle()}
-            actions={(
-              <Button
-                paint="primary"
-                onClick={() => listStore.clearFilter()}
-              >
-                <T name="lskList.emptyDataResetButton" />
-              </Button>
-            )}
+            subtitle={this.renderSubtitle(type)}
+            actions={this.renderAction(type)}
           />
           {/* пусто после фетча, фильтры включены */}
         </If>
@@ -117,15 +139,8 @@ class ListEmpty extends Component {
             icon={
               <Error404 height="200" width="100%" />
             }
-            subtitle={this.renderSubtitle()}
-            actions={(
-              <Button
-                paint="primary"
-                onClick={() => listStore.setSkip(0)}
-              >
-                <T name="lskList.emptyDataToFirstPage" />
-              </Button>
-            )}
+            subtitle={this.renderSubtitle(type)}
+            actions={this.renderAction(type)}
           />
           {/* пусто после фетча, фильтры включены, скип стоит
           Страница почему-то пуста, переключиться на первую */}
@@ -135,4 +150,4 @@ class ListEmpty extends Component {
   }
 }
 
-export default ListEmpty;
+export default inject('listStore')(observer(ListEmptyPure));
