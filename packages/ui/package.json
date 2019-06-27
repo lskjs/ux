@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/ui",
-  "version": "0.34.51",
+  "version": "0.34.54",
   "description": "LSK ux subrepo: ui",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -38,7 +38,7 @@
   },
   "devDependencies": {
     "@lskjs/autobind": "^0.34.8",
-    "@lskjs/button": "^0.34.47",
+    "@lskjs/button": "^0.34.54",
     "@lskjs/css": "^0.34.45",
     "@lskjs/dev": "^0.34.45",
     "@lskjs/theme": "^0.34.45",
