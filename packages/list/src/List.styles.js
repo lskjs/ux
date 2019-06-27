@@ -1,6 +1,7 @@
 import styled, { css } from 'react-emotion';
 import getTheme from '@lskjs/theme/getTheme';
 import createDynamicTag from '@lskjs/utils/createDynamicTag';
+import removeProps from '@lskjs/utils/removeProps';
 import { Row } from '@lskjs/ui/Grid';
 // import TabBlock from '~/Uapp/components.v2/atoms/TabBlock';
 
@@ -277,7 +278,8 @@ export const ArrowBlock = styled('div')`
 `;
 
 const hoverTag = createDynamicTag('div');
-export const HoverRowWrapper = styled(hoverTag)`
+const filteredHoverTag = removeProps(hoverTag, ['bordered']);
+export const HoverRowWrapper = styled(filteredHoverTag)`
   cursor: pointer;
   display: block;
   > .table-gird-row {
@@ -302,7 +304,8 @@ export const HoverRowWrapper = styled(hoverTag)`
   `)}
 `;
 
-export const SelectRowWrapper = styled('div')`
+const filteredSelectTag = removeProps('div', ['bordered']);
+export const SelectRowWrapper = styled(filteredSelectTag)`
   cursor: pointer;
   display: block;
   &:not(:last-child) {

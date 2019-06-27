@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import Slider from 'react-slick';
 import PropTypes from 'prop-types';
 import { observer } from 'mobx-react';
@@ -39,7 +39,7 @@ const normalizeItems = (items = []) => (
 );
 
 @observer
-class Carousel extends PureComponent {
+class Carousel extends Component {
   static propTypes = {
     slidesToScroll: PropTypes.number,
     itemWidth: PropTypes.number,

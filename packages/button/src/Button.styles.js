@@ -596,6 +596,38 @@ const viewTransparentDisabledDark = css`
   }
 `;
 
+const viewYoutubeDisabled = ({ theme }) => css`
+  pointer-events: none;
+  padding: 11px 8px;
+  color: ${getTheme(theme, 'colors.gray')} !important;
+  background-color: transparent !important;
+  &:hover,
+  &:active {
+    color: rgba(0, 0, 0, 0.5) !important;
+    background-color: transparent !important;
+  }
+  &:focus {
+    color: rgba(0, 0, 0, 0.5) !important;
+    background-color: rgba(0, 0, 0, 0.16) !important;
+  }
+`;
+
+const viewEmptyDisabled = ({ theme }) => css`
+  pointer-events: none;
+  padding: 11px 0px;
+  color: ${getTheme(theme, 'colors.gray')} !important;
+  background-color: transparent !important;
+  &:hover,
+  &:active {
+    color: rgba(0, 0, 0, 0.5) !important;
+    background-color: transparent !important;
+  }
+  &:focus {
+    color: rgba(0, 0, 0, 0.5) !important;
+    background-color: rgba(0, 0, 0, 0.16) !important;
+  }
+`;
+
 const shadowTheme = ({ theme }) => css`
   padding: 20px !important;
   color: ${getTheme(theme, 'colors.main')};
@@ -611,6 +643,36 @@ const shadowTheme = ({ theme }) => css`
     box-shadow: 0 16px 20px 0 rgba(0, 0, 0, 0.2);
     background-color: ${getTheme(theme, 'colors.lighterPrimary')};
     color: ${getTheme(theme, 'colors.primary')};
+  }
+`;
+
+const youtubeTheme = ({ theme }) => css`
+  padding: 11px 8px;
+  color: ${getTheme(theme, 'colors.main')};
+
+  &:hover {
+    background-color: ${getTheme(theme, 'colors.lighterGray')};
+    color: ${getTheme(theme, 'colors.main')};
+  }
+
+  &:focus {
+    background-color: ${getTheme(theme, 'colors.darkerGray')};
+    color: ${getTheme(theme, 'colors.main')};
+  }
+`;
+
+const emptyPrimaryTheme = ({ theme }) => css`
+  padding: 11px 0;
+  color: ${getTheme(theme, 'colors.primary')};
+
+  &:hover {
+    background-color: ${getTheme(theme, 'colors.white')};
+    color: ${getTheme(theme, 'colors.darkestPrimary')};
+  }
+
+  &:focus {
+    background-color: ${getTheme(theme, 'colors.white')};
+    color: ${getTheme(theme, 'colors.focusPrimary')};
   }
 `;
 
@@ -798,6 +860,8 @@ export const Btn = styled(filteredTag)`
         case 'base': return viewBaseDisabled;
         case 'transparent': return viewTransparentDisabled;
         case 'transparentDark': return viewTransparentDisabledDark;
+        case 'youtube': return viewYoutubeDisabled;
+        case 'empty': return viewEmptyDisabled;
         default: return '';
       }
     } else if (props.view === 'solid') {
@@ -835,8 +899,12 @@ export const Btn = styled(filteredTag)`
         case 'transparentDark': return transparentThemeDark;
         default: return defaultBaseTheme;
       }
+    } else if (props.view === 'youtube') {
+      return youtubeTheme;
     } else if (props.view === 'shadow') {
       return shadowTheme;
+    } else if (props.view === 'empty') {
+      return emptyPrimaryTheme;
     } else if (props.view === 'transparent') {
       return transparentTheme;
     } else {

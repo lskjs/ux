@@ -46,8 +46,8 @@ export default class Avatar extends PureComponent {
     src: PropTypes.string,
 
     size: PropTypes.number,
-    width: PropTypes.number,
-    height: PropTypes.number,
+    width: PropTypes.any, // eslint-disable-line react/forbid-prop-types
+    height: PropTypes.any, // eslint-disable-line react/forbid-prop-types
 
     color: PropTypes.string,
     textColor: PropTypes.string,

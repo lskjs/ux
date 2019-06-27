@@ -52,6 +52,8 @@ class Button extends PureComponent {
       'text',
       'base',
       'shadow',
+      'youtube',
+      'empty',
       'transparent',
       'transparentDark',
     ]),
