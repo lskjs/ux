@@ -214,7 +214,7 @@ export const Block = styled('div')`
   }
   input {
     width: 100%;
-    padding: 0 40px;
+    padding: 13px 40px;
     font-family: ${p => getTheme(p.theme, 'fontFamily')};
     font-size: 13px;
     line-height: 1.43;

@@ -16,6 +16,7 @@ export const Button = styled('button')`
   display: flex;
   padding: 0;
   background: transparent;
+  align-items: center;
   border: none;
   outline: none;
   position: absolute;
