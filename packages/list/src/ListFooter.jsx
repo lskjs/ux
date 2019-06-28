@@ -31,7 +31,7 @@ class ListFooter extends Component {
       <List.FooterWrapper>
         <Container>
           <Left>
-            <If condition={show.download}>
+            <If condition={!!show.download}>
               <Item>
                 <ResponsiveButton
                   view="text"
@@ -51,7 +51,7 @@ class ListFooter extends Component {
             </If>
           </Left>
 
-          <If condition={show.stepper}>
+          <If condition={!!show.stepper}>
             <Item>
               <List.StepperWrapper>
                 <T name="lskList.paginatorShow" />
@@ -75,7 +75,7 @@ class ListFooter extends Component {
               </List.PagesWrapper>
             </Item>
           </If>
-          <If condition={show.paginator}>
+          <If condition={!!show.paginator}>
             <Item>
               <List.Paginator />
             </Item>

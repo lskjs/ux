@@ -18,7 +18,7 @@ class ListHeader extends Component {
     }
     return (
       <React.Fragment>
-        <If condition={show.search}>
+        <If condition={!!show.search}>
           <List.HeaderWrapper>
             <List.Search />
           </List.HeaderWrapper>
@@ -26,17 +26,17 @@ class ListHeader extends Component {
         <List.HeaderWrapper>
           <List.Filter />
         </List.HeaderWrapper>
-        <If condition={show.tags}>
+        <If condition={!!show.tags}>
           <List.HeaderWrapper>
             <List.TagsPanel />
           </List.HeaderWrapper>
         </If>
-        <If condition={show.searchResults && listStore.hasFilter}>
+        <If condition={!!show.searchResults && listStore.hasFilter}>
           <List.HeaderWrapper>
             <List.SearchResults />
           </List.HeaderWrapper>
         </If>
-        <List.HeaderWrapper sticky={show.sticky}>
+        <List.HeaderWrapper sticky={!!show.sticky}>
           <List.HeaderRow />
         </List.HeaderWrapper>
       </React.Fragment>

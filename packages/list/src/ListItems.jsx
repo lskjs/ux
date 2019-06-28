@@ -38,7 +38,7 @@ class ListItems extends Component {
                   className={buttonStyles}
                   block
                 >
-                  <If condition={listStore.loading}>
+                  <If condition={!!listStore.loading}>
                     <T name="lskList.bodyLoadingButton" />
                   </If>
                   <If condition={!listStore.loading}>

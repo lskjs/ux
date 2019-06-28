@@ -46,7 +46,7 @@ class ListFilter extends Component {
                 hash={listStore.filter}
                 onChange={listStore.setFilter}
               />
-              <If condition={debug}>
+              <If condition={!!debug}>
                 <DEV json={listStore.filter} />
               </If>
             </List.FilterWrapper>
