@@ -41,6 +41,7 @@ export const Info = styled.div`
   display: flex;
   flex-direction: column;
   padding-left: 20px;
+  overflow: hidden;
 `;
 
 export const RemoveButton = styled('span')`
@@ -63,7 +64,7 @@ export const RemoveButton = styled('span')`
 export const PreviewImage = styled('img')`
   width: 100px;
   height: 70px;
-  object-fit: cover;
+  object-fit: contain;
   display: flex;
   margin: 0 auto;
   text-align: center;
