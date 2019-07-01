@@ -41,6 +41,7 @@
     "@lskjs/button": "^0.34.54",
     "@lskjs/css": "^0.34.45",
     "@lskjs/dev": "^0.34.45",
+    "@lskjs/scroll": "0.34.45",
     "@lskjs/theme": "^0.34.45",
     "@lskjs/utils": "0.34.8",
     "antd": "^3.16.2",
@@ -66,7 +67,10 @@
   },
   "peerDependencies": {
     "@lskjs/autobind": "^0.34.8",
+    "@lskjs/button": "*",
     "@lskjs/css": "*",
+    "@lskjs/theme": "*",
+    "@lskjs/scroll": "*",
     "@lskjs/utils": "^0.34.8",
     "antd": "^3.16.2",
     "emotion": "9.2.10",
