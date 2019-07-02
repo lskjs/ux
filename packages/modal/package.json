@@ -41,6 +41,7 @@
     "classnames": "2.2.6",
     "emotion": "9.2.12",
     "formik": "1.5.2",
+    "history": "4.9.0",
     "lodash": "4.17.11",
     "mobx": "5.9.4",
     "mobx-react": "5.4.3",
@@ -50,9 +51,10 @@
     "react-custom-scrollbars": "4.2.1",
     "react-emotion": "9.2.12",
     "react-icons2": "2.5.0",
-    "react-modal": "3.8.1"
+    "react-modal": "3.8.1",
+    "universal-router": "8.2.0"
   },
-  "peerDependecies": {
+  "peerDependencies": {
     "@lskjs/autobind": "*",
     "@lskjs/button": "*",
     "@lskjs/css": "*",
@@ -71,6 +73,8 @@
     "react-custom-scrollbars": "*",
     "react-emotion": "*",
     "react-icons2": "*",
+    "universal-router": "*",
+    "history": "*",
     "react-modal": "*"
   }
 }

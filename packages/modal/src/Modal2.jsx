@@ -3,7 +3,6 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import If from 'react-if';
 import cx from 'classnames';
-import get from 'lodash/get';
 import uniq from 'lodash/uniq';
 import filter from 'lodash/filter';
 import pick from 'lodash/pick';
@@ -36,7 +35,30 @@ import {
 
 import { Provider } from './Modal2.context';
 
-const reactModalProps = ['isOpen', 'onAfterOpen', 'onRequestClose', 'closeTimeoutMS', 'style', 'contentLabel', 'portalClassName', 'overlayClassName', 'className', 'bodyOpenClassName', 'htmlOpenClassName', 'ariaHideApp', 'shouldFocusAfterRender', 'shouldCloseOnOverlayClick', 'shouldCloseOnEsc', 'shouldReturnFocusAfterClose', 'role', 'parentSelector', 'aria', 'data', 'overlayRef', 'contentRef'];
+const reactModalProps = [
+  'isOpen',
+  'onAfterOpen',
+  'onRequestClose',
+  'closeTimeoutMS',
+  'style',
+  'contentLabel',
+  'portalClassName',
+  'overlayClassName',
+  'className',
+  'bodyOpenClassName',
+  'htmlOpenClassName',
+  'ariaHideApp',
+  'shouldFocusAfterRender',
+  'shouldCloseOnOverlayClick',
+  'shouldCloseOnEsc',
+  'shouldReturnFocusAfterClose',
+  'role',
+  'parentSelector',
+  'aria',
+  'data',
+  'overlayRef',
+  'contentRef',
+];
 
 ReactModal.defaultStyles = {
   overlay: {
@@ -96,9 +118,9 @@ class Modal2 extends PureComponent {
     CloseIcon: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
     className: PropTypes.string,
     size: PropTypes.oneOf(uniq(filter(sizes, e => typeof e === 'string'))),
-    trigger: PropTypes.any,
+    trigger: PropTypes.any, // eslint-disable-line react/forbid-prop-types
     innerRef: PropTypes.func,
-    style: PropTypes.object,
+    style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   }
 
   static defaultProps = {
