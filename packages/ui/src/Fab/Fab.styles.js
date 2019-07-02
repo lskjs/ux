@@ -8,8 +8,6 @@ import removeProps from '@lskjs/utils/removeProps';
 const dynamicTag = createDynamicTag('button');
 const filteredTag = removeProps(dynamicTag, ['styleName', 'fixed']);
 
-console.log(getStyles);
-
 export default styled(filteredTag)`
   padding: 0;
   min-width: 0;

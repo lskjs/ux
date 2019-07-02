@@ -4,11 +4,13 @@ import UsdIcon from 'react-icons2/mdi/currency-usd';
 import Story from '@lskjs/dev/Story';
 import createForm from '../../createForm';
 import Input from './Input';
+import Textarea from '../Textarea';
 import currency from './formats/currency';
 import FormDebug from '../../FormDebug';
 
 const InputFormView = props => (
   <Form>
+    <Field {...props.control('textarea')} />
     <Field {...props.control('input')} />
     <Field {...props.control('input2')} />
     <Field {...props.control('input3')} />
@@ -26,11 +28,19 @@ const InputForm = createForm({
     input: 'createForm.initialValues',
   },
   controls: {
+    textarea: {
+      title: 'input',
+      component: Textarea,
+      placeholder: 'input placeholder',
+      maxlength: 10,
+      required: true,
+    },
     input: {
       title: 'input',
       component: Input,
       placeholder: 'input placeholder',
       required: true,
+      maxlength: 10,
     },
     input2: {
       title: 'input2',

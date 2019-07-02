@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import debounce from 'lodash/debounce';
 import autobind from '@lskjs/autobind';
+import get from 'lodash/get';
 import If from 'react-if';
 import filterProps from '@lskjs/utils/filterProps';
 import getBlock from './BaseInput.styles';
@@ -9,6 +10,7 @@ import {
   InputBox,
   LeftWrapper,
   RightWrapper,
+  Count,
 } from './InputStyle.styles';
 
 
@@ -24,6 +26,7 @@ class Input extends PureComponent {
     rightIcon: PropTypes.any,
     className: PropTypes.string,
     regex: PropTypes.any,
+    maxlength: PropTypes.number,
   }
   static defaultProps = {
     validationState: null,
@@ -36,6 +39,7 @@ class Input extends PureComponent {
     rightIcon: null,
     className: null,
     regex: null,
+    maxlength: null,
   }
   constructor(props) {
     super(props);
@@ -94,6 +98,7 @@ class Input extends PureComponent {
       innerRef,
       leftIcon,
       rightIcon,
+      maxlength,
       ...otherProps
     } = this.props;
     const { value } = this.state;
@@ -113,6 +118,7 @@ class Input extends PureComponent {
           block={block}
           disabled={disabled}
           className={className}
+          maxlength={maxlength}
           {...filterProps(otherProps, Block)}
           value={typeof displayRate === 'number' ? value * displayRate : value}
           onChange={this.handleChange}
@@ -121,6 +127,13 @@ class Input extends PureComponent {
           <RightWrapper>
             {rightIcon}
           </RightWrapper>
+        </If>
+        <If condition={maxlength}>
+          <Count>
+            {get(value, 'length') || 0}
+            /
+            {maxlength}
+          </Count>
         </If>
       </InputBox>
     );
