@@ -350,3 +350,12 @@ export const SearchResultsWrapper = styled('div')`
   letter-spacing: -0.1px;
   color: ${p => getTheme(p.theme, 'colors.main')};
 `;
+
+
+export const FilterButtonWrapper = styled('div')`
+  button {
+    &:focus {
+      background-color: transparent;
+    }
+  }
+`;
