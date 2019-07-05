@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import get from 'lodash/get';
+import Promise from 'bluebird';
 import autobind from '@lskjs/autobind';
 import UniversalRouter from 'universal-router';
 import createMemoryHistory from 'history/createMemoryHistory';
