@@ -5,11 +5,11 @@ import removeProps from '@lskjs/utils/removeProps';
 import getTheme from '@lskjs/theme/getTheme';
 
 const iconLeft = css`
-  margin-right: 10px;
+  margin-right: 8px;
 `;
 
 const iconRight = css`
-  margin-left: 10px;
+  margin-left: 8px;
 `;
 
 const iconSingle = css`
@@ -676,6 +676,21 @@ const emptyPrimaryTheme = ({ theme }) => css`
   }
 `;
 
+const emptyCommonTheme = ({ theme }) => css`
+  padding: 11px 0;
+  color: ${getTheme(theme, 'colors.main')};
+
+  &:hover {
+    background-color: ${getTheme(theme, 'colors.white')};
+    color: ${getTheme(theme, 'colors.darkestPrimary')};
+  }
+
+  &:focus {
+    background-color: ${getTheme(theme, 'colors.white')};
+    color: ${getTheme(theme, 'colors.focusPrimary')};
+  }
+`;
+
 const transparentTheme = ({ theme }) => css`
   color: ${getTheme(theme, 'colors.white')};
   background-color: transparent;
@@ -758,7 +773,11 @@ export const getStyles = (props) => {
   } else if (props.view === 'shadow') {
     return shadowTheme;
   } else if (props.view === 'empty') {
-    return emptyPrimaryTheme;
+    switch (props.paint) {
+      case 'primary': return emptyPrimaryTheme;
+      case 'common': return emptyCommonTheme;
+      default: return emptyPrimaryTheme;
+    }
   } else if (props.view === 'transparent') {
     return transparentTheme;
   } else {
