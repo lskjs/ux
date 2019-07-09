@@ -7,10 +7,16 @@ globalStylesFormItem();
 
 export default ({ field, form, children, htmlId, required, _required, title, help }) => {
   const errorMessage = form && form.errors && form.errors[field.name];
+  let looksLikeRequired;
+  if (_required !== null) {
+    looksLikeRequired = _required;
+  } else {
+    looksLikeRequired = required;
+  }
   return (
     <Form.Item
       key={htmlId}
-      required={required || _required}
+      required={looksLikeRequired}
       label={title}
       help={help}
       validateStatus={errorMessage ? 'error' : null}
