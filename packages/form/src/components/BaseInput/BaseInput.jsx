@@ -128,7 +128,7 @@ class Input extends PureComponent {
             {rightIcon}
           </RightWrapper>
         </If>
-        <If condition={maxlength}>
+        <If condition={!!maxlength}>
           <Count>
             {get(value, 'length') || 0}
             /

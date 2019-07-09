@@ -15,7 +15,6 @@ const Input = ({
       value={field.value || ''}
       debounce={0}
       {...props}
-      regex={props.regex}
       style={{ border: hasError ? '1px solid red' : '' }}
       onChange={(value) => {
         form.setFieldValue(field.name, value);
