@@ -33,6 +33,7 @@
     "react-visibility-sensor": "^5.0.2"
   },
   "devDependencies": {
+    "@lskjs/apiquery": "^0.34.8",
     "@lskjs/autobind": "^0.34.8",
     "@lskjs/button": "^0.34.33",
     "@lskjs/css": "^0.34.36",

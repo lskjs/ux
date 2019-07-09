@@ -14,9 +14,9 @@ import List from '../List';
 
 Promise.config({ cancellation: true });
 const api = {
-  async find({ skip, limit, cancelToken } = {}) {
+  async find({ skip, limit, __cancelToken } = {}) {
     const promise = Promise.delay(200); // это типа гет запрос
-    cancelToken.token.promise.then(() => promise.cancel());
+    __cancelToken.token.promise.then(() => promise.cancel());
     await promise;
     const count = 1000;
     const roles = () => sample(['Director', 'Manager', 'Stuff', 'Salesman', 'Driver', 'Tester', 'Designer']);
