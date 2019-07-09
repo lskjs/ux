@@ -32,6 +32,7 @@ export default {
     darkGray: '#212529',
     darkerGray: '#e2e4ee',
     darkestGray: '#cbcedc',
+    placeholder: '#808080',
   },
   layout: {
     phone: 540,

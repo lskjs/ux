@@ -17,6 +17,7 @@ class ListCheckbox extends Component {
   }
   render() {
     const { selectStore, item, global } = this.props;
+
     return (
       <Checkbox
         indeterminate={global && selectStore.globalIsIndeterminate()}

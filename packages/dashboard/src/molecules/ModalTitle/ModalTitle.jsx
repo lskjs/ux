@@ -7,7 +7,7 @@ import { Title, buttonStyle } from './ModalTitle.styles';
 
 class ModalTitle extends PureComponent {
   static propTypes = {
-    children: PropTypes.any.isRequired,
+    children: PropTypes.any.isRequired, // eslint-disable-line react/forbid-prop-types
     onBack: PropTypes.func,
     align: PropTypes.oneOf(['left', 'center', 'right']),
   }
@@ -19,7 +19,7 @@ class ModalTitle extends PureComponent {
     const { children, align, onBack } = this.props;
     return (
       <Title align={align} className="modal-title">
-        <If condition={onBack}>
+        <If condition={!!onBack}>
           <Button
             className={buttonStyle}
             paint="primary"

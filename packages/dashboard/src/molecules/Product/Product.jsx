@@ -53,7 +53,7 @@ class Product extends PureComponent {
             <TitleLink componentClass={componentClass} href={href}>{name}</TitleLink>
           </CardTitle>
           <CardPrice>
-            <If condition={oldPrice}>
+            <If condition={!!oldPrice}>
               <StrikeTroughItem oldPrice={oldPrice}>{oldPrice}</StrikeTroughItem>
             </If>
             <StrikeTroughItem>{price}</StrikeTroughItem>

@@ -22,7 +22,7 @@ class UrlButton extends Component {
     url: null,
   };
 
-  //@autobind
+  @autobind
   async onClick() {
     const { api, url, onSuccess } = this.props;
     const res = await api.fetch(url);
@@ -31,7 +31,7 @@ class UrlButton extends Component {
     }
   }
 
-  //@autobind
+  @autobind
   onError(err) {
     const { uapp } = this.props;
     uapp.onError(err);

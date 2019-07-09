@@ -119,10 +119,10 @@ export default class Slide extends Component {
         <If condition={this.props.overlay}>
           <Overlay style={{ backgroundColor: overlay }} />
         </If>
-        <If condition={video}>
+        <If condition={!!video}>
           {this.renderVideo(video)}
         </If>
-        <If condition={image}>
+        <If condition={!!image}>
           <Image style={{ backgroundImage: `url(${image})` }} />
         </If>
       </Background>
@@ -203,13 +203,13 @@ export default class Slide extends Component {
     }
     return (
       <InnerBlock style={style}>
-        <If condition={top}>
+        <If condition={!!top}>
           <TopBlock>
             {top}
           </TopBlock>
         </If>
         <Middle>
-          <If condition={left}>
+          <If condition={!!left}>
             <LeftBlock>
               {left}
             </LeftBlock>
@@ -222,13 +222,13 @@ export default class Slide extends Component {
               </Content>
             </Center>
           </If>
-          <If condition={right}>
+          <If condition={!!right}>
             <RightBlock>
               {right}
             </RightBlock>
           </If>
         </Middle>
-        <If condition={bottom}>
+        <If condition={!!bottom}>
           <BottomBlock>
             {bottom}
           </BottomBlock>

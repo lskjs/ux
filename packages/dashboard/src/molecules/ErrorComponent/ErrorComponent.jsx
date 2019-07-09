@@ -17,9 +17,9 @@ class ErrorComponent extends PureComponent {
       PropTypes.arrayOf(PropTypes.element),
     ]),
     subtitle: PropTypes.string,
-    actions: PropTypes.any,
+    actions: PropTypes.any, // eslint-disable-line react/forbid-prop-types
     footer: PropTypes.string,
-    image: PropTypes.any,
+    image: PropTypes.any, // eslint-disable-line react/forbid-prop-types
     align: PropTypes.string,
   };
   static defaultProps = {
@@ -42,7 +42,7 @@ class ErrorComponent extends PureComponent {
     } = this.props;
     return (
       <Wrapper {...props}>
-        <If condition={image}>
+        <If condition={!!image}>
           <ImageWrapper>
             {image}
           </ImageWrapper>

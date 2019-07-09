@@ -36,14 +36,14 @@ class EmptyContainer extends PureComponent {
     return (
       <Box paint="transparent">
         <Box.Body padded>
-          <If condition={icon}>
+          <If condition={!!icon}>
             <IconWrapper>{icon}</IconWrapper>
           </If>
           <Title>{title}</Title>
-          <If condition={subtitle}>
+          <If condition={!!subtitle}>
             <Subtitle>{subtitle}</Subtitle>
           </If>
-          <If condition={actions}>
+          <If condition={!!actions}>
             <ActionsWrapper>
               {actions}
             </ActionsWrapper>

@@ -36,7 +36,7 @@ class Comment extends PureComponent {
             <TitleWrapper componentClass={componentClass} {...titleProps}>
               {user.title || user.name}
             </TitleWrapper>
-            <If condition={date}>
+            <If condition={!!date}>
               <DateWrapper>{moment(date).format('LLL')}</DateWrapper>
             </If>
           </Typography>

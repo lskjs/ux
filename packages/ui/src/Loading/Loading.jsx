@@ -111,14 +111,14 @@ class Loading extends PureComponent {
         <div style={full ? styles.innerFull : styles.inner}>
           <div style={styles.box}>
             {iconComponent}
-            <If condition={text}>
+            <If condition={!!text}>
               <div style={Object.assign(fontName ? { fontFamily: fontName } : {}, styles.text)}>
                 {text}
               </div>
             </If>
           </div>
         </div>
-        <If condition={children}>
+        <If condition={!!children}>
           <div style={styles.overlay}>
             {children}
           </div>

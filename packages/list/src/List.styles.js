@@ -1,6 +1,7 @@
 import styled, { css } from 'react-emotion';
 import getTheme from '@lskjs/theme/getTheme';
 import createDynamicTag from '@lskjs/utils/createDynamicTag';
+import removeProps from '@lskjs/utils/removeProps';
 import { Row } from '@lskjs/ui/Grid';
 // import TabBlock from '~/Uapp/components.v2/atoms/TabBlock';
 
@@ -277,7 +278,8 @@ export const ArrowBlock = styled('div')`
 `;
 
 const hoverTag = createDynamicTag('div');
-export const HoverRowWrapper = styled(hoverTag)`
+const filteredHoverTag = removeProps(hoverTag, ['bordered']);
+export const HoverRowWrapper = styled(filteredHoverTag)`
   cursor: pointer;
   display: block;
   > .table-gird-row {
@@ -295,13 +297,27 @@ export const HoverRowWrapper = styled(hoverTag)`
       background-color: ${p => getTheme(p.theme, 'colors.lighterPrimary')};
     }
   }
+  ${p => (p.checked && css`
+    > .table-gird-row {
+      background-color: ${getTheme(p.theme, 'colors.semiPrimary')};
+    }
+  `)}
 `;
 
-export const SelectRowWrapper = styled('div')`
+const filteredSelectTag = removeProps('div', ['bordered']);
+export const SelectRowWrapper = styled(filteredSelectTag)`
   cursor: pointer;
   display: block;
+  &:not(:last-child) {
+    border-bottom: 1px solid ${p => getTheme(p.theme, 'colors.border')};
+  }
   > .table-gird-row {
     background-color: ${p => getTheme(p.theme, 'colors.white')};
+    transition: background-color .2s ease-out;
+    will-change: background-color;
+  }
+  > .table-gird-row:hover {
+    background-color: ${p => getTheme(p.theme, 'colors.lighterPrimary')};
     transition: background-color .2s ease-out;
     will-change: background-color;
   }
@@ -333,4 +349,13 @@ export const SearchResultsWrapper = styled('div')`
   line-height: 1.23;
   letter-spacing: -0.1px;
   color: ${p => getTheme(p.theme, 'colors.main')};
+`;
+
+
+export const FilterButtonWrapper = styled('div')`
+  button {
+    &:focus {
+      background-color: transparent;
+    }
+  }
 `;

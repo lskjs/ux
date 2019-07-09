@@ -65,7 +65,7 @@ class GridFile extends Component {
           </Typography>
           <Typography className={urlStyle}>{title}</Typography>
         </Info>
-        <If condition={onRemove}>
+        <If condition={!!onRemove}>
           <RemoveButton>
             <Remove onClick={this.remove} />
           </RemoveButton>

@@ -21,8 +21,7 @@ class ListSelectRow extends Component {
       className,
       ...props
     } = this.props;
-
-    if (!selectStore.length) {
+    if (!selectStore.items.length) {
       return (
         <List.HoverRow
           componentClass={componentClass}

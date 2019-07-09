@@ -8,7 +8,7 @@ const Join = ({ items, glue }) => (
 );
 
 Join.propTypes = {
-  items: PropTypes.instanceOf(PropTypes.array),
+  items: PropTypes.array, // eslint-disable-line react/forbid-prop-types
   glue: PropTypes.string,
 };
 

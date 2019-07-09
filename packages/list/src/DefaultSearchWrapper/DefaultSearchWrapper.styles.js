@@ -1,9 +1,11 @@
 import styled, { css } from 'react-emotion';
 import { DebounceInput } from 'react-debounce-input';
 import createDynamicTag from '@lskjs/utils/createDynamicTag';
+import removeProps from '@lskjs/utils/removeProps';
 import getTheme from '@lskjs/theme/getTheme';
 
 const dynamicTag = createDynamicTag(DebounceInput);
+const filteredTag = removeProps(dynamicTag, ['FilterForm']);
 
 export const Block = styled('div')`
   display: flex;
@@ -14,6 +16,7 @@ export const Button = styled('button')`
   display: flex;
   padding: 0;
   background: transparent;
+  align-items: center;
   border: none;
   outline: none;
   position: absolute;
@@ -46,13 +49,13 @@ export const Count = styled('div')`
 const placeholderStyle = p => css`
   font-family: ${getTheme(p.theme, 'fontFamily')};
   font-size: 13px;
-  font-weight: 500;
+  font-weight: normal;
   line-height: 56px;
   text-align: left;
   color: ${getTheme(p.theme, 'colors.secondary')};
 `;
 
-export const Input = styled(dynamicTag)`
+export const Input = styled(filteredTag)`
   width: 100%;
   height: 56px;
   padding: 0 0 0 ${p => `calc(${getTheme(p.theme, 'tablePadding', 0)}px + 34px)`};
@@ -63,8 +66,8 @@ export const Input = styled(dynamicTag)`
   font-family: ${p => getTheme(p.theme, 'fontFamily')};
   font-size: 13px;
   text-align: left;
-  font-weight: 500;
-  color: ${p => getTheme(p.theme, 'colors.main')};
+  font-weight: normal;
+  color: ${p => getTheme(p.theme, 'colors.secondary')};
   &::-webkit-input-placeholder {
     ${placeholderStyle}
   }

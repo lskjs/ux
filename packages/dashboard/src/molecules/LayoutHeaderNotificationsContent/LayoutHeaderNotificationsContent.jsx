@@ -23,7 +23,7 @@ class LayoutHeaderNotificationsContent extends Component {
             <Tabs.TabPane
               tab={(
                 <span>
-                  <If condition={tab.icon}>
+                  <If condition={!!tab.icon}>
                     <Icon type={tab.icon} />
                   </If>
                   {tab.title}

@@ -98,7 +98,7 @@ export default ({ storiesOf }) => (
                 user={user}
               >
                 <HeaderDropdown>
-                  <If condition={user.name}>
+                  <If condition={!!user.name}>
                     <Menu.Item key="4" className="d-block d-md-none">
                       <T name="components.headerSignedAs" />
                       <strong>{user.name}</strong>

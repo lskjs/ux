@@ -11,7 +11,6 @@ class ListHeaderRow extends Component {
   render() {
     const { List, listStore } = this.props;
     let { children } = this.props;
-
     if (!children) {
       const { HeaderItem } = this.props;
       if (!HeaderItem) return null; // <DEV json="!HeaderItem" />;

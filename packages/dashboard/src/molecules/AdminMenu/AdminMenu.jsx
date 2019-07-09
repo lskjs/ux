@@ -99,7 +99,7 @@ class AdminMenu extends PureComponent {
     const { icon, label, title } = item;
     const renderBody = (
       <React.Fragment>
-        <If condition={label}>
+        <If condition={!!label}>
           {this.renderLabel(item, sub)}
         </If>
         <If condition={!label}>

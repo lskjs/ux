@@ -75,7 +75,7 @@ export default () => injectGlobal`
   }
 
   .lsk-form-select.react-select__control--is-focused > .react-select__control {
-    border-color: #7070ff;
+    border-color: #B3B3B3;
     box-shadow: none !important;
   }
 

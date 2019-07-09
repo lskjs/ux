@@ -41,23 +41,23 @@ class ListItem extends Component {
       <Wrapper {...props}>
         <ListItemInner>
           <div className="mr-3">
-            <If condition={icon && !leftComponent}>
+            <If condition={!!icon && !leftComponent}>
               <ListItemIcon {...iconProps}>
                 <Icon type={icon} />
               </ListItemIcon>
             </If>
-            <If condition={leftComponent && !icon}>
+            <If condition={!!leftComponent && !icon}>
               {leftComponent}
             </If>
           </div>
           <ListItemBody>
-            <If condition={title}>
+            <If condition={!!title}>
               <ListItemTitle>{title}</ListItemTitle>
             </If>
-            <If condition={description}>
+            <If condition={!!description}>
               <ListItemDescription>{description}</ListItemDescription>
             </If>
-            <If condition={date}>
+            <If condition={!!date}>
               <ListItemDate>{date}</ListItemDate>
             </If>
           </ListItemBody>

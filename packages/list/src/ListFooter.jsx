@@ -11,7 +11,7 @@ import { Container, Item, Left } from './AlignLayout';
 
 const ResponsiveButton = withResponsive(Button);
 
-@contextToProps('List', 'pageSize', 'show')
+@contextToProps('List', 'pageSize', 'pageOptions', 'show')
 @inject('listStore')
 @observer
 class ListFooter extends Component {
@@ -21,16 +21,17 @@ class ListFooter extends Component {
       listStore,
       show,
       pageSize = 10,
+      pageOptions,
     } = this.props;
     if (listStore.count <= 0) return false;
-    const { options = [1, 2, 5, 10].map(a => a * pageSize) } = this.props;
+    const { options = pageOptions.map(a => a * pageSize) } = this.props;
     const from = listStore.skip + 1;
     const to = listStore.skip + listStore.items.length;
     return (
       <List.FooterWrapper>
         <Container>
           <Left>
-            <If condition={show.download}>
+            <If condition={!!show.download}>
               <Item>
                 <ResponsiveButton
                   view="text"
@@ -50,7 +51,7 @@ class ListFooter extends Component {
             </If>
           </Left>
 
-          <If condition={show.stepper}>
+          <If condition={!!show.stepper}>
             <Item>
               <List.StepperWrapper>
                 <T name="lskList.paginatorShow" />
@@ -74,7 +75,7 @@ class ListFooter extends Component {
               </List.PagesWrapper>
             </Item>
           </If>
-          <If condition={show.paginator}>
+          <If condition={!!show.paginator}>
             <Item>
               <List.Paginator />
             </Item>

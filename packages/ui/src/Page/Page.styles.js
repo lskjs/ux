@@ -1,7 +1,7 @@
 import styled from 'react-emotion';
 import getTheme from '@lskjs/theme/getTheme';
 
-export default styled('main')`
+export default styled('div')`
   width: 100%;
   background-color: ${p => getTheme(p.theme, 'colors.mainBackground')};
   padding: 4px 8px 24px;

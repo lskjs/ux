@@ -9,13 +9,14 @@ import { contextToProps } from './List.context';
 @observer
 class ListSearchResults extends Component {
   static propTypes = {
-    List: PropTypes.instanceOf(PropTypes.object).isRequired,
-    listStore: PropTypes.instanceOf(PropTypes.object).isRequired,
+    List: PropTypes.object.isRequired, 
+    listStore: PropTypes.object.isRequired,
   }
 
   render() {
     const { List, listStore } = this.props;
     // lskList.searchResultsCount = Найдено {{count}} результатов
+    if (listStore.count === null) return false;
     return (
       <List.SearchResultsWrapper>
         <T name="lskList.searchResultsCount" count={listStore.count} />

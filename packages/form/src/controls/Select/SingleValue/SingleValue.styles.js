@@ -19,7 +19,9 @@ export const Option = styled('div')`
   font-stretch: normal;
   background-color: ${p => getTheme(p.theme, 'colors.white')};
   letter-spacing: -0.1px;
-  color: ${p => getTheme(p.theme, 'colors.main')};
+  color: ${p => (p.value === '@@NULL@@'
+    ? getTheme(p.theme, 'colors.placeholder')
+    : getTheme(p.theme, 'colors.main'))};
 `;
 
 export const Image = styled('img')`

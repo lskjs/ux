@@ -6,7 +6,7 @@ import { Title, Subtitle, IconWrapper, ActionsWrapper } from './EmptyContainer.s
 
 class EmptyContainer extends PureComponent {
   static propTypes = {
-    icon: PropTypes.any,
+    icon: PropTypes.any, // eslint-disable-line react/forbid-prop-types
     title: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.number,
@@ -19,7 +19,7 @@ class EmptyContainer extends PureComponent {
       PropTypes.element,
       PropTypes.arrayOf(PropTypes.element),
     ]),
-    actions: PropTypes.any,
+    actions: PropTypes.any, // eslint-disable-line react/forbid-prop-types
   };
   static defaultProps = {
     icon: null,
@@ -36,14 +36,14 @@ class EmptyContainer extends PureComponent {
     return (
       <Box paint="transparent">
         <Box.Body padded>
-          <If condition={icon}>
+          <If condition={!!icon}>
             <IconWrapper>{icon}</IconWrapper>
           </If>
           <Title>{title}</Title>
-          <If condition={subtitle}>
+          <If condition={!!subtitle}>
             <Subtitle>{subtitle}</Subtitle>
           </If>
-          <If condition={actions}>
+          <If condition={!!actions}>
             <ActionsWrapper>
               {actions}
             </ActionsWrapper>

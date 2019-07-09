@@ -14,6 +14,7 @@ export const InputBox = styled('div')`
   position: relative;
   display: flex;
   align-items: center;
+  flex-direction: column;
   ${p => (p.leftIcon !== null && `
     > ${LeftWrapper} {
       position: absolute;
@@ -29,6 +30,23 @@ export const InputBox = styled('div')`
     }
   `)}
 `;
+
+export const Count = styled('div')`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-top: 5px;
+
+  color: #9b9b9b;
+  font-size: 13px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.27;
+  letter-spacing: -0.1px;
+`;
+
 
 export const currencyInput = css`
   border-radius: 3px;

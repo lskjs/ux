@@ -26,7 +26,7 @@ class SingleValue extends Component {
     } = this.props;
     return (
       <DefaultSingleValue data={data} {...props}>
-        <Option image={data.image}>
+        <Option image={data.image} value={data.value}>
           <If condition={!data.iconActive}>
             <Icon icon={data.icon} style={data.iconColor ? { color: data.iconColor } : {}}>
               {data.icon}

@@ -132,7 +132,7 @@ class PriceInput extends Component {
     let fields = [
       <Column half key={1}>
         <InlineGroup key="price" controlId="price">
-          <If condition={title1}>
+          <If condition={!!title1}>
             <ControlLabel>{required ? '* ' : ''}{t(title1)}</ControlLabel>
           </If>
           {/* {round(this.store.value || 0, 2) || 0} */}
@@ -154,7 +154,7 @@ class PriceInput extends Component {
       </Column>,
       <Column half key={2}>
         <InlineGroup key="payment" controlId="payment">
-          <If condition={title2}>
+          <If condition={!!title2}>
             <ControlLabel>{required ? '* ' : ''}{t(title2)}</ControlLabel>
           </If>
           <InputGroup>
@@ -176,10 +176,10 @@ class PriceInput extends Component {
           </InputGroup>
         </InlineGroup>
       </Column>,
-      <If condition={title3}>
+      <If condition={!!title3}>
         <Column half key={3}>
           <InlineGroup key="payment" controlId="payment">
-            <If condition={title2}>
+            <If condition={!!title2}>
               <ControlLabel>{required ? '* ' : ''}{t(title3)}</ControlLabel>
             </If>
             <InputGroup>

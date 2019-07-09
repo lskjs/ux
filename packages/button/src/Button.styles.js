@@ -5,11 +5,11 @@ import removeProps from '@lskjs/utils/removeProps';
 import getTheme from '@lskjs/theme/getTheme';
 
 const iconLeft = css`
-  margin-right: 10px;
+  margin-right: 8px;
 `;
 
 const iconRight = css`
-  margin-left: 10px;
+  margin-left: 8px;
 `;
 
 const iconSingle = css`
@@ -596,6 +596,38 @@ const viewTransparentDisabledDark = css`
   }
 `;
 
+const viewYoutubeDisabled = ({ theme }) => css`
+  pointer-events: none;
+  padding: 11px 8px;
+  color: ${getTheme(theme, 'colors.gray')} !important;
+  background-color: transparent !important;
+  &:hover,
+  &:active {
+    color: rgba(0, 0, 0, 0.5) !important;
+    background-color: transparent !important;
+  }
+  &:focus {
+    color: rgba(0, 0, 0, 0.5) !important;
+    background-color: rgba(0, 0, 0, 0.16) !important;
+  }
+`;
+
+const viewEmptyDisabled = ({ theme }) => css`
+  pointer-events: none;
+  padding: 11px 0px;
+  color: ${getTheme(theme, 'colors.gray')} !important;
+  background-color: transparent !important;
+  &:hover,
+  &:active {
+    color: rgba(0, 0, 0, 0.5) !important;
+    background-color: transparent !important;
+  }
+  &:focus {
+    color: rgba(0, 0, 0, 0.5) !important;
+    background-color: rgba(0, 0, 0, 0.16) !important;
+  }
+`;
+
 const shadowTheme = ({ theme }) => css`
   padding: 20px !important;
   color: ${getTheme(theme, 'colors.main')};
@@ -611,6 +643,51 @@ const shadowTheme = ({ theme }) => css`
     box-shadow: 0 16px 20px 0 rgba(0, 0, 0, 0.2);
     background-color: ${getTheme(theme, 'colors.lighterPrimary')};
     color: ${getTheme(theme, 'colors.primary')};
+  }
+`;
+
+const youtubeTheme = ({ theme }) => css`
+  padding: 11px 8px;
+  color: ${getTheme(theme, 'colors.main')};
+
+  &:hover {
+    background-color: ${getTheme(theme, 'colors.lighterGray')};
+    color: ${getTheme(theme, 'colors.main')};
+  }
+
+  &:focus {
+    background-color: ${getTheme(theme, 'colors.darkerGray')};
+    color: ${getTheme(theme, 'colors.main')};
+  }
+`;
+
+const emptyPrimaryTheme = ({ theme }) => css`
+  padding: 11px 0;
+  color: ${getTheme(theme, 'colors.primary')};
+
+  &:hover {
+    background-color: ${getTheme(theme, 'colors.white')};
+    color: ${getTheme(theme, 'colors.darkestPrimary')};
+  }
+
+  &:focus {
+    background-color: ${getTheme(theme, 'colors.white')};
+    color: ${getTheme(theme, 'colors.focusPrimary')};
+  }
+`;
+
+const emptyCommonTheme = ({ theme }) => css`
+  padding: 11px 0;
+  color: ${getTheme(theme, 'colors.main')};
+
+  &:hover {
+    background-color: ${getTheme(theme, 'colors.white')};
+    color: ${getTheme(theme, 'colors.darkestPrimary')};
+  }
+
+  &:focus {
+    background-color: ${getTheme(theme, 'colors.white')};
+    color: ${getTheme(theme, 'colors.focusPrimary')};
   }
 `;
 
@@ -644,6 +721,69 @@ const transparentThemeDark = ({ theme }) => css`
   }
 `;
 
+export const getStyles = (props) => {
+  if (props.disabled) {
+    switch (props.view) {
+      case 'solid': return viewSolidDisabled;
+      case 'text': return viewTextDisabled;
+      case 'base': return viewBaseDisabled;
+      case 'transparent': return viewTransparentDisabled;
+      case 'transparentDark': return viewTransparentDisabledDark;
+      case 'youtube': return viewYoutubeDisabled;
+      case 'empty': return viewEmptyDisabled;
+      default: return '';
+    }
+  } else if (props.view === 'solid') {
+    switch (props.paint) {
+      case 'primary': return primarySolidTheme;
+      case 'info': return infoSolidTheme;
+      case 'warning': return warningSolidTheme;
+      case 'danger': return dangerSolidTheme;
+      case 'success': return successSolidTheme;
+      case 'common': return commonSolidTheme;
+      case 'transparent': return transparentTheme;
+      case 'transparentDark': return transparentThemeDark;
+      default: return defaultSolidTheme;
+    }
+  } else if (props.view === 'text') {
+    switch (props.paint) {
+      case 'primary': return primaryTextTheme;
+      case 'info': return infoTextTheme;
+      case 'warning': return warningTextTheme;
+      case 'danger': return dangerTextTheme;
+      case 'success': return successTextTheme;
+      case 'common': return commonTextTheme;
+      case 'transparent': return transparentTheme;
+      case 'transparentDark': return transparentThemeDark;
+      default: return defaultTextTheme;
+    }
+  } else if (props.view === 'base') {
+    switch (props.paint) {
+      // case 'primary': return primaryBaseTheme;
+      // case 'info': return infoBaseTheme;
+      case 'warning': return warningBaseTheme;
+      case 'danger': return dangerBaseTheme;
+      case 'success': return successBaseTheme;
+      case 'transparent': return transparentTheme;
+      case 'transparentDark': return transparentThemeDark;
+      default: return '';
+    }
+  } else if (props.view === 'youtube') {
+    return youtubeTheme;
+  } else if (props.view === 'shadow') {
+    return shadowTheme;
+  } else if (props.view === 'empty') {
+    switch (props.paint) {
+      case 'primary': return emptyPrimaryTheme;
+      case 'common': return emptyCommonTheme;
+      default: return emptyPrimaryTheme;
+    }
+  } else if (props.view === 'transparent') {
+    return transparentTheme;
+  } else {
+    return '';
+  }
+};
 
 const dynamicTag = createDynamicTag('button');
 const filteredTag = removeProps(dynamicTag, [
@@ -790,59 +930,7 @@ export const Btn = styled(filteredTag)`
       default: return '';
     }
   }}
-  ${(props) => {
-    if (props.disabled) {
-      switch (props.view) {
-        case 'solid': return viewSolidDisabled;
-        case 'text': return viewTextDisabled;
-        case 'base': return viewBaseDisabled;
-        case 'transparent': return viewTransparentDisabled;
-        case 'transparentDark': return viewTransparentDisabledDark;
-        default: return '';
-      }
-    } else if (props.view === 'solid') {
-      switch (props.paint) {
-        case 'primary': return primarySolidTheme;
-        case 'info': return infoSolidTheme;
-        case 'warning': return warningSolidTheme;
-        case 'danger': return dangerSolidTheme;
-        case 'success': return successSolidTheme;
-        case 'common': return commonSolidTheme;
-        case 'transparent': return transparentTheme;
-        case 'transparentDark': return transparentThemeDark;
-        default: return defaultSolidTheme;
-      }
-    } else if (props.view === 'text') {
-      switch (props.paint) {
-        case 'primary': return primaryTextTheme;
-        case 'info': return infoTextTheme;
-        case 'warning': return warningTextTheme;
-        case 'danger': return dangerTextTheme;
-        case 'success': return successTextTheme;
-        case 'common': return commonTextTheme;
-        case 'transparent': return transparentTheme;
-        case 'transparentDark': return transparentThemeDark;
-        default: return defaultTextTheme;
-      }
-    } else if (props.view === 'base') {
-      switch (props.paint) {
-        case 'primary': return primaryBaseTheme;
-        case 'info': return infoBaseTheme;
-        case 'warning': return warningBaseTheme;
-        case 'danger': return dangerBaseTheme;
-        case 'success': return successBaseTheme;
-        case 'transparent': return transparentTheme;
-        case 'transparentDark': return transparentThemeDark;
-        default: return defaultBaseTheme;
-      }
-    } else if (props.view === 'shadow') {
-      return shadowTheme;
-    } else if (props.view === 'transparent') {
-      return transparentTheme;
-    } else {
-      return '';
-    }
-  }}
+  ${getStyles}
   ${props => (props.disabled && `
     cursor: not-allowed !important;
     pointer-events: none !important;

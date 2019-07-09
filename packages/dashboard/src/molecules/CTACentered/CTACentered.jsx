@@ -48,7 +48,7 @@ class CTACentered extends PureComponent {
             {subtitle}
           </Lead>
           {actions}
-          <If condition={footer}>
+          <If condition={!!footer}>
             <Muted>{footer}</Muted>
           </If>
         </Wrapper>

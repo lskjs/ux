@@ -5,7 +5,7 @@ import { Wrapper, Title, Subtitle, Avatar, Category, Icon } from './PostUser.sty
 
 class PostUser extends PureComponent {
   static propTypes = {
-    user: PropTypes.object.isRequired,
+    user: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
     subtitle: PropTypes.string,
     category: PropTypes.shape({
       title: PropTypes.string.isRequired,
@@ -26,10 +26,10 @@ class PostUser extends PureComponent {
           alt={user.title}
         />
         <Title>{user.title}</Title>
-        <If condition={subtitle}>
+        <If condition={!!subtitle}>
           <Subtitle>{subtitle}</Subtitle>
         </If>
-        <If condition={title}>
+        <If condition={!!title}>
           <Icon color={color} type="caret-right" />
           <Category color={color} {...categoryOther}>{title}</Category>
         </If>

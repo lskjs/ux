@@ -92,7 +92,7 @@ class ExtendedCheckblock extends PureComponent {
               </Icon>
               <Label>{label}</Label>
             </Header>
-            <If condition={info}>
+            <If condition={!!info}>
               <Footer>
                 <Info>
                   {info}
@@ -101,7 +101,7 @@ class ExtendedCheckblock extends PureComponent {
             </If>
           </Item>
         </General>
-        <If condition={children}>
+        <If condition={!!children}>
           <Additional>
             {children}
           </Additional>

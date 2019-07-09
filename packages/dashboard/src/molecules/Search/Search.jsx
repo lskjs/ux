@@ -24,7 +24,7 @@ class Search extends PureComponent {
   static propTypes = {
     componentClass: PropTypes.any,
     current: PropTypes.number,
-    max: PropTypes.number,
+    max: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     canClear: PropTypes.bool,
     onClear: PropTypes.func,
     actions: PropTypes.any,
@@ -88,7 +88,7 @@ class Search extends PureComponent {
           onKeyUp={this.handlePress}
           {...filterProps(props, Tag)}
         />
-        <If condition={max}>
+        <If condition={!!max}>
           <Count>
             {`${current} / ${max}`}
           </Count>
@@ -104,7 +104,7 @@ class Search extends PureComponent {
               />
             </Action>
           </If>
-          <If condition={actions}>
+          <If condition={!!actions}>
             <Action additional divide={max || canClear}>
               {actions}
             </Action>

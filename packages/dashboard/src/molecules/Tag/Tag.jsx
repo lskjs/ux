@@ -11,7 +11,7 @@ class Tag extends PureComponent {
     return (
       <TagItem disabled={disabled}>
         <Title>{children}</Title>
-        <If condition={onClose}>
+        <If condition={!!onClose}>
           <CloseWrapper
             type="button"
             onClick={() => onClose(id)}

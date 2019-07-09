@@ -131,7 +131,10 @@ class List extends Component {
   }
   render() {
     const {
-      debug, columns, show: customShow = {}, pageSize = 10, paginatorProps = {},
+      debug, columns, show: customShow = {},
+      pageSize = 10,
+      pageOptions = [1, 2, 5, 10],
+      paginatorProps = {},
       Item, FilterForm, HeaderItem,
       filterProps,
     } = this.props;
@@ -225,6 +228,7 @@ class List extends Component {
           List,
           show,
           pageSize,
+          pageOptions,
           Item,
           FilterForm,
           HeaderItem,

@@ -64,16 +64,16 @@ class BlogCardList extends PureComponent {
           />
         </ImageContainer>
         <Body>
-          <If condition={tag}>
+          <If condition={!!tag}>
             <TagItem>{tag}</TagItem>
           </If>
-          <If condition={title}>
+          <If condition={!!title}>
             <Title>{title}</Title>
           </If>
-          <If condition={content}>
+          <If condition={!!content}>
             <Content>{content}</Content>
           </If>
-          <If condition={author}>
+          <If condition={!!author}>
             <Author>{author}</Author>
           </If>
         </Body>

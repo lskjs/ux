@@ -4,11 +4,12 @@ import { observer, inject } from 'mobx-react';
 import filter from 'lodash/filter';
 import { Badge } from 'antd';
 // import If from 'react-if';
-import TuneIcon from 'react-icons2/mdi/tune';
 import isEmpty from '@lskjs/utils/isEmpty';
 import T from '@lskjs/ui/T';
 import withResponsive from '@lskjs/button/withResponsive';
+import FilterIcon from './FilterIcon';
 import { contextToProps } from './List.context';
+import { FilterButtonWrapper } from './List.styles';
 
 @contextToProps('List', 'isFilterModal')
 @inject('listStore')
@@ -22,7 +23,7 @@ class FilterButton extends Component {
     const ResponsiveButton = withResponsive(List.Button);
     const Button = props => (
       <ResponsiveButton
-        icon={<TuneIcon />}
+        icon={<FilterIcon />}
         paint="primary"
         size="small"
         view="text"
@@ -31,7 +32,7 @@ class FilterButton extends Component {
       />
     );
     return (
-      <React.Fragment>
+      <FilterButtonWrapper>
         {/*  className={isFilterModal ? 'd-none d-md-flex' : null} */}
         <Badge count={badge}>
           <Button
@@ -41,7 +42,7 @@ class FilterButton extends Component {
             <T name="lskList.filterButton" />
           </Button>
         </Badge>
-      </React.Fragment>
+      </FilterButtonWrapper>
     );
   }
 }

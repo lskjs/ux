@@ -1,5 +1,4 @@
 import React from 'react';
-// import DEV from '@lskjs/dev/DEV';
 
 const Bool = ({
   field,
@@ -18,16 +17,11 @@ const Bool = ({
   } else if (field && typeof field.value !== 'undefined') {
     newProps.checked = !!field.value;
   }
-  // console.log({ newProps });
-
   return (
-  // <div>
-  //   {Math.random()}
-  //   <DEV json={{ newProps }} />
-
     <Component
       {...props}
       {...newProps}
+      value={value}
       onChange={(newValue) => {
         if (onChange) {
           onChange(newValue);

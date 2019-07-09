@@ -94,6 +94,7 @@ class Select extends Component {
   render() {
     const {
       blurInputOnSelect = true,
+      hideSelectedOptions = false,
       placeholder = '',
       value: propValue,
       field,
@@ -106,6 +107,7 @@ class Select extends Component {
       components = {},
       styles = {},
       isMulti,
+      isHideSelected,
       ...props
     } = this.props;
     if (sortable) {
@@ -123,9 +125,7 @@ class Select extends Component {
       option = find(normalizedOptions, { value });
     } else if (isMulti) {
       if (Array.isArray(value)) {
-        option = normalizedOptions.filter((el) => {
-          return value.includes(el.value);
-        });
+        option = normalizedOptions.filter(el => value.includes(el.value));
       } else {
         option = [];
       }
@@ -154,6 +154,7 @@ class Select extends Component {
         closeMenuOnSelect={false}
         placeholder={placeholder}
         isMulti={isMulti}
+        hideSelectedOptions={hideSelectedOptions}
         {...field}
         {...props}
         components={{

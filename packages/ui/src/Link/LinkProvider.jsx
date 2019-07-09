@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 class LinkProvider extends Component {
   static propTypes = {
-    onClick: PropTypes.object.isRequired,
+    onClick: PropTypes.func.isRequired,
   };
 
   static childContextTypes = {
