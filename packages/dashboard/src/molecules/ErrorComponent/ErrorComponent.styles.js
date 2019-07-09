@@ -9,6 +9,7 @@ export const Wrapper = styled('section')`
   
   @media screen and (max-width: 992px) {
     flex-direction: column;
+    overflow: scroll;
   }
 `;
 

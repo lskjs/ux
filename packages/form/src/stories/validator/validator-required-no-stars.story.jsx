@@ -25,8 +25,13 @@ const Validation = createForm({
     input: {
       title: 'input',
       component: Input,
-      required: true,
-      _required: false,
+      // required: true,
+      // _required: false,
+      validator: {
+        presence: {
+          allowEmpty: false,
+        },
+      },
       type: 'email',
     },
   },
