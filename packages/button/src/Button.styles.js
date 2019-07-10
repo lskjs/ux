@@ -663,30 +663,28 @@ const youtubeTheme = ({ theme }) => css`
 
 const emptyPrimaryTheme = ({ theme }) => css`
   padding: 11px 0;
+  background-color: transparent;
   color: ${getTheme(theme, 'colors.primary')};
 
   &:hover {
-    background-color: ${getTheme(theme, 'colors.white')};
     color: ${getTheme(theme, 'colors.darkestPrimary')};
   }
 
   &:focus {
-    background-color: ${getTheme(theme, 'colors.white')};
     color: ${getTheme(theme, 'colors.focusPrimary')};
   }
 `;
 
 const emptyCommonTheme = ({ theme }) => css`
   padding: 11px 0;
+  background-color: transparent;
   color: ${getTheme(theme, 'colors.main')};
 
   &:hover {
-    background-color: ${getTheme(theme, 'colors.white')};
     color: ${getTheme(theme, 'colors.darkestPrimary')};
   }
 
   &:focus {
-    background-color: ${getTheme(theme, 'colors.white')};
     color: ${getTheme(theme, 'colors.focusPrimary')};
   }
 `;
