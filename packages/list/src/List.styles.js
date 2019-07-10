@@ -16,22 +16,22 @@ export const Title = styled('div')`
   color: ${p => getTheme(p.theme, 'colors.main')};
 `;
 
-export const SearchWrapper = styled('div')`
-  display: flex;
-  align-items: center;
-  padding: 8px 12px;
-  position: relative;
-  border-radius: 4px;
-  background-color: ${p => getTheme(p.theme, 'colors.white')};
-  border: 1px solid ${p => getTheme(p.theme, 'colors.border')};
-  width: 240px;
-  overflow: hidden;
+// export const SearchWrapper = styled('div')`
+//   display: flex;
+//   align-items: center;
+//   padding: 8px 12px;
+//   position: relative;
+//   border-radius: 4px;
+//   background-color: ${p => getTheme(p.theme, 'colors.white')};
+//   border: 1px solid ${p => getTheme(p.theme, 'colors.border')};
+//   width: 240px;
+//   overflow: hidden;
 
-  > svg {
-    font-size: 24px;
-    color: ${p => getTheme(p.theme, 'colors.primary')};
-  }
-`;
+//   > svg {
+//     font-size: 24px;
+//     color: ${p => getTheme(p.theme, 'colors.primary')};
+//   }
+// `;
 
 export const SearchInput = styled('input')`
   border: none;
@@ -358,4 +358,9 @@ export const FilterButtonWrapper = styled('div')`
       background-color: transparent;
     }
   }
+`;
+
+export const SearchWrapper = styled('div')`
+  position: relative;
+  box-sizing: border-box;
 `;

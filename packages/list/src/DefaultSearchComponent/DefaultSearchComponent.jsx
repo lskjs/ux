@@ -15,9 +15,9 @@ import {
   Input,
   Actions,
   Action,
-} from './DefaultSearchWrapper.styles';
+} from './DefaultSearchComponent.styles';
 
-class Search extends PureComponent {
+class DefaultSearchComponent extends PureComponent {
   static propTypes = {
     componentClass: PropTypes.any, // eslint-disable-line react/forbid-prop-types
     current: PropTypes.number,
@@ -119,4 +119,4 @@ class Search extends PureComponent {
   }
 }
 
-export default Search;
+export default DefaultSearchComponent;
