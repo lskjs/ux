@@ -2,6 +2,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import If from 'react-if';
+import noop from 'lodash/noop';
 import cx from 'classnames';
 import uniq from 'lodash/uniq';
 import filter from 'lodash/filter';
@@ -150,7 +151,6 @@ class Modal2 extends PureComponent {
   constructor(props) {
     super(props);
     this.state = { visible: props.defaultVisible, counter: 1 };
-    this.body = React.createRef();
   }
 
   static getDerivedStateFromProps(props) {
@@ -222,7 +222,7 @@ class Modal2 extends PureComponent {
       <Provider value={{ modal, Modal }}>
         <React.Fragment>
           <ReactModal
-            ref={closable ? (e) => { this._modal = e; } : null}
+            ref={closable ? (e) => { this._modal = e; } : noop}
             contentRef={closable ? (e) => {
               if (typeof window !== 'undefined' && e) {
                 e.onclick = (event) => {
@@ -230,12 +230,14 @@ class Modal2 extends PureComponent {
                   const str = event.target.className;
                   if (typeof str !== 'string') return;
                   if (str.includes('ReactModal__Content')) {
-                    this._modal.portal.shouldClose = true;
-                    this._modal.portal.handleOverlayOnClick(event);
+                    if (this._modal && this._modal.portal) {
+                      this._modal.portal.shouldClose = true;
+                      this._modal.portal.handleOverlayOnClick(event);
+                    }
                   }
                 };
               }
-            } : null}
+            } : noop}
             isOpen={this.state.visible}
             onRequestClose={closable && this.close}
             bodyOpenClassName={bodyModalStyle}
@@ -246,7 +248,6 @@ class Modal2 extends PureComponent {
             <span style={{ opacity: 0 }}>{this.state.counter}</span>
             <div
               aria-hidden
-              ref={closable && this.body}
               className={cx({
                 [className]: className,
                 [modalStyle]: true,
