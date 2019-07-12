@@ -4,8 +4,10 @@ import autobind from '@lskjs/autobind';
 
 class VisibilityScroll extends PureComponent {
   static propTypes = {
+    /** Содержимое */
     children: PropTypes.any, // eslint-disable-line react/forbid-prop-types
     show: PropTypes.bool,
+    /** Указывает, когда нужно показать элемент */
     trigger: PropTypes.number,
   }
 
