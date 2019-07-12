@@ -7,8 +7,11 @@ import VisibilityScroll from '../VisibilityScroll';
 
 class BackToTop extends PureComponent {
   static propTypes = {
+    /** Другой цвет состояния */
     paint: PropTypes.string,
+    /** Позиционирование */
     position: PropTypes.string,
+    /** фиксированное положение */
     fixed: PropTypes.bool,
   }
 
@@ -25,7 +28,7 @@ class BackToTop extends PureComponent {
   render() {
     const { paint, position, fixed, ...props } = this.props;
     return (
-      <VisibilityScroll>
+      <VisibilityScroll trigger={1}>
         <Fab
           paint={paint}
           position={position}
