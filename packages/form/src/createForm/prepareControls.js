@@ -8,14 +8,13 @@ export default (ctrls, FormGroup) => {
     const ControlWrapper = ctrl.FormGroup || FormGroup;
     let component;
     if (ControlWrapper) {
-      component = (props2) => {
+      component = props2 =>
         // console.log('component', props2);
-        return React.createElement(
+        React.createElement(
           ControlWrapper,
           props2,
           React.createElement(ctrl.component, props2),
         );
-      };
     } else {
       ({ component } = ctrl);
     }
@@ -28,14 +27,23 @@ export default (ctrls, FormGroup) => {
 
     control.htmlId = getControlHtmlId(control);
     if (!control.validator) control.validator = {};
-    if (control.required && !control.validator.presence) {
-      control._required = control.required;
-      delete control.required;
-      control.validator.presence = {
-        allowEmpty: false,
-      };
+    if (!control.validator.presence) {
+      let looksLikeRequired;
+      if (control._required != null) {
+        looksLikeRequired = control._required;
+      } else {
+        looksLikeRequired = control.required;
+      }
+      control._required = looksLikeRequired;
+
+      if (control.required) {
+        control.validator.presence = {
+          allowEmpty: false,
+        };
+        delete control.required;
+      }
     }
-    if (control.type === 'email' && !control.validator.email) {
+    if (!control.validator.email && control.type === 'email') {
       control._type = control.type;
       delete control.type;
       control.validator.email = true;

@@ -36,6 +36,7 @@ export const Count = styled('div')`
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  padding-top: 5px;
 
   color: #9b9b9b;
   font-size: 13px;

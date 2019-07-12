@@ -8,13 +8,13 @@ import FormError from './FormError';
 
 const Notice = styled('div')`
   margin-bottom: 8px;
-  min-height: 48px;
+  /* min-height: 48px; */
   border-radius: 3px;
   background-color: #f0f0f0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  /* width: 100%; */
   padding: 13px;
 
   font-family: ${p => getTheme(p.theme, 'fontFamily')};

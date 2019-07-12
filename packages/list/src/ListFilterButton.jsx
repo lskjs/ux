@@ -9,6 +9,7 @@ import T from '@lskjs/ui/T';
 import withResponsive from '@lskjs/button/withResponsive';
 import FilterIcon from './FilterIcon';
 import { contextToProps } from './List.context';
+import { FilterButtonWrapper } from './List.styles';
 
 @contextToProps('List', 'isFilterModal')
 @inject('listStore')
@@ -31,7 +32,7 @@ class FilterButton extends Component {
       />
     );
     return (
-      <React.Fragment>
+      <FilterButtonWrapper>
         {/*  className={isFilterModal ? 'd-none d-md-flex' : null} */}
         <Badge count={badge}>
           <Button
@@ -41,7 +42,7 @@ class FilterButton extends Component {
             <T name="lskList.filterButton" />
           </Button>
         </Badge>
-      </React.Fragment>
+      </FilterButtonWrapper>
     );
   }
 }

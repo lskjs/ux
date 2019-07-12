@@ -70,6 +70,8 @@ export default ({ storiesOf }) => {
         <Button paint="primary" view="text">view=text</Button>
         <Button paint="primary" block>block</Button>
         <Button paint="primary" disabled>disabled</Button>
+        <Button view="empty" paint="primary">Empty primary</Button>
+        <Button view="empty" paint="common">Empty common</Button>
         <hr />
         <Button paint="danger">Default</Button>
         <Button paint="danger" view="transparent">view=transparent</Button>

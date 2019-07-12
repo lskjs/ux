@@ -7,7 +7,7 @@ import Button from '@lskjs/button';
 import scroll from '@lskjs/scroll';
 import { Table } from '@lskjs/ui/Table';
 import DEV from '@lskjs/dev/DEV';
-import DefaultSearchWrapper from './DefaultSearchWrapper';
+import DefaultSearchComponent from './DefaultSearchComponent';
 import {
   Wrapper,
   BodyWrapper,
@@ -15,6 +15,7 @@ import {
   FilterWrapper,
   TagsPanelWrapper,
   HeaderItemWrapper,
+  SearchWrapper,
   SearchResultsWrapper,
   HeaderWrapper,
   FooterWrapper,
@@ -97,7 +98,8 @@ class List extends Component {
   static isFilterModal = true;
   static Button = Button;
   static SearchResults = ListSearchResults;
-  static SearchWrapper = DefaultSearchWrapper;
+  static SearchWrapper = SearchWrapper;
+  static SearchComponent = DefaultSearchComponent;
   static SearchResultsWrapper = SearchResultsWrapper;
   // static DownloadButton = ({ children }) => children;
 
@@ -177,6 +179,7 @@ class List extends Component {
       Button: getProp(this, 'Button'),
       SearchResults: getProp(this, 'SearchResults'),
       SearchWrapper: getProp(this, 'SearchWrapper'),
+      SearchComponent: getProp(this, 'SearchComponent'),
       SearchResultsWrapper: getProp(this, 'SearchResultsWrapper'),
 
       Wrapper: getProp(this, 'Wrapper'),

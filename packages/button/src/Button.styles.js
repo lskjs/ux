@@ -5,11 +5,11 @@ import removeProps from '@lskjs/utils/removeProps';
 import getTheme from '@lskjs/theme/getTheme';
 
 const iconLeft = css`
-  margin-right: 10px;
+  margin-right: 8px;
 `;
 
 const iconRight = css`
-  margin-left: 10px;
+  margin-left: 8px;
 `;
 
 const iconSingle = css`
@@ -663,15 +663,28 @@ const youtubeTheme = ({ theme }) => css`
 
 const emptyPrimaryTheme = ({ theme }) => css`
   padding: 11px 0;
+  background-color: transparent;
   color: ${getTheme(theme, 'colors.primary')};
 
   &:hover {
-    background-color: ${getTheme(theme, 'colors.white')};
     color: ${getTheme(theme, 'colors.darkestPrimary')};
   }
 
   &:focus {
-    background-color: ${getTheme(theme, 'colors.white')};
+    color: ${getTheme(theme, 'colors.focusPrimary')};
+  }
+`;
+
+const emptyCommonTheme = ({ theme }) => css`
+  padding: 11px 0;
+  background-color: transparent;
+  color: ${getTheme(theme, 'colors.main')};
+
+  &:hover {
+    color: ${getTheme(theme, 'colors.darkestPrimary')};
+  }
+
+  &:focus {
     color: ${getTheme(theme, 'colors.focusPrimary')};
   }
 `;
@@ -758,7 +771,11 @@ export const getStyles = (props) => {
   } else if (props.view === 'shadow') {
     return shadowTheme;
   } else if (props.view === 'empty') {
-    return emptyPrimaryTheme;
+    switch (props.paint) {
+      case 'primary': return emptyPrimaryTheme;
+      case 'common': return emptyCommonTheme;
+      default: return emptyPrimaryTheme;
+    }
   } else if (props.view === 'transparent') {
     return transparentTheme;
   } else {
