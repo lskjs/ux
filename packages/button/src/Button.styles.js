@@ -1090,6 +1090,7 @@ export const ButtonGroup = styled('div')`
   ${p => p.padded && css`
     ${Btn} {
       margin: 5px;
+      flex: 1 1 auto;
     }`}
   @media screen and (max-width: 768px) {
     ${p => p.block && css`

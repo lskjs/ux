@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import Title from './ModalTitle';
 import { css } from 'emotion';
+import Title from './ModalTitle';
 
 
 const transitionLayout = css`
@@ -42,7 +42,7 @@ const transitionLayout = css`
 
 class Layout extends PureComponent {
   static propTypes = {
-    children: PropTypes.any.isRequired, // eslint-disable-line react/forbid-prop-types
+    children: PropTypes.any, // eslint-disable-line react/forbid-prop-types
     onBack: PropTypes.func,
     pathname: PropTypes.string,
     title: PropTypes.string,
@@ -53,6 +53,7 @@ class Layout extends PureComponent {
     onBack: null,
     title: null,
     pathname: null,
+    children: null,
   }
   render() {
     const { pathname, children, title, align, onBack } = this.props;

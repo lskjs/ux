@@ -53,3 +53,7 @@ export const hocFooter = css`
     margin-bottom: 0 !important;
   }
 `;
+
+export const triggerStyle = css`
+  display: flex;
+`;

@@ -4,9 +4,11 @@ import get from 'lodash/get';
 import Promise from 'bluebird';
 import autobind from '@lskjs/autobind';
 import UniversalRouter from 'universal-router';
-import createMemoryHistory from 'history/createMemoryHistory';
+// import createMemoryHistory from 'history/createMemoryHistory';
 import Modal from './Modal2';
 import Layout from './components/Layout';
+
+const createMemoryHistory = require('history').createMemoryHistory;
 
 class StatefulModal extends PureComponent {
   static propTypes = {

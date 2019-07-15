@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import autobind from '@lskjs/autobind';
 import filterProps from '@lskjs/utils/filterProps';
+import { triggerStyle } from '../../Modal2.styles';
 import { contextToProps } from '../../Modal2.context';
 
 @contextToProps('modal', 'Modal')
@@ -36,7 +37,7 @@ class ModalTrigger extends Component { // eslint-disable-line
       children, componentClass: Tag = 'span', ...props
     } = this.props;
     return (
-      <Tag onClick={this.handleClick} {...filterProps(props, Tag)}>
+      <Tag className={triggerStyle} onClick={this.handleClick} {...filterProps(props, Tag)}>
         {children}
       </Tag>
     );

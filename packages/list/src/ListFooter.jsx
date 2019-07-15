@@ -65,7 +65,7 @@ class ListFooter extends Component {
               </List.StepperWrapper>
             </Item>
           </If>
-          <If condition={show.pages && listStore.items.length}>
+          <If condition={show.pages && !!listStore.items.length}>
             <Item>
               <List.PagesWrapper>
                 {from}
