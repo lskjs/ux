@@ -187,7 +187,7 @@ class Modal2 extends PureComponent {
   }
   @autobind
   close() {
-    if (!this.props.closable) return;
+    // if (!this.props.closable) return;
     this.setState({ visible: false });
     if (this.props.onClose) this.props.onClose();
   }
@@ -256,9 +256,9 @@ class Modal2 extends PureComponent {
                 [modalLarge]: sizes.is(size, 'large'),
               })}
             >
-              <If condition={closable}>
+              {/* <If condition={closable}> */}
                 <Modal.CloseIcon onClick={this.close} />
-              </If>
+              {/* </If> */}
               <Modal.InnerWrapper>
                 <Modal.Inner {...omit(props, reactModalProps)} />
               </Modal.InnerWrapper>
