@@ -119,12 +119,20 @@ class List extends Component {
   static SelectRowWrapper = SelectRowWrapper;
   static PaginatorWrapper = PaginatorWrapper;
 
+  constructor(props) {
+    super(props);
+    this.listRef = React.createRef();
+  }
+
   componentDidMount() {
     const { listStore } = this.props;
     if (listStore && listStore.subscribe) {
       this.unsubscribe = listStore.subscribe((before, after) => {
         if (DEBUG) console.log('listStore.subscribe', before, after); // eslint-disable-line no-console
-        scroll(0); // TODO: перемещаться в самый верх таблицы, а не страницы
+        const el = this.listRef.current;
+        if (el.offsetTop < window.scrollY) {
+          scroll(el, { offset: -10 });
+        }
       });
     }
   }
@@ -221,7 +229,7 @@ class List extends Component {
     }
     children = (
       // shadow={shadow}
-      <List.Wrapper style={{ width: '100%' }}>
+      <List.Wrapper innerRef={this.listRef} style={{ width: '100%' }}>
         {children}
       </List.Wrapper>
     );
