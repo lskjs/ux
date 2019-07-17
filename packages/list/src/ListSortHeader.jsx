@@ -1,11 +1,7 @@
 import React from 'react';
-// import ArrowDown from 'react-icons/lib/fa/sort-desc';
-// import ArrowUp from 'react-icons/lib/fa/sort-asc';
-// import Sort from 'react-icons/lib/fa/sort';
-
-const ArrowDown = () => '<ArrowDown/>';
-const ArrowUp = () => '<ArrowUp/>';
-const Sort = () => '<Sort/>';
+import ArrowDown from './icons/Down';
+import ArrowUp from './icons/Up';
+import Sort from './icons/Sort';
 
 const SortDirection = ({ value, size = 14 }) => (
   value === 1 // eslint-disable-line no-nested-ternary
