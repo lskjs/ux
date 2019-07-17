@@ -11,6 +11,11 @@ const DefaultBody = ({
   inputRef,
   validationState,
 }) => {
+  const open = () => {
+    if (inputRef) {
+      inputRef.click();
+    }
+  };
   return (
     <React.Fragment>
       <If condition={dragged}>
@@ -36,11 +41,8 @@ const DefaultBody = ({
                 type="button"
                 paint="primary"
                 bordered
-                onClick={() => {
-                  if (inputRef) {
-                    inputRef.click();
-                  }
-                }}
+                onTouchStart={open}
+                onClick={open}
               >
                 <T name="upload.buttonFiles" />
               </Button>

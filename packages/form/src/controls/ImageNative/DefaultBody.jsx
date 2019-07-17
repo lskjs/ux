@@ -31,6 +31,11 @@ const DefaultBody = ({
   type = 'image',
   avatar,
 }) => {
+  const open = () => {
+    if (inputRef) {
+      inputRef.click();
+    }
+  };
   return (
     <React.Fragment>
       <If condition={dragged}>
@@ -55,11 +60,8 @@ const DefaultBody = ({
             <Actions>
               <Button
                 type="button"
-                onClick={() => {
-                  if (inputRef) {
-                    inputRef.click();
-                  }
-                }}
+                onTouchStart={open}
+                onClick={open}
               >
                 <T name="upload.buttonImage" />
               </Button>

@@ -162,6 +162,10 @@ class Files extends Component {
     return (
       <React.Fragment>
         <div
+          style={{
+            display: 'inline-block',
+            position: 'relative',
+          }}
           {...otherProps}
           className={cx({
             [zoneStyle]: true,
@@ -172,7 +176,16 @@ class Files extends Component {
             id={`${name}-input`}
             multiple={multiple}
             type="file"
-            style={{ display: 'none' }}
+            style={{
+              outline: 'none',
+              opacity: 0,
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              zIndex: 10,
+            }}
             onChange={(e) => {
               this.onDrop(e.target.files);
             }}
