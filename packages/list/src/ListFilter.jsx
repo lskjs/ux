@@ -25,7 +25,7 @@ class ListFilter extends Component {
     const { showFilter } = listStore;
     return (
       <React.Fragment>
-        <If condition={isFilterModal && isTouchDevice()}>
+        <If condition={!!isFilterModal && !!isTouchDevice()}>
           <ListFilterModal
             className="d-md-none"
             overlayClassName="d-md-none"
