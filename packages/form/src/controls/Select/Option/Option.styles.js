@@ -13,7 +13,7 @@ export const OptionItem = styled('button')`
   z-index: 111111;
 
   font-family: ${p => getTheme(p.theme, 'fontFamily')};
-  background-color: ${p => (p.focused ? '#F0F0FF' : getTheme(p.theme, 'colors.white'))};
+  background-color: ${p => (p.focused ? getTheme(p.theme, 'colors.lighterPrimary') : getTheme(p.theme, 'colors.white'))};
   font-size: 13px;
   font-weight: normal;
   font-style: normal;
@@ -22,16 +22,16 @@ export const OptionItem = styled('button')`
   letter-spacing: -0.1px;
   color: ${p => getTheme(p.theme, 'colors.main')};
   &:focus{
-    background-color: #F0F0FF !important;
+    background-color: ${p => getTheme(p.theme, 'colors.lighterPrimary')} !important;
     color: ${p => getTheme(p.theme, 'colors.main')};
   }
   &:hover {
-    background-color: #F0F0FF !important;
+    background-color: ${p => getTheme(p.theme, 'colors.lighterPrimary')} !important;
     color: ${p => getTheme(p.theme, 'colors.main')};
   }
   ${p => (p.selected && css`
-    background-color: #ffffff !important;
-    color: #7070FF !important;
+    background-color: ${getTheme(p.theme, 'colors.white')} !important;
+    color: ${getTheme(p.theme, 'colors.primary')} !important;
   `)}
 `;
 
