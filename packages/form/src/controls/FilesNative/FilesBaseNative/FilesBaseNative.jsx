@@ -138,7 +138,7 @@ class Files extends Component {
       ...otherProps
     } = this.props;
     let open = null;
-    console.log('this.state.input', input);
+    // console.log('this.state.input', input);
     const childrenProps = {
       validationState,
       refZone: this.zone,

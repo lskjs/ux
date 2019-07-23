@@ -35,9 +35,10 @@ class UserCard extends PureComponent {
       avatar,
       position,
       footer,
+      ...props
     } = this.props;
     return (
-      <Card componentClass={componentClass} href={href}>
+      <Card componentClass={componentClass} href={href} {...props}>
         <AvatarWrapper>
           <Avatar
             id={id}
