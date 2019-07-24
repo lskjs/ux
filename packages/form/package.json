@@ -111,6 +111,7 @@
     "react-dom": "*",
     "react-emotion": "*",
     "react-icons2": "*",
-    "react-if": "*"
+    "react-if": "*",
+    "prop-types": "*"
   }
 }

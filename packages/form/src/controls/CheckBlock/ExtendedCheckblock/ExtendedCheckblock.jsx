@@ -59,6 +59,7 @@ class ExtendedCheckblock extends PureComponent {
       type,
       height,
       value,
+      ...props
     } = this.props;
     let checkIcon;
     let blankIcon;
@@ -75,6 +76,7 @@ class ExtendedCheckblock extends PureComponent {
         disabled={disabled}
         hasChildren={children}
         type="button"
+        {...props}
       >
         {/* <DEV json={{ value }} /> */}
         <General>
