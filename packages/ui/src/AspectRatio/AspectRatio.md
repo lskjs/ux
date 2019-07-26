@@ -30,6 +30,13 @@
 </AspectRatio>
 ```
 
+Соотношение сторон 5:7
+```jsx
+ <AspectRatio ratio="5:7">
+  <img width="100%" alt="" src="https://picsum.photos/800" />
+</AspectRatio>
+```
+
 Соотношение сторон 16:9
 ```jsx
 <AspectRatio ratio="16:9">

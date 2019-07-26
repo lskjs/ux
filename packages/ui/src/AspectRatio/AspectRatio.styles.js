@@ -7,6 +7,7 @@ function makeRatio(p) {
     case '1:0.89': return '89.29%';
     case '4:3': return '75%';
     case '4:6': return '150%';
+    case '5:7': return '140%';
     case '16:9': return '56.25%';
     case '21:9': return '42.857143%';
     default: return 'auto';
