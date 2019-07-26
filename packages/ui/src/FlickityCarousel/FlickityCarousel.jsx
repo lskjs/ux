@@ -1,8 +1,9 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import autobind from '@lskjs/autobind';
 import Button from '@lskjs/button';
 import Flickity from 'react-flickity-component';
-import { prevButton, flickityStyle } from './FlickityCarousel.style';
+import { flickityStyle, Wrapper, Control } from './FlickityCarousel.styles';
 import CarouselButton from './assets/carousel-go';
 
 const flickityOptions = {
@@ -22,34 +23,81 @@ class FlickityCarousel extends PureComponent {
   }
   constructor(props) {
     super(props);
+    this.state = {
+      canPrev: false,
+      canNext: false,
+    };
     this.flkty = React.createRef();
   }
-  myCustomNext = () => {
+  componentDidMount() {
+    if (typeof window !== 'undefined') {
+      this.stateManager();
+      this.flkty.on('change', () => {
+        this.stateManager();
+      });
+    }
+  }
+  @autobind
+  myCustomNext() {
     this.flkty.next();
   }
-  myCustomPrevious = () => {
+  @autobind
+  myCustomPrevious() {
     this.flkty.previous();
   }
+
+  @autobind
+  stateManager() {
+    const { target } = this.flkty.selectedSlide;
+    if (target === 0) {
+      this.setState({
+        canPrev: false,
+      });
+    } else {
+      this.setState({
+        canPrev: true,
+      });
+    }
+    if (target === this.flkty.slidesWidth) {
+      this.setState({
+        canNext: false,
+      });
+    } else {
+      this.setState({
+        canNext: true,
+      });
+    }
+  }
+
   render() {
+    const { canNext, canPrev } = this.state;
     const { children, ...props } = this.props;
     return (
-      <div>
+      <Wrapper {...props}>
         <Flickity
-          // className="carousel" // default ""
-          elementType="div"// default 'div'
-          disableImagesLoaded={false} // default false
-          reloadOnUpdate // default false
+          disableImagesLoaded={false}
           options={flickityOptions}
-          static // default false
-          flickityRef={c => this.flkty = c}
+          static
+          flickityRef={(c) => {
+            this.flkty = c;
+          }}
           className={flickityStyle}
-          {...props}
         >
           {children}
         </Flickity>
-        <Button paint="primary" className={prevButton} icon={<CarouselButton />} onClick={this.myCustomPrevious} />
-        <Button paint="primary" icon={<CarouselButton />} onClick={this.myCustomNext} />
-      </div>
+        <Control position="left" visible={canPrev}>
+          <Button
+            icon={<CarouselButton />}
+            onClick={this.myCustomPrevious}
+          />
+        </Control>
+        <Control position="right" visible={canNext}>
+          <Button
+            icon={<CarouselButton />}
+            onClick={this.myCustomNext}
+          />
+        </Control>
+      </Wrapper>
     );
   }
 }
