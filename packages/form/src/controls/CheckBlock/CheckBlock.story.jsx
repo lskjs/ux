@@ -8,8 +8,8 @@ import FormDebug from '../../FormDebug';
 
 const CheckBlockViewForm = props => (
   <Form>
-    <Field {...props.controls.get('radio')} />
-    <Field {...props.controls.get('checkbox')} />
+    <Field {...props.control('radio')} />
+    <Field {...props.control('checkbox')} />
     <FormDebug {...props} />
   </Form>
 );

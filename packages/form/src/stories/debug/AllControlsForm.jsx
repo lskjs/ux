@@ -34,12 +34,12 @@ export const View = props => (
     <Field {...props.control('files')} />
     <Field {...props.control('inputArray')} />
     <Field {...props.control('calendar')} />
-    <Field {...props.controls.get('radio')} />
-    <Field {...props.controls.get('checkbox')} />
-    <Field {...props.controls.get('blue')} />
+    <Field {...props.control('radio')} />
+    <Field {...props.control('checkbox')} />
+    <Field {...props.control('blue')} />
     {/* <Field {...props.control('date')} /> */}
     <Field {...props.control('geo')} />
-    <Field {...props.controls.get('color')} />
+    <Field {...props.control('color')} />
     <Field {...props.control('image')} />
     <Field {...props.control('blueCheckbox')} />
     <Field {...props.control('range')} />

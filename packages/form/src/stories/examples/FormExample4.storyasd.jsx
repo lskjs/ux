@@ -11,13 +11,13 @@ import FormDebug from '../../FormDebug';
 
 const FormExample4View = props => (
   <Form>
-    <Field {...props.controls.get('email')} />
-    <Field {...props.controls.get('password')} />
-    <Field {...props.controls.get('name')} />
-    <Field {...props.controls.get('role')} />
-    <Field {...props.controls.get('info.phone')} />
-    <Field {...props.controls.get('info.comment')} />
-    <Field {...props.controls.get('info.referrer')} />
+    <Field {...props.control('email')} />
+    <Field {...props.control('password')} />
+    <Field {...props.control('name')} />
+    <Field {...props.control('role')} />
+    <Field {...props.control('info.phone')} />
+    <Field {...props.control('info.comment')} />
+    <Field {...props.control('info.referrer')} />
     <FormDebug {...props} />
   </Form>
 );
