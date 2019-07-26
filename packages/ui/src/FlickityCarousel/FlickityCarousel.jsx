@@ -87,12 +87,14 @@ class FlickityCarousel extends PureComponent {
         </Flickity>
         <Control position="left" visible={canPrev}>
           <Button
+            disabled={!canPrev}
             icon={<CarouselButton />}
             onClick={this.myCustomPrevious}
           />
         </Control>
         <Control position="right" visible={canNext}>
           <Button
+            disabled={!canNext}
             icon={<CarouselButton />}
             onClick={this.myCustomNext}
           />
