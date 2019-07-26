@@ -4,7 +4,7 @@ import removeProps from '@lskjs/utils/removeProps';
 function makeRatio(p) {
   switch (p.ratio) {
     case '1:1': return '100%';
-    case '1:0.89': return '89%';
+    case '1:0.89': return '89.29%';
     case '4:3': return '75%';
     case '4:6': return '150%';
     case '16:9': return '56.25%';
