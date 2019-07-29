@@ -1,6 +1,6 @@
 import React from 'react';
 import Story from '@lskjs/dev/Story';
-import DefaultSearchWrapper from '../DefaultSearchWrapper';
+// import DefaultSearchWrapper from '../DefaultSearchWrapper';
 
 const action = name  => (...args)=> console.log('[' + name + ']', ...args)  //eslint-disable-line
 
