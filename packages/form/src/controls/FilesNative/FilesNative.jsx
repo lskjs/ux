@@ -17,6 +17,7 @@ const FilesUploader = ({
   onError,
   components,
   isMulti,
+  maxSize,
   ...props
 }) => {
   // console.log(1111, { field });
@@ -69,6 +70,7 @@ const FilesUploader = ({
       // files={field.value}
       onBlur={null}
       footer={Footer}
+      maxSize={maxSize}
     >
       {Body}
     </Files>
