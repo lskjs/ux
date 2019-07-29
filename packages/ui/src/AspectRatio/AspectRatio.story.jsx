@@ -18,9 +18,23 @@ export default ({ storiesOf }) => (
         </AspectRatio>
       </Story>
     ))
+    .add('1:0.89', () => (
+      <Story>
+        <AspectRatio ratio="1:0.89">
+          <img width="100%" alt="" src="https://picsum.photos/800" />
+        </AspectRatio>
+      </Story>
+    ))
     .add('4:3', () => (
       <Story>
         <AspectRatio ratio="4:3">
+          <img width="100%" alt="" src="https://picsum.photos/800" />
+        </AspectRatio>
+      </Story>
+    ))
+    .add('5:7', () => (
+      <Story>
+        <AspectRatio ratio="5:7">
           <img width="100%" alt="" src="https://picsum.photos/800" />
         </AspectRatio>
       </Story>

@@ -20,11 +20,11 @@ const CheckboxFormView = props => (
     <Checkbox value={false} />
     <Checkbox onChange={value => console.log({ value })} />
     <hr />
-    <Field {...props.controls.get('blue')} />
-    <Field {...props.controls.get('black')} />
-    <Field {...props.controls.get('black')} />
+    <Field {...props.control('blue')} />
+    <Field {...props.control('black')} />
+    <Field {...props.control('black')} />
     <hr />
-    <Field {...props.controls.get('screen')} />
+    <Field {...props.control('screen')} />
     <FormDebug {...props} />
   </Form>
 );

@@ -28,7 +28,7 @@ const SelectFormView = props => (
     <Field {...props.control('select4')} />
     <Field {...props.control('select5')} />
     <Field {...props.controls.radio} />
-    <Field {...props.controls.get('info.initialValue')} />
+    <Field {...props.control('info.initialValue')} />
     <Performance name="countries">
       <Field {...props.control('countries')} />
     </Performance>

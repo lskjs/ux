@@ -43,7 +43,14 @@ class ProfileCardBig extends PureComponent {
           src={img}
           shape="circle"
         />
-        <h4>{name}</h4>
+        <h4
+          style={{
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
+          }}
+        >
+          {name}
+        </h4>
         <span>{info}</span>
         <p>{sign}</p>
         <If condition={!!footer}>

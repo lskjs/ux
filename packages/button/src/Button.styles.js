@@ -1092,7 +1092,7 @@ export const ButtonGroup = styled('div')`
       margin: 5px;
       flex: 1 1 auto;
     }`}
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     ${p => p.block && css`
       flex-direction: column;`}
     ${Btn} {

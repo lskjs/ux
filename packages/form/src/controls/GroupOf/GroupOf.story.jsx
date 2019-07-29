@@ -15,14 +15,14 @@ import Camera from 'react-icons2/mdi/camcorder';
 const RadioFormView = props => (
   // const colorsOptions = getOptions(colorsControl);
   <Form>
-    <Field {...props.controls.get('color')} />
-    <Field {...props.controls.get('adtype')} />
-    <Field {...props.controls.get('dealType')} />
+    <Field {...props.control('color')} />
+    <Field {...props.control('adtype')} />
+    <Field {...props.control('dealType')} />
     <hr />
-    <Field {...props.controls.get('colors')} />
-    <Field {...props.controls.get('colors2')} />
+    <Field {...props.control('colors')} />
+    <Field {...props.control('colors2')} />
     <Field
-      {...props.controls.get('colors')}
+      {...props.control('colors')}
       render2={({ options }) => (
         <div style={{ border: '1px black solid' }}>
           {options.map(({ Component, option }) => (
@@ -32,7 +32,7 @@ const RadioFormView = props => (
       )}
     />
     <hr />
-    <Field {...props.controls.get('videoTypes')} itemProps={{ style: { display: 'block' } }} />
+    <Field {...props.control('videoTypes')} itemProps={{ style: { display: 'block' } }} />
     <FormDebug {...props} />
   </Form>
 );
