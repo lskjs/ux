@@ -3,7 +3,7 @@ import omit from 'lodash/omit';
 import PropTypes from 'prop-types';
 import ButtonGroup from '@lskjs/button/ButtonGroup';
 import Bool from '../Checkbox/Bool';
-import StyledButton from './RadioButtonGroup.styles';
+import StyledButton, { Wrapper } from './RadioButtonGroup.styles';
 
 class RadioButtonGroup extends PureComponent {
   static propTypes = {
@@ -12,12 +12,14 @@ class RadioButtonGroup extends PureComponent {
       title: PropTypes.any,
     })),
     value: PropTypes.string,
+    block: PropTypes.bool,
     paint: PropTypes.string,
     onChange: PropTypes.func,
   }
 
   static defaultProps = {
     options: [],
+    block: false,
     value: null,
     paint: 'primary',
     onChange: null,
@@ -35,6 +37,7 @@ class RadioButtonGroup extends PureComponent {
       options,
       value,
       paint,
+      block,
       ...props
     } = this.props;
     return (
@@ -42,20 +45,22 @@ class RadioButtonGroup extends PureComponent {
         panel
         {...omit(props, ['onChange'])}
       >
-        {options.map((item, index) => (
-          <StyledButton
-            key={index} // eslint-disable-line react/no-array-index-key
-            size="small"
-            type="button"
-            paint={value === item.value ? paint : 'default'}
-            active={value === item.value}
-            onClick={() => {
-              this.onChange(item.value);
-            }}
-          >
-            {item.title}
-          </StyledButton>
-        ))}
+        <Wrapper block={block}>
+          {options.map((item, index) => (
+            <StyledButton
+              key={index} // eslint-disable-line react/no-array-index-key
+              size="small"
+              type="button"
+              paint={value === item.value ? paint : 'default'}
+              active={value === item.value}
+              onClick={() => {
+                this.onChange(item.value);
+              }}
+            >
+              {item.title}
+            </StyledButton>
+          ))}
+        </Wrapper>
       </ButtonGroup>
     );
   }

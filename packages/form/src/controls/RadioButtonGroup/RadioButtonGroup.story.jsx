@@ -7,7 +7,7 @@ import FormDebug from '../../FormDebug';
 
 const RadioButtonGroupFormView = props => (
   <Form>
-    <Field {...props.control('RadioButtonGroup')} />
+    <Field {...props.control('RadioButtonGroup')} block />
     <FormDebug {...props} />
   </Form>
 );
