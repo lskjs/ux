@@ -5,11 +5,12 @@ import autobind from '@lskjs/autobind';
 import Promise from 'bluebird';
 import isFunction from 'lodash/isFunction';
 import cx from 'classnames';
-import zoneStyle from './FilesBaseNative.styles';
+import zoneStyle, { Loader, LoaderWrapper, Overlay } from './FilesBaseNative.styles';
 
 @inject(s => ({
   upload: s.uapp.modules.upload,
   uapp: s.uapp,
+  i18: s.i18,
 }))
 @observer
 class Files extends Component {
@@ -30,6 +31,8 @@ class Files extends Component {
     children: PropTypes.func,
     footer: PropTypes.func,
     type: PropTypes.string,
+    maxSize: PropTypes.number,
+    i18: PropTypes.object.isRequired,
   }
   static defaultProps = {
     className: null,
@@ -47,6 +50,7 @@ class Files extends Component {
     children: null,
     footer: null,
     type: undefined,
+    maxSize: null,
   }
   constructor(props) {
     super(props);
@@ -54,6 +58,7 @@ class Files extends Component {
       // value: props.value,
       dragged: false,
       input: null,
+      loader: false,
     };
     this.input = null;
   }
@@ -78,18 +83,29 @@ class Files extends Component {
       upload,
       onError,
       multiple,
+      maxSize,
+      i18,
       uapp,
     } = this.props;
     if (!upload) return;
     let value = null;
     try {
-      const res = await Promise.map(files, file => (
-        upload.uploadFile(file)
-      ));
+      this.setState({ loader: true });
+      const res = await Promise.map(files, (file) => {
+        if (maxSize) {
+          const fileSize = file.size / 1024 / 1024;
+          if (fileSize > maxSize) {
+            throw i18.t('error.fileSize');
+          }
+        }
+        return upload.uploadFile(file);
+      });
       if (multiple) value = res.map(e => e.url);
       else value = res[0] && res[0].url;
       if (onSubmit) onSubmit(value);
+      this.setState({ loader: false });
     } catch (err) {
+      this.setState({ loader: false });
       if (uapp.onError) {
         uapp.onError(err);
       } else {
@@ -119,7 +135,7 @@ class Files extends Component {
   }
 
   render() {
-    const { dragged, input } = this.state;
+    const { dragged, input, loader } = this.state;
     const { value2 } = this.props;
     const {
       info,
@@ -190,6 +206,12 @@ class Files extends Component {
               this.onDrop(e.target.files);
             }}
           />
+          <div style={{ display: loader ? 'block' : 'none' }}>
+            <Overlay />
+            <LoaderWrapper>
+              <Loader />
+            </LoaderWrapper>
+          </div>
           {isFunction(children) ? children(childrenProps) : children}
         </div>
         {/* <Dropzone

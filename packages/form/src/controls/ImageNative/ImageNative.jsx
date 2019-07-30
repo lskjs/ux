@@ -11,6 +11,7 @@ const ImageUploader = ({
   onError,
   components,
   isMulti,
+  maxSize,
   ...props
 }) => {
   const Body = components.Body || ImageUploader.defaultProps.components.Body;
@@ -20,6 +21,7 @@ const ImageUploader = ({
       {...field}
       {...props}
       value2={field.value}
+      maxSize={maxSize}
       multiple={isMulti}
       onSubmit={value => form.setFieldValue(field.name, value)}
       onError={() => onError && onError(form.errors[field.name])} // this.globalError
