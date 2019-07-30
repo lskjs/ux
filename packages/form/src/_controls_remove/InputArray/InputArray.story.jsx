@@ -8,7 +8,7 @@ import FormDebug from '../../FormDebug';
 const InputArrayFormView = (props) => {
   return (
     <Form>
-      <Field {...props.controls.inputArray} />
+      <Field {...props.control('inputArray')} />
       <FormDebug {...props} />
     </Form>
   );

@@ -8,7 +8,7 @@ import FormDebug from '../../FormDebug';
 const PhoneInputOldFormView = (props) => {
   return (
     <Form>
-      <Field {...props.controls.phoneInputOld} />
+      <Field {...props.control('phoneInputOld')} />
       <FormDebug {...props} />
     </Form>
   );

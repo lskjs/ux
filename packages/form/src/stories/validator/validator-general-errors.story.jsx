@@ -10,7 +10,7 @@ const ValidationView = (props) => {
   const { controls } = props;
   return (
     <Form>
-      <Field {...controls.email} />
+      <Field {...control('email')} />
       <FormDebug {...props} />
     </Form>
   );

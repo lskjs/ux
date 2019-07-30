@@ -27,7 +27,7 @@ const SelectFormView = props => (
     <Field {...props.control('select3')} />
     <Field {...props.control('select4')} />
     <Field {...props.control('select5')} />
-    <Field {...props.controls.radio} />
+    <Field {...props.control('radio')} />
     <Field {...props.control('info.initialValue')} />
     <Performance name="countries">
       <Field {...props.control('countries')} />
@@ -64,7 +64,7 @@ const SelectFormView = props => (
     <Field {...props.control('userSelect')} />
     <hr />
     <h1>initialValue - баг</h1>
-    <Field {...props.controls.get('info.bug1')} />
+    <Field {...props.control('info.bug1')} />
     <hr />
     <hr />
     <select>

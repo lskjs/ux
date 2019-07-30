@@ -8,7 +8,7 @@ import FormDebug from './FormDebug';
 const InputFormView = (props) => {
   return (
     <Form>
-      <Field {...props.controls.input} />
+      <Field {...props.control('input')} />
       <InputFormNested />
     </Form>
   );
@@ -16,7 +16,7 @@ const InputFormView = (props) => {
 const InputFormViewNested = (props) => {
   return (
     <Form>
-      <Field {...props.controls.input} />
+      <Field {...props.control('input')} />
     </Form>
   );
 };

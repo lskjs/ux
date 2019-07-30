@@ -12,7 +12,7 @@
 //   } = props;
 //   return (
 //     <Form>
-//       <Field {...controls.editor} />
+//       <Field {...control('editor')} />
 //     </Form>
 //   );
 // };

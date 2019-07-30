@@ -9,7 +9,7 @@ import FormDebug from '../../FormDebug';
 const PriceInputFormView = (props) => {
   return (
     <Form>
-      <Field {...props.controls.priceInput} />
+      <Field {...props.control('priceInput')} />
       <FormDebug {...props} />
     </Form>
   );

@@ -9,7 +9,7 @@ import FormDebug from '../FormDebug';
 const OnChangeView = (props) => {
   return (
     <Form>
-      <Field {...props.controls.input} />
+      <Field {...props.control('input')} />
       <FormDebug {...props} />
     </Form>
   );

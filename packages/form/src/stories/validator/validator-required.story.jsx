@@ -23,18 +23,18 @@ const ValidationView = (props) => {
   } = props;
   return (
     <Form>
-      <Field {...controls.input} />
-      <Field {...controls.select} />
-      <Field {...controls.switcher} />
-      <Field {...controls.checkbox} />
-      <Field {...controls.radio} />
-      <Field {...controls.range} />
-      <Field {...controls.date} />
-      <Field {...controls.files} />
-      <Field {...controls.image} />
-      <Field {...controls.phoneInput} />
-      <Field {...controls.tags} />
-      <Field {...controls.array} />
+      <Field {...control('input')} />
+      <Field {...control('select')} />
+      <Field {...control('switcher')} />
+      <Field {...control('checkbox')} />
+      <Field {...control('radio')} />
+      <Field {...control('range')} />
+      <Field {...control('date')} />
+      <Field {...control('files')} />
+      <Field {...control('image')} />
+      <Field {...control('phoneInput')} />
+      <Field {...control('tags')} />
+      <Field {...control('array')} />
       <FormDebug {...props} />
     </Form>
   );

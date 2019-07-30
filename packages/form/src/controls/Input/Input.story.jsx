@@ -17,7 +17,7 @@ const InputFormView = props => (
     <Field {...props.control('input4')} />
     <Field {...props.control('input5')} />
     <Field {...props.control('input6')} />
-    <FastField {...props.controls.input2} title="FastField/input2" />
+    <FastField {...props.control('input2')} title="FastField/input2" />
     <FormDebug {...props} />
   </Form>
 );

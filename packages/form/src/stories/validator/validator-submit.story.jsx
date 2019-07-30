@@ -12,8 +12,8 @@ const ValidationView = (props) => {
   } = props;
   return (
     <Form>
-      <Field {...controls.email} disabled={!!status} />
-      <Field {...controls.password} disabled={!!status} />
+      <Field {...control('email} disabled={!!status')} />
+      <Field {...control('password} disabled={!!status')} />
       <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
       <FormDebug {...props} />
     </Form>

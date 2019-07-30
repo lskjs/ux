@@ -13,9 +13,9 @@ import createNestedFormControl from '../createNestedFormControl';
 const EntityFormView = props => (
   <Form>
     <h3>EntityForm:</h3>
-    <Field {...props.controls.name} />
-    <Field {...props.controls.money} />
-    <Field {...props.controls.gender} />
+    <Field {...props.control('name')} />
+    <Field {...props.control('money')} />
+    <Field {...props.control('gender')} />
   </Form>
 );
 
@@ -43,9 +43,9 @@ const EntityForm = createFormWithI18(() => ({
 const ComplexFormView = props => (
   <Form>
     <h3>ArrayOfEntityForm:</h3>
-    <Field {...props.controls.title} />
-    <Field {...props.controls.director} />
-    <Field {...props.controls.users} />
+    <Field {...props.control('title')} />
+    <Field {...props.control('director')} />
+    <Field {...props.control('users')} />
     <FormDebug {...props} />
   </Form>
 );

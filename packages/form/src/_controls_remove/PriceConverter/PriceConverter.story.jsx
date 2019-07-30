@@ -8,7 +8,7 @@ import FormDebug from '../../FormDebug';
 const PriceConverterFormView = (props) => {
   return (
     <Form>
-      <Field {...props.controls.priceConverter} />
+      <Field {...props.control('priceConverter')} />
       <FormDebug {...props} />
     </Form>
   );

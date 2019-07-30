@@ -9,8 +9,8 @@ import FormDebug from '../FormDebug';
 const InputFormView = (props) => {
   return (
     <Form>
-      <Field {...props.controls.login} />
-      <Field {...props.controls.password} />
+      <Field {...props.control('login')} />
+      <Field {...props.control('password')} />
       <FormDebug {...props} />
     </Form>
   );

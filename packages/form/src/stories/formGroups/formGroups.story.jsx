@@ -39,9 +39,9 @@ const FormExampleView = (props) => {
   } = props;
   return (
     <Form className="ant-form ant-form-horizontal">
-      <Field {...controls.input} />
-      <Field {...controls.input2} />
-      <Field {...controls.input3} />
+      <Field {...control('input')} />
+      <Field {...control('input2')} />
+      <Field {...control('input3')} />
       <AntForm.Item>
         <Button type="primary" onClick={handleSubmit}>Submit</Button>
       </AntForm.Item>
@@ -63,9 +63,9 @@ class DebugFormExampleView extends Component {
     return (
       <Form>
         <AntForm layout="vertical">
-          <Field {...controls.input} />
-          <Field {...controls.input2} />
-          <Field {...controls.input3} />
+          <Field {...control('input')} />
+          <Field {...control('input2')} />
+          <Field {...control('input3')} />
           <AntForm.Item>
             <Button type="primary" onClick={handleSubmit}>Submit</Button>
           </AntForm.Item>

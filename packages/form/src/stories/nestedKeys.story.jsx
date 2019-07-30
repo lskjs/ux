@@ -9,10 +9,10 @@ import FormDebug from '../FormDebug';
 const InputFormView = (props) => {
   return (
     <Form>
-      <Field {...props.controls.input} />
-      <Field {...props.controls.dependent} />
+      <Field {...props.control('input')} />
+      <Field {...props.control('dependent')} />
       <Field {...props.controls['test.input']} />
-      <Field {...props.controls.input3} />
+      <Field {...props.control('input3')} />
       <FormDebug {...props} />
     </Form>
   );

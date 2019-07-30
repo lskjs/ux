@@ -19,16 +19,16 @@ const FormExample2View = (props) => {
       <Table columns={['repeat(4, 1fr)']} overflow="visible">
         <Row gap={12}>
           <Col index={0}>
-            <Field {...props.controls.input} />
+            <Field {...props.control('input')} />
           </Col>
           <Col index={1}>
-            <FastField {...props.controls.select} />
+            <FastField {...props.control('select')} />
           </Col>
           <Col index={2}>
-            <FastField {...props.controls.checkbox} />
+            <FastField {...props.control('checkbox')} />
           </Col>
           <Col index={3}>
-            <FastField {...props.controls.tags} />
+            <FastField {...props.control('tags')} />
           </Col>
         </Row>
       </Table>

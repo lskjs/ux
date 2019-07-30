@@ -10,9 +10,9 @@ import FormDebug from '../../FormDebug';
 
 const FormExample3View = props => (
   <Form>
-    <FastField {...props.controls.checkbox} />
+    <FastField {...props.control('checkbox')} />
     <FastField
-      {...props.controls.input}
+      {...props.control('input')}
       isDisabled={!props.values.checkbox}
       _required={props.values.checkbox}
       shouldUpdate={(nextProps, prevProps) => (

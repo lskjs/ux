@@ -13,10 +13,10 @@ import Tags from '../../controls/Tags';
 const FormExample1View = (props) => {
   return (
     <Form>
-      <FastField {...props.controls.input} />
-      <FastField {...props.controls.select} />
-      <FastField {...props.controls.checkbox} />
-      <FastField {...props.controls.tags} />
+      <FastField {...props.control('input')} />
+      <FastField {...props.control('select')} />
+      <FastField {...props.control('checkbox')} />
+      <FastField {...props.control('tags')} />
       <FormDebug {...props} />
     </Form>
   );

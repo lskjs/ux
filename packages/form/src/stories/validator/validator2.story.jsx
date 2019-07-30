@@ -11,8 +11,8 @@ const ValidationView = (props) => {
   } = props;
   return (
     <Form>
-      <Field {...controls.password} />
-      <Field {...controls.password2} />
+      <Field {...control('password')} />
+      <Field {...control('password2')} />
       <FormDebug {...props} />
     </Form>
   );

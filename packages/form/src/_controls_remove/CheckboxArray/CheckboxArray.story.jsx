@@ -11,11 +11,11 @@ import FormDebug from '../../FormDebug';
 const CheckboxArrayFormView = (props) => {
   return (
     <Form>
-      <Field {...props.controls.checkboxArray} />
-      <Field {...props.controls.control1} />
-      <Field {...props.controls.control2} />
-      <Field {...props.controls.control3} />
-      <Field {...props.controls.control4} />
+      <Field {...props.control('checkboxArray')} />
+      <Field {...props.control('control1')} />
+      <Field {...props.control('control2')} />
+      <Field {...props.control('control3')} />
+      <Field {...props.control('control4')} />
       <FormDebug {...props} />
     </Form>
   );

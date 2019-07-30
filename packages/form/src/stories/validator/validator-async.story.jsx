@@ -13,8 +13,8 @@ const ValidationView = (props) => {
   } = props;
   return (
     <Form>
-      <Field {...controls.email} disabled={isSubmitting} />
-      <Field {...controls.password} disabled={isSubmitting} />
+      <Field {...control('email} disabled={isSubmitting')} />
+      <Field {...control('password} disabled={isSubmitting')} />
       <p>
         Existing emails: some@email.com, someasync@email.com
       </p>
