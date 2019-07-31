@@ -2,8 +2,8 @@ import React from 'react';
 
 const isDev = () => !!(typeof __DEV__ !== 'undefined' ? __DEV__ : global.__DEV__); // eslint-disable-line
 
-const DEV = ({ children, json, pretty = true }) => (
-  isDev() ? (
+const DEV = ({ children, json, pretty = true, condition = true }) => (
+  (isDev() && (condition)) ? (
     <div
       data-label="DEV"
       data-dev={isDev()}
