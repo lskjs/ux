@@ -95,7 +95,7 @@ const HeaderItem = ({ toggleSort, sort = {} }) => (
 );
 
 
-export default ({ storiesOf }) => storiesOf('List/cases', module)
+export default ({ storiesOf }) => storiesOf('list/List/cases', module)
   .add('case1', () => (
     <Story devtools style={{ padding: 24 }}>
       <List

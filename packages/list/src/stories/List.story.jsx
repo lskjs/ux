@@ -47,7 +47,7 @@ const Item = observer(({ item = {}, index = createIndex() }) => (
   </ItemRow>
 ));
 
-export default ({ storiesOf }) => storiesOf('List', module)
+export default ({ storiesOf }) => storiesOf('list/List', module)
   .add('default', () => (
     <Story devtools style={{ padding: 24 }}>
       <List

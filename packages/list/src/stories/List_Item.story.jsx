@@ -94,7 +94,7 @@ const GridItem = observer(({ item = {} }) => (
   </Col>
 ));
 
-export default ({ storiesOf }) => storiesOf('List/Item', module)
+export default ({ storiesOf }) => storiesOf('list/List/Item', module)
   .add('table', () => (
     <Story devtools style={{ padding: 24 }}>
       <List

@@ -73,7 +73,7 @@ const EditItem = observer(({ item = {}, index = createIndex() }) => (
   </ItemRow>
 ));
 
-export default ({ storiesOf }) => storiesOf('List', module)
+export default ({ storiesOf }) => storiesOf('list/List', module)
   .add('case4: List Add Remove Edit', () => (
     <Story devtools style={{ padding: 24 }}>
       <List

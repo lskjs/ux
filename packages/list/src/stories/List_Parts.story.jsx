@@ -84,7 +84,7 @@ const HeaderItem = ({ toggleSort, sort = {} }) => (
 );
 
 
-export default ({ storiesOf }) => storiesOf('List/parts', module)
+export default ({ storiesOf }) => storiesOf('list/List/parts', module)
   .add('List.Header', () => (
     <Story>
       <List

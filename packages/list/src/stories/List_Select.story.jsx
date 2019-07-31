@@ -120,7 +120,7 @@ const SelectLinkItem3 = observer(({ item = {} }) => (
   </List.SelectRow>
 ));
 
-export default ({ storiesOf }) => storiesOf('List/Select', module)
+export default ({ storiesOf }) => storiesOf('list/List/Select', module)
   .add('List with Select', () => (
     <Story>
       <List

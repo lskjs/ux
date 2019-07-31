@@ -49,7 +49,7 @@ const LargeItem = observer(({ item = {}, index = createIndex() }) => (
   </ItemRow>
 ));
 
-export default ({ storiesOf }) => storiesOf('List', module)
+export default ({ storiesOf }) => storiesOf('list/List', module)
   .add('case5: large item', () => (
     <Story devtools style={{ padding: 24 }}>
       <List

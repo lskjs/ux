@@ -49,7 +49,7 @@ const Item = observer(({ item = {}, index = createIndex() }) => (
   </ItemRow>
 ));
 
-export default ({ storiesOf }) => storiesOf('List', module)
+export default ({ storiesOf }) => storiesOf('list/List', module)
   .add('case3: custom wrappers', () => (
     <Story devtools style={{ padding: 24 }}>
       <List

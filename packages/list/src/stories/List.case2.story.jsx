@@ -87,7 +87,7 @@ const HeaderItem = ({ toggleSort, sort = {} }) => (
 );
 
 
-export default ({ storiesOf }) => storiesOf('List/cases', module)
+export default ({ storiesOf }) => storiesOf('list/List/cases', module)
   .add('case2: custom header with sortdirection', () => (
     <Story devtools style={{ padding: 24 }}>
       <List

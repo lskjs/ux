@@ -3,7 +3,7 @@ import Story from '@lskjs/dev/Story';
 import { Container, Left, Item, Right } from './AlignLayout';
 // const Content = <>
 export default ({ storiesOf }) => (
-  storiesOf('ListSensor/AlignLayout', module)
+  storiesOf('list/ListSensor/AlignLayout', module)
     .add('Default', () => (
       <Story>
         <Container>
