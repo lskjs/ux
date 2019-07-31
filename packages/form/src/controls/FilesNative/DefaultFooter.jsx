@@ -3,8 +3,8 @@ import If from 'react-if';
 import Button from '@lskjs/button';
 import T from '@lskjs/ui/T';
 // import { Col, Row } from '@lskjs/ui/Grid';
-import Box from './components/Box';
-import GridFiles from './components/GridFiles';
+import Box from '../Files/components/Box';
+import GridFiles from '../Files/components/GridFiles';
 
 
 const DefaultFooter = ({ value, onRemoveAll, onRemove }) => (
