@@ -13,7 +13,7 @@ const promisedHandleSubmit = () => new Promise((resolve, reject) => {
 });
 
 export default ({ storiesOf }) => {
-  storiesOf('Button/StatefulButton', module)
+  storiesOf('button/StatefulButton', module)
     .add('Default', () => (
       <Story>
         <StatefulButton

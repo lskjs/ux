@@ -6,7 +6,7 @@ import UrlButton from './UrlButton';
 // import '../../../Root/Storybook.g.css';
 
 export default ({ storiesOf }) => {
-  storiesOf('Button/UrlButton', module)
+  storiesOf('button/UrlButton', module)
     .add('Default', () => (
       <Story>
         <UrlButton

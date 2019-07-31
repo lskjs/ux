@@ -16,7 +16,7 @@ import withResponsive from './withResponsive';
 const ResponsiveButton = withResponsive(Button);
 
 export default ({ storiesOf }) => {
-  storiesOf('Button', module)
+  storiesOf('button/Button', module)
     .add('default', () => (
       <Story>
         <Button
