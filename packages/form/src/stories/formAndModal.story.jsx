@@ -53,7 +53,7 @@ const InputForm = createForm({
   },
 });
 
-export default ({ storiesOf }) => storiesOf('Form', module)
+export default ({ storiesOf }) => storiesOf('form/Form', module)
   .add('formAndModal', () => (
     <Story>
       <InputForm

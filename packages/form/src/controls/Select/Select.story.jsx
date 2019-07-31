@@ -636,7 +636,7 @@ const SelectForm = createForm({
 
 
 export default ({ storiesOf }) =>
-  storiesOf('controls', module)
+  storiesOf('form/controls', module)
     .add('Select ', () => {
       return (
         <Story devtools perf>

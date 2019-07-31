@@ -8,7 +8,7 @@ import sure from './sure';
 import form from './modal';
 
 export default ({ storiesOf }) => (
-  storiesOf('Modal2/hoc', module)
+  storiesOf('form/Modal2/hoc', module)
     .add('Are you sure', () => {
       const SureModal = sure();
       const innerRef = createRef();

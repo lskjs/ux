@@ -143,7 +143,7 @@ const TagsForm = createForm({
 
 
 export default ({ storiesOf }) =>
-  storiesOf('controls', module)
+  storiesOf('form/controls', module)
     .add('Tags ', () => {
       return (
         <Story>

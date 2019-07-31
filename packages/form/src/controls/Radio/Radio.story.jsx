@@ -32,7 +32,7 @@ const RadioForm = createForm({
 });
 
 export default ({ storiesOf }) =>
-  storiesOf('controls', module)
+  storiesOf('form/controls', module)
     .add('Radio ', () => {
       return (
         <Story>

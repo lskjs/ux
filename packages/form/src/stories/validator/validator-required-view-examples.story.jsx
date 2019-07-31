@@ -51,7 +51,7 @@ const Validation = createForm({
 
 
 export default ({ storiesOf }) => (
-  storiesOf('validator', module)
+  storiesOf('form/validator', module)
     .add('validator required with no stars', () => (
       <Story>
         <Validation

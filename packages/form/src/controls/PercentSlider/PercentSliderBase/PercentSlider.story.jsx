@@ -3,7 +3,7 @@
 // import Story from '@lskjs/dev/Story';
 
 // export default ({ storiesOf }) => (
-//   storiesOf('components/PercentSlider', module)
+//   storiesOf('form/components/PercentSlider', module)
 //     .add('default', () => (
 //       <Story>
 //         <PercentSlider />

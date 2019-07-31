@@ -26,7 +26,7 @@ const GeoGoogleForm = createForm({
 });
 
 export default ({ storiesOf }) =>
-  storiesOf('controls', module)
+  storiesOf('form/controls', module)
     .add('Geo', () => {
       return (
         <Story>

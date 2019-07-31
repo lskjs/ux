@@ -29,7 +29,7 @@
 // });
 
 // export default ({ storiesOf }) =>
-//   storiesOf('controls', module)
+//   storiesOf('form/controls', module)
 //     .add('Editor ', () => {
 //       return (
 //         <Story>

@@ -47,7 +47,7 @@ const Validation = createForm({
 
 
 export default ({ storiesOf }) =>
-  storiesOf('validator', module)
+  storiesOf('form/validator', module)
     .add('Validation2', () => {
       return (
         <Story>

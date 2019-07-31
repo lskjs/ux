@@ -51,7 +51,7 @@ const InputFormNested = createFormWithI18({
 });
 
 export default ({ storiesOf }) =>
-  storiesOf('nested form', module)
+  storiesOf('form/nested form', module)
     .add('createFormWithI18', () => {
       return (
         <Story>

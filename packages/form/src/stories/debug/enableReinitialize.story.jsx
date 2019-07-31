@@ -5,7 +5,7 @@ import Performance from '@lskjs/dev/Performance';
 import AllControlsForm from './AllControlsForm';
 
 export default ({ storiesOf }) =>
-  storiesOf('debug', module)
+  storiesOf('form/debug', module)
     .add('enableReinitialize', () => {
       return (
         <Story state={{}} performance={false}>

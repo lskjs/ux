@@ -15,7 +15,7 @@
 
 
 // export default ({ storiesOf }) => {
-//   storiesOf('OptionSelect', module)
+//   storiesOf('form/OptionSelect', module)
 //     .add('Checkbox', () => (
 //       <ThemeProvider theme={theme}>
 //         <CustomSelect

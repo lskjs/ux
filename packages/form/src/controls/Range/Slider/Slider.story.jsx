@@ -35,7 +35,7 @@ const marks = {
 };
 
 export default ({ storiesOf }) => (
-  storiesOf('components/Slider', module)
+  storiesOf('form/components/Slider', module)
     .add('default', () => (
       <Story>
         <Slider
@@ -46,7 +46,7 @@ export default ({ storiesOf }) => (
     ))
 );
 // export default ({ storiesOf, action, knob }) => {
-//   storiesOf('Slider', module)
+//   storiesOf('form/Slider', module)
 //     // .addHtml(getStyles())
 //     .addHtml(getFont('PT Sans'))
 //     .add('Slider Default', () => (

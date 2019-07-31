@@ -55,7 +55,7 @@ const CheckboxForm = createForm({
 });
 
 export default ({ storiesOf }) =>
-  storiesOf('controls', module)
+  storiesOf('form/controls', module)
     .add('Checkbox ', () => {
       return (
         <Story>

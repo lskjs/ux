@@ -38,7 +38,7 @@ const ImageForm = createForm({
 });
 
 export default ({ storiesOf }) => (
-  storiesOf('controls', module)
+  storiesOf('form/controls', module)
     .add('ImageNative ', () => (
       <Story>
         <ImageForm />

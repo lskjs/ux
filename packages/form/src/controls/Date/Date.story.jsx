@@ -41,7 +41,7 @@ const DateForm = createForm({
 });
 
 export default ({ storiesOf }) =>
-  storiesOf('controls', module)
+  storiesOf('form/controls', module)
     .add('Date ', () => {
       return (
         <Story>

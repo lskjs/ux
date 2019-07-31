@@ -55,7 +55,7 @@ const SwitcherForm = createForm({
 });
 
 export default ({ storiesOf }) =>
-  storiesOf('controls', module)
+  storiesOf('form/controls', module)
     .add('Switcher ', () => {
       return (
         <Story>

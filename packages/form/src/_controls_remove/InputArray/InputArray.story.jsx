@@ -25,7 +25,7 @@ const InputArrayForm = createForm({
 });
 
 export default ({ storiesOf }) =>
-  storiesOf('controls_remove', module)
+  storiesOf('form/controls_remove', module)
     .add('InputArray ', () => {
       return (
         <Story>

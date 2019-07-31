@@ -106,7 +106,7 @@ const SimpleFormGroupForm = createForm({
 });
 
 export default ({ storiesOf }) =>
-  storiesOf('formGroups', module)
+  storiesOf('form/formGroups', module)
     .add('EmptyFormGroup', () => {
       return (
         <Story>

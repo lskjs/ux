@@ -3,7 +3,7 @@ import Story from '@lskjs/dev/Story';
 import AllControlsForm from './AllControlsForm';
 
 export default ({ storiesOf }) =>
-  storiesOf('debug', module)
+  storiesOf('form/debug', module)
     .add('allcontrols', () => {
       return (
         <Story>

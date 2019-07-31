@@ -77,7 +77,7 @@ class Container extends Component {
 
 
 export default ({ storiesOf }) =>
-  storiesOf('debug', module)
+  storiesOf('form/debug', module)
     .add('trashValues', () => {
       return (
         <Story>

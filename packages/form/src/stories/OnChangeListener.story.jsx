@@ -26,7 +26,7 @@ const OnChangeForm = createForm({
 });
 
 export default ({ storiesOf }) =>
-  storiesOf('Form', module)
+  storiesOf('form/Form', module)
     .add('onChange ', () => {
       return (
         <Story>

@@ -39,7 +39,7 @@ const CheckBlockForm = createForm({
 });
 
 export default ({ storiesOf }) =>
-  storiesOf('controls', module)
+  storiesOf('form/controls', module)
     .add('CheckBlock ', () => {
       return (
         <Story>

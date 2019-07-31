@@ -28,7 +28,7 @@ const DemoForm = createForm({
 });
 
 export default ({ storiesOf }) =>
-  storiesOf('debug', module)
+  storiesOf('form/debug', module)
     .add('controlNotFound', () => {
       return (
         <Story>

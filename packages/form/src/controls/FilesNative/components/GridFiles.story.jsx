@@ -7,7 +7,7 @@ import LineFiles from './LineFiles';
 import items from './files.mock';
 
 export default ({ storiesOf }) => (
-  storiesOf('components/AnyFiles', module)
+  storiesOf('form/components/AnyFiles', module)
     .add('GridFile', () => (
       <Story>
         <GridFile

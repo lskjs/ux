@@ -42,7 +42,7 @@ import Form from '../../../Form';
 
 
 export default ({ storiesOf, action }) => {
-  return storiesOf('PriceInput', module)
+  return storiesOf('form/PriceInput', module)
     .add('default', () => {
       return (
         <Provider t={a => a}>

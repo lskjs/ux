@@ -25,7 +25,7 @@ const RangeForm = createForm({
 });
 
 export default ({ storiesOf }) =>
-  storiesOf('controls', module)
+  storiesOf('form/controls', module)
     .add('Range ', () => {
       return (
         <Story>

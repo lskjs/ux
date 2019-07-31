@@ -28,7 +28,7 @@ const TextareaForm = createForm({
 });
 
 export default ({ storiesOf }) =>
-  storiesOf('controls', module)
+  storiesOf('form/controls', module)
     .add('Textarea ', () => {
       return (
         <Story>
