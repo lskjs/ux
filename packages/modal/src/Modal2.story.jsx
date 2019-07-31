@@ -157,7 +157,7 @@ class ModalWithRoutesExample extends Component {
 }
 
 export default ({ storiesOf }) => (
-  storiesOf('Modal2', module)
+  storiesOf('modal/Modal2', module)
     .add('1. Easy use', () => (
       <Story>
         <Modal
