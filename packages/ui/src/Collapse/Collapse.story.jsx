@@ -26,7 +26,7 @@ class Container extends Component {
 }
 
 export default ({ storiesOf }) => {
-  storiesOf('Collapse', module)
+  storiesOf('ui/Collapse', module)
     .add('default', () => (
       <Story>
         <Container />

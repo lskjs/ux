@@ -23,7 +23,7 @@ const userWithHref = () => ({
 });
 
 export default ({ storiesOf }) => (
-  storiesOf('AvatarGroup', module)
+  storiesOf('ui/AvatarGroup', module)
     .add('Items only', () => (
       <Story>
         <AvatarGroup

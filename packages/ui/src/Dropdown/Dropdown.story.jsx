@@ -98,7 +98,7 @@ class Drp extends PureComponent {
 }
 
 export default ({ storiesOf }) => {
-  storiesOf('Dropdown', module)
+  storiesOf('ui/Dropdown', module)
     .add('Default', () => (
       <Story>
         <Drp />

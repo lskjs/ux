@@ -4,7 +4,7 @@ import Link from './Link';
 import LinkProvider from './LinkProvider';
 
 export default ({ storiesOf }) => (
-  storiesOf('Link', module)
+  storiesOf('ui/Link', module)
     .add('default', () => (
       <Story>
         <p>

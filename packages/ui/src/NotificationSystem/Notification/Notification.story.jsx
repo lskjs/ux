@@ -3,7 +3,7 @@ import Story from '@lskjs/dev/Story';
 import Notification from './Notification';
 
 export default ({ storiesOf }) => {
-  storiesOf('NotificationSystem', module)
+  storiesOf('ui/NotificationSystem', module)
     .add('Notification', () => (
       <Story>
         <Notification

@@ -3,7 +3,7 @@ import Story from '@lskjs/dev/Story';
 import AspectRatio from './AspectRatio';
 
 export default ({ storiesOf }) => (
-  storiesOf('AspectRatio', module)
+  storiesOf('ui/AspectRatio', module)
     .add('Auto', () => (
       <Story>
         <AspectRatio>

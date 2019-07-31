@@ -4,7 +4,7 @@ import Story from '@lskjs/dev/Story';
 // import ObserverDEV from './ObserverDEV';
 
 export default ({ storiesOf, action }) => (
-  storiesOf('DEV', module)
+  storiesOf('ui/DEV', module)
     .add('children', () => (
       <Story>
         <DEV>

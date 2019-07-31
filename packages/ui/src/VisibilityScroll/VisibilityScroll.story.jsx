@@ -5,7 +5,7 @@ import Story from '@lskjs/dev/Story';
 
 
 export default ({ storiesOf }) => (
-  storiesOf('VisibilityScroll', module)
+  storiesOf('ui/VisibilityScroll', module)
     .add('default', () => (
       <Story>
         <div style={{ minHeight: '2000px' }}>

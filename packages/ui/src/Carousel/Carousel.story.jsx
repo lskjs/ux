@@ -65,7 +65,7 @@ const ItemComponent = ({ title }) => (
 );
 
 export default ({ storiesOf }) => (
-  storiesOf('Carousel', module)
+  storiesOf('ui/Carousel', module)
     .add('default', () => (
       <Story>
         <Carousel items={items} />

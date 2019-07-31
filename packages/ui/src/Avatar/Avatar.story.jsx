@@ -17,7 +17,7 @@ const user = () => ({
 });
 
 export default ({ storiesOf, action, knob }) => {
-  return storiesOf('Avatar', module)
+  return storiesOf('ui/Avatar', module)
     .add('Default as img (title,src)', () => (
       <Story>
         <Avatar

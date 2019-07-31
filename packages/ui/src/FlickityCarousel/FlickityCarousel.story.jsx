@@ -3,7 +3,7 @@ import Story from '@lskjs/dev/Story';
 import FlickityCarousel from './FlickityCarousel';
 
 export default ({ storiesOf }) => (
-  storiesOf('FlickityCarousel', module)
+  storiesOf('ui/FlickityCarousel', module)
     .add('code', () => (
       <Story>
         <FlickityCarousel>

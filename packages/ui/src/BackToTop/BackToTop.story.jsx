@@ -3,7 +3,7 @@ import BackToTop from './BackToTop';
 import Story from '@lskjs/dev/Story';
 
 export default ({ storiesOf }) => (
-  storiesOf('BackToTop', module)
+  storiesOf('ui/BackToTop', module)
     .add('default', () => (
       <Story>
         <div style={{ minHeight: '2000px' }}>

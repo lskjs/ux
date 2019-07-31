@@ -3,7 +3,7 @@ import Story from '@lskjs/dev/Story';
 import Paper from './Paper';
 
 export default ({ storiesOf }) => {
-  storiesOf('Paper', module)
+  storiesOf('ui/Paper', module)
     .add('Default', () => (
       <Story>
         <Paper>Content</Paper>

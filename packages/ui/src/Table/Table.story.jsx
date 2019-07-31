@@ -83,7 +83,7 @@ class TableTest extends Component {
 
 
 export default ({ storiesOf }) => {
-  storiesOf('Table', module)
+  storiesOf('ui/Table', module)
     .add('Default', () => (
       <Story devtools>
         <TableTest />

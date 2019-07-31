@@ -18,7 +18,7 @@ const articles = [
 
 
 export default ({ storiesOf }) => (
-  storiesOf('SlideContent', module)
+  storiesOf('ui/SlideContent', module)
     .add('EmptyContainer', () => (
       <Story>
         <SlideContent

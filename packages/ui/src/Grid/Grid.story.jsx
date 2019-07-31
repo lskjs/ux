@@ -11,7 +11,7 @@ const defaultStyle = {
 const Item = ({ style, ...props }) => <div style={{ ...defaultStyle, ...style }} {...props} />;
 
 export default ({ storiesOf }) => {
-  storiesOf('Grid', module)
+  storiesOf('ui/Grid', module)
     .add('Default', () => (
       <Story style={{ background: '#42cafd' }}>
         <Container>

@@ -4,7 +4,7 @@ import Story from '@lskjs/dev/Story';
 import A from './A';
 
 export default ({ storiesOf, action }) => (
-  storiesOf('A', module)
+  storiesOf('ui/A', module)
     .add('empty', () => (
       <Story>
         <A>

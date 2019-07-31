@@ -4,7 +4,7 @@ import Tags from './Tags';
 
 
 export default ({ storiesOf }) => {
-  storiesOf('Tags', module)
+  storiesOf('ui/Tags', module)
     .add('Default', () => (
       <Story >
         <Tags

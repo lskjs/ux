@@ -3,7 +3,7 @@ import Story from '@lskjs/dev/Story';
 import T from './T';
 
 export default ({ storiesOf }) => (
-  storiesOf('T', module)
+  storiesOf('ui/T', module)
     .add('empty', () => (
       <Story>
         <T name="test.key" />

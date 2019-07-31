@@ -41,7 +41,7 @@ const Name = 'div';
 const color = '#1890ff';
 
 export default ({ storiesOf }) => (
-  storiesOf('Loaders', module)
+  storiesOf('ui/Loaders', module)
     .add('default', () => (
       <Story>
         <Row>

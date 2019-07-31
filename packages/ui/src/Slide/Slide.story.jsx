@@ -5,7 +5,7 @@ import Story from '@lskjs/dev/Story';
 
 
 export default ({ storiesOf, action }) => {
-  return storiesOf('Slide', module)
+  return storiesOf('ui/Slide', module)
     .add('default', () => (
       <Story>
         <Slide>

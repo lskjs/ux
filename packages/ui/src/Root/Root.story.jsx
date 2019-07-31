@@ -3,7 +3,7 @@ import Story from '@lskjs/dev/Story';
 import Root from './Root';
 
 export default ({ storiesOf }) => (
-  storiesOf('Root', module)
+  storiesOf('ui/Root', module)
     .add('empty', () => (
       <Story>
         <Root uapp={{}}>

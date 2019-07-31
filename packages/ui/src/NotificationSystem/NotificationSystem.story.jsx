@@ -6,7 +6,7 @@ import notify from './notifyStyles.styles';
 import Notification from './Notification';
 
 export default ({ storiesOf }) => {
-  storiesOf('NotificationSystem', module)
+  storiesOf('ui/NotificationSystem', module)
     .add('default', () => {
       const notificationSystem = React.createRef();
       const toast = (obj) => {

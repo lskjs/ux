@@ -10,7 +10,7 @@ const user = () => ({
 });
 
 module.exports = function ({ storiesOf, knob }) {
-  return storiesOf('NotifyItem', module)
+  return storiesOf('ui/NotifyItem', module)
     .addHtml((
       <link
         href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic"

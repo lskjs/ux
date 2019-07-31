@@ -4,7 +4,7 @@ import Page from './Page';
 // import repeat from 'lodash/repeat';
 
 export default ({ storiesOf, action }) => {
-  return storiesOf('Page', module)
+  return storiesOf('ui/Page', module)
     .add('default', () => (
       <Story>
         <Page>

@@ -31,7 +31,7 @@ class Wrapper extends Component {
 }
 
 export default ({ storiesOf }) => (
-  storiesOf('Progress', module)
+  storiesOf('ui/Progress', module)
     .add('default', () => (
       <Story>
         <Wrapper>
