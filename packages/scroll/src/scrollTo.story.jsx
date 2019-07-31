@@ -8,7 +8,7 @@ setDefaultOptions({
 });
 
 export default ({ storiesOf }) => (
-  storiesOf('utils', module)
+  storiesOf('scroll/utils', module)
     .add('scrollTo', () => (
       <Story>
         <button onClick={() => scrollTo(9999)}>
