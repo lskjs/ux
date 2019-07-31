@@ -1,8 +1,9 @@
 import styled from 'react-emotion';
+import getTheme from '@lskjs/theme/getTheme';
 
 export const Wrapper = styled.div`
   display: flex;
-  font-family: ${props => props.theme.fontFamily};
+  font-family: ${props => getTheme(props.theme, 'fontFamily')};
   border-radius: 3px;
   border: solid 1px #e3e3e3;
   padding-top: 8px;

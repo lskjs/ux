@@ -1,4 +1,5 @@
 import styled, { css } from 'react-emotion';
+import getTheme from '@lskjs/theme/getTheme';
 
 export const containerStyle = css`
   display: flex;
@@ -49,7 +50,7 @@ export const RemoveButton = styled('span')`
   border: none;
   outline: none;
   opacity: 0.7;
-  color: ${props => props.theme.colors.danger};
+  color: ${props => getTheme(props.theme, 'colors.danger')};
   position: absolute;
   top: 3px;
   right: 3px;
