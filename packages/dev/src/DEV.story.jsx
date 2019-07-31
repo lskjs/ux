@@ -5,7 +5,7 @@ import Performance from './Performance';
 // import ObserverDEV from './ObserverDEV';
 
 export default ({ storiesOf, action }) => (
-  storiesOf('DEV', module)
+  storiesOf('dev/DEV', module)
     .add('children', () => (
       <Story>
         <DEV>
