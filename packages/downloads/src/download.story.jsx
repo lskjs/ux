@@ -10,7 +10,7 @@ const data = [
 ];
 
 export default ({ storiesOf }) => (
-  storiesOf('utils', module)
+  storiesOf('downloads/utils', module)
     .add('download', () => (
       <Story>
         <DEV json={data} />
