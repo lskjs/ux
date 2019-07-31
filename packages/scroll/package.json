@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/scroll",
-  "version": "0.34.87",
+  "version": "0.34.90",
   "description": "LSK ux subrepo: scroll",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@lskjs/css": "^0.34.87",
-    "@lskjs/dev": "^0.34.87",
+    "@lskjs/dev": "^0.34.90",
     "@lskjs/theme": "^0.34.87",
     "@lskjs/utils": "^0.35.6",
     "emotion-theming": "9.1.2",
