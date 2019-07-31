@@ -10,7 +10,7 @@ const articles = [
   },
 ];
 export default ({ storiesOf }) => (
-  storiesOf('ui/CalloutRight', module)
+  storiesOf('dashboard/ui/CalloutRight', module)
     .add('Default', () => (
       <Story>
         <CalloutRight {...articles[0]} />

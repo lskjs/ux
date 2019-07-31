@@ -74,7 +74,7 @@ const tags = (
 );
 
 export default ({ storiesOf }) => (
-  storiesOf('ui/Post', module)
+  storiesOf('dashboard/ui/Post', module)
     .add('Default', () => (
       <Story>
         <Post

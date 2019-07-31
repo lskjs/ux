@@ -4,7 +4,7 @@ import Story from '@lskjs/dev/Story';
 import EmptyContainer from './EmptyContainer';
 
 module.exports = ({ storiesOf }) =>
-  storiesOf('hz/EmptyContainer', module)
+  storiesOf('dashboard/hz/EmptyContainer', module)
     .add('EmptyContainer', () => {
       return (
         <Story>

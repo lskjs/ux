@@ -4,7 +4,7 @@ import Story from '@lskjs/dev/Story';
 import AnimatedLink from './AnimatedLink';
 
 export default ({ storiesOf }) => (
-  storiesOf('ui/AnimatedLink', module)
+  storiesOf('dashboard/ui/AnimatedLink', module)
     .add('Default', () => (
       <Story>
         <AnimatedLink

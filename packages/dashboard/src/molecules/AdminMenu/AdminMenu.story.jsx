@@ -340,7 +340,7 @@ const items2 = [
 ];
 
 module.exports = ({ storiesOf }) =>
-  storiesOf('molecules/AdminMenu', module)
+  storiesOf('dashboard/molecules/AdminMenu', module)
     .add('Default', () => {
       return (
         <Story>

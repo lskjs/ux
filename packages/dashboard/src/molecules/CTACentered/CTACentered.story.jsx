@@ -13,7 +13,7 @@ const articles = [
 ];
 
 export default ({ storiesOf }) => (
-  storiesOf('ui/CTACentered', module)
+  storiesOf('dashboard/ui/CTACentered', module)
     .add('Default', () => (
       <Story>
         <CTACentered {...articles[0]} align="left" />

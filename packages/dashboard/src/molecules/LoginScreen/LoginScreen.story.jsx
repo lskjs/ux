@@ -4,7 +4,7 @@ import Story from '@lskjs/dev/Story';
 import LoginScreen from './LoginScreen';
 
 export default ({ storiesOf }) => (
-  storiesOf('ui/LoginScreen', module)
+  storiesOf('dashboard/ui/LoginScreen', module)
     .add('LoginScreen', () => (
       <Story>
         <LoginScreen />

@@ -5,7 +5,7 @@ import ProfileCardBig from './ProfileCardBig';
 
 
 export default ({ storiesOf }) => (
-  storiesOf('ui/ProfileCardBig', module)
+  storiesOf('dashboard/ui/ProfileCardBig', module)
     .add('Default', () => (
       <Story>
         <ProfileCardBig

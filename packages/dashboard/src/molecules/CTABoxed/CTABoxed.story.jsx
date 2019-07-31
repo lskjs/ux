@@ -4,7 +4,7 @@ import Button from '@lskjs/button';
 import Story from '@lskjs/dev/Story';
 
 export default ({ storiesOf }) => (
-  storiesOf('ui/CTABoxed', module)
+  storiesOf('dashboard/ui/CTABoxed', module)
     .add('Default', () => (
       <Story>
         <CTABoxed

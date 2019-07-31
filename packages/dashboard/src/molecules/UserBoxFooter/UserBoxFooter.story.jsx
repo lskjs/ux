@@ -4,7 +4,7 @@ import UserBoxFooter from './UserBoxFooter';
 import Story from '@lskjs/dev/Story';
 
 export default ({ storiesOf }) => (
-  storiesOf('ui/UserBoxFooter', module)
+  storiesOf('dashboard/ui/UserBoxFooter', module)
     .add('default', () => (
       <Story>
         <UserBoxFooter

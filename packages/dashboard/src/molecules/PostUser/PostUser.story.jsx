@@ -3,7 +3,7 @@ import PostUser from './PostUser';
 import Story from '@lskjs/dev/Story';
 
 export default ({ storiesOf }) => (
-  storiesOf('ui/PostUser', module)
+  storiesOf('dashboard/ui/PostUser', module)
     .add('Default', () => (
       <Story>
         <PostUser

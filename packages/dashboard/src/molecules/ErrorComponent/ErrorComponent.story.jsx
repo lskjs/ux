@@ -16,7 +16,7 @@ const articles = [
 ];
 
 export default ({ storiesOf }) => (
-  storiesOf('ui/ErrorComponent', module)
+  storiesOf('dashboard/ui/ErrorComponent', module)
     .add('Error 404', () => (
       <Story>
         <ErrorComponent

@@ -14,7 +14,7 @@ const articles = [
 ];
 
 export default ({ storiesOf }) => (
-  storiesOf('ui/TestImonialV2', module)
+  storiesOf('dashboard/ui/TestImonialV2', module)
     .add('default', () => (
       <Story>
         <TestImonialV2 {...articles[0]} />

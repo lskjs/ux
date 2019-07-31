@@ -3,7 +3,7 @@ import EventFooter from './EventFooter';
 import Story from '@lskjs/dev/Story';
 
 export default ({ storiesOf }) => (
-  storiesOf('ui/EventFooter', module)
+  storiesOf('dashboard/ui/EventFooter', module)
     .add('default', () => (
       <Story>
         <EventFooter

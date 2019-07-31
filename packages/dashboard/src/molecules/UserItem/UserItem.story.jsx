@@ -4,7 +4,7 @@ import Story from '@lskjs/dev/Story';
 
 
 export default ({ storiesOf }) => (
-  storiesOf('ui/UserItem', module)
+  storiesOf('dashboard/ui/UserItem', module)
     .add('default', () => (
       <Story>
         <UserItem

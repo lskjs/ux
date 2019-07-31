@@ -5,7 +5,7 @@ import Story from '@lskjs/dev/Story';
 
 
 export default ({ storiesOf }) => (
-  storiesOf('ui/StatusBlock', module)
+  storiesOf('dashboard/ui/StatusBlock', module)
     .add('default', () => (
       <Story>
         <StatusBlock

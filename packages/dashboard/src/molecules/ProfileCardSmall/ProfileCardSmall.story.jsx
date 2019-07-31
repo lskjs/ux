@@ -5,7 +5,7 @@ import ProfileCardV1 from './ProfileCardSmall';
 
 
 export default ({ storiesOf }) => (
-  storiesOf('ui/ProfileCardSmall', module)
+  storiesOf('dashboard/ui/ProfileCardSmall', module)
     .add('Default', () => (
       <Story>
         <ProfileCardV1 img="https://picsum.photos/200" name="Jason Bourne" info="Engineer" />

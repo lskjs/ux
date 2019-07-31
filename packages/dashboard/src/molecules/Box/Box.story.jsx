@@ -8,7 +8,7 @@ import UserBoxFooter from '../UserBoxFooter';
 import BoxDivider from '../../atoms/BoxDivider';
 
 export default ({ storiesOf }) => (
-  storiesOf('ui/Box', module)
+  storiesOf('dashboard/ui/Box', module)
     .add('Default', () => (
       <Story>
         <Box padded>

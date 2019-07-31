@@ -9,7 +9,7 @@ const getFont = fontName => (
 );
 
 module.exports = ({ storiesOf, action }) =>
-  storiesOf('Search', module)
+  storiesOf('dashboard/Search', module)
     .addHtml(getFont('PT Sans'))
     .add('Default', () => <Search placeholder="Введите название канала" onChange={action('onChange')} />)
     .add('Counted', () => <Search placeholder="Введите название канала" max={700} onChange={action('onChange')} />);

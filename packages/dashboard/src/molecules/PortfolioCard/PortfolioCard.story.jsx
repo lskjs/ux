@@ -19,7 +19,7 @@ const articles = [
 ];
 
 export default ({ storiesOf }) => (
-  storiesOf('ui/PortfolioCard', module)
+  storiesOf('dashboard/ui/PortfolioCard', module)
     .add('Card1', () => (
       <Story>
         <PortfolioCard {...articles[0]} />

@@ -3,7 +3,7 @@ import Story from '@lskjs/dev/Story';
 import DefaultCard from './DefaultCard';
 
 module.exports = ({ storiesOf }) =>
-  storiesOf('hz/DefaultCard', module)
+  storiesOf('dashboard/hz/DefaultCard', module)
     .add('DefaultCard', () => {
       return (
         <Story>

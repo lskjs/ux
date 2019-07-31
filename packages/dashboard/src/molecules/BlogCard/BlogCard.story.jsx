@@ -54,7 +54,7 @@ const articles = [
 
 
 export default ({ storiesOf }) => (
-  storiesOf('ui/BlogCard', module)
+  storiesOf('dashboard/ui/BlogCard', module)
     .add('BlogCard', () => (
       <Story>
         <BlogCard

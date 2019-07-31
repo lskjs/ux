@@ -14,7 +14,7 @@ const articles = [
 ];
 
 export default ({ storiesOf }) => (
-  storiesOf('ui/Blog', module)
+  storiesOf('dashboard/ui/Blog', module)
     .add('Default', () => (
       <div style={{ padding: 60 }}>
         <Story>

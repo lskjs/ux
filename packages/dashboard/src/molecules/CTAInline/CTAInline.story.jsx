@@ -4,7 +4,7 @@ import CTAInline from './CTAInline';
 import Story from '@lskjs/dev/Story';
 
 export default ({ storiesOf }) => (
-  storiesOf('ui/CTAInline', module)
+  storiesOf('dashboard/ui/CTAInline', module)
     .add('Default', () => (
       <Story>
         <CTAInline

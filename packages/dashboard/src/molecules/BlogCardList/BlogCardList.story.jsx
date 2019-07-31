@@ -57,7 +57,7 @@ const articles = [
 ];
 
 export default ({ storiesOf }) => (
-  storiesOf('ui/BlogCardList', module)
+  storiesOf('dashboard/ui/BlogCardList', module)
     .add('BlogCardList', () => (
       <div>
         {range(5).map(i => <div style={{ padding: 60 }}><Story><BlogCardList {...articles[i]} /></Story></div>)}

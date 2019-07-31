@@ -17,7 +17,7 @@ const user = () => ({
 });
 
 export default ({ storiesOf }) => (
-  storiesOf('ui/UserCard', module)
+  storiesOf('dashboard/ui/UserCard', module)
     .add('default', () => (
       <Story>
         <UserCard {...user()} />

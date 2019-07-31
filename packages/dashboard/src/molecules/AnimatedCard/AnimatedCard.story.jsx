@@ -6,7 +6,7 @@ import AnimatedCard from './AnimatedCard';
 
 
 export default ({ storiesOf }) => (
-  storiesOf('ui/AnimatedCard', module)
+  storiesOf('dashboard/ui/AnimatedCard', module)
     .add('Default with anim enter', () => (
       <Story style={{ border: 'none' }}>
         <Row>

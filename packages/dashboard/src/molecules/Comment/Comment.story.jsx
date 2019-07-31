@@ -10,7 +10,7 @@ const user = {
 
 
 export default ({ storiesOf }) => (
-  storiesOf('ui/Comment', module)
+  storiesOf('dashboard/ui/Comment', module)
     .add('Default', () => (
       <Story>
         <Comment

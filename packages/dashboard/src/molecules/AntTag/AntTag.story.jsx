@@ -4,7 +4,7 @@ import Link from '@lskjs/ui/Link';
 import AntTag from './AntTag';
 
 export default ({ storiesOf }) => (
-  storiesOf('ui/AntTag', module)
+  storiesOf('dashboard/ui/AntTag', module)
     .add('Default', () => (
       <Story>
         <AntTag>

@@ -3,7 +3,7 @@ import NumberCard from './NumberCard';
 import Story from '@lskjs/dev/Story';
 
 export default ({ storiesOf }) => (
-  storiesOf('ui/NumberCard', module)
+  storiesOf('dashboard/ui/NumberCard', module)
     .add('Default', () => (
       <Story>
         <NumberCard

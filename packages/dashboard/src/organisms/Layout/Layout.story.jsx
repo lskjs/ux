@@ -327,7 +327,7 @@ export const fixedLayout = props => (
 );
 
 export default ({ storiesOf }) => (
-  storiesOf('organisms/Layout', module)
+  storiesOf('dashboard/organisms/Layout', module)
     .add('Default', () => (
       <Story>
         <Layout>

@@ -63,7 +63,7 @@ const config = {
 const tabs = [];
 
 export default ({ storiesOf }) => (
-  storiesOf('molecules', module)
+  storiesOf('dashboard/molecules', module)
     .add('LayoutHeader/1', () => (
       <Story>
         <LayoutHeader
