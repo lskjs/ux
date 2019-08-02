@@ -1,4 +1,4 @@
-import styled from 'react-emotion';
+import styled, { css } from 'react-emotion';
 import getTheme from '@lskjs/theme/getTheme';
 
 export const Additional = styled('div')`
@@ -146,3 +146,32 @@ export const Info = styled('div')`
   min-height: 40px;
 `;
 
+export const CheckBlockList = styled('div')`
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 4px;
+  border: 1px solid ${p => getTheme(p.theme, 'colors.border')};
+  border-bottom: none;
+  > div {
+    &:nth-child(odd) {
+      ${Item} {
+        border-right: 1px solid ${p => getTheme(p.theme, 'colors.border')};
+        border-bottom: 1px solid ${p => getTheme(p.theme, 'colors.border')};
+      }
+    }
+    &:nth-child(even){
+      border-bottom: 1px solid ${p => getTheme(p.theme, 'colors.border')};
+    }
+    &:last-child {
+      ${Item} {
+        border-bottom: none;
+      }
+    }
+    padding: 0;
+  }
+  ${Item} {
+    border: 0;
+    margin: 0;
+    border-radius: 0;
+  }
+`;

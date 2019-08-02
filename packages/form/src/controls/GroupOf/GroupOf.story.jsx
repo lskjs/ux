@@ -1,5 +1,6 @@
 import React from 'react';
 import { Form, Field, FastField } from 'formik';
+import { Row, Col } from '@lskjs/ui/Grid';
 import Story from '@lskjs/dev/Story';
 import createForm from '../../createForm';
 import GroupOf from './GroupOf';
@@ -11,6 +12,8 @@ import T from '@lskjs/ui/T';
 import Account from 'react-icons2/mdi/account-box-outline';
 import Desktop from 'react-icons2/mdi/desktop-mac';
 import Camera from 'react-icons2/mdi/camcorder';
+import { CheckBlockList } from '../CheckBlock/ExtendedCheckblock/ExtendedCheckblock.styles';
+
 
 const RadioFormView = props => (
   // const colorsOptions = getOptions(colorsControl);
@@ -18,6 +21,20 @@ const RadioFormView = props => (
     <Field {...props.control('color')} />
     <Field {...props.control('adtype')} />
     <Field {...props.control('dealType')} />
+    <hr />
+    <Field {...props.control('checkBlockList')}
+      render2={({ options }) => (
+        <CheckBlockList>
+          {options.map(({ Component }) => {
+            return (
+              <Col xs={6}>
+                <Component />
+              </Col>
+            );
+          })}
+        </CheckBlockList>
+      )}
+    />
     <hr />
     <Field {...props.control('colors')} />
     <Field {...props.control('colors2')} />
@@ -153,6 +170,41 @@ const RadioForm = createForm({
         label: 'Fix price',
         info: 'this is info',
       }],
+    },
+    checkBlockList: {
+      component: GroupOf,
+      isMulti: true,
+      itemComponent: Checkblock,
+      itemProps: {
+        view: 'checkbox',
+        block: true,
+      },
+      options: [
+        {
+          value: 'first',
+          title: 'first',
+        },
+        {
+          value: 'second',
+          title: 'second',
+        },
+        {
+          value: 'third',
+          title: 'third',
+        },
+        {
+          value: 'fourth',
+          title: 'fourth',
+        },
+        {
+          value: 'fifth',
+          title: 'fifth',
+        },
+        {
+          value: 'sixth',
+          title: 'sixth',
+        },
+      ],
     },
     adtype: {
       component: GroupOf,
