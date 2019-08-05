@@ -1,4 +1,7 @@
 import React from 'react';
+import AntForm from 'antd/lib/form';
+import Button from '@lskjs/button';
+import isEmpty from 'lodash/isEmpty';
 import { Form, Field, FastField } from 'formik';
 import { Row, Col } from '@lskjs/ui/Grid';
 import Story from '@lskjs/dev/Story';
@@ -13,46 +16,81 @@ import Account from 'react-icons2/mdi/account-box-outline';
 import Desktop from 'react-icons2/mdi/desktop-mac';
 import Camera from 'react-icons2/mdi/camcorder';
 import { CheckBlockList } from '../CheckBlock/ExtendedCheckblock/ExtendedCheckblock.styles';
+import { LabelWrapper, checkBlockListStyle } from './GroupOf.styles';
 
 
-const RadioFormView = props => (
-  // const colorsOptions = getOptions(colorsControl);
-  <Form>
-    <Field {...props.control('color')} />
-    <Field {...props.control('adtype')} />
-    <Field {...props.control('dealType')} />
-    <hr />
-    <Field {...props.control('checkBlockList')}
-      render2={({ options }) => (
-        <CheckBlockList>
-          {options.map(({ Component }) => {
-            return (
-              <Col xs={6}>
-                <Component />
-              </Col>
-            );
-          })}
-        </CheckBlockList>
-      )}
-    />
-    <hr />
-    <Field {...props.control('colors')} />
-    <Field {...props.control('colors2')} />
-    <Field
-      {...props.control('colors')}
-      render2={({ options }) => (
-        <div style={{ border: '1px black solid' }}>
-          {options.map(({ Component, option }) => (
-            <div style={{ border: `1px ${option.value} dotted` }}><Component /></div>
-          ))}
-        </div>
-      )}
-    />
-    <hr />
-    <Field {...props.control('videoTypes')} itemProps={{ style: { display: 'block' } }} />
-    <FormDebug {...props} />
-  </Form>
-);
+const RadioFormView = (props) => {
+  const checkBlockListValues = props.values.checkBlockList;
+  const checkBlockListField = props.controls.checkBlockList;
+  return (
+    // const colorsOptions = getOptions(colorsControl);
+    <Form>
+      <Field {...props.control('color')} />
+      <Field {...props.control('adtype')} />
+      <Field {...props.control('dealType')} />
+      <hr />
+      <AntForm.Item
+        className={checkBlockListStyle}
+        label={(
+          <LabelWrapper>
+            <div>test</div>
+            <Button
+              type="button"
+              paint="primary"
+              view="empty"
+              size="small"
+              isRipple={false}
+              // onClick={() => console.log(props)}
+              onClick={() => {
+                const values = [];
+                if (!checkBlockListValues || isEmpty(checkBlockListField)) {
+                  checkBlockListField.options.forEach((item) => {
+                    values.push(item.value);
+                  });
+                  props.setFieldValue(checkBlockListField.name, values);
+                } else {
+                  props.setFieldValue(checkBlockListField.name, null);
+                }
+              }}
+            >
+              {checkBlockListValues && !isEmpty(checkBlockListValues) ? 'Очистить все' : 'Выделить все'}
+            </Button>
+          </LabelWrapper>
+        )}
+      >
+        <Field {...props.control('checkBlockList')}
+          render2={({ options }) => (
+            <CheckBlockList>
+              {options.map(({ Component }) => {
+                return (
+                  <Col xs={6}>
+                    <Component />
+                  </Col>
+                );
+              })}
+            </CheckBlockList>
+          )}
+        />
+      </AntForm.Item>
+      <hr />
+      <Field {...props.control('colors')} />
+      <Field {...props.control('colors2')} />
+      <Field
+        {...props.control('colors')}
+        render2={({ options }) => (
+          <div style={{ border: '1px black solid' }}>
+            {options.map(({ Component, option }) => (
+              <div style={{ border: `1px ${option.value} dotted` }}><Component /></div>
+            ))}
+          </div>
+        )}
+      />
+      <hr />
+      <Field {...props.control('videoTypes')} itemProps={{ style: { display: 'block' } }} />
+      <FormDebug {...props} />
+    </Form>
+  );
+};
 
 const RadioForm = createForm({
   view: RadioFormView,

@@ -9,7 +9,7 @@ export const flickityStyle = css`
 export const Control = styled('div')`
   top: 0;
   bottom: 0;
-  padding: 0 24px;
+  padding: 0 0px;
   ${p => (p.position === 'left' && css`
     left: 0;
     transform: rotate(180deg);
