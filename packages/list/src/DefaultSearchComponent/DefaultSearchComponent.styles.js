@@ -67,7 +67,7 @@ export const Input = styled(filteredTag)`
   font-size: 13px;
   text-align: left;
   font-weight: normal;
-  color: ${p => getTheme(p.theme, 'colors.secondary')};
+  color: ${p => getTheme(p.theme, 'colors.main')};
   &::-webkit-input-placeholder {
     ${placeholderStyle}
   }
