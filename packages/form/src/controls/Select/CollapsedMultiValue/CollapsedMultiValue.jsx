@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import isEqual from 'lodash/isEqual';
 import pick from 'lodash/pick';
+import T from '@lskjs/ui/T';
 import { ValueBlock, Value } from './CollapsedMultiValue.styles';
 
 class CollapsedMultiValue extends Component {
@@ -21,7 +22,7 @@ class CollapsedMultiValue extends Component {
     const { selectProps } = this.props;
     return (
       <ValueBlock>
-        Выбрано <Value>({selectProps.value.length})</Value>
+        <T name="lskjsForm.MultiValueSelected" /> <Value>({selectProps.value.length})</Value>
       </ValueBlock>
     );
   }
