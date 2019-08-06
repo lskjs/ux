@@ -43,13 +43,13 @@ const RadioFormView = (props) => {
               // onClick={() => console.log(props)}
               onClick={() => {
                 const values = [];
-                if (!checkBlockListValues || isEmpty(checkBlockListField)) {
+                if (!checkBlockListValues || isEmpty(checkBlockListValues)) {
                   checkBlockListField.options.forEach((item) => {
                     values.push(item.value);
                   });
                   props.setFieldValue(checkBlockListField.name, values);
                 } else {
-                  props.setFieldValue(checkBlockListField.name, null);
+                  props.setFieldValue(checkBlockListField.name, []);
                 }
               }}
             >
