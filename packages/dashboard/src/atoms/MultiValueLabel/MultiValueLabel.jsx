@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import T from '@lskjs/ui/T';
 import { MultiValue, Value } from './MultiValueLabel.styles';
 
 class MultiValueLabel extends PureComponent {
@@ -6,7 +7,7 @@ class MultiValueLabel extends PureComponent {
     const { selectProps } = this.props;
     return (
       <MultiValue>
-        Выбрано <Value>({selectProps.value.length})</Value>
+        <T name="filterCheckboxItem.selected" /> <Value>({selectProps.value.length})</Value>
       </MultiValue>
     );
   }
