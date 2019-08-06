@@ -22,7 +22,7 @@ class CollapsedMultiValue extends Component {
     const { selectProps } = this.props;
     return (
       <ValueBlock>
-        <T name="filterCheckboxItem.selected" /> <Value>({selectProps.value.length})</Value>
+        <T name="lskjsForm.MultiValueSelected" /> <Value>({selectProps.value.length})</Value>
       </ValueBlock>
     );
   }
