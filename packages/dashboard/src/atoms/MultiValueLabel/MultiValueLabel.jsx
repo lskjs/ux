@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import T from '@lskjs/ui/T';
 import { MultiValue, Value } from './MultiValueLabel.styles';
 
 class MultiValueLabel extends PureComponent {
