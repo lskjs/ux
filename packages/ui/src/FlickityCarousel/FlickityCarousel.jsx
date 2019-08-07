@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import autobind from '@lskjs/autobind';
 import Button from '@lskjs/button';
 import Flickity from 'react-flickity-component';
-import { flickityStyle, Wrapper, Control } from './FlickityCarousel.styles';
+import { flickityStyle, Wrapper, Control, shadowStyle } from './FlickityCarousel.styles';
 import CarouselButton from './assets/carousel-go';
 
 const flickityOptions = {
@@ -87,6 +87,7 @@ class FlickityCarousel extends PureComponent {
         </Flickity>
         <Control position="left" visible={canPrev}>
           <Button
+            className={shadowStyle}
             disabled={!canPrev}
             icon={<CarouselButton />}
             onClick={this.myCustomPrevious}
@@ -94,6 +95,7 @@ class FlickityCarousel extends PureComponent {
         </Control>
         <Control position="right" visible={canNext}>
           <Button
+            className={shadowStyle}
             disabled={!canNext}
             icon={<CarouselButton />}
             onClick={this.myCustomNext}
