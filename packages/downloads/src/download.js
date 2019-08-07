@@ -62,7 +62,7 @@ const downloadAllFromList = async ({ listStore, limit, maxCount }) => {
   listStoreAll.skip = 0;
   listStoreAll.items = [];
   const maxItemsCount = listStoreAll.count > maxCount ? maxCount : listStoreAll.count;
-  await promiseMapSeries(Array(Math.round(maxItemsCount / limit)).fill(), async () => {
+  await promiseMapSeries(Array(Math.ceil(maxItemsCount / limit)).fill(), async () => {
     await listStoreAll.fetchMore(1, limit);
   });
   return listStoreAll.items;
