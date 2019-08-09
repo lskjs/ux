@@ -86,7 +86,7 @@ class Files extends Component {
       const res = await Promise.map(files, file => (
         upload.uploadFile(file)
       ));
-      if (multiple) value = res.map(e => e.url && e.filename);
+      if (multiple) value = res.map(e => ({ url: e.url, filename: e.filename }));
       else value = res[0] && res[0].url;
       if (onSubmit) onSubmit(value);
     } catch (err) {

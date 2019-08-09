@@ -32,9 +32,8 @@ class GridFile extends Component {
   }
 
   render() {
-    const { src = '', title, image, type, onRemove, link } = this.props;
+    const { src = '', filename, title, image, type, onRemove, link } = this.props;
     const Icon = fileTypes[type] || fileTypes.other;
-
     const res = (
       <Box
         componentClass="div"
@@ -45,7 +44,7 @@ class GridFile extends Component {
             ? (
               <PreviewImage
                 src={src}
-                alt={title}
+                alt={filename}
               />
             )
             : (
@@ -63,7 +62,7 @@ class GridFile extends Component {
           >
             {type}
           </Typography>
-          <Typography className={urlStyle}>{title}</Typography>
+          <Typography className={urlStyle}>{filename}</Typography>
         </Info>
         <If condition={!!onRemove}>
           <RemoveButton>
