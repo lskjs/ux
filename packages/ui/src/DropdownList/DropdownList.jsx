@@ -104,7 +104,7 @@ class DropdownList extends PureComponent {
         menuRect={menuRect}
         style={styleProps}
       >
-        <Paper shadow style={{ minWidth: 224 }}>
+        <Paper shadow style={{ minWidth: 224, paddingTop: 8, paddingBottom: 8 }}>
           {items}
         </Paper>
       </Wrapper>

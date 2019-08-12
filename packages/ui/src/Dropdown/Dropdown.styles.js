@@ -23,7 +23,8 @@ export const Wrapper = styled('div')`
 const dynamicTag = createDynamicTag('div');
 export const Block = styled(dynamicTag)`
   display: block;
-  padding: 14px 12px;
+  padding: 15.5px 12px;
+  border-radius: 0;
   &:not(:last-child) {
     border-bottom: 1px solid ${p => getTheme(p.theme, 'colors.border')};
   } 
