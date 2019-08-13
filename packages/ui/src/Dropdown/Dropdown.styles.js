@@ -26,7 +26,7 @@ export const Block = styled(dynamicTag)`
   padding: 15.5px 12px;
   border-radius: 0;
   &:not(:last-child) {
-    border-bottom: 1px solid ${p => getTheme(p.theme, 'colors.border')};
+    border-bottom: 1px solid ${p => getTheme(p.theme, 'colors.lighterGray')};
   } 
   &:hover {
     background-color: ${p => getTheme(p.theme, 'colors.lighterPrimary')};

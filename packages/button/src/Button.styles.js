@@ -24,7 +24,11 @@ const rotate = keyframes`
 `;
 
 export const Text = styled('span')`
-
+  ${p => p.mobileView && css`
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  `}
 `;
 
 

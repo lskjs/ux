@@ -78,6 +78,7 @@ class Button extends PureComponent {
     style: PropTypes.object,
     colors: PropTypes.object,
     isRipple: PropTypes.bool,
+    mobileView: PropTypes.bool,
   }
 
   static defaultProps = {
@@ -108,6 +109,7 @@ class Button extends PureComponent {
     autoMobile: false,
     rounded: false,
     style: null,
+    mobileView: false,
     isRipple: !isTouchDevice(),
   }
 
@@ -251,6 +253,7 @@ class Button extends PureComponent {
       style,
       colors,
       onlyIcon,
+      mobileView,
       isRipple,
       ...props
     } = this.props;
@@ -324,7 +327,7 @@ class Button extends PureComponent {
           {content}
         </State>
         {icoLeft && this.renderIcon(icoLeft, icon ? 'single' : 'left')}
-        {children && <Text>{children}</Text>}
+        {children && <Text mobileView={mobileView}>{children}</Text>}
         {iconRight && this.renderIcon(iconRight, 'right')}
       </Btn>
     );

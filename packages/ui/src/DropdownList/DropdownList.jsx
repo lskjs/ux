@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import autobind from '@lskjs/autobind';
 
-import Wrapper from './DropdownList.styles';
+import Wrapper, { listStyle } from './DropdownList.styles';
 import Paper from '../Paper';
 
 class DropdownList extends PureComponent {
@@ -104,7 +104,7 @@ class DropdownList extends PureComponent {
         menuRect={menuRect}
         style={styleProps}
       >
-        <Paper shadow style={{ minWidth: 224, paddingTop: 8, paddingBottom: 8 }}>
+        <Paper shadow className={listStyle}>
           {items}
         </Paper>
       </Wrapper>
