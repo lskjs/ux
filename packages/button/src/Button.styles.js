@@ -24,11 +24,7 @@ const rotate = keyframes`
 `;
 
 export const Text = styled('span')`
-  ${p => p.mobileView && css`
-    @media screen and (max-width: 767px) {
-      display: none;
-    }
-  `}
+  
 `;
 
 
@@ -971,6 +967,21 @@ export const Btn = styled(filteredTag)`
     &:active {
       color: ${getTheme(p, 'colors.activeColor')};
       background-color: ${getTheme(p, 'colors.activeBackground')};
+    }
+  `}
+  ${p => p.mobileView && css`
+    @media screen and (max-width: 767px) {
+      ${Text} {
+        display: none;
+      }
+      ${Icon} {
+        margin-left: ${p.iconDirection === 'right' && '4px'};
+        margin-right: ${p.iconDirection === 'left' && '4px'};
+
+      }
+      padding-right: 9px;
+      padding-left: 9px;
+      min-width: unset;
     }
   `}
 `;

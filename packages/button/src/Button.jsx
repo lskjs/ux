@@ -280,6 +280,7 @@ class Button extends PureComponent {
     return (
       <Btn
         type={type}
+        mobileView={mobileView}
         componentClass={tag}
         bordered={bordered}
         borderColor={borderColor}
@@ -327,7 +328,7 @@ class Button extends PureComponent {
           {content}
         </State>
         {icoLeft && this.renderIcon(icoLeft, icon ? 'single' : 'left')}
-        {children && <Text mobileView={mobileView}>{children}</Text>}
+        {children && <Text>{children}</Text>}
         {iconRight && this.renderIcon(iconRight, 'right')}
       </Btn>
     );
