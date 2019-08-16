@@ -21,6 +21,7 @@ class Dropdown extends PureComponent {
     closeOnSelect: PropTypes.bool,
     /** Тело компонента */
     children: PropTypes.any, // eslint-disable-line react/forbid-prop-types
+    outsideClick: PropTypes.bool,
   }
   static defaultProps = {
     trigger: null,
@@ -28,6 +29,7 @@ class Dropdown extends PureComponent {
     placement: 'bottom',
     closeOnSelect: true,
     children: null,
+    outsideClick: true,
   }
 
   constructor(props) {
@@ -42,11 +44,14 @@ class Dropdown extends PureComponent {
   @autobind
   show() {
     const { isOpen } = this.state;
+    const { outsideClick } = this.props;
     const { current: trigger } = this.trigger;
-    if (!isOpen) {
-      document.addEventListener('click', this.handleOutsideClick);
-    } else {
-      document.removeEventListener('click', this.handleOutsideClick);
+    if (outsideClick) {
+      if (!isOpen) {
+        document.addEventListener('click', this.handleOutsideClick);
+      } else {
+        document.removeEventListener('click', this.handleOutsideClick);
+      }
     }
     this.setState({
       rect: trigger && trigger.getBoundingClientRect(),
@@ -56,7 +61,8 @@ class Dropdown extends PureComponent {
   @autobind
   hide() {
     const { isOpen } = this.state;
-    if (isOpen) {
+    const { outsideClick } = this.props;
+    if (isOpen && outsideClick) {
       document.removeEventListener('click', this.handleOutsideClick);
     }
     this.toggle();
