@@ -21,7 +21,8 @@ class FilterButton extends Component {
     const {
       List, listStore,
     } = this.props;
-    const badge = listStore.hasFilter ? filter(listStore.filter, a => !isEmpty(a)).length : 0;
+    // console.log('lsk-ux FilterButton', listStore.filter);
+    const badge = listStore.hasFilter ? listStore.getActiveFilter : 0;
     const ResponsiveButton = withResponsive(List.Button);
     const Button = props => (
       <ResponsiveButton

@@ -40,7 +40,7 @@
     "@lskjs/dashboard": "^0.34.111",
     "@lskjs/dev": "^0.34.108",
     "@lskjs/form": "^0.34.111",
-    "@lskjs/mobx": "^0.35.6",
+    "@lskjs/mobx": "^0.35.37",
     "@lskjs/modal": "^0.34.111",
     "@lskjs/scroll": "^0.34.108",
     "@lskjs/theme": "^0.34.108",

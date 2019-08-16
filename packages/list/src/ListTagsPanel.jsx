@@ -14,7 +14,7 @@ class ListTagsPanel extends Component {
       listStore,
       filterProps,
     } = this.props;
-    if (!listStore.hasFilter) return null;
+    if (!listStore.getActiveFilter) return null;
     return (
       <List.TagsPanelWrapper>
         <List.Tags listStore={listStore} Tag={List.Tag} form={form} {...filterProps} />
