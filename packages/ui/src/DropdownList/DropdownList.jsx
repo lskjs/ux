@@ -1,6 +1,8 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import ReactDOM from 'react-dom';
+import Performance from '@lskjs/dev/Performance';
 import autobind from '@lskjs/autobind';
 
 import Wrapper, { listStyle } from './DropdownList.styles';
@@ -98,16 +100,18 @@ class DropdownList extends PureComponent {
       }
     }
     return (
-      <Wrapper
-        rect={rect}
-        innerRef={this.menu}
-        menuRect={menuRect}
-        style={styleProps}
-      >
-        <Paper shadow className={listStyle}>
-          {items}
-        </Paper>
-      </Wrapper>
+      <Performance name="DropdownList" disabled={!__DEV__}>
+        <Wrapper
+          rect={rect}
+          innerRef={this.menu}
+          menuRect={menuRect}
+          style={styleProps}
+        >
+          <Paper shadow className={listStyle}>
+            {items}
+          </Paper>
+        </Wrapper>
+      </Performance>
     );
   }
   render() {
