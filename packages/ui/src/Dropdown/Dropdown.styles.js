@@ -1,4 +1,4 @@
-import styled from 'react-emotion';
+import styled, { css } from 'react-emotion';
 import getTheme from '@lskjs/theme/getTheme';
 import createDynamicTag from '@lskjs/utils/createDynamicTag';
 
@@ -25,13 +25,12 @@ export const Block = styled(dynamicTag)`
   display: block;
   padding: 15.5px 12px;
   border-radius: 0;
-  &:not(:last-child) {
-    border-bottom: 1px solid ${p => getTheme(p.theme, 'colors.lighterGray')};
-  } 
+  ${p => (p.active && css`
+    * {
+      color: ${getTheme(p.theme, 'colors.primary')};
+    }
+  `)}
   &:hover {
     background-color: ${p => getTheme(p.theme, 'colors.lighterPrimary')};
-    * {
-      color: ${p => getTheme(p.theme, 'colors.primary')};
-    }
   }
 `;

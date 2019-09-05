@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import If from 'react-if';
 import PropTypes from 'prop-types';
 import autobind from '@lskjs/autobind';
+import Performance from '@lskjs/dev/Performance';
 import DropdownItem from './DropdownItem';
 import DropdownList from '../DropdownList';
 import { Wrapper } from './Dropdown.styles';
@@ -96,25 +97,27 @@ class Dropdown extends PureComponent {
     const { children, trigger, pull, placement, id } = this.props;
     const { isOpen, rect } = this.state;
     return (
-      <Wrapper id={id}>
-        <div
-          aria-hidden
-          style={{ display: 'inline-block' }}
-          ref={this.trigger}
-        >
-          {trigger({ isOpen, onClick: this.show })}
-        </div>
-        <If condition={isOpen}>
-          <DropdownList
-            id={id}
-            ref={this.dropdown}
-            pull={pull}
-            placement={placement}
-            items={children}
-            rect={rect}
-          />
-        </If>
-      </Wrapper>
+      <Performance name="Dropdown" disabled={!__DEV__}>
+        <Wrapper id={id}>
+          <div
+            aria-hidden
+            style={{ display: 'inline-block' }}
+            ref={this.trigger}
+          >
+            {trigger({ isOpen, onClick: this.show })}
+          </div>
+          <If condition={isOpen}>
+            <DropdownList
+              id={id}
+              ref={this.dropdown}
+              pull={pull}
+              placement={placement}
+              items={children}
+              rect={rect}
+            />
+          </If>
+        </Wrapper>
+      </Performance>
     );
   }
 }

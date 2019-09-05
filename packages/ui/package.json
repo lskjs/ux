@@ -72,6 +72,7 @@
     "@lskjs/css": "*",
     "@lskjs/scroll": "*",
     "@lskjs/theme": "*",
+    "@lskjs/dev": "*",
     "@lskjs/utils": "^0.35.6",
     "antd": "^3.16.2",
     "emotion": "9.2.10",
