@@ -48,7 +48,7 @@ class LayoutHeaderUserMenu extends Component {
             <Avatar
               size={32}
               id={user.id || user._id}
-              src={user.avatar}
+              src={user.avatar || user.info.avatar}
               title={user.title || user.name}
             >
               <If condition={user.role === 'admin'}>
