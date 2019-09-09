@@ -33,7 +33,7 @@ const FilesUploader = ({
       onSubmit={(incomeValues) => {
         if (incomeValues && incomeValues.type === 'remove') {
           if (isMulti) {
-            form.setFieldValue(field.name, (field.value || []).filter(item => !(item && (item === incomeValues.src || item.src === incomeValues.src))));
+            form.setFieldValue(field.name, (field.value || []).filter(item => !(item && (item === incomeValues.src || item.src === incomeValues.src || item.url === incomeValues.src))));
           } else if (incomeValues.src === field.value) {
             form.setFieldValue(field.name, null);
           }
