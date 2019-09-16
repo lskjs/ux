@@ -19,7 +19,7 @@
     "watch": "../../scripts/package-watch.sh",
     "link": "../../scripts/package-link.sh",
     "bump": "../../scripts/package-bump.sh",
-    "release": "../../scripts/package-release.sh",
+    "release": "npm run build-storybook && ../../scripts/package-release.sh",
     "release:docs": "../../scripts/package-release-docs.sh",
     "storybook": "../../scripts/package-storybook.sh",
     "build-storybook": "../../scripts/package-build-storybook.sh",
