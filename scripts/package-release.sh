@@ -2,4 +2,4 @@
 # DEBUG=0 DIST=release `dirname "$0"`/package-build.sh && \
 # npm publish release
 
-echo $0
+echo `dirname "$0"`
