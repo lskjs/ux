@@ -11,11 +11,12 @@ import Radio from '../Radio';
 import Checkbox from '../Checkbox';
 import Checkblock from '../CheckBlock';
 import FormDebug from '../../FormDebug';
+import Input from '../Input';
 import T from '@lskjs/ui/T';
 import Account from 'react-icons2/mdi/account-box-outline';
 import Desktop from 'react-icons2/mdi/desktop-mac';
 import Camera from 'react-icons2/mdi/camcorder';
-import { CheckBlockList } from '../CheckBlock/ExtendedCheckblock/ExtendedCheckblock.styles';
+import { CheckBlockList, ColumnCheckBlockList } from '../CheckBlock/ExtendedCheckblock/ExtendedCheckblock.styles';
 import { LabelWrapper, checkBlockListStyle } from './GroupOf.styles';
 
 
@@ -72,6 +73,22 @@ const RadioFormView = (props) => {
           )}
         />
       </AntForm.Item>
+      <hr />
+      <br />
+      <br />
+      <Field {...props.control('checkBlockList2')}
+        render2={({ options }) => (
+          <ColumnCheckBlockList>
+            {options.map(({ Component }) => {
+              return (
+                <Col xs={12}>
+                  <Component />
+                </Col>
+              );
+            })}
+          </ColumnCheckBlockList>
+        )}
+      />
       <hr />
       <Field {...props.control('colors')} />
       <Field {...props.control('colors2')} />
@@ -210,6 +227,41 @@ const RadioForm = createForm({
       }],
     },
     checkBlockList: {
+      component: GroupOf,
+      isMulti: true,
+      itemComponent: Checkblock,
+      itemProps: {
+        view: 'checkbox',
+        block: true,
+      },
+      options: [
+        {
+          value: 'first',
+          title: 'first',
+        },
+        {
+          value: 'second',
+          title: 'second',
+        },
+        {
+          value: 'third',
+          title: 'third',
+        },
+        {
+          value: 'fourth',
+          title: 'fourth',
+        },
+        {
+          value: 'fifth',
+          title: 'fifth',
+        },
+        {
+          value: 'sixth',
+          title: 'sixth',
+        },
+      ],
+    },
+    checkBlockList2: {
       component: GroupOf,
       isMulti: true,
       itemComponent: Checkblock,

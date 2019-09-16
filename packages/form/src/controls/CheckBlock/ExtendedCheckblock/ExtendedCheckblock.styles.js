@@ -175,3 +175,34 @@ export const CheckBlockList = styled('div')`
     border-radius: 0;
   }
 `;
+
+export const ColumnCheckBlockList = styled('div')`
+  border-radius: 4px;
+  border: 1px solid ${p => getTheme(p.theme, 'colors.border')};
+  overflow-y: scroll;
+  height: 240px;
+  > div {
+    &:nth-child(odd) {
+      ${Item} {
+        /* border-right: 1px solid ${p => getTheme(p.theme, 'colors.border')}; */
+        border-bottom: 1px solid ${p => getTheme(p.theme, 'colors.border')};
+      }
+    }
+    &:nth-child(even){
+      border-bottom: 1px solid ${p => getTheme(p.theme, 'colors.border')};
+    }
+    &:last-child {
+      border-bottom: none;
+      ${Item} {
+        border-bottom: none;
+      }
+    }
+    border-right: none;
+    padding: 0;
+  }
+  ${Item} {
+    border: 0;
+    margin: 0;
+    border-radius: 0;
+  }
+`;
