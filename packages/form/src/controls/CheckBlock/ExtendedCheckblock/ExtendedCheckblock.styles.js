@@ -178,8 +178,7 @@ export const CheckBlockList = styled('div')`
 
 export const ColumnCheckBlockList = styled('div')`
   border-radius: 0 0 4px 4px;
-  border: 1px solid ${p => getTheme(p.theme, 'colors.border')};
-  overflow-y: scroll;
+  /* border: 1px solid ${p => getTheme(p.theme, 'colors.border')}; */
   border-top: 0;
   > div {
     &:nth-child(odd) {
