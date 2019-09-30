@@ -71,9 +71,9 @@ class FlickityCarousel extends PureComponent {
 
   render() {
     const { canNext, canPrev } = this.state;
-    const { children, instanceProps = {}, ...props } = this.props;
+    const { children, instanceProps = {}, rightToLeft, ...props } = this.props;
     return (
-      <Wrapper {...props}>
+      <Wrapper>
         <Flickity
           disableImagesLoaded={false}
           options={flickityOptions}
@@ -83,6 +83,7 @@ class FlickityCarousel extends PureComponent {
           flickityRef={(c) => {
             this.flkty = c;
           }}
+          {...props}
         >
           {children}
         </Flickity>
