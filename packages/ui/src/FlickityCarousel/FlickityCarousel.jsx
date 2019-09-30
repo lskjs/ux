@@ -7,7 +7,7 @@ import { flickityStyle, Wrapper, Control, shadowStyle } from './FlickityCarousel
 import CarouselButton from './assets/carousel-go';
 
 const flickityOptions = {
-  initialIndex: 0,
+  // initialIndex: 0,
   pageDots: false,
   prevNextButtons: false,
   cellAlign: 'left',
@@ -71,19 +71,21 @@ class FlickityCarousel extends PureComponent {
 
   render() {
     const { canNext, canPrev } = this.state;
-    const { children, instanceProps = {}, rightToLeft, ...props } = this.props;
+    const { children, instanceProps = {}, rightToLeft, options, ...props } = this.props;
     return (
-      <Wrapper>
+      <Wrapper {...props}>
         <Flickity
           disableImagesLoaded={false}
-          options={flickityOptions}
+          options={{
+            ...flickityOptions,
+            ...options,
+          }}
           static
           className={flickityStyle}
           {...instanceProps}
           flickityRef={(c) => {
             this.flkty = c;
           }}
-          {...props}
         >
           {children}
         </Flickity>
