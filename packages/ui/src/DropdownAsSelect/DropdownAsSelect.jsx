@@ -6,16 +6,29 @@ import ChevronDownIcon from 'react-icons2/mdi/chevron-down';
 import { Manager, Reference, Popper } from 'react-popper';
 
 import Outside from '@lskjs/utils/react-click-outside';
-import { contentStyle, outsideWrapperStyle, popperDisabledStyle, Content, Trigger as TriggerStyled, Icon, injectStyles } from './DropdownAsSelect.styles';
+import {
+  contentStyle,
+  outsideWrapperStyle,
+  popperDisabledStyle,
+  Content,
+  Trigger as TriggerStyled,
+  Icon,
+  injectStyles,
+} from './DropdownAsSelect.styles';
 
 injectStyles();
 
 class SelectFilter extends PureComponent {
   static Trigger = TriggerStyled;
   static propTypes = {
+    // eslint-disable-next-line react/forbid-prop-types
     trigger: PropTypes.any,
+    // eslint-disable-next-line react/forbid-prop-types
     children: PropTypes.any,
     disabled: PropTypes.bool,
+    triggerClosable: PropTypes.bool,
+    outsideClosable: PropTypes.bool,
+    // eslint-disable-next-line react/forbid-prop-types
     contentWrapperProps: PropTypes.object,
     onClose: PropTypes.func,
   }
@@ -24,6 +37,8 @@ class SelectFilter extends PureComponent {
     trigger: null,
     children: null,
     disabled: false,
+    triggerClosable: true,
+    outsideClosable: null,
     contentWrapperProps: {},
     onClose: null,
   }
@@ -33,6 +48,7 @@ class SelectFilter extends PureComponent {
     this.state = {
       open: false,
       contentHeight: '100%',
+      defaultOutsideClosable: true,
     };
     this.content = React.createRef();
   }
@@ -40,21 +56,25 @@ class SelectFilter extends PureComponent {
   @autobind
   onClickOutside() {
     const { open } = this.state;
+    const { onClose } = this.props;
     if (!open) return;
     this.openHandler(false);
-    if (this.props.onClose) {
-      this.props.onClose();
+    if (onClose) {
+      onClose();
     }
   }
 
   @autobind
   openHandler(open) {
-    this.setState({ open }, () => {
-      this.setState({
-        contentHeight: this.content.current
-          ? this.content.current.scrollHeight
-          : '100%',
-      });
+    this.setState({ open }, this.updateHeight);
+  }
+
+  @autobind
+  updateHeight() {
+    this.setState({
+      contentHeight: this.content.current
+        ? this.content.current.scrollHeight
+        : '100%',
     });
   }
 
@@ -63,6 +83,7 @@ class SelectFilter extends PureComponent {
     const { open, contentHeight } = this.state;
     const { children, contentWrapperProps } = this.props;
     if (!open) return false;
+    const content = typeof children === 'function' ? children({ open }) : children;
     return (
       <Content
         innerRef={ref}
@@ -73,7 +94,7 @@ class SelectFilter extends PureComponent {
       >
         <div ref={this.content}>
           <div {...contentWrapperProps}>
-            {children}
+            {content}
           </div>
         </div>
       </Content>
@@ -81,11 +102,12 @@ class SelectFilter extends PureComponent {
   }
 
   render() {
-    const { open } = this.state;
-    const { trigger, disabled } = this.props;
+    const { open, defaultOutsideClosable } = this.state;
+    const { trigger, disabled, triggerClosable, outsideClosable } = this.props;
     const { Trigger } = this.constructor;
+    const isOutside = outsideClosable !== null ? outsideClosable : defaultOutsideClosable;
     return (
-      <Outside className={outsideWrapperStyle} onClickOutside={this.onClickOutside}>
+      <Outside className={outsideWrapperStyle} onClickOutside={isOutside ? this.onClickOutside : () => {}}>
         <Manager>
           <Reference>
             {({ ref }) => (
@@ -93,10 +115,22 @@ class SelectFilter extends PureComponent {
                 innerRef={ref}
                 open={!disabled ? open : false}
                 disabled={disabled}
-                onClick={() => !disabled && this.openHandler(!open)}
+                onClick={() => {
+                  // if (isOutside) {
+                  //   this.setState({ defaultOutsideClosable: false });
+                  // }
+                  if (!disabled && !open) {
+                    this.openHandler(true);
+                  }
+                  if (open && triggerClosable) {
+                    if (!disabled) {
+                      this.openHandler(false);
+                    }
+                  }
+                }}
                 type="button"
               >
-                {trigger}
+                {typeof trigger === 'function' ? trigger({ open }) : trigger}
                 <Icon>
                   <ChevronDownIcon />
                 </Icon>
