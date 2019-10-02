@@ -5,6 +5,9 @@
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
   "keywords": [],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "dev": "npm run watch",
     "postversion": "npm run release",
