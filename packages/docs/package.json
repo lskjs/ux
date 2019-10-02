@@ -1,13 +1,9 @@
 {
-  "name": "@buzzguru/docs",
+  "name": "@lskjs/docs",
   "version": "0.34.126",
-  "description": "BuzzGuru docs",
+  "description": "lskjs docs",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
-  "publishConfig": {
-    "registry": "http://npm.buzz.guru:4873"
-  },
-  "repository": "https://gitlab.isuvorov.com/buzzguru/docs/tree/master/packages/docs",
   "keywords": [],
   "scripts": {
     "dev": "npm run watch",
