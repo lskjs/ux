@@ -105,7 +105,7 @@ class SelectFilter extends PureComponent {
 
   render() {
     const { open, defaultOutsideClosable } = this.state;
-    const { trigger, disabled, triggerClosable, outsideClosable } = this.props;
+    const { trigger, disabled, triggerClosable, outsideClosable, icon } = this.props;
     const { Trigger } = this.constructor;
     const isOutside = outsideClosable !== null ? outsideClosable : defaultOutsideClosable;
     return (
