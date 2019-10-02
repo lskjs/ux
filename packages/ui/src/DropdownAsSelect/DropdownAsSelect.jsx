@@ -31,6 +31,7 @@ class SelectFilter extends PureComponent {
     // eslint-disable-next-line react/forbid-prop-types
     contentWrapperProps: PropTypes.object,
     onClose: PropTypes.func,
+    icon: PropTypes.any,
   }
 
   static defaultProps = {
@@ -41,6 +42,7 @@ class SelectFilter extends PureComponent {
     outsideClosable: null,
     contentWrapperProps: {},
     onClose: null,
+    icon: <ChevronDownIcon />,
   }
 
   constructor(props) {
@@ -132,7 +134,7 @@ class SelectFilter extends PureComponent {
               >
                 {typeof trigger === 'function' ? trigger({ open }) : trigger}
                 <Icon>
-                  <ChevronDownIcon />
+                  {icon}
                 </Icon>
               </Trigger>
             )}
