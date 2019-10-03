@@ -65,8 +65,8 @@ class Dropdown extends PureComponent {
     const { outsideClick } = this.props;
     if (isOpen && outsideClick) {
       document.removeEventListener('click', this.handleOutsideClick);
+      this.toggle();
     }
-    this.toggle();
   }
 
   @autobind
