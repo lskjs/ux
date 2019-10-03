@@ -24,7 +24,7 @@ export const Icon = styled('div')`
   right: 0;
   top: 0;
   bottom: 0;
-  margin: auto 13px;
+  padding: 13px;
   font-size: 24px;
   line-height: 43px;
   color: hsl(0,0%,80%);
@@ -32,6 +32,9 @@ export const Icon = styled('div')`
 
   &:hover {
     color: hsl(0,0%,60%);
+  }
+  > svg {
+    margin-top: -22px;
   }
 `;
 

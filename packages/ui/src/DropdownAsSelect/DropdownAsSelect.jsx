@@ -28,6 +28,7 @@ class SelectFilter extends PureComponent {
     disabled: PropTypes.bool,
     triggerClosable: PropTypes.bool,
     outsideClosable: PropTypes.bool,
+    triggerIconClosable: PropTypes.bool,
     // eslint-disable-next-line react/forbid-prop-types
     contentWrapperProps: PropTypes.object,
     onClose: PropTypes.func,
@@ -40,6 +41,7 @@ class SelectFilter extends PureComponent {
     disabled: false,
     triggerClosable: true,
     outsideClosable: null,
+    triggerIconClosable: true,
     contentWrapperProps: {},
     onClose: null,
     icon: <ChevronDownIcon />,
@@ -105,7 +107,15 @@ class SelectFilter extends PureComponent {
 
   render() {
     const { open, defaultOutsideClosable } = this.state;
-    const { trigger, disabled, triggerClosable, outsideClosable, icon } = this.props;
+    const {
+      trigger,
+      disabled,
+      triggerClosable,
+      outsideClosable,
+      triggerIconClosable,
+      onClose,
+      icon
+    } = this.props;
     const { Trigger } = this.constructor;
     const isOutside = outsideClosable !== null ? outsideClosable : defaultOutsideClosable;
     return (
@@ -130,13 +140,28 @@ class SelectFilter extends PureComponent {
                   if (open && triggerClosable) {
                     if (!disabled) {
                       this.openHandler(false);
+                      if (onClose) {
+                        onClose();
+                      }
                     }
                   }
                 }}
                 type="button"
               >
                 {typeof trigger === 'function' ? trigger({ open }) : trigger}
-                <Icon>
+                <Icon
+                  type="button"
+                  onClick={() => {
+                    if (open && triggerIconClosable) {
+                      if (!disabled) {
+                        this.openHandler(false);
+                        if (onClose) {
+                          onClose();
+                        }
+                      }
+                    }
+                  }}
+                >
                   {icon}
                 </Icon>
               </Trigger>
