@@ -18,9 +18,6 @@ module.exports = async ({ config, mode }) => {
   config.plugins.push(new webpack.NormalModuleReplacementPlugin(
     /@lskjs\/dev\/Story/,
     (resource) => {
-      if (!resource.context.includes('@buzzguru/ui/Story')) {
-        resource.request = require.resolve('@buzzguru/ui/Story');
-      }
       if (resource.context.endsWith('@lskjs/dev')) {
         resource.request = require.resolve('@lskjs/dev');
       }
