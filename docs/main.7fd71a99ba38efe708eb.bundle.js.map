@@ -1,0 +1,1 @@
+{"version":3,"file":"main.7fd71a99ba38efe708eb.bundle.js","sources":["webpack:///./src/noop.jsx"],"sourcesContent":["export default () => {};\n"],"mappings":"AAAA","sourceRoot":""}
