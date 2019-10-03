@@ -43,9 +43,6 @@ module.exports = {
     const name = path.basename(componentPath, '.jsx');
     return `import ${name} from '${pack.name}/${name}';`;
   },
-  styleguideComponents: {
-    Wrapper: path.join(__dirname, 'node_modules', '@buzzguru/ui', 'Story'),
-  },
   webpackConfig: {
     resolve: {
       extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
