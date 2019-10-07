@@ -24,6 +24,9 @@ const dynamicTag = createDynamicTag('div');
 export const Block = styled(dynamicTag)`
   display: block;
   padding: 15.5px 12px;
+  ${p => (p.gap && css`
+    padding: ${p.gap};
+  `)}
   border-radius: 0;
   ${p => (p.active && css`
     * {
