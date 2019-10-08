@@ -220,7 +220,7 @@ export const globalStylesFormItem = () => injectGlobal`
     animation-name: diffZoomIn3 !important;
   }
   .has-error.has-feedback .ant-form-item-children-icon {
-    color: #ff4d4f;
+    color: #ee1e31;
     animation-name: diffZoomIn2 !important;
   }
   .is-validating.has-feedback .ant-form-item-children-icon {
@@ -260,6 +260,12 @@ export const globalStylesFormItem = () => injectGlobal`
     color: #9b9b9b !important;
     font-size: 14px !important;
     line-height: 1.43 !important;
+  }
+  .ant-form-item-control.has-error input {
+    border-color: #ee1e31;
+  }
+  .ant-form-item-label {
+    padding: 0 !important;
   }
 `;
 

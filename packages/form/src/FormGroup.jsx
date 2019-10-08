@@ -6,21 +6,21 @@ import { globalStylesFormItem } from './Form.styles';
 globalStylesFormItem();
 
 
-export default ({ field, form, children, htmlId, required, _required, title, help }) => {
-  const errorMessage = form && form.errors && form.errors[field.name];
+export default ({ field, form, children, htmlId, required, _required, title, help, errorMessage }) => {
+  const errorMsg = errorMessage || form && form.errors && form.errors[field.name];
   const looksLikeRequired = required || _required;
+  const titleComponent = <span style={errorMsg ? { color: '#ee1e31' } : {}}>{title}</span>;
   return (
     <Form.Item
       key={htmlId}
       required={looksLikeRequired}
-      label={title}
+      label={titleComponent}
       help={help}
-      validateStatus={errorMessage ? 'error' : null}
-      style={{ textAlign: 'left' }}
+      validateStatus={errorMsg ? 'error' : null}
     >
       <div id={htmlId} />
       {children}
-      {errorMessage && <FormError>{errorMessage}</FormError>}
+      {errorMsg && <FormError style={{ color: '#ee1e31' }}>{errorMsg}</FormError>}
     </Form.Item>
   );
 };
