@@ -9,7 +9,10 @@ globalStylesFormItem();
 export default ({ field, form, children, htmlId, required, _required, title, help, errorMessage }) => {
   const errorMsg = errorMessage || form && form.errors && form.errors[field.name];
   const looksLikeRequired = required || _required;
-  const titleComponent = <span style={errorMsg ? { color: '#ee1e31' } : {}}>{title}</span>;
+  let titleComponent;
+  if (title) {
+    titleComponent = <span style={errorMsg ? { color: '#ee1e31' } : {}}>{title}</span>;
+  }
   return (
     <Form.Item
       key={htmlId}
