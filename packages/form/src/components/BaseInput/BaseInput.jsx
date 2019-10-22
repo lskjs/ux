@@ -27,6 +27,7 @@ class Input extends PureComponent {
     className: PropTypes.string,
     regex: PropTypes.any,
     maxlength: PropTypes.number,
+    showLimit: PropTypes.bool,
   }
   static defaultProps = {
     validationState: null,
@@ -40,6 +41,7 @@ class Input extends PureComponent {
     className: null,
     regex: null,
     maxlength: null,
+    showLimit: true,
   }
   constructor(props) {
     super(props);
@@ -99,6 +101,7 @@ class Input extends PureComponent {
       leftIcon,
       rightIcon,
       maxlength,
+      showLimit,
       ...otherProps
     } = this.props;
     const { value } = this.state;
@@ -128,7 +131,7 @@ class Input extends PureComponent {
             {rightIcon}
           </RightWrapper>
         </If>
-        <If condition={!!maxlength}>
+        <If condition={maxlength && showLimit}>
           <Count>
             {get(value, 'length') || 0}
             /
