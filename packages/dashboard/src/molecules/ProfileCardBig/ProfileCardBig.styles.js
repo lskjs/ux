@@ -50,6 +50,7 @@ export const ProfileCardItem = styled(filteredTag)`
 
 export const ProfileCardAvatar = styled(Avatar)`
   box-shadow: 0 0 0 5px rgba(0,0,0,.1), 0 0 10px hsla(0,0%,100%,.2);
+  background-color: ${p => (!p.img ? 'rgba(0, 0, 0, 0)' : p.backgroundColor)};
   border-radius: 80px;
   margin: auto auto 18px;
 `;

@@ -15,17 +15,20 @@ class UserBoxFooter extends PureComponent {
     subtitle: PropTypes.any,
     actions: PropTypes.any,
     user: PropTypes.object,
+    backgroundColor: PropTypes.string,
   };
   static defaultProps = {
     subtitle: null,
     actions: null,
     user: null,
+    backgroundColor: null,
   };
   render() {
     const {
       subtitle,
       actions,
       user,
+      backgroundColor,
     } = this.props;
     return (
       <UserFooterItem>
@@ -35,6 +38,7 @@ class UserBoxFooter extends PureComponent {
             src={user.avatar}
             id={user._id}
             size={140}
+            backgroundColor={backgroundColor}
           />
         </AvatarContainer>
         <Content>
