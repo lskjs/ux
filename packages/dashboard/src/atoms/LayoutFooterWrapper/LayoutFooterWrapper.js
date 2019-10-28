@@ -9,7 +9,6 @@ export default styled(Footer)`
   line-height: 1.25rem;
   font-family: ${p => getTheme(p.theme, 'fontFamily')};
   padding: 1.625rem 30px;
-
   a {
     color: ${p => getTheme(p.theme, 'colors.darkGray')};
     opacity: .6;
@@ -22,15 +21,16 @@ export default styled(Footer)`
   ul {
     margin: 0;
   }
-  
+
   padding: 11px 30px 12px;
   border-top: 1px solid rgba(0,0,0, .05);
-  background-color: rgba(0,0,0, .01);
+  /* background-color: rgba(0,0,0, .01); */
 
   ${LayoutFooterElement}:not(:last-child) {
     position: relative;
     padding-right: .5rem;
     margin-right: .5rem;
+    background: ${p => getTheme(p.theme, 'colors.mainBackground')};
     &:after {
       content: '';
       position: absolute;
