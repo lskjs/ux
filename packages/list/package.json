@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/list",
-  "version": "0.34.140",
+  "version": "0.34.141",
   "description": "LSK ux subrepo: list",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -37,7 +37,7 @@
     "@lskjs/autobind": "^0.35.7",
     "@lskjs/button": "^0.34.138",
     "@lskjs/css": "^0.34.138",
-    "@lskjs/dashboard": "^0.34.138",
+    "@lskjs/dashboard": "^0.34.141",
     "@lskjs/dev": "^0.34.138",
     "@lskjs/form": "^0.34.140",
     "@lskjs/mobx": "^0.35.37",
