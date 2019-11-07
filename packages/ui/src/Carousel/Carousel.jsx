@@ -108,7 +108,7 @@ class Carousel extends Component {
       initialSlide: 0,
       slidesToScroll: variableWidth ? Math.floor(1142 / itemWidth) : slidesToScroll,
       slidesToShow: variableWidth ? Math.floor(1142 / itemWidth) : 1,
-      variableWidth: false,
+      variableWidth: true,
       adaptiveHeight: true,
       nextArrow,
       prevArrow,
