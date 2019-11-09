@@ -1,4 +1,4 @@
-import styled from 'react-emotion';
+import styled, { css } from 'react-emotion';
 import { injectGlobal } from 'emotion';
 
 
@@ -507,9 +507,11 @@ export const Container = styled.div`
   }
   .slick-slide img {
     display: block;
-    /* width: 100%; */
     height: 100%;
     object-fit: contain;
+    ${p => p.withContetn && css`
+      width: 100%
+    `};
   }
   .slick-slide.slick-loading img {
     display: none;

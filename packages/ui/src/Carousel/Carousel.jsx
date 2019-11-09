@@ -51,6 +51,7 @@ class Carousel extends Component {
     variableWidth: PropTypes.bool,
     ItemComponent: PropTypes.any, // eslint-disable-line react/forbid-prop-types
     lightBox: PropTypes.bool,
+    withContent: PropTypes.bool,
   }
 
   static defaultProps = {
@@ -64,6 +65,7 @@ class Carousel extends Component {
     prevArrow: <ButtonLeft><ArrowLeft /></ButtonLeft>,
     items: [],
     lightBox: false,
+    withContent: false,
   }
 
   constructor(props) {
@@ -87,6 +89,7 @@ class Carousel extends Component {
       itemHeight,
       variableWidth,
       lightBox,
+      withContent,
       ...props
     } = this.props;
 
@@ -108,7 +111,7 @@ class Carousel extends Component {
       initialSlide: 0,
       slidesToScroll: variableWidth ? Math.floor(1142 / itemWidth) : slidesToScroll,
       slidesToShow: variableWidth ? Math.floor(1142 / itemWidth) : 1,
-      variableWidth: true,
+      variableWidth: !withContent,
       adaptiveHeight: true,
       nextArrow,
       prevArrow,
