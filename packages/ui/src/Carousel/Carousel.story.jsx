@@ -54,6 +54,22 @@ const items = [
   },
 ];
 
+const wideItems = [
+  {
+    src: 'https://is3-ssl.mzstatic.com/image/thumb/Purple114/v4/75/91/74/759174ed-15e2-5040-8858-9810c9a5d877/mzl.vrzbcvzh.jpg/643x0w.jpg',
+    title: 'title 1',
+  },
+  {
+    src: 'https://is3-ssl.mzstatic.com/image/thumb/Purple114/v4/53/51/24/535124d0-3d6f-a02f-7cef-969241c0a48f/mzl.zffkxvuh.jpg/643x0w.jpg',
+    title: 'title 2',
+  },
+  {
+    src: 'https://is3-ssl.mzstatic.com/image/thumb/Purple124/v4/7f/fe/2b/7ffe2bdd-0cf8-66ec-3fb8-aa3950960d0d/mzl.vnsutomj.jpg/643x0w.jpg',
+    title: 'title 3',
+  },
+
+];
+
 const zeroItem = [];
 
 const ItemComponent = ({ title }) => (
@@ -139,6 +155,13 @@ export default ({ storiesOf }) => (
           items={items}
           nextArrow={<AnotherButtonRight><AnotherArrowLeft /></AnotherButtonRight>}
           prevArrow={<AnotherButtonLeft><AnotherArrowRight /></AnotherButtonLeft>}
+        />
+      </Story>
+    ))
+    .add('wide images', () => (
+      <Story>
+        <Carousel
+          items={wideItems}
         />
       </Story>
     ))

@@ -17,6 +17,7 @@ class ProfileCardBig extends PureComponent {
     ]),
     sign: PropTypes.string,
     fixHeight: PropTypes.number,
+    backgroundColor: PropTypes.string,
   };
   static defaultProps = {
     img: null,
@@ -24,6 +25,7 @@ class ProfileCardBig extends PureComponent {
     info: null,
     sign: null,
     fixHeight: null,
+    backgroundColor: '#6C5B7B',
   }
   render() {
     const {
@@ -34,14 +36,21 @@ class ProfileCardBig extends PureComponent {
       fixHeight,
       footer,
       componentClass,
+      backgroundColor,
       ...props
     } = this.props;
     return (
-      <ProfileCardItem componentClass={componentClass} fixHeight={fixHeight} {...props}>
+      <ProfileCardItem
+        componentClass={componentClass}
+        fixHeight={fixHeight}
+        {...props}
+      >
         <ProfileCardAvatar
           size={100}
           src={img}
           shape="circle"
+          backgroundColor={backgroundColor}
+          title={img ? null : name}
         />
         <h4
           style={{
