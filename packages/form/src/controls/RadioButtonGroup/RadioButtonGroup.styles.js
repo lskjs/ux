@@ -16,4 +16,7 @@ export default styled(Button)`
       ? `0 0 0 1px ${getTheme(p.theme, `colors.${p.paint}`)}`
       : `0 0 0 1px ${getTheme(p.theme, 'colors.border')}`
   )};
+  &:focus {
+    background: ${p => getTheme(p.theme, 'colors.primary')};
+  }
 `;
