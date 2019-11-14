@@ -128,6 +128,7 @@ class Files extends Component {
       validationState,
       multiple,
       showPreview,
+      removable,
       className,
       children,
       footer,
@@ -153,6 +154,7 @@ class Files extends Component {
       dropText,
       multiple,
       showPreview,
+      removable,
       type,
       avatar: {
         id,
@@ -194,7 +196,7 @@ class Files extends Component {
         </div>
         {/* <Dropzone
           {...otherProps}
-          
+
           disableClick
           multiple={multiple}
           ref={this.zone}
