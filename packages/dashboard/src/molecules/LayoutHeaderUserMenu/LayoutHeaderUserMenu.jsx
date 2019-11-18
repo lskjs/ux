@@ -21,7 +21,6 @@ export const badgeClass = css`
   align-items: center;
   justify-content: center;
   padding: 0;
-
 `;
 class LayoutHeaderUserMenu extends PureComponent {
   static propTypes = {
@@ -50,7 +49,7 @@ class LayoutHeaderUserMenu extends PureComponent {
               id={user.id || user._id}
               src={user.avatar || user.info.avatar}
               title={user.title || user.name}
-              style={{ backgroundColor: '#6C5B7B' }}
+              backgroundColor="#6C5B7B"
             >
               <If condition={user.role === 'admin'}>
                 <Avatar.Badge className={badgeClass} right bottom>
