@@ -428,7 +428,9 @@ export const globalStylesLightbox = () => injectGlobal`
 
 export const Container = styled.div`
   position: relative;
-  margin: 5px;
+  margin: 9px;
+  margin-top: 0;
+  margin-bottom: 0;
   .slick-slider {
     position: relative;
     display: block;
@@ -500,7 +502,7 @@ export const Container = styled.div`
 
     height: 100%;
     min-height: 1px;
-    margin: 5px;
+    margin-right: 10px;
   }
   [dir="rtl"] .slick-slide {
     float: right;
