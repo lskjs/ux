@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Dropdown from 'antd/lib/dropdown';
 import If from 'react-if';
@@ -23,7 +23,7 @@ export const badgeClass = css`
   padding: 0;
 
 `;
-class LayoutHeaderUserMenu extends Component {
+class LayoutHeaderUserMenu extends PureComponent {
   static propTypes = {
     user: PropTypes.object.isRequired,
     children: PropTypes.any.isRequired,
@@ -50,6 +50,7 @@ class LayoutHeaderUserMenu extends Component {
               id={user.id || user._id}
               src={user.avatar || user.info.avatar}
               title={user.title || user.name}
+              style={{ backgroundColor: '#6C5B7B' }}
             >
               <If condition={user.role === 'admin'}>
                 <Avatar.Badge className={badgeClass} right bottom>
