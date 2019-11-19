@@ -25,9 +25,11 @@ const DefaultBody = ({
   dragged,
   value,
   inputRef,
-  onRemoveFiles,
+  onRemoveAll,
+  // onRemoveFiles,
   validationState,
   showPreview = true,
+  removable = false,
   type = 'image',
   avatar,
 }) => {
@@ -86,15 +88,17 @@ const DefaultBody = ({
                   <T name="upload.placeholderImage" />
                 </PlaceholderFooter>
               </If>
-              <If condition={type === 'image' && value}>
-                <Overlay />
-                <RemoveButton
-                  type="button"
-                  onClick={onRemoveFiles}
-                >
-                  <Remove />
-                </RemoveButton>
-              </If>
+              {removable && value && (
+                <React.Fragment>
+                  <Overlay />
+                  <RemoveButton
+                    type="button"
+                    onClick={onRemoveAll}
+                  >
+                    <Remove />
+                  </RemoveButton>
+                </React.Fragment>
+              )}
             </Footer>
           </If>
         </Block>

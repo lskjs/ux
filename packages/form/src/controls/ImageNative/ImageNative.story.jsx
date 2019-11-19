@@ -21,6 +21,7 @@ const ImageForm = createForm({
     image: {
       title: 'Image',
       component: ImageNative,
+      removable: true,
     },
     image1: {
       title: 'Image 1',

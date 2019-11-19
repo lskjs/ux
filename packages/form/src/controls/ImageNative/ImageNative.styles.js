@@ -67,7 +67,7 @@ export const RemoveButton = styled('button')`
   margin: 0;
   font-size: 24px;
   display: flex;
-  z-index: 2;
+  z-index: 10;
 `;
 
 export const PlaceholderFooter = styled('div')`
