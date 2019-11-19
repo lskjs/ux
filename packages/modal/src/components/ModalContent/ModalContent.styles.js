@@ -7,7 +7,7 @@ export default styled(removeProps('div', ['align', 'size']))`
   padding: ${(props) => {
     switch (props.size) {
       case 'large': return '32px 16px 24px';
-      default: return '24px 16px 16px';
+      default: return '16px 16px 16px';
     }
   }};
   position: relative;
