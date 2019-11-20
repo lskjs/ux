@@ -31,6 +31,7 @@ export default {
     black: '#343a40',
     darkGray: '#212529',
     darkerGray: '#e2e4ee',
+    veryLightGrey: '#cdcdcd',
     darkestGray: '#cbcedc',
     placeholder: '#808080',
   },
