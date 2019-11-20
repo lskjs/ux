@@ -52,7 +52,7 @@ const placeholderStyle = p => css`
   font-weight: normal;
   line-height: 56px;
   text-align: left;
-  color: ${getTheme(p.theme, 'colors.secondary')};
+  color: ${getTheme(p.theme, 'colors.veryLightGrey')};
 `;
 
 export const Input = styled(filteredTag)`

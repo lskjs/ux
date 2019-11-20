@@ -53,19 +53,19 @@ export const SearchInput = styled('input')`
   color: ${p => getTheme(p.theme, 'colors.main')};
 
   ::-webkit-input-placeholder {
-    color: ${p => getTheme(p.theme, 'colors.veryLightGrey')};
+    color: ${p => getTheme(p.theme, 'colors.secondary')};
     font-family: ${p => getTheme(p.theme, 'fontFamily')};
   }
   ::-moz-placeholder {
-    color: ${p => getTheme(p.theme, 'colors.veryLightGrey')};
+    color: ${p => getTheme(p.theme, 'colors.secondary')};
     font-family: ${p => getTheme(p.theme, 'fontFamily')};
   }
   :-ms-input-placeholder {
-    color: ${p => getTheme(p.theme, 'colors.veryLightGrey')};
+    color: ${p => getTheme(p.theme, 'colors.secondary')};
     font-family: ${p => getTheme(p.theme, 'fontFamily')};
   }
   :-moz-placeholder {
-    color: ${p => getTheme(p.theme, 'colors.veryLightGrey')};
+    color: ${p => getTheme(p.theme, 'colors.secondary')};
     font-family: ${p => getTheme(p.theme, 'fontFamily')};
   }
 `;
