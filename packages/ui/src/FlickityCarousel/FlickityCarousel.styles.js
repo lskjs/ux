@@ -20,7 +20,7 @@ export const Control = styled('div')`
   display: flex;
   align-items: center;
   z-index: 1;
-  bottom: ${p => (p.vertical ? css`${p.vertical}%` : 0)}
+  bottom: ${p => (p.vertical ? css`${p.vertical}%` : 0)};
 `;
 
 export const Wrapper = styled('div')`
@@ -32,4 +32,3 @@ export const shadowStyle = css`
 
 `;
 
-export const ButtonsWrapper = styled('div')``;

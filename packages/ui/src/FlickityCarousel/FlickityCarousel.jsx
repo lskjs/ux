@@ -91,24 +91,22 @@ class FlickityCarousel extends PureComponent {
         >
           {children}
         </Flickity>
-        <ButtonsWrapper>
-          <Control position="left" visible={canPrev} vertical={vertical}>
-            <Button
-              className={shadowStyle}
-              disabled={!canPrev}
-              icon={<CarouselButton />}
-              onClick={this.myCustomPrevious}
-            />
-          </Control>
-          <Control position="right" visible={canNext} vertical={vertical}>
-            <Button
-              className={shadowStyle}
-              disabled={!canNext}
-              icon={<CarouselButton />}
-              onClick={this.myCustomNext}
-            />
-          </Control>
-        </ButtonsWrapper>
+        <Control position="left" visible={canPrev} vertical={vertical}>
+          <Button
+            className={shadowStyle}
+            disabled={!canPrev}
+            icon={<CarouselButton />}
+            onClick={this.myCustomPrevious}
+          />
+        </Control>
+        <Control position="right" visible={canNext} vertical={vertical}>
+          <Button
+            className={shadowStyle}
+            disabled={!canNext}
+            icon={<CarouselButton />}
+            onClick={this.myCustomNext}
+          />
+        </Control>
       </Wrapper>
     );
   }
