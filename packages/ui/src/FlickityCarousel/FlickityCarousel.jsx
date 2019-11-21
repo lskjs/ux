@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import autobind from '@lskjs/autobind';
 import Button from '@lskjs/button';
 import Flickity from 'react-flickity-component';
-import { flickityStyle, Wrapper, Control, shadowStyle } from './FlickityCarousel.styles';
+import { flickityStyle, Wrapper, Control, shadowStyle, ButtonsWrapper } from './FlickityCarousel.styles';
 import CarouselButton from './assets/carousel-go';
 
 const flickityOptions = {
@@ -17,9 +17,11 @@ const flickityOptions = {
 class FlickityCarousel extends PureComponent {
   static propTypes = {
     children: PropTypes.any,
+    vertical: PropTypes.number,
   }
   static defaultProps = {
     children: null,
+    vertical: null,
   }
   constructor(props) {
     super(props);
@@ -71,7 +73,7 @@ class FlickityCarousel extends PureComponent {
 
   render() {
     const { canNext, canPrev } = this.state;
-    const { children, instanceProps = {}, rightToLeft, options, ...props } = this.props;
+    const { children, instanceProps = {}, rightToLeft, options, vertical, ...props } = this.props;
     return (
       <Wrapper {...props}>
         <Flickity
@@ -89,22 +91,24 @@ class FlickityCarousel extends PureComponent {
         >
           {children}
         </Flickity>
-        <Control position="left" visible={canPrev}>
-          <Button
-            className={shadowStyle}
-            disabled={!canPrev}
-            icon={<CarouselButton />}
-            onClick={this.myCustomPrevious}
-          />
-        </Control>
-        <Control position="right" visible={canNext}>
-          <Button
-            className={shadowStyle}
-            disabled={!canNext}
-            icon={<CarouselButton />}
-            onClick={this.myCustomNext}
-          />
-        </Control>
+        <ButtonsWrapper>
+          <Control position="left" visible={canPrev} vertical={vertical}>
+            <Button
+              className={shadowStyle}
+              disabled={!canPrev}
+              icon={<CarouselButton />}
+              onClick={this.myCustomPrevious}
+            />
+          </Control>
+          <Control position="right" visible={canNext} vertical={vertical}>
+            <Button
+              className={shadowStyle}
+              disabled={!canNext}
+              icon={<CarouselButton />}
+              onClick={this.myCustomNext}
+            />
+          </Control>
+        </ButtonsWrapper>
       </Wrapper>
     );
   }
