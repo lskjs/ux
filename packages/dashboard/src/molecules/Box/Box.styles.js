@@ -66,11 +66,11 @@ export default styled(filteredTag)`
     background-color: ${getTheme(p.theme, 'colors.white')};
   `)}
   ${paintColors}
-  > section:first-child {
+  > div:first-child {
     border-radius: ${p => getTheme(p.theme, 'borderRadius')} ${p => getTheme(p.theme, 'borderRadius')} 0 0;
   }
 
-  > section:last-child {
+  > div:last-child {
     border-radius: 0 0 ${p => getTheme(p.theme, 'borderRadius')} ${p => getTheme(p.theme, 'borderRadius')};
   }
   ${p => (p.image && css`
