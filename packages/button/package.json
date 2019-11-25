@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/button",
-  "version": "0.34.158",
+  "version": "0.34.159",
   "description": "LSK ux subrepo: button",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -32,9 +32,9 @@
   },
   "devDependencies": {
     "@lskjs/autobind": "^0.35.7",
-    "@lskjs/css": "^0.34.158",
-    "@lskjs/dev": "^0.34.158",
-    "@lskjs/theme": "^0.34.158",
+    "@lskjs/css": "^0.34.159",
+    "@lskjs/dev": "^0.34.159",
+    "@lskjs/theme": "^0.34.159",
     "@lskjs/utils": "^0.35.6",
     "antd": "^3.16.2",
     "classnames": "^2.2.6",
