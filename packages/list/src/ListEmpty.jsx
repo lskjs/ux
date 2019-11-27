@@ -60,6 +60,8 @@ export class ListEmptyPure extends Component {
           <Button
             paint="primary"
             onClick={() => listStore.fetch()}
+            block
+            style={{ maxWidth: 214 }}
           >
             <T name="buttons.refresh" />
           </Button>
@@ -69,6 +71,8 @@ export class ListEmptyPure extends Component {
           <Button
             paint="primary"
             onClick={() => listStore.clearFilter()}
+            block
+            style={{ maxWidth: 214 }}
           >
             <T name="lskList.emptyDataResetButton" />
           </Button>
@@ -78,6 +82,8 @@ export class ListEmptyPure extends Component {
           <Button
             paint="primary"
             onClick={() => listStore.setSkip(0)}
+            block
+            style={{ maxWidth: 214 }}
           >
             <T name="lskList.emptyDataToFirstPage" />
           </Button>
