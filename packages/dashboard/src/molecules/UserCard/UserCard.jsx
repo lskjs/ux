@@ -15,6 +15,7 @@ class UserCard extends PureComponent {
     title: PropTypes.string,
     avatar: PropTypes.string,
     position: PropTypes.string,
+    backgroundColor: PropTypes.string,
     footer: PropTypes.any,
   };
   static defaultProps = {
@@ -23,6 +24,7 @@ class UserCard extends PureComponent {
     avatar: null,
     position: null,
     href: null,
+    backgroundColor: null,
     componentClass: 'a',
     footer: null,
   }
@@ -34,6 +36,7 @@ class UserCard extends PureComponent {
       title,
       avatar,
       position,
+      backgroundColor,
       footer,
       ...props
     } = this.props;
@@ -46,6 +49,7 @@ class UserCard extends PureComponent {
             src={avatar}
             size={80}
             innerStyle={{ border: '6px solid #d68345' }}
+            backgroundColor={backgroundColor}
           />
         </AvatarWrapper>
         <If condition={!!title}>
