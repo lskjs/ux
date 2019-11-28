@@ -20,6 +20,7 @@ class Comment extends PureComponent {
       date,
       componentClass,
       titleProps = {},
+      backgroundColor,
     } = this.props;
     return (
       <CommentWrapper>
@@ -29,6 +30,7 @@ class Comment extends PureComponent {
             title={user.title || user.name}
             src={user.avatar || user.image}
             size={48}
+            backgroundColor={backgroundColor}
           />
         </AvatarWrapper>
         <ContentWrapper>
