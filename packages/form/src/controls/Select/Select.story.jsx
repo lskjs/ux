@@ -44,7 +44,7 @@ const SelectFormView = props => (
     <Performance name="countries5">
       <Field {...props.control('countries')} />
     </Performance>
-    {/* <hr />
+    <hr />
     <h1>Мультиселекты</h1>
     <Field {...props.control('multiselect')} />
     <Field {...props.control('multiselect2')} />
@@ -73,7 +73,7 @@ const SelectFormView = props => (
       <option value="mercedes">Mercedes</option>
       <option value="audi">Audi</option>
     </select>
-    <FormDebug {...props} /> */}
+    {/* <FormDebug {...props} /> */}
   </Form>
 );
 
