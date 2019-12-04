@@ -88,6 +88,7 @@
     "react-drive-in2": "^1.8.1",
     "react-emotion": "9.2.10",
     "react-flickity-component": "3.3.0",
+    "react-if": "*",
     "react-icon-base": "^2.1.2",
     "react-icons2": "^2.5.0",
     "react-image-lightbox": "5.1.0",

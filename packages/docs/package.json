@@ -61,6 +61,7 @@
     "react-drive-in2": "^1.8.1",
     "react-emotion": "10.0.0",
     "react-flickity-component": "3.3.0",
+    "react-if": "3.4.0",
     "react-icons2": "2.5.0",
     "react-motion": "^0.5.2",
     "react-notification-system": "^0.2.17",
