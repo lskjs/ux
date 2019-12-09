@@ -3,11 +3,13 @@ import styled, { css } from 'react-emotion';
 export const LeftWrapper = styled('div')`
   display: flex;
   align-items: center;
+  height: 100%;
 `;
 
 export const RightWrapper = styled('div')`
   display: flex;
   align-items: center;
+  height: 100%;
 `;
 
 export const InputBox = styled('div')`
