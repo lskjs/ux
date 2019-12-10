@@ -1,4 +1,4 @@
-import styled, { css } from 'react-emotion';
+import styled, { css, injectGlobal } from 'react-emotion';
 import getTheme from '@lskjs/theme/getTheme';
 import createDynamicTag from '@lskjs/utils/createDynamicTag';
 import removeProps from '@lskjs/utils/removeProps';
@@ -291,7 +291,7 @@ export const HoverRowWrapper = styled(filteredHoverTag)`
     &:not(:last-child) {
       border-bottom: 1px solid ${getTheme(p.theme, 'colors.border')};
     }
-  `)}
+    `)}
   &:hover {
     > .table-gird-row {
       background-color: ${p => getTheme(p.theme, 'colors.lighterPrimary')};
@@ -301,7 +301,7 @@ export const HoverRowWrapper = styled(filteredHoverTag)`
     > .table-gird-row {
       background-color: ${getTheme(p.theme, 'colors.semiPrimary')};
     }
-  `)}
+    `)}
 `;
 
 const filteredSelectTag = removeProps('div', ['bordered']);
@@ -325,12 +325,12 @@ export const SelectRowWrapper = styled(filteredSelectTag)`
     &:not(:last-child) {
       border-bottom: 1px solid ${getTheme(p.theme, 'colors.border')};
     }
-  `)}
+    `)}
   ${p => (p.checked && css`
     > .table-gird-row {
       background-color: ${getTheme(p.theme, 'colors.semiPrimary')};
     }
-  `)}
+    `)}
 `;
 
 export const modalStyle = css`
@@ -363,4 +363,13 @@ export const FilterButtonWrapper = styled('div')`
 export const SearchWrapper = styled('div')`
   position: relative;
   box-sizing: border-box;
+`;
+
+export const globalStylesList = () => injectGlobal`
+  .ant-checkbox-inner {
+    box-shadow: inset 0px 0px 0px 1px #d9d9d9;
+  }
+  .ant-checkbox-checked:after {
+    border: none !important;
+  }
 `;

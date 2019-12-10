@@ -25,6 +25,7 @@ import {
   SelectWrapper,
   SelectRowWrapper,
   HoverRowWrapper,
+  globalStylesList,
 } from './List.styles';
 import { Provider } from './List.context';
 
@@ -48,6 +49,8 @@ import ListPaginator from './ListPaginator';
 import DefaultLoader from './DefaultLoader';
 import DefaultTags from './DefaultTags';
 import DefaultTag from './DefaultTag';
+
+globalStylesList();
 
 const getProp = (obj, name) => (
   get(obj, `props.${name}`, get(obj, `constructor.${name}`))
