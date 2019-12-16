@@ -134,5 +134,59 @@ export default () => injectGlobal`
  .time-picker-small .time-picker-icon, .time-picker-small .time-picker-clear {
   right: - 1px;
 }
-
+  .ant-time-picker-icon {
+    position: absolute;
+    top: 50%;
+    right: 11px;
+    z-index: 1;
+    width: 14px;
+    height: 14px;
+    margin-top: -7px;
+    color: #BFBFBF;
+    line-height: 14px;
+    -webkit-transition: all .3s cubic-bezier(.645, .045, .355, 1);
+    transition: all .3s cubic-bezier(.645, .045, .355, 1);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .anticon .anticon-clock-circle .ant-time-picker-clock-icon {
+    display: block;
+    color: #BFBFBF;
+    line-height: 1;
+  }
+  .ant-time-picker-icon, .ant-time-picker-clear {
+    position: absolute;
+    top: 50%;
+    right: 11px;
+    z-index: 1;
+    width: 14px;
+    height: 14px;
+    margin-top: -7px;
+    color: #BFBFBF;
+    line-height: 14px;
+    -webkit-transition: all .3s cubic-bezier(.645, .045, .355, 1);
+    transition: all .3s cubic-bezier(.645, .045, .355, 1);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+}
+  .ant-time-picker-clear {
+    bacground-color: #fff;
+  }
+  .ant-time-picker-panel-select {
+    position: relative;
+    float: left;
+    width: 56px;
+    max-height: 192px;
+    overflow: hidden;
+    font-size: 14px;
+    border-left: 1px solid #e8e8e8;
+    @media screen and (max-width: 991px) {
+      overflow: scroll;
+    }
+}
 `;
