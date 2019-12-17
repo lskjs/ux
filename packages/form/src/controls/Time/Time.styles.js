@@ -123,7 +123,6 @@ export default () => injectGlobal`
   line-height: 1;
 }
  .time-picker-clear {
-  z-index: 1;
   opacity: 0;
   pointer-events: none;
 }
@@ -138,7 +137,6 @@ export default () => injectGlobal`
     position: absolute;
     top: 50%;
     right: 11px;
-    z-index: 1;
     width: 14px;
     height: 14px;
     margin-top: -7px;
@@ -160,7 +158,6 @@ export default () => injectGlobal`
     position: absolute;
     top: 50%;
     right: 11px;
-    z-index: 1;
     width: 14px;
     height: 14px;
     margin-top: -7px;
@@ -172,10 +169,14 @@ export default () => injectGlobal`
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    cursor: pointer;
 }
   .ant-time-picker-clear {
-    bacground-color: #fff;
+    opacity: 0;
+  }
+  .ant-time-picker:hover .ant-time-picker-clear {
+    opacity: 1;
+    margin-right: 18px;
+    cursor: pointer;
   }
   .ant-time-picker-panel-select {
     position: relative;
