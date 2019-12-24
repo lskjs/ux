@@ -150,6 +150,7 @@ class List extends Component {
       paginatorProps = {},
       Item, FilterForm, HeaderItem,
       filterProps,
+      innerProps,
     } = this.props;
     const isFilterModal = getProp(this, 'isFilterModal');
     let { listStore } = this.props;
@@ -250,6 +251,7 @@ class List extends Component {
           paginatorProps,
           debug,
           filterProps,
+          innerProps,
         }}
       >
         <MobxProvider listStore={listStore} selectStore={selectStore}>
