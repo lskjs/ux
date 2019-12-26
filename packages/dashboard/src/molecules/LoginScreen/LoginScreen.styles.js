@@ -75,7 +75,6 @@ export const FormA = styled(dynamicTag)`
 export const FormContainer = styled('section')`
   width: 80%;
   margin: 0 auto;
-  text-align: center;
   display: flex;
   flex-direction: column;
   font-family: ${p => getTheme(p.theme, 'fontFamily')};
