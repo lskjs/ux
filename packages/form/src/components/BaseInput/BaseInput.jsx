@@ -13,7 +13,6 @@ import {
   Count,
 } from './InputStyle.styles';
 
-
 class Input extends PureComponent {
   static propTypes = {
     displayRate: PropTypes.number,
