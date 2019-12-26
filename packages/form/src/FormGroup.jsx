@@ -1,17 +1,18 @@
 import React from 'react';
 import Form from 'antd/lib/form';
 import FormError from './FormError';
+import Title from './components/TitleComponent';
 import { globalStylesFormItem } from './Form.styles';
 
 globalStylesFormItem();
 
 
-export default ({ field, form, children, htmlId, required, _required, title, help, errorMessage }) => {
+export default ({ field, form, children, htmlId, required, _required, title, help, errorMessage, info }) => {
   const errorMsg = errorMessage || form && form.errors && form.errors[field.name];
   const looksLikeRequired = required || _required;
   let titleComponent;
   if (title) {
-    titleComponent = <span style={errorMsg ? { color: '#ee1e31' } : {}}>{title}</span>;
+    titleComponent = <Title title={title} error={errorMsg} info={info} />;
   }
   return (
     <Form.Item
