@@ -121,7 +121,7 @@ class Input extends PureComponent {
           block={block}
           disabled={disabled}
           className={className}
-          maxlength={maxlength}
+          maxLength={maxlength}
           {...filterProps(otherProps, Block)}
           value={typeof displayRate === 'number' ? value * displayRate : value}
           onChange={this.handleChange}
@@ -131,7 +131,7 @@ class Input extends PureComponent {
             {rightIcon}
           </RightWrapper>
         </If>
-        <If condition={maxlength && showLimit}>
+        <If condition={!!(maxlength && showLimit)}>
           <Count>
             {get(value, 'length') || 0}
             /
