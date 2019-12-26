@@ -797,6 +797,7 @@ const filteredTag = removeProps(dynamicTag, [
   'bordered',
   'borderColor',
   'rounded',
+  'mobileView',
 ]);
 
 // Если убрать filteredTag, то появляются варнинги

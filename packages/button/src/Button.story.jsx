@@ -78,6 +78,8 @@ export default ({ storiesOf }) => {
         <Button paint="danger" view="text">view=text</Button>
         <Button paint="danger" block>block</Button>
         <Button paint="danger" disabled>disabled</Button>
+        <hr />
+        <Button paint="primary" mobileView iconLeft={<Vk />}>mobileView</Button>
       </Story>
     ))
     .add('disabled', () => (

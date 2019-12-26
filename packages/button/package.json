@@ -39,9 +39,11 @@
     "antd": "^3.16.2",
     "classnames": "^2.2.6",
     "emotion": "^9.2.10",
+    "lodash": "4.17.15",
     "mobx": "^5.9.4",
     "mobx-react": "^5.4.3",
     "mobx-react-devtools": "^6.1.1",
+    "prop-types": "15.7.2",
     "react": "^16.8.6",
     "react-emotion": "^9.2.10",
     "react-icons2": "^2.5.0"
@@ -58,6 +60,8 @@
     "mobx-react": "*",
     "react": "*",
     "react-emotion": "*",
-    "react-icons2": "*"
+    "react-icons2": "*",
+    "prop-types": "*",
+    "lodash": "*"
   }
 }

@@ -19,6 +19,7 @@ import {
 
 class Button extends PureComponent {
   static propTypes = {
+    // eslint-disable-next-line react/forbid-prop-types
     children: PropTypes.any,
     bordered: PropTypes.bool,
     borderColor: PropTypes.string,
@@ -58,27 +59,40 @@ class Button extends PureComponent {
       'transparentDark',
     ]),
     type: PropTypes.string,
+    // eslint-disable-next-line react/forbid-prop-types
     componentClass: PropTypes.any,
     block: PropTypes.bool,
     disabled: PropTypes.bool,
     new: PropTypes.bool,
     onClick: PropTypes.func,
     className: PropTypes.string,
+    // eslint-disable-next-line react/forbid-prop-types
     icon: PropTypes.any,
+    // eslint-disable-next-line react/forbid-prop-types
     iconLeft: PropTypes.any,
+    // eslint-disable-next-line react/forbid-prop-types
     iconRight: PropTypes.any,
+    // eslint-disable-next-line react/forbid-prop-types
     contentSuccess: PropTypes.any,
+    // eslint-disable-next-line react/forbid-prop-types
     contentProcessing: PropTypes.any,
+    // eslint-disable-next-line react/forbid-prop-types
     contentError: PropTypes.any,
+    // eslint-disable-next-line react/forbid-prop-types
     textSuccess: PropTypes.any,
+    // eslint-disable-next-line react/forbid-prop-types
     textProcessing: PropTypes.any,
+    // eslint-disable-next-line react/forbid-prop-types
     textError: PropTypes.any,
     autoMobile: PropTypes.bool,
     rounded: PropTypes.bool,
+    // eslint-disable-next-line react/forbid-prop-types
     style: PropTypes.object,
+    // eslint-disable-next-line react/forbid-prop-types
     colors: PropTypes.object,
     isRipple: PropTypes.bool,
     mobileView: PropTypes.bool,
+    onlyIcon: PropTypes.bool,
   }
 
   static defaultProps = {
@@ -108,8 +122,9 @@ class Button extends PureComponent {
     textError: null,
     autoMobile: false,
     rounded: false,
-    style: null,
+    colors: null,
     mobileView: false,
+    onlyIcon: false,
     isRipple: !isTouchDevice(),
   }
 
@@ -122,8 +137,9 @@ class Button extends PureComponent {
   }
 
   componentDidMount() {
+    const { disabled, isRipple } = this.props;
     if (typeof window !== 'undefined') {
-      if (!this.props.disabled && this.props.isRipple) {
+      if (!disabled && isRipple) {
         const condition = this.isBrowser('safari') || this.isBrowser('firefox');
         this.ripple.current.addEventListener(condition ? 'click' : 'mousedown', this.clickListener);
       }
@@ -131,8 +147,9 @@ class Button extends PureComponent {
   }
 
   componentWillUnmount() {
+    const { disabled, isRipple } = this.props;
     if (typeof window !== 'undefined') {
-      if (!this.props.disabled && this.props.isRipple) {
+      if (!disabled && isRipple) {
         const condition = this.isBrowser('safari') || this.isBrowser('firefox');
         this.ripple.current.removeEventListener(condition ? 'click' : 'mousedown', this.clickListener);
       }
@@ -152,16 +169,25 @@ class Button extends PureComponent {
 
   @autobind
   getButtonStateTheme() {
+    const {
+      paint,
+      contentError,
+      contentProcessing,
+      contentSuccess,
+      textError,
+      textProcessing,
+      textSuccess,
+    } = this.props;
     switch (this.getPropsState()) {
       case 'processing':
         return {
-          paint: this.props.paint,
-          content: this.props.contentProcessing || (
+          paint,
+          content: contentProcessing || (
             <React.Fragment>
-              <Icon direction={this.props.textProcessing ? 'left' : 'single'}>
+              <Icon direction={textProcessing ? 'left' : 'single'}>
                 <LoadingDots />
               </Icon>
-              {this.props.textProcessing}
+              {textProcessing}
             </React.Fragment>
           ),
         };
@@ -169,42 +195,42 @@ class Button extends PureComponent {
         return {
           // paint: 'success',
           paint: 'primary',
-          content: this.props.contentSuccess || (
+          content: contentSuccess || (
             <React.Fragment>
-              <Icon direction={this.props.textSuccess ? 'left' : 'single'}>
+              <Icon direction={textSuccess ? 'left' : 'single'}>
                 <CheckIcon size={32} />
               </Icon>
-              {this.props.textSuccess}
+              {textSuccess}
             </React.Fragment>
           ),
         };
       case 'error':
         return {
           paint: 'danger',
-          content: this.props.contentError || (
+          content: contentError || (
             <React.Fragment>
-              <If condition={!this.props.textError}>
-                <Icon direction={this.props.textError ? 'left' : 'single'}>
+              <If condition={!textError}>
+                <Icon direction={textError ? 'left' : 'single'}>
                   <CloseIcon />
                 </Icon>
               </If>
-              {this.props.textError}
+              {textError}
             </React.Fragment>
           ),
         };
       default:
         return {
-          paint: this.props.paint,
+          paint,
         };
     }
   }
 
   @autobind
   clickListener(e) {
-    if (!this.props.disabled && this.props.isRipple) {
+    const { disabled, isRipple } = this.props;
+    if (!disabled && isRipple) {
       this.circle.style.top = `${e.offsetY}px`;
       this.circle.style.left = `${e.offsetX}px`;
-
       this.setState({ isRippleActive: true });
     }
   }
@@ -215,7 +241,8 @@ class Button extends PureComponent {
 
   @autobind
   endAnimationRipple() {
-    if (!this.props.disabled && this.props.isRipple) {
+    const { disabled, isRipple } = this.props;
+    if (!disabled && isRipple) {
       this.setState({ isRippleActive: false });
     }
   }
@@ -237,7 +264,7 @@ class Button extends PureComponent {
       view,
       size,
       block,
-      state,  //eslint-disable-line
+      state,
       onClick,
       autoMobile,
       componentClass,
