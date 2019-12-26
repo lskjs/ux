@@ -13,7 +13,7 @@ export default ({
     disabled={!!status}
     {...props}
   >
-    <If condition={isSubmitting}>
+    <If condition={!!isSubmitting}>
       <T name="buttons.waiting" />
     </If>
     <If condition={!isSubmitting}>
