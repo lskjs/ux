@@ -32,7 +32,7 @@ const InputForm = createForm({
       title: 'input',
       component: Textarea,
       placeholder: 'input placeholder',
-      maxlength: 10,
+      maxLength: 10,
       required: true,
     },
     input: {
@@ -40,7 +40,7 @@ const InputForm = createForm({
       component: Input,
       placeholder: 'input placeholder',
       required: true,
-      maxlength: 10,
+      maxLength: 10,
     },
     input2: {
       title: 'input2',

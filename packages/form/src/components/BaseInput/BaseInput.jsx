@@ -26,7 +26,7 @@ class Input extends PureComponent {
     rightIcon: PropTypes.any,
     className: PropTypes.string,
     regex: PropTypes.any,
-    maxlength: PropTypes.number,
+    maxLength: PropTypes.number,
     showLimit: PropTypes.bool,
   }
   static defaultProps = {
@@ -40,7 +40,7 @@ class Input extends PureComponent {
     rightIcon: null,
     className: null,
     regex: null,
-    maxlength: null,
+    maxLength: null,
     showLimit: true,
   }
   constructor(props) {
@@ -100,7 +100,7 @@ class Input extends PureComponent {
       innerRef,
       leftIcon,
       rightIcon,
-      maxlength,
+      maxLength,
       showLimit,
       ...otherProps
     } = this.props;
@@ -121,7 +121,7 @@ class Input extends PureComponent {
           block={block}
           disabled={disabled}
           className={className}
-          maxLength={maxlength}
+          maxLength={maxLength}
           {...filterProps(otherProps, Block)}
           value={typeof displayRate === 'number' ? value * displayRate : value}
           onChange={this.handleChange}
@@ -131,11 +131,11 @@ class Input extends PureComponent {
             {rightIcon}
           </RightWrapper>
         </If>
-        <If condition={!!(maxlength && showLimit)}>
+        <If condition={!!(maxLength && showLimit)}>
           <Count>
             {get(value, 'length') || 0}
             /
-            {maxlength}
+            {maxLength}
           </Count>
         </If>
       </InputBox>
