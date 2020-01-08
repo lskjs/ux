@@ -1,14 +1,20 @@
-import React from 'react';
+import React, { useEffect, useRef, useState, useCallback } from 'react';
 import get from 'lodash/get';
 import PhoneInput from './react-phone-input-2';
 import { Container, injectStyles } from './PhoneInput.style';
 
 injectStyles();
 
+
 export default ({ field, form, ...props }) => {
-  const refInput = React.useRef();
+  const refInput = useRef();
   let width = get(refInput, 'current.numberInputRef.offsetWidth');
   if (!width) width = '100%';
+  const [, updateState] = useState();
+  const forceUpdate = useCallback(() => updateState({}), []);
+  useEffect(() => {
+    forceUpdate();
+  }, []);
   return (
     <Container>
       <PhoneInput
