@@ -22,7 +22,7 @@
     "link:me": "../../scripts/package-link-me.sh",
     "link:all": "../../scripts/package-link-all.sh",
     "bump": "../../scripts/package-bump.sh",
-    "release": "../../scripts/package-release.sh",
+    "release": "BUILD_PARAMS=--copy-files ../../scripts/package-release.sh",
     "release:docs": "../../scripts/package-release-docs.sh",
     "storybook": "../../scripts/package-storybook.sh",
     "styleguide": "../../scripts/package-styleguide.sh"
