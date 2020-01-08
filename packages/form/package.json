@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/form",
-  "version": "0.34.180",
+  "version": "0.34.181",
   "description": "LSK ux subrepo: form",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -112,7 +112,7 @@
     "react-dom": "*",
     "react-emotion": "*",
     "react-icons2": "*",
-    "react-phone-input-2": "*",
-    "react-if": "*"
+    "react-if": "*",
+    "react-phone-input-2": "*"
   }
 }
