@@ -16,7 +16,7 @@
     "bootstrap": "../../scripts/package-bootstrap.sh",
     "bootstrap:nodemodules": "../../scripts/package-bootstrap-nodemodules.sh",
     "update": "../../scripts/package-update.sh",
-    "build": "../../scripts/package-build.sh",
+    "build": "BUILD_PARAMS=--copy-files ../../scripts/package-build.sh",
     "watch": "../../scripts/package-watch.sh",
     "link": "../../scripts/package-link.sh",
     "link:me": "../../scripts/package-link-me.sh",
