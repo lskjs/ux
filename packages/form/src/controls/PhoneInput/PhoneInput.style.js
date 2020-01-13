@@ -107,10 +107,10 @@ export const injectStyles = () => injectGlobal`
         height: 0;
         border-left: 3px solid transparent;
         border-right: 3px solid transparent;
-        border-top: 4px solid #555;
+        border-top: 4px solid #7070ff;
         &.up {
           border-top: none;
-          border-bottom: 4px solid #555;
+          border-bottom: 4px solid #7070ff;
         }
       }
     }
