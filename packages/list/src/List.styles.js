@@ -289,7 +289,14 @@ export const HoverRowWrapper = styled(filteredHoverTag)`
   }
   ${p => (p.bordered && css`
     &:not(:last-child) {
-      border-bottom: 1px solid ${getTheme(p.theme, 'colors.border')};
+      ::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        display: block;
+        height: 1px;
+        background-color: ${getTheme(p.theme, 'colors.border')};
+      }
     }
     `)}
   &:hover {
