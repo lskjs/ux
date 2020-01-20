@@ -31,11 +31,11 @@
     "react-if": "^3.1.3"
   },
   "devDependencies": {
-    "@lskjs/autobind": "^0.35.7",
+    "@lskjs/autobind": "^0.35.119",
     "@lskjs/css": "^0.34.180",
     "@lskjs/dev": "^0.34.180",
     "@lskjs/theme": "^0.34.180",
-    "@lskjs/utils": "^0.35.6",
+    "@lskjs/utils": "^0.35.122",
     "antd": "^3.16.2",
     "classnames": "^2.2.6",
     "emotion": "^9.2.10",
