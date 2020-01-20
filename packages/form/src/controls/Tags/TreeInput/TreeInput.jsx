@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import autobind from '@lskjs/autobind';
-import { debounce } from 'lodash-decorators';
+import debounce from '@lskjs/utils/decorator-debounce';
 import { inject, observer } from 'mobx-react';
 import uniq from 'lodash/uniq';
 import Tree from 'antd/lib/tree';

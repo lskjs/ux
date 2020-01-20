@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import debounce from 'lodash-decorators/debounce';
+import debounce from '@lskjs/utils/decorator-debounce';
 import PropTypes from 'prop-types';
 import ASlider from 'antd/lib/slider';
 import { Wrapper, Value, SliderWrapper } from './PercentSlider.styles';

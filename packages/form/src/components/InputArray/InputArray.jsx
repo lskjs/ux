@@ -4,7 +4,7 @@ import autobind from '@lskjs/autobind';
 import isEqual from 'lodash/isEqual';
 import isEmpty from 'lodash/isEmpty';
 import DebounceInput from 'react-debounce-input';
-import { debounce } from 'lodash-decorators';
+import debounce from '@lskjs/utils/decorator-debounce';
 import { FormControl } from 'react-bootstrap';
 
 import Input from '../BaseInput';

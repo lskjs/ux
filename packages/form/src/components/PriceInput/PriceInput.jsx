@@ -3,7 +3,7 @@ import If from 'react-if';
 import PropTypes from 'prop-types';
 import { inject, observer } from 'mobx-react';
 import autobind from '@lskjs/autobind';
-import { debounce } from 'lodash-decorators';
+import debounce from '@lskjs/utils/decorator-debounce';
 import DebounceInput from 'react-debounce-input';
 
 import UsdIcon from 'react-icons2/mdi/currency-usd';
