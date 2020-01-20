@@ -4,10 +4,11 @@
   "description": "lskjs docs",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
-  "keywords": [],
   "publishConfig": {
     "access": "public"
   },
+  "repository": "https://github.com/isuvorov/lib-starter-kit/tree/master/packages/lib1",
+  "keywords": [],
   "scripts": {
     "dev": "npm run watch",
     "postversion": "npm run release",
@@ -24,23 +25,23 @@
     "release": "npm run build-storybook && ../../scripts/package-release.sh",
     "release:docs": "../../scripts/package-release-docs.sh",
     "storybook": "../../scripts/package-storybook.sh",
-    "build-storybook": "../../scripts/package-build-storybook.sh",
-    "styleguide": "../../scripts/package-styleguide.sh"
+    "styleguide": "../../scripts/package-styleguide.sh",
+    "build-storybook": "../../scripts/package-build-storybook.sh"
   },
   "dependencies": {
-    "@lskjs/apiquery": "^0.35.29",
-    "@lskjs/autobind": "0.34.1",
+    "@lskjs/apiquery": "^0.36.0",
+    "@lskjs/autobind": "0.36.0",
     "@lskjs/button": "0.35.0",
     "@lskjs/dev": "0.35.0",
     "@lskjs/downloads": "0.35.0",
-    "@lskjs/form": "0.35.0",
-    "@lskjs/list": "0.35.0",
-    "@lskjs/mobx": "0.34.1",
-    "@lskjs/modal": "0.35.0",
-    "@lskjs/scroll": "0.35.0",
-    "@lskjs/theme": "0.34.126",
-    "@lskjs/ui": "0.35.0",
-    "@lskjs/utils": "0.34.5",
+    "@lskjs/form": "0.34.186",
+    "@lskjs/list": "0.34.187",
+    "@lskjs/mobx": "0.36.1",
+    "@lskjs/modal": "0.34.180",
+    "@lskjs/scroll": "0.34.180",
+    "@lskjs/theme": "0.34.180",
+    "@lskjs/ui": "0.34.180",
+    "@lskjs/utils": "0.36.1",
     "antd": "^3.20.7",
     "axios": "^0.19.0",
     "bluebird": "3.5.5",
@@ -73,5 +74,6 @@
     "react-slick": "0.25.2",
     "react-world-flags": "1.3.0",
     "universal-router": "^8.2.1"
-  }
+  },
+  "devDependencies": {}
 }

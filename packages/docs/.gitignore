@@ -1,7 +1,6 @@
 .cache
 .idea
 .vscode
-.ssh
 lerna-debug.log
 **/node_modules
 build

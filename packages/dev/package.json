@@ -27,10 +27,11 @@
     "storybook": "../../scripts/package-storybook.sh",
     "styleguide": "../../scripts/package-styleguide.sh"
   },
+  "dependencies": {},
   "devDependencies": {
     "@lskjs/css": "0.35.0",
-    "@lskjs/theme": "0.35.0",
-    "@lskjs/utils": "^0.35.122",
+    "@lskjs/theme": "^0.34.180",
+    "@lskjs/utils": "^0.36.1",
     "emotion": "^9.2.12",
     "emotion-theming": "^9.1.2",
     "lodash": "^4.17.11",

@@ -31,13 +31,13 @@
     "xlsx-populate": "1.19.1"
   },
   "devDependencies": {
-    "@lskjs/autobind": "^0.35.119",
+    "@lskjs/autobind": "^0.36.0",
     "@lskjs/button": "0.35.0",
     "@lskjs/css": "0.35.0",
     "@lskjs/dev": "0.35.0",
-    "@lskjs/mobx": "^0.35.122",
-    "@lskjs/theme": "0.35.0",
-    "@lskjs/utils": "^0.35.122",
+    "@lskjs/mobx": "^0.36.1",
+    "@lskjs/theme": "^0.34.180",
+    "@lskjs/utils": "^0.36.1",
     "axios": "^0.19.0",
     "emotion": "^9.2.10",
     "emotion-theming": "^9.1.2",
