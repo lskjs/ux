@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/css",
-  "version": "0.34.180",
+  "version": "0.35.0",
   "description": "LSK ux subrepo: css",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -27,7 +27,6 @@
     "storybook": "../../scripts/package-storybook.sh",
     "styleguide": "../../scripts/package-styleguide.sh"
   },
-  "dependencies": {},
   "devDependencies": {
     "emotion": "^9.2.12"
   },
