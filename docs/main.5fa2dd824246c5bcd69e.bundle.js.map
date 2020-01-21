@@ -1,1 +1,0 @@
-{"version":3,"file":"main.5fa2dd824246c5bcd69e.bundle.js","sources":["webpack:///./.storybook/config.js"],"sourcesContent":["import configure from 'storybox/configure';\nimport params from './params';\nconfigure(params);"],"mappings":"AAEA","sourceRoot":""}
