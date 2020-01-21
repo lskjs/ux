@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/downloads",
-  "version": "0.36.5",
+  "version": "0.36.6",
   "description": "LSK ux subrepo: download",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -32,11 +32,11 @@
   },
   "devDependencies": {
     "@lskjs/autobind": "^0.36.0",
-    "@lskjs/button": "^0.36.5",
-    "@lskjs/css": "^0.36.5",
-    "@lskjs/dev": "^0.36.5",
+    "@lskjs/button": "^0.36.6",
+    "@lskjs/css": "^0.36.6",
+    "@lskjs/dev": "^0.36.6",
     "@lskjs/mobx": "^0.36.2",
-    "@lskjs/theme": "^0.36.5",
+    "@lskjs/theme": "^0.36.6",
     "@lskjs/utils": "^0.36.1",
     "axios": "^0.19.0",
     "emotion": "^9.2.10",

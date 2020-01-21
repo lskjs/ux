@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/dev",
-  "version": "0.36.5",
+  "version": "0.36.6",
   "description": "LSK ux subrepo: ui-dev",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -28,8 +28,8 @@
     "styleguide": "../../scripts/package-styleguide.sh"
   },
   "devDependencies": {
-    "@lskjs/css": "^0.36.5",
-    "@lskjs/theme": "^0.36.5",
+    "@lskjs/css": "^0.36.6",
+    "@lskjs/theme": "^0.36.6",
     "@lskjs/utils": "^0.36.1",
     "emotion": "^9.2.12",
     "emotion-theming": "^9.1.2",
