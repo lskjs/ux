@@ -63,15 +63,10 @@ export const globalStylesFormItem = () => injectGlobal`
     display: inline-block;
     overflow: hidden;
     white-space: nowrap;
+    width: 100%;
   }
   .ant-form-item-label label {
     color: rgba(0, 0, 0, 0.85);
-  }
-  .ant-form-item-label label:after {
-    content: ":";
-    margin: 0 8px 0 2px;
-    position: relative;
-    top: -0.5px;
   }
   .ant-form-item .ant-switch {
     margin: 2px 0 4px;

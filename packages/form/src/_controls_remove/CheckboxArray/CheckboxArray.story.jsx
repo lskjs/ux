@@ -28,6 +28,7 @@ const CheckboxArrayForm = createForm({
       title: 'checkboxArray',
       component: CheckboxArray,
       itemComponent: CheckboxDeal,
+      info: 'papa',
       options: [
         {
           value: 1,

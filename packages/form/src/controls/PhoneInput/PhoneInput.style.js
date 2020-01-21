@@ -1,4 +1,5 @@
 import styled, { injectGlobal } from 'react-emotion';
+import getTheme from '@lskjs/theme/getTheme';
 import highResPng from './high-res.png';
 
 export const Container = styled.div`
@@ -25,7 +26,13 @@ export const Container = styled.div`
     margin: 0px;
   } */
 
- 
+  .react-tel-input .selected-flag .arrow {
+    border-top: 4px solid ${p => getTheme(p.theme, 'colors.primary')};
+    &.up {
+      border-top: none;
+      border-bottom: 4px solid ${p => getTheme(p.theme, 'colors.primary')};
+    }
+  }
 `;
 
 export const injectStyles = () => injectGlobal`
@@ -107,10 +114,8 @@ export const injectStyles = () => injectGlobal`
         height: 0;
         border-left: 3px solid transparent;
         border-right: 3px solid transparent;
-        border-top: 4px solid #7070ff;
         &.up {
           border-top: none;
-          border-bottom: 4px solid #7070ff;
         }
       }
     }
