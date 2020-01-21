@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/docs",
-  "version": "0.36.4",
+  "version": "0.36.5",
   "description": "lskjs docs",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -32,9 +32,9 @@
   "dependencies": {
     "@lskjs/apiquery": "^0.36.0",
     "@lskjs/autobind": "0.36.0",
-    "@lskjs/button": "^0.36.4",
-    "@lskjs/dev": "^0.36.4",
-    "@lskjs/downloads": "^0.36.4",
+    "@lskjs/button": "^0.36.5",
+    "@lskjs/dev": "^0.36.5",
+    "@lskjs/downloads": "^0.36.5",
     "@lskjs/form": "0.34.186",
     "@lskjs/list": "0.34.187",
     "@lskjs/mobx": "0.36.1",
