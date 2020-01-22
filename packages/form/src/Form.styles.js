@@ -1,18 +1,6 @@
 import { injectGlobal } from 'emotion';
 
 export const globalStylesFormItem = () => injectGlobal`
-  .ant-form-item-required:before {
-    display: inline-block;
-    margin-right: 4px;
-    content: "*";
-    font-family: SimSun;
-    line-height: 1;
-    font-size: 14px;
-    color: #ff4d4f;
-  }
-  .ant-form-hide-required-mark .ant-form-item-required:before {
-    display: none;
-  }
   .ant-form-item {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 14px;

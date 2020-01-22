@@ -12,7 +12,14 @@ export default ({ field, form, children, htmlId, required, _required, title, hel
   const looksLikeRequired = required || _required;
   let titleComponent;
   if (title) {
-    titleComponent = <Title title={title} error={errorMsg} info={info} />;
+    titleComponent = (
+      <Title
+        title={title}
+        error={errorMsg}
+        info={info}
+        isRequired={looksLikeRequired}
+      />
+    );
   }
   return (
     <Form.Item
