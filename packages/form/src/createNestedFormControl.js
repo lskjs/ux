@@ -1,12 +1,13 @@
 import React2 from 'react';
+import DEBUG from './createForm/_debug';
 
-const createNestedFormControl = (Component, React = React2) => ({ children, ...props }) => {
-  const { form, field, ...otherProps } = props;
+const createNestedFormControl = (Component, React = React2) => ({ children, form, field, ...props }) => {
   const { value } = field;
+  if (DEBUG) console.log('createNestedFormControl', { props }); // eslint-disable-line no-console
   return React.createElement(
     Component,
     {
-      ...otherProps,
+      ...props,
       initialValues: value,
       onChange: (values) => {
         form.setFieldValue(field.name, values);

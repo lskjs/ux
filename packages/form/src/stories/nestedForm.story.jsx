@@ -1,6 +1,7 @@
 import React, { createRef } from 'react';
 import { Form, Field } from 'formik';
 import Story from '@lskjs/dev/Story';
+import DEV from '@lskjs/dev/DEV';
 import createForm from '../createForm';
 import FormDebug from '../FormDebug';
 
@@ -9,13 +10,16 @@ import Select from '../controls/Select';
 import ArrayOf from '../controls/ArrayOf';
 import createNestedFormControl from '../createNestedFormControl';
 
+window.__DEV__ = typeof window !== 'undefined' && window.location.hostname === 'localhost';
 
-const EntityFormView = props => (
+
+const EntityFormView = ({ control, genders }) => (
   <Form>
     <h3>EntityForm:</h3>
-    <Field {...props.control('name')} />
-    <Field {...props.control('money')} />
-    <Field {...props.control('gender')} />
+    <Field {...control('name')} />
+    <Field {...control('money')} />
+    <Field {...control('gender')} options={genders} />
+    <DEV json={genders} />
   </Form>
 );
 
@@ -41,12 +45,13 @@ const EntityForm = createForm({
 });
 
 
-const ComplexFormView = props => (
+const ComplexFormView = ({ control, genders, ...props }) => (
   <Form>
+    <DEV json={genders} />
     <h3>ArrayOfEntityForm:</h3>
-    <Field {...props.control('title')} />
-    <Field {...props.control('director')} />
-    <Field {...props.control('users')} />
+    <Field {...control('title')} />
+    <Field {...control('director')} genders={genders} />
+    <Field {...control('users')} itemProps={{ genders }} />
     <FormDebug {...props} />
   </Form>
 );
@@ -61,7 +66,6 @@ const ComplexForm = createForm({
     },
     director: {
       title: 'Директор',
-      // component: Input,
       component: createNestedFormControl(EntityForm),
     },
     users: {
@@ -85,8 +89,19 @@ export default ({ storiesOf }) => storiesOf('form/nestedForm', module)
       <ComplexForm
         ref={ref}
         onSubmit={(values) => {
-          console.log('ComplexForm.onSubmit', values);
-          console.log('ref', ref);
+          console.log('ComplexForm.onSubmit', values);  // eslint-disable-line
+        }}
+      />
+    </Story>
+  ))
+  .add('ComplexForm with deep props', ({ ref = createRef() }) => (
+    <Story devtools>
+      <ComplexForm
+        ref={ref}
+        genders={['male', 'female', 'agender', 'transgender', 'poligender']}
+        test={[123]}
+        onSubmit={(values) => {
+          console.log('ComplexForm.onSubmit', values);  // eslint-disable-line
         }}
       />
     </Story>
