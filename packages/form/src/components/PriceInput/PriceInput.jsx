@@ -214,7 +214,7 @@ class PriceInput extends Component {
             {fields}
           </Row>
         </InputsBlock>
-        <If condition={help}>
+        <If condition={!!help}>
           <ComissionBlock
             small={small}
           >

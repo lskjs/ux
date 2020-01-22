@@ -6,7 +6,6 @@ import Calendar from './Calendar';
 import Input from '../Input';
 import FormDebug from '../../FormDebug';
 
-window.__DEV__ = true;
 
 const CalendarFormView = props => (
   <Form>

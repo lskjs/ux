@@ -8,13 +8,11 @@ export default (ctrls, FormGroup) => {
     const ControlWrapper = ctrl.FormGroup || FormGroup;
     let component;
     if (ControlWrapper) {
-      component = props2 =>
-        // console.log('component', props2);
-        React.createElement(
-          ControlWrapper,
-          props2,
-          React.createElement(ctrl.component, props2),
-        );
+      component = props2 => React.createElement(
+        ControlWrapper,
+        props2,
+        React.createElement(ctrl.component, props2),
+      );
     } else {
       ({ component } = ctrl);
     }

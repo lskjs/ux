@@ -116,7 +116,7 @@ export default class Slide extends Component {
     return (
       <Background>
         <NoClick />
-        <If condition={this.props.overlay}>
+        <If condition={!!this.props.overlay}>
           <Overlay style={{ backgroundColor: overlay }} />
         </If>
         <If condition={!!video}>
@@ -214,7 +214,7 @@ export default class Slide extends Component {
               {left}
             </LeftBlock>
           </If>
-          <If condition={content || children}>
+          <If condition={Boolean(content || children)}>
             <Center>
               <Content>
                 {content}

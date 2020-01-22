@@ -106,7 +106,7 @@ class Dropdown extends PureComponent {
           >
             {trigger({ isOpen, onClick: this.show })}
           </div>
-          <If condition={isOpen}>
+          <If condition={!!isOpen}>
             <DropdownList
               id={id}
               ref={this.dropdown}

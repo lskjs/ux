@@ -16,7 +16,7 @@ const InputFormView = ({ control, ...props }) => (
     <Field {...control('input4')} />
     <Field {...control('input5')} />
     <Field {...control('textarea')} />
-    <FastField {...control('input2')} title="FastField/input2" />
+    <FastField {...control('input2')} title="FastField for Input" />
     <FormDebug {...props} />
   </Form>
 );
@@ -32,7 +32,6 @@ const InputForm = createForm({
       component: Input,
       placeholder: 'input placeholder',
       required: true,
-      maxLength: 10,
     },
     input2: {
       title: 'Input with initialValue',
@@ -41,10 +40,11 @@ const InputForm = createForm({
       initialValue: 'Some value in input2',
     },
     input3: {
-      title: 'Input with regex',
+      title: 'Input with regex only digits and 10 maxLegnth ',
       component: Input,
       help: 'Only digits',
       regex: /\d*\.?\d*/,
+      maxLength: 10,
     },
     input4: {
       title: 'Input with regex',

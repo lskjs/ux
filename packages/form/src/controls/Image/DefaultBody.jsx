@@ -33,7 +33,7 @@ const DefaultBody = ({
 }) => {
   return (
     <React.Fragment>
-      <If condition={dragged}>
+      <If condition={!!dragged}>
         <Drop>
           <DropText>
             <T name="upload.dropImage" />

@@ -94,7 +94,7 @@ class Search extends PureComponent {
           </Count>
         </If>
         <Actions>
-          <If condition={canClear}>
+          <If condition={!!canClear}>
             <Action>
               <Button
                 icon={<CloseIcon />}

@@ -42,7 +42,7 @@ class ListBody extends Component {
           icon={<List.LoaderIcon />}
           disabled={!listStore.loading}
         >
-          <If condition={show.more && listStore.canFetchMore(-1)}>
+          <If condition={Boolean(show.more && listStore.canFetchMore(-1))}>
             <Button
               bordered
               size="large"
@@ -60,11 +60,11 @@ class ListBody extends Component {
               </If>
             </Button>
           </If>
-          <If condition={listStore.items.length === 0}>
+          <If condition={Boolean(listStore.items.length === 0)}>
             <List.Empty />
           </If>
           <List.Items />
-          <If condition={show.more && listStore.canFetchMore(1)}>
+          <If condition={Boolean(show.more && listStore.canFetchMore(1))}>
             <ButtonWrapper
               onChange={() => listStore.fetchMore(1)}
               offset={{ direction: 'bottom', value: -200 }}
@@ -78,7 +78,7 @@ class ListBody extends Component {
                 className={buttonStyles}
                 block
               >
-                <If condition={listStore.loading}>
+                <If condition={!!listStore.loading}>
                   <T name="lskList.bodyLoadingButton" />
                 </If>
                 <If condition={!listStore.loading}>

@@ -109,10 +109,8 @@ class ArrayOf extends Component {
             </Horizontal>
           );
         })}
-        <If condition={values.length > 1 || showAddButton}>
-          <If condition={(showAddButton || addButton) && (!maxCount || values.length < maxCount)}>
-            {addButton}
-          </If>
+        <If condition={Boolean(values.length > 1 || showAddButton) && Boolean((showAddButton || addButton) && (!maxCount || values.length < maxCount))}>
+          {addButton}
         </If>
       </React.Fragment>
     );

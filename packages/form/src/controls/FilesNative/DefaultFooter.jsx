@@ -11,7 +11,7 @@ const DefaultFooter = ({ value, onRemoveAll, onRemove }) => (
   <If condition={Array.isArray(value) || value}>
     <Box paint="transparent">
       <Box.Header padded>
-        <If condition={value && value.length}>
+        <If condition={Boolean(value && value.length)}>
           <React.Fragment>
             <T name="lskComponents.filesCount" count={Array.isArray(value) ? value.length : 1} />
             <Button

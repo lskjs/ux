@@ -6,8 +6,8 @@ import { Field } from 'formik';
 import Tooltip from 'antd/lib/tooltip';
 import CloseIcon from 'react-icons2/mdi/close';
 import If from 'react-if';
-import DebugJson from '../DebugJson';
 import IconCircleButton from '@lskjs/button/IconCircleButton';
+import DebugJson from '../DebugJson';
 import Horizontal from './Horizontal';
 
 
@@ -133,7 +133,7 @@ class ArrayOf extends Component {
     const values = this.getValues();
     const ItemComponent = itemComponent || DebugJson;
     const addBtn = (
-      <If condition={(showAddButton || AddButton) && (!maxCount || values.length < maxCount)}>
+      <If condition={Boolean((showAddButton || AddButton) && (!maxCount || values.length < maxCount))}>
         <Tooltip placement="right" title="Добавить элемент">
           <AddButton onClick={this.addButtonHandler} />
         </Tooltip>
@@ -158,7 +158,7 @@ class ArrayOf extends Component {
           return (
             <Horizontal>
               <div style={{ width: 50, paddingTop: 4 }}>
-                <If condition={showRemoveButton && !(values.length === key + 1 && autoAddLastItem)}>
+                <If condition={Boolean(showRemoveButton && !(values.length === key + 1 && autoAddLastItem))}>
                   <Tooltip placement="right" title="Удалить элемент">
                     <RemoveButton onClick={() => this.removeButtonHandler(key)} />
                   </Tooltip>

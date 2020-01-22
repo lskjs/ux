@@ -72,7 +72,7 @@ const ComplexForm = createFormWithI18(() => ({
 }));
 
 export default ({ storiesOf }) => (
-  storiesOf('form/nestedForm', module)
+  storiesOf('form/nestedForm/i18', module)
     .add('EntityForm i18', () => (
       <Story devtools>
         <EntityForm />

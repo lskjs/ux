@@ -8,7 +8,7 @@ import GridFiles from './components/GridFiles';
 
 
 const DefaultFooter = ({ value, onRemoveAll, onRemove }) => (
-  <If condition={Array.isArray(value) || value}>
+  <If condition={Boolean(Array.isArray(value) || value)}>
     <Box paint="transparent">
       <Box.Header padded>
         <If condition={value && value.length}>
