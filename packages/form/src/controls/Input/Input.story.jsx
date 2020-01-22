@@ -8,16 +8,15 @@ import Textarea from '../Textarea';
 import currency from './formats/currency';
 import FormDebug from '../../FormDebug';
 
-const InputFormView = props => (
+const InputFormView = ({ control, ...props }) => (
   <Form>
-    <Field {...props.control('textarea')} />
-    <Field {...props.control('input')} />
-    <Field {...props.control('input2')} />
-    <Field {...props.control('input3')} />
-    <Field {...props.control('input4')} />
-    <Field {...props.control('input5')} />
-    <Field {...props.control('input6')} />
-    <FastField {...props.control('input2')} title="FastField/input2" />
+    <Field {...control('input')} />
+    <Field {...control('input2')} />
+    <Field {...control('input3')} />
+    <Field {...control('input4')} />
+    <Field {...control('input5')} />
+    <Field {...control('textarea')} />
+    <FastField {...control('input2')} title="FastField/input2" />
     <FormDebug {...props} />
   </Form>
 );
@@ -28,61 +27,51 @@ const InputForm = createForm({
     input: 'createForm.initialValues',
   },
   controls: {
-    textarea: {
-      title: 'input',
-      component: Textarea,
-      placeholder: 'input placeholder',
-      maxLength: 10,
-      required: true,
-    },
     input: {
-      title: 'input',
+      title: 'Sample input',
       component: Input,
       placeholder: 'input placeholder',
       required: true,
       maxLength: 10,
     },
     input2: {
-      title: 'input2',
+      title: 'Input with initialValue',
       component: Input,
       placeholder: 'input2 placeholder',
       initialValue: 'Some value in input2',
     },
     input3: {
-      title: 'input with regex',
+      title: 'Input with regex',
       component: Input,
       help: 'Only digits',
       regex: /\d*\.?\d*/,
     },
     input4: {
-      title: 'input with regex',
+      title: 'Input with regex',
       component: Input,
       help: 'Only english',
       regex: /[a-zA-Z ]*/,
     },
     input5: {
-      title: 'input with $ icon',
+      title: 'input with $ icon and currency format',
       component: Input,
+      format: currency,
       leftIcon: <UsdIcon size={28} />,
       placeholder: 'input placeholder',
     },
-    input6: {
-      title: 'Only currency',
-      component: Input,
-      format: currency,
+    textarea: {
+      title: 'Input as textarea',
+      component: Textarea,
       placeholder: 'input placeholder',
-      leftIcon: <UsdIcon size={28} />,
+      maxLength: 10,
+      required: true,
     },
   },
 });
 
-export default ({ storiesOf }) =>
-  storiesOf('form/controls', module)
-    .add('Input', () => {
-      return (
-        <Story>
-          <InputForm />
-        </Story>
-      );
-    });
-
+export default ({ storiesOf }) => storiesOf('form/controls', module)
+  .add('Input', () => (
+    <Story>
+      <InputForm />
+    </Story>
+  ));
