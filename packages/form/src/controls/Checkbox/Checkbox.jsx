@@ -6,10 +6,11 @@ import Bool from './Bool';
 
 globalStyle();
 
-export const BaseCheckbox = ({ onChange, validationState, ...props }) => (
+export const BaseCheckbox = ({ onChange, validationState, value, checked, ...props }) => (
   <AntCheckbox
     {...props}
-    onChange={({ target: { checked } }) => onChange(checked)}
+    checked={checked || value}
+    onChange={({ target: { checked: checkedValue } }) => onChange(checkedValue)}
     // onChange={value => onChange(value.target.checked)}
   >
     <Label validationState={validationState}>
@@ -27,4 +28,3 @@ BaseCheckbox.defaultProps = {
 };
 
 export default props => <Bool {...props} componentClass={BaseCheckbox} />;
-
