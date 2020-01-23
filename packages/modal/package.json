@@ -43,7 +43,7 @@
     "emotion": "9.2.12",
     "formik": "1.5.2",
     "history": "4.9.0",
-    "lodash": "4.17.11",
+    "lodash": "4.17.15",
     "mobx": "5.9.4",
     "mobx-react": "5.4.3",
     "mobx-react-devtools": "6.1.1",

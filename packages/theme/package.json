@@ -31,6 +31,9 @@
     "animated-scroll-to": "^1.2.2"
   },
   "devDependencies": {
-    "lodash": "4.17.11"
+    "lodash": "4.17.15"
+  },
+  "peerDependencies": {
+    "lodash": "*"
   }
 }
