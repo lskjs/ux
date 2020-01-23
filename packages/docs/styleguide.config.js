@@ -43,6 +43,9 @@ module.exports = {
     const name = path.basename(componentPath, '.jsx');
     return `import ${name} from '${pack.name}/${name}';`;
   },
+  styleguideComponents: {
+    Wrapper: path.join(__dirname, 'src', 'StoryProvider'),
+  },
   webpackConfig: {
     resolve: {
       extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],

@@ -31,16 +31,15 @@
   "dependencies": {
     "@lskjs/apiquery": "^0.36.0",
     "@lskjs/autobind": "0.36.0",
-    "@lskjs/button": "^0.36.11",
-    "@lskjs/dev": "^0.36.11",
-    "@lskjs/downloads": "^0.36.11",
+    "@lskjs/button": "^0.36.14",
+    "@lskjs/dev": "^0.36.14",
+    "@lskjs/downloads": "^0.36.14",
     "@lskjs/form": "^0.36.13",
-    "@lskjs/list": "^0.36.13",
+    "@lskjs/modal": "^0.36.11",
     "@lskjs/mobx": "0.36.2",
-    "@lskjs/modal": "^0.36.12",
     "@lskjs/scroll": "^0.36.11",
     "@lskjs/theme": "^0.36.11",
-    "@lskjs/ui": "^0.36.12",
+    "@lskjs/ui": "^0.36.11",
     "@lskjs/utils": "0.36.1",
     "antd": "^3.20.7",
     "axios": "^0.19.0",
@@ -73,5 +72,6 @@
     "react-slick": "0.25.2",
     "react-world-flags": "1.3.0",
     "universal-router": "^8.2.1"
-  }
+  },
+  "devDependencies": {}
 }
