@@ -32,7 +32,7 @@ class GridFile extends Component {
   }
 
   render() {
-    const { src = '', filename, title, image, type, onRemove, link } = this.props;
+    const { src = '', filename, image, type, onRemove, link } = this.props;
     const Icon = fileTypes[type] || fileTypes.other;
     const res = (
       <Box

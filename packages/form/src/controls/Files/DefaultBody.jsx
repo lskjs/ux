@@ -7,14 +7,14 @@ import { Actions, Block, Drop, DropIcon, DropText, Header, Info } from './Files.
 
 const DefaultBody = ({
   dragged,
-  // value, 
+  // value,
   refZone,
   validationState,
 }) => {
   const open = () => refZone.current && refZone.current.open();
   return (
     <React.Fragment>
-      <If condition={dragged}>
+      <If condition={!!dragged}>
         <Drop>
           <DropText>
             <T name="upload.dropFiles" />
