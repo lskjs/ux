@@ -59,7 +59,6 @@ class Files extends Component {
   }
   componentDidMount() {
     const { name } = this.props;
-    console.log(name);
     if (typeof window !== 'undefined') {
       const input = document.getElementById(`${name}-input`);
       this.setState({ input });
