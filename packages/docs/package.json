@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/docs",
-  "version": "0.36.12",
+  "version": "0.36.13",
   "description": "lskjs docs",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -34,8 +34,8 @@
     "@lskjs/button": "^0.36.11",
     "@lskjs/dev": "^0.36.11",
     "@lskjs/downloads": "^0.36.11",
-    "@lskjs/form": "^0.36.12",
-    "@lskjs/list": "^0.36.12",
+    "@lskjs/form": "^0.36.13",
+    "@lskjs/list": "^0.36.13",
     "@lskjs/mobx": "0.36.2",
     "@lskjs/modal": "^0.36.12",
     "@lskjs/scroll": "^0.36.11",
