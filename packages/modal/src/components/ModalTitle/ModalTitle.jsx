@@ -11,15 +11,17 @@ class ModalTitle extends PureComponent {
     children: PropTypes.any.isRequired,
     onBack: PropTypes.func,
     align: PropTypes.oneOf(['left', 'center', 'right']),
+    whiteTheme: PropTypes.bool,
   }
   static defaultProps = {
     align: 'left',
     onBack: null,
+    whiteTheme: false,
   }
   render() {
-    const { children, align, onBack } = this.props;
+    const { children, align, onBack, whiteTheme } = this.props;
     return (
-      <Title align={align} className="modal-title">
+      <Title align={align} className="modal-title" whiteTheme={!!whiteTheme}>
         <If condition={!!onBack}>
           <Button
             className={buttonStyle}

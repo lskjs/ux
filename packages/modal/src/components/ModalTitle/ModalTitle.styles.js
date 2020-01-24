@@ -3,12 +3,12 @@ import styled, { css } from 'react-emotion';
 import getTheme from '@lskjs/theme/getTheme';
 import removeProps from '@lskjs/utils/removeProps';
 
-export const Title = styled(removeProps('div', ['align']))`
+export const Title = styled(removeProps('div', ['align', 'whiteTheme']))`
   padding: 11px 44px 11px 16px;
   margin: 0;
   display: flex;
   align-items: center;
-  background-color: ${p => getTheme(p.theme, 'colors.primary')};
+  background-color: ${p => (p.whiteTheme ? getTheme(p.theme, 'colors.white') : getTheme(p.theme, 'colors.primary'))};
   height: 56px;
   font-family: ${p => getTheme(p.theme, 'fontFamily')};
   font-size: 18px;
@@ -17,7 +17,7 @@ export const Title = styled(removeProps('div', ['align']))`
   font-stretch: normal;
   line-height: 1.33;
   letter-spacing: -0.1px;
-  color: ${p => getTheme(p.theme, 'colors.white')};
+  color: ${p => (p.whiteTheme ? getTheme(p.theme, 'colors.main') : getTheme(p.theme, 'colors.white'))};
   box-sizing: border-box;
   border-radius: 8px 8px 0 0;
 `;

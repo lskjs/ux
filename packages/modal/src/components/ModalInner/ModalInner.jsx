@@ -9,6 +9,7 @@ class ModalInner extends PureComponent { // eslint-disable-line
     const {
       Modal, modal,
       title, subtitle, image, content, footer, children,
+      whiteTheme,
       ...props
     } = this.props;
 
@@ -20,7 +21,7 @@ class ModalInner extends PureComponent { // eslint-disable-line
     }
     return (
       <React.Fragment>
-        {title && <Modal.Title>{title}</Modal.Title>}
+        {title && <Modal.Title whiteTheme={!!whiteTheme}>{title}</Modal.Title>}
         {subtitle && <Modal.Subtitle>{subtitle}</Modal.Subtitle>}
         {image && <Modal.Image src={image} />}
         {content && <Modal.Content>{content}</Modal.Content>}

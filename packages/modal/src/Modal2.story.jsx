@@ -161,9 +161,9 @@ export default ({ storiesOf }) => (
     .add('1. Easy use', () => (
       <Story>
         <Modal
+          title="title"
           size="small"
           trigger="trigger"
-          title="title"
           subtitle="subtitle"
           image="https://picsum.photos/1280/720/?random"
           content="content"

@@ -10,6 +10,7 @@ export default props => (
     type="button"
     paint="transparent"
     icon={<Close />}
+    style={{ color: !!props.whiteTheme && '#9b9b9b' }}
     className={closeButtonStyle}
     {...props}
   />

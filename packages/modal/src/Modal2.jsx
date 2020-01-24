@@ -122,6 +122,7 @@ class Modal2 extends PureComponent {
     trigger: PropTypes.any, // eslint-disable-line react/forbid-prop-types
     innerRef: PropTypes.func,
     style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+    whiteTheme: PropTypes.bool,
   }
 
   static defaultProps = {
@@ -146,6 +147,7 @@ class Modal2 extends PureComponent {
     trigger: null,
     innerRef: null,
     style: {},
+    whiteTheme: false,
   }
 
   constructor(props) {
@@ -257,7 +259,7 @@ class Modal2 extends PureComponent {
               })}
             >
               {/* <If condition={closable}> */}
-                <Modal.CloseIcon onClick={this.close} />
+                <Modal.CloseIcon onClick={this.close} whiteTheme={!!this.props.whiteTheme} />
               {/* </If> */}
               <Modal.InnerWrapper>
                 <Modal.Inner {...omit(props, reactModalProps)} />
