@@ -22,10 +22,11 @@ export const Wrapper = styled('div')`
 
 const dynamicTag = createDynamicTag('div');
 export const Block = styled(dynamicTag)`
-  display: block;
+  display: flex;
+  align-items: center;
   padding: 15.5px 12px;
   ${p => (p.gap && css`
-    padding: ${p.gap};
+    padding: ${p.gap}px;
   `)}
   border-radius: 0;
   ${p => (p.active && css`
@@ -35,5 +36,13 @@ export const Block = styled(dynamicTag)`
   `)}
   &:hover {
     background-color: ${p => getTheme(p.theme, 'colors.lighterPrimary')};
+    > div > svg {
+      color: ${p => getTheme(p.theme, 'colors.primary')};
+    }
   }
+`;
+
+export const IconWrapper = styled('div')`
+  margin-right: 8px;
+  color: ${p => getTheme(p.theme, 'colors.gray')};
 `;

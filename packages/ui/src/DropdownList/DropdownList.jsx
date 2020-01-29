@@ -2,10 +2,12 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import ReactDOM from 'react-dom';
+import If from 'react-if';
 import Performance from '@lskjs/dev/Performance';
 import autobind from '@lskjs/autobind';
+import Button from '@lskjs/button';
 
-import Wrapper, { listStyle } from './DropdownList.styles';
+import Wrapper, { listStyle, Actions } from './DropdownList.styles';
 import Paper from '../Paper';
 
 class DropdownList extends PureComponent {
@@ -13,8 +15,10 @@ class DropdownList extends PureComponent {
     id: PropTypes.string,
     rect: PropTypes.any, // eslint-disable-line react/forbid-prop-types
     items: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-    pull: PropTypes.oneOf(['start', 'end']),
+    pull: PropTypes.oneOf(['start', 'end', 'stretch']),
     placement: PropTypes.oneOf(['top', 'bottom', 'right', 'left']),
+    bordered: PropTypes.bool,
+    actions: PropTypes.any, // eslint-disable-line react/forbid-prop-types
   }
   static defaultProps = {
     id: null,
@@ -22,6 +26,8 @@ class DropdownList extends PureComponent {
     items: null,
     pull: 'start',
     placement: 'bottom',
+    bordered: null,
+    actions: null,
   }
   constructor(props) {
     super(props);
@@ -39,7 +45,7 @@ class DropdownList extends PureComponent {
   }
   @autobind
   getListComponent() {
-    const { rect, items, pull, placement } = this.props;
+    const { rect, items, pull, placement, bordered, actions } = this.props;
     const { menuRect } = this.state;
     const styleProps = {
       left: 0,
@@ -98,6 +104,9 @@ class DropdownList extends PureComponent {
         styleProps.top = `${rect.height - menuRect.height}px`;
         styleProps.left = `${0 - menuRect.width}px`;
       }
+    } else if (pull === 'stretch') {
+      styleProps.top = `${rect.height}px`;
+      styleProps.width = `${rect.width}px`;
     }
     return (
       <Performance name="DropdownList" disabled={!__DEV__}>
@@ -106,7 +115,14 @@ class DropdownList extends PureComponent {
           innerRef={this.menu}
           menuRect={menuRect}
           style={styleProps}
+          pull={pull}
+          bordered={!!bordered}
         >
+          <If condition={!!actions}>
+            <Actions>
+              {actions}
+            </Actions>
+          </If>
           <Paper shadow className={listStyle}>
             {items}
           </Paper>

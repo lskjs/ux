@@ -15,7 +15,7 @@ class Dropdown extends PureComponent {
     /** Элемент по клику на который будет открываться дропдаун */
     trigger: PropTypes.func,
     /** Расположение элемента с начала / с конца */
-    pull: PropTypes.oneOf(['start', 'end']),
+    pull: PropTypes.oneOf(['start', 'end', 'stretch']),
     /** Расположение элемента сверху / снизу / справа / слева */
     placement: PropTypes.oneOf(['top', 'bottom', 'right', 'left']),
     /** Закрытие дропдауна по выбору элемента из меню */
@@ -23,6 +23,9 @@ class Dropdown extends PureComponent {
     /** Тело компонента */
     children: PropTypes.any, // eslint-disable-line react/forbid-prop-types
     outsideClick: PropTypes.bool,
+    bordered: PropTypes.bool,
+    actions: PropTypes.any, // eslint-disable-line react/forbid-prop-types
+    triggerStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   }
   static defaultProps = {
     trigger: null,
@@ -31,6 +34,9 @@ class Dropdown extends PureComponent {
     closeOnSelect: true,
     children: null,
     outsideClick: true,
+    bordered: false,
+    actions: null,
+    triggerStyle: null,
   }
 
   constructor(props) {
@@ -94,15 +100,18 @@ class Dropdown extends PureComponent {
   }
 
   render() {
-    const { children, trigger, pull, placement, id } = this.props;
+    const { children, trigger, pull, placement, id, bordered, actions, triggerStyle } = this.props;
     const { isOpen, rect } = this.state;
     return (
       <Performance name="Dropdown" disabled={!__DEV__}>
         <Wrapper id={id}>
           <div
             aria-hidden
-            style={{ display: 'inline-block' }}
+            style={{
+              display: 'inline-block',
+            }}
             ref={this.trigger}
+            className={isOpen && triggerStyle}
           >
             {trigger({ isOpen, onClick: this.show })}
           </div>
@@ -114,6 +123,8 @@ class Dropdown extends PureComponent {
               placement={placement}
               items={children}
               rect={rect}
+              bordered={!!bordered}
+              actions={actions}
             />
           </If>
         </Wrapper>
