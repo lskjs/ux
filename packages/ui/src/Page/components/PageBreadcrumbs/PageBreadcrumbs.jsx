@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
-import Breadcrumb from 'antd/lib/breadcrumb';
 import get from 'lodash/get';
 import cloneDeep from 'lodash/cloneDeep';
-// import Container from '../../atoms/PageContainer';
-import Breadcrumbs from './components/PageBreadcrumbs';
+import omit from 'lodash/omit';
+import Breadcrumbs from '../../../Breadcrumbs';
 import Link from '../../../Link';
 
 @inject('page')
@@ -26,28 +25,36 @@ class PageBreadcrumbs extends Component {
     if (reverse) {
       metas = metas.reverse();
     }
-
     let items = rawItems ? cloneDeep(rawItems) : metas.map((meta, key) => ({
       key,
       title: meta.title,
       href: meta.url,
-      path: meta.url,
     }));
-    items = items.slice(omitFirst ? 1 : 0, omitLast ? items.length - 1 : items.length);
-
+    items = items.filter((item, i) => {
+      if (i === 0 && omitFirst) return false;
+      if (i === items.length - 1 && omitLast) return false;
+      return true;
+    });
+    if (items.length) {
+      items[items.length - 1] = omit(items[items.length - 1], ['title']);
+    }
+    if (children) {
+      return (
+        <Breadcrumbs>
+          {children}
+        </Breadcrumbs>
+      );
+    }
     return (
-      <Breadcrumbs {...props}>
-        {children || (
-          <Breadcrumb
-            itemRender={(route) => {
-              const { title, path } = route;
-              if (!path) return title;
-              return (<Link href={path}>{title}</Link>);
-            }}
-            routes={items}
-          />
-        )}
-      </Breadcrumbs>
+      <Breadcrumbs
+        {...props}
+        render={(item) => {
+          const { title, href } = item;
+          if (!href) return title;
+          return (<Link href={href}>{title}</Link>);
+        }}
+        items={items}
+      />
     );
   }
 }
