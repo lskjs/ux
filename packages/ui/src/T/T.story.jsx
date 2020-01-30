@@ -9,6 +9,4 @@ export default ({ storiesOf }) => (
         <T name="test.key" />
       </Story>
     ))
-
 );
-

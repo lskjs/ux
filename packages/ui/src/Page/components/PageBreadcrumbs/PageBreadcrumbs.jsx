@@ -21,7 +21,8 @@ class PageBreadcrumbs extends Component {
     } = this.props;
     const breadcrumbs = get(page, 'state.show.breadcrumbs', true);
     if (!breadcrumbs) return null;
-    let metas = cloneDeep(get(page, 'state.metas'));
+    let metas = cloneDeep(get(page, 'state.metas')) || [];
+
     if (reverse) {
       metas = metas.reverse();
     }
@@ -36,7 +37,7 @@ class PageBreadcrumbs extends Component {
       return true;
     });
     if (items.length) {
-      items[items.length - 1] = omit(items[items.length - 1], ['title']);
+      items[items.length - 1] = omit(items[items.length - 1], ['href']);
     }
     if (children) {
       return (

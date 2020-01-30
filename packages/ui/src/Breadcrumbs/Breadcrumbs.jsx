@@ -3,18 +3,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Wrapper from './Breadcrumbs.styles';
 
-const Breadcrumbs = ({ render, items, ...props }) => (
+const Breadcrumbs = ({ render, items = [], ...props }) => (
   <Wrapper {...props}>
     {items.map((item, i) => (
       <span key={item.id || item.key || i}>
-        {render ? render(item, i) : item.title}
-        {i !== items.length - 1 && (
-        <span>
-              /
-        </span>
+        {(render ? render(item, i) : item.title) || (__DEV__ ? '??' : '')}
+        {(i !== items.length - 1) && (
+          <span>
+            &nbsp;/&nbsp;
+          </span>
         )}
       </span>
-
     ))}
   </Wrapper>
 );
