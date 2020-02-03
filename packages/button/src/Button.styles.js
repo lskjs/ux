@@ -1,5 +1,6 @@
 /* eslint import/no-extraneous-dependencies: 0 */
-import styled, { css, keyframes } from 'react-emotion';
+import styled from '@emotion/styled';
+import { css, keyframes } from '@emotion/core';
 import createDynamicTag from '@lskjs/utils/createDynamicTag';
 import removeProps from '@lskjs/utils/removeProps';
 import getTheme from '@lskjs/theme/getTheme';
@@ -822,7 +823,7 @@ export const Btn = styled(filteredTag)`
 
   ${(props) => {
     if (props.auto) {
-      return `
+      return css`
         @media screen and (max-width: 768px) {
           ${Text} {
             display: none;
@@ -832,7 +833,7 @@ export const Btn = styled(filteredTag)`
           }
           display: ${props.block ? 'flex' : 'inline-flex'};
           align-items: center;
-          ${props.size === 'extraLarge' && `
+          ${props.size === 'extraLarge' && css`
             padding-top: 9px;
             padding-bottom: 9px;
             padding-right: 9px;
@@ -842,7 +843,7 @@ export const Btn = styled(filteredTag)`
               font-size: 24px;
             }
           `}
-          ${props.size === 'large' && `
+          ${props.size === 'large' && css`
             padding-top: 9px;
             padding-bottom: 9px;
             padding-right: 9px;
@@ -852,7 +853,7 @@ export const Btn = styled(filteredTag)`
               font-size: 24px;
             }
           `}
-          ${props.size === 'default' && `
+          ${props.size === 'default' && css`
             padding-top: 8px;
             padding-bottom: 8px;
             padding-right: 8px;
@@ -862,7 +863,7 @@ export const Btn = styled(filteredTag)`
               font-size: 22px;
             }
           `}
-          ${props.size === 'small' && `
+          ${props.size === 'small' && css`
             padding-top: 6px;
             padding-bottom: 6px;
             padding-right: 6px;
@@ -873,7 +874,7 @@ export const Btn = styled(filteredTag)`
             }
 
           `}
-          ${props.size === 'verySmall' && `
+          ${props.size === 'verySmall' && css`
             padding-top: 5px;
             padding-bottom: 5px;
             padding-right: 5px;
@@ -884,7 +885,7 @@ export const Btn = styled(filteredTag)`
             }
 
           `}
-          ${props.size === 'extraSmall' && `
+          ${props.size === 'extraSmall' && css`
             padding-top: 3px;
             padding-bottom: 3px;
             padding-right: 3px;
@@ -930,14 +931,14 @@ export const Btn = styled(filteredTag)`
     }
   }}
   ${getStyles}
-  ${props => (props.disabled && `
+  ${props => (props.disabled && css`
     cursor: not-allowed !important;
     pointer-events: none !important;
   `)}
   ${props => (props.block && `
     width: 100%;
   `)}
-  ${props => ((props.block && props.twoIcons) && `
+  ${props => ((props.block && props.twoIcons) && css`
     ${Icon} {
       &:not(:last-child) {
         margin-right: auto !important;
@@ -947,10 +948,10 @@ export const Btn = styled(filteredTag)`
       }
     }
   `)}
-  ${props => ((props.block && props.iconDirection === 'right') && `
+  ${props => ((props.block && props.iconDirection === 'right') && css`
     margin-left: auto;
   `)}
-  ${props => (props.onlyIcon && `
+  ${props => (props.onlyIcon && css`
     min-width: auto;
     border-radius: 50px;
   `)}
@@ -958,7 +959,7 @@ export const Btn = styled(filteredTag)`
     color: transparent !important;
   `)} */
   pointer-events: ${p => (p.state !== 'ready' ? 'none' : 'auto')};
-  ${p => `
+  ${p => css`
     color: ${getTheme(p, 'colors.color')};
     background-color: ${getTheme(p, 'colors.background')};
     &:hover {
@@ -1022,7 +1023,7 @@ export const Ripple = styled('div')`
   height: 100%;
   overflow: hidden;
   background: transparent;
-  ${props => (props.active && `
+  ${props => (props.active && css`
     ${RippleCircle} {
       animation: ${aRipple} .4s ease-in;
     }`
@@ -1044,7 +1045,7 @@ export const State = styled('div')`
   pointer-events: ${p => (p.state !== 'ready' ? 'none' : 'auto')};
   ${(props) => {
     if (props.bordered) {
-      return `
+      return css`
         box-shadow: inset 0 0 0 1px #fff;
       `;
     }
@@ -1129,7 +1130,7 @@ export const ButtonGroup = styled('div')`
       }
       border-radius: 0;
     }
-  `}
+`}
   /* ${p => !p.panel && css`
     ${Btn} {
       margin: 0 4px;

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Marker from 'react-icons2/md/room';
 import autobind from '@lskjs/autobind';
 import GoogleMapReact from 'google-map-react';
-import { css } from 'react-emotion';
+import { css } from '@emotion/core';
 import SearchBox from './SearchBox';
 // import { Icon } from './Geo.styles';
 

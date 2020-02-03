@@ -1,4 +1,4 @@
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 import AntDrawer from 'antd/lib/drawer';
 import getTheme from '@lskjs/theme/getTheme';
 import LayoutSidenav from '../LayoutSidenav/LayoutSidenav.styles';

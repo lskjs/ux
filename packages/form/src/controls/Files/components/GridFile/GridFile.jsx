@@ -1,4 +1,6 @@
+/** @jsx jsx */
 import React, { Component } from 'react';
+import { jsx } from '@emotion/core';
 import autobind from '@lskjs/autobind';
 import Link from '@lskjs/ui/Link';
 import Remove from 'react-icons2/mdi/close-circle-outline';
@@ -37,7 +39,7 @@ class GridFile extends Component {
     const res = (
       <Box
         componentClass="div"
-        className={containerStyle}
+        css={containerStyle}
       >
         <PreviewContainer>
           { image
@@ -50,7 +52,7 @@ class GridFile extends Component {
             : (
               <Icon
                 size={64}
-                className={centerFile}
+                css={centerFile}
               />
             )}
         </PreviewContainer>
@@ -58,11 +60,11 @@ class GridFile extends Component {
           <Typography
             color="#9b9b9b"
             variant="caption"
-            className={typeStyle}
+            css={typeStyle}
           >
             {type}
           </Typography>
-          <Typography className={urlStyle}>{filename}</Typography>
+          <Typography css={urlStyle}>{filename}</Typography>
         </Info>
         <If condition={!!onRemove}>
           <RemoveButton>

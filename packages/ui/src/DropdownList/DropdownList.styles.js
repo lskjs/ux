@@ -1,5 +1,6 @@
-import styled, { css } from 'react-emotion';
 import getTheme from '@lskjs/theme/getTheme';
+import styled from '@emotion/styled';
+import { css } from '@emotion/core';
 
 export default styled('div')`
   position: absolute;

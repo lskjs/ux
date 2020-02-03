@@ -12,7 +12,7 @@ const DefaultFooter = ({ value, onRemoveAll, onRemove }) => (
     <Box paint="transparent">
       <Box.Header padded>
         <If condition={value && value.length}>
-          <React.Fragment>
+          <>
             <T name="lskComponents.filesCount" count={Array.isArray(value) ? value.length : 1} />
             <Button
               type="button"
@@ -23,7 +23,7 @@ const DefaultFooter = ({ value, onRemoveAll, onRemove }) => (
             >
               <T name="lskComponents.onRemoveFiles" />
             </Button>
-          </React.Fragment>
+          </>
         </If>
       </Box.Header>
       <Box.Body>

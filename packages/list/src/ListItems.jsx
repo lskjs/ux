@@ -1,5 +1,6 @@
+/** @jsx jsx */
 import React, { Component } from 'react';
-import { css } from 'react-emotion';
+import { jsx, css, Global } from '@emotion/core';
 import { observer, inject } from 'mobx-react';
 import If from 'react-if';
 import DEV from '@lskjs/dev/DEV';
@@ -8,11 +9,6 @@ import T from '@lskjs/ui/T';
 import Button from '@lskjs/button';
 import { contextToProps } from './List.context';
 
-const buttonStyles = css`
-  border-radius: 0;
-  box-shadow: 0 0 0 1px #e3e3e3;
-  width: 100%;
-`;
 @contextToProps('List', 'Item')
 @inject('listStore')
 @observer
@@ -27,24 +23,35 @@ class ListItems extends Component {
           {listStore.map((item, index) => {
             if (item === null) {
               return (
-                <Button
-                  bordered
-                  size="large"
-                  paint="default"
-                  onClick={() => (
-                    listStore.fetch({ skip: listStore.skip + index, limit: 1, cache: 1 })
-                  )}
-                  disabled={listStore.loading}
-                  className={buttonStyles}
-                  block
-                >
-                  <If condition={!!listStore.loading}>
-                    <T name="lskList.bodyLoadingButton" />
-                  </If>
-                  <If condition={!listStore.loading}>
-                    <T name="lskList.bodyLoadMoreButton" />
-                  </If>
-                </Button>
+                <>
+                  <Global
+                    styles={css`
+                    .buttoncss {
+                      border-radius: 0;
+                      box-shadow: 0 0 0 1px #e3e3e3;
+                      width: 100%;
+                      }
+                    `}
+                  />
+                  <Button
+                    bordered
+                    size="large"
+                    paint="default"
+                    onClick={() => (
+                      listStore.fetch({ skip: listStore.skip + index, limit: 1, cache: 1 })
+                    )}
+                    disabled={listStore.loading}
+                    className="buttoncss"
+                    block
+                  >
+                    <If condition={!!listStore.loading}>
+                      <T name="lskList.bodyLoadingButton" />
+                    </If>
+                    <If condition={!listStore.loading}>
+                      <T name="lskList.bodyLoadMoreButton" />
+                    </If>
+                  </Button>
+                </>
               );
             }
             if (!Item) return <DEV json="!Item" />;

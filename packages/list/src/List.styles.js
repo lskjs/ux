@@ -1,9 +1,10 @@
-import styled, { css, injectGlobal } from 'react-emotion';
+import styled from '@emotion/styled';
+import { css } from '@emotion/core';
+import { injectGlobal } from 'emotion';
 import getTheme from '@lskjs/theme/getTheme';
 import createDynamicTag from '@lskjs/utils/createDynamicTag';
 import removeProps from '@lskjs/utils/removeProps';
 import { Row } from '@lskjs/ui/Grid';
-// import TabBlock from '~/Uapp/components.v2/atoms/TabBlock';
 
 export const Title = styled('div')`
   font-family: ${p => getTheme(p.theme, 'fontFamily')};

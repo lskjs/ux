@@ -1,4 +1,6 @@
+/** @jsx jsx */
 import React, { Component } from 'react';
+import { jsx } from '@emotion/core';
 import { observer, inject } from 'mobx-react';
 import T from '@lskjs/ui/T';
 import Modal, {
@@ -27,7 +29,7 @@ class ListFilterModal extends Component {
         {() => (
           <React.Fragment>
             <Title><T name="lskList.filterButton" /></Title>
-            <Content className={modalStyle}>
+            <Content css={[modalStyle]}>
               <FilterForm
                 {...filterProps}
                 enableReinitialize

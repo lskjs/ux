@@ -1,6 +1,6 @@
-import { injectGlobal } from 'react-emotion';
+import { css } from '@emotion/core';
 
-export default () => injectGlobal`
+const globalStyles = css`
   .lsk-form-select .react-select__control.react-select__control--is-focused {
     border: solid 1px #7070ff !important;
     box-shadow: none !important;
@@ -97,3 +97,5 @@ export default () => injectGlobal`
     cursor: not-allowed;
   }
 `;
+
+export default globalStyles;

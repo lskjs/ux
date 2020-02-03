@@ -1,6 +1,5 @@
-import styled, { css } from 'react-emotion';
-import { injectGlobal } from 'emotion';
-
+import styled from '@emotion/styled';
+import { css } from '@emotion/core';
 
 export const ButtonRight = styled.button`
   position: relative;
@@ -79,8 +78,8 @@ export const ArrowRight = styled.i`
   box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.2);
 `;
 
-export const globalStylesLightbox = () => injectGlobal`
-  @keyframes closeWindow {
+export const globalStyles = css`
+@keyframes closeWindow {
     0% {
       opacity: 1;
     }

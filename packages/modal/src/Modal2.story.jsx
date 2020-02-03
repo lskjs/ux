@@ -1,6 +1,6 @@
 /* eslint import/no-extraneous-dependencies: 0 */
 import React, { Component } from 'react';
-import { css } from 'react-emotion';
+import { css } from '@emotion/core';
 import autobind from '@lskjs/autobind';
 import Story from '@lskjs/dev/Story';
 import Button from '@lskjs/button';

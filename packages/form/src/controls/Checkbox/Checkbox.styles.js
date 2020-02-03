@@ -1,4 +1,5 @@
-import styled, { injectGlobal } from 'react-emotion';
+import styled from '@emotion/styled';
+import { css } from '@emotion/core';
 import getTheme from '@lskjs/theme/getTheme';
 
 export default styled('span')`
@@ -7,8 +8,7 @@ export default styled('span')`
   `)}
 `;
 
-/* eslint-disable */
-export const globalStyle = () => injectGlobal`
+export const globalStyles = css`
   .ant-checkbox {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 14px;
@@ -203,4 +203,3 @@ export const globalStyle = () => injectGlobal`
     left: -1px;
   }
 `;
-/* eslint-enable */

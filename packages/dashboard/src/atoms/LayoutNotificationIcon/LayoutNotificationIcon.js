@@ -1,4 +1,4 @@
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 import Icon from 'antd/lib/icon';
 import getTheme from '@lskjs/theme/getTheme';
 

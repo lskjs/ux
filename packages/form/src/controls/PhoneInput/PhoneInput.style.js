@@ -1,4 +1,5 @@
-import styled, { injectGlobal } from 'react-emotion';
+import styled from '@emotion/styled';
+import { injectGlobal } from 'emotion';
 import getTheme from '@lskjs/theme/getTheme';
 import highResPng from './high-res.png';
 

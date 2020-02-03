@@ -1,8 +1,9 @@
+/** @jsx jsx */
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import Menu from 'antd/lib/menu';
 import get from 'lodash/get';
-import { css } from 'react-emotion';
+import { css, jsx } from '@emotion/core';
 
 export const tabsStyle = css`
   background: transparent;
@@ -30,7 +31,7 @@ class PageTabs extends Component {
         onClick={onClickProps || onClick}
         selectedKeys={selectedKeys}
         mode="horizontal"
-        className={tabsStyle}
+        css={tabsStyle}
       >
         {/* {tabs.map(Menu.Item)} */}
         {tabs.map(props => (

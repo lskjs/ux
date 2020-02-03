@@ -1,6 +1,7 @@
+/** @jsx jsx */
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { css } from 'react-emotion';
+import { css, jsx } from '@emotion/core';
 import theme from '@lskjs/theme';
 import getTheme from '@lskjs/theme/getTheme';
 import autobind from '@lskjs/autobind';
@@ -193,7 +194,7 @@ class StatefulButton extends PureComponent {
       <Tag
         onClick={this.onClick}
         state={this.getButtonState()}
-        className={style}
+        css={style}
         {...filterProps(buttonProps, Tag)}
         // {...buttonProps}
       />

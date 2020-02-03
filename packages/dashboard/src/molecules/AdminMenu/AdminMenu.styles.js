@@ -1,5 +1,5 @@
 /* eslint max-len: 0 */
-import { injectGlobal, css } from 'react-emotion';
+import { css } from '@emotion/core';
 
 export const blockStyle = css`
   width: calc(100% - 12px);
@@ -13,7 +13,7 @@ export const flexStyle = css`
   }
 `;
 
-export const injectStyles = () => injectGlobal`
+export const globalStyles = css`
   .ant-menu {
     font-family: 'Gotham Pro', Helvetica, Arial;
     font-size: 13px;

@@ -1,4 +1,4 @@
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 import AntAvatar from 'antd/lib/avatar';
 import AntIcon from 'antd/lib/icon';
 import getTheme from '@lskjs/theme/getTheme';

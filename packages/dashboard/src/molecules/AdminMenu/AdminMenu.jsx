@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import { Global } from '@emotion/core';
 import autobind from '@lskjs/autobind';
 import Link from '@lskjs/ui/Link';
 import Menu from 'antd/lib/menu';
@@ -8,9 +9,7 @@ import If from 'react-if';
 import Horizontal from '../../atoms/Horizontal';
 import ItemTitle from '../../atoms/ItemTitle';
 import TinyLabel from '../../atoms/TinyLabel';
-import { flexStyle, blockStyle, injectStyles } from './AdminMenu.styles';
-
-injectStyles();
+import { flexStyle, blockStyle, globalStyles } from './AdminMenu.styles';
 
 const { SubMenu, ItemGroup, Divider } = Menu;
 
@@ -137,6 +136,7 @@ class AdminMenu extends PureComponent {
         mode={mode}
         theme={theme}
       >
+        <Global styles={globalStyles} />
         {items.map((item) => {
           if (item === 'divider' && mode !== 'horizontal') {
             return <Divider key={`${item.key}-${item}`} />;

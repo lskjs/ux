@@ -1,12 +1,9 @@
+/** @jsx jsx */
 import React, { Component } from 'react';
-import { css } from 'react-emotion';
+import { css, jsx } from '@emotion/core';
 import { inject, observer } from 'mobx-react';
-import cx from 'classnames';
 import isArray from 'lodash/isArray';
 import forEach from 'lodash/forEach';
-
-import filterProps from '@lskjs/utils/filterProps';
-
 
 // const defaultStyle = ({ theme }) => css`
 // color: ${theme.colors && theme.colors.default};
@@ -90,11 +87,8 @@ class TableRow extends Component {
     }
 
     const styleString = styles.join('\n');
-    // console.log(styleString);
     const cssClassName = css(styleString);
-    const defaultClassName = 'table-gird-row';
-    // console.log({ cssClassName });
-
+    // const defaultClassName = 'table-gird-row';
 
     // if (Array.isArray(children)) {
     //   children.forEach((col, i) => {
@@ -125,16 +119,27 @@ class TableRow extends Component {
     // }));
 
     // return <div>dsvfbng</div>
-    const subProps = {
-      ...props,
-      className: cx([className, cssClassName, defaultClassName]),
-    };
+    // const subProps = {
+    //   ...props,
+    //   css: cssClassName,
+    // };
 
-    return React.createElement(
-      componentClass,
-      filterProps(subProps, componentClass),
-      children,
+    const TRow = `${componentClass || 'div'}`;
+    return (
+      <TRow
+        componentClass={componentClass}
+        className={`${className || ''} table-gird-row`}
+        css={cssClassName}
+        {...props}
+      >
+        {children}
+      </TRow>
     );
+    // return React.createElement(
+    //   componentClass,
+    //   filterProps(subProps, componentClass),
+    //   children,
+    // );
   }
 }
 

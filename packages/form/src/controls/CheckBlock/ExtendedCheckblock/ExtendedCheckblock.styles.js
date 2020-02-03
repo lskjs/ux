@@ -1,4 +1,4 @@
-import styled, { css } from 'react-emotion';
+import styled from '@emotion/styled';
 import getTheme from '@lskjs/theme/getTheme';
 
 export const Additional = styled('div')`

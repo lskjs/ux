@@ -1,4 +1,5 @@
-import styled, { keyframes, css } from 'react-emotion';
+import styled from '@emotion/styled';
+import { css, keyframes } from '@emotion/core';
 import range from 'lodash/range';
 
 function delay(interval, c, index) {
@@ -6,10 +7,10 @@ function delay(interval, c, index) {
 }
 
 function count(n = 4, start = 2) { // eslint-disable-line consistent-return
-  const list = range(start, n).map(i => `
-      &:nth-child(${i}) {
-        animation-delay:${delay(0.2, n, i - 1)}s;
-      }
+  const list = range(start, n).map(i => css`
+    &:nth-child(${i}) {
+      animation-delay:${delay(0.2, n, i - 1)}s;
+    }
   `);
   return css(list.join('\n'));
 }

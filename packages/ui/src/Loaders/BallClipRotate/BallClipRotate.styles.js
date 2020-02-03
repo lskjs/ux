@@ -1,4 +1,5 @@
-import styled, { keyframes } from 'react-emotion';
+import styled from '@emotion/styled';
+import { keyframes } from '@emotion/core';
 
 const rotate = keyframes`
   0% {
@@ -27,4 +28,3 @@ export default styled('div')`
     display: inline-block;
     animation: ${rotate} 0.75s 0s linear infinite;
 `;
-

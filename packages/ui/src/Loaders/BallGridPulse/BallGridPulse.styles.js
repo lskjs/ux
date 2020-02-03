@@ -1,4 +1,5 @@
-import styled, { keyframes, css } from 'react-emotion';
+import styled from '@emotion/styled';
+import { css, keyframes } from '@emotion/core';
 import range from 'lodash/range';
 
 const scale = keyframes`
@@ -25,7 +26,7 @@ const beat = keyframes`
 `;
 
 function count(n = 10, start = 1) { // eslint-disable-line consistent-return
-  const list = range(start, n).map(i => `
+  const list = range(start, n).map(i => css`
       &:nth-child(${i}) {
         animation-delay: ${((Math.random(100) / 100) - 0.2)}s;
         animation-duration: ${((Math.random(100) / 100) + 0.6)}s;
@@ -50,10 +51,10 @@ export const GridBall = styled('div')`
     ${(p) => {
     switch (p.type) {
       case 'beat':
-        return `
+        return css`
           animation-name: ${beat};`;
       default:
-        return `
+        return css`
           animation-name: ${scale};`;
     }
   }}

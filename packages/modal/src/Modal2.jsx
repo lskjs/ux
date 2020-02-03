@@ -1,9 +1,10 @@
+/** @jsx jsx */
 /* eslint import/no-extraneous-dependencies: 0 */
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { jsx, Global } from '@emotion/core';
 import If from 'react-if';
 import noop from 'lodash/noop';
-import cx from 'classnames';
 import uniq from 'lodash/uniq';
 import filter from 'lodash/filter';
 import pick from 'lodash/pick';
@@ -222,6 +223,11 @@ class Modal2 extends PureComponent {
     if (innerRef) innerRef(this);
     return (
       <Provider value={{ modal, Modal }}>
+        <Global
+          styles={{
+            '.bodyModal': bodyModalStyle,
+          }}
+        />
         <React.Fragment>
           <ReactModal
             ref={closable ? (e) => { this._modal = e; } : noop}
@@ -242,24 +248,24 @@ class Modal2 extends PureComponent {
             } : noop}
             isOpen={this.state.visible}
             onRequestClose={closable && this.close}
-            bodyOpenClassName={bodyModalStyle}
-            htmlOpenClassName={bodyModalStyle}
+            bodyOpenClassName="bodyModal"
+            htmlOpenClassName="bodyModal"
             style={merge(style, Modal2.defaultStyles)}
             {...pick(props, reactModalProps)}
           >
             <span style={{ opacity: 0 }}>{this.state.counter}</span>
             <div
               aria-hidden
-              className={cx({
-                [className]: className,
-                [modalStyle]: true,
-                [modalSmall]: sizes.is(size, 'small'),
-                [modalNormal]: sizes.is(size, 'medium'),
-                [modalLarge]: sizes.is(size, 'large'),
-              })}
+              css={[
+                className,
+                modalStyle,
+                sizes.is(size, 'small') ? modalSmall : null,
+                sizes.is(size, 'medium') ? modalNormal : null,
+                sizes.is(size, 'large') ? modalLarge : null,
+              ]}
             >
               {/* <If condition={closable}> */}
-                <Modal.CloseIcon onClick={this.close} whiteTheme={!!this.props.whiteTheme} />
+              <Modal.CloseIcon onClick={this.close} whiteTheme={!!this.props.whiteTheme} />
               {/* </If> */}
               <Modal.InnerWrapper>
                 <Modal.Inner {...omit(props, reactModalProps)} />

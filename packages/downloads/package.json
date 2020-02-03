@@ -46,10 +46,13 @@
     "mobx-react": "^5.4.3",
     "mobx-react-devtools": "^6.1.1",
     "react": "^16.8.6",
-    "react-emotion": "^9.2.10",
+    "@emotion/core": "^10.0.22",
+    "@emotion/styled": "^10.0.23",
     "react-icons2": "^2.5.0"
   },
   "peerDependencies": {
+    "@emotion/core": "*",
+    "@emotion/styled": "*",
     "@lskjs/autobind": "*",
     "@lskjs/css": "*",
     "@lskjs/dev": "*",
@@ -63,7 +66,6 @@
     "mobx-react": "*",
     "mobx-react-devtools": "*",
     "react": "*",
-    "react-emotion": "*",
     "react-icons2": "*"
   }
 }

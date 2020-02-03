@@ -1,4 +1,5 @@
-import styled, { css, keyframes } from 'react-emotion';
+import styled from '@emotion/styled';
+import { css, keyframes } from '@emotion/core';
 import range from 'lodash/range';
 
 const scale = keyframes`
@@ -21,7 +22,7 @@ function delay(interval, c, index) {
 }
 
 function count(n = 4, start = 1) { // eslint-disable-line consistent-return
-  const list = range(start, n).map(i => `
+  const list = range(start, n).map(i => css`
       &:nth-child(${i}) {
         animation: ${scale} 0.75s ${delay(0.12, n, i)}s infinite cubic-bezier(.2,.68,.18,1.08);
       }

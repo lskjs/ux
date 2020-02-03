@@ -105,7 +105,7 @@ export default () => injectGlobal`
     width: 100%;
     height: 100%;
     border-radius: 2px;
-    border: 1px solid #1890ff;
+    /* border: 1px solid #1890ff; */
     content: "";
     animation: antCheckboxEffect 0.36s ease-in-out;
     animation-fill-mode: both;
@@ -525,7 +525,7 @@ export default () => injectGlobal`
     width: 100%;
     height: 100%;
     border-radius: 2px;
-    border: 1px solid #1890ff;
+    /* border: 1px solid #1890ff; */
     content: "";
     animation: antCheckboxEffect 0.36s ease-in-out;
     animation-fill-mode: both;

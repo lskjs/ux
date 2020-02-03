@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { observer } from 'mobx-react';
 import range from 'lodash/range';
 import Lightbox from 'react-image-lightbox';
+import { Global } from '@emotion/core';
 import {
   Container,
   ButtonRight,
@@ -12,10 +13,8 @@ import {
   ArrowRight,
   Wrapper,
   ItemSlider,
-  globalStylesLightbox,
+  globalStyles,
 } from './Carousel.style';
-
-globalStylesLightbox();
 
 const DefaultItemComponent = ({ src, title }) => (
   <img src={src} alt={title} />
@@ -125,6 +124,7 @@ class Carousel extends Component {
     };
     return (
       <Container>
+        <Global styles={globalStyles} />
         <Slider {...settings} {...props}>
           {normalizeItems(items).map((item, i) => (
             <ItemSlider key={item.key || i}>

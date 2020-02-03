@@ -1,4 +1,4 @@
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 import Textarea from 'react-textarea-autosize';
 import AntAvatar from 'antd/lib/avatar';
 import getTheme from '@lskjs/theme/getTheme';

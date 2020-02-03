@@ -1,23 +1,8 @@
-import React, { PureComponent } from 'react';
+import React, { Fragment, PureComponent } from 'react';
 import autobind from '@lskjs/autobind';
 import PropTypes from 'prop-types';
-import { injectGlobal } from 'emotion';
+import { css, Global } from '@emotion/core';
 import { Collapse as ReactCollapse, UnmountClosed } from 'react-collapse';
-import cx from 'classnames';
-
-injectGlobal(`
-  .ReactCollapse--collapse {
-    will-change: height, border-bottom;
-    border-bottom: none !important;
-  }
-  .ReactCollapse--rest {
-    overflow: visible !important;
-    position: relative;
-    border-bottom: 1px solid #e3e3e3 !important;
-    z-index: 11;
-  }
-`);
-
 
 class Collapse extends PureComponent {
   static propTypes = {
@@ -93,25 +78,40 @@ class Collapse extends PureComponent {
       );
     }
     return (
-      <Wrapper
-        {...props}
-        isOpened={show}
-        forceInitialAnimation={type === 'collapseUnmount'}
-        onRender={this.handleRenderer}
-        onRest={() => {
-          if (show) {
-            this.toggleRestFilterBar(true);
+      <Fragment>
+        <Global
+          styles={css`
+            .ReactCollapse--collapse {
+              will-change: height, border-bottom;
+              transition: height 500ms !important;
+              border-bottom: none !important;
+            }
+            .ReactCollapse--rest {
+              overflow: visible !important;
+              position: relative;
+              border-bottom: 1px solid #e3e3e3 !important;
+              z-index: 11;
+            }
+            `
           }
-        }}
-        theme={{
-          collapse: cx({
-            'ReactCollapse--collapse': true,
-            'ReactCollapse--rest': show && rest,
-          }),
-        }}
-      >
-        {children}
-      </Wrapper>
+        />
+        <Wrapper
+          {...props}
+          isOpened={show}
+          forceInitialAnimation={type === 'collapseUnmount'}
+          onRender={this.handleRenderer}
+          onRest={() => {
+            if (show) {
+              this.toggleRestFilterBar(true);
+            }
+          }}
+          theme={{
+            collapse: ['ReactCollapse--collapse', (show && rest) ? 'ReactCollapse--rest' : ''],
+          }}
+        >
+          {children}
+        </Wrapper>
+      </Fragment>
     );
   }
 }

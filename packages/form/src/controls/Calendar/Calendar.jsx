@@ -1,14 +1,14 @@
 import React, { PureComponent } from 'react';
 // import get from 'lodash/get';
 // import PropTypes from 'prop-types';
+import { Global } from '@emotion/core';
 import CalendarBase from 'react-calendar/dist/entry.nostyle';
 import autobind from '@lskjs/autobind';
 import moment from 'moment';
 // import moment from 'moment';
 // import HighlightedCell from './HighlightedCell';
-import { highlightedStyle, calendarStyles } from './highlightedStyle';
+import { highlightedStyle, globalStyles } from './highlightedStyle';
 
-calendarStyles();
 
 class Calendar extends PureComponent {
   static isAnyTypeDate(f) {
@@ -34,24 +34,27 @@ class Calendar extends PureComponent {
       ...props
     } = this.props;
     return (
-      <CalendarBase
-        {...field}
-        {...props}
-        onChange={(value) => {
-          const selectedDate = new Date(moment(value).format('YYYY-MM-DD'));
-          // const selectedDate = new Date(value);
-          // console.log(value, selectedDate);
-          form.setFieldValue(field.name, selectedDate);
-        }}
-        tileClassName={({ date }) => {
-          const dates = (highlightedDates || []).map(d => this.validationDate(d));
-          const isValid = !!dates.filter(e => date.toDateString() === e.toDateString()).length;
-          if (isValid) return highlightedStyle;
-          return '';
-        }}
-        value={this.validationDate(field.value)}
-        minDate={futureOnly ? new Date() : null}
-      />
+      <>
+        <Global styles={globalStyles} />
+        <CalendarBase
+          {...field}
+          {...props}
+          onChange={(value) => {
+            const selectedDate = new Date(moment(value).format('YYYY-MM-DD'));
+            // const selectedDate = new Date(value);
+            // console.log(value, selectedDate);
+            form.setFieldValue(field.name, selectedDate);
+          }}
+          tileClassName={({ date }) => {
+            const dates = (highlightedDates || []).map(d => this.validationDate(d));
+            const isValid = !!dates.filter(e => date.toDateString() === e.toDateString()).length;
+            if (isValid) return highlightedStyle;
+            return '';
+          }}
+          value={this.validationDate(field.value)}
+          minDate={futureOnly ? new Date() : null}
+        />
+      </>
     );
   }
 }

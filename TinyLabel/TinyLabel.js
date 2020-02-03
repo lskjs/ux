@@ -1,4 +1,5 @@
-import styled, { css } from 'react-emotion';
+import styled from '@emotion/styled';
+import { css } from '@emotion/core';
 import getTheme from '@lskjs/theme/getTheme';
 import removeProps from '../../../utils/removeProps';
 
@@ -18,14 +19,14 @@ export default styled(filter)`
   text-align: center;
   padding: 0 4px;
   color: ${p => getTheme(p.theme, 'colors.white')};
-  
+
   ${p => (p.sticky && css`
     position: absolute;
     top: 4px;
     right: 0;
     box-shadow: 0 0 0 2px #3a3a44;
   `)}
-  
+
   ${p => (p.pullRight && css`
     margin-left: auto;
   `)}

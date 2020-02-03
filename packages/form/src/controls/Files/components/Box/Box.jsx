@@ -1,4 +1,6 @@
+/** @jsx jsx */
 import React, { PureComponent } from 'react';
+import { jsx } from '@emotion/core';
 import PropTypes from 'prop-types';
 import BoxHeader from './BoxHeader';
 import BoxBody from './BoxBody';

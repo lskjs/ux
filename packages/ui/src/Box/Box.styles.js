@@ -1,4 +1,5 @@
-import styled, { css } from 'react-emotion';
+import styled from '@emotion/styled';
+import { css } from '@emotion/core';
 import getTheme from '@lskjs/theme/getTheme';
 import creacteDynamicTag from '@lskjs/utils/createDynamicTag';
 import removeProps from '@lskjs/utils/removeProps';
@@ -81,4 +82,3 @@ export default styled(filteredTag)`
     border-radius: ${getTheme(p.theme, 'borderRadius')}
   `)}
 `;
-

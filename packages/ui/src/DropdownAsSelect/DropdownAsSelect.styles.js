@@ -1,5 +1,5 @@
-import styled, { css } from 'react-emotion';
-import { injectGlobal } from 'emotion';
+import styled from '@emotion/styled';
+import { css } from '@emotion/core';
 import getTheme from '@lskjs/theme/getTheme';
 
 export const popperDisabledStyle = css`
@@ -87,37 +87,36 @@ export const Trigger = styled('button')`
   }
 `;
 
-export const injectStyles = () => injectGlobal`
-
-.popover {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2021;
-  display: none;
-  max-width: 276px;
-  padding: 1px;
-  font-family: "PT Sans", sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  letter-spacing: -0.1px;
-  line-break: auto;
-  line-height: 1.42857;
-  text-align: left;
-  text-align: start;
-  text-decoration: none;
-  text-shadow: none;
-  text-transform: none;
-  white-space: normal;
-  word-break: normal;
-  word-spacing: normal;
-  word-wrap: normal;
-  font-size: 15px;
-  background-color: #fff;
-  background-clip: padding-box;
-  border: 1px solid #ccc;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
+export const globalStyles = css`
+  .popover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2021;
+    display: none;
+    max-width: 276px;
+    padding: 1px;
+    font-family: "PT Sans", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: -0.1px;
+    line-break: auto;
+    line-height: 1.42857;
+    text-align: left;
+    text-align: start;
+    text-decoration: none;
+    text-shadow: none;
+    text-transform: none;
+    white-space: normal;
+    word-break: normal;
+    word-spacing: normal;
+    word-wrap: normal;
+    font-size: 15px;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
   -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); }
   .popover.top {
@@ -210,6 +209,5 @@ export const injectStyles = () => injectGlobal`
     border-right-width: 0;
     border-left-color: #fff;
     bottom: -10px; }
-
 
 `;

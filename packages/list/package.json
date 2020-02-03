@@ -33,6 +33,8 @@
     "react-visibility-sensor": "^5.0.2"
   },
   "devDependencies": {
+    "@emotion/core": "^10.0.22",
+    "@emotion/styled": "^10.0.23",
     "@lskjs/apiquery": "^0.36.0",
     "@lskjs/autobind": "^0.36.0",
     "@lskjs/button": "^0.36.14",
@@ -50,17 +52,17 @@
     "axios": "^0.18.0",
     "bluebird": "^3.5.4",
     "classnames": "^2.2.6",
-    "emotion": "^9.2.10",
+    "emotion": "^10.0.23",
     "formik": "^1.5.2",
     "lodash": "4.17.15",
     "mobx": "^5.9.4",
     "mobx-react": "^5.4.3",
     "mobx-react-devtools": "^6.1.1",
     "prop-types": "^15.7.2",
+    "rc-queue-anim": "1.8.3",
     "react": "^16.8.6",
     "react-collapse": "^4.0.3",
     "react-custom-scrollbars": "^4.2.1",
-    "react-emotion": "^9.2.10",
     "react-icons2": "^2.5.0",
     "react-motion": "0.5.2",
     "validate.js": "^0.12.0"
@@ -90,9 +92,12 @@
     "mobx-react-devtools": "*",
     "prop-types": "*",
     "react": "*",
-    "react-emotion": "*",
     "react-icons2": "*",
     "react-motion": "*",
-    "validate.js": "*"
+    "validate.js": "*",
+    "@emotion/core": "*",
+    "@emotion/styled": "*",
+    "lodash-decorators": "*",
+    "rc-queue-anim": "*"
   }
 }

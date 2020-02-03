@@ -1,5 +1,6 @@
 /* eslint import/no-extraneous-dependencies: 0 */
-import styled, { css } from 'react-emotion';
+import styled from '@emotion/styled';
+import { css } from '@emotion/core';
 
 export const modalStyle = css`
   margin: 60px auto;

@@ -1,6 +1,6 @@
-import { injectGlobal } from 'emotion';
+import { css } from '@emotion/core';
 
-export const globalStylesFormItem = () => injectGlobal`
+export const globalStylesFormItem = () => css`
   .ant-form-item {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 14px;

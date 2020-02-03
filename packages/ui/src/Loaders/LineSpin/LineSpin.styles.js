@@ -1,4 +1,5 @@
-import styled, { css, keyframes } from 'react-emotion';
+import styled from '@emotion/styled';
+import { css, keyframes } from '@emotion/core';
 import range from 'lodash/range';
 
 const spin = keyframes`
@@ -15,7 +16,7 @@ function delay(interval, c, index) {
 }
 
 function count(n = 9, start = 1) { // eslint-disable-line consistent-return
-  const list = range(start, n).map(i => `
+  const list = range(start, n).map(i => css`
       &:nth-child(${i}) {
         animation: ${spin} 1.2s ${delay(0.12, n, i)}s infinite ease-in-out;
       }

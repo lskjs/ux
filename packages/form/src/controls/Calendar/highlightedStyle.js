@@ -1,4 +1,4 @@
-import { injectGlobal, css } from 'react-emotion';
+import { css } from '@emotion/core';
 
 export const highlightedStyle = css`
   background-color: #e6f7ff !important;
@@ -12,7 +12,7 @@ export const highlightedStyle = css`
   }
 `;
 
-export const calendarStyles = () => injectGlobal`
+export const globalStyles = css`
   .react-calendar__tile--active {
     background: #006edc;
     color: black !important;

@@ -1,4 +1,6 @@
+/** @jsx jsx */
 import React, { PureComponent } from 'react';
+import { jsx } from '@emotion/core';
 import isEqual from 'lodash/isEqual';
 import { Provider } from 'mobx-react';
 

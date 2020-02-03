@@ -1,4 +1,5 @@
-import styled, { css, keyframes } from 'react-emotion';
+import styled from '@emotion/styled';
+import { css, keyframes } from '@emotion/core';
 import range from 'lodash/range';
 
 const scaleRandom = keyframes`
@@ -14,11 +15,11 @@ const scaleRandom = keyframes`
 `;
 
 function count(n = 5, start = 1) { // eslint-disable-line consistent-return
-  const list = range(start, n).map(i => `
-      &:nth-child(${i}) {
-        animation-delay: ${((Math.random(100) / 100) - 0.2)}s;
-        animation-duration: ${((Math.random(100) / 100) + 0.3)}s;
-      }
+  const list = range(start, n).map(i => css`
+    &:nth-child(${i}) {
+      animation-delay: ${((Math.random(100) / 100) - 0.2)}s;
+      animation-duration: ${((Math.random(100) / 100) + 0.3)}s;
+    }
   `);
   return css(list.join('\n'));
 }

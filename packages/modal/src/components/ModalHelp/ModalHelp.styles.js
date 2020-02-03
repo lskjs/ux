@@ -1,5 +1,5 @@
 /* eslint import/no-extraneous-dependencies: 0 */
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 import getTheme from '@lskjs/theme/getTheme';
 import removeProps from '@lskjs/utils/removeProps';
 

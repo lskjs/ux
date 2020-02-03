@@ -1,4 +1,4 @@
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 import removeProps from '@lskjs/utils/removeProps';
 
 function makeRatio(p) {

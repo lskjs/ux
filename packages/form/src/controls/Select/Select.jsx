@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Global } from '@emotion/core';
 import find from 'lodash/find';
 import get from 'lodash/get';
 import isEqual from 'lodash/isEqual';
@@ -9,13 +10,12 @@ import cx from 'classnames';
 import Up from 'react-icons2/mdi/chevron-up';
 import Down from 'react-icons2/mdi/chevron-down';
 import { getOptionValue, getReverseOptionValue, getNormalizedOptions, NULL_STRING } from './utils';
-import injectStyles from './Select.styles';
+import globalStyles from './Select.styles';
 import SingleValue from './SingleValue';
 import Option from './Option';
 import CollapsedValueContainer from './CollapsedValueContainer';
 import CollapsedMultiValue from './CollapsedMultiValue';
 
-injectStyles();
 
 class Select extends Component {
   state = {}
@@ -141,55 +141,58 @@ class Select extends Component {
     const defaultIsSearchable = options && options.length > 10;
     // console.log({ defaultIsClearable }, props.required, !!nullOption, !props.required, !nullOption, nullOption, props.isClearable, normalizedOptions);
     return (
-      <SelectComponent
-        blurInputOnSelect={blurInputOnSelect}
-        // isClearable={defaultIsClearable}
-        isSearchable={defaultIsSearchable}
-        isClearable={defaultIsClearable}
-        arrowRenderer={e => (e.isOpen ? <Up /> : <Down />)}
-        error={hasError}
-        classNamePrefix="react-select"
-        cacheOptions={async}
-        defaultOptions={async}
-        closeMenuOnSelect={false}
-        placeholder={placeholder}
-        isMulti={isMulti}
-        hideSelectedOptions={hideSelectedOptions}
-        {...field}
-        {...props}
-        components={{
-          SingleValue,
-          Option,
-          ...(collapsed ? collapsedComponents : {}),
-          ...components,
-        }}
-        styles={{
-          singleValue: base => ({
-            ...base,
-            position: 'relative',
-            top: 'inherit',
-            transform: 'inherit',
-            flexWrap: 'nowrap',
-          }),
-          valueContainer: base => ({
-            ...base,
-            flexWrap: 'nowrap',
-            whiteSpace: 'nowrap',
-            overflow: 'hidden',
-            textOverflow: 'ellipsis',
-          }),
-          ...styles,
-        }}
-        className={cx({
-          'lsk-form-select': true,
-          [className]: !!className,
-          'has-error': hasError,
-        })}
-        value={option || null}
-        loadOptions={this.loadOptions}
-        onChange={this.handleChange}
-        options={async ? null : normalizedOptions}
-      />
+      <>
+        <Global styles={globalStyles} />
+        <SelectComponent
+          blurInputOnSelect={blurInputOnSelect}
+          // isClearable={defaultIsClearable}
+          isSearchable={defaultIsSearchable}
+          isClearable={defaultIsClearable}
+          arrowRenderer={e => (e.isOpen ? <Up /> : <Down />)}
+          error={hasError}
+          classNamePrefix="react-select"
+          cacheOptions={async}
+          defaultOptions={async}
+          closeMenuOnSelect={false}
+          placeholder={placeholder}
+          isMulti={isMulti}
+          hideSelectedOptions={hideSelectedOptions}
+          {...field}
+          {...props}
+          components={{
+            SingleValue,
+            Option,
+            ...(collapsed ? collapsedComponents : {}),
+            ...components,
+          }}
+          styles={{
+            singleValue: base => ({
+              ...base,
+              position: 'relative',
+              top: 'inherit',
+              transform: 'inherit',
+              flexWrap: 'nowrap',
+            }),
+            valueContainer: base => ({
+              ...base,
+              flexWrap: 'nowrap',
+              whiteSpace: 'nowrap',
+              overflow: 'hidden',
+              textOverflow: 'ellipsis',
+            }),
+            ...styles,
+          }}
+          className={cx({
+            'lsk-form-select': true,
+            [className]: !!className,
+            'has-error': hasError,
+          })}
+          value={option || null}
+          loadOptions={this.loadOptions}
+          onChange={this.handleChange}
+          options={async ? null : normalizedOptions}
+        />
+      </>
     );
   }
 }

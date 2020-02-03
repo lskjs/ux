@@ -1,4 +1,4 @@
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 import getTheme from '@lskjs/theme/getTheme';
 
 export const Value = styled('span')`

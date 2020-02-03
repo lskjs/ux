@@ -1,4 +1,4 @@
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 import A from '@lskjs/ui/A';
 import getTheme from '@lskjs/theme/getTheme';
 

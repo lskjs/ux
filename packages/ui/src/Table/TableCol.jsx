@@ -1,8 +1,7 @@
+/** @jsx jsx */
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
-import { css } from 'react-emotion';
-import cx from 'classnames';
-import filterProps from '@lskjs/utils/filterProps';
+import { css, jsx } from '@emotion/core';
 
 @inject('overflow')
 @observer
@@ -15,10 +14,12 @@ class TableCol extends Component {
       align,
       overflow = 'hidden',
       children,
+      className,
       ...props
     } = this.props;
 
     const otherStyle = {};
+    otherStyle.overflow = overflow;
     if (index !== null) otherStyle.gridColumn = index + 1;
     // otherStyle.flex = 1;
     otherStyle.display = 'flex';
@@ -36,21 +37,34 @@ class TableCol extends Component {
       };
     }
 
-    return React.createElement(
-      componentClass,
-      filterProps({
-        ...props,
-        className: cx([
-          props.className,
-          css({
-            overflow,
-            ...otherStyle,
-            ...style,
-          }),
-        ]),
-      }, componentClass),
-      children,
+    const TCol = `${componentClass || 'div'}`;
+    return (
+      <TCol
+        componentClass={componentClass}
+        className={className || ''}
+        css={css`${otherStyle}`}
+        style={style}
+        {...props}
+      >
+        {children}
+      </TCol>
     );
+
+    // return React.createElement(
+    //   componentClass,
+    //   filterProps({
+    //     ...props,
+    //     className: cx([
+    //       props.className,
+    //       css({
+    //         overflow,
+    //         ...otherStyle,
+    //         ...style,
+    //       }),
+    //     ]),
+    //   }, componentClass),
+    //   children,
+    // );
   }
 }
 

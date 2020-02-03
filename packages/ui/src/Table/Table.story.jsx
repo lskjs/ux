@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import range from 'lodash/range';
 import Story from '@lskjs/dev/Story';
 
 import { Table, Row, Col } from './index';
 
-class TableTest extends Component {
+class TableTest extends PureComponent {
   render() {
     const { count = 10 } = this.props;
     const items = range(count);

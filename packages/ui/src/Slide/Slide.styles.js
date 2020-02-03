@@ -1,4 +1,6 @@
-import styled, { css } from 'react-emotion';
+/** @jsx jsx */
+import { css } from '@emotion/core';
+import styled from '@emotion/styled';
 import getTheme from '@lskjs/theme/getTheme';
 
 const bg = css`

@@ -1,4 +1,5 @@
-import styled, { keyframes, css } from 'react-emotion';
+import styled from '@emotion/styled';
+import { css, keyframes } from '@emotion/core';
 import range from 'lodash/range';
 
 const spin = keyframes`
@@ -17,10 +18,10 @@ function delay(interval, c, index) {
 }
 
 function count(n = 9, start = 1) { // eslint-disable-line consistent-return
-  const list = range(start, n).map(i => `
-      &:nth-child(${i}) {
-        animation: ${spin} 1s ${delay(0.12, n, i - 1)}s infinite linear;
-      }
+  const list = range(start, n).map(i => css`
+    &:nth-child(${i}) {
+      animation: ${spin} 1s ${delay(0.12, n, i - 1)}s infinite linear;
+    }
   `);
   return css(list.join('\n'));
 }

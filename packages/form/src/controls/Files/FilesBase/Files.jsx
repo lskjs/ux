@@ -5,7 +5,6 @@ import autobind from '@lskjs/autobind';
 import Promise from 'bluebird';
 import isFunction from 'lodash/isFunction';
 import Dropzone from 'react-dropzone';
-import cx from 'classnames';
 import zoneStyle from './Files.styles';
 
 @inject(s => ({
@@ -150,10 +149,7 @@ class Files extends Component {
       <React.Fragment>
         <Dropzone
           {...otherProps}
-          className={cx({
-            [zoneStyle]: true,
-            [className]: className,
-          })}
+          css={[zoneStyle, className]}
           disableClick
           multiple={multiple}
           ref={this.zone}

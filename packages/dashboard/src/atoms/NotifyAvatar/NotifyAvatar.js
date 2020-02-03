@@ -1,4 +1,4 @@
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 
 export default styled('div')`
   background-color: rgba(255, 255, 255, 0.2);

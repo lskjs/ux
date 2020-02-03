@@ -1,9 +1,10 @@
-import styled, { css } from 'react-emotion';
+import styled from '@emotion/styled';
+import { css } from '@emotion/core';
 import getTheme from '@lskjs/theme/getTheme';
 
 export const containerStyle = css`
   display: flex;
-  flex-direction: row;
+  flex-direction: row !important;
   padding: 12px;
   text-decoration: none;
   cursor: pointer;
@@ -38,7 +39,7 @@ export const centerFile = css`
   width: 100px;
 `;
 
-export const Info = styled.div`
+export const Info = styled('div')`
   display: flex;
   flex-direction: column;
   padding-left: 20px;
@@ -71,7 +72,7 @@ export const PreviewImage = styled('img')`
   text-align: center;
 `;
 
-export const PreviewContainer = styled.div`
+export const PreviewContainer = styled('div')`
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -1,7 +1,7 @@
 /* eslint import/no-extraneous-dependencies: 0 */
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { css } from 'react-emotion';
+import { css } from '@emotion/core';
 import { withTheme } from 'emotion-theming';
 import { Scrollbars } from 'react-custom-scrollbars';
 import cx from 'classnames';
