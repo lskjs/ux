@@ -137,7 +137,7 @@ export default ({ storiesOf }) => storiesOf('list/List/Select', module)
       <List
         listStore={listStore}
         Item={SelectLinkItem}
-        HeaderItem={SelectHeaderItem}
+        // HeaderItem={SelectHeaderItem}
         columns={columns}
       />
       <DebugListStore store={listStore} />

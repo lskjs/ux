@@ -115,7 +115,7 @@ class Input extends PureComponent {
         <Block
           iconLeft={leftIcon}
           iconRight={rightIcon}
-          innerRef={innerRef}
+          ref={innerRef}
           validationState={validationState}
           block={block}
           disabled={disabled}

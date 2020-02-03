@@ -25,7 +25,7 @@ const rotate = keyframes`
 `;
 
 export const Text = styled('span')`
-  
+
 `;
 
 
@@ -1122,7 +1122,7 @@ export const ButtonGroup = styled('div')`
       font-size: 11px;
       line-height: 1.41;
       /* box-shadow: 0 0 0 1px ${getTheme(p.theme, 'colors.border')}; */
-      &:first-child {
+      &:first-of-type {
         border-radius: 4px 0 0 4px;
       }
       &:last-child {

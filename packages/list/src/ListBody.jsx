@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import React, { Component } from 'react';
-import { jsx, css, Global } from '@emotion/core';
+import { jsx } from '@emotion/core';
 import { observer, inject } from 'mobx-react';
 import If from 'react-if';
 import VisibilitySensor from 'react-visibility-sensor';
@@ -9,7 +9,7 @@ import Progress from '@lskjs/ui/Progress';
 import T from '@lskjs/ui/T';
 import Button from '@lskjs/button';
 import { contextToProps } from './List.context';
-
+import { loadMoreButton } from './List.styles';
 
 @contextToProps('List', 'show')
 @inject('listStore')
@@ -39,22 +39,13 @@ class ListBody extends Component {
           disabled={!listStore.loading}
         >
           <If condition={Boolean(show.more && listStore.canFetchMore(-1))}>
-            <Global
-              styles={css`
-                .buttoncss {
-                  border-radius: 0;
-                  box-shadow: 0 0 0 1px #e3e3e3;
-                  width: 100%;
-                }
-              `}
-            />
             <Button
               bordered
               size="large"
               paint="default"
               onClick={() => listStore.fetchMore(-1)}
               disabled={listStore.loading}
-              className="buttoncss"
+              css={loadMoreButton}
               block
             >
               <If condition={!!listStore.loading}>
@@ -80,7 +71,7 @@ class ListBody extends Component {
                 paint="default"
                 onClick={() => listStore.fetchMore(1)}
                 disabled={listStore.loading}
-                className="buttoncss"
+                css={loadMoreButton}
                 block
               >
                 <If condition={!!listStore.loading}>

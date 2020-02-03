@@ -27,9 +27,11 @@ export default ({ storiesOf }) => (
               Удалить
             </Button>
           </SureModal>
-          <button onClick={() => {
-            innerRef.current.open();
-          }}
+          <button
+            type="button"
+            onClick={() => {
+              innerRef.current.open();
+            }}
           >
             Open by ref
           </button>
@@ -67,9 +69,11 @@ export default ({ storiesOf }) => (
               Send bio
             </Button>
           </FormModal>
-          <button onClick={() => {
-            innerRef.current.open();
-          }}
+          <button
+            type="button"
+            onClick={() => {
+              innerRef.current.open();
+            }}
           >
             Open by ref
           </button>

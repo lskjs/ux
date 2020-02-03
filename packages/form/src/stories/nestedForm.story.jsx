@@ -84,20 +84,20 @@ export default ({ storiesOf }) => storiesOf('form/nestedForm', module)
       <EntityForm />
     </Story>
   ))
-  .add('ComplexForm', ({ ref = createRef() }) => (
+  .add('ComplexForm', ({ innerRef = createRef() }) => (
     <Story devtools>
       <ComplexForm
-        ref={ref}
+        innerRef={innerRef}
         onSubmit={(values) => {
           console.log('ComplexForm.onSubmit', values);  // eslint-disable-line
         }}
       />
     </Story>
   ))
-  .add('ComplexForm with deep props', ({ ref = createRef() }) => (
+  .add('ComplexForm with deep props', ({ innerRef = createRef() }) => (
     <Story devtools>
       <ComplexForm
-        ref={ref}
+        innerRef={innerRef}
         genders={['male', 'female', 'agender', 'transgender', 'poligender']}
         test={[123]}
         onSubmit={(values) => {

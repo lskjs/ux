@@ -113,7 +113,7 @@ class StatefulModal extends PureComponent {
         onOpen={this.onOpen}
         onClose={this.onClose}
         trigger={children}
-        innerRef={(modal) => {
+        ref={(modal) => {
           this.modal = modal;
           if (innerRef) innerRef(this);
         }}

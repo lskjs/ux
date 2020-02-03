@@ -1,7 +1,7 @@
 import React from 'react';
-import NotificationSystem from './NotificationSystem';
 import Story from '@lskjs/dev/Story';
 import Button from '@lskjs/button';
+import NotificationSystem from './NotificationSystem';
 import notify from './notifyStyles.styles';
 import Notification from './Notification';
 
@@ -76,12 +76,12 @@ export default ({ storiesOf }) => {
         autoDismiss: 0,
         level: 'success',
         children: <Notification item={{
-            type: 'notify.success',
-            info: {
-              title: 'Success title',
-              text: 'Success text',
-            },
-          }}
+          type: 'notify.success',
+          info: {
+            title: 'Success title',
+            text: 'Success text',
+          },
+        }}
         />,
       });
       return (
@@ -98,4 +98,3 @@ export default ({ storiesOf }) => {
       );
     });
 };
-

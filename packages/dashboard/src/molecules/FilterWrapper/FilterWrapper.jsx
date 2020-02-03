@@ -13,7 +13,7 @@ class FilterWrapper extends PureComponent {
     return (
       <Modal
         size="small"
-        innerRef={(modal) => { this.modal = modal; }}
+        ref={(modal) => { this.modal = modal; }}
         trigger={trigger}
         onOpen={this.handleOpen}
         // onChange={onChange && this.handleChange}

@@ -16,7 +16,7 @@ export default ({ storiesOf }) => (
         <AntTag target="_blank" href="https://vk.com">
           Link
         </AntTag>
-        <AntTag componetClass={Link} href="https://vk.com">
+        <AntTag componentClass={Link} href="https://vk.com">
           Link
         </AntTag>
       </Story>

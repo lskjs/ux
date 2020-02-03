@@ -6,9 +6,9 @@ import AdminMenu from './AdminMenu';
 import Modal from '@lskjs/modal';
 import Icon from 'antd/lib/icon';
 
-// const SidenavModalSidebarMenuModal = ({ innerRef, children }) => (
+// const SidenavModalSidebarMenuModal = ({ ref, children }) => (
 //   <Modal
-//     innerRef={(e) => { if (innerRef) innerRef(e); }}
+//     ref={(e) => { if (ref) ref(e); }}
 //     size="small"
 //     trigger={children}
 //     title="title"
@@ -21,9 +21,9 @@ import Icon from 'antd/lib/icon';
 //   />
 // );
 
-const SidenavModal = ({ innerRef, children }) => (
+const SidenavModal = ({ ref, children }) => (
   <Modal
-    innerRef={(e) => { if (innerRef) innerRef(e); }}
+    innerRef={(e) => { if (ref) ref(e); }}
     size="small"
     trigger={children}
     title="title"
@@ -489,7 +489,7 @@ module.exports = ({ storiesOf }) =>
                 href: '/admin/eventUsers',
                 componentClass: Link,
                 icon: <Icon type="user" />,
-                title:  'Admin Users', 
+                title:  'Admin Users',
               },
               'divider',
               {

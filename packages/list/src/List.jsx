@@ -214,11 +214,11 @@ class List extends Component {
 
     if (!children) {
       children = (
-        <React.Fragment>
+        <>
           {show.header && <List.Header />}
           <List.Body />
           {show.footer && <List.Footer />}
-        </React.Fragment>
+        </>
       );
     }
 
@@ -233,7 +233,7 @@ class List extends Component {
     }
     children = (
       // shadow={shadow}
-      <List.Wrapper innerRef={this.listRef} style={{ width: '100%' }}>
+      <List.Wrapper ref={this.listRef} style={{ width: '100%' }}>
         {children}
       </List.Wrapper>
     );
@@ -255,9 +255,9 @@ class List extends Component {
         }}
       >
         <MobxProvider listStore={listStore} selectStore={selectStore}>
-          <React.Fragment>
+          <>
             {children}
-          </React.Fragment>
+          </>
         </MobxProvider>
       </Provider>
     );

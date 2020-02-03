@@ -18,9 +18,9 @@ class GridTable extends PureComponent {  //eslint-disable-line
     const { overflow, children } = this.props;
     return (
       <Provider columns={this.columns} overflow={overflow}>
-        <React.Fragment>
+        <>
           {children}
-        </React.Fragment>
+        </>
       </Provider>
     );
   }

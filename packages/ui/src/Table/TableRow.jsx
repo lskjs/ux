@@ -52,6 +52,7 @@ class TableRow extends Component {
       header,
       children,
       className,
+      style,
       ...props
     } = this.props;
 
@@ -86,7 +87,7 @@ class TableRow extends Component {
       // }
     }
 
-    const styleString = styles.join('\n');
+    const styleString = styles.join(' ');
     const cssClassName = css(styleString);
     // const defaultClassName = 'table-gird-row';
 
@@ -124,17 +125,17 @@ class TableRow extends Component {
     //   css: cssClassName,
     // };
 
-    const TRow = `${componentClass || 'div'}`;
-    return (
-      <TRow
-        componentClass={componentClass}
-        className={`${className || ''} table-gird-row`}
-        css={cssClassName}
-        {...props}
-      >
-        {children}
-      </TRow>
+    return jsx(
+      componentClass,
+      {
+        css: css(styleString),
+        className: `${className || ''} table-gird-row`,
+        style,
+        ...props,
+      },
+      children,
     );
+
     // return React.createElement(
     //   componentClass,
     //   filterProps(subProps, componentClass),

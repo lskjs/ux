@@ -166,6 +166,7 @@ class Files extends Component {
           style={{
             display: 'inline-block',
             position: 'relative',
+            width: '100%',
           }}
           {...otherProps}
           className={cx({

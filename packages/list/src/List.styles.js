@@ -6,6 +6,12 @@ import createDynamicTag from '@lskjs/utils/createDynamicTag';
 import removeProps from '@lskjs/utils/removeProps';
 import { Row } from '@lskjs/ui/Grid';
 
+export const loadMoreButton = css`
+  border-radius: 0 !important;
+  box-shadow: 0 0 0 1px #e3e3e3 !important;
+  width: 100% !important;
+`;
+
 export const Title = styled('div')`
   font-family: ${p => getTheme(p.theme, 'fontFamily')};
   font-size: 20px;

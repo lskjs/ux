@@ -180,7 +180,7 @@ class TreePicker extends Component {
         size="small"
         trigger={children}
         onClose={this.resetToProps}
-        innerRef={(modal) => {
+        ref={(modal) => {
           this.modal = modal;
         }}
       >

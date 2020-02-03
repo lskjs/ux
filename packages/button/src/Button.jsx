@@ -332,11 +332,11 @@ class Button extends PureComponent {
       >
         <If condition={!disabled && isRipple}>
           <Ripple
-            innerRef={this.ripple}
+            ref={this.ripple}
             active={isRippleActive}
           >
             <RippleCircle
-              innerRef={(el) => { this.circle = el; }}
+              ref={(el) => { this.circle = el; }}
               onAnimationEnd={this.endAnimationRipple}
             />
           </Ripple>

@@ -19,4 +19,7 @@ export default styled(Button)`
   &:focus {
     background: ${p => getTheme(p.theme, 'colors.primary')};
   }
+  &:focus &:hover {
+    background: ${p => getTheme(p.theme, 'colors.primary')};
+  }
 `;

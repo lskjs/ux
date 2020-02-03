@@ -533,7 +533,7 @@ class ReactPhoneInput extends Component {
           onFocus={this.handleInputFocus}
           onKeyDown={this.handleInputKeyDown}
           value={this.state.formattedNumber}
-          innerRef={e => this.numberInput = e} // eslint-disable-line
+          ref={e => this.numberInput = e} // eslint-disable-line
           type="tel"
           className={inputClasses}
         />

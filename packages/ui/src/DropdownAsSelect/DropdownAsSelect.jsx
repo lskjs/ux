@@ -85,14 +85,14 @@ class SelectFilter extends PureComponent {
   }
 
   @autobind
-  renderContent({ ref, style, placement }) {
+  renderContent({ innerRef, style, placement }) {
     const { open, contentHeight } = this.state;
     const { children, contentWrapperProps } = this.props;
     if (!open) return false;
     const content = typeof children === 'function' ? children({ open }) : children;
     return (
       <Content
-        innerRef={ref}
+        ref={innerRef}
         data-placement={placement}
         height={contentHeight}
         className={contentStyle}
@@ -128,9 +128,9 @@ class SelectFilter extends PureComponent {
         <Global styles={globalStyles} />
         <Manager>
           <Reference>
-            {({ ref }) => (
+            {({ innerRef }) => (
               <Trigger
-                innerRef={ref}
+                ref={innerRef}
                 open={!disabled ? open : false}
                 disabled={disabled}
                 onClick={() => {

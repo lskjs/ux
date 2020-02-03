@@ -37,17 +37,19 @@ class TableCol extends Component {
       };
     }
 
-    const TCol = `${componentClass || 'div'}`;
-    return (
-      <TCol
-        componentClass={componentClass}
-        className={className || ''}
-        css={css`${otherStyle}`}
-        style={style}
-        {...props}
-      >
-        {children}
-      </TCol>
+    return jsx(
+      componentClass,
+      {
+        // className,
+        css: [
+          css(className),
+          css(otherStyle),
+          css(style),
+        ],
+        style,
+        ...props,
+      },
+      children,
     );
 
     // return React.createElement(

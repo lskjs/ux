@@ -112,7 +112,7 @@ class DropdownList extends PureComponent {
       <Performance name="DropdownList" disabled={!__DEV__}>
         <Wrapper
           rect={rect}
-          innerRef={this.menu}
+          ref={this.menu}
           menuRect={menuRect}
           style={styleProps}
           pull={pull}
