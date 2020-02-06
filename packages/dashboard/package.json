@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/dashboard",
-  "version": "0.36.18",
+  "version": "0.36.19",
   "description": "LSK ux subrepo: dashboard",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -28,17 +28,17 @@
     "styleguide": "../../scripts/package-styleguide.sh"
   },
   "dependencies": {
-    "react-if": "^3.4.0",
-    "react-custom-scrollbars": "^4.2.1"
+    "react-custom-scrollbars": "^4.2.1",
+    "react-if": "^3.4.0"
   },
   "devDependencies": {
     "@lskjs/autobind": "^0.36.0",
     "@lskjs/button": "^0.36.14",
     "@lskjs/css": "^0.36.14",
     "@lskjs/dev": "^0.36.14",
-    "@lskjs/modal": "^0.36.18",
+    "@lskjs/modal": "^0.36.19",
     "@lskjs/theme": "^0.36.15",
-    "@lskjs/ui": "^0.36.18",
+    "@lskjs/ui": "^0.36.19",
     "@lskjs/utils": "^0.36.1",
     "antd": "^3.17.0",
     "emotion": "^9.2.10",
