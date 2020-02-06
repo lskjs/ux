@@ -28,7 +28,8 @@
     "styleguide": "../../scripts/package-styleguide.sh"
   },
   "dependencies": {
-    "react-if": "^3.4.0"
+    "react-if": "^3.4.0",
+    "react-custom-scrollbars": "^4.2.1"
   },
   "devDependencies": {
     "@lskjs/autobind": "^0.36.0",
@@ -47,7 +48,6 @@
     "moment": "^2.24.0",
     "rc-queue-anim": "^1.6.12",
     "react": "^16.8.6",
-    "react-custom-scrollbars": "^4.2.1",
     "react-drive-in2": "^1.8.1",
     "react-emotion": "9.2.10",
     "react-icons2": "^2.5.0",
