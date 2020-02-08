@@ -50,4 +50,12 @@ export const H5 = (...props) => <Typo tag="h5" view="h5" {...props} />;
 export const H6 = (...props) => <Typo tag="h6" view="h6" {...props} />;
 export const P = (...props) => <Typo tag="p" view="p" {...props} />;
 
+Typo.H1 = H1;
+Typo.H2 = H2;
+Typo.H3 = H3;
+Typo.H4 = H4;
+Typo.H5 = H5;
+Typo.H6 = H6;
+Typo.P = P;
+
 export default Typo;
