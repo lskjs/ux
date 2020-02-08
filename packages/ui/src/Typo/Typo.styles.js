@@ -76,14 +76,14 @@ export default styled(removeProps(dynamicTag, [
   'align',
   'width',
 ]))`
-  width: ${p => `${p.width}px`};
+  width: ${props => `${props.width}px`};
   word-break: break-word;
-  ${p => p.textOverflow && `
+  ${props => props.textOverflow && `
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   `}
-  font-family: ${p => getTheme(p.theme, 'fontFamily')};
+  font-family: ${props => getTheme(props.theme, 'font.family')};
   color: ${props => (props.color || getTheme(props.theme, 'colors.main'))};
   text-align: ${(props) => {
     if (Object.values(Aligns).includes(props.align)) {
@@ -121,6 +121,7 @@ export default styled(removeProps(dynamicTag, [
       font-stretch: ${view.stretch};
       line-height: ${view.height};
       letter-spacing: ${view.spacing};
+      margin: ${view.margin};
 `;
   }}
   ${(props) => {
