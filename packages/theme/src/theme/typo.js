@@ -9,6 +9,7 @@ const typo = {
     stretch: 'normal',
     height: '1.8',
     spacing: '-0.1px',
+    margin: 0,
   },
   h1: {
     size: multy(font.size.base, 2.5),
