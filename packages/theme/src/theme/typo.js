@@ -3,12 +3,14 @@ import { multy } from './utils';
 
 const typo = {
   base: {
+    color: 'rgba(0, 0, 0, 0.84)',
     size: multy(font.size.base, 1),
     weight: 'normal',
     style: 'normal',
     stretch: 'normal',
-    height: '1.8',
-    spacing: '-0.1px',
+    height: 1.58,
+    // spacing: '-0.1px',
+    spacing: '-0.004em',
     margin: 0,
   },
   h1: {
