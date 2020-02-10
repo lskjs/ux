@@ -28,9 +28,9 @@
     "styleguide": "../../scripts/package-styleguide.sh"
   },
   "devDependencies": {
-    "emotion": "^10.0.23"
+    "@emotion/core": "^10.0.27"
   },
   "peerDependencies": {
-    "emotion": "*"
+    "@emotion/core": "*"
   }
 }

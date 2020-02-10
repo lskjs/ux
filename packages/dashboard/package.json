@@ -40,9 +40,8 @@
     "@lskjs/ui": "^0.36.18",
     "@lskjs/utils": "^0.36.1",
     "antd": "^3.17.0",
-    "emotion": "^10.0.23",
-    "@emotion/core": "^10.0.22",
-    "@emotion/styled": "^10.0.23",
+    "@emotion/core": "^10.0.27",
+    "@emotion/styled": "^10.0.27",
     "mobx": "^5.9.4",
     "mobx-react": "^5.4.3",
     "mobx-react-devtools": "^6.1.1",
@@ -62,7 +61,6 @@
     "@lskjs/ui": "*",
     "@lskjs/utils": "*",
     "antd": "*",
-    "emotion": "*",
     "moment": "*",
     "react-icons2": "*"
   }
