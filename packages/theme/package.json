@@ -28,7 +28,6 @@
     "styleguide": "../../scripts/package-styleguide.sh"
   },
   "dependencies": {
-    "animated-scroll-to": "^1.2.2"
   },
   "devDependencies": {
     "lodash": "4.17.15"

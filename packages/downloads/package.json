@@ -46,7 +46,7 @@
     "mobx": "^5.15.4",
     "mobx-react": "^6.1.7",
     "mobx-react-devtools": "^6.1.1",
-    "react": "^16.12.0",
+    "react": "^16.8.6",
     "react-icons2": "^2.5.0"
   },
   "peerDependencies": {
