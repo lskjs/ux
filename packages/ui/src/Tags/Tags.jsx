@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import DefaultTag from 'antd/lib/tag';
 import filterProps from '@lskjs/utils/filterProps';
+import DefaultTag from './Tag';
 
 class Tags extends PureComponent {
   static propTypes = {
@@ -65,4 +65,3 @@ class Tags extends PureComponent {
 }
 
 export default Tags;
-
