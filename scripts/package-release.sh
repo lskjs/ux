@@ -1,4 +1,5 @@
-#!/bin/sh
-rm -rf release && \
-DEBUG=0 DIST=release `dirname "$0"`/package-build.sh && \
+#!/usr/bin/env bash
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+
+rm -rf release && DEBUG=0 DIST=release "$DIR/package-build.sh" && \
 npm publish release
