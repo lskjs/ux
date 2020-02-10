@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/gridtable",
-  "version": "1.0.0-alpha.0",
+  "version": "1.0.1",
   "description": "LSK ux subrepo: gridtable",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
