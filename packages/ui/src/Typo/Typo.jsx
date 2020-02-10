@@ -42,13 +42,4 @@ Typo.defaultProps = {
   width: null,
 };
 
-export const H1 = props => <Typo componentClass="h1" view="h1" {...props} />;
-export const H2 = props => <Typo componentClass="h2" view="h2" {...props} />;
-export const H3 = props => <Typo componentClass="h3" view="h3" {...props} />;
-export const H4 = props => <Typo componentClass="h4" view="h4" {...props} />;
-export const H5 = props => <Typo componentClass="h5" view="h5" {...props} />;
-export const H6 = props => <Typo componentClass="h6" view="h6" {...props} />;
-export const P = props => <Typo componentClass="p" view="p" {...props} />;
-
-
 export default Typo;

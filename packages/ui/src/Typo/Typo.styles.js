@@ -1,7 +1,8 @@
-import styled, { css } from 'react-emotion';
-import getTheme from '@lskjs/theme/getTheme';
+import styled from 'react-emotion';
+// import getTheme from '@lskjs/theme/getTheme';
 import createDynamicTag from '@lskjs/utils/createDynamicTag';
 import removeProps from '@lskjs/utils/removeProps';
+import createTypoCss from './createTypoCss';
 
 const dynamicTag = createDynamicTag('div');
 
@@ -75,59 +76,69 @@ export default styled(removeProps(dynamicTag, [
   'view',
   'align',
   'width',
-]))`
-  width: ${props => `${props.width}px`};
-  word-break: break-word;
-  ${props => props.textOverflow && `
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  `}
-  font-family: ${props => getTheme(props.theme, 'font.family')};
-  color: ${props => (props.color || getTheme(props.theme, 'colors.main'))};
-  text-align: ${(props) => {
-    if (Object.values(Aligns).includes(props.align)) {
-      return props.align;
-    }
-    return Aligns.INHERIT;
-  }};
-  ${(props) => {
-    if (!props.pre) return '';
-    const prefix = 'white-space:';
-    switch (props.pre) {
-      case 'line': return `${prefix} pre-line;`;
-      case 'wrap': return `${prefix} pre-wrap;`;
-      default: return `${prefix} pre;`;
-    }
-  }}
-  ${(props) => {
-    if (typeof props.paragraph === 'number') {
-      return `margin-bottom: ${props.paragraph}px;`;
-    }
-    if (props.paragraph) {
-      return 'margin-bottom: 24px;';
-    }
-    return '';
-  }}
-  ${(props) => {
-    const view = {
-      ...(getTheme(props.theme, 'typo.base') || {}),
-      ...(getTheme(props.theme, `typo.${props.view}`) || {}),
-    };
-    return css`
-      font-size: ${view.size};
-      font-weight: ${view.weight};
-      font-style: ${view.style};
-      font-stretch: ${view.stretch};
-      line-height: ${view.height};
-      letter-spacing: ${view.spacing};
-      margin: ${view.margin};
-`;
-  }}
-  ${(props) => {
-    if (props.lineHeight) {
-      return `line-height: ${props.lineHeight};`;
-    }
-    return '';
-  }}
-`;
+]))`${props => createTypoCss(props)}`;
+
+// export default styled(removeProps(dynamicTag, [
+//   'lineHeight',
+//   'paragraph',
+//   'textOverflow',
+//   'color',
+//   'view',
+//   'align',
+//   'width',
+// ]))`
+//   word-break: break-word;
+//   ${props => props.width && `width: ${props.width}px`};
+//   ${props => props.textOverflow && `
+//     white-space: nowrap;
+//     overflow: hidden;
+//     text-overflow: ellipsis;
+//   `}
+//   font-family: ${props => getTheme(props.theme, 'font.family.base')};
+//   color: ${props => (props.color || getTheme(props.theme, 'colors.main'))};
+//   text-align: ${(props) => {
+//     if (Object.values(Aligns).includes(props.align)) {
+//       return props.align;
+//     }
+//     return Aligns.INHERIT;
+//   }};
+//   ${(props) => {
+//     if (!props.pre) return '';
+//     const prefix = 'white-space:';
+//     switch (props.pre) {
+//       case 'line': return `${prefix} pre-line;`;
+//       case 'wrap': return `${prefix} pre-wrap;`;
+//       default: return `${prefix} pre;`;
+//     }
+//   }}
+//   ${(props) => {
+//     if (typeof props.paragraph === 'number') {
+//       return `margin-bottom: ${props.paragraph}px;`;
+//     }
+//     if (props.paragraph) {
+//       return 'margin-bottom: 24px;';
+//     }
+//     return '';
+//   }}
+//   ${(props) => {
+//     const view = {
+//       ...(getTheme(props.theme, 'typo.base') || {}),
+//       ...(getTheme(props.theme, `typo.${props.view}`) || {}),
+//     };
+//     return css`
+//       font-size: ${view.size};
+//       font-weight: ${view.weight};
+//       font-style: ${view.style};
+//       font-stretch: ${view.stretch};
+//       line-height: ${view.height};
+//       letter-spacing: ${view.spacing};
+//       margin: ${view.margin};
+// `;
+//   }}
+//   ${(props) => {
+//     if (props.lineHeight) {
+//       return `line-height: ${props.lineHeight};`;
+//     }
+//     return '';
+//   }}
+// `;
