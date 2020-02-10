@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/dashboard",
-  "version": "0.36.18",
+  "version": "0.36.23",
   "description": "LSK ux subrepo: dashboard",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -28,17 +28,18 @@
     "styleguide": "../../scripts/package-styleguide.sh"
   },
   "dependencies": {
+    "react-custom-scrollbars": "^4.2.1",
     "react-if": "^3.4.0"
   },
   "devDependencies": {
-    "@lskjs/autobind": "^0.36.0",
-    "@lskjs/button": "^0.36.14",
-    "@lskjs/css": "^0.36.14",
-    "@lskjs/dev": "^0.36.14",
-    "@lskjs/modal": "^0.36.18",
-    "@lskjs/theme": "^0.36.15",
-    "@lskjs/ui": "^0.36.18",
-    "@lskjs/utils": "^0.36.1",
+    "@lskjs/autobind": "^0.38.1",
+    "@lskjs/button": "^0.36.23",
+    "@lskjs/css": "^0.36.21",
+    "@lskjs/dev": "^0.36.23",
+    "@lskjs/modal": "^0.36.23",
+    "@lskjs/theme": "^0.36.23",
+    "@lskjs/ui": "^0.36.23",
+    "@lskjs/utils": "^0.37.5",
     "antd": "^3.17.0",
     "@emotion/core": "^10.0.27",
     "@emotion/styled": "^10.0.27",
@@ -48,7 +49,6 @@
     "moment": "^2.24.0",
     "rc-queue-anim": "^1.6.12",
     "react": "^16.8.6",
-    "react-custom-scrollbars": "^4.2.1",
     "react-drive-in2": "^1.8.1",
     "react-icons2": "^2.5.0",
     "react-swipeable": "5.3.0",

@@ -9,13 +9,13 @@ import T from '@lskjs/ui/T';
 import Button from '@lskjs/button';
 import { contextToProps } from './List.context';
 
-@contextToProps('List', 'Item')
+@contextToProps('List', 'Item', 'itemProps')
 @inject('listStore')
 @observer
 class ListItems extends Component {
   render() {
     const {
-      List, listStore, Item,
+      List, listStore, Item, itemProps,
     } = this.props;
     return (
       <List.ItemsWrapper>
@@ -55,7 +55,7 @@ class ListItems extends Component {
               );
             }
             if (!Item) return <DEV json="!Item" />;
-            return <Item key={item._id || item.id || index} item={item} />;
+            return <Item {...itemProps} item={item} key={item._id || item.id || index} />;
           })}
         </Performance>
       </List.ItemsWrapper>
