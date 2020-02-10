@@ -1,4 +1,4 @@
-import styled, { css } from 'react-emotion';
+import styled, { css } from '@emotion/styled';
 import getTheme from '@lskjs/theme/getTheme';
 import createDynamicTag from '@lskjs/utils/createDynamicTag';
 import removeProps from '@lskjs/utils/removeProps';

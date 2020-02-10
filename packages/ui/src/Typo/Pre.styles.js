@@ -1,4 +1,4 @@
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 import createDynamicTag from '@lskjs/utils/createDynamicTag';
 
 export default styled(createDynamicTag('pre'))`

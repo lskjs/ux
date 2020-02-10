@@ -1,4 +1,4 @@
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 
 export const ImageWrapper = styled('div')`
 @media screen and (max-width: 992px) {

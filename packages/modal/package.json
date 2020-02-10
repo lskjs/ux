@@ -29,31 +29,31 @@
   },
   "dependencies": {
     "react-custom-scrollbars": "4.2.1",
-    "react-if": "^3.1.3"
+    "react-if": "^3.4.3"
   },
   "devDependencies": {
     "@emotion/core": "^10.0.27",
     "@emotion/styled": "^10.0.27",
-    "@lskjs/autobind": "^0.38.1",
+    "@lskjs/autobind": "^0.39.0",
     "@lskjs/button": "^0.36.23",
     "@lskjs/css": "^0.36.21",
     "@lskjs/dev": "^0.36.23",
     "@lskjs/theme": "^0.36.23",
     "@lskjs/ui": "^0.36.23",
-    "@lskjs/utils": "0.37.5",
-    "bluebird": "3.5.5",
+    "@lskjs/utils": "^0.39.0",
+    "bluebird": "^3.7.2",
     "classnames": "2.2.6",
-    "formik": "1.5.2",
-    "history": "4.9.0",
+    "formik": "^2.1.4",
+    "history": "^4.10.1",
     "lodash": "4.17.15",
-    "mobx": "5.9.4",
-    "mobx-react": "5.4.3",
+    "mobx": "^5.15.4",
+    "mobx-react": "^6.1.7",
     "mobx-react-devtools": "6.1.1",
     "prop-types": "15.7.2",
-    "react": "16.8.6",
+    "react": "^16.12.0",
     "react-icons2": "2.5.0",
-    "react-modal": "3.8.1",
-    "universal-router": "8.2.0"
+    "react-modal": "^3.11.1",
+    "universal-router": "^8.3.0"
   },
   "peerDependencies": {
     "@emotion/core": "*",

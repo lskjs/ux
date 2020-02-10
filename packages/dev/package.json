@@ -27,15 +27,16 @@
     "storybook": "../../scripts/package-storybook.sh",
     "styleguide": "../../scripts/package-styleguide.sh"
   },
+  "dependencies": {},
   "devDependencies": {
     "@lskjs/css": "^0.36.21",
     "@lskjs/theme": "^0.36.23",
-    "@lskjs/utils": "^0.37.5",
-    "lodash": "4.17.15",
+    "@lskjs/utils": "^0.39.0",
     "emotion": "^10.0.27",
     "emotion-theming": "^10.0.27",
-    "mobx": "^5.9.4",
-    "mobx-react": "^5.4.3",
+    "lodash": "4.17.15",
+    "mobx": "^5.15.4",
+    "mobx-react": "^6.1.7",
     "mobx-react-devtools": "^6.1.1",
     "react": "^16.8.6"
   },

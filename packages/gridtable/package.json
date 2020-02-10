@@ -27,6 +27,13 @@
     "storybook": "../../scripts/package-storybook.sh",
     "styleguide": "../../scripts/package-styleguide.sh"
   },
+  "dependencies": {
+    "@lskjs/mobx": "^0.39.0",
+    "@lskjs/utils": "^0.39.0",
+    "lodash": "^4.17.15",
+    "mobx": "^5.15.4",
+    "mobx-react": "^6.1.7"
+  },
   "devDependencies": {
     "react": "^16.8.6"
   },
@@ -39,12 +46,5 @@
     "mobx-react": "*",
     "mobx-react-devtools": "*",
     "react": "*"
-  },
-  "dependencies": {
-    "@lskjs/mobx": "^0.39.0",
-    "@lskjs/utils": "^0.39.0",
-    "lodash": "^4.17.15",
-    "mobx": "^5.15.4",
-    "mobx-react": "^6.1.7"
   }
 }

@@ -1,4 +1,4 @@
-import styled, { css } from 'react-emotion';
+import styled, { css } from '@emotion/styled';
 import createDynamicTag from '@lskjs/utils/createDynamicTag';
 
 export const Header = styled('div')`

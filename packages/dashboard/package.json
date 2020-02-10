@@ -32,14 +32,14 @@
     "react-if": "^3.4.0"
   },
   "devDependencies": {
-    "@lskjs/autobind": "^0.38.1",
+    "@lskjs/autobind": "^0.39.0",
     "@lskjs/button": "^0.36.23",
     "@lskjs/css": "^0.36.21",
     "@lskjs/dev": "^0.36.23",
     "@lskjs/modal": "^0.36.23",
     "@lskjs/theme": "^0.36.23",
     "@lskjs/ui": "^0.36.23",
-    "@lskjs/utils": "^0.37.5",
+    "@lskjs/utils": "^0.39.0",
     "antd": "^3.17.0",
     "@emotion/core": "^10.0.27",
     "@emotion/styled": "^10.0.27",
