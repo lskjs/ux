@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/docs",
-  "version": "0.36.23",
+  "version": "1.0.0-alpha.0",
   "description": "lskjs docs",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -31,16 +31,16 @@
   "dependencies": {
     "@lskjs/apiquery": "^0.39.0",
     "@lskjs/autobind": "0.39.0",
-    "@lskjs/button": "^0.36.23",
-    "@lskjs/css": "^0.36.21",
-    "@lskjs/dev": "^0.36.23",
-    "@lskjs/downloads": "^0.36.23",
-    "@lskjs/form": "^0.36.23",
+    "@lskjs/button": "^1.0.0-alpha.0",
+    "@lskjs/css": "^1.0.0-alpha.0",
+    "@lskjs/dev": "^1.0.0-alpha.0",
+    "@lskjs/downloads": "^1.0.0-alpha.0",
+    "@lskjs/form": "^1.0.0-alpha.0",
     "@lskjs/mobx": "0.39.0",
-    "@lskjs/modal": "^0.36.23",
-    "@lskjs/scroll": "^0.36.23",
-    "@lskjs/theme": "^0.36.23",
-    "@lskjs/ui": "^0.36.23",
+    "@lskjs/modal": "^1.0.0-alpha.0",
+    "@lskjs/scroll": "^1.0.0-alpha.0",
+    "@lskjs/theme": "^1.0.0-alpha.0",
+    "@lskjs/ui": "^1.0.0-alpha.0",
     "@lskjs/utils": "0.39.0",
     "antd": "^3.20.7",
     "axios": "^0.19.0",
@@ -72,6 +72,5 @@
     "react-slick": "0.25.2",
     "react-world-flags": "1.3.0",
     "universal-router": "^8.2.1"
-  },
-  "devDependencies": {}
+  }
 }
