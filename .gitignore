@@ -9,6 +9,7 @@ build
 release*
 storage
 .env*
+docs
 
 packages/*/build
 packages/*/release*

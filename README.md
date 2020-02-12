@@ -1,19 +1,17 @@
-# Lib Starter Kit
+# Lego Starter Kit / UX libraries
 
-> Starter kit for JavaScript libs
+это монореп (управляется lenrа'ой), для фронтовых компонентов, тут нет никакого серверного кода и поэтому нету .env
+нас интересует в данный момент ui
+`npm run dev` - делает просто сборку src=>build, это необходимо, когда мы линкуем пакеты к реальному  проекту и тестриуем в живой среде
 
-[![](https://img.shields.io/npm/dm/lego-starter-kit.svg?style=flat)](https://www.npmjs.org/package/lego-starter-kit) 
+## How to run
 
-Husky can prevent bad `git commit`, `git push` and more 🐶 _woof!_
-
-## Support
-
-If Husky is saving you (or your team) time, please consider supporting it on 👍 thank you!
-
-<p>
-  <a href="https://www.patreon.com/bePatron?c=784328">
-    <img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="160">
-  </a>
-</p>
-
+```sh
+git clone git@github.com:lskjs/ux.git lskjs-ux
+cd lskjs-ux
+npm install
+npm run bootstrap
+cd packages/ui
+npm run storybook
+```
 
