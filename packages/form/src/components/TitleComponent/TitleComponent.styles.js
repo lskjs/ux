@@ -2,7 +2,7 @@ import styled, { css } from 'react-emotion';
 import getTheme from '@lskjs/theme/getTheme';
 
 export const Title = styled('div')`
- ${p => (p.error && css`
+  ${p => (p.error && css`
     color: #ee1e31;
   `)}
 `;
@@ -10,6 +10,12 @@ export const Title = styled('div')`
 export const Wrapper = styled('div')`
   display: flex;
   justify-content: space-between;
+  ${p => p.infoLeft && css`
+    justify-content: flex-start;
+    ${Title} {
+      margin-right: 4px;
+    }
+  `}
 `;
 
 export const Info = styled('div')`
