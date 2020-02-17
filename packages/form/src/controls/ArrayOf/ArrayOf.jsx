@@ -145,7 +145,6 @@ class ArrayOf extends Component {
         {values.map((value, key) => {
           const children = (
             <Field
-              key={key}  //eslint-disable-line
               component={ItemComponent}
               name={`${field.name}.${key}`}
               // initialValue={value}
@@ -156,7 +155,9 @@ class ArrayOf extends Component {
           );
           // if (!showRemoveButton || (values.length === 1 && autoAddLastItem)) return children;
           return (
-            <Horizontal>
+            <Horizontal
+              key={key}  //eslint-disable-line
+            >
               <div style={{ width: 50, paddingTop: 4 }}>
                 <If condition={Boolean(showRemoveButton && !(values.length === key + 1 && autoAddLastItem))}>
                   <Tooltip placement="right" title="Удалить элемент">
