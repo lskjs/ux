@@ -10,7 +10,7 @@ import P from './P.styles';
 import Heading from './Heading.styles';
 import resetcss from './resetcss';
 
-
+export const Br = () => <br />;
 export const H1 = props => <Heading componentClass="h1" view="h1" {...props} />;
 export const H2 = props => <Heading componentClass="h2" view="h2" {...props} />;
 export const H3 = props => <Heading componentClass="h3" view="h3" {...props} />;

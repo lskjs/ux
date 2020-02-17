@@ -3,7 +3,7 @@
 import React from 'react';
 import Story from '@lskjs/dev/Story';
 import { injectGlobal } from 'emotion';
-import Typo, { Article, H1, H2, P, Hr, Blockquote, Code, Pre } from '.';
+import { Article, H1, H2, P, Hr, Blockquote, Code, Pre } from '.';
 
 import Image from '../Image';
 import Page from '../Page';
@@ -13,11 +13,11 @@ import resetcss from './resetcss';
 const ArticleInfo = Article;
 const A = 'a';
 
-
 export default ({ storiesOf }) => {
-  storiesOf('ui/Typo/Blog', module)
-    .add('article 0', () => {
+  storiesOf('ui/Typo', module)
+    .add('Article 1', () => {
       injectGlobal(resetcss());
+      /* eslint-disable prettier/prettier */
       return (
         <Story>
           <Article>
@@ -59,8 +59,10 @@ export default ({ storiesOf }) => {
           </Article>
         </Story>
       );
+      /* eslint-enable prettier/prettier */
     })
-    .add('article 1', () => (
+    /* eslint-disable prettier/prettier */
+    .add('Article 2', () => (
       <Story>
         <Page>
           <Article>
@@ -141,4 +143,5 @@ export default ({ storiesOf }) => {
         </Page>
       </Story>
     ));
+    /* eslint-enable prettier/prettier */
 };

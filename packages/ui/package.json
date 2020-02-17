@@ -29,7 +29,6 @@
   },
   "dependencies": {
     "classnames": "2.2.6",
-    "mobx": "5.9.4",
     "nanobar": "0.4.2",
     "react-flickity-component": "3.5.0",
     "react-image-fallback": "8.0.0",
@@ -47,8 +46,11 @@
     "@lskjs/theme": "1.1.0",
     "@lskjs/utils": "0.39.0",
     "antd": "3.26.9",
+    "emotion": "10.0.27",
+    "flickity": "2.2.1",
     "formik": "2.1.4",
     "lodash": "4.17.15",
+    "mobx": "5.9.4",
     "mobx-react": "6.1.7",
     "mobx-react-devtools": "6.1.1",
     "prop-types": "15.7.2",
@@ -59,6 +61,7 @@
     "react-icon-base": "2.1.2",
     "react-icons2": "2.5.0",
     "react-if": "3.4.3",
+    "react-markdown": "4.3.1",
     "react-notification-system": "0.3.0",
     "react-slick": "0.25.2",
     "react-world-flags": "1.3.0"
@@ -89,6 +92,8 @@
     "react-drive-in2": "*",
     "react-image-lightbox": "5.1.1",
     "react-motion": "*",
-    "react-world-flags": "*"
+    "react-world-flags": "*",
+    "flickity": "*",
+    "react-markdown": "*"
   }
 }
