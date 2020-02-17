@@ -5,7 +5,7 @@ import { css } from '@emotion/core';
 export default styled('div')`
   position: absolute;
   width: max-content;
-  z-index: 10;
+  z-index: 11;
   display: inline-flex;
   flex-direction: column;
   > div {

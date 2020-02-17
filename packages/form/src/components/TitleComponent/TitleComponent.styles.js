@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { css } from '@emotion/core';
 
 export const Title = styled('div')`
- ${p => (p.error && css`
+  ${p => (p.error && css`
     color: #ee1e31;
   `)}
 `;
@@ -11,6 +11,12 @@ export const Title = styled('div')`
 export const Wrapper = styled('div')`
   display: flex;
   justify-content: space-between;
+  ${p => p.infoLeft && css`
+    justify-content: flex-start;
+    ${Title} {
+      margin-right: 4px;
+    }
+  `}
 `;
 
 export const Info = styled('div')`
