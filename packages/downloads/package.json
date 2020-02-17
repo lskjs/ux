@@ -28,26 +28,26 @@
     "styleguide": "../../scripts/package-styleguide.sh"
   },
   "dependencies": {
-    "xlsx-populate": "^1.20.1"
+    "xlsx-populate": "1.20.1"
   },
   "devDependencies": {
-    "@emotion/core": "^10.0.27",
-    "@emotion/styled": "^10.0.27",
-    "@lskjs/autobind": "^0.39.0",
-    "@lskjs/button": "^1.1.0",
-    "@lskjs/css": "^1.1.0",
-    "@lskjs/dev": "^1.1.0",
-    "@lskjs/mobx": "^0.39.0",
-    "@lskjs/theme": "^1.1.0",
-    "@lskjs/utils": "^0.39.0",
-    "axios": "^0.19.2",
-    "emotion-theming": "^10.0.27",
+    "@emotion/core": "10.0.27",
+    "@emotion/styled": "10.0.27",
+    "@lskjs/autobind": "0.39.0",
+    "@lskjs/button": "1.1.0",
+    "@lskjs/css": "1.1.0",
+    "@lskjs/dev": "1.1.0",
+    "@lskjs/mobx": "0.39.0",
+    "@lskjs/theme": "1.1.0",
+    "@lskjs/utils": "0.39.0",
+    "axios": "0.19.2",
+    "emotion-theming": "10.0.27",
     "lodash": "4.17.15",
-    "mobx": "^5.15.4",
-    "mobx-react": "^6.1.7",
-    "mobx-react-devtools": "^6.1.1",
-    "react": "^16.8.6",
-    "react-icons2": "^2.5.0"
+    "mobx": "5.15.4",
+    "mobx-react": "6.1.7",
+    "mobx-react-devtools": "6.1.1",
+    "react": "16.8.6",
+    "react-icons2": "2.5.0"
   },
   "peerDependencies": {
     "@emotion/core": "*",
