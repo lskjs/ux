@@ -91,13 +91,13 @@ const ArrayOfForm = createForm({
       showAddButton: true,
       addButton: 'Добавить input',
     },
-    speakers: {
-      component: ArrayOf,
-      itemComponent: createNestedFormControl(SpeakerForm, React),
-      value: loadOption,
-      showAddButton: true,
-      showRemoveButton: true,
-    },
+    // speakers: {
+    //   component: ArrayOf,
+    //   itemComponent: createNestedFormControl(SpeakerForm, React),
+    //   value: loadOption,
+    //   showAddButton: true,
+    //   showRemoveButton: true,
+    // },
   },
 });
 
