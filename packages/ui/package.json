@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/ui",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "LSK ux subrepo: ui",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -39,11 +39,11 @@
     "@emotion/core": "10.0.27",
     "@emotion/styled": "10.0.27",
     "@lskjs/autobind": "0.39.0",
-    "@lskjs/button": "1.1.0",
-    "@lskjs/css": "1.1.0",
-    "@lskjs/dev": "1.1.0",
-    "@lskjs/scroll": "1.1.0",
-    "@lskjs/theme": "1.1.0",
+    "@lskjs/button": "^1.1.1",
+    "@lskjs/css": "^1.1.1",
+    "@lskjs/dev": "^1.1.1",
+    "@lskjs/scroll": "^1.1.1",
+    "@lskjs/theme": "^1.1.1",
     "@lskjs/utils": "0.39.0",
     "antd": "3.26.9",
     "emotion": "10.0.27",
@@ -88,12 +88,12 @@
     "react-if": "*"
   },
   "optionalDependencies": {
+    "flickity": "*",
     "react-collapse": "*",
     "react-drive-in2": "*",
     "react-image-lightbox": "5.1.1",
+    "react-markdown": "*",
     "react-motion": "*",
-    "react-world-flags": "*",
-    "flickity": "*",
-    "react-markdown": "*"
+    "react-world-flags": "*"
   }
 }
