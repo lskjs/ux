@@ -5,14 +5,27 @@ import FormError from './FormError';
 import Title from './components/TitleComponent';
 import { globalStylesFormItem } from './Form.styles';
 
-
-export default ({ field, form, children, htmlId, required, _required, title, help, errorMessage, info, infoLeft }) => {
-  const errorMsg = errorMessage || form && form.errors && form.errors[field.name];
+export default ({
+  field,
+  form,
+  withI18,
+  children,
+  htmlId,
+  required,
+  _required,
+  title,
+  help,
+  errorMessage,
+  info,
+  infoLeft,
+}) => {
+  const errorMsg = errorMessage || (form && form.errors && form.errors[field.name]);
   const looksLikeRequired = required || _required;
   let titleComponent;
   if (title) {
     titleComponent = (
       <Title
+        withI18={withI18}
         infoLeft={infoLeft}
         title={title}
         error={errorMsg}

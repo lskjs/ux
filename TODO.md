@@ -1,2 +1,5 @@
-- rename `config.client` => `config.uapp`
-- прокинуть сквозные конфиги во все модули
+- [ ] Добавить Contributors в Readme.md
+- [ ] Прокинуть сквозные конфиги во все модули
+- [ ] Добавить formGroupConfig в createForm, и прокинуть в FormGroup + title
+- [ ] Сделать story для FormGroup и withI18
+- [ ] Переименовать TitleComponent в FormGroupTitle, и сделать для него story

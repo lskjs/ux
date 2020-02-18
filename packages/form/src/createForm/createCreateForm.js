@@ -11,8 +11,9 @@ import DEBUG from './_debug';
 export default ({
   OnChangeListener = React.Fragment,
   withFormik: defaultWithFormik,
+  withI18 = false,
   ...creatorConfig
-}) => (configOrFn) => {
+}) => configOrFn => {
   let config;
   if (isFunction(configOrFn)) {
     config = configOrFn({});
@@ -35,8 +36,7 @@ export default ({
     ...configProps
   } = config;
 
-
-  const { controls, control } = prepareControls(rawControls, FormGroup);
+  const { controls, control } = prepareControls(rawControls, { FormGroup, withI18 });
   const { validators, customValidators } = getValidators(controls);
   const View = wrapView({
     View: RawView,
@@ -54,7 +54,10 @@ export default ({
     mapPropsToValues: createMapPropsToValues({ controls }),
     handleSubmit: createHandleSubmit({ flatten }),
     validate: createValidate({
-      validators, customValidators, onError, controls,
+      validators,
+      customValidators,
+      onError,
+      controls,
     }),
     validateOnChange: false,
     validateOnBlur: false,
