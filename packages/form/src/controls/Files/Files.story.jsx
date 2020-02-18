@@ -6,6 +6,22 @@ import Files from './Files';
 import FormDebug from '../../FormDebug';
 import Body from '../Image/DefaultBody';
 
+const CroppperDemo = ({ src, onSubmit }) => {
+  return (
+    <div style={{ border: '2px dashed red' }}>
+      <img alt="" src={src.preview} width={400} height={400} style={{ objectFit: 'cover' }} />
+      <button
+        type="button"
+        onClick={() => {
+          onSubmit(src);
+        }}
+      >
+        Crop this pic
+      </button>
+    </div>
+  );
+};
+
 const FilesFormView = props => (
   <Form>
     <Field {...props.control('files')} />
@@ -13,6 +29,7 @@ const FilesFormView = props => (
     <Field {...props.control('files3')} />
     <Field {...props.control('files4')} />
     <Field {...props.control('files5')} />
+    <Field {...props.control('withCropper')} />
     <FormDebug {...props} />
   </Form>
 );
@@ -54,11 +71,18 @@ const FilesForm = createForm({
       component: Files,
       isMulti: true,
     },
+    withCropper: {
+      title: 'withCropper',
+      component: Files,
+      type: 'image',
+      hasCropper: true,
+      CropperComponent: CroppperDemo,
+    },
   },
 });
 
-export default ({ storiesOf }) => storiesOf('form/controls', module)
-  .add('Files ', () => (
+export default ({ storiesOf }) =>
+  storiesOf('form/controls', module).add('Files ', () => (
     <Story>
       <FilesForm
         initialValues={{
