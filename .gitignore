@@ -10,6 +10,7 @@ release*
 storage
 .env*
 docs
+!packages/docs
 
 packages/*/build
 packages/*/release*
