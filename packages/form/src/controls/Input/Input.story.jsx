@@ -15,6 +15,8 @@ const InputFormView = ({ control, ...props }) => (
     <Field {...control('input3')} />
     <Field {...control('input4')} />
     <Field {...control('input5')} />
+    <Field {...control('email')} />
+    <Field {...control('password')} />
     <Field {...control('textarea')} />
     <FastField {...control('input2')} title="FastField for Input" />
     <FormDebug {...props} />
@@ -59,6 +61,19 @@ const InputForm = createForm({
       leftIcon: <UsdIcon size={28} />,
       placeholder: 'input placeholder',
     },
+    email: {
+      title: 'Email',
+      component: Input,
+      type: 'email',
+    },
+    password: {
+      title: 'Password',
+      component: Input,
+      type: 'password',
+      props: {
+        autocomplete: 'password',
+      },
+    },
     textarea: {
       title: 'Input as textarea',
       component: Textarea,
@@ -69,8 +84,8 @@ const InputForm = createForm({
   },
 });
 
-export default ({ storiesOf }) => storiesOf('form/controls', module)
-  .add('Input', () => (
+export default ({ storiesOf }) =>
+  storiesOf('form/controls', module).add('Input', () => (
     <Story>
       <InputForm />
     </Story>

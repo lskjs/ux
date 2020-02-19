@@ -8,8 +8,19 @@ export default (ctrls, { FormGroup, withI18 } = {}) => {
     const ControlWrapper = ctrl.FormGroup || FormGroup;
     let component;
     if (ControlWrapper) {
-      component = props2 =>
-        React.createElement(ControlWrapper, { withI18, ...props2 }, React.createElement(ctrl.component, props2));
+      component = ({ formGroupProps: innerFormGroupProps, ...innerProps }) => {
+        const formGroupProps = {
+          withI18,
+          ...(ctrl.formGroupProps || {}),
+          ...(innerFormGroupProps || {}),
+        };
+        const componentProps = {
+          ...(ctrl.props || {}),
+          ...innerProps,
+        };
+
+        return React.createElement(ControlWrapper, formGroupProps, React.createElement(ctrl.component, componentProps));
+      };
     } else {
       ({ component } = ctrl);
     }
