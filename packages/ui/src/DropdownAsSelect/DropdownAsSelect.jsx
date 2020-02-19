@@ -14,11 +14,8 @@ import {
   Content,
   Trigger as TriggerStyled,
   Icon,
-  injectStyles,
   globalStyles,
 } from './DropdownAsSelect.styles';
-
-injectStyles();
 
 class SelectFilter extends PureComponent {
   static Trigger = TriggerStyled;
