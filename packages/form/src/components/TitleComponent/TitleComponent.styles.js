@@ -10,6 +10,12 @@ export const Title = styled('div')`
 export const Wrapper = styled('div')`
   display: flex;
   justify-content: space-between;
+  ${p => p.infoLeft && css`
+    justify-content: flex-start;
+    ${Title} {
+      margin-right: 4px;
+    }
+  `}
 `;
 
 export const Info = styled('div')`
