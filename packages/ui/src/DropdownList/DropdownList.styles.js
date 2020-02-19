@@ -4,7 +4,7 @@ import getTheme from '@lskjs/theme/getTheme';
 export default styled('div')`
   position: absolute;
   width: max-content;
-  z-index: 11;
+  z-index: 12;
   display: inline-flex;
   flex-direction: column;
   > div {
