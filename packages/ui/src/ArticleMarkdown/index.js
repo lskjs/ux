@@ -1,2 +1,1 @@
-export { default } from './ArticleMarkdown
-';
+export { default } from './ArticleMarkdown';
