@@ -1,11 +1,11 @@
-import injectObserver from '@lskjs/utils/injectObserver';
+// import injectObserver from '@lskjs/utils/injectObserver';
 import createForm from './createForm';
-import DEBUG from './createForm/_debug';
+// import DEBUG from './createForm/_debug';
 
-console.log('createFormWithI18 DEPRECATED -- DANGER DON\'T USE IT -- createFormWithI18 DEPRECATED -- DANGER DON\'T USE IT -- createFormWithI18 DEPRECATED -- DANGER DON\'T USE IT -- createFormWithI18 DEPRECATED -- DANGER DON\'T USE IT -- ');
+console.log('createFormWithI18 DEPRECATED -- DANGER DON\'T USE IT -- createFormWithI18 DEPRECATED -- DANGER DON\'T USE IT -- createFormWithI18 DEPRECATED -- DANGER DON\'T USE IT -- createFormWithI18 DEPRECATED -- DANGER DON\'T USE IT -- ');  //eslint-disable-line
 
-export default config => (configParams) => {
-  console.log('createFormWithI18 DEPRECATED -- DANGER DON\'T USE IT -- createFormWithI18 DEPRECATED -- DANGER DON\'T USE IT -- createFormWithI18 DEPRECATED -- DANGER DON\'T USE IT -- createFormWithI18 DEPRECATED -- DANGER DON\'T USE IT -- ');
+export default config => configParams => {
+  console.log('createFormWithI18 DEPRECATED -- DANGER DON\'T USE IT -- createFormWithI18 DEPRECATED -- DANGER DON\'T USE IT -- createFormWithI18 DEPRECATED -- DANGER DON\'T USE IT -- createFormWithI18 DEPRECATED -- DANGER DON\'T USE IT -- '); //eslint-disable-line
   return createForm(config(configParams));
 };
 // export default config => injectObserver(['i18', 'config', 'user'], (configParams) => {
