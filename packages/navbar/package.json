@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/navbar",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "LSK ux subrepo: navbar",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -33,10 +33,10 @@
     "@lskjs/theme": "1.1.1",
     "@lskjs/utils": "1.0.8",
     "emotion": "10.0.27",
-    "react": "16.8.6",
     "mobx": "5.15.4",
     "mobx-react": "6.1.8",
-    "mobx-react-devtools": "6.1.1"
+    "mobx-react-devtools": "6.1.1",
+    "react": "16.8.6"
   },
   "peerDependencies": {
     "@emotion/core": "*",
