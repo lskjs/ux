@@ -1,46 +1,31 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import ArrowUp from 'react-icons2/mdi/arrow-up';
 import scrollTo from '@lskjs/scroll';
 import Fab from '../Fab';
 import VisibilityScroll from '../VisibilityScroll';
 
-class BackToTop extends PureComponent {
-  static propTypes = {
-    /** Другой цвет состояния */
-    paint: PropTypes.string,
-    /** Позиционирование */
-    position: PropTypes.string,
-    /** фиксированное положение */
-    fixed: PropTypes.bool,
-  }
+const BackToTop = ({ paint, position, fixed, ...props }) => (
+  <VisibilityScroll trigger={1}>
+    <Fab paint={paint} position={position} fixed={fixed} onClick={() => scrollTo(0)} {...props}>
+      <ArrowUp />
+    </Fab>
+  </VisibilityScroll>
+);
 
-  static defaultProps = {
-    paint: 'primary',
-    position: 'bottom right',
-    fixed: true,
-  }
+BackToTop.propTypes = {
+  /** Другой цвет состояния */
+  paint: PropTypes.string,
+  /** Позиционирование */
+  position: PropTypes.string,
+  /** фиксированное положение */
+  fixed: PropTypes.bool,
+};
 
-  scrollToTop() {
-    scrollTo(0);
-  }
-
-  render() {
-    const { paint, position, fixed, ...props } = this.props;
-    return (
-      <VisibilityScroll trigger={1}>
-        <Fab
-          paint={paint}
-          position={position}
-          fixed={fixed}
-          onClick={this.scrollToTop}
-          {...props}
-        >
-          <ArrowUp />
-        </Fab>
-      </VisibilityScroll>
-    );
-  }
-}
+BackToTop.defaultProps = {
+  paint: 'primary',
+  position: 'bottom right',
+  fixed: true,
+};
 
 export default BackToTop;
