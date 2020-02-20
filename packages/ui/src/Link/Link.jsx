@@ -46,7 +46,7 @@ class Link extends PureComponent {
       linkProvider.onClick(url, e);
     } else if (typeof window !== 'undefined' && window.app && window.app.uapp && window.app.uapp.history) {
       if (__DEV__) console.debug('Link without linkProvider: using global.app.uapp.history'); // eslint-disable-line no-console
-      window.app.uapp.history.redirect(url);
+      window.app.uapp.history.push(url);
     } else {
       console.error('Link without linkProvider (history)'); // eslint-disable-line no-console
       window.location = url;
