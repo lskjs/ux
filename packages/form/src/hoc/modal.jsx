@@ -11,9 +11,7 @@ import FormSubmitButton from '../FormSubmitButton';
 import FormSubmitError from '../FormSubmitError';
 // import { hocFooter } from '../Modal2.styles';
 
-const createView = ({ Modal, controlsOrder }) => ({
-  title, subtitle, image, content, control, errors, status,
-}) => (
+const createView = ({ Modal, controlsOrder }) => ({ title, subtitle, image, content, control, errors, status }) => (
   <Form>
     {title && <Modal.Title>{title}</Modal.Title>}
     {subtitle && <Modal.Subtitle>{subtitle}</Modal.Subtitle>}
@@ -26,22 +24,14 @@ const createView = ({ Modal, controlsOrder }) => ({
     </Modal.Content>
     <Modal.Footer style={{ flexDirection: 'column' }}>
       <If condition={Object.keys(errors).length}>
-        <FormSubmitError
-          errors={errors}
-        />
+        <FormSubmitError errors={errors} />
       </If>
       <ButtonGroup padded>
-        <FormSubmitButton
-          paint="primary"
-          status={status}
-        >
+        <FormSubmitButton paint="primary" status={status}>
           <T name="common.submit" />
         </FormSubmitButton>
         <Modal.Trigger>
-          <Button
-            paint="danger"
-            view="text"
-          >
+          <Button paint="danger" view="text">
             <T name="common.cancel" />
           </Button>
         </Modal.Trigger>
@@ -64,15 +54,8 @@ export default ({
     controls,
   });
 
-  return ({
-    innerRef = React.createRef(), onSubmit, children, inner, ...props
-  }) => (
-    <Modal
-      ref={innerRef}
-      {...params}
-      {...props}
-      trigger={children}
-    >
+  return ({ innerRef = React.createRef(), onSubmit, children, inner, ...props }) => (
+    <Modal ref={innerRef} {...params} {...props} trigger={children}>
       <ModalForm
         {...params}
         {...props}

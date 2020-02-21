@@ -1,14 +1,14 @@
+/* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import { Form, Field } from 'formik';
 import Story from '@lskjs/dev/Story';
-import createFormWithI18 from '../createFormWithI18';
+import createForm from '../createForm';
 import FormDebug from '../FormDebug';
 
 import Input from '../controls/Input';
 import Select from '../controls/Select';
 import ArrayOf from '../controls/ArrayOf';
 import createNestedFormControl from '../createNestedFormControl';
-
 
 const EntityFormView = props => (
   <Form>
@@ -19,26 +19,28 @@ const EntityFormView = props => (
   </Form>
 );
 
-const EntityForm = createFormWithI18(() => ({
+const EntityForm = createForm({
   view: EntityFormView,
   controls: {
     name: {
-      title: 'Name',
+      title: 'form.name',
+      withI18: true,
       component: Input,
     },
     money: {
-      title: 'Money',
+      title: 'form.money',
+      withI18: true,
       component: Input,
       type: 'number',
     },
     gender: {
-      title: 'Gender',
+      title: 'form.gender',
+      withI18: true,
       component: Select,
       options: ['male', 'female'],
     },
   },
-}));
-
+});
 
 const ComplexFormView = props => (
   <Form>
@@ -50,29 +52,30 @@ const ComplexFormView = props => (
   </Form>
 );
 
-const ComplexForm = createFormWithI18(() => ({
+const ComplexForm = createForm({
+  withI18: true,
   view: ComplexFormView,
   controls: {
     title: {
-      title: 'Номер группы',
+      title: 'form.title',
       component: Input,
     },
     director: {
-      title: 'Директор',
+      title: 'form.director',
       // component: Input,
       component: createNestedFormControl(EntityForm),
     },
     users: {
-      title: 'Ученики',
+      title: 'form.users',
       component: ArrayOf,
       itemComponent: createNestedFormControl(EntityForm),
       showAddButton: true,
     },
   },
-}));
+});
 
-export default ({ storiesOf }) => (
-  storiesOf('form/nestedForm/i18', module)
+export default ({ storiesOf }) =>
+  storiesOf('form/i18', module)
     .add('EntityForm i18', () => (
       <Story devtools>
         <EntityForm />
@@ -82,5 +85,4 @@ export default ({ storiesOf }) => (
       <Story devtools>
         <ComplexForm />
       </Story>
-    ))
-);
+    ));

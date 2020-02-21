@@ -8,11 +8,14 @@ export default (ctrls, { FormGroup, withI18 } = {}) => {
     const ControlWrapper = ctrl.FormGroup || FormGroup;
     let component;
     if (ControlWrapper) {
-      component = ({ formGroupProps: innerFormGroupProps, ...innerProps }) => {
+      component = ({ title, ...innerProps }) => {
+        // formGroupProps: innerFormGroupProps,
+        const innerFormGroupProps = innerProps; // innerProps.formGroupProps
         const formGroupProps = {
           withI18,
           ...(ctrl.formGroupProps || {}),
           ...(innerFormGroupProps || {}),
+          title,
         };
         const componentProps = {
           ...(ctrl.props || {}),

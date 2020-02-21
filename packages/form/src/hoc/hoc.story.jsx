@@ -7,8 +7,8 @@ import Textarea from '../controls/Textarea';
 import sure from './sure';
 import form from './modal';
 
-export default ({ storiesOf }) => (
-  storiesOf('form/Modal2/hoc', module)
+export default ({ storiesOf }) =>
+  storiesOf('form/hoc', module)
     .add('Are you sure', () => {
       const SureModal = sure();
       const innerRef = createRef();
@@ -21,20 +21,12 @@ export default ({ storiesOf }) => (
             onSubmit={() => console.log('yes')}
             onClose={() => console.log('onClose')}
           >
-            <Button
-              paint="danger"
-            >
-              Удалить
-            </Button>
+            <Button paint="danger">Удалить</Button>
           </SureModal>
-          <button
-            type="button"
-            onClick={() => {
-              innerRef.current.open();
-            }}
-          >
+          <hr />
+          <Button paing="primary " type="button" onClick={() => innerRef.current.open()}>
             Open by ref
-          </button>
+          </Button>
         </Story>
       );
     })
@@ -63,21 +55,12 @@ export default ({ storiesOf }) => (
             onSubmit={values => console.log('yes', values)}
             onClose={() => console.log('onClose')}
           >
-            <Button
-              paint="success"
-            >
-              Send bio
-            </Button>
+            <Button paint="success">Send bio</Button>
           </FormModal>
-          <button
-            type="button"
-            onClick={() => {
-              innerRef.current.open();
-            }}
-          >
+          <hr />
+          <Button paing="primary " type="button" onClick={() => innerRef.current.open()}>
             Open by ref
-          </button>
+          </Button>
         </Story>
       );
-    })
-);
+    });

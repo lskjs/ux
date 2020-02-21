@@ -5,11 +5,20 @@ import Button from 'antd/lib/button';
 
 import Story from '@lskjs/dev/Story';
 import DEV from '@lskjs/dev/DEV';
-import createForm from '../../createForm';
-import FormGroup from '../../FormGroup';
-import SimpleFormGroup from '../../SimpleFormGroup';
-import Input from '../../controls/Input';
-import SimpleInput from './SimpleInput';
+import createForm from '../createForm';
+import FormGroup from '../FormGroup';
+import SimpleFormGroup from '../SimpleFormGroup';
+import Input from '../controls/Input';
+
+const SimpleInput = ({ form, field, ...props }) => (
+  <input
+    {...field}
+    {...props}
+    // onChange={(e) => {
+    //   console.log('input.onChange', e);
+    // }}
+  />
+);
 
 const ctrls = {
   input: {
@@ -31,19 +40,17 @@ const ctrls = {
   },
 };
 
-const FormExampleView = (props) => {
-  const {
-    handleSubmit,
-    controls,
-    values,
-  } = props;
+const FormExampleView = props => {
+  const { handleSubmit, control, values } = props;
   return (
     <Form className="ant-form ant-form-horizontal">
       <Field {...control('input')} />
       <Field {...control('input2')} />
       <Field {...control('input3')} />
       <AntForm.Item>
-        <Button type="primary" onClick={handleSubmit}>Submit</Button>
+        <Button type="primary" onClick={handleSubmit}>
+          Submit
+        </Button>
       </AntForm.Item>
       <DEV json={values} />
     </Form>
@@ -55,11 +62,7 @@ class DebugFormExampleView extends Component {
     i: 1,
   };
   render() {
-    const {
-      handleSubmit,
-      controls,
-      values,
-    } = this.props;
+    const { handleSubmit, control, values } = this.props;
     return (
       <Form>
         <AntForm layout="vertical">
@@ -67,11 +70,16 @@ class DebugFormExampleView extends Component {
           <Field {...control('input2')} />
           <Field {...control('input3')} />
           <AntForm.Item>
-            <Button type="primary" onClick={handleSubmit}>Submit</Button>
+            <Button type="primary" onClick={handleSubmit}>
+              Submit
+            </Button>
           </AntForm.Item>
           <hr />
           <DEV json={Math.random()} />
-          <button onClick={() => this.setState({ i: this.state.i + 1 })}>{this.state.i}++</button>
+          <button onClick={() => this.setState({ i: this.state.i + 1 })}>
+            {this.state.i}
+            ++
+          </button>
           <DEV json={values} />
         </AntForm>
       </Form>
@@ -106,7 +114,7 @@ const SimpleFormGroupForm = createForm({
 });
 
 export default ({ storiesOf }) =>
-  storiesOf('form/formGroups', module)
+  storiesOf('form/FormGroup', module)
     .add('EmptyFormGroup', () => {
       return (
         <Story>
@@ -116,7 +124,7 @@ export default ({ storiesOf }) =>
     })
     .add('FormGroup', () => {
       return (
-        <Story>
+        <Story>ls
           <FormGroupForm />
         </Story>
       );
@@ -134,22 +142,4 @@ export default ({ storiesOf }) =>
           <SimpleFormGroupForm />
         </Story>
       );
-    })
-    .add('form and buttons', () => {
-      return (
-        <Story>
-          <form onSubmit={(e) => { console.log('submit'); e.preventDefault(); }} >
-            <button>
-              default
-            </button>
-            <button type="submit">
-              submit
-            </button>
-            <button type="button">
-              button
-            </button>
-          </form>
-        </Story>
-      );
     });
-
