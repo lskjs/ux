@@ -36,6 +36,7 @@
     "@lskjs/dev": "^1.1.9",
     "@lskjs/downloads": "^1.1.10",
     "@lskjs/form": "^1.1.10",
+    "@lskjs/list": "^1.1.10",
     "@lskjs/mobx": "0.39.0",
     "@lskjs/modal": "^1.1.10",
     "@lskjs/scroll": "^1.1.10",
