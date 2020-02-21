@@ -124,7 +124,7 @@ export default ({ storiesOf }) =>
     })
     .add('FormGroup', () => {
       return (
-        <Story>ls
+        <Story>
           <FormGroupForm />
         </Story>
       );
