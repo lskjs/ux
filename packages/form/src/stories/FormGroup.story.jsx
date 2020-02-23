@@ -90,27 +90,27 @@ class DebugFormExampleView extends Component {
 const EmptyFormGroupForm = createForm({
   view: DebugFormExampleView,
   controls: ctrls,
-  onSubmit: console.log,
+  onSubmit: console.log, // eslint-disable-line no-console
 });
 
 const FormGroupForm = createForm({
   view: DebugFormExampleView,
   FormGroup,
   controls: ctrls,
-  onSubmit: console.log,
+  onSubmit: console.log, // eslint-disable-line no-console
 });
 const FormGroupForm2 = createForm({
   view: FormExampleView,
   FormGroup,
   controls: ctrls,
-  onSubmit: console.log,
+  onSubmit: console.log, // eslint-disable-line no-console
 });
 
 const SimpleFormGroupForm = createForm({
   view: DebugFormExampleView,
   FormGroup: SimpleFormGroup,
   controls: ctrls,
-  onSubmit: console.log,
+  onSubmit: console.log, // eslint-disable-line no-console
 });
 
 export default ({ storiesOf }) =>

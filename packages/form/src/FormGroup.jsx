@@ -23,8 +23,6 @@ export default ({
   const errorMsg = errorMessage || (form && form.errors && form.errors[field.name]);
   const looksLikeRequired = required || _required;
   let titleComponent;
-  console.log({title});
-  
   if (title) {
     titleComponent = (
       <Title

@@ -26,7 +26,7 @@
     "release:docs": "../../scripts/package-release-docs.sh",
     "storybook": "../../scripts/package-storybook.sh",
     "styleguide": "../../scripts/package-styleguide.sh",
-    "build-storybook": "../../scripts/package-build-storybook.sh"
+    "build-storybook": "echo ../../scripts/package-build-storybook.sh"
   },
   "dependencies": {
     "@lskjs/apiquery": "^0.39.0",
