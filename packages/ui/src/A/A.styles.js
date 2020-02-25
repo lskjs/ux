@@ -26,11 +26,14 @@ const secondaryStyle = ({ theme }) => css`
 export default styled(Link)`
   text-decoration: underline;
   cursor: pointer;
-  ${(props) => {
+  ${props => {
     switch (props.bsStyle) {
-      case 'primary': return primaryStyle;
-      case 'secondary': return secondaryStyle;
-      default: return defaultStyle;
+      case 'primary':
+        return primaryStyle;
+      case 'secondary':
+        return secondaryStyle;
+      default:
+        return defaultStyle;
     }
   }}
 `;
