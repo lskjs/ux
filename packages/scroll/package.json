@@ -39,7 +39,6 @@
     "lodash": "4.17.15",
     "mobx": "5.15.4",
     "mobx-react": "6.1.7",
-    "mobx-react-devtools": "6.1.1",
     "react": "16.8.6"
   },
   "peerDependencies": {
@@ -51,7 +50,6 @@
     "lodash": "*",
     "mobx": "*",
     "mobx-react": "*",
-    "mobx-react-devtools": "*",
     "react": "*"
   }
 }

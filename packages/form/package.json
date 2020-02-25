@@ -63,7 +63,6 @@
     "lodash": "4.17.15",
     "mobx": "5.15.4",
     "mobx-react": "6.1.7",
-    "mobx-react-devtools": "6.1.1",
     "moment": "2.24.0",
     "object-hash": "2.0.1",
     "prop-types": "15.7.2",

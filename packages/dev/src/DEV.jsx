@@ -2,8 +2,8 @@ import React from 'react';
 
 const isDev = () => !!(typeof __DEV__ !== 'undefined' ? __DEV__ : global.__DEV__); // eslint-disable-line
 
-const DEV = ({ children, json, pretty = true, condition = true }) => (
-  (isDev() && (condition)) ? (
+const DEV = ({ children, json, pretty = true, condition = true }) =>
+  isDev() && condition ? (
     <div
       data-label="DEV"
       data-dev={isDev()}
@@ -12,18 +12,17 @@ const DEV = ({ children, json, pretty = true, condition = true }) => (
         outline: '1px dashed #ff0000b0',
       }}
     >
-      {json
-        ? (
-          <pre>
-            {pretty
-              ? JSON.stringify(json, null, 2)
-              // ? JSON.stringify(json, null, 2).replace(/,"/ig, ',\n"')
-              : JSON.stringify(json)}
-          </pre>
-        )
-        : children}
+      {json ? (
+        <pre>
+          {pretty
+            ? JSON.stringify(json, null, 2)
+            : // ? JSON.stringify(json, null, 2).replace(/,"/ig, ',\n"')
+              JSON.stringify(json)}
+        </pre>
+      ) : (
+        children
+      )}
     </div>
-  ) : null
-);
+  ) : null;
 
 export default DEV;

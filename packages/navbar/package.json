@@ -35,7 +35,6 @@
     "emotion": "10.0.27",
     "mobx": "5.15.4",
     "mobx-react": "6.1.8",
-    "mobx-react-devtools": "6.1.1",
     "react": "16.8.6"
   },
   "peerDependencies": {

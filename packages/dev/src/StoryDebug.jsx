@@ -1,6 +1,6 @@
 import React from 'react';
-import DevTools from 'mobx-react-devtools';
 import State from './State';
+import DevTools from './DevTools';
 import Performance from './Performance';
 
 export default ({ children, devtools, style, state = {} }) => (
@@ -14,9 +14,7 @@ export default ({ children, devtools, style, state = {} }) => (
         ...style,
       }}
     >
-      <State {...state}>
-        {children}
-      </State>
+      <State {...state}>{children}</State>
       {devtools && <DevTools />}
     </div>
   </Performance>

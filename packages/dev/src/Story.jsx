@@ -14,9 +14,7 @@ class Story extends Component {
     const { children, locale, theme } = this.props;
     return (
       <Uapp locale={locale} theme={theme}>
-        <StoryDebug theme={theme}>
-          {children}
-        </StoryDebug>
+        <StoryDebug theme={theme}>{children}</StoryDebug>
       </Uapp>
     );
   }

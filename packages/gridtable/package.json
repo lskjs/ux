@@ -44,7 +44,6 @@
     "lodash": "*",
     "mobx": "*",
     "mobx-react": "*",
-    "mobx-react-devtools": "*",
     "react": "*"
   }
 }
