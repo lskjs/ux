@@ -1,4 +1,4 @@
-import Reactfrom 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Link from '@lskjs/link';
 import { Right, Item } from './NotifyItem.styles';
@@ -8,6 +8,7 @@ const NotifyItem = ({ href, unread, children, type }) => (
     <Right>{children}</Right>
   </Item>
 );
+
 NotifyItem.propTypes = {
   unread: PropTypes.bool,
   children: PropTypes.any.isRequired,
