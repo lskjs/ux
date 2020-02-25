@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { jsx } from '@emotion/core';
 import autobind from '@lskjs/autobind';
-import Link from '@lskjs/ui/Link';
+import Link from '@lskjs/link';
 import Remove from 'react-icons2/mdi/close-circle-outline';
 import If from 'react-if';
 import Box from '../Box';

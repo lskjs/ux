@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { Global } from '@emotion/core';
 import autobind from '@lskjs/autobind';
-import Link from '@lskjs/ui/Link';
+import Link from '@lskjs/link';
 import Menu from 'antd/lib/menu';
 import If from 'react-if';
 import Horizontal from '../../atoms/Horizontal';

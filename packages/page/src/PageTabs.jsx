@@ -15,19 +15,22 @@ export const tabsStyle = css`
 
 export const PageTabs = ({ onClick: onClickProps, tabs, tab, page }) => (
   <Consumer>
-    {({ onClick = onClickProps }) => (
-      <Menu
-        onClick={onClick}
-        selectedKeys={[tab || get(page, 'state.meta.tab')].filter(a => a)}
-        mode="horizontal"
-        css={tabsStyle}
-      >
-        {/* {tabs.map(Menu.Item)} */}
-        {tabs.map(props => (
-          <Menu.Item {...props} />
-        ))}
-      </Menu>
-    )}
+    {value => {
+      const onClick = get(value, 'onClick', onClickProps);
+      return (
+        <Menu
+          onClick={onClick}
+          selectedKeys={[tab || get(page, 'state.meta.tab')].filter(a => a)}
+          mode="horizontal"
+          css={tabsStyle}
+        >
+          {/* {tabs.map(Menu.Item)} */}
+          {tabs.map(props => (
+            <Menu.Item {...props} />
+          ))}
+        </Menu>
+      );
+    }}
   </Consumer>
 );
 

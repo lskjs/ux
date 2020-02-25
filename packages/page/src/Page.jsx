@@ -21,7 +21,8 @@ class Page extends PureComponent {
   static Body = PageBody;
   static Tabs = PageTabs;
   static Content = Content;
-  static PageHeaderWrapper = PageTitleWrapper;
+  static PageTitleWrapper = PageTitleWrapper;
+  static PageHeaderWrapper = 'div';
   static PageBodyWrapper = 'div';
 
   render() {

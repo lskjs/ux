@@ -4,7 +4,7 @@ import get from 'lodash/get';
 import cloneDeep from 'lodash/cloneDeep';
 import omit from 'lodash/omit';
 import Breadcrumbs from '@lskjs/ui/Breadcrumbs';
-import Link from '@lskjs/ui/Link';
+import Link from '@lskjs/link';
 
 const PageBreadcrumbs = ({ children, page, reverse, omitFirst, omitLast, items: rawItems, ...props }) => {
   const breadcrumbs = get(page, 'state.show.breadcrumbs', true);
