@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
-import Link from '../Link';
+import Link from '@lskjs/link';
 
 const defaultStyle = ({ theme }) => css`
   color: ${theme.colors && theme.colors.default};
