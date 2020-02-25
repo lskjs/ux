@@ -27,16 +27,16 @@
     "storybook": "../../scripts/package-storybook.sh",
     "styleguide": "../../scripts/package-styleguide.sh"
   },
+  "dependencies": {
+    "prop-types": "15.7.2"
+  },
   "devDependencies": {
-    "@lskjs/dev": "0.36.24",
+    "@lskjs/dev": "1.1.13",
     "@lskjs/utils": "1.0.8",
     "react": "16.8.6"
   },
   "peerDependencies": {
     "@lskjs/utils": "*",
     "react": "*"
-  },
-  "dependencies": {
-    "prop-types": "15.7.2"
   }
 }

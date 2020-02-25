@@ -27,6 +27,7 @@
     "storybook": "../../scripts/package-storybook.sh",
     "styleguide": "../../scripts/package-styleguide.sh"
   },
+  "dependencies": {},
   "devDependencies": {
     "@lskjs/css": "^1.1.1",
     "@lskjs/theme": "^1.1.1",

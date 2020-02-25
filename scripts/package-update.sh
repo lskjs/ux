@@ -5,7 +5,7 @@ rm -rf .babelrc && rm -rf .babelrc.js && cp ../../.babelrc.js . && \
 rm -rf .eslintrc.js && cp ../../.eslintrc.js .eslintrc.js && \
 rm -rf styleguide.config.js && cp ../../styleguide.config.js . && \
 rm -rf tsconfig.json && cp ../../tsconfig.json . && \
-rm -rf .gitignore && \
+# rm -rf .gitignore && \
 rm -rf .storybook && cp -R ../../.storybook/.storybook-package .storybook 
 
 # update package \
