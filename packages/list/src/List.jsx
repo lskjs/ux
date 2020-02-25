@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Provider as MobxProvider } from 'mobx-react';
 import mapValues from 'lodash/mapValues';
-import get from 'lodash/get';
 import ListStore from '@lskjs/mobx/stores/ListStore';
+import collectProps from '@lskjs/utils/collectProps';
+import collectProp from '@lskjs/utils/collectProp';
 import Button from '@lskjs/button';
 import scroll from '@lskjs/scroll';
 import { Table } from '@lskjs/ui/Table';
@@ -51,10 +52,6 @@ import DefaultTags from './DefaultTags';
 import DefaultTag from './DefaultTag';
 
 globalStylesList();
-
-const getProp = (obj, name) => (
-  get(obj, `props.${name}`, get(obj, `constructor.${name}`))
-);
 
 const defaultShow = {
   /** */ header: true,
@@ -144,16 +141,20 @@ class List extends Component {
   }
   render() {
     const {
-      debug, columns, show: customShow = {},
+      debug,
+      columns,
+      show: customShow = {},
       pageSize = 10,
       pageOptions = [1, 2, 5, 10],
       paginatorProps = {},
-      Item, FilterForm, HeaderItem,
+      Item,
+      FilterForm,
+      HeaderItem,
       filterProps,
       innerProps,
       itemProps,
     } = this.props;
-    const isFilterModal = getProp(this, 'isFilterModal');
+    const isFilterModal = collectProp(this, 'isFilterModal');
     let { listStore } = this.props;
 
     if (!listStore) {
@@ -163,53 +164,57 @@ class List extends Component {
 
     const { selectStore } = listStore;
 
-    const show = mapValues({
-      ...defaultShow,
-      ...customShow,
-    }, Boolean);
+    const show = mapValues(
+      {
+        ...defaultShow,
+        ...customShow,
+      },
+      Boolean,
+    );
 
-    const List = {  //eslint-disable-line
-      LoaderIcon: getProp(this, 'LoaderIcon'),
-      Sticky: getProp(this, 'Sticky'),
-      Header: getProp(this, 'Header'),
-      Search: getProp(this, 'Search'),
-      Filter: getProp(this, 'Filter'),
-      Tag: getProp(this, 'Tag'),
-      Tags: getProp(this, 'Tags'),
-      TagsPanel: getProp(this, 'TagsPanel'),
-      Body: getProp(this, 'Body'),
-      Items: getProp(this, 'Items'),
-      HeaderRow: getProp(this, 'HeaderRow'), // !!!!!!!!!
-      Footer: getProp(this, 'Footer'),
-      Paginator: getProp(this, 'Paginator'),
-      FilterButton: getProp(this, 'FilterButton'),
-      Empty: getProp(this, 'Empty'),
-      SortHeader: getProp(this, 'SortHeader'),
-      Checkbox: getProp(this, 'Checkbox'),
-      SelectRow: getProp(this, 'SelectRow'),
-      HoverRow: getProp(this, 'HoverRow'),
+    // eslint-disable-next-line no-shadow
+    const List = collectProps(this, [
+      'LoaderIcon',
+      'Sticky',
+      'Header',
+      'Search',
+      'Filter',
+      'Tag',
+      'Tags',
+      'TagsPanel',
+      'Body',
+      'Items',
+      'HeaderRow', // !!!!!!!!!!!!!!
+      'Footer',
+      'Paginator',
+      'FilterButton',
+      'Empty',
+      'SortHeader',
+      'Checkbox',
+      'SelectRow',
+      'HoverRow',
 
-      Button: getProp(this, 'Button'),
-      SearchResults: getProp(this, 'SearchResults'),
-      SearchWrapper: getProp(this, 'SearchWrapper'),
-      SearchComponent: getProp(this, 'SearchComponent'),
-      SearchResultsWrapper: getProp(this, 'SearchResultsWrapper'),
+      'Button',
+      'SearchResults',
+      'SearchWrapper',
+      'SearchComponent',
+      'SearchResultsWrapper',
 
-      Wrapper: getProp(this, 'Wrapper'),
-      BodyWrapper: getProp(this, 'BodyWrapper'),
-      ItemsWrapper: getProp(this, 'ItemsWrapper'),
-      FilterWrapper: getProp(this, 'FilterWrapper'),
-      TagsPanelWrapper: getProp(this, 'TagsPanelWrapper'),
-      HeaderItemWrapper: getProp(this, 'HeaderItemWrapper'),
-      HeaderWrapper: getProp(this, 'HeaderWrapper'),
-      FooterWrapper: getProp(this, 'FooterWrapper'),
+      'Wrapper',
+      'BodyWrapper',
+      'ItemsWrapper',
+      'FilterWrapper',
+      'TagsPanelWrapper',
+      'HeaderItemWrapper',
+      'HeaderWrapper',
+      'FooterWrapper',
 
-      PaginatorWrapper: getProp(this, 'PaginatorWrapper'),
-      PagesWrapper: getProp(this, 'PagesWrapper'),
-      StepperWrapper: getProp(this, 'StepperWrapper'),
-      SelectWrapper: getProp(this, 'SelectWrapper'),
-      SelectRowWrapper: getProp(this, 'SelectRowWrapper'),
-    };
+      'PaginatorWrapper',
+      'PagesWrapper',
+      'StepperWrapper',
+      'SelectWrapper',
+      'SelectRowWrapper',
+    ]);
 
     let { children } = this.props;
 
@@ -224,13 +229,7 @@ class List extends Component {
     }
 
     if (columns) {
-      children = (
-        <Table
-          columns={columns}
-        >
-          {children}
-        </Table>
-      );
+      children = <Table columns={columns}>{children}</Table>;
     }
     children = (
       // shadow={shadow}
@@ -257,9 +256,7 @@ class List extends Component {
         }}
       >
         <MobxProvider listStore={listStore} selectStore={selectStore}>
-          <>
-            {children}
-          </>
+          <>{children}</>
         </MobxProvider>
       </Provider>
     );
