@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import LinkContext from './LinkContext';
+import LinkContext from './Link.context';
 
 const LinkProvider = ({ children, onClick }) => (
   <LinkContext.Provider value={{ onClick }}>

@@ -5,7 +5,7 @@ import isMiddleClickEvent from '@lskjs/utils/isMiddleClickEvent';
 import isModifiedEvent from '@lskjs/utils/isModifiedEvent';
 import isLeftClickEvent from '@lskjs/utils/isLeftClickEvent';
 import composeUrl from '@lskjs/utils/composeUrl';
-import LinkContext from './LinkContext';
+import LinkContext from './Link.context';
 
 const getUapp = () => {
   if (typeof window !== 'undefined') {
