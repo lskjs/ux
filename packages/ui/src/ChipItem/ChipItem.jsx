@@ -1,7 +1,7 @@
 
 import React from 'react';
 import Avatar from '../Avatar';
-import Link from '../Link';
+import Link from '@lskjs/link';
 import Sider from '../Sider';
 
 import { ImageWrapper, TextWrapper } from './ChipItem.styles';

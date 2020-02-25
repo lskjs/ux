@@ -4,7 +4,7 @@ import ReactMarkdown from 'react-markdown'; // eslint-disable-line import/no-ext
 import { Article, H1, Heading, P, Hr, Blockquote, Code, Pre, Br } from '../Typo';
 import Image from '../Image';
 import A from '../A';
-// import Link from '../Link';
+// import Link from '@lskjs/link';
 
 export default ({ title, content }) => (
   <Article style={{ margin: '0 auto' }}>

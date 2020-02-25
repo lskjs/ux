@@ -1,7 +1,7 @@
 import React from 'react';
 import Story from '@lskjs/dev/Story';
 import Box from './Box';
-import Link from '../Link';
+import Link from '@lskjs/link';
 import AnimatedLink from '../AnimatedLink';
 import BoxDivider from './components/BoxDivider';
 

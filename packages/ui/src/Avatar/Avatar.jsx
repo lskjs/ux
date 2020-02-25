@@ -4,7 +4,7 @@ import isNull from 'lodash/isNull';
 import isString from 'lodash/isString';
 import ReactImageFallback from 'react-image-fallback';
 // import PureComponent from 'lsk-general/General/PureComponent';
-import Link from '../Link';
+import Link from '@lskjs/link';
 
 // import gifSpinner from './img/loading.gif';
 const textSizeRatio = 3;

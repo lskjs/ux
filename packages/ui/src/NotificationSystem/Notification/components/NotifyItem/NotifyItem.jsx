@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import Link from '../../../../Link';
+import Link from '@lskjs/link';
 import { Right, Item } from './NotifyItem.styles';
 
 

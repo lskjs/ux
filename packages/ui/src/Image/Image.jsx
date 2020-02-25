@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import ReactImageFallback from 'react-image-fallback';
-import Link from '../Link';
+import Link from '@lskjs/link';
 // import Img from './Image.styles';
 
 // const textSizeRatio = 3;

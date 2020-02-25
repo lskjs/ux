@@ -1,6 +1,6 @@
 import React from 'react';
 import Story from '@lskjs/dev/Story';
-import Link from '../Link';
+import Link from '@lskjs/link';
 import AnimatedLink from './AnimatedLink';
 
 export default ({ storiesOf }) => (
