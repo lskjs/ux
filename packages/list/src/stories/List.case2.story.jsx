@@ -5,7 +5,7 @@ import sample from 'lodash/sample';
 import { observer } from 'mobx-react';
 import { css } from '@emotion/core';
 import Promise from 'bluebird';
-import { Row as BsRow, Col as BsCol } from '@lskjs/ui/Grid';
+import { Row as BsRow, Col as BsCol } from '@lskjs/grid';
 import Story from '@lskjs/dev/Story';
 import { Row, Col } from '@lskjs/ui/Table';
 import ListStore from '@lskjs/mobx/stores/ListStore';

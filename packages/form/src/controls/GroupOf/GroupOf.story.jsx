@@ -3,7 +3,7 @@ import AntForm from 'antd/lib/form';
 import Button from '@lskjs/button';
 import isEmpty from 'lodash/isEmpty';
 import { Form, Field, FastField } from 'formik';
-import { Row, Col } from '@lskjs/ui/Grid';
+import { Row, Col } from '@lskjs/grid';
 import Story from '@lskjs/dev/Story';
 import createForm from '../../createForm';
 import GroupOf from './GroupOf';

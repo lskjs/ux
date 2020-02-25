@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import get from 'lodash/get';
-import { Row, Col } from '@lskjs/ui/Grid';
+import { Row, Col } from '@lskjs/grid';
 import CheckBlock from '../CheckBlock';
 import checkBlockStyle from './CheckBlockList.style';
 

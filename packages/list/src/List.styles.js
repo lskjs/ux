@@ -4,7 +4,7 @@ import { injectGlobal } from 'emotion';
 import getTheme from '@lskjs/theme/getTheme';
 import createDynamicTag from '@lskjs/utils/createDynamicTag';
 import removeProps from '@lskjs/utils/removeProps';
-import { Row } from '@lskjs/ui/Grid';
+import { Row } from '@lskjs/grid';
 
 export const loadMoreButton = css`
   border-radius: 0 !important;

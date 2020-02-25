@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Row } from '@lskjs/ui/Grid';
+import { Col, Row } from '@lskjs/grid';
 import QueueAnim from 'rc-queue-anim';
 import Story from '@lskjs/dev/Story';
 import AnimatedCard from './AnimatedCard';

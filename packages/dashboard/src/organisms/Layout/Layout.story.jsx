@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container } from '@lskjs/ui/Grid';
+import { Container } from '@lskjs/grid';
 import Menu from 'antd/lib/menu';
 import Icon from 'antd/lib/icon';
 import AntLayout from 'antd/lib/layout';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col } from '@lskjs/ui/Grid';
+import { Row, Col } from '@lskjs/grid';
 import GridFile from '../GridFile';
 import normilizeFiles from '../normilizeFiles';
 // import { GridFiles } from './GridFiles.styles';

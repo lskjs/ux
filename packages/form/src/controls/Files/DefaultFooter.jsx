@@ -2,7 +2,7 @@ import React from 'react';
 import If from 'react-if';
 import Button from '@lskjs/button';
 import T from '@lskjs/ui/T';
-// import { Col, Row } from '@lskjs/ui/Grid';
+// import { Col, Row } from '@lskjs/grid';
 import Box from './components/Box';
 import GridFiles from './components/GridFiles';
 

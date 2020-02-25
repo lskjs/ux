@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { Row as BsRow, Col as BsCol } from '@lskjs/ui/Grid';
+import { Row as BsRow, Col as BsCol } from '@lskjs/grid';
 import Form from 'antd/lib/form';
 import Button from 'antd/lib/button';
 import createDynamicTag from '@lskjs/utils/createDynamicTag';
