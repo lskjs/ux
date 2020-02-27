@@ -1,72 +1,48 @@
-/** @jsx jsx */
+/* eslint-disable no-nested-ternary */
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
-import { css, jsx } from '@emotion/core';
+import filterProps from '@lskjs/utils/filterProps';
 
 @inject('overflow')
 @observer
 class TableCol extends Component {
   render() {
-    const {
-      componentClass = 'div',
-      index,
-      style,
-      align,
-      overflow = 'hidden',
-      children,
-      className,
-      ...props
-    } = this.props;
+    const { componentClass = 'div', index, style, align, overflow = 'hidden', children, ...props } = this.props;
 
     const otherStyle = {};
-    otherStyle.overflow = overflow;
     if (index !== null) otherStyle.gridColumn = index + 1;
     // otherStyle.flex = 1;
     otherStyle.display = 'flex';
     if (align) {
-      otherStyle.justifyContent = (
-        align === 'right' ? 'flex-end' : // eslint-disable-line
-          align === 'center' ? 'center'
-            : 'flex-start'
-      );
+      otherStyle.justifyContent =
+        align === 'right'
+          ? 'flex-end' // eslint-disable-line
+          : align === 'center'
+          ? 'center'
+          : 'flex-start';
     }
     if (props.stopPropagation && !props.onClick) {
-      props.onClick = (e) => {
+      props.onClick = e => {
         e.stopPropagation();
         e.preventDefault();
       };
     }
 
-    return jsx(
+    return React.createElement(
       componentClass,
-      {
-        // className,
-        css: [
-          css(className),
-          css(otherStyle),
-          css(style),
-        ],
-        style,
-        ...props,
-      },
+      filterProps(
+        {
+          ...props,
+          style: {
+            overflow,
+            ...otherStyle,
+            ...style,
+          },
+        },
+        componentClass,
+      ),
       children,
     );
-
-    // return React.createElement(
-    //   componentClass,
-    //   filterProps({
-    //     ...props,
-    //     className: cx([
-    //       props.className,
-    //       css({
-    //         overflow,
-    //         ...otherStyle,
-    //         ...style,
-    //       }),
-    //     ]),
-    //   }, componentClass),
-    //   children,
-    // );
   }
 }
 

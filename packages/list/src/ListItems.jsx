@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /** @jsx jsx */
 import React, { Component } from 'react';
 import { jsx, css, Global } from '@emotion/core';
@@ -14,32 +15,28 @@ import { contextToProps } from './List.context';
 @observer
 class ListItems extends Component {
   render() {
-    const {
-      List, listStore, Item, itemProps,
-    } = this.props;
+    const { List, listStore, Item, itemProps } = this.props;
     return (
       <List.ItemsWrapper>
-        <Performance name="List.Items" disabled={!__DEV__}>
-          {listStore.map((item, index) => {
-            if (item === null) {
-              return (
-                <>
-                  <Global
-                    styles={css`
-                    .buttoncss {
-                      border-radius: 0;
-                      box-shadow: 0 0 0 1px #e3e3e3;
-                      width: 100%;
-                      }
-                    `}
-                  />
+        <>
+          <Global
+            styles={css`
+              .buttoncss {
+                border-radius: 0;
+                box-shadow: 0 0 0 1px #e3e3e3;
+                width: 100%;
+              }
+            `}
+          />
+          <Performance name="List.Items" disabled={!__DEV__}>
+            {listStore.map((item, index) => {
+              if (item === null) {
+                return (
                   <Button
                     bordered
                     size="large"
                     paint="default"
-                    onClick={() => (
-                      listStore.fetch({ skip: listStore.skip + index, limit: 1, cache: 1 })
-                    )}
+                    onClick={() => listStore.fetch({ skip: listStore.skip + index, limit: 1, cache: 1 })}
                     disabled={listStore.loading}
                     className="buttoncss"
                     block
@@ -51,13 +48,13 @@ class ListItems extends Component {
                       <T name="lskList.bodyLoadMoreButton" />
                     </If>
                   </Button>
-                </>
-              );
-            }
-            if (!Item) return <DEV json="!Item" />;
-            return <Item {...itemProps} item={item} key={item._id || item.id || index} />;
-          })}
-        </Performance>
+                );
+              }
+              if (!Item) return <DEV json="!Item" />;
+              return <Item {...itemProps} item={item} key={item._id || item.id || index} />;
+            })}
+          </Performance>
+        </>
       </List.ItemsWrapper>
     );
   }

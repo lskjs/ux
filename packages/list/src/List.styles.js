@@ -181,7 +181,7 @@ export const BodyWrapperPadded = styled(Row)`
 
 export const ItemsWrapper = styled('div')`
   > .table-gird-row {
-    padding: 0 ${p => getTheme(p.theme, 'tablePadding')}px;
+    padding: ${p => `0 ${getTheme(p.theme, 'tablePadding')}px`};
   }
 `;
 
@@ -202,7 +202,7 @@ export const FooterWrapper = styled('div')`
   /* background-color: ${p => getTheme(p.theme, 'colors.darkerBackground')}; */
   border-top: 1px solid ${p => getTheme(p.theme, 'colors.border')};
   /* height: auto; */
-  padding: 8px ${p => getTheme(p.theme, 'tablePadding')}px;
+  padding: ${p => `8px ${getTheme(p.theme, 'tablePadding')}px`};
   /* @media screen and (max-width: 1317px) {
     flex-direction: column;
     align-items: flex-end;
@@ -252,7 +252,7 @@ ${p => (p.sticky && css`
 `;
 
 export const TagsPanelWrapper = styled('div')`
-  padding: 8px ${p => getTheme(p.theme, 'tablePadding')}px;
+  padding: ${p => `8px ${getTheme(p.theme, 'tablePadding')}px`};
   display: flex;
   flex-wrap: wrap;
   > button {
