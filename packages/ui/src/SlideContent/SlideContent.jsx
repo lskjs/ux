@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import If from 'react-if';
-import { Container, Col } from '../Grid';
+import { Container, Col } from '@lskjs/grid';
 
 import {
   Title,

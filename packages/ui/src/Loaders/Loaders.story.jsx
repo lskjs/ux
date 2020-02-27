@@ -1,6 +1,6 @@
 import React from 'react';
 import Story from '@lskjs/dev/Story';
-import { Row, Col } from '../Grid';
+import { Row, Col } from '@lskjs/grid';
 
 import ScaleRippleMulti from './ScaleRippleMulti';
 import ScaleRipple from './ScaleRipple';

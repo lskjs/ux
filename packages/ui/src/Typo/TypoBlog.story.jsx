@@ -6,7 +6,6 @@ import { injectGlobal } from 'emotion';
 import { Article, H1, H2, P, Hr, Blockquote, Code, Pre } from '.';
 
 import Image from '../Image';
-import Page from '../Page';
 import Tag from '../Tags/Tag';
 import resetcss from './resetcss';
 
@@ -64,83 +63,81 @@ export default ({ storiesOf }) => {
     /* eslint-disable prettier/prettier */
     .add('Article 2', () => (
       <Story>
-        <Page>
-          <Article>
-            <link href="https://glyph.medium.com/css/e/sr/latin/e/ssr/latin/e/ssb/latin/m2.css" rel="stylesheet" />
-            {/* <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" /> */}
-            <Image
-              src="https://miro.medium.com/max/5000/1*Z4FQ2qjqaQGKX1GlD77bOg.png"
-              placeholder="https://miro.medium.com/max/200/1*Z4FQ2qjqaQGKX1GlD77bOg.png?q=20"
-              width="2500"
-              height="600"
-              role="presentation"
-            />
-            <H1>Why can’t we read anymore?</H1>
-            Or, can books save us from what digital does to our brains?
-            <div>
-              Author
-              <a href="https://medium.com/@arturkornakov/5-%D0%B8%D0%B4%D0%B5%D0%B9-vue-js-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B5-%D0%B2%D1%8B-%D0%BF%D0%BE%D0%BB%D1%8E%D0%B1%D0%B8%D1%82%D0%B5-%D0%B4%D0%B0%D0%B6%D0%B5-%D0%B5%D1%81%D0%BB%D0%B8-react-%D0%B2%D0%B0%D1%81-%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D1%81%D1%82%D1%8C%D1%8E-%D1%83%D1%81%D1%82%D1%80%D0%B0%D0%B8%D0%B2%D0%B0%D0%B5%D1%82-33bcbeba2916#.ql864n1w6">
-                source
-              </a>
-            </div>
+        <Article>
+          <link href="https://glyph.medium.com/css/e/sr/latin/e/ssr/latin/e/ssb/latin/m2.css" rel="stylesheet" />
+          {/* <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" /> */}
+          <Image
+            src="https://miro.medium.com/max/5000/1*Z4FQ2qjqaQGKX1GlD77bOg.png"
+            placeholder="https://miro.medium.com/max/200/1*Z4FQ2qjqaQGKX1GlD77bOg.png?q=20"
+            width="2500"
+            height="600"
+            role="presentation"
+          />
+          <H1>Why can’t we read anymore?</H1>
+          Or, can books save us from what digital does to our brains?
+          <div>
+            Author
+            <a href="https://medium.com/@arturkornakov/5-%D0%B8%D0%B4%D0%B5%D0%B9-vue-js-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B5-%D0%B2%D1%8B-%D0%BF%D0%BE%D0%BB%D1%8E%D0%B1%D0%B8%D1%82%D0%B5-%D0%B4%D0%B0%D0%B6%D0%B5-%D0%B5%D1%81%D0%BB%D0%B8-react-%D0%B2%D0%B0%D1%81-%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D1%81%D1%82%D1%8C%D1%8E-%D1%83%D1%81%D1%82%D1%80%D0%B0%D0%B8%D0%B2%D0%B0%D0%B5%D1%82-33bcbeba2916#.ql864n1w6">
+              source
+            </a>
+          </div>
+          <P>
+            В основе любой популярной библиотеки лежит идея, которая отличает её от остальных. В Angular — это директивы и
+            two-way data-binding, в React — компонентный подход, Virtual DOM, однонаправленный поток данных, SSR; Polymer
+            приносит будущие web components в современные браузеры. Некоторые библиотеки делают упор на быстродействие,
+            пытаясь выкинуть из популярных всю ненужную шелуху (Inferno, Preact), другие, по мнению их авторов, впитывают в
+            себя самое лучшее из разных подходов. Vue.js как раз из последних.
+            <br />
+            Досконально изучать каждый не имеет смысла (и не хватит времени), но понимание идей, лежащих в основе
+            популярных, поможет вам выбрать подходящий инструмент под ваши задачи.
+          </P>
+          <H2>Vue.js?</H2>
+          <P>
+            На что похож Vue при первом знакомстве?
+            <br />
+            Те, кто использовал React и Angular, сразу увидят много общего — компонентный подход, lifecycle методы,
+            unidirectional data-flow c передачей props вниз по дереву, virtual DOM, директивы, vuex (redux-like), vue
+            router. Такая схожесть, при наличии опыта работы с одной из библиотек, позволит вам быстро понять, почему многие
+            выбирают именно Vue.
+          </P>
+          <Image
+            src="https://miro.medium.com/max/2450/1*Dx_jN9L8UMcYPiY-9kwQRA.jpeg"
+            placeholder="https://miro.medium.com/max/60/1*Dx_jN9L8UMcYPiY-9kwQRA.jpeg?q=20"
+            width="2500"
+            height="600"
+            role="presentation"
+          />
+          <P>
+            В этой заметке я постарался осветить основные идеи Vue.js, которые показались мне интересными или
+            отличительными, при этом намерено не затрагивая вопросы быстродействия, коммьюнити или эко-системы.
+          </P>
+          <Hr />
+          <H2>1. Реактивность</H2>
+          <P>
+            Реактивность — это когда данные внутри приложения напрямую связаны с данными в отображении и их изменение в
+            любой части мгновенно влияет на перерисовку отображения.
+            <br />
+            Как реализуется реактивность в React? Кратко говоря, все данные, которые мы используем в приложении хранятся в
+            {' '}
+            <strong>state</strong>
+            {' '}
+            и
+            <strong>props</strong>
+            , при необходимости изменить данные, мы изменяем их через
+            {' '}
+            <strong>setState</strong>
+            , дальше React определяет какие части приложения зависели от измененных данных и
+            перерисовывает их.
+          </P>
+          {/* https://medium.com/@hughmcguire/why-can-t-we-read-anymore-503c38c131fe */}
+          <Blockquote>
             <P>
-              В основе любой популярной библиотеки лежит идея, которая отличает её от остальных. В Angular — это директивы и
-              two-way data-binding, в React — компонентный подход, Virtual DOM, однонаправленный поток данных, SSR; Polymer
-              приносит будущие web components в современные браузеры. Некоторые библиотеки делают упор на быстродействие,
-              пытаясь выкинуть из популярных всю ненужную шелуху (Inferno, Preact), другие, по мнению их авторов, впитывают в
-              себя самое лучшее из разных подходов. Vue.js как раз из последних.
-              <br />
-              Досконально изучать каждый не имеет смысла (и не хватит времени), но понимание идей, лежащих в основе
-              популярных, поможет вам выбрать подходящий инструмент под ваши задачи.
+              Smokers who are the most optimistic about their ability to resist temptation are the most likely to relapse
+              four months later, and overoptimistic dieters are the least likely to lose weight. (Kelly McGonigal: The
+              Willpower Instinct)
             </P>
-            <H2>Vue.js?</H2>
-            <P>
-              На что похож Vue при первом знакомстве?
-              <br />
-              Те, кто использовал React и Angular, сразу увидят много общего — компонентный подход, lifecycle методы,
-              unidirectional data-flow c передачей props вниз по дереву, virtual DOM, директивы, vuex (redux-like), vue
-              router. Такая схожесть, при наличии опыта работы с одной из библиотек, позволит вам быстро понять, почему многие
-              выбирают именно Vue.
-            </P>
-            <Image
-              src="https://miro.medium.com/max/2450/1*Dx_jN9L8UMcYPiY-9kwQRA.jpeg"
-              placeholder="https://miro.medium.com/max/60/1*Dx_jN9L8UMcYPiY-9kwQRA.jpeg?q=20"
-              width="2500"
-              height="600"
-              role="presentation"
-            />
-            <P>
-              В этой заметке я постарался осветить основные идеи Vue.js, которые показались мне интересными или
-              отличительными, при этом намерено не затрагивая вопросы быстродействия, коммьюнити или эко-системы.
-            </P>
-            <Hr />
-            <H2>1. Реактивность</H2>
-            <P>
-              Реактивность — это когда данные внутри приложения напрямую связаны с данными в отображении и их изменение в
-              любой части мгновенно влияет на перерисовку отображения.
-              <br />
-              Как реализуется реактивность в React? Кратко говоря, все данные, которые мы используем в приложении хранятся в
-              {' '}
-              <strong>state</strong>
-              {' '}
-              и
-              <strong>props</strong>
-              , при необходимости изменить данные, мы изменяем их через
-              {' '}
-              <strong>setState</strong>
-              , дальше React определяет какие части приложения зависели от измененных данных и
-              перерисовывает их.
-            </P>
-            {/* https://medium.com/@hughmcguire/why-can-t-we-read-anymore-503c38c131fe */}
-            <Blockquote>
-              <P>
-                Smokers who are the most optimistic about their ability to resist temptation are the most likely to relapse
-                four months later, and overoptimistic dieters are the least likely to lose weight. (Kelly McGonigal: The
-                Willpower Instinct)
-              </P>
-            </Blockquote>
-          </Article>
-        </Page>
+          </Blockquote>
+        </Article>
       </Story>
     ));
     /* eslint-enable prettier/prettier */
