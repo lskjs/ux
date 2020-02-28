@@ -13,14 +13,13 @@ const bg = css`
 `;
 
 const videoYoutubeStyle = css`
-iframe {
+  iframe {
     ${bg}
   }
 `;
 
 const innerStyle = css`
-   z-index: 110;
-
+  z-index: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -41,43 +40,63 @@ export const Middle = styled('div')`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 110;
+  z-index: 0;
 `;
 
 export const Content = styled('div')``;
 
-export const InnerBlock = styled('div')`${innerStyle}`;
-export const InnerTable = styled('table')`${innerStyle}`;
+export const InnerBlock = styled('div')`
+  ${innerStyle}
+`;
+export const InnerTable = styled('table')`
+  ${innerStyle}
+`;
 
-export const TopBlock = styled('div')`${topStyle}`;
-export const TopTable = styled('td')`${topStyle}`;
+export const TopBlock = styled('div')`
+  ${topStyle}
+`;
+export const TopTable = styled('td')`
+  ${topStyle}
+`;
 
-export const BottomBlock = styled('div')`${bottomStyle}`;
-export const BottomTable = styled('td')`${bottomStyle}`;
+export const BottomBlock = styled('div')`
+  ${bottomStyle}
+`;
+export const BottomTable = styled('td')`
+  ${bottomStyle}
+`;
 
 export const SlideFrame = styled('div')`
   position: relative;
-  ${props => (props.center && `
+  ${props =>
+    props.center &&
+    `
     text-align: center;
-    z-index: 110;
-  `)}
+    z-index: 0;
+  `}
 
-  ${props => (props.stretch && `
+  ${props =>
+    props.stretch &&
+    `
     ${Middle} {
       align-items: stretch !important;
     }
     ${Content} {
       height: 100%;
     }
-  `)}
+  `}
 
-  ${props => (props.fixed && `
+  ${props =>
+    props.fixed &&
+    `
     ${Content} {
       ${getTheme(props.theme, 'mixins.grid')};
     }
-  `)}
+  `}
 
-  ${props => (props.ie && `
+  ${props =>
+    props.ie &&
+    `
     * {
       border: 1px transparent solid;
     }
@@ -96,7 +115,7 @@ export const SlideFrame = styled('div')`
     ${InnerTable} {
       height:100vh;
     }
-  `)}
+  `}
 `;
 
 export const LeftBlock = styled('div')``;
@@ -109,24 +128,24 @@ export const Center = styled('div')`
 `;
 
 export const Background = styled('div')`
-  z-index: 100;
+  z-index: 0;
 `;
 
 export const NoClick = styled('div')`
   ${bg}
-  z-index: 103;
+  z-index: 3;
 `;
 
 export const Overlay = styled('div')`
   ${bg}
-  z-index: 102;
+  z-index: 2;
 `;
 
 export const Video = styled('div')`
   ${bg}
-  z-index: 101;
+  z-index: 1;
 
-  ${props => (props.youtube && videoYoutubeStyle)}
+  ${props => props.youtube && videoYoutubeStyle}
 `;
 
 export const VideoForeground = styled('div')`
@@ -141,7 +160,7 @@ export const VideoForeground = styled('div')`
 
 export const Image = styled('div')`
   ${bg}
-  z-index: 100;
+  z-index: 0;
 
   background-size: cover;
   background-position: center;
