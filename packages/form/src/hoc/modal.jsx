@@ -1,5 +1,5 @@
 /* eslint import/no-extraneous-dependencies: 0 */
-import React from 'react';
+import React, { forwardRef } from 'react';
 import If from 'react-if';
 import { Form, Field } from 'formik';
 import Button from '@lskjs/button';
@@ -40,13 +40,11 @@ const createView = ({ Modal, controlsOrder }) => ({ title, subtitle, image, cont
   </Form>
 );
 
-// / Modal = ,
 export default ({
   Modal = DefaultModal,
   controls,
   controlsOrder = Object.keys(controls),
   view = createView({ Modal, controls, controlsOrder }),
-
   ...params
 } = {}) => {
   const ModalForm = createForm({
@@ -54,16 +52,16 @@ export default ({
     controls,
   });
 
-  return ({ innerRef = React.createRef(), onSubmit, children, inner, ...props }) => (
-    <Modal ref={innerRef} {...params} {...props} trigger={children}>
+  return forwardRef(({ onSubmit, children, inner, ...props }, ref) => (
+    <Modal ref={ref} {...params} {...props} trigger={children}>
       <ModalForm
         {...params}
         {...props}
         onSubmit={async (...args) => {
           await onSubmit(...args);
-          innerRef.current.close();
+          ref.current.close();
         }}
       />
     </Modal>
-  );
+  ));
 };

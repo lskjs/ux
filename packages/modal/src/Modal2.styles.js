@@ -4,7 +4,7 @@ import { css } from '@emotion/core';
 
 export const modalStyle = css`
   margin: 60px auto;
-  @media screen and (max-width: 576px){
+  @media screen and (max-width: 576px) {
     margin-top: 0;
   }
   outline: none;
@@ -33,7 +33,7 @@ export const modalLarge = css`
 export const InnerWrapper = styled('div')`
   background: #fff;
   border-radius: 8px;
-  box-shadow: 0 2px 18px rgba(0,0,0,.2);
+  box-shadow: 0 2px 18px rgba(0, 0, 0, 0.2);
 `;
 
 export const bodyModalStyle = css`
@@ -41,7 +41,7 @@ export const bodyModalStyle = css`
 `;
 
 export const closeButtonStyle = css`
-  position: absolute;
+  position: absolute !important;
   right: 0;
   top: 0;
   margin: 8px;

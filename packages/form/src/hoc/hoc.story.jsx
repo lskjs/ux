@@ -11,11 +11,11 @@ export default ({ storiesOf }) =>
   storiesOf('form/hoc', module)
     .add('Are you sure', () => {
       const SureModal = sure();
-      const innerRef = createRef();
+      const ref = createRef();
       return (
         <Story>
           <SureModal
-            innerRef={innerRef}
+            ref={ref}
             title="Deleting"
             content="Are you sure"
             onSubmit={() => console.log('yes')}
@@ -24,7 +24,7 @@ export default ({ storiesOf }) =>
             <Button paint="danger">Удалить</Button>
           </SureModal>
           <hr />
-          <Button paing="primary " type="button" onClick={() => innerRef.current.open()}>
+          <Button paing="primary " type="button" onClick={() => ref.current.open()}>
             Open by ref
           </Button>
         </Story>
@@ -45,11 +45,11 @@ export default ({ storiesOf }) =>
           },
         },
       });
-      const innerRef = createRef();
+      const ref = createRef();
       return (
         <Story>
           <FormModal
-            innerRef={innerRef}
+            ref={ref}
             title="Request"
             content="Do you want"
             onSubmit={values => console.log('yes', values)}
@@ -58,7 +58,7 @@ export default ({ storiesOf }) =>
             <Button paint="success">Send bio</Button>
           </FormModal>
           <hr />
-          <Button paing="primary " type="button" onClick={() => innerRef.current.open()}>
+          <Button paing="primary " type="button" onClick={() => ref.current.open()}>
             Open by ref
           </Button>
         </Story>

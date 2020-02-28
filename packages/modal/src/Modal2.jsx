@@ -26,14 +26,7 @@ import ModalTrigger from './components/ModalTrigger';
 import ModalInner from './components/ModalInner';
 import ModalCloseIcon from './components/ModalCloseIcon';
 
-import {
-  bodyModalStyle,
-  modalStyle,
-  modalSmall,
-  modalNormal,
-  modalLarge,
-  InnerWrapper,
-} from './Modal2.styles';
+import { bodyModalStyle, modalStyle, modalSmall, modalNormal, modalLarge, InnerWrapper } from './Modal2.styles';
 
 import { Provider } from './Modal2.context';
 
@@ -82,7 +75,7 @@ ReactModal.defaultStyles = {
   },
 };
 
-if (typeof (window) !== 'undefined') {
+if (typeof window !== 'undefined') {
   ReactModal.setAppElement('body');
 }
 
@@ -121,10 +114,10 @@ class Modal2 extends PureComponent {
     className: PropTypes.string,
     size: PropTypes.oneOf(uniq(filter(sizes, e => typeof e === 'string'))),
     trigger: PropTypes.any, // eslint-disable-line react/forbid-prop-types
-    innerRef: PropTypes.func,
+    ref: PropTypes.func,
     style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
     whiteTheme: PropTypes.bool,
-  }
+  };
 
   static defaultProps = {
     defaultVisible: false,
@@ -146,10 +139,10 @@ class Modal2 extends PureComponent {
     className: null,
     size: sizes.medium,
     trigger: null,
-    innerRef: null,
+    ref: null,
     style: {},
     whiteTheme: false,
-  }
+  };
 
   constructor(props) {
     super(props);
@@ -210,17 +203,9 @@ class Modal2 extends PureComponent {
       InnerWrapper: this.props.InnerWrapper || this.constructor.InnerWrapper,
       CloseIcon: this.props.CloseIcon || this.constructor.CloseIcon,
     };
-    const {
-      className,
-      size = 'default',
-      closable = true,
-      trigger,
-      innerRef,
-      style,
-      ...props
-    } = this.props;
+    const { className, size = 'default', closable = true, trigger, ref, style, ...props } = this.props;
     const modal = this;
-    if (innerRef) innerRef(this);
+    if (ref) ref(this);
     return (
       <Provider value={{ modal, Modal }}>
         <Global
@@ -228,24 +213,34 @@ class Modal2 extends PureComponent {
             '.bodyModal': bodyModalStyle,
           }}
         />
-        <React.Fragment>
+        <>
           <ReactModal
-            ref={closable ? (e) => { this._modal = e; } : noop}
-            contentRef={closable ? (e) => {
-              if (typeof window !== 'undefined' && e) {
-                e.onclick = (event) => {
-                  if (!event || !event.target || !event.target.className) return;
-                  const str = event.target.className;
-                  if (typeof str !== 'string') return;
-                  if (str.includes('ReactModal__Content')) {
-                    if (this._modal && this._modal.portal) {
-                      this._modal.portal.shouldClose = true;
-                      this._modal.portal.handleOverlayOnClick(event);
+            ref={
+              closable
+                ? e => {
+                    this._modal = e;
+                  }
+                : noop
+            }
+            contentRef={
+              closable
+                ? e => {
+                    if (typeof window !== 'undefined' && e) {
+                      e.onclick = event => {
+                        if (!event || !event.target || !event.target.className) return;
+                        const str = event.target.className;
+                        if (typeof str !== 'string') return;
+                        if (str.includes('ReactModal__Content')) {
+                          if (this._modal && this._modal.portal) {
+                            this._modal.portal.shouldClose = true;
+                            this._modal.portal.handleOverlayOnClick(event);
+                          }
+                        }
+                      };
                     }
                   }
-                };
-              }
-            } : noop}
+                : noop
+            }
             isOpen={this.state.visible}
             onRequestClose={closable && this.close}
             bodyOpenClassName="bodyModal"
@@ -275,11 +270,10 @@ class Modal2 extends PureComponent {
           <If condition={!!trigger}>
             <Modal.Trigger type="open">{trigger}</Modal.Trigger>
           </If>
-        </React.Fragment>
+        </>
       </Provider>
     );
   }
 }
-
 
 export default Modal2;

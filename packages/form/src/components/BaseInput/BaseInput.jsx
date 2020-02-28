@@ -6,12 +6,7 @@ import get from 'lodash/get';
 import If from 'react-if';
 import filterProps from '@lskjs/utils/filterProps';
 import getBlock from './BaseInput.styles';
-import {
-  InputBox,
-  LeftWrapper,
-  RightWrapper,
-  Count,
-} from './InputStyle.styles';
+import { InputBox, LeftWrapper, RightWrapper, Count } from './InputStyle.styles';
 
 class Input extends PureComponent {
   static propTypes = {
@@ -27,7 +22,7 @@ class Input extends PureComponent {
     regex: PropTypes.any,
     maxLength: PropTypes.number,
     showLimit: PropTypes.bool,
-  }
+  };
   static defaultProps = {
     validationState: null,
     componentClass: 'input',
@@ -41,7 +36,7 @@ class Input extends PureComponent {
     regex: null,
     maxLength: null,
     showLimit: true,
-  }
+  };
   constructor(props) {
     super(props);
     this.state = {
@@ -96,7 +91,7 @@ class Input extends PureComponent {
       componentClass,
       disabled,
       displayRate,
-      innerRef,
+      ref,
       leftIcon,
       rightIcon,
       maxLength,
@@ -108,14 +103,12 @@ class Input extends PureComponent {
     return (
       <InputBox>
         <If condition={!!leftIcon}>
-          <LeftWrapper>
-            {leftIcon}
-          </LeftWrapper>
+          <LeftWrapper>{leftIcon}</LeftWrapper>
         </If>
         <Block
           iconLeft={leftIcon}
           iconRight={rightIcon}
-          ref={innerRef}
+          ref={ref}
           validationState={validationState}
           block={block}
           disabled={disabled}
@@ -126,16 +119,10 @@ class Input extends PureComponent {
           onChange={this.handleChange}
         />
         <If condition={!!rightIcon}>
-          <RightWrapper>
-            {rightIcon}
-          </RightWrapper>
+          <RightWrapper>{rightIcon}</RightWrapper>
         </If>
         <If condition={!!(maxLength && showLimit)}>
-          <Count>
-            {get(value, 'length') || 0}
-            /
-            {maxLength}
-          </Count>
+          <Count>{`${get(value, 'length') || 0}/${maxLength}`}</Count>
         </If>
       </InputBox>
     );

@@ -14,12 +14,6 @@ export default props => (
         '.closeButton': closeButtonStyle,
       }}
     />
-    <Button
-      type="button"
-      paint="transparent"
-      icon={<Close />}
-      className="closeButton"
-      {...props}
-    />
+    <Button type="button" paint="transparent" icon={<Close />} className="closeButton" {...props} />
   </>
 );

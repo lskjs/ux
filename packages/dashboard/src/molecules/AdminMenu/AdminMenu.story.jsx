@@ -23,7 +23,7 @@ import Icon from 'antd/lib/icon';
 
 const SidenavModal = ({ ref, children }) => (
   <Modal
-    innerRef={(e) => { if (ref) ref(e); }}
+    ref={(e) => { if (ref) ref(e); }}
     size="small"
     trigger={children}
     title="title"
@@ -165,7 +165,7 @@ class State extends Component {
             onChange={onChange} // eslint-disable-line no-console
           />
         </div>
-        <SidenavModal innerRef={(e) => { this.modal = e; }} />
+        <SidenavModal ref={(e) => { this.modal = e; }} />
       </Story>
     );
   }

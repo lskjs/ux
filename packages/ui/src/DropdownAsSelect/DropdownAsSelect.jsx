@@ -32,7 +32,7 @@ class SelectFilter extends PureComponent {
     contentWrapperProps: PropTypes.object,
     onClose: PropTypes.func,
     icon: PropTypes.any,
-  }
+  };
 
   static defaultProps = {
     trigger: null,
@@ -44,7 +44,7 @@ class SelectFilter extends PureComponent {
     contentWrapperProps: {},
     onClose: null,
     icon: <ChevronDownIcon />,
-  }
+  };
 
   constructor(props) {
     super(props);
@@ -75,30 +75,20 @@ class SelectFilter extends PureComponent {
   @autobind
   updateHeight() {
     this.setState({
-      contentHeight: this.content.current
-        ? this.content.current.scrollHeight
-        : '100%',
+      contentHeight: this.content.current ? this.content.current.scrollHeight : '100%',
     });
   }
 
   @autobind
-  renderContent({ innerRef, style, placement }) {
+  renderContent({ ref, style, placement }) {
     const { open, contentHeight } = this.state;
     const { children, contentWrapperProps } = this.props;
     if (!open) return false;
     const content = typeof children === 'function' ? children({ open }) : children;
     return (
-      <Content
-        ref={innerRef}
-        data-placement={placement}
-        height={contentHeight}
-        className={contentStyle}
-        style={style}
-      >
+      <Content ref={ref} data-placement={placement} height={contentHeight} className={contentStyle} style={style}>
         <div ref={this.content}>
-          <div {...contentWrapperProps}>
-            {content}
-          </div>
+          <div {...contentWrapperProps}>{content}</div>
         </div>
       </Content>
     );
@@ -106,28 +96,17 @@ class SelectFilter extends PureComponent {
 
   render() {
     const { open, defaultOutsideClosable } = this.state;
-    const {
-      trigger,
-      disabled,
-      triggerClosable,
-      outsideClosable,
-      triggerIconClosable,
-      onClose,
-      icon
-    } = this.props;
+    const { trigger, disabled, triggerClosable, outsideClosable, triggerIconClosable, onClose, icon } = this.props;
     const { Trigger } = this.constructor;
     const isOutside = outsideClosable !== null ? outsideClosable : defaultOutsideClosable;
     return (
-      <Outside
-        className={outsideWrapperStyle}
-        onClickOutside={isOutside ? this.onClickOutside : () => {}}
-      >
+      <Outside className={outsideWrapperStyle} onClickOutside={isOutside ? this.onClickOutside : () => {}}>
         <Global styles={globalStyles} />
         <Manager>
           <Reference>
-            {({ innerRef }) => (
+            {({ ref }) => (
               <Trigger
-                ref={innerRef}
+                ref={ref}
                 open={!disabled ? open : false}
                 disabled={disabled}
                 onClick={() => {

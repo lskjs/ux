@@ -16,7 +16,7 @@ class StatefulModal extends PureComponent {
     preRenderRoutes: PropTypes.array, // eslint-disable-line react/forbid-prop-types
     onOpen: PropTypes.func,
     onClose: PropTypes.func,
-    innerRef: PropTypes.func,
+    ref: PropTypes.func,
     children: PropTypes.any, // eslint-disable-line react/forbid-prop-types
     routes: PropTypes.any, // eslint-disable-line react/forbid-prop-types
   }
@@ -25,7 +25,7 @@ class StatefulModal extends PureComponent {
     preRenderRoutes: [],
     onOpen: null,
     onClose: null,
-    innerRef: null,
+    ref: null,
     children: null,
     routes: null,
   }
@@ -105,7 +105,7 @@ class StatefulModal extends PureComponent {
     this.modal.open();
   }
   render() {
-    const { children, innerRef } = this.props;
+    const { children, ref } = this.props;
     const { pathname, transitionName, page } = this.state;
     return (
       <Modal
@@ -115,7 +115,7 @@ class StatefulModal extends PureComponent {
         trigger={children}
         ref={(modal) => {
           this.modal = modal;
-          if (innerRef) innerRef(this);
+          if (ref) ref(this);
         }}
       >
         <Layout

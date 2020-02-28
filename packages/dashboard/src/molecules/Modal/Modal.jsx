@@ -35,7 +35,7 @@ class Modal extends PureComponent {
     footer: PropTypes.any,
     onEdit: PropTypes.func,
     subHeader: PropTypes.any,
-    innerRef: PropTypes.func,
+    ref: PropTypes.func,
     onClose: PropTypes.func,
     onOpen: PropTypes.func,
     disabled: PropTypes.bool,
@@ -45,9 +45,9 @@ class Modal extends PureComponent {
     closeComponent: PropTypes.func,
     size: PropTypes.oneOf(['small', 'default', 'large']),
     closeOnBackdrop: PropTypes.bool,
-  }
+  };
   static defaultProps = {
-    trigger: <React.Fragment />,
+    trigger: <></>,
     title: null,
     color: null,
     children: null,
@@ -55,7 +55,7 @@ class Modal extends PureComponent {
     onEdit: null,
     className: null,
     subHeader: null,
-    innerRef: null,
+    ref: null,
     disabled: false,
     small: false,
     body: null,
@@ -65,7 +65,7 @@ class Modal extends PureComponent {
     closable: true,
     closeComponent: null,
     closeOnBackdrop: true,
-  }
+  };
   render() {
     const {
       trigger,
@@ -76,7 +76,7 @@ class Modal extends PureComponent {
       onEdit,
       size,
       subHeader,
-      innerRef,
+      ref,
       disabled,
       body,
       small,
@@ -107,9 +107,9 @@ class Modal extends PureComponent {
     }
     return (
       <LskModal
-        ref={(modal) => {
+        ref={modal => {
           this.modal = modal;
-          if (innerRef) innerRef(modal);
+          if (ref) ref(modal);
         }}
         onClose={() => {
           if (onClose) onClose(this.modal);
@@ -120,9 +120,7 @@ class Modal extends PureComponent {
         {...props}
       >
         <If condition={!!trigger}>
-          <LskModal.Trigger>
-            {trigger}
-          </LskModal.Trigger>
+          <LskModal.Trigger>{trigger}</LskModal.Trigger>
           <LskModal.Content
             dialogClassName={cx({
               [className]: className,
@@ -132,7 +130,7 @@ class Modal extends PureComponent {
             {...contentProps}
           >
             <If condition={!!closable}>
-              {closeComponent && closeComponent(this.modal) || (
+              {(closeComponent && closeComponent(this.modal)) || (
                 <Button
                   type="button"
                   paint="primary"
@@ -142,9 +140,7 @@ class Modal extends PureComponent {
                 />
               )}
             </If>
-            <div className="modal-composer">
-              {children}
-            </div>
+            <div className="modal-composer">{children}</div>
           </LskModal.Content>
         </If>
       </LskModal>

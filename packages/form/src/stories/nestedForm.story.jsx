@@ -12,7 +12,6 @@ import createNestedFormControl from '../createNestedFormControl';
 
 window.__DEV__ = typeof window !== 'undefined' && window.location.hostname === 'localhost';
 
-
 const EntityFormView = ({ control, genders }) => (
   <Form>
     <h3>EntityForm:</h3>
@@ -43,7 +42,6 @@ const EntityForm = createForm({
     },
   },
 });
-
 
 const ComplexFormView = ({ control, genders, ...props }) => (
   <Form>
@@ -78,31 +76,32 @@ const ComplexForm = createForm({
   },
 });
 
-export default ({ storiesOf }) => storiesOf('form/nestedForm', module)
-  .add('EntityForm', () => (
-    <Story devtools>
-      <EntityForm />
-    </Story>
-  ))
-  .add('ComplexForm', ({ innerRef = createRef() }) => (
-    <Story devtools>
-      <ComplexForm
-        innerRef={innerRef}
-        onSubmit={(values) => {
-          console.log('ComplexForm.onSubmit', values);  // eslint-disable-line
-        }}
-      />
-    </Story>
-  ))
-  .add('ComplexForm with deep props', ({ innerRef = createRef() }) => (
-    <Story devtools>
-      <ComplexForm
-        innerRef={innerRef}
-        genders={['male', 'female', 'agender', 'transgender', 'poligender']}
-        test={[123]}
-        onSubmit={(values) => {
-          console.log('ComplexForm.onSubmit', values);  // eslint-disable-line
-        }}
-      />
-    </Story>
-  ));
+export default ({ storiesOf }) =>
+  storiesOf('form/nestedForm', module)
+    .add('EntityForm', () => (
+      <Story devtools>
+        <EntityForm />
+      </Story>
+    ))
+    .add('ComplexForm', ({ ref = createRef() }) => (
+      <Story devtools>
+        <ComplexForm
+          ref={ref}
+          onSubmit={values => {
+            console.log('ComplexForm.onSubmit', values);  // eslint-disable-line
+          }}
+        />
+      </Story>
+    ))
+    .add('ComplexForm with deep props', ({ ref = createRef() }) => (
+      <Story devtools>
+        <ComplexForm
+          ref={ref}
+          genders={['male', 'female', 'agender', 'transgender', 'poligender']}
+          test={[123]}
+          onSubmit={values => {
+            console.log('ComplexForm.onSubmit', values);  // eslint-disable-line
+          }}
+        />
+      </Story>
+    ));
