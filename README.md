@@ -31,6 +31,7 @@ npm start
 ```
 
 https://github.com/facebook/create-react-app
+https://github.com/lskjs/tutorial/tree/steps/step1
 
 ### 2. Как добавить кнопку (@lskjs/button) на CRA лендинг
 
@@ -44,3 +45,6 @@ import Button from "@lskjs/button";
         
 <Button paint="primary">Primary</Button>
 ```
+
+https://github.com/lskjs/tutorial/tree/steps/step2
+https://github.com/lskjs/tutorial/compare/steps/step1...steps/step2
