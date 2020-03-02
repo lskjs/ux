@@ -1,4 +1,4 @@
-
+import isPlainObject from 'lodash/isPlainObject';
 import fileTypes from './fileTypes';
 
 function determineType(src) {
@@ -8,12 +8,12 @@ function determineType(src) {
   return ext;
 }
 
-export const normalizeFile = (item) => {
+export const normalizeFile = item => {
   let src;
-  if (typeof item === 'string') {
-    src = item || '';
-  } else {
+  if (isPlainObject(item)) {
     src = item.src || item.url || '';
+  } else {
+    src = item || '';
   }
   const { type, image, ...props } = item;
 
@@ -32,8 +32,6 @@ export const normalizeFile = (item) => {
   return { src, ...props };
 };
 
-const normalizeFiles = (items = []) => (
-  items ? items.map(normalizeFile) : []
-);
+const normalizeFiles = (items = []) => (items ? items.map(normalizeFile) : []);
 
 export default normalizeFiles;

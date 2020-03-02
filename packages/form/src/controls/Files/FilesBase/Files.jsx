@@ -10,10 +10,7 @@ import isFunction from 'lodash/isFunction';
 import Dropzone from 'react-dropzone';
 import zoneStyle from './Files.styles';
 
-@inject(s => ({
-  upload: s.uapp.modules.upload,
-  uapp: s.uapp,
-}))
+@inject('uapp')
 @observer
 class Files extends Component {
   constructor(props) {
@@ -59,11 +56,12 @@ class Files extends Component {
 
   @autobind
   async onUpload(files) {
-    const { upload, onError, multiple, uapp } = this.props;
-    if (!upload) return false;
+    const { onError, multiple, uapp } = this.props;
+    const upload = await uapp.module('upload');
+    if (!upload) throw '!upload';
     let value = null;
     try {
-      const res = await Promise.map(files, file => upload.uploadFile(file));
+      const res = await upload.uploadFiles(files);
       if (multiple) value = res.map(e => e.url);
       else value = res[0] && res[0].url;
     } catch (err) {
