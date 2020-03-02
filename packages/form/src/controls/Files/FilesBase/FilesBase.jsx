@@ -1,18 +1,16 @@
 /** @jsx jsx */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { inject, observer } from 'mobx-react';
+import { inject } from 'mobx-react';
 import { jsx } from '@emotion/core';
 import autobind from '@lskjs/autobind';
-import Promise from 'bluebird';
 import If from 'react-if';
 import isFunction from 'lodash/isFunction';
 import Dropzone from 'react-dropzone';
-import zoneStyle from './Files.styles';
+import zoneStyle from './FilesBase.styles';
 
 @inject('uapp')
-@observer
-class Files extends Component {
+class FilesBase extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -33,7 +31,6 @@ class Files extends Component {
     const { onSubmit, hasCropper } = this.props;
     const state = { dragged: false };
     if (!hasCropper) {
-      console.log(files);
       const value = await this.onUpload(files);
       if (onSubmit) onSubmit(value);
     } else {
@@ -153,7 +150,7 @@ class Files extends Component {
   }
 }
 
-Files.propTypes = {
+FilesBase.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   value: PropTypes.any,
   // eslint-disable-next-line react/forbid-prop-types
@@ -179,7 +176,7 @@ Files.propTypes = {
   CropperComponent: PropTypes.elementType,
 };
 
-Files.defaultProps = {
+FilesBase.defaultProps = {
   className: null,
   multiple: false,
   onSubmit: null,
@@ -201,4 +198,4 @@ Files.defaultProps = {
   showPreview: null,
 };
 
-export default Files;
+export default FilesBase;

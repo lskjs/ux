@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Files from './FilesBase';
+import FilesBase from './FilesBase';
 
 import DefaultBody from './DefaultBody';
 import DefaultFooter from './DefaultFooter';
@@ -13,13 +13,13 @@ const getArray = val => (
   )
 );
 
-const FilesUploader = ({ field, form, onError, components, isMulti, hasCropper, CropperComponent, ...props }) => {
+const Files = ({ field, form, onError, components, isMulti, hasCropper, CropperComponent, ...props }) => {
   // console.log(1111, { field });
   // const defaultValue = field.value;
-  const Body = components.Body || FilesUploader.defaultProps.components.Body;
-  const Footer = components.Footer || FilesUploader.defaultProps.components.Footer;
+  const Body = components.Body || Files.defaultProps.components.Body;
+  const Footer = components.Footer || Files.defaultProps.components.Footer;
   return (
-    <Files
+    <FilesBase
       // {...field}
       value2={field.value}
       {...props}
@@ -69,11 +69,11 @@ const FilesUploader = ({ field, form, onError, components, isMulti, hasCropper, 
       footer={Footer}
     >
       {Body}
-    </Files>
+    </FilesBase>
   );
 };
 
-FilesUploader.propTypes = {
+Files.propTypes = {
   components: PropTypes.shape({
     Body: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
     Footer: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
@@ -86,7 +86,7 @@ FilesUploader.propTypes = {
   onError: PropTypes.func,
 };
 
-FilesUploader.defaultProps = {
+Files.defaultProps = {
   components: {
     Body: DefaultBody,
     Footer: DefaultFooter,
@@ -97,4 +97,4 @@ FilesUploader.defaultProps = {
   onError: null,
 };
 
-export default FilesUploader;
+export default Files;

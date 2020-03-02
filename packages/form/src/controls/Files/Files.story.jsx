@@ -1,5 +1,6 @@
 import React from 'react';
 import { Form, Field } from 'formik';
+// import Story from '@lskjs/dev/Story/UappStory';
 import Story from '@lskjs/dev/Story';
 import createForm from '../../createForm';
 import Files from './Files';
@@ -29,6 +30,7 @@ const FilesFormView = props => (
     <Field {...props.control('files3')} />
     <Field {...props.control('files4')} />
     <Field {...props.control('files5')} />
+    <Field {...props.control('singleFile')} />
     <Field {...props.control('withCropper')} />
     <FormDebug {...props} />
   </Form>
@@ -70,6 +72,11 @@ const FilesForm = createForm({
       title: 'Files6',
       component: Files,
       isMulti: true,
+    },
+    singleFile: {
+      title: 'singleFile',
+      component: Files,
+      isMulti: false,
     },
     withCropper: {
       title: 'withCropper',
@@ -115,6 +122,7 @@ export default ({ storiesOf }) =>
             'http://krasa.tk/wp-content/uploads/2015/11/face.jpg',
             'https://millionstatusov.ru/pic/statpic/all/58e61335ec518.jpg',
           ],
+          singleFile: 'https://millionstatusov.ru/pic/statpic/all/58e61335ec518.jpg',
         }}
       />
     </Story>
