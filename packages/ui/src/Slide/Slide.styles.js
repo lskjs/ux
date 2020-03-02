@@ -19,7 +19,6 @@ const videoYoutubeStyle = css`
 `;
 
 const innerStyle = css`
-  z-index: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -40,7 +39,6 @@ export const Middle = styled('div')`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 0;
 `;
 
 export const Content = styled('div')``;
@@ -128,22 +126,21 @@ export const Center = styled('div')`
 `;
 
 export const Background = styled('div')`
-  z-index: 0;
 `;
 
 export const NoClick = styled('div')`
   ${bg}
-  z-index: 3;
+  z-index: -1;
 `;
 
 export const Overlay = styled('div')`
   ${bg}
-  z-index: 2;
+  z-index: -2;
 `;
 
 export const Video = styled('div')`
   ${bg}
-  z-index: 1;
+  z-index: -4;
 
   ${props => props.youtube && videoYoutubeStyle}
 `;
@@ -160,7 +157,7 @@ export const VideoForeground = styled('div')`
 
 export const Image = styled('div')`
   ${bg}
-  z-index: 0;
+  z-index: -3;
 
   background-size: cover;
   background-position: center;
