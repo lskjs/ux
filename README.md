@@ -46,5 +46,4 @@ import Button from "@lskjs/button";
 <Button paint="primary">Primary</Button>
 ```
 
-https://github.com/lskjs/tutorial/tree/steps/step2
-https://github.com/lskjs/tutorial/compare/steps/step1...steps/step2
+Попробовать код можно в [ветке step2](https://github.com/lskjs/tutorial/tree/steps/step2). Сравнить изменения с предыдущего шага можно [> тут <](https://github.com/lskjs/tutorial/compare/steps/step1...steps/step2)
