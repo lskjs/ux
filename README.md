@@ -18,3 +18,29 @@ npm run storybook
 ## TODO
 
 [If you could help us](TODO.md)
+
+
+## Tutorial
+
+### 1. Как сделать лендинг на CRA
+
+```sh
+npx create-react-app landing
+cd landing
+npm start
+```
+
+https://github.com/facebook/create-react-app
+
+### 2. Как добавить кнопку (@lskjs/button) на CRA лендинг
+
+```sh
+npm i @lskjs/button
+npm i lodash react-icons2
+```
+
+```jsx
+import Button from "@lskjs/button";
+        
+<Button paint="primary">Primary</Button>
+```
