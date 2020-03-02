@@ -1,6 +1,8 @@
+/** @jsx jsx */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { inject, observer } from 'mobx-react';
+import { jsx } from '@emotion/core';
 import autobind from '@lskjs/autobind';
 import Promise from 'bluebird';
 import If from 'react-if';
