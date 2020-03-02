@@ -7,8 +7,6 @@ import autobind from '@lskjs/autobind';
 import ReactSelect from 'react-select';
 import ReactAsyncSelect from 'react-select/lib/Async';
 import cx from 'classnames';
-import Up from 'react-icons2/mdi/chevron-up';
-import Down from 'react-icons2/mdi/chevron-down';
 import { getOptionValue, getReverseOptionValue, getNormalizedOptions, NULL_STRING } from './utils';
 import globalStyles from './Select.styles';
 import SingleValue from './SingleValue';
@@ -56,7 +54,6 @@ class Select extends Component {
   @autobind
   async loadOptions(...args) {
     try {
-      // console.log('loadOptions');
       const { loadOptions, ...props } = this.props;
       const options = await loadOptions(...args);
 
