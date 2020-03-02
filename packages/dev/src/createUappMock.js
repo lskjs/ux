@@ -1,5 +1,5 @@
 export default function createUappMock({ locale }) {
-  const user = {};
+  const auth = { session: { user: {} } };
   const api = {
     fetch: (...args) => console.log('api.get', ...args),
   };
@@ -8,7 +8,7 @@ export default function createUappMock({ locale }) {
   const config = {};
   const uapp = {
     i18,
-    user,
+    auth,
     t,
     config,
     api,
@@ -31,10 +31,9 @@ export default function createUappMock({ locale }) {
     },
     onError: e => console.error(e),
     provide: () => ({
-      t,
       config,
       i18,
-      user,
+      auth,
       uapp,
       api,
     }),

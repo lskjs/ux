@@ -1,11 +1,11 @@
 import polyfill from '@lskjs/utils/polyfill';
 import React, { Component } from 'react';
-import StoryDebug from './StoryDebug';
-import Uapp from './Uapp';
+import DevStory from './DevStory';
+import UappMock from '../UappMock';
 
 polyfill();
 
-class Story extends Component {
+class UappStory extends Component {
   componentDidMount() {
     window.story = this;
     if (window.parent) window.parent.story = this;
@@ -13,11 +13,11 @@ class Story extends Component {
   render() {
     const { children, locale, theme } = this.props;
     return (
-      <Uapp locale={locale} theme={theme}>
-        <StoryDebug theme={theme}>{children}</StoryDebug>
-      </Uapp>
+      <UappMock locale={locale} theme={theme}>
+        <DevStory theme={theme}>{children}</DevStory>
+      </UappMock>
     );
   }
 }
 
-export default Story;
+export default UappStory;
