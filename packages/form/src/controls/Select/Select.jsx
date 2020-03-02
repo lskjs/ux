@@ -15,14 +15,13 @@ import SingleValue from './SingleValue';
 import Option from './Option';
 import CollapsedValueContainer from './CollapsedValueContainer';
 import CollapsedMultiValue from './CollapsedMultiValue';
-
+import DropdownIndicator from './DropdownIndicator';
 
 class Select extends Component {
-  state = {}
+  state = {};
+
   componentDidMount() {
-    const {
-      loadOption, field, async, isMulti,
-    } = this.props;
+    const { loadOption, field, async, isMulti } = this.props;
     const value = get(field, 'value');
     if (async && value && loadOption) {
       if (isMulti && !value.length) return;
@@ -34,14 +33,16 @@ class Select extends Component {
     const prevValue = get(props, 'field.value');
     const nextValue = get(nextProps, 'field.value');
     const hasError = nextProps.field && nextProps.field.name && !!get(nextProps.form, `errors.${nextProps.field.name}`);
-    const hadError = this.props.field && this.props.field.name && !!get(this.props.form, `errors.${this.props.field.name}`);
+    const hadError =
+      this.props.field && this.props.field.name && !!get(this.props.form, `errors.${this.props.field.name}`);
     if (!isEqual(hadError, hasError)) {
       return true;
     }
     // console.log(nextProps);
     if (!isEqual(nextValue, prevValue)) {
       return true;
-    } else if (!isEqual(state.option, nextState.option)) {
+    }
+    if (!isEqual(state.option, nextState.option)) {
       return true;
     }
     return false;
@@ -110,6 +111,7 @@ class Select extends Component {
       isHideSelected,
       ...props
     } = this.props;
+    // console.log(this.props.selected)
     if (sortable) {
       options.sort(this.compareVal);
     }
@@ -148,7 +150,6 @@ class Select extends Component {
           // isClearable={defaultIsClearable}
           isSearchable={defaultIsSearchable}
           isClearable={defaultIsClearable}
-          arrowRenderer={e => (e.isOpen ? <Up /> : <Down />)}
           error={hasError}
           classNamePrefix="react-select"
           cacheOptions={async}
@@ -162,6 +163,7 @@ class Select extends Component {
           components={{
             SingleValue,
             Option,
+            DropdownIndicator,
             ...(collapsed ? collapsedComponents : {}),
             ...components,
           }}
