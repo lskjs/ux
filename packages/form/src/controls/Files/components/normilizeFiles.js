@@ -1,4 +1,5 @@
 import isPlainObject from 'lodash/isPlainObject';
+import clone from 'lodash/clone';
 import fileTypes from './fileTypes';
 
 function determineType(src) {
@@ -8,28 +9,27 @@ function determineType(src) {
   return ext;
 }
 
-export const normalizeFile = item => {
-  let src;
-  if (isPlainObject(item)) {
-    src = item.src || item.url || '';
+export const normalizeFile = rawItem => {
+  let item;
+  if (isPlainObject(rawItem)) {
+    item = clone(rawItem);
   } else {
-    src = item || '';
+    item = { src: rawItem };
   }
-  const { type, image, ...props } = item;
-
-  if (!props.title) {
-    props.title = src.substring(src.lastIndexOf('/') + 1);
+  const src = item.src || item.url || '';
+  if (!item.title) {
+    item.title = src.substring(src.lastIndexOf('/') + 1);
   }
-  if (!props.type) {
-    props.type = determineType(src);
+  if (!item.type) {
+    item.type = determineType(src);
   }
-  if (!props.image) {
+  if (!item.image) {
     if (src.match(/[^/]+(jpg|jpeg|exif|bmp|png|gif|tiff|webp|heif)$/)) {
-      props.image = src;
+      item.image = src;
     }
   }
 
-  return { src, ...props };
+  return { src, ...item };
 };
 
 const normalizeFiles = (items = []) => (items ? items.map(normalizeFile) : []);
