@@ -4,130 +4,12 @@ import CheckIcon from 'react-icons2/mdi/check';
 import CloseIcon from 'react-icons2/mdi/close';
 import PropTypes from 'prop-types';
 import omit from 'lodash/omit';
-import If from 'react-if';
 import filterProps from '@lskjs/utils/filterProps';
 import isTouchDevice from '@lskjs/utils/isTouchDevice';
 import LoadingDots from './components/LoadingDots';
-import {
-  Btn,
-  Text,
-  Icon,
-  State,
-  Ripple,
-  RippleCircle,
-} from './Button.styles';
+import { Btn, Text, Icon, State, Ripple, RippleCircle } from './Button.styles';
 
 class Button extends PureComponent {
-  static propTypes = {
-    // eslint-disable-next-line react/forbid-prop-types
-    children: PropTypes.any,
-    bordered: PropTypes.bool,
-    borderColor: PropTypes.string,
-    size: PropTypes.oneOf([
-      'extraSmall',
-      'verySmall',
-      'small',
-      'default',
-      'large',
-      'extraLarge',
-    ]),
-    paint: PropTypes.oneOf([
-      'default',
-      'primary',
-      'warning',
-      'danger',
-      'info',
-      'common',
-      'success',
-      'transparent',
-      'transparentDark',
-    ]),
-    state: PropTypes.oneOf([
-      'processing', 'progress',
-      'success',
-      'error',
-      'ready', null,
-    ]),
-    view: PropTypes.oneOf([
-      'solid',
-      'text',
-      'base',
-      'shadow',
-      'youtube',
-      'empty',
-      'transparent',
-      'transparentDark',
-    ]),
-    type: PropTypes.string,
-    // eslint-disable-next-line react/forbid-prop-types
-    componentClass: PropTypes.any,
-    block: PropTypes.bool,
-    disabled: PropTypes.bool,
-    new: PropTypes.bool,
-    onClick: PropTypes.func,
-    className: PropTypes.string,
-    // eslint-disable-next-line react/forbid-prop-types
-    icon: PropTypes.any,
-    // eslint-disable-next-line react/forbid-prop-types
-    iconLeft: PropTypes.any,
-    // eslint-disable-next-line react/forbid-prop-types
-    iconRight: PropTypes.any,
-    // eslint-disable-next-line react/forbid-prop-types
-    contentSuccess: PropTypes.any,
-    // eslint-disable-next-line react/forbid-prop-types
-    contentProcessing: PropTypes.any,
-    // eslint-disable-next-line react/forbid-prop-types
-    contentError: PropTypes.any,
-    // eslint-disable-next-line react/forbid-prop-types
-    textSuccess: PropTypes.any,
-    // eslint-disable-next-line react/forbid-prop-types
-    textProcessing: PropTypes.any,
-    // eslint-disable-next-line react/forbid-prop-types
-    textError: PropTypes.any,
-    autoMobile: PropTypes.bool,
-    rounded: PropTypes.bool,
-    // eslint-disable-next-line react/forbid-prop-types
-    style: PropTypes.object,
-    // eslint-disable-next-line react/forbid-prop-types
-    colors: PropTypes.object,
-    isRipple: PropTypes.bool,
-    mobileView: PropTypes.bool,
-    onlyIcon: PropTypes.bool,
-  }
-
-  static defaultProps = {
-    size: 'default',
-    paint: 'default',
-    view: 'solid',
-    bordered: false,
-    borderColor: null,
-    type: 'button',
-    style: {},
-    componentClass: 'button',
-    onClick: null,
-    block: false,
-    disabled: false,
-    new: false,
-    className: null,
-    icon: null,
-    iconLeft: null,
-    iconRight: null,
-    children: null,
-    state: null,
-    contentSuccess: null,
-    contentProcessing: null,
-    contentError: null,
-    textSuccess: null,
-    textProcessing: null,
-    textError: null,
-    autoMobile: false,
-    rounded: false,
-    colors: null,
-    mobileView: false,
-    onlyIcon: false,
-    isRipple: !isTouchDevice(),
-  }
-
   constructor(props) {
     super(props);
     this.state = {
@@ -183,12 +65,12 @@ class Button extends PureComponent {
         return {
           paint,
           content: contentProcessing || (
-            <React.Fragment>
+            <>
               <Icon direction={textProcessing ? 'left' : 'single'}>
                 <LoadingDots />
               </Icon>
               {textProcessing}
-            </React.Fragment>
+            </>
           ),
         };
       case 'success':
@@ -196,26 +78,26 @@ class Button extends PureComponent {
           // paint: 'success',
           paint: 'primary',
           content: contentSuccess || (
-            <React.Fragment>
+            <>
               <Icon direction={textSuccess ? 'left' : 'single'}>
                 <CheckIcon size={32} />
               </Icon>
               {textSuccess}
-            </React.Fragment>
+            </>
           ),
         };
       case 'error':
         return {
           paint: 'danger',
           content: contentError || (
-            <React.Fragment>
-              <If condition={!textError}>
+            <>
+              {textError && (
                 <Icon direction={textError ? 'left' : 'single'}>
                   <CloseIcon />
                 </Icon>
-              </If>
+              )}
               {textError}
-            </React.Fragment>
+            </>
           ),
         };
       default:
@@ -249,11 +131,7 @@ class Button extends PureComponent {
 
   @autobind
   renderIcon(icon, dir) {
-    return (
-      <Icon direction={dir}>
-        {icon}
-      </Icon>
-    );
+    return <Icon direction={dir}>{icon}</Icon>;
   }
 
   render() {
@@ -291,11 +169,7 @@ class Button extends PureComponent {
     if (iconRight) iconDirection = 'right';
     if (icon) iconDirection = 'single';
     let content = '';
-    ({
-      paint,
-      disabled = disabled,
-      content,
-    } = this.getButtonStateTheme());
+    ({ paint, disabled = disabled, content } = this.getButtonStateTheme());
     const buttonProps = omit(props, [
       'contentSuccess',
       'contentProcessing',
@@ -330,17 +204,16 @@ class Button extends PureComponent {
         {...filterProps(buttonProps, tag)}
         // {...buttonProps}
       >
-        <If condition={!disabled && isRipple}>
-          <Ripple
-            ref={this.ripple}
-            active={isRippleActive}
-          >
+        {!disabled && isRipple && (
+          <Ripple ref={this.ripple} active={isRippleActive}>
             <RippleCircle
-              ref={(el) => { this.circle = el; }}
+              ref={el => {
+                this.circle = el;
+              }}
               onAnimationEnd={this.endAnimationRipple}
             />
           </Ripple>
-        </If>
+        )}
         <State
           size={size}
           paint={paint}
@@ -361,5 +234,94 @@ class Button extends PureComponent {
     );
   }
 }
+
+Button.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
+  children: PropTypes.any,
+  bordered: PropTypes.bool,
+  borderColor: PropTypes.string,
+  size: PropTypes.oneOf(['extraSmall', 'verySmall', 'small', 'default', 'large', 'extraLarge']),
+  paint: PropTypes.oneOf([
+    'default',
+    'primary',
+    'warning',
+    'danger',
+    'info',
+    'common',
+    'success',
+    'transparent',
+    'transparentDark',
+  ]),
+  state: PropTypes.oneOf(['processing', 'progress', 'success', 'error', 'ready', null]),
+  view: PropTypes.oneOf(['solid', 'text', 'base', 'shadow', 'youtube', 'empty', 'transparent', 'transparentDark']),
+  type: PropTypes.string,
+  // eslint-disable-next-line react/forbid-prop-types
+  componentClass: PropTypes.any,
+  block: PropTypes.bool,
+  disabled: PropTypes.bool,
+  new: PropTypes.bool,
+  onClick: PropTypes.func,
+  className: PropTypes.string,
+  // eslint-disable-next-line react/forbid-prop-types
+  icon: PropTypes.any,
+  // eslint-disable-next-line react/forbid-prop-types
+  iconLeft: PropTypes.any,
+  // eslint-disable-next-line react/forbid-prop-types
+  iconRight: PropTypes.any,
+  // eslint-disable-next-line react/forbid-prop-types
+  contentSuccess: PropTypes.any,
+  // eslint-disable-next-line react/forbid-prop-types
+  contentProcessing: PropTypes.any,
+  // eslint-disable-next-line react/forbid-prop-types
+  contentError: PropTypes.any,
+  // eslint-disable-next-line react/forbid-prop-types
+  textSuccess: PropTypes.any,
+  // eslint-disable-next-line react/forbid-prop-types
+  textProcessing: PropTypes.any,
+  // eslint-disable-next-line react/forbid-prop-types
+  textError: PropTypes.any,
+  autoMobile: PropTypes.bool,
+  rounded: PropTypes.bool,
+  // eslint-disable-next-line react/forbid-prop-types
+  style: PropTypes.object,
+  // eslint-disable-next-line react/forbid-prop-types
+  colors: PropTypes.object,
+  isRipple: PropTypes.bool,
+  mobileView: PropTypes.bool,
+  onlyIcon: PropTypes.bool,
+};
+
+Button.defaultProps = {
+  size: 'default',
+  paint: 'default',
+  view: 'solid',
+  bordered: false,
+  borderColor: null,
+  type: 'button',
+  style: {},
+  componentClass: 'button',
+  onClick: null,
+  block: false,
+  disabled: false,
+  new: false,
+  className: null,
+  icon: null,
+  iconLeft: null,
+  iconRight: null,
+  children: null,
+  state: null,
+  contentSuccess: null,
+  contentProcessing: null,
+  contentError: null,
+  textSuccess: null,
+  textProcessing: null,
+  textError: null,
+  autoMobile: false,
+  rounded: false,
+  colors: null,
+  mobileView: false,
+  onlyIcon: false,
+  isRipple: !isTouchDevice(),
+};
 
 export default Button;

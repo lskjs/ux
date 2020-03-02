@@ -20,7 +20,7 @@ class StatefulButton extends PureComponent {
     onSubmit: PropTypes.func,
     onError: PropTypes.func,
     form: PropTypes.any,
-  }
+  };
 
   static defaultProps = {
     baseState: 'ready',
@@ -33,7 +33,7 @@ class StatefulButton extends PureComponent {
     onSubmit: null,
     onError: null,
     onClick: null,
-  }
+  };
 
   constructor(props) {
     super(props);
@@ -72,9 +72,7 @@ class StatefulButton extends PureComponent {
   @autobind
   onClick(e) {
     if (this.getButtonState() === 'ready') {
-      const {
-        onSubmit, onClick, form, state,
-      } = this.props;
+      const { onSubmit, onClick, form, state } = this.props;
       this.resetInternalStateAfterProcessing = false;
 
       let event;
@@ -83,9 +81,12 @@ class StatefulButton extends PureComponent {
       else event = Promise.resolve;
 
       if (!state) {
-        this.setState({
-          internalState: 'processing',
-        }, () => this.attachPromiseHandlers(event));
+        this.setState(
+          {
+            internalState: 'processing',
+          },
+          () => this.attachPromiseHandlers(event),
+        );
       }
     }
   }
@@ -116,9 +117,7 @@ class StatefulButton extends PureComponent {
 
   @autobind
   getButtonState() {
-    return this.props.state
-      || this.state.internalState
-      || this.props.baseState;
+    return this.props.state || this.state.internalState || this.props.baseState;
   }
 
   privateTimeoutId;
@@ -145,26 +144,37 @@ class StatefulButton extends PureComponent {
   attachPromiseHandlers(promise) {
     const { stableSuccess, onError } = this.props;
     if (typeof promise === 'object') {
-      return promise.then(() => {
-        return this.isMounted && this.setState({
-          internalState: 'success',
-        }, () => {
-          if (!stableSuccess) {
-            this.doResetInternalStateAfterTimer();
-          } else if (this.resetInternalStateAfterProcessing) {
-            this.doResetInternalState();
+      return promise
+        .then(() => {
+          return (
+            this.isMounted &&
+            this.setState(
+              {
+                internalState: 'success',
+              },
+              () => {
+                if (!stableSuccess) {
+                  this.doResetInternalStateAfterTimer();
+                } else if (this.resetInternalStateAfterProcessing) {
+                  this.doResetInternalState();
+                }
+              },
+            )
+          );
+        })
+        .catch(err => {
+          if (this.isMounted) {
+            this.setState(
+              {
+                internalState: 'error',
+              },
+              async () => {
+                this.doResetInternalStateAfterTimer();
+                if (onError) await onError(err);
+              },
+            );
           }
         });
-      }).catch((err) => {
-        if (this.isMounted) {
-          this.setState({
-            internalState: 'error',
-          }, async () => {
-            this.doResetInternalStateAfterTimer();
-            if (onError) await onError(err);
-          });
-        }
-      });
     }
 
     this.doResetInternalState();
