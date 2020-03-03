@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/button",
-  "version": "1.1.29",
+  "version": "1.1.30",
   "description": "LSK ux subrepo: button",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -37,7 +37,7 @@
     "prop-types": "^15.7.2"
   },
   "devDependencies": {
-    "@lskjs/dev": "^1.1.22",
+    "@lskjs/dev": "^1.1.30",
     "antd": "3.26.9",
     "lodash": "4.17.15",
     "mobx": "5.15.4",

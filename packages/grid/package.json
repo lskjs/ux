@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/grid",
-  "version": "1.1.22",
+  "version": "1.1.30",
   "description": "LSK ux subrepo: grid",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -30,7 +30,7 @@
   "devDependencies": {
     "@emotion/core": "10.0.27",
     "@emotion/styled": "10.0.27",
-    "@lskjs/dev": "^1.1.22",
+    "@lskjs/dev": "^1.1.30",
     "@lskjs/theme": "^1.1.14",
     "@lskjs/utils": "0.39.0"
   },

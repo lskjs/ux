@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/link",
-  "version": "1.1.22",
+  "version": "1.1.30",
   "description": "LSK ux subrepo: link",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -31,7 +31,7 @@
     "prop-types": "15.7.2"
   },
   "devDependencies": {
-    "@lskjs/dev": "^1.1.22",
+    "@lskjs/dev": "^1.1.30",
     "@lskjs/utils": "1.0.8",
     "react": "16.8.6"
   },
