@@ -4,7 +4,6 @@ import { jsx } from '@emotion/core';
 import autobind from '@lskjs/autobind';
 import Link from '@lskjs/link';
 import Remove from 'react-icons2/mdi/close-circle-outline';
-import If from 'react-if';
 import Box from '../Box';
 import fileTypes from '../fileTypes';
 import Typography from '../Typography';
@@ -37,40 +36,21 @@ class GridFile extends Component {
     const { src = '', filename, image, type, onRemove, link } = this.props;
     const Icon = fileTypes[type] || fileTypes.other;
     const res = (
-      <Box
-        componentClass="div"
-        css={containerStyle}
-      >
+      <Box componentClass="div" css={containerStyle}>
         <PreviewContainer>
-          { image
-            ? (
-              <PreviewImage
-                src={src}
-                alt={filename}
-              />
-            )
-            : (
-              <Icon
-                size={64}
-                css={centerFile}
-              />
-            )}
+          {image ? <PreviewImage src={src} alt={filename} /> : <Icon size={64} css={centerFile} />}
         </PreviewContainer>
         <Info>
-          <Typography
-            color="#9b9b9b"
-            variant="caption"
-            css={typeStyle}
-          >
+          <Typography color="#9b9b9b" variant="caption" css={typeStyle}>
             {type}
           </Typography>
           <Typography css={urlStyle}>{filename}</Typography>
         </Info>
-        <If condition={!!onRemove}>
+        {onRemove && (
           <RemoveButton>
             <Remove onClick={this.remove} />
           </RemoveButton>
-        </If>
+        )}
       </Box>
     );
 

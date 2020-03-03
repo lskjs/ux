@@ -25,7 +25,7 @@ const ImageDefaultBody = ({
   dragged,
   value,
   refZone,
-  onRemoveFiles,
+  onRemoveAll,
   showPreview,
   validationState,
   type = 'image',
@@ -81,7 +81,7 @@ const ImageDefaultBody = ({
                 {type === 'image' && value && (
                   <>
                     <Overlay />
-                    <RemoveButton type="button" onClick={onRemoveFiles}>
+                    <RemoveButton type="button" onClick={onRemoveAll}>
                       <Remove />
                     </RemoveButton>
                   </>

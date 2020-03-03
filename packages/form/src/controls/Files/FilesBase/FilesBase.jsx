@@ -4,10 +4,11 @@ import PropTypes from 'prop-types';
 import { inject } from 'mobx-react';
 import { jsx } from '@emotion/core';
 import autobind from '@lskjs/autobind';
-import If from 'react-if';
 import isFunction from 'lodash/isFunction';
 import Dropzone from 'react-dropzone';
 import zoneStyle from './FilesBase.styles';
+
+const DEBUG = 1;
 
 @inject('uapp')
 class FilesBase extends Component {
@@ -73,6 +74,7 @@ class FilesBase extends Component {
 
   @autobind
   remove({ src } = {}) {
+    if (DEBUG) console.log('remove', { src });
     const { onSubmit } = this.props;
     if (onSubmit) {
       onSubmit({
@@ -85,6 +87,7 @@ class FilesBase extends Component {
 
   @autobind
   removeAll() {
+    if (DEBUG) console.log('removeAll');
     const { onSubmit } = this.props;
     if (onSubmit) onSubmit(null);
   }
@@ -149,6 +152,7 @@ class FilesBase extends Component {
 }
 
 FilesBase.propTypes = {
+  // uapp: PropTypes.objectOf(Object).isRequired,
   // eslint-disable-next-line react/forbid-prop-types
   value: PropTypes.any,
   // eslint-disable-next-line react/forbid-prop-types
@@ -160,7 +164,6 @@ FilesBase.propTypes = {
   info: PropTypes.string,
   onSubmit: PropTypes.func,
   onError: PropTypes.func,
-  upload: PropTypes.objectOf(Object).isRequired,
   id: PropTypes.string,
   title: PropTypes.string,
   multiple: PropTypes.bool,

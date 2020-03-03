@@ -56,6 +56,7 @@ export const Overlay = styled('div')`
 `;
 
 export const RemoveButton = styled('button')`
+  cursor: pointer;
   background: none;
   border: none;
   outline: none;
@@ -142,7 +143,7 @@ export const Info = styled('div')`
 `;
 
 export const Header = styled('div')`
-padding: 12px 16px;
+  padding: 12px 16px;
   background-color: #ffffff;
   flex: 1;
   border-radius: 3px 3px 0 0;
@@ -157,10 +158,14 @@ export const Block = styled('div')`
   border: solid 1px #e3e3e3;
   display: flex;
   flex-direction: column;
-  ${p => (p.validationState === 'error' && `
+  ${p =>
+    p.validationState === 'error' &&
+    `
     border-color: #da4c5a;
-  `)}
-  ${p => (p.avatar && `
+  `}
+  ${p =>
+    p.avatar &&
+    `
     height: 384px;
     ${Header} {
       order: 1;
@@ -169,7 +174,7 @@ export const Block = styled('div')`
       opacity: 1;
       margin-bottom: 16px;
     }
-  `)}
+  `}
   @media screen and (max-width: 330px) {
     width: 100%;
   }
