@@ -2,17 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Files from '../Files/FilesBase';
 
-import DefaultBody from './DefaultBody';
-import DefaultFooter from './DefaultFooter';
+import DefaultBody from './ImageDefaultBody';
+import DefaultFooter from './ImageDefaultFooter';
 
-const ImageUploader = ({
-  field,
-  form,
-  onError,
-  components,
-  isMulti,
-  ...props
-}) => {
+const ImageUploader = ({ field, form, onError, components, isMulti, showPreview = true, ...props }) => {
   const Body = components.Body || ImageUploader.defaultProps.components.Body;
   const Footer = components.Footer || ImageUploader.defaultProps.components.Footer;
   return (
@@ -25,6 +18,7 @@ const ImageUploader = ({
       onError={() => onError && onError(form.errors[field.name])} // this.globalError
       validationState={form.errors[field.name] ? 'error' : null}
       files={field.value}
+      showPreview={showPreview}
       onBlur={null}
       accept="image/jpeg, image/png"
       footer={Footer}

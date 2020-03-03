@@ -1,10 +1,11 @@
 import React from 'react';
 import { Form, Field } from 'formik';
-import Story from '@lskjs/dev/Story';
+// import StoryWithUpload from '@lskjs/dev/Story';
+import StoryWithUpload from '../Files/StoryWithUpload';
 import createForm from '../../createForm';
 import Image from './Image';
 import FormDebug from '../../FormDebug';
-import Footer from '../Files/DefaultFooter';
+import Footer from '../Files/FilesDefaultFooter';
 
 const ImageFormView = props => (
   <Form>
@@ -37,11 +38,9 @@ const ImageForm = createForm({
   },
 });
 
-export default ({ storiesOf }) => (
-  storiesOf('form/controls', module)
-    .add('Image ', () => (
-      <Story>
-        <ImageForm />
-      </Story>
-    ))
-);
+export default ({ storiesOf }) =>
+  storiesOf('form/controls', module).add('Image ', () => (
+    <StoryWithUpload>
+      <ImageForm />
+    </StoryWithUpload>
+  ));

@@ -5,7 +5,7 @@ import Button from '@lskjs/button';
 import T from '@lskjs/ui/T';
 import { Actions, Block, Drop, DropIcon, DropText, Header, Info } from './Files.styles';
 
-const DefaultBody = ({
+const FilesDefaultBody = ({
   dragged,
   // value,
   refZone,
@@ -13,7 +13,7 @@ const DefaultBody = ({
 }) => {
   const open = () => refZone.current && refZone.current.open();
   return (
-    <React.Fragment>
+    <>
       <If condition={!!dragged}>
         <Drop>
           <DropText>
@@ -25,28 +25,21 @@ const DefaultBody = ({
         </Drop>
       </If>
       <If condition={!dragged}>
-        <Block
-          validationState={validationState}
-        >
+        <Block validationState={validationState}>
           <Header>
             <Info>
               <T name="upload.infoFiles" />
             </Info>
             <Actions>
-              <Button
-                type="button"
-                paint="primary"
-                bordered
-                onClick={open}
-              >
+              <Button type="button" paint="primary" bordered onClick={open}>
                 <T name="upload.buttonFiles" />
               </Button>
             </Actions>
           </Header>
         </Block>
       </If>
-    </React.Fragment>
+    </>
   );
 };
 
-export default DefaultBody;
+export default FilesDefaultBody;

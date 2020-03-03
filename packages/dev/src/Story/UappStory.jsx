@@ -11,9 +11,9 @@ class UappStory extends Component {
     if (window.parent) window.parent.story = this;
   }
   render() {
-    const { children, locale, theme } = this.props;
+    const { children, locale, theme, providers } = this.props;
     return (
-      <UappMock locale={locale} theme={theme}>
+      <UappMock locale={locale} theme={theme} {...providers}>
         <DevStory theme={theme}>{children}</DevStory>
       </UappMock>
     );

@@ -4,7 +4,7 @@ import Story from '@lskjs/dev/Story';
 import createForm from '../../createForm';
 import FilesNative from './FilesNative';
 import FormDebug from '../../FormDebug';
-import Body from '../Image/DefaultBody';
+import Body from '../Image/ImageDefaultBody';
 
 const FilesFormView = props => (
   <Form>

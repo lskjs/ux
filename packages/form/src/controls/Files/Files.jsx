@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import FilesBase from './FilesBase';
 
-import DefaultBody from './DefaultBody';
-import DefaultFooter from './DefaultFooter';
+import DefaultBody from './FilesDefaultBody';
+import DefaultFooter from './FilesDefaultFooter';
 
 // eslint-disable-next-line prettier/prettier
 const getArray = val => (
@@ -27,6 +27,8 @@ const Files = ({ field, form, onError, components, isMulti, hasCropper, CropperC
       CropperComponent={CropperComponent}
       multiple={isMulti}
       onSubmit={incomeValues => {
+        console.log({incomeValues});
+        
         if (incomeValues && incomeValues.type === 'remove') {
           if (isMulti) {
             form.setFieldValue(

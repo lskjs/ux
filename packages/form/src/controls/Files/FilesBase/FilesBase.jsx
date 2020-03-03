@@ -129,9 +129,7 @@ class FilesBase extends Component {
     };
     return (
       <>
-        <If condition={!!(hasCropper && CropperComponent && image)}>
-          <CropperComponent src={image} onSubmit={this.onCrop} />
-        </If>
+        {hasCropper && CropperComponent && image && <CropperComponent src={image} onSubmit={this.onCrop} />}
         <Dropzone
           {...otherProps}
           css={[zoneStyle, className]}

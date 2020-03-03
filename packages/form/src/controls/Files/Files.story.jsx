@@ -1,11 +1,12 @@
 import React from 'react';
 import { Form, Field } from 'formik';
+import { Provider } from 'mobx-react';
 // import Story from '@lskjs/dev/Story/UappStory';
-import Story from '@lskjs/dev/Story';
+import StoryWithUpload from './StoryWithUpload';
 import createForm from '../../createForm';
 import Files from './Files';
 import FormDebug from '../../FormDebug';
-import Body from '../Image/DefaultBody';
+import Body from '../Image/ImageDefaultBody';
 
 const CroppperDemo = ({ src, onSubmit }) => {
   return (
@@ -25,12 +26,11 @@ const CroppperDemo = ({ src, onSubmit }) => {
 
 const FilesFormView = props => (
   <Form>
+    <Field {...props.control('singleFile')} />
     <Field {...props.control('files')} />
-    <Field {...props.control('files2')} />
     <Field {...props.control('files3')} />
     <Field {...props.control('files4')} />
     <Field {...props.control('files5')} />
-    <Field {...props.control('singleFile')} />
     <Field {...props.control('withCropper')} />
     <FormDebug {...props} />
   </Form>
@@ -44,10 +44,10 @@ const FilesForm = createForm({
       component: Files,
       isMulti: true,
     },
-    files2: {
+    singleFile: {
       title: 'Files2: isMulti, custom body',
       component: Files,
-      isMulti: true,
+      isMulti: false,
       type: 'image',
       components: {
         Body,
@@ -73,11 +73,6 @@ const FilesForm = createForm({
       component: Files,
       isMulti: true,
     },
-    singleFile: {
-      title: 'singleFile',
-      component: Files,
-      isMulti: false,
-    },
     withCropper: {
       title: 'withCropper',
       component: Files,
@@ -90,7 +85,7 @@ const FilesForm = createForm({
 
 export default ({ storiesOf }) =>
   storiesOf('form/controls', module).add('Files ', () => (
-    <Story>
+    <StoryWithUpload>
       <FilesForm
         initialValues={{
           files: [
@@ -104,6 +99,7 @@ export default ({ storiesOf }) =>
             '//cdn.mgbeta.ru/frz/abpage-favicon.png',
             '//cdn.mgbeta.ru/abp/_abpage.css',
           ],
+          singleFile: 'https://millionstatusov.ru/pic/statpic/all/58e61335ec518.jpg',
           files3: [
             'https://pp.userapi.com/c636819/v636819936/346c3/6xIvJ0BI8rs.jpg',
             'https://avatanplus.com/files/resources/mid/56bced54bd17f152d1ff1327.png',
@@ -122,8 +118,7 @@ export default ({ storiesOf }) =>
             'http://krasa.tk/wp-content/uploads/2015/11/face.jpg',
             'https://millionstatusov.ru/pic/statpic/all/58e61335ec518.jpg',
           ],
-          singleFile: 'https://millionstatusov.ru/pic/statpic/all/58e61335ec518.jpg',
         }}
       />
-    </Story>
+    </StoryWithUpload>
   ));

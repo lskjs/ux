@@ -4,7 +4,7 @@ import Story from '@lskjs/dev/Story';
 import createForm from '../../createForm';
 import ImageNative from './ImageNative';
 import FormDebug from '../../FormDebug';
-import Footer from '../Files/DefaultFooter';
+import Footer from '../Files/FilesDefaultFooter';
 
 const ImageFormView = props => (
   <Form>
