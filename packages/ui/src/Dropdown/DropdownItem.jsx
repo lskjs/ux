@@ -27,7 +27,7 @@ DropdownItem.propTypes = {
   children: PropTypes.any, // eslint-disable-line react/forbid-prop-types
   componentClass: PropTypes.any, // eslint-disable-line react/forbid-prop-types
   id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-  gap: PropTypes.string,
+  gap: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   icon: PropTypes.any, // eslint-disable-line react/forbid-prop-types
 };
 

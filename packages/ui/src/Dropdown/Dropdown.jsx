@@ -111,7 +111,7 @@ class Dropdown extends PureComponent {
               display: 'inline-block',
             }}
             ref={this.trigger}
-            className={isOpen && triggerStyle}
+            className={!!isOpen ? triggerStyle : ''}
           >
             {trigger({ isOpen, onClick: this.show })}
           </div>

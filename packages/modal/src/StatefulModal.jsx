@@ -16,7 +16,6 @@ class StatefulModal extends PureComponent {
     preRenderRoutes: PropTypes.array, // eslint-disable-line react/forbid-prop-types
     onOpen: PropTypes.func,
     onClose: PropTypes.func,
-    ref: PropTypes.func,
     children: PropTypes.any, // eslint-disable-line react/forbid-prop-types
     routes: PropTypes.any, // eslint-disable-line react/forbid-prop-types
   }
@@ -25,7 +24,6 @@ class StatefulModal extends PureComponent {
     preRenderRoutes: [],
     onOpen: null,
     onClose: null,
-    ref: null,
     children: null,
     routes: null,
   }
