@@ -7,7 +7,7 @@ export const Additional = styled('div')`
   border-top: none;
   border-radius: 0 0 3px 3px;
   position: relative;
-  
+
   transform: translate3d(0, -100%, 0);
   padding: 0 44px;
   opacity: 0;
@@ -15,7 +15,7 @@ export const Additional = styled('div')`
 
   transition: transform .2s ease, padding .2s ease, opacity .2s ease, height .2s ease;
   will-change: transform, padding, opacity, height;
-  
+
   overflow: hidden;
   z-index: 1;
 `;

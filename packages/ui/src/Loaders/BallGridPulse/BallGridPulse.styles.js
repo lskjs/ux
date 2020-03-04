@@ -58,7 +58,7 @@ export const GridBall = styled('div')`
           animation-name: ${scale};`;
     }
   }}
-    
+
     display: inline-block;
     animation-iteration-count: infinite;
 `;
