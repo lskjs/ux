@@ -26,7 +26,8 @@ class Page extends PureComponent {
   static PageBodyWrapper = 'div';
 
   render() {
-    const { children, container, page, ...props } = this.props;
+    const { layout: Layout, children, container, page, ...props } = this.props;
+    let { legacy } = this.props;
     let data = children;
     // eslint-disable-next-line no-shadow
     const Page = collectProps(this, [
@@ -42,10 +43,17 @@ class Page extends PureComponent {
       'PageBodyWrapper',
       'PageTitleWrapper',
     ]);
-    if (container) {
-      data = <Page.Container>{data}</Page.Container>;
+    if (legacy === null && typeof Layout === 'string') {
+      legacy = true;
     }
-    data = <Page.Content {...props}>{data}</Page.Content>;
+    if (legacy) {
+      if (container) {
+        data = <Page.Container>{data}</Page.Container>;
+      }
+      data = <Page.Content {...props}>{data}</Page.Content>;
+    } else if (Layout) {
+      data = <Layout {...props}>{data}</Layout>;
+    }
 
     return (
       <Provider
