@@ -185,7 +185,7 @@ class StatefulButton extends PureComponent {
     const { componentClass: Tag, innerComponentClass } = this.props;
     const style = css`
       &:focus {
-        background-color: ${getTheme(theme, `colors.${this.props.paint}`)};
+        background-color: ${getTheme(theme, `colors.${this.props.paint}`)} !important;
       }
     `;
     const buttonProps = omit(this.props, [
