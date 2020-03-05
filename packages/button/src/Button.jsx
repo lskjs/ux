@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import omit from 'lodash/omit';
 import filterProps from '@lskjs/utils/filterProps';
 import isTouchDevice from '@lskjs/utils/isTouchDevice';
+import isBrowser from '@lskjs/utils/isBrowser';
 import LoadingDots from './components/LoadingDots';
 import { Btn, Text, Icon, State, Ripple, RippleCircle } from './Button.styles';
 
@@ -22,7 +23,7 @@ class Button extends PureComponent {
     const { disabled, isRipple } = this.props;
     if (typeof window !== 'undefined') {
       if (!disabled && isRipple) {
-        const condition = this.isBrowser('safari') || this.isBrowser('firefox');
+        const condition = isBrowser('safari') || isBrowser('firefox');
         this.ripple.current.addEventListener(condition ? 'click' : 'mousedown', this.clickListener);
       }
     }
@@ -32,7 +33,7 @@ class Button extends PureComponent {
     const { disabled, isRipple } = this.props;
     if (typeof window !== 'undefined') {
       if (!disabled && isRipple) {
-        const condition = this.isBrowser('safari') || this.isBrowser('firefox');
+        const condition = isBrowser('safari') || isBrowser('firefox');
         this.ripple.current.removeEventListener(condition ? 'click' : 'mousedown', this.clickListener);
       }
     }
@@ -117,9 +118,6 @@ class Button extends PureComponent {
     }
   }
 
-  isBrowser(name) {
-    return document.documentElement.className.includes(name);
-  }
 
   @autobind
   endAnimationRipple() {
