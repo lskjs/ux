@@ -1,14 +1,26 @@
 import set from 'lodash/set';
 import get from 'lodash/get';
+import pick from 'lodash/pick';
 import cloneDeep from 'lodash/cloneDeep';
 import DEBUG from './_debug';
 
-export default ({ controls }) => (props) => {
+export default ({ controls, pick: pickList = true }) => props => {
   if (DEBUG) console.log('Form2 mapPropsToValues', props, controls ); // eslint-disable-line
 
   const { initialValues } = props;
-  const defaultValues = cloneDeep(initialValues) || {};
-  Object.keys(controls).forEach((key) => {
+
+  let defaultValues;
+  if (pickList) {
+    if (pickList === true) {
+      defaultValues = cloneDeep(initialValues) || {};
+    } else {
+      defaultValues = pick(initialValues, pickList);
+    }
+  } else {
+    defaultValues = pick(initialValues, Object.keys(controls));
+  }
+
+  Object.keys(controls).forEach(key => {
     if (typeof get(defaultValues, key) !== 'undefined') return;
     if (controls[key].key) return;
 
@@ -20,6 +32,6 @@ export default ({ controls }) => (props) => {
     set(defaultValues, key, initialValue);
   });
 
-  if (DEBUG) console.log('Form2 mapPropsToValues', initialValues, ' => ', defaultValues ); // eslint-disable-line
+  if (DEBUG) console.log('Form2 mapPropsToValues', initialValues, ' => ', defaultValues); // eslint-disable-line
   return defaultValues;
 };

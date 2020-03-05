@@ -33,6 +33,7 @@ export default ({
     withFormik = defaultWithFormik,
     flatten = true,
     onError,
+    pick,
     ...configProps
   } = config;
 
@@ -51,7 +52,7 @@ export default ({
   });
 
   return withFormik({
-    mapPropsToValues: createMapPropsToValues({ controls }),
+    mapPropsToValues: createMapPropsToValues({ controls, pick }),
     handleSubmit: createHandleSubmit({ flatten }),
     validate: createValidate({
       validators,
