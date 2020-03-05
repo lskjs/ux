@@ -7,7 +7,7 @@ export const Title = styled('div')`
   font-size: 24px;
   line-height: 0.75;
   text-align: left;
-  color: #4a4a4a;
+  color: ${p => getTheme(p.theme, 'colors.main')};
 `;
 
 export const Desc = styled('div')`
@@ -15,7 +15,7 @@ export const Desc = styled('div')`
   font-size: 15px;
   line-height: 1.33;
   text-align: center;
-  color: #4a4a4a;
+  color: ${p => getTheme(p.theme, 'colors.main')};
   margin-top: 24px;
 `;
 
@@ -39,7 +39,7 @@ export const FbVal = styled('div')`
   line-height: 1.25;
   letter-spacing: -0.1px;
   text-align: left;
-  color: #4a4a4a;
+  color: ${p => getTheme(p.theme, 'colors.main')};
   margin-top: 8px;
 `;
 

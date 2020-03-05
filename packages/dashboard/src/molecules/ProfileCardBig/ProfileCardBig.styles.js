@@ -56,7 +56,7 @@ export const ProfileCardAvatar = styled(Avatar)`
 `;
 
 export const SocialIcon = styled('a')`
-  color: #fff;
+  color: ${p => getTheme(p.theme, 'colors.white')};
   background-color: #868e96;
   border: 0;
   transition: all .2s;

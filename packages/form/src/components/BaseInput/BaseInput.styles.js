@@ -7,7 +7,7 @@ export default (component = 'input') => (
     width: 100%;
     /* background-color: rgba(255, 255, 255, 0.44); */
     border: solid 1px #e3e3e3;
-    color: #4a4a4a;
+    color: ${p => getTheme(p.theme, 'colors.main')};
     font-family: ${p => getTheme(p.theme, 'fontFamily')};
     font-size: 13px;
     line-height: 1.43;
@@ -34,7 +34,7 @@ export default (component = 'input') => (
     ${p => (p.disabled && `
       background-color: rgba(155, 155, 155, 0.03) !important;
       color: rgba(74, 74, 74, 0.5) !important;
-      border-color: #e3e3e3 !important;
+      border-color: ${getTheme(p.theme, 'colors.border')} !important;
     `)}
 
     &:focus,
@@ -44,7 +44,7 @@ export default (component = 'input') => (
 
     &::-webkit-input-placeholder {
       opacity: 0.5 !important;
-      color: #9b9b9b !important;
+      color: ${p => getTheme(p.theme, 'colors.secondary')} !important;
       font-family: ${p => getTheme(p.theme, 'fontFamily')};
       font-size: 13px !important;
       line-height: 1.43 !important;
@@ -52,7 +52,7 @@ export default (component = 'input') => (
 
     &::-moz-placeholder {
       opacity: 0.5 !important;
-      color: #9b9b9b !important;
+      color: ${p => getTheme(p.theme, 'colors.secondary')} !important;
       font-family: ${p => getTheme(p.theme, 'fontFamily')};
       font-size: 13px !important;
       line-height: 1.43 !important;
@@ -60,7 +60,7 @@ export default (component = 'input') => (
 
     &:-moz-placeholder {
       opacity: 0.5 !important;
-      color: #9b9b9b !important;
+      color: ${p => getTheme(p.theme, 'colors.secondary')} !important;
       font-family: ${p => getTheme(p.theme, 'fontFamily')};
       font-size: 13px !important;
       line-height: 1.43 !important;
@@ -68,7 +68,7 @@ export default (component = 'input') => (
 
     &:-ms-input-placeholder {
       opacity: 0.5 !important;
-      color: #9b9b9b !important;
+      color: ${p => getTheme(p.theme, 'colors.secondary')} !important;
       font-family: ${p => getTheme(p.theme, 'fontFamily')};
       font-size: 13px !important;
       line-height: 1.43 !important;

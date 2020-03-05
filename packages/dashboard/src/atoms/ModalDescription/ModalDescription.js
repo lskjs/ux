@@ -13,5 +13,5 @@ export default styled(removeProps('p', ['align']))`
   line-height: 1.54;
   letter-spacing: -0.1px;
   text-align: ${props => props.align};
-  color: #9b9b9b;
+  color: ${p => getTheme(p.theme, 'colors.secondary')};
 `;

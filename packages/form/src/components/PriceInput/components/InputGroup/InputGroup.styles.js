@@ -3,7 +3,7 @@ import getTheme from '@lskjs/theme/getTheme';
 
 export default styled('section')`
   display: flex;
-  background-color: #fff;
+  background-color: ${p => getTheme(p.theme, 'colors.white')};
   height: 48px;
   outline: none;
   > * {
@@ -13,7 +13,7 @@ export default styled('section')`
   > input {
     flex: 1;
     &:focus {
-      border-color: #e3e3e3 !important;
+      border-color: ${p => getTheme(p.theme, 'colors.border')} !important;
     }
   }
   &:focus-within > * {
@@ -48,7 +48,7 @@ export default styled('section')`
     }
     > *:last-child {
       border-left: none;
-      border-right: 1px solid #e3e3e3 !important;
+      border-right: 1px solid ${getTheme(p.theme, 'colors.border')} !important;
     }
     &:focus-within > *:last-child {
       border-right-color: ${getTheme(p.theme, 'colors.primary')} !important;

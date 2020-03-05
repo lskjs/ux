@@ -3,8 +3,8 @@ import styled from '@emotion/styled';
 import { css } from '@emotion/core';
 
 export const Title = styled('div')`
-  ${p => (p.error && css`
-    color: #ee1e31;
+ ${p => (p.error && css`
+    color: ${getTheme(p.theme, 'colors.danger')};
   `)}
 `;
 

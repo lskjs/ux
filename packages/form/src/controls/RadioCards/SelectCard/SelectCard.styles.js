@@ -50,7 +50,7 @@ export const Title = styled('b')`
   line-height: 1.43;
   letter-spacing: -0.1px;
   text-align: left;
-  color: #4a4a4a;
+  color: ${p => getTheme(p.theme, 'colors.main')};
   font-weight: normal;
   margin-bottom: 6px;
 `;
@@ -60,15 +60,15 @@ export const Desc = styled('p')`
   line-height: 1.43;
   letter-spacing: -0.1px;
   text-align: left;
-  color: #9b9b9b;
+  color: ${p => getTheme(p.theme, 'colors.secondary')};
   margin: 0;
 `;
 
 export const Block = styled('button')`
   width: 280px;
   height: 200px;
-  background-color: #ffffff;
-  border: solid 1px #e3e3e3;
+  background-color: ${p => getTheme(p.theme, 'colors.white')};
+  border: solid 1px ${p => getTheme(p.theme, 'colors.border')};
   display: flex;
   flex-direction: column;
   outline: none;

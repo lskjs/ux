@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
   display: flex;
   font-family: ${props => getTheme(props.theme, 'fontFamily')};
   border-radius: 3px;
-  border: solid 1px #e3e3e3;
+  border: solid 1px ${p => getTheme(p.theme, 'colors.border')};
   padding-top: 8px;
   padding-left: 12px;
   padding-right: 12px;
@@ -24,7 +24,7 @@ export const Items = styled.a`
 `;
 
 export const Memory = styled.span`
- color: #9b9b9b;
+ color: ${p => getTheme(p.theme, 'colors.secondary')};
 `;
 
 export const Button = styled.button`

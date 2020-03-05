@@ -19,7 +19,7 @@ export const CloseButton = styled('button')`
   right: 12px;
   font-size: 24px;
   opacity: .5;
-  color: #9b9b9b;
+  color: ${p => getTheme(p.theme, 'colors.secondary')};
   padding: 5px;
   display: flex;
   background: transparent;
@@ -43,14 +43,14 @@ export const Title = styled('h3')`
   font-weight: normal;
   letter-spacing: -0.1px;
   text-align: left;
-  color: #4a4a4a;
+  color: ${p => getTheme(p.theme, 'colors.main')};
 `;
 
 export const Search = styled('div')`
   display: flex;
   border-radius: 3px;
   border: solid 1px ${p => getTheme(p.theme, 'colors.primary')};
-  background-color: #fff;
+  background-color: ${p => getTheme(p.theme, 'colors.white')};
   position: relative;
   height: 48px;
   overflow: hidden;
@@ -78,14 +78,14 @@ export const SearchInput = styled(DebounceInput)`
   font-size: 13px;
   line-height: 1.43;
   text-align: left;
-  color: #4a4a4a;
+  color: ${p => getTheme(p.theme, 'colors.main')};
   &::-webkit-input-placeholder {
     opacity: 0.5;
     font-family: ${p => getTheme(p.theme, 'fontFamily')};
     font-size: 13px;
     line-height: 1.43;
     text-align: left;
-    color: #9b9b9b;
+    color: ${p => getTheme(p.theme, 'colors.secondary')};
   }
   &::-moz-placeholder {
     opacity: 0.5;
@@ -93,7 +93,7 @@ export const SearchInput = styled(DebounceInput)`
     font-size: 13px;
     line-height: 1.43;
     text-align: left;
-    color: #9b9b9b;
+    color: ${p => getTheme(p.theme, 'colors.secondary')};
   }
   &:-ms-input-placeholder {
     opacity: 0.5;
@@ -101,7 +101,7 @@ export const SearchInput = styled(DebounceInput)`
     font-size: 13px;
     line-height: 1.43;
     text-align: left;
-    color: #9b9b9b;
+    color: ${p => getTheme(p.theme, 'colors.secondary')};
   }
   &:-moz-placeholder {
     opacity: 0.5;
@@ -109,7 +109,7 @@ export const SearchInput = styled(DebounceInput)`
     font-size: 13px;
     line-height: 1.43;
     text-align: left;
-    color: #9b9b9b;
+    color: ${p => getTheme(p.theme, 'colors.secondary')};
   }
 `;
 
@@ -220,7 +220,7 @@ export const Block = styled('div')`
     font-size: 13px;
     line-height: 1.43;
     text-align: left;
-    color: #4a4a4a;
+    color: ${p => getTheme(p.theme, 'colors.main')};
   }
 `;
 

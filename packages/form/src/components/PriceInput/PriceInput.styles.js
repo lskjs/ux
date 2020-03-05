@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import getTheme from '@lskjs/theme/getTheme';
 
 import { FormGroup } from 'react-bootstrap';
 
@@ -39,7 +40,7 @@ export const ComissionBlock = styled('div')`
     font-size: 11px;
     letter-spacing: -0.1px;
     text-align: left;
-    color: #9b9b9b;
+    color: ${getTheme(p.theme, 'colors.secondary')};
     margin-top: 8px;
   `)}
 `;

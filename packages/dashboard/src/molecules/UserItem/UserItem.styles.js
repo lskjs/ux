@@ -9,7 +9,7 @@ export const Title = styled('div')`
   font-size: 15px;
   letter-spacing: -0.1px;
   text-align: left;
-  color: #9b9b9b;
+  color: ${p => getTheme(p.theme, 'colors.secondary')};
 
   white-space: nowrap;
   text-overflow: ellipsis;

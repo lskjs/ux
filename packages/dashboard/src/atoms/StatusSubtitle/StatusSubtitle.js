@@ -6,6 +6,5 @@ export default styled('div')`
   font-size: 11px;
   letter-spacing: -0.1px;
   text-align: right;
-  color: #4a4a4a;
-  color: #${p => getTheme(p.theme, 'colors.main')};
+  color: ${p => getTheme(p.theme, 'colors.main')};
 `;

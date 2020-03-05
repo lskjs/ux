@@ -116,6 +116,6 @@ export const InfoInner = styled('div')`
   width: 100%;
   vertical-align: middle;
   text-align: center;
-  color: #fff;
+  color: ${p => getTheme(p.theme, 'colors.white')};
 `;
 

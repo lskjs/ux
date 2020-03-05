@@ -10,14 +10,14 @@ export const Label = styled('b')`
   line-height: 1.54;
   letter-spacing: -0.1px;
   text-align: right;
-  color: #4a4a4a;
+  color: ${p => getTheme(p.theme, 'colors.main')};
   margin-right: 12px;
 `;
 
 export const Handler = styled('div')`
   width: 18px;
   height: 18px;
-  background-color: #fff;
+  background-color: ${p => getTheme(p.theme, 'colors.white')};
   border-radius: 50px;
   margin-left: 0;
 
@@ -37,7 +37,7 @@ export const Block = styled('button')`
   cursor: pointer;
 
   border-radius: 50px;
-  background-color: #e3e3e3;
+  background-color: ${p => getTheme(p.theme, 'colors.border')};
   padding: 4px;
 
   transition: background-color .2s ease;
@@ -59,11 +59,11 @@ export const Wrap = styled('div')`
   flex-shrink: 0;
   ${p => (p.disabled && `
     ${Block} {
-      background-color: #e3e3e3 !important;
+      background-color: ${getTheme(p.theme, 'colors.border')} !important;
       cursor: not-allowed;
     }
     ${Label} {
-      color: #e3e3e3;
+      color: ${getTheme(p.theme, 'colors.border')};
     }
   `)}
 `;

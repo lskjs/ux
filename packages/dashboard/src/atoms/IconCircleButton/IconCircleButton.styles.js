@@ -69,13 +69,13 @@ export default styled(filteredTag)`
     }
 
     ${p.disabled && css`
-      background-color: #e3e3e3;
+      background-color: ${getTheme(p.theme, 'colors.border')};
       cursor: not-allowed;
-      color: #fff;
+      color: ${getTheme(p.theme, 'colors.white')};
 
       &:hover {
-        background-color: #e3e3e3;
-        color: #fff;
+        background-color: ${getTheme(p.theme, 'colors.border')};
+        color: ${getTheme(p.theme, 'colors.white')};
       }
     `}
   `)}

@@ -5,7 +5,7 @@ import getTheme from '@lskjs/theme/getTheme';
 export const Block = styled('button')`
   display: flex;
   width: 100%;
-  background: #fff;
+  background: ${p => getTheme(p.theme, 'colors.white')};
   border: none;
   padding: 0;
   outline: none;

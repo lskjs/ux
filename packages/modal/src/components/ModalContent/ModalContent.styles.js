@@ -29,5 +29,5 @@ export default styled(removeProps('div', ['align', 'size']))`
   font-stretch: normal;
   line-height: 1.43;
   letter-spacing: -0.1px;
-  color: #4a4a4a;
+  color: ${p => getTheme(p.theme, 'colors.main')};
 `;

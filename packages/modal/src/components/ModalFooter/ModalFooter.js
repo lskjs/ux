@@ -17,7 +17,7 @@ export default styled(removeProps('div', ['align']))`
       default: return 'flex-start';
     }
   }};
-  color: #4a4a4a;
+  color: ${p => getTheme(p.theme, 'colors.main')};
 
   > *:not(:last-child) {
     margin-right: 12px;

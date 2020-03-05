@@ -74,8 +74,8 @@ export const Icon = styled('div')`
 
 export const Item = styled('button')`
   border-radius: 3px;
-  background-color: #ffffff;
-  border: solid 1px #e3e3e3;
+  background-color: ${p => getTheme(p.theme, 'colors.white')};
+  border: solid 1px ${p => getTheme(p.theme, 'colors.border')};
   padding: 10px 8px 12px;
   outline: none;
   width: 100%;
@@ -88,11 +88,11 @@ export const Item = styled('button')`
   ${p => (p.disabled && `
     cursor: not-allowed;
     & * {
-      color: #e3e3e3;
+      color: ${getTheme(p.theme, 'colors.border')};
     }
     &:hover {
-      background-color: #ffffff;
-      border: solid 1px #e3e3e3;
+      background-color: ${getTheme(p.theme, 'colors.white')};
+      border: solid 1px ${getTheme(p.theme, 'colors.border')};
     }
   `)}
   ${p => (p.block && `
@@ -126,7 +126,7 @@ export const Label = styled('div')`
   line-height: 1.43;
   letter-spacing: -0.1px;
   text-align: left;
-  color: #4a4a4a;
+  color: ${p => getTheme(p.theme, 'colors.main')};
 `;
 
 export const Footer = styled('div')`
@@ -141,7 +141,7 @@ export const Info = styled('div')`
   line-height: 1.43;
   letter-spacing: -0.1px;
   text-align: left;
-  color: #9b9b9b;
+  color: ${p => getTheme(p.theme, 'colors.secondary')};
   white-space: pre-line;
   min-height: 40px;
 `;

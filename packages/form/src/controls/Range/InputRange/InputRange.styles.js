@@ -59,5 +59,5 @@ export const ElPlace = styled('div')`
   font-size: 13px;
   line-height: 1.43;
   text-align: left;
-  color: #9b9b9b;
+  color: ${p => getTheme(p.theme, 'colors.secondary')};
 `;

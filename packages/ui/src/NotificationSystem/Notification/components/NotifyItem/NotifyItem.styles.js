@@ -44,10 +44,10 @@ export const Item = styled('div')`
     switch (p.type) {
       case 'error':
         return `
-          background-color: #ee1e31 !important;
-          color: white !important;
+          background-color: ${getTheme(p.theme, 'colors.danger')} !important;
+          color: ${getTheme(p.theme, 'colors.white')} !important;
           &:hover {
-            background-color: #ee1e31 !important;
+            background-color: ${getTheme(p.theme, 'colors.danger')} !important;
             box-shadow: none !important;
             cursor: pointer !important;
             text-decoration: none !important;
@@ -55,10 +55,10 @@ export const Item = styled('div')`
         `;
       case 'warning':
         return `
-          background-color: #fe9902 !important;
-          color: white !important;
+          background-color: ${getTheme(p.theme, 'colors.warning')} !important;
+          color: ${getTheme(p.theme, 'colors.white')} !important;
           &:hover {
-            background-color: #fe9902 !important;
+            background-color: ${getTheme(p.theme, 'colors.warning')} !important;
             box-shadow: none !important;
             cursor: pointer !important;
             text-decoration: none !important;
@@ -66,10 +66,10 @@ export const Item = styled('div')`
         `;
       case 'success':
         return `
-          background-color: #50cc58 !important;
-          color: white !important;
+          background-color: ${getTheme(p.theme, 'colors.success')} !important;
+          color: ${getTheme(p.theme, 'colors.white')} !important;
           &:hover {
-            background-color: #50cc58 !important;
+            background-color: ${getTheme(p.theme, 'colors.success')} !important;
             box-shadow: none !important;
             cursor: pointer !important;
             text-decoration: none !important;
@@ -77,10 +77,10 @@ export const Item = styled('div')`
         `;
       case 'info':
         return `
-          background-color: #7070ff !important;
-          color: white !important;
+          background-color: ${getTheme(p.theme, 'colors.primary')} !important;
+          color: ${getTheme(p.theme, 'colors.white')} !important;
           &:hover {
-            background-color: #7070ff !important;
+            background-color: ${getTheme(p.theme, 'colors.primary')} !important;
             box-shadow: none !important;
             cursor: pointer !important;
             text-decoration: none !important;

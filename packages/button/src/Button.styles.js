@@ -803,7 +803,7 @@ const filteredTag = removeProps(dynamicTag, [
 
 // Если убрать filteredTag, то появляются варнинги
 export const Btn = styled(filteredTag)`
-  background-color: #fff;
+  background-color: ${p => getTheme(p.theme, 'colors.white')};
   border: none;
   box-shadow: ${p => ((p.bordered && p.borderColor && `0 0 0 1px ${p.borderColor}`) || (p.bordered && '0 0 0 1px'))};
   outline: none;

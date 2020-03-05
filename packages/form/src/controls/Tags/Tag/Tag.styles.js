@@ -40,10 +40,10 @@ export const TagItem = styled('div')`
   ${p => (p.disabled && `
     background-color: #f9f9f9;
     ${Title} {
-      color: #e3e3e3;
+      color: ${getTheme(p.theme, 'colors.border')};
     }
     ${CloseWrapper} {
-      color: #e3e3e3;
+      color: ${getTheme(p.theme, 'colors.border')};
       cursor: not-allowed;
     }
   `)}

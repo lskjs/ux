@@ -69,7 +69,7 @@ export const Frame = styled('div')`
 
   &:focus-within {
     ${TitleWrapper} {
-      color: ${p => (p.error ? '#DA4C5A' : '#7070ff')};
+      color: ${p => (p.error ? '#DA4C5A' : getTheme(p.theme, 'colors.primary'))};
     }
   }
 `;

@@ -36,7 +36,7 @@ export const Wrapper = styled('div')`
 
   .ant-slider-rail {
     height: 2px !important;
-    background-color: #eeeff4 !important;
+    background-color: ${p => getTheme(p.theme, 'colors.darkerBackground')} !important;
     top: 0 !important;
   }
 
@@ -56,7 +56,7 @@ export const Wrapper = styled('div')`
    width: 8px !important;
    height: 8px !important;
    border: none !important;
-   background-color: #7070ff !important;
+   background-color: ${p => getTheme(p.theme, 'colors.primary')} !important;
    outline: none !important;
    box-shadow: 0 0 0 1px ${p => getTheme(p.theme, 'colors.primary')};
 

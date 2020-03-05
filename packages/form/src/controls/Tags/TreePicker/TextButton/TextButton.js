@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import getTheme from '@lskjs/theme/getTheme';
 
 export default styled('button')`
   font-family: 'Gotham Pro', Helvetica, Arial;
@@ -8,7 +9,7 @@ export default styled('button')`
   font-stretch: normal;
   line-height: 1.08;
   letter-spacing: -0.1px;
-  color: #7070ff;
+  color: ${p => getTheme(p.theme, 'colors.primary')};
   padding: 0;
   margin: 0;
   background: none;

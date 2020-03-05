@@ -44,7 +44,7 @@ export const Count = styled('div')`
   font-size: 13px;
   line-height: 1.0;
   text-align: right;
-  color: #9b9b9b;
+  color: ${p => getTheme(p.theme, 'colors.secondary')};
 `;
 
 const placeholderStyle = p => css`

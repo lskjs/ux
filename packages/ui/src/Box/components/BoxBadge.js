@@ -21,7 +21,7 @@ export default styled('div')`
     border-radius: 10rem;
   `)}
   ${p => (p.primary && css`
-    color: #fff;
+    color: ${getTheme(p.theme, 'colors.white')};
     background-color: #1890ff;
   `)}
 `;

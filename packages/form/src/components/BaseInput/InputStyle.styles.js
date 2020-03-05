@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
+import getTheme from '@lskjs/theme/getTheme';
 
 export const LeftWrapper = styled('div')`
   display: flex;
@@ -41,7 +42,7 @@ export const Count = styled('div')`
   justify-content: flex-end;
   padding-top: 5px;
 
-  color: #9b9b9b;
+  color: ${p => getTheme(p.theme, 'colors.secondary')};
   font-size: 13px;
   font-weight: normal;
   font-style: normal;

@@ -42,12 +42,12 @@ export default styled(filteredTag)`
 
   ${p => (p.active && css`
     background-color: ${getTheme(p.theme, 'colors.primary')};
-    color: white;
+    color: ${getTheme(p.theme, 'colors.white')};
   `)}
 
   &:hover {
     background-color: ${p => getTheme(p.theme, 'colors.primary')};
-    color: white;
+    color: ${p => getTheme(p.theme, 'colors.white')};
   }
 
   > svg {
@@ -56,26 +56,26 @@ export default styled(filteredTag)`
 
   ${p => (p.inverse && css`
     background-color: ${getTheme(p.theme, 'colors.primary')};
-    color: white;
+    color: ${getTheme(p.theme, 'colors.white')};
 
     ${p.active && css`
       background-color: ${getTheme(p.theme, 'colors.primary')};
-      color: white;
+      color: ${getTheme(p.theme, 'colors.white')};
     `}
 
     &:hover {
       background-color: ${getTheme(p.theme, 'colors.primary')};
-      color: white;
+      color: ${getTheme(p.theme, 'colors.white')};
     }
 
     ${p.disabled && css`
-      background-color: #e3e3e3;
+      background-color: ${getTheme(p.theme, 'colors.border')};
       cursor: not-allowed;
-      color: #fff;
+      color: ${getTheme(p.theme, 'colors.white')};
 
       &:hover {
-        background-color: #e3e3e3;
-        color: #fff;
+        background-color: ${getTheme(p.theme, 'colors.border')};
+        color: ${getTheme(p.theme, 'colors.white')};
       }
     `}
   `)}

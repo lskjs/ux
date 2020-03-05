@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import getTheme from '@lskjs/theme/getTheme';
 
 export const Icon = styled('button')`
   background: none;
@@ -35,7 +36,7 @@ export const Item = styled('div')`
     letter-spacing: -0.1px;
     text-align: left;
     font-family: ${p => getTheme(p.theme, 'fontFamily')};
-    color: #4a4a4a;
+    color: ${p => getTheme(p.theme, 'colors.main')};
     cursor: pointer;
   }
   ${(p) => {
@@ -60,16 +61,16 @@ ${p => (p.selected && `
     }
     label {
       cursor: default;
-      color: #4a4a4a !important;
+      color: ${getTheme(p.theme, 'colors.main')} !important;
     }
     `)}
   ${p => (p.disabled && `
     ${Icon} {
-      color: #e3e3e3 !important;
+      color: ${getTheme(p.theme, 'colors.border')} !important;
       cursor: not-allowed;
     }
     label {
-      color: #e3e3e3 !important;
+      color: ${getTheme(p.theme, 'colors.border')} !important;
       cursor: not-allowed;
     }
     cursor: not-allowed;

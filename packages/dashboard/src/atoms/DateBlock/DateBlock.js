@@ -6,6 +6,6 @@ export default styled('div')`
   line-height: 1.43;
   letter-spacing: -0.1px;
   text-align: left;
-  color: #${p => getTheme(p.theme, 'colors.main')};
+  color: ${p => getTheme(p.theme, 'colors.main')};
   font-family: ${p => getTheme(p.theme, 'fontFamily')};
 `;

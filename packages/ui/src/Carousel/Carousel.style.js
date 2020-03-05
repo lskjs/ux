@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
+import getTheme from '@lskjs/theme/getTheme';
 
 export const ButtonRight = styled.button`
   position: relative;
@@ -59,7 +60,7 @@ export const ArrowLeft = styled.i`
   border: none !important;
   display: block;
   margin-left: 8px;
-  background-color: #fff;
+  background-color: ${p => getTheme(p.theme, 'colors.white')};
   box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.2);
 `;
 
@@ -74,7 +75,7 @@ export const ArrowRight = styled.i`
   width: 40px;
   margin-left: 29px;
   height: 40px;
-  background-color: #fff;
+  background-color: ${p => getTheme(p.theme, 'colors.white')};
   box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.2);
 `;
 
@@ -591,7 +592,7 @@ export const ItemSlider = styled.div`
 export const AnotherButtonRight = styled.button`
   width: 56px;
   height: 56px;
-  background-color: #ffffff;
+  background-color: ${p => getTheme(p.theme, 'colors.white')};
   position: absolute;
   top: 31%;
   font-size: 2em;
@@ -618,7 +619,7 @@ export const AnotherButtonRight = styled.button`
 `;
 
 export const AnotherButtonLeft = styled.button`
-  background-color: #ffffff;
+  background-color: ${p => getTheme(p.theme, 'colors.white')};
   position: absolute;
   top: 31%;
   right: 2%;
@@ -626,7 +627,7 @@ export const AnotherButtonLeft = styled.button`
   width: 56px;
   height: 56px;
   box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.2);
-  background-color: #ffffff;
+  background-color: ${p => getTheme(p.theme, 'colors.white')};
   background-repeat: no-repeat;
   cursor: pointer;
   outline: none;

@@ -16,7 +16,7 @@ export const Drop = styled('div')`
   width: 100%;
   height: 132px;
   border-radius: 3px;
-  background-color: #ffffff;
+  background-color: ${p => getTheme(p.theme, 'colors.white')};
   border: solid 3px ${p => getTheme(p.theme, 'colors.primary')};
   display: flex;
   align-items: center;
@@ -60,7 +60,7 @@ export const RemoveButton = styled('button')`
   border: none;
   outline: none;
   opacity: 0.7;
-  color: #ffffff;
+  color: ${p => getTheme(p.theme, 'colors.white')};
   position: absolute;
   top: 0;
   right: 0;
@@ -136,14 +136,14 @@ export const Info = styled('div')`
   line-height: 1.43;
   letter-spacing: -0.1px;
   text-align: left;
-  color: #4a4a4a;
+  color: ${p => getTheme(p.theme, 'colors.main')};
   font-family: ${p => getTheme(p.theme, 'fontFamily')};
   margin-bottom: 32px;
 `;
 
 export const Header = styled('div')`
 padding: 12px 16px;
-  background-color: #ffffff;
+  background-color: ${p => getTheme(p.theme, 'colors.white')};
   flex: 1;
   border-radius: 3px 3px 0 0;
 `;
@@ -152,8 +152,8 @@ export const Block = styled('div')`
   width: 100%;
   padding: 0;
   border-radius: 3px;
-  background-color: #ffffff;
-  border: solid 1px #e3e3e3;
+  background-color: ${p => getTheme(p.theme, 'colors.white')};
+  border: solid 1px ${p => getTheme(p.theme, 'colors.border')};
   display: flex;
   flex-direction: column;
   ${p => (p.validationState === 'error' && `
