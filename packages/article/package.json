@@ -38,7 +38,8 @@
     "@lskjs/theme": "1.1.14",
     "@lskjs/ui": "^1.1.33",
     "@lskjs/utils": "1.0.37",
-    "emotion": "10.0.27"
+    "emotion": "10.0.27",
+    "react": "16.8.6"
   },
   "peerDependencies": {
     "@emotion/core": "*",
@@ -46,6 +47,7 @@
     "@lskjs/link": "*",
     "@lskjs/theme": "*",
     "@lskjs/ui": "*",
-    "@lskjs/utils": "*"
+    "@lskjs/utils": "*",
+    "react": "*"
   }
 }
