@@ -100,17 +100,17 @@ export default ({ storiesOf }) => {
           >
             {name}
           </Button>
-        })
+        })}
         <hr />
         <ButtonGroup padded>
           {socialColors.map((colors, name) => {
-            <Button 
+            <Button
               icon={React.createElement(icons[name])}
               colors={colors} />
-          })
+          })}
         </ButtonGroup>
       </Story>
-    ))
+    )
     .add('badge', () => (
       <Story>
         <Badge count={5}>
