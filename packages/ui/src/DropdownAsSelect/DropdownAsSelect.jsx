@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { Global } from '@emotion/core';
 import cx from 'classnames';
 import autobind from '@lskjs/autobind';
 import ChevronDownIcon from 'react-icons2/mdi/chevron-down';
@@ -15,8 +16,6 @@ import {
   Icon,
   globalStyles,
 } from './DropdownAsSelect.styles';
-
-globalStyles();
 
 class SelectFilter extends PureComponent {
   static Trigger = TriggerStyled;
@@ -102,6 +101,7 @@ class SelectFilter extends PureComponent {
     const isOutside = outsideClosable !== null ? outsideClosable : defaultOutsideClosable;
     return (
       <Outside className={outsideWrapperStyle} onClickOutside={isOutside ? this.onClickOutside : () => {}}>
+        <Global styles={globalStyles} />
         <Manager>
           <Reference>
             {({ ref }) => (
