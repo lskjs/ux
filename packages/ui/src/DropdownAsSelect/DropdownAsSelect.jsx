@@ -8,7 +8,7 @@ import { Manager, Reference, Popper } from 'react-popper';
 import Outside from '../utils/react-click-outside';
 import {
   contentStyle,
-  outsideWrapperStyle,
+  // outsideWrapperStyle,
   popperDisabledStyle,
   Content,
   Trigger as TriggerStyled,
@@ -101,7 +101,7 @@ class SelectFilter extends PureComponent {
     const { Trigger } = this.constructor;
     const isOutside = outsideClosable !== null ? outsideClosable : defaultOutsideClosable;
     return (
-      <Outside className={outsideWrapperStyle} onClickOutside={isOutside ? this.onClickOutside : () => {}}>
+      <Outside style={{ position: 'relative' }} onClickOutside={isOutside ? this.onClickOutside : () => {}}>
         <Manager>
           <Reference>
             {({ ref }) => (
