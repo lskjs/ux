@@ -4,9 +4,9 @@
 
 ###  Providing your components inside
 
-- componentClass
-- Tag
-- as
+- componentClass // старый бутстрап
+- Tag // antd
+- as // react-bootstrap & emotion & styledcomponent
 
 ### Sizes
 
@@ -22,6 +22,12 @@ vs
 xs, sm, md, lg, xl
 
 
+### scss vs css-in-js
+
+### Emotion vs Styled-component
+
+
+### bunyan vs ...
 
 ### Questions
 
