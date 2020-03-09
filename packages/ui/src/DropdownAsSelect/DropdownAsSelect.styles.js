@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { injectGlobal } from 'emotion';
 import { css } from '@emotion/core';
 import getTheme from '@lskjs/theme/getTheme';
 
@@ -87,7 +88,7 @@ export const Trigger = styled('button')`
   }
 `;
 
-export const globalStyles = css`
+export const globalStyles = () => injectGlobal`
   .popover {
     position: absolute;
     top: 0;
