@@ -16,12 +16,12 @@ import withResponsive from './withResponsive';
 const ResponsiveButton = withResponsive(Button);
 
 const icons = {
-  facebook : Facebook,
-  twitter : Twitter,
-  vk : Vk,
-  telegram : Telegram,
-  youtube : Youtube,
-}
+  facebook: Facebook,
+  twitter: Twitter,
+  vk: Vk,
+  telegram: Telegram,
+  youtube: Youtube,
+};
 
 export default ({ storiesOf }) => {
   storiesOf('button/Button/alpha', module)
@@ -47,16 +47,11 @@ export default ({ storiesOf }) => {
         <Button size="small">Smaaaaaaaaaaaaaaaaaaaaal</Button>
       </Story>
     ))
-    .add('small', () => (
-      <Story />
-    ))
+    .add('small', () => <Story />)
 
     .add('default', () => (
       <Story>
-        <Button
-          componentClass="a"
-          href="/cabinet"
-        >
+        <Button componentClass="a" href="/cabinet">
           Link
         </Button>
       </Story>
@@ -69,45 +64,63 @@ export default ({ storiesOf }) => {
         <Button block>Block button</Button>
         <Button disabled>Disabled button</Button>
         <Button view="empty">Empty primary</Button>
-        <Button view="empty" paint="common">Empty common</Button>
+        <Button view="empty" paint="common">
+          Empty common
+        </Button>
         <hr />
         <Button paint="danger">Default</Button>
-        <Button paint="danger" view="transparent">view=transparent</Button>
-        <Button paint="danger" view="text">view=text</Button>
-        <Button paint="danger" block>block</Button>
-        <Button paint="danger" disabled>disabled</Button>
+        <Button paint="danger" view="transparent">
+          view=transparent
+        </Button>
+        <Button paint="danger" view="text">
+          view=text
+        </Button>
+        <Button paint="danger" block>
+          block
+        </Button>
+        <Button paint="danger" disabled>
+          disabled
+        </Button>
         <hr />
-        <Button mobileView iconLeft={<Vk />}>mobileView</Button>
+        <Button mobileView iconLeft={<Vk />}>
+          mobileView
+        </Button>
       </Story>
     ))
     .add('disabled', () => (
       <Story>
         <Button disabled>Default</Button>
-        <Button disabled paint="primary">Primary</Button>
-        <Button disabled paint="info">Info</Button>
-        <Button disabled paint="success">Success</Button>
-        <Button disabled paint="warning">Warning</Button>
-        <Button disabled paint="danger">Danger</Button>
+        <Button disabled paint="primary">
+          Primary
+        </Button>
+        <Button disabled paint="info">
+          Info
+        </Button>
+        <Button disabled paint="success">
+          Success
+        </Button>
+        <Button disabled paint="warning">
+          Warning
+        </Button>
+        <Button disabled paint="danger">
+          Danger
+        </Button>
       </Story>
     ))
     .add('social', () => (
       <Story>
         {socialColors.map((colors, name) => {
-          <Button
-            colors={colors}
-            size="large"
-            block
-          >
-            {name}
-          </Button>
-        })
+          return (
+            <Button colors={colors} size="large" block>
+              {name}
+            </Button>
+          );
+        })}
         <hr />
         <ButtonGroup padded>
-          {socialColors.map((colors, name) => {
-            <Button 
-              icon={React.createElement(icons[name])}
-              colors={colors} />
-          })
+          {socialColors.map((colors, name) => (
+            <Button icon={React.createElement(icons[name])} colors={colors} />
+          ))}
         </ButtonGroup>
       </Story>
     ))
@@ -169,11 +182,7 @@ export default ({ storiesOf }) => {
     ))
     .add('withResponsive', () => (
       <Story>
-        <ResponsiveButton
-          paint="primary"
-          size="small"
-          icon={<Plus />}
-        >
+        <ResponsiveButton paint="primary" size="small" icon={<Plus />}>
           Responsive
         </ResponsiveButton>
       </Story>
@@ -189,14 +198,20 @@ export default ({ storiesOf }) => {
     ))
     .add('without ripple', () => (
       <Story>
-        <Button isRipple={false} paint="primary">Primary</Button>
+        <Button isRipple={false} paint="primary">
+          Primary
+        </Button>
       </Story>
     ))
     .add('button group', () => (
       <Story>
         <ButtonGroup>
-          <Button isRipple={false} paint="primary">Primary</Button>
-          <Button isRipple={false} paint="primary">Primary</Button>
+          <Button isRipple={false} paint="primary">
+            Primary
+          </Button>
+          <Button isRipple={false} paint="primary">
+            Primary
+          </Button>
         </ButtonGroup>
       </Story>
     ))
@@ -240,10 +255,16 @@ export default ({ storiesOf }) => {
     ))
     .add('Button with border', () => (
       <Story>
-        <Button bordered paint="primary" view="text"> Button with border </Button>
+        <Button bordered paint="primary" view="text">
+          {' '}
+          Button with border{' '}
+        </Button>
         <br />
         <br />
-        <Button bordered borderColor="#fafa" paint="primary" view="text"> Button with custom border </Button>
+        <Button bordered borderColor="#fafa" paint="primary" view="text">
+          {' '}
+          Button with custom border{' '}
+        </Button>
       </Story>
     ));
 };
