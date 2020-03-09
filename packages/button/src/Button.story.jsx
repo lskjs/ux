@@ -19,10 +19,7 @@ export default ({ storiesOf }) => {
   storiesOf('button/Button', module)
     .add('default', () => (
       <Story>
-        <Button
-          componentClass="a"
-          href="/cabinet"
-        >
+        <Button componentClass="a" href="/cabinet">
           Link
         </Button>
       </Story>
@@ -40,93 +37,127 @@ export default ({ storiesOf }) => {
     .add('size', () => (
       <Story>
         <Button paint="primary">default</Button>
-        <Button paint="primary" size="small">small</Button>
-        <Button paint="primary" size="large">large</Button>
+        <Button paint="primary" size="small">
+          small
+        </Button>
+        <Button paint="primary" size="large">
+          large
+        </Button>
       </Story>
     ))
     .add('small', () => (
       <Story>
-        <Button paint="primary" size="small">Primary</Button>
-        <Button paint="danger" size="small">Danger</Button>
-        <Button paint="info" size="small">Info</Button>
-        <Button paint="success" size="small">Success</Button>
-        <Button paint="warning" size="small">Warning</Button>
+        <Button paint="primary" size="small">
+          Primary
+        </Button>
+        <Button paint="danger" size="small">
+          Danger
+        </Button>
+        <Button paint="info" size="small">
+          Info
+        </Button>
+        <Button paint="success" size="small">
+          Success
+        </Button>
+        <Button paint="warning" size="small">
+          Warning
+        </Button>
         <br />
-        <Button paint="primary" size="small">Laaaaaaaaaaaaaaaaaarge text</Button>
+        <Button paint="primary" size="small">
+          Laaaaaaaaaaaaaaaaaarge text
+        </Button>
         <br />
-        <Button iconLeft={<Facebook />} paint="primary" size="small">small</Button>
+        <Button iconLeft={<Facebook />} paint="primary" size="small">
+          small
+        </Button>
         <br />
-        <Button iconRight={<Twitter />} paint="primary" size="small">small</Button>
+        <Button iconRight={<Twitter />} paint="primary" size="small">
+          small
+        </Button>
         <br />
         <Button icon={<Telegram />} paint="primary" size="small" />
         <br />
-        <Button iconLeft={<Facebook />} iconRight={<Twitter />} paint="primary" size="small">small</Button>
+        <Button iconLeft={<Facebook />} iconRight={<Twitter />} paint="primary" size="small">
+          small
+        </Button>
       </Story>
     ))
     .add('props', () => (
       <Story>
         <Button paint="primary">Default</Button>
-        <Button paint="primary" view="transparent">view=transparent</Button>
-        <Button paint="primary" view="text">view=text</Button>
-        <Button paint="primary" block>block</Button>
-        <Button paint="primary" disabled>disabled</Button>
-        <Button view="empty" paint="primary">Empty primary</Button>
-        <Button view="empty" paint="common">Empty common</Button>
+        <Button paint="primary" view="transparent">
+          view=transparent
+        </Button>
+        <Button paint="primary" view="text">
+          view=text
+        </Button>
+        <Button paint="primary" block>
+          block
+        </Button>
+        <Button paint="primary" disabled>
+          disabled
+        </Button>
+        <Button view="empty" paint="primary">
+          Empty primary
+        </Button>
+        <Button view="empty" paint="common">
+          Empty common
+        </Button>
         <hr />
         <Button paint="danger">Default</Button>
-        <Button paint="danger" view="transparent">view=transparent</Button>
-        <Button paint="danger" view="text">view=text</Button>
-        <Button paint="danger" block>block</Button>
-        <Button paint="danger" disabled>disabled</Button>
+        <Button paint="danger" view="transparent">
+          view=transparent
+        </Button>
+        <Button paint="danger" view="text">
+          view=text
+        </Button>
+        <Button paint="danger" block>
+          block
+        </Button>
+        <Button paint="danger" disabled>
+          disabled
+        </Button>
         <hr />
-        <Button paint="primary" mobileView iconLeft={<Vk />}>mobileView</Button>
+        <Button paint="primary" mobileView iconLeft={<Vk />}>
+          mobileView
+        </Button>
       </Story>
     ))
     .add('disabled', () => (
       <Story>
         <Button disabled>Default</Button>
-        <Button disabled paint="primary">Primary</Button>
-        <Button disabled paint="info">Info</Button>
-        <Button disabled paint="success">Success</Button>
-        <Button disabled paint="warning">Warning</Button>
-        <Button disabled paint="danger">Danger</Button>
+        <Button disabled paint="primary">
+          Primary
+        </Button>
+        <Button disabled paint="info">
+          Info
+        </Button>
+        <Button disabled paint="success">
+          Success
+        </Button>
+        <Button disabled paint="warning">
+          Warning
+        </Button>
+        <Button disabled paint="danger">
+          Danger
+        </Button>
       </Story>
     ))
     .add('social', () => (
       <Story>
-        <Button
-          colors={socialColors.youtube}
-          size="large"
-          block
-        >
+        <Button colors={socialColors.youtube} size="large" block>
           Youtube
         </Button>
-        <Button
-          colors={socialColors.facebook}
-          size="large"
-          block
-        >
+        <Button colors={socialColors.facebook} size="large" block>
           Facebook
         </Button>
-        <Button
-          colors={socialColors.twitter}
-          size="large"
-          block
-        >
+        <Button colors={socialColors.twitter} size="large" block>
           Twitter
         </Button>
-        <Button
-          colors={socialColors.vk}
-          size="large"
-          block
-        >
+        <Button colors={socialColors.vk} size="large" block>
           VK
         </Button>
-        <Button
-          colors={socialColors.telegram}
-          size="large"
-          block
-        >
+        <Button colors={socialColors.telegram} size="large" block>
           Telegram
         </Button>
         <ButtonGroup padded>
@@ -196,11 +227,7 @@ export default ({ storiesOf }) => {
     ))
     .add('withResponsive', () => (
       <Story>
-        <ResponsiveButton
-          paint="primary"
-          size="small"
-          icon={<Plus />}
-        >
+        <ResponsiveButton paint="primary" size="small" icon={<Plus />}>
           Responsive
         </ResponsiveButton>
       </Story>
@@ -216,14 +243,20 @@ export default ({ storiesOf }) => {
     ))
     .add('without ripple', () => (
       <Story>
-        <Button isRipple={false} paint="primary">Primary</Button>
+        <Button isRipple={false} paint="primary">
+          Primary
+        </Button>
       </Story>
     ))
     .add('button group', () => (
       <Story>
         <ButtonGroup>
-          <Button isRipple={false} paint="primary">Primary</Button>
-          <Button isRipple={false} paint="primary">Primary</Button>
+          <Button isRipple={false} paint="primary">
+            Primary
+          </Button>
+          <Button isRipple={false} paint="primary">
+            Primary
+          </Button>
         </ButtonGroup>
       </Story>
     ))
@@ -267,10 +300,14 @@ export default ({ storiesOf }) => {
     ))
     .add('Button with border', () => (
       <Story>
-        <Button bordered paint="primary" view="text"> Button with border </Button>
+        <Button bordered paint="primary" view="text">
+          Button with border
+        </Button>
         <br />
         <br />
-        <Button bordered borderColor="#fafa" paint="primary" view="text"> Button with custom border </Button>
+        <Button bordered borderColor="#fafa" paint="primary" view="text">
+          Button with custom border
+        </Button>
       </Story>
     ));
 };
