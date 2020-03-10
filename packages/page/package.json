@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/page",
-  "version": "1.1.48",
+  "version": "1.1.49",
   "description": "LSK ux subrepo: page",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -35,7 +35,7 @@
     "@lskjs/grid": "^1.1.48",
     "@lskjs/link": "^1.1.48",
     "@lskjs/theme": "^1.1.46",
-    "@lskjs/ui": "^1.1.48",
+    "@lskjs/ui": "^1.1.49",
     "@lskjs/utils": "1.0.19",
     "antd": "3.26.12",
     "lodash": "4.17.15",

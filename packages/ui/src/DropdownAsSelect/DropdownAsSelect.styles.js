@@ -16,7 +16,7 @@ export const Content = styled('div')`
   border-radius: 4px;
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.24);
   background-color: ${p => getTheme(p.theme, 'colors.white')};
-  z-index: 1;
+  z-index: 11;
   height: ${p => p.height}px;
 `;
 
