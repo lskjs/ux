@@ -42,9 +42,7 @@ export const defaultOptions = {
   // horizontal: true,
 };
 
-
 setDefaultOptions(defaultOptions);
-
 
 export default function scrollTo(id, incomeOptions = {}) {
   const options = {
@@ -57,11 +55,11 @@ export default function scrollTo(id, incomeOptions = {}) {
     let value;
     if (id == null) {
       return false;
-    } if (typeof id === 'number') {
-      value = id;
-    } else if (typeof id === 'string') {
+    }
+    if (typeof id === 'string') {
       const anchor = document.querySelector(id);
       if (!anchor) return false;
+      value = anchor;
     } else {
       value = id;
     }
