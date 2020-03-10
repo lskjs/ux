@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/button",
-  "version": "1.1.44",
+  "version": "1.1.48",
   "description": "LSK ux subrepo: button",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -31,13 +31,14 @@
     "@emotion/core": "^10.0.27",
     "@emotion/styled": "^10.0.27",
     "@lskjs/autobind": "^1.4.0",
-    "@lskjs/theme": "^1.1.41",
+    "@lskjs/theme": "^1.1.46",
     "@lskjs/utils": "^1.5.0",
     "classnames": "^2.2.6",
     "prop-types": "^15.7.2"
   },
   "devDependencies": {
-    "@lskjs/dev": "^1.1.41",
+    "@lskjs/dev": "^1.1.47",
+    "@lskjs/grid": "1.1.41",
     "antd": "3.26.9",
     "lodash": "4.17.15",
     "mobx": "5.15.4",
@@ -46,6 +47,9 @@
     "react-icons2": "2.5.0"
   },
   "peerDependencies": {
+    "@lskjs/dev": "*",
+    "@lskjs/grid": "*",
+    "antd": "*",
     "lodash": "*",
     "react": "*",
     "react-icons2": "*"

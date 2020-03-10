@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
 import getTheme from '@lskjs/theme/getTheme';
-import removeProps from '@lskjs/utils/removeProps';
 
 /* default */
 const defaultStyle = css`
@@ -20,7 +19,6 @@ const size1Style = css`
   flex: 0 0 8.33333%;
   max-width: 8.33333%;
 `;
-
 
 const size2Style = css`
   flex: 0 0 16.66667%;
@@ -279,7 +277,6 @@ const sizeMedium12Style = css`
   }
 `;
 
-
 /* large */
 const defaultLargeStyle = css`
   @media (min-width: 992px) {
@@ -381,7 +378,6 @@ const sizeLarge12Style = css`
   }
 `;
 
-
 /* extra large */
 const defaultExtraStyle = css`
   @media (min-width: 1200px) {
@@ -472,8 +468,7 @@ const sizeExtra12Style = css`
   }
 `;
 
-const filter = removeProps('div', ['xs', 'sm', 'md', 'lg', 'xl']);
-export default styled(filter)`
+export default styled('div', { shouldForwardProp: prop => !['xs', 'sm', 'md', 'lg', 'xl'].includes(prop) })`
   box-sizing: border-box;
   position: relative;
   width: 100%;
@@ -482,114 +477,184 @@ export default styled(filter)`
   padding-right: ${p => getTheme(p.theme, 'gridGap')}px;
   padding-left: ${p => getTheme(p.theme, 'gridGap')}px;
 
-  ${(p) => {
+  ${p => {
     if (p.xs && !['number', 'string'].includes(typeof p.xs)) {
       return defaultStyle;
     }
     switch (p.xs) {
-      case 'auto': return autoStyle;
-      case 1: return size1Style;
-      case 2: return size2Style;
-      case 3: return size3Style;
-      case 4: return size4Style;
-      case 5: return size5Style;
-      case 6: return size6Style;
-      case 7: return size7Style;
-      case 8: return size8Style;
-      case 9: return size9Style;
-      case 10: return size10Style;
-      case 11: return size11Style;
-      case 12: return size12Style;
-      default: return '';
+      case 'auto':
+        return autoStyle;
+      case 1:
+        return size1Style;
+      case 2:
+        return size2Style;
+      case 3:
+        return size3Style;
+      case 4:
+        return size4Style;
+      case 5:
+        return size5Style;
+      case 6:
+        return size6Style;
+      case 7:
+        return size7Style;
+      case 8:
+        return size8Style;
+      case 9:
+        return size9Style;
+      case 10:
+        return size10Style;
+      case 11:
+        return size11Style;
+      case 12:
+        return size12Style;
+      default:
+        return '';
     }
   }}
 
-  ${(p) => {
+  ${p => {
     if (p.sm && !['number', 'string'].includes(typeof p.sm)) {
       return defaultSmallStyle;
     }
     switch (p.sm) {
-      case 'auto': return autoSmallStyle;
-      case 1: return sizeSmall1Style;
-      case 2: return sizeSmall2Style;
-      case 3: return sizeSmall3Style;
-      case 4: return sizeSmall4Style;
-      case 5: return sizeSmall5Style;
-      case 6: return sizeSmall6Style;
-      case 7: return sizeSmall7Style;
-      case 8: return sizeSmall8Style;
-      case 9: return sizeSmall9Style;
-      case 10: return sizeSmall10Style;
-      case 11: return sizeSmall11Style;
-      case 12: return sizeSmall12Style;
-      default: return '';
+      case 'auto':
+        return autoSmallStyle;
+      case 1:
+        return sizeSmall1Style;
+      case 2:
+        return sizeSmall2Style;
+      case 3:
+        return sizeSmall3Style;
+      case 4:
+        return sizeSmall4Style;
+      case 5:
+        return sizeSmall5Style;
+      case 6:
+        return sizeSmall6Style;
+      case 7:
+        return sizeSmall7Style;
+      case 8:
+        return sizeSmall8Style;
+      case 9:
+        return sizeSmall9Style;
+      case 10:
+        return sizeSmall10Style;
+      case 11:
+        return sizeSmall11Style;
+      case 12:
+        return sizeSmall12Style;
+      default:
+        return '';
     }
   }}
 
 
-  ${(p) => {
+  ${p => {
     if (p.md && !['number', 'string'].includes(typeof p.md)) {
       return defaultMediumStyle;
     }
     switch (p.md) {
-      case 'auto': return autoMediumStyle;
-      case 1: return sizeMedium1Style;
-      case 2: return sizeMedium2Style;
-      case 3: return sizeMedium3Style;
-      case 4: return sizeMedium4Style;
-      case 5: return sizeMedium5Style;
-      case 6: return sizeMedium6Style;
-      case 7: return sizeMedium7Style;
-      case 8: return sizeMedium8Style;
-      case 9: return sizeMedium9Style;
-      case 10: return sizeMedium10Style;
-      case 11: return sizeMedium11Style;
-      case 12: return sizeMedium12Style;
-      default: return '';
+      case 'auto':
+        return autoMediumStyle;
+      case 1:
+        return sizeMedium1Style;
+      case 2:
+        return sizeMedium2Style;
+      case 3:
+        return sizeMedium3Style;
+      case 4:
+        return sizeMedium4Style;
+      case 5:
+        return sizeMedium5Style;
+      case 6:
+        return sizeMedium6Style;
+      case 7:
+        return sizeMedium7Style;
+      case 8:
+        return sizeMedium8Style;
+      case 9:
+        return sizeMedium9Style;
+      case 10:
+        return sizeMedium10Style;
+      case 11:
+        return sizeMedium11Style;
+      case 12:
+        return sizeMedium12Style;
+      default:
+        return '';
     }
   }}
 
-  ${(p) => {
+  ${p => {
     if (p.lg && !['number', 'string'].includes(typeof p.lg)) {
       return defaultLargeStyle;
     }
     switch (p.lg) {
-      case 'auto': return autoLargeStyle;
-      case 1: return sizeLarge1Style;
-      case 2: return sizeLarge2Style;
-      case 3: return sizeLarge3Style;
-      case 4: return sizeLarge4Style;
-      case 5: return sizeLarge5Style;
-      case 6: return sizeLarge6Style;
-      case 7: return sizeLarge7Style;
-      case 8: return sizeLarge8Style;
-      case 9: return sizeLarge9Style;
-      case 10: return sizeLarge10Style;
-      case 11: return sizeLarge11Style;
-      case 12: return sizeLarge12Style;
-      default: return '';
+      case 'auto':
+        return autoLargeStyle;
+      case 1:
+        return sizeLarge1Style;
+      case 2:
+        return sizeLarge2Style;
+      case 3:
+        return sizeLarge3Style;
+      case 4:
+        return sizeLarge4Style;
+      case 5:
+        return sizeLarge5Style;
+      case 6:
+        return sizeLarge6Style;
+      case 7:
+        return sizeLarge7Style;
+      case 8:
+        return sizeLarge8Style;
+      case 9:
+        return sizeLarge9Style;
+      case 10:
+        return sizeLarge10Style;
+      case 11:
+        return sizeLarge11Style;
+      case 12:
+        return sizeLarge12Style;
+      default:
+        return '';
     }
   }}
 
-  ${(p) => {
+  ${p => {
     if (p.xl && !['number', 'string'].includes(typeof p.xl)) {
       return defaultExtraStyle;
     }
     switch (p.xl) {
-      case 'auto': return autoExtraStyle;
-      case 1: return sizeExtra1Style;
-      case 2: return sizeExtra2Style;
-      case 3: return sizeExtra3Style;
-      case 4: return sizeExtra4Style;
-      case 5: return sizeExtra5Style;
-      case 6: return sizeExtra6Style;
-      case 7: return sizeExtra7Style;
-      case 8: return sizeExtra8Style;
-      case 9: return sizeExtra9Style;
-      case 10: return sizeExtra10Style;
-      case 11: return sizeExtra11Style;
-      case 12: return sizeExtra12Style;
-      default: return '';
+      case 'auto':
+        return autoExtraStyle;
+      case 1:
+        return sizeExtra1Style;
+      case 2:
+        return sizeExtra2Style;
+      case 3:
+        return sizeExtra3Style;
+      case 4:
+        return sizeExtra4Style;
+      case 5:
+        return sizeExtra5Style;
+      case 6:
+        return sizeExtra6Style;
+      case 7:
+        return sizeExtra7Style;
+      case 8:
+        return sizeExtra8Style;
+      case 9:
+        return sizeExtra9Style;
+      case 10:
+        return sizeExtra10Style;
+      case 11:
+        return sizeExtra11Style;
+      case 12:
+        return sizeExtra12Style;
+      default:
+        return '';
     }
   }}
 `;

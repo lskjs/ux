@@ -83,7 +83,7 @@ class FlickityCarousel extends PureComponent {
             ...options,
           }}
           static
-          className={flickityStyle}
+          css={flickityStyle}
           {...instanceProps}
           flickityRef={(c) => {
             this.flkty = c;
@@ -93,7 +93,7 @@ class FlickityCarousel extends PureComponent {
         </Flickity>
         <Control position="left" visible={canPrev} vertical={vertical}>
           <Button
-            className={shadowStyle}
+            css={shadowStyle}
             disabled={!canPrev}
             icon={<CarouselButton />}
             onClick={this.myCustomPrevious}
@@ -101,7 +101,7 @@ class FlickityCarousel extends PureComponent {
         </Control>
         <Control position="right" visible={canNext} vertical={vertical}>
           <Button
-            className={shadowStyle}
+            css={shadowStyle}
             disabled={!canNext}
             icon={<CarouselButton />}
             onClick={this.myCustomNext}

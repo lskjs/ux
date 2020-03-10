@@ -1,10 +1,8 @@
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
-import removeProps from '@lskjs/utils/removeProps';
 import getTheme from '@lskjs/theme/getTheme';
 
-const filter = removeProps('div', ['fluid']);
-export default styled(filter)`
+export default styled('div', { shouldForwardProp: prop => !['fluid'].includes(prop) })`
   box-sizing: border-box;
   width: 100%;
   margin-right: auto;
