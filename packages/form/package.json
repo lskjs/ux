@@ -95,6 +95,7 @@
     "@lskjs/scroll": "*",
     "@lskjs/theme": "*",
     "@lskjs/ui": "*",
+    "@lskjs/dev": "*",
     "@lskjs/utils": "*",
     "antd": "*",
     "bluebird": "*",
