@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/article",
-  "version": "1.1.47",
+  "version": "1.1.48",
   "description": "LSK ux subrepo: article",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -34,9 +34,9 @@
     "@emotion/core": "10.0.27",
     "@emotion/styled": "10.0.27",
     "@lskjs/dev": "^1.1.47",
-    "@lskjs/link": "^1.1.47",
+    "@lskjs/link": "^1.1.48",
     "@lskjs/theme": "^1.1.46",
-    "@lskjs/ui": "^1.1.47",
+    "@lskjs/ui": "^1.1.48",
     "@lskjs/utils": "1.0.37",
     "emotion": "10.0.27",
     "react": "16.8.6"
