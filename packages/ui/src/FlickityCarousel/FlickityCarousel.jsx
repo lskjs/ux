@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import autobind from '@lskjs/autobind';
 import Button from '@lskjs/button';
 import Flickity from 'react-flickity-component';
-import { flickityStyle, Wrapper, Control, shadowStyle, ButtonsWrapper } from './FlickityCarousel.styles';
+import { Wrapper, Control } from './FlickityCarousel.styles';
 import CarouselButton from './assets/carousel-go';
 
 const flickityOptions = {
@@ -15,14 +15,6 @@ const flickityOptions = {
 };
 
 class FlickityCarousel extends PureComponent {
-  static propTypes = {
-    children: PropTypes.any,
-    vertical: PropTypes.number,
-  }
-  static defaultProps = {
-    children: null,
-    vertical: null,
-  }
   constructor(props) {
     super(props);
     this.state = {
@@ -83,9 +75,9 @@ class FlickityCarousel extends PureComponent {
             ...options,
           }}
           static
-          css={flickityStyle}
           {...instanceProps}
-          flickityRef={(c) => {
+          // css={flickityStyle}
+          flickityRef={c => {
             this.flkty = c;
           }}
         >
@@ -93,7 +85,9 @@ class FlickityCarousel extends PureComponent {
         </Flickity>
         <Control position="left" visible={canPrev} vertical={vertical}>
           <Button
-            css={shadowStyle}
+            style={{
+              boxShadow: '0 -6px 8px -2px rgba(0, 0, 0, 0.16)',
+            }}
             disabled={!canPrev}
             icon={<CarouselButton />}
             onClick={this.myCustomPrevious}
@@ -101,7 +95,9 @@ class FlickityCarousel extends PureComponent {
         </Control>
         <Control position="right" visible={canNext} vertical={vertical}>
           <Button
-            css={shadowStyle}
+            style={{
+              boxShadow: '0 6px 8px -2px rgba(0, 0, 0, 0.16)',
+            }}
             disabled={!canNext}
             icon={<CarouselButton />}
             onClick={this.myCustomNext}
@@ -111,5 +107,15 @@ class FlickityCarousel extends PureComponent {
     );
   }
 }
+
+FlickityCarousel.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
+  children: PropTypes.any,
+  vertical: PropTypes.number,
+};
+FlickityCarousel.defaultProps = {
+  children: null,
+  vertical: null,
+};
 
 export default FlickityCarousel;
