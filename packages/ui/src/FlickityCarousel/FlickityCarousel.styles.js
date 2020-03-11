@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { css } from '@emotion/core';
 
 export const flickityStyle = css`
+  cursor: default;
   &:focus {
     outline: none !important;
   }
