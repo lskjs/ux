@@ -59,6 +59,17 @@ const xlargeSize = css`
   min-width: 104px;
 `;
 
+const huge = css`
+  padding: 19px 66px;
+  font-size: 17px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.08;
+  letter-spacing: -0.2px;
+  min-width: 104px;
+`;
+
 const largeSize = props => css`
   ${props.new ? `
     padding: 15px 16px;
@@ -919,6 +930,7 @@ export const Btn = styled(filteredTag)`
       case 'verySmall': return verySmallSize;
       case 'extraSmall': return xsmallSize;
       case 'extraLarge': return xlargeSize;
+      case 'huge': return huge;
       default: return defaultSize;
     }
   }}

@@ -238,7 +238,7 @@ Button.propTypes = {
   children: PropTypes.any,
   bordered: PropTypes.bool,
   borderColor: PropTypes.string,
-  size: PropTypes.oneOf(['extraSmall', 'verySmall', 'small', 'default', 'large', 'extraLarge']),
+  size: PropTypes.oneOf(['extraSmall', 'verySmall', 'small', 'default', 'large', 'extraLarge', 'huge']),
   paint: PropTypes.oneOf([
     'default',
     'primary',

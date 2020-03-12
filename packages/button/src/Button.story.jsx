@@ -43,6 +43,9 @@ export default ({ storiesOf }) => {
         <Button paint="primary" size="large">
           large
         </Button>
+        <Button paint="primary" size="huge">
+          Начать бесплатно
+        </Button>
       </Story>
     ))
     .add('small', () => (
