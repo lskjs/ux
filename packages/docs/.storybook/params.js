@@ -1,5 +1,6 @@
 const articleReq = require.context('../node_modules/@lskjs/article', true, /.story.js$|.story.js$|.story.jsx$|.story.jsx$|.story.tsx$/);
 const landingReq = require.context('../node_modules/@lskjs/landing', true, /.story.js$|.story.js$|.story.jsx$|.story.jsx$|.story.tsx$/);
+const extraReq = require.context('../node_modules/@lskjs/extra', true, /.story.js$|.story.js$|.story.jsx$|.story.jsx$|.story.tsx$/);
 const devReq = require.context('../node_modules/@lskjs/dev', true, /.story.js$|.story.js$|.story.jsx$|.story.jsx$|.story.tsx$/);
 const gridReq = require.context('../node_modules/@lskjs/grid', true, /.story.js$|.story.js$|.story.jsx$|.story.jsx$|.story.tsx$/);
 const gridtableReq = require.context('../node_modules/@lskjs/gridtable', true, /.story.js$|.story.js$|.story.jsx$|.story.jsx$|.story.tsx$/);
@@ -37,6 +38,7 @@ export default {
     navbarReq,
     themeReq,
     landingReq,
+    extraReq,
   ),
   options: {
     name: 'docs',
