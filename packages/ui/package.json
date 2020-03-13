@@ -62,6 +62,7 @@
     "react-icon-base": "2.1.2",
     "react-icons2": "2.5.0",
     "react-if": "3.4.3",
+    "react-laag": "1.7.3",
     "react-markdown": "4.3.1",
     "react-notification-system": "0.3.0",
     "react-slick": "0.25.2",
@@ -87,7 +88,8 @@
     "react": "*",
     "react-icon-base": "*",
     "react-icons2": "*",
-    "react-if": "*"
+    "react-if": "*",
+    "react-laag": "*"
   },
   "optionalDependencies": {
     "flickity": "*",
