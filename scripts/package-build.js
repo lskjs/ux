@@ -36,6 +36,7 @@ async function packageBuild() {
       '--emitDeclarationOnly',
       '--esModuleInterop',
       `--outDir ${DIST}`,
+      '--jsx preserve',
       'src/**.ts',
     ].join(' '),
   );

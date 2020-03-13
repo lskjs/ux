@@ -3,7 +3,6 @@
     "outDir": "build/lib",
     "module": "commonjs",
     "target": "es5",
-    "typeRoots" : ["./typings"],
     "lib": [
       "es5",
       "es6",
@@ -13,7 +12,8 @@
     ],
     "sourceMap": true,
     "allowJs": true,
-    "jsx": "react",
+    "checkJs": false,
+    "jsx": "preserve",
     "moduleResolution": "node",
     "rootDirs": [
       "src",
