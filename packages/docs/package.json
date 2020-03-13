@@ -38,6 +38,7 @@
     "@lskjs/downloads": "^1.1.61",
     "@lskjs/form": "^1.1.61",
     "@lskjs/grid": "^1.1.61",
+    "@lskjs/extra": "^1.1.61",
     "@lskjs/gridtable": "^1.1.57",
     "@lskjs/landing": "^1.1.61",
     "@lskjs/link": "^1.1.61",
