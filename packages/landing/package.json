@@ -30,8 +30,6 @@
   "devDependencies": {
     "@lskjs/grid": "^1.1.54",
     "@lskjs/theme": "1.1.51",
-    "@types/prop-types": "15.7.3",
-    "@types/react": "16.9.23",
     "prop-types": "15.7.2",
     "react": "16.8.6"
   },
