@@ -1,1 +1,1 @@
-# LSK ux subrepo: ui-dev
+# LSK ux subrepo: landing
