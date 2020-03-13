@@ -141,7 +141,7 @@ class GridTableTest extends Component {
 
 
 export default ({ storiesOf }) => {
-  storiesOf('GridTable', module)
+  storiesOf('gridtable/GridTable', module)
     .add('Default', () => (
       <Story devtools>
         <GridTableTest />
