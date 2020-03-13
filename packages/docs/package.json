@@ -31,6 +31,7 @@
   "dependencies": {
     "@lskjs/apiquery": "^1.2.0",
     "@lskjs/article": "^1.1.55",
+    "@lskjs/landing": "^1.1.55",
     "@lskjs/autobind": "1.4.0",
     "@lskjs/button": "^1.1.55",
     "@lskjs/css": "^1.1.55",
