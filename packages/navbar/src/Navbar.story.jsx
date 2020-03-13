@@ -6,7 +6,7 @@ import NavDropdown from './NavDropdown';
 import GlobalStyles from './GlobalStyles';
 
 export default ({ storiesOf }) =>
-  storiesOf('ui/Navbar', module).add('default', () => (
+  storiesOf('navbar/Navbar', module).add('default', () => (
     <Story>
       <GlobalStyles />
       <Navbar bg="light" expand="lg">
