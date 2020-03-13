@@ -158,6 +158,7 @@ class Button extends PureComponent {
       onlyIcon,
       mobileView,
       isRipple,
+      htmlRef,
       ...props
     } = this.props;
     const tag = componentClass || 'button';
@@ -176,11 +177,12 @@ class Button extends PureComponent {
       'textProcessing',
       'textError',
     ]);
+    console.log(htmlRef);
     return (
       <Btn
         type={type}
         mobileView={mobileView}
-        componentClass={tag}
+        as={tag}
         bordered={bordered}
         borderColor={borderColor}
         rounded={rounded}
@@ -199,6 +201,7 @@ class Button extends PureComponent {
         twoIcons={icoLeft && iconRight}
         style={style}
         colors={colors}
+        ref={htmlRef}
         {...filterProps(buttonProps, tag)}
         // {...buttonProps}
       >
@@ -287,6 +290,7 @@ Button.propTypes = {
   isRipple: PropTypes.bool,
   mobileView: PropTypes.bool,
   onlyIcon: PropTypes.bool,
+  htmlRef: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
 };
 
 Button.defaultProps = {
@@ -320,6 +324,7 @@ Button.defaultProps = {
   mobileView: false,
   onlyIcon: false,
   isRipple: !isTouchDevice(),
+  htmlRef: null,
 };
 
 export default Button;

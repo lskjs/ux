@@ -24,28 +24,31 @@ const rotate = keyframes`
   }
 `;
 
-export const Text = styled('span')`
-
-`;
-
+export const Text = styled('span')``;
 
 export const Icon = styled('div')`
   display: flex;
   margin-top: 0;
-  ${(props) => {
+  ${props => {
     switch (props.direction) {
-      case 'left': return iconLeft;
-      case 'right': return iconRight;
-      case 'single': return iconSingle;
-      default: return '';
+      case 'left':
+        return iconLeft;
+      case 'right':
+        return iconRight;
+      case 'single':
+        return iconSingle;
+      default:
+        return '';
     }
   }}
 
-  ${props => (props.spin && `
+  ${props =>
+    props.spin &&
+    `
     > svg {
       animation: ${rotate} .6s linear infinite;
     }
-  `)}
+  `}
 `;
 
 const xlargeSize = css`
@@ -71,7 +74,8 @@ const huge = css`
 `;
 
 const largeSize = props => css`
-  ${props.new ? `
+  ${props.new
+    ? `
     padding: 15px 16px;
     font-size: 13px;
     font-weight: 500;
@@ -79,7 +83,8 @@ const largeSize = props => css`
     font-stretch: normal;
     line-height: 1.08;
     letter-spacing: -0.1px;
-  ` : `
+  `
+    : `
     padding: 17px 16px;
     font-size: 13px;
     font-weight: 500;
@@ -141,7 +146,8 @@ const xsmallSize = css`
 const iconButtonLeft = props => css`
   display: ${props.block ? 'flex' : 'inline-flex'};
   align-items: center;
-  ${props.size === 'large' && `
+  ${props.size === 'large' &&
+    `
     padding-left: 9px;
     padding-top: 9px;
     padding-bottom: 9px;
@@ -150,7 +156,8 @@ const iconButtonLeft = props => css`
       font-size: 24px;
     }
   `}
-  ${props.size === 'default' && `
+  ${props.size === 'default' &&
+    `
     padding-top: 11px;
     padding-bottom: 11px;
     padding-left: 12px;
@@ -159,7 +166,8 @@ const iconButtonLeft = props => css`
       font-size: 18px;
     }
   `}
-  ${props.size === 'small' && `
+  ${props.size === 'small' &&
+    `
     padding-left: 6.35px;
     padding-top: 6px;
     padding-bottom: 6px;
@@ -173,7 +181,8 @@ const iconButtonLeft = props => css`
 const iconButtonRight = props => css`
   display: ${props.block ? 'flex' : 'inline-flex'};
   align-items: center;
-  ${props.size === 'large' && `
+  ${props.size === 'large' &&
+    `
     padding-top: 9px;
     padding-bottom: 9px;
     padding-right: 9px;
@@ -182,7 +191,8 @@ const iconButtonRight = props => css`
       font-size: 24px;
     }
   `}
-  ${props.size === 'default' && `
+  ${props.size === 'default' &&
+    `
     padding-right: 14px;
     padding-top: 11px;
     padding-bottom: 11px;
@@ -191,7 +201,8 @@ const iconButtonRight = props => css`
       font-size: 18px;
     }
   `}
-  ${props.size === 'small' && `
+  ${props.size === 'small' &&
+    `
     padding-top: 6px;
     padding-bottom: 6px;
     padding-right: 8px;
@@ -205,7 +216,8 @@ const iconButtonRight = props => css`
 const iconButtonSingle = props => css`
   display: ${props.block ? 'flex' : 'inline-flex'};
   align-items: center;
-  ${props.size === 'large' && `
+  ${props.size === 'large' &&
+    `
     padding-top: 6px !important;
     padding-bottom: 6px !important;
     padding-right: 6px !important;
@@ -215,7 +227,8 @@ const iconButtonSingle = props => css`
       font-size: 26px;
     }
   `}
-  ${props.size === 'default' && `
+  ${props.size === 'default' &&
+    `
     padding-top: 12px !important;
     padding-bottom: 12px !important;
     padding-right: 12px !important;
@@ -225,7 +238,8 @@ const iconButtonSingle = props => css`
       font-size: 16px;
     }
   `}
-  ${props.size === 'small' && `
+  ${props.size === 'small' &&
+    `
     padding-top: 8px !important;
     padding-bottom: 8px !important;
     padding-right: 8px !important;
@@ -236,7 +250,6 @@ const iconButtonSingle = props => css`
     }
   `}
 `;
-
 
 const viewSolidDisabled = css`
   background-color: rgb(242, 243, 250) !important;
@@ -274,7 +287,8 @@ const defaultSolidTheme = props => css`
     background-color: #f0f0f0;
   }
 
-  ${props.disabled && `
+  ${props.disabled &&
+    `
     pointer-events: none;
     color: rgba(74, 74, 74, 0.5) !important;
     background-color: rgba(255, 255, 255, 0.5) !important;
@@ -448,7 +462,8 @@ const commonSolidTheme = ({ theme }) => css`
 const viewTextDisabled = props => css`
   pointer-events: none;
   /* color: rgba(74, 74, 74, 0.5) !important; */
-  ${props.bordered && `
+  ${props.bordered &&
+    `
     background-color: rgb(242, 243, 250) !important;
     box-shadow: none;
   `}
@@ -592,7 +607,6 @@ const viewTransparentDisabled = css`
   }
 `;
 
-
 const viewTransparentDisabledDark = css`
   pointer-events: none;
   color: rgba(0, 0, 0, 0.5) !important;
@@ -731,52 +745,84 @@ const transparentThemeDark = ({ theme }) => css`
   }
 `;
 
-export const getStyles = (props) => {
+export const getStyles = props => {
   if (props.disabled) {
     switch (props.view) {
-      case 'solid': return viewSolidDisabled;
-      case 'text': return viewTextDisabled;
-      case 'base': return viewBaseDisabled;
-      case 'transparent': return viewTransparentDisabled;
-      case 'transparentDark': return viewTransparentDisabledDark;
-      case 'youtube': return viewYoutubeDisabled;
-      case 'empty': return viewEmptyDisabled;
-      default: return '';
+      case 'solid':
+        return viewSolidDisabled;
+      case 'text':
+        return viewTextDisabled;
+      case 'base':
+        return viewBaseDisabled;
+      case 'transparent':
+        return viewTransparentDisabled;
+      case 'transparentDark':
+        return viewTransparentDisabledDark;
+      case 'youtube':
+        return viewYoutubeDisabled;
+      case 'empty':
+        return viewEmptyDisabled;
+      default:
+        return '';
     }
   } else if (props.view === 'solid') {
     switch (props.paint) {
-      case 'primary': return primarySolidTheme;
-      case 'info': return infoSolidTheme;
-      case 'warning': return warningSolidTheme;
-      case 'danger': return dangerSolidTheme;
-      case 'success': return successSolidTheme;
-      case 'common': return commonSolidTheme;
-      case 'transparent': return transparentTheme;
-      case 'transparentDark': return transparentThemeDark;
-      default: return defaultSolidTheme;
+      case 'primary':
+        return primarySolidTheme;
+      case 'info':
+        return infoSolidTheme;
+      case 'warning':
+        return warningSolidTheme;
+      case 'danger':
+        return dangerSolidTheme;
+      case 'success':
+        return successSolidTheme;
+      case 'common':
+        return commonSolidTheme;
+      case 'transparent':
+        return transparentTheme;
+      case 'transparentDark':
+        return transparentThemeDark;
+      default:
+        return defaultSolidTheme;
     }
   } else if (props.view === 'text') {
     switch (props.paint) {
-      case 'primary': return primaryTextTheme;
-      case 'info': return infoTextTheme;
-      case 'warning': return warningTextTheme;
-      case 'danger': return dangerTextTheme;
-      case 'success': return successTextTheme;
-      case 'common': return commonTextTheme;
-      case 'transparent': return transparentTheme;
-      case 'transparentDark': return transparentThemeDark;
-      default: return defaultTextTheme;
+      case 'primary':
+        return primaryTextTheme;
+      case 'info':
+        return infoTextTheme;
+      case 'warning':
+        return warningTextTheme;
+      case 'danger':
+        return dangerTextTheme;
+      case 'success':
+        return successTextTheme;
+      case 'common':
+        return commonTextTheme;
+      case 'transparent':
+        return transparentTheme;
+      case 'transparentDark':
+        return transparentThemeDark;
+      default:
+        return defaultTextTheme;
     }
   } else if (props.view === 'base') {
     switch (props.paint) {
       // case 'primary': return primaryBaseTheme;
       // case 'info': return infoBaseTheme;
-      case 'warning': return warningBaseTheme;
-      case 'danger': return dangerBaseTheme;
-      case 'success': return successBaseTheme;
-      case 'transparent': return transparentTheme;
-      case 'transparentDark': return transparentThemeDark;
-      default: return '';
+      case 'warning':
+        return warningBaseTheme;
+      case 'danger':
+        return dangerBaseTheme;
+      case 'success':
+        return successBaseTheme;
+      case 'transparent':
+        return transparentTheme;
+      case 'transparentDark':
+        return transparentThemeDark;
+      default:
+        return '';
     }
   } else if (props.view === 'youtube') {
     return youtubeTheme;
@@ -784,9 +830,12 @@ export const getStyles = (props) => {
     return shadowTheme;
   } else if (props.view === 'empty') {
     switch (props.paint) {
-      case 'primary': return emptyPrimaryTheme;
-      case 'common': return emptyCommonTheme;
-      default: return emptyPrimaryTheme;
+      case 'primary':
+        return emptyPrimaryTheme;
+      case 'common':
+        return emptyCommonTheme;
+      default:
+        return emptyPrimaryTheme;
     }
   } else if (props.view === 'transparent') {
     return transparentTheme;
@@ -795,28 +844,27 @@ export const getStyles = (props) => {
   }
 };
 
-const dynamicTag = createDynamicTag('button');
-const filteredTag = removeProps(dynamicTag, [
-  'new',
-  'iconDirection',
-  'paint',
-  'view',
-  'size',
-  'block',
-  'auto',
-  'onlyIcon',
-  'twoIcons',
-  'bordered',
-  'borderColor',
-  'rounded',
-  'mobileView',
-]);
-
-// Если убрать filteredTag, то появляются варнинги
-export const Btn = styled(filteredTag)`
+export const Btn = styled('button', {
+  shouldForwardProp: prop =>
+    ![
+      'new',
+      'iconDirection',
+      'paint',
+      'view',
+      'size',
+      'block',
+      'auto',
+      'onlyIcon',
+      'twoIcons',
+      'bordered',
+      'borderColor',
+      'rounded',
+      'mobileView',
+    ].includes(prop),
+})`
   background-color: ${p => getTheme(p.theme, 'colors.white')};
   border: none;
-  box-shadow: ${p => ((p.bordered && p.borderColor && `0 0 0 1px ${p.borderColor}`) || (p.bordered && '0 0 0 1px'))};
+  box-shadow: ${p => (p.bordered && p.borderColor && `0 0 0 1px ${p.borderColor}`) || (p.bordered && '0 0 0 1px')};
   outline: none;
   border-radius: ${p => (p.rounded ? getTheme(p.theme, 'borderCircle') : getTheme(p.theme, 'borderSmall'))};
   overflow: hidden;
@@ -827,12 +875,14 @@ export const Btn = styled(filteredTag)`
   text-decoration: none !important;
   display: ${p => (p.block ? 'block' : 'inline-block')};
 
-  ${props => props.twoIcons && `
+  ${props =>
+    props.twoIcons &&
+    `
     padding-top: 10px !important;
     padding-bottom: 10px !important;
   `}
 
-  ${(props) => {
+  ${props => {
     if (props.auto) {
       return css`
         @media screen and (max-width: 768px) {
@@ -844,69 +894,72 @@ export const Btn = styled(filteredTag)`
           }
           display: ${props.block ? 'flex' : 'inline-flex'};
           align-items: center;
-          ${props.size === 'extraLarge' && css`
-            padding-top: 9px;
-            padding-bottom: 9px;
-            padding-right: 9px;
-            padding-left: 9px;
+          ${props.size === 'extraLarge' &&
+            css`
+              padding-top: 9px;
+              padding-bottom: 9px;
+              padding-right: 9px;
+              padding-left: 9px;
 
-            ${Icon} {
-              font-size: 24px;
-            }
-          `}
-          ${props.size === 'large' && css`
-            padding-top: 9px;
-            padding-bottom: 9px;
-            padding-right: 9px;
-            padding-left: 9px;
+              ${Icon} {
+                font-size: 24px;
+              }
+            `}
+          ${props.size === 'large' &&
+            css`
+              padding-top: 9px;
+              padding-bottom: 9px;
+              padding-right: 9px;
+              padding-left: 9px;
 
-            ${Icon} {
-              font-size: 24px;
-            }
-          `}
-          ${props.size === 'default' && css`
-            padding-top: 8px;
-            padding-bottom: 8px;
-            padding-right: 8px;
-            padding-left: 8px;
+              ${Icon} {
+                font-size: 24px;
+              }
+            `}
+          ${props.size === 'default' &&
+            css`
+              padding-top: 8px;
+              padding-bottom: 8px;
+              padding-right: 8px;
+              padding-left: 8px;
 
-            ${Icon} {
-              font-size: 22px;
-            }
-          `}
-          ${props.size === 'small' && css`
-            padding-top: 6px;
-            padding-bottom: 6px;
-            padding-right: 6px;
-            padding-left: 6px;
+              ${Icon} {
+                font-size: 22px;
+              }
+            `}
+          ${props.size === 'small' &&
+            css`
+              padding-top: 6px;
+              padding-bottom: 6px;
+              padding-right: 6px;
+              padding-left: 6px;
 
-            ${Icon} {
-              font-size: 20px;
-            }
+              ${Icon} {
+                font-size: 20px;
+              }
+            `}
+          ${props.size === 'verySmall' &&
+            css`
+              padding-top: 5px;
+              padding-bottom: 5px;
+              padding-right: 5px;
+              padding-left: 5px;
 
-          `}
-          ${props.size === 'verySmall' && css`
-            padding-top: 5px;
-            padding-bottom: 5px;
-            padding-right: 5px;
-            padding-left: 5px;
+              ${Icon} {
+                font-size: 18px;
+              }
+            `}
+          ${props.size === 'extraSmall' &&
+            css`
+              padding-top: 3px;
+              padding-bottom: 3px;
+              padding-right: 3px;
+              padding-left: 3px;
 
-            ${Icon} {
-              font-size: 18px;
-            }
-
-          `}
-          ${props.size === 'extraSmall' && css`
-            padding-top: 3px;
-            padding-bottom: 3px;
-            padding-right: 3px;
-            padding-left: 3px;
-
-            ${Icon} {
-              font-size: 16px;
-            }
-
-          `}
+              ${Icon} {
+                font-size: 16px;
+              }
+            `}
           padding: 11px 12px;
           min-width: auto;
           border-radius: 100px;
@@ -923,53 +976,79 @@ export const Btn = styled(filteredTag)`
   &:hover {
     cursor: pointer;
   }
-  ${(props) => {
+  ${props => {
     switch (props.size) {
-      case 'large': return largeSize;
-      case 'small': return smallSize;
-      case 'verySmall': return verySmallSize;
-      case 'extraSmall': return xsmallSize;
-      case 'extraLarge': return xlargeSize;
-      case 'huge': return huge;
-      default: return defaultSize;
+      case 'large':
+        return largeSize;
+      case 'small':
+        return smallSize;
+      case 'verySmall':
+        return verySmallSize;
+      case 'extraSmall':
+        return xsmallSize;
+      case 'extraLarge':
+        return xlargeSize;
+      case 'huge':
+        return huge;
+      default:
+        return defaultSize;
     }
   }}
-  ${(props) => {
+  ${props => {
     switch (props.iconDirection) {
-      case 'left': return iconButtonLeft;
-      case 'right': return iconButtonRight;
-      case 'single': return iconButtonSingle;
-      default: return '';
+      case 'left':
+        return iconButtonLeft;
+      case 'right':
+        return iconButtonRight;
+      case 'single':
+        return iconButtonSingle;
+      default:
+        return '';
     }
   }}
   ${getStyles}
-  ${props => (props.disabled && css`
-    cursor: not-allowed !important;
-    pointer-events: none !important;
-  `)}
-  ${props => (props.block && `
+  ${props =>
+    props.disabled &&
+    css`
+      cursor: not-allowed !important;
+      pointer-events: none !important;
+    `}
+  ${props =>
+    props.block &&
+    `
     width: 100%;
-  `)}
-  ${props => ((props.block && props.twoIcons) && css`
-    ${Icon} {
-      &:not(:last-child) {
-        margin-right: auto !important;
+  `}
+  ${props =>
+    props.block &&
+    props.twoIcons &&
+    css`
+      ${Icon} {
+        &:not(:last-child) {
+          margin-right: auto !important;
+        }
+        &:last-child {
+          margin-left: auto !important;
+        }
       }
-      &:last-child {
-        margin-left: auto !important;
-      }
-    }
-  `)}
-  ${props => ((props.block && props.iconDirection === 'right') && css`
-    margin-left: auto;
-  `)}
-  ${props => (props.onlyIcon && css`
-    min-width: auto;
-    border-radius: 50px;
-  `)}
-  /* ${props => ((props.view === 'transparent' && props.state === 'processing') && `
+    `}
+  ${props =>
+    props.block &&
+    props.iconDirection === 'right' &&
+    css`
+      margin-left: auto;
+    `}
+  ${props =>
+    props.onlyIcon &&
+    css`
+      min-width: auto;
+      border-radius: 50px;
+    `}
+  /* ${props =>
+    props.view === 'transparent' &&
+    props.state === 'processing' &&
+    `
     color: transparent !important;
-  `)} */
+  `} */
   pointer-events: ${p => (p.state !== 'ready' ? 'none' : 'auto')};
   ${p => css`
     color: ${getTheme(p, 'colors.color')};
@@ -983,21 +1062,22 @@ export const Btn = styled(filteredTag)`
       background-color: ${getTheme(p, 'colors.activeBackground')};
     }
   `}
-  ${p => p.mobileView && css`
-    @media screen and (max-width: 767px) {
-      ${Text} {
-        display: none;
+  ${p =>
+    p.mobileView &&
+    css`
+      @media screen and (max-width: 767px) {
+        ${Text} {
+          display: none;
+        }
+        ${Icon} {
+          margin-left: ${p.iconDirection === 'right' && '4px'};
+          margin-right: ${p.iconDirection === 'left' && '4px'};
+        }
+        padding-right: 9px;
+        padding-left: 9px;
+        min-width: unset;
       }
-      ${Icon} {
-        margin-left: ${p.iconDirection === 'right' && '4px'};
-        margin-right: ${p.iconDirection === 'left' && '4px'};
-
-      }
-      padding-right: 9px;
-      padding-left: 9px;
-      min-width: unset;
-    }
-  `}
+    `}
 `;
 
 export const RippleCircle = styled('span')`
@@ -1009,7 +1089,7 @@ export const RippleCircle = styled('span')`
   width: 0;
   height: 0;
   border-radius: ${p => getTheme(p.theme, 'borderCircle')};
-  background: rgba(0, 0, 0, .10);
+  background: rgba(0, 0, 0, 0.1);
 `;
 
 const aRipple = keyframes`
@@ -1026,7 +1106,6 @@ const aRipple = keyframes`
   }
 `;
 
-
 export const Ripple = styled('div')`
   position: absolute;
   top: 0;
@@ -1035,11 +1114,13 @@ export const Ripple = styled('div')`
   height: 100%;
   overflow: hidden;
   background: transparent;
-  ${props => (props.active && css`
-    ${RippleCircle} {
-      animation: ${aRipple} .4s ease-in;
-    }`
-  )}
+  ${props =>
+    props.active &&
+    css`
+      ${RippleCircle} {
+        animation: ${aRipple} 0.4s ease-in;
+      }
+    `}
 `;
 
 export const State = styled('div')`
@@ -1055,7 +1136,7 @@ export const State = styled('div')`
   cursor: default !important;
   border-radius: ${p => (p.rounded ? getTheme(p.theme, 'borderCircle') : getTheme(p.theme, 'borderSmall'))};
   pointer-events: ${p => (p.state !== 'ready' ? 'none' : 'auto')};
-  ${(props) => {
+  ${props => {
     if (props.bordered) {
       return css`
         box-shadow: inset 0 0 0 1px #fff;
@@ -1074,39 +1155,56 @@ export const State = styled('div')`
   will-change: background-color, color, opacity, visibility;
 
   justify-content: center;
-  ${(props) => {
+  ${props => {
     switch (props.iconDirection) {
-      case 'left': return iconButtonLeft;
-      case 'right': return iconButtonRight;
-      case 'single': return iconButtonSingle;
-      default: return '';
+      case 'left':
+        return iconButtonLeft;
+      case 'right':
+        return iconButtonRight;
+      case 'single':
+        return iconButtonSingle;
+      default:
+        return '';
     }
   }}
-  ${(props) => {
+  ${props => {
     switch (props.size) {
-      case 'large': return largeSize;
-      case 'small': return smallSize;
-      case 'extraSmall': return xsmallSize;
-      default: return defaultSize;
+      case 'large':
+        return largeSize;
+      case 'small':
+        return smallSize;
+      case 'extraSmall':
+        return xsmallSize;
+      default:
+        return defaultSize;
     }
   }}
-  ${(props) => {
+  ${props => {
     switch (props.paint) {
-      case 'primary': return primarySolidTheme;
-      case 'info': return infoSolidTheme;
-      case 'warning': return warningSolidTheme;
-      case 'danger': return dangerSolidTheme;
-      case 'common': return commonSolidTheme;
-      case 'success': return successSolidTheme;
-      default: return defaultSolidTheme;
+      case 'primary':
+        return primarySolidTheme;
+      case 'info':
+        return infoSolidTheme;
+      case 'warning':
+        return warningSolidTheme;
+      case 'danger':
+        return dangerSolidTheme;
+      case 'common':
+        return commonSolidTheme;
+      case 'success':
+        return successSolidTheme;
+      default:
+        return defaultSolidTheme;
     }
   }}
-  /* ${props => ((props.view === 'transparent' && props.state === 'processing') && `
+  /* ${props =>
+    props.view === 'transparent' &&
+    props.state === 'processing' &&
+    `
     background-color: transparent !important;
-  `)} */
+  `} */
 
 `;
-
 
 // РЕАЛИЗОВАТЬ
 // https://github.com/twbs/bootstrap/blob/ff29c1224c20b8fcf2d1e7c28426470f1dc3e40d/scss/_button-group.scss
@@ -1116,19 +1214,27 @@ export const ButtonGroup = styled('div')`
   display: inline-flex;
   vertical-align: middle;
   flex-wrap: wrap;
-  ${p => p.padded && css`
-    ${Btn} {
-      margin: 5px;
-      flex: 1 1 auto;
-    }`}
+  ${p =>
+    p.padded &&
+    css`
+      ${Btn} {
+        margin: 5px;
+        flex: 1 1 auto;
+      }
+    `}
   @media screen and (max-width: 767px) {
-    ${p => p.block && css`
-      flex-direction: column;`}
+    ${p =>
+      p.block &&
+      css`
+        flex-direction: column;
+      `}
     ${Btn} {
       margin: 8px 0 8px 0;
     }
   }
-  ${p => p.panel && css`
+  ${p =>
+    p.panel &&
+    css`
     button {
       min-width: 72px;
       font-size: 11px;
@@ -1143,21 +1249,27 @@ export const ButtonGroup = styled('div')`
       border-radius: 0;
     }
 `}
-  /* ${p => !p.panel && css`
-    ${Btn} {
-      margin: 0 4px;
-      &:first-child {
-        margin-left: 0;
+  /* ${p =>
+    !p.panel &&
+    css`
+      ${Btn} {
+        margin: 0 4px;
+        &:first-child {
+          margin-left: 0;
+        }
+        &:last-child {
+          margin-right: 0;
+        }
       }
-      &:last-child {
-        margin-right: 0;
-      }
-    }`} */
+    `} */
 
   & > * {
     position: relative;
-    ${p => p.block && css`
-      flex: 1 1 auto;`}
+    ${p =>
+      p.block &&
+      css`
+        flex: 1 1 auto;
+      `}
 
     /* @include hover {
       z-index: 1;
