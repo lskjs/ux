@@ -181,6 +181,15 @@ const iconButtonLeft = props => css`
 const iconButtonRight = props => css`
   display: ${props.block ? 'flex' : 'inline-flex'};
   align-items: center;
+  ${props.paint === 'primaryText' &&
+    `
+    padding-top: 11px !important;
+    padding-bottom: 11px !important;
+    ${Icon} {
+      margin: 0;
+      font-size: 18px;
+    }
+  `}
   ${props.size === 'large' &&
     `
     padding-top: 9px;
@@ -378,6 +387,31 @@ const primarySolidTheme = ({ theme }) => css`
   &:active {
     color: ${getTheme(theme, 'colors.white')};
     background-color: ${getTheme(theme, 'colors.darkPrimary')};
+  }
+`;
+
+const primaryTextSolidTheme = ({ theme }) => css`
+  padding: 12.5px 8px;
+  min-width: 76px;
+  border-radius: 8px;
+  font-size: 14px;
+
+  color: ${getTheme(theme, 'colors.main')};
+  background-color: transparent;
+
+  &:hover {
+    color: ${getTheme(theme, 'colors.primary')};
+    background-color: ${getTheme(theme, 'colors.lighterPrimary')};
+  }
+
+  &:focus {
+    color: ${getTheme(theme, 'colors.primary')};
+    background-color: ${getTheme(theme, 'colors.lightPrimary')};
+  }
+
+  &:active {
+    color: ${getTheme(theme, 'colors.primary')};
+    background-color: ${getTheme(theme, 'colors.lighterPrimary')};
   }
 `;
 
@@ -783,6 +817,8 @@ export const getStyles = props => {
         return transparentTheme;
       case 'transparentDark':
         return transparentThemeDark;
+      case 'primaryText':
+        return primaryTextSolidTheme;
       default:
         return defaultSolidTheme;
     }
@@ -1194,6 +1230,8 @@ export const State = styled('div')`
         return commonSolidTheme;
       case 'success':
         return successSolidTheme;
+      case 'primaryText':
+        return primaryTextSolidTheme;
       default:
         return defaultSolidTheme;
     }

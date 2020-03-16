@@ -250,6 +250,7 @@ Button.propTypes = {
     'success',
     'transparent',
     'transparentDark',
+    'primaryText',
   ]),
   state: PropTypes.oneOf(['processing', 'progress', 'success', 'error', 'ready', null]),
   view: PropTypes.oneOf(['solid', 'text', 'base', 'shadow', 'youtube', 'empty', 'transparent', 'transparentDark']),
