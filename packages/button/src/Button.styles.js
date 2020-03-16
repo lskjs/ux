@@ -847,6 +847,7 @@ export const getStyles = props => {
 export const Btn = styled('button', {
   shouldForwardProp: prop =>
     ![
+      'as',
       'new',
       'iconDirection',
       'paint',
