@@ -180,7 +180,6 @@ class Button extends PureComponent {
       <Btn
         type={type}
         mobileView={mobileView}
-        as={componentClass}
         bordered={bordered}
         borderColor={borderColor}
         rounded={rounded}
@@ -200,6 +199,7 @@ class Button extends PureComponent {
         style={style}
         colors={colors}
         ref={htmlRef}
+        {...(componentClass ? { as: componentClass } : {})}
         {...buttonProps}
       >
         {!disabled && isRipple && (
