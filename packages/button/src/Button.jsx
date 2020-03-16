@@ -167,6 +167,7 @@ class Button extends PureComponent {
     if (iconRight) iconDirection = 'right';
     if (icon) iconDirection = 'single';
     let content = '';
+    const tag = componentClass || 'button';
     ({ paint, disabled = disabled, content } = this.getButtonStateTheme());
     const buttonProps = omit(props, [
       'contentSuccess',
@@ -179,6 +180,7 @@ class Button extends PureComponent {
     return (
       <Btn
         type={type}
+        as={tag}
         mobileView={mobileView}
         bordered={bordered}
         borderColor={borderColor}
@@ -199,7 +201,6 @@ class Button extends PureComponent {
         style={style}
         colors={colors}
         ref={htmlRef}
-        {...(componentClass ? { as: componentClass } : {})}
         {...buttonProps}
       >
         {!disabled && isRipple && (
