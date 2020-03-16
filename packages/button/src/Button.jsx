@@ -161,7 +161,6 @@ class Button extends PureComponent {
       htmlRef,
       ...props
     } = this.props;
-    const tag = componentClass || 'button';
     const icoLeft = icon || iconLeft;
     let iconDirection = null;
     if (iconLeft) iconDirection = 'left';
@@ -177,12 +176,11 @@ class Button extends PureComponent {
       'textProcessing',
       'textError',
     ]);
-    console.log(htmlRef);
     return (
       <Btn
         type={type}
         mobileView={mobileView}
-        as={tag}
+        as={componentClass}
         bordered={bordered}
         borderColor={borderColor}
         rounded={rounded}
@@ -202,8 +200,7 @@ class Button extends PureComponent {
         style={style}
         colors={colors}
         ref={htmlRef}
-        {...filterProps(buttonProps, tag)}
-        // {...buttonProps}
+        {...buttonProps}
       >
         {!disabled && isRipple && (
           <Ripple ref={this.ripple} active={isRippleActive}>
@@ -301,7 +298,7 @@ Button.defaultProps = {
   borderColor: null,
   type: 'button',
   style: {},
-  componentClass: 'button',
+  componentClass: null,
   onClick: null,
   block: false,
   disabled: false,
