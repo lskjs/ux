@@ -3,7 +3,8 @@ import Grid from '@lskjs/grid';
 import * as Styles from './Header.styles';
 
 interface HeaderProps {
-  data: any,
+  brand: any,
+  menu: any,
 }
 
 const Header: React.FC<HeaderProps> = ({ brand, menu }) => {
