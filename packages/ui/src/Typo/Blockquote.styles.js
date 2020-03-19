@@ -21,8 +21,8 @@ import createDynamicTag from '@lskjs/utils/createDynamicTag';
 // `
 
 export default styled(createDynamicTag('blockquote'))`
-font-weight: 400;
-word-break: break-word;
-margin: 0;
-padding-left: 30px;
+  font-weight: 400;
+  word-break: break-word;
+  margin: 0;
+  padding-left: 30px;
 `;
