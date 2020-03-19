@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/docs",
-  "version": "1.1.67",
+  "version": "1.1.68",
   "description": "lskjs docs",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -40,7 +40,7 @@
     "@lskjs/form": "^1.1.67",
     "@lskjs/grid": "^1.1.67",
     "@lskjs/gridtable": "^1.1.57",
-    "@lskjs/landing": "^1.1.67",
+    "@lskjs/landing": "^1.1.68",
     "@lskjs/link": "^1.1.67",
     "@lskjs/list": "^1.1.67",
     "@lskjs/mobx": "1.5.0",
