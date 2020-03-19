@@ -38,7 +38,7 @@ const Landing: LandingFC<LandingProps> = ({ markup, slides }) => {
         const slide = acceptableSlidesKeys.find(key => key === obj.type);
         if (!slide || !acceptableSlides) return false;
         const Component = acceptableSlides[slide];
-        return <Component key={obj.type} data={obj.data} />;
+        return <Component key={obj.type} {...obj.data} />;
       })}
     </>
   );

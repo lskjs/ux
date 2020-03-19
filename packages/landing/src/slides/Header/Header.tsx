@@ -6,20 +6,19 @@ interface HeaderProps {
   data: any,
 }
 
-const Header: React.FC<HeaderProps> = ({ data }) => {
-  console.log('Header', data);
+const Header: React.FC<HeaderProps> = ({ brand, menu }) => {
   return (
     <Styles.Wrapper>
       <Grid.Container style={{ height: '100%' }}>
         <Styles.Inner>
           <Styles.Brand>
-            {data.brand}
+            {brand}
           </Styles.Brand>
           <Styles.SearchWrapper>
             Search
           </Styles.SearchWrapper>
           <Styles.MenuWrapper>
-            {data.menu.map((item: any) => (
+            {menu.map((item: any) => (
               <Styles.MenuItem key={item.key} activeClassName="selected">
                 {item.title}
               </Styles.MenuItem>
