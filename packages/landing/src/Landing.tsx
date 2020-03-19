@@ -4,11 +4,6 @@ import PropTypes from 'prop-types';
 import Header from './slides/Header';
 import CustomSlide2 from './slides/CustomSlide2';
 
-const defaultAcceptableSlides = {
-  header: Header,
-  customSlide2: CustomSlide2,
-};
-
 interface LandingSlide {
   type: string,
   data: any,
@@ -23,10 +18,14 @@ interface Slides {
   [name: string]: React.ComponentType<any>,
 }
 
-const Landing: React.FC<LandingProps> = ({ markup, slides }) => {
-  let acceptableSlides: Slides | undefined;
+interface LandingFC<T> extends React.FC<T> {
+  defaultAcceptableSlides: Slides,
+}
+
+const Landing: LandingFC<LandingProps> = ({ markup, slides }) => {
+  let acceptableSlides: Slides | undefined = Landing.defaultAcceptableSlides;
   if (slides && typeof slides === 'function') {
-    acceptableSlides = slides(defaultAcceptableSlides);
+    acceptableSlides = slides(Landing.defaultAcceptableSlides);
   }
   const acceptableSlidesKeys = Object.keys(acceptableSlides || {});
   console.log({ acceptableSlides, acceptableSlidesKeys });
@@ -43,6 +42,11 @@ const Landing: React.FC<LandingProps> = ({ markup, slides }) => {
       })}
     </>
   );
+};
+
+Landing.defaultAcceptableSlides = {
+  header: Header,
+  customSlide2: CustomSlide2,
 };
 
 Landing.propTypes = {

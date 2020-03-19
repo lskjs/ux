@@ -44,7 +44,7 @@ interface StoryProps {
 
 export default ({ storiesOf }: StoryProps) => (
   storiesOf('landing/Landing', module)
-    .add('default', () => (
+    .add('custom slides through prop', () => (
       <Landing
         markup={mock}
         slides={(slides) => ({
@@ -54,5 +54,15 @@ export default ({ storiesOf }: StoryProps) => (
         })}
       />
     ))
+    .add('custom slides through static', () => {
+      Landing.defaultAcceptableSlides = {
+        ...Landing.defaultAcceptableSlides,
+        custom1: CustomSlide1,
+        custom2: CustomSlide2,
+      }
+      return (
+        <Landing markup={mock} />
+      );
+    })
 );
 
