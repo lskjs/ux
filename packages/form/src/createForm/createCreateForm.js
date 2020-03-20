@@ -12,6 +12,7 @@ export default ({
   OnChangeListener = React.Fragment,
   withFormik: defaultWithFormik,
   withI18 = false,
+  debug = false,
   ...creatorConfig
 }) => configOrFn => {
   let config;
@@ -21,7 +22,7 @@ export default ({
   } else {
     config = configOrFn;
   }
-  if (DEBUG) console.log('Form2 config', config ); // eslint-disable-line
+  if (debug) console.log('createForm.config', config); // eslint-disable-line no-console
   config = {
     ...creatorConfig,
     ...config,
@@ -37,8 +38,11 @@ export default ({
     ...configProps
   } = config;
 
-  const { controls, control } = prepareControls(rawControls, { FormGroup, withI18 });
+  const { controls, control } = prepareControls(rawControls, { FormGroup, withI18, debug });
+  if (debug) console.log('createForm.controls', controls); // eslint-disable-line no-console
   const { validators, customValidators } = getValidators(controls);
+  if (debug) console.log('createForm.validators', validators); // eslint-disable-line no-console
+  if (debug) console.log('createForm.customValidators', customValidators); // eslint-disable-line no-console
   const View = wrapView({
     View: RawView,
     Wrapper: OnChangeListener,

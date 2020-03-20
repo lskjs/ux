@@ -7,35 +7,25 @@ import en from 'antd/lib/locale-provider/en_US';
 import ru from 'antd/lib/locale-provider/ru_RU';
 import cx from 'classnames';
 
-@inject('t')
+@inject('i18')
 @observer
 class Timepicker extends Component {
   static propTypes = {
-    value: PropTypes.oneOfType([
-      PropTypes.array,
-      PropTypes.object,
-    ]),
+    value: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
     validationState: PropTypes.oneOf(['success', 'warning', 'error']),
     onChange: PropTypes.func,
     ranged: PropTypes.bool,
     t: PropTypes.func.isRequired,
-  }
+  };
   static defaultProps = {
     value: null,
     onChange: null,
     validationState: null,
     ranged: false,
-  }
+  };
   render() {
-    const {
-      id,
-      className,
-      ranged,
-      validationState,
-      t,
-      ...otherProps
-    } = this.props;
-    const locale = t('locale') === 'ru' ? ru : en;
+    const { id, className, ranged, validationState, i18, ...otherProps } = this.props;
+    const locale = i18.t('locale') === 'ru' ? ru : en;
     return (
       <LocaleProvider locale={locale}>
         <div
@@ -46,10 +36,7 @@ class Timepicker extends Component {
             [className]: className,
           })}
         >
-          <TimePicker
-            className="timepicker"
-            {...otherProps}
-          />
+          <TimePicker className="timepicker" {...otherProps} />
         </div>
       </LocaleProvider>
     );

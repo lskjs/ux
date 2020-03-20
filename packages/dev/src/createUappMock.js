@@ -1,42 +1,17 @@
-export default function createUappMock({ locale }) {
-  const auth = { session: { user: {} } };
-  const api = {
-    fetch: (...args) => console.log('api.get', ...args),
-  };
-  const t = a => (a === 'locale' ? locale : a);
-  const i18 = { t };
-  const config = {};
+export default function createUappMock(params = {}) {
   const uapp = {
-    i18,
-    auth,
-    t,
-    config,
-    api,
-    isAdmin: () => true,
-    getCalculation: () => ({
-      feeRate: 0.2,
-    }),
-    modules: {
-      upload: {
-        uploadFile: async e => ({ url: '//picsum.photos/1280/720/?random' }),
-        // uploadFile: async e => ({ url: e.name }),
-      },
-      billing: {
-        stores: {
-          Transactions: {
-            getCardTokenSign: () => {},
-          },
-        },
-      },
+    i18: { t: a => a },
+    auth: { session: { user: {} } },
+    t: a => a,
+    config: {},
+    api: {
+      fetch: (...args) => console.log('api.get', ...args), // eslint-disable-line no-console
     },
-    onError: e => console.error(e),
-    provide: () => ({
-      config,
-      i18,
-      auth,
-      uapp,
-      api,
-    }),
+    onError: e => console.error(e), // eslint-disable-line no-console
+    ...params,
   };
+  uapp.provide = () => ({ uapp, app: uapp, ...uapp });
+  console.log(12312312312, uapp.provide());
+
   return uapp;
 }

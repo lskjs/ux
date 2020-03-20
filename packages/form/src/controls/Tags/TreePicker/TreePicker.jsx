@@ -20,7 +20,7 @@ import Input from '../../../components/BaseInput';
 
 import { Block, ScrollContent, Meta, InnerBlock } from './TreePicker.styles';
 
-@inject('t')
+@inject('i18')
 @observer
 class TreePicker extends Component {
   static propTypes = {
@@ -31,15 +31,19 @@ class TreePicker extends Component {
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
     fields: PropTypes.array,
     flat: PropTypes.bool,
-  }
+  };
 
   static defaultProps = {
-    children: <Button><T name="lskComponents.treePickerModalTrigger" /></Button>,
+    children: (
+      <Button>
+        <T name="lskComponents.treePickerModalTrigger" />
+      </Button>
+    ),
     search: '',
     value: null,
     fields: null,
     flat: false,
-  }
+  };
 
   constructor(props) {
     super(props);
@@ -63,7 +67,7 @@ class TreePicker extends Component {
   }
 
   getArrays(items, array = []) {
-    items.forEach((item) => {
+    items.forEach(item => {
       item._title = item.title;
       if (Array.isArray(item.children) && item.children.length > 0) {
         this.getArrays(item.children, array, item);
@@ -77,7 +81,7 @@ class TreePicker extends Component {
   }
 
   getChildrenTitles(items, titles = '') {
-    items.forEach((item) => {
+    items.forEach(item => {
       item._title = item.title;
       titles += `.${item._title}`;
       if (Array.isArray(item.children) && item.children.length > 0) {
@@ -96,9 +100,7 @@ class TreePicker extends Component {
       distance: 100,
       maxPatternLength: 32,
       minMatchCharLength: 1,
-      keys: [
-        '_title',
-      ],
+      keys: ['_title'],
     });
   }
 
@@ -145,7 +147,7 @@ class TreePicker extends Component {
     if (!searchedFieldIds) {
       searchedFieldIds = map(searchedFields, '_id');
     }
-    const tree = JSON.parse(JSON.stringify(fields)).filter((field) => {
+    const tree = JSON.parse(JSON.stringify(fields)).filter(field => {
       if (searchedFieldIds.indexOf(field._id) !== -1) {
         if (Array.isArray(field.children) && field.children.length > 0) {
           field.children = this.deepSearch(searchedFields, field.children, searchedFieldIds);
@@ -159,15 +161,7 @@ class TreePicker extends Component {
 
   render() {
     const { search, value } = this.state;
-    const {
-      title,
-      flat,
-      fields,
-      createTag,
-      children,
-      t,
-      clearBtnStyles,
-    } = this.props;
+    const { title, flat, fields, createTag, children, i18, clearBtnStyles } = this.props;
     let searchedFields = [];
     try {
       searchedFields = this.fuse.search(search);
@@ -180,65 +174,42 @@ class TreePicker extends Component {
         size="small"
         trigger={children}
         onClose={this.resetToProps}
-        ref={(modal) => {
+        ref={modal => {
           this.modal = modal;
         }}
       >
         <Title>{title}</Title>
         <Block>
           <Magnify />
-          <Input
-            placeholder={t('treePicker.tags')}
-            value={search}
-            onChange={this.handleSearch}
-          />
+          <Input placeholder={i18.t('treePicker.tags')} value={search} onChange={this.handleSearch} />
         </Block>
         <InnerBlock>
           <Subtitle>
-            {t('admin.header.tags')}
-            {' '}
-(
-            {value ? value.length : 0 }
+            {i18.t('admin.header.tags')}
+{' '}
+({value ? value.length : 0}
 )
-          </Subtitle>
+</Subtitle>
           <Meta>
             <If condition={value && value.length > 0}>
-              <TextButton
-                className={clearBtnStyles}
-                onClick={() => this.handleSelect([])}
-              >
-                {t('treePicker.cancel')}
+              <TextButton className={clearBtnStyles} onClick={() => this.handleSelect([])}>
+                {i18.t('treePicker.cancel')}
               </TextButton>
             </If>
           </Meta>
         </InnerBlock>
         <Content style={{ paddingTop: 16 }}>
-          <ScrollContent
-            universal
-            autoHide
-            autoHeight
-            autoHeightMin={0}
-            autoHeightMax={256}
-          >
-            <TreeInput
-              fields={!search ? fields : tree}
-              value={value}
-              onChange={this.handleSelect}
-              flat={flat}
-            />
+          <ScrollContent universal autoHide autoHeight autoHeightMin={0} autoHeightMax={256}>
+            <TreeInput fields={!search ? fields : tree} value={value} onChange={this.handleSelect} flat={flat} />
             {createTag}
           </ScrollContent>
         </Content>
         <Footer>
           <Button paint="primary" onClick={this.handleSubmit}>
-            {t('billing.done')}
+            {i18.t('billing.done')}
           </Button>
-          <Button
-            paint="primary"
-            view="text"
-            onClick={this.handleReset}
-          >
-            {t('buttons.cancel')}
+          <Button paint="primary" view="text" onClick={this.handleReset}>
+            {i18.t('buttons.cancel')}
           </Button>
         </Footer>
       </Modal2>

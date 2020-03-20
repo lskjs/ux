@@ -1,4 +1,3 @@
-
 import { inject, observer } from 'mobx-react';
 
 const T = ({ i18, name, ...props }) => {

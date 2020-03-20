@@ -23,7 +23,7 @@ import {
   ComissionBlock,
 } from './PriceInput.styles';
 
-@inject('t')
+@inject('i18')
 @observer
 class PriceInput extends Component {
   static propTypes = {
@@ -112,7 +112,7 @@ class PriceInput extends Component {
       title2,
       title3,
       help,
-      t,
+      i18,
       single,
       required,
       small,
@@ -133,7 +133,7 @@ class PriceInput extends Component {
       <Column half key={1}>
         <InlineGroup key="price" controlId="price">
           <If condition={!!title1}>
-            <ControlLabel>{required ? '* ' : ''}{t(title1)}</ControlLabel>
+            <ControlLabel>{required ? '* ' : ''}{i18.t(title1)}</ControlLabel>
           </If>
           {/* {round(this.store.value || 0, 2) || 0} */}
           <InputGroup>
@@ -155,7 +155,7 @@ class PriceInput extends Component {
       <Column half key={2}>
         <InlineGroup key="payment" controlId="payment">
           <If condition={!!title2}>
-            <ControlLabel>{required ? '* ' : ''}{t(title2)}</ControlLabel>
+            <ControlLabel>{required ? '* ' : ''}{i18.t(title2)}</ControlLabel>
           </If>
           <InputGroup>
             <Input
@@ -180,7 +180,7 @@ class PriceInput extends Component {
         <Column half key={3}>
           <InlineGroup key="payment" controlId="payment">
             <If condition={!!title2}>
-              <ControlLabel>{required ? '* ' : ''}{t(title3)}</ControlLabel>
+              <ControlLabel>{required ? '* ' : ''}{i18.t(title3)}</ControlLabel>
             </If>
             <InputGroup>
               <Input
@@ -218,7 +218,7 @@ class PriceInput extends Component {
           <ComissionBlock
             small={small}
           >
-            {t(help, params)}
+            {i18.t(help, params)}
           </ComissionBlock>
         </If>
       </InlineBlock>

@@ -1,13 +1,13 @@
 import React from 'react';
 import Notification from './Notification';
 
-export default function (rawData = {}) {
+export default function(rawData = {}) {
   const data = this.prepareNotificationData(rawData, 'success') || {};
   if (__DEV__) {
     if (data.type === 'error') {
-      console.error('Uapp.toast', rawData);
+      console.error('NotificationSystem.toast', rawData);
     } else {
-      console.warn('Uapp.toast', data);
+      console.warn('NotificationSystem.toast', data);
     }
   }
 
