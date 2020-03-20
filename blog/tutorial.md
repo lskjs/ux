@@ -2,29 +2,36 @@
 
 ### 1. Как сделать лендинг на CRA
 
+В консоли разработчика пишем:
+
 ```sh
 npx create-react-app landing
 cd landing
 npm start
 ```
+#### Как это работает? 
+Для инициализации используется [create-react-app](https://github.com/facebook/create-react-app)
 
-https://github.com/facebook/create-react-app
-https://github.com/lskjs/tutorial/tree/steps/step1
+Посмотреть реализацию  Step 1 можно [> тут <](https://github.com/lskjs/tutorial/tree/steps/step1)
 
 ### 2. Как добавить кнопку (@lskjs/button) на CRA лендинг
 
+Подключаем необходимые пакеты:
+ 
 ```sh
 npm i @lskjs/button
 npm i lodash react-icons2
 ```
-
+В нужном файле импортируем и используем кнопку:
 ```jsx
 import Button from "@lskjs/button";
         
 <Button paint="primary">Primary</Button>
 ```
 
-Попробовать код можно в [ветке step2](https://github.com/lskjs/tutorial/tree/steps/step2). Сравнить изменения с предыдущего шага можно [> тут <](https://github.com/lskjs/tutorial/compare/steps/step1...steps/step2)
+Попробовать код можно в [ветке step2](https://github.com/lskjs/tutorial/tree/steps/step2). 
+
+Сравнить изменения с предыдущего шага можно [> тут <](https://github.com/lskjs/tutorial/compare/steps/step1...steps/step2)
 
 
 ### 3. Как создать форму (@lskjs/form) на CRA
