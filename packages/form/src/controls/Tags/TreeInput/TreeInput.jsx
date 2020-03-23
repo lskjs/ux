@@ -7,8 +7,6 @@ import Tree from 'antd/lib/tree';
 
 const { TreeNode } = Tree;
 
-@inject('uapp')
-@observer
 class TreeInput extends Component {
   constructor(props) {
     super(props);

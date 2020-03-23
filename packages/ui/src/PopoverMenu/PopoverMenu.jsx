@@ -2,8 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ToggleLayer, Arrow, Transition } from 'react-laag';
 
-const PopoverMenu = ({ trigger, layer, layerStyle, transitionDelay, placement }) => (
+const PopoverMenu = ({ trigger, layer, layerStyle, transitionDelay, placement, ...props }) => (
   <ToggleLayer
+    {...props}
     renderLayer={({ isOpen, layerProps, arrowStyle, layerSide }) => (
       <Transition isOpen={isOpen}>
         {(isMenuOpen = isOpen, onTransitionEnd) => (

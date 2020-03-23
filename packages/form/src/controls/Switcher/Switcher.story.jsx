@@ -13,6 +13,7 @@ const SwitcherFormView = props => (
     <Field {...props.control('switcher3')} />
     <Field {...props.control('switcher4')} />
     <Field {...props.control('switcher5')} />
+    <Field {...props.control('switcher6')} />
     <FormDebug {...props} />
   </Form>
 );
@@ -50,6 +51,12 @@ const SwitcherForm = createForm({
       styleSwitcher: {
         backgroundColor: 'red',
       },
+    },
+    switcher6: {
+      title: '6. switcher with double label',
+      component: Switcher,
+      left: <div>left</div>,
+      right: <div>right</div>,
     },
   },
 });

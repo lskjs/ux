@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import autobind from '@lskjs/autobind';
 import omit from 'lodash/omit';
-import { inject, observer } from 'mobx-react';
+import { inject } from 'mobx-react';
 import filterProps from '@lskjs/utils/filterProps';
 import StatefulButton from '../StatefulButton';
 
 @inject('api', 'uapp')
-@observer
+// @observer
 class UrlButton extends Component {
   static propTypes = {
     onSuccess: PropTypes.func,

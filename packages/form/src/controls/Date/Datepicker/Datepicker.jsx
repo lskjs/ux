@@ -10,38 +10,31 @@ import cx from 'classnames';
 
 const { RangePicker } = DatePicker;
 
-@inject('t')
+@inject('i18')
 @observer
 class Datepicker extends Component {
   static propTypes = {
-    value: PropTypes.oneOfType([
-      PropTypes.array,
-      PropTypes.object,
-    ]),
+    value: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
     validationState: PropTypes.oneOf(['success', 'warning', 'error']),
     onChange: PropTypes.func,
     ranged: PropTypes.bool,
     t: PropTypes.func.isRequired,
-  }
+  };
   static defaultProps = {
     value: null,
     onChange: null,
     validationState: null,
     ranged: false,
-  }
+  };
   @autobind
   getCalendarContainer() {
     const { id } = this.props;
     if (!__CLIENT__ && !id) return false;
-    return document.querySelector(`.datepicker-${id}`)
-      || document.querySelector('.container')
-      || document.body;
+    return document.querySelector(`.datepicker-${id}`) || document.querySelector('.container') || document.body;
   }
   render() {
-    const {
-      id, className, ranged, validationState, t, ...otherProps
-    } = this.props;
-    const locale = t('locale') === 'ru' ? ru : en;
+    const { id, className, ranged, validationState, i18, ...otherProps } = this.props;
+    const locale = i18.t('locale') === 'ru' ? ru : en;
     return (
       <LocaleProvider locale={locale}>
         <div
@@ -52,23 +45,17 @@ class Datepicker extends Component {
             [className]: className,
           })}
         >
-          {ranged
-            ? (
-              <RangePicker
-                className="datepicker"
-                getCalendarContainer={this.getCalendarContainer}
-                {...otherProps}
-              />
-            )
-            : (
-              <DatePicker
-                className="datepicker"
-                onChange={(m) => {
-                  this.onChange(m.toDate());
-                }}
-                getCalendarContainer={this.getCalendarContainer}
-                {...otherProps}
-              />
+          {ranged ? (
+            <RangePicker className="datepicker" getCalendarContainer={this.getCalendarContainer} {...otherProps} />
+          ) : (
+            <DatePicker
+              className="datepicker"
+              onChange={m => {
+                this.onChange(m.toDate());
+              }}
+              getCalendarContainer={this.getCalendarContainer}
+              {...otherProps}
+            />
           )}
           {/* <DEV>
             <div className="datepicker-icon">

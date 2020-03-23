@@ -4,12 +4,15 @@ import { ThemeProvider } from 'emotion-theming';
 import defaultTheme from '@lskjs/theme';
 import createUappMock from './createUappMock';
 
-export default ({ children, locale = 'en', theme = defaultTheme }) => {
-  const uapp = createUappMock({ locale });
+export default ({ children, theme = defaultTheme, ...props }) => {
+  const uapp = createUappMock(props);
   window.uapp = uapp;
   if (window.parent) window.parent.uapp = uapp;
+  const providers = uapp.provide();
+  console.log({providers});
+  
   return (
-    <Provider uapp={uapp} {...uapp.provide()}>
+    <Provider {...providers}>
       <ThemeProvider theme={theme}>{children}</ThemeProvider>
     </Provider>
   );

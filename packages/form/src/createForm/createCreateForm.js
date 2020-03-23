@@ -6,39 +6,41 @@ import wrapView from './wrapView';
 import createMapPropsToValues from './createMapPropsToValues';
 import createHandleSubmit from './createHandleSubmit';
 import createValidate from './createValidate';
-import DEBUG from './_debug';
 
-export default ({
-  OnChangeListener = React.Fragment,
-  withFormik: defaultWithFormik,
-  withI18 = false,
-  ...creatorConfig
-}) => configOrFn => {
+export default (preConfig = {}) => (realtimeConfig = {}) => {
   let config;
-  if (isFunction(configOrFn)) {
-    config = configOrFn({});
-    // config = inject(configOrFn);
+  if (isFunction(realtimeConfig)) {
+    config = realtimeConfig({});
+    // config = inject(realtimeConfig);
   } else {
-    config = configOrFn;
+    config = realtimeConfig;
   }
-  if (DEBUG) console.log('Form2 config', config ); // eslint-disable-line
   config = {
-    ...creatorConfig,
+    ...preConfig,
     ...config,
   };
+
   const {
     controls: rawControls,
+    withI18 = false,
+    debug = false,
     view: RawView,
     FormGroup,
-    withFormik = defaultWithFormik,
+    withFormik,
     flatten = true,
     onError,
     pick,
-    ...configProps
+    OnChangeListener = React.Fragment,
+    ...withFormikConfigProps
   } = config;
+  if (!withFormik) throw '!withFormik';
+  if (debug) console.log('createForm.config', { preConfig, realtimeConfig, config, withFormikConfigProps }); // eslint-disable-line no-console
 
-  const { controls, control } = prepareControls(rawControls, { FormGroup, withI18 });
+  const { controls, control } = prepareControls(rawControls, { FormGroup, withI18, debug });
+  if (debug) console.log('createForm.controls', controls); // eslint-disable-line no-console
   const { validators, customValidators } = getValidators(controls);
+  if (debug) console.log('createForm.validators', validators); // eslint-disable-line no-console
+  if (debug) console.log('createForm.customValidators', customValidators); // eslint-disable-line no-console
   const View = wrapView({
     View: RawView,
     Wrapper: OnChangeListener,
@@ -62,6 +64,6 @@ export default ({
     }),
     validateOnChange: false,
     validateOnBlur: false,
-    ...configProps,
+    ...withFormikConfigProps,
   })(View);
 };

@@ -2,7 +2,7 @@ import React from 'react';
 import forEach from 'lodash/forEach';
 import getControlHtmlId from './getControlHtmlId';
 
-export default (ctrls, { FormGroup, withI18 } = {}) => {
+export default (ctrls, { FormGroup, withI18, debug = false } = {}) => {
   const controls = {};
   forEach(ctrls, (ctrl, name) => {
     const ControlWrapper = ctrl.FormGroup || FormGroup;
@@ -21,7 +21,7 @@ export default (ctrls, { FormGroup, withI18 } = {}) => {
           ...(ctrl.props || {}),
           ...innerProps,
         };
-
+        if (debug) console.log('createForm.ControlWrapper', { name, ctrl, formGroupProps, componentProps }); // eslint-disable-line no-console
         return React.createElement(ControlWrapper, formGroupProps, React.createElement(ctrl.component, componentProps));
       };
     } else {
