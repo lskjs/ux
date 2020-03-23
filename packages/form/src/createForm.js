@@ -7,10 +7,9 @@ import FormGroup from './FormGroup';
 export default createCreateForm({
   OnChangeListener,
   FormGroup,
-  withFormik,
+  withFormik, // this.props.formik.unregisterField
   onError,
 });
-
 
 // Form.create({
 //   View,
@@ -35,7 +34,7 @@ export default createCreateForm({
 
 // ///
 
-// const createForm = Form.createCreator({  
+// const createForm = Form.createCreator({
 //   withFormik,
 //   inject: ['i18', 'some'],
 // })({
@@ -43,6 +42,3 @@ export default createCreateForm({
 //   controls,
 //   ....
 // })
-
-
-

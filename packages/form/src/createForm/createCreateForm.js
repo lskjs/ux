@@ -6,37 +6,35 @@ import wrapView from './wrapView';
 import createMapPropsToValues from './createMapPropsToValues';
 import createHandleSubmit from './createHandleSubmit';
 import createValidate from './createValidate';
-import DEBUG from './_debug';
 
-export default ({
-  OnChangeListener = React.Fragment,
-  withFormik: defaultWithFormik,
-  withI18 = false,
-  debug = false,
-  ...creatorConfig
-}) => configOrFn => {
+export default (preConfig = {}) => (realtimeConfig = {}) => {
   let config;
-  if (isFunction(configOrFn)) {
-    config = configOrFn({});
-    // config = inject(configOrFn);
+  if (isFunction(realtimeConfig)) {
+    config = realtimeConfig({});
+    // config = inject(realtimeConfig);
   } else {
-    config = configOrFn;
+    config = realtimeConfig;
   }
-  if (debug) console.log('createForm.config', config); // eslint-disable-line no-console
   config = {
-    ...creatorConfig,
+    ...preConfig,
     ...config,
   };
+
   const {
     controls: rawControls,
+    withI18 = false,
+    debug = false,
     view: RawView,
     FormGroup,
-    withFormik = defaultWithFormik,
+    withFormik,
     flatten = true,
     onError,
     pick,
-    ...configProps
+    OnChangeListener = React.Fragment,
+    ...withFormikConfigProps
   } = config;
+  if (!withFormik) throw '!withFormik';
+  if (debug) console.log('createForm.config', { preConfig, realtimeConfig, config, withFormikConfigProps }); // eslint-disable-line no-console
 
   const { controls, control } = prepareControls(rawControls, { FormGroup, withI18, debug });
   if (debug) console.log('createForm.controls', controls); // eslint-disable-line no-console
@@ -66,6 +64,6 @@ export default ({
     }),
     validateOnChange: false,
     validateOnBlur: false,
-    ...configProps,
+    ...withFormikConfigProps,
   })(View);
 };
