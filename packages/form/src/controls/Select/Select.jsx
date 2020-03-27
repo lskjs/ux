@@ -33,6 +33,8 @@ class Select extends Component {
     const hasError = nextProps.field && nextProps.field.name && !!get(nextProps.form, `errors.${nextProps.field.name}`);
     const hadError =
       this.props.field && this.props.field.name && !!get(this.props.form, `errors.${this.props.field.name}`);
+    const prevIsDisabled = get(props, 'isDisabled');
+    const nextIsDisabled = get(nextProps, 'isDisabled');
     if (!isEqual(hadError, hasError)) {
       return true;
     }
@@ -41,6 +43,9 @@ class Select extends Component {
       return true;
     }
     if (!isEqual(state.option, nextState.option)) {
+      return true;
+    }
+    if (!isEqual(nextIsDisabled, prevIsDisabled)) {
       return true;
     }
     return false;
