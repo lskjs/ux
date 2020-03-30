@@ -1,5 +1,29 @@
 ## Tutorial
 
+### 0. Что нужно установить перед началом
+
+* IDE - VS Code/Sublime/WebStorm/Atom
+
+
+* node.js, установить, проверить версию
+
+
+https://nodejs.org/ru/ -- скачать тут
+
+https://medium.com/devschacht/node-hero-chapter-1-239f7afeb1d1 -- что такое нода.
+
+Проверяем версию: 
+```sh
+node -v
+```
+* npm -- https://www.npmjs.com/ -- менеджер пакетов. 
+
+Для установки пишем в консоль:
+```sh
+npm i -g npx
+npm -v
+```
+
 ### 1. Как сделать лендинг на CRA
 
 В консоли разработчика пишем:
@@ -10,7 +34,22 @@ cd landing
 npm start
 ```
 #### Как это работает? 
-Для инициализации используется [create-react-app](https://github.com/facebook/create-react-app)
+
+* Построение лендинга происходит с использованием фреймворка [React](https://ru.reactjs.org/) 
+
+Чтобы установить React в свой проект нужно написать в файле формата `.jsx`
+```sh
+import React from 'react";
+```
+
+Здесь вы можете посмотреть [мини-уроки введение в React](https://learn.javascript.ru/screencast/react)
+
+
+* Для инициализации используется [create-react-app](https://github.com/facebook/create-react-app)
+
+*Create React App не обрабатывает бэкенд логику или базы данных, он только предоставляет команды для сборки фронтенда, поэтому вы можете использовать его с любым бэкэндом. «Под капотом» используются Babel и webpack, но вам не нужно ничего знать о них.
+Когда ваше приложение готово к развёртыванию в продакшене, запуск команды npm run build создаст оптимизированную сборку вашего приложения в папке build. Вы можете узнать больше о Create React App из его README и его пользовательского руководства.*
+[Подробнее >тут<.](https://ru.reactjs.org/docs/create-a-new-react-app.html)
 
 Посмотреть реализацию  Step 1 можно [> тут <](https://github.com/lskjs/tutorial/tree/steps/step1)
 
