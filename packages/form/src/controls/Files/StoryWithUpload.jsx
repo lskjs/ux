@@ -3,6 +3,7 @@ import { Provider } from 'mobx-react';
 import Story from '@lskjs/dev/Story';
 
 export const uapp = {
+  i18: { t: a => a },
   module: type => ({
     uploadFiles(files) {
       console.log('UPLOAD => ', files);
@@ -17,6 +18,8 @@ export const uapp = {
 
 export default ({ children, ...props }) => (
   <Story {...props}>
-    <Provider uapp={uapp}>{children}</Provider>
+    <Provider uapp={uapp} i18={uapp.i18}>
+      {children}
+    </Provider>
   </Story>
 );

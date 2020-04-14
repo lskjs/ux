@@ -34,6 +34,16 @@ export const Container = styled.div`
       border-bottom: 4px solid ${p => getTheme(p.theme, 'colors.primary')};
     }
   }
+  .react-tel-input {
+    .form-control {
+      line-height: normal;
+      &:focus, &.open {
+        outline: none;
+        border: solid 1px ${p => getTheme(p.theme, 'colors.primary')} !important;
+        box-shadow: none;
+      }
+    }
+  }
 `;
 
 export const injectStyles = () => injectGlobal`
@@ -49,15 +59,17 @@ export const injectStyles = () => injectGlobal`
       border-radius: 5px;
       width: 300px;
       outline: none;
-      padding: 18.5px 14px 18.5px 58px;
+      padding: 15px 14px 15px 58px;
       transition: box-shadow ease .25s, border-color ease .25s;
       color: #495057;
+
+      
 
       &:focus, &.open {
         background-color: #fff;
         border-color: #80bdff;
-        outline: 0;
-        box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+        outline: none !important;
+        /* box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25); */
       }
       &.invalid-number {
         border: 1px solid #f44336;

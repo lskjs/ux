@@ -10,6 +10,7 @@ import Story from '@lskjs/dev/Story';
 import socialColors from '@lskjs/utils/socialColors';
 import Button from './Button';
 import ButtonGroup from './ButtonGroup';
+import IconCircleButton from './IconCircleButton';
 // import Link from '@lskjs/ui/Link';
 import withResponsive from './withResponsive';
 
@@ -311,6 +312,13 @@ export default ({ storiesOf }) => {
         <Button bordered borderColor="#fafa" paint="primary" view="text">
           Button with custom border
         </Button>
+      </Story>
+    ))
+    .add('Icon circle button', () => (
+      <Story>
+        <IconCircleButton>
+          <Plus />
+        </IconCircleButton>
       </Story>
     ));
 };

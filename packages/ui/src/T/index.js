@@ -1,1 +1,3 @@
-export { default } from './T';
+import T from '@lskjs/t';
+
+export default T;

@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import If from 'react-if';
 import autobind from '@lskjs/autobind';
 import Button from '@lskjs/button';
 import Flickity from 'react-flickity-component';
@@ -65,7 +66,7 @@ class FlickityCarousel extends PureComponent {
 
   render() {
     const { canNext, canPrev } = this.state;
-    const { children, instanceProps = {}, rightToLeft, options, vertical, ...props } = this.props;
+    const { children, instanceProps = {}, rightToLeft, options, vertical, showButtons, ...props } = this.props;
     return (
       <Wrapper {...props}>
         <Flickity
@@ -83,26 +84,28 @@ class FlickityCarousel extends PureComponent {
         >
           {children}
         </Flickity>
-        <Control position="left" visible={canPrev} vertical={vertical}>
-          <Button
-            style={{
-              boxShadow: '0 -6px 8px -2px rgba(0, 0, 0, 0.16)',
-            }}
-            disabled={!canPrev}
-            icon={<CarouselButton />}
-            onClick={this.myCustomPrevious}
-          />
-        </Control>
-        <Control position="right" visible={canNext} vertical={vertical}>
-          <Button
-            style={{
-              boxShadow: '0 6px 8px -2px rgba(0, 0, 0, 0.16)',
-            }}
-            disabled={!canNext}
-            icon={<CarouselButton />}
-            onClick={this.myCustomNext}
-          />
-        </Control>
+        <If condition={!!showButtons}>
+          <Control position="left" visible={canPrev} vertical={vertical}>
+            <Button
+              style={{
+                boxShadow: '0 -6px 8px -2px rgba(0, 0, 0, 0.16)',
+              }}
+              disabled={!canPrev}
+              icon={<CarouselButton />}
+              onClick={this.myCustomPrevious}
+            />
+          </Control>
+          <Control position="right" visible={canNext} vertical={vertical}>
+            <Button
+              style={{
+                boxShadow: '0 6px 8px -2px rgba(0, 0, 0, 0.16)',
+              }}
+              disabled={!canNext}
+              icon={<CarouselButton />}
+              onClick={this.myCustomNext}
+            />
+          </Control>
+        </If>
       </Wrapper>
     );
   }
@@ -112,10 +115,12 @@ FlickityCarousel.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   children: PropTypes.any,
   vertical: PropTypes.number,
+  showButtons: PropTypes.bool,
 };
 FlickityCarousel.defaultProps = {
   children: null,
   vertical: null,
+  showButtons: true,
 };
 
 export default FlickityCarousel;
