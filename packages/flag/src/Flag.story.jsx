@@ -3,7 +3,7 @@ import Story from '@lskjs/dev/Story';
 import Flag from './Flag';
 
 export default ({ storiesOf }) =>
-  storiesOf('ui/Flag', module)
+  storiesOf('flag/Flag', module)
     .add('code', () => (
       <Story>
         <Flag />
