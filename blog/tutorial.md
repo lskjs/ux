@@ -158,3 +158,103 @@ import Form from './Form';
 ```
 
 Попробовать код можно в [ветке step3](https://github.com/lskjs/tutorial/tree/steps/step3). Сравнить изменения с предыдущего шага можно [> тут <](https://github.com/lskjs/tutorial/compare/steps/step2...steps/step3)
+
+### 4. Как добавить мультиязычность (@lskjs/i18) на CRA
+
+```
+npm i @lskjs/i18
+npm i mobx mobx-react
+```
+
+Создаём файл инициализации `i18.js`
+```js
+import I18 from '@lskjs/i18';
+
+const i18 = new I18({ // Создаём экземпляр класса I18.
+  config: { // Конфигурируем модуль i18next. См. офф. документацию: https://www.i18next.com/overview/configuration-options
+    locales: ['en', 'ru'], // Перечисляем используемые языки
+    resources: { // Указываем переводы для каждого из языка
+      en: {
+        translation: {
+          helloWorld: 'Hello World', // Например так
+          button: {
+            changeLanguage: 'Change language', // Или так, используя вложенность
+          },
+        },
+      },
+      ru: {
+        translation: {
+          helloWorld: 'Привет Мир',
+          button: {
+            changeLanguage: 'Сменить язык',
+          },
+        },
+      },
+    },
+  },
+});
+
+i18.init({ // Инициализируем модуль
+  lng: 'ru' // Указываем какой язык будет использоваться по-умолчанию
+});
+
+export default i18;
+```
+
+В `App.js` импортируем i18 модуль и передаём его в провайдер [MobX](https://github.com/mobxjs/mobx)
+```js
+import { Provider } from 'mobx-react';
+import i18 from './i18';
+
+function App() {
+  return (
+    <Provider i18={i18}> {/* Прокидывает модуль i18 сквозь весь проект */}
+      ...
+    </Provider>
+  );
+}
+```
+
+Создадим новый компонент для примера работы переводов `Translate.jsx`
+```js
+import React from 'react';
+import { inject, observer } from 'mobx-react';
+import Button from '@lskjs/button';
+import T from '@lskjs/ui/T';
+
+function Translate({ i18 }) {
+  return (
+    <div>
+      <h1>{i18.t('helloWorld')}</h1> {/* Функция t для использования ключей переводов */}
+      <Button
+        paint="primary"
+        onClick={() => {
+          const nextLocale = i18.locale === 'ru' ? 'en' : 'ru'; // В i18.locale содержится текущий язык
+          i18.setLocale(nextLocale); // i18.setLocale функция, меняющая язык на переданный
+        }}
+      >
+        <T name="button.changeLanguage" /> {/* Или компонент <T> для использования ключей переводов */}
+      </Button>
+    </div>
+  );
+}
+
+export default inject('i18')(observer(Translate)); // "Инжектим" i18 из провайдера и подписываемся на его изменения
+```
+
+Не забудьте импортировать созданный выше компонент в `App.js` и обозначить глобальные переменные для работы модуля i18.
+
+В `index.js` добавляем следующие строки после импортов
+```js
+global.__DEV__ = process.env.NODE_ENV === 'development';
+```
+
+В `public/index.html` добавляем секцию `<script>` для константных глобальных переменных
+```html
+<script>
+  const __CLIENT__ = true;
+  const __SERVER__ = false;
+</script>
+```
+
+Попробовать код можно в [ветке step4](https://github.com/lskjs/tutorial/tree/steps/step4). Сравнить изменения с предыдущего шага можно [> тут <](https://github.com/lskjs/tutorial/compare/steps/step3...steps/step4)
