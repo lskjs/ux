@@ -258,3 +258,64 @@ global.__DEV__ = process.env.NODE_ENV === 'development';
 ```
 
 Попробовать код можно в [ветке step4](https://github.com/lskjs/tutorial/tree/steps/step4). Сравнить изменения с предыдущего шага можно [> тут <](https://github.com/lskjs/tutorial/compare/steps/step3...steps/step4)
+
+### 4.1. Упрощаем работу с мультиязычностью (@lskjs/build-locales) на CRA
+
+В предыдущем шаге было видно, как мы описыавем переводы JS объектами в конфигурировании i18,
+но можно данный шаг сделать более удобным!
+
+
+```
+npm i @lskjs/build-locales
+```
+
+Содаём в корне проекта файл `.lskjs.js` со следующим содержимым
+```js
+module.exports = {
+  i18: {
+    // Здесь будет ссылка на Google Таблицу подготовленную для работы с переводами
+    url: 'https://docs.google.com/spreadsheets/d/1m1PXq0FIhFefqIxd3WTPugqMTcKoHsPuU6SlmnxG1Pw/edit#gid=0',
+  },
+};
+```
+
+Создаём файл `build-locales.sh` в директории `scripts` со следующим содержимым
+```sh
+#!/usr/bin/env bash
+
+LOCALES_LINK=`node -e "console.log(require('./.lskjs.js').i18.url)"`
+LOCALES_DIST="./src/translations"
+
+echo "$LOCALES_LINK => $LOCALES_DIST"
+
+rm -rf $LOCALES_DIST && \
+node node_modules/@lskjs/build-locales/bin/build-locales --locales ru,en --link $LOCALES_LINK --dist $LOCALES_DIST && \
+echo "done"
+```
+
+Запускаем созданный скрипт коммандой `sh ./scripts/build-locales.sh`.
+После выполнения будут созданы 2 json файла в директории `src/translations` из таблицы указанной в `.lskjs.js`.
+
+Изменим существующую конфигурацию модуля `i18.js` заменив объекты переводов на json файлы
+```js
+// ...
+import enResource from './translations/en.json';
+import ruResource from './translations/ru.json';
+
+const i18 = new I18({
+  config: {
+    // ...
+    resources: {
+      en: {
+        translation: enResource,
+      },
+      ru: {
+        translation: ruResource,
+      },
+    },
+  },
+});
+// ...
+```
+
+Попробовать код можно в [ветке step4.1](https://github.com/lskjs/tutorial/tree/steps/step4.1). Сравнить изменения с предыдущего шага можно [> тут <](https://github.com/lskjs/tutorial/compare/steps/step4...steps/step4.1)
