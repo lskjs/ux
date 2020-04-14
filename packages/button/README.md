@@ -10,7 +10,7 @@
 
 ## Just press on Button and take a result from @lskjs/button. Or in reverse.
 <!-- <p align="center"> -->
-![](images/button.png)
+![](/blog/images/button.png)
 
 <!-- ## Getting Started -->
 ## Installation and usage
