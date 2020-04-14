@@ -1,1 +1,3 @@
-export { default } from './Image';
+import Image from '@lskjs/image';
+
+export default Image;

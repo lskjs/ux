@@ -1,1 +1,3 @@
-export { default } from './Progress';
+import Progress from '@lskjs/progress';
+
+export default Progress;
