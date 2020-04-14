@@ -1,4 +1,4 @@
-export default function (rawData, { defaultType = 'info' }) {
+export default function(rawData, { defaultType = 'info' }) {
   let data = {};
   if (typeof rawData === 'string') {
     data.title = rawData;
