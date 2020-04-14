@@ -1,13 +1,13 @@
 {
-  "name": "@lskjs/grid",
+  "name": "@lskjs/progress",
   "version": "1.1.73",
-  "description": "LSK ux subrepo: grid",
+  "description": "LSK ux subrepo: progress",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
-  "repository": "https://github.com/lskjs/ux/tree/master/packages/grid",
+  "repository": "https://github.com/lskjs/ux/tree/master/packages/progress",
   "keywords": [],
   "scripts": {
     "dev": "npm run watch",
