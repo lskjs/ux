@@ -9,6 +9,7 @@
     "commit": "./node_modules/cz-customizable/standalone.js -S",
     "dev": "./scripts/dev.sh",
     "release": "./scripts/release.sh",
+    "release:yes": "lerna publish --skip-npm --exact --github-release --yes",
     "release:patch": "lerna publish --skip-npm  -m \"release: %s\" --yes patch",
     "release:it": "release-it",
     "release:changelog": "lerna-changelog",
