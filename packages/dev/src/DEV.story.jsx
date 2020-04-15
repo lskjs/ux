@@ -2,6 +2,7 @@ import React from 'react';
 import DEV from './DEV';
 import Story from './Story';
 import Zebra from './Zebra';
+import Grill from './Grill';
 import Performance from './Performance';
 import setDev from './utils/setDev';
 // import ObserverDEV from './ObserverDEV';
@@ -45,6 +46,11 @@ export default ({ storiesOf, action }) =>
             example: "<Dev json={{ hello: 'world' }}>",
           }}
         />
+      </Story>
+    ))
+    .add('<Grill />', () => (
+      <Story>
+        <Grill>TODO: Grill</Grill>
       </Story>
     ))
     .add('<Performance />', () => (
