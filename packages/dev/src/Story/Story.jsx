@@ -1,12 +1,8 @@
 import React from 'react';
+import Zebra from '../Zebra';
 
-export default ({ children, style }) => (
-  <div
-    style={{
-      border: '30px #eee solid',
-      ...style,
-    }}
-  >
+export default ({ children }) => (
+  <Zebra border={null} background="white" padding={40} colors={['#fcfcfc22', '#eeeeee22']}>
     {children}
-  </div>
+  </Zebra>
 );

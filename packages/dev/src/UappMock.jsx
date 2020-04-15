@@ -9,8 +9,6 @@ export default ({ children, theme = defaultTheme, ...props }) => {
   window.uapp = uapp;
   if (window.parent) window.parent.uapp = uapp;
   const providers = uapp.provide();
-  console.log({providers});
-  
   return (
     <Provider {...providers}>
       <ThemeProvider theme={theme}>{children}</ThemeProvider>

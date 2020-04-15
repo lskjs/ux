@@ -1,17 +1,10 @@
 import React from 'react';
+import Zebra from './Zebra';
+import isDev from './utils/isDev';
 
-const isDev = () => !!(typeof __DEV__ !== 'undefined' ? __DEV__ : global.__DEV__); // eslint-disable-line
-
-const DEV = ({ children, json, pretty = true, condition = true }) =>
-  isDev() && condition ? (
-    <div
-      data-label="DEV"
-      data-dev={isDev()}
-      style={{
-        background: 'repeating-linear-gradient(45deg,#b5281d30,#b5281d30 10px,#f0413430 0,#f0413430 20px)',
-        outline: '1px dashed #ff0000b0',
-      }}
-    >
+const DEV = ({ children, json, pretty = true, condition = isDev(), ...props }) =>
+  condition ? (
+    <Zebra border="#e43c3c33" colors={['#b5281d30', '#f0413430']} {...props}>
       {json ? (
         <pre>
           {pretty
@@ -22,7 +15,7 @@ const DEV = ({ children, json, pretty = true, condition = true }) =>
       ) : (
         children
       )}
-    </div>
+    </Zebra>
   ) : null;
 
 export default DEV;
