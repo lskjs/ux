@@ -30,9 +30,9 @@
   "dependencies": {
     "@emotion/core": "^10.0.27",
     "@emotion/styled": "^10.0.27",
-    "@lskjs/autobind": "^1.4.0",
-    "@lskjs/theme": "^1.1.71",
-    "@lskjs/utils": "^1.5.0",
+    "@lskjs/autobind": "^1.11.0",
+    "@lskjs/theme": "^1.1.73",
+    "@lskjs/utils": "^1.17.1",
     "classnames": "^2.2.6",
     "prop-types": "^15.7.2"
   },

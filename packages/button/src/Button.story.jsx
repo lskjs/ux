@@ -16,9 +16,76 @@ import withResponsive from './withResponsive';
 
 const ResponsiveButton = withResponsive(Button);
 
+const Grill = ({ children, cols = 6 }) => {
+  let items;
+  if (Array.isArray(children)) {
+    items = children.map(item => <div>{item}</div>);
+  } else {
+    items = [children];
+  }
+  // console.log({ children, items });
+  return (
+    <div
+      style={{
+        display: 'grid',
+        gridTemplateColumns: Array(cols)
+          .fill()
+          .map(() => '1fr')
+          .join(' '),
+        gridGap: 8,
+        alignItems: 'center',
+      }}
+    >
+      {items}
+    </div>
+  );
+};
+
 export default ({ storiesOf }) => {
   storiesOf('button/Button', module)
-    .add('default', () => (
+    .add('<Button />', () => (
+      <>
+        <Story background={null}>
+          <Grill cols={6}>
+            <Button>Default</Button>
+            <Button paint="primary">Primary</Button>
+            <Button paint="info">Info</Button>
+            <Button paint="success">Success</Button>
+            <Button paint="warning">Warning</Button>
+            <Button paint="danger">Danger</Button>
+          </Grill>
+        </Story>
+        <Story background={null}>
+          <Grill cols={4}>
+            <Button paint="primary">Default sшze</Button>
+            <Button paint="primary" size="small">
+              small
+            </Button>
+            <Button paint="primary" size="large">
+              Large Size
+            </Button>
+            <Button paint="primary" size="huge">
+              The HUGE Size
+            </Button>
+          </Grill>
+        </Story>
+        <Story background={null}>
+          <Grill cols={4}>
+            <Button iconLeft={<Facebook />} paint="primary" size="small">
+              Facebook
+            </Button>
+            <Button iconRight={<Twitter />} paint="primary" size="small">
+              Twitter
+            </Button>
+            <Button icon={<Telegram />} paint="primary" size="small" />
+            <Button iconLeft={<Facebook />} iconRight={<Twitter />} paint="primary" size="small">
+              Share me›
+            </Button>
+          </Grill>
+        </Story>
+      </>
+    ))
+    .add('componentClass', () => (
       <Story>
         <Button componentClass="a" href="/cabinet">
           Link
