@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/lskjs/ux/tree/master/packages/ui-dev/compare/v1.3.0...v1.4.0) (2020-04-15)
+
+
+### Features
+
+* **dev:** add Grill component ([d528693](https://github.com/lskjs/ux/tree/master/packages/ui-dev/commit/d528693fc6de7a773e74c70bd7df28181f921297))
+
+
+
+
+
 # [1.3.0](https://github.com/lskjs/ux/tree/master/packages/ui-dev/compare/v1.1.76...v1.3.0) (2020-04-15)
 
 
