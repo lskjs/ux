@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/progress",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "LSK ux subrepo: progress",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -35,7 +35,7 @@
   "devDependencies": {
     "@emotion/core": "10.0.27",
     "@emotion/styled": "10.0.27",
-    "@lskjs/dev": "1.2.0",
+    "@lskjs/dev": "1.3.0",
     "@lskjs/theme": "^1.1.73",
     "@lskjs/utils": "0.39.0",
     "react": "16.8.6"
