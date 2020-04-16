@@ -37,6 +37,7 @@
     "@lskjs/dev": "1.4.1",
     "@lskjs/downloads": "1.4.1",
     "@lskjs/extra": "1.4.1",
+    "@lskjs/flag": "^1.1.77",
     "@lskjs/form": "1.4.1",
     "@lskjs/grid": "1.4.1",
     "@lskjs/gridtable": "1.4.1",

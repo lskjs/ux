@@ -7,7 +7,7 @@ import ArticleMarkdown from '../ArticleMarkdown';
 import post1 from './post1.md';
 
 export default ({ storiesOf }) => {
-  storiesOf('ui/ArticleMarkdown', module)
+  storiesOf('article/ArticleMarkdown', module)
     .add('Hello World', () => {
       injectGlobal(resetcss());
       return (
