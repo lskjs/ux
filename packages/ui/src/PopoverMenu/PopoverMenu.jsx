@@ -12,7 +12,7 @@ const PopoverMenu = ({ trigger, layer, layerStyle, transitionDelay, placement, i
             ref={layerProps.ref}
             className="layer"
             onTransitionEnd={onTransitionEnd}
-            onMouseOut={isToggleHover ? () => close() : null}
+            onMouseLeave={isToggleHover ? () => close() : null}
             style={{
               ...layerProps.style,
               ...layerStyle,
