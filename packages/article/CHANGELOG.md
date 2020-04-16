@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.1](https://github.com/lskjs/ux/tree/master/packages/article/compare/v1.4.0...v1.4.1) (2020-04-16)
+
+
+### Bug Fixes
+
+* **article:** change deps in package ([e801232](https://github.com/lskjs/ux/tree/master/packages/article/commit/e801232b3b18b2e25b355d7da0ba8db20b3dc7c1))
+
+
+
+
+
 # [1.4.0](https://github.com/lskjs/ux/tree/master/packages/article/compare/v1.3.0...v1.4.0) (2020-04-15)
 
 **Note:** Version bump only for package @lskjs/article
