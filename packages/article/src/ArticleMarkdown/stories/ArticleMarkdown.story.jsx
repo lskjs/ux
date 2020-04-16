@@ -1,8 +1,8 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 import { injectGlobal } from 'emotion';
 import React from 'react';
-import Story from '@lskjs/dev/Story/Story';
-import resetcss from '@lskjs/ui/Typo/resetcss';
+import Story from '@lskjs/dev/Story';
+import resetcss from '@lskjs/typo/resetcss';
 import ArticleMarkdown from '../ArticleMarkdown';
 import post1 from './post1.md';
 

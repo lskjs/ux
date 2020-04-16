@@ -1,12 +1,10 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import { Article, H1, Heading, P, Hr, Blockquote, Code, Pre } from '@lskjs/ui/Typo';
-import Image from '@lskjs/ui/Image';
-import A from '@lskjs/ui/A';
+import { Article, H1, Heading, P, Hr, Blockquote, Code, Pre, Br } from '@lskjs/typo';
+import Image from '@lskjs/image';
 import Link from '@lskjs/link';
-
-const Br = () => <br />;
+// import A from '@lskjs/ui/A';
 
 export default ({ title, content }) => (
   <Article style={{ margin: '0 auto' }}>
@@ -15,7 +13,8 @@ export default ({ title, content }) => (
       source={content}
       renderers={{
         thematicBreak: Hr,
-        link: A,
+        // link: A,
+        link: Link,
         paragraph: P,
         break: Br,
         image: Image,
