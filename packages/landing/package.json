@@ -27,6 +27,7 @@
     "storybook": "../../scripts/package-storybook.sh",
     "styleguide": "../../scripts/package-styleguide.sh"
   },
+  "dependencies": {},
   "devDependencies": {
     "@lskjs/grid": "1.4.0",
     "@lskjs/theme": "^1.1.71",

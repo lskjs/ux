@@ -8,7 +8,10 @@
     "access": "public"
   },
   "repository": "https://github.com/lskjs/ux/tree/master/packages/button",
-  "keywords": [],
+  "keywords": [
+    "Buttons",
+    "UI kit"
+  ],
   "scripts": {
     "dev": "npm run watch",
     "postversion": "npm run release",
@@ -46,6 +49,7 @@
     "react": "16.8.6",
     "react-icons2": "2.5.0"
   },
+  "homepage": "https://lskjs.github.io/ux/?path=/story/button",
   "peerDependencies": {
     "@lskjs/dev": "*",
     "@lskjs/grid": "*",

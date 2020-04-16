@@ -12,7 +12,8 @@
     ],
     "sourceMap": true,
     "allowJs": true,
-    "jsx": "react",
+    "checkJs": false,
+    "jsx": "preserve",
     "moduleResolution": "node",
     "rootDirs": [
       "src",

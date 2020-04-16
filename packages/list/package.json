@@ -35,7 +35,7 @@
   "devDependencies": {
     "@emotion/core": "10.0.27",
     "@emotion/styled": "10.0.27",
-    "@lskjs/apiquery": "1.2.0",
+    "@lskjs/apiquery": "1.15.0",
     "@lskjs/autobind": "0.39.0",
     "@lskjs/button": "1.4.0",
     "@lskjs/css": "1.3.0",
