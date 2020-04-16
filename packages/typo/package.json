@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/typo",
-  "version": "1.1.73",
+  "version": "1.1.77",
   "description": "LSK ux subrepo: typo",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -28,8 +28,8 @@
     "styleguide": "../../scripts/package-styleguide.sh"
   },
   "dependencies": {
-    "prop-types": "^15.7.2",
-    "@lskjs/utils": "0.39.0"
+    "@lskjs/utils": "0.39.0",
+    "prop-types": "^15.7.2"
   },
   "devDependencies": {
     "@emotion/styled": "10.0.27",
