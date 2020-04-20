@@ -884,7 +884,6 @@ export const Btn = styled('button', {
   shouldForwardProp: prop =>
     ![
       'as',
-      'to',
       'new',
       'iconDirection',
       'paint',
