@@ -25,14 +25,15 @@ export default styled('div')`
         border-radius: 0px 0 8px 8px;
       }
     `}
-    ${p =>
-      p.pull === 'stretch' &&
-      p.placement === 'top' &&
-      css`
-        > div {
-          border-radius: 8px 8px 0px 0px;
-        }
-      `}
+  ${p =>
+    p.pull === 'stretch' &&
+    p.placement === 'top' &&
+    css`
+      > div {
+        border-radius: 8px 8px 0px 0px;
+        box-shadow: none !important;
+      }
+    `}
   ${p =>
     p.bordered &&
     css`
