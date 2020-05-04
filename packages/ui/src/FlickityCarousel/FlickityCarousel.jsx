@@ -85,26 +85,28 @@ class FlickityCarousel extends PureComponent {
           {children}
         </Flickity>
         <If condition={!!showButtons}>
-          <Control position="left" visible={canPrev} vertical={vertical}>
-            <Button
-              style={{
-                boxShadow: '0 -6px 8px -2px rgba(0, 0, 0, 0.16)',
-              }}
-              disabled={!canPrev}
-              icon={<CarouselButton />}
-              onClick={this.myCustomPrevious}
-            />
-          </Control>
-          <Control position="right" visible={canNext} vertical={vertical}>
-            <Button
-              style={{
-                boxShadow: '0 6px 8px -2px rgba(0, 0, 0, 0.16)',
-              }}
-              disabled={!canNext}
-              icon={<CarouselButton />}
-              onClick={this.myCustomNext}
-            />
-          </Control>
+          <>
+            <Control position="left" visible={canPrev} vertical={vertical}>
+              <Button
+                style={{
+                  boxShadow: '0 -6px 8px -2px rgba(0, 0, 0, 0.16)',
+                }}
+                disabled={!canPrev}
+                icon={<CarouselButton />}
+                onClick={this.myCustomPrevious}
+              />
+            </Control>
+            <Control position="right" visible={canNext} vertical={vertical}>
+              <Button
+                style={{
+                  boxShadow: '0 6px 8px -2px rgba(0, 0, 0, 0.16)',
+                }}
+                disabled={!canNext}
+                icon={<CarouselButton />}
+                onClick={this.myCustomNext}
+              />
+            </Control>
+          </>
         </If>
       </Wrapper>
     );
