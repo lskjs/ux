@@ -118,16 +118,18 @@ class Select extends Component {
       ...props
     } = this.props;
     // console.log(this.props.selected)
+    let i18Options;
     if (withI18) {
-      options.forEach(item => ({
+      i18Options = options.map(item => ({
         title: i18.t(item.title),
         value: item.value,
+        ...item,
       }));
     }
     if (sortable) {
-      options.sort(this.compareVal);
+      (i18Options || options).sort(this.compareVal);
     }
-    const normalizedOptions = getNormalizedOptions(options, props);
+    const normalizedOptions = getNormalizedOptions(i18Options || options, props);
     let option;
     let value;
     if (!async) {
@@ -152,7 +154,7 @@ class Select extends Component {
     };
     const nullOption = find(normalizedOptions, o => o.value === NULL_STRING);
     const defaultIsClearable = !props.required && !nullOption;
-    const defaultIsSearchable = options && options.length > 10;
+    const defaultIsSearchable = i18Options && i18Options.length > 10;
     // console.log({ defaultIsClearable }, props.required, !!nullOption, !props.required, !nullOption, nullOption, props.isClearable, normalizedOptions);
     // console.log(options);
     return (
