@@ -21,9 +21,9 @@ import countriesList from './countriesList';
 const SelectFormView = props => (
   <Form>
     <h1>Обычные селекты</h1>
-    {/* <Field {...props.control('select')} /> */}
+    <Field {...props.control('select')} />
     <Field {...props.control('selectSort')} />
-    {/* <Field {...props.control('select2')} />
+    <Field {...props.control('select2')} />
     <Field {...props.control('select3')} />
     <Field {...props.control('select4')} />
     <Field {...props.control('select5')} />
@@ -72,7 +72,7 @@ const SelectFormView = props => (
       <option value="saab">Saab</option>
       <option value="mercedes">Mercedes</option>
       <option value="audi">Audi</option>
-    </select> */}
+    </select>
     {/* <FormDebug {...props} /> */}
   </Form>
 );
