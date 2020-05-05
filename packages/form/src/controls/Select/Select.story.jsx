@@ -9,7 +9,7 @@ import range from 'lodash/range';
 import keys from 'lodash/keys';
 
 import Modal, { Title, Content } from '@lskjs/modal';
-import Story from '@lskjs/dev/Story';
+import Story from '@lskjs/dev/Story/UappStory';
 import Performance from '@lskjs/dev/Performance';
 import Flag from '@lskjs/ui/Flag';
 import createForm from '../../createForm';
@@ -92,6 +92,7 @@ const SelectForm = createForm({
       placeholder: 'test',
       component: Select,
       sortable: true,
+      withI18: true,
       options: [
         {
           value: 'two',

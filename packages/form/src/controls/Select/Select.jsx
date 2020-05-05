@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Global } from '@emotion/core';
+import { inject } from 'mobx-react';
 import find from 'lodash/find';
 import get from 'lodash/get';
 import isEqual from 'lodash/isEqual';
@@ -15,6 +16,7 @@ import CollapsedValueContainer from './CollapsedValueContainer';
 import CollapsedMultiValue from './CollapsedMultiValue';
 import DropdownIndicator from './DropdownIndicator';
 
+@inject('i18')
 class Select extends Component {
   state = {};
 
@@ -71,10 +73,17 @@ class Select extends Component {
   }
   @autobind
   compareVal(currentValue, nextValue) {
-    if (currentValue.title > nextValue.title) {
+    const { withI18, i18 } = this.props;
+    let currentVal = currentValue.title;
+    let nextVal = nextValue.title;
+    if (withI18) {
+      currentVal = i18.t(currentVal);
+      nextVal = i18.t(nextVal);
+    }
+    if (currentVal > nextVal) {
       return 1;
     }
-    if (currentValue.title < nextValue.title) {
+    if (currentVal < nextVal) {
       return -1;
     }
     return 0;
@@ -144,6 +153,7 @@ class Select extends Component {
     const defaultIsClearable = !props.required && !nullOption;
     const defaultIsSearchable = options && options.length > 10;
     // console.log({ defaultIsClearable }, props.required, !!nullOption, !props.required, !nullOption, nullOption, props.isClearable, normalizedOptions);
+    // console.log(options);
     return (
       <>
         <Global styles={globalStyles} />
