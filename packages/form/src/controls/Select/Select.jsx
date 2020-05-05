@@ -126,6 +126,7 @@ class Select extends Component {
         ...item,
       }));
     }
+    console.log(i18Options, 'options');
     if (sortable) {
       (i18Options || options).sort(this.compareVal);
     }
