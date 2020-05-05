@@ -73,17 +73,10 @@ class Select extends Component {
   }
   @autobind
   compareVal(currentValue, nextValue) {
-    const { withI18, i18 } = this.props;
-    let currentVal = currentValue.title;
-    let nextVal = nextValue.title;
-    if (withI18) {
-      currentVal = i18.t(currentVal);
-      nextVal = i18.t(nextVal);
-    }
-    if (currentVal > nextVal) {
+    if (currentValue.title > nextValue.title) {
       return 1;
     }
-    if (currentVal < nextVal) {
+    if (currentValue.title < nextValue.title) {
       return -1;
     }
     return 0;
@@ -120,9 +113,17 @@ class Select extends Component {
       styles = {},
       isMulti,
       isHideSelected,
+      withI18,
+      i18,
       ...props
     } = this.props;
     // console.log(this.props.selected)
+    if (withI18) {
+      options.forEach(item => ({
+        title: i18.t(item.title),
+        value: item.value,
+      }));
+    }
     if (sortable) {
       options.sort(this.compareVal);
     }
