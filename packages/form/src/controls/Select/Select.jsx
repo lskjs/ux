@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Global } from '@emotion/core';
-import { inject } from 'mobx-react';
 import find from 'lodash/find';
 import get from 'lodash/get';
 import isEqual from 'lodash/isEqual';
@@ -16,7 +15,6 @@ import CollapsedValueContainer from './CollapsedValueContainer';
 import CollapsedMultiValue from './CollapsedMultiValue';
 import DropdownIndicator from './DropdownIndicator';
 
-@inject('i18')
 class Select extends Component {
   state = {};
 
@@ -113,24 +111,13 @@ class Select extends Component {
       styles = {},
       isMulti,
       isHideSelected,
-      withI18,
-      i18,
       ...props
     } = this.props;
     // console.log(this.props.selected)
-    let i18Options;
-    if (withI18) {
-      i18Options = options.map(item => ({
-        title: i18.t(item.title),
-        value: item.value,
-        ...item,
-      }));
-    }
-    console.log(i18Options, 'options');
     if (sortable) {
-      (i18Options || options).sort(this.compareVal);
+      options.sort(this.compareVal);
     }
-    const normalizedOptions = getNormalizedOptions(i18Options || options, props);
+    const normalizedOptions = getNormalizedOptions(options, props);
     let option;
     let value;
     if (!async) {
@@ -155,9 +142,8 @@ class Select extends Component {
     };
     const nullOption = find(normalizedOptions, o => o.value === NULL_STRING);
     const defaultIsClearable = !props.required && !nullOption;
-    const defaultIsSearchable = i18Options && i18Options.length > 10;
+    const defaultIsSearchable = options && options.length > 10;
     // console.log({ defaultIsClearable }, props.required, !!nullOption, !props.required, !nullOption, nullOption, props.isClearable, normalizedOptions);
-    // console.log(options);
     return (
       <>
         <Global styles={globalStyles} />

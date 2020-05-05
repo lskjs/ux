@@ -92,12 +92,10 @@ const SelectForm = createForm({
       placeholder: 'test',
       component: Select,
       sortable: true,
-      withI18: true,
       options: [
         {
           value: 'two',
           title: 'Два',
-          asasd: 'asd',
         },
         {
           value: 'one',
