@@ -42,7 +42,7 @@ export default class Avatar extends PureComponent {
   };
 
   static propTypes = {
-    title: PropTypes.string,
+    title: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
     src: PropTypes.string,
 
     size: PropTypes.number,
