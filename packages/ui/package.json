@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/ui",
-  "version": "1.1.90",
+  "version": "1.1.91",
   "description": "LSK ux subrepo: ui",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -45,7 +45,7 @@
     "@lskjs/grid": "1.4.1",
     "@lskjs/link": "1.4.1",
     "@lskjs/scroll": "1.4.1",
-    "@lskjs/t": "1.1.77",
+    "@lskjs/t": "^1.1.91",
     "@lskjs/theme": "^1.1.71",
     "@lskjs/utils": "0.39.0",
     "antd": "3.26.9",
