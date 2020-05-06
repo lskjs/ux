@@ -6,9 +6,9 @@ import { Block, IconWrapper } from './Dropdown.styles';
 
 const DropdownItem = ({ children, active, componentClass = 'div', gap, icon, reverse, ...props }) => (
   <Performance name="DropdownItem" disabled={!__DEV__}>
-    <Block active={active} componentClass={componentClass} gap={gap} reverse={reverse} {...props}>
+    <Block active={active ? 1 : 0} componentClass={componentClass} gap={gap} reverse={reverse ? 1 : 0} {...props}>
       <If condition={!!icon}>
-        <IconWrapper reverse={reverse}>{icon}</IconWrapper>
+        <IconWrapper reverse={reverse ? 1 : 0}>{icon}</IconWrapper>
       </If>
       {children}
     </Block>
