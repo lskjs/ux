@@ -23,6 +23,7 @@ export default styled('div')`
     css`
       > div {
         border-radius: 0px 0 8px 8px;
+        box-shadow: none !important;
       }
     `}
   ${p =>
