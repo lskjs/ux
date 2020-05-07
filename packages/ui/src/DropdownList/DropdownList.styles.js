@@ -23,7 +23,7 @@ export default styled('div')`
     css`
       > div {
         border-radius: 0px 0 8px 8px;
-        box-shadow: none !important;
+        /* box-shadow: none !important; */
       }
     `}
   ${p =>
@@ -32,7 +32,7 @@ export default styled('div')`
     css`
       > div {
         border-radius: 8px 8px 0px 0px;
-        box-shadow: none !important;
+        box-shadow: 0 -2px 6px 0px rgba(0, 0, 0, 0.04);
       }
     `}
   ${p =>
