@@ -42,6 +42,9 @@ class Select extends Component {
     if (!isEqual(nextValue, prevValue)) {
       return true;
     }
+    if (!isEqual(props.options, nextProps.options)) {
+      return true;
+    }
     if (!isEqual(state.option, nextState.option)) {
       return true;
     }
