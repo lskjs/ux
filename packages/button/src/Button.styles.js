@@ -897,6 +897,8 @@ export const Btn = styled('button', {
       'borderColor',
       'rounded',
       'mobileView',
+      'title',
+      'titlemobile',
     ].includes(prop),
 })`
   background-color: ${p => getTheme(p.theme, 'colors.white')};

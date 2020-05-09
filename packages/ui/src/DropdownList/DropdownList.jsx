@@ -19,7 +19,7 @@ class DropdownList extends PureComponent {
     placement: PropTypes.oneOf(['top', 'bottom', 'right', 'left']),
     bordered: PropTypes.bool,
     actions: PropTypes.any, // eslint-disable-line react/forbid-prop-types
-  }
+  };
   static defaultProps = {
     id: null,
     rect: null,
@@ -28,7 +28,7 @@ class DropdownList extends PureComponent {
     placement: 'bottom',
     bordered: null,
     actions: null,
-  }
+  };
   constructor(props) {
     super(props);
     this.menu = React.createRef();
@@ -105,8 +105,14 @@ class DropdownList extends PureComponent {
         styleProps.left = `${0 - menuRect.width}px`;
       }
     } else if (pull === 'stretch') {
-      styleProps.top = `${rect.height}px`;
-      styleProps.width = `${rect.width}px`;
+      if (placement === 'bottom') {
+        styleProps.top = `${rect.height}px`;
+        styleProps.width = `${rect.width}px`;
+      }
+      if (placement === 'top') {
+        styleProps.top = `${0 - menuRect.height}px`;
+        styleProps.width = `${rect.width}px`;
+      }
     }
     return (
       <Performance name="DropdownList" disabled={!__DEV__}>
@@ -116,12 +122,11 @@ class DropdownList extends PureComponent {
           menuRect={menuRect}
           style={styleProps}
           pull={pull}
+          placement={placement}
           bordered={!!bordered}
         >
           <If condition={!!actions}>
-            <Actions>
-              {actions}
-            </Actions>
+            <Actions>{actions}</Actions>
           </If>
           <Paper shadow className={listStyle}>
             {items}

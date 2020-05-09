@@ -19,8 +19,9 @@ export default ({ storiesOf }) =>
               boxShadow: '-8px 12px 50px -3px rgba(70, 70, 172, 0.32)',
             }}
             transitionDelay={300}
-            trigger={({ triggerRef, toggle }) => (
-              <Button type="button" htmlRef={triggerRef} onClick={toggle}>
+            isToggleHover
+            trigger={({ triggerRef, toggle, open }) => (
+              <Button type="button" htmlRef={triggerRef} onClick={toggle} onMouseEnter={() => open()}>
                 Тест
               </Button>
             )}

@@ -26,15 +26,24 @@ export const Block = styled(dynamicTag)`
   display: flex;
   align-items: center;
   padding: 15.5px 12px;
-  ${p => (p.gap && css`
-    padding: ${p.gap}px;
-  `)}
+  ${p =>
+    p.gap &&
+    css`
+      padding: ${p.gap}px;
+    `}
   border-radius: 0;
-  ${p => (p.active && css`
-    * {
-      color: ${getTheme(p.theme, 'colors.primary')};
-    }
-  `)}
+  ${p =>
+    p.reverse &&
+    css`
+      flex-direction: row-reverse;
+    `}
+  ${p =>
+    p.active &&
+    css`
+      * {
+        color: ${getTheme(p.theme, 'colors.primary')};
+      }
+    `}
   &:hover {
     background-color: ${p => getTheme(p.theme, 'colors.lighterPrimary')};
     > div > svg {
@@ -45,5 +54,11 @@ export const Block = styled(dynamicTag)`
 
 export const IconWrapper = styled('div')`
   margin-right: 8px;
+  ${p =>
+    p.reverse &&
+    css`
+      margin-right: 0;
+      margin-left: 8px;
+    `}
   color: ${p => getTheme(p.theme, 'colors.gray')};
 `;

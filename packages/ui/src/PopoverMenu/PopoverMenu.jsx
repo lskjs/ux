@@ -2,16 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ToggleLayer, Arrow, Transition } from 'react-laag';
 
-const PopoverMenu = ({ trigger, layer, layerStyle, transitionDelay, placement, ...props }) => (
+const PopoverMenu = ({ trigger, layer, layerStyle, transitionDelay, placement, isToggleHover, ...props }) => (
   <ToggleLayer
     {...props}
-    renderLayer={({ isOpen, layerProps, arrowStyle, layerSide }) => (
+    renderLayer={({ isOpen, layerProps, arrowStyle, layerSide, close }) => (
       <Transition isOpen={isOpen}>
         {(isMenuOpen = isOpen, onTransitionEnd) => (
           <div
             ref={layerProps.ref}
             className="layer"
             onTransitionEnd={onTransitionEnd}
+            onMouseLeave={isToggleHover ? () => close() : null}
             style={{
               ...layerProps.style,
               ...layerStyle,
@@ -34,9 +35,9 @@ const PopoverMenu = ({ trigger, layer, layerStyle, transitionDelay, placement, .
       ...placement,
     }}
   >
-    {({ triggerRef, toggle }) =>
+    {({ triggerRef, toggle, open }) =>
       trigger ? (
-        trigger({ triggerRef, toggle })
+        trigger({ triggerRef, toggle, open })
       ) : (
         <button type="button" ref={triggerRef} onClick={toggle}>
           asd
@@ -54,6 +55,7 @@ PopoverMenu.propTypes = {
   transitionDelay: PropTypes.number,
   // eslint-disable-next-line react/forbid-prop-types
   placement: PropTypes.object,
+  isToggleHover: PropTypes.bool,
 };
 PopoverMenu.defaultProps = {
   layer: null,
@@ -61,6 +63,7 @@ PopoverMenu.defaultProps = {
   trigger: null,
   transitionDelay: 300,
   placement: null,
+  isToggleHover: false,
 };
 
 export default PopoverMenu;

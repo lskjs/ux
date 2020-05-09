@@ -4,18 +4,11 @@ import PropTypes from 'prop-types';
 import Performance from '@lskjs/dev/Performance';
 import { Block, IconWrapper } from './Dropdown.styles';
 
-const DropdownItem = ({ children, active, componentClass = 'div', gap, icon, ...props }) => (
+const DropdownItem = ({ children, active, componentClass = 'div', gap, icon, reverse, ...props }) => (
   <Performance name="DropdownItem" disabled={!__DEV__}>
-    <Block
-      active={active}
-      componentClass={componentClass}
-      gap={gap}
-      {...props}
-    >
+    <Block active={active ? 1 : 0} componentClass={componentClass} gap={gap} reverse={reverse ? 1 : 0} {...props}>
       <If condition={!!icon}>
-        <IconWrapper>
-          {icon}
-        </IconWrapper>
+        <IconWrapper reverse={reverse ? 1 : 0}>{icon}</IconWrapper>
       </If>
       {children}
     </Block>
@@ -29,6 +22,7 @@ DropdownItem.propTypes = {
   id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   gap: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   icon: PropTypes.any, // eslint-disable-line react/forbid-prop-types
+  reverse: PropTypes.bool,
 };
 
 DropdownItem.defaultProps = {
@@ -37,6 +31,7 @@ DropdownItem.defaultProps = {
   active: false,
   gap: null,
   icon: null,
+  reverse: false,
 };
 
 export default DropdownItem;
