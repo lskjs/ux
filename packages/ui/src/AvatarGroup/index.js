@@ -1,1 +1,3 @@
-export { default } from './AvatarGroup';
+import AvatarGroup from '@lskjs/avatar/AvatarGroup';
+
+export default AvatarGroup;

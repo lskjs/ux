@@ -1,1 +1,3 @@
-export { default } from './Avatar';
+import Avatar from '@lskjs/avatar';
+
+export default Avatar;
