@@ -1,13 +1,13 @@
 {
-  "name": "@lskjs/image",
+  "name": "@lskjs/tag",
   "version": "1.4.1",
-  "description": "LSK ux subrepo: image",
+  "description": "LSK ux subrepo: tag",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
-  "repository": "https://github.com/lskjs/ux/tree/master/packages/image",
+  "repository": "https://github.com/lskjs/ux/tree/master/packages/tag",
   "keywords": [],
   "scripts": {
     "dev": "npm run watch",
