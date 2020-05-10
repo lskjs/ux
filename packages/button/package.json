@@ -35,7 +35,7 @@
     "@emotion/styled": "^10.0.27",
     "@lskjs/autobind": "^1.11.0",
     "@lskjs/theme": "1.4.1",
-    "@lskjs/utils": "^1.17.1",
+    "@lskjs/utils": "^1.19.0",
     "classnames": "^2.2.6",
     "prop-types": "^15.7.2"
   },

@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "@lskjs/link": "1.4.1",
-    "@lskjs/utils": "^1.17.1",
+    "@lskjs/utils": "^1.19.0",
     "prop-types": "15.7.2",
     "react-image-fallback": "^8.0.0"
   },

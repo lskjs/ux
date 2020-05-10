@@ -37,7 +37,7 @@
     "@lskjs/button": "1.4.1",
     "@lskjs/css": "1.4.1",
     "@lskjs/dev": "1.4.1",
-    "@lskjs/mobx": "1.17.1",
+    "@lskjs/mobx": "1.19.0",
     "@lskjs/theme": "1.4.1",
     "@lskjs/utils": "0.39.0",
     "axios": "0.19.2",

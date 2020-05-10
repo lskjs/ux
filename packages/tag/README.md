@@ -24,7 +24,7 @@ npm install @lskjs/tag
 Then use it in your app:
 
 ```jsx
-import Button from '@lskjs/tag';
+import Tag from '@lskjs/tag';
 
 const App = (
   <Tag variant="primary">Primary button</Tag>
