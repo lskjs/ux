@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.6.0](https://github.com/isuvorov/lib-starter-kit/tree/master/packages/lib1/compare/v1.5.0...v1.6.0) (2020-05-10)
+
+
+### Bug Fixes
+
+* fixing docs ([784fe7e](https://github.com/isuvorov/lib-starter-kit/tree/master/packages/lib1/commit/784fe7e6f8ed118dac5a64ef4f7864045e58c734))
+
+
+### Features
+
+* optimize release size of npm package ([51f0b60](https://github.com/isuvorov/lib-starter-kit/tree/master/packages/lib1/commit/51f0b60a4a471b0b1da9232105a4cf23b720ec8c))
+
+
+
+
+
 # [1.5.0](https://github.com/isuvorov/lib-starter-kit/tree/master/packages/lib1/compare/v1.1.94...v1.5.0) (2020-05-10)
 
 

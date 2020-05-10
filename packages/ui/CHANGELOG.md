@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.6.0](https://github.com/lskjs/ux/tree/master/packages/ui/compare/v1.5.0...v1.6.0) (2020-05-10)
+
+
+### Bug Fixes
+
+* **ui:** add missing packages ([60fd4d2](https://github.com/lskjs/ux/tree/master/packages/ui/commit/60fd4d23f07f4c5d4c1bf78abcb67e7771a4e01f))
+
+
+### Features
+
+* optimize release size of npm package ([51f0b60](https://github.com/lskjs/ux/tree/master/packages/ui/commit/51f0b60a4a471b0b1da9232105a4cf23b720ec8c))
+
+
+
+
+
 # [1.5.0](https://github.com/lskjs/ux/tree/master/packages/ui/compare/v1.1.94...v1.5.0) (2020-05-10)
 
 
