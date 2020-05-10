@@ -32,13 +32,14 @@ class TagGroup extends PureComponent {
             onClose={() => onClose && onClose(item)}
             onClick={() => onClick && onClick(item)}
             closable={closable && !disabled}
-            children={item.title || item.children}
             style={{
               overflow: 'hidden',
               textOverflow: 'ellipsis',
               cursor: onClick ? 'pointer' : null,
             }}
-          />
+          >
+            {item.title || item.children}
+          </Tag>
         ))}
         {children}
       </div>
