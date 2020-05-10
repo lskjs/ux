@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/lskjs/ux/tree/master/packages/tag/compare/v1.1.94...v1.5.0) (2020-05-10)
+
+
+### Features
+
+* **tag:** add TagGroup ([e1dcb6c](https://github.com/lskjs/ux/tree/master/packages/tag/commit/e1dcb6c7ffb61c6947aace2f89a3c32e5d6a4189))
+* **ui:** remove Tag, add @lskjs/tag ([324c516](https://github.com/lskjs/ux/tree/master/packages/tag/commit/324c5167e21b22a4601c5bc1ebdea7fd4a7393b0))
+
+
+
+
+
 ## [1.4.1](https://github.com/lskjs/ux/tree/master/packages/image/compare/v1.4.0...v1.4.1) (2020-04-16)
 
 **Note:** Version bump only for package @lskjs/image

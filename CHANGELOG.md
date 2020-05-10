@@ -3,6 +3,73 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/isuvorov/lib-starter-kit/compare/v1.1.94...v1.5.0) (2020-05-10)
+
+
+### Bug Fixes
+
+* **docs:** working docs build ([9d1b80f](https://github.com/isuvorov/lib-starter-kit/commit/9d1b80fd79faf0269d00ec571c20e8eea1d3b69c)), closes [#LSK-1](https://github.com/isuvorov/lib-starter-kit/issues/LSK-1)
+
+
+### Features
+
+* **tag:** add TagGroup ([e1dcb6c](https://github.com/isuvorov/lib-starter-kit/commit/e1dcb6c7ffb61c6947aace2f89a3c32e5d6a4189))
+* **ui:** move ui/avatar to @lskjs/avatar ([26d9ad1](https://github.com/isuvorov/lib-starter-kit/commit/26d9ad1c38a59ced4cc283e59e4cf3f8130b308c))
+* **ui:** remove Tag, add @lskjs/tag ([324c516](https://github.com/isuvorov/lib-starter-kit/commit/324c5167e21b22a4601c5bc1ebdea7fd4a7393b0))
+* remove react-bootstrap legacy ([569dba2](https://github.com/isuvorov/lib-starter-kit/commit/569dba26f01f85a142ff00fe09f63700d804eccc))
+* remove unuseful form controls ([295f9e9](https://github.com/isuvorov/lib-starter-kit/commit/295f9e99e1f09a8941a01b295c53205727cf1cee))
+
+
+
+## [1.4.1](https://github.com/isuvorov/lib-starter-kit/compare/v1.4.0...v1.4.1) (2020-04-16)
+
+
+### Bug Fixes
+
+* **article:** change deps in package ([e801232](https://github.com/isuvorov/lib-starter-kit/commit/e801232b3b18b2e25b355d7da0ba8db20b3dc7c1))
+
+
+
+# [1.4.0](https://github.com/isuvorov/lib-starter-kit/compare/v1.3.0...v1.4.0) (2020-04-15)
+
+
+### Features
+
+* **dev:** add Grill component ([d528693](https://github.com/isuvorov/lib-starter-kit/commit/d528693fc6de7a773e74c70bd7df28181f921297))
+
+
+
+# [1.3.0](https://github.com/isuvorov/lib-starter-kit/compare/v1.1.76...v1.3.0) (2020-04-15)
+
+
+### Bug Fixes
+
+* **image:** fix image and progress packages ([1b8c3ad](https://github.com/isuvorov/lib-starter-kit/commit/1b8c3ad76bac946cb5ef44e547cf37dca56955a3))
+* **image:** fix package json in @lskjs/image ([bf18b15](https://github.com/isuvorov/lib-starter-kit/commit/bf18b155d1a5e0e678897c70ff16a2c0d31027a0))
+* **navbar:** remove navbar deps ([ef62fce](https://github.com/isuvorov/lib-starter-kit/commit/ef62fce6ad3e0278dddfb77e88ea04a53ab33ece))
+* **notification:** fix deps in @lskjs/notification ([b26e00a](https://github.com/isuvorov/lib-starter-kit/commit/b26e00a64212e66e4efa6aa06ec3a35bbb7ef314))
+* readme style ([1bcd38c](https://github.com/isuvorov/lib-starter-kit/commit/1bcd38cce3dc0dce6c7b6801cc9cd6b8cbf64617))
+
+
+### Features
+
+* **dev:** separate DEV and Zebra,  using Zebra in Story ([9c55ae7](https://github.com/isuvorov/lib-starter-kit/commit/9c55ae7e4470c718141c689cdd07f23bde8f9745))
+* add conventional commits in lerna ([c911bc0](https://github.com/isuvorov/lib-starter-kit/commit/c911bc0b17c756254b9c34ef8830ddb847546577))
+* add npm run release:yes ([af16ed5](https://github.com/isuvorov/lib-starter-kit/commit/af16ed5fce8e65c0f6706be35a146245955829bc))
+
+
+
+## [1.1.73](https://github.com/isuvorov/lib-starter-kit/compare/v1.1.72...v1.1.73) (2020-03-23)
+
+
+### Bug Fixes
+
+* **readme:** update ([dd75279](https://github.com/isuvorov/lib-starter-kit/commit/dd75279a1356c6026670851dea35ac66c210c7c2))
+
+
+
+
+
 ## [1.4.1](https://github.com/isuvorov/lib-starter-kit/compare/v1.4.0...v1.4.1) (2020-04-16)
 
 
