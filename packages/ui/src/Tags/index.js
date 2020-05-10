@@ -1,1 +1,3 @@
-export { default } from './Tags';
+import TagGroup from '@lskjs/tag/TagGroup';
+
+export default TagGroup;

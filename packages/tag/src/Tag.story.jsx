@@ -4,7 +4,7 @@ import Tag from './Tag';
 import TagGroup from './TagGroup';
 
 export default ({ storiesOf }) => {
-  storiesOf('tag/Tag')
+  storiesOf('tag')
     .add('<Tag />', () => (
       <Story>
         <Tag />
