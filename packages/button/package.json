@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/button",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "LSK ux subrepo: button",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -34,13 +34,13 @@
     "@emotion/core": "^10.0.27",
     "@emotion/styled": "^10.0.27",
     "@lskjs/autobind": "^1.11.0",
-    "@lskjs/theme": "1.6.0",
+    "@lskjs/theme": "1.6.1",
     "@lskjs/utils": "^1.19.0",
     "classnames": "^2.2.6",
     "prop-types": "^15.7.2"
   },
   "devDependencies": {
-    "@lskjs/dev": "1.6.0",
+    "@lskjs/dev": "1.6.1",
     "@lskjs/grid": "1.1.41",
     "antd": "3.26.9",
     "lodash": "4.17.15",
