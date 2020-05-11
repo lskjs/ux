@@ -11,10 +11,10 @@ module.exports = async ({ config, mode }) => {
     babelrc.plugins.splice(transformRuntimeIndex, 1);
   }
   config.module.rules[0].use[0].options.plugins = babelrc.plugins;
-  config.plugins.push(new webpack.NormalModuleReplacementPlugin(
-    /\.\/countriesCodes\.json/,
-    require.resolve('./countriesCodes.json', {paths: [ __dirname ]}),
-  ));
+  // config.plugins.push(new webpack.NormalModuleReplacementPlugin(
+  //   /\.\/countriesCodes\.json/,
+  //   require.resolve('./countriesCodes.json', {paths: [ __dirname ]}),
+  // ));
   config.plugins.push(new webpack.NormalModuleReplacementPlugin(
     /@lskjs\/dev\/Story/,
     (resource) => {
