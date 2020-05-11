@@ -30,6 +30,8 @@
   "dependencies": {
     "@lskjs/autobind": "^1.11.0",
     "@lskjs/link": "1.6.0",
+    "@lskjs/t": "1.6.0",
+    "@lskjs/theme": "1.6.0",
     "prop-types": "15.7.2",
     "react-notification-system": "^0.3.0"
   },
@@ -39,6 +41,7 @@
     "react-icon-base": "^2.1.2"
   },
   "peerDependencies": {
-    "react": "*"
+    "react": "*",
+    "react-icon-base": "*"
   }
 }

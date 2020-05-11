@@ -22,13 +22,13 @@ async function packageBuild() {
       'src',
       `--out-dir ${DIST}`,
       '--source-maps both',
-      '--ignore "**/*.story.jsx"',
+      // '--ignore "**/*.story.jsx"',
       '--extensions ".js,.jsx,.ts,.tsx"',
       BUILD_PARAMS,
     ].join(' '),
   );
 
-  res = await shell.exec(['rm', '-f', `${DIST}/**/*.story.jsx`].join(' '));
+  // res = await shell.exec(['rm', '-f', `${DIST}/**/*.story.jsx`].join(' '));
 
   if (res.code !== 0) throw res;
 
