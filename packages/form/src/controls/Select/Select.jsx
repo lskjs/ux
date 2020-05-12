@@ -62,10 +62,13 @@ class Select extends Component {
   @autobind
   async loadOptions(...args) {
     try {
-      const { loadOptions, ...props } = this.props;
+      const { loadOptions, sortable, ...props } = this.props;
       const options = await loadOptions(...args);
 
       // console.log({ options });
+      if (sortable && !!options) {
+        options.sort(this.compareVal);
+      }
       return getNormalizedOptions(options, props);
     } catch (err) {
       if (__DEV__) console.error('Form2/Select loadOptions error', err); // eslint-disable-line no-console
@@ -117,7 +120,7 @@ class Select extends Component {
       ...props
     } = this.props;
     // console.log(this.props.selected)
-    if (sortable) {
+    if (sortable && !!options) {
       options.sort(this.compareVal);
     }
     const normalizedOptions = getNormalizedOptions(options, props);
