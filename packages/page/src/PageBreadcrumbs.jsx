@@ -3,8 +3,8 @@ import { inject, observer } from 'mobx-react';
 import get from 'lodash/get';
 import cloneDeep from 'lodash/cloneDeep';
 import omit from 'lodash/omit';
-import Breadcrumbs from '@lskjs/ui/Breadcrumbs';
 import Link from '@lskjs/link';
+import Breadcrumbs from './components/Breadcrumbs';
 
 const PageBreadcrumbs = ({ children, page, reverse, omitFirst, omitLast, items: rawItems, ...props }) => {
   const breadcrumbs = get(page, 'state.show.breadcrumbs', true);
@@ -35,7 +35,7 @@ const PageBreadcrumbs = ({ children, page, reverse, omitFirst, omitLast, items: 
   return (
     <Breadcrumbs
       {...props}
-      render={item => {
+      render={(item) => {
         const { title, href } = item;
         if (!href) return title;
         return <Link href={href}>{title}</Link>;
