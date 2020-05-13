@@ -29,12 +29,12 @@
   },
   "dependencies": {
     "react-custom-scrollbars": "4.2.1",
+    "@lskjs/autobind": "0.39.0",
     "react-if": "3.4.3"
   },
   "devDependencies": {
     "@emotion/core": "10.0.27",
     "@emotion/styled": "10.0.27",
-    "@lskjs/autobind": "0.39.0",
     "@lskjs/button": "1.7.1",
     "@lskjs/css": "1.7.1",
     "@lskjs/dev": "1.7.1",
@@ -57,7 +57,6 @@
   "peerDependencies": {
     "@emotion/core": "*",
     "@emotion/styled": "*",
-    "@lskjs/autobind": "*",
     "@lskjs/button": "*",
     "@lskjs/css": "*",
     "@lskjs/dev": "*",

@@ -30,13 +30,13 @@
   "dependencies": {
     "react-debounce-input": "3.2.2",
     "react-if": "3.4.3",
+    "@lskjs/autobind": "0.39.0",
     "react-visibility-sensor": "5.1.1"
   },
   "devDependencies": {
     "@emotion/core": "10.0.27",
     "@emotion/styled": "10.0.27",
     "@lskjs/apiquery": "1.15.0",
-    "@lskjs/autobind": "0.39.0",
     "@lskjs/button": "1.7.1",
     "@lskjs/css": "1.7.1",
     "@lskjs/dev": "1.7.1",
@@ -68,7 +68,6 @@
   "peerDependencies": {
     "@emotion/core": "*",
     "@emotion/styled": "*",
-    "@lskjs/autobind": "*",
     "@lskjs/button": "*",
     "@lskjs/css": "*",
     "@lskjs/dev": "*",

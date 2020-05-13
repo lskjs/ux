@@ -27,16 +27,16 @@
     "storybook": "../../scripts/package-storybook.sh",
     "styleguide": "../../scripts/package-styleguide.sh"
   },
+  "dependencies": {
+    "@lskjs/utils": "1.0.19",
+    "@lskjs/grid": "1.7.1",
+    "@lskjs/link": "1.7.1",
+    "@lskjs/theme": "1.7.1"
+  },
   "devDependencies": {
     "@emotion/core": "10.0.27",
     "@emotion/styled": "10.0.27",
-    "@lskjs/autobind": "1.0.0",
     "@lskjs/dev": "1.7.1",
-    "@lskjs/grid": "1.7.1",
-    "@lskjs/link": "1.7.1",
-    "@lskjs/theme": "1.7.1",
-    "@lskjs/ui": "1.7.1",
-    "@lskjs/utils": "1.0.19",
     "antd": "3.26.12",
     "lodash": "4.17.15",
     "mobx": "5.15.4",
@@ -47,12 +47,6 @@
   "peerDependencies": {
     "@emotion/core": "*",
     "@emotion/styled": "*",
-    "@lskjs/autobind": "*",
-    "@lskjs/grid": "*",
-    "@lskjs/link": "*",
-    "@lskjs/theme": "*",
-    "@lskjs/ui": "*",
-    "@lskjs/utils": "*",
     "antd": "*",
     "lodash": "*",
     "mobx": "*",
