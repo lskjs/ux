@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/page",
-  "version": "1.7.1",
+  "version": "1.7.2",
   "description": "LSK ux subrepo: page",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -28,10 +28,10 @@
     "styleguide": "../../scripts/package-styleguide.sh"
   },
   "dependencies": {
-    "@lskjs/utils": "1.0.19",
     "@lskjs/grid": "1.7.1",
     "@lskjs/link": "1.7.1",
-    "@lskjs/theme": "1.7.1"
+    "@lskjs/theme": "1.7.1",
+    "@lskjs/utils": "1.0.19"
   },
   "devDependencies": {
     "@emotion/core": "10.0.27",

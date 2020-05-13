@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.7.2](https://github.com/lskjs/ux/tree/master/packages/page/compare/v1.7.1...v1.7.2) (2020-05-13)
+
+
+### Bug Fixes
+
+* change devDeps to deps or removed ([c76ce64](https://github.com/lskjs/ux/tree/master/packages/page/commit/c76ce647af6328bcc0abf310da1f4dacc6c1de59))
+* **page:** remove lskjs/ui from breadcrumbs ([7e8eff1](https://github.com/lskjs/ux/tree/master/packages/page/commit/7e8eff160a9e2c9fba98ae4b71473f04ea268511))
+
+
+
+
+
 ## [1.7.1](https://github.com/lskjs/ux/tree/master/packages/page/compare/v1.6.1...v1.7.1) (2020-05-11)
 
 **Note:** Version bump only for package @lskjs/page

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.7.2](https://github.com/lskjs/ux/tree/master/packages/modal/compare/v1.7.1...v1.7.2) (2020-05-13)
+
+
+### Bug Fixes
+
+* change devDeps to deps or removed ([c76ce64](https://github.com/lskjs/ux/tree/master/packages/modal/commit/c76ce647af6328bcc0abf310da1f4dacc6c1de59))
+
+
+
+
+
 ## [1.7.1](https://github.com/lskjs/ux/tree/master/packages/modal/compare/v1.6.1...v1.7.1) (2020-05-11)
 
 **Note:** Version bump only for package @lskjs/modal
