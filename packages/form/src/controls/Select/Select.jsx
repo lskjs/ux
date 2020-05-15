@@ -171,7 +171,7 @@ class Select extends Component {
         <SelectComponent
           blurInputOnSelect={blurInputOnSelect}
           // isClearable={defaultIsClearable}
-          isSearchable
+          isSearchable={defaultIsSearchable}
           isClearable={defaultIsClearable}
           error={hasError}
           classNamePrefix="react-select"
