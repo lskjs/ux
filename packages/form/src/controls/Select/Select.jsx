@@ -116,10 +116,25 @@ class Select extends Component {
       components = {},
       styles = {},
       isMulti,
+      multiSearch,
       isHideSelected,
       ...props
     } = this.props;
     // console.log(this.props.selected)
+
+    let filterOption;
+    if (options && multiSearch) {
+      filterOption = (option, inputValue) => {
+        const { label, value } = option;
+        const otherKey = options.filter(opt => {
+          return (
+            (opt.title === label && opt.en.toLowerCase().includes(inputValue.toLowerCase())) ||
+            (opt.title === label && opt.ru.toLowerCase().includes(inputValue.toLowerCase()))
+          );
+        });
+        return value.includes(inputValue) || otherKey.length > 0;
+      };
+    }
     if (sortable && !!options) {
       options.sort(this.compareVal);
     }
@@ -156,7 +171,7 @@ class Select extends Component {
         <SelectComponent
           blurInputOnSelect={blurInputOnSelect}
           // isClearable={defaultIsClearable}
-          isSearchable={defaultIsSearchable}
+          isSearchable
           isClearable={defaultIsClearable}
           error={hasError}
           classNamePrefix="react-select"
@@ -166,6 +181,7 @@ class Select extends Component {
           placeholder={placeholder}
           isMulti={isMulti}
           hideSelectedOptions={hideSelectedOptions}
+          filterOption={filterOption}
           {...field}
           {...props}
           components={{
