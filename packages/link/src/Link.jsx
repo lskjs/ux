@@ -39,7 +39,7 @@ const Link = ({ componentClass: Component = 'a', to, href, qs, target, children,
   };
 
   return (
-    <Component href={url} onClick={handleClick} {...props}>
+    <Component href={url} onClick={handleClick} target={target} {...props}>
       {children}
     </Component>
   );
