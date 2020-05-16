@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/page",
-  "version": "1.7.2",
+  "version": "1.8.0",
   "description": "LSK ux subrepo: page",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "@lskjs/grid": "1.7.1",
-    "@lskjs/link": "1.7.1",
+    "@lskjs/link": "1.8.0",
     "@lskjs/theme": "1.7.1",
     "@lskjs/utils": "1.0.19"
   },

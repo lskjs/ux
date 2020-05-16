@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/avatar",
-  "version": "1.7.1",
+  "version": "1.8.0",
   "description": "LSK ux subrepo: avatar",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -28,7 +28,7 @@
     "styleguide": "../../scripts/package-styleguide.sh"
   },
   "dependencies": {
-    "@lskjs/link": "1.7.1",
+    "@lskjs/link": "1.8.0",
     "lodash": "4.17.15",
     "prop-types": "15.7.2",
     "react-image-fallback": "8.0.0"

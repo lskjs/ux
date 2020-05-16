@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/article",
-  "version": "1.7.1",
+  "version": "1.8.0",
   "description": "LSK ux subrepo: article",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -28,8 +28,8 @@
     "styleguide": "../../scripts/package-styleguide.sh"
   },
   "dependencies": {
-    "@lskjs/image": "1.7.1",
-    "@lskjs/link": "1.7.1",
+    "@lskjs/image": "1.8.0",
+    "@lskjs/link": "1.8.0",
     "@lskjs/theme": "1.7.1",
     "@lskjs/typo": "1.7.1",
     "react-markdown": "4.3.1"
