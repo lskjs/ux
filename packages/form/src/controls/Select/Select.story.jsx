@@ -140,9 +140,36 @@ const SelectForm = createForm({
       options: ['one', 'two'],
     },
     select5: {
-      title: 'The Large select5',
+      title: 'select5 with multisearch',
       component: Select,
-      options: range(1, 300),
+      multiSearch: true,
+      // options: range(1, 300),
+      options: [
+        {
+          title: 'Русский',
+          ru: 'Русский',
+          en: 'Russian',
+          value: 'ru',
+        },
+        {
+          title: 'Албанский',
+          ru: 'Албанский',
+          en: 'Albanian',
+          value: 'al',
+        },
+        {
+          title: 'Английский',
+          ru: 'Английский',
+          en: 'English',
+          value: 'en',
+        },
+        {
+          title: 'Казахский',
+          ru: 'Казахский',
+          en: 'Kazahstan',
+          value: 'kz',
+        },
+      ],
     },
     // ///
     multiselect: {
