@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useRef } from 'react';
 import PropTypes from 'prop-types';
 import Story from '@lskjs/dev/Story';
 import Progress from './Progress';
@@ -77,7 +77,7 @@ export default ({ storiesOf }) =>
           <div>
             aaaaa
             <div>
-              bbbb
+              rogress bbbb
               <div>
                 ccccc
                 <div>
@@ -131,5 +131,5 @@ global =
           </Wrapper>
         )}
       </Story>
-    ));
+    ))
 // {this.state.global ? 'true' : 'false'}
