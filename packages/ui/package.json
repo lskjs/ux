@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/ui",
-  "version": "1.8.0",
+  "version": "1.9.0",
   "description": "LSK ux subrepo: ui",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -48,7 +48,7 @@
     "@lskjs/image": "1.8.0",
     "@lskjs/link": "1.8.0",
     "@lskjs/notification": "1.8.0",
-    "@lskjs/progress": "1.7.1",
+    "@lskjs/progress": "1.9.0",
     "@lskjs/scroll": "1.7.1",
     "@lskjs/t": "1.7.1",
     "@lskjs/tag": "1.8.0",
