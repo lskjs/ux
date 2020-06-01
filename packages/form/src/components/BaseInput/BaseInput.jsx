@@ -18,6 +18,7 @@ class Input extends PureComponent {
     styleName: PropTypes.string,
     leftIcon: PropTypes.any,
     rightIcon: PropTypes.any,
+    innerRef: PropTypes.any,
     className: PropTypes.string,
     regex: PropTypes.any,
     maxLength: PropTypes.number,
@@ -32,6 +33,7 @@ class Input extends PureComponent {
     displayRate: null,
     leftIcon: null,
     rightIcon: null,
+    innerRef: null,
     className: null,
     regex: null,
     maxLength: null,
@@ -91,7 +93,7 @@ class Input extends PureComponent {
       componentClass,
       disabled,
       displayRate,
-      ref,
+      innerRef,
       leftIcon,
       rightIcon,
       maxLength,
@@ -108,7 +110,7 @@ class Input extends PureComponent {
         <Block
           iconLeft={leftIcon}
           iconRight={rightIcon}
-          ref={ref}
+          ref={innerRef}
           validationState={validationState}
           block={block}
           disabled={disabled}

@@ -126,13 +126,16 @@ class Select extends Component {
     if (options && multiSearch) {
       filterOption = (option, inputValue) => {
         const { label, value } = option;
+        const valueSearch = options.filter(opt => {
+          return opt.value.toLowerCase().includes(inputValue.toLowerCase());
+        }).length === 1;
         const otherKey = options.filter(opt => {
           return (
             (opt.title === label && opt.en.toLowerCase().includes(inputValue.toLowerCase())) ||
             (opt.title === label && opt.ru.toLowerCase().includes(inputValue.toLowerCase()))
           );
         });
-        return value.includes(inputValue) || otherKey.length > 0;
+        return value.toLowerCase().includes(inputValue.toLowerCase()) || (!valueSearch && otherKey.length > 0);
       };
     }
     if (sortable && !!options) {
