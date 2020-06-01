@@ -1,8 +1,8 @@
 import React from 'react';
 import File from 'react-icons2/mdi/file-image';
 import Remove from 'react-icons2/mdi/close-circle-outline';
-import T from '@lskjs/ui/T';
-import Avatar from '@lskjs/ui/Avatar';
+import T from '@lskjs/t';
+import Avatar from '@lskjs/avatar';
 // import DEV from '@lskjs/dev';
 
 import {

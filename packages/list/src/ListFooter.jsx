@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
 import If from 'react-if';
 import DownloadIcon from 'react-icons2/mdi/download';
-import T from '@lskjs/ui/T';
+import T from '@lskjs/t';
 import Button from '@lskjs/button';
 import withResponsive from '@lskjs/button/withResponsive';
 import { contextToProps } from './List.context';

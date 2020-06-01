@@ -6,7 +6,7 @@ import If from 'react-if';
 import VisibilitySensor from 'react-visibility-sensor';
 import Loading from '@lskjs/ui/Loading';
 import Progress from '@lskjs/ui/Progress';
-import T from '@lskjs/ui/T';
+import T from '@lskjs/t';
 import Button from '@lskjs/button';
 import { contextToProps } from './List.context';
 import { loadMoreButton } from './List.styles';

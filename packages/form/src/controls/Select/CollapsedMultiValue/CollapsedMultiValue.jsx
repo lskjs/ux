@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import isEqual from 'lodash/isEqual';
 import pick from 'lodash/pick';
-import T from '@lskjs/ui/T';
+import T from '@lskjs/t';
 import { ValueBlock, Value } from './CollapsedMultiValue.styles';
 
 class CollapsedMultiValue extends Component {

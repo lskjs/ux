@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import autobind from '@lskjs/autobind';
-import T from '@lskjs/ui/T';
+import T from '@lskjs/t';
 import PropTypes from 'prop-types';
 import toNumber from 'lodash/toNumber';
 import isFinite from 'lodash/isFinite';

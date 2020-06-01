@@ -4,7 +4,7 @@ import If from 'react-if';
 import { Form, Field } from 'formik';
 import Button from '@lskjs/button';
 import ButtonGroup from '@lskjs/button/ButtonGroup';
-import T from '@lskjs/ui/T';
+import T from '@lskjs/t';
 import DefaultModal from '@lskjs/modal';
 import createForm from '../createForm';
 import FormSubmitButton from '../FormSubmitButton';

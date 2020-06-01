@@ -11,7 +11,7 @@ import keys from 'lodash/keys';
 import Modal, { Title, Content } from '@lskjs/modal';
 import Story from '@lskjs/dev/Story/UappStory';
 import Performance from '@lskjs/dev/Performance';
-import Flag from '@lskjs/ui/Flag';
+import Flag from '@lskjs/flag';
 import createForm from '../../createForm';
 // import FormDebug from '../../FormDebug';
 import Select from './Select';

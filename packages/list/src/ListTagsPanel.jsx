@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
-import T from '@lskjs/ui/T';
+import T from '@lskjs/t';
 import { contextToProps } from './List.context';
 
 @contextToProps('List', 'filterProps')

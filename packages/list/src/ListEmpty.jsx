@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { inject, observer } from 'mobx-react';
 import If from 'react-if';
 import Button from '@lskjs/button';
-import T from '@lskjs/ui/T';
+import T from '@lskjs/t';
 import Error404 from '@lskjs/ui/SlideContent/icons/error404';
 import EmptyContainer from '@lskjs/ui/EmptyContainer';
 

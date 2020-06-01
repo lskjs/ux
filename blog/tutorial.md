@@ -222,7 +222,7 @@ function App() {
 import React from 'react';
 import { inject, observer } from 'mobx-react';
 import Button from '@lskjs/button';
-import T from '@lskjs/ui/T';
+import T from '@lskjs/t';
 
 function Translate({ i18 }) {
   return (

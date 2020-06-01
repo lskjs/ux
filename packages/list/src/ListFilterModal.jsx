@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { jsx } from '@emotion/core';
 import { observer, inject } from 'mobx-react';
-import T from '@lskjs/ui/T';
+import T from '@lskjs/t';
 import Modal, {
   Title,
   Content,

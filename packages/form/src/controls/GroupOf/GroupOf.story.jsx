@@ -12,7 +12,7 @@ import Checkbox from '../Checkbox';
 import Checkblock from '../CheckBlock';
 import FormDebug from '../../FormDebug';
 import Input from '../Input';
-import T from '@lskjs/ui/T';
+import T from '@lskjs/t';
 import Account from 'react-icons2/mdi/account-box-outline';
 import Desktop from 'react-icons2/mdi/desktop-mac';
 import Camera from 'react-icons2/mdi/camcorder';

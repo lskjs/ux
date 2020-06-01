@@ -7,7 +7,7 @@ import theme from '@lskjs/theme';
 import getTheme from '@lskjs/theme/getTheme';
 // import If from 'react-if';
 import isEmpty from '@lskjs/utils/isEmpty';
-import T from '@lskjs/ui/T';
+import T from '@lskjs/t';
 import withResponsive from '@lskjs/button/withResponsive';
 import FilterIcon from './FilterIcon';
 import { contextToProps } from './List.context';

@@ -1,7 +1,7 @@
 import React from 'react';
 import Form from 'antd/lib/form';
 import { Global } from '@emotion/core';
-import T from '@lskjs/ui/T';
+import T from '@lskjs/t';
 import FormError from './FormError';
 import Title from './components/TitleComponent';
 import { globalStylesFormItem } from './Form.styles';

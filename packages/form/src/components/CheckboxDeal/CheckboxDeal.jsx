@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import If from 'react-if';
-import T from '@lskjs/ui/T';
+import T from '@lskjs/t';
 import { BaseCheckbox as Checkbox } from '../../controls/Checkbox';
 
 import {

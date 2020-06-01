@@ -8,7 +8,7 @@ import get from 'lodash/get';
 import Plus from 'react-icons2/mdi/plus-circle';
 import If from 'react-if';
 
-import Tags from '@lskjs/ui/Tags';
+import Tags from '@lskjs/tag/TagGroup';
 import Button from '@lskjs/button';
 import Tag from '../Tag';
 import TagsWrapper from '../TagsWrapper';

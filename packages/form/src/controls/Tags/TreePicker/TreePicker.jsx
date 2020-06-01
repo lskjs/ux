@@ -10,7 +10,7 @@ import Magnify from 'react-icons2/mdi/magnify';
 import map from 'lodash/map';
 import omit from 'lodash/omit';
 import uniqBy from 'lodash/uniqBy';
-import T from '@lskjs/ui/T';
+import T from '@lskjs/t';
 import Button from '@lskjs/button';
 import Modal2, { Title, Subtitle, Content, Footer } from '@lskjs/modal';
 

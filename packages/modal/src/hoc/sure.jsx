@@ -1,7 +1,7 @@
 /* eslint import/no-extraneous-dependencies: 0 */
 import React, { forwardRef, createRef } from 'react';
 import Button from '@lskjs/button';
-import T from '@lskjs/ui/T';
+import T from '@lskjs/t';
 import DefaultModal from '../Modal2';
 
 export default ({ Modal = DefaultModal, ...params } = {}) =>

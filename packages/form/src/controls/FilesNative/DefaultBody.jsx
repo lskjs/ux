@@ -2,7 +2,7 @@ import React from 'react';
 import If from 'react-if';
 import FileIcon from 'react-icons2/mdi/file-image';
 import Button from '@lskjs/button';
-import T from '@lskjs/ui/T';
+import T from '@lskjs/t';
 import { Actions, Block, Drop, DropIcon, DropText, Header, Info } from './FilesNative.styles';
 
 const DefaultBody = ({

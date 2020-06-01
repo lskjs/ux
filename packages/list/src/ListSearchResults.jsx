@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { inject, observer } from 'mobx-react';
-import T from '@lskjs/ui/T';
+import T from '@lskjs/t';
 import { contextToProps } from './List.context';
 
 @contextToProps('List')
