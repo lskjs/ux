@@ -5,7 +5,7 @@ import ListStore from '@lskjs/mobx/stores/ListStore';
 import collectProps from '@lskjs/utils/collectProps';
 import collectProp from '@lskjs/utils/collectProp';
 import Button from '@lskjs/button';
-import scroll from '@lskjs/scroll';
+// import scroll from '@lskjs/scroll';
 import { Table } from '@lskjs/ui/Table';
 import DEV from '@lskjs/dev/DEV';
 import DefaultSearchComponent from './DefaultSearchComponent';
@@ -124,21 +124,21 @@ class List extends Component {
     this.listRef = React.createRef();
   }
 
-  componentDidMount() {
-    const { listStore } = this.props;
-    if (listStore && listStore.subscribe) {
-      this.unsubscribe = listStore.subscribe((before, after) => {
-        if (DEBUG) console.log('listStore.subscribe', before, after); // eslint-disable-line no-console
-        const el = this.listRef.current;
-        if (el && el.offsetTop < window.scrollY) {
-          scroll(el, { offset: -10 });
-        }
-      });
-    }
-  }
-  componentWillUnmount() {
-    if (this.unsubscribe) this.unsubscribe();
-  }
+  // componentDidMount() {
+  //   const { listStore } = this.props;
+  //   if (listStore && listStore.subscribe) {
+  //     this.unsubscribe = listStore.subscribe((before, after) => {
+  //       if (DEBUG) console.log('listStore.subscribe', before, after); // eslint-disable-line no-console
+  //       const el = this.listRef.current;
+  //       if (el && el.offsetTop < window.scrollY) {
+  //         scroll(el, { offset: -10 });
+  //       }
+  //     });
+  //   }
+  // }
+  // componentWillUnmount() {
+  //   if (this.unsubscribe) this.unsubscribe();
+  // }
   render() {
     const {
       debug,
