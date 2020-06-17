@@ -86,7 +86,9 @@ G [-] [5] [+]
 B [-] [5] [+]
 ```
 
+```jsx
 <ColorPicker value={'aaffcc'} onChange={color => console.log(color)} /> 
+```
 
 
   
