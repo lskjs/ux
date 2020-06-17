@@ -16,6 +16,7 @@ convert({ name: {firstName, lastName} , bdate,  address: '325345, Some street, S
 
 
 ## task 2.3
+```
 [
    fullName [* (if !isAdult)]
    age
@@ -28,5 +29,5 @@ convert({ name: {firstName, lastName} , bdate,  address: '325345, Some street, S
    ----
    }
 ]
-
+```
 
