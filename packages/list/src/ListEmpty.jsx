@@ -26,6 +26,9 @@ export class ListEmptyPure extends Component {
     }
     if (!listStore.hasFilter) {
       // 2) пусто после фетча, фильры выключены
+      if (listStore.paywall) {
+        return 5;
+      }
       return 2;
     }
     if (!listStore.skip) {
