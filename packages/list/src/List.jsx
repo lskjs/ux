@@ -125,12 +125,12 @@ class List extends Component {
   }
 
   componentDidMount() {
-    const { listStore } = this.props;
+    const { listStore, scroll: scrollEnable = true } = this.props;
     if (listStore && listStore.subscribe) {
       this.unsubscribe = listStore.subscribe((before, after) => {
         if (DEBUG) console.log('listStore.subscribe', before, after); // eslint-disable-line no-console
         const el = this.listRef.current;
-        if (el && el.offsetTop < window.scrollY) {
+        if (scrollEnable && el && el.offsetTop < window.scrollY) {
           scroll(el, { offset: -10 });
         }
       });
