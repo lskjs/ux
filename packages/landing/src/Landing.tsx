@@ -28,7 +28,7 @@ const Landing: LandingFC<LandingProps> = ({ markup, slides }) => {
     acceptableSlides = slides(Landing.defaultAcceptableSlides);
   }
   const acceptableSlidesKeys = Object.keys(acceptableSlides || {});
-  console.log({ acceptableSlides, acceptableSlidesKeys });
+  // console.log({ acceptableSlides, acceptableSlidesKeys });
   if (!(markup && Array.isArray(markup)) || !acceptableSlidesKeys.length) {
     return null;
   }

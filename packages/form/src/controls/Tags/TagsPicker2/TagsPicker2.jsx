@@ -18,9 +18,9 @@ const Add = 'Add';
 
 function getFieldsKeys(fields = []) {
   const keys = {};
-  fields.forEach((field) => {
+  fields.forEach(field => {
     keys[field.value] = field;
-    (field.children || []).forEach((f) => {
+    (field.children || []).forEach(f => {
       keys[f.value] = f;
     });
   });
@@ -45,7 +45,7 @@ class TagsPicker extends PureComponent {
     disabled: PropTypes.bool,
     readOnly: PropTypes.bool,
     maxLength: PropTypes.number,
-  }
+  };
   static defaultProps = {
     fields: [],
     value: [],
@@ -57,7 +57,7 @@ class TagsPicker extends PureComponent {
     disabled: false,
     readOnly: false,
     maxLength: null,
-  }
+  };
   constructor(props) {
     super(props);
     this.state = {
@@ -123,9 +123,7 @@ class TagsPicker extends PureComponent {
 
   @autobind
   renderModal(trigger) {
-    const {
-      flat, title, onChange, fields, createTag,
-    } = this.props;
+    const { flat, title, onChange, fields, createTag } = this.props;
     // const { fields } = this.state;
     const value = this.getValue();
 
@@ -144,15 +142,14 @@ class TagsPicker extends PureComponent {
     );
   }
   render() {
-    const {
-      block, triggerTitle, fields, disabled, readOnly, validationState, maxLength,
-    } = this.props;
+    const { block, triggerTitle, fields, disabled, readOnly, validationState, maxLength } = this.props;
     const value = this.getValue();
     const fieldsKeys = getFieldsKeys(fields);
 
-    const trigger = value.length > 0
-      ? <Add inverse disabled={disabled} />
-      : (
+    const trigger =
+      value.length > 0 ? (
+        <Add inverse disabled={disabled} />
+      ) : (
         <Button
           paint={validationState !== 'error' ? 'primary' : 'danger'}
           block={block}
@@ -169,7 +166,7 @@ class TagsPicker extends PureComponent {
           <TagsWrapper>
             <Tags
               closable
-              onClose={() => console.log('close')}
+              // onClose={() => console.log('close')}
               options={fields}
               values={value}
             />
@@ -185,14 +182,10 @@ class TagsPicker extends PureComponent {
                 //   {get(fieldsKeys, `${item}.title`, '???')}
                 // </Tag>
             ))} */}
-            <If condition={!readOnly}>
-              {disabled ? trigger : this.renderModal(trigger)}
-            </If>
+            <If condition={!readOnly}>{disabled ? trigger : this.renderModal(trigger)}</If>
           </TagsWrapper>
         </If>
-        <If condition={!readOnly && value.length === 0}>
-          {disabled ? trigger : this.renderModal(trigger)}
-        </If>
+        <If condition={!readOnly && value.length === 0}>{disabled ? trigger : this.renderModal(trigger)}</If>
       </div>
     );
   }

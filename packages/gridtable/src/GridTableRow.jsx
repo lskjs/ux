@@ -8,7 +8,7 @@ import aggregateClassName from './aggregateClassName';
 @observer
 class GridTableRow extends Component {
   render() {
-    console.log('renderRow');
+    // console.log('renderRow');
 
     const {
       componentClass = 'div',

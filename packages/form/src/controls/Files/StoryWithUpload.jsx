@@ -6,7 +6,7 @@ export const uapp = {
   i18: { t: a => a },
   module: type => ({
     uploadFiles(files) {
-      console.log('UPLOAD => ', files);
+      // console.log('UPLOAD => ', files);
       return [
         {
           url: 'https://picsum.photos/100/?random',

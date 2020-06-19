@@ -8,7 +8,7 @@ import DefaultFooter from './FilesDefaultFooter';
 // eslint-disable-next-line prettier/prettier
 const getArray = val => (
   // eslint-disable-next-line prettier/prettier
-  val == null ? [] : ( // eslint-disable-line no-nested-ternary 
+  val == null ? [] : ( // eslint-disable-line no-nested-ternary
     Array.isArray(val) ? val : [val] // eslint-disable-line prettier/prettier
   )
 );
@@ -27,8 +27,7 @@ const Files = ({ field, form, onError, components, isMulti, hasCropper, CropperC
       CropperComponent={CropperComponent}
       multiple={isMulti}
       onSubmit={incomeValues => {
-        console.log({incomeValues});
-        
+        // console.log({incomeValues});
         if (incomeValues && incomeValues.type === 'remove') {
           if (isMulti) {
             form.setFieldValue(
