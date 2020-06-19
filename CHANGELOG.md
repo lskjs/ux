@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.12.0](https://github.com/isuvorov/lib-starter-kit/compare/v1.11.0...v1.12.0) (2020-06-19)
+
+
+### Features
+
+* **list:** add scroll: disable props ([434ea72](https://github.com/isuvorov/lib-starter-kit/commit/434ea7209c829475659925135e1d8e54793f2dc5))
+
+
+
+
+
 # [1.11.0](https://github.com/isuvorov/lib-starter-kit/compare/v1.1.100...v1.11.0) (2020-06-18)
 
 

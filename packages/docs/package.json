@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/docs",
-  "version": "1.11.0",
+  "version": "1.12.0",
   "description": "lskjs docs",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -45,7 +45,7 @@
     "@lskjs/image": "1.11.0",
     "@lskjs/landing": "1.11.0",
     "@lskjs/link": "1.11.0",
-    "@lskjs/list": "1.11.0",
+    "@lskjs/list": "1.12.0",
     "@lskjs/mobx": "1.19.0",
     "@lskjs/modal": "1.11.0",
     "@lskjs/navbar": "1.11.0",
