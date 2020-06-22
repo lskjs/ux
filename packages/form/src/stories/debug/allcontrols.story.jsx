@@ -1,5 +1,5 @@
 import React from 'react';
-import Story from '@lskjs/dev/Story';
+import Story from '../Story';
 import AllControlsForm from './AllControlsForm';
 
 export default ({ storiesOf }) =>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form, Field } from 'formik';
-import Story from '@lskjs/dev/Story';
+import Story from './Story';
 import createForm from '../createForm';
 import Input from '../controls/Input';
 import Select from '../controls/Select';
@@ -55,14 +55,17 @@ const InputForm = createForm({
 });
 
 export default ({ storiesOf }) =>
-  storiesOf('form/Form', module)
-    .add('nestedKeys', () => {
-      return (
-        <Story>
-          <InputForm
-            onChange={(values) => { console.log('onChange', values); }}
-            onSubmit={(values) => { console.log('onSubmit', values); }}
-          />
-        </Story>
-      );
-    });
+  storiesOf('form/Form', module).add('nestedKeys', () => {
+    return (
+      <Story>
+        <InputForm
+          onChange={(values) => {
+            console.log('onChange', values);
+          }}
+          onSubmit={(values) => {
+            console.log('onSubmit', values);
+          }}
+        />
+      </Story>
+    );
+  });

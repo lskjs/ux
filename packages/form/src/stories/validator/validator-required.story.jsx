@@ -1,6 +1,7 @@
+/* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import { Form, Field } from 'formik';
-import Story from '@lskjs/dev/Story';
+import Story from '../Story';
 import createForm from '../../createForm';
 import FormDebug from '../../FormDebug';
 
@@ -17,28 +18,23 @@ import PhoneInput from '../../controls/PhoneInput';
 import Tags from '../../controls/Tags';
 import ArrayOf from '../../controls/ArrayOf';
 
-const ValidationView = (props) => {
-  const {
-    controls,
-  } = props;
-  return (
-    <Form>
-      <Field {...control('input')} />
-      <Field {...control('select')} />
-      <Field {...control('switcher')} />
-      <Field {...control('checkbox')} />
-      <Field {...control('radio')} />
-      <Field {...control('range')} />
-      <Field {...control('date')} />
-      <Field {...control('files')} />
-      <Field {...control('image')} />
-      <Field {...control('phoneInput')} />
-      <Field {...control('tags')} />
-      <Field {...control('array')} />
-      <FormDebug {...props} />
-    </Form>
-  );
-};
+const ValidationView = (props) => (
+  <Form>
+    <Field {...props.control('input')} />
+    <Field {...props.control('select')} />
+    <Field {...props.control('switcher')} />
+    <Field {...props.control('checkbox')} />
+    <Field {...props.control('radio')} />
+    <Field {...props.control('range')} />
+    <Field {...props.control('date')} />
+    <Field {...props.control('files')} />
+    <Field {...props.control('image')} />
+    <Field {...props.control('phoneInput')} />
+    <Field {...props.control('tags')} />
+    <Field {...props.control('array')} />
+    <FormDebug {...props} />
+  </Form>
+);
 
 const Validation = createForm({
   view: ValidationView,
@@ -115,17 +111,15 @@ const Validation = createForm({
   },
 });
 
-
 export default ({ storiesOf }) =>
-  storiesOf('form/validator', module)
-    .add('validator with required', () => {
-      return (
-        <Story>
-          <Validation
-            onSubmit={(values) => {
-              console.log({ values });
-            }}
-          />
-        </Story>
-      );
-    });
+  storiesOf('form/validator', module).add('validator with required', () => {
+    return (
+      <Story>
+        <Validation
+          onSubmit={(values) => {
+            console.log({ values });
+          }}
+        />
+      </Story>
+    );
+  });

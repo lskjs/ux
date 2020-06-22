@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import autobind from '@lskjs/autobind';
 
-import Story from '@lskjs/dev/Story';
+import Story from '../Story';
 import AllControlsForm, { controls } from './AllControlsForm';
 
 class Container extends Component {

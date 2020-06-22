@@ -1,24 +1,17 @@
 import React from 'react';
 import { Form, Field } from 'formik';
-import Story from '@lskjs/dev/Story';
+import Story from '../Story';
 import createForm from '../../createForm';
 import Input from '../../controls/Input';
 import FormDebug from '../../FormDebug';
 
-const ValidationView = (props) => {
-  const {
-    status,
-    controls,
-  } = props;
-  return (
-    <Form>
-      <Field {...control('email} disabled={!!status')} />
-      <Field {...control('password} disabled={!!status')} />
-      <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-      <FormDebug {...props} />
-    </Form>
-  );
-};
+const ValidationView = ({ control, ...props }) => (
+  <Form>
+    <Field {...props.control('email')} disabled={!!props.status} />
+    <Field {...props.control('password')} disabled={!!props.status} />
+    <FormDebug {...props} />
+  </Form>
+);
 
 const ValidationAsync = createForm({
   view: ValidationView,
@@ -41,19 +34,18 @@ const ValidationAsync = createForm({
 });
 
 export default ({ storiesOf }) =>
-  storiesOf('form/validator', module)
-    .add('validator and submit', () => {
-      return (
-        <Story>
-          <ValidationAsync
-            onSubmit={async (values) => {
-              throw new Error('Емейл уже есть в базе')
-              await Promise.delay(3000);
-              if (Math.random() < 0.5) {
-                throw 'Емейл уже есть в базе'
-              }
-            }}
-          />
-        </Story>
-      );
-    });
+  storiesOf('form/validator', module).add('validator and submit', () => {
+    return (
+      <Story>
+        <ValidationAsync
+          onSubmit={async (values) => {
+            throw new Error('Емейл уже есть в базе');
+            await Promise.delay(3000);
+            if (Math.random() < 0.5) {
+              throw 'Емейл уже есть в базе';
+            }
+          }}
+        />
+      </Story>
+    );
+  });

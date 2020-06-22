@@ -1,8 +1,8 @@
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import { Form, Field } from 'formik';
-import Story from '@lskjs/dev/Story';
 import { Provider } from 'mobx-react';
+import Story from './Story';
 
 import createForm from '../createForm';
 import FormDebug from '../FormDebug';
@@ -12,7 +12,7 @@ import Select from '../controls/Select';
 import ArrayOf from '../controls/ArrayOf';
 import createNestedFormControl from '../createNestedFormControl';
 
-const EntityFormView = props => (
+const EntityFormView = (props) => (
   <Form>
     <h3>EntityForm:</h3>
     <Field {...props.control('name')} />
@@ -44,7 +44,7 @@ const EntityForm = createForm({
   },
 });
 
-const ComplexFormView = props => (
+const ComplexFormView = (props) => (
   <Form>
     <h3>ArrayOfEntityForm:</h3>
     <Field {...props.control('title')} />

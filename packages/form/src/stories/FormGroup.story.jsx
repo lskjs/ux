@@ -3,8 +3,8 @@ import { Form, Field } from 'formik';
 import AntForm from 'antd/lib/form';
 import Button from 'antd/lib/button';
 
-import Story from '@lskjs/dev/Story';
 import DEV from '@lskjs/dev/DEV';
+import Story from './Story';
 import createForm from '../createForm';
 import FormGroup from '../FormGroup';
 import SimpleFormGroup from '../SimpleFormGroup';
@@ -40,7 +40,7 @@ const ctrls = {
   },
 };
 
-const FormExampleView = props => {
+const FormExampleView = (props) => {
   const { handleSubmit, control, values } = props;
   return (
     <Form className="ant-form ant-form-horizontal">

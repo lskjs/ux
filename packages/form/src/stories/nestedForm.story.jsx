@@ -1,7 +1,7 @@
 import React, { createRef } from 'react';
 import { Form, Field } from 'formik';
-import Story from '@lskjs/dev/Story';
 import DEV from '@lskjs/dev/DEV';
+import Story from './Story';
 import createForm from '../createForm';
 import FormDebug from '../FormDebug';
 
@@ -87,7 +87,7 @@ export default ({ storiesOf }) =>
       <Story devtools>
         <ComplexForm
           ref={ref}
-          onSubmit={values => {
+          onSubmit={(values) => {
             console.log('ComplexForm.onSubmit', values);  // eslint-disable-line
           }}
         />
@@ -99,7 +99,7 @@ export default ({ storiesOf }) =>
           ref={ref}
           genders={['male', 'female', 'agender', 'transgender', 'poligender']}
           test={[123]}
-          onSubmit={values => {
+          onSubmit={(values) => {
             console.log('ComplexForm.onSubmit', values);  // eslint-disable-line
           }}
         />

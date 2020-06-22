@@ -1,9 +1,8 @@
 import React from 'react';
-import { Form, Field, FastField } from 'formik';
+import { Form, Field } from 'formik';
 import createFormWithI18 from '../createFormWithI18';
 import Input from '../controls/Input';
-import Story from '@lskjs/dev/Story';
-import FormDebug from '../FormDebug';
+import Story from './Story';
 
 const InputFormView = (props) => {
   return (
@@ -51,13 +50,10 @@ const InputFormNested = createFormWithI18({
 });
 
 export default ({ storiesOf }) =>
-  storiesOf('form/nested form', module)
-    .add('createFormWithI18', () => {
-      return (
-        <Story>
-          <InputForm
-            initialValues={{}}
-          />
-        </Story>
-      );
-    });
+  storiesOf('form/nested form', module).add('createFormWithI18', () => {
+    return (
+      <Story>
+        <InputForm initialValues={{}} />
+      </Story>
+    );
+  });

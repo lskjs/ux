@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, FastField } from 'formik';
 
-import Story from '@lskjs/dev/Story';
+import Story from '../Story';
 import createForm from '../../createForm';
 import defaultShouldUpdate from '../../defaultShouldUpdate';
 import Input from '../../controls/Input';

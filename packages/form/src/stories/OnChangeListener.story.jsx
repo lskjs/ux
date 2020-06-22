@@ -1,10 +1,9 @@
 import React from 'react';
 import { Form, Field } from 'formik';
-import Story from '@lskjs/dev/Story';
+import Story from './Story';
 import createForm from '../createForm';
 import Input from '../controls/Input';
 import FormDebug from '../FormDebug';
-
 
 const OnChangeView = (props) => {
   return (
@@ -26,15 +25,14 @@ const OnChangeForm = createForm({
 });
 
 export default ({ storiesOf }) =>
-  storiesOf('form/Form', module)
-    .add('onChange ', () => {
-      return (
-        <Story>
-          <OnChangeForm
-            onChange={(values) => {
-              console.log('onChange', values);
-            }}
-          />
-        </Story>
-      );
-    });
+  storiesOf('form/Form', module).add('onChange ', () => {
+    return (
+      <Story>
+        <OnChangeForm
+          onChange={(values) => {
+            console.log('onChange', values);
+          }}
+        />
+      </Story>
+    );
+  });

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, Field } from 'formik';
-import Story from '@lskjs/dev/Story';
 import Button from '@lskjs/button';
+import Story from './Story';
 // import GridFile from '../components/Files/components/GridFile';
 import GridFile from '../controls/Files/components/GridFile';
 import sure from '../hoc/sure';
@@ -13,30 +13,26 @@ import FormDebug from '../FormDebug';
 
 const SureModal = sure();
 
-const InputFormView = props => (
+const InputFormView = (props) => (
   <Form>
     <Field {...props.control('input')} />
     <Button>Button</Button>
     <Button type="submit">Button</Button>
     <button>button</button>
     <button type="submit">button submit</button>
-      <GridFile
-        title="title"
-        url="http://shiz.co/beatlescode/assets/hereComesTheSun.mp3"
-        size={10000}
-        onRemove={() => console.log('onRemove')}
-      />
+    <GridFile
+      title="title"
+      url="http://shiz.co/beatlescode/assets/hereComesTheSun.mp3"
+      size={10000}
+      onRemove={() => console.log('onRemove')}
+    />
     <SureModal
       title="Deleting"
       content="Are you sure"
       onSubmit={() => console.log('yes')}
       onClose={() => console.log('onClose')}
     >
-      <Button
-        paint="danger"
-      >
-        Удалить
-      </Button>
+      <Button paint="danger">Удалить</Button>
     </SureModal>
     <FormDebug {...props} />
   </Form>
@@ -53,12 +49,16 @@ const InputForm = createForm({
   },
 });
 
-export default ({ storiesOf }) => storiesOf('form/Form', module)
-  .add('formAndModal', () => (
+export default ({ storiesOf }) =>
+  storiesOf('form/Form', module).add('formAndModal', () => (
     <Story>
       <InputForm
-        onChange={(values) => { console.log('onChange', values); }}
-        onSubmit={(values) => { console.log('onSubmit', values); }}
+        onChange={(values) => {
+          console.log('onChange', values);
+        }}
+        onSubmit={(values) => {
+          console.log('onSubmit', values);
+        }}
       />
     </Story>
   ));

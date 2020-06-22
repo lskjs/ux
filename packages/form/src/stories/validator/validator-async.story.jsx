@@ -1,31 +1,26 @@
+/* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import { Form, Field } from 'formik';
-import Story from '@lskjs/dev/Story';
+import Story from '../Story';
 import createForm from '../../createForm';
 import InputComponent from '../../controls/Input';
 import FormDebug from '../../FormDebug';
 
-
 const ValidationView = (props) => {
-  const {
-    isSubmitting,
-    controls,
-  } = props;
+  const { isSubmitting } = props;
   return (
     <Form>
-      <Field {...props.control('email')}  disabled={isSubmitting} />
+      <Field {...props.control('email')} disabled={isSubmitting} />
       <Field {...props.control('password')} />
       {/* <Field {...control('password) disabled={isSubmitting')} /> */}
-      <p>
-        Existing emails: some@email.com, someasync@email.com
-      </p>
+      <p>Existing emails: some@email.com, someasync@email.com</p>
       <FormDebug {...props} />
     </Form>
   );
 };
 
 const checkEmail = async (data) => {
-  return new Promise(((resolve, reject) => {
+  return new Promise((resolve, reject) => {
     setTimeout(() => {
       if (data === 'someasync@email.com') {
         reject(new Error('email already exists'));
@@ -33,21 +28,21 @@ const checkEmail = async (data) => {
         resolve();
       }
     }, 1000);
-  }));
+  });
 };
 
 const checkUrl = async (data) => {
   const regex = /^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#-]+\/?)*$/;
 
-  return new Promise(((resolve, reject) => {
+  return new Promise((resolve, reject) => {
     setTimeout(() => {
-      if (!data.match(regex)) {
-        reject(new Error('Not url!'));
-      } else {
+      if (data && data.match(regex)) {
         resolve();
+      } else {
+        reject(new Error('Not url!'));
       }
     }, 1000);
-  }));
+  });
 };
 
 const ValidationAsync = createForm({
@@ -97,15 +92,14 @@ const ValidationAsync = createForm({
 });
 
 export default ({ storiesOf }) =>
-  storiesOf('form/validator', module)
-    .add('async validator', () => {
-      return (
-        <Story>
-          <ValidationAsync
-            onSubmit={(values) => {
-              console.log({ values });
-            }}
-          />
-        </Story>
-      );
-    });
+  storiesOf('form/validator', module).add('async validator', () => {
+    return (
+      <Story>
+        <ValidationAsync
+          onSubmit={(values) => {
+            console.log({ values });
+          }}
+        />
+      </Story>
+    );
+  });

@@ -1,5 +1,5 @@
 import React from 'react';
-import Story from '@lskjs/dev/Story';
+import Story from '../Story';
 import DEV from '@lskjs/dev/DEV';
 import Performance from '@lskjs/dev/Performance';
 import AllControlsForm from './AllControlsForm';

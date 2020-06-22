@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, FastField, Field } from 'formik';
 
-import Story from '@lskjs/dev/Story';
+import Story from '../Story';
 import { Table, Col, Row } from '@lskjs/gridtable';
 
 import createForm from '../../createForm';

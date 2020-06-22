@@ -1,24 +1,22 @@
+/* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import { Form, Field } from 'formik';
-import Story from '@lskjs/dev/Story';
 import Apiquery from '@lskjs/apiquery';
+
+import Story from '../Story';
 import createForm from '../../createForm';
 import InputComponent from '../../controls/Input';
 import FormDebug from '../../FormDebug';
 
-const ValidationView = (props) => {
-  const { controls } = props;
-  return (
-    <Form>
-      <Field {...control('email')} />
-      <FormDebug {...props} />
-    </Form>
-  );
-};
-
+const ValidationView = (props) => (
+  <Form>
+    <Field {...props.control('email')} />
+    <FormDebug {...props} />
+  </Form>
+);
 
 const api = new Apiquery({
-  url: 'https://analytics.buzz.guru/api',
+  url: 'https://staging.buzz.guru/api',
 });
 
 const ValidationAsync = createForm({
@@ -54,18 +52,16 @@ const ValidationAsync = createForm({
   },
 });
 
-export default ({ storiesOf }) => (
-  storiesOf('form/validator', module)
-    .add('async general errors', () => (
-      <Story>
-        <ValidationAsync
-          onError={(errors) => {
-            console.log({ errors });
-          }}
-          onSubmit={(values) => {
-            console.log({ values });
-          }}
-        />
-      </Story>
-    ))
-);
+export default ({ storiesOf }) =>
+  storiesOf('form/validator', module).add('async general errors', () => (
+    <Story>
+      <ValidationAsync
+        onError={(errors) => {
+          console.log({ errors });
+        }}
+        onSubmit={(values) => {
+          console.log({ values });
+        }}
+      />
+    </Story>
+  ));

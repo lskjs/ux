@@ -1,22 +1,17 @@
 import React from 'react';
 import { Form, Field } from 'formik';
-import Story from '@lskjs/dev/Story';
+import Story from '../Story';
 import createForm from '../../createForm';
 import Input from '../../controls/Input';
 import FormDebug from '../../FormDebug';
 
-const ValidationView = (props) => {
-  const {
-    controls,
-  } = props;
-  return (
-    <Form>
-      <Field {...control('password')} />
-      <Field {...control('password2')} />
-      <FormDebug {...props} />
-    </Form>
-  );
-};
+const ValidationView = (props) => (
+  <Form>
+    <Field {...props.control('password')} />
+    <Field {...props.control('password2')} />
+    <FormDebug {...props} />
+  </Form>
+);
 
 const Validation = createForm({
   view: ValidationView,
@@ -45,20 +40,18 @@ const Validation = createForm({
   },
 });
 
-
 export default ({ storiesOf }) =>
-  storiesOf('form/validator', module)
-    .add('Validation2', () => {
-      return (
-        <Story>
-          <Validation
-            onSubmit={(values, form) => {
-              console.log('onSubmit', values, form);
-              form.setFieldError('password2', 'error in onSubmit');
-              // form.setErrors({ password: 'dfhdkgjhjl' });
-              console.log({ values });
-            }}
-          />
-        </Story>
-      );
-    });
+  storiesOf('form/validator', module).add('Validation2', () => {
+    return (
+      <Story>
+        <Validation
+          onSubmit={(values, form) => {
+            console.log('onSubmit', values, form);
+            form.setFieldError('password2', 'error in onSubmit');
+            // form.setErrors({ password: 'dfhdkgjhjl' });
+            console.log({ values });
+          }}
+        />
+      </Story>
+    );
+  });

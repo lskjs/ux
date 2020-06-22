@@ -2,12 +2,12 @@
 import React from 'react';
 import { Form, Field } from 'formik';
 import Promise from 'bluebird';
-import Story from '@lskjs/dev/Story';
+import Story from './Story';
 import createForm from '../createForm';
 import Input from '../controls/Input';
 import FormDebug from '../FormDebug';
 
-const InputFormView = props => (
+const InputFormView = (props) => (
   <Form>
     <Field {...props.control('login')} />
     <Field {...props.control('password')} />
@@ -30,7 +30,7 @@ const DemoForm = createForm({
   },
 });
 
-const createSubmit = (probability = 0.5, delay = 2000) => async values => {
+const createSubmit = (probability = 0.5, delay = 2000) => async (values) => {
   console.log('onSubmit', values); // eslint-disable-line no-console
   await Promise.delay(delay);
   if (Math.random() < probability) {
