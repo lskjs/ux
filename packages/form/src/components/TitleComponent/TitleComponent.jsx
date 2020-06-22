@@ -5,7 +5,7 @@ import * as Styles from './TitleComponent.styles';
 const Input = ({ title, error, info, isRequired, infoLeft }) => (
   <Styles.Wrapper infoLeft={infoLeft}>
     <Styles.Title error={error}>
-      {`${title}:`}
+      {title}
       <If condition={isRequired}>
         <Styles.Required>*</Styles.Required>
       </If>
