@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.12.1](https://github.com/lskjs/ux/tree/master/packages/form/compare/v1.12.0...v1.12.1) (2020-06-22)
+
+
+### Bug Fixes
+
+* **form:** catch sync errors before async test ([2593566](https://github.com/lskjs/ux/tree/master/packages/form/commit/2593566c6e262347b17003fe17cffbff5361325d))
+
+
+
+
+
 # [1.11.0](https://github.com/lskjs/ux/tree/master/packages/form/compare/v1.1.100...v1.11.0) (2020-06-18)
 
 
