@@ -6,15 +6,7 @@ import FormSubmit from './FormSubmit';
 import FormSubmitButton from './FormSubmitButton';
 import FormSubmitError from './FormSubmitError';
 
-export {
-  createForm,
-  createNestedFormControl,
-  FormError,
-  FormGroup,
-  FormSubmit,
-  FormSubmitButton,
-  FormSubmitError,
-};
+export { createForm, createNestedFormControl, FormError, FormGroup, FormSubmit, FormSubmitButton, FormSubmitError };
 
 const Form2 = {
   createForm,

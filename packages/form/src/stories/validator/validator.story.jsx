@@ -1,3 +1,4 @@
+/* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import { Form, Field } from 'formik';
 import Story from '../Story';

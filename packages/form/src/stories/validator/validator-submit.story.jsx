@@ -1,3 +1,4 @@
+/* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import { Form, Field } from 'formik';
 import Story from '../Story';
@@ -5,7 +6,7 @@ import createForm from '../../createForm';
 import Input from '../../controls/Input';
 import FormDebug from '../../FormDebug';
 
-const ValidationView = ({ control, ...props }) => (
+const ValidationView = (props) => (
   <Form>
     <Field {...props.control('email')} disabled={!!props.status} />
     <Field {...props.control('password')} disabled={!!props.status} />

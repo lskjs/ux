@@ -19,6 +19,8 @@ const i18 = {
 
 export default ({ children, ...props }) => (
   <Story {...props}>
-    <Provider i18={i18}>{children}</Provider>
+    <Provider i18={i18} uapp={{ i18, module: () => null }}>
+      {children}
+    </Provider>
   </Story>
 );

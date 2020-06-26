@@ -19,7 +19,6 @@ const ValidationView = (props) => {
   );
 };
 
-
 const Validation = createForm({
   withFormik,
   view: ValidationView,
@@ -49,16 +48,13 @@ const Validation = createForm({
   },
 });
 
-
-export default ({ storiesOf }) => (
-  storiesOf('form/validator', module)
-    .add('validator required with no stars', () => (
-      <Story>
-        <Validation
-          onSubmit={(values) => {
-            console.log({ values });
-          }}
-        />
-      </Story>
-    ))
-);
+export default ({ storiesOf }) =>
+  storiesOf('form/validator', module).add('validator required with no stars', () => (
+    <Story>
+      <Validation
+        onSubmit={(values) => {
+          console.log({ values });
+        }}
+      />
+    </Story>
+  ));

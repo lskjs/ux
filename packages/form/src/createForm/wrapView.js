@@ -2,9 +2,7 @@ import React from 'react';
 import avoidNestedFields from './avoidNestedFields';
 import DEBUG from './_debug';
 
-export default ({
-  View, Wrapper, props: staticProps, flatten,
-}) => (props) => {
+export default ({ View, Wrapper, props: staticProps, flatten }) => (props) => {
   const mergedProps = { ...staticProps, ...props };
   if (DEBUG) console.log('wrapView create render', { staticProps, props }); // eslint-disable-line no-console
 
