@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import React, { PureComponent } from 'react';
+import { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { css, jsx } from '@emotion/core';
 import theme from '@lskjs/theme';

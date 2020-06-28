@@ -55,8 +55,7 @@
     "@lskjs/grid": "*",
     "antd": "*",
     "lodash": "*",
-    "react": "*",
-    "react-icons2": "*"
+    "react": "*"
   },
   "optionalDependencies": {
     "mobx": "*",

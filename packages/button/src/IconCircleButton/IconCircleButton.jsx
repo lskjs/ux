@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import PlusIcon from 'react-icons2/mdi/plus';
+import PlusIcon from '../icons/plus';
 
 import Block from './IconCircleButton.styles';
 

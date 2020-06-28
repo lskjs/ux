@@ -1,11 +1,11 @@
 import React, { PureComponent } from 'react';
 import autobind from '@lskjs/autobind';
-import CheckIcon from 'react-icons2/mdi/check';
-import CloseIcon from 'react-icons2/mdi/close';
 import PropTypes from 'prop-types';
 import omit from 'lodash/omit';
 import isTouchDevice from '@lskjs/utils/isTouchDevice';
 import isBrowser from '@lskjs/utils/isBrowser';
+import CheckIcon from './icons/check';
+import CloseIcon from './icons/close';
 import LoadingDots from './components/LoadingDots';
 import { Btn, Text, Icon, State, Ripple, RippleCircle } from './Button.styles';
 
