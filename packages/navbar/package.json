@@ -40,6 +40,7 @@
   },
   "devDependencies": {
     "@emotion/core": "10.0.27",
+    "@lskjs/button": "1.11.0",
     "@lskjs/dev": "1.11.0",
     "emotion": "10.0.27",
     "react": "16.8.6"

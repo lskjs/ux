@@ -4,6 +4,7 @@ import Story from '@lskjs/dev/Story';
 import DotsIcon from './icons/dots-icon-horizontal';
 import Dropdown from './Dropdown';
 
+window.__DEV__ = true;
 class Drp extends PureComponent {
   state = {
     pull: 'start',

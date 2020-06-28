@@ -5,8 +5,10 @@ import Nav from './Nav';
 import NavDropdown from './NavDropdown';
 import GlobalStyles from './GlobalStyles';
 
+window.__DEV__ = true;
+
 export default ({ storiesOf }) =>
-  storiesOf('navbar/Navbar', module).add('default', () => (
+  storiesOf('navbar', module).add('Navbar', () => (
     <Story>
       <GlobalStyles />
       <Navbar bg="light" expand="lg">
