@@ -1,19 +1,18 @@
 import React, { PureComponent } from 'react';
-import StatefulButton from '../../../StatefulButton';
 import Button from '@lskjs/button';
 import T from '@lskjs/ui/T';
+import StatefulButton from '../../../StatefulButton';
 import Modal, { Title, Footer, Content } from '../Modal';
 
 class FilterWrapper extends PureComponent {
   render() {
-    const {
-      trigger,
-      title,
-    } = this.props;
+    const { trigger, title } = this.props;
     return (
       <Modal
         size="small"
-        ref={(modal) => { this.modal = modal; }}
+        ref={modal => {
+          this.modal = modal;
+        }}
         trigger={trigger}
         onOpen={this.handleOpen}
         // onChange={onChange && this.handleChange}
@@ -26,19 +25,10 @@ class FilterWrapper extends PureComponent {
           </div>
         </Content>
         <Footer>
-          <StatefulButton
-            paint="primary"
-            id="submit-button"
-            onClick={this.handleSubmit}
-            componentClass={Button}
-          >
+          <StatefulButton paint="primary" id="submit-button" onClick={this.handleSubmit} componentClass={Button}>
             <T name="common.confirm" />
           </StatefulButton>
-          <Button
-            paint="primary"
-            view="text"
-            onClick={() => this.modal.close()}
-          >
+          <Button paint="primary" view="text" onClick={() => this.modal.close()}>
             <T name="common.cancel" />
           </Button>
         </Footer>

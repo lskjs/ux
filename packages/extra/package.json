@@ -34,5 +34,12 @@
   "peerDependencies": {
     "prop-types": "*",
     "react": "*"
+  },
+  "dependencies": {
+    "@lskjs/button": "^1.1.105",
+    "@lskjs/dev": "^1.1.105",
+    "emotion": "^10.0.27",
+    "moment": "^2.27.0",
+    "react-icons2": "^2.5.0"
   }
 }
