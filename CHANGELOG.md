@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.13.0](https://github.com/isuvorov/lib-starter-kit/compare/v1.12.1...v1.13.0) (2020-06-28)
+
+
+### Bug Fixes
+
+* **form:** form storybook ([cc25d3d](https://github.com/isuvorov/lib-starter-kit/commit/cc25d3de341bbee903d280b87f986288badd1352))
+* update React.js tasks ([6c8b15f](https://github.com/isuvorov/lib-starter-kit/commit/6c8b15fd8543a5792753ab364dbb2af7a8880645))
+
+
+### Features
+
+* **add-to-calendar:** new add-to-calendar packages with utils ([db8cfb6](https://github.com/isuvorov/lib-starter-kit/commit/db8cfb6fe0099cbd3966e659af2e76e31b72beaf))
+* **button:** remove react-icons2 ([6dedb47](https://github.com/isuvorov/lib-starter-kit/commit/6dedb47cbfe7bdec9e9f759015126407c58ad436))
+* **navbar:** add dropdown story ([e0b9c1e](https://github.com/isuvorov/lib-starter-kit/commit/e0b9c1ebdafcb38276207866e856ae9fded2a9fd))
+
+
+
+
+
 ## [1.12.1](https://github.com/isuvorov/lib-starter-kit/compare/v1.12.0...v1.12.1) (2020-06-22)
 
 

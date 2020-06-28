@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.13.0](https://github.com/lskjs/ux/tree/master/packages/navbar/compare/v1.12.1...v1.13.0) (2020-06-28)
+
+
+### Features
+
+* **navbar:** add dropdown story ([e0b9c1e](https://github.com/lskjs/ux/tree/master/packages/navbar/commit/e0b9c1ebdafcb38276207866e856ae9fded2a9fd))
+
+
+
+
+
 # [1.11.0](https://github.com/lskjs/ux/tree/master/packages/navbar/compare/v1.1.100...v1.11.0) (2020-06-18)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.13.0](https://github.com/lskjs/ux/tree/master/packages/form/compare/v1.12.1...v1.13.0) (2020-06-28)
+
+
+### Bug Fixes
+
+* **form:** form storybook ([cc25d3d](https://github.com/lskjs/ux/tree/master/packages/form/commit/cc25d3de341bbee903d280b87f986288badd1352))
+
+
+
+
+
 ## [1.12.1](https://github.com/lskjs/ux/tree/master/packages/form/compare/v1.12.0...v1.12.1) (2020-06-22)
 
 

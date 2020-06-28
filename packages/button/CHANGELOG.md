@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.13.0](https://github.com/lskjs/ux/tree/master/packages/button/compare/v1.12.1...v1.13.0) (2020-06-28)
+
+
+### Features
+
+* **button:** remove react-icons2 ([6dedb47](https://github.com/lskjs/ux/tree/master/packages/button/commit/6dedb47cbfe7bdec9e9f759015126407c58ad436))
+
+
+
+
+
 # [1.11.0](https://github.com/lskjs/ux/tree/master/packages/button/compare/v1.1.100...v1.11.0) (2020-06-18)
 
 
