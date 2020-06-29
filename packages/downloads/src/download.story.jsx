@@ -5,19 +5,20 @@ import DEV from '@lskjs/dev/DEV';
 import StatefulButton from '@lskjs/button/StatefulButton';
 import Button from '@lskjs/button/Button';
 import ListStore from '@lskjs/mobx/stores/ListStore';
-
-const data = Array(500).fill().map((_, i) => ({
-  index: i,
-  field1: 'value1',
-  field2: 'value2',
-  field3: 'value3',
-  field4: 'value4',
-  field5: 'value5',
-  field6: 'value6',
-  field7: 'value7',
-  field8: 'value8',
-  field9: 'value9',
-}));
+const data = Array(500)
+  .fill()
+  .map((_, i) => ({
+    index: i,
+    field1: 'value1',
+    field2: 'value2',
+    field3: 'value3',
+    field4: 'value4',
+    field5: 'value5',
+    field6: 'value6',
+    field7: 'value7',
+    field8: 'value8',
+    field9: 'value9',
+  }));
 
 const indexToValue = (fieldName) => {
   return ({ item }) => {
@@ -61,23 +62,27 @@ const defaultData = [
   ['cell4', 'cell5', 'cell6'],
 ];
 
-export default ({ storiesOf }) => (
+export default ({ storiesOf }) =>
   storiesOf('downloads/utils', module)
     .add('download', () => (
       <Story>
         <DEV json={defaultData} />
-        <button onClick={() => generateFile({ name: 'file', data: defaultData })}>
-          Download spreadsheet
-        </button>
+        <button onClick={() => generateFile({ name: 'file', data: defaultData })}>Download spreadsheet</button>
       </Story>
-    )).add('download button', () => (
+    ))
+    .add('download button', () => (
       <Story>
         <StatefulButton
           componentClass={Button}
           paint="primary"
-          onClick={() => download({
-            listStore, markup, markupProps, name: 'default',
-          })}
+          onClick={() =>
+            download({
+              listStore,
+              markup,
+              markupProps,
+              name: 'default',
+            })
+          }
         >
           Download
         </StatefulButton>
@@ -88,12 +93,45 @@ export default ({ storiesOf }) => (
         <StatefulButton
           componentClass={Button}
           paint="primary"
-          onClick={() => download({
-            listStore, markup, markupProps, name: 'all', all: true,
-          })}
+          onClick={() =>
+            download({
+              listStore,
+              markup,
+              markupProps,
+              name: 'all',
+              all: true,
+            })
+          }
         >
           Download all
         </StatefulButton>
       </Story>
     ))
-);
+    .add('download button all with dynamic fields', () => (
+      <Story>
+        <StatefulButton
+          componentClass={Button}
+          paint="primary"
+          onClick={() =>
+            download({
+              listStore,
+              markup,
+              markupProps,
+              dynamicFields: (item) => {
+                // console.log(item);
+                const arr = [];
+                if (Math.random() > 0.5) {
+                  arr.push(['dynamic field', item.index]);
+                }
+                arr.push(['dynamic static field', 1337]);
+                return arr;
+              },
+              name: 'all',
+              all: true,
+            })
+          }
+        >
+          Download all
+        </StatefulButton>
+      </Story>
+    ));
