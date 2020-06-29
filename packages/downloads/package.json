@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/downloads",
-  "version": "1.13.0",
+  "version": "1.14.0",
   "description": "LSK ux subrepo: download",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",

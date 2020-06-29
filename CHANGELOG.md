@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.14.0](https://github.com/isuvorov/lib-starter-kit/compare/v1.13.0...v1.14.0) (2020-06-29)
+
+
+### Features
+
+* **downloads:** dynamic fields ([d471e37](https://github.com/isuvorov/lib-starter-kit/commit/d471e375cb7461ae320d292623bc88e9954ae5de))
+
+
+
+
+
 # [1.13.0](https://github.com/isuvorov/lib-starter-kit/compare/v1.12.1...v1.13.0) (2020-06-28)
 
 
