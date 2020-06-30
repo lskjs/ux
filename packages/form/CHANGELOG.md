@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.15.1](https://github.com/lskjs/ux/tree/master/packages/form/compare/v1.15.0...v1.15.1) (2020-06-30)
+
+
+### Bug Fixes
+
+* **form:** i18 error in form only if string ([b018a1f](https://github.com/lskjs/ux/tree/master/packages/form/commit/b018a1f343ba3e573479f712997edb144c335ed3))
+
+
+
+
+
 # [1.15.0](https://github.com/lskjs/ux/tree/master/packages/form/compare/v1.14.0...v1.15.0) (2020-06-30)
 
 
