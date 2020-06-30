@@ -47,7 +47,11 @@ export default ({
       >
         <div id={htmlId} />
         {children}
-        {errorMsg && <FormError style={{ color: '#ee1e31' }}>{withI18 ? <T name={errorMsg} /> : errorMsg}</FormError>}
+        {errorMsg && (
+          <FormError style={{ color: '#ee1e31' }}>
+            {withI18 && typeof errorMsg === 'string' ? <T name={errorMsg} /> : errorMsg}
+          </FormError>
+        )}
       </Form.Item>
     </>
   );
