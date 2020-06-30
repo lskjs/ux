@@ -100,7 +100,8 @@ class Geo extends Component {
               zIndex: 2,
             }}
           >
-            <SearchBox map={mapInstance} mapsApi={mapsApi} onPlacesChanged={console.log} />
+            {/* <SearchBox map={mapInstance} mapsApi={mapsApi} onPlacesChanged={console.log} /> */}
+            <SearchBox map={mapInstance} mapsApi={mapsApi} />
           </div>
         )}
         <GoogleMapReact

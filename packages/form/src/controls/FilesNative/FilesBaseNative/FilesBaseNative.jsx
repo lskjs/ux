@@ -30,7 +30,7 @@ class Files extends Component {
     children: PropTypes.func,
     footer: PropTypes.func,
     type: PropTypes.string,
-  }
+  };
   static defaultProps = {
     className: null,
     multiple: false,
@@ -47,7 +47,7 @@ class Files extends Component {
     children: null,
     footer: null,
     type: undefined,
-  }
+  };
   constructor(props) {
     super(props);
     this.state = {
@@ -72,19 +72,11 @@ class Files extends Component {
   // }
   @autobind
   async onDrop(files = []) {
-    const {
-      onSubmit,
-      upload,
-      onError,
-      multiple,
-      uapp,
-    } = this.props;
+    const { onSubmit, upload, onError, multiple, uapp } = this.props;
     if (!upload) return;
     let value = null;
     try {
-      const res = await Promise.map(files, file => (
-        upload.uploadFile(file)
-      ));
+      const res = await Promise.map(files, file => upload.uploadFile(file));
       if (multiple) value = res.map(e => ({ url: e.url, filename: e.filename }));
       else value = res[0] && res[0].url;
       if (onSubmit) onSubmit(value);
@@ -92,7 +84,7 @@ class Files extends Component {
       if (uapp.onError) {
         uapp.onError(err);
       } else {
-        console.error('Files.onDrop', '!onError', onError, err);
+        // console.error('Files.onDrop', '!onError', onError, err);
       }
     }
     this.setState({ dragged: false });
@@ -105,7 +97,8 @@ class Files extends Component {
   remove({ src } = {}) {
     const { onSubmit } = this.props;
     if (onSubmit) {
-      onSubmit({ // хуйня, но что поделать?
+      onSubmit({
+        // хуйня, но что поделать?
         type: 'remove',
         src,
       });
@@ -137,7 +130,7 @@ class Files extends Component {
       name,
       ...otherProps
     } = this.props;
-    let open = null;
+    const open = null;
     // console.log('this.state.input', input);
     const childrenProps = {
       validationState,
@@ -161,7 +154,7 @@ class Files extends Component {
       },
     };
     return (
-      <React.Fragment>
+      <>
         <div
           style={{
             display: 'inline-block',
@@ -188,7 +181,7 @@ class Files extends Component {
               height: '100%',
               zIndex: 10,
             }}
-            onChange={(e) => {
+            onChange={e => {
               this.onDrop(e.target.files);
             }}
           />
@@ -207,7 +200,7 @@ class Files extends Component {
           {isFunction(children) ? children(childrenProps) : children}
         </Dropzone> */}
         {isFunction(footer) ? footer(childrenProps) : footer}
-      </React.Fragment>
+      </>
     );
   }
 }

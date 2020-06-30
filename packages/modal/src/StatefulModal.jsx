@@ -42,7 +42,7 @@ class StatefulModal extends PureComponent {
         .router
         .resolve(data)
         .then((page) => {
-          console.log(page, pathname);
+          // console.log(page, pathname);
           // this.page = page;
           this.setState({ pathname, page });
         });

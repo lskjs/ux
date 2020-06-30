@@ -27,6 +27,6 @@ export default ({ flatten }) => async (values, props2) => {
       setStatus(null);
     }, 1000);
   } else {
-    console.log('STRANGE!!!!!!!');
+    // console.log('STRANGE!!!!!!!');
   }
 };

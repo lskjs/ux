@@ -66,7 +66,7 @@ class FilesBase extends Component {
       if (uapp.onError) {
         uapp.onError(err);
       } else {
-        console.error('Files.onDrop', '!onError', onError, err);
+        // console.error('Files.onDrop', '!onError', onError, err);
       }
     }
     return value;

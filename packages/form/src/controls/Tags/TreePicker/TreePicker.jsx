@@ -166,7 +166,7 @@ class TreePicker extends Component {
     try {
       searchedFields = this.fuse.search(search);
     } catch (err) {
-      console.log('TreePicker.render', 'searchedFields', searchedFields, err); // eslint-disable-line
+      // console.log('TreePicker.render', 'searchedFields', searchedFields, err); // eslint-disable-line
     }
     const tree = searchedFields.length === 0 ? fields : this.deepSearch(searchedFields);
     return (

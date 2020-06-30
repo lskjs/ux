@@ -114,7 +114,6 @@ class Modal2 extends PureComponent {
     className: PropTypes.string,
     size: PropTypes.oneOf(uniq(filter(sizes, e => typeof e === 'string'))),
     trigger: PropTypes.any, // eslint-disable-line react/forbid-prop-types
-    ref: PropTypes.func,
     style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
     whiteTheme: PropTypes.bool,
   };
@@ -139,7 +138,6 @@ class Modal2 extends PureComponent {
     className: null,
     size: sizes.medium,
     trigger: null,
-    ref: null,
     style: {},
     whiteTheme: false,
   };
@@ -203,9 +201,9 @@ class Modal2 extends PureComponent {
       InnerWrapper: this.props.InnerWrapper || this.constructor.InnerWrapper,
       CloseIcon: this.props.CloseIcon || this.constructor.CloseIcon,
     };
-    const { className, size = 'default', closable = true, trigger, ref, style, ...props } = this.props;
+    const { className, size = 'default', closable = true, trigger, style, ...props } = this.props;
     const modal = this;
-    if (ref) ref(this);
+    // if (ref) ref(this);
     return (
       <Provider value={{ modal, Modal }}>
         <Global

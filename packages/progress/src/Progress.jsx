@@ -55,7 +55,7 @@ export class Progress extends Component {
           value = 100;
           clearInterval(this.timeout);
         }
-        console.log('timeout', this.state, { value, speed });
+        // console.log('timeout', this.state, { value, speed });
 
         this.setState({ value });
       }, 1000);
@@ -76,7 +76,7 @@ export class Progress extends Component {
       height: ${this.props.height}px;
       ${shadow ? `box-shadow: 0 0 12px ${color}, 0 0 5px ${color};` : ''}
       overflow: hidden;
-      max-width: 100%; 
+      max-width: 100%;
       position: absolute !important;
       background-color: ${color};
       top: 0;
