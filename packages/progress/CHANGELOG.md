@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.15.0](https://github.com/lskjs/ux/tree/master/packages/progress/compare/v1.14.0...v1.15.0) (2020-06-30)
+
+
+
+## [1.1.105](https://github.com/lskjs/ux/tree/master/packages/progress/compare/v1.11.0...v1.1.105) (2020-06-19)
+
+
+### Bug Fixes
+
+* remove console.log ([8d18877](https://github.com/lskjs/ux/tree/master/packages/progress/commit/8d18877b60caaa90f020d96a5a79fd6cfe184236))
+
+
+
+
+
 # [1.11.0](https://github.com/lskjs/ux/tree/master/packages/progress/compare/v1.1.100...v1.11.0) (2020-06-18)
 
 

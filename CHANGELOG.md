@@ -3,6 +3,90 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.15.0](https://github.com/isuvorov/lib-starter-kit/compare/v1.14.0...v1.15.0) (2020-06-30)
+
+
+### Bug Fixes
+
+* **form:** try to translate front errors ([dc3c74b](https://github.com/isuvorov/lib-starter-kit/commit/dc3c74bf70bf10989dfcebc9ec07725c4aac35c4))
+* update React.js tasks 1.2-1.7 ([2425d47](https://github.com/isuvorov/lib-starter-kit/commit/2425d4773b4de001d4a083ee21565d9614a49d04))
+
+
+
+## [1.1.109](https://github.com/isuvorov/lib-starter-kit/compare/v1.1.108...v1.1.109) (2020-06-22)
+
+
+### Bug Fixes
+
+* reqired ([dcbf935](https://github.com/isuvorov/lib-starter-kit/commit/dcbf935a27258ec04f355fc3022f2e24e2947e02))
+
+
+
+## [1.1.108](https://github.com/isuvorov/lib-starter-kit/compare/v1.1.107...v1.1.108) (2020-06-22)
+
+
+### Bug Fixes
+
+* isRequired -> formItem -> title ([cba3052](https://github.com/isuvorov/lib-starter-kit/commit/cba3052a8d8b7046932618cd4590958c8b6c17ce))
+
+
+
+## [1.1.107](https://github.com/isuvorov/lib-starter-kit/compare/v1.12.1...v1.1.107) (2020-06-22)
+
+
+### Features
+
+* **list:** add scroll: disable props ([dbc61d1](https://github.com/isuvorov/lib-starter-kit/commit/dbc61d13672dde8eb8aff20945915bb4ba73a7f3))
+
+
+
+## [1.1.105](https://github.com/isuvorov/lib-starter-kit/compare/v1.11.0...v1.1.105) (2020-06-19)
+
+
+### Bug Fixes
+
+* remove console.log ([8d18877](https://github.com/isuvorov/lib-starter-kit/commit/8d18877b60caaa90f020d96a5a79fd6cfe184236))
+
+
+
+## [1.1.104](https://github.com/isuvorov/lib-starter-kit/compare/v1.1.103...v1.1.104) (2020-06-05)
+
+
+### Features
+
+* add breakpoint prop to PopoverMenu ([8307471](https://github.com/isuvorov/lib-starter-kit/commit/8307471d3d1582757eddc495da591033dac01135))
+
+
+
+## [1.1.103](https://github.com/isuvorov/lib-starter-kit/compare/v1.1.102...v1.1.103) (2020-06-04)
+
+
+### Features
+
+* Global modals ([0859001](https://github.com/isuvorov/lib-starter-kit/commit/08590019891e378435a477fbdcf5373aefcb4d4c))
+
+
+
+## [1.1.102](https://github.com/isuvorov/lib-starter-kit/compare/v1.1.101...v1.1.102) (2020-06-02)
+
+
+### Reverts
+
+* Revert "fix: remove scroll" ([b2e4319](https://github.com/isuvorov/lib-starter-kit/commit/b2e4319dba41fa153b6d42356d331b57e7ab305b))
+
+
+
+## [1.1.101](https://github.com/isuvorov/lib-starter-kit/compare/v1.1.100...v1.1.101) (2020-06-02)
+
+
+### Bug Fixes
+
+* remove scroll ([d0d935e](https://github.com/isuvorov/lib-starter-kit/commit/d0d935ea6afc5b2dd9d446f3f6f864a90dce8671))
+
+
+
+
+
 # [1.14.0](https://github.com/isuvorov/lib-starter-kit/compare/v1.13.0...v1.14.0) (2020-06-29)
 
 

@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.15.0](https://github.com/lskjs/ux/tree/master/packages/modal/compare/v1.14.0...v1.15.0) (2020-06-30)
+
+
+
+## [1.1.105](https://github.com/lskjs/ux/tree/master/packages/modal/compare/v1.11.0...v1.1.105) (2020-06-19)
+
+
+### Bug Fixes
+
+* remove console.log ([8d18877](https://github.com/lskjs/ux/tree/master/packages/modal/commit/8d18877b60caaa90f020d96a5a79fd6cfe184236))
+
+
+
+## [1.1.104](https://github.com/lskjs/ux/tree/master/packages/modal/compare/v1.1.103...v1.1.104) (2020-06-05)
+
+
+
+## [1.1.103](https://github.com/lskjs/ux/tree/master/packages/modal/compare/v1.1.102...v1.1.103) (2020-06-04)
+
+
+### Features
+
+* Global modals ([0859001](https://github.com/lskjs/ux/tree/master/packages/modal/commit/08590019891e378435a477fbdcf5373aefcb4d4c))
+
+
+
+
+
 # [1.13.0](https://github.com/lskjs/ux/tree/master/packages/modal/compare/v1.12.1...v1.13.0) (2020-06-28)
 
 **Note:** Version bump only for package @lskjs/modal

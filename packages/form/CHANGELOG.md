@@ -3,6 +3,52 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.15.0](https://github.com/lskjs/ux/tree/master/packages/form/compare/v1.14.0...v1.15.0) (2020-06-30)
+
+
+### Bug Fixes
+
+* **form:** try to translate front errors ([dc3c74b](https://github.com/lskjs/ux/tree/master/packages/form/commit/dc3c74bf70bf10989dfcebc9ec07725c4aac35c4))
+
+
+
+## [1.1.109](https://github.com/lskjs/ux/tree/master/packages/form/compare/v1.1.108...v1.1.109) (2020-06-22)
+
+
+### Bug Fixes
+
+* reqired ([dcbf935](https://github.com/lskjs/ux/tree/master/packages/form/commit/dcbf935a27258ec04f355fc3022f2e24e2947e02))
+
+
+
+## [1.1.108](https://github.com/lskjs/ux/tree/master/packages/form/compare/v1.1.107...v1.1.108) (2020-06-22)
+
+
+### Bug Fixes
+
+* isRequired -> formItem -> title ([cba3052](https://github.com/lskjs/ux/tree/master/packages/form/commit/cba3052a8d8b7046932618cd4590958c8b6c17ce))
+
+
+
+## [1.1.105](https://github.com/lskjs/ux/tree/master/packages/form/compare/v1.11.0...v1.1.105) (2020-06-19)
+
+
+### Bug Fixes
+
+* remove console.log ([8d18877](https://github.com/lskjs/ux/tree/master/packages/form/commit/8d18877b60caaa90f020d96a5a79fd6cfe184236))
+
+
+
+## [1.1.104](https://github.com/lskjs/ux/tree/master/packages/form/compare/v1.1.103...v1.1.104) (2020-06-05)
+
+
+
+## [1.1.103](https://github.com/lskjs/ux/tree/master/packages/form/compare/v1.1.102...v1.1.103) (2020-06-04)
+
+
+
+
+
 # [1.13.0](https://github.com/lskjs/ux/tree/master/packages/form/compare/v1.12.1...v1.13.0) (2020-06-28)
 
 
