@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Form, Field } from 'formik';
 import Story from '@lskjs/dev/Story';
@@ -33,6 +32,7 @@ const PhoneInputForm = createForm({
       title: 'Пример региона',
       component: PhoneInput,
       defaultCountry: 'it',
+      defaultBehavior: true,
       regions: 'europe',
     },
     phone3: {

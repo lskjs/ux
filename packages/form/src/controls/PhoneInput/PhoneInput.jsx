@@ -5,8 +5,8 @@ import { Container, injectStyles } from './PhoneInput.style';
 
 injectStyles();
 
-
 export default ({ field, form, ...props }) => {
+  const { defaultCountry, defaultBehavior } = props;
   const refInput = useRef();
   let width = get(refInput, 'current.numberInputRef.offsetWidth');
   if (!width) width = '100%';
@@ -15,6 +15,12 @@ export default ({ field, form, ...props }) => {
   useEffect(() => {
     forceUpdate();
   }, []);
+  let value;
+  if (defaultBehavior) {
+    value = field.value
+  } else {
+    value = (field.value || '').startsWith('+') ? field.value : `+${field.value}`;
+  }
   return (
     <Container>
       <PhoneInput
@@ -37,12 +43,12 @@ export default ({ field, form, ...props }) => {
           fontSize: '13px',
           width,
         }}
-        defaultCountry="ru"
+        country={defaultBehavior ? defaultCountry : ''}
         {...field}
         {...props}
-        value={(field.value || '').startsWith('+') ? field.value : `+${field.value}`}
+        value={value}
         onChange={(value) => {
-          form.setFieldValue(field.name, value.replace(/\D+/g, ''));
+          form.setFieldValue(field.name, defaultBehavior ? value : value.replace(/\D+/g, ''));
         }}
       />
     </Container>
