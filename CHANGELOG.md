@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.15.2](https://github.com/isuvorov/lib-starter-kit/compare/v1.15.1...v1.15.2) (2020-07-06)
+
+
+### Bug Fixes
+
+* **form:** phoneinput default behavior mode ([ba014ee](https://github.com/isuvorov/lib-starter-kit/commit/ba014eebf8a8af2388b0dadde03f3fcebc6c53b7))
+* **task1:** finish update ([8675757](https://github.com/isuvorov/lib-starter-kit/commit/867575752253842ba47f3fc2b7a2c5e25652d2d9))
+* package link me ([9df5cd4](https://github.com/isuvorov/lib-starter-kit/commit/9df5cd48653125a5381909a2be148d7bf1136bdf))
+* update task 1 ([2f35f96](https://github.com/isuvorov/lib-starter-kit/commit/2f35f9657d3e3fb5e55db829de61700415d91b15))
+
+
+
+
+
 ## [1.15.1](https://github.com/isuvorov/lib-starter-kit/compare/v1.15.0...v1.15.1) (2020-06-30)
 
 
