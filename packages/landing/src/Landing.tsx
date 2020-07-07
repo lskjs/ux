@@ -68,10 +68,7 @@ const Landing: LandingFC<LandingProps> = ({ id, markup, slides }) => {
   );
 };
 
-Landing.defaultAcceptableSlides = {
-  header: Header,
-  customSlide2: CustomSlide2,
-};
+Landing.defaultAcceptableSlides = {};
 
 Landing.propTypes = {
   markup: PropTypes.arrayOf<LandingSlide>(Object).isRequired,
