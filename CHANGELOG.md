@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.15.3](https://github.com/isuvorov/lib-starter-kit/compare/v1.15.2...v1.15.3) (2020-07-07)
+
+
+### Bug Fixes
+
+* **downloads:** dynamic fields sort ([01739e2](https://github.com/isuvorov/lib-starter-kit/commit/01739e20b376e18b39f0225081b5de085fee982f))
+* Landing uniq keys & id indentifier ([865ccc1](https://github.com/isuvorov/lib-starter-kit/commit/865ccc18fb13895643ba7fd0a4cdb58461a26b5d))
+
+
+
+
+
 ## [1.15.2](https://github.com/isuvorov/lib-starter-kit/compare/v1.15.1...v1.15.2) (2020-07-06)
 
 

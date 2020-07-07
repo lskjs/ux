@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.15.3](https://github.com/lskjs/ux/tree/master/packages/download/compare/v1.15.2...v1.15.3) (2020-07-07)
+
+
+### Bug Fixes
+
+* **downloads:** dynamic fields sort ([01739e2](https://github.com/lskjs/ux/tree/master/packages/download/commit/01739e20b376e18b39f0225081b5de085fee982f))
+
+
+
+
+
 # [1.15.0](https://github.com/lskjs/ux/tree/master/packages/download/compare/v1.14.0...v1.15.0) (2020-06-30)
 
 **Note:** Version bump only for package @lskjs/downloads

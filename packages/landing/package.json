@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/landing",
-  "version": "1.15.0",
+  "version": "1.15.3",
   "description": "LSK ux subrepo: landing",
   "author": "Andrey Kondalov <i@yukio.ru>",
   "license": "MIT",
@@ -28,7 +28,7 @@
     "styleguide": "../../scripts/package-styleguide.sh"
   },
   "devDependencies": {
-    "@lskjs/grid": "1.15.0",
+    "@lskjs/grid": "^1.15.3",
     "@lskjs/theme": "1.15.0",
     "@types/lodash": "^4.14.157",
     "install": "^0.13.0",
@@ -43,7 +43,7 @@
     "react": "*"
   },
   "dependencies": {
-    "@lskjs/dev": "^1.15.0",
+    "@lskjs/dev": "^1.15.3",
     "lodash": "^4.17.15"
   }
 }
