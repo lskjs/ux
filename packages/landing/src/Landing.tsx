@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import reduce from 'lodash/reduce';
 import findLast from 'lodash/findLast';
@@ -23,6 +23,10 @@ interface LandingFC<T> extends React.FC<T> {
 }
 
 const Landing: LandingFC<LandingProps> = ({ id, markup, slides }) => {
+  const [page, setPage] = useState(id);
+  useEffect(() => {
+    setPage(id);
+  }, [id]);
   let acceptableSlides: Slides | undefined = Landing.defaultAcceptableSlides;
   if (slides && typeof slides === 'function') {
     acceptableSlides = slides(Landing.defaultAcceptableSlides);
@@ -54,7 +58,7 @@ const Landing: LandingFC<LandingProps> = ({ id, markup, slides }) => {
     [],
   );
   return (
-    <main id={`landing-${id}`}>
+    <main id={`landing-${page}`}>
       {arr.map((obj) => {
         const slide = acceptableSlidesKeys.find((key) => obj.type.includes(key));
         if (!slide || !acceptableSlides) return false;
@@ -77,4 +81,4 @@ Landing.defaultProps = {
   slides: undefined,
 };
 
-export default memo(Landing, (prevProps, nextProps) => prevProps.id === nextProps.id);
+export default Landing;
