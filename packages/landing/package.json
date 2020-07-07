@@ -30,6 +30,9 @@
   "devDependencies": {
     "@lskjs/grid": "1.15.0",
     "@lskjs/theme": "1.15.0",
+    "@types/lodash": "^4.14.157",
+    "install": "^0.13.0",
+    "npm": "^6.14.5",
     "prop-types": "15.7.2",
     "react": "16.8.6"
   },
@@ -38,5 +41,9 @@
     "@lskjs/theme": "*",
     "prop-types": "*",
     "react": "*"
+  },
+  "dependencies": {
+    "@lskjs/dev": "^1.15.0",
+    "lodash": "^4.17.15"
   }
 }
