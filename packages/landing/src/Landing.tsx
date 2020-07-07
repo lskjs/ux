@@ -3,9 +3,6 @@ import PropTypes from 'prop-types';
 import reduce from 'lodash/reduce';
 import findLast from 'lodash/findLast';
 
-import Header from './slides/Header';
-import CustomSlide2 from './slides/CustomSlide2';
-
 interface LandingSlide {
   type: string;
   data: object;
