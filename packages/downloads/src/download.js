@@ -1,5 +1,7 @@
 import XlsxPopulate from 'xlsx-populate/browser/xlsx-populate';
 import zip from 'lodash/zip';
+import sortBy from 'lodash/sortBy';
+import uniq from 'lodash/uniq';
 
 function promiseMapSeries(array, iterator, thisArg) {
   const { length } = array;
@@ -18,9 +20,32 @@ function promiseMapSeries(array, iterator, thisArg) {
   return Promise.all(results);
 }
 
-const markupToMatrix = ({ markup, items, props, dynamicFields }) => {
-  const dynamicCounted = items.map((el) => dynamicFields(el));
+const markupToMatrix = ({ markup, items, props, dynamicFields, dynamicFieldsSort }) => {
+  const dynamicCounted = items.map((el) => dynamicFields(el, props));
   const dynamicObject = {};
+  if (Array.isArray(dynamicFieldsSort) && dynamicFieldsSort.length) {
+    const namesAndKeys = {};
+    dynamicCounted.forEach((arr) => {
+      arr.forEach(([name, , key]) => {
+        if (key) {
+          if (!namesAndKeys[key]) {
+            namesAndKeys[key] = [];
+          }
+          namesAndKeys[key].push(name);
+        }
+      });
+    });
+    // очень некрасивый метод, как и всё здесь, надо переделать
+    const bruh = sortBy(Object.keys(namesAndKeys), (o) => {
+      const ind = dynamicFieldsSort.indexOf(o);
+      return ind < 0 ? 10000 : ind;
+    });
+    bruh.forEach((key) => {
+      uniq(namesAndKeys[key]).forEach((k) => {
+        dynamicObject[k] = [];
+      });
+    });
+  }
   dynamicCounted.forEach((arr, index) => {
     arr.forEach(([key, value]) => {
       if (!dynamicObject[key]) {
@@ -94,6 +119,7 @@ const download = async ({
   markup = [],
   markupProps = {},
   dynamicFields = () => [],
+  dynamicFieldsSort = [],
   name,
   all = false,
 }) => {
@@ -101,6 +127,7 @@ const download = async ({
   const data = markupToMatrix({
     markup,
     dynamicFields,
+    dynamicFieldsSort,
     props: markupProps,
     items,
   });

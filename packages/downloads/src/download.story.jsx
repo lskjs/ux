@@ -5,7 +5,7 @@ import DEV from '@lskjs/dev/DEV';
 import StatefulButton from '@lskjs/button/StatefulButton';
 import Button from '@lskjs/button/Button';
 import ListStore from '@lskjs/mobx/stores/ListStore';
-const data = Array(500)
+const data = Array(10)
   .fill()
   .map((_, i) => ({
     index: i,
@@ -119,13 +119,17 @@ export default ({ storiesOf }) =>
               markupProps,
               dynamicFields: (item) => {
                 // console.log(item);
-                const arr = [];
+                const arr = [['vk', '1337', 'vk']];
                 if (Math.random() > 0.5) {
-                  arr.push(['dynamic field', item.index]);
+                  arr.push(['dynamic field', item.index, 'other']);
                 }
+                arr.push(['Ссылка на соц. сеть 1 ', 3333]);
                 arr.push(['dynamic static field', 1337]);
+                arr.push(['Ссылка на соц. сеть 2 ', 3333]);
+                arr.push(['vk 2', 11111, 'vk']);
                 return arr;
               },
+              dynamicFieldsSort: ['other', 'vk'],
               name: 'all',
               all: true,
             })
