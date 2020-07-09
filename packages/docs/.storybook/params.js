@@ -1,10 +1,13 @@
-import contexts from './contexts';
+const req = require.context(
+  '../src',
+  true,
+  /.story.js|.story.js|.story.jsx|.story.jsx|.story.tsx$/,
+);
 
 export default {
-  modules: [].concat.apply([], contexts.map((req) => req.keys().map(req))),
+  modules: req.keys().map(req),
   options: {
-    name: 'Lsk.js',
+    name: 'LskGeneral',
   },
   knobs: false,
 };
-

@@ -28,18 +28,18 @@
     "styleguide": "../../scripts/package-styleguide.sh"
   },
   "dependencies": {
-    "@lskjs/autobind": "0.39.0",
+    "@lskjs/autobind": "1.20.0",
     "react-custom-scrollbars": "4.2.1",
     "react-if": "3.4.3"
   },
   "devDependencies": {
     "@emotion/core": "10.0.27",
     "@emotion/styled": "10.0.27",
-    "@lskjs/button": "^1.15.3",
+    "@lskjs/button": "1.15.3",
     "@lskjs/css": "1.15.0",
-    "@lskjs/dev": "^1.15.3",
+    "@lskjs/dev": "1.15.3",
     "@lskjs/theme": "1.15.0",
-    "@lskjs/ui": "^1.15.3",
+    "@lskjs/ui": "1.15.3",
     "@lskjs/utils": "0.39.0",
     "bluebird": "3.7.2",
     "classnames": "2.2.6",

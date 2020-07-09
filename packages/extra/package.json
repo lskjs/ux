@@ -27,6 +27,7 @@
     "storybook": "../../scripts/package-storybook.sh",
     "styleguide": "../../scripts/package-styleguide.sh"
   },
+  "dependencies": {},
   "devDependencies": {
     "prop-types": "15.7.2",
     "react": "16.8.6"

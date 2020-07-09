@@ -31,7 +31,7 @@
     "prop-types": "15.7.2"
   },
   "devDependencies": {
-    "@lskjs/dev": "^1.15.3",
+    "@lskjs/dev": "1.15.3",
     "mobx": "5.15.4",
     "mobx-react": "6.2.2",
     "react": "16.8.6"

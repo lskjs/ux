@@ -28,7 +28,7 @@
     "styleguide": "../../scripts/package-styleguide.sh"
   },
   "dependencies": {
-    "@lskjs/mobx": "1.19.0",
+    "@lskjs/mobx": "1.42.0",
     "@lskjs/utils": "0.39.0",
     "lodash": "4.17.15",
     "mobx": "5.15.4",

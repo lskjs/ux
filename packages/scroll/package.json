@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@lskjs/css": "1.15.0",
-    "@lskjs/dev": "^1.15.3",
+    "@lskjs/dev": "1.15.3",
     "@lskjs/theme": "1.15.0",
     "@lskjs/utils": "0.39.0",
     "emotion-theming": "10.0.27",

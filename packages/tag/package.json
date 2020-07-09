@@ -28,12 +28,12 @@
     "styleguide": "../../scripts/package-styleguide.sh"
   },
   "dependencies": {
-    "@lskjs/link": "^1.15.3",
-    "@lskjs/utils": "1.19.0",
+    "@lskjs/link": "1.15.3",
+    "@lskjs/utils": "1.42.0",
     "prop-types": "15.7.2"
   },
   "devDependencies": {
-    "@lskjs/dev": "^1.15.3",
+    "@lskjs/dev": "1.15.3",
     "antd": "4.1.3",
     "react": "16.8.6"
   },
