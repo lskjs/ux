@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.15.6](https://github.com/lskjs/ux/tree/master/packages/avatar/compare/v1.15.5...v1.15.6) (2020-07-09)
+
+**Note:** Version bump only for package @lskjs/avatar
+
+
+
+
+
 ## [1.15.3](https://github.com/lskjs/ux/tree/master/packages/avatar/compare/v1.15.2...v1.15.3) (2020-07-07)
 
 **Note:** Version bump only for package @lskjs/avatar

@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/theme",
-  "version": "1.15.0",
+  "version": "1.15.6",
   "description": "LSK ux subrepo: theme",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -27,7 +27,6 @@
     "storybook": "../../scripts/package-storybook.sh",
     "styleguide": "../../scripts/package-styleguide.sh"
   },
-  "dependencies": {},
   "devDependencies": {
     "lodash": "4.17.15"
   },
