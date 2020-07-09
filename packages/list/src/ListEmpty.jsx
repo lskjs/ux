@@ -123,7 +123,7 @@ export class ListEmptyPure extends Component {
             icon={
               <Error404 height="200" width="100%" />
             }
-            subtitle={this.renderSubtitle()}
+            subtitle={this.renderSubtitle(type)}
             actions={this.renderAction(type)}
           />
           {/* пусто после фетча, фильры выключены
