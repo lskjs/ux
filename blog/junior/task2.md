@@ -1,33 +1,17 @@
-# Task 2
+# Задача 1 – Backend
 
 
-## tast 2.1
-```
-convert({ name: {firstName, lastName} , bdate,  address: '325345, Some street, Samara, Russia'   }) 
-=> { fullName, age, isAdult, address: {country, city, postcode}   }
+## Задача 1.1 
+
+На вход есть массив данных. Необходимо оставить в нёмтолько поля **a** и **b**:
+
+```jsx
+const arr = { a: 1, b: 2, c: 3, d: 4 }
 ```
 
-## task 2.2
-```js
-[user, user, user]
-=> 
-[user2, user2, user2]
+Ожидаемый вывод: 
+```jsx
+const arr = { a: 1, b: 2}
 ```
 
-
-## task 2.3
-```
-[
-   fullName [* (if !isAdult)]
-   age
-   
-   if (isAdult) {
-   ----
-   country
-   city
-   postcode
-   ----
-   }
-]
-```
 
