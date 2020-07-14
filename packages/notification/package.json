@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/notification",
-  "version": "1.15.6",
+  "version": "1.17.0",
   "description": "LSK ux subrepo: notification",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",

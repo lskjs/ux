@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.17.0](https://github.com/isuvorov/lib-starter-kit/compare/v1.16.1...v1.17.0) (2020-07-14)
+
+
+### Features
+
+* **AN-1874:** clickable toasts ([209e60f](https://github.com/isuvorov/lib-starter-kit/commit/209e60f5ff58261a33b26b8e81579e74d19ad0cb))
+
+
+
+
+
 ## [1.16.1](https://github.com/isuvorov/lib-starter-kit/compare/v1.16.0...v1.16.1) (2020-07-14)
 
 
