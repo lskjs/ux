@@ -23,7 +23,10 @@ const createCookieConsentForm = ({ cookieName = 'cookie-consent', view: View, in
       acceptAll={() => {
         setCookieJson(cookieName, { ...initialValues, updatedAt: Date.now() });
       }}
-      apply={(values) => {
+      rejectAll={() => {
+        setCookieJson(cookieName, { ...initialValues, updatedAt: Date.now() });
+      }}
+      setCustom={(values) => {
         const state = getCookieJson(cookieName) || initialValues;
         Object.keys(initialValues).forEach((key) => {
           if (typeof values[key] === 'undefined') return;

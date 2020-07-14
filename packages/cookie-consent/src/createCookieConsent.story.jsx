@@ -2,17 +2,20 @@ import React from 'react';
 import Story from '@lskjs/dev/Story';
 import createCookieConsent from './createCookieConsent';
 
-const CookieNotificationView = ({ applyAll, accept }) => (
+const CookieNotificationView = ({ acceptAll, setCustom, rejectAll }) => (
   <div>
     <button
       type="button"
       onClick={() => {
-        accept({ google: true, facebook: false, amplitude: false, intercom: true, locale: true });
+        setCustom({ google: true, facebook: false, amplitude: false, intercom: true, locale: true });
       }}
     >
       Accept
     </button>
-    <button type="button" onClick={applyAll}>
+    <button type="button" onClick={rejectAll}>
+      Reject All
+    </button>
+    <button type="button" onClick={acceptAll}>
       Apply All
     </button>
   </div>
