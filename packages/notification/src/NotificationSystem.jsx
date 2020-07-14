@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import ReactNotificationSystem from 'react-notification-system';
 import autobind from '@lskjs/autobind';
 import Link from '@lskjs/link';
@@ -22,39 +23,36 @@ class NotificationSystem extends PureComponent {
 
   @autobind
   toast(rawData, config) {
-    const {
-      type = 'info', level, children, autoDismiss = 5, href, onClick, ...info
-    } = prepareNotificationData(rawData, { defaultType: 'success', ...config });
-
+    const { type = 'info', level, children, autoDismiss = 5, href, onClick, ...info } = prepareNotificationData(
+      rawData,
+      { defaultType: 'success', ...config },
+    );
+    const { componentClass } = this.props;
+    const Tag = componentClass || Link;
     this.notificationSystem.current.addNotification({
       autoDismiss,
       level: type,
       children: children || (
-        <Link
-          href={href}
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ textDecoration: 'none' }}
-          onClick={onClick}
-        >
+        <Tag href={href} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }} onClick={onClick}>
           <NotifyTimelineWrapper>
-            <NotifyTimeline
-              animationDuration={autoDismiss !== null ? autoDismiss : 5}
-            />
-            <Notification
-              type={type}
-              {...info}
-            />
+            <NotifyTimeline animationDuration={autoDismiss !== null ? autoDismiss : 5} />
+            <Notification type={type} clickable={componentClass} {...info} />
           </NotifyTimelineWrapper>
-        </Link>
+        </Tag>
       ),
     });
   }
   render() {
-    return (
-      <ReactNotificationSystem ref={this.notificationSystem} style={notify} />
-    );
+    return <ReactNotificationSystem ref={this.notificationSystem} style={notify} />;
   }
 }
+
+NotificationSystem.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
+  componentClass: PropTypes.any,
+};
+NotificationSystem.defaultProps = {
+  componentClass: null,
+};
 
 export default NotificationSystem;

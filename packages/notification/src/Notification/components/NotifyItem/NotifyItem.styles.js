@@ -16,9 +16,9 @@ export const Right = styled('div')`
 
 export const Item = styled('div')`
   padding: 16px 32px 16px 8px;
-  transition: .3s ease;
+  transition: 0.3s ease;
   will-change: opacity;
-  cursor: pointer;
+  cursor: ${p => (p.clickable ? 'pointer' : 'default')};
   display: flex;
   /* width: 100%; */
   border-radius: 8px;
@@ -35,12 +35,12 @@ export const Item = styled('div')`
     text-decoration: none;
   }
   &:focus {
-    text-decoration: none
+    text-decoration: none;
   }
   &:active {
     text-decoration: none;
   }
-  ${(p) => {
+  ${p => {
     switch (p.type) {
       case 'error':
         return `
@@ -49,7 +49,6 @@ export const Item = styled('div')`
           &:hover {
             background-color: ${getTheme(p.theme, 'colors.danger')} !important;
             box-shadow: none !important;
-            cursor: pointer !important;
             text-decoration: none !important;
           }
         `;
@@ -60,7 +59,6 @@ export const Item = styled('div')`
           &:hover {
             background-color: ${getTheme(p.theme, 'colors.warning')} !important;
             box-shadow: none !important;
-            cursor: pointer !important;
             text-decoration: none !important;
           }
         `;
@@ -71,7 +69,6 @@ export const Item = styled('div')`
           &:hover {
             background-color: ${getTheme(p.theme, 'colors.success')} !important;
             box-shadow: none !important;
-            cursor: pointer !important;
             text-decoration: none !important;
           }
         `;
@@ -82,14 +79,16 @@ export const Item = styled('div')`
           &:hover {
             background-color: ${getTheme(p.theme, 'colors.primary')} !important;
             box-shadow: none !important;
-            cursor: pointer !important;
             text-decoration: none !important;
           }
         `;
-      default: return '';
+      default:
+        return '';
     }
   }}
-  ${p => (p.unread && `
+  ${p =>
+    p.unread &&
+    `
     background-color: #ddebf9;
-  `)}
+  `}
 `;

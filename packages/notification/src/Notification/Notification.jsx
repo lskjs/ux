@@ -31,7 +31,7 @@ class Notification extends Component {
   }
 
   render() {
-    const { href, type, title, text, image } = this.props;
+    const { href, type, title, text, image, clickable } = this.props;
 
     return (
       <NotifyItem
@@ -39,6 +39,7 @@ class Notification extends Component {
         // unread={transparent ? false : !(item.viewedAt)}
         href={href}
         type={type}
+        clickable={clickable !== 'div'}
       >
         <NotifyItemInner>
           <NotifyAvatar>{image || this.getDefaultImage()}</NotifyAvatar>
