@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.16.0](https://github.com/isuvorov/lib-starter-kit/compare/v1.15.6...v1.16.0) (2020-07-14)
+
+
+### Features
+
+* **cookie-consent:** create cookie consent wrapper ([868b0aa](https://github.com/isuvorov/lib-starter-kit/commit/868b0aa33b4ed5c037f294ed0e034f017ef5d52e))
+* add task 3 to junior module ([ee9554f](https://github.com/isuvorov/lib-starter-kit/commit/ee9554fd30e6a3f20f4abca8d4493b6716151ad0))
+
+
+
+
+
 ## [1.15.6](https://github.com/isuvorov/lib-starter-kit/compare/v1.15.5...v1.15.6) (2020-07-09)
 
 

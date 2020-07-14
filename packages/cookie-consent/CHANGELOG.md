@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.16.0](https://github.com/lskjs/ux/tree/master/packages/cookie-consent/compare/v1.15.6...v1.16.0) (2020-07-14)
+
+
+### Features
+
+* **cookie-consent:** create cookie consent wrapper ([868b0aa](https://github.com/lskjs/ux/tree/master/packages/cookie-consent/commit/868b0aa33b4ed5c037f294ed0e034f017ef5d52e))
+
+
+
+
+
 ## [1.15.6](https://github.com/lskjs/ux/tree/master/packages/flag/compare/v1.15.5...v1.15.6) (2020-07-09)
 
 **Note:** Version bump only for package @lskjs/flag
