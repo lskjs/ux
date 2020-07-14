@@ -1,9 +1,9 @@
 import React from 'react';
-import Story from '@lskjs/dev/Story/UappStory';
+import Story from '@lskjs/dev/Story';
 import Button from '@lskjs/button';
-import NotificationSystem from './NotificationSystem';
-import notify from './notifyStyles.styles';
-import Notification from './Notification';
+import NotificationSystem from '@lskjs/notification';
+import notify from '@lskjs/notification/notifyStyles.styles';
+import Notification from '@lskjs/notification/Notification';
 
 export default ({ storiesOf }) => {
   storiesOf('notification/NotificationSystem', module)
@@ -14,7 +14,7 @@ export default ({ storiesOf }) => {
       };
       return (
         <Story>
-          <NotificationSystem ref={notificationSystem} componentClass="div" />
+          <NotificationSystem ref={notificationSystem} clickable={false} />
           <Button
             paint="success"
             onClick={() =>

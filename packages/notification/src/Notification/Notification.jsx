@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import If from 'react-if';
-import T from '../../T';
+import T from '@lskjs/t';
 import ErrorIcon from './svg/error';
 import WarningIcon from './svg/warning';
 import InfoIcon from './svg/info';
@@ -11,7 +11,6 @@ import NotifyInfo from './components/NotifyInfo';
 import NotifyTitle from './components/NotifyTitle';
 import NotifyText from './components/NotifyText';
 import NotifyItemInner from './components/NotifyItemInner';
-
 
 class Notification extends Component {
   getDefaultImage() {
@@ -33,26 +32,20 @@ class Notification extends Component {
   }
 
   render() {
-    const {
-      href, type, title, text, image,
-    } = this.props;
-
+    const { href, type, title, text, image, clickable } = this.props;
     return (
       <NotifyItem
         // unread
         // unread={transparent ? false : !(item.viewedAt)}
         href={href}
         type={type}
+        clickable={clickable !== 'div'}
       >
         <NotifyItemInner>
-          <NotifyAvatar>
-            {image || this.getDefaultImage()}
-          </NotifyAvatar>
+          <NotifyAvatar>{image || this.getDefaultImage()}</NotifyAvatar>
           <NotifyInfo>
             <If condition={!!title}>
-              <NotifyTitle>
-                {title}
-              </NotifyTitle>
+              <NotifyTitle>{title}</NotifyTitle>
             </If>
             <If condition={!title && type === 'error'}>
               <T name="common.error" />
@@ -61,9 +54,7 @@ class Notification extends Component {
               <T name="common.success" />
             </If>
             <If condition={!!text}>
-              <NotifyText>
-                {text}
-              </NotifyText>
+              <NotifyText>{text}</NotifyText>
             </If>
           </NotifyInfo>
         </NotifyItemInner>
