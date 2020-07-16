@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.17.1](https://github.com/isuvorov/lib-starter-kit/compare/v1.17.0...v1.17.1) (2020-07-16)
+
+
+### Bug Fixes
+
+* **AN-1953:** phone input error style ([e25afd2](https://github.com/isuvorov/lib-starter-kit/commit/e25afd256efb73b1d608aacb2a00a8c820e4c8af))
+
+
+
+
+
 # [1.17.0](https://github.com/isuvorov/lib-starter-kit/compare/v1.16.1...v1.17.0) (2020-07-14)
 
 
