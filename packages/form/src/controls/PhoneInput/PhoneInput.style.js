@@ -51,6 +51,9 @@ export const injectStyles = () => injectGlobal`
     margin: 0px;
 
   }
+  .ant-form-item-control .has-error input {
+    border-color: #ee1e31 !important;
+  }
   .react-tel-input {
     .form-control {
       font-size: 16px;
