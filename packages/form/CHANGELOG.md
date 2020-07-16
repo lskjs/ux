@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.17.3](https://github.com/lskjs/ux/tree/master/packages/form/compare/v1.17.2...v1.17.3) (2020-07-16)
+
+
+### Bug Fixes
+
+* **AN-1953:** phone input error ([36528af](https://github.com/lskjs/ux/tree/master/packages/form/commit/36528affb846a068e9255cf4ea9c7220bec9b225))
+
+
+
+
+
 ## [1.17.2](https://github.com/lskjs/ux/tree/master/packages/form/compare/v1.17.1...v1.17.2) (2020-07-16)
 
 
