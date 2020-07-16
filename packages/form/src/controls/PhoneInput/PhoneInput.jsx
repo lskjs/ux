@@ -21,6 +21,7 @@ export default ({ field, form, ...props }) => {
   } else {
     value = (field.value || '').startsWith('+') ? field.value : `+${field.value}`;
   }
+  const hasError = field && field.name && !!get(form, `errors.${field.name}`);
   return (
     <Container>
       <PhoneInput
@@ -31,6 +32,7 @@ export default ({ field, form, ...props }) => {
         }}
         inputStyle={{
           width: '100%',
+          border: hasError ? '1px solid red' : '1px solid #e3e3e3',
           fontSize: '13px',
           // paddingTop: '23px',
           // paddingBottom: '23px',
