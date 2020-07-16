@@ -44,6 +44,12 @@ export const Container = styled.div`
       }
     }
   }
+  .ant-form-item-control input {
+    border: solid 1px #e3e3e3,
+  }
+  .ant-form-item-control .has-error input {
+    border: 1px solid #ee1e31 !important;
+  }
 `;
 
 export const injectStyles = () => injectGlobal`
@@ -51,8 +57,11 @@ export const injectStyles = () => injectGlobal`
     margin: 0px;
 
   }
+  .ant-form-item-control input {
+    border: solid 1px #e3e3e3,
+  }
   .ant-form-item-control .has-error input {
-    border-color: #ee1e31 !important;
+    border: 1px solid #ee1e31 !important;
   }
   .react-tel-input {
     .form-control {

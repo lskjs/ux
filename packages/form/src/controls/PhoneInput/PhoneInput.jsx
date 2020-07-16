@@ -31,7 +31,6 @@ export default ({ field, form, ...props }) => {
         }}
         inputStyle={{
           width: '100%',
-          border: 'solid 1px #e3e3e3',
           fontSize: '13px',
           // paddingTop: '23px',
           // paddingBottom: '23px',
