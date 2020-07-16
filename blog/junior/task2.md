@@ -1,4 +1,4 @@
-# Задача 1 – Backend
+# Задача 1 – Backend - Lodash 
 
 
 ## Задача 1.1 
