@@ -17,7 +17,7 @@ export const setCookieJson = (cookieName, value) => {
 };
 
 const createCookieConsentForm = ({ cookieName = 'cookie-consent', view: View, initialValues = {} } = {}) => {
-  return () => (
+  return (props) => (
     <View
       initialValues={getCookieJson(cookieName) || initialValues}
       acceptAll={() => {
@@ -35,6 +35,7 @@ const createCookieConsentForm = ({ cookieName = 'cookie-consent', view: View, in
         state.updatedAt = Date.now();
         setCookieJson(cookieName, state);
       }}
+      {...props}
     />
   );
 };
