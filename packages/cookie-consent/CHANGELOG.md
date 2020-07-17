@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.17.4](https://github.com/lskjs/ux/tree/master/packages/cookie-consent/compare/v1.17.3...v1.17.4) (2020-07-17)
+
+
+### Bug Fixes
+
+* **cookie-consent:** pass props to cookieForm ([8989c58](https://github.com/lskjs/ux/tree/master/packages/cookie-consent/commit/8989c58fd265b521be1ae4c01a19077486fc857a))
+
+
+
+
+
 ## [1.16.1](https://github.com/lskjs/ux/tree/master/packages/cookie-consent/compare/v1.16.0...v1.16.1) (2020-07-14)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.17.4](https://github.com/isuvorov/lib-starter-kit/compare/v1.17.3...v1.17.4) (2020-07-17)
+
+
+### Bug Fixes
+
+* **cookie-consent:** pass props to cookieForm ([8989c58](https://github.com/isuvorov/lib-starter-kit/commit/8989c58fd265b521be1ae4c01a19077486fc857a))
+
+
+
+
+
 ## [1.17.3](https://github.com/isuvorov/lib-starter-kit/compare/v1.17.2...v1.17.3) (2020-07-16)
 
 
