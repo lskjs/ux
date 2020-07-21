@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.18.2](https://github.com/isuvorov/lib-starter-kit/compare/v1.18.1...v1.18.2) (2020-07-21)
+
+
+### Bug Fixes
+
+* default disable false ([a904209](https://github.com/isuvorov/lib-starter-kit/commit/a904209bdea6aa07b20e9d54fd01a48353a18612))
+
+
+
+
+
 ## [1.18.1](https://github.com/isuvorov/lib-starter-kit/compare/v1.18.0...v1.18.1) (2020-07-21)
 
 
