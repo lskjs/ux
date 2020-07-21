@@ -28,7 +28,7 @@ class ListFooter extends Component {
     const { options = pageOptions.map(a => a * pageSize) } = this.props;
     const from = listStore.skip + 1;
     const to = listStore.skip + listStore.items.length;
-    let disabled = true;
+    let disabled = false;
     if (footerProps && footerProps.downloadDisabled) {
       disabled = footerProps.downloadDisabled;
     }
