@@ -153,6 +153,7 @@ class List extends Component {
       filterProps,
       innerProps,
       itemProps,
+      footerProps,
     } = this.props;
     const isFilterModal = collectProp(this, 'isFilterModal');
     let { listStore } = this.props;
@@ -253,6 +254,7 @@ class List extends Component {
           filterProps,
           innerProps,
           itemProps,
+          footerProps,
         }}
       >
         <MobxProvider listStore={listStore} selectStore={selectStore}>

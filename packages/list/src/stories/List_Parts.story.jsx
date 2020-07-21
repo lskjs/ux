@@ -2,7 +2,7 @@ import React from 'react';
 import { observer } from 'mobx-react';
 import { css } from '@emotion/core';
 import cx from 'classnames';
-import Story from '@lskjs/dev/Story';
+import Story from '@lskjs/dev/Story/UappStory';
 import { Row, Col, ItemRow, ItemCol, createIndex } from '../Table';
 import FilterForm from './FilterForm';
 

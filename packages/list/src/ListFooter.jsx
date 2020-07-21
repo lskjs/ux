@@ -11,7 +11,7 @@ import { Container, Item, Left } from './AlignLayout';
 
 const ResponsiveButton = withResponsive(Button);
 
-@contextToProps('List', 'pageSize', 'pageOptions', 'show')
+@contextToProps('List', 'pageSize', 'pageOptions', 'show', 'footerProps')
 @inject('listStore')
 @observer
 class ListFooter extends Component {
@@ -22,11 +22,16 @@ class ListFooter extends Component {
       show,
       pageSize = 10,
       pageOptions,
+      footerProps,
     } = this.props;
     if (listStore.count <= 0) return false;
     const { options = pageOptions.map(a => a * pageSize) } = this.props;
     const from = listStore.skip + 1;
     const to = listStore.skip + listStore.items.length;
+    let disabled = false;
+    if (footerProps && footerProps.downloadDisabled) {
+      disabled = footerProps.downloadDisabled;
+    }
     return (
       <List.FooterWrapper>
         <Container>
@@ -37,6 +42,7 @@ class ListFooter extends Component {
                   view="text"
                   icon={<DownloadIcon />}
                   onClick={listStore.download}
+                  disabled={disabled}
                 >
                   <T name="lskList.downloadButton" />
                 </ResponsiveButton>
