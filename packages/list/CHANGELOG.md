@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.18.1](https://github.com/lskjs/ux/tree/master/packages/list/compare/v1.18.0...v1.18.1) (2020-07-21)
+
+
+### Bug Fixes
+
+* footerProps download button ([567441e](https://github.com/lskjs/ux/tree/master/packages/list/commit/567441e5d949e2cafc9c76fed5f277d811c3032d))
+
+
+
+
+
 # [1.18.0](https://github.com/lskjs/ux/tree/master/packages/list/compare/v1.17.4...v1.18.0) (2020-07-21)
 
 
