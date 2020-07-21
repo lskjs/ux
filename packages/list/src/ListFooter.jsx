@@ -28,7 +28,7 @@ class ListFooter extends Component {
     const { options = pageOptions.map(a => a * pageSize) } = this.props;
     const from = listStore.skip + 1;
     const to = listStore.skip + listStore.items.length;
-    let disabled = false;
+    let disabled = true;
     if (footerProps && footerProps.downloadDisabled) {
       disabled = footerProps.downloadDisabled;
     }
@@ -43,6 +43,7 @@ class ListFooter extends Component {
                   icon={<DownloadIcon />}
                   onClick={listStore.download}
                   disabled={disabled}
+                  style={{ background: disabled && 'transparent' }}
                 >
                   <T name="lskList.downloadButton" />
                 </ResponsiveButton>
