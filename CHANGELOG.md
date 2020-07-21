@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.18.0](https://github.com/isuvorov/lib-starter-kit/compare/v1.17.4...v1.18.0) (2020-07-21)
+
+
+### Features
+
+* add prop footerProps to List ([d03e26d](https://github.com/isuvorov/lib-starter-kit/commit/d03e26dd441b8d500594330ed55985a96da6daa8))
+
+
+
+
+
 ## [1.17.4](https://github.com/isuvorov/lib-starter-kit/compare/v1.17.3...v1.17.4) (2020-07-17)
 
 
