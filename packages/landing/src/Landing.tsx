@@ -28,12 +28,21 @@ const Landing: LandingFC<LandingProps> = ({ id, markup, slides }) => {
     setPage(id);
   }, [id]);
   let acceptableSlides: Slides | undefined = Landing.defaultAcceptableSlides;
-  if (slides && typeof slides === 'function') {
-    acceptableSlides = slides(Landing.defaultAcceptableSlides);
+  if (slides) {
+    if (typeof slides === 'function') {
+      acceptableSlides = slides(Landing.defaultAcceptableSlides);
+    } else {
+      acceptableSlides = slides;
+    }
   }
   const acceptableSlidesKeys = Object.keys(acceptableSlides || {});
   // console.log({ acceptableSlides, acceptableSlidesKeys });
-  if (!(markup && Array.isArray(markup)) || !acceptableSlidesKeys.length) {
+  if (!(markup && Array.isArray(markup))) {
+    console.log('Landing: markup is empty') // eslint-disable-line no-console
+    return null;
+  }
+  if (!acceptableSlidesKeys.length) {
+    console.log('Landing: slides is empty') // eslint-disable-line no-console
     return null;
   }
   const arr = reduce<LandingSlide[], LandingSlide[]>(

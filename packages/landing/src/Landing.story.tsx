@@ -139,6 +139,16 @@ export default ({ storiesOf }: StoryProps) =>
         })}
       />
     ))
+    .add('custom slides through prop as object', () => (
+      <Landing
+        id="home"
+        markup={mock}
+        slides={{
+          custom1: CustomSlide1,
+          custom2: CustomSlide2,
+        }}
+      />
+    ))
     .add('dynamically change markup prop', () => {
       return <DynamicComponent />;
     })
