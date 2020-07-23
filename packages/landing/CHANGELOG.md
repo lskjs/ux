@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.18.3](https://github.com/lskjs/ux/tree/master/packages/landing/compare/v1.18.2...v1.18.3) (2020-07-23)
+
+
+### Bug Fixes
+
+* **landing:** allow slides from props ([bb18487](https://github.com/lskjs/ux/tree/master/packages/landing/commit/bb184874d63eea235a4c2b2cec06334099a6d402))
+
+
+
+
+
 ## [1.15.6](https://github.com/lskjs/ux/tree/master/packages/landing/compare/v1.15.5...v1.15.6) (2020-07-09)
 
 **Note:** Version bump only for package @lskjs/landing
