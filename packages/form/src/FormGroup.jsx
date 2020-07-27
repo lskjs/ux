@@ -28,7 +28,7 @@ export default ({
       <Title
         withI18={withI18}
         infoLeft={infoLeft}
-        title={withI18 ? <T name={title} /> : title}
+        title={withI18 && typeof title === 'string' ? <T name={title} /> : title}
         error={errorMsg}
         info={info}
         isRequired={looksLikeRequired}
