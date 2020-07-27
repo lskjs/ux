@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.18.4](https://github.com/isuvorov/lib-starter-kit/tree/master/packages/lib1/compare/v1.18.3...v1.18.4) (2020-07-27)
+
+**Note:** Version bump only for package @lskjs/docs
+
+
+
+
+
 ## [1.18.3](https://github.com/isuvorov/lib-starter-kit/tree/master/packages/lib1/compare/v1.18.2...v1.18.3) (2020-07-23)
 
 **Note:** Version bump only for package @lskjs/docs

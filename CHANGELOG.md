@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.18.4](https://github.com/isuvorov/lib-starter-kit/compare/v1.18.3...v1.18.4) (2020-07-27)
+
+
+### Bug Fixes
+
+* **form:** check if i18 non string in title ([5379084](https://github.com/isuvorov/lib-starter-kit/commit/53790844b881233032a96313353187539fb8bd1a))
+
+
+
+
+
 ## [1.18.3](https://github.com/isuvorov/lib-starter-kit/compare/v1.18.2...v1.18.3) (2020-07-23)
 
 
