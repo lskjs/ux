@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.19.1](https://github.com/lskjs/ux/tree/master/packages/t/compare/v1.19.0...v1.19.1) (2020-08-05)
+
+
+### Bug Fixes
+
+* update package locks ([32ae2ad](https://github.com/lskjs/ux/tree/master/packages/t/commit/32ae2ad9cfd0d1024ecc610f046acc8b01997ff2))
+
+
+
+
+
 # [1.19.0](https://github.com/lskjs/ux/tree/master/packages/t/compare/v1.18.4...v1.19.0) (2020-08-05)
 
 **Note:** Version bump only for package @lskjs/t
