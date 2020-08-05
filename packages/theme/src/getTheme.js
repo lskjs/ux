@@ -2,4 +2,5 @@
 import get from 'lodash/get';
 import defaultTheme from './theme';
 
-export default (theme, path) => get(theme, path, get(defaultTheme, path));
+export default (theme, path, defaultValue) =>
+  get(theme, path, typeof defaultValue === 'undefined' ? get(defaultTheme, path) : defaultValue);

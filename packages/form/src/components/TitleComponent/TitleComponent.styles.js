@@ -3,20 +3,24 @@ import styled from '@emotion/styled';
 import { css } from '@emotion/core';
 
 export const Title = styled('div')`
- ${p => (p.error && css`
-    color: ${getTheme(p.theme, 'colors.danger')};
-  `)}
+  ${(p) =>
+    p.error &&
+    css`
+      color: ${getTheme(p.theme, 'colors.danger')};
+    `}
 `;
 
 export const Wrapper = styled('div')`
   display: flex;
   justify-content: space-between;
-  ${p => p.infoLeft && css`
-    justify-content: flex-start;
-    ${Title} {
-      margin-right: 4px;
-    }
-  `}
+  ${(p) =>
+    p.infoLeft &&
+    css`
+      justify-content: flex-start;
+      ${Title} {
+        margin-right: 4px;
+      }
+    `}
 `;
 
 export const Info = styled('div')`
@@ -24,6 +28,6 @@ export const Info = styled('div')`
 `;
 
 export const Required = styled('span')`
-  color: ${props => getTheme(props.theme, 'colors.danger')};
+  color: ${(props) => getTheme(props.theme, 'form.requiredColor', getTheme(props.theme, 'colors.danger'))};
   padding-left: 4px;
 `;
