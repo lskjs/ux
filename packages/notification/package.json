@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/notification",
-  "version": "1.17.0",
+  "version": "1.19.0",
   "description": "LSK ux subrepo: notification",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -29,14 +29,14 @@
   },
   "dependencies": {
     "@lskjs/autobind": "1.20.0",
-    "@lskjs/link": "1.15.6",
-    "@lskjs/t": "1.15.6",
-    "@lskjs/theme": "1.15.6",
+    "@lskjs/link": "1.19.0",
+    "@lskjs/t": "1.19.0",
+    "@lskjs/theme": "1.19.0",
     "prop-types": "15.7.2",
     "react-notification-system": "0.3.0"
   },
   "devDependencies": {
-    "@lskjs/dev": "1.15.6",
+    "@lskjs/dev": "1.19.0",
     "react": "16.8.6",
     "react-icon-base": "2.1.2"
   },

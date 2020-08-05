@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.19.0](https://github.com/lskjs/ux/tree/master/packages/landing/compare/v1.18.4...v1.19.0) (2020-08-05)
+
+**Note:** Version bump only for package @lskjs/landing
+
+
+
+
+
 ## [1.18.3](https://github.com/lskjs/ux/tree/master/packages/landing/compare/v1.18.2...v1.18.3) (2020-07-23)
 
 

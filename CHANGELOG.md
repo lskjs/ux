@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.19.0](https://github.com/isuvorov/lib-starter-kit/compare/v1.18.4...v1.19.0) (2020-08-05)
+
+
+### Bug Fixes
+
+* **task2:** update ([61c01d1](https://github.com/isuvorov/lib-starter-kit/commit/61c01d1004d5d433c0fdd3a0e70b2167f9dca47b))
+* add some updates ([672486f](https://github.com/isuvorov/lib-starter-kit/commit/672486f05766bd61c247a4c2312d0a612ede0d1d))
+* update 1.1-1.3 tasks ([2e9f18d](https://github.com/isuvorov/lib-starter-kit/commit/2e9f18d2b318e572f74c58e055f47eb417b1376c))
+
+
+### Features
+
+* **form:** color of * while required field ([84a8ea1](https://github.com/isuvorov/lib-starter-kit/commit/84a8ea1a8244f1b15fb140d371c7f5d586b2603c))
+
+
+
+
+
 ## [1.18.4](https://github.com/isuvorov/lib-starter-kit/compare/v1.18.3...v1.18.4) (2020-07-27)
 
 
