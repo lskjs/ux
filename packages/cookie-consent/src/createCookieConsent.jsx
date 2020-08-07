@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Cookies from 'js-cookie';
+import mapValues from 'lodash/mapValues';
 
 const tryJSONparse = (str, defaultValue = str) => {
   try {
@@ -16,28 +17,45 @@ export const setCookieJson = (cookieName, value) => {
   Cookies.set(cookieName, JSON.stringify(value), { expires });
 };
 
-const createCookieConsentForm = ({ cookieName = 'cookie-consent', view: View, initialValues = {} } = {}) => {
-  return (props) => (
-    <View
-      initialValues={getCookieJson(cookieName) || initialValues}
-      acceptAll={() => {
-        setCookieJson(cookieName, { ...initialValues, updatedAt: Date.now() });
-      }}
-      rejectAll={() => {
-        setCookieJson(cookieName, { ...initialValues, updatedAt: Date.now() });
-      }}
-      setCustom={(values) => {
-        const state = getCookieJson(cookieName) || initialValues;
-        Object.keys(initialValues).forEach((key) => {
-          if (typeof values[key] === 'undefined') return;
-          state[key] = values[key];
-        });
-        state.updatedAt = Date.now();
-        setCookieJson(cookieName, state);
-      }}
-      {...props}
-    />
-  );
+const createCookieConsentForm = ({
+  cookieName = 'cookie-consent',
+  view: View,
+  initialValues = {},
+  onChange,
+  onInit,
+} = {}) => {
+  return ({ onInit: onInit2, onChange: onChange2, ...props }) => {
+    const [cookieValues, setValues] = useState(getCookieJson(cookieName) || initialValues);
+    if (onInit) onInit(cookieValues);
+    if (onInit2) onInit2(cookieValues);
+    const setCookie = (state) => {
+      setCookieJson(cookieName, state);
+      setValues(state);
+      if (onChange) onChange(state);
+      if (onChange2) onChange2(state);
+    };
+    return (
+      <View
+        initialValues={cookieValues}
+        acceptAll={() => {
+          setCookie({ ...mapValues(initialValues, () => true), updatedAt: Date.now() });
+        }}
+        rejectAll={() => {
+          setCookie({ ...mapValues(initialValues, () => false), updatedAt: Date.now() });
+        }}
+        setCustom={(values) => {
+          const state = { ...cookieValues };
+          Object.keys(initialValues).forEach((key) => {
+            if (typeof values[key] === 'undefined') return;
+            state[key] = values[key];
+          });
+          state.updatedAt = Date.now();
+          setCookie(state);
+        }}
+        {...props}
+      />
+    );
+  };
 };
 
 export default createCookieConsentForm;
