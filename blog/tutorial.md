@@ -51,8 +51,6 @@ import React from 'react";
 Когда ваше приложение готово к развёртыванию в продакшене, запуск команды npm run build создаст оптимизированную сборку вашего приложения в папке build. Вы можете узнать больше о Create React App из его README и его пользовательского руководства.*
 [Подробнее >тут<.](https://ru.reactjs.org/docs/create-a-new-react-app.html)
 
-Для инициализации используется [create-react-app](https://github.com/facebook/create-react-app)
-
 Посмотреть реализацию  Step 1 можно [> тут <](https://github.com/lskjs/tutorial/tree/steps/step1)
 
 ### 2. Как добавить кнопку (@lskjs/button) на CRA лендинг
