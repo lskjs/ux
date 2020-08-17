@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.20.1](https://github.com/isuvorov/lib-starter-kit/compare/v1.20.0...v1.20.1) (2020-08-17)
+
+
+### Bug Fixes
+
+* closable button ([6ecce4b](https://github.com/isuvorov/lib-starter-kit/commit/6ecce4b0cf14ef37e3f8b97ba5bdcdd8495539d0))
+* **blog:** form tutorial ([24cbe63](https://github.com/isuvorov/lib-starter-kit/commit/24cbe63d63fe2677544237c2825468304f8d73e1))
+* update 1.1 & 1.2 tasks ([87508da](https://github.com/isuvorov/lib-starter-kit/commit/87508dab7b4a84db99c90d51bb5a1ef2b95dbea7))
+
+
+### Features
+
+* **task 3:** add 1.1 & 1.2 tasks ([697d6ab](https://github.com/isuvorov/lib-starter-kit/commit/697d6aba04d66ef99e6c7c1db97902c0d595a02d))
+
+
+
+
+
 # [1.20.0](https://github.com/isuvorov/lib-starter-kit/compare/v1.19.1...v1.20.0) (2020-08-07)
 
 

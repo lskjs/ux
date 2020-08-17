@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.20.1](https://github.com/lskjs/ux/tree/master/packages/form/compare/v1.20.0...v1.20.1) (2020-08-17)
+
+**Note:** Version bump only for package @lskjs/form
+
+
+
+
+
 ## [1.19.1](https://github.com/lskjs/ux/tree/master/packages/form/compare/v1.19.0...v1.19.1) (2020-08-05)
 
 
