@@ -257,9 +257,9 @@ class Modal2 extends PureComponent {
                 sizes.is(size, 'large') ? modalLarge : null,
               ]}
             >
-              {/* <If condition={closable}> */}
-              <Modal.CloseIcon onClick={this.close} whiteTheme={!!this.props.whiteTheme} />
-              {/* </If> */}
+              <If condition={!!closable}>
+                <Modal.CloseIcon onClick={this.close} whiteTheme={!!this.props.whiteTheme} />
+              </If>
               <Modal.InnerWrapper>
                 <Modal.Inner {...omit(props, reactModalProps)} />
               </Modal.InnerWrapper>
