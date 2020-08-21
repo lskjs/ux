@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.20.3](https://github.com/lskjs/ux/tree/master/packages/form/compare/v1.20.2...v1.20.3) (2020-08-21)
+
+
+### Bug Fixes
+
+* **form:** add error-border support for field with title key like object key ([6fdeb31](https://github.com/lskjs/ux/tree/master/packages/form/commit/6fdeb3144a0325afa6ebebe40f514a9438a3081d))
+
+
+
+
+
 ## [1.20.2](https://github.com/lskjs/ux/tree/master/packages/form/compare/v1.20.1...v1.20.2) (2020-08-21)
 
 **Note:** Version bump only for package @lskjs/form
