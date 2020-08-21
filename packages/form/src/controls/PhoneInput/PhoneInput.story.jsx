@@ -1,20 +1,24 @@
-
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Form, Field } from 'formik';
 import Story from '@lskjs/dev/Story';
 import createForm from '../../createForm';
 import PhoneInput from './PhoneInput';
 import FormDebug from '../../FormDebug';
 
-const PhoneInputFormView = props => (
-  <Form>
-    <Field {...props.control('phone')} />
-    <Field {...props.control('phone1')} />
-    <Field {...props.control('phone2')} />
-    <Field {...props.control('phone3')} />
-    <FormDebug {...props} />
-  </Form>
-);
+const PhoneInputFormView = props => {
+  useEffect(() => {
+    props.setFieldError('phone1', 'test');
+  }, []);
+  return (
+    <Form>
+      <Field {...props.control('phone')} />
+      <Field {...props.control('phone1')} />
+      <Field {...props.control('phone2')} />
+      <Field {...props.control('phone3')} />
+      <FormDebug {...props} />
+    </Form>
+  );
+};
 
 const PhoneInputForm = createForm({
   view: PhoneInputFormView,
@@ -44,18 +48,15 @@ const PhoneInputForm = createForm({
   },
 });
 
-
-export default ({ storiesOf }) => (
-  storiesOf('form/controls', module)
-    .add('PhoneInput', () => (
-      <Story>
-        <PhoneInputForm
-          initialValues={{
-            input: '+7 (917) 123 1234',
-            phone: '+7 (917) 123 1234',
-            phone6: 'uhuhuhuhuht',
-          }}
-        />
-      </Story>
-    ))
-);
+export default ({ storiesOf }) =>
+  storiesOf('form/controls', module).add('PhoneInput', () => (
+    <Story>
+      <PhoneInputForm
+        initialValues={{
+          input: '+7 (917) 123 1234',
+          phone: '+7 (917) 123 1234',
+          phone6: 'uhuhuhuhuht',
+        }}
+      />
+    </Story>
+  ));
