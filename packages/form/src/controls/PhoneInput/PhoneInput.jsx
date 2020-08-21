@@ -6,7 +6,7 @@ import { Container, injectStyles } from './PhoneInput.style';
 
 injectStyles();
 
-const PhoneInput = ({ field, form, ...props }) => {
+const PhoneInput = ({ field, form, htmlId = '', ...props }) => {
   const refInput = useRef();
   let width = get(refInput, 'current.numberInputRef.offsetWidth');
   if (!width) width = '100%';
@@ -15,7 +15,13 @@ const PhoneInput = ({ field, form, ...props }) => {
   useEffect(() => {
     forceUpdate();
   }, []);
-  const fieldError = get(form, `errors.${get(field, 'name')}`, false);
+  const [fieldError, setFieldError] = useState(false);
+  useEffect(() => {
+    console.log(get(form, `errors.${htmlId.split('lskform_')[1]}`));
+    if (get(form, `errors.${htmlId.split('lskform_')[1]}`, false)) {
+      if (!fieldError) setFieldError(true);
+    } else if (fieldError) setFieldError(false);
+  }, [form.errors]);
   return (
     <Container>
       <PhoneInputBase
@@ -26,7 +32,7 @@ const PhoneInput = ({ field, form, ...props }) => {
         }}
         inputStyle={{
           width: '100%',
-          border: fieldError ? 'solid 1px #EE1E31' : 'solid 1px #e3e3e3',
+          border: !fieldError ? 'solid 1px #e3e3e3' : 'solid 1px #EE1E31',
           fontSize: '13px',
           // paddingTop: '23px',
           // paddingBottom: '23px',
