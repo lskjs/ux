@@ -1,12 +1,12 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react';
+import PropTypes from 'prop-types';
 import get from 'lodash/get';
-import PhoneInput from './react-phone-input-2';
+import PhoneInputBase from './react-phone-input-2';
 import { Container, injectStyles } from './PhoneInput.style';
 
 injectStyles();
 
-export default ({ field, form, ...props }) => {
-  const { defaultCountry, defaultBehavior } = props;
+const PhoneInput = ({ field, form, ...props }) => {
   const refInput = useRef();
   let width = get(refInput, 'current.numberInputRef.offsetWidth');
   if (!width) width = '100%';
@@ -15,16 +15,10 @@ export default ({ field, form, ...props }) => {
   useEffect(() => {
     forceUpdate();
   }, []);
-  let value;
-  if (defaultBehavior) {
-    value = field.value
-  } else {
-    value = (field.value || '').startsWith('+') ? field.value : `+${field.value}`;
-  }
-  const hasError = field && field.name && !!get(form, `errors.${field.name}`);
+  const fieldError = get(form, `errors.${get(field, 'name')}`, false);
   return (
     <Container>
-      <PhoneInput
+      <PhoneInputBase
         ref={refInput}
         buttonStyle={{
           background: 'none',
@@ -32,7 +26,7 @@ export default ({ field, form, ...props }) => {
         }}
         inputStyle={{
           width: '100%',
-          border: hasError ? '1px solid red' : '1px solid #e3e3e3',
+          border: fieldError ? 'solid 1px #EE1E31' : 'solid 1px #e3e3e3',
           fontSize: '13px',
           // paddingTop: '23px',
           // paddingBottom: '23px',
@@ -44,14 +38,25 @@ export default ({ field, form, ...props }) => {
           fontSize: '13px',
           width,
         }}
-        country={defaultBehavior ? defaultCountry : ''}
+        defaultCountry="ru"
         {...field}
         {...props}
-        value={value}
-        onChange={(value) => {
-          form.setFieldValue(field.name, defaultBehavior ? value : value.replace(/\D+/g, ''));
+        value={(get(field, 'value') || '').startsWith('+') ? get(field, 'value') : `+${get(field, 'value')}`}
+        onChange={value => {
+          form.setFieldValue(get(field, 'name'), value.replace(/\D+/g, ''));
         }}
       />
     </Container>
   );
 };
+
+PhoneInput.propTypes = {
+  field: PropTypes.objectOf(Object),
+  form: PropTypes.objectOf(Object),
+};
+
+PhoneInput.defaultProps = {
+  field: {},
+  form: {},
+};
+export default PhoneInput;
