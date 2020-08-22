@@ -137,7 +137,7 @@ export const controls = {
     title: 'Координаты',
     component: Geo,
     defaultZoom: 9,
-    apiKey: 'AIzaSyB2h6WjtzHRJvzi51vdikCpHlG3K6n3U24',
+    apiKey: 'YOUR KEY HERE',
   },
   color: {
     component: GroupOf,
