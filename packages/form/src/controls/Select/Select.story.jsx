@@ -205,6 +205,8 @@ const SelectForm = createForm({
         id,
         title: `User ${id}`,
       })),
+      hideSelectedOptions: false,
+      blurInputOnSelect: false,
     },
     checkboxes: {
       title: 'checkboxes: isMulti & hideSelectedOptions & collapsed & customView',
