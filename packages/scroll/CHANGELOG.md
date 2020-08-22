@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.20.4](https://github.com/lskjs/ux/tree/master/packages/scroll/compare/v1.20.3...v1.20.4) (2020-08-22)
+
+**Note:** Version bump only for package @lskjs/scroll
+
+
+
+
+
 ## [1.19.1](https://github.com/lskjs/ux/tree/master/packages/scroll/compare/v1.19.0...v1.19.1) (2020-08-05)
 
 

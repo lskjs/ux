@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/cookie-consent",
-  "version": "1.20.0",
+  "version": "1.20.4",
   "description": "LSK ux subrepo: cookie-consent",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -32,7 +32,7 @@
     "prop-types": "15.7.2"
   },
   "devDependencies": {
-    "@lskjs/dev": "1.19.1",
+    "@lskjs/dev": "^1.20.4",
     "react": "16.8.6"
   },
   "peerDependencies": {

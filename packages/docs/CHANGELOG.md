@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.20.4](https://github.com/isuvorov/lib-starter-kit/tree/master/packages/lib1/compare/v1.20.3...v1.20.4) (2020-08-22)
+
+
+### Bug Fixes
+
+* **docs:** context is back ([a23c852](https://github.com/isuvorov/lib-starter-kit/tree/master/packages/lib1/commit/a23c852c825a22e0408d82e3131a796ca47f34b3))
+
+
+
+
+
 ## [1.20.3](https://github.com/isuvorov/lib-starter-kit/tree/master/packages/lib1/compare/v1.20.2...v1.20.3) (2020-08-21)
 
 **Note:** Version bump only for package @lskjs/docs
