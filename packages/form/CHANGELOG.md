@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.20.5](https://github.com/lskjs/ux/tree/master/packages/form/compare/v1.20.4...v1.20.5) (2020-08-22)
+
+
+### Bug Fixes
+
+* **form:** remove api key ([0e20dc4](https://github.com/lskjs/ux/tree/master/packages/form/commit/0e20dc45cda55e200b41bc9ae4f01e5cd79b5538))
+
+
+
+
+
 ## [1.20.4](https://github.com/lskjs/ux/tree/master/packages/form/compare/v1.20.3...v1.20.4) (2020-08-22)
 
 **Note:** Version bump only for package @lskjs/form
