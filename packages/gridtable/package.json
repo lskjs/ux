@@ -30,7 +30,7 @@
   "dependencies": {
     "@lskjs/mobx": "1.42.0",
     "@lskjs/utils": "0.39.0",
-    "lodash": "4.17.19",
+    "lodash": "4.17.20",
     "mobx": "5.15.4",
     "mobx-react": "6.1.7"
   },

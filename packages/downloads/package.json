@@ -42,7 +42,7 @@
     "@lskjs/utils": "0.39.0",
     "axios": "0.19.2",
     "emotion-theming": "10.0.27",
-    "lodash": "4.17.19",
+    "lodash": "4.17.20",
     "mobx": "5.15.4",
     "mobx-react": "6.1.7",
     "react": "16.8.6",
