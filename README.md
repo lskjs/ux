@@ -65,3 +65,28 @@ npm run bootstrap
 cd packages/ui
 npm run storybook
 ```
+
+## How to add new package 
+To create a new package with Storybook, do the following:
+
+1. Release new package:
+```sh
+npm run release
+```
+2. Install it in ```packages/docs```:
+```sh
+cd packages/docs
+npm i package_name
+```
+3. Go to ```packages/docs/.storybook/contexts.js``` to add line with your package's name.
+```js
+...
+require.context('../node_modules/@lskjs/package_name', true, /.story.js$|.story.jsx$|.story.tsx$/),
+...
+```
+4. Push & build docs:
+```sh
+git push
+npm run release 
+```
+You could check before release that the ``` npm run build-storybook``` in ```packages/docs``` is successful.
