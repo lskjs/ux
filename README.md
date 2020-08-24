@@ -7,13 +7,11 @@
 `npm run dev` - делает просто сборку src=>build, это необходимо, когда мы линкуем пакеты к реальному  проекту и тестриуем в живой среде
 
 
-## Tutorial
 
-[Tutorial](/blog/tutorial.md)
+## [Tutorial](/blog/tutorial.md)
 
-## Storybook 
 
-[All examples here](https://lskjs.github.io/ux)
+## [Storybook](https://lskjs.github.io/ux)
 
 
 ## Packages
