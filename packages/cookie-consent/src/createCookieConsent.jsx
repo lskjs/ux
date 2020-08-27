@@ -11,25 +11,27 @@ const tryJSONparse = (str, defaultValue = str) => {
   }
 };
 export const getCookieJson = (cookieName) => tryJSONparse(Cookies.get(cookieName), null);
-export const setCookieJson = (cookieName, value) => {
+export const setCookieJson = (cookieName, value, options = {}) => {
   const expires = new Date(Date.now());
   expires.setFullYear(expires.getFullYear() + 1);
-  Cookies.set(cookieName, JSON.stringify(value), { expires });
+  Cookies.set(cookieName, JSON.stringify(value), { expires, ...options });
 };
 
 const createCookieConsentForm = ({
   cookieName = 'cookie-consent',
+  options = {},
   view: View,
   initialValues = {},
   onChange,
   onInit,
 } = {}) => {
   return ({ onInit: onInit2, onChange: onChange2, ...props }) => {
-    const [cookieValues, setValues] = useState(getCookieJson(cookieName) || initialValues);
+    const { name = cookieName, ...cookieOptions } = options;
+    const [cookieValues, setValues] = useState(getCookieJson(name) || initialValues);
     if (onInit) onInit(cookieValues);
     if (onInit2) onInit2(cookieValues);
     const setCookie = (state) => {
-      setCookieJson(cookieName, state);
+      setCookieJson(name, state, cookieOptions);
       setValues(state);
       if (onChange) onChange(state);
       if (onChange2) onChange2(state);
