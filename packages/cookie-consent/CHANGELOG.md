@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.21.0](https://github.com/lskjs/ux/tree/master/packages/cookie-consent/compare/v1.20.5...v1.21.0) (2020-08-27)
+
+
+### Features
+
+* **cookie-consent:** new schema cookie options ([3f7bd28](https://github.com/lskjs/ux/tree/master/packages/cookie-consent/commit/3f7bd28acb737a6dc52fd59b484f3879839cd654))
+
+
+
+
+
 ## [1.20.5](https://github.com/lskjs/ux/tree/master/packages/cookie-consent/compare/v1.20.4...v1.20.5) (2020-08-22)
 
 **Note:** Version bump only for package @lskjs/cookie-consent
