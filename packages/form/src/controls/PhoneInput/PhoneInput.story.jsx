@@ -8,6 +8,7 @@ import FormDebug from '../../FormDebug';
 const PhoneInputFormView = props => {
   useEffect(() => {
     props.setFieldError('info.phone2', 'test');
+    props.setFieldError('phone', 'test2');
   }, []);
   return (
     <Form>
@@ -53,7 +54,7 @@ export default ({ storiesOf }) =>
   storiesOf('form/controls', module).add('PhoneInput', () => (
     <Story>
       <PhoneInputForm
-        onSubmit={(...props) => console.log(props)}
+        onSubmit={e => console.log(e)}
         initialValues={{
           input: '+7 (917) 123 1234',
           phone: '+7 (917) 123 1234',

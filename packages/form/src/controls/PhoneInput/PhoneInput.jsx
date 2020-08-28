@@ -15,13 +15,7 @@ const PhoneInput = ({ field, form, htmlId = '', ...props }) => {
   useEffect(() => {
     forceUpdate();
   }, []);
-  const [fieldError, setFieldError] = useState(false);
-  useEffect(() => {
-    console.log(get(form, `errors.${htmlId.split('lskform_')[1]}`));
-    if (get(form, `errors.${htmlId.split('lskform_')[1]}`, false)) {
-      if (!fieldError) setFieldError(true);
-    } else if (fieldError) setFieldError(false);
-  }, [form.errors]);
+  const hasError = !!form.errors[field.name];
   return (
     <Container>
       <PhoneInputBase
@@ -32,7 +26,7 @@ const PhoneInput = ({ field, form, htmlId = '', ...props }) => {
         }}
         inputStyle={{
           width: '100%',
-          border: !fieldError ? 'solid 1px #e3e3e3' : 'solid 1px #EE1E31',
+          border: !hasError ? 'solid 1px #e3e3e3' : 'solid 1px #EE1E31',
           fontSize: '13px',
           // paddingTop: '23px',
           // paddingBottom: '23px',
