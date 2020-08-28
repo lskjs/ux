@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.21.1](https://github.com/isuvorov/lib-starter-kit/compare/v1.21.0...v1.21.1) (2020-08-28)
+
+
+### Bug Fixes
+
+* **form:** phoneInput errors ([e022130](https://github.com/isuvorov/lib-starter-kit/commit/e022130e09198cf7f205ed957aeda1562854fff2))
+
+
+
+
+
 # [1.21.0](https://github.com/isuvorov/lib-starter-kit/compare/v1.20.5...v1.21.0) (2020-08-27)
 
 
