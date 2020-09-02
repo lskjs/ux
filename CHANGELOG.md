@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.22.0](https://github.com/isuvorov/lib-starter-kit/compare/v1.21.1...v1.22.0) (2020-09-02)
+
+
+### Features
+
+* **scroll:** add option for disabling horisontal scroll ([615fcba](https://github.com/isuvorov/lib-starter-kit/commit/615fcbaebe462fdf461a6ed668b980311d758d79))
+
+
+
+
+
 ## [1.21.1](https://github.com/isuvorov/lib-starter-kit/compare/v1.21.0...v1.21.1) (2020-08-28)
 
 
