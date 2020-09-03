@@ -10,7 +10,7 @@ import Eye from './assets/icons/eye';
 import EyeClose from './assets/icons/eye-close';
 import BaseInput from '../../components/BaseInput';
 
-const Password = ({ field, form, ...props }) => {
+const Password = ({ field, form, validationInfo, ...props }) => {
   const [type, setType] = useState('password');
   const password = field.value || '';
   const upperCaseRegExp = new RegExp(/[A-Z]+/);
@@ -31,7 +31,7 @@ const Password = ({ field, form, ...props }) => {
   const errorStyle = { border: '1px solid red' };
   return (
     <div style={{ position: 'relative' }}>
-      <If condition={!!password}>
+      <If condition={!!password && validationInfo}>
         <PassType color={color} lineHeight={1.7} letterSpacing="normal">
           <T name={passTypeKey} />
         </PassType>
@@ -40,11 +40,12 @@ const Password = ({ field, form, ...props }) => {
         {...field}
         value={field.value || ''}
         rightIcon={
-          type === 'password' ? (
+          validationInfo &&
+          (type === 'password' ? (
             <Eye size={18} onClick={() => setType('text')} color="#cdcdcd" />
           ) : (
             <EyeClose size={20} onClick={() => setType('password')} color="#cdcdcd" />
-          )
+          ))
         }
         debounce={0}
         {...props}
@@ -54,7 +55,7 @@ const Password = ({ field, form, ...props }) => {
           form.setFieldValue(field.name, value);
         }}
       />
-      <If condition={!!password}>
+      <If condition={!!password && validationInfo}>
         <Info color="#9b9b9b" lineHeight={1.27} letterSpacing="normal" style={{ marginTop: 7 }}>
           <Info
             color={password && password.length > 8 ? '#7070ff' : '#9b9b9b'}
@@ -91,10 +92,12 @@ Password.propTypes = {
   field: PropTypes.object,
   // eslint-disable-next-line react/forbid-prop-types
   form: PropTypes.object.isRequired,
+  validationInfo: PropTypes.bool,
 };
 
 Password.defaultProps = {
   field: undefined,
+  validationInfo: false,
 };
 
 export default Password;
