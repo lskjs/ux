@@ -58,7 +58,7 @@ const Password = ({ field, form, validationInfo, ...props }) => {
       <If condition={!!password && validationInfo}>
         <Info color="#9b9b9b" lineHeight={1.27} letterSpacing="normal" style={{ marginTop: 7 }}>
           <Info
-            color={password && password.length > 8 ? '#7070ff' : '#9b9b9b'}
+            color={password && password.length >= 8 ? '#7070ff' : '#9b9b9b'}
             lineHeight={1.27}
             letterSpacing="normal"
             as="span"
