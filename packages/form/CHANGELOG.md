@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.23.0](https://github.com/lskjs/ux/tree/master/packages/form/compare/v1.22.0...v1.23.0) (2020-09-03)
+
+
+### Features
+
+* password validation info ([6adebc4](https://github.com/lskjs/ux/tree/master/packages/form/commit/6adebc4fc6f7c1f5cc14550884d87fdd39f3f0d7))
+
+
+
+
+
 # [1.22.0](https://github.com/lskjs/ux/tree/master/packages/form/compare/v1.21.1...v1.22.0) (2020-09-02)
 
 **Note:** Version bump only for package @lskjs/form
