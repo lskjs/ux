@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Form, FastField } from 'formik';
-import Story from '@lskjs/dev/Story';
+import Story from '@lskjs/dev/Story/UappStory';
 import createForm from '../../createForm';
 import Password from './Password';
 import FormDebug from '../../FormDebug';
