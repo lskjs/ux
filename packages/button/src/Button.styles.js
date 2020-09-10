@@ -119,7 +119,7 @@ const verySmallSize = css`
 `;
 
 const smallSize = css`
-  padding: 10.5px 7.53px;
+  padding: 10px 12px;
   min-width: 48px;
 
   font-size: 13px;
@@ -917,8 +917,8 @@ export const Btn = styled('button', {
   ${props =>
     props.twoIcons &&
     `
-    padding-top: 10px !important;
-    padding-bottom: 10px !important;
+    padding-top: 8.5px !important;
+    padding-bottom: 8.5px !important;
   `}
 
   ${props => {
