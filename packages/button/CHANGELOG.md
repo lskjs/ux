@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.24.0](https://github.com/lskjs/ux/tree/master/packages/button/compare/v1.23.2...v1.24.0) (2020-09-10)
+
+
+### Bug Fixes
+
+* paddings button two icons ([68dc3d9](https://github.com/lskjs/ux/tree/master/packages/button/commit/68dc3d9648725cbb5a489a4c7a4a7741ae329799))
+
+
+
+
+
 ## [1.20.5](https://github.com/lskjs/ux/tree/master/packages/button/compare/v1.20.4...v1.20.5) (2020-08-22)
 
 **Note:** Version bump only for package @lskjs/button

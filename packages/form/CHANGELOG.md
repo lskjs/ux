@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.24.0](https://github.com/lskjs/ux/tree/master/packages/form/compare/v1.23.2...v1.24.0) (2020-09-10)
+
+
+### Features
+
+* **@lskjs/form:** add ReCaptcha V2 & V3 ([4a48e03](https://github.com/lskjs/ux/tree/master/packages/form/commit/4a48e035b1629c0c589bc637adcb946628cb3dfd))
+
+
+
+
+
 ## [1.23.2](https://github.com/lskjs/ux/tree/master/packages/form/compare/v1.23.1...v1.23.2) (2020-09-03)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.24.0](https://github.com/lskjs/ux/tree/master/packages/list/compare/v1.23.2...v1.24.0) (2020-09-10)
+
+
+### Features
+
+* bug with async select in filter form list ([a1a3cde](https://github.com/lskjs/ux/tree/master/packages/list/commit/a1a3cde6766de2a4e4a35ec61876d686d9e8425e))
+
+
+
+
+
 ## [1.23.2](https://github.com/lskjs/ux/tree/master/packages/list/compare/v1.23.1...v1.23.2) (2020-09-03)
 
 **Note:** Version bump only for package @lskjs/list
