@@ -31,25 +31,10 @@
     "animated-scroll-to": "2.0.5"
   },
   "devDependencies": {
-    "@lskjs/css": "^1.20.5",
-    "@lskjs/dev": "^1.20.5",
-    "@lskjs/theme": "^1.20.5",
-    "@lskjs/utils": "0.39.0",
-    "emotion-theming": "10.0.27",
-    "lodash": "4.17.20",
-    "mobx": "5.15.4",
-    "mobx-react": "6.1.7",
+    "@lskjs/dev": "1.20.5",
     "react": "16.8.6"
   },
   "peerDependencies": {
-    "@lskjs/css": "*",
-    "@lskjs/dev": "*",
-    "@lskjs/theme": "*",
-    "@lskjs/utils": "*",
-    "emotion-theming": "*",
-    "lodash": "*",
-    "mobx": "*",
-    "mobx-react": "*",
     "react": "*"
   }
 }
