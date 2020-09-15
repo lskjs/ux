@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.25.0](https://github.com/isuvorov/lib-starter-kit/compare/v1.24.0...v1.25.0) (2020-09-15)
+
+
+### Bug Fixes
+
+* **form:** remove zero from Files Box Header ([47d0129](https://github.com/isuvorov/lib-starter-kit/commit/47d01293778e2749abba8e1f10a2b07ee14d8e9e))
+
+
+### Features
+
+* **form:** add valueType prop in Files ([2df2994](https://github.com/isuvorov/lib-starter-kit/commit/2df2994686635e2a06973795b144ed626a9079e4))
+* **scroll:** remove unused packages ([02f2573](https://github.com/isuvorov/lib-starter-kit/commit/02f2573c40a5528f971b6e8709185821ba5bc859))
+
+
+
+
+
 # [1.24.0](https://github.com/isuvorov/lib-starter-kit/compare/v1.23.2...v1.24.0) (2020-09-10)
 
 

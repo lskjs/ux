@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.25.0](https://github.com/lskjs/ux/tree/master/packages/scroll/compare/v1.24.0...v1.25.0) (2020-09-15)
+
+
+### Features
+
+* **scroll:** remove unused packages ([02f2573](https://github.com/lskjs/ux/tree/master/packages/scroll/commit/02f2573c40a5528f971b6e8709185821ba5bc859))
+
+
+
+
+
 # [1.22.0](https://github.com/lskjs/ux/tree/master/packages/scroll/compare/v1.21.1...v1.22.0) (2020-09-02)
 
 
