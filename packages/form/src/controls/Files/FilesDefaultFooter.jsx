@@ -10,7 +10,7 @@ const FilesDefaultFooter = ({ value, onRemoveAll, onRemove }) => {
   return (
     <Box paint="transparent">
       <Box.Header padded>
-        {arrayValue.length && (
+        {!!arrayValue.length && (
           <>
             <T name="lskComponents.filesCount" count={arrayValue.length} />
             <Button type="button" paint="danger" size="extraSmall" bordered onClick={onRemoveAll}>
