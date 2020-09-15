@@ -66,8 +66,13 @@ class FilesBase extends Component {
         } else {
           value = res[0] && res[0].url;
         }
-      } else if (!multiple) {
-        [value] = res;
+      } else {
+        // eslint-disable-next-line no-lonely-if
+        if (multiple) {
+          value = res;
+        } else {
+          [value] = res;
+        }
       }
     } catch (err) {
       if (uapp.onError) {

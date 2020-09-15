@@ -79,7 +79,7 @@ const FilesForm = createForm({
       title: 'Files7',
       component: Files,
       isMulti: true,
-      valueType: 'object', // , 'url', 'blob', 'base64' , default == 'url'
+      valueType: 'raw', // , 'url', 'blob', 'base64' , default == 'url'
     },
     withCropper: {
       title: 'withCropper',
