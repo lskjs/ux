@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.25.1](https://github.com/isuvorov/lib-starter-kit/compare/v1.25.0...v1.25.1) (2020-09-15)
+
+
+### Bug Fixes
+
+* **form:** Files upload multiple with raw valueType ([b9f8f92](https://github.com/isuvorov/lib-starter-kit/commit/b9f8f92a00c296624112c8888ccf2001bcabc6b6))
+
+
+
+
+
 # [1.25.0](https://github.com/isuvorov/lib-starter-kit/compare/v1.24.0...v1.25.0) (2020-09-15)
 
 
