@@ -25,10 +25,10 @@ class GridFile extends Component {
 
   @autobind
   remove() {
-    const { onRemove, key, src } = this.props;
+    const { onRemove, key, index, src } = this.props;
 
     if (onRemove) {
-      onRemove({ key, src });
+      onRemove({ key, index, src });
     }
   }
 

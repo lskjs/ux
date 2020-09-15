@@ -13,29 +13,24 @@ const getArray = val => (
   )
 );
 
-const Files = ({ field, form, onError, components, isMulti, hasCropper, CropperComponent, ...props }) => {
-  // console.log(1111, { field });
-  // const defaultValue = field.value;
+const Files = ({ field, form, onError, components, isMulti, valueType = 'url', hasCropper, CropperComponent, ...props }) => {
   const Body = components.Body || Files.defaultProps.components.Body;
   const Footer = components.Footer || Files.defaultProps.components.Footer;
   return (
     <FilesBase
-      // {...field}
       value2={field.value}
       {...props}
       hasCropper={hasCropper}
       CropperComponent={CropperComponent}
       multiple={isMulti}
-      onSubmit={incomeValues => {
-        // console.log({incomeValues});
+      onSubmit={(incomeValues) => {
         if (incomeValues && incomeValues.type === 'remove') {
+          const { index } = incomeValues;
           if (isMulti) {
-            form.setFieldValue(
-              field.name,
-              (field.value || []).filter(
-                item => !(item && (item === incomeValues.src || item.src === incomeValues.src)),
-              ),
-            );
+            let value = field.value || [];
+            value = [...value];
+            value.splice(index, 1);
+            form.setFieldValue(field.name, value);
           } else if (incomeValues.src === field.value) {
             form.setFieldValue(field.name, null);
           }
@@ -55,17 +50,8 @@ const Files = ({ field, form, onError, components, isMulti, hasCropper, CropperC
           return;
         }
         const values = [...getArray(field.value), ...getArray(incomeValues)];
-        // console.log('field.value', field.value);
-        // console.log('getArray(field.value)', getArray(field.value));
-        // console.log('incomeValues', incomeValues);
-        // console.log('getArray(incomeValues)', getArray(incomeValues));
-        // {incomeValues, values},
-
         form.setFieldValue(field.name, values);
       }}
-      // onError={() => onError?.(form.errors[field.name])} // this.globalError
-      // validationState={form.errors[field.name] ? 'error' : null}
-      // files={field.value}
       onBlur={null}
       footer={Footer}
     >

@@ -16,10 +16,7 @@ const GridFiles = ({ items, ...props }) => {
           sm={6}
           md={6}
         >
-          <GridFile
-            {...item}
-            {...props}
-          />
+          <GridFile index={i} {...item} {...props} />
         </Col>
       ))}
     </Row>

@@ -9,7 +9,7 @@ function determineType(src) {
   return ext;
 }
 
-export const normalizeFile = rawItem => {
+export const normalizeFile = (rawItem) => {
   let item;
   if (isPlainObject(rawItem)) {
     item = clone(rawItem);

@@ -8,7 +8,7 @@ import isFunction from 'lodash/isFunction';
 import Dropzone from 'react-dropzone';
 import zoneStyle from './FilesBase.styles';
 
-const DEBUG = 1;
+const DEBUG = 0;
 
 @inject('uapp')
 class FilesBase extends Component {
@@ -54,14 +54,21 @@ class FilesBase extends Component {
 
   @autobind
   async onUpload(files) {
-    const { onError, multiple, uapp } = this.props;
+    const { onError, multiple, uapp, valueType } = this.props;
     const upload = await uapp.module('upload');
     if (!upload) throw '!upload';
     let value = null;
     try {
       const res = await upload.uploadFiles(files);
-      if (multiple) value = res.map(e => e.url);
-      else value = res[0] && res[0].url;
+      if (valueType === 'url') {
+        if (multiple) {
+          value = res.map((e) => e.url);
+        } else {
+          value = res[0] && res[0].url;
+        }
+      } else if (!multiple) {
+        [value] = res;
+      }
     } catch (err) {
       if (uapp.onError) {
         uapp.onError(err);
@@ -73,7 +80,7 @@ class FilesBase extends Component {
   }
 
   @autobind
-  remove({ src } = {}) {
+  remove({ index, key, src } = {}) {
     if (DEBUG) console.log('remove', { src });
     const { onSubmit } = this.props;
     if (onSubmit) {
@@ -81,6 +88,8 @@ class FilesBase extends Component {
         // хуйня, но что поделать?
         type: 'remove',
         src,
+        index,
+        key,
       });
     }
   }

@@ -1,6 +1,6 @@
+/* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import { Form, Field } from 'formik';
-import { Provider } from 'mobx-react';
 // import Story from '@lskjs/dev/Story/UappStory';
 import StoryWithUpload from './StoryWithUpload';
 import createForm from '../../createForm';
@@ -24,13 +24,15 @@ const CroppperDemo = ({ src, onSubmit }) => {
   );
 };
 
-const FilesFormView = props => (
+const FilesFormView = (props) => (
   <Form>
     <Field {...props.control('singleFile')} />
     <Field {...props.control('files')} />
     <Field {...props.control('files3')} />
     <Field {...props.control('files4')} />
     <Field {...props.control('files5')} />
+    <Field {...props.control('files6')} />
+    <Field {...props.control('files7')} />
     <Field {...props.control('withCropper')} />
     <FormDebug {...props} />
   </Form>
@@ -72,6 +74,12 @@ const FilesForm = createForm({
       title: 'Files6',
       component: Files,
       isMulti: true,
+    },
+    files7: {
+      title: 'Files7',
+      component: Files,
+      isMulti: true,
+      valueType: 'object', // , 'url', 'blob', 'base64' , default == 'url'
     },
     withCropper: {
       title: 'withCropper',
@@ -117,6 +125,14 @@ export default ({ storiesOf }) =>
             'http://www.setwalls.ru/download.php?file=201306/2560x1440/setwalls.ru-58752.jpg',
             'http://krasa.tk/wp-content/uploads/2015/11/face.jpg',
             'https://millionstatusov.ru/pic/statpic/all/58e61335ec518.jpg',
+          ],
+          files7: [
+            { url: 'https://pp.userapi.com/c636819/v636819936/346c3/6xIvJ0BI8rs.jpg' },
+            { url: 'https://avatanplus.com/files/resources/mid/56bced54bd17f152d1ff1327.png' },
+            { url: 'https://a.d-cd.net/8dabadas-960.jpg' },
+            { url: 'http://www.setwalls.ru/download.php?file=201306/2560x1440/setwalls.ru-58752.jpg' },
+            { url: 'http://krasa.tk/wp-content/uploads/2015/11/face.jpg' },
+            { url: 'https://millionstatusov.ru/pic/statpic/all/58e61335ec518.jpg' },
           ],
         }}
       />
