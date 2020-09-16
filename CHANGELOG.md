@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.26.2](https://github.com/isuvorov/lib-starter-kit/compare/v1.26.1...v1.26.2) (2020-09-16)
+
+
+### Bug Fixes
+
+* dropdown trigger ([60a44ed](https://github.com/isuvorov/lib-starter-kit/commit/60a44edd155a31ab2a2d9469f51774e4d385fde3))
+
+
+
+
+
 ## [1.26.1](https://github.com/isuvorov/lib-starter-kit/compare/v1.26.0...v1.26.1) (2020-09-16)
 
 
