@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.26.1](https://github.com/lskjs/ux/tree/master/packages/ui/compare/v1.26.0...v1.26.1) (2020-09-16)
+
+
+### Bug Fixes
+
+* dropdown style ([c2b1e05](https://github.com/lskjs/ux/tree/master/packages/ui/commit/c2b1e052f726a4a9b0c87b5898c5e96c0a39e74e))
+* emotion ([4315025](https://github.com/lskjs/ux/tree/master/packages/ui/commit/43150250cc1c491c34c10d5c87ad6c0ee9db522b))
+
+
+
+
+
 # [1.26.0](https://github.com/lskjs/ux/tree/master/packages/ui/compare/v1.25.2...v1.26.0) (2020-09-16)
 
 
