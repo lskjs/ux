@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.26.0](https://github.com/isuvorov/lib-starter-kit/compare/v1.25.2...v1.26.0) (2020-09-16)
+
+
+### Features
+
+* add prop block to dropdown ([f98304b](https://github.com/isuvorov/lib-starter-kit/commit/f98304b14a620dc368ca5e4d919253c984f8fcaf))
+
+
+
+
+
 ## [1.25.2](https://github.com/isuvorov/lib-starter-kit/compare/v1.25.1...v1.25.2) (2020-09-15)
 
 **Note:** Version bump only for package lskjs-ux
