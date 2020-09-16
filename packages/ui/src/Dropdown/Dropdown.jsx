@@ -26,6 +26,7 @@ class Dropdown extends PureComponent {
     bordered: PropTypes.bool,
     actions: PropTypes.any, // eslint-disable-line react/forbid-prop-types
     triggerStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+    block: PropTypes.bool,
   }
   static defaultProps = {
     trigger: null,
@@ -37,6 +38,7 @@ class Dropdown extends PureComponent {
     bordered: false,
     actions: null,
     triggerStyle: null,
+    block: false,
   }
 
   constructor(props) {
@@ -100,7 +102,7 @@ class Dropdown extends PureComponent {
   }
 
   render() {
-    const { children, trigger, pull, placement, id, bordered, actions, triggerStyle } = this.props;
+    const { children, trigger, pull, placement, id, bordered, actions, triggerStyle, block } = this.props;
     const { isOpen, rect } = this.state;
     return (
       <Performance name="Dropdown" disabled={!__DEV__}>
@@ -109,6 +111,7 @@ class Dropdown extends PureComponent {
             aria-hidden
             style={{
               display: 'inline-block',
+              width: block && '100%',
             }}
             ref={this.trigger}
             className={!!isOpen ? triggerStyle : ''}
