@@ -21,6 +21,12 @@ export const Wrapper = styled('div')`
   position: relative;
 `;
 
+export const blockStyle = css`
+  @media screen and (max-width: 991px) {
+    width: 100%;
+  }
+`;
+
 const dynamicTag = createDynamicTag('div');
 export const Block = styled(dynamicTag)`
   display: flex;

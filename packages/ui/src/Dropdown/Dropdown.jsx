@@ -1,11 +1,13 @@
+/* eslint-disable no-unused-vars */
 import React, { PureComponent } from 'react';
 import If from 'react-if';
 import PropTypes from 'prop-types';
+import { jsx } from '@emotion/core';
 import autobind from '@lskjs/autobind';
 import Performance from '@lskjs/dev/Performance';
 import DropdownItem from './DropdownItem';
 import DropdownList from '../DropdownList';
-import { Wrapper } from './Dropdown.styles';
+import { Wrapper, blockStyle } from './Dropdown.styles';
 
 class Dropdown extends PureComponent {
   static Item = DropdownItem;
@@ -111,8 +113,8 @@ class Dropdown extends PureComponent {
             aria-hidden
             style={{
               display: 'inline-block',
-              width: block && '100%',
             }}
+            css={block && blockStyle}
             ref={this.trigger}
             className={!!isOpen ? triggerStyle : ''}
           >
