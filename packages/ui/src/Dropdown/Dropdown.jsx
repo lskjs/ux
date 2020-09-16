@@ -7,7 +7,7 @@ import { jsx } from '@emotion/core';
 import Performance from '@lskjs/dev/Performance';
 import DropdownItem from './DropdownItem';
 import DropdownList from '../DropdownList';
-import { Wrapper, blockStyle } from './Dropdown.styles';
+import { Wrapper, Trigger } from './Dropdown.styles';
 
 class Dropdown extends PureComponent {
   static Item = DropdownItem;
@@ -109,17 +109,17 @@ class Dropdown extends PureComponent {
     return (
       <Performance name="Dropdown" disabled={!__DEV__}>
         <Wrapper id={id}>
-          <div
+          <Trigger
             aria-hidden
             style={{
               display: 'inline-block',
             }}
-            css={block && blockStyle}
+            block={block}
             ref={this.trigger}
             className={!!isOpen ? triggerStyle : ''}
           >
             {trigger({ isOpen, onClick: this.show })}
-          </div>
+          </Trigger>
           <If condition={!!isOpen}>
             <DropdownList
               id={id}

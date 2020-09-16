@@ -21,10 +21,14 @@ export const Wrapper = styled('div')`
   position: relative;
 `;
 
-export const blockStyle = css`
-  @media screen and (max-width: 991px) {
-    width: 100%;
-  }
+export const Trigger = styled('div')`
+  ${(p) =>
+    p.block &&
+    css`
+      @media screen and (max-width: 991px) {
+        width: 100%;
+      }
+    `}
 `;
 
 const dynamicTag = createDynamicTag('div');
@@ -32,18 +36,18 @@ export const Block = styled(dynamicTag)`
   display: flex;
   align-items: center;
   padding: 15.5px 12px;
-  ${p =>
+  ${(p) =>
     p.gap &&
     css`
       padding: ${p.gap}px;
     `}
   border-radius: 0;
-  ${p =>
+  ${(p) =>
     p.reverse &&
     css`
       flex-direction: row-reverse;
     `}
-  ${p =>
+  ${(p) =>
     p.active &&
     css`
       * {
@@ -51,20 +55,20 @@ export const Block = styled(dynamicTag)`
       }
     `}
   &:hover {
-    background-color: ${p => getTheme(p.theme, 'colors.lighterPrimary')};
+    background-color: ${(p) => getTheme(p.theme, 'colors.lighterPrimary')};
     > div > svg {
-      color: ${p => getTheme(p.theme, 'colors.primary')};
+      color: ${(p) => getTheme(p.theme, 'colors.primary')};
     }
   }
 `;
 
 export const IconWrapper = styled('div')`
   margin-right: 8px;
-  ${p =>
+  ${(p) =>
     p.reverse &&
     css`
       margin-right: 0;
       margin-left: 8px;
     `}
-  color: ${p => getTheme(p.theme, 'colors.gray')};
+  color: ${(p) => getTheme(p.theme, 'colors.gray')};
 `;
