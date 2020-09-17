@@ -1,7 +1,5 @@
-/** @jsx jsx */
-import { PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { css, jsx } from '@emotion/core';
 import theme from '@lskjs/theme';
 import getTheme from '@lskjs/theme/getTheme';
 import autobind from '@lskjs/autobind';
@@ -183,11 +181,6 @@ class StatefulButton extends PureComponent {
 
   render() {
     const { componentClass: Tag, innerComponentClass } = this.props;
-    const style = css`
-      &:focus {
-        background-color: ${getTheme(theme, `colors.${this.props.paint}`)} !important;
-      }
-    `;
     const buttonProps = omit(this.props, [
       'stableSuccess',
       'timerMillis',
@@ -204,7 +197,6 @@ class StatefulButton extends PureComponent {
       <Tag
         onClick={this.onClick}
         state={this.getButtonState()}
-        css={style}
         {...filterProps(buttonProps, Tag)}
         // {...buttonProps}
       />
