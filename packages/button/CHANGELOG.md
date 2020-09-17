@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.26.3](https://github.com/lskjs/ux/tree/master/packages/button/compare/v1.26.2...v1.26.3) (2020-09-17)
+
+
+### Bug Fixes
+
+* **button:** statefulButton remove useless code ([09ece19](https://github.com/lskjs/ux/tree/master/packages/button/commit/09ece190ee8adb9f9ba3b7ecdad7b50d1551f21a))
+
+
+
+
+
 # [1.24.0](https://github.com/lskjs/ux/tree/master/packages/button/compare/v1.23.2...v1.24.0) (2020-09-10)
 
 
