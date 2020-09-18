@@ -1,7 +1,8 @@
+/* eslint-disable no-unused-vars */
 /** @jsx jsx */
 import React from 'react';
 import { inject, observer } from 'mobx-react';
-import Menu from 'antd/lib/menu';
+import Menu, { MenuItem } from 'rc-menu';
 import get from 'lodash/get';
 import { css, jsx } from '@emotion/core';
 import { Consumer } from '@lskjs/link/Link.context';
@@ -26,7 +27,7 @@ export const PageTabs = ({ onClick: onClickProps, tabs, tab, page }) => (
         >
           {/* {tabs.map(Menu.Item)} */}
           {tabs.map(props => (
-            <Menu.Item {...props} />
+            <MenuItem {...props} />
           ))}
         </Menu>
       );
