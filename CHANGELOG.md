@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.26.4](https://github.com/isuvorov/lib-starter-kit/compare/v1.26.3...v1.26.4) (2020-09-18)
+
+
+### Bug Fixes
+
+* **form:** formGroup fix fonts ([3d47bc2](https://github.com/isuvorov/lib-starter-kit/commit/3d47bc20193e3a2e1b0d4ee21330d286a6af8c7d))
+
+
+
+
+
 ## [1.26.3](https://github.com/isuvorov/lib-starter-kit/compare/v1.26.2...v1.26.3) (2020-09-17)
 
 
