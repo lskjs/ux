@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { Form, Field } from 'formik';
-import AntForm from 'antd/lib/form';
-import Button from 'antd/lib/button';
 
 import DEV from '@lskjs/dev/DEV';
+import Button from '@lskjs/button';
 import Story from './Story';
 import createForm from '../createForm';
 import FormGroup from '../FormGroup';
+import FormItem from '../components/FormItem';
 import SimpleFormGroup from '../SimpleFormGroup';
 import Input from '../controls/Input';
 
@@ -47,11 +47,11 @@ const FormExampleView = (props) => {
       <Field {...control('input')} />
       <Field {...control('input2')} />
       <Field {...control('input3')} />
-      <AntForm.Item>
-        <Button type="primary" onClick={handleSubmit}>
+      <FormItem>
+        <Button paint="primary" onClick={handleSubmit}>
           Submit
         </Button>
-      </AntForm.Item>
+      </FormItem>
       <DEV json={values} />
     </Form>
   );
@@ -65,23 +65,21 @@ class DebugFormExampleView extends Component {
     const { handleSubmit, control, values } = this.props;
     return (
       <Form>
-        <AntForm layout="vertical">
-          <Field {...control('input')} />
-          <Field {...control('input2')} />
-          <Field {...control('input3')} />
-          <AntForm.Item>
-            <Button type="primary" onClick={handleSubmit}>
-              Submit
-            </Button>
-          </AntForm.Item>
-          <hr />
-          <DEV json={Math.random()} />
-          <button onClick={() => this.setState({ i: this.state.i + 1 })}>
-            {this.state.i}
-            ++
-          </button>
-          <DEV json={values} />
-        </AntForm>
+        <Field {...control('input')} />
+        <Field {...control('input2')} />
+        <Field {...control('input3')} />
+        <FormItem>
+          <Button paint="primary" onClick={handleSubmit}>
+            Submit
+          </Button>
+        </FormItem>
+        <hr />
+        <DEV json={Math.random()} />
+        <button onClick={() => this.setState({ i: this.state.i + 1 })}>
+          {this.state.i}
+          ++
+        </button>
+        <DEV json={values} />
       </Form>
     );
   }

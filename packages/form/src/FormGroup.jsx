@@ -1,10 +1,7 @@
 import React from 'react';
-import Form from 'antd/lib/form';
-import { Global } from '@emotion/core';
 import T from '@lskjs/t';
-import FormError from './FormError';
 import Title from './components/TitleComponent';
-import { globalStylesFormItem } from './Form.styles';
+import FormItem from './components/FormItem';
 
 export default ({
   field,
@@ -37,22 +34,16 @@ export default ({
   }
   return (
     <>
-      <Global styles={globalStylesFormItem} />
-      <Form.Item
-        key={htmlId}
+      <FormItem
+        id={htmlId}
         required={looksLikeRequired}
         label={titleComponent}
         help={help}
-        validateStatus={errorMsg ? 'error' : null}
+        hasError={!!errorMsg}
+        errorMessage={withI18 && typeof errorMsg === 'string' ? <T name={errorMsg} /> : errorMsg}
       >
-        <div id={htmlId} />
         {children}
-        {errorMsg && (
-          <FormError style={{ color: '#ee1e31' }}>
-            {withI18 && typeof errorMsg === 'string' ? <T name={errorMsg} /> : errorMsg}
-          </FormError>
-        )}
-      </Form.Item>
+      </FormItem>
     </>
   );
 };

@@ -1,9 +1,9 @@
 import React from 'react';
 import If from 'react-if';
-import Form from 'antd/lib/form';
 import styled from '@emotion/styled';
 import getTheme from '@lskjs/theme/getTheme';
 import getControlHtmlId from './createForm/getControlHtmlId';
+import FormItem from './components/FormItem';
 import FormError from './FormError';
 
 const Notice = styled('div')`
@@ -17,7 +17,7 @@ const Notice = styled('div')`
   /* width: 100%; */
   padding: 13px;
 
-  font-family: ${p => getTheme(p.theme, 'fontFamily')};
+  font-family: ${(p) => getTheme(p.theme, 'fontFamily')};
   font-size: 11px;
   font-weight: normal;
   font-style: normal;
@@ -28,19 +28,14 @@ const Notice = styled('div')`
   color: #111111;
 `;
 
-
 export default ({ errors }) => (
-  <Form.Item
-    validateStatus={errors ? 'error' : null}
-  >
+  <FormItem hasError={!!errors}>
     <If condition={!!errors.onSubmit}>
       {/* <FormError id={getControlHtmlId('onSubmit')}>{errors.onSubmit}</FormError> */}
       <Notice>
-        <FormError id={getControlHtmlId('onSubmit')}>
-          {errors.onSubmit}
-        </FormError>
+        <FormError id={getControlHtmlId('onSubmit')}>{errors.onSubmit}</FormError>
         {/* {errors.general} */}
       </Notice>
     </If>
-  </Form.Item>
+  </FormItem>
 );
