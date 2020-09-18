@@ -5,7 +5,7 @@ export const Label = styled('div')`
   display: block;
   text-align: left;
   line-height: 1.71429;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
   padding-bottom: 2px;
   color: ${(props) => getTheme(props.theme, props.hasError ? 'colors.danger' : 'colors.main')};
@@ -18,6 +18,7 @@ export const Control = styled('div')`
 export const Help = styled('div')`
   line-height: 1.5;
   font-size: 12px;
+  padding-top: 4px;
   color: ${(props) => getTheme(props.theme, props.hasError ? 'colors.danger' : 'colors.main')};
 `;
 
