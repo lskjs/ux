@@ -31,6 +31,7 @@ class FilterButton extends Component {
         size="small"
         view="text"
         bordered
+        shape="square"
         {...props}
       />
     );

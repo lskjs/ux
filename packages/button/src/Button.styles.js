@@ -1083,6 +1083,8 @@ export const Btn = styled('button', {
       border-radius: 50px;
       @media screen and (max-width: 767px) {
         border-radius: ${props.shape === 'square' && 4}px;
+        padding-right: 10px !important;
+        padding-left: 10px !important;
       }
     `}
   /* ${props =>
