@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.27.0](https://github.com/lskjs/ux/tree/master/packages/button/compare/v1.26.5...v1.27.0) (2020-09-21)
+
+
+### Features
+
+* add prop shape to button ([eb78283](https://github.com/lskjs/ux/tree/master/packages/button/commit/eb7828331c01921aee86c5657784444073242895))
+
+
+
+
+
 ## [1.26.3](https://github.com/lskjs/ux/tree/master/packages/button/compare/v1.26.2...v1.26.3) (2020-09-17)
 
 

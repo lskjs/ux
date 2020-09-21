@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.27.0](https://github.com/isuvorov/lib-starter-kit/compare/v1.26.5...v1.27.0) (2020-09-21)
+
+
+### Features
+
+* add prop shape to button ([eb78283](https://github.com/isuvorov/lib-starter-kit/commit/eb7828331c01921aee86c5657784444073242895))
+
+
+
+
+
 ## [1.26.5](https://github.com/isuvorov/lib-starter-kit/compare/v1.26.4...v1.26.5) (2020-09-18)
 
 **Note:** Version bump only for package ux
