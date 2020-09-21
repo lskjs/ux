@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.27.2](https://github.com/lskjs/ux/tree/master/packages/list/compare/v1.27.1...v1.27.2) (2020-09-21)
+
+
+### Bug Fixes
+
+* button style ([bb5b453](https://github.com/lskjs/ux/tree/master/packages/list/commit/bb5b453d597db793f075e995010c7fe8dbbb0264))
+
+
+
+
+
 ## [1.27.1](https://github.com/lskjs/ux/tree/master/packages/list/compare/v1.27.0...v1.27.1) (2020-09-21)
 
 
