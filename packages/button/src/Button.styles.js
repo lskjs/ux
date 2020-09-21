@@ -1081,6 +1081,9 @@ export const Btn = styled('button', {
     css`
       min-width: auto;
       border-radius: 50px;
+      @media screen and (max-width: 767px) {
+        border-radius: ${props.shape === 'square' && 4}px;
+      }
     `}
   /* ${props =>
     props.view === 'transparent' &&
