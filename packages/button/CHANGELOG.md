@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.27.1](https://github.com/lskjs/ux/tree/master/packages/button/compare/v1.27.0...v1.27.1) (2020-09-21)
+
+
+### Bug Fixes
+
+* shape button ([5669f89](https://github.com/lskjs/ux/tree/master/packages/button/commit/5669f89bc0c7a19bf6e5f5262f289a4630057831))
+
+
+
+
+
 # [1.27.0](https://github.com/lskjs/ux/tree/master/packages/button/compare/v1.26.5...v1.27.0) (2020-09-21)
 
 
