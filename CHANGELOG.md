@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.27.3](https://github.com/isuvorov/lib-starter-kit/compare/v1.27.2...v1.27.3) (2020-09-21)
+
+
+### Bug Fixes
+
+* button paddings ([a48ad27](https://github.com/isuvorov/lib-starter-kit/commit/a48ad27ea9d643a27edf318d9b6ff49073fcceba))
+
+
+
+
+
 ## [1.27.2](https://github.com/isuvorov/lib-starter-kit/compare/v1.27.1...v1.27.2) (2020-09-21)
 
 

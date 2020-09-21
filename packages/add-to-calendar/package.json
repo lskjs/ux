@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/add-to-calendar",
-  "version": "1.27.2",
+  "version": "1.27.3",
   "description": "LSK ux subrepo: extra",
   "author": "Andrey Kondalov <i@yukio.ru>",
   "license": "MIT",
@@ -33,7 +33,7 @@
     "moment": "2.27.0"
   },
   "devDependencies": {
-    "@lskjs/button": "^1.27.2",
+    "@lskjs/button": "^1.27.3",
     "@lskjs/dev": "^1.26.3",
     "prop-types": "15.7.2",
     "react": "16.13.1"
