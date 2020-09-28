@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.27.4](https://github.com/isuvorov/lib-starter-kit/compare/v1.27.3...v1.27.4) (2020-09-28)
+
+
+### Bug Fixes
+
+* **form:** nested hasError ([24eb1b2](https://github.com/isuvorov/lib-starter-kit/commit/24eb1b227615096297a17c2e0b64f8b3604e818b))
+
+
+
+
+
 ## [1.27.3](https://github.com/isuvorov/lib-starter-kit/compare/v1.27.2...v1.27.3) (2020-09-21)
 
 
