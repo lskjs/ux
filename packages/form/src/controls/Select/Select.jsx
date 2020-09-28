@@ -159,7 +159,7 @@ class Select extends Component {
       }
     }
     const SelectComponent = async ? ReactAsyncSelect : ReactSelect;
-    const hasError = field && field.name && !!get(form, `errors.${field.name}`);
+    const hasError = field && field.name && !!get(form.errors, field.name);
     const collapsedComponents = {
       ValueContainer: CollapsedValueContainer,
       MultiValue: CollapsedMultiValue,

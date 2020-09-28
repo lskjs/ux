@@ -8,7 +8,7 @@ const TextArea = ({
   form,
   ...props
 }) => {
-  const hasError = field && field.name && !!get(form, `errors.${field.name}`);
+  const hasError = field && field.name && !!get(form.errors, field.name);
   return (
     <BaseInput
       minRows={3}
