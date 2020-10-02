@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import If from 'react-if';
 import PropTypes from 'prop-types';
 import { Wrapper, Left, Right } from './Sider.styles';
 
@@ -64,7 +63,7 @@ class Sider extends PureComponent {
         mobile={mobile}
         {...props}
       >
-        <If condition={!!left}>
+        {!!left && (
           <Left
             centeringLeftBlock={centeringLeftBlock}
             centeringRightBlock={centeringRightBlock}
@@ -74,12 +73,12 @@ class Sider extends PureComponent {
           >
             {left}
           </Left>
-        </If>
-        <If condition={!!right}>
+        )}
+        {!!right && (
           <Right isOverflow={isOverflow} mobile={mobile} centeringRightBlock={centeringRightBlock}>
             {right}
           </Right>
-        </If>
+        )}
       </Wrapper>
     );
   }

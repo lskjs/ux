@@ -28,8 +28,8 @@
     "styleguide": "../../scripts/package-styleguide.sh"
   },
   "devDependencies": {
-    "@lskjs/css": "^1.20.5",
-    "@lskjs/theme": "^1.20.5",
+    "@lskjs/css": "1.20.5",
+    "@lskjs/theme": "1.20.5",
     "@lskjs/utils": "0.39.0",
     "emotion": "10.0.27",
     "emotion-theming": "10.0.27",

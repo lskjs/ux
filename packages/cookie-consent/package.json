@@ -32,7 +32,7 @@
     "prop-types": "15.7.2"
   },
   "devDependencies": {
-    "@lskjs/dev": "^1.26.3",
+    "@lskjs/dev": "1.26.3",
     "react": "16.8.6"
   },
   "peerDependencies": {

@@ -29,14 +29,14 @@
   },
   "dependencies": {
     "@lskjs/autobind": "1.20.0",
-    "@lskjs/link": "^1.27.4",
-    "@lskjs/t": "^1.27.4",
-    "@lskjs/theme": "^1.20.5",
+    "@lskjs/link": "1.27.4",
+    "@lskjs/t": "1.27.4",
+    "@lskjs/theme": "1.20.5",
     "prop-types": "15.7.2",
     "react-notification-system": "0.3.0"
   },
   "devDependencies": {
-    "@lskjs/dev": "^1.26.3",
+    "@lskjs/dev": "1.26.3",
     "react": "16.8.6",
     "react-icon-base": "2.1.2"
   },
