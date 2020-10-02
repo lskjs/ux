@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/typo",
-  "version": "1.27.4",
+  "version": "1.28.0",
   "description": "LSK ux subrepo: typo",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "@emotion/styled": "10.0.27",
-    "@lskjs/dev": "1.26.3",
+    "@lskjs/dev": "1.28.0",
     "emotion": "10.0.27",
     "react": "16.8.6"
   },
