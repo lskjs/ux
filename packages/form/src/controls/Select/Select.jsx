@@ -5,7 +5,7 @@ import get from 'lodash/get';
 import isEqual from 'lodash/isEqual';
 import autobind from '@lskjs/autobind';
 import ReactSelect from 'react-select';
-import ReactAsyncSelect from 'react-select/lib/Async';
+import ReactAsyncSelect from 'react-select/async';
 import cx from 'classnames';
 import { getOptionValue, getReverseOptionValue, getNormalizedOptions, NULL_STRING } from './utils';
 import globalStyles from './Select.styles';
