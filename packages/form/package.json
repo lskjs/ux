@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/form",
-  "version": "1.29.0",
+  "version": "1.30.0",
   "description": "LSK ux subrepo: form",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -104,9 +104,9 @@
     "@lskjs/link": "*",
     "@lskjs/modal": "*",
     "@lskjs/scroll": "*",
-    "@lskjs/theme": "*",
     "@lskjs/t": "*",
     "@lskjs/tag": "*",
+    "@lskjs/theme": "*",
     "@lskjs/ui": "*",
     "@lskjs/utils": "*",
     "antd": "*",

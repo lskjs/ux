@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.30.0](https://github.com/isuvorov/lib-starter-kit/compare/v1.29.0...v1.30.0) (2020-10-08)
+
+
+### Bug Fixes
+
+* **form:** async select clearing and changing outsite ([52ea0d7](https://github.com/isuvorov/lib-starter-kit/commit/52ea0d7fbbc21af5f98583d320c408d5c9df594d))
+* update react-select ([ee7f8ac](https://github.com/isuvorov/lib-starter-kit/commit/ee7f8acfaec7874578ccff9cb7222eafcfdb7424))
+
+
+### Features
+
+* **ui2:** add chipitem ([0118063](https://github.com/isuvorov/lib-starter-kit/commit/01180632c02e039693a30b84afcd21aba31b7965))
+
+
+
+
+
 # [1.29.0](https://github.com/isuvorov/lib-starter-kit/compare/v1.28.0...v1.29.0) (2020-10-02)
 
 
