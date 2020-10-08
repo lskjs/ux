@@ -1,22 +1,30 @@
 import React from 'react';
 import { Form, Field } from 'formik';
 import Select from '@lskjs/form/controls/Select';
+import { Grid, Row, Col } from '@lskjs/grid';
 // import { ValueContainer as DefaultValueContainer } from 'react-select/lib/components/containers';
 import range from 'lodash/range';
 
 import createForm from '@lskjs/form/createForm';
-// import FormDebug from '@lskjs/form/FormDebug';
+import FormDebug from '@lskjs/form/FormDebug';
 // import createFormWithI18 from '../../createFormWithI18';
 
-const SelectFormView = (props) => (
+const SelectFormView = ({ control, ...props }) => (
   <Form>
-    <h1>Обычный селект</h1>
-    <Field {...props.control('select')} />
-    <h1>Асинхронные селекты</h1>
-    <Field {...props.control('asyncSelect')} />
-    <Field {...props.control('asyncSelect2')} />
-    <Field {...props.control('asyncMultiSelect')} />
-    {/* <FormDebug {...props} /> */}
+    <Row>
+      <Col md={3}>
+        <Field {...control('select')} />
+      </Col>
+      <Col md={3}>
+        <Field {...control('asyncSelect')} />
+      </Col>
+      <Col md={3}>
+        <Field {...control('asyncSelect2')} />
+      </Col>
+      <Col md={3}>
+        <Field {...control('asyncMultiSelect')} />
+      </Col>
+    </Row>
   </Form>
 );
 
@@ -34,7 +42,7 @@ export default createForm({
       title: 'The Select',
       placeholder: 'test',
       component: Select,
-      options: range(1, 11).map(id => ({
+      options: range(1, 11).map((id) => ({
         value: id,
         title: `The ${id}`,
       })),

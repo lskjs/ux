@@ -1,47 +1,34 @@
-import React, { Component } from 'react';
-import If from 'react-if';
+import React from 'react';
 import { inject, observer } from 'mobx-react';
 import { contextToProps } from './List.context';
 
-@contextToProps('List', 'show')
-@inject('listStore')
-@observer
-class ListHeader extends Component {
-  render() {
-    const { List, children, listStore, show } = this.props;
-    if (children) {
-      return (
+const ListHeader = ({ List, children, listStore, show }) => {
+  if (children) return <List.HeaderWrapper>{children}</List.HeaderWrapper>;
+  return (
+    <>
+      {!!show.search && (
         <List.HeaderWrapper>
-          {children}
+          <List.Search />
         </List.HeaderWrapper>
-      );
-    }
-    return (
-      <React.Fragment>
-        <If condition={!!show.search}>
-          <List.HeaderWrapper>
-            <List.Search />
-          </List.HeaderWrapper>
-        </If>
+      )}
+      <List.HeaderWrapper>
+        <List.Filter />
+      </List.HeaderWrapper>
+      {!!show.tags && (
         <List.HeaderWrapper>
-          <List.Filter />
+          <List.TagsPanel />
         </List.HeaderWrapper>
-        <If condition={!!show.tags}>
-          <List.HeaderWrapper>
-            <List.TagsPanel />
-          </List.HeaderWrapper>
-        </If>
-        <If condition={!!show.searchResults && listStore.hasFilter}>
-          <List.HeaderWrapper>
-            <List.SearchResults />
-          </List.HeaderWrapper>
-        </If>
-        <List.HeaderWrapper sticky={!!show.sticky}>
-          <List.HeaderRow />
+      )}
+      {!!show.searchResults && listStore.hasFilter && (
+        <List.HeaderWrapper>
+          <List.SearchResults />
         </List.HeaderWrapper>
-      </React.Fragment>
-    );
-  }
-}
+      )}
+      <List.HeaderWrapper sticky={!!show.sticky}>
+        <List.HeaderRow />
+      </List.HeaderWrapper>
+    </>
+  );
+};
 
-export default ListHeader;
+export default contextToProps('List', 'show')(inject('listStore')(observer(ListHeader)));

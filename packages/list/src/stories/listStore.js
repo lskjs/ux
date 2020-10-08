@@ -6,7 +6,23 @@ import CrudApi from '@lskjs/mobx/stores/CrudApi';
 import Apiquery from '@lskjs/apiquery';
 
 const apiquery = new Apiquery();
-const select = ['providerId', 'type', 'status', 'channelInfo.title', 'channelInfo.country', 'channelInfo.totalVideos', 'channelInfo.subscribers', 'channelInfo.avatar', 'channelInfo.username', 'average.lastVideoPublishedAt', 'average.analytics.views', 'average.videoViews', 'average.language', '_parser.successFetchedAt', 'createdAt'];
+const select = [
+  'providerId',
+  'type',
+  'status',
+  'channelInfo.title',
+  'channelInfo.country',
+  'channelInfo.totalVideos',
+  'channelInfo.subscribers',
+  'channelInfo.avatar',
+  'channelInfo.username',
+  'average.lastVideoPublishedAt',
+  'average.analytics.views',
+  'average.videoViews',
+  'average.language',
+  '_parser.successFetchedAt',
+  'createdAt',
+];
 
 export class Api extends CrudApi {
   base = 'https://analytics.buzzguru.com/api/channels';
@@ -27,19 +43,11 @@ export class Api extends CrudApi {
 
     return {
       ...res,
-      data: res.data.map(item => ({
+      data: res.data.map((item) => ({
         ...item,
         title: item.channelInfo.title,
-        role: sample([
-          'Director',
-          'Manager',
-          'Stuff',
-          'Salesman',
-          'Driver',
-          'Tester',
-          'Designer',
-        ]),
-        rating: +(random(1, 1000, true).toFixed(2)),
+        role: sample(['Director', 'Manager', 'Stuff', 'Salesman', 'Driver', 'Tester', 'Designer']),
+        rating: +random(1, 1000, true).toFixed(2),
       })),
     };
   }
