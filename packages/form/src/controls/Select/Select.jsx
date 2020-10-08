@@ -56,7 +56,7 @@ class Select extends Component {
   async initOption() {
     const { loadOption, field } = this.props;
     const { value } = field;
-    const option = await loadOption(value);
+    const [option] = getNormalizedOptions([await loadOption(value)], this.props);
     this.setState({ option, initOption: true }); // eslint-disable-line react/no-unused-state
   }
   @autobind
@@ -91,7 +91,7 @@ class Select extends Component {
     this.setState({ option, initOption: false }); // eslint-disable-line react/no-unused-state
     let value;
     if (option && option.length) {
-      value = option.map(item => getReverseOptionValue(item && item.value));
+      value = option.map((item) => getReverseOptionValue(item && item.value));
     } else {
       value = getReverseOptionValue(option && option.value);
     }
@@ -126,10 +126,11 @@ class Select extends Component {
     if (options && multiSearch) {
       filterOption = (option, inputValue) => {
         const { label, value } = option;
-        const valueSearch = options.filter(opt => {
-          return opt.value.toLowerCase().includes(inputValue.toLowerCase());
-        }).length === 1;
-        const otherKey = options.filter(opt => {
+        const valueSearch =
+          options.filter((opt) => {
+            return opt.value.toLowerCase().includes(inputValue.toLowerCase());
+          }).length === 1;
+        const otherKey = options.filter((opt) => {
           return (
             (opt.title === label && opt.en.toLowerCase().includes(inputValue.toLowerCase())) ||
             (opt.title === label && opt.ru.toLowerCase().includes(inputValue.toLowerCase()))
@@ -144,16 +145,23 @@ class Select extends Component {
     const normalizedOptions = getNormalizedOptions(options, props);
     let option;
     let value;
-    if (!async) {
-      value = getOptionValue(field ? field.value : propValue);
-    }
+    // if (!async) {
+    value = getOptionValue(field ? field.value : propValue);
+    // }
     if (async) {
       ({ option } = this.state);
+      if (value == null || value === NULL_STRING) {
+        value = null;
+        option = null;
+      } else if (((option && option.value) || null) !== value) {
+        // Увы, мы наверное не имеем право перезапросить option если сверху поменялся value
+        this.initOption(); // TODO: потестировать может быть рекурсия
+      }
     } else if (!isMulti) {
       option = find(normalizedOptions, { value });
     } else if (isMulti) {
       if (Array.isArray(value)) {
-        option = normalizedOptions.filter(el => value.includes(el.value));
+        option = normalizedOptions.filter((el) => value.includes(el.value));
       } else {
         option = [];
       }
@@ -164,13 +172,15 @@ class Select extends Component {
       ValueContainer: CollapsedValueContainer,
       MultiValue: CollapsedMultiValue,
     };
-    const nullOption = find(normalizedOptions, o => o.value === NULL_STRING);
+    const nullOption = find(normalizedOptions, (o) => o.value === NULL_STRING);
     const defaultIsClearable = !props.required && !nullOption;
     const defaultIsSearchable = options && options.length > 10;
     // console.log({ defaultIsClearable }, props.required, !!nullOption, !props.required, !nullOption, nullOption, props.isClearable, normalizedOptions);
+    console.log('RENDER');
     return (
       <>
         <Global styles={globalStyles} />
+        {JSON.stringify({ value, option })}
         <SelectComponent
           blurInputOnSelect={blurInputOnSelect}
           // isClearable={defaultIsClearable}
@@ -195,14 +205,14 @@ class Select extends Component {
             ...components,
           }}
           styles={{
-            singleValue: base => ({
+            singleValue: (base) => ({
               ...base,
               position: 'relative',
               top: 'inherit',
               transform: 'inherit',
               flexWrap: 'nowrap',
             }),
-            valueContainer: base => ({
+            valueContainer: (base) => ({
               ...base,
               flexWrap: 'nowrap',
               whiteSpace: 'nowrap',

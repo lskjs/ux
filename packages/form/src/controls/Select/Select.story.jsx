@@ -18,53 +18,54 @@ import Select from './Select';
 import countriesList from './countriesList';
 // import createFormWithI18 from '../../createFormWithI18';
 
-const SelectFormView = props => (
+const SelectFormView = ({ control, ...props }) => (
   <Form>
     <h1>Обычные селекты</h1>
-    <Field {...props.control('select')} />
-    <Field {...props.control('selectSort')} />
-    <Field {...props.control('select2')} />
-    <Field {...props.control('select3')} />
-    <Field {...props.control('select4')} />
-    <Field {...props.control('select5')} />
-    <Field {...props.control('radio')} />
-    <Field {...props.control('info.initialValue')} />
+    <Field {...control('select')} />
+    <Field {...control('selectSort')} />
+    <Field {...control('select2')} />
+    <Field {...control('select3')} />
+    <Field {...control('select4')} />
+    <Field {...control('select5')} />
+    <Field {...control('radio')} />
+    <Field {...control('info.initialValue')} />
     <Performance name="countries">
-      <Field {...props.control('countries')} />
+      <Field {...control('countries')} />
     </Performance>
     <Performance name="countries2">
-      <Field {...props.control('countries')} />
+      <Field {...control('countries')} />
     </Performance>
     <Performance name="countries3">
-      <Field {...props.control('countries')} />
+      <Field {...control('countries')} />
     </Performance>
     <Performance name="countries4">
-      <Field {...props.control('countries')} />
+      <Field {...control('countries')} />
     </Performance>
     <Performance name="countries5">
-      <Field {...props.control('countries')} />
+      <Field {...control('countries')} />
     </Performance>
     <hr />
     <h1>Мультиселекты</h1>
-    <Field {...props.control('multiselect')} />
-    <Field {...props.control('multiselect2')} />
-    <Field {...props.control('multiselect3')} />
-    <Field {...props.control('checkboxes')} />
+    <Field {...control('multiselect')} />
+    <Field {...control('multiselect2')} />
+    <Field {...control('multiselect3')} />
+    <Field {...control('checkboxes')} />
     <hr />
     <h1>Асинхронные селекты</h1>
-    <Field {...props.control('asyncSelect')} />
-    <Field {...props.control('asyncSelect2')} />
-    <Field {...props.control('asyncMultiSelect')} />
+    <Field {...control('asyncSelect')} />
+    <Field {...control('asyncSelect')} />
+    <Field {...control('asyncSelect2')} />
+    <Field {...control('asyncMultiSelect')} />
     <hr />
     <h1>Кастомный дизайн</h1>
-    <Field {...props.control('games')} />
-    <Field {...props.control('games2')} />
-    <Field {...props.control('flag')} />
-    <Field {...props.control('countries')} />
-    <Field {...props.control('userSelect')} />
+    <Field {...control('games')} />
+    <Field {...control('games2')} />
+    <Field {...control('flag')} />
+    <Field {...control('countries')} />
+    <Field {...control('userSelect')} />
     <hr />
     <h1>initialValue - баг</h1>
-    <Field {...props.control('info.bug1')} />
+    <Field {...control('info.bug1')} />
     <hr />
     <hr />
     <select>
@@ -116,7 +117,7 @@ const SelectForm = createForm({
       title: 'The Select',
       placeholder: 'test',
       component: Select,
-      options: range(1, 11).map(id => ({
+      options: range(1, 11).map((id) => ({
         value: id,
         title: `The ${id}`,
       })),
@@ -125,7 +126,7 @@ const SelectForm = createForm({
     select2: {
       title: 'The Select2: without title',
       component: Select,
-      options: range(1, 11).map(id => ({
+      options: range(1, 11).map((id) => ({
         value: id,
       })),
     },
@@ -176,7 +177,7 @@ const SelectForm = createForm({
       title: 'multiselect: isMulti',
       component: Select,
       isMulti: true,
-      options: range(1, 11).map(id => ({
+      options: range(1, 11).map((id) => ({
         value: id,
         id,
         title: `User ${id}`,
@@ -189,7 +190,7 @@ const SelectForm = createForm({
       component: Select,
       isMulti: true,
       hideSelectedOptions: false,
-      options: range(1, 11).map(id => ({
+      options: range(1, 11).map((id) => ({
         value: id,
         id,
         title: `User ${id}`,
@@ -200,7 +201,7 @@ const SelectForm = createForm({
       component: Select,
       isMulti: true,
       collapsed: true,
-      options: range(1, 11).map(id => ({
+      options: range(1, 11).map((id) => ({
         value: id,
         id,
         title: `User ${id}`,
@@ -214,7 +215,7 @@ const SelectForm = createForm({
       isMulti: true,
       collapsed: true,
       hideSelectedOptions: false,
-      options: range(1, 11).map(id => ({
+      options: range(1, 11).map((id) => ({
         value: id,
         id,
         title: `User ${id}`,
@@ -230,7 +231,7 @@ const SelectForm = createForm({
     radio: {
       title: 'Radio',
       component: Select,
-      options: range(1, 11).map(id => ({
+      options: range(1, 11).map((id) => ({
         value: id,
         id,
         title: `User ${id}`,
@@ -244,7 +245,7 @@ const SelectForm = createForm({
     userSelect: {
       title: 'The userSelect',
       component: Select,
-      options: range(1, 11).map(id => ({
+      options: range(1, 11).map((id) => ({
         value: id,
         id,
         image: `https://picsum.photos/40/40/?image=${id}`,
@@ -258,7 +259,7 @@ const SelectForm = createForm({
       hideSelectedOptions: false,
       blurInputOnSelect: false,
       collapsed: true,
-      options: range(1, 11).map(id => ({
+      options: range(1, 11).map((id) => ({
         value: id,
         id,
         image: `https://picsum.photos/40/40/?image=1${id}`,
@@ -275,7 +276,7 @@ const SelectForm = createForm({
       component: Select,
       isMulti: true,
       hideSelectedOptions: false,
-      options: range(1, 11).map(id => ({
+      options: range(1, 11).map((id) => ({
         value: id,
         id,
         image: `https://picsum.photos/40/40/?image=1${id}`,
@@ -307,13 +308,11 @@ const SelectForm = createForm({
       title: 'Countries',
       component: Select,
       options: keys(countriesList).map((value) => {
-        return (
-          {
-            title: value,
-            value,
-            icon: <Flag country={value} />,
-          }
-        );
+        return {
+          title: value,
+          value,
+          icon: <Flag country={value} />,
+        };
       }),
     },
     // /////
@@ -321,7 +320,7 @@ const SelectForm = createForm({
       title: 'The asyncSelect',
       component: Select,
       async: true,
-      loadOption: async value => ({
+      loadOption: async (value) => ({
         value,
         id: value,
         image: `https://picsum.photos/40/40/?image=${value}`,
@@ -330,12 +329,18 @@ const SelectForm = createForm({
       loadOptions: async (searchValue = '') => {
         const start = searchValue.length;
         return new Promise((resolve) => {
-          setTimeout(() => resolve(range(start, start + 10).map(value => ({
-            value,
-            id: value,
-            image: `https://picsum.photos/40/40/?image=${value}`,
-            title: `User ${value}`,
-          }))), 50);
+          setTimeout(
+            () =>
+              resolve(
+                range(start, start + 10).map((value) => ({
+                  value,
+                  id: value,
+                  image: `https://picsum.photos/40/40/?image=${value}`,
+                  title: `User ${value}`,
+                })),
+              ),
+            50,
+          );
         });
       },
     },
@@ -360,12 +365,18 @@ const SelectForm = createForm({
       loadOptions: async (searchValue = '') => {
         const start = searchValue.length;
         return new Promise((resolve) => {
-          setTimeout(() => resolve(range(start, start + 10).map(value => ({
-            value,
-            id: value,
-            image: `https://picsum.photos/40/40/?image=${value}`,
-            title: `User ${value}`,
-          }))), 50);
+          setTimeout(
+            () =>
+              resolve(
+                range(start, start + 10).map((value) => ({
+                  value,
+                  id: value,
+                  image: `https://picsum.photos/40/40/?image=${value}`,
+                  title: `User ${value}`,
+                })),
+              ),
+            50,
+          );
         });
       },
     },
@@ -373,7 +384,7 @@ const SelectForm = createForm({
       title: 'The asyncSelect2',
       component: Select,
       async: true,
-      loadOption: async value => ({
+      loadOption: async (value) => ({
         value,
         id: value,
         image: `https://picsum.photos/40/40/?image=${value}`,
@@ -382,12 +393,18 @@ const SelectForm = createForm({
       loadOptions: async (searchValue = '') => {
         const start = searchValue.length;
         return new Promise((resolve) => {
-          setTimeout(() => resolve(range(start, start + 10).map(value => ({
-            value,
-            id: value,
-            image: `https://picsum.photos/40/40/?image=${value}`,
-            title: `User ${value}`,
-          }))), 2000);
+          setTimeout(
+            () =>
+              resolve(
+                range(start, start + 10).map((value) => ({
+                  value,
+                  id: value,
+                  image: `https://picsum.photos/40/40/?image=${value}`,
+                  title: `User ${value}`,
+                })),
+              ),
+            2000,
+          );
         });
       },
     },
@@ -662,7 +679,6 @@ const SelectForm = createForm({
 //     },
 //   },
 // }));
-
 
 export default ({ storiesOf }) =>
   storiesOf('form/controls', module)
