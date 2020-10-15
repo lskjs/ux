@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.30.1](https://github.com/lskjs/ux/tree/master/packages/list/compare/v1.30.0...v1.30.1) (2020-10-15)
+
+
+### Bug Fixes
+
+* **ListEmpty:** replace import ([e8aef04](https://github.com/lskjs/ux/tree/master/packages/list/commit/e8aef04f29f7fa33ac996edf31cfce1504e44ca2))
+
+
+
+
+
 # [1.30.0](https://github.com/lskjs/ux/tree/master/packages/list/compare/v1.29.0...v1.30.0) (2020-10-08)
 
 **Note:** Version bump only for package @lskjs/list
