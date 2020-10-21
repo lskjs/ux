@@ -6,7 +6,7 @@ import { ModalConsumer } from '../index';
 const TestTriggerGlobalModalConsumer = () => {
   return (
     <ModalConsumer>
-      {modal => {
+      {(modal) => {
         let refModal;
         setTimeout(() => {
           refModal = modal.create('test-4', { size: 'small' }, ({ Modal: M, methods, ref, id }) => (
@@ -31,7 +31,7 @@ const TestTriggerGlobalModalConsumer = () => {
               </M.Footer>
             </>
           ));
-        }, 1);
+        }, 0);
         return (
           <Button paint="primary" onClick={() => refModal.current.open()}>
             Открыть TestTriggerGlobalModalConsumer

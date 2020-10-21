@@ -32,7 +32,7 @@ export default ({ storiesOf }) =>
           <TestTriggerGlobalModalConsumer />
           <TestTriggerGlobalModalHookWithUpdate />
           <ModalConsumer>
-            {modal => (
+            {(modal) => (
               <div style={{ padding: '20px 0' }}>
                 <Button onClick={() => modal.open('test-3')}>Открыть test-3</Button>
                 <br />
