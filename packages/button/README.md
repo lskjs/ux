@@ -1,4 +1,4 @@
-# LSK – Button
+# LSK.js – Button
 
 > React component for buttons creation
 
