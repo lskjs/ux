@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/modal",
-  "version": "1.30.2",
+  "version": "1.31.0",
   "description": "LSK ux subrepo: modal",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",

@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.31.0](https://github.com/lskjs/ux/tree/master/packages/dashboard/compare/v1.30.2...v1.31.0) (2020-10-22)
+
+**Note:** Version bump only for package @lskjs/dashboard
+
+
+
+
+
 ## [1.30.2](https://github.com/lskjs/ux/tree/master/packages/dashboard/compare/v1.30.1...v1.30.2) (2020-10-21)
 
 **Note:** Version bump only for package @lskjs/dashboard

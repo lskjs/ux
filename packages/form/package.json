@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/form",
-  "version": "1.30.2",
+  "version": "1.31.0",
   "description": "LSK ux subrepo: form",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -54,7 +54,7 @@
     "@lskjs/grid": "^1.30.2",
     "@lskjs/gridtable": "^1.30.2",
     "@lskjs/link": "^1.30.2",
-    "@lskjs/modal": "^1.30.2",
+    "@lskjs/modal": "^1.31.0",
     "@lskjs/scroll": "^1.30.2",
     "@lskjs/t": "1.27.4",
     "@lskjs/tag": "1.27.4",

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.31.0](https://github.com/isuvorov/lib-starter-kit/compare/v1.30.2...v1.31.0) (2020-10-22)
+
+
+### Features
+
+* **modal:** support custom sizes ([c6c2c89](https://github.com/isuvorov/lib-starter-kit/commit/c6c2c89c57c9ee00fcf73b4302bc65f3939c599b))
+
+
+
+
+
 ## [1.30.2](https://github.com/isuvorov/lib-starter-kit/compare/v1.30.1...v1.30.2) (2020-10-21)
 
 **Note:** Version bump only for package ux
