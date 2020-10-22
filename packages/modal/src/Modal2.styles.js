@@ -37,9 +37,14 @@ export const InnerWrapper = styled('div')`
   box-shadow: 0 2px 18px rgba(0, 0, 0, 0.2);
 `;
 
-export const bodyModalStyle = css`
-  overflow: hidden;
-`;
+// export const reactModalStyles = css`
+//   transform: translate3d(0, 10%, 0);
+//   transition: transform 0.2s ease;
+// `;
+
+// export const reactModalOpenStyles = css`
+//   transform: translate3d(0, 0%, 0);
+// `;
 
 export const closeButtonStyle = css`
   position: absolute !important;
@@ -58,4 +63,39 @@ export const hocFooter = css`
 
 export const triggerStyle = css`
   display: flex;
+`;
+
+export const globalStyles = css`
+  .bodyModal {
+    overflow: hidden;
+  }
+
+  .ReactModal__Overlay {
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  .ReactModal__Overlay--after-open {
+    opacity: 1;
+  }
+
+  .ReactModal__Overlay--before-close {
+    opacity: 0;
+  }
+
+  .ReactModal__Overlay .ReactModal__Content {
+    opacity: 0;
+    transform: translate3d(0, 5%, 0);
+    transition: opacity 0.15s ease-out, transform 0.2s ease-out;
+  }
+
+  .ReactModal__Overlay--after-open .ReactModal__Content {
+    transform: translate3d(0, 0%, 0);
+    opacity: 1;
+  }
+
+  .ReactModal__Overlay--before-close .ReactModal__Content {
+    transform: translate3d(0, -5%, 0);
+    opacity: 0;
+  }
 `;

@@ -7,13 +7,19 @@ import { jsx, Global } from '@emotion/core';
 import Button from '@lskjs/button';
 import { closeButtonStyle } from '../../Modal2.styles';
 
-export default props => (
+export default (props) => (
   <>
     <Global
       styles={{
         '.closeButton': closeButtonStyle,
       }}
     />
-    <Button type="button" paint="transparent" icon={<Close />} className="closeButton" {...props} />
+    <Button
+      type="button"
+      paint={props.whiteTheme ? 'transparent' : 'transparentDark'}
+      icon={<Close />}
+      className="closeButton"
+      {...props}
+    />
   </>
 );

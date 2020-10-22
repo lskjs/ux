@@ -12,12 +12,12 @@
 
 ```jsx
 import React from 'react';
-import GlobalModalProvider from '@lskjs/modal/Global';
+import { ModalProvider }  from '@lskjs/modal/Global';
 
 const Example = () => (
-  <GlobalModalProvider>
+  <ModalProvider>
     ...
-  </GlobalModalProvider>
+  </ModalProvider>
 );
 ```
 
