@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.31.2](https://github.com/isuvorov/lib-starter-kit/compare/v1.31.1...v1.31.2) (2020-10-27)
+
+
+### Bug Fixes
+
+* **storybook:** add slide to docs ([9aabecf](https://github.com/isuvorov/lib-starter-kit/commit/9aabecf5805c9d917053951f0ff4e7a26d773315))
+
+
+
+
+
 ## [1.31.1](https://github.com/isuvorov/lib-starter-kit/compare/v1.31.0...v1.31.1) (2020-10-27)
 
 

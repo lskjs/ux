@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/docs",
-  "version": "1.31.1",
+  "version": "1.31.2",
   "description": "lskjs docs",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -52,8 +52,8 @@
     "@lskjs/notification": "^1.30.2",
     "@lskjs/page": "^1.30.2",
     "@lskjs/progress": "^1.30.2",
-    "@lskjs/slide": "^1.30.2",
     "@lskjs/scroll": "^1.30.2",
+    "@lskjs/slide": "^1.30.2",
     "@lskjs/t": "^1.30.2",
     "@lskjs/tag": "^1.30.2",
     "@lskjs/theme": "1.20.5",
