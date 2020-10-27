@@ -6,6 +6,85 @@ import { Provider } from './Modal.context';
 import GlobalModal from './GlobalModal';
 import Modal from '../index';
 
+/**
+ * @callback createCb
+ * @extends create
+ */
+
+/**
+ * @callback updateCb
+ * @extends update
+ */
+
+/**
+ * @callback removeCb
+ * @extends remove
+ */
+
+/**
+ * @callback listCb
+ * @extends list
+ */
+
+/**
+ * @callback getCb
+ * @extends get
+ */
+
+/**
+ * @callback openCb
+ * @extends open
+ */
+
+/**
+ * @callback closeCb
+ * @extends close
+ */
+
+/**
+ * @callback listCb
+ * @extends list
+ */
+
+/**
+ * Список методов
+ * @typedef {Object} Methods
+ * @property {createCb} create - Создать модалку
+ * @property {updateCb} update - Обновить модалку
+ * @property {removeCb} remove - Удалить модалку
+ * @property {getCb} get - Инстанс модалки
+ * @property {openCb} open - Открыть модалку
+ * @property {closeCb} close - Закрыть модалку
+ * @property {listCb} list - Список модалок
+ */
+
+/**
+ * @typedef {Object} ModalListEntity
+ * @property {Object} ref - ModalRef
+ * @property {*} content - Контент модалки
+ */
+
+/**
+ * Список модалок
+ * @typedef {Object} Modals
+ * @property {...ModalListEntity} *
+ */
+
+/**
+ * @method simple
+ * @param {string} id - ID инстанса модалки
+ * @returns {string} ID
+ */
+
+/**
+ * Контекст модалки
+ * @callback selfCallback
+ * @param {string} id - ID инстанса модалки
+ * @param {Object} ref - Reference на компонент модалки
+ * @param {*} Modal - Компонент модалки
+ * @param {Methods} methods - Методы контекста глобальных модалок
+ */
+
 class GlobalModalProvider extends Component {
   constructor(props) {
     super(props);
@@ -35,20 +114,28 @@ class GlobalModalProvider extends Component {
     };
   }
 
-  create(id, params = {}, content) {
+  /**
+   * Создание инстанса модалки
+   * @method create
+   * @param {string} id - ID инстанса модалки
+   * @param {Object} [props = {}] - Props для модалки
+   * @param {(string | selfCallback)} content - Реакт компоненты или функция возвращающая реакт компоненты
+   * @returns {*} ModalRef
+   */
+  create(id, props = {}, content) {
     if (!this.modals.current) return null;
     const { renderedIds, modals } = this.modals.current.state;
     if (renderedIds.includes(id)) return modals[id].ref;
     const ref = createRef();
     const self = {
-      ...params,
+      ...props,
       id,
       ref,
       Modal,
       methods: this.getMethods(),
     };
     const modal = {
-      ...params,
+      ...props,
       ref,
       content: typeof content === 'function' ? content(self) : content,
     };
@@ -58,11 +145,19 @@ class GlobalModalProvider extends Component {
     return modal.ref;
   }
 
-  update(id, params = {}, content) {
+  /**
+   * Обновление инстанса модалки
+   * @method update
+   * @param {string} id - ID инстанса модалки
+   * @param {Object} [props = {}] - Props для модалки
+   * @param {(string | selfCallback)} content - Реакт компоненты или функция возвращающая реакт компоненты
+   * @returns {*} ModalRef
+   */
+  update(id, props = {}, content) {
     const modal = this.get(id);
-    const data = merge(modal, params);
+    const data = merge(modal, props);
     const self = {
-      ...params,
+      ...props,
       id,
       ref: modal.ref,
       Modal,
@@ -80,6 +175,11 @@ class GlobalModalProvider extends Component {
     return modal.ref;
   }
 
+  /**
+   * Удаление инстанса модалки
+   * @method remove
+   * @extends simple
+   */
   remove(id) {
     if (!this.modals.current) return null;
     const { modals } = this.modals.current.state;
@@ -94,18 +194,34 @@ class GlobalModalProvider extends Component {
     return id;
   }
 
+  /**
+   * Список инстансов модалок
+   * @method list
+   * @returns {Modals} Список модалок
+   */
   list() {
     if (!this.modals.current) return null;
     const { modals } = this.modals.current.state;
     return modals;
   }
 
+  /**
+   * Получение инстанса модалки
+   * @method get
+   * @param {string} id - ID инстанса модалки
+   * @returns {ModalListEntity} - Инстанс модалки
+   */
   get(id) {
     if (!this.modals.current) return null;
     const { modals } = this.modals.current.state;
     return modals[id];
   }
 
+  /**
+   * Открыть модалку
+   * @method open
+   * @extends simple
+   */
   open(id) {
     const modal = this.get(id);
     if (!modal) return null;
@@ -113,6 +229,11 @@ class GlobalModalProvider extends Component {
     return id;
   }
 
+  /**
+   * Закрыть модалку
+   * @method open
+   * @extends simple
+   */
   close(id) {
     const modal = this.get(id);
     if (!modal) return null;

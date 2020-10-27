@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
 import Button from '@lskjs/button';
 
 import { ModalContext } from '../index';
 
 const TestAutoGlobalModalHook = () => {
   const modal = useContext(ModalContext);
-  setTimeout(() => {
+  useEffect(() => {
     modal.create('test-2', { size: 'small', defaultVisible: true }, ({ Modal: M, methods, ref, id }) => (
       <>
         <M.Title>TestAutoGlobalModalHook </M.Title>
@@ -23,7 +23,7 @@ const TestAutoGlobalModalHook = () => {
         </M.Footer>
       </>
     ));
-  }, 1);
+  }, []);
   return '';
 };
 

@@ -27,7 +27,7 @@ const Password = ({ field, form, validationInfo, ...props }) => {
     passTypeKey = 'lskFormPassword.validationType_1';
     color = '#fa6400';
   }
-  const hasError = get(field, 'name') && !!get(form, `errors.${field.name}`);
+  const hasError = field && field.name && !!get(form.errors, field.name);
   const errorStyle = { border: '1px solid red' };
   return (
     <div style={{ position: 'relative' }}>

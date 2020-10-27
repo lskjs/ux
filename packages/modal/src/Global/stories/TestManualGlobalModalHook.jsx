@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
 import Button from '@lskjs/button';
 
 import { ModalContext } from '../index';
 
 const TestManualGlobalModalHook = () => {
   const modal = useContext(ModalContext);
-  setTimeout(() => {
+  useEffect(() => {
     const refModal = modal.create('test-1', { size: 'small' }, ({ Modal: M, methods, ref, id }) => (
       <>
         <M.Title>TestManualGlobalModalHook</M.Title>
@@ -23,10 +23,12 @@ const TestManualGlobalModalHook = () => {
         </M.Footer>
       </>
     ));
-    if (refModal && refModal.current) {
-      refModal.current.open();
-    }
-  }, 1);
+    setTimeout(() => {
+      if (refModal && refModal.current) {
+        refModal.current.open();
+      }
+    }, 0);
+  }, []);
   return '';
 };
 

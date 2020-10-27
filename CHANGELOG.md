@@ -3,6 +3,130 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.31.0](https://github.com/isuvorov/lib-starter-kit/compare/v1.30.2...v1.31.0) (2020-10-22)
+
+
+### Features
+
+* **modal:** support custom sizes ([c6c2c89](https://github.com/isuvorov/lib-starter-kit/commit/c6c2c89c57c9ee00fcf73b4302bc65f3939c599b))
+
+
+
+
+
+## [1.30.2](https://github.com/isuvorov/lib-starter-kit/compare/v1.30.1...v1.30.2) (2020-10-21)
+
+**Note:** Version bump only for package ux
+
+
+
+
+
+## [1.30.1](https://github.com/isuvorov/lib-starter-kit/compare/v1.30.0...v1.30.1) (2020-10-15)
+
+
+### Bug Fixes
+
+* **ListEmpty:** replace import ([e8aef04](https://github.com/isuvorov/lib-starter-kit/commit/e8aef04f29f7fa33ac996edf31cfce1504e44ca2))
+
+
+
+
+
+# [1.30.0](https://github.com/isuvorov/lib-starter-kit/compare/v1.29.0...v1.30.0) (2020-10-08)
+
+
+### Bug Fixes
+
+* **form:** async select clearing and changing outsite ([52ea0d7](https://github.com/isuvorov/lib-starter-kit/commit/52ea0d7fbbc21af5f98583d320c408d5c9df594d))
+* update react-select ([ee7f8ac](https://github.com/isuvorov/lib-starter-kit/commit/ee7f8acfaec7874578ccff9cb7222eafcfdb7424))
+
+
+### Features
+
+* **ui2:** add chipitem ([0118063](https://github.com/isuvorov/lib-starter-kit/commit/01180632c02e039693a30b84afcd21aba31b7965))
+
+
+
+
+
+# [1.29.0](https://github.com/isuvorov/lib-starter-kit/compare/v1.28.0...v1.29.0) (2020-10-02)
+
+
+### Features
+
+* **ui2:** create ui2 package – light ui ([12f3b0d](https://github.com/isuvorov/lib-starter-kit/commit/12f3b0d40f0a73afcb805f5aee99941b29636ade))
+
+
+
+
+
+# [1.28.0](https://github.com/isuvorov/lib-starter-kit/compare/v1.27.4...v1.28.0) (2020-10-02)
+
+
+### Features
+
+* **slide:** add packages slide, create Slide and SliceContent components ([f39c46d](https://github.com/isuvorov/lib-starter-kit/commit/f39c46d1342c5570e019258d78f37fa5aa7f0943))
+
+
+
+
+
+## [1.27.4](https://github.com/isuvorov/lib-starter-kit/compare/v1.27.3...v1.27.4) (2020-09-28)
+
+
+### Bug Fixes
+
+* **form:** nested hasError ([24eb1b2](https://github.com/isuvorov/lib-starter-kit/commit/24eb1b227615096297a17c2e0b64f8b3604e818b))
+
+
+
+
+
+## [1.27.3](https://github.com/isuvorov/lib-starter-kit/compare/v1.27.2...v1.27.3) (2020-09-21)
+
+
+### Bug Fixes
+
+* button paddings ([a48ad27](https://github.com/isuvorov/lib-starter-kit/commit/a48ad27ea9d643a27edf318d9b6ff49073fcceba))
+
+
+
+
+
+## [1.27.2](https://github.com/isuvorov/lib-starter-kit/compare/v1.27.1...v1.27.2) (2020-09-21)
+
+
+### Bug Fixes
+
+* button style ([bb5b453](https://github.com/isuvorov/lib-starter-kit/commit/bb5b453d597db793f075e995010c7fe8dbbb0264))
+
+
+
+
+
+## [1.27.1](https://github.com/isuvorov/lib-starter-kit/compare/v1.27.0...v1.27.1) (2020-09-21)
+
+
+### Bug Fixes
+
+* shape button ([5669f89](https://github.com/isuvorov/lib-starter-kit/commit/5669f89bc0c7a19bf6e5f5262f289a4630057831))
+
+
+
+
+
+# [1.27.0](https://github.com/isuvorov/lib-starter-kit/compare/v1.26.5...v1.27.0) (2020-09-21)
+
+
+### Features
+
+* add prop shape to button ([eb78283](https://github.com/isuvorov/lib-starter-kit/commit/eb7828331c01921aee86c5657784444073242895))
+
+
+
+
+
 ## [1.26.5](https://github.com/isuvorov/lib-starter-kit/compare/v1.26.4...v1.26.5) (2020-09-18)
 
 **Note:** Version bump only for package ux

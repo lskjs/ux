@@ -157,6 +157,7 @@ class Button extends PureComponent {
       mobileView,
       isRipple,
       htmlRef,
+      shape,
       ...props
     } = this.props;
     const icoLeft = icon || iconLeft;
@@ -199,6 +200,7 @@ class Button extends PureComponent {
         style={style}
         colors={colors}
         ref={htmlRef}
+        shape={shape}
         {...buttonProps}
       >
         {!disabled && isRipple && (
@@ -288,6 +290,7 @@ Button.propTypes = {
   mobileView: PropTypes.bool,
   onlyIcon: PropTypes.bool,
   htmlRef: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
+  shape: PropTypes.oneOf(['square', 'circle']),
 };
 
 Button.defaultProps = {
@@ -322,6 +325,7 @@ Button.defaultProps = {
   onlyIcon: false,
   isRipple: !isTouchDevice(),
   htmlRef: null,
+  shape: 'circle',
 };
 
 export default Button;

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
 import Button from '@lskjs/button';
 
 import { ModalContext } from '../index';
@@ -6,7 +6,7 @@ import { ModalContext } from '../index';
 const TestTriggerGlobalModalHookWithUpdate = () => {
   const modal = useContext(ModalContext);
   let refModal;
-  setTimeout(() => {
+  useEffect(() => {
     refModal = modal.create('test-5', { size: 'small' }, ({ Modal: M, methods, ref, id, size }) => {
       console.log(size);
       return (
@@ -38,7 +38,7 @@ const TestTriggerGlobalModalHookWithUpdate = () => {
         </>
       );
     });
-  }, 1);
+  }, []);
   return (
     <Button paint="primary" onClick={() => refModal.current.open()}>
       Открыть TestTriggerGlobalModalHookWithUpdate

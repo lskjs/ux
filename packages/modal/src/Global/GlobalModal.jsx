@@ -19,7 +19,7 @@ class GlobalModal extends Component {
   }
 
   addModal(id, modal, content) {
-    this.setState(state => {
+    this.setState((state) => {
       const newState = {
         renderedIds: [...state.renderedIds, id],
         modals: {
@@ -38,7 +38,7 @@ class GlobalModal extends Component {
   }
 
   updateModal(id, modal, content) {
-    this.setState(state => {
+    this.setState((state) => {
       const newModals = state.modals;
       newModals[id] = modal;
       const newState = {
@@ -59,7 +59,7 @@ class GlobalModal extends Component {
     unset(modals, id);
     const newContents = contents;
     unset(contents, id);
-    const newRenderedIds = remove(renderedIds, key => key !== id);
+    const newRenderedIds = remove(renderedIds, (key) => key !== id);
     this.setState({
       renderedIds: newRenderedIds,
       modals: newModals,
@@ -71,9 +71,9 @@ class GlobalModal extends Component {
     const { renderedIds, modals } = this.state;
     return (
       <>
-        {Object.keys(modals).map(key => {
+        {Object.keys(modals).map((key) => {
           const modal = modals[key];
-          const isRendered = renderedIds.find(e => e === key);
+          const isRendered = renderedIds.find((e) => e === key);
           if (!isRendered) return false;
           return (
             <Modal key={key} {...omit(modal, ['content', 'ref'])} ref={modal.ref}>

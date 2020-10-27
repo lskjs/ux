@@ -1,8 +1,8 @@
+/* eslint-disable no-unused-vars */
 /** @jsx jsx */
-/* eslint import/no-extraneous-dependencies: 0 */
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { jsx, Global } from '@emotion/core';
+import { css, jsx, Global } from '@emotion/core';
 import If from 'react-if';
 import noop from 'lodash/noop';
 import uniq from 'lodash/uniq';
@@ -26,7 +26,7 @@ import ModalTrigger from './components/ModalTrigger';
 import ModalInner from './components/ModalInner';
 import ModalCloseIcon from './components/ModalCloseIcon';
 
-import { bodyModalStyle, modalStyle, modalSmall, modalNormal, modalLarge, InnerWrapper } from './Modal2.styles';
+import { globalStyles, modalStyle, modalSmall, modalNormal, modalLarge, InnerWrapper } from './Modal2.styles';
 
 import { Provider } from './Modal2.context';
 
@@ -94,54 +94,6 @@ class Modal2 extends PureComponent {
   static Inner = ModalInner;
   static defaultStyles = ReactModal.defaultStyles;
 
-  static propTypes = {
-    defaultVisible: PropTypes.bool,
-    onOpen: PropTypes.func,
-    onClose: PropTypes.func,
-    closable: PropTypes.bool,
-    Title: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
-    Subtitle: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
-    Image: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
-    Content: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
-    Description: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
-    Help: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
-    Scroll: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
-    Footer: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
-    Trigger: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
-    Inner: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
-    InnerWrapper: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
-    CloseIcon: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
-    className: PropTypes.string,
-    size: PropTypes.oneOf(uniq(filter(sizes, e => typeof e === 'string'))),
-    trigger: PropTypes.any, // eslint-disable-line react/forbid-prop-types
-    style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-    whiteTheme: PropTypes.bool,
-  };
-
-  static defaultProps = {
-    defaultVisible: false,
-    onOpen: null,
-    onClose: null,
-    closable: true,
-    Title: null,
-    Subtitle: null,
-    Image: null,
-    Content: null,
-    Description: null,
-    Help: null,
-    Scroll: null,
-    Footer: null,
-    Trigger: null,
-    Inner: null,
-    InnerWrapper: null,
-    CloseIcon: null,
-    className: null,
-    size: sizes.medium,
-    trigger: null,
-    style: {},
-    whiteTheme: false,
-  };
-
   constructor(props) {
     super(props);
     this.state = { visible: props.defaultVisible, counter: 1 };
@@ -204,27 +156,29 @@ class Modal2 extends PureComponent {
     const { className, size = 'default', closable = true, trigger, style, ...props } = this.props;
     const modal = this;
     // if (ref) ref(this);
+
+    const modalCustomSize = css`
+      @media screen and (min-width: 768px) {
+        width: ${size}px;
+      }
+    `;
     return (
       <Provider value={{ modal, Modal }}>
-        <Global
-          styles={{
-            '.bodyModal': bodyModalStyle,
-          }}
-        />
+        <Global styles={globalStyles} />
         <>
           <ReactModal
             ref={
               closable
-                ? e => {
+                ? (e) => {
                     this._modal = e;
                   }
                 : noop
             }
             contentRef={
               closable
-                ? e => {
+                ? (e) => {
                     if (typeof window !== 'undefined' && e) {
-                      e.onclick = event => {
+                      e.onclick = (event) => {
                         if (!event || !event.target || !event.target.className) return;
                         const str = event.target.className;
                         if (typeof str !== 'string') return;
@@ -239,6 +193,7 @@ class Modal2 extends PureComponent {
                   }
                 : noop
             }
+            closeTimeoutMS={200}
             isOpen={this.state.visible}
             onRequestClose={closable && this.close}
             bodyOpenClassName="bodyModal"
@@ -255,6 +210,7 @@ class Modal2 extends PureComponent {
                 sizes.is(size, 'small') ? modalSmall : null,
                 sizes.is(size, 'medium') ? modalNormal : null,
                 sizes.is(size, 'large') ? modalLarge : null,
+                typeof size === 'number' ? modalCustomSize : null,
               ]}
             >
               <If condition={!!closable}>
@@ -273,5 +229,53 @@ class Modal2 extends PureComponent {
     );
   }
 }
+
+Modal2.propTypes = {
+  defaultVisible: PropTypes.bool,
+  onOpen: PropTypes.func,
+  onClose: PropTypes.func,
+  closable: PropTypes.bool,
+  Title: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+  Subtitle: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+  Image: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+  Content: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+  Description: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+  Help: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+  Scroll: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+  Footer: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+  Trigger: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+  Inner: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+  InnerWrapper: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+  CloseIcon: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+  className: PropTypes.string,
+  size: PropTypes.oneOfType([PropTypes.oneOf(uniq(filter(sizes, (e) => typeof e === 'string'))), PropTypes.number]),
+  trigger: PropTypes.any, // eslint-disable-line react/forbid-prop-types
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  whiteTheme: PropTypes.bool,
+};
+
+Modal2.defaultProps = {
+  defaultVisible: false,
+  onOpen: null,
+  onClose: null,
+  closable: true,
+  Title: null,
+  Subtitle: null,
+  Image: null,
+  Content: null,
+  Description: null,
+  Help: null,
+  Scroll: null,
+  Footer: null,
+  Trigger: null,
+  Inner: null,
+  InnerWrapper: null,
+  CloseIcon: null,
+  className: null,
+  size: sizes.medium,
+  trigger: null,
+  style: {},
+  whiteTheme: true,
+};
 
 export default Modal2;

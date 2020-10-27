@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.30.2](https://github.com/lskjs/ux/tree/master/packages/ui-dev/compare/v1.30.1...v1.30.2) (2020-10-21)
+
+**Note:** Version bump only for package @lskjs/dev
+
+
+
+
+
+# [1.29.0](https://github.com/lskjs/ux/tree/master/packages/ui-dev/compare/v1.28.0...v1.29.0) (2020-10-02)
+
+
+### Features
+
+* **ui2:** create ui2 package – light ui ([12f3b0d](https://github.com/lskjs/ux/tree/master/packages/ui-dev/commit/12f3b0d40f0a73afcb805f5aee99941b29636ade))
+
+
+
+
+
+# [1.28.0](https://github.com/lskjs/ux/tree/master/packages/ui-dev/compare/v1.27.4...v1.28.0) (2020-10-02)
+
+**Note:** Version bump only for package @lskjs/dev
+
+
+
+
+
 ## [1.26.3](https://github.com/lskjs/ux/tree/master/packages/ui-dev/compare/v1.26.2...v1.26.3) (2020-09-17)
 
 **Note:** Version bump only for package @lskjs/dev

@@ -5,7 +5,7 @@ import { inject } from 'mobx-react';
 import { GoogleReCaptchaProvider, GoogleReCaptcha } from 'react-google-recaptcha-v3';
 
 const ReCaptchaV3 = ({ uapp, field, form, ...props }) => {
-  const hasError = field && field.name && !!get(form, `errors.${field.name}`);
+  const hasError = field && field.name && !!get(form.errors, field.name);
   const sitekey = get(uapp, 'config.capcha.sitekey');
   if (!sitekey) return '!sitekey';
   return (

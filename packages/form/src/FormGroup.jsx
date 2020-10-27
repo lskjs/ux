@@ -1,4 +1,5 @@
 import React from 'react';
+import get from 'lodash/get';
 import T from '@lskjs/t';
 import Title from './components/TitleComponent';
 import FormItem from './components/FormItem';
@@ -17,7 +18,7 @@ export default ({
   info,
   infoLeft,
 }) => {
-  const errorMsg = errorMessage || (form && form.errors && form.errors[field.name]);
+  const errorMsg = errorMessage || (form && form.errors && get(form.errors, field.name));
   const looksLikeRequired = required || _required;
   let titleComponent;
   if (title) {

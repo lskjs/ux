@@ -249,10 +249,10 @@ const iconButtonSingle = props => css`
   `}
   ${props.size === 'small' &&
     `
-    padding-top: 8px !important;
-    padding-bottom: 8px !important;
-    padding-right: 8px !important;
-    padding-left: 8px !important;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 8px;
+    padding-left: 8px;
 
     ${Icon} {
       font-size: 20px;
@@ -1081,6 +1081,10 @@ export const Btn = styled('button', {
     css`
       min-width: auto;
       border-radius: 50px;
+      @media screen and (max-width: 767px) {
+        cursor: default;
+        border-radius: ${props.shape === 'square' && 4}px;
+      }
     `}
   /* ${props =>
     props.view === 'transparent' &&

@@ -77,7 +77,7 @@ export default ({ storiesOf }) => {
             <Button iconRight={<Twitter />} paint="primary" size="small">
               Twitter
             </Button>
-            <Button icon={<Telegram />} paint="primary" size="small" />
+            <Button icon={<Telegram />} shape="square" paint="primary" size="small" />
             <Button iconLeft={<Facebook />} iconRight={<Twitter />} paint="primary" size="small">
               Share me›
             </Button>
