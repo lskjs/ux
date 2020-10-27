@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.31.1](https://github.com/lskjs/ux/tree/master/packages/ui/compare/v1.31.0...v1.31.1) (2020-10-27)
+
+
+### Bug Fixes
+
+* **Badge:** исправили табуляцию ([7abfd6f](https://github.com/lskjs/ux/tree/master/packages/ui/commit/7abfd6f98b1fa2e5b313ae3761f7d4224d5ff7bc))
+
+
+
+
+
 ## [1.30.2](https://github.com/lskjs/ux/tree/master/packages/ui/compare/v1.30.1...v1.30.2) (2020-10-21)
 
 **Note:** Version bump only for package @lskjs/ui
