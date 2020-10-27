@@ -52,6 +52,7 @@
     "@lskjs/notification": "^1.30.2",
     "@lskjs/page": "^1.30.2",
     "@lskjs/progress": "^1.30.2",
+    "@lskjs/slide": "^1.30.2",
     "@lskjs/scroll": "^1.30.2",
     "@lskjs/t": "^1.30.2",
     "@lskjs/tag": "^1.30.2",

@@ -22,6 +22,7 @@ export default [
   require.context('../node_modules/@lskjs/page', true, /.story.js$|.story.jsx$|.story.tsx$/),
   require.context('../node_modules/@lskjs/progress', true, /.story.js$|.story.jsx$|.story.tsx$/),
   require.context('../node_modules/@lskjs/scroll', true, /.story.js$|.story.jsx$|.story.tsx$/),
+  require.context('../node_modules/@lskjs/slide', true, /.story.js$|.story.jsx$|.story.tsx$/),
   require.context('../node_modules/@lskjs/t', true, /.story.js$|.story.jsx$|.story.tsx$/),
   require.context('../node_modules/@lskjs/tag', true, /.story.js$|.story.jsx$|.story.tsx$/),
   require.context('../node_modules/@lskjs/theme', true, /.story.js$|.story.jsx$|.story.tsx$/),
