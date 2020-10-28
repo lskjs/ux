@@ -1,8 +1,9 @@
+/* eslint-disable camelcase */
 import { Component } from 'react';
 
 class Performance extends Component {
   perf = {};
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     const { disabled } = this.props;
     if (disabled) return;
     this.perf.componentWillMount = Date.now();
@@ -13,7 +14,7 @@ class Performance extends Component {
     this.perf.componentDidMount = Date.now();
     console.log(`[P] ${name}.mount time ${this.perf.componentDidMount - this.perf.componentWillMount}ms`); // eslint-disable-line no-console
   }
-  componentWillUpdate() {
+  UNSAFE_componentWillUpdate() {
     const { disabled } = this.props;
     if (disabled) return;
     this.perf.componentWillUpdate = Date.now();
