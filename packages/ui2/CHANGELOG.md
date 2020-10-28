@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.31.3](https://github.com/lskjs/ux/tree/master/packages/ui2/compare/v1.31.2...v1.31.3) (2020-10-28)
+
+
+### Bug Fixes
+
+* **dev:** use UNSAFE methods ([8b2191a](https://github.com/lskjs/ux/tree/master/packages/ui2/commit/8b2191ad46ecc83092cf08764e01c2bc271bdd6d))
+
+
+
+
+
 ## [1.30.2](https://github.com/lskjs/ux/tree/master/packages/ui2/compare/v1.30.1...v1.30.2) (2020-10-21)
 
 **Note:** Version bump only for package @lskjs/ui2
