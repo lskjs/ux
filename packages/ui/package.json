@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/ui",
-  "version": "1.32.0",
+  "version": "1.32.1",
   "description": "LSK ux subrepo: ui",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -43,7 +43,7 @@
     "@lskjs/button": "^1.31.3",
     "@lskjs/css": "^1.30.2",
     "@lskjs/dev": "^1.31.3",
-    "@lskjs/flag": "^1.32.0",
+    "@lskjs/flag": "^1.32.1",
     "@lskjs/grid": "^1.31.3",
     "@lskjs/image": "^1.31.3",
     "@lskjs/link": "^1.31.3",

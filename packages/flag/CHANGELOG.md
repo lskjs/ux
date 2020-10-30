@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.32.1](https://github.com/lskjs/ux/tree/master/packages/flag/compare/v1.32.0...v1.32.1) (2020-10-30)
+
+
+### Bug Fixes
+
+* **flag:** basePath and height ([fe9959d](https://github.com/lskjs/ux/tree/master/packages/flag/commit/fe9959de800f5d37b6c8bf1101fbf9ca28a3e1c5))
+
+
+
+
+
 # [1.32.0](https://github.com/lskjs/ux/tree/master/packages/flag/compare/v1.31.4...v1.32.0) (2020-10-30)
 
 
