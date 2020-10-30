@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/ui",
-  "version": "1.31.3",
+  "version": "1.32.0",
   "description": "LSK ux subrepo: ui",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -43,7 +43,7 @@
     "@lskjs/button": "^1.31.3",
     "@lskjs/css": "^1.30.2",
     "@lskjs/dev": "^1.31.3",
-    "@lskjs/flag": "^1.31.3",
+    "@lskjs/flag": "^1.32.0",
     "@lskjs/grid": "^1.31.3",
     "@lskjs/image": "^1.31.3",
     "@lskjs/link": "^1.31.3",
@@ -66,14 +66,14 @@
     "prop-types": "15.7.2",
     "react": "16.8.6",
     "react-collapse": "5.0.0",
+    "react-flags": "0.1.18",
     "react-icon-base": "2.1.2",
     "react-icons2": "2.5.0",
     "react-if": "3.4.3",
     "react-laag": "1.7.3",
     "react-markdown": "4.3.1",
     "react-notification-system": "0.3.0",
-    "react-slick": "0.25.2",
-    "react-flags": "0.1.18"
+    "react-slick": "0.25.2"
   },
   "peerDependencies": {
     "@emotion/core": "*",
@@ -102,9 +102,9 @@
   "optionalDependencies": {
     "flickity": "*",
     "react-collapse": "*",
+    "react-flags": "*",
     "react-image-lightbox": "*",
     "react-markdown": "*",
-    "react-motion": "*",
-    "react-flags": "*"
+    "react-motion": "*"
   }
 }

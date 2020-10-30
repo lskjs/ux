@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/modal",
-  "version": "1.31.3",
+  "version": "1.32.0",
   "description": "LSK ux subrepo: modal",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -39,7 +39,7 @@
     "@lskjs/css": "^1.30.2",
     "@lskjs/dev": "^1.31.3",
     "@lskjs/theme": "1.20.5",
-    "@lskjs/ui": "^1.31.3",
+    "@lskjs/ui": "^1.32.0",
     "@lskjs/utils": "0.39.0",
     "bluebird": "3.7.2",
     "classnames": "2.2.6",

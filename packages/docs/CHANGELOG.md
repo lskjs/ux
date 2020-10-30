@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.32.0](https://github.com/isuvorov/lib-starter-kit/tree/master/packages/lib1/compare/v1.31.4...v1.32.0) (2020-10-30)
+
+
+### Features
+
+* **flag:** change flag package ([7b54fc7](https://github.com/isuvorov/lib-starter-kit/tree/master/packages/lib1/commit/7b54fc7405869cf932e72751708689dc463469ec))
+
+
+
+
+
 ## [1.31.4](https://github.com/isuvorov/lib-starter-kit/tree/master/packages/lib1/compare/v1.31.3...v1.31.4) (2020-10-28)
 
 

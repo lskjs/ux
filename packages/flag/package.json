@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/flag",
-  "version": "1.31.3",
+  "version": "1.32.0",
   "description": "LSK ux subrepo: flag",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
