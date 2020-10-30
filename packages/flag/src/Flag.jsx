@@ -13,7 +13,7 @@ const Flag = ({ country, code, pngSize, format, height, ...props }) => {
       format={format}
       pngSize={pngSize}
       height={height}
-      basePath="assets"
+      basePath="/assets"
       {...props}
     />
   );
@@ -29,7 +29,7 @@ Flag.propTypes = {
 Flag.defaultProps = {
   country: 'gb',
   format: 'svg',
-  height: 16,
+  height: null,
   code: null,
   pngSize: 16,
 };
