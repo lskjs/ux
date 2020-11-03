@@ -180,7 +180,6 @@ class Select extends Component {
     return (
       <>
         <Global styles={globalStyles} />
-        {JSON.stringify({ value, option })}
         <SelectComponent
           blurInputOnSelect={blurInputOnSelect}
           // isClearable={defaultIsClearable}
