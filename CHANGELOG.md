@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.32.3](https://github.com/isuvorov/lib-starter-kit/compare/v1.32.2...v1.32.3) (2020-11-06)
+
+
+### Bug Fixes
+
+* padding of select ([5edd693](https://github.com/isuvorov/lib-starter-kit/commit/5edd69338b2fe86d9ea98f440dfc8f89051d716a))
+
+
+
+
+
 ## [1.32.2](https://github.com/isuvorov/lib-starter-kit/compare/v1.32.1...v1.32.2) (2020-11-03)
 
 
