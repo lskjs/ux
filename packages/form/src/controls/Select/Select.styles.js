@@ -15,7 +15,7 @@ const globalStyles = css`
     font-size: 13px;
     line-height: 1.43;
     text-align: left;
-    padding: 5px 6px 5px 3px;
+    padding: 3px 6px 3px 3px;
     outline: none;
     cursor: pointer;
   }
