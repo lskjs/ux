@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { MessageProps } from './Message.d';
 
 export const ContentWrapper = styled('div')`
   display: flex;
@@ -7,7 +8,8 @@ export const ContentWrapper = styled('div')`
   animation: fadeIn 1s ease-in;
   /* max-width: max-content; */
 `;
-export const AvatarWrapper = styled('div')`
+
+export const AvatarWrapper = styled('div')<MessageProps>`
   width: 42px;
   flex-shrink: 0;
   position: relative;
@@ -39,7 +41,11 @@ export const Text = styled('div')`
   /* hyphens: auto; перенос слов */
 `;
 
-export const Title = styled('div')`
+export type TitleType = {
+  isRightDir: boolean;
+};
+
+export const Title = styled('div')<MessageProps>`
   display: block;
   /* text-transform: uppercase; */
   font-size: 12px;
@@ -61,7 +67,8 @@ export const Message = styled('div')`
   width: 100%;
 `;
 
-export const Wrapper = styled('div')`
+
+export const Wrapper = styled('div')<MessageProps>`
   display: flex;
   max-width: 90%;
   align-items: stretch;

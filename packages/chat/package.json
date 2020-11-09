@@ -9,6 +9,8 @@
   },
   "repository": "https://github.com/lskjs/ux/tree/master/packages/chat",
   "keywords": [],
+  "main": "./index.js",
+  "types": "./index.d.ts",
   "scripts": {
     "dev": "npm run watch",
     "postversion": "npm run release",
@@ -28,24 +30,14 @@
     "styleguide": "../../scripts/package-styleguide.sh"
   },
   "dependencies": {
-    "prop-types": "15.7.2"
+    "@lskjs/image": "1.31.3"
   },
   "devDependencies": {
     "@lskjs/dev": "1.31.3",
-    "lodash": "4.17.20",
-    "mobx": "5.15.4",
-    "mobx-react": "6.2.2",
-    "moment-timezone": "0.5.31",
-    "react": "16.8.6",
-    "react-moment": "1.0.0"
+    "react": "16.8.6"
   },
   "peerDependencies": {
     "@lskjs/dev": "*",
-    "mobx": "*",
-    "mobx-react": "*",
-    "react": "*",
-    "react-moment": "*",
-    "moment-timezone": "*",
-    "lodash": "*"
+    "react": "*"
   }
 }

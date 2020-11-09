@@ -1,3 +1,4 @@
+
 {
   "compilerOptions": {
     "outDir": "build/lib",
@@ -30,7 +31,8 @@
     "declaration": true,
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true
+    "emitDecoratorMetadata": true,
+    "skipLibCheck": true
   },
   "include": [
     "src/**/*"

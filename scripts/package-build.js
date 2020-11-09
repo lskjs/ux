@@ -22,7 +22,7 @@ async function packageBuild() {
       'src',
       `--out-dir ${DIST}`,
       '--source-maps both',
-      // '--ignore "**/*.story.jsx"',
+      '--ignore "**/*.d.ts"',
       '--extensions ".js,.jsx,.ts,.tsx"',
       BUILD_PARAMS,
     ].join(' '),
