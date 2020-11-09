@@ -1,16 +1,16 @@
-# LSK T
+# LSK CHAT
  
 > React components for internationalization
 
 [![LSK logo](https://badgen.net/badge/icon/MADE%20BY%20LSK?icon=zeit&label&color=red&labelColor=red)](https://github.com/lskjs)
-[![NPM version](https://badgen.net/npm/v/@lskjs/t)](https://www.npmjs.com/package/@lskjs/t)
-[![Package size](https://badgen.net/bundlephobia/minzip/@lskjs/t)](https://bundlephobia.com/result?p=@lskjs/t)
+[![NPM version](https://badgen.net/npm/v/@lskjs/t)](https://www.npmjs.com/package/@lskjs/chat)
+[![Package size](https://badgen.net/bundlephobia/minzip/@lskjs/t)](https://bundlephobia.com/result?p=@lskjs/chat)
 [![License LSK](https://badgen.net/npm/license/@lskjs/t)](https://github.com/lskjs/lskjs/blob/master/LICENSE)
 [![Chat on Telegram](https://img.shields.io/badge/Chat%20on-Telegram-brightblue.svg)](https://t.me/lskjs)
 
-## Just press on t and take a result from @lskjs/t. Or in reverse.
+## Just press on t and take a result from @lskjs/chat. Or in reverse.
 <!-- <p align="center"> -->
-![](/blog/images/t.png)
+![](/blog/images/chat.png)
 
 <!-- ## Getting Started -->
 ## Installation and usage
@@ -18,56 +18,65 @@
 The easiest way to use is to install it from npm and build it into your app with Webpack.
 
 ```bash
-npm install @lskjs/t
+npm install @lskjs/chat
 ```
 
 Then use it in your app:
 
 ```jsx
-import t from '@lskjs/t';
+import Chat from '@lskjs/chat';
 
-const App = (
-  <>
-    <T name="page.header.title" />
-    <T name="page.header.subtitle" />
-  </>
-);
+    class ChatComponent extends React.Component {
+  state = {
+    messages: [],
+  };
+
+  constructor() {
+    super();
+    serverMessages.forEach((serverMessage) => {
+      const { messages } = this.state;
+      const timeout = serverMessage.createdAt - Date.now();
+      setTimeout(() => {
+        // this.state.messages.push(serverMessage);
+        this.setState({
+          messages: [...messages, serverMessage],
+        });
+      }, timeout);
+    });
+  }
+  render() {
+    const { messages } = this.state;
+    return <Chat items={messages} userId={2} />;
+  }
+}
+
+
+export default ({ storiesOf }) => {
+  return storiesOf('chat/Chat').add('Chat', () => (
+    <Story>
+      <ChatComponent />
+    </Story>
+  ));
+};
 ```
 
 _For more examples and usage, please refer_
 
-- [Tutorial](https://github.com/lskjs/ux/blob/master/blog/tutorial.md#lskjs/t)
-- [Storybook](https://lskjs.github.io/ux/?path=/story/t-t)
+- [Tutorial](https://github.com/lskjs/ux/blob/master/blog/tutorial.md#lskjs/chat)
+- [Storybook](https://lskjs.github.io/ux/?path=/story/t-chat)
 
 
 ## Examples
 
-```jsx
-import T from '@lskjs/t/T';
-import withT from '@lskjs/t/withT';
 
-export default () => (
-  <ButtonGroup>
-    <Button variant="primary">Primary button</Button>
-    <Button variant="outline-secondary">Secondary Button</Button>
-    <Button as="input" type="submit" value="Submit Button" />
-    <Button size="lg">Large Button</Button>
-    <Button block>Block Button</Button>
-    <Button active>Active Button</Button>
-    <Button disabled>Disabled Button</Button>
-    <Button type="primary" shape="circle" icon={<SearchOutlined />} />
-  </ButtonGroup>
-)
- ```
-
-See the [more examples](https://lskjs.github.io/ux/?path=/story/t) in Storybook.
+See the [more examples](https://lskjs.github.io/ux/?path=/story/chat) in Storybook.
 # More info
 
 ## Links
 
-- [Tutorial](https://github.com/lskjs/ux/blob/master/blog/tutorial.md#lskjs/t)
-- [Docs](https://lskjs.github.io/ux/styleguide/t)
-- [Storybook](https://lskjs.github.io/ux/?path=/story/t)
+- [Tutorial](https://github.com/lskjs/ux/blob/master/blog/tutorial.md#lskjs/chat)
+- [Docs](https://lskjs.github.io/ux/styleguide/chat)
+- [Storybook](https://lskjs.github.io/ux/?path=/story/chat)
 - [Changelog](./CHANGELOG.md)
 
 ## Contact
