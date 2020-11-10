@@ -56,7 +56,7 @@ class Select extends Component {
   async initOption() {
     const { loadOption, field } = this.props;
     const { value } = field;
-    const [option] = getNormalizedOptions([await loadOption(value)], this.props);
+    const option = getNormalizedOptions(await loadOption(value), this.props);
     this.setState({ option, initOption: true }); // eslint-disable-line react/no-unused-state
   }
   @autobind
@@ -65,7 +65,6 @@ class Select extends Component {
       const { loadOptions, sortable, ...props } = this.props;
       const options = await loadOptions(...args);
 
-      // console.log({ options });
       if (sortable && !!options) {
         options.sort(this.compareVal);
       }
@@ -176,7 +175,7 @@ class Select extends Component {
     const defaultIsClearable = !props.required && !nullOption;
     const defaultIsSearchable = options && options.length > 10;
     // console.log({ defaultIsClearable }, props.required, !!nullOption, !props.required, !nullOption, nullOption, props.isClearable, normalizedOptions);
-    console.log('RENDER');
+    // console.log('RENDER');
     return (
       <>
         <Global styles={globalStyles} />

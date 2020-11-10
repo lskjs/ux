@@ -5,12 +5,7 @@ import T from '@lskjs/t';
 import { ValueBlock, Value } from './CollapsedMultiValue.styles';
 
 class CollapsedMultiValue extends Component {
-  static sCUFields = [
-    'isDisabled',
-    'isFocused',
-    'selectProps.value.length',
-    'isSelected',
-  ]
+  static sCUFields = ['isDisabled', 'isFocused', 'selectProps.value', 'isSelected'];
   shouldComponentUpdate(nextProps) {
     const { props } = this;
     const { sCUFields } = this.constructor;
@@ -19,10 +14,11 @@ class CollapsedMultiValue extends Component {
     return !isEqual(params, nextParams);
   }
   render() {
-    const { selectProps } = this.props;
+    const { getValue } = this.props;
+    const value = getValue();
     return (
       <ValueBlock>
-        <T name="lskjsForm.MultiValueSelected" /> <Value>({selectProps.value.length})</Value>
+        <T name="lskjsForm.MultiValueSelected" /> <Value>({value.length})</Value>
       </ValueBlock>
     );
   }
