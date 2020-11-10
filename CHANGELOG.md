@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.32.4](https://github.com/isuvorov/lib-starter-kit/compare/v1.32.3...v1.32.4) (2020-11-10)
+
+
+### Bug Fixes
+
+* **form:** Async Select option load is work! ([74a3f9e](https://github.com/isuvorov/lib-starter-kit/commit/74a3f9e359552000d996fed957404827e53a55d3))
+
+
+
+
+
 ## [1.32.3](https://github.com/isuvorov/lib-starter-kit/compare/v1.32.2...v1.32.3) (2020-11-06)
 
 

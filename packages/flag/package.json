@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/flag",
-  "version": "1.32.1",
+  "version": "1.32.4",
   "description": "LSK ux subrepo: flag",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -32,7 +32,7 @@
     "react-flags": "0.1.18"
   },
   "devDependencies": {
-    "@lskjs/dev": "^1.31.3",
+    "@lskjs/dev": "^1.32.4",
     "react": "16.8.6"
   },
   "peerDependencies": {
