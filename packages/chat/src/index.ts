@@ -1,2 +1,2 @@
-export { default } from './Chat';
-export { Message } from './Message';
+export { default } from './ChatExample';
+export { default as Message } from './Message';

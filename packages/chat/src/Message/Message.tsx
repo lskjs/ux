@@ -1,4 +1,4 @@
-import React, { InferProps } from 'react';
+import React from 'react';
 import Image from '@lskjs/image';
 import * as Styled from './Message.styles';
 import { MessageProps } from './Message.d';
@@ -13,7 +13,7 @@ const Message: React.FC<MessageProps> = ({
   isRightDir = false,
   showTitle,
   showAvatar,
-  avatar
+  avatar,
 }) => (
   <Styled.Wrapper isRightDir={isRightDir}>
     {showAvatar && (

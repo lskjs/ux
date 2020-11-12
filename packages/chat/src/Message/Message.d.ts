@@ -10,4 +10,4 @@ export interface MessageProps {
   showTitle?: boolean;
   showAvatar?: boolean;
   avatar?: string;
-};
+}
