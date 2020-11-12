@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.33.0](https://github.com/lskjs/ux/tree/master/packages/chat/compare/v1.32.4...v1.33.0) (2020-11-12)
+
+
+### Bug Fixes
+
+* **chat:** ts errors ([38a329c](https://github.com/lskjs/ux/tree/master/packages/chat/commit/38a329c3511ab5d8ebb744dda1b6f1800a371038))
+
+
+### Features
+
+* **chat:** add ts ([3d445ed](https://github.com/lskjs/ux/tree/master/packages/chat/commit/3d445ed309d04b4fe4d10569df2cf94388a9c092))
+* **packages:** add @lskjs/chat ([438ef5c](https://github.com/lskjs/ux/tree/master/packages/chat/commit/438ef5c6437ea25f425957cafa517c0a7ceedb49))
+
+
+
+
+
 ## [1.31.3](https://github.com/lskjs/ux/tree/master/packages/t/compare/v1.31.2...v1.31.3) (2020-10-28)
 
 **Note:** Version bump only for package @lskjs/t
