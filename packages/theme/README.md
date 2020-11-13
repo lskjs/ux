@@ -10,7 +10,7 @@
 
 1. `npm i @lskjs/theme`
 2. Прокинуть тему в начальную точку приложения ( Layout, App, Uapp )
-```
+```js
 export default class Uapp extends BaseUapp {
   theme = theme
 ```
