@@ -10,18 +10,18 @@
 
 1. `npm i @lskjs/theme`
 2. Прокинуть тему в начальную точку приложения ( Layout, App, Uapp )
-```js
+```jsx
 export default class Uapp extends BaseUapp {
   theme = theme
 ```
 или
- ```
+ ```jsx
 <ThemeProvider theme={theme}>
 
 </ThemeProvider>
 ```
 2. Использование в Styled Components
-```
+```jsx
 import getTheme from '@lskjs/theme/getTheme';
 
 getTheme(props.theme, 'colors.primary')
@@ -33,7 +33,7 @@ getTheme(props.theme, 'colors.primary')
 
 Добавить в проект файл theme.js , в котором:
 
-```
+```js
 import theme from '@lskjs/theme';
 
 export default {
