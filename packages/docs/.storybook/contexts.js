@@ -1,7 +1,10 @@
 export default [
+  require.context('../node_modules/@lskjs/add-to-calendar', true, /.story.js$|.story.jsx$|.story.tsx$/),
   require.context('../node_modules/@lskjs/article', true, /.story.js$|.story.jsx$|.story.tsx$/),
   require.context('../node_modules/@lskjs/avatar', true, /.story.js$|.story.jsx$|.story.tsx$/),
   require.context('../node_modules/@lskjs/button', true, /.story.js$|.story.jsx$|.story.tsx$/),
+  require.context('../node_modules/@lskjs/chat', true, /.story.js$|.story.jsx$|.story.tsx$/),
+  require.context('../node_modules/@lskjs/cookie-consent', true, /.story.js$|.story.jsx$|.story.tsx$/),
   // require.context('../node_modules/@lskjs/css', true, /.story.js$|.story.jsx$|.story.tsx$/),
   // require.context('../node_modules/@lskjs/dashboard', true, /.story.js$|.story.jsx$|.story.tsx$/),
   require.context('../node_modules/@lskjs/dev', true, /.story.js$|.story.jsx$|.story.tsx$/),
@@ -28,4 +31,5 @@ export default [
   require.context('../node_modules/@lskjs/theme', true, /.story.js$|.story.jsx$|.story.tsx$/),
   require.context('../node_modules/@lskjs/typo', true, /.story.js$|.story.jsx$|.story.tsx$/),
   require.context('../node_modules/@lskjs/ui', true, /.story.js$|.story.jsx$|.story.tsx$/),
+  // require.context('../node_modules/@lskjs/ui2', true, /.story.js$|.story.jsx$|.story.tsx$/),
 ];

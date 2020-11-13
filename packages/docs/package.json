@@ -29,11 +29,14 @@
     "build-storybook": "../../scripts/package-build-storybook.sh"
   },
   "dependencies": {
+    "@lskjs/add-to-calendar": "1.32.4",
     "@lskjs/apiquery": "1.47.0",
     "@lskjs/article": "^1.32.4",
     "@lskjs/autobind": "1.43.0",
     "@lskjs/avatar": "^1.32.4",
     "@lskjs/button": "^1.32.4",
+    "@lskjs/chat": "1.33.0",
+    "@lskjs/cookie-consent": "1.32.4",
     "@lskjs/css": "^1.30.2",
     "@lskjs/dev": "^1.32.4",
     "@lskjs/downloads": "^1.32.4",
@@ -59,6 +62,7 @@
     "@lskjs/theme": "1.20.5",
     "@lskjs/typo": "^1.32.4",
     "@lskjs/ui": "^1.32.4",
+    "@lskjs/ui2": "1.32.4",
     "@lskjs/utils": "1.57.0",
     "antd": "^3.26.20",
     "axios": "0.19.0",
