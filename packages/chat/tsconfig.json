@@ -1,4 +1,3 @@
-
 {
   "compilerOptions": {
     "outDir": "build/lib",
@@ -13,8 +12,7 @@
     ],
     "sourceMap": true,
     "allowJs": true,
-    "checkJs": false,
-    "jsx": "preserve",
+    "jsx": "react",
     "moduleResolution": "node",
     "rootDirs": [
       "src",
@@ -31,8 +29,7 @@
     "declaration": true,
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "skipLibCheck": true
+    "emitDecoratorMetadata": true
   },
   "include": [
     "src/**/*"

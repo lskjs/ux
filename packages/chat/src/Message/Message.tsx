@@ -1,11 +1,25 @@
 import React from 'react';
 import Image from '@lskjs/image';
 import * as Styled from './Message.styles';
-import { MessageProps } from './Message.d';
+
+// TODO: JSDoc like this
+// https://github.com/logux/server/blob/master/server/index.d.ts
+
+export interface IMessageProps {
+  image?: string;
+  authorName?: string;
+  time?: string;
+  text?: string;
+  isRightDir?: boolean;
+  showTitle?: boolean;
+  showAvatar?: boolean;
+  avatar?: string;
+}
+
 
 // TODO: Moment
 
-const Message: React.FC<MessageProps> = ({
+const Message: React.FC<IMessageProps> = ({
   image,
   authorName,
   time,
