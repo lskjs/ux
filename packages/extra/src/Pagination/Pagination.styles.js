@@ -1,42 +1,36 @@
 import styled from '@emotion/styled';
-import { css } from '@emotion/core';
 
 export const Nav = styled.nav`
   padding: 1rem 0;
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  ul > li {
-    display: inline-block;
-    margin: 0 .3rem;
-  }
-  li > a {
-    display: block;
-    color: #000;
-    background: #fff;
-    padding: 10px;
-    border: 1px solid #d9d9d9;
-    border-radius: 2px;
-    text-align: center;
-    line-height: 20px;
-    width: 20px;
-    text-decoration: none;
-    &:hover{
-      color: #1890ff;
-      border: 1px solid #1890ff;
-    }
-  }
-  svg {
-    vertical-align: middle;
-    text-align: center;
-  }
+`;
+
+export const Ul= styled.ul`
+  list-style: none; 
+  margin: 0; padding: 0;
 `;
 
 export const Li = styled.li`
-  a {
-    color: ${ (props) => (props.current) ? '#1890ff !important' : 'initial' };
-    border: ${ (props) => (props.current) ? '1px solid #1890ff !important' : 'initial' }
+  display: inline-block;
+  margin: 0 .3rem;
+`;
+
+export const PaginationBtn = styled.button`
+  display: block;
+  background: #fff;
+  padding: 10px;
+  border-radius: 2px;
+  line-height: 20px;
+  width: 40px;
+  color: ${ (props) => (props.current) ? '#1890ff' : '#000' }; 
+  border: ${ (props) => (props.current) ? '1px solid #1890ff' : '1px solid #d9d9d9' };
+  &:hover{
+    color: #1890ff;
+    border: 1px solid #1890ff;
+  }
+  &:focus{
+    outline-color: #1890ff;
+  }
+  svg {
+    vertical-align: middle;
   }
 `;

@@ -41,29 +41,30 @@ const posts = [
 ]
 
 class Parent extends React.Component {
-  state = {
-    currentPage: 1,
-    pageSize: this.props.pageSize,
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentPage: 1,
+      pageSize: this.props.pageSize,
+    };
+    this.handleChange = this.handleChange.bind(this);
   }
-  paginate(e, number) {
-    e.preventDefault();
-    this.setState((state, props) => ({
+  handleChange(typeOfButton, number, maxPageNumber){
+    if (typeOfButton === 'prev') {
+      if (this.state.currentPage > 1) {
+        this.setState((state, props) => ({
+          currentPage: this.state.currentPage - 1,
+        }));
+      }
+    } else if (typeOfButton === 'next') {
+      if (this.state.currentPage < maxPageNumber) {
+        this.setState((state, props) => ({
+          currentPage: this.state.currentPage + 1,
+        }));
+      }
+    } else {
+      this.setState((state, props) => ({
         currentPage: number,
-    }));
-  }
-  clickPrev(e) {
-    e.preventDefault();
-    if (this.state.currentPage > 1) {
-      this.setState((state, props) => ({
-        currentPage: this.state.currentPage - 1,
-      }));
-    }
-  }
-  clickNext(e, maxPageNumber) {
-    e.preventDefault();
-    if (this.state.currentPage < maxPageNumber) {
-      this.setState((state, props) => ({
-        currentPage: this.state.currentPage + 1,
       }));
     }
   }
@@ -86,9 +87,7 @@ class Parent extends React.Component {
             total={posts.length} 
             pageSize={this.state.pageSize}
             currentPage={this.state.currentPage}
-            paginate={this.paginate.bind(this)} 
-            clickPrev={this.clickPrev.bind(this)}
-            clickNext={this.clickNext.bind(this)} 
+            handleChange={this.handleChange}
           />
         </div>
     );
