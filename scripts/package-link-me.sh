@@ -6,8 +6,6 @@ NPMSRC="$NPMDIR/$PACKAGE" && \
 SRC=`pwd` && \
 # echo "ln -s $SRC $NPMSRC"  && \
 rm -rf $NPMSRC && \
-mkdir -p $NPMSRC && \
-rm -rf $NPMSRC && \
 ln -s $SRC $NPMSRC && \
 echo "$NPMSRC => $SRC" && \
 cd ../

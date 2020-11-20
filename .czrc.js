@@ -30,4 +30,7 @@ module.exports = {
     ],
   allowCustomScopes: true,
   allowBreakingChanges: ['feat', 'fix', 'revert'],
+  rules: {
+    'scope-case': [0, 'always', 'lower-case'],
+  }
 };

@@ -1,2 +1,8 @@
 #!/usr/bin/env bash
-npm run watch
+if [[ -f ./.env ]]
+then
+  set -o allexport
+  source .env
+  set +o allexport
+fi
+lerna exec -- npm run dev
