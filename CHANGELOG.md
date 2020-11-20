@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.34.0](https://github.com/isuvorov/lib-starter-kit/compare/v1.33.0...v1.34.0) (2020-11-20)
+
+
+### Features
+
+* **docs:** add ui2, add-to-calendar, chat, cookie-consent to docs storybook ([9dd430a](https://github.com/isuvorov/lib-starter-kit/commit/9dd430abf74a068d6ea12d48f936ee7fad75e5ad))
+
+
+
+
+
 # [1.33.0](https://github.com/isuvorov/lib-starter-kit/compare/v1.32.4...v1.33.0) (2020-11-12)
 
 
