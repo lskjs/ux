@@ -22,10 +22,11 @@ export const PaginationBtn = styled.button`
   line-height: 20px;
   width: 40px;
   color: ${ (props) => (props.current) ? '#1890ff' : '#000' }; 
+  color: ${ (props) => (props.disabled) ? '#736e6e' : '#000' }; 
   border: ${ (props) => (props.current) ? '1px solid #1890ff' : '1px solid #d9d9d9' };
   &:hover{
-    color: #1890ff;
-    border: 1px solid #1890ff;
+    color: ${ (props) => (props.disabled) ? '#736e6e' : '#1890ff' }; 
+    border: ${ (props) => (props.disabled) ? '1px solid #d9d9d9' : '1px solid #1890ff' };
   }
   &:focus{
     outline-color: #1890ff;

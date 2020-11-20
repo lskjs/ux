@@ -99,5 +99,13 @@ export default ({ storiesOf }) => {
   .add('Default', () => (
     <Parent pageSize={2} />
   ))
-
+  .add('Disabled', () => (
+    <Pagination disabled total={posts.length} pageSize={2} />
+  ))
+  .add('hideOnSinglePage', () => (
+    <Pagination total={1} hideOnSinglePage />
+  ))
+  .add('showTotal', () => (
+    <Pagination total={50} showTotal={total => `Total ${total} pages`} />
+  ))
 }
