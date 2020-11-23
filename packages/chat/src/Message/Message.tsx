@@ -1,20 +1,10 @@
 import React from 'react';
 import Image from '@lskjs/image';
+import { IMessageProps } from './types';
 import * as Styled from './Message.styles';
 
 // TODO: JSDoc like this
 // https://github.com/logux/server/blob/master/server/index.d.ts
-
-export interface IMessageProps {
-  image?: string;
-  authorName?: string;
-  time?: string;
-  text?: string;
-  isRightDir?: boolean;
-  showTitle?: boolean;
-  showAvatar?: boolean;
-  avatar?: string;
-}
 
 
 // TODO: Moment

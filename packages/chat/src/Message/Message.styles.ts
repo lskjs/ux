@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { MessageProps } from './Message.d';
+import { IMessageProps } from './types';
 
 export const ContentWrapper = styled('div')`
   display: flex;
@@ -9,7 +9,7 @@ export const ContentWrapper = styled('div')`
   /* max-width: max-content; */
 `;
 
-export const AvatarWrapper = styled('div')<MessageProps>`
+export const AvatarWrapper = styled('div')<IMessageProps>`
   width: 42px;
   flex-shrink: 0;
   position: relative;
@@ -45,7 +45,7 @@ export type TitleType = {
   isRightDir: boolean;
 };
 
-export const Title = styled('div')<MessageProps>`
+export const Title = styled('div')<IMessageProps>`
   display: block;
   /* text-transform: uppercase; */
   font-size: 12px;
@@ -68,7 +68,7 @@ export const Message = styled('div')`
 `;
 
 
-export const Wrapper = styled('div')<MessageProps>`
+export const Wrapper = styled('div')<IMessageProps>`
   display: flex;
   max-width: 90%;
   align-items: stretch;

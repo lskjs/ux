@@ -38,6 +38,7 @@ async function packageBuild() {
         '--declarationMap',
         '--emitDeclarationOnly',
         '--esModuleInterop',
+        '--jsx react',
         `--outDir ${DIST}`,
         'src/**.ts',
       ].join(' '),
