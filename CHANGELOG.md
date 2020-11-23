@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.34.1](https://github.com/isuvorov/lib-starter-kit/compare/v1.34.0...v1.34.1) (2020-11-23)
+
+
+### Bug Fixes
+
+* **chat:** fix typings ([029f07d](https://github.com/isuvorov/lib-starter-kit/commit/029f07d663de73ddc577846c01a51dc63b0d3c0f))
+
+
+
+
+
 # [1.34.0](https://github.com/isuvorov/lib-starter-kit/compare/v1.33.0...v1.34.0) (2020-11-20)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/css",
-  "version": "1.34.0",
+  "version": "1.34.1",
   "description": "LSK ux subrepo: css",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -33,7 +33,6 @@
     "i18": "../../scripts/package-i18.sh",
     "clear": "../../scripts/package-clear.sh"
   },
-  "dependencies": {},
   "devDependencies": {
     "@emotion/core": "10.0.27",
     "emotion": "10.0.27"
