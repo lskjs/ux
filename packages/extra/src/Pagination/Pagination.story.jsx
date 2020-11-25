@@ -38,7 +38,7 @@ const posts = [
     "title": "6 dolorem eum magni eos aperiam quia",
     "body": "ut aspernatur corporis harum nihil quis provident sequi\nmollitia nobis aliquid molestiae\nperspiciatis et ea nemo ab reprehenderit accusantium quas\nvoluptate dolores velit et doloremque molestiae"
   }
-]
+];
 
 class Parent extends React.Component {
   constructor(props) {
@@ -49,24 +49,11 @@ class Parent extends React.Component {
     };
     this.handleChange = this.handleChange.bind(this);
   }
-  handleChange(typeOfButton, number, maxPageNumber){
-    if (typeOfButton === 'prev') {
-      if (this.state.currentPage > 1) {
-        this.setState((state, props) => ({
-          currentPage: this.state.currentPage - 1,
-        }));
-      }
-    } else if (typeOfButton === 'next') {
-      if (this.state.currentPage < maxPageNumber) {
-        this.setState((state, props) => ({
-          currentPage: this.state.currentPage + 1,
-        }));
-      }
-    } else {
-      this.setState((state, props) => ({
-        currentPage: number,
-      }));
-    }
+
+  handleChange(number){
+    this.setState((state, props) => ({
+      currentPage: number,
+    }));
   }
 
   render() {

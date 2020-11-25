@@ -1,25 +1,47 @@
 import React from 'react';
+import { FaAngleRight, FaAngleLeft } from 'react-icons/fa';
 import { Nav, Ul, Li, PaginationBtn } from './Pagination.styles';
-import { FaAngleRight, FaAngleLeft } from "react-icons/fa";
 
 export default class Pagination extends React.Component {
-	state = {
-		total: this.props.total || 0,
-		pageSize: this.props.pageSize || 10,
-    currentPage: this.props.currentPage,
-    disabled: this.props.disabled || false,
-    hideOnSinglePage: this.props.hideOnSinglePage,
-    showTotal: this.props.showTotal
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      total: this.props.total || 0,
+      pageSize: this.props.pageSize || 10,
+      currentPage: this.props.currentPage,
+      disabled: this.props.disabled || false,
+      hideOnSinglePage: this.props.hideOnSinglePage,
+      showTotal: this.props.showTotal
+    };
+    this.handleArrows = this.handleArrows.bind(this);
+  }
 
-  static getDerivedStateFromProps(nextProps, prevState){
-    if(nextProps.currentPage!==prevState.currentPage){
-      return { currentPage: nextProps.currentPage};
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if ( nextProps.currentPage !== prevState.currentPage ) {
+      return { 
+        currentPage: nextProps.currentPage
+      };
     }
     else return null;
   }
 
-	render() {
+  handleArrows(typeOfButton, maxPageNumber) {
+    let page = this.state.currentPage;
+    if (typeOfButton === 'prev') {
+      if (this.state.currentPage > 1) {
+        this.setState({ currentPage: this.state.currentPage - 1 });
+        page--;
+      }
+    } else if (typeOfButton === 'next') {
+      if (this.state.currentPage < maxPageNumber) {
+        this.setState({ currentPage: this.state.currentPage + 1 });
+        page++;
+      }
+    }
+    return this.props.handleChange(page);
+  }
+
+  render() {
     if (this.state.hideOnSinglePage === true && this.state.total <= this.state.pageSize) {
       return null;
     }
@@ -45,8 +67,8 @@ export default class Pagination extends React.Component {
           {totalText}
           <Li>
             <PaginationBtn 
-              onClick={() => this.props.handleChange('prev')}
-              disabled={this.props.disabled}
+              onClick={() => this.handleArrows('prev')}
+              disabled={this.props.disabled || !(this.state.currentPage > 1)}
             >
               <FaAngleLeft />
             </PaginationBtn>
@@ -54,7 +76,7 @@ export default class Pagination extends React.Component {
             { pageNumbers.map(number => (
               <Li key={number} >
                 <PaginationBtn 
-                  onClick={() => this.props.handleChange('number', number)}
+                  onClick={() => this.props.handleChange(number)}
                   current={ this.state.currentPage === number }
                   disabled={this.props.disabled}
                 >
@@ -64,8 +86,8 @@ export default class Pagination extends React.Component {
             )) }
             <Li>
               <PaginationBtn 
-                onClick={() => this.props.handleChange('next', '', maxPageNumber)}
-                disabled={this.props.disabled}
+                onClick={() => this.handleArrows('next', maxPageNumber)}
+                disabled={this.props.disabled || !(this.state.currentPage < maxPageNumber)}
               >
                 <FaAngleRight />
               </PaginationBtn>
@@ -73,5 +95,5 @@ export default class Pagination extends React.Component {
         </Ul>
       </Nav>
     );
-	};
+  };
 }

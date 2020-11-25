@@ -21,12 +21,20 @@ export const PaginationBtn = styled.button`
   border-radius: 2px;
   line-height: 20px;
   width: 40px;
-  color: ${ (props) => (props.current) ? '#1890ff' : '#000' }; 
-  color: ${ (props) => (props.disabled) ? '#736e6e' : '#000' }; 
   border: ${ (props) => (props.current) ? '1px solid #1890ff' : '1px solid #d9d9d9' };
+  color: ${(props) => {
+    if (props.current) {
+      return '#1890ff';
+    } else if (props.disabled) {
+      return '#736e6e';
+    } else {
+      return '#000';
+    }
+  }};
   &:hover{
     color: ${ (props) => (props.disabled) ? '#736e6e' : '#1890ff' }; 
     border: ${ (props) => (props.disabled) ? '1px solid #d9d9d9' : '1px solid #1890ff' };
+    cursor: ${ (props) => (props.disabled) ? 'default' : 'pointer' };
   }
   &:focus{
     outline-color: #1890ff;
