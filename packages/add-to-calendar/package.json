@@ -28,13 +28,13 @@
     "styleguide": "../../scripts/package-styleguide.sh"
   },
   "dependencies": {
-    "@lskjs/utils": "1.77.3",
+    "@lskjs/utils": "1.42.0",
     "emotion": "10.0.27",
     "moment": "2.27.0"
   },
   "devDependencies": {
-    "@lskjs/button": "^1.32.4",
-    "@lskjs/dev": "^1.32.4",
+    "@lskjs/button": "^1.30.2",
+    "@lskjs/dev": "^1.30.2",
     "prop-types": "15.7.2",
     "react": "16.13.1"
   },
