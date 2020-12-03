@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.35.0](https://github.com/isuvorov/lib-starter-kit/compare/v1.34.2...v1.35.0) (2020-12-03)
+
+
+### Features
+
+* **form:** Optimize Select control. ([2765e17](https://github.com/isuvorov/lib-starter-kit/commit/2765e1772cca572b0462f893467ed90d6a536847))
+
+
+
+
+
 ## [1.34.2](https://github.com/isuvorov/lib-starter-kit/compare/v1.34.1...v1.34.2) (2020-11-27)
 
 **Note:** Version bump only for package lskjs-ux
