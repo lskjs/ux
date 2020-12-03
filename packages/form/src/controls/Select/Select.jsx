@@ -38,7 +38,9 @@ class Select extends Component {
     if (!isEqual(hadError, hasError)) {
       return true;
     }
-    // console.log(nextProps);
+    if (!isEqual(state._value, nextState._value)) {
+      return true;
+    }
     if (!isEqual(nextValue, prevValue)) {
       return true;
     }
@@ -54,9 +56,14 @@ class Select extends Component {
     return false;
   }
   async initOption() {
+    const { _value } = this.state;
     const { loadOption, field } = this.props;
     const { value } = field;
-    const option = getNormalizedOptions(await loadOption(value), this.props);
+    let rawValue = _value;
+    if (!rawValue) {
+      rawValue = value;
+    }
+    const option = getNormalizedOptions(await loadOption(rawValue), this.props);
     this.setState({ option, initOption: true }); // eslint-disable-line react/no-unused-state
   }
   @autobind
@@ -86,7 +93,7 @@ class Select extends Component {
   }
   @autobind
   handleChange(option) {
-    const { form, field, onChange } = this.props;
+    const { blurInputOnSelect = true } = this.props;
     this.setState({ option, initOption: false }); // eslint-disable-line react/no-unused-state
     let value;
     if (option && option.length) {
@@ -94,12 +101,42 @@ class Select extends Component {
     } else {
       value = getReverseOptionValue(option && option.value);
     }
+    if (typeof value === 'undefined') {
+      this.handleLocaleChange(value);
+      this.handleRemoteChange(value);
+    } else {
+      if (blurInputOnSelect) {
+        this.handleRemoteChange(value);
+      } else {
+        this.handleLocaleChange(value);
+      }
+    }
+  }
+  @autobind
+  handleLocaleChange(value) {
+    this.setState({
+      _value: value,
+    });
+  }
+  @autobind
+  handleRemoteChange(value) {
+    const { form, field, onChange } = this.props;
     if (form && field) {
       form.setFieldValue(field.name, value);
     }
     if (onChange) onChange(value);
   }
+  @autobind
+  callbackCloseMenu() {
+    const { blurInputOnSelect = true } = this.props;
+    const { _value: value } = this.state;
+    if (!blurInputOnSelect) {
+      this.handleRemoteChange(value);
+      this.handleLocaleChange(undefined);
+    }
+  }
   render() {
+    const { _value } = this.state;
     const {
       blurInputOnSelect = true,
       hideSelectedOptions = false,
@@ -117,9 +154,9 @@ class Select extends Component {
       isMulti,
       multiSearch,
       isHideSelected,
+      onMenuClose,
       ...props
     } = this.props;
-    // console.log(this.props.selected)
 
     let filterOption;
     if (options && multiSearch) {
@@ -144,8 +181,12 @@ class Select extends Component {
     const normalizedOptions = getNormalizedOptions(options, props);
     let option;
     let value;
+    let rawValue = _value;
+    if (!rawValue) {
+      rawValue = field ? field.value : propValue;
+    }
     // if (!async) {
-    value = getOptionValue(field ? field.value : propValue);
+    value = getOptionValue(rawValue);
     // }
     if (async) {
       ({ option } = this.state);
@@ -174,8 +215,6 @@ class Select extends Component {
     const nullOption = find(normalizedOptions, (o) => o.value === NULL_STRING);
     const defaultIsClearable = !props.required && !nullOption;
     const defaultIsSearchable = options && options.length > 10;
-    // console.log({ defaultIsClearable }, props.required, !!nullOption, !props.required, !nullOption, nullOption, props.isClearable, normalizedOptions);
-    // console.log('RENDER');
     return (
       <>
         <Global styles={globalStyles} />
@@ -228,6 +267,7 @@ class Select extends Component {
           loadOptions={this.loadOptions}
           onChange={this.handleChange}
           options={async ? null : normalizedOptions}
+          onMenuClose={onMenuClose || !blurInputOnSelect && this.callbackCloseMenu}
         />
       </>
     );

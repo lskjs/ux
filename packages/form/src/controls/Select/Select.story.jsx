@@ -13,7 +13,7 @@ import Story from '@lskjs/dev/Story/UappStory';
 import Performance from '@lskjs/dev/Performance';
 import Flag from '@lskjs/flag';
 import createForm from '../../createForm';
-// import FormDebug from '../../FormDebug';
+import FormDebug from '../../FormDebug';
 import Select from './Select';
 import countriesList from './countriesList';
 // import createFormWithI18 from '../../createFormWithI18';
@@ -50,12 +50,15 @@ const SelectFormView = ({ control, ...props }) => (
     <Field {...control('multiselect2')} />
     <Field {...control('multiselect3')} />
     <Field {...control('checkboxes')} />
+    <FormDebug {...props} />
     <hr />
     <h1>Асинхронные селекты</h1>
     <Field {...control('asyncSelect')} />
     <Field {...control('asyncSelect')} />
     <Field {...control('asyncSelect2')} />
     <Field {...control('asyncMultiSelect')} />
+    <Field {...control('asyncMultiSelect2')} />
+    <FormDebug {...props} />
     <hr />
     <h1>Кастомный дизайн</h1>
     <Field {...control('games')} />
@@ -63,6 +66,7 @@ const SelectFormView = ({ control, ...props }) => (
     <Field {...control('flag')} />
     <Field {...control('countries')} />
     <Field {...control('userSelect')} />
+    <FormDebug {...props} />
     <hr />
     <h1>initialValue - баг</h1>
     <Field {...control('info.bug1')} />
@@ -74,7 +78,7 @@ const SelectFormView = ({ control, ...props }) => (
       <option value="mercedes">Mercedes</option>
       <option value="audi">Audi</option>
     </select>
-    {/* <FormDebug {...props} /> */}
+    <FormDebug {...props} />
   </Form>
 );
 
@@ -349,6 +353,43 @@ const SelectForm = createForm({
       component: Select,
       async: true,
       isMulti: true,
+      loadOption: async (values) => {
+        if (Array.isArray(values)) {
+          return values.map((value) => {
+            return {
+              value,
+              id: value,
+              image: `https://picsum.photos/40/40/?image=${value}`,
+              label: `User ${value}`,
+            };
+          });
+        }
+        return [];
+      },
+      loadOptions: async (searchValue = '') => {
+        const start = searchValue.length;
+        return new Promise((resolve) => {
+          setTimeout(
+            () =>
+              resolve(
+                range(start, start + 10).map((value) => ({
+                  value,
+                  id: value,
+                  image: `https://picsum.photos/40/40/?image=${value}`,
+                  title: `User ${value}`,
+                })),
+              ),
+            50,
+          );
+        });
+      },
+    },
+    asyncMultiSelect2: {
+      title: 'The asyncMultiSelect2 && !blurInputOnSelect',
+      component: Select,
+      async: true,
+      isMulti: true,
+      blurInputOnSelect: false,
       loadOption: async (values) => {
         if (Array.isArray(values)) {
           return values.map((value) => {
