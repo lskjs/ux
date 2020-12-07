@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.35.2](https://github.com/isuvorov/lib-starter-kit/compare/v1.35.1...v1.35.2) (2020-12-07)
+
+
+### Bug Fixes
+
+* disable after release hook ([271de3f](https://github.com/isuvorov/lib-starter-kit/commit/271de3f4960eb0200d5ff5e4cff27a252664bf6c))
+* **form:** remove comments from Select story ([0f68a2f](https://github.com/isuvorov/lib-starter-kit/commit/0f68a2f71cdf2cfc2ce3115baaa618e6c6b0db3b))
+
+
+
+
+
 ## [1.35.1](https://github.com/isuvorov/lib-starter-kit/compare/v1.35.0...v1.35.1) (2020-12-07)
 
 
