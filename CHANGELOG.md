@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.35.1](https://github.com/isuvorov/lib-starter-kit/compare/v1.35.0...v1.35.1) (2020-12-07)
+
+
+### Bug Fixes
+
+* **ci:** paths ([ee94471](https://github.com/isuvorov/lib-starter-kit/commit/ee94471061c4a5b749e249ad5481fff88c62eb6d))
+* **ci:** trigger by pushed tag ([b30e4fb](https://github.com/isuvorov/lib-starter-kit/commit/b30e4fbfb71bc08fb2eabaf97158db15cc5c9103))
+* **form:** remove FormDebug from Select story ([468e982](https://github.com/isuvorov/lib-starter-kit/commit/468e98215fad6bb6d3f899e1643ff996ca71dc72))
+* CI release hook ([c035860](https://github.com/isuvorov/lib-starter-kit/commit/c0358604695ddb03519419e26cbf20cdf6e03862))
+* remove link-me ([ee530c2](https://github.com/isuvorov/lib-starter-kit/commit/ee530c2c3a783513f07582c5f50177171a13aa27))
+
+
+
+
+
 # [1.35.0](https://github.com/isuvorov/lib-starter-kit/compare/v1.34.2...v1.35.0) (2020-12-03)
 
 

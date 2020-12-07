@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.35.1](https://github.com/lskjs/ux/tree/master/packages/form/compare/v1.35.0...v1.35.1) (2020-12-07)
+
+
+### Bug Fixes
+
+* **form:** remove FormDebug from Select story ([468e982](https://github.com/lskjs/ux/tree/master/packages/form/commit/468e98215fad6bb6d3f899e1643ff996ca71dc72))
+
+
+
+
+
 # [1.35.0](https://github.com/lskjs/ux/tree/master/packages/form/compare/v1.34.2...v1.35.0) (2020-12-03)
 
 
