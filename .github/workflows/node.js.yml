@@ -25,8 +25,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
-    - run: cd packages/docs && npm run bootstrap
-    - run: npm run build-storybook && cd ../..
+    - run: cd packages/docs && npm run bootstrap && npm run build-storybook && cd ../..
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@3.7.1
       with:
