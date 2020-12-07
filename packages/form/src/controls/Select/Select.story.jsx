@@ -50,7 +50,6 @@ const SelectFormView = ({ control, ...props }) => (
     <Field {...control('multiselect2')} />
     <Field {...control('multiselect3')} />
     <Field {...control('checkboxes')} />
-    <FormDebug {...props} />
     <hr />
     <h1>Асинхронные селекты</h1>
     <Field {...control('asyncSelect')} />
@@ -58,7 +57,6 @@ const SelectFormView = ({ control, ...props }) => (
     <Field {...control('asyncSelect2')} />
     <Field {...control('asyncMultiSelect')} />
     <Field {...control('asyncMultiSelect2')} />
-    <FormDebug {...props} />
     <hr />
     <h1>Кастомный дизайн</h1>
     <Field {...control('games')} />
@@ -66,7 +64,6 @@ const SelectFormView = ({ control, ...props }) => (
     <Field {...control('flag')} />
     <Field {...control('countries')} />
     <Field {...control('userSelect')} />
-    <FormDebug {...props} />
     <hr />
     <h1>initialValue - баг</h1>
     <Field {...control('info.bug1')} />
@@ -78,7 +75,6 @@ const SelectFormView = ({ control, ...props }) => (
       <option value="mercedes">Mercedes</option>
       <option value="audi">Audi</option>
     </select>
-    <FormDebug {...props} />
   </Form>
 );
 
