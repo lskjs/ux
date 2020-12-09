@@ -2,12 +2,13 @@ import styled from '@emotion/styled';
 import getTheme from '@lskjs/theme/getTheme';
 
 export const Value = styled('div')`
-  margin-top: -9px;
   font-weight: 500;
   font-size: 14px;
   margin-right: 12px;
   font-family: ${p => getTheme(p.theme, 'fontFamily')};
   color: ${p => getTheme(p.theme, 'colors.primary')};
+  flex-shrink: 0;
+  width: 38px;
 `;
 
 export const SliderWrapper = styled('div')`
@@ -21,10 +22,10 @@ export const SliderWrapper = styled('div')`
 `;
 
 export const Wrapper = styled('div')`
-   display: flex;
+  display: flex;
   .ant-slider {
     margin: 10px 0px 10px 6px;
-    height: 10px;
+    height: 8px;
     background-color: transparent !important;
     border-top: none !important;
     border-bottom: none !important;
@@ -38,6 +39,7 @@ export const Wrapper = styled('div')`
     height: 2px !important;
     background-color: ${p => getTheme(p.theme, 'colors.darkerBackground')} !important;
     top: 0 !important;
+    left: 0 !important;
   }
 
   .ant-slider-track {
@@ -52,21 +54,21 @@ export const Wrapper = styled('div')`
   }
 
   .ant-slider-handle {
-   margin-top: -7px !important;
-   width: 8px !important;
-   height: 8px !important;
-   border: none !important;
-   background-color: ${p => getTheme(p.theme, 'colors.primary')} !important;
-   outline: none !important;
-   box-shadow: 0 0 0 1px ${p => getTheme(p.theme, 'colors.primary')};
+    margin-top: -7px !important;
+    width: 8px !important;
+    height: 8px !important;
+    border: none !important;
+    background-color: ${p => getTheme(p.theme, 'colors.primary')} !important;
+    outline: none !important;
+    box-shadow: 0 0 0 1px ${p => getTheme(p.theme, 'colors.primary')};
 
-   transition: box-shadow .2s ease-out !important;
-   will-change: box-shadow;
+    transition: box-shadow 0.2s ease-out !important;
+    will-change: box-shadow;
   }
 
   .ant-slider-handle:hover {
-   box-shadow: 0 0 0 6px ${p => getTheme(p.theme, 'colors.primary')};
-   transform: scale(1) !important;
+    box-shadow: 0 0 0 6px ${p => getTheme(p.theme, 'colors.primary')};
+    transform: scale(1) !important;
   }
 
   .ant-slider-disabled .ant-slider-rail {
