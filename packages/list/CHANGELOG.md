@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.36.0](https://github.com/lskjs/ux/tree/master/packages/list/compare/v1.35.2...v1.36.0) (2020-12-09)
+
+
+### Features
+
+* search actions to List ([23f4303](https://github.com/lskjs/ux/tree/master/packages/list/commit/23f4303234e7d510784b31ee23f9424278d90d97))
+
+
+
+
+
 ## [1.35.2](https://github.com/lskjs/ux/tree/master/packages/list/compare/v1.35.1...v1.35.2) (2020-12-07)
 
 **Note:** Version bump only for package @lskjs/list
