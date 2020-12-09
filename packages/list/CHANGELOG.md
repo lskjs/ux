@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.36.2](https://github.com/lskjs/ux/tree/master/packages/list/compare/v1.36.1...v1.36.2) (2020-12-09)
+
+
+### Bug Fixes
+
+* seachActions default ([3d6f081](https://github.com/lskjs/ux/tree/master/packages/list/commit/3d6f081a85a27c7d446590dd2610309d8ef5b137))
+
+
+
+
+
 ## [1.36.1](https://github.com/lskjs/ux/tree/master/packages/list/compare/v1.36.0...v1.36.1) (2020-12-09)
 
 
