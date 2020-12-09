@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.36.1](https://github.com/isuvorov/lib-starter-kit/compare/v1.36.0...v1.36.1) (2020-12-09)
+
+
+### Bug Fixes
+
+* searchActions list ([e2b678a](https://github.com/isuvorov/lib-starter-kit/commit/e2b678a6e9c716f0d32fe50eee276631f500344f))
+
+
+
+
+
 # [1.36.0](https://github.com/isuvorov/lib-starter-kit/compare/v1.35.2...v1.36.0) (2020-12-09)
 
 
