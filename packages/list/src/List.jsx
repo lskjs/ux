@@ -26,6 +26,7 @@ import {
   SelectWrapper,
   SelectRowWrapper,
   HoverRowWrapper,
+  SearchActionsWrapper,
   globalStylesList,
 } from './List.styles';
 import { Provider } from './List.context';
@@ -99,6 +100,7 @@ class List extends Component {
   static Button = Button;
   static SearchResults = ListSearchResults;
   static SearchWrapper = SearchWrapper;
+  static SearchActionsWrapper = SearchActionsWrapper;
   static SearchComponent = DefaultSearchComponent;
   static SearchResultsWrapper = SearchResultsWrapper;
   // static DownloadButton = ({ children }) => children;
@@ -154,6 +156,7 @@ class List extends Component {
       innerProps,
       itemProps,
       footerProps,
+      actions,
     } = this.props;
     const isFilterModal = collectProp(this, 'isFilterModal');
     let { listStore } = this.props;
@@ -200,6 +203,7 @@ class List extends Component {
       'SearchWrapper',
       'SearchComponent',
       'SearchResultsWrapper',
+      'SearchActionsWrapper',
 
       'Wrapper',
       'BodyWrapper',
@@ -255,6 +259,7 @@ class List extends Component {
           innerProps,
           itemProps,
           footerProps,
+          actions,
         }}
       >
         <MobxProvider listStore={listStore} selectStore={selectStore}>

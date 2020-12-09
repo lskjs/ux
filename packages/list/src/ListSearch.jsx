@@ -4,8 +4,9 @@ import { observer, inject } from 'mobx-react';
 import { formatter } from '@lskjs/utils/formatter';
 import { contextToProps } from './List.context';
 
-const ListSearch = ({ i18, List, listStore, show, ...props }) => (
-  <List.SearchWrapper>
+const ListSearch = ({ i18, List, listStore, show, actions, ...props }) => (
+  <List.SearchWrapper flex={!!show.searchActions}>
+    {!!show.searchActions && <List.SearchActionsWrapper>{actions}</List.SearchActionsWrapper>}
     <List.SearchComponent
       current={listStore.items.length}
       max={formatter(listStore.count)}
@@ -16,9 +17,15 @@ const ListSearch = ({ i18, List, listStore, show, ...props }) => (
       onClear={() => listStore.setSearch(null)}
       actions={show.filterButton && <List.FilterButton />}
       placeholder={i18.t('lskList.searchPlaceholder')}
+      block={!!show.searchActions}
       {...props}
     />
   </List.SearchWrapper>
 );
 
-export default contextToProps('List', 'show', 'FilterForm')(inject('listStore', 'i18')(observer(ListSearch)));
+export default contextToProps(
+  'List',
+  'show',
+  'FilterForm',
+  'actions',
+)(inject('listStore', 'i18')(observer(ListSearch)));
