@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.36.3](https://github.com/lskjs/ux/tree/master/packages/form/compare/v1.36.2...v1.36.3) (2020-12-09)
+
+
+### Bug Fixes
+
+* PercentSlider ([1d4fd6c](https://github.com/lskjs/ux/tree/master/packages/form/commit/1d4fd6c0bf16b3d74b941c5c95e497476d3b7334))
+
+
+
+
+
 ## [1.35.2](https://github.com/lskjs/ux/tree/master/packages/form/compare/v1.35.1...v1.35.2) (2020-12-07)
 
 

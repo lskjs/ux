@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.36.3](https://github.com/isuvorov/lib-starter-kit/compare/v1.36.2...v1.36.3) (2020-12-09)
+
+
+### Bug Fixes
+
+* PercentSlider ([1d4fd6c](https://github.com/isuvorov/lib-starter-kit/commit/1d4fd6c0bf16b3d74b941c5c95e497476d3b7334))
+
+
+
+
+
 ## [1.36.2](https://github.com/isuvorov/lib-starter-kit/compare/v1.36.1...v1.36.2) (2020-12-09)
 
 
