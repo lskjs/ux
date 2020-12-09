@@ -72,6 +72,7 @@ const defaultShow = {
   /** */ pages: true,
   /** */ stepper: true,
   /** */ paginator: true,
+  /** */ searchActions: true,
 };
 
 const DEBUG = false;
