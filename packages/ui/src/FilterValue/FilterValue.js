@@ -7,6 +7,6 @@ export default styled('div')`
   text-align: left;
   display: flex;
   align-items: center;
-  padding: 0 46px 0 12px;
+  padding: 0 0 0 12px;
   color: ${p => (!p.selected ? getTheme(p.theme, 'colors.secondary') : getTheme(p.theme, 'colors.main'))};
 `;
