@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.36.4](https://github.com/lskjs/ux/tree/master/packages/modal/compare/v1.36.3...v1.36.4) (2020-12-14)
+
+**Note:** Version bump only for package @lskjs/modal
+
+
+
+
+
 ## [1.34.2](https://github.com/lskjs/ux/tree/master/packages/modal/compare/v1.34.1...v1.34.2) (2020-11-27)
 
 **Note:** Version bump only for package @lskjs/modal
