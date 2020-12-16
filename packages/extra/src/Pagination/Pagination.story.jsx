@@ -46,6 +46,8 @@ class Parent extends React.Component {
     this.state = {
       currentPage: 1,
       pageSize: this.props.pageSize,
+      showJumper: this.props.showJumper,
+      jumperNumber: this.props.jumperNumber,
     };
     this.handleChange = this.handleChange.bind(this);
   }
@@ -74,7 +76,9 @@ class Parent extends React.Component {
             total={posts.length} 
             pageSize={this.state.pageSize}
             currentPage={this.state.currentPage}
-            handleChange={this.handleChange}
+            onChange={this.handleChange}
+            showJumper={this.state.showJumper}
+            jumperNumber={this.state.jumperNumber}
           />
         </div>
     );
@@ -94,5 +98,30 @@ export default ({ storiesOf }) => {
   ))
   .add('showTotal', () => (
     <Pagination total={50} showTotal={total => `Total ${total} pages`} />
+  ))
+  .add('Jumper', () => (
+    <div>
+    <p>total: 6 </p>
+    <Parent pageSize={1} showJumper />
+    total: 40
+    <Pagination total={40} pageSize={10} showJumper />
+    total: 50
+    <Pagination total={50} pageSize={10} showJumper />
+    total: 60
+    <Pagination total={60} pageSize={10} showJumper />
+    total: 70
+    <Pagination total={70} pageSize={10} showJumper />
+    total: 80
+    <Pagination total={80} pageSize={10} showJumper />
+    total: 80, current default: 3
+    <Pagination total={80} pageSize={10} currentPage={3} showJumper />
+    total: 100
+    <Pagination total={100} pageSize={10} showJumper />
+    total: 500
+    <Pagination total={500} pageSize={10} showJumper />
+    </div>
+  ))
+  .add('goTo', () => (
+    <Pagination total={50} goTo />
   ))
 }

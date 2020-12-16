@@ -43,3 +43,29 @@ export const PaginationBtn = styled.button`
     vertical-align: middle;
   }
 `;
+
+export const GoTo = styled.button`
+  color: #1890ff;
+  background: #fff;
+  padding: 10px;
+  border-radius: 2px;
+  line-height: 20px;
+  width: 40px;
+  border: 1px solid #d9d9d9;
+  &:hover{
+    color: #000;
+  }
+  svg {
+    vertical-align: middle;
+  }
+`;
+
+export const Input = styled.input`
+  background: #fff;
+  padding: 10px;
+  border-radius: 2px;
+  line-height: 20px;
+  width: 100px;
+  border: 1px solid #d9d9d9;
+  margin-right: .5rem;
+`;
