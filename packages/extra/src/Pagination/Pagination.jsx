@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaAngleRight, FaAngleLeft } from 'react-icons/fa';
-import { Nav, Ul, Li, PaginationBtn, Input, GoTo } from './Pagination.styles';
+import { Nav, Ul, Li, PaginationBtn, Input, GoTo, Select } from './Pagination.styles';
 
 export default class Pagination extends React.Component {
   constructor(props) {
@@ -15,11 +15,16 @@ export default class Pagination extends React.Component {
       showJumper: this.props.showJumper || false,
       jumperNumber: (Math.ceil(this.props.total / this.props.pageSize) <=3) ? 1 : 5,
       goTo: this.props.goTo || false,
+      pageNumberInputText: this.props.pageNumberInputText || "Page number",
+      showTitle: this.props.showTitle,
+      showSizeChanger: this.props.showSizeChanger || false,
+      simple: this.props.simple || false,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleArrows = this.handleArrows.bind(this);
     this.jumperClick = this.jumperClick.bind(this);
     this.handleGoTO = this.handleGoTO.bind(this);
+    this.changePageSize = this.changePageSize.bind(this);
   }
 
   handleChange(number) {
@@ -72,13 +77,18 @@ export default class Pagination extends React.Component {
 
   handleGoTO = (e) => {
     const currentInputValue = Number(document.getElementById('goToInput').value);
-    if (e.type === 'click') {
+    if (e.type === 'click' || e.key === 'Enter') {
       this.handleChange(currentInputValue);
     }
   };
 
+  changePageSize (number){
+    this.setState({ pageSize: number });
+  }
+
   render() {
-    if (this.state.hideOnSinglePage === true && this.state.total <= this.state.pageSize) {
+
+    if (this.state.hideOnSinglePage === true && this.state.total <= this.state.pageSize || this.state.total <= 0) {
       return null;
     }
 
@@ -88,20 +98,69 @@ export default class Pagination extends React.Component {
       pageNumbers.push(i);
     }
 
+    if (this.state.simple) {
+      return (
+        <Nav>
+          <Ul>
+            <Li>
+              <PaginationBtn 
+                onClick={() => this.handleArrows('prev')}
+                disabled={this.props.disabled || !(this.state.currentPage > 1)}
+              >
+                <FaAngleLeft />
+              </PaginationBtn>
+            </Li>
+            <Li>
+              <Input 
+                id="goToInput" 
+                type="number" 
+                min="1" 
+                max={maxPageNumber} 
+                placeholder={this.state.currentPage}
+                onKeyPress={(e) => this.handleGoTO(e)}
+              />
+            </Li>
+            <Li>
+              <p> / </p>
+            </Li>
+            <Li>
+              <PaginationBtn 
+                onClick={() => this.handleChange(maxPageNumber)}
+                current={this.state.currentPage === maxPageNumber}
+                disabled={this.props.disabled}
+              >
+                {maxPageNumber}
+              </PaginationBtn>
+            </Li>
+            <Li>
+              <PaginationBtn 
+                onClick={() => this.handleArrows('next', maxPageNumber)}
+                disabled={this.props.disabled || !(this.state.currentPage < maxPageNumber)}
+              >
+                <FaAngleRight />
+              </PaginationBtn>
+            </Li>
+          </Ul>
+        </Nav>
+      );
+    }
+
     let jumperPrev = null;
     let jumperNext = null;
     let firstBtn = null;
     let lastBtn = null;
-
-    if (this.state.showJumper && (maxPageNumber >= 5)){ 
-
-      jumperPrev = (
-        <Li>
-          <PaginationBtn onClick={() => this.jumperClick('prev')}>
-          ...
-          </PaginationBtn>
-        </Li>
-      );
+    
+    if (this.state.showJumper && (maxPageNumber > 5)){ 
+    
+      if(this.state.currentPage > 3){
+        jumperPrev = (
+          <Li>
+            <PaginationBtn onClick={() => this.jumperClick('prev')}>
+            ...
+            </PaginationBtn>
+          </Li>
+        );
+      }
 
       jumperNext = (
         <Li>
@@ -111,8 +170,12 @@ export default class Pagination extends React.Component {
         </Li>
       );
 
+      if (this.state.currentPage === maxPageNumber - 2 || this.state.currentPage === maxPageNumber - 1 || this.state.currentPage === maxPageNumber) {
+        jumperNext = null;
+      }
+
       firstBtn = (
-        <Li>
+        <Li title={this.state.showTitle ? `1` : null}>
           <PaginationBtn 
             onClick={() => this.handleChange(1)}
             current={this.state.currentPage === 1}
@@ -124,7 +187,7 @@ export default class Pagination extends React.Component {
       );
 
       lastBtn = (
-        <Li>
+        <Li title={this.state.showTitle ? `${maxPageNumber}` : null}>
           <PaginationBtn 
             onClick={() => this.handleChange(maxPageNumber)}
             current={this.state.currentPage === maxPageNumber}
@@ -182,10 +245,26 @@ export default class Pagination extends React.Component {
     if (this.state.goTo){
       goTo = (
         <Li>
-          <Input id="goToInput" type="number" min="1" max={maxPageNumber} placeholder="Page number" />
+          <Input id="goToInput" type="number" min="1" max={maxPageNumber} placeholder={this.state.pageNumberInputText} />
           <GoTo type="button" onClick={(e) => this.handleGoTO(e)}>
             <FaAngleRight />
           </GoTo>
+        </Li>
+      );
+    }
+
+    let SizeChanger = null;
+    if (this.state.showSizeChanger){
+      const listPageSizes = [10, 15, 20, 50, 100];
+      SizeChanger = (
+        <Li>
+          <Select onChange={(e) => this.changePageSize(e.target.value)}>
+            {listPageSizes.map(pageSize => ( 
+            <option key={pageSize} value={pageSize} >
+              {pageSize}
+            </option>
+            ))}
+          </Select>
         </Li>
       );
     }
@@ -205,7 +284,7 @@ export default class Pagination extends React.Component {
           {firstBtn}
           {jumperPrev}
             {pageNumbers.map(number => (
-              <Li key={number}>
+              <Li key={number} title={this.state.showTitle ? `${number}` : null}>
                 <PaginationBtn 
                   onClick={() => this.handleChange(number)}
                   current={this.state.currentPage === number}
@@ -225,6 +304,7 @@ export default class Pagination extends React.Component {
                 <FaAngleRight />
               </PaginationBtn>
             </Li>
+            {SizeChanger}
             {goTo}
         </Ul>
       </Nav>

@@ -48,6 +48,7 @@ class Parent extends React.Component {
       pageSize: this.props.pageSize,
       showJumper: this.props.showJumper,
       jumperNumber: this.props.jumperNumber,
+      simple: this.props.simple,
     };
     this.handleChange = this.handleChange.bind(this);
   }
@@ -79,6 +80,7 @@ class Parent extends React.Component {
             onChange={this.handleChange}
             showJumper={this.state.showJumper}
             jumperNumber={this.state.jumperNumber}
+            simple={this.state.simple}
           />
         </div>
     );
@@ -96,6 +98,13 @@ export default ({ storiesOf }) => {
   .add('hideOnSinglePage', () => (
     <Pagination total={1} hideOnSinglePage />
   ))
+  .add('on total < 0', () => (
+    <div>
+      <Pagination total={0} />
+      <Pagination total={-1} />
+    </div>
+    
+  ))
   .add('showTotal', () => (
     <Pagination total={50} showTotal={total => `Total ${total} pages`} />
   ))
@@ -103,14 +112,10 @@ export default ({ storiesOf }) => {
     <div>
     <p>total: 6 </p>
     <Parent pageSize={1} showJumper />
-    total: 40
-    <Pagination total={40} pageSize={10} showJumper />
     total: 50
     <Pagination total={50} pageSize={10} showJumper />
     total: 60
     <Pagination total={60} pageSize={10} showJumper />
-    total: 70
-    <Pagination total={70} pageSize={10} showJumper />
     total: 80
     <Pagination total={80} pageSize={10} showJumper />
     total: 80, current default: 3
@@ -122,6 +127,30 @@ export default ({ storiesOf }) => {
     </div>
   ))
   .add('goTo', () => (
-    <Pagination total={50} goTo />
+    <div>
+      goTo: default
+      <Pagination total={50} goTo />
+      goTo with custom pageNumberInputText
+      <Pagination total={50} goTo pageNumberInputText="Страница" />
+    </div>
+  ))
+  .add('showTitle', () => (
+    <div>
+      showTitle: false
+      <Pagination total={50} showTitle={false} />
+      showTitle: true (by default)
+      <Pagination total={50} showTitle />
+    </div>
+  ))
+  .add('SizeChanger', () => (
+    <div>
+      <Pagination total={30} showSizeChanger />
+      <Pagination total={40} showSizeChanger />
+      <Pagination total={500} showJumper showSizeChanger />
+      <Pagination total={100} showJumper goTo showSizeChanger />
+    </div>
+  ))
+  .add('Stupid (simple)', () => (
+    <Parent pageSize={2} simple />
   ))
 }
