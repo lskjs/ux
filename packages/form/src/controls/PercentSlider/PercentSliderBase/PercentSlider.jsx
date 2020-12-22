@@ -1,60 +1,42 @@
-import React, { Component } from 'react';
-import debounce from '@lskjs/utils/decorator-debounce';
+import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import ASlider from 'antd/lib/slider';
+import debounce from 'lodash/debounce';
 import { Wrapper, Value, SliderWrapper } from './PercentSlider.styles';
 
-class Slider extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: props.value,
-    };
-  }
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.value !== this.props.value) {
-      this.setState({ value: nextProps.value });
+const Slider = ({ onChange, value: propValue, htmlId, name, onBlur, ...props }) => {
+  const [value, setValue] = useState(propValue);
+  const refPrevValue = useRef();
+
+  useEffect(() => {
+    if (refPrevValue.current !== propValue) {
+      refPrevValue.current = propValue;
+      setValue(propValue);
     }
-  }
-  @debounce(100)
-  handleChange(value) {
-    const { onChange } = this.props;
-    if (onChange) {
-      onChange(value);
-    }
-  }
-  render() {
-    const { onChange, ...props } = this.props;
-    const { value } = this.state;
-    return (
-      <Wrapper>
-        <Value>{value}%</Value>
-        <SliderWrapper>
-          <ASlider
-            onChange={(e) => {
-              this.setState({ value: e });
-              this.handleChange(e);
-            }}
-            {...props}
-            value={value}
-          />
-        </SliderWrapper>
-      </Wrapper>
-    );
-  }
-}
-// const Slider = ({ value, onChange, ...props }) => (
-//   <Wrapper>
-//     <Value>{value}%</Value>
-//     <SliderWrapper>
-//       <ASlider
-//         onChange={onChange}
-//         defaultValue={value}
-//         {...props}
-//       />
-//     </SliderWrapper>
-//   </Wrapper>
-// );
+  }, [propValue]);
+
+  const handleRemoteChange = debounce((_value) => {
+    if (onChange) onChange(_value);
+  }, 150);
+
+  const handleLocalChange = (_value) => {
+    setValue(_value);
+    handleRemoteChange(_value);
+  };
+  console.log(props);
+  return (
+    <Wrapper id={htmlId} name={name}>
+      <Value>{value}%</Value>
+      <SliderWrapper>
+        <ASlider
+          {...props}
+          onChange={handleLocalChange}
+          value={value}
+        />
+      </SliderWrapper>
+    </Wrapper>
+  );
+};
 
 Slider.propTypes = {
   value: PropTypes.number,
