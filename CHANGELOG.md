@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.36.5](https://github.com/isuvorov/lib-starter-kit/compare/v1.36.4...v1.36.5) (2020-12-22)
+
+
+### Bug Fixes
+
+* **form:** PercentSlider control makes great again ([216795d](https://github.com/isuvorov/lib-starter-kit/commit/216795d7459bc961119c44daf89785f936a246a9))
+
+
+
+
+
 ## [1.36.4](https://github.com/isuvorov/lib-starter-kit/compare/v1.36.3...v1.36.4) (2020-12-14)
 
 
