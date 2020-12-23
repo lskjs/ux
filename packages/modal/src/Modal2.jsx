@@ -197,7 +197,7 @@ class Modal2 extends PureComponent {
             isOpen={this.state.visible}
             onRequestClose={closable && this.close}
             bodyOpenClassName="bodyModal"
-            htmlOpenClassName="bodyModal"
+            // htmlOpenClassName="bodyModal" // Добавление класса в html заставляет скроллится модалку вверх страницы
             style={merge(style, Modal2.defaultStyles)}
             {...pick(props, reactModalProps)}
           >
