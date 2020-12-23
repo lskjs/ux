@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.36.6](https://github.com/isuvorov/lib-starter-kit/compare/v1.36.5...v1.36.6) (2020-12-23)
+
+
+### Bug Fixes
+
+* **modal:** remove html open class ([1cf129b](https://github.com/isuvorov/lib-starter-kit/commit/1cf129b60f729086a6ffa03f50f96114d65595de))
+
+
+
+
+
 ## [1.36.5](https://github.com/isuvorov/lib-starter-kit/compare/v1.36.4...v1.36.5) (2020-12-22)
 
 
