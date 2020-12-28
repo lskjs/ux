@@ -1,7 +1,7 @@
 # Formik + @lskjs/form controls
 
 
-```
+```jsx
 import React from 'react';
 import { Formik, Field, Form } from 'formik';
 import FormItem from '@lskjs/form/components/FormItem'
