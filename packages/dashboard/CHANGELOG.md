@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.36.9](https://github.com/lskjs/ux/tree/master/packages/dashboard/compare/v1.36.8...v1.36.9) (2020-12-29)
+
+
+### Bug Fixes
+
+* **modal:** react-modal without devDeps ([a4b17f0](https://github.com/lskjs/ux/tree/master/packages/dashboard/commit/a4b17f0cb05dcf86a873f05a36a18b0a65d1e273))
+
+
+
+
+
 ## [1.36.6](https://github.com/lskjs/ux/tree/master/packages/dashboard/compare/v1.36.5...v1.36.6) (2020-12-23)
 
 **Note:** Version bump only for package @lskjs/dashboard

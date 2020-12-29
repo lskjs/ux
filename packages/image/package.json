@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/image",
-  "version": "1.34.2",
+  "version": "1.36.9",
   "description": "LSK ux subrepo: image",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -28,12 +28,12 @@
     "styleguide": "../../scripts/package-styleguide.sh"
   },
   "dependencies": {
-    "@lskjs/link": "1.34.2",
+    "@lskjs/link": "1.36.9",
     "prop-types": "15.7.2",
     "react-image-fallback": "8.0.0"
   },
   "devDependencies": {
-    "@lskjs/dev": "1.34.2",
+    "@lskjs/dev": "1.36.9",
     "react": "16.8.6"
   },
   "peerDependencies": {

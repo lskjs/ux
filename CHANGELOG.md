@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.36.9](https://github.com/isuvorov/lib-starter-kit/compare/v1.36.8...v1.36.9) (2020-12-29)
+
+
+### Bug Fixes
+
+* **modal:** react-modal without devDeps ([a4b17f0](https://github.com/isuvorov/lib-starter-kit/commit/a4b17f0cb05dcf86a873f05a36a18b0a65d1e273))
+
+
+
+
+
 ## [1.36.8](https://github.com/isuvorov/lib-starter-kit/compare/v1.36.7...v1.36.8) (2020-12-29)
 
 
