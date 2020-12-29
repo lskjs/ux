@@ -20,9 +20,21 @@ class Select extends Component {
     const propValue = props.field ? props.field.value : props.value;
     const stateValue = state._value;
     const prevPropValue = state.prevPropValue;
-    if (!propValue && stateValue) return null;
+    if (!propValue && !isEqual(stateValue, prevPropValue)) return null;
     if (isEqual(prevPropValue, propValue) && !isEqual(propValue, stateValue)) {
       return {
+        prevPropValue: propValue,
+      };
+    }
+    if (!isEqual(prevPropValue, propValue) && isEqual(prevPropValue, stateValue)) {
+      return {
+        _value: undefined,
+        prevPropValue: undefined,
+      };
+    }
+    if (!isEqual(propValue, stateValue) && !isEqual(propValue, stateValue)) {
+      return {
+        _value: stateValue,
         prevPropValue: propValue,
       };
     }
@@ -132,10 +144,14 @@ class Select extends Component {
     }
   }
   @autobind
-  handleLocaleChange(value) {
-    this.setState({
+  handleLocaleChange(value, reset) {
+    const newState = {
       _value: value,
-    });
+    };
+    if (reset) {
+      newState.prevPropValue = undefined;
+    }
+    this.setState(newState);
   }
   @autobind
   handleRemoteChange(value) {
@@ -152,7 +168,7 @@ class Select extends Component {
     if (!blurInputOnSelect) {
       const callbackValue = _value || field && field.value || value;
       this.handleRemoteChange(callbackValue);
-      this.handleLocaleChange(undefined);
+      this.handleLocaleChange(undefined, true);
     }
   }
   render() {
