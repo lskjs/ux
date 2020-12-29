@@ -30,7 +30,8 @@
   "dependencies": {
     "@lskjs/autobind": "1.20.0",
     "react-custom-scrollbars": "4.2.1",
-    "react-if": "3.4.3"
+    "react-if": "3.4.3",
+    "react-modal": "3.11.1"
   },
   "devDependencies": {
     "@emotion/core": "10.0.27",
@@ -51,7 +52,6 @@
     "prop-types": "15.7.2",
     "react": "16.8.6",
     "react-icons2": "2.5.0",
-    "react-modal": "3.11.1",
     "universal-router": "8.3.0"
   },
   "peerDependencies": {
@@ -73,7 +73,6 @@
     "prop-types": "*",
     "react": "*",
     "react-icons2": "*",
-    "react-modal": "*",
     "universal-router": "*"
   }
 }
