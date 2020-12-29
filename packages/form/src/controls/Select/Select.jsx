@@ -16,6 +16,25 @@ import CollapsedMultiValue from './CollapsedMultiValue';
 import DropdownIndicator from './DropdownIndicator';
 
 class Select extends Component {
+  static getDerivedStateFromProps(props, state) {
+    const propValue = props.field ? props.field.value : props.value;
+    const stateValue = state._value;
+    const prevPropValue = state.prevPropValue;
+    if (!propValue && stateValue) return null;
+    if (isEqual(prevPropValue, propValue) && !isEqual(propValue, stateValue)) {
+      return {
+        prevPropValue: propValue,
+      };
+    }
+    if (!isEqual(propValue, stateValue)) {
+      return {
+        _value: propValue,
+        prevPropValue: propValue,
+      };
+    }
+    return null;
+  }
+
   state = {};
 
   componentDidMount() {
@@ -128,10 +147,11 @@ class Select extends Component {
   }
   @autobind
   callbackCloseMenu() {
-    const { blurInputOnSelect = true } = this.props;
-    const { _value: value } = this.state;
+    const { blurInputOnSelect = true, field, value } = this.props;
+    const { _value } = this.state;
     if (!blurInputOnSelect) {
-      this.handleRemoteChange(value);
+      const callbackValue = _value || field && field.value || value;
+      this.handleRemoteChange(callbackValue);
       this.handleLocaleChange(undefined);
     }
   }
@@ -187,7 +207,7 @@ class Select extends Component {
     }
     // if (!async) {
     value = getOptionValue(rawValue);
-    // }
+      // }
     if (async) {
       ({ option } = this.state);
       if (value == null || value === NULL_STRING) {
