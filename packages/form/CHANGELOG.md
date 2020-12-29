@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.36.8](https://github.com/lskjs/ux/tree/master/packages/form/compare/v1.36.7...v1.36.8) (2020-12-29)
+
+
+### Bug Fixes
+
+* **form:** Select add conditions ([64dbbeb](https://github.com/lskjs/ux/tree/master/packages/form/commit/64dbbebe982a5960ceb7679549db2ffbe4f4c997))
+
+
+
+
+
 ## [1.36.7](https://github.com/lskjs/ux/tree/master/packages/form/compare/v1.36.6...v1.36.7) (2020-12-29)
 
 **Note:** Version bump only for package @lskjs/form
