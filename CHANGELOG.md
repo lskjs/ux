@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.36.7](https://github.com/isuvorov/lib-starter-kit/compare/v1.36.6...v1.36.7) (2020-12-29)
+
+**Note:** Version bump only for package lskjs-ux
+
+
+
+
+
 ## [1.36.6](https://github.com/isuvorov/lib-starter-kit/compare/v1.36.5...v1.36.6) (2020-12-23)
 
 
