@@ -15,6 +15,7 @@
     "release": "lerna publish --skip-npm --exact",
     "release:yes": "lerna publish --skip-npm --exact --github-release --yes",
     "release:after": "./scripts/release-after.sh",
+    "release:beta": "lerna publish --skip-npm --exact --github-release --yes --conventional-prerelease && npm run release:after",
     "release:it": "release-it",
     "release:changelog": "lerna-changelog",
     "release:storybook": "storybook-to-ghpages",
