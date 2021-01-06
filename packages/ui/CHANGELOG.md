@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.1](https://github.com/lskjs/ux/tree/master/packages/ui/compare/v1.36.10...v2.0.0-beta.1) (2021-01-06)
+
+
+### Features
+
+* prepare for version 2 ([afc319e](https://github.com/lskjs/ux/tree/master/packages/ui/commit/afc319ec7bb9f1d4236ad02e951f295f6d79a3e9))
+
+
+
+
+
 ## [1.36.10](https://github.com/lskjs/ux/tree/master/packages/ui/compare/v1.36.9...v1.36.10) (2020-12-29)
 
 **Note:** Version bump only for package @lskjs/ui

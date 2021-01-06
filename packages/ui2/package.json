@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/ui2",
-  "version": "1.36.10",
+  "version": "2.0.0-beta.1",
   "description": "LSK ux subrepo: ui2",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -33,9 +33,9 @@
   "devDependencies": {
     "@emotion/core": "10.0.27",
     "@emotion/styled": "10.0.27",
-    "@lskjs/dev": "1.36.10",
-    "@lskjs/link": "1.36.10",
-    "@lskjs/theme": "1.36.10",
+    "@lskjs/dev": "2.0.0-beta.1",
+    "@lskjs/link": "2.0.0-beta.1",
+    "@lskjs/theme": "2.0.0-beta.1",
     "react": "16.8.6"
   },
   "peerDependencies": {

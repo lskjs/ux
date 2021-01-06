@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/extra",
-  "version": "1.36.10",
+  "version": "2.0.0-beta.1",
   "description": "LSK ux subrepo: extra",
   "author": "Andrey Kondalov <i@yukio.ru>",
   "license": "MIT",
