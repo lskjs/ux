@@ -36,23 +36,33 @@
     "bump": "../../scripts/package-bump.sh",
     "release": "../../scripts/package-release.sh",
     "release:docs": "../../scripts/package-release-docs.sh",
-    "storybook": "../../scripts/package-storybook.sh",
+    "storybook": "start-storybook -p 6006",
+    "storybook-docs": "start-storybook -p 6006 --docs",
+    "build-storybook": "build-storybook",
+    "build-storybook-docs": "build-storybook --docs",
     "styleguide": "../../scripts/package-styleguide.sh",
     "i18": "../../scripts/package-i18.sh",
     "clear": "../../scripts/package-clear.sh"
   },
   "dependencies": {
-    "@emotion/core": "^10.1.1",
-    "@emotion/styled": "^10.0.27",
-    "@lskjs/theme": "1.36.10"
+    "@emotion/react": "^11.1.4",
+    "@emotion/styled": "^11.0.0",
+    "@lskjs/theme": "1.36.10",
+    "lodash.merge": "^4.6.2"
   },
   "devDependencies": {
-    "prop-types": "15.7.2",
-    "@lskjs/dev": "1.36.10",
+    "@babel/core": "^7.12.10",
+    "@emotion/babel-plugin": "^11.1.2",
+    "@storybook/addon-actions": "^6.1.14",
+    "@storybook/addon-essentials": "^6.1.14",
+    "@storybook/addon-links": "^6.1.14",
+    "@storybook/react": "^6.1.14",
+    "babel-loader": "^8.2.2",
+    "prop-types": "^15.7.2",
     "react": "^17.0.1"
   },
   "peerDependencies": {
-    "@lskjs/dev": "1.x",
-    "react": "17.x"
+    "react": "17.x",
+    "prop-types": "15.7.x"
   }
 }

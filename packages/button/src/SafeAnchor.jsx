@@ -1,4 +1,5 @@
 import React, { forwardRef } from 'react';
+import createChainedFunction from './utils/createChainedFunction';
 
 function isTrivialHref(href) {
   return !href || href.trim() === '#';
@@ -8,6 +9,7 @@ const SafeAnchor = React.forwardRef(
   (
     {
       as: Component = 'a',
+      htmlAs = 'a',
       disabled,
       onKeyDown,
       ...props
@@ -50,6 +52,7 @@ const SafeAnchor = React.forwardRef(
 
     return (
       <Component
+        as={htmlAs}
         ref={ref}
         {...props}
         onClick={handleClick}

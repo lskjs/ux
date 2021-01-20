@@ -5,6 +5,15 @@ module.exports = {
     '@babel/typescript',
   ],
   plugins: [
+    [
+      "emotion",
+      {
+        "sourceMap": true,
+        "autoLabel": process.env.NODE_ENV !== 'production',
+        "labelFormat": "[filename]--[local]",
+        "cssPropOptimization": true
+      },
+    ],
     ['@babel/plugin-proposal-decorators', { legacy: true }],
     ['@babel/plugin-proposal-class-properties', { loose: true }],
     '@babel/plugin-syntax-dynamic-import',
@@ -17,15 +26,6 @@ module.exports = {
       {
         rootPathPrefix: '~',
         rootPathSuffix: 'src',
-      },
-    ],
-    [
-      "emotion",
-      {
-        "sourceMap": true,
-        "autoLabel": process.env.NODE_ENV !== 'production',
-        "labelFormat": "[filename]--[local]",
-        "cssPropOptimization": true
       },
     ],
   ],
