@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { css } from '@emotion/react';
 
 import { ButtonProvider } from './ButtonContext';
+import { addColorSchema } from './theme';
 import Button from './Button';
 
 export default {
@@ -14,7 +16,9 @@ export default {
     ),
   ],
   argTypes: {
-    variant: { control: 'select' },
+    // variant: {
+    //   control: 'select',
+    // },
     size: { control: 'select' },
     type: { control: 'select' },
   },
@@ -22,9 +26,40 @@ export default {
 
 const Template = (args) => <Button {...args} />;
 
-export const Primary = Template.bind({});
+export const Default = Template.bind({});
 
-Primary.args = {
+Default.args = {
   variant: 'primary',
   children: 'Кнопка',
+};
+
+export const CustomSchema = (args) => {
+  const [variant, setVariant] = useState('primary');
+  return (
+    <div>
+      <button
+       onClick={() => {
+        addColorSchema({
+          colors: {
+            text: 'red',
+            normal: 'grey',
+            hover: 'black',
+          },
+          style: (props) => css`
+            color: ${props.theme['ux/Button'].colors.custom.text};
+            background-color: ${props.theme['ux/Button'].colors.custom.normal};
+            &:hover {
+              background-color: ${props.theme['ux/Button'].colors.custom.hover};
+            }
+          `,
+        }, 'custom');
+        setVariant('custom');
+       }}
+      >
+         Add custom schema
+       </button>
+      <br />
+      <Button {...args} variant={variant}>Кастомная тема</Button>
+    </div> 
+   );
 };

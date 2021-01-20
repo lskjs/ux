@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
+import { withTheme } from '@emotion/react';
 import PropTypes from 'prop-types';
 import sizes from '@lskjs/utils/sizes';
 
 import SafeAnchor from './SafeAnchor';
 import { ButtonContext } from './ButtonContext';
+import { theme } from './theme';
 import * as Styles from './Button.styles';
 
 const Button = ({ variant, as, active, block, disabled, href, size, type, children, ...props }) => {
@@ -43,7 +45,15 @@ const Button = ({ variant, as, active, block, disabled, href, size, type, childr
 };
 
 Button.propTypes = {
-  variant: PropTypes.oneOf(['primary', 'secondary', 'success', 'warning', 'danger', 'info', 'light', 'dark', 'link']),
+  variant: (props, propName, componentName) => {
+    const allowedVariants = Object.keys(theme.variants);
+    if (!allowedVariants.includes(props[propName])) {
+      return new Error(
+        'Prop `' + propName + '` in component' +
+        ' `' + componentName + '` is not on the list of allowed ' + JSON.stringify(allowedVariants),
+      );
+    }
+  },
   as: PropTypes.elementType,
   active: PropTypes.bool,
   block: PropTypes.bool,

@@ -1,58 +1,141 @@
 import { css } from '@emotion/react';
 
-function make(object, prop, fallback = 'default') {
+const make = (object, prop, fallback = 'default') => {
   const isValid = Object.keys(object).includes(prop);
   return object[isValid ? prop : fallback];
-}
+};
 
 export const internalTheme = (props) => props.theme['ux/Button'];
 
-export const variants = {
-  primary: (props) => css`
-    background-color: ${internalTheme(props).colors.primary};
-    border-color: ${internalTheme(props).colors.primary};
-    color: ${internalTheme(props).colors.white};
-  `,
-  secondary: (props) => css`
-    background-color: ${internalTheme(props).colors.secondary};
-    border-color: ${internalTheme(props).colors.secondary};
-    color: ${internalTheme(props).colors.white};
-  `,
-  success: (props) => css`
-    background-color: ${internalTheme(props).colors.success};
-    border-color: ${internalTheme(props).colors.success};
-    color: ${internalTheme(props).colors.white};
-  `,
-  warning: (props) => css`
-    background-color: ${internalTheme(props).colors.warning};
-    border-color: ${internalTheme(props).colors.warning};
-    color: ${internalTheme(props).colors.white};
-  `,
-  danger: (props) => css`
-    background-color: ${internalTheme(props).colors.danger};
-    border-color: ${internalTheme(props).colors.danger};
-    color: ${internalTheme(props).colors.white};
-  `,
-  info: (props) => css`
-    background-color: ${internalTheme(props).colors.info};
-    border-color: ${internalTheme(props).colors.info};
-    color: ${internalTheme(props).colors.white};
-  `,
-  light: (props) => css`
-    background-color: ${internalTheme(props).colors.light};
-    border-color: ${internalTheme(props).colors.light};
-    color: ${internalTheme(props).colors.default};
-  `,
-  dark: (props) => css`
-    background-color: ${internalTheme(props).colors.dark};
-    border-color: ${internalTheme(props).colors.dark};
-    color: ${internalTheme(props).colors.white};
-  `,
-  link: (props) => css`
-    background-color: transparent;
-    border-color: transparent;
-    color: ${internalTheme(props).colors.primary};
-  `,
+const genGenericVariant = (props, name) => css`
+  background-color: ${internalTheme(props).colors[name].normal};
+  border-color: ${internalTheme(props).colors[name].normal};
+  color: ${internalTheme(props).colors[name].text};
+  &:focus {
+    box-shadow: 0 0 0 0.2rem ${internalTheme(props).colors[name].ring};
+  }
+  &:focus,
+  &:hover {
+    background-color: ${internalTheme(props).colors[name].hover};
+    border-color: ${internalTheme(props).colors[name].active};
+  }
+  &:active {
+    background-color: ${internalTheme(props).colors[name].active};
+    border-color: ${internalTheme(props).colors[name].darker};
+  }
+`;
+
+export const colorSchema = {
+  primary: {
+    colors: {
+      text: '#fff',
+      normal: '#007bff',
+      hover: '#0069d9',
+      active: '#0062cc',
+      darker: '#005cbf',
+      ring: 'rgba(38,143,255,.5)',
+    },
+    style: (props) => genGenericVariant(props, 'primary'),
+  },
+  secondary: {
+    colors: {
+      text: '#fff',
+      normal: '#6c757d',
+      hover: '#5a6268',
+      active: '#545b62',
+      darker: '#4e555b',
+      ring: 'rgba(130,138,145,.5)',
+    },
+    style: (props) => genGenericVariant(props, 'secondary'),
+  },
+  success: {
+    colors: {
+      text: '#fff',
+      normal: '#28a745',
+      hover: '#218838',
+      active: '#1e7e34',
+      darker: '#1c7430',
+      ring: 'rgba(72,180,97,.5)',
+    },
+    style: (props) => genGenericVariant(props, 'success'),
+  },
+  warning: {
+    colors: {
+      text: '#fff',
+      normal: '#ffc107',
+      hover: '#e0a800',
+      active: '#d39e00',
+      darker: '#c69500',
+      ring: 'rgba(222,170,12,.5)',
+    },
+    style: (props) => genGenericVariant(props, 'warning'),
+  },
+  danger: {
+    colors: {
+      text: '#fff',
+      normal: '#dc3545',
+      hover: '#c82333',
+      active: '#bd2130',
+      darker: '#b21f2d',
+      ring: 'rgba(225,83,97,.5)',
+    },
+    style: (props) => genGenericVariant(props, 'danger'),
+  },
+  info: {
+    colors: {
+      text: '#fff',
+      normal: '#17a2b8',
+      hover: '#138496',
+      active: '#117a8b',
+      darker: '#10707f',
+      ring: 'rgba(58,176,195,.5)',
+    },
+    style: (props) => genGenericVariant(props, 'info'),
+  },
+  light: {
+    colors: {
+      text: '#212529',
+      normal: '#f8f9fa',
+      hover: '#e2e6ea',
+      active: '#dae0e5',
+      darker: '#d3d9df',
+      ring: 'rgba(216,217,219,.5)',
+    },
+    style: (props) => genGenericVariant(props, 'light'),
+  },
+  dark: {
+    colors: {
+      text: '#fff',
+      normal: '#343a40',
+      hover: '#23272b',
+      active: '#1d2124',
+      darker: '#171a1d',
+      ring: 'rgba(82,88,93,.5)',
+    },
+    style: (props) => genGenericVariant(props, 'dark'),
+  },
+  link: {
+    colors: {
+      normal: '#007bff',
+      hover: '#0056b3',
+      ring: 'rgba(0,123,255,.25)',
+    },
+    style: (props) => css`
+      background-color: transparent;
+      border-color: transparent;
+      color: ${internalTheme(props).colors.link.normal};
+      &:focus,
+      &:hover {
+        text-decoration: underline;
+      }
+      &:focus {
+        box-shadow: 0 0 0 0.2rem ${internalTheme(props).colors.link.ring};
+      }
+      &:hover {
+        color: ${internalTheme(props).colors.link.hover};
+      }
+    `,
+  },
 };
 
 export const theme = {
@@ -62,23 +145,22 @@ export const theme = {
   lineHeight: '1.5',
   borderRadius: '.25rem',
   transition: 'color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out',
-  colors: {
-    primary: '#007bff',
-    secondary: '#6c757d',
-    success: '#28a745',
-    warning: '#ffc107',
-    danger: '#dc3545',
-    info: '#17a2b8',
-    light: '#f8f9fa',
-    default: '#212529',
-    dark: '#343a40',
-    white: '#ffffff',
-  },
-  variants,
+  variants: {},
+  colors: {},
   utils: {
     make,
   },
 };
+
+export function addColorSchema(schema, name) {
+  if (!name || !schema) return;
+  if (schema.colors) theme.colors[name] = schema.colors;
+  if (schema.style) theme.variants[name] = schema.style;
+};
+
+Object.keys(colorSchema).forEach((schemaName) => {
+  addColorSchema(colorSchema[schemaName], schemaName);
+});
 
 export const themeComposer = (selfTheme) => (ancestorTheme) => ({
   ...ancestorTheme,

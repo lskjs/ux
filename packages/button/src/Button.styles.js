@@ -14,6 +14,7 @@ export const Button = styled('button')`
   transition: ${(props) => internalTheme(props).transition};
   border-radius: ${(props) => internalTheme(props).borderRadius};
 
+  outline: none;
   text-align: center;
   vertical-align: middle;
   user-select: none;
