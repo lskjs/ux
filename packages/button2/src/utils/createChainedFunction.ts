@@ -7,9 +7,9 @@
  * @param {function} функции для chain
  * @returns {function|null}
  */
-function createChainedFunction(...funcs) {
+function createChainedFunction(...funcs: any[]) {
   return funcs
-    .filter((f) => f != null)
+    .filter((f: Function) => f != null)
     .reduce((acc, f) => {
       if (typeof f !== 'function') {
         throw new Error(
@@ -19,8 +19,8 @@ function createChainedFunction(...funcs) {
 
       if (acc === null) return f;
 
-      return function chainedFunction(...args) {
-        acc.apply(this, args);
+      return function chainedFunction(this: any, ...args: Function[]) {
+        (acc as unknown as Function).apply(this, args);
         f.apply(this, args);
       };
     }, null);

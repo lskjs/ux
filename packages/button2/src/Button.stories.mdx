@@ -1,0 +1,159 @@
+import { useState } from 'react';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { css } from '@emotion/react';
+
+import { ButtonProvider } from './ButtonContext';
+import { addColorSchema } from './theme';
+import Button from './Button';
+
+<Meta
+  title="UX/Button"
+  component={Button}
+  decorators={[
+    (Story) => (
+      <ButtonProvider>
+        <Story />
+      </ButtonProvider>
+    ),
+  ]}
+/>
+
+# Button
+> Компонент **Button** используется для запуска действия или события.
+> Например: отправка формы, отмена действия, открытие модального окна.
+
+## Импорт
+```js
+import Button from '@lskjs/button';
+```
+
+## Использование
+<Canvas>
+  <Story name="Basic">
+    <Button>Обычная кнопка</Button>
+  </Story>
+</Canvas>
+
+### Варианты цветовой схемы
+Используйте пропсу **variant** для обозначения вида кнопки.
+
+Вы можете использовать по-умолчанию один из этих вариантов:
+`primary` `secondary` `success` `warning` `danger` `info` `light` `dark` `link`
+
+<Canvas>
+  <Story name="Variant/Primary">
+    <Button variant="primary">Кнопка</Button>
+  </Story>
+  <Story name="Variant/Secondary">
+    <Button variant="secondary">Кнопка</Button>
+  </Story>
+  <Story name="Variant/Success">
+    <Button variant="success">Кнопка</Button>
+  </Story>
+  <Story name="Variant/Warning">
+    <Button variant="warning">Кнопка</Button>
+  </Story>
+  <Story name="Variant/Danger">
+    <Button variant="danger">Кнопка</Button>
+  </Story>
+  <Story name="Variant/Info">
+    <Button variant="info">Кнопка</Button>
+  </Story>
+  <Story name="Variant/Light">
+    <Button variant="light">Кнопка</Button>
+  </Story>
+  <Story name="Variant/Dark">
+    <Button variant="dark">Кнопка</Button>
+  </Story>
+  <Story name="Variant/Link">
+    <Button variant="link">Кнопка</Button>
+  </Story>
+</Canvas>
+
+### Тэги кнопки
+По-умолчанию компонент `<Button>` отображает HTML элемент `<button>`.
+Однако вы можете рендерить всё что захотите. Добавление пропсы **href** автоматически отобразит HTML элемент `<a>`. 
+
+<Canvas>
+  <Story name="Tags/Link">
+    <Button href="#">Ссылка</Button>
+  </Story>
+  <Story name="Tags/Button">
+    <Button type="submit">Кнопка</Button>
+  </Story>
+  <Story name="Tags/Input">
+    <Button as="input" type="button" value="Инпут" />
+  </Story>
+  <Story name="Tags/Submit">
+    <Button as="input" type="submit" value="Подтвержение" />
+  </Story>
+  <Story name="Tags/Reset">
+    <Button as="input" type="reset" value="Сброс" />
+  </Story>
+</Canvas>
+
+
+### Пользовательская цветовая схема
+В качестве дополнительной кастомизации можно добавить собственную цветовую схему кнопки.
+
+**Пример схемы:**
+```js
+{
+  colors: {
+    text: 'red',
+    normal: 'grey',
+    hover: 'black',
+  },
+  style: (props) => css`
+    color: ${props.theme['ux/Button'].colors.custom.text};
+    background-color: ${props.theme['ux/Button'].colors.custom.normal};
+    &:hover {
+      background-color: ${props.theme['ux/Button'].colors.custom.hover};
+    }
+  `,
+}
+```
+
+
+```js
+import { addColorSchema } from './theme';
+
+addColorSchema(colorSchema);
+```
+
+**Пример компонента:**
+<Canvas>
+  <Story name="Custom">
+    {() => {
+      const [variant, setVariant] = useState('primary');
+      return (
+        <div>
+          <button
+            style={{ marginBottom: 24 }}
+            onClick={() => {
+              addColorSchema({
+                colors: {
+                  text: 'red',
+                  normal: 'grey',
+                  hover: 'black',
+                },
+                style: (props) => css`
+                  color: ${props.theme['ux/Button'].colors.custom.text};
+                  background-color: ${props.theme['ux/Button'].colors.custom.normal};
+                  &:hover {
+                    background-color: ${props.theme['ux/Button'].colors.custom.hover};
+                  }
+                `,
+              }, 'custom');
+              setVariant('custom');
+            }}
+          >
+            Add custom schema
+          </button>
+          <br />
+          <Button variant={variant}>Кнопка</Button>
+        </div>
+      );
+    }}
+  </Story>
+</Canvas>

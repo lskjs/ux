@@ -1,11 +1,24 @@
-import React, { forwardRef } from 'react';
+import { ReactComponentLike } from 'prop-types';
+import React, {
+  ComponentPropsWithoutRef,
+  MouseEvent,
+  KeyboardEvent,
+  forwardRef,
+} from 'react';
 import createChainedFunction from './utils/createChainedFunction';
 
-function isTrivialHref(href) {
+function isTrivialHref(href: string | undefined): boolean {
   return !href || href.trim() === '#';
 }
 
-const SafeAnchor = React.forwardRef(
+interface SafeAnchorProps extends ComponentPropsWithoutRef<'a'> {
+  as: ReactComponentLike | string;
+  htmlAs: ReactComponentLike | string;
+  disabled?: boolean;
+  [key: string]: any;
+}
+
+const SafeAnchor = forwardRef<any, SafeAnchorProps>(
   (
     {
       as: Component = 'a',
@@ -16,7 +29,7 @@ const SafeAnchor = React.forwardRef(
     },
     ref,
   ) => {
-    const handleClick = (event) => {
+    const handleClick = (event: MouseEvent<HTMLAnchorElement> | KeyboardEvent<HTMLAnchorElement>) => {
       const { href, onClick } = props;
 
       if (disabled || isTrivialHref(href)) {
@@ -29,11 +42,11 @@ const SafeAnchor = React.forwardRef(
       }
 
       if (onClick) {
-        onClick(event);
+        onClick(event as MouseEvent<HTMLAnchorElement>);
       }
     };
 
-    const handleKeyDown = (event) => {
+    const handleKeyDown = (event: KeyboardEvent<HTMLAnchorElement>) => {
       if (event.key === ' ') {
         event.preventDefault();
         handleClick(event);

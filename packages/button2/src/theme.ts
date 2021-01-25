@@ -1,13 +1,14 @@
-import { css } from '@emotion/react';
+import { css, SerializedStyles, Theme } from '@emotion/react';
+import { ComponentPropsWithoutRef } from 'react';
 
-const make = (object, prop, fallback = 'default') => {
+const make = (object: { [key: string]: SerializedStyles }, prop: string, fallback: string = 'default') => {
   const isValid = Object.keys(object).includes(prop);
   return object[isValid ? prop : fallback];
 };
 
-export const internalTheme = (props) => props.theme['ux/Button'];
+export const internalTheme = (props: { theme: Theme }) => props.theme['ux/Button'];
 
-const genGenericVariant = (props, name) => css`
+const genGenericVariant = (props: { theme: Theme }, name: string): SerializedStyles => css`
   background-color: ${internalTheme(props).colors[name].normal};
   border-color: ${internalTheme(props).colors[name].normal};
   color: ${internalTheme(props).colors[name].text};
@@ -35,7 +36,7 @@ export const colorSchema = {
       darker: '#005cbf',
       ring: 'rgba(38,143,255,.5)',
     },
-    style: (props) => genGenericVariant(props, 'primary'),
+    style: (props: { theme: Theme }) => genGenericVariant(props, 'primary'),
   },
   secondary: {
     colors: {
@@ -46,7 +47,7 @@ export const colorSchema = {
       darker: '#4e555b',
       ring: 'rgba(130,138,145,.5)',
     },
-    style: (props) => genGenericVariant(props, 'secondary'),
+    style: (props: { theme: Theme }) => genGenericVariant(props, 'secondary'),
   },
   success: {
     colors: {
@@ -57,7 +58,7 @@ export const colorSchema = {
       darker: '#1c7430',
       ring: 'rgba(72,180,97,.5)',
     },
-    style: (props) => genGenericVariant(props, 'success'),
+    style: (props: { theme: Theme }) => genGenericVariant(props, 'success'),
   },
   warning: {
     colors: {
@@ -68,7 +69,7 @@ export const colorSchema = {
       darker: '#c69500',
       ring: 'rgba(222,170,12,.5)',
     },
-    style: (props) => genGenericVariant(props, 'warning'),
+    style: (props: { theme: Theme }) => genGenericVariant(props, 'warning'),
   },
   danger: {
     colors: {
@@ -79,7 +80,7 @@ export const colorSchema = {
       darker: '#b21f2d',
       ring: 'rgba(225,83,97,.5)',
     },
-    style: (props) => genGenericVariant(props, 'danger'),
+    style: (props: { theme: Theme }) => genGenericVariant(props, 'danger'),
   },
   info: {
     colors: {
@@ -90,7 +91,7 @@ export const colorSchema = {
       darker: '#10707f',
       ring: 'rgba(58,176,195,.5)',
     },
-    style: (props) => genGenericVariant(props, 'info'),
+    style: (props: { theme: Theme }) => genGenericVariant(props, 'info'),
   },
   light: {
     colors: {
@@ -101,7 +102,7 @@ export const colorSchema = {
       darker: '#d3d9df',
       ring: 'rgba(216,217,219,.5)',
     },
-    style: (props) => genGenericVariant(props, 'light'),
+    style: (props: { theme: Theme }) => genGenericVariant(props, 'light'),
   },
   dark: {
     colors: {
@@ -112,7 +113,7 @@ export const colorSchema = {
       darker: '#171a1d',
       ring: 'rgba(82,88,93,.5)',
     },
-    style: (props) => genGenericVariant(props, 'dark'),
+    style: (props: { theme: Theme }) => genGenericVariant(props, 'dark'),
   },
   link: {
     colors: {
@@ -120,7 +121,7 @@ export const colorSchema = {
       hover: '#0056b3',
       ring: 'rgba(0,123,255,.25)',
     },
-    style: (props) => css`
+    style: (props: { theme: Theme }) => css`
       background-color: transparent;
       border-color: transparent;
       color: ${internalTheme(props).colors.link.normal};
@@ -152,7 +153,16 @@ export const theme = {
   },
 };
 
-export function addColorSchema(schema, name) {
+interface Colors {
+  [key: string]: string;
+}
+
+export interface ColorSchema {
+  colors: Colors;
+  style: (props: ComponentPropsWithoutRef<any>) => SerializedStyles;
+}
+
+export function addColorSchema(schema: ColorSchema, name: string) {
   if (!name || !schema) return;
   if (schema.colors) theme.colors[name] = schema.colors;
   if (schema.style) theme.variants[name] = schema.style;
@@ -162,7 +172,7 @@ Object.keys(colorSchema).forEach((schemaName) => {
   addColorSchema(colorSchema[schemaName], schemaName);
 });
 
-export const themeComposer = (selfTheme) => (ancestorTheme) => ({
+export const themeComposer = (selfTheme: Theme) => (ancestorTheme: Theme) => ({
   ...ancestorTheme,
-  'ux/Button': theme,
+  'ux/Button': selfTheme,
 });

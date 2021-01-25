@@ -1,7 +1,8 @@
 import styled from '@emotion/styled';
 import { internalTheme } from './theme';
+import { ButtonProps } from './Button';
 
-export const Button = styled('button')`
+export const Button = styled('button')<ButtonProps>`
   -webkit-appearance: button;
   text-transform: none;
 

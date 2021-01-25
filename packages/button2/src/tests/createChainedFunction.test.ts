@@ -6,7 +6,7 @@ describe('createChainedFunction', () => {
   });
 
   test('Вернёт ошибку типа, если передан неправильный тип', () => {
-    expect(() => createChainedFunction({ heh: 'mda' })).toThrowError(/Некорректный тип аргумента/);
+    expect(() => createChainedFunction({ heh: 'mda' } as any)).toThrowError(/Некорректный тип аргумента/);
   })
 
   test('Вернёт оригинальную функцию, если передана только одна функция', () => {
