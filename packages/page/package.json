@@ -31,6 +31,7 @@
     "@lskjs/grid": "2.0.0-beta.2",
     "@lskjs/link": "2.0.0-beta.2",
     "@lskjs/theme": "2.0.0-beta.2",
+    "@lskjs/mobx": "2.2.0-beta.5.5",
     "@lskjs/utils": "1.42.0",
     "rc-menu": "8.7.1"
   },

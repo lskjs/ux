@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /** @jsx jsx */
 import React from 'react';
-import { inject, observer } from 'mobx-react';
+import { inject, observer } from '@lskjs/mobx';
 import Menu, { MenuItem } from 'rc-menu';
 import get from 'lodash/get';
 import { css, jsx } from '@emotion/core';
@@ -16,17 +16,17 @@ export const tabsStyle = css`
 
 export const PageTabs = ({ onClick: onClickProps, tabs, tab, page }) => (
   <Consumer>
-    {value => {
+    {(value) => {
       const onClick = get(value, 'onClick', onClickProps);
       return (
         <Menu
           onClick={onClick}
-          selectedKeys={[tab || get(page, 'state.meta.tab')].filter(a => a)}
+          selectedKeys={[tab || get(page, 'state.meta.tab')].filter((a) => a)}
           mode="horizontal"
           css={tabsStyle}
         >
           {/* {tabs.map(Menu.Item)} */}
-          {tabs.map(props => (
+          {tabs.map((props) => (
             <MenuItem {...props} />
           ))}
         </Menu>

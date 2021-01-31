@@ -1,5 +1,5 @@
 import React from 'react';
-import { inject, observer } from 'mobx-react';
+import { inject, observer } from '@lskjs/mobx';
 import get from 'lodash/get';
 // import PageTitleActions from '../PageTitleActions';
 import { contextToProps } from './Page.context';
