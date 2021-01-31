@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.3](https://github.com/lskjs/ux/tree/master/packages/page/compare/v2.0.0-beta.2...v2.0.0-beta.3) (2021-01-31)
+
+
+### Features
+
+* **page:** migrate mobx-react to lskjs/mobx ([5dd5f0e](https://github.com/lskjs/ux/tree/master/packages/page/commit/5dd5f0e4ea4e3a030c2ce258388710648841ce33))
+
+
+
+
+
 # [2.0.0-beta.2](https://github.com/lskjs/ux/tree/master/packages/page/compare/v2.0.0-beta.1...v2.0.0-beta.2) (2021-01-06)
 
 

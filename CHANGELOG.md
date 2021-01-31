@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.3](https://github.com/isuvorov/lib-starter-kit/compare/v2.0.0-beta.2...v2.0.0-beta.3) (2021-01-31)
+
+
+### Features
+
+* **page:** migrate mobx-react to lskjs/mobx ([5dd5f0e](https://github.com/isuvorov/lib-starter-kit/commit/5dd5f0e4ea4e3a030c2ce258388710648841ce33))
+* **t:** migrate mobx-react to lskjs/mobx and move safest T ([3614957](https://github.com/isuvorov/lib-starter-kit/commit/361495707fe650aa2720e6793a02c7e249683eb1))
+
+
+
+
+
 # [2.0.0-beta.2](https://github.com/isuvorov/lib-starter-kit/compare/v2.0.0-beta.1...v2.0.0-beta.2) (2021-01-06)
 
 
