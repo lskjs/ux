@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 // eslint-disable-next-line import/no-extraneous-dependencies
 const glob = require('glob');
+// eslint-disable-next-line import/no-extraneous-dependencies
 const shell = require('shelljs');
 
 const DIST = process.env.DIST || 'build';
@@ -10,7 +11,7 @@ if (process.env.DEBUG) console.log(`DIST=${DIST} BUILD_PARAMS=${BUILD_PARAMS}`);
 async function packageBuild() {
   await shell.mkdir('-p', DIST);
   const copyFiles = ['package.json', 'package-lock.json', 'README.md'];
-  await copyFiles.map(async file => {
+  await copyFiles.map(async (file) => {
     await shell.cp('-R', file, `${DIST}/`);
   });
 
@@ -31,17 +32,9 @@ async function packageBuild() {
 
   const list = glob.sync('src/**/**.ts');
   if (list.length) {
+    // NOTE: Why? https://github.com/babel/babel/issues/9668#issuecomment-602221154
     res = await shell.exec(
-      [
-        '../../node_modules/typescript/bin/tsc',
-        '--declaration',
-        '--declarationMap',
-        '--emitDeclarationOnly',
-        '--esModuleInterop',
-        '--jsx react',
-        `--outDir ${DIST}`,
-        'src/**.ts',
-      ].join(' '),
+      ['../../node_modules/typescript/bin/tsc', '--project tsconfig.types.json', `--outDir ${DIST}`].join(' '),
     );
     if (res.code !== 0 && res.stdout.trim() !== "error TS6053: File 'src/**.ts' not found.") throw res;
   }
@@ -51,7 +44,7 @@ async function packageBuild() {
   console.log('OK package-build');
 }
 
-packageBuild().catch(err => {
+packageBuild().catch((err) => {
   console.error(`========= ERR (${err.code} ) ========`);
   if (err.stdout) console.error(err.stdout);
   if (err.stderr) console.error(err.stderr);
