@@ -25,6 +25,10 @@
     "release": "../../scripts/package-release.sh",
     "release:docs": "../../scripts/package-release-docs.sh",
     "storybook": "../../scripts/package-storybook.sh",
+    "storybook": "start-storybook -p 6006",
+    "storybook-docs": "start-storybook -p 6006 --docs",
+    "build-storybook": "build-storybook",
+    "build-storybook-docs": "build-storybook --docs",
     "styleguide": "../../scripts/package-styleguide.sh"
   },
   "dependencies": {
