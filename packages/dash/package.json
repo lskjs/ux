@@ -1,0 +1,54 @@
+{
+  "name": "@lskjs/dash",
+  "version": "2.0.0-beta.2",
+  "description": "LSK.js – Dash – React components for your own dashboard",
+  "author": "Igor Suvorov <hi@isuvorov.com>",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": "https://github.com/lskjs/ux/tree/master/packages/dash",
+  "keywords": [],
+  "scripts": {
+    "start": "../../scripts/package-start.sh",
+    "dev": "../../scripts/package-dev.sh",
+    "dev:server": "../../scripts/package-dev-server.sh",
+    "dev:cra": "../../scripts/package-dev-cra.sh",
+    "dev:cra-and-server": "../../scripts/package-dev-cra-and-server.sh",
+    "postversion": "npm run release",
+    "lint:js": "../../scripts/package-lint-js.sh",
+    "bootstrap": "../../scripts/package-bootstrap.sh",
+    "update": "../../scripts/package-update.sh",
+    "build": "../../scripts/package-build.sh",
+    "watch": "../../scripts/package-watch.sh",
+    "bump": "../../scripts/package-bump.sh",
+    "release": "../../scripts/package-release.sh",
+    "release:docs": "../../scripts/package-release-docs.sh",
+    "storybook": "../../scripts/package-storybook.sh",
+    "i18": "../../scripts/package-i18.sh"
+  },
+  "dependencies": {
+    "@lskjs/button": "^2.0.0-beta.2",
+    "@lskjs/form": "^2.0.0-beta.4",
+    "@lskjs/link": "^2.0.0-beta.2",
+    "@lskjs/page": "^2.0.0-beta.4",
+    "@lskjs/scroll": "^2.0.0-beta.2",
+    "@lskjs/slide": "^2.0.0-beta.2",
+    "@lskjs/t": "^2.0.0-beta.4",
+    "@lskjs/theme": "^2.0.0-beta.2",
+    "@lskjs/ui2": "^2.0.0-beta.2",
+    "formik": "^2.2.6",
+    "mobx-react": "^7.1.0",
+    "react-image-fallback": "^8.0.0"
+  },
+  "devDependencies": {
+    "@emotion/react": "11.1.4",
+    "@emotion/styled": "11.0.0",
+    "prop-types": "15.7.2",
+    "react": "17.0.1"
+  },
+  "peerDependencies": {
+    "prop-types": "15.7.2",
+    "react": "17.0.1"
+  }
+}

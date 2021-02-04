@@ -1,3 +1,4 @@
+import { isDev } from '@lskjs/utils/env';
 import { withT } from './withT';
 
 export const T = ({ i18, name, ...props }) => {
@@ -8,7 +9,7 @@ export const T = ({ i18, name, ...props }) => {
     return str;
   } catch (err) {
     // eslint-disable-next-line no-console
-    if (__DEV__) console.error('<T />', err);
+    if (isDev) console.error('<T />', err);
     return defaultRes;
   }
 };

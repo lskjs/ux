@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "@lskjs/mobx": "2.2.0-beta.5.5",
+    "@lskjs/utils": "2.2.0-beta.20",
     "prop-types": "15.7.2"
   },
   "devDependencies": {
