@@ -7,7 +7,7 @@ import Link from '@lskjs/link';
 // const textSizeRatio = 3;
 const textSizePercent = 30;
 
-class Image extends PureComponent {
+export class Image extends PureComponent {
   getInnerStyle() {
     const {
       size,
@@ -101,6 +101,7 @@ class Image extends PureComponent {
         {children}
       </Component>
     );
+    
   }
 }
 

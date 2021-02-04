@@ -1,0 +1,50 @@
+import { useState } from 'react';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { Image } from './Image';
+
+<Meta
+  title="<Image>"
+  component={Image}
+/>
+
+# Lsk.js – Image
+
+> Компонент **Image** используется для отображения изображения. Фаллбеки и разные условия
+
+## Установка
+```bash
+npm i @lskjs/image
+```
+
+
+## Использование
+```jsx
+import { Image } from '@lskjs/image';
+
+<Image src="https://avatars.mds.yandex.net/get-pdb/750514/5798b2df-9998-4381-b8be-57aaf7b65e92/s375" />
+```
+
+
+## Пример
+<Canvas>
+  <Story name="Basic">
+    <Image src="https://avatars.mds.yandex.net/get-pdb/750514/5798b2df-9998-4381-b8be-57aaf7b65e92/s375" />
+  </Story>
+</Canvas>
+
+
+## Различные поведения компонента
+<Canvas>
+  <Story name="Валидная ссылка">
+    <Image src="https://avatars.mds.yandex.net/get-pdb/750514/5798b2df-9998-4381-b8be-57aaf7b65e9" />
+  </Story>
+  <Story name="Не валидная ссылка">
+    <Image src="https://avatars.mds.yandex.net/get-pdb/750514/5798b2df-9998-4381-b8be-57aaf7b65e9" />
+  </Story>
+  <Story name="Отсутсвие ссылки">
+    <Image />
+  </Story>
+  <Story name="Null">
+    <Image src={null} />
+  </Story>
+</Canvas>
