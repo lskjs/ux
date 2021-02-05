@@ -3,7 +3,7 @@ import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import { css } from '@emotion/react';
 
 import { ButtonProvider } from './ButtonContext';
-import { addColorSchema } from './theme';
+import { addColorSchema, addSize, internalTheme } from './theme';
 import Button from './Button';
 
 <Meta
@@ -93,6 +93,24 @@ import Button from '@lskjs/button';
 </Canvas>
 
 
+### Размеры
+Используйте пропсу **size** для обозначения размера кнопки.
+
+Вы можете использовать по-умолчанию один из этих размеров:
+`small` `medium` `large` и их алиасы `default` `sm` `md` `lg`
+
+<Canvas>
+  <Story name="Size/Small">
+    <Button size="small">Кнопка</Button>
+  </Story>
+  <Story name="Size/Medium">
+    <Button size="medium">Кнопка</Button>
+  </Story>
+  <Story name="Size/Large">
+    <Button size="large">Кнопка</Button>
+  </Story>
+</Canvas>
+
 ### Пользовательская цветовая схема
 В качестве дополнительной кастомизации можно добавить собственную цветовую схему кнопки.
 
@@ -105,10 +123,10 @@ import Button from '@lskjs/button';
     hover: 'black',
   },
   style: (props) => css`
-    color: ${props.theme['ux/Button'].colors.custom.text};
-    background-color: ${props.theme['ux/Button'].colors.custom.normal};
+    color: ${internalTheme(props).colors.custom.text};
+    background-color: ${internalTheme(props).colors.custom.normal};
     &:hover {
-      background-color: ${props.theme['ux/Button'].colors.custom.hover};
+      background-color: ${internalTheme(props).colors.custom.hover};
     }
   `,
 }
@@ -123,7 +141,7 @@ addColorSchema(colorSchema);
 
 **Пример компонента:**
 <Canvas>
-  <Story name="Custom">
+  <Story name="Custom/Color">
     {() => {
       const [variant, setVariant] = useState('primary');
       return (
@@ -138,10 +156,10 @@ addColorSchema(colorSchema);
                   hover: 'black',
                 },
                 style: (props) => css`
-                  color: ${props.theme['ux/Button'].colors.custom.text};
-                  background-color: ${props.theme['ux/Button'].colors.custom.normal};
+                  color: ${internalTheme(props).colors.custom.text};
+                  background-color: ${internalTheme(props).colors.custom.normal};
                   &:hover {
-                    background-color: ${props.theme['ux/Button'].colors.custom.hover};
+                    background-color: ${internalTheme(props).colors.custom.hover};
                   }
                 `,
               }, 'custom');
@@ -152,6 +170,57 @@ addColorSchema(colorSchema);
           </button>
           <br />
           <Button variant={variant}>Кнопка</Button>
+        </div>
+      );
+    }}
+  </Story>
+</Canvas>
+
+### Пользовательский размер
+В качестве дополнительной кастомизации можно добавить собственный размер кнопки.
+
+**Пример схемы:**
+```js
+(props) => css`
+  font-size: 2rem;
+  line-height: 1.5;
+  font-weight: ${internalTheme(props).fontWeight};
+  border-radius: 0.4rem;
+  padding: 1.25rem 1.5rem;
+`
+```
+
+
+```js
+import { addSize } from './theme';
+
+addSize(size);
+```
+
+**Пример компонента:**
+<Canvas>
+  <Story name="Custom/Size">
+    {() => {
+      const [size, setSize] = useState('default');
+      return (
+        <div>
+          <button
+            style={{ marginBottom: 24 }}
+            onClick={() => {
+              addSize((props) => css`
+                font-size: 2rem;
+                line-height: 1.5;
+                font-weight: ${internalTheme(props).fontWeight};
+                border-radius: 0.4rem;
+                padding: 1.25rem 1.5rem;
+              `, 'extraLarge');
+              setSize('extraLarge');
+            }}
+          >
+            Add extraLarge custom size
+          </button>
+          <br />
+          <Button size={size}>Кнопка</Button>
         </div>
       );
     }}
