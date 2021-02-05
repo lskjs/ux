@@ -1,12 +1,14 @@
 import { css, SerializedStyles, Theme } from '@emotion/react';
 import { ComponentPropsWithoutRef } from 'react';
 
+const PACKAGE_THEME_KEY = Symbol.for('#ux/button');
+
 const make = (object: { [key: string]: SerializedStyles }, prop: string, fallback: string = 'default') => {
   const isValid = Object.keys(object).includes(prop);
   return object[isValid ? prop : fallback];
 };
 
-export const internalTheme = (props: { theme: Theme }) => props.theme['ux/Button'];
+export const internalTheme = (props: { theme: Theme }) => props.theme[PACKAGE_THEME_KEY];
 
 const genGenericVariant = (props: { theme: Theme }, name: string): SerializedStyles => css`
   background-color: ${internalTheme(props).colors[name].normal};
@@ -174,5 +176,5 @@ Object.keys(colorSchema).forEach((schemaName) => {
 
 export const themeComposer = (selfTheme: Theme) => (ancestorTheme: Theme) => ({
   ...ancestorTheme,
-  'ux/Button': selfTheme,
+  [PACKAGE_THEME_KEY]: selfTheme,
 });
