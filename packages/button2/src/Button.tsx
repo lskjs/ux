@@ -1,6 +1,9 @@
 import React, { useContext, ElementType, ComponentPropsWithoutRef, FC } from 'react';
 import PropTypes from 'prop-types';
-// import sizes from '@lskjs/utils/sizes';
+import map from 'lodash/map';
+import omit from 'lodash/omit';
+
+import sizes from '@lskjs/utils/sizes';
 
 import SafeAnchor from './SafeAnchor';
 import { ButtonContext } from './ButtonContext';
@@ -18,11 +21,36 @@ export interface ButtonProps extends ComponentPropsWithoutRef<'button'> {
   block?: boolean;
   /** Ссылка */
   href?: string;
-  /** Размер кнопки */
-  size?: 'small' | 'default' | 'medium' | 'large' | 'sm' | 'md' | 'lg';
+  /** Размер кнопки (один из стандартных размеров: `small` `medium` `large` и их алиасов `default` `sm` `lg` `md`) */
+  size?: string;
 }
 
-export const Button: FC<ButtonProps> = ({ variant, as, active, block, disabled, href, size, type, children, ...props }) => {
+const getSize = (size: string): string => {
+  const defaultSize = 'medium';
+  let pretendSize = defaultSize;
+  if (sizes.is(size, 'extraSmall')) pretendSize = 'extraSmall';
+  if (sizes.is(size, 'small')) pretendSize = 'small';
+  if (sizes.is(size, defaultSize)) pretendSize = defaultSize;
+  if (sizes.is(size, 'large')) pretendSize = 'large';
+  if (sizes.is(size, 'extraLarge')) pretendSize = 'extraLarge';
+  if (Object.keys(theme.sizes).includes(pretendSize)) {
+    return pretendSize;
+  }
+  return defaultSize;
+};
+
+export const Button: FC<ButtonProps> = ({
+  variant,
+  as,
+  active,
+  block,
+  disabled,
+  href,
+  size = 'medium',
+  type,
+  children,
+  ...props
+}) => {
   const ctx = useContext(ButtonContext);
   if (!ctx._contextProvided) {
     console.error('[ux/Button] Context is not provided!');
@@ -33,7 +61,7 @@ export const Button: FC<ButtonProps> = ({ variant, as, active, block, disabled, 
     active,
     block,
     disabled,
-    size,
+    size: getSize(size),
     type,
   };
 
@@ -69,11 +97,24 @@ Button.propTypes = {
     }
     return null;
   },
+  size: (props, propName, componentName): Error | null => {
+    const allowedSizes = map(omit(sizes, 'is'), (val, key) => {
+      if (Object.keys(theme.sizes).includes(val)) return key;
+      return null;
+    }).filter(a => !!a);
+
+    if (!allowedSizes.includes(props[propName])) {
+      return new Error(
+        'Prop `' + propName + '` in component' +
+        ' `' + componentName + '` is not on the list of allowed ' + JSON.stringify(allowedSizes),
+      );
+    }
+    return null;
+  },
   active: PropTypes.bool,
   block: PropTypes.bool,
   disabled: PropTypes.bool,
   href: PropTypes.string,
-  size: PropTypes.oneOf(['small', 'default', 'medium', 'large', 'sm', 'md', 'lg']),
   type: PropTypes.oneOf(['button', 'reset', 'submit', null]),
   children: PropTypes.node,
 };

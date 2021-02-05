@@ -42,13 +42,13 @@
     "clear": "../../scripts/package-clear.sh"
   },
   "dependencies": {
-    "@lskjs/theme": "1.36.10",
-    "lodash.merge": "^4.6.2"
+    "@lskjs/theme": "1.36.10"
   },
   "devDependencies": {
     "@types/jest": "^26.0.20",
     "@types/lodash.merge": "^4.6.6",
     "@types/react": "^17.0.0",
+    "lodash": "^4.17.20",
     "prop-types": "^15.7.2",
     "react": "^17.0.1"
   },

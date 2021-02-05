@@ -1,7 +1,7 @@
 import React, { createContext, FC, ReactChild } from 'react';
 import PropTypes from 'prop-types';
 import { Theme, ThemeProvider } from '@emotion/react';
-import merge from 'lodash.merge';
+import merge from 'lodash/merge';
 import { themeComposer, theme as buttonTheme } from './theme';
 
 const defaultContext = {

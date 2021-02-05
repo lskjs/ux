@@ -141,15 +141,37 @@ export const colorSchema = {
   },
 };
 
+const sizes = {
+  large: (props: { theme: Theme }) => css`
+    font-size: 1.25rem;
+    line-height: 1.5;
+    font-weight: ${internalTheme(props).fontWeight};
+    border-radius: 0.3rem;
+    padding: 0.5rem 1rem;
+  `,
+  medium: (props: { theme: Theme }) => css`
+    font-size: 1rem;
+    line-height: 1.5;
+    font-weight: ${internalTheme(props).fontWeight};
+    border-radius: 0.25rem;
+    padding: 0.375rem .75rem;
+  `,
+  small: (props: { theme: Theme }) => css`
+    font-size: 0.875rem;
+    line-height: 1.5;
+    font-weight: ${internalTheme(props).fontWeight};
+    border-radius: 0.2rem;
+    padding: 0.25rem 0.5rem;
+  `,
+};
+
 export const theme = {
   fontFamily: 'sans-serif',
   fontWeight: 400,
-  fontSize: '1rem',
-  lineHeight: '1.5',
-  borderRadius: '.25rem',
   transition: 'color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out',
   variants: {},
   colors: {},
+  sizes: {},
   utils: {
     make,
   },
@@ -164,11 +186,20 @@ export interface ColorSchema {
   style: (props: ComponentPropsWithoutRef<any>) => SerializedStyles;
 }
 
+export function addSize(schema: SerializedStyles, name: string) {
+  if (!name || !schema) return;
+  theme.sizes[name] = schema;
+};
+
 export function addColorSchema(schema: ColorSchema, name: string) {
   if (!name || !schema) return;
   if (schema.colors) theme.colors[name] = schema.colors;
   if (schema.style) theme.variants[name] = schema.style;
 };
+
+Object.keys(sizes).forEach((schemaName) => {
+  addSize(sizes[schemaName], schemaName);
+});
 
 Object.keys(colorSchema).forEach((schemaName) => {
   addColorSchema(colorSchema[schemaName], schemaName);
