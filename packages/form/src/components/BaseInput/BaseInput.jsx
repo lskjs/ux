@@ -1,44 +1,14 @@
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
-import debounce from 'lodash/debounce';
 import autobind from '@lskjs/autobind';
-import get from 'lodash/get';
-import If from 'react-if';
 import filterProps from '@lskjs/utils/filterProps';
+import debounce from 'lodash/debounce';
+import get from 'lodash/get';
+import PropTypes from 'prop-types';
+import React, { PureComponent } from 'react';
+
 import getBlock from './BaseInput.styles';
-import { InputBox, LeftWrapper, RightWrapper, Count } from './InputStyle.styles';
+import { Count, InputBox, LeftWrapper, RightWrapper } from './InputStyle.styles';
 
 class Input extends PureComponent {
-  static propTypes = {
-    displayRate: PropTypes.number,
-    validationState: PropTypes.oneOf(['success', 'warning', 'error']),
-    componentClass: PropTypes.any,
-    block: PropTypes.bool,
-    disabled: PropTypes.bool,
-    styleName: PropTypes.string,
-    leftIcon: PropTypes.any,
-    rightIcon: PropTypes.any,
-    innerRef: PropTypes.any,
-    className: PropTypes.string,
-    regex: PropTypes.any,
-    maxLength: PropTypes.number,
-    showLimit: PropTypes.bool,
-  };
-  static defaultProps = {
-    validationState: null,
-    componentClass: 'input',
-    block: false,
-    disabled: false,
-    styleName: null,
-    displayRate: null,
-    leftIcon: null,
-    rightIcon: null,
-    innerRef: null,
-    className: null,
-    regex: null,
-    maxLength: null,
-    showLimit: true,
-  };
   constructor(props) {
     super(props);
     this.state = {
@@ -104,9 +74,7 @@ class Input extends PureComponent {
     const { Block } = this;
     return (
       <InputBox>
-        <If condition={!!leftIcon}>
-          <LeftWrapper>{leftIcon}</LeftWrapper>
-        </If>
+        {!!leftIcon && <LeftWrapper>{leftIcon}</LeftWrapper>}
         <Block
           iconLeft={leftIcon}
           iconRight={rightIcon}
@@ -120,15 +88,42 @@ class Input extends PureComponent {
           value={typeof displayRate === 'number' ? value * displayRate : value}
           onChange={this.handleChange}
         />
-        <If condition={!!rightIcon}>
-          <RightWrapper>{rightIcon}</RightWrapper>
-        </If>
-        <If condition={!!(maxLength && showLimit)}>
-          <Count>{`${get(value, 'length') || 0}/${maxLength}`}</Count>
-        </If>
+        {!!rightIcon && <RightWrapper>{rightIcon}</RightWrapper>}
+        {!!(maxLength && showLimit) && <Count>{`${get(value, 'length') || 0}/${maxLength}`}</Count>}
       </InputBox>
     );
   }
 }
+
+Input.propTypes = {
+  displayRate: PropTypes.number,
+  validationState: PropTypes.oneOf(['success', 'warning', 'error']),
+  componentClass: PropTypes.any,
+  block: PropTypes.bool,
+  disabled: PropTypes.bool,
+  styleName: PropTypes.string,
+  leftIcon: PropTypes.any,
+  rightIcon: PropTypes.any,
+  innerRef: PropTypes.any,
+  className: PropTypes.string,
+  regex: PropTypes.any,
+  maxLength: PropTypes.number,
+  showLimit: PropTypes.bool,
+};
+Input.defaultProps = {
+  validationState: null,
+  componentClass: 'input',
+  block: false,
+  disabled: false,
+  styleName: null,
+  displayRate: null,
+  leftIcon: null,
+  rightIcon: null,
+  innerRef: null,
+  className: null,
+  regex: null,
+  maxLength: null,
+  showLimit: true,
+};
 
 export default Input;

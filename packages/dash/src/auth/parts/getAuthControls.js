@@ -1,40 +1,36 @@
 import Input from '@lskjs/form/controls/Input';
 import pick from 'lodash/pick';
 
-const getAuthControls = (view) => {
+export const getAuthControls = (view) => {
   const controls = {
     email: {
       component: Input,
-      withI18: true,
-      title: 'auth.authForm.email',
+      title: 'lsk.dash.controls.email',
       required: true,
       type: 'email',
-      initialValue: __DEV__ ? 'me@coder24.ru' : '',
+      // initialValue: __DEV__ ? 'me@coder24.ru' : '',
     },
     password: {
       component: Input,
-      withI18: true,
-      title: 'auth.authForm.password',
+      title: 'lsk.dash.controls.password',
       required: true,
       type: 'password',
       asdasd: 1231231,
       props: {
         autocomplete: 'password',
       },
-      initialValue: __DEV__ ? 'me@coder24.ru' : '',
+      // initialValue: __DEV__ ? 'me@coder24.ru' : '',
     },
     name: {
       component: Input,
-      withI18: true,
-      title: 'auth.authForm.name',
+      title: 'lsk.dash.controls.name',
       required: true,
     },
     code: {
       component: Input,
-      withI18: true,
-      title: 'auth.authForm.code',
+      title: 'lsk.dash.controls.code',
       required: true,
-      initialValue: __DEV__ ? '1234' : '',
+      // initialValue: __DEV__ ? '1234' : '',
     },
   };
   if (view === 'AuthLoginForm') {

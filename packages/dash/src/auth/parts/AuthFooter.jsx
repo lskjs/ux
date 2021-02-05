@@ -10,25 +10,25 @@ export const AuthFooter = ({ view, providers }) => (
   <>
     {view !== 'login' && (
       <AdditionalInfo>
-        <T name="auth.authFooter.login" />
+        <T name="lsk.dash.AuthFooter.login" />
         <A href="/auth/login">
-          <T name="buttons.login" />
+          <T name="lsk.dash.buttons.login" />
         </A>
       </AdditionalInfo>
     )}
     {view !== 'signup' && (
       <AdditionalInfo>
-        <T name="auth.authFooter.signup" />
+        <T name="lsk.dash.AuthFooter.signup" />
         <A href="/auth/signup">
-          <T name="buttons.signup" />
+          <T name="lsk.dash.buttons.signup" />
         </A>
       </AdditionalInfo>
     )}
     {view !== 'restore' && (
       <AdditionalInfo>
-        <T name="auth.authFooter.restore" />
+        <T name="lsk.dash.AuthFooter.restore" />
         <A href="/auth/restore">
-          <T name="buttons.restore" />
+          <T name="lsk.dash.buttons.restore" />
         </A>
       </AdditionalInfo>
     )}
