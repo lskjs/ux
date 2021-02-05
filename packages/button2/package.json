@@ -42,8 +42,6 @@
     "clear": "../../scripts/package-clear.sh"
   },
   "dependencies": {
-    "@emotion/react": "^11.1.4",
-    "@emotion/styled": "^11.0.0",
     "@lskjs/theme": "1.36.10",
     "lodash.merge": "^4.6.2"
   },
