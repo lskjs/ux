@@ -1,4 +1,4 @@
-import React, { createContext, FC, ReactNode } from 'react';
+import React, { createContext, FC, ReactChild } from 'react';
 import PropTypes from 'prop-types';
 import { Theme, ThemeProvider } from '@emotion/react';
 import merge from 'lodash.merge';
@@ -14,7 +14,7 @@ export const ButtonConsumer = ButtonContext.Consumer;
 interface ButtonProviderProps<T> {
   value?: T;
   theme?: Theme | ((arg0: Theme) => Theme);
-  children: ReactNode;
+  children: ReactChild;
 }
 
 export const ButtonProvider: FC<ButtonProviderProps<Object>> = ({ value = {}, theme = {}, children }) => {
@@ -35,7 +35,6 @@ export const ButtonProvider: FC<ButtonProviderProps<Object>> = ({ value = {}, th
 ButtonProvider.propTypes = {
   value: PropTypes.instanceOf(Object).isRequired,
   theme: PropTypes.oneOfType([PropTypes.instanceOf(Object)]),
-  children: PropTypes.node,
 };
 
 ButtonProvider.defaultProps = {
