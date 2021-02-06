@@ -28,18 +28,17 @@
     "i18": "../../scripts/package-i18.sh"
   },
   "dependencies": {
-    "@lskjs/button": "^2.0.0-beta.2",
-    "@lskjs/form": "^2.0.0-beta.4",
-    "@lskjs/link": "^2.0.0-beta.2",
-    "@lskjs/page": "^2.0.0-beta.4",
-    "@lskjs/scroll": "^2.0.0-beta.2",
-    "@lskjs/slide": "^2.0.0-beta.2",
-    "@lskjs/t": "^2.0.0-beta.4",
-    "@lskjs/theme": "^2.0.0-beta.2",
-    "@lskjs/ui2": "^2.0.0-beta.2",
-    "formik": "^2.2.6",
-    "mobx-react": "^7.1.0",
-    "react-image-fallback": "^8.0.0"
+    "@lskjs/button": "2.0.0-beta.2",
+    "@lskjs/form": "2.0.0-beta.4",
+    "@lskjs/link": "2.0.0-beta.2",
+    "@lskjs/page": "2.0.0-beta.4",
+    "@lskjs/scroll": "2.0.0-beta.2",
+    "@lskjs/slide": "2.0.0-beta.2",
+    "@lskjs/t": "2.0.0-beta.4",
+    "@lskjs/theme": "2.0.0-beta.2",
+    "@lskjs/ui2": "2.0.0-beta.2",
+    "formik": "2.2.6",
+    "mobx-react": "7.1.0"
   },
   "devDependencies": {
     "@emotion/react": "11.1.4",

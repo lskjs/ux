@@ -1,7 +1,7 @@
 import Page from '@lskjs/page';
 import React from 'react';
 
-const AuthLogoutPage = ({}) => (
+const AuthLogoutPage = () => (
   <Page layout={Page.AuthLayout}>
     <Page.Header breadcrumbs={null} />
   </Page>
