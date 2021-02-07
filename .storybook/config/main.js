@@ -11,7 +11,7 @@ if (!pack) {
 
 module.exports = {
   stories: [
-    `../packages/${pack}/stories/**/*.@(story|stories).@(js|jsx|ts|tsx|mdx)`,
+    `../../packages/${pack}/stories/**/*.@(story|stories).@(js|jsx|ts|tsx|mdx)`,
   ],
   addons: [
     '@storybook/addon-links',
