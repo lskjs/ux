@@ -6,7 +6,7 @@ rsync -avEp ../../tsconfig.json ../../tsconfig.types.json . && \
 rsync -avEp  ../../scripts/assets/files/ . 
 
 # update package \
-node ../../scripts/package-merge.js 
+node ../../scripts/package/merge.js 
 
 if [ -d ./cra ]
 then

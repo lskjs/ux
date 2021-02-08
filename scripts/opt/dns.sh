@@ -5,4 +5,4 @@ then
   source .env
   set +o allexport
 fi
-node scripts/dns.js
+node scripts/opt/dns.js
