@@ -2,30 +2,20 @@
   "name": "@lskjs/dash",
   "version": "2.0.0-beta.2",
   "description": "LSK.js – Dash – React components for your own dashboard",
-  "author": "Igor Suvorov <hi@isuvorov.com>",
-  "license": "MIT",
-  "publishConfig": {
-    "access": "public"
-  },
-  "repository": "https://github.com/lskjs/ux/tree/master/packages/dash",
   "keywords": [],
+  "repository": "https://github.com/lskjs/ux/tree/master/packages/dash",
+  "license": "MIT",
+  "author": "Igor Suvorov <hi@isuvorov.com>",
   "scripts": {
-    "start": "../../scripts/package-start.sh",
-    "dev": "../../scripts/package-dev.sh",
-    "dev:server": "../../scripts/package-dev-server.sh",
-    "dev:cra": "../../scripts/package-dev-cra.sh",
-    "dev:cra-and-server": "../../scripts/package-dev-cra-and-server.sh",
-    "postversion": "npm run release",
-    "lint:js": "../../scripts/package-lint-js.sh",
-    "bootstrap": "../../scripts/package-bootstrap.sh",
-    "update": "../../scripts/package-update.sh",
-    "build": "../../scripts/package-build.sh",
-    "watch": "../../scripts/package-watch.sh",
-    "bump": "../../scripts/package-bump.sh",
-    "release": "../../scripts/package-release.sh",
-    "release:docs": "../../scripts/package-release-docs.sh",
-    "storybook": "../../scripts/package-storybook.sh",
-    "i18": "../../scripts/package-i18.sh"
+    "bootstrap": "lsk run bootstrap",
+    "build": "lsk run build",
+    "dev": "lsk run dev",
+    "i18": "lsk run i18",
+    "release": "lsk run release",
+    "start": "lsk run start",
+    "storybook": "lsk run storybook",
+    "test": "lsk run test",
+    "watch": "lsk run watch"
   },
   "dependencies": {
     "@lskjs/button": "2.0.0-beta.2",
@@ -49,5 +39,8 @@
   "peerDependencies": {
     "prop-types": "15.7.2",
     "react": "17.0.1"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
