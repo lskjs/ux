@@ -1,16 +1,15 @@
 import classNames from 'classnames';
-import React, { useMemo, useCallback } from 'react';
 import PropTypes from 'prop-types';
-
+import React, { useCallback, useMemo } from 'react';
 import { useUncontrolled } from 'uncontrollable';
 
 import createWithBsPrefix from './createWithBsPrefix';
 import NavbarBrand from './NavbarBrand';
 import NavbarCollapse from './NavbarCollapse';
-import NavbarToggle from './NavbarToggle';
-import { useBootstrapPrefix } from './ThemeProvider';
 import NavbarContext from './NavbarContext';
+import NavbarToggle from './NavbarToggle';
 import SelectableContext from './SelectableContext';
+import { useBootstrapPrefix } from './ThemeProvider';
 
 const propTypes = {
   /** @default 'navbar' */

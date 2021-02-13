@@ -1,2 +1,4 @@
-export { default as A } from './A';
+export * from './ChipItem';
+export * from './A';
 export * from './DEV';
+export * from './Sider';

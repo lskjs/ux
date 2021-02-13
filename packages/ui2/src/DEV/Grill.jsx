@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default ({ children, cols = 6 }) => {
+export const Grill = ({ children, cols = 6 }) => {
   let items;
   if (Array.isArray(children)) {
     items = children.map((item) => <div>{item}</div>);
@@ -24,3 +24,5 @@ export default ({ children, cols = 6 }) => {
     </div>
   );
 };
+
+export default Grill;

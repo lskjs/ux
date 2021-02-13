@@ -4,7 +4,7 @@ import React from 'react';
 import { AuthLoginForm } from '../forms/AuthLoginForm';
 import { AuthFooter } from '../parts/AuthFooter';
 
-const AuthLoginPage = ({ onSubmit, providers }) => (
+export const AuthLoginPage = ({ onSubmit, providers }) => (
   <Page layout={Page.AuthLayout}>
     <Page.Header breadcrumbs={null} />
     <AuthLoginForm onSubmit={onSubmit} />

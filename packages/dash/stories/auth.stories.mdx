@@ -1,79 +1,20 @@
-import './fix';
+import './helper';
 import { useState } from 'react';
 import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import { AuthSignupForm } from '../src/auth/forms/AuthSignupForm';
-import { AuthLoginForm } from '../src/auth/forms/AuthLoginForm';
-import { AuthRestoreForm } from '../src/auth/forms/AuthRestoreForm';
-import { AuthPasswordForm } from '../src/auth/forms/AuthPasswordForm';
-import { AuthPermitForm } from '../src/auth/forms/AuthPermitForm';
-import { AuthFooter } from '../src/auth/parts/AuthFooter';
-
+import { AuthLoginPage } from '../src/auth/pages/AuthLoginPage';
 
 <Meta
-  title="dash"
+  title="dash/auth"
 />
-
-# Lsk.js – Dash
-
-> *Dash* – компоненты и страницы  для построения своего лендинга, кабинета, админки, дашборда 
-
-
-# Lsk.js – Dash/landing
-
-> *Dash/landing* – компоненты и страницы для построения лендинга
-
-
-# Lsk.js – Dash/cabinet
-
-> *Dash/landing* – компоненты и страницы  для построения личного кабинета пользователя
-
-# Lsk.js – Dash/admin
-
-> *Dash/landing* – компоненты и страницы  для построения админки
 
 # Lsk.js – Dash/auth
 
 > *Dash/auth* – компоненты и страницы  для построения страниц авторизации и регистрации
 
-## AuthFooter - футер для форм
+ ## AuthLoginPage - страница логина
 <Canvas>
-  <Story name="<AuthFooter>">
-    <AuthFooter />
-  </Story>
-</Canvas> 
-
-## AuthSignupForm - форма для регистрации
-<Canvas>
-  <Story name="<AuthSignupForm>">
-    <AuthSignupForm />
+  <Story name="<AuthLoginPage>">
+    <AuthLoginPage />
   </Story>
 </Canvas>
 
- ## AuthLoginForm - форма для входа
-<Canvas>
-  <Story name="<AuthLoginForm>">
-    <AuthLoginForm />
-  </Story>
-</Canvas>
-
-
-## AuthRestoreForm - форма для восстановления пароля
-<Canvas>
-  <Story name="<AuthRestoreForm>">
-    <AuthRestoreForm />
-  </Story>
-</Canvas>
-
-## AuthPasswordForm - форма для ввода нового пароля после восстановления
-<Canvas>
-  <Story name="<AuthPasswordForm>">
-    <AuthPasswordForm />
-  </Story>
-</Canvas>
-
-## AuthPermitForm - форма для ввода одноразового кода пароля
-<Canvas>
-  <Story name="<AuthPermitForm>">
-    <AuthPermitForm />
-  </Story>
-</Canvas> 

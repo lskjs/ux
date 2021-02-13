@@ -1,9 +1,9 @@
 import classNames from 'classnames';
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 
-import { useBootstrapPrefix } from './ThemeProvider';
 import SafeAnchor from './SafeAnchor';
+import { useBootstrapPrefix } from './ThemeProvider';
 
 const propTypes = {
   /**
@@ -63,45 +63,33 @@ const defaultProps = {
   type: 'button',
 };
 
-const Button = React.forwardRef(
-  (
-    { bsPrefix, variant, size, active, className, block, type, as, ...props },
-    ref,
-  ) => {
-    const prefix = useBootstrapPrefix(bsPrefix, 'btn');
+const Button = React.forwardRef(({ bsPrefix, variant, size, active, className, block, type, as, ...props }, ref) => {
+  const prefix = useBootstrapPrefix(bsPrefix, 'btn');
 
-    const classes = classNames(
-      className,
-      prefix,
-      active && 'active',
-      `${prefix}-${variant}`,
-      block && `${prefix}-block`,
-      size && `${prefix}-${size}`,
-    );
+  const classes = classNames(
+    className,
+    prefix,
+    active && 'active',
+    `${prefix}-${variant}`,
+    block && `${prefix}-block`,
+    size && `${prefix}-${size}`,
+  );
 
-    if (props.href) {
-      return (
-        <SafeAnchor
-          {...props}
-          as={as}
-          ref={ref}
-          className={classNames(classes, props.disabled && 'disabled')}
-        />
-      );
-    }
+  if (props.href) {
+    return <SafeAnchor {...props} as={as} ref={ref} className={classNames(classes, props.disabled && 'disabled')} />;
+  }
 
-    if (ref) {
-      props.ref = ref;
-    }
+  if (ref) {
+    props.ref = ref;
+  }
 
-    if (!as) {
-      props.type = type;
-    }
+  if (!as) {
+    props.type = type;
+  }
 
-    const Component = as || 'button';
-    return <Component {...props} className={classes} />;
-  },
-);
+  const Component = as || 'button';
+  return <Component {...props} className={classes} />;
+});
 
 Button.displayName = 'Button';
 Button.propTypes = propTypes;

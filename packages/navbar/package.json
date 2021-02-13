@@ -18,6 +18,7 @@
     "watch": "lsk run watch"
   },
   "dependencies": {
+    "@lskjs/button2": "^1.36.10",
     "@restart/context": "2.1.4",
     "@restart/hooks": "0.3.20",
     "classnames": "2.2.6",

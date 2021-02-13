@@ -1,8 +1,9 @@
+import useForceUpdate from '@restart/hooks/useForceUpdate';
+import useMergedRefs from '@restart/hooks/useMergedRefs';
 import qsa from 'dom-helpers/querySelectorAll';
 import PropTypes from 'prop-types';
 import React, { useContext, useEffect, useRef } from 'react';
-import useForceUpdate from '@restart/hooks/useForceUpdate';
-import useMergedRefs from '@restart/hooks/useMergedRefs';
+
 import NavContext from './NavContext';
 import SelectableContext, { makeEventKey } from './SelectableContext';
 import TabContext from './TabContext';
@@ -49,7 +50,8 @@ const AbstractNav = React.forwardRef(
     const parentOnSelect = useContext(SelectableContext);
     const tabContext = useContext(TabContext);
 
-    let getControlledId, getControllerId;
+    let getControlledId;
+    let getControllerId;
 
     if (tabContext) {
       role = role || 'tablist';
@@ -60,13 +62,13 @@ const AbstractNav = React.forwardRef(
 
     const listNode = useRef(null);
 
-    const getNextActiveChild = offset => {
+    const getNextActiveChild = (offset) => {
       if (!listNode.current) return null;
 
-      let items = qsa(listNode.current, '[data-rb-event-key]:not(.disabled)');
-      let activeChild = listNode.current.querySelector('.active');
+      const items = qsa(listNode.current, '[data-rb-event-key]:not(.disabled)');
+      const activeChild = listNode.current.querySelector('.active');
 
-      let index = items.indexOf(activeChild);
+      const index = items.indexOf(activeChild);
       if (index === -1) return null;
 
       let nextIndex = index + offset;
@@ -81,7 +83,7 @@ const AbstractNav = React.forwardRef(
       if (parentOnSelect) parentOnSelect(key, event);
     };
 
-    const handleKeyDown = event => {
+    const handleKeyDown = (event) => {
       if (onKeyDown) onKeyDown(event);
 
       let nextActiveChild;
@@ -107,9 +109,7 @@ const AbstractNav = React.forwardRef(
 
     useEffect(() => {
       if (listNode.current && needsRefocusRef.current) {
-        let activeChild = listNode.current.querySelector(
-          '[data-rb-event-key].active',
-        );
+        const activeChild = listNode.current.querySelector('[data-rb-event-key].active');
 
         if (activeChild) activeChild.focus();
       }
@@ -129,12 +129,7 @@ const AbstractNav = React.forwardRef(
             getControllerId: getControllerId || noop,
           }}
         >
-          <Component
-            {...props}
-            onKeyDown={handleKeyDown}
-            ref={mergedRef}
-            role={role}
-          />
+          <Component {...props} onKeyDown={handleKeyDown} ref={mergedRef} role={role} />
         </NavContext.Provider>
       </SelectableContext.Provider>
     );

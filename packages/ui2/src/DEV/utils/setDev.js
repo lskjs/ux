@@ -1,5 +1,5 @@
 /* eslint-disable no-nested-ternary */
-export default (value) => {
+const setDev = (value) => {
   const bool = !!value;
   if (typeof window !== 'undefined') {
     window.__DEV__ = bool;
@@ -7,3 +7,5 @@ export default (value) => {
     global.__DEV__ = bool;
   }
 };
+
+export default setDev;

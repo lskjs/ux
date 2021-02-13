@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default ({
+export const Zebra = ({
   children,
   color = '#fcfcfc77',
   border = 2,
@@ -24,3 +24,5 @@ export default ({
     </div>
   </div>
 );
+
+export default Zebra;

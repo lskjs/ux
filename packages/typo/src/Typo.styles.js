@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 // import getTheme from '@lskjs/theme/getTheme';
 import createDynamicTag from '@lskjs/utils/createDynamicTag';
 import removeProps from '@lskjs/utils/removeProps';
+
 import createTypoCss from './createTypoCss';
 
 const dynamicTag = createDynamicTag('div');
@@ -40,7 +41,6 @@ const dynamicTag = createDynamicTag('div');
 //   line-height: $display-line-height;
 // }
 
-
 // const small1 = css`
 //   font-size: 11px;
 //   font-weight: normal;
@@ -68,15 +68,11 @@ export const alignEnum = Object.values(Aligns);
 // export const viewEnum = Object.keys(views);
 export const preEnum = ['line', 'wrap'];
 
-export default styled(removeProps(dynamicTag, [
-  'lineHeight',
-  'paragraph',
-  'textOverflow',
-  'color',
-  'view',
-  'align',
-  'width',
-]))`${props => createTypoCss(props)}`;
+export default styled(
+  removeProps(dynamicTag, ['lineHeight', 'paragraph', 'textOverflow', 'color', 'view', 'align', 'width']),
+)`
+  ${(props) => createTypoCss(props)}
+`;
 
 // export default styled(removeProps(dynamicTag, [
 //   'lineHeight',
