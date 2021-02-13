@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.5](https://github.com/lskjs/ux/tree/master/packages/image/compare/v2.0.0-beta.4...v2.0.0-beta.5) (2021-02-13)
+
+
+### Features
+
+* **dash:** rewrite forms ([5730079](https://github.com/lskjs/ux/tree/master/packages/image/commit/57300798ce7f77e6802074ac17682b6b674f501b))
+* new stable storybook with image and button2 ([2dcd713](https://github.com/lskjs/ux/tree/master/packages/image/commit/2dcd713edb89112907a2dfd4dc6a01412cbd0741))
+
+
+
+
+
 # [2.0.0-beta.2](https://github.com/lskjs/ux/tree/master/packages/image/compare/v2.0.0-beta.1...v2.0.0-beta.2) (2021-01-06)
 
 

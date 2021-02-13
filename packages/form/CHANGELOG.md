@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.5](https://github.com/lskjs/ux/tree/master/packages/form/compare/v2.0.0-beta.4...v2.0.0-beta.5) (2021-02-13)
+
+
+### Features
+
+* **dash:** rewrite forms ([5730079](https://github.com/lskjs/ux/tree/master/packages/form/commit/57300798ce7f77e6802074ac17682b6b674f501b))
+
+
+
+
+
 # [2.0.0-beta.4](https://github.com/lskjs/ux/tree/master/packages/form/compare/v2.0.0-beta.3...v2.0.0-beta.4) (2021-01-31)
 
 **Note:** Version bump only for package @lskjs/form

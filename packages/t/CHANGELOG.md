@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.5](https://github.com/lskjs/ux/tree/master/packages/t/compare/v2.0.0-beta.4...v2.0.0-beta.5) (2021-02-13)
+
+
+### Features
+
+* **dash:** starting to develop dash ([7cadcda](https://github.com/lskjs/ux/tree/master/packages/t/commit/7cadcdac503aa1f1d424fa315134948e23b77662))
+
+
+
+
+
 # [2.0.0-beta.4](https://github.com/lskjs/ux/tree/master/packages/t/compare/v2.0.0-beta.3...v2.0.0-beta.4) (2021-01-31)
 
 **Note:** Version bump only for package @lskjs/t
