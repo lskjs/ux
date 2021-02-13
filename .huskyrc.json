@@ -1,5 +1,7 @@
 {
   "hooks": {
+    "pre-commit": "echo npm run pre-commit",
+    "pre-push": "echo npm run pre-push",
     "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
   }
 }
