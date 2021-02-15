@@ -1,8 +1,9 @@
-import React, { createContext, FC, ReactChild } from 'react';
-import PropTypes from 'prop-types';
 import { Theme, ThemeProvider } from '@emotion/react';
 import merge from 'lodash/merge';
-import { themeComposer, theme as buttonTheme } from './theme';
+import PropTypes from 'prop-types';
+import React, { createContext, FC, ReactChild } from 'react';
+
+import { theme as buttonTheme, themeComposer } from './theme';
 
 const defaultContext = {
   _contextProvided: false,
@@ -25,9 +26,7 @@ export const ButtonProvider: FC<ButtonProviderProps<Object>> = ({ value = {}, th
   const defaultTheme = themeComposer(extendedTheme);
   return (
     <ThemeProvider theme={defaultTheme}>
-      <ButtonContext.Provider value={context}>
-        {children}
-      </ButtonContext.Provider>
+      <ButtonContext.Provider value={context}>{children}</ButtonContext.Provider>
     </ThemeProvider>
   );
 };

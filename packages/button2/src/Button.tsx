@@ -1,14 +1,13 @@
-import React, { useContext, ElementType, ComponentPropsWithoutRef, FC } from 'react';
-import PropTypes from 'prop-types';
+import sizes from '@lskjs/utils/sizes';
 import map from 'lodash/map';
 import omit from 'lodash/omit';
+import PropTypes from 'prop-types';
+import React, { ComponentPropsWithoutRef, ElementType, FC, useContext } from 'react';
 
-import sizes from '@lskjs/utils/sizes';
-
-import SafeAnchor from './SafeAnchor';
-import { ButtonContext } from './ButtonContext';
-import { theme } from './theme';
 import * as Styles from './Button.styles';
+import { ButtonContext } from './ButtonContext';
+import SafeAnchor from './SafeAnchor';
+import { theme } from './theme';
 
 export interface ButtonProps extends ComponentPropsWithoutRef<'button'> {
   /** Цвет (один из стандартных цветов: `primary` `secondary` `success` `warning` `danger` `info` `light` `dark` `link`) */
@@ -67,13 +66,7 @@ export const Button: FC<ButtonProps> = ({
 
   if (href) {
     return (
-      <SafeAnchor
-        as={Styles.Button}
-        htmlAs="a"
-        href={href}
-        {...btnProps}
-        {...props}
-      >
+      <SafeAnchor as={Styles.Button} htmlAs="a" href={href} {...btnProps} {...props}>
         {children}
       </SafeAnchor>
     );
@@ -91,8 +84,8 @@ Button.propTypes = {
     const allowedVariants = Object.keys(theme.variants);
     if (!allowedVariants.includes(props[propName])) {
       return new Error(
-        'Prop `' + propName + '` in component' +
-        ' `' + componentName + '` is not on the list of allowed ' + JSON.stringify(allowedVariants),
+        `Prop \`${propName}\` in component` +
+          ` \`${componentName}\` is not on the list of allowed ${JSON.stringify(allowedVariants)}`,
       );
     }
     return null;
@@ -101,12 +94,12 @@ Button.propTypes = {
     const allowedSizes = map(omit(sizes, 'is'), (val, key) => {
       if (Object.keys(theme.sizes).includes(val)) return key;
       return null;
-    }).filter(a => !!a);
+    }).filter((a) => !!a);
 
     if (!allowedSizes.includes(props[propName])) {
       return new Error(
-        'Prop `' + propName + '` in component' +
-        ' `' + componentName + '` is not on the list of allowed ' + JSON.stringify(allowedSizes),
+        `Prop \`${propName}\` in component` +
+          ` \`${componentName}\` is not on the list of allowed ${JSON.stringify(allowedSizes)}`,
       );
     }
     return null;

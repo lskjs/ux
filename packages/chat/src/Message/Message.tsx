@@ -1,11 +1,11 @@
-import React from 'react';
 import Image from '@lskjs/image';
-import { IMessageProps } from './types';
+import React from 'react';
+
 import * as Styled from './Message.styles';
+import { IMessageProps } from './types';
 
 // TODO: JSDoc like this
 // https://github.com/logux/server/blob/master/server/index.d.ts
-
 
 // TODO: Moment
 

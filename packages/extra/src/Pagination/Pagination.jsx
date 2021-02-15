@@ -1,6 +1,7 @@
 import React from 'react';
-import { FaAngleRight, FaAngleLeft } from 'react-icons/fa';
-import { Nav, Ul, Li, PaginationBtn } from './Pagination.styles';
+import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
+
+import { Li, Nav, PaginationBtn, Ul } from './Pagination.styles';
 
 export default class Pagination extends React.Component {
   constructor(props) {
@@ -11,18 +12,18 @@ export default class Pagination extends React.Component {
       currentPage: this.props.currentPage,
       disabled: this.props.disabled || false,
       hideOnSinglePage: this.props.hideOnSinglePage,
-      showTotal: this.props.showTotal
+      showTotal: this.props.showTotal,
     };
     this.handleArrows = this.handleArrows.bind(this);
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    if ( nextProps.currentPage !== prevState.currentPage ) {
-      return { 
-        currentPage: nextProps.currentPage
+    if (nextProps.currentPage !== prevState.currentPage) {
+      return {
+        currentPage: nextProps.currentPage,
       };
     }
-    else return null;
+    return null;
   }
 
   handleArrows(typeOfButton, maxPageNumber) {
@@ -54,46 +55,42 @@ export default class Pagination extends React.Component {
 
     let totalText = null;
     if (this.state.showTotal) {
-      totalText = (
-        <Li>
-          {this.props.showTotal(this.state.total)}
-        </Li>
-      );
+      totalText = <Li>{this.props.showTotal(this.state.total)}</Li>;
     }
-  
+
     return (
-      <Nav>  
+      <Nav>
         <Ul>
           {totalText}
           <Li>
-            <PaginationBtn 
+            <PaginationBtn
               onClick={() => this.handleArrows('prev')}
               disabled={this.props.disabled || !(this.state.currentPage > 1)}
             >
               <FaAngleLeft />
             </PaginationBtn>
           </Li>
-            { pageNumbers.map(number => (
-              <Li key={number} >
-                <PaginationBtn 
-                  onClick={() => this.props.handleChange(number)}
-                  current={ this.state.currentPage === number }
-                  disabled={this.props.disabled}
-                >
-                  {number}
-                </PaginationBtn>
-              </Li>
-            )) }
-            <Li>
-              <PaginationBtn 
-                onClick={() => this.handleArrows('next', maxPageNumber)}
-                disabled={this.props.disabled || !(this.state.currentPage < maxPageNumber)}
+          {pageNumbers.map((number) => (
+            <Li key={number}>
+              <PaginationBtn
+                onClick={() => this.props.handleChange(number)}
+                current={this.state.currentPage === number}
+                disabled={this.props.disabled}
               >
-                <FaAngleRight />
+                {number}
               </PaginationBtn>
             </Li>
+          ))}
+          <Li>
+            <PaginationBtn
+              onClick={() => this.handleArrows('next', maxPageNumber)}
+              disabled={this.props.disabled || !(this.state.currentPage < maxPageNumber)}
+            >
+              <FaAngleRight />
+            </PaginationBtn>
+          </Li>
         </Ul>
       </Nav>
     );
-  };
+  }
 }

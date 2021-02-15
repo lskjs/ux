@@ -1,10 +1,6 @@
 import { ReactComponentLike } from 'prop-types';
-import React, {
-  ComponentPropsWithoutRef,
-  MouseEvent,
-  KeyboardEvent,
-  forwardRef,
-} from 'react';
+import React, { ComponentPropsWithoutRef, forwardRef, KeyboardEvent, MouseEvent } from 'react';
+
 import createChainedFunction from './utils/createChainedFunction';
 
 function isTrivialHref(href: string | undefined): boolean {
@@ -19,16 +15,7 @@ interface SafeAnchorProps extends ComponentPropsWithoutRef<'a'> {
 }
 
 const SafeAnchor = forwardRef<any, SafeAnchorProps>(
-  (
-    {
-      as: Component = 'a',
-      htmlAs = 'a',
-      disabled,
-      onKeyDown,
-      ...props
-    },
-    ref,
-  ) => {
+  ({ as: Component = 'a', htmlAs = 'a', disabled, onKeyDown, ...props }, ref) => {
     const handleClick = (event: MouseEvent<HTMLAnchorElement> | KeyboardEvent<HTMLAnchorElement>) => {
       const { href, onClick } = props;
 

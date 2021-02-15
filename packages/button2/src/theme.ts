@@ -3,7 +3,7 @@ import { ComponentPropsWithoutRef } from 'react';
 
 const PACKAGE_THEME_KEY = Symbol.for('#ux/button');
 
-const make = (object: { [key: string]: SerializedStyles }, prop: string, fallback: string = 'default') => {
+const make = (object: { [key: string]: SerializedStyles }, prop: string, fallback = 'default') => {
   const isValid = Object.keys(object).includes(prop);
   return object[isValid ? prop : fallback];
 };
@@ -154,7 +154,7 @@ const sizes = {
     line-height: 1.5;
     font-weight: ${internalTheme(props).fontWeight};
     border-radius: 0.25rem;
-    padding: 0.375rem .75rem;
+    padding: 0.375rem 0.75rem;
   `,
   small: (props: { theme: Theme }) => css`
     font-size: 0.875rem;
@@ -168,7 +168,8 @@ const sizes = {
 export const theme = {
   fontFamily: 'sans-serif',
   fontWeight: 400,
-  transition: 'color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out',
+  transition:
+    'color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out',
   variants: {},
   colors: {},
   sizes: {},
@@ -189,13 +190,13 @@ export interface ColorSchema {
 export function addSize(schema: SerializedStyles, name: string) {
   if (!name || !schema) return;
   theme.sizes[name] = schema;
-};
+}
 
 export function addColorSchema(schema: ColorSchema, name: string) {
   if (!name || !schema) return;
   if (schema.colors) theme.colors[name] = schema.colors;
   if (schema.style) theme.variants[name] = schema.style;
-};
+}
 
 Object.keys(sizes).forEach((schemaName) => {
   addSize(sizes[schemaName], schemaName);

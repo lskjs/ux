@@ -12,15 +12,13 @@ function createChainedFunction(...funcs: any[]) {
     .filter((f: Function) => f != null)
     .reduce((acc, f) => {
       if (typeof f !== 'function') {
-        throw new Error(
-          'Некорректный тип аргумента, возможно передавать только функции, undefined или null.',
-        );
+        throw new Error('Некорректный тип аргумента, возможно передавать только функции, undefined или null.');
       }
 
       if (acc === null) return f;
 
       return function chainedFunction(this: any, ...args: Function[]) {
-        (acc as unknown as Function).apply(this, args);
+        ((acc as unknown) as Function).apply(this, args);
         f.apply(this, args);
       };
     }, null);
