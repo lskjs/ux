@@ -1,7 +1,7 @@
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
-import ReactImageFallback from 'react-image-fallback';
 import Link from '@lskjs/link';
+import PropTypes from 'prop-types';
+import React, { PureComponent } from 'react';
+import ReactImageFallback from 'react-image-fallback';
 // import Img from './Image.styles';
 
 // const textSizeRatio = 3;
@@ -76,7 +76,7 @@ export class Image extends PureComponent {
     if (!placeholder) {
       placeholder = title
         .split(' ')
-        .map(s => s.charAt(0))
+        .map((s) => s.charAt(0))
         .join('')
         .substr(0, placeholderLimit);
     }
@@ -101,7 +101,6 @@ export class Image extends PureComponent {
         {children}
       </Component>
     );
-    
   }
 }
 
