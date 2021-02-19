@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/article",
-  "version": "2.0.0-beta.5",
+  "version": "2.3.0-beta.4",
   "description": "LSK ux subrepo: article",
   "keywords": [],
   "repository": "https://github.com/lskjs/ux/tree/master/packages/article",
@@ -19,16 +19,16 @@
     "watch": "lsk run watch"
   },
   "dependencies": {
-    "@lskjs/image": "2.0.0-beta.5",
-    "@lskjs/link": "2.0.0-beta.5",
-    "@lskjs/theme": "2.0.0-beta.5",
-    "@lskjs/typo": "2.0.0-beta.5",
+    "@lskjs/image": "2.3.0-beta.4",
+    "@lskjs/link": "2.3.0-beta.4",
+    "@lskjs/theme": "2.3.0-beta.4",
+    "@lskjs/typo": "2.3.0-beta.4",
     "react-markdown": "4.3.1"
   },
   "devDependencies": {
     "@emotion/core": "10.0.27",
     "@emotion/styled": "10.0.27",
-    "@lskjs/dev": "2.0.0-beta.5",
+    "@lskjs/dev": "2.3.0-beta.4",
     "emotion": "10.0.27",
     "react": "16.8.6"
   },

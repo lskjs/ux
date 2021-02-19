@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/button",
-  "version": "2.0.0-beta.5",
+  "version": "2.3.0-beta.4",
   "description": "LSK ux subrepo: button",
   "keywords": [
     "Buttons",
@@ -26,7 +26,7 @@
     "@emotion/core": "10.0.27",
     "@emotion/styled": "10.0.27",
     "@lskjs/autobind": "1.100.1",
-    "@lskjs/theme": "2.0.0-beta.5",
+    "@lskjs/theme": "2.3.0-beta.4",
     "@lskjs/utils": "1.99.1",
     "classnames": "2.2.6",
     "mobx": "*",
@@ -34,7 +34,7 @@
     "prop-types": "15.7.2"
   },
   "devDependencies": {
-    "@lskjs/dev": "2.0.0-beta.5",
+    "@lskjs/dev": "2.3.0-beta.4",
     "@lskjs/grid": "1.1.41",
     "antd": "3.26.9",
     "lodash": "4.17.20",

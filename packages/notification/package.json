@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/notification",
-  "version": "2.0.0-beta.5",
+  "version": "2.3.0-beta.4",
   "description": "LSK ux subrepo: notification",
   "keywords": [],
   "repository": "https://github.com/lskjs/ux/tree/master/packages/notification",
@@ -20,14 +20,14 @@
   },
   "dependencies": {
     "@lskjs/autobind": "1.100.1",
-    "@lskjs/link": "2.0.0-beta.5",
-    "@lskjs/t": "2.0.0-beta.5",
-    "@lskjs/theme": "2.0.0-beta.5",
+    "@lskjs/link": "2.3.0-beta.4",
+    "@lskjs/t": "2.3.0-beta.4",
+    "@lskjs/theme": "2.3.0-beta.4",
     "prop-types": "15.7.2",
     "react-notification-system": "0.3.0"
   },
   "devDependencies": {
-    "@lskjs/dev": "2.0.0-beta.5",
+    "@lskjs/dev": "2.3.0-beta.4",
     "react": "16.8.6",
     "react-icon-base": "2.1.2"
   },

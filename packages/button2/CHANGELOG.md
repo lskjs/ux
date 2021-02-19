@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0-beta.4](https://github.com/lskjs/ux/tree/master/packages/button/compare/v2.0.0-beta.4...v2.3.0-beta.4) (2021-02-19)
+
+
+### Bug Fixes
+
+* **button2:** remove duplicate emotion instances ([5110afd](https://github.com/lskjs/ux/tree/master/packages/button/commit/5110afd1432849bb44f4cc5ba48954aeaa5a825f))
+* **button2:** right typing child ([7111562](https://github.com/lskjs/ux/tree/master/packages/button/commit/71115620bca932072b56682c166f3d85fcc50f7a))
+
+
+### Features
+
+* lsk run update ([5311035](https://github.com/lskjs/ux/tree/master/packages/button/commit/5311035a4a997dba9a2c4c5f10b9e46991756118))
+* **button2:** declare utils/sizes ([3ae7dc2](https://github.com/lskjs/ux/tree/master/packages/button/commit/3ae7dc2e88d6cbd188a962a449190e30478ede51))
+* **button2:** sizes support ([62aed36](https://github.com/lskjs/ux/tree/master/packages/button/commit/62aed3642b26c96c920097c5dfa5a623dcb9868e))
+* **button2:** test story CSF format ([3c1a463](https://github.com/lskjs/ux/tree/master/packages/button/commit/3c1a4630e3af72b0ec4b4bc1712284afe76cdbaf))
+* **button2:** use Symbol for constant theme key ([82c2e36](https://github.com/lskjs/ux/tree/master/packages/button/commit/82c2e364b45b67e14a6a47f6a75d91eefd63c75e))
+* new stable storybook with image and button2 ([2dcd713](https://github.com/lskjs/ux/tree/master/packages/button/commit/2dcd713edb89112907a2dfd4dc6a01412cbd0741))
+
+
+
+
+
 # [2.0.0-beta.5](https://github.com/lskjs/ux/tree/master/packages/button/compare/v2.0.0-beta.4...v2.0.0-beta.5) (2021-02-19)
 
 

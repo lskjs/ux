@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/dev",
-  "version": "2.0.0-beta.5",
+  "version": "2.3.0-beta.4",
   "description": "LSK ux subrepo: ui-dev",
   "keywords": [],
   "repository": "https://github.com/lskjs/ux/tree/master/packages/ui-dev",
@@ -22,8 +22,8 @@
     "mobx-react-devtools": "6.1.1"
   },
   "devDependencies": {
-    "@lskjs/css": "2.0.0-beta.5",
-    "@lskjs/theme": "2.0.0-beta.5",
+    "@lskjs/css": "2.3.0-beta.4",
+    "@lskjs/theme": "2.3.0-beta.4",
     "@lskjs/utils": "0.39.0",
     "emotion": "10.0.27",
     "emotion-theming": "10.0.27",
