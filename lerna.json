@@ -5,10 +5,11 @@
   ],
   "command": {
     "version": {
-      "allowBranch": ["master", "beta"],
+      "allowBranch": [
+        "master",
+        "beta"
+      ],
       "conventionalCommits": true,
-      "exact": true,
-      "gitRemote": "upstream",
       "message": "chore(release): %s"
     },
     "publish": {
