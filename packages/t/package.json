@@ -11,6 +11,7 @@
     "build": "lsk run build",
     "dev": "lsk run dev",
     "i18": "lsk run i18",
+    "prepublishOnly": "lsk run prepublishOnly",
     "release": "lsk run release",
     "start": "lsk run start",
     "storybook": "lsk run storybook",
@@ -18,8 +19,8 @@
     "watch": "lsk run watch"
   },
   "dependencies": {
-    "@lskjs/mobx": "2.2.0-beta.5.5",
-    "@lskjs/utils": "2.2.0-beta.21",
+    "@lskjs/mobx": "2.3.0-beta.4",
+    "@lskjs/utils": "2.3.0-beta.4",
     "prop-types": "15.7.2"
   },
   "devDependencies": {
