@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.5](https://github.com/lskjs/ux/tree/master/packages/dash/compare/v2.0.0-beta.4...v2.0.0-beta.5) (2021-02-19)
+
+
+### Features
+
+* lsk run update ([5311035](https://github.com/lskjs/ux/tree/master/packages/dash/commit/5311035a4a997dba9a2c4c5f10b9e46991756118))
+* **dash:** add forms ([93141ca](https://github.com/lskjs/ux/tree/master/packages/dash/commit/93141ca67d53d481f0f8fb53321bdd3789fcc5ff))
+* **dash:** rewrite forms ([5730079](https://github.com/lskjs/ux/tree/master/packages/dash/commit/57300798ce7f77e6802074ac17682b6b674f501b))
+* **dash:** starting to develop dash ([7cadcda](https://github.com/lskjs/ux/tree/master/packages/dash/commit/7cadcdac503aa1f1d424fa315134948e23b77662))
+
+
+
+
+
 # [2.0.0-beta.2](https://github.com/lskjs/ux/tree/master/packages/image/compare/v2.0.0-beta.1...v2.0.0-beta.2) (2021-01-06)
 
 

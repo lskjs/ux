@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.5](https://github.com/lskjs/ux/tree/master/packages/flag/compare/v2.0.0-beta.4...v2.0.0-beta.5) (2021-02-19)
+
+
+### Features
+
+* lsk run update ([5311035](https://github.com/lskjs/ux/tree/master/packages/flag/commit/5311035a4a997dba9a2c4c5f10b9e46991756118))
+
+
+
+
+
 # [2.0.0-beta.2](https://github.com/lskjs/ux/tree/master/packages/flag/compare/v2.0.0-beta.1...v2.0.0-beta.2) (2021-01-06)
 
 
