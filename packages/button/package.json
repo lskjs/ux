@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/button",
-  "version": "1.36.11",
+  "version": "1.37.0",
   "description": "LSK ux subrepo: button",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
