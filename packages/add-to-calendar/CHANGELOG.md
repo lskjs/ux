@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0-beta.6](https://github.com/lskjs/ux/tree/master/packages/extra/compare/v2.3.0-beta.4...v2.3.0-beta.6) (2021-04-15)
+
+**Note:** Version bump only for package @lskjs/add-to-calendar
+
+
+
+
+
 # [2.3.0-beta.4](https://github.com/lskjs/ux/tree/master/packages/extra/compare/v2.0.0-beta.4...v2.3.0-beta.4) (2021-02-19)
 
 

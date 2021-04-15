@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0-beta.6](https://github.com/lskjs/ux/tree/master/packages/button/compare/v2.3.0-beta.4...v2.3.0-beta.6) (2021-04-15)
+
+
+### Bug Fixes
+
+* **button:** ids ([186532e](https://github.com/lskjs/ux/tree/master/packages/button/commit/186532e70fb621e5932f7d071838d7eed4674be1))
+
+
+
+
+
 # [2.3.0-beta.4](https://github.com/lskjs/ux/tree/master/packages/button/compare/v2.0.0-beta.4...v2.3.0-beta.4) (2021-02-19)
 
 
