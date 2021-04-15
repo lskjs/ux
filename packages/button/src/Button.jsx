@@ -58,6 +58,7 @@ class Button extends PureComponent {
       textError,
       textProcessing,
       textSuccess,
+      id,
     } = this.props;
     switch (this.getPropsState()) {
       case 'processing':
@@ -65,8 +66,8 @@ class Button extends PureComponent {
           paint,
           content: contentProcessing || (
             <>
-              <Icon direction={textProcessing ? 'left' : 'single'}>
-                <LoadingDots />
+              <Icon id={id} direction={textProcessing ? 'left' : 'single'}>
+                <LoadingDots id={id} />
               </Icon>
               {textProcessing}
             </>
@@ -78,8 +79,8 @@ class Button extends PureComponent {
           paint: 'primary',
           content: contentSuccess || (
             <>
-              <Icon direction={textSuccess ? 'left' : 'single'}>
-                <CheckIcon size={32} />
+              <Icon id={id} direction={textSuccess ? 'left' : 'single'}>
+                <CheckIcon size={32} id={id} />
               </Icon>
               {textSuccess}
             </>
@@ -91,8 +92,8 @@ class Button extends PureComponent {
           content: contentError || (
             <>
               {textError && (
-                <Icon direction={textError ? 'left' : 'single'}>
-                  <CloseIcon />
+                <Icon id={id} direction={textError ? 'left' : 'single'}>
+                  <CloseIcon id={id} />
                 </Icon>
               )}
               {textError}
@@ -127,7 +128,8 @@ class Button extends PureComponent {
 
   @autobind
   renderIcon(icon, dir) {
-    return <Icon direction={dir}>{icon}</Icon>;
+    const { id } = this.props;
+    return <Icon id={id} direction={dir}>{icon}</Icon>;
   }
 
   render() {
@@ -158,6 +160,7 @@ class Button extends PureComponent {
       isRipple,
       htmlRef,
       shape,
+      id,
       ...props
     } = this.props;
     const icoLeft = icon || iconLeft;
@@ -178,6 +181,7 @@ class Button extends PureComponent {
     ]);
     return (
       <Btn
+        id={id}
         type={type}
         as={tag}
         mobileView={mobileView}
@@ -204,7 +208,7 @@ class Button extends PureComponent {
         {...buttonProps}
       >
         {!disabled && isRipple && (
-          <Ripple ref={this.ripple} active={isRippleActive}>
+          <Ripple id={id} ref={this.ripple} active={isRippleActive}>
             <RippleCircle
               ref={el => {
                 this.circle = el;
@@ -214,6 +218,7 @@ class Button extends PureComponent {
           </Ripple>
         )}
         <State
+          id={id}
           size={size}
           paint={paint}
           view={view}
@@ -227,7 +232,7 @@ class Button extends PureComponent {
           {content}
         </State>
         {icoLeft && this.renderIcon(icoLeft, icon ? 'single' : 'left')}
-        {children && <Text>{children}</Text>}
+        {children && <Text id={id}>{children}</Text>}
         {iconRight && this.renderIcon(iconRight, 'right')}
       </Btn>
     );
@@ -261,6 +266,7 @@ Button.propTypes = {
   disabled: PropTypes.bool,
   new: PropTypes.bool,
   onClick: PropTypes.func,
+  id: PropTypes.string,
   className: PropTypes.string,
   // eslint-disable-next-line react/forbid-prop-types
   icon: PropTypes.any,
@@ -303,6 +309,7 @@ Button.defaultProps = {
   style: {},
   componentClass: null,
   onClick: null,
+  id: false,
   block: false,
   disabled: false,
   new: false,
