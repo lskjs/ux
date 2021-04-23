@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/docs",
-  "version": "1.36.11",
+  "version": "1.37.1",
   "description": "lskjs docs",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "license": "MIT",
@@ -39,7 +39,7 @@
     "@lskjs/cookie-consent": "1.36.11",
     "@lskjs/css": "1.36.10",
     "@lskjs/dev": "1.36.11",
-    "@lskjs/downloads": "1.36.11",
+    "@lskjs/downloads": "1.37.1",
     "@lskjs/extra": "1.36.10",
     "@lskjs/flag": "1.36.11",
     "@lskjs/form": "1.36.11",

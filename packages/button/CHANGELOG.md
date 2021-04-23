@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.37.1](https://github.com/lskjs/ux/tree/master/packages/button/compare/v1.36.11...v1.37.1) (2021-04-23)
+
+
+### Bug Fixes
+
+* ids ([b13c568](https://github.com/lskjs/ux/tree/master/packages/button/commit/b13c56895f1f31345e579aa62102fc736a828f87))
+
+
+
+
+
 ## [1.36.11](https://github.com/lskjs/ux/tree/master/packages/button/compare/v1.36.10...v1.36.11) (2021-02-05)
 
 **Note:** Version bump only for package @lskjs/button

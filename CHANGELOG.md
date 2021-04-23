@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.37.1](https://github.com/isuvorov/lib-starter-kit/compare/v1.36.11...v1.37.1) (2021-04-23)
+
+
+### Bug Fixes
+
+* **download:** return counts of items and change how many requests left ([eae5bdd](https://github.com/isuvorov/lib-starter-kit/commit/eae5bddb470791b4259850e9ae65a418de904da1))
+* ids ([b13c568](https://github.com/isuvorov/lib-starter-kit/commit/b13c56895f1f31345e579aa62102fc736a828f87))
+
+
+
+
+
 ## [1.36.11](https://github.com/isuvorov/lib-starter-kit/compare/v1.36.10...v1.36.11) (2021-02-05)
 
 
