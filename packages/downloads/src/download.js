@@ -93,7 +93,7 @@ export const downloadFile = async (workbook, name = 'filename') => {
 export const generateFile = async ({ type = 'xlsx', name = 'filename', data }) => {
   if (type === 'xlsx') {
     const workbook = await generateFromJSON(data);
-    downloadFile(workbook, name);
+    await downloadFile(workbook, name);
   }
 };
 
@@ -105,10 +105,19 @@ const downloadAllFromList = async ({ listStore, limit, maxCount }) => {
   const listStoreAll = new listStore.constructor(listStore);
   listStoreAll.skip = 0;
   listStoreAll.items = [];
-  const maxItemsCount = listStoreAll.count > maxCount ? maxCount : listStoreAll.count;
-  await promiseMapSeries(Array(Math.ceil(maxItemsCount / limit)).fill(), async () => {
-    await listStoreAll.fetchMore(1, limit);
-  });
+  let next = false;
+  let count = 0;
+  do {
+    const res = await listStoreAll.fetchMore(1, limit);
+    count += 1;
+    const maxItemsCount = listStoreAll.count > maxCount ? maxCount : listStoreAll.count;
+    const totalCount = Math.ceil(maxItemsCount / limit);
+    if (count >= totalCount) {
+      next = false;
+    } else {
+      next = true;
+    }
+  } while (next);
   return listStoreAll.items;
 };
 
@@ -131,7 +140,10 @@ const download = async ({
     props: markupProps,
     items,
   });
-  generateFile({ name, data });
+  await generateFile({ name, data });
+  return {
+    count: items.length,
+  };
 };
 
 export default download;
