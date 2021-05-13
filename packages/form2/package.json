@@ -1,0 +1,44 @@
+{
+  "name": "@lskjs/form2",
+  "version": "2.3.0-beta.6",
+  "description": "open source form library for React and React Native",
+  "keywords": [
+    "form",
+    "constructor",
+    "formik"
+  ],
+  "repository": "https://github.com/lskjs/ux/tree/master/packages/form2",
+  "license": "MIT",
+  "author": "Igor Suvorov <hi@isuvorov.com>",
+  "scripts": {
+    "bootstrap": "lsk run bootstrap",
+    "build": "lsk run build",
+    "dev": "lsk run dev",
+    "i18": "lsk run i18",
+    "prepublishOnly": "lsk run prepublishOnly",
+    "release": "lsk run release",
+    "start": "lsk run start",
+    "storybook": "lsk run storybook",
+    "test": "lsk run test",
+    "watch": "lsk run watch"
+  },
+  "dependencies": {
+    "@lskjs/utils": "2.3.0-beta.4"
+  },
+  "devDependencies": {
+    "@lskjs/dev": "^2.3.0-beta.6",
+    "@lskjs/t": "^2.3.0-beta.6",
+    "formik": "^2.2.6",
+    "lodash": "^4.17.20",
+    "prop-types": "15.7.2",
+    "react": "16.8.6",
+    "validate.js": "^0.13.1"
+  },
+  "peerDependencies": {
+    "prop-types": "*",
+    "react": "*"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
