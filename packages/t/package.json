@@ -20,18 +20,19 @@
   },
   "dependencies": {
     "@lskjs/mobx": "2.3.0-beta.4",
-    "@lskjs/utils": "2.3.0-beta.4",
-    "prop-types": "15.7.2"
+    "@lskjs/utils": "2.3.0-beta.4"
   },
   "devDependencies": {
     "@lskjs/dev": "2.3.0-beta.6",
     "mobx": "5.15.4",
     "mobx-react": "6.2.2",
+    "prop-types": "15.7.2",
     "react": "16.8.6"
   },
   "peerDependencies": {
     "mobx": "*",
     "mobx-react": "*",
+    "prop-types": "*",
     "react": "*"
   },
   "publishConfig": {
