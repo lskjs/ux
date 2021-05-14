@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0-beta.7](https://github.com/lskjs/ux/tree/master/packages/t/compare/v2.3.0-beta.6...v2.3.0-beta.7) (2021-05-14)
+
+
+### Bug Fixes
+
+* **t:** optimize deps ([c8496a1](https://github.com/lskjs/ux/tree/master/packages/t/commit/c8496a1848ca776404fa5898895a5c4f86492495))
+
+
+
+
+
 # [2.3.0-beta.6](https://github.com/lskjs/ux/tree/master/packages/t/compare/v2.3.0-beta.4...v2.3.0-beta.6) (2021-04-15)
 
 **Note:** Version bump only for package @lskjs/t

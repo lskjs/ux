@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0-beta.7](https://github.com/lskjs/ux/tree/master/packages/form2/compare/v2.3.0-beta.6...v2.3.0-beta.7) (2021-05-14)
+
+
+### Bug Fixes
+
+* form2, form-control-input ([f5b11c1](https://github.com/lskjs/ux/tree/master/packages/form2/commit/f5b11c1106c6e68ae42579569a16adbd692bee27))
+
+
+### Features
+
+* **form2:** init package ([84b1bc0](https://github.com/lskjs/ux/tree/master/packages/form2/commit/84b1bc02ebfaa475dc32ffce7f1031033182813e))
+
+
+
+
+
 # [2.3.0-beta.6](https://github.com/lskjs/ux/tree/master/packages/form/compare/v2.3.0-beta.4...v2.3.0-beta.6) (2021-04-15)
 
 **Note:** Version bump only for package @lskjs/form

@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0-beta.7](https://github.com/lskjs/cli/compare/v2.3.0-beta.6...v2.3.0-beta.7) (2021-05-14)
+
+
+### Bug Fixes
+
+* **t:** optimize deps ([c8496a1](https://github.com/lskjs/cli/commit/c8496a1848ca776404fa5898895a5c4f86492495))
+* form2, form-control-input ([f5b11c1](https://github.com/lskjs/cli/commit/f5b11c1106c6e68ae42579569a16adbd692bee27))
+
+
+### Features
+
+* **form-control-input:** init package ([fa9ff9a](https://github.com/lskjs/cli/commit/fa9ff9a5b98292c285d64991bb7ead5a692b7909))
+* **form2:** init package ([84b1bc0](https://github.com/lskjs/cli/commit/84b1bc02ebfaa475dc32ffce7f1031033182813e))
+
+
+
+
+
 # [2.3.0-beta.6](https://github.com/lskjs/cli/compare/v2.3.0-beta.4...v2.3.0-beta.6) (2021-04-15)
 
 

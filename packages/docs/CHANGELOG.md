@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0-beta.7](https://github.com/isuvorov/lib-starter-kit/tree/master/packages/lib1/compare/v2.3.0-beta.6...v2.3.0-beta.7) (2021-05-14)
+
+**Note:** Version bump only for package @lskjs/docs
+
+
+
+
+
 # [2.3.0-beta.6](https://github.com/isuvorov/lib-starter-kit/tree/master/packages/lib1/compare/v2.3.0-beta.4...v2.3.0-beta.6) (2021-04-15)
 
 **Note:** Version bump only for package @lskjs/docs
