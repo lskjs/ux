@@ -4,7 +4,7 @@ import React from 'react';
 
 import FormSubmit from './FormSubmit';
 
-export default (props) => (
+const FormDebug = (props) => (
   <>
     <hr />
     <FormSubmit {...props}>Submit</FormSubmit>
@@ -12,3 +12,5 @@ export default (props) => (
     <DEV json={pick(props, ['touched', 'isSubmitting', 'errors', 'values', 'status'])} />
   </>
 );
+
+export default FormDebug;

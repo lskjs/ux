@@ -1,7 +1,7 @@
 {
   "name": "@lskjs/form2",
   "version": "2.3.0-beta.6",
-  "description": "open source form library for React and React Native",
+  "description": "Open source form library for React and React Native",
   "keywords": [
     "form",
     "constructor",
@@ -27,16 +27,28 @@
   },
   "devDependencies": {
     "@lskjs/dev": "^2.3.0-beta.6",
+    "@lskjs/scroll": "^2.3.0-beta.6",
     "@lskjs/t": "^2.3.0-beta.6",
-    "formik": "^2.2.6",
+    "@lskjs/theme": "1.1.71",
+    "formik": "1.5.8",
+    "emotion": "10.0.27",
+    "@emotion/styled": "10.0.27",
+    "@emotion/core": "10.0.27",
     "lodash": "^4.17.20",
+    "mobx": "5.15.4",
+    "mobx-react": "6.1.7",
+    "object-hash": "2.0.1",
     "prop-types": "15.7.2",
     "react": "16.8.6",
     "validate.js": "^0.13.1"
   },
   "peerDependencies": {
     "prop-types": "*",
-    "react": "*"
+    "react": "*",
+    "object-hash": "*",
+    "emotion": "*",
+    "@emotion/styled": "*",
+    "@emotion/core": "*"
   },
   "publishConfig": {
     "access": "public"

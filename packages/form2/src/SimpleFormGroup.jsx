@@ -1,5 +1,5 @@
-import React from 'react';
 import hash from 'object-hash';
+import React from 'react';
 
 const SimpleFormGroup = ({ field, form, children, title, label, required, _required, help }) => {
   const errorMessage = form && form.errors && form.errors[field.name];

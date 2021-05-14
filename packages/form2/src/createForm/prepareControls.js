@@ -1,5 +1,6 @@
-import React from 'react';
 import forEach from 'lodash/forEach';
+import React from 'react';
+
 import getControlHtmlId from './getControlHtmlId';
 
 export default (ctrls, { FormGroup, withI18, debug = false } = {}) => {
@@ -60,7 +61,7 @@ export default (ctrls, { FormGroup, withI18, debug = false } = {}) => {
     controls[name] = control;
   });
 
-  const get = key => {
+  const get = (key) => {
     const control = controls[key];
     if (!control) {
       if (__DEV__) {

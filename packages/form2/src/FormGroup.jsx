@@ -2,10 +2,10 @@ import T from '@lskjs/t';
 import get from 'lodash/get';
 import React from 'react';
 
-import FormItem from './components/FormItem'; // TODO: подумать
+import Item from './components/FormItem'; // TODO: подумать
 import Title from './components/TitleComponent'; // TODO: подумать
 
-export default ({
+const FormGroup = ({
   field,
   form,
   withI18,
@@ -35,17 +35,17 @@ export default ({
     );
   }
   return (
-    <>
-      <FormItem
-        id={htmlId}
-        required={looksLikeRequired}
-        label={titleComponent}
-        help={help}
-        hasError={!!errorMsg}
-        errorMessage={withI18 && typeof errorMsg === 'string' ? <T name={errorMsg} /> : errorMsg}
-      >
-        {children}
-      </FormItem>
-    </>
+    <Item
+      id={htmlId}
+      required={looksLikeRequired}
+      label={titleComponent}
+      help={help}
+      hasError={!!errorMsg}
+      errorMessage={withI18 && typeof errorMsg === 'string' ? <T name={errorMsg} /> : errorMsg}
+    >
+      {children}
+    </Item>
   );
 };
+
+export default FormGroup;

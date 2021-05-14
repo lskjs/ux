@@ -1,11 +1,12 @@
-import React from 'react';
 import isFunction from 'lodash/isFunction';
+import React from 'react';
+
+import createHandleSubmit from './createHandleSubmit';
+import createMapPropsToValues from './createMapPropsToValues';
+import createValidate from './createValidate';
 import getValidators from './getValidators';
 import prepareControls from './prepareControls';
 import wrapView from './wrapView';
-import createMapPropsToValues from './createMapPropsToValues';
-import createHandleSubmit from './createHandleSubmit';
-import createValidate from './createValidate';
 
 export default (preConfig = {}) => (realtimeConfig = {}) => {
   let config;

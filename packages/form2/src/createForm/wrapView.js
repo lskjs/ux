@@ -1,6 +1,7 @@
 import React from 'react';
-import avoidNestedFields from './avoidNestedFields';
+
 import DEBUG from './_debug';
+import avoidNestedFields from './avoidNestedFields';
 
 export default ({ View, Wrapper, props: staticProps, flatten }) => (props) => {
   const mergedProps = { ...staticProps, ...props };

@@ -8,7 +8,7 @@ export const Input = ({ field, form, format = () => ({}), ...props }) => {
   return (
     <BaseInput
       {...field}
-      value={field.value || ''}
+      value={(field || {}).value || ''}
       debounce={0}
       {...props}
       style={{ border: hasError ? '1px solid red' : '' }}

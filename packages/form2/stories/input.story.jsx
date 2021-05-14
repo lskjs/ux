@@ -2,32 +2,44 @@
 import { Field, Form } from 'formik';
 import React from 'react';
 
+import { Input } from '../../form-control-input/src/Input';
 import createForm from '../src/createForm';
 // import FormDebug from '../FormDebug';
 
 const InputFormView = (props) => (
   <Form>
     <Field {...props.control('input')} />
-    {/* <FormDebug {...props} /> */}
   </Form>
 );
 
-const InputControl = () => '<InputControl />';
+const InputControl = () => <input />;
+const LskInputControl = () => <Input />;
 
 const InputForm = createForm({
   view: InputFormView,
   controls: {
     input: {
       title: 'Input',
-      initialValue: 'createForm.controls.initialValue',
+      initialValue: '',
       component: InputControl,
+    },
+  },
+});
+const LskInputForm = createForm({
+  view: InputFormView,
+  controls: {
+    input: {
+      title: 'Lsk Input',
+      initialValue: '',
+      component: LskInputControl,
     },
   },
 });
 
 export default {
-  title: 'form2/input',
+  title: 'form2/inputForm',
   component: InputForm,
 };
 
-export const Default = () => <InputForm />;
+export const htmlInput = () => <InputForm />;
+export const LskInput = () => <LskInputForm />;

@@ -2,7 +2,8 @@ import { css } from '@emotion/core';
 
 export const globalStylesFormItem = () => css`
   .ant-form-item {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif,
+      'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
     font-size: 14px;
     font-variant: tabular-nums;
     line-height: 1.71428571;
@@ -22,7 +23,7 @@ export const globalStylesFormItem = () => css`
     font-size: 14px;
   }
   .ant-form-item-control > .ant-form-item:last-child,
-  .ant-form-item [class^="ant-col-"] > .ant-form-item:only-child {
+  .ant-form-item [class^='ant-col-'] > .ant-form-item:only-child {
     margin-bottom: -24px;
   }
   .ant-form-item-control {
@@ -32,7 +33,7 @@ export const globalStylesFormItem = () => css`
   }
   .ant-form-item-control:before,
   .ant-form-item-control:after {
-    content: "";
+    content: '';
     display: table;
   }
   .ant-form-item-control:after {
@@ -60,7 +61,7 @@ export const globalStylesFormItem = () => css`
     margin: 2px 0 4px;
   }
   .ant-form-item-no-colon .ant-form-item-label label:after {
-    content: " ";
+    content: ' ';
   }
   .ant-form-vertical .ant-form-item-label,
   .ant-col-24.ant-form-item-label,
@@ -196,7 +197,7 @@ export const globalStylesFormItem = () => css`
   }
   .has-success.has-feedback .ant-form-item-children-icon {
     animation-name: diffZoomIn1 !important;
-    color: #66BB6A;
+    color: #66bb6a;
   }
   .has-warning.has-feedback .ant-form-item-children-icon {
     color: #ffc53d;

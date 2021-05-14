@@ -1,12 +1,10 @@
-import avoidNestedFields from './avoidNestedFields';
 import getError from '@lskjs/utils/getError';
-import DEBUG from './_debug';
 
+import DEBUG from './_debug';
+import avoidNestedFields from './avoidNestedFields';
 
 export default ({ flatten }) => async (values, props2) => {
-  const {
-    setSubmitting, props, setStatus, setFieldError, status, isSubmitting,
-  } = props2;
+  const { setSubmitting, props, setStatus, setFieldError, status, isSubmitting } = props2;
   const { onSubmit } = props;
   if (DEBUG) console.log('Form2 handleSubmit', { status, isSubmitting }); // eslint-disable-line
 
@@ -15,8 +13,9 @@ export default ({ flatten }) => async (values, props2) => {
   if (!isSubmitting) {
     setStatus('progress');
     try {
-      if (values && flatten) values = avoidNestedFields(values);
-      if (onSubmit) await onSubmit(values, props2);
+      let submitValues = values;
+      if (values && flatten) submitValues = avoidNestedFields(values);
+      if (onSubmit) await onSubmit(submitValues, props2);
       setStatus('success');
     } catch (err) {
       setFieldError('onSubmit', getError(err).message);
