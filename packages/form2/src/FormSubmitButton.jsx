@@ -2,8 +2,23 @@
 import T from '@lskjs/t';
 import React from 'react';
 
+const buttonStyle = {
+  backgroundColor: '#ffffff',
+  border: 'none',
+  boxShadow: '0 0 0 1px',
+  outline: 'none',
+  borderRadius: '4px',
+  overflow: 'hidden',
+  position: 'relative',
+  textAlign: 'center',
+  justifyContent: 'center',
+  webkitAppearance: 'none !important',
+  textDecoration: 'none !important',
+  display: 'inline-block',
+};
+
 const FormSubmitButton = ({
-  componentClass: Component = () => <button />,
+  componentClass: Component = () => <button style={buttonStyle} />,
   isSubmitting,
   status,
   children,
