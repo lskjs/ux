@@ -1,0 +1,56 @@
+{
+  "name": "@lskjs/form3",
+  "version": "2.3.0-beta.7",
+  "description": "Open source form library for React and React Native with updated formik",
+  "keywords": [
+    "form",
+    "constructor",
+    "formik"
+  ],
+  "repository": "https://github.com/lskjs/ux/tree/master/packages/form3",
+  "license": "MIT",
+  "author": "Igor Suvorov <hi@isuvorov.com>",
+  "scripts": {
+    "bootstrap": "lsk run bootstrap",
+    "build": "lsk run build",
+    "dev": "lsk run dev",
+    "i18": "lsk run i18",
+    "prepublishOnly": "lsk run prepublishOnly",
+    "release": "lsk run release",
+    "start": "lsk run start",
+    "storybook": "lsk run storybook",
+    "test": "lsk run test",
+    "watch": "lsk run watch"
+  },
+  "dependencies": {
+    "@lskjs/utils": "2.3.0-beta.4"
+  },
+  "devDependencies": {
+    "@emotion/core": "10.0.27",
+    "@emotion/styled": "10.0.27",
+    "@lskjs/dev": "^2.3.0-beta.6",
+    "@lskjs/scroll": "^2.3.0-beta.6",
+    "@lskjs/t": "2.3.0-beta.7",
+    "@lskjs/theme": "1.1.71",
+    "emotion": "10.0.27",
+    "formik": "2.2.6",
+    "lodash": "^4.17.20",
+    "mobx": "5.15.4",
+    "mobx-react": "6.1.7",
+    "object-hash": "2.0.1",
+    "prop-types": "15.7.2",
+    "react": "16.8.6",
+    "validate.js": "^0.13.1"
+  },
+  "peerDependencies": {
+    "@emotion/core": "*",
+    "@emotion/styled": "*",
+    "emotion": "*",
+    "object-hash": "*",
+    "prop-types": "*",
+    "react": "*"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
