@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0-beta.8](https://github.com/lskjs/cli/compare/v2.3.0-beta.7...v2.3.0-beta.8) (2021-05-17)
+
+
+### Bug Fixes
+
+* **submit-button:** add styles ([5c3e3f3](https://github.com/lskjs/cli/commit/5c3e3f3d381d9629816fdf538fdd2c93ef66e8ca))
+
+
+### Features
+
+* **form3:** init package(with formik 2.2.6) ([b5f959e](https://github.com/lskjs/cli/commit/b5f959e1e75356d58b285a3bd9f8368507edd7d8))
+
+
+
+
+
 # [2.3.0-beta.7](https://github.com/lskjs/cli/compare/v2.3.0-beta.6...v2.3.0-beta.7) (2021-05-14)
 
 

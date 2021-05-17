@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0-beta.8](https://github.com/lskjs/ux/tree/master/packages/form2/compare/v2.3.0-beta.7...v2.3.0-beta.8) (2021-05-17)
+
+
+### Bug Fixes
+
+* **submit-button:** add styles ([5c3e3f3](https://github.com/lskjs/ux/tree/master/packages/form2/commit/5c3e3f3d381d9629816fdf538fdd2c93ef66e8ca))
+
+
+
+
+
 # [2.3.0-beta.7](https://github.com/lskjs/ux/tree/master/packages/form2/compare/v2.3.0-beta.6...v2.3.0-beta.7) (2021-05-14)
 
 
