@@ -2,8 +2,8 @@ import T from '@lskjs/t';
 import get from 'lodash/get';
 import React from 'react';
 
-import Item from './components/FormItem'; // TODO: подумать
-import Title from './components/TitleComponent'; // TODO: подумать
+import Item from './components/FormItem';
+import Title from './components/TitleComponent';
 
 const FormGroup = ({
   field,
