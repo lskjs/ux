@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/form3",
-  "version": "2.3.0-beta.9",
+  "version": "2.3.0-beta.10",
   "description": "Open source form library for React and React Native with updated formik",
   "keywords": [
     "form",
@@ -26,9 +26,9 @@
     "@lskjs/utils": "2.3.0-beta.4"
   },
   "devDependencies": {
-    "@lskjs/dev": "^2.3.0-beta.6",
-    "@lskjs/scroll": "^2.3.0-beta.6",
-    "@lskjs/t": "2.3.0-beta.7",
+    "@lskjs/dev": "2.3.0-beta.10",
+    "@lskjs/scroll": "2.3.0-beta.10",
+    "@lskjs/t": "2.3.0-beta.10",
     "@lskjs/theme": "1.1.71",
     "formik": "2.2.6",
     "lodash": "^4.17.20",

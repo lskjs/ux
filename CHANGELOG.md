@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0-beta.10](https://github.com/lskjs/cli/compare/v2.3.0-beta.9...v2.3.0-beta.10) (2021-05-18)
+
+
+### Bug Fixes
+
+* temporary support legacy peerDeps ([f32e6dd](https://github.com/lskjs/cli/commit/f32e6dd48fc7ac9348d57b7bb0974c1d4e143680))
+
+
+### Features
+
+* **form-control-select:** init package ([b810891](https://github.com/lskjs/cli/commit/b8108913ce953e89c363425b761430a1a9d3bfda))
+* **list:** [WIP] upgrade list. ([2e3c744](https://github.com/lskjs/cli/commit/2e3c744093e962f8c4ac6a18ac600b210274ff8c))
+
+
+
+
+
 # [2.3.0-beta.9](https://github.com/lskjs/cli/compare/v2.3.0-beta.8...v2.3.0-beta.9) (2021-05-18)
 
 

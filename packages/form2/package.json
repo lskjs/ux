@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/form2",
-  "version": "2.3.0-beta.9",
+  "version": "2.3.0-beta.10",
   "description": "Open source form library for React and React Native",
   "keywords": [
     "form",
@@ -28,12 +28,12 @@
   "devDependencies": {
     "@emotion/core": "10.0.27",
     "@emotion/styled": "10.0.27",
-    "@lskjs/dev": "^2.3.0-beta.6",
-    "@lskjs/scroll": "^2.3.0-beta.6",
-    "@lskjs/t": "2.3.0-beta.7",
+    "@lskjs/dev": "2.3.0-beta.10",
+    "@lskjs/scroll": "2.3.0-beta.10",
+    "@lskjs/t": "2.3.0-beta.10",
     "@lskjs/theme": "1.1.71",
-    "formik": "1.5.8",
     "emotion": "10.0.27",
+    "formik": "1.5.8",
     "lodash": "^4.17.20",
     "mobx": "5.15.4",
     "mobx-react": "6.1.7",
@@ -45,9 +45,9 @@
   "peerDependencies": {
     "@emotion/core": "*",
     "@emotion/styled": "*",
+    "emotion": "*",
     "object-hash": "*",
     "prop-types": "*",
-    "emotion": "*",
     "react": "*"
   },
   "publishConfig": {
