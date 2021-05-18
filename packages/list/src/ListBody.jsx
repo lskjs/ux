@@ -1,13 +1,15 @@
+/** @jsxRuntime classic */
 /** @jsx jsx */
-import React, { Component } from 'react';
 import { jsx } from '@emotion/core';
-import { observer, inject } from 'mobx-react';
-import If from 'react-if';
-import VisibilitySensor from 'react-visibility-sensor';
+import Button from '@lskjs/button';
+import T from '@lskjs/t';
 import Loading from '@lskjs/ui/Loading';
 import Progress from '@lskjs/ui/Progress';
-import T from '@lskjs/t';
-import Button from '@lskjs/button';
+import { inject, observer } from 'mobx-react';
+import React, { Component } from 'react';
+import If from 'react-if';
+import VisibilitySensor from 'react-visibility-sensor';
+
 import { contextToProps } from './List.context';
 import { loadMoreButton } from './List.styles';
 
@@ -16,12 +18,7 @@ import { loadMoreButton } from './List.styles';
 @observer
 class ListBody extends Component {
   render() {
-    const {
-      List,
-      listStore,
-      show = {},
-      ...props
-    } = this.props;
+    const { List, listStore, show = {}, ...props } = this.props;
     const ButtonWrapper = show.autoload ? VisibilitySensor : 'div';
     return (
       <List.BodyWrapper {...props} style={{ position: 'relative' }}>
@@ -33,11 +30,7 @@ class ListBody extends Component {
         3) загружаем второй раз, меняя skip, фильтры не меняются
         4) до загружаем второй раз, используя fetch next / fetch prev
         */}
-        <Loading
-          text={null}
-          icon={<List.LoaderIcon />}
-          disabled={!listStore.loading}
-        >
+        <Loading text={null} icon={<List.LoaderIcon />} disabled={!listStore.loading}>
           <If condition={Boolean(show.more && listStore.canFetchMore(-1))}>
             <Button
               bordered
@@ -61,10 +54,7 @@ class ListBody extends Component {
           </If>
           <List.Items />
           <If condition={Boolean(show.more && listStore.canFetchMore(1))}>
-            <ButtonWrapper
-              onChange={() => listStore.fetchMore(1)}
-              offset={{ direction: 'bottom', value: -200 }}
-            >
+            <ButtonWrapper onChange={() => listStore.fetchMore(1)} offset={{ direction: 'bottom', value: -200 }}>
               <Button
                 bordered
                 size="large"

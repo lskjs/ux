@@ -1,31 +1,22 @@
-import range from 'lodash/range';
-import random from 'lodash/random';
-import find from 'lodash/find';
-import sortBy from 'lodash/sortBy';
+import ListStore from '@lskjs/mobx/stores/ListStore';
+import axios from 'axios';
+import Promise from 'bluebird';
 import clone from 'lodash/clone';
 import lodashFilter from 'lodash/filter';
+import find from 'lodash/find';
+import random from 'lodash/random';
+import range from 'lodash/range';
 import sample from 'lodash/sample';
-import Promise from 'bluebird';
-import axios from 'axios';
-import ListStore from '@lskjs/mobx/stores/ListStore';
+import sortBy from 'lodash/sortBy';
 
 const endpoint = 'https://analytics.buzzguru.com/api/channels/find';
 const count = 1000;
-const initItems = range(0, 1000).map(id => ({
+const initItems = range(0, 1000).map((id) => ({
   id,
   title: `User ${id + 1}`,
-  role: sample([
-    'Director',
-    'Manager',
-    'Stuff',
-    'Salesman',
-    'Driver',
-    'Tester',
-    'Designer',
-  ]),
-  rating: +(random(id, count, true).toFixed(2)),
+  role: sample(['Director', 'Manager', 'Stuff', 'Salesman', 'Driver', 'Tester', 'Designer']),
+  rating: +random(id, count, true).toFixed(2),
 }));
-
 
 Promise.config({ cancellation: true });
 const api = {
@@ -39,7 +30,7 @@ const api = {
     items = lodashFilter(items, filter);
     if (sort && Object.keys(sort).length) {
       const sortKey = Object.keys(sort)[0];
-      items = sortBy(initItems, item => item[sortKey]);
+      items = sortBy(initItems, (item) => item[sortKey]);
       if (!sort[sortKey]) {
         items = items.reverse();
       }

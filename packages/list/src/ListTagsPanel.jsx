@@ -1,6 +1,7 @@
-import React from 'react';
-import { inject, observer } from 'mobx-react';
 import T from '@lskjs/t';
+import { inject, observer } from 'mobx-react';
+import React from 'react';
+
 import { contextToProps } from './List.context';
 
 const ListTagsPanel = ({ List, form, listStore, filterProps }) => {

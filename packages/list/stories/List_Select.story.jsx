@@ -1,12 +1,12 @@
-import React from 'react';
-import { observer } from 'mobx-react';
 import Story from '@lskjs/dev/Story/UappStory';
 import Link from '@lskjs/link';
-import { Row, Col, ItemRow, ItemCol, HeaderRow, HeaderCol } from '../Table';
+import { observer } from 'mobx-react';
+import React from 'react';
 
-import List from '../List';
-import listStore from './listStore';
+import List from '../src/List';
+import { Col, HeaderCol, HeaderRow, ItemCol, ItemRow, Row } from '../src/Table';
 import DebugListStore from './DebugListStore';
+import listStore from './listStore';
 
 const columns = [60, '1fr', '1fr', 60];
 const SelectHeaderItem = observer(({ toggleSort, sort = {} }) => (
@@ -16,12 +16,10 @@ const SelectHeaderItem = observer(({ toggleSort, sort = {} }) => (
     </HeaderCol>
     <HeaderCol index={1}>
       <List.SortHeader style={{ background: '#eee' }} value={sort.id} onClick={() => toggleSort('id')}>
-       id
+        id
       </List.SortHeader>
     </HeaderCol>
-    <HeaderCol index={2}>
-      name
-    </HeaderCol>
+    <HeaderCol index={2}>name</HeaderCol>
     <List.SortHeader value={sort.role} onClick={() => toggleSort('role')}>
       <HeaderCol index={3} style={{ background: '#eee' }}>
         role
@@ -36,18 +34,10 @@ const SelectItem = observer(({ item = {} }) => (
       <List.Checkbox item={item} />
     </ItemCol>
     <ItemCol index={1}>
-      {item.id}
-      {' '}
--
-      {' '}
-      {Math.random()}
+      {item.id} - {Math.random()}
     </ItemCol>
-    <ItemCol index={2}>
-      {item.title}
-    </ItemCol>
-    <ItemCol index={3}>
-      {item.role}
-    </ItemCol>
+    <ItemCol index={2}>{item.title}</ItemCol>
+    <ItemCol index={3}>{item.role}</ItemCol>
   </ItemRow>
 ));
 
@@ -58,18 +48,10 @@ const SelectLinkItem = observer(({ item = {} }) => (
         <List.Checkbox item={item} />
       </ItemCol>
       <ItemCol index={1}>
-        {item.id}
-        {' '}
--
-        {' '}
-        {Math.random()}
+        {item.id} - {Math.random()}
       </ItemCol>
-      <ItemCol index={2}>
-        {item.title}
-      </ItemCol>
-      <ItemCol index={3}>
-        {item.role}
-      </ItemCol>
+      <ItemCol index={2}>{item.title}</ItemCol>
+      <ItemCol index={3}>{item.role}</ItemCol>
     </ItemRow>
   </List.SelectRow>
 ));
@@ -77,22 +59,12 @@ const SelectLinkItem = observer(({ item = {} }) => (
 const SelectLinkItem2 = observer(({ item = {} }) => (
   <Link href="https://google.com">
     <Row>
-      <Col index={0}>
-        {/* <List.Checkbox item={item} /> */}
-      </Col>
+      <Col index={0}>{/* <List.Checkbox item={item} /> */}</Col>
       <Col index={1}>
-        {item.id}
-        {' '}
--
-        {' '}
-        {Math.random()}
+        {item.id} - {Math.random()}
       </Col>
-      <Col index={2}>
-        {item.title}
-      </Col>
-      <Col index={3}>
-        {item.role}
-      </Col>
+      <Col index={2}>{item.title}</Col>
+      <Col index={3}>{item.role}</Col>
     </Row>
   </Link>
 ));
@@ -104,64 +76,46 @@ const SelectLinkItem3 = observer(({ item = {} }) => (
         <List.Checkbox item={item} />
       </Col>
       <Col index={1}>
-        {item.id}
-        {' '}
--
-        {' '}
-        {Math.random()}
+        {item.id} - {Math.random()}
       </Col>
-      <Col index={2}>
-        {item.title}
-      </Col>
-      <Col index={3}>
-        {item.role}
-      </Col>
+      <Col index={2}>{item.title}</Col>
+      <Col index={3}>{item.role}</Col>
     </Row>
   </List.SelectRow>
 ));
 
-export default ({ storiesOf }) => storiesOf('list/List/Select', module)
-  .add('List with Select', () => (
-    <Story>
-      <List
-        listStore={listStore}
-        Item={SelectItem}
-        HeaderItem={SelectHeaderItem}
-        columns={columns}
-      />
-      <DebugListStore store={listStore} />
-    </Story>
-  ))
-  .add('List with SelectLinkItem', () => (
-    <Story>
-      <List
-        listStore={listStore}
-        Item={SelectLinkItem}
-        // HeaderItem={SelectHeaderItem}
-        columns={columns}
-      />
-      <DebugListStore store={listStore} />
-    </Story>
-  ))
-  .add('List with SelectLinkItem2', () => (
-    <Story>
-      <List
-        listStore={listStore}
-        Item={SelectLinkItem2}
-        HeaderItem={SelectHeaderItem}
-        columns={columns}
-      />
-      <DebugListStore store={listStore} />
-    </Story>
-  ))
-  .add('List with SelectLinkItem3', () => (
-    <Story>
-      <List
-        listStore={listStore}
-        Item={SelectLinkItem3}
-        HeaderItem={SelectHeaderItem}
-        columns={columns}
-      />
-      <DebugListStore store={listStore} />
-    </Story>
-  ));
+export default {
+  title: 'List/Select',
+  component: List,
+};
+
+export const withSelect = () => (
+  <Story>
+    <List listStore={listStore} Item={SelectItem} HeaderItem={SelectHeaderItem} columns={columns} />
+    <DebugListStore store={listStore} />
+  </Story>
+);
+
+export const withSelectLinkItem = () => (
+  <Story>
+    <List
+      listStore={listStore}
+      Item={SelectLinkItem}
+      // HeaderItem={SelectHeaderItem}
+      columns={columns}
+    />
+    <DebugListStore store={listStore} />
+  </Story>
+);
+export const withSelectLinkItem2 = () => (
+  <Story>
+    <List listStore={listStore} Item={SelectLinkItem2} HeaderItem={SelectHeaderItem} columns={columns} />
+    <DebugListStore store={listStore} />
+  </Story>
+);
+export const withSelectLinkItem3 = () => (
+  <Story>
+    <List listStore={listStore} Item={SelectLinkItem3} HeaderItem={SelectHeaderItem} columns={columns} />
+    <DebugListStore store={listStore} />
+  </Story>
+);

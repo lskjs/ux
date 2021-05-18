@@ -1,12 +1,11 @@
+/** @jsxRuntime classic */
 /** @jsx jsx */
-import React, { Component } from 'react';
 import { jsx } from '@emotion/core';
-import { observer, inject } from 'mobx-react';
+import Modal, { Content, Title } from '@lskjs/modal';
 import T from '@lskjs/t';
-import Modal, {
-  Title,
-  Content,
-} from '@lskjs/modal';
+import { inject, observer } from 'mobx-react';
+import React, { Component } from 'react';
+
 import { contextToProps } from './List.context';
 import { modalStyle } from './List.styles';
 
@@ -15,9 +14,7 @@ import { modalStyle } from './List.styles';
 @observer
 class ListFilterModal extends Component {
   render() {
-    const {
-      listStore, filterProps, FilterForm, children, ...props
-    } = this.props;
+    const { listStore, filterProps, FilterForm, children, ...props } = this.props;
     return (
       <Modal
         trigger={children}
@@ -28,7 +25,9 @@ class ListFilterModal extends Component {
       >
         {() => (
           <React.Fragment>
-            <Title><T name="lskList.filterButton" /></Title>
+            <Title>
+              <T name="lskList.filterButton" />
+            </Title>
             <Content css={[modalStyle]}>
               <FilterForm
                 {...filterProps}

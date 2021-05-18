@@ -1,19 +1,18 @@
-import React from 'react';
-import range from 'lodash/range';
-import random from 'lodash/random';
-import sample from 'lodash/sample';
-import { observer } from 'mobx-react';
 import { css } from '@emotion/core';
-import cx from 'classnames';
-import Promise from 'bluebird';
-
 // import polyfill from '@lskjs/utils/polyfill';
 import Story from '@lskjs/dev/Story/UappStory';
-import { Row, Col } from '@lskjs/ui/Table';
 import ListStore from '@lskjs/mobx/stores/ListStore';
-import FilterForm from './FilterForm';
+import { Col, Row } from '@lskjs/ui/Table';
+import Promise from 'bluebird';
+import cx from 'classnames';
+import random from 'lodash/random';
+import range from 'lodash/range';
+import sample from 'lodash/sample';
+import { observer } from 'mobx-react';
+import React from 'react';
 
-import List from '../List';
+import List from '../src/List';
+import FilterForm from './FilterForm';
 
 // polyfill();
 
@@ -27,7 +26,7 @@ const api = {
     const roles = () => sample(['Director', 'Manager', 'Stuff', 'Salesman', 'Driver', 'Tester', 'Designer']);
     return {
       count,
-      items: range(skip, skip + limit).map(id => ({
+      items: range(skip, skip + limit).map((id) => ({
         id,
         title: `User ${id + 1}`,
         rating: random(id, count, true).toFixed(2),
@@ -56,21 +55,12 @@ const itemStyle = css`
 
 const ListItem = observer(({ item = {} }) => (
   <Row className={cx([styleHeight, itemStyle])}>
-    <Col index={0}>
-      {item.id}
-    </Col>
-    <Col index={1}>
-      {item.title}
-    </Col>
-    <Col index={2}>
-      {item.role}
-    </Col>
-    <Col index={3}>
-      {item.rating}
-    </Col>
+    <Col index={0}>{item.id}</Col>
+    <Col index={1}>{item.title}</Col>
+    <Col index={2}>{item.role}</Col>
+    <Col index={3}>{item.rating}</Col>
   </Row>
 ));
-
 
 const SortDirection = ({ value }) => (value === 1 ? '⬆' : value === -1 ? '⬇' : '⚬'); // eslint-disable-line no-nested-ternary
 
@@ -80,9 +70,7 @@ const HeaderItem = ({ toggleSort, sort = {} }) => (
       id
       <SortDirection value={sort.id} />
     </Col>
-    <Col index={1}>
-      name
-    </Col>
+    <Col index={1}>name</Col>
     <Col index={2} onClick={() => toggleSort('role')}>
       role
       <SortDirection value={sort.role} />
@@ -94,16 +82,13 @@ const HeaderItem = ({ toggleSort, sort = {} }) => (
   </Row>
 );
 
+export default {
+  title: 'List/case1',
+  component: List,
+};
 
-export default ({ storiesOf }) => storiesOf('list/List/cases', module)
-  .add('case1', () => (
-    <Story devtools style={{ padding: 24 }}>
-      <List
-        listStore={listStore}
-        HeaderItem={HeaderItem}
-        ListItem={ListItem}
-        FilterForm={FilterForm}
-        columns={columns}
-      />
-    </Story>
-  ));
+export const Default = () => (
+  <Story devtools style={{ padding: 24 }}>
+    <List listStore={listStore} HeaderItem={HeaderItem} ListItem={ListItem} FilterForm={FilterForm} columns={columns} />
+  </Story>
+);

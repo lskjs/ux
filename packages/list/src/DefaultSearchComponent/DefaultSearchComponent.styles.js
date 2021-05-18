@@ -1,12 +1,32 @@
-import styled from '@emotion/styled';
 import { css } from '@emotion/core';
-import { DebounceInput } from 'react-debounce-input';
-import createDynamicTag from '@lskjs/utils/createDynamicTag';
-import removeProps from '@lskjs/utils/removeProps';
+import styled from '@emotion/styled';
 import getTheme from '@lskjs/theme/getTheme';
+import { DebounceInput } from 'react-debounce-input';
 
-const dynamicTag = createDynamicTag(DebounceInput);
-const filteredTag = removeProps(dynamicTag, ['FilterForm']);
+export const CloseButton = styled('button')`
+  width: 40px;
+  height: 40px;
+  border-radius: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  color: ${(p) => getTheme(p.theme, 'colors.primary')};
+  cursor: pointer;
+
+  will-change: background-color;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: ${(p) => getTheme(p.theme, 'colors.lighterPrimary')};
+  }
+  > svg {
+    display: flex;
+  }
+`;
 
 export const Block = styled('div')`
   display: flex;
@@ -61,7 +81,9 @@ const placeholderStyle = (p) => css`
   color: #cdcdcd;
 `;
 
-export const Input = styled(filteredTag)`
+export const Input = styled(DebounceInput, {
+  shouldForwardProp: (prop) => !['FilterForm'].includes(prop),
+})`
   width: 100%;
   height: 56px;
   padding: 0 0 0 ${(p) => `calc(${getTheme(p.theme, 'tablePadding', 0)}px + 34px)`};

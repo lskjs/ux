@@ -1,12 +1,12 @@
-import React from 'react';
-import { observer } from 'mobx-react';
 import Story from '@lskjs/dev/Story/UappStory';
-import { ItemRow, ItemCol, HeaderRow, HeaderCol, createIndex } from '../Table';
-import FilterFormAsyncSelectBug from './FilterFormAsyncSelectBug';
+import { observer } from 'mobx-react';
+import React from 'react';
 
-import List from '../List';
-import listStore from './listStore';
+import List from '../src/List';
+import { createIndex, HeaderCol, HeaderRow, ItemCol, ItemRow } from '../src/Table';
 import DebugListStore from './DebugListStore';
+import FilterFormAsyncSelectBug from './FilterFormAsyncSelectBug';
+import listStore from './listStore';
 
 window.__DEV__ = true;
 
@@ -41,19 +41,23 @@ const Item = observer(({ item = {}, index = createIndex() }) => (
   </ItemRow>
 ));
 
-export default ({ storiesOf }) =>
-  storiesOf('list/List', module).add('bug: async select bug', () => (
-    <Story devtools style={{ padding: 24 }}>
-      <List
+export default {
+  title: 'List/Bug',
+  component: List,
+};
+
+export const AsyncSelectBug = () => (
+  <Story devtools style={{ padding: 24 }}>
+    <List
       debug
-        container
-        listStore={listStore}
-        HeaderItem={HeaderItem}
-        Item={Item}
-        FilterForm={FilterFormAsyncSelectBug}
-        columns={columns}
-        Wrapper={({ children }) => <div style={{ background: 'white' }}>{children}</div>}
-      />
-      <DebugListStore store={listStore} />
-    </Story>
-  ));
+      container
+      listStore={listStore}
+      HeaderItem={HeaderItem}
+      Item={Item}
+      FilterForm={FilterFormAsyncSelectBug}
+      columns={columns}
+      Wrapper={({ children }) => <div style={{ background: 'white' }}>{children}</div>}
+    />
+    <DebugListStore store={listStore} />
+  </Story>
+);

@@ -1,10 +1,10 @@
-import styled from '@emotion/styled';
 import { css } from '@emotion/core';
-import { injectGlobal } from 'emotion';
+import styled from '@emotion/styled';
+import { Row } from '@lskjs/grid';
 import getTheme from '@lskjs/theme/getTheme';
 import createDynamicTag from '@lskjs/utils/createDynamicTag';
 import removeProps from '@lskjs/utils/removeProps';
-import { Row } from '@lskjs/grid';
+import { injectGlobal } from 'emotion';
 
 export const loadMoreButton = css`
   border-radius: 0 !important;
@@ -391,13 +391,4 @@ export const SearchWrapper = styled('div')`
       display: flex;
       align-items: center;
     `}
-`;
-
-export const globalStylesList = () => injectGlobal`
-  .ant-checkbox-inner {
-    box-shadow: inset 0px 0px 0px 1px #d9d9d9;
-  }
-  .ant-checkbox-checked:after {
-    border: none !important;
-  }
 `;

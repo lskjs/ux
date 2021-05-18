@@ -1,18 +1,24 @@
-import React, { PureComponent } from 'react';
-import DebounceInput from 'react-debounce-input';
-import PropTypes from 'prop-types';
-import If from 'react-if';
-import CloseIcon from 'react-icons2/mdi/close';
-import Magnify from 'react-icons2/mdi/magnify';
-import autobind from '@lskjs/autobind';
-import Button from '@lskjs/button';
 import filterProps from '@lskjs/utils/filterProps';
+import PropTypes from 'prop-types';
+import React, { useRef } from 'react';
+import DebounceInput from 'react-debounce-input';
 
-import { Block, Button as ButtonStyled, Count, Input, Actions, Action } from './DefaultSearchComponent.styles';
+import CloseIcon from '../icons/CloseIcon';
+import SearchIcon from '../icons/SearchIcon';
+import {
+  Action,
+  Actions,
+  Block,
+  Button as ButtonStyled,
+  CloseButton,
+  Count,
+  Input,
+} from './DefaultSearchComponent.styles';
 
-class DefaultSearchComponent extends PureComponent {
-  @autobind
-  handleChange(event) {
+const DefaultSearchComponent = ({ componentClass: Tag, current, max, actions, canClear, onClear, block, ...props }) => {
+  const refInput = useRef();
+
+  function handleChange(event) {
     const { onChange, value: propValue } = this.props;
     let value = '';
     if (typeof event === 'string') {
@@ -25,56 +31,49 @@ class DefaultSearchComponent extends PureComponent {
     if (onChange) onChange(value);
   }
 
-  @autobind
-  handlePress(event) {
+  function handlePress(event) {
     if (event.keyCode === 13) {
-      this.handleChange(event);
+      handleChange(event);
     }
   }
 
-  @autobind
-  handleClick() {
-    if (this.input) {
-      this.handleChange(this.input.state.value);
+  function handleClick() {
+    if (refInput.current) {
+      handleChange(refInput.current.state.value);
     }
   }
 
-  render() {
-    const { componentClass: Tag, current, max, actions, canClear, onClear, block, ...props } = this.props;
-    return (
-      <Block block={block}>
-        <ButtonStyled type="button" onClick={this.handleClick}>
-          <Magnify />
-        </ButtonStyled>
-        <Input
-          componentClass={Tag}
-          debounceTimeout={500}
-          ref={(e) => {
-            this.input = e;
-          }}
-          onChange={this.handleChange}
-          onKeyUp={this.handlePress}
-          {...filterProps(props, Tag)}
-        />
-        <If condition={!!max}>
-          <Count>{`${current} / ${max}`}</Count>
-        </If>
-        <Actions>
-          <If condition={!!canClear}>
-            <Action>
-              <Button icon={<CloseIcon width="24px" height="24px" />} paint="primary" view="text" onClick={onClear} />
-            </Action>
-          </If>
-          <If condition={!!actions}>
-            <Action additional divide={max || canClear}>
-              {actions}
-            </Action>
-          </If>
-        </Actions>
-      </Block>
-    );
-  }
-}
+  return (
+    <Block block={block}>
+      <ButtonStyled type="button" onClick={handleClick}>
+        <SearchIcon />
+      </ButtonStyled>
+      <Input
+        as={Tag}
+        debounceTimeout={500}
+        ref={refInput}
+        onChange={handleChange}
+        onKeyUp={handlePress}
+        {...filterProps(props, Tag)}
+      />
+      {!!max && <Count>{`${current} / ${max}`}</Count>}
+      <Actions>
+        {!!canClear && (
+          <Action>
+            <CloseButton onClick={onClear}>
+              <CloseIcon width="24px" height="24px" />
+            </CloseButton>
+          </Action>
+        )}
+        {!!actions && (
+          <Action additional divide={max || canClear}>
+            {actions}
+          </Action>
+        )}
+      </Actions>
+    </Block>
+  );
+};
 
 DefaultSearchComponent.propTypes = {
   componentClass: PropTypes.any, // eslint-disable-line react/forbid-prop-types
