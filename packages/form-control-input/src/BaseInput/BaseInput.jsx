@@ -1,6 +1,5 @@
 import filterProps from '@lskjs/utils/filterProps'; // TODO: подумать
-import debounce from 'lodash/debounce';
-import get from 'lodash/get';
+import debounce from 'lodash.debounce';
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 
@@ -87,7 +86,7 @@ class Input extends PureComponent {
           onChange={this.handleChange.bind(this)}
         />
         {!!rightIcon && <RightWrapper>{rightIcon}</RightWrapper>}
-        {!!(maxLength && showLimit) && <Count>{`${get(value, 'length') || 0}/${maxLength}`}</Count>}
+        {!!(maxLength && showLimit) && <Count>{`${`${value || ''}`.length}/${maxLength}`}</Count>}
       </InputBox>
     );
   }

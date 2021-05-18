@@ -1,0 +1,65 @@
+{
+  "name": "@lskjs/form-control-select",
+  "version": "2.3.0-beta.7",
+  "description": "Select control for Form",
+  "keywords": [],
+  "repository": "https://github.com/lskjs/ux/tree/master/packages/form-control-select",
+  "license": "MIT",
+  "author": "Igor Suvorov <hi@isuvorov.com>",
+  "scripts": {
+    "bootstrap": "lsk run bootstrap",
+    "build": "lsk run build",
+    "dev": "lsk run dev",
+    "i18": "lsk run i18",
+    "prepublishOnly": "lsk run prepublishOnly",
+    "release": "lsk run release",
+    "start": "lsk run start",
+    "storybook": "lsk run storybook",
+    "test": "lsk run test",
+    "watch": "lsk run watch"
+  },
+  "dependencies": {
+    "@lskjs/utils": "2.3.0-beta.4",
+    "lodash.find": "4.6.0",
+    "lodash.get": "4.4.2",
+    "lodash.isboolean": "3.0.3",
+    "lodash.isequal": "4.5.0",
+    "lodash.isnumber": "3.0.3",
+    "lodash.isplainobject": "4.0.6",
+    "lodash.isstring": "4.0.1",
+    "lodash.omit": "4.5.0",
+    "lodash.pick": "4.4.0",
+    "lodash.sortby": "4.7.0",
+    "react-select": "^3.1.0"
+  },
+  "devDependencies": {
+    "@emotion/core": "10.0.27",
+    "@emotion/styled": "10.0.27",
+    "@lskjs/dev": "2.3.0-beta.6",
+    "@lskjs/flag": "2.3.0-beta.6",
+    "@lskjs/modal": "2.3.0-beta.7",
+    "@lskjs/t": "1.27.4",
+    "@lskjs/theme": "1.1.71",
+    "classnames": "2.2.6",
+    "emotion": "10.0.27",
+    "formik": "1.5.8",
+    "lodash.keys": "4.2.0",
+    "lodash.range": "3.2.0",
+    "mobx": "5.15.4",
+    "mobx-react": "6.1.7",
+    "prop-types": "15.7.2",
+    "react": "16.8.6",
+    "react-icons2": "2.5.0"
+  },
+  "peerDependencies": {
+    "@emotion/core": "*",
+    "@emotion/styled": "*",
+    "classnames": "*",
+    "emotion": "*",
+    "prop-types": "*",
+    "react": "*"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
