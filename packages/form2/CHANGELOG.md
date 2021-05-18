@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0-beta.9](https://github.com/lskjs/ux/tree/master/packages/form2/compare/v2.3.0-beta.8...v2.3.0-beta.9) (2021-05-18)
+
+
+### Features
+
+* **form2:** optimize code, remove unused styles ([89613de](https://github.com/lskjs/ux/tree/master/packages/form2/commit/89613defeed8723c63f9d83525d97b99857fa58b))
+
+
+
+
+
 # [2.3.0-beta.8](https://github.com/lskjs/ux/tree/master/packages/form2/compare/v2.3.0-beta.7...v2.3.0-beta.8) (2021-05-17)
 
 
