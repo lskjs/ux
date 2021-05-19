@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0-beta.11](https://github.com/lskjs/cli/compare/v2.3.0-beta.10...v2.3.0-beta.11) (2021-05-19)
+
+
+### Bug Fixes
+
+* **form2:** babelrc emotion ([cab65cb](https://github.com/lskjs/cli/commit/cab65cbb0370827017dd7ca7fa6fda838a07c6b2))
+
+
+
+
+
 # [2.3.0-beta.10](https://github.com/lskjs/cli/compare/v2.3.0-beta.9...v2.3.0-beta.10) (2021-05-18)
 
 
