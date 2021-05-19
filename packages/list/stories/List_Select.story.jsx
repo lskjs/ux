@@ -6,7 +6,7 @@ import React from 'react';
 import List from '../src/List';
 import { Col, HeaderCol, HeaderRow, ItemCol, ItemRow, Row } from '../src/Table';
 import DebugListStore from './DebugListStore';
-import listStore from './listStore';
+import listStore from './listStoreMock';
 
 const columns = [60, '1fr', '1fr', 60];
 const SelectHeaderItem = observer(({ toggleSort, sort = {} }) => (

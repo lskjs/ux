@@ -12,7 +12,8 @@ import sortBy from 'lodash/sortBy';
 const endpoint = 'https://analytics.buzzguru.com/api/channels/find';
 const count = 1000;
 const initItems = range(0, 1000).map((id) => ({
-  id,
+  _id: id + 1,
+  id: id + 1,
   title: `User ${id + 1}`,
   role: sample(['Director', 'Manager', 'Stuff', 'Salesman', 'Driver', 'Tester', 'Designer']),
   rating: +random(id, count, true).toFixed(2),
@@ -24,7 +25,7 @@ const api = {
     console.log('filter', { skip, limit, filter, sort });
 
     const promise = Promise.delay(200); // это типа гет запрос
-    __cancelToken.token.promise.then(() => promise.cancel());
+    // __cancelToken.token.promise.then(() => promise.cancel());
     await promise;
     let items = clone(initItems);
     items = lodashFilter(items, filter);
@@ -75,7 +76,7 @@ const api = {
 
 const listStore = new ListStore({ api, skip: 20 });
 setTimeout(() => {
-  listStore.fetch();
+  // listStore.fetch();
 }, 2000);
 
 export default listStore;

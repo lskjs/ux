@@ -1,50 +1,26 @@
-import React from 'react';
-import { inject, observer } from 'mobx-react';
-import If from 'react-if';
-import isTouchDevice from '@lskjs/utils/isTouchDevice';
 import DEV from '@lskjs/dev/DEV';
 import Collapse from '@lskjs/ui/Collapse';
-import { contextToProps } from './List.context';
-import ListFilterModal from './ListFilterModal';
+import { inject, observer } from 'mobx-react';
+import React from 'react';
 
-const ListFilter = ({
-  List,
-  FilterForm,
-  listStore,
-  debug,
-  filterProps,
-  isFilterModal,
-  // container,
-}) => {
-  if (!FilterForm) return null; // <DEV json="!FilterForm" />;
+import { contextToProps } from './List.context';
+
+const ListFilter = ({ List, FilterForm, listStore, debug, filterProps }) => {
+  if (!FilterForm) return null;
   const { showFilter } = listStore;
   return (
-    <>
-      <If condition={!!isFilterModal && !!isTouchDevice()}>
-        <ListFilterModal
-          className="d-md-none"
-          overlayClassName="d-md-none"
-          visible={showFilter}
-          onClose={listStore.toggleFilter}
+    <Collapse show={showFilter} type="collapse">
+      <List.FilterWrapper>
+        <FilterForm
+          {...filterProps}
+          enableReinitialize
+          initialValues={listStore.filter}
+          hash={listStore.filter}
+          onChange={listStore.setFilter}
         />
-      </If>
-      <div className={isFilterModal && isTouchDevice() ? 'd-none d-md-block' : ''}>
-        <Collapse show={showFilter} type="collapse">
-          <List.FilterWrapper>
-            <FilterForm
-              {...filterProps}
-              enableReinitialize
-              initialValues={listStore.filter}
-              hash={listStore.filter}
-              onChange={listStore.setFilter}
-            />
-            <If condition={!!debug}>
-              <DEV json={listStore.filter} />
-            </If>
-          </List.FilterWrapper>
-        </Collapse>
-      </div>
-    </>
+        {debug && <DEV json={listStore.filter} />}
+      </List.FilterWrapper>
+    </Collapse>
   );
 };
 

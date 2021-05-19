@@ -1,5 +1,5 @@
-import { createContext } from 'react';
 import createContextToProps from '@lskjs/utils/createContextToProps';
+import { createContext } from 'react';
 
 const Context = createContext(null);
 

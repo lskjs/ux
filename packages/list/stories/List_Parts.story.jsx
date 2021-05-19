@@ -8,7 +8,7 @@ import List from '../src/List';
 import { Col, createIndex, ItemCol, ItemRow, Row } from '../src/Table';
 import DebugListStore from './DebugListStore';
 import FilterForm from './FilterForm';
-import listStore from './listStore';
+import listStore from './listStoreMock';
 
 const columns = [60, '1fr', '1fr', 60];
 
