@@ -5,6 +5,36 @@ import getTheme from '@lskjs/theme/getTheme';
 import createDynamicTag from '@lskjs/utils/createDynamicTag';
 import removeProps from '@lskjs/utils/removeProps';
 
+export const ListRowButton = styled('button')`
+  padding: 13px 11px;
+  font-size: 13px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.08;
+  letter-spacing: -0.1px;
+  color: ${(p) => getTheme(p.theme, 'colors.main')};
+  background-color: transparent;
+  font-family: ${(p) => getTheme(p.theme, 'fontFamily')};
+  border: none;
+  outline: none;
+  border-radius: 0;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  margin: auto;
+  cursor: pointer;
+  height: 56px;
+  pointer-events: ${(p) => (p.disabled ? 'none' : 'auto')};
+
+  will-change: background-color;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: ${(p) => getTheme(p.theme, 'colors.lighterPrimary')};
+  }
+`;
+
 export const CommonButton = styled('button')`
   padding: 13px 11px;
   font-size: 13px;
@@ -24,6 +54,7 @@ export const CommonButton = styled('button')`
   width: 100%;
   margin: auto;
   cursor: pointer;
+  pointer-events: ${(p) => (p.disabled ? 'none' : 'auto')};
 
   will-change: background-color;
   transition: background-color 0.2s ease;
@@ -52,6 +83,13 @@ export const LoadMoreButton = styled('button')`
   box-shadow: 0 0 0 1px ${(p) => getTheme(p.theme, 'colors.border')};
   text-align: center;
   cursor: pointer;
+
+  will-change: background-color;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: rgba(130, 130, 139, 0.08);
+  }
 `;
 
 export const Title = styled('div')`
@@ -414,14 +452,6 @@ export const SearchResultsWrapper = styled('div')`
   line-height: 1.23;
   letter-spacing: -0.1px;
   color: ${(p) => getTheme(p.theme, 'colors.main')};
-`;
-
-export const FilterButtonWrapper = styled('div')`
-  button {
-    &:focus {
-      background-color: transparent;
-    }
-  }
 `;
 
 export const SearchWrapper = styled('div')`

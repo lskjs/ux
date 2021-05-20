@@ -1,7 +1,6 @@
 import Story from '@lskjs/dev/Story/UappStory';
 import { Col, Row } from '@lskjs/grid';
 import { observer } from 'mobx-react';
-import QueueAnim from 'rc-queue-anim';
 import React from 'react';
 
 import List from '../src/List';
@@ -44,19 +43,6 @@ const Item = observer(({ item = {}, index = createIndex() }) => (
 ));
 
 const GridItemsWrapper = (props) => <Row {...props} vertical style={{ marginTop: 0, marginBottom: 0 }} />;
-
-const AnimatedGridItemsWrapper = (props) => (
-  <QueueAnim
-    type="bottom"
-    delay={100}
-    duration={300}
-    component={Row}
-    componentProps={{ vertical: true, style: { marginTop: 0, marginBottom: 0 } }}
-    {...props}
-  />
-);
-// const index = createIndex();
-//  key={index()}>
 
 const GridItem = observer(({ item = {} }) => (
   <Col xl={3} lg={4} md={6} key={item._id}>
@@ -102,20 +88,6 @@ export const Grid = () => (
       listStore={listStore}
       HeaderItem={HeaderItem}
       ItemsWrapper={GridItemsWrapper}
-      Item={GridItem}
-      FilterForm={FilterForm}
-      columns={columns}
-    />
-    <DebugListStore store={listStore} />
-  </Story>
-);
-export const AnimatedGrid = () => (
-  <Story devtools style={{ padding: 24 }}>
-    <List
-      container
-      listStore={listStore}
-      HeaderItem={HeaderItem}
-      ItemsWrapper={AnimatedGridItemsWrapper}
       Item={GridItem}
       FilterForm={FilterForm}
       columns={columns}
