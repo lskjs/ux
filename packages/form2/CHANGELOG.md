@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0-beta.12](https://github.com/lskjs/ux/tree/master/packages/form2/compare/v2.3.0-beta.11...v2.3.0-beta.12) (2021-05-20)
+
+
+### Bug Fixes
+
+* **form2:** emotion babel plugin 10 ([111b6e0](https://github.com/lskjs/ux/tree/master/packages/form2/commit/111b6e0e927fafb4c1ad883d2efcb5aa8353e2ac))
+
+
+
+
+
 # [2.3.0-beta.11](https://github.com/lskjs/ux/tree/master/packages/form2/compare/v2.3.0-beta.10...v2.3.0-beta.11) (2021-05-19)
 
 
