@@ -4,10 +4,10 @@ module.exports = {
   ],
   "plugins": [
     [
-      "@emotion",
+      "emotion",
       {
         "sourceMap": true,
-        "autoLabel": 'dev-only',
+        "autoLabel": process.env.NODE_ENV !== 'production',
         "labelFormat": "[filename]--[local]",
         "cssPropOptimization": true
       },
