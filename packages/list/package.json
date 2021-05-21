@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/list",
-  "version": "2.3.0-beta.12",
+  "version": "2.3.0-beta.13",
   "description": "LSK ux subrepo: list",
   "keywords": [],
   "repository": "https://github.com/lskjs/ux/tree/master/packages/list",
@@ -28,7 +28,7 @@
     "@emotion/styled": "10.0.27",
     "@lskjs/apiquery": "1.100.1",
     "@lskjs/dev": "2.3.0-beta.10",
-    "@lskjs/form": "2.3.0-beta.10",
+    "@lskjs/form": "2.3.0-beta.13",
     "@lskjs/grid": "2.3.0-beta.10",
     "@lskjs/link": "2.3.0-beta.10",
     "@lskjs/mobx": "0.39.0",

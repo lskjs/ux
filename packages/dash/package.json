@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/dash",
-  "version": "2.3.0-beta.10",
+  "version": "2.3.0-beta.13",
   "description": "LSK.js – Dash – React components for your own dashboard",
   "keywords": [],
   "repository": "https://github.com/lskjs/ux/tree/master/packages/dash",
@@ -21,7 +21,7 @@
   "dependencies": {
     "@lskjs/button": "2.3.0-beta.4",
     "@lskjs/button2": "^1.36.10",
-    "@lskjs/form": "2.3.0-beta.10",
+    "@lskjs/form": "2.3.0-beta.13",
     "@lskjs/image": "^1.36.11",
     "@lskjs/link": "2.3.0-beta.10",
     "@lskjs/navbar": "^1.36.11",

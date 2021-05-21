@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0-beta.13](https://github.com/lskjs/ux/tree/master/packages/list/compare/v2.3.0-beta.12...v2.3.0-beta.13) (2021-05-21)
+
+
+### Features
+
+* **list:** reworked list ([f9465b3](https://github.com/lskjs/ux/tree/master/packages/list/commit/f9465b3eeab0a5742e007c733f2aeed656a5aea2))
+
+
+
+
+
 # [2.3.0-beta.12](https://github.com/lskjs/ux/tree/master/packages/list/compare/v2.3.0-beta.11...v2.3.0-beta.12) (2021-05-20)
 
 **Note:** Version bump only for package @lskjs/list
