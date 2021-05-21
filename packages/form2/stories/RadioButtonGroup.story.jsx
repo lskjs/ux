@@ -38,7 +38,7 @@ const RadioButtonGroupForm = createForm({
 });
 
 export default {
-  title: 'form-control-radiobuttongroup/RadioButtonGroupForm',
+  title: 'form2/RadioButtonGroupForm',
   component: RadioButtonGroupForm,
 };
 
