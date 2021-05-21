@@ -1,0 +1,46 @@
+{
+  "name": "@lskjs/form-control-radiobuttongroup",
+  "version": "2.3.0-beta.12",
+  "description": "RadioButtonGroup control for Form",
+  "keywords": [],
+  "repository": "https://github.com/lskjs/ux/tree/master/packages/form-control-radiobuttongroup",
+  "license": "MIT",
+  "author": "Igor Suvorov <hi@isuvorov.com>",
+  "scripts": {
+    "bootstrap": "lsk run bootstrap",
+    "build": "lsk run build",
+    "dev": "lsk run dev",
+    "i18": "lsk run i18",
+    "prepublishOnly": "lsk run prepublishOnly",
+    "release": "lsk run release",
+    "start": "lsk run start",
+    "storybook": "lsk run storybook",
+    "test": "lsk run test",
+    "watch": "lsk run watch"
+  },
+  "dependencies": {
+    "@lskjs/utils": "2.3.0-beta.4",
+    "lodash.omit": "4.5.0"
+  },
+  "devDependencies": {
+    "@emotion/core": "10.0.27",
+    "@emotion/styled": "10.0.27",
+    "emotion": "10.0.27",
+    "@lskjs/button": "2.3.0-beta.4",
+    "@lskjs/dev": "2.3.0-beta.10",
+    "@lskjs/theme": "1.1.71",
+    "formik": "1.5.8",
+    "prop-types": "15.7.2",
+    "react": "16.8.6"
+  },
+  "peerDependencies": {
+    "@emotion/core": "*",
+    "@emotion/styled": "*",
+    "emotion": "*",
+    "prop-types": "*",
+    "react": "*"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
