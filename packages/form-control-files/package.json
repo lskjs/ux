@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/form-control-files",
-  "version": "2.3.0-beta.12",
+  "version": "2.3.0-beta.14",
   "description": "Files control for Form",
   "keywords": [],
   "repository": "https://github.com/lskjs/ux/tree/master/packages/form-control-files",
@@ -28,34 +28,34 @@
   "devDependencies": {
     "@emotion/core": "10.0.27",
     "@emotion/styled": "10.0.27",
-    "emotion": "10.0.27",
+    "@lskjs/button": "2.3.0-beta.4",
     "@lskjs/dev": "2.3.0-beta.10",
     "@lskjs/grid": "2.3.0-beta.10",
-    "@lskjs/theme": "1.1.71",
     "@lskjs/link": "2.3.0-beta.10",
-    "@lskjs/button": "2.3.0-beta.4",
     "@lskjs/t": "1.27.4",
+    "@lskjs/theme": "1.1.71",
+    "emotion": "10.0.27",
     "formik": "1.5.8",
     "mobx": "5.15.4",
     "mobx-react": "6.1.7",
     "prop-types": "15.7.2",
+    "react": "16.8.6",
     "react-dropzone": "5.1.0",
-    "react-icons2": "2.5.0",
-    "react": "16.8.6"
+    "react-icons2": "2.5.0"
   },
   "peerDependencies": {
     "@emotion/core": "*",
     "@emotion/styled": "*",
+    "@lskjs/button": "*",
     "@lskjs/grid": "*",
     "@lskjs/link": "*",
-    "@lskjs/button": "*",
     "@lskjs/t": "*",
     "emotion": "*",
-    "prop-types": "*",
     "mobx": "*",
     "mobx-react": "*",
-    "react-icons2": "*",
-    "react": "*"
+    "prop-types": "*",
+    "react": "*",
+    "react-icons2": "*"
   },
   "publishConfig": {
     "access": "public"

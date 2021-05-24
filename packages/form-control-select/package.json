@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/form-control-select",
-  "version": "2.3.0-beta.13",
+  "version": "2.3.0-beta.14",
   "description": "Select control for Form",
   "keywords": [],
   "repository": "https://github.com/lskjs/ux/tree/master/packages/form-control-select",
