@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0-beta.20](https://github.com/lskjs/cli/compare/v2.3.0-beta.19...v2.3.0-beta.20) (2021-05-26)
+
+
+### Bug Fixes
+
+* **form-control-password:** package name ([0cad007](https://github.com/lskjs/cli/commit/0cad007c5e452c0790cbcdce3f9c720a7949a607))
+
+
+
+
+
 # [2.3.0-beta.19](https://github.com/lskjs/cli/compare/v2.3.0-beta.18...v2.3.0-beta.19) (2021-05-26)
 
 
