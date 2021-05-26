@@ -1,9 +1,9 @@
 {
-  "name": "@lskjs/form-control-phone-password",
+  "name": "@lskjs/form-control-password",
   "version": "2.3.0-beta.19",
   "description": "Password input control for Form",
   "keywords": [],
-  "repository": "https://github.com/lskjs/ux/tree/master/packages/form-control-phone-password",
+  "repository": "https://github.com/lskjs/ux/tree/master/packages/form-control-password",
   "license": "MIT",
   "author": "Igor Suvorov <hi@isuvorov.com>",
   "scripts": {
