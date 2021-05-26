@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/form-control-phone-password",
-  "version": "2.3.0-beta.17",
+  "version": "2.3.0-beta.18",
   "description": "Password input control for Form",
   "keywords": [],
   "repository": "https://github.com/lskjs/ux/tree/master/packages/form-control-phone-password",

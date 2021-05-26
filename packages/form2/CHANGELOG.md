@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0-beta.18](https://github.com/lskjs/ux/tree/master/packages/form2/compare/v2.3.0-beta.17...v2.3.0-beta.18) (2021-05-26)
+
+
+### Features
+
+* **form2:** add stories ([5140e9f](https://github.com/lskjs/ux/tree/master/packages/form2/commit/5140e9fc45944f24ba78a39caf393e7f0aa75b1e))
+
+
+
+
+
 # [2.3.0-beta.17](https://github.com/lskjs/ux/tree/master/packages/form2/compare/v2.3.0-beta.15...v2.3.0-beta.17) (2021-05-24)
 
 **Note:** Version bump only for package @lskjs/form2
