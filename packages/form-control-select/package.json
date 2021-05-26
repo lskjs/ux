@@ -41,7 +41,6 @@
     "@lskjs/t": "1.27.4",
     "@lskjs/theme": "1.1.71",
     "classnames": "2.2.6",
-    "emotion": "10.0.27",
     "formik": "1.5.8",
     "lodash.keys": "4.2.0",
     "lodash.range": "3.2.0",
@@ -55,7 +54,6 @@
     "@emotion/core": "*",
     "@emotion/styled": "*",
     "classnames": "*",
-    "emotion": "*",
     "prop-types": "*",
     "react": "*"
   },

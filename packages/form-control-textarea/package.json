@@ -27,7 +27,6 @@
     "@emotion/styled": "10.0.27",
     "@lskjs/dev": "2.3.0-beta.15",
     "@lskjs/theme": "1.1.71",
-    "emotion": "10.0.27",
     "formik": "1.5.8",
     "prop-types": "15.7.2",
     "react": "16.8.6",
@@ -36,7 +35,6 @@
   "peerDependencies": {
     "@emotion/core": "*",
     "@emotion/styled": "*",
-    "emotion": "*",
     "prop-types": "*",
     "react": "*",
     "react-icons2": "*"
