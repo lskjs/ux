@@ -27,7 +27,7 @@
     "@emotion/core": "10.0.27",
     "@emotion/styled": "10.0.27",
     "@lskjs/button": "2.3.0-beta.4",
-    "@lskjs/dev": "2.3.0-beta.15",
+    "@lskjs/dev": "2.3.0-beta.17",
     "@lskjs/theme": "1.1.71",
     "formik": "1.5.8",
     "prop-types": "15.7.2",

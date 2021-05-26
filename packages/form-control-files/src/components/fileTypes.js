@@ -1,13 +1,14 @@
 import fromPairs from 'lodash.frompairs';
-import File from 'react-icons2/mdi/file';
-import Doc from 'react-icons2/mdi/file-document';
-import Table from 'react-icons2/mdi/file-excel';
-import Image from 'react-icons2/mdi/file-image';
-import Music from 'react-icons2/mdi/file-music';
-import Pdf from 'react-icons2/mdi/file-pdf';
-import Presentation from 'react-icons2/mdi/file-powerpoint';
-import Video from 'react-icons2/mdi/file-video';
-import Word from 'react-icons2/mdi/file-word';
+
+import File from '../icons/file';
+import Doc from '../icons/file-document';
+import Table from '../icons/file-excel';
+import Image from '../icons/file-image';
+import Music from '../icons/file-music';
+import Pdf from '../icons/file-pdf';
+import Presentation from '../icons/file-powerpoint';
+import Video from '../icons/file-video';
+import Word from '../icons/file-word';
 
 function assign(arr, type) {
   const prepare = arr.map((e) => [e, type]);

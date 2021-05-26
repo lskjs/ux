@@ -1,11 +1,11 @@
 import PropTypes, { objectOf } from 'prop-types';
 import React, { PureComponent } from 'react';
-import RadioBlank from 'react-icons2/mdi/checkbox-blank-circle-outline';
-import CheckboxBlank from 'react-icons2/mdi/checkbox-blank-outline';
-import CheckboxCheck from 'react-icons2/mdi/checkbox-marked';
-import RadioCheck from 'react-icons2/mdi/checkbox-marked-circle';
 
 import { Additional, Block, Footer, General, Header, Icon, Info, Item, Label } from './ExtendedCheckblock.styles';
+import RadioBlank from './icons/checkbox-blank-circle-outline';
+import CheckboxBlank from './icons/checkbox-blank-outline';
+import CheckboxCheck from './icons/checkbox-marked';
+import RadioCheck from './icons/checkbox-marked-circle';
 
 export class ExtendedCheckblock extends PureComponent {
   constructor(props) {

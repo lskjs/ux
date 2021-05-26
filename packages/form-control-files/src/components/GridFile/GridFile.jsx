@@ -1,7 +1,7 @@
 import Link from '@lskjs/link';
 import React, { Component } from 'react';
-import Remove from 'react-icons2/mdi/close-circle-outline';
 
+import Remove from '../../icons/close-circle-outline';
 import { Box } from '../Box';
 import fileTypes from '../fileTypes';
 import Typography from '../Typography';

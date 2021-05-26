@@ -29,9 +29,9 @@
     "@emotion/core": "10.0.27",
     "@emotion/styled": "10.0.27",
     "@lskjs/button": "2.3.0-beta.4",
-    "@lskjs/dev": "2.3.0-beta.15",
-    "@lskjs/grid": "2.3.0-beta.15",
-    "@lskjs/link": "2.3.0-beta.15",
+    "@lskjs/dev": "2.3.0-beta.17",
+    "@lskjs/grid": "2.3.0-beta.17",
+    "@lskjs/link": "2.3.0-beta.17",
     "@lskjs/t": "1.27.4",
     "@lskjs/theme": "1.1.71",
     "formik": "1.5.8",
@@ -39,8 +39,7 @@
     "mobx-react": "6.1.7",
     "prop-types": "15.7.2",
     "react": "16.8.6",
-    "react-dropzone": "5.1.0",
-    "react-icons2": "2.5.0"
+    "react-dropzone": "5.1.0"
   },
   "peerDependencies": {
     "@emotion/core": "*",
@@ -52,8 +51,7 @@
     "mobx": "*",
     "mobx-react": "*",
     "prop-types": "*",
-    "react": "*",
-    "react-icons2": "*"
+    "react": "*"
   },
   "publishConfig": {
     "access": "public"

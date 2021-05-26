@@ -8,7 +8,9 @@ import { CheckBlock } from '../src/CheckBlock';
 const CheckBlockViewForm = (props) => (
   <Form>
     <Field {...props.control('radio')} />
+    <Field {...props.control('radio1')} />
     <Field {...props.control('checkbox')} />
+    <Field {...props.control('checkbox1')} />
     {/* <FormDebug {...props} /> */}
   </Form>
 );
@@ -30,6 +32,26 @@ const CheckBlockForm = createForm({
     checkbox: {
       // title: 'checkBlock',
       component: CheckBlockComponent,
+      view: 'checkbox',
+      label: 'test',
+      info: 'this is info',
+      // children: 'asd',
+      block: true,
+    },
+    radio1: {
+      // title: 'checkBlock',
+      component: CheckBlockComponent,
+      checked: true,
+      view: 'radio',
+      label: 'test',
+      info: 'this is info',
+      // children: 'asd',
+      block: true,
+    },
+    checkbox1: {
+      // title: 'checkBlock',
+      component: CheckBlockComponent,
+      checked: true,
       view: 'checkbox',
       label: 'test',
       info: 'this is info',

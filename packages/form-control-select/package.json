@@ -35,9 +35,9 @@
   "devDependencies": {
     "@emotion/core": "10.0.27",
     "@emotion/styled": "10.0.27",
-    "@lskjs/dev": "2.3.0-beta.15",
-    "@lskjs/flag": "2.3.0-beta.15",
-    "@lskjs/modal": "2.3.0-beta.15",
+    "@lskjs/dev": "2.3.0-beta.17",
+    "@lskjs/flag": "2.3.0-beta.17",
+    "@lskjs/modal": "2.3.0-beta.17",
     "@lskjs/t": "1.27.4",
     "@lskjs/theme": "1.1.71",
     "classnames": "2.2.6",
@@ -47,8 +47,7 @@
     "mobx": "5.15.4",
     "mobx-react": "6.1.7",
     "prop-types": "15.7.2",
-    "react": "16.8.6",
-    "react-icons2": "2.5.0"
+    "react": "16.8.6"
   },
   "peerDependencies": {
     "@emotion/core": "*",
