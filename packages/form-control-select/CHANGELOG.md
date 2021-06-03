@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0-beta.22](https://github.com/lskjs/ux/tree/master/packages/form-control-select/compare/v2.3.0-beta.21...v2.3.0-beta.22) (2021-06-03)
+
+
+### Bug Fixes
+
+* **form-control-select:** clearable and input val ([8305e5b](https://github.com/lskjs/ux/tree/master/packages/form-control-select/commit/8305e5b4aacfdc79dc755458ac6ab188798d4897))
+
+
+
+
+
 # [2.3.0-beta.19](https://github.com/lskjs/ux/tree/master/packages/form-control-select/compare/v2.3.0-beta.18...v2.3.0-beta.19) (2021-05-26)
 
 
