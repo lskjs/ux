@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0-beta.21](https://github.com/lskjs/cli/compare/v2.3.0-beta.20...v2.3.0-beta.21) (2021-06-03)
+
+
+### Features
+
+* **list:** add support preloader item ([88a5767](https://github.com/lskjs/cli/commit/88a576740495d0daf4ecfb4e02f835abd4a27305))
+
+
+
+
+
 # [2.3.0-beta.20](https://github.com/lskjs/cli/compare/v2.3.0-beta.19...v2.3.0-beta.20) (2021-05-26)
 
 

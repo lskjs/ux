@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0-beta.21](https://github.com/lskjs/ux/tree/master/packages/list/compare/v2.3.0-beta.20...v2.3.0-beta.21) (2021-06-03)
+
+
+### Features
+
+* **list:** add support preloader item ([88a5767](https://github.com/lskjs/ux/tree/master/packages/list/commit/88a576740495d0daf4ecfb4e02f835abd4a27305))
+
+
+
+
+
 # [2.3.0-beta.17](https://github.com/lskjs/ux/tree/master/packages/list/compare/v2.3.0-beta.15...v2.3.0-beta.17) (2021-05-24)
 
 **Note:** Version bump only for package @lskjs/list
