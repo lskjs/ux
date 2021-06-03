@@ -116,7 +116,7 @@ class Select extends Component {
       }
       return getNormalizedOptions(options, props);
     } catch (err) {
-      if (__DEV__) console.error('Form2/Select loadOptions error', err); // eslint-disable-line no-console
+      if (__DEV__) console.error('form-control-select loadOptions error', err); // eslint-disable-line no-console
       return [];
     }
   }
@@ -140,7 +140,8 @@ class Select extends Component {
     } else {
       value = getReverseOptionValue(option && option.value);
     }
-    if (typeof value === 'undefined') {
+    // if (typeof value === 'undefined') {
+    if (!value) {
       this.handleLocaleChange(value);
       this.handleRemoteChange(value);
     } else if (blurInputOnSelect) {
