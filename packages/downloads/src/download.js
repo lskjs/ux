@@ -105,10 +105,20 @@ const downloadAllFromList = async ({ listStore, limit, maxCount }) => {
   const listStoreAll = new listStore.constructor(listStore);
   listStoreAll.skip = 0;
   listStoreAll.items = [];
-  const maxItemsCount = listStoreAll.count > maxCount ? maxCount : listStoreAll.count;
-  await promiseMapSeries(Array(Math.ceil(maxItemsCount / limit)).fill(), async () => {
-    await listStoreAll.fetchMore(1, limit);
-  });
+  let next = false;
+  let count = 0;
+  do {
+    const res = await listStoreAll.fetchMore(1, limit);
+    count += 1;
+    const maxItemsCount = listStoreAll.count > maxCount ? maxCount : listStoreAll.count;
+    const totalCount = Math.ceil(maxItemsCount / limit);
+    if (count >= totalCount) {
+      next = false;
+      listStoreAll.items = listStoreAll.items.slice(0, maxItemsCount)
+    } else {
+      next = true;
+    }
+  } while (next);
   return listStoreAll.items;
 };
 
