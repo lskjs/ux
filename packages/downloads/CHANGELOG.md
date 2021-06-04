@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.37.2](https://github.com/lskjs/ux/tree/master/packages/download/compare/v1.37.1...v1.37.2) (2021-06-04)
+
+
+### Bug Fixes
+
+* **downloads:** slice array ([d34149c](https://github.com/lskjs/ux/tree/master/packages/download/commit/d34149c01d40a2282eb3a5319c5ebb55127a8365))
+
+
+
+
+
 ## [1.37.1](https://github.com/lskjs/ux/tree/master/packages/download/compare/v1.36.11...v1.37.1) (2021-04-23)
 
 
