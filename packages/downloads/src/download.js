@@ -114,6 +114,7 @@ const downloadAllFromList = async ({ listStore, limit, maxCount }) => {
     const totalCount = Math.ceil(maxItemsCount / limit);
     if (count >= totalCount) {
       next = false;
+      listStoreAll.items = listStoreAll.items.slice(0, maxItemsCount)
     } else {
       next = true;
     }
