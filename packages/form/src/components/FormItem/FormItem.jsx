@@ -2,9 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import * as Styles from './FormItem.styles';
 
-const FormItem = ({ id, label, help, hasError, errorMessage, children }) => (
+const FormItem = ({ id, label, help, hasError, errorMessage, children, tooltip }) => (
   <Styles.Wrapper id={id}>
-    {label && <Styles.Label hasError={hasError}>{label}</Styles.Label>}
+    {label && (
+      <Styles.Label hasError={hasError}>
+        {label}
+        {tooltip && <Styles.TooltipWrapper>{tooltip}</Styles.TooltipWrapper>}
+      </Styles.Label>
+    )}
     {children}
     {(errorMessage || help) && <Styles.Help hasError={hasError}>{errorMessage || help}</Styles.Help>}
   </Styles.Wrapper>
@@ -17,6 +22,7 @@ FormItem.propTypes = {
   hasError: PropTypes.bool.isRequired,
   errorMessage: PropTypes.oneOfType([PropTypes.number, PropTypes.string, PropTypes.node]),
   children: PropTypes.oneOfType([PropTypes.number, PropTypes.string, PropTypes.node]),
+  tooltip: PropTypes.oneOfType([PropTypes.number, PropTypes.string, PropTypes.node]),
 };
 
 FormItem.defaultProps = {
