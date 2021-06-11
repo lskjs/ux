@@ -56,6 +56,7 @@ export const Wrapper = styled('div')`
 
   .rc-slider-handle {
     position: relative;
+    transform: none !important;
     margin-top: -7px !important;
     width: 8px !important;
     height: 8px !important;
