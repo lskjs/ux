@@ -37,6 +37,7 @@ export const Wrapper = styled('div')`
 
   .rc-slider-rail {
     height: 2px !important;
+    margin-bottom: -2px !important;
     background-color: ${(p) => getTheme(p.theme, 'colors.darkerBackground')} !important;
     top: 0 !important;
     left: 0 !important;
