@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0-beta.23](https://github.com/lskjs/ux/tree/master/packages/form/compare/v2.3.0-beta.22...v2.3.0-beta.23) (2021-06-11)
+
+
+### Bug Fixes
+
+* form item ([3a809cc](https://github.com/lskjs/ux/tree/master/packages/form/commit/3a809ccfb926334bddf8b69725495f03aa5696ad))
+
+
+
+
+
 # [2.3.0-beta.17](https://github.com/lskjs/ux/tree/master/packages/form/compare/v2.3.0-beta.15...v2.3.0-beta.17) (2021-05-24)
 
 **Note:** Version bump only for package @lskjs/form

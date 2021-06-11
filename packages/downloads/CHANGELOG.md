@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0-beta.23](https://github.com/lskjs/ux/tree/master/packages/download/compare/v2.3.0-beta.22...v2.3.0-beta.23) (2021-06-11)
+
+
+### Bug Fixes
+
+* **downloads:** slice array ([77ed338](https://github.com/lskjs/ux/tree/master/packages/download/commit/77ed3388a906043f3793c0ade0f97723b366b5b3))
+
+
+
+
+
 # [2.3.0-beta.17](https://github.com/lskjs/ux/tree/master/packages/download/compare/v2.3.0-beta.15...v2.3.0-beta.17) (2021-05-24)
 
 **Note:** Version bump only for package @lskjs/downloads
