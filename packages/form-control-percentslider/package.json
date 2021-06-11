@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/form-control-percentslider",
-  "version": "2.3.0-beta.25",
+  "version": "2.3.0-beta.26",
   "description": "Percentslider control for Form",
   "keywords": [],
   "repository": "https://github.com/lskjs/ux/tree/master/packages/form-control-percentslider",

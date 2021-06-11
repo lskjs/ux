@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0-beta.26](https://github.com/lskjs/cli/compare/v2.3.0-beta.25...v2.3.0-beta.26) (2021-06-11)
+
+
+### Bug Fixes
+
+* **form-control-percentslider:** slider handle style ([9126939](https://github.com/lskjs/cli/commit/91269394d7623178a41294c5a613c33e055c7f45))
+
+
+
+
+
 # [2.3.0-beta.25](https://github.com/lskjs/cli/compare/v2.3.0-beta.24...v2.3.0-beta.25) (2021-06-11)
 
 
