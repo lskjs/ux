@@ -5,7 +5,12 @@ import * as Styles from './FormItem.styles';
 
 const FormItem = ({ id, label, help, hasError, errorMessage, children }) => (
   <Styles.Wrapper id={id}>
-    {label && <Styles.Label hasError={hasError}>{label}</Styles.Label>}
+    {label && (
+      <Styles.Label hasError={hasError}>
+        {label}
+        {tooltip && <Styles.TooltipWrapper>{tooltip}</Styles.TooltipWrapper>}
+      </Styles.Label>
+    )}
     {children}
     {(errorMessage || help) && <Styles.Help hasError={hasError}>{errorMessage || help}</Styles.Help>}
   </Styles.Wrapper>

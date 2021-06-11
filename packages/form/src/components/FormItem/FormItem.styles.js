@@ -2,7 +2,9 @@ import styled from '@emotion/styled';
 import getTheme from '@lskjs/theme/getTheme';
 
 export const Label = styled('div')`
-  display: block;
+  display: flex;
+  align-items: center;
+
   text-align: left;
   line-height: 1.71429;
   font-size: 12px;
@@ -37,3 +39,8 @@ export const Wrapper = styled('div')`
   list-style: none;
   display: block;
 `;
+
+export const TooltipWrapper = styled('div')`
+  margin-left: 4px;
+`;
+
