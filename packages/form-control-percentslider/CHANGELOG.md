@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0-beta.27](https://github.com/lskjs/ux/tree/master/packages/form-control-percentslider/compare/v2.3.0-beta.26...v2.3.0-beta.27) (2021-06-15)
+
+
+### Bug Fixes
+
+* **form-control-percentslider:** handle smoothing ([0dec240](https://github.com/lskjs/ux/tree/master/packages/form-control-percentslider/commit/0dec24035da6ff438d29d8c9e7cef9ce753bfad2))
+
+
+
+
+
 # [2.3.0-beta.26](https://github.com/lskjs/ux/tree/master/packages/form-control-percentslider/compare/v2.3.0-beta.25...v2.3.0-beta.26) (2021-06-11)
 
 
