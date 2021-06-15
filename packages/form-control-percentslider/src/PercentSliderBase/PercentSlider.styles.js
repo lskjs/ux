@@ -71,8 +71,8 @@ export const Wrapper = styled('div')`
   }
 
   .rc-slider-handle:hover {
-    box-shadow: 0 0 0 6px ${(p) => getTheme(p.theme, 'colors.primary')};
-    transform: scale(1) !important;
+    box-shadow: 0 0 0 6px #f0f0ff;
+    transform: scale(1.3) !important;
   }
 
   .rc-slider-disabled .rc-slider-rail {
