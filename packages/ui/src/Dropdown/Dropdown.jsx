@@ -111,9 +111,9 @@ class Dropdown extends PureComponent {
         <Wrapper id={id}>
           <Trigger
             aria-hidden
-            style={{
-              display: 'inline-block',
-            }}
+            // style={{
+            //   display: 'inline-block',
+            // }}
             block={block}
             ref={this.trigger}
             className={!!isOpen ? triggerStyle : ''}
