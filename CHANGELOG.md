@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0-beta.28](https://github.com/lskjs/cli/compare/v2.3.0-beta.27...v2.3.0-beta.28) (2021-06-28)
+
+
+### Bug Fixes
+
+* dropdown style ([ef27ab1](https://github.com/lskjs/cli/commit/ef27ab182a8cc09c49749c45af8782fba021d4b8))
+
+
+
+
+
 # [2.3.0-beta.27](https://github.com/lskjs/cli/compare/v2.3.0-beta.26...v2.3.0-beta.27) (2021-06-15)
 
 
