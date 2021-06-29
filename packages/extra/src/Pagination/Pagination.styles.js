@@ -1,3 +1,4 @@
+import React, { FC } from 'react';
 import styled from '@emotion/styled';
 
 export const Nav = styled.nav`
@@ -21,9 +22,9 @@ export const PaginationBtn = styled.button`
   border-radius: 2px;
   line-height: 20px;
   width: 40px;
-  border: ${ (props) => (props.current) ? '1px solid #1890ff' : '1px solid #d9d9d9' };
+  border: ${ (props) => (props.current && !props.disabled) ? '1px solid #1890ff' : '1px solid #d9d9d9' };
   color: ${(props) => {
-    if (props.current) {
+    if (props.current && !props.disabled) {
       return '#1890ff';
     } else if (props.disabled) {
       return '#736e6e';
@@ -41,5 +42,40 @@ export const PaginationBtn = styled.button`
   }
   svg {
     vertical-align: middle;
+  }
+`;
+
+export const GoTo = styled.button`
+  color: #1890ff;
+  background: #fff;
+  padding: 10px;
+  border-radius: 2px;
+  line-height: 20px;
+  width: 40px;
+  border: 1px solid #d9d9d9;
+  &:hover{
+    color: #000;
+  }
+  svg {
+    vertical-align: middle;
+  }
+`;
+
+export const Input = styled.input`
+  background: #fff;
+  padding: 10px;
+  border-radius: 2px;
+  line-height: 20px;
+  width: 100px;
+  border: 1px solid #d9d9d9;
+  margin-right: .5rem;
+`;
+
+export const Select = styled.select`
+  border: 1px solid #d9d9d9;
+  border-radius: 2px;
+  padding: 12px .5rem;
+  &:hover{
+    cursor: pointer;
   }
 `;
