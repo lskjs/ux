@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/grid",
-  "version": "2.3.0-beta.15",
+  "version": "2.4.0-beta.1",
   "description": "LSK ux subrepo: grid",
   "keywords": [],
   "repository": "https://github.com/lskjs/ux/tree/master/packages/grid",
@@ -21,8 +21,8 @@
   "devDependencies": {
     "@emotion/core": "10.0.27",
     "@emotion/styled": "10.0.27",
-    "@lskjs/dev": "2.3.0-beta.15",
-    "@lskjs/theme": "2.3.0-beta.15",
+    "@lskjs/dev": "2.4.0-beta.1",
+    "@lskjs/theme": "2.4.0-beta.1",
     "@lskjs/utils": "0.39.0"
   },
   "peerDependencies": {

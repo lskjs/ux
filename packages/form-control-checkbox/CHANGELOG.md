@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.4.0-beta.1](https://github.com/lskjs/ux/compare/v2.3.0-beta.29...v2.4.0-beta.1) (2021-08-11)
+
+**Note:** Version bump only for package @lskjs/form-control-checkbox
+
+
+
+
+
 # [2.3.0-beta.19](https://github.com/lskjs/ux/tree/master/packages/form-control-checkbox/compare/v2.3.0-beta.18...v2.3.0-beta.19) (2021-05-26)
 
 

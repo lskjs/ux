@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/typo",
-  "version": "2.3.0-beta.15",
+  "version": "2.4.0-beta.1",
   "description": "LSK ux subrepo: typo",
   "keywords": [],
   "repository": "https://github.com/lskjs/ux/tree/master/packages/typo",
@@ -19,13 +19,13 @@
     "watch": "lsk run watch"
   },
   "dependencies": {
-    "@lskjs/theme": "2.3.0-beta.15",
+    "@lskjs/theme": "2.4.0-beta.1",
     "@lskjs/utils": "1.99.1",
     "prop-types": "15.7.2"
   },
   "devDependencies": {
     "@emotion/styled": "10.0.27",
-    "@lskjs/dev": "2.3.0-beta.15",
+    "@lskjs/dev": "2.4.0-beta.1",
     "emotion": "10.0.27",
     "react": "16.8.6"
   },

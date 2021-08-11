@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.4.0-beta.1](https://github.com/lskjs/ux/compare/v2.3.0-beta.29...v2.4.0-beta.1) (2021-08-11)
+
+
+### Features
+
+* **list:** remove react-visibility-sensor ([8a5bc05](https://github.com/lskjs/ux/commit/8a5bc056bba625a1cf6196ea74cccbabc465f4c2))
+
+
+
+
+
 # [2.3.0-beta.29](https://github.com/lskjs/ux/tree/master/packages/list/compare/v2.3.0-beta.28...v2.3.0-beta.29) (2021-08-11)
 
 

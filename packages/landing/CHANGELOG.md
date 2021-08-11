@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.4.0-beta.1](https://github.com/lskjs/ux/compare/v2.3.0-beta.29...v2.4.0-beta.1) (2021-08-11)
+
+
+### Bug Fixes
+
+* **landing:** remove ([81d2179](https://github.com/lskjs/ux/commit/81d21799145a7db3cde6c599066d83821e02ea0a))
+* **landing:** types ([0100de7](https://github.com/lskjs/ux/commit/0100de7ea5e0815c4aed3c166024a9d9f3bfced5))
+
+
+
+
+
 # [2.3.0-beta.17](https://github.com/lskjs/ux/tree/master/packages/landing/compare/v2.3.0-beta.15...v2.3.0-beta.17) (2021-05-24)
 
 **Note:** Version bump only for package @lskjs/landing
