@@ -29,9 +29,9 @@
     "react": "16.8.6"
   },
   "peerDependencies": {
-    "@emotion/styled": "*",
-    "@lskjs/dev": "*",
-    "react": "*"
+    "@emotion/styled": "10.x",
+    "@lskjs/dev": "1.x",
+    "react": "16.x"
   },
   "publishConfig": {
     "access": "public"

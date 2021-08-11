@@ -1,4 +1,4 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
+/* eslint-disable react/prop-types */
 import React, { Component } from 'react';
 
 import Message from './Message';
@@ -66,10 +66,11 @@ class ChatExample extends Component<ChatExampleProps> {
 
     return (
       <div>
-        {groups.map(({ items, ...group }) => (
-          <MessageGroup {...group}>
-            {items.map((item) => (
+        {groups.map(({ items, ...group }, index) => (
+          <MessageGroup key={index} {...group}>
+            {items.map((item, idx) => (
               <Message
+                key={`${index}-${idx}`}
                 // {...item.content}
                 time={getTimeString(item.createdAt)}
                 text={item.content.text}

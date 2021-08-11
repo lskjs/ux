@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import Image from '@lskjs/image';
 import React from 'react';
 

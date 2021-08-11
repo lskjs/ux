@@ -36,6 +36,7 @@
     "@commitlint/config-conventional": "13.1.0",
     "@lskjs/eslint-config": "2.2.0",
     "@lskjs/utils": "2.5.0",
+    "@types/react": "^17.0.17",
     "babel-eslint": "10.1.0",
     "babel-plugin-emotion": "11.0.0",
     "eslint": "7.32.0",
