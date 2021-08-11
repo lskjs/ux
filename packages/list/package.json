@@ -18,10 +18,12 @@
     "test": "lsk run test",
     "watch": "lsk run watch"
   },
+  "_dependencies": {
+    "react-visibility-sensor": "5.1.1"
+  },
   "dependencies": {
     "react-debounce-input": "3.2.2",
-    "react-paginate": "^7.1.2",
-    "react-visibility-sensor": "5.1.1"
+    "react-paginate": "^7.1.2"
   },
   "devDependencies": {
     "@emotion/core": "10.0.27",
