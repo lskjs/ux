@@ -9,7 +9,7 @@
   "scripts": {
     "bootstrap": "lsk run bootstrap",
     "build": "lsk run build",
-    "build-storybook": "../../scripts/package-build-storybook.sh",
+    "build-storybook-disabled": "../../scripts/package-build-storybook.sh",
     "dev": "lsk run dev",
     "i18": "lsk run i18",
     "prepublishOnly": "lsk run prepublishOnly",
