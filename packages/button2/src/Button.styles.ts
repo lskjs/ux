@@ -33,3 +33,5 @@ export const Button = styled('button')<ButtonProps>`
     return ux.utils.make(ux.sizes, props.size, 'medium');
   }}
 `;
+
+export default null;

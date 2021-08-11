@@ -2,7 +2,7 @@ import sizes from '@lskjs/utils/sizes';
 import map from 'lodash/map';
 import omit from 'lodash/omit';
 import PropTypes from 'prop-types';
-import React, { ComponentPropsWithoutRef, ElementType, FC, useContext } from 'react';
+import React, { ComponentPropsWithoutRef, FC, useContext } from 'react';
 
 import * as Styles from './Button.styles';
 import { ButtonContext } from './ButtonContext';
@@ -12,8 +12,6 @@ import { theme } from './theme';
 export interface ButtonProps extends ComponentPropsWithoutRef<'button'> {
   /** Цвет (один из стандартных цветов: `primary` `secondary` `success` `warning` `danger` `info` `light` `dark` `link`) */
   variant: string;
-  /** Вариация кнопки (Например: `button` `a`) */
-  as?: ElementType;
   /** Активное состояние */
   active?: boolean;
   /** В виде блока (100% ширины) */
@@ -22,6 +20,7 @@ export interface ButtonProps extends ComponentPropsWithoutRef<'button'> {
   href?: string;
   /** Размер кнопки (один из стандартных размеров: `small` `medium` `large` и их алиасов `default` `sm` `lg` `md`) */
   size?: string;
+  [type: string]: any;
 }
 
 const getSize = (size: string): string => {
@@ -104,6 +103,7 @@ Button.propTypes = {
     }
     return null;
   },
+  as: PropTypes.elementType,
   active: PropTypes.bool,
   block: PropTypes.bool,
   disabled: PropTypes.bool,

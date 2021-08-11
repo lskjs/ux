@@ -1,3 +1,5 @@
+/* eslint-disable no-param-reassign */
+/* eslint-disable react/prop-types */
 import { ReactComponentLike } from 'prop-types';
 import React, { ComponentPropsWithoutRef, forwardRef, KeyboardEvent, MouseEvent } from 'react';
 
@@ -62,4 +64,5 @@ const SafeAnchor = forwardRef<any, SafeAnchorProps>(
   },
 );
 
+SafeAnchor.displayName = 'SafeAnchor';
 export default SafeAnchor;

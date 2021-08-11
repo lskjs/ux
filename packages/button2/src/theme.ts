@@ -169,6 +169,7 @@ export const theme = {
   fontFamily: 'sans-serif',
   fontWeight: 400,
   transition:
+    // eslint-disable-next-line max-len
     'color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out',
   variants: {},
   colors: {},

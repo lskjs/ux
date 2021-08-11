@@ -9,7 +9,7 @@
  */
 function createChainedFunction(...funcs: any[]) {
   return funcs
-    .filter((f: Function) => f != null)
+    .filter((f: () => any) => f != null)
     .reduce((acc, f) => {
       if (typeof f !== 'function') {
         throw new Error('Некорректный тип аргумента, возможно передавать только функции, undefined или null.');
@@ -17,8 +17,8 @@ function createChainedFunction(...funcs: any[]) {
 
       if (acc === null) return f;
 
-      return function chainedFunction(this: any, ...args: Function[]) {
-        ((acc as unknown) as Function).apply(this, args);
+      return function chainedFunction(this: any, ...args: (() => any)[]) {
+        (acc as unknown as () => any).apply(this, args);
         f.apply(this, args);
       };
     }, null);
