@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Landing from './Landing';
 
-import CustomSlide1 from './slides/CustomSlide1';
-import CustomSlide2 from './slides/CustomSlide2';
+import Landing from '../src/Landing';
+import CustomSlide1 from '../src/slides/CustomSlide1';
+import CustomSlide2 from '../src/slides/CustomSlide2';
 
 const mock = [
   {
@@ -123,7 +123,7 @@ const DynamicComponent2 = () => {
 };
 
 interface StoryProps {
-  storiesOf: Function;
+  storiesOf: (arg1: string, arg2: any) => any;
 }
 
 export default ({ storiesOf }: StoryProps) =>
@@ -149,12 +149,8 @@ export default ({ storiesOf }: StoryProps) =>
         }}
       />
     ))
-    .add('dynamically change markup prop', () => {
-      return <DynamicComponent />;
-    })
-    .add('dynamically change markup & page prop', () => {
-      return <DynamicComponent2 />;
-    })
+    .add('dynamically change markup prop', () => <DynamicComponent />)
+    .add('dynamically change markup & page prop', () => <DynamicComponent2 />)
     .add('custom slides through static', () => {
       Landing.defaultAcceptableSlides = {
         ...Landing.defaultAcceptableSlides,

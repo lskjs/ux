@@ -32,10 +32,10 @@
     "react": "16.8.6"
   },
   "peerDependencies": {
-    "@lskjs/grid": "*",
-    "@lskjs/theme": "*",
-    "prop-types": "*",
-    "react": "*"
+    "@lskjs/grid": "2.3.x",
+    "@lskjs/theme": "2.3.x",
+    "prop-types": "15.x",
+    "react": "16.x"
   },
   "publishConfig": {
     "access": "public"
