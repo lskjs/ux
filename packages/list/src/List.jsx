@@ -87,6 +87,7 @@ class List extends Component {
   static HeaderRow = ListHeaderRow;
   static Footer = ListFooter;
   static PreloaderItem = null;
+  static BlurComponent = null;
   static Paginator = ListPaginator;
   static FilterButton = ListFilterButton;
   static Empty = ListEmpty;
@@ -192,6 +193,7 @@ class List extends Component {
       'FilterButton',
       'Empty',
       'PreloaderItem',
+      'BlurComponent',
       'SortHeader',
       'Checkbox',
       'SelectRow',
