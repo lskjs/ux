@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0-beta.29](https://github.com/lskjs/ux/tree/master/packages/list/compare/v2.3.0-beta.28...v2.3.0-beta.29) (2021-08-11)
+
+
+### Features
+
+* **List:** add BlurComponent ([f7da4dd](https://github.com/lskjs/ux/tree/master/packages/list/commit/f7da4dd218777c786116616b690e393f4b53209e))
+
+
+
+
+
 # [2.3.0-beta.21](https://github.com/lskjs/ux/tree/master/packages/list/compare/v2.3.0-beta.20...v2.3.0-beta.21) (2021-06-03)
 
 
