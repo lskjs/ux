@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/typo",
-  "version": "2.3.0-beta.17",
+  "version": "2.3.0-beta.15",
   "description": "LSK ux subrepo: typo",
   "keywords": [],
   "repository": "https://github.com/lskjs/ux/tree/master/packages/typo",
