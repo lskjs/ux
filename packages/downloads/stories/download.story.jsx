@@ -4,7 +4,7 @@ import Story from '@lskjs/dev/Story';
 import DEV from '@lskjs/dev/DEV';
 import StatefulButton from '@lskjs/button/StatefulButton';
 import Button from '@lskjs/button/Button';
-import ListStore from '@lskjs/mobx/stores/ListStore';
+import ListStore from '@lskjs/mobx/mobxStores/ListStore';
 const data = Array(10)
   .fill()
   .map((_, i) => ({

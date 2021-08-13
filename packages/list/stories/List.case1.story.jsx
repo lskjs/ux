@@ -1,7 +1,7 @@
 import { css } from '@emotion/core';
 // import polyfill from '@lskjs/utils/polyfill';
 import Story from '@lskjs/dev/Story/UappStory';
-import ListStore from '@lskjs/mobx/stores/ListStore';
+import ListStore from '@lskjs/mobx/mobxStores/ListStore';
 import { Col, Row } from '@lskjs/ui/Table';
 import Promise from 'bluebird';
 import cx from 'classnames';

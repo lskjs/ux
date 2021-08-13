@@ -1,7 +1,7 @@
 import { css } from '@emotion/core';
 import Story from '@lskjs/dev/Story/UappStory';
 import { Col as BsCol, Row as BsRow } from '@lskjs/grid';
-import ListStore from '@lskjs/mobx/stores/ListStore';
+import ListStore from '@lskjs/mobx/mobxStores/ListStore';
 import { Col, Row } from '@lskjs/ui/Table';
 import Promise from 'bluebird';
 import random from 'lodash/random';

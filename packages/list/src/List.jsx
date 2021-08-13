@@ -1,6 +1,6 @@
 import Button from '@lskjs/button';
 import DEV from '@lskjs/dev/DEV';
-import ListStore from '@lskjs/mobx/stores/ListStore';
+import ListStore from '@lskjs/mobx/mobxStores/ListStore';
 import scroll from '@lskjs/scroll';
 import { Table } from '@lskjs/ui/Table';
 import collectProp from '@lskjs/utils/collectProp';

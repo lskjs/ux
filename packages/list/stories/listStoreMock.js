@@ -1,4 +1,4 @@
-import ListStore from '@lskjs/mobx/stores/ListStore';
+import ListStore from '@lskjs/mobx/mobxStores/ListStore';
 import Promise from 'bluebird';
 import clone from 'lodash/clone';
 import lodashFilter from 'lodash/filter';

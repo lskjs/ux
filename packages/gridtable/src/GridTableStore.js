@@ -2,7 +2,7 @@ import { observable, toJS, action } from 'mobx';
 // import isEqual from 'lodash/isEqual';
 import isFunction from 'lodash/isFunction';
 import debounce from '@lskjs/utils/decorator-debounce';
-import Store from '@lskjs/mobx/stores/Store';
+import Store from '@lskjs/mobx/mobxStores/Store';
 
 class GridTableStore extends Store {
   @observable gap;
