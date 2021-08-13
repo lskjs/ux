@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/avatar",
-  "version": "2.5.1",
+  "version": "2.4.0-beta.1",
   "description": "LSK ux subrepo: avatar",
   "keywords": [],
   "repository": "https://github.com/lskjs/ux/tree/master/packages/avatar",
@@ -19,13 +19,13 @@
     "watch": "lsk run watch"
   },
   "dependencies": {
-    "@lskjs/link": "2.5.1",
+    "@lskjs/link": "2.4.0-beta.1",
     "lodash": "4.17.20",
     "prop-types": "15.7.2",
     "react-image-fallback": "8.0.0"
   },
   "devDependencies": {
-    "@lskjs/dev": "2.5.1",
+    "@lskjs/dev": "2.4.0-beta.1",
     "react": "16.8.6"
   },
   "peerDependencies": {

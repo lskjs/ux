@@ -3,21 +3,6 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [2.5.1](https://github.com/lskjs/ux/compare/v2.4.0-beta.1...v2.5.1) (2021-08-13)
-
-
-### Bug Fixes
-
-* styles dropdown ([8f049b7](https://github.com/lskjs/ux/commit/8f049b7b754e0c7abfe337636add1824a90647c3))
-
-
-
-## [1.36.11](https://github.com/lskjs/ux/compare/v2.0.0-beta.4...v1.36.11) (2021-02-05)
-
-
-
-
-
 # [2.4.0-beta.1](https://github.com/lskjs/ux/compare/v2.3.0-beta.29...v2.4.0-beta.1) (2021-08-11)
 
 **Note:** Version bump only for package @lskjs/ui

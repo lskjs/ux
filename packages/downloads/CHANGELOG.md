@@ -3,34 +3,6 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [2.5.1](https://github.com/lskjs/ux/compare/v2.4.0-beta.1...v2.5.1) (2021-08-13)
-
-
-
-## [1.37.2](https://github.com/lskjs/ux/compare/v2.3.0-beta.22...v1.37.2) (2021-06-04)
-
-
-### Bug Fixes
-
-* **downloads:** slice array ([d34149c](https://github.com/lskjs/ux/commit/d34149c01d40a2282eb3a5319c5ebb55127a8365))
-
-
-
-## [1.37.1](https://github.com/lskjs/ux/compare/v2.3.0-beta.6...v1.37.1) (2021-04-23)
-
-
-### Bug Fixes
-
-* **download:** return counts of items and change how many requests left ([eae5bdd](https://github.com/lskjs/ux/commit/eae5bddb470791b4259850e9ae65a418de904da1))
-
-
-
-## [1.36.11](https://github.com/lskjs/ux/compare/v2.0.0-beta.4...v1.36.11) (2021-02-05)
-
-
-
-
-
 # [2.4.0-beta.1](https://github.com/lskjs/ux/compare/v2.3.0-beta.29...v2.4.0-beta.1) (2021-08-11)
 
 **Note:** Version bump only for package @lskjs/downloads

@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/dev",
-  "version": "2.5.1",
+  "version": "2.4.0-beta.1",
   "description": "LSK ux subrepo: ui-dev",
   "keywords": [],
   "repository": "https://github.com/lskjs/ux/tree/master/packages/ui-dev",
@@ -19,8 +19,8 @@
     "watch": "lsk run watch"
   },
   "devDependencies": {
-    "@lskjs/css": "2.5.1",
-    "@lskjs/theme": "2.5.1",
+    "@lskjs/css": "2.4.0-beta.1",
+    "@lskjs/theme": "2.4.0-beta.1",
     "@lskjs/utils": "0.39.0",
     "emotion": "10.0.27",
     "emotion-theming": "10.0.27",
