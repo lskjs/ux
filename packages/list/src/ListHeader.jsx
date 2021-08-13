@@ -1,5 +1,6 @@
-import React from 'react';
 import { inject, observer } from 'mobx-react';
+import React from 'react';
+
 import { contextToProps } from './List.context';
 
 const ListHeader = ({ List, children, listStore, show }) => {

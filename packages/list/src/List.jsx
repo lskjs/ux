@@ -1,58 +1,54 @@
-import React, { Component } from 'react';
-import { Provider as MobxProvider } from 'mobx-react';
-import mapValues from 'lodash/mapValues';
-import ListStore from '@lskjs/mobx/stores/ListStore';
-import collectProps from '@lskjs/utils/collectProps';
-import collectProp from '@lskjs/utils/collectProp';
 import Button from '@lskjs/button';
+import DEV from '@lskjs/dev/DEV';
+import ListStore from '@lskjs/mobx/stores/ListStore';
 import scroll from '@lskjs/scroll';
 import { Table } from '@lskjs/ui/Table';
-import DEV from '@lskjs/dev/DEV';
-import DefaultSearchComponent from './DefaultSearchComponent';
-import {
-  Wrapper,
-  BodyWrapper,
-  ItemsWrapper,
-  FilterWrapper,
-  TagsPanelWrapper,
-  HeaderItemWrapper,
-  SearchWrapper,
-  SearchResultsWrapper,
-  HeaderWrapper,
-  FooterWrapper,
-  PaginatorWrapper,
-  PagesWrapper,
-  StepperWrapper,
-  SelectWrapper,
-  SelectRowWrapper,
-  HoverRowWrapper,
-  SearchActionsWrapper,
-  globalStylesList,
-} from './List.styles';
-import { Provider } from './List.context';
-
-import ListSearchResults from './ListSearchResults';
-import ListSelectRow from './ListSelectRow';
-import ListSticky from './ListSticky';
-import ListHeader from './ListHeader';
-import ListSearch from './ListSearch';
-import ListFilter from './ListFilter';
-import ListTagsPanel from './ListTagsPanel';
-import ListBody from './ListBody';
-import ListItems from './ListItems';
-import ListHeaderRow from './ListHeaderRow';
-import ListFooter from './ListFooter';
-import ListFilterButton from './ListFilterButton';
-import ListEmpty from './ListEmpty';
-import ListSortHeader from './ListSortHeader';
-import ListCheckbox from './ListCheckbox';
-import ListPaginator from './ListPaginator';
+import collectProp from '@lskjs/utils/collectProp';
+import collectProps from '@lskjs/utils/collectProps';
+import mapValues from 'lodash/mapValues';
+import { Provider as MobxProvider } from 'mobx-react';
+import React, { Component } from 'react';
 
 import DefaultLoader from './DefaultLoader';
-import DefaultTags from './DefaultTags';
+import DefaultSearchComponent from './DefaultSearchComponent';
 import DefaultTag from './DefaultTag';
-
-globalStylesList();
+import DefaultTags from './DefaultTags';
+import { Provider } from './List.context';
+import {
+  BodyWrapper,
+  FilterWrapper,
+  FooterWrapper,
+  HeaderItemWrapper,
+  HeaderWrapper,
+  HoverRowWrapper,
+  ItemsWrapper,
+  PagesWrapper,
+  PaginatorWrapper,
+  SearchActionsWrapper,
+  SearchResultsWrapper,
+  SearchWrapper,
+  SelectRowWrapper,
+  SelectWrapper,
+  StepperWrapper,
+  TagsPanelWrapper,
+  Wrapper,
+} from './List.styles';
+import ListBody from './ListBody';
+import ListCheckbox from './ListCheckbox';
+import ListEmpty from './ListEmpty';
+import ListFilter from './ListFilter';
+import ListFilterButton from './ListFilterButton';
+import ListFooter from './ListFooter';
+import ListHeader from './ListHeader';
+import ListHeaderRow from './ListHeaderRow';
+import ListItems from './ListItems';
+import ListPaginator from './ListPaginator';
+import ListSearch from './ListSearch';
+import ListSearchResults from './ListSearchResults';
+import ListSelectRow from './ListSelectRow';
+import ListSortHeader from './ListSortHeader';
+import ListSticky from './ListSticky';
+import ListTagsPanel from './ListTagsPanel';
 
 const defaultShow = {
   /** */ header: true,
@@ -90,9 +86,10 @@ class List extends Component {
   static Items = ListItems;
   static HeaderRow = ListHeaderRow;
   static Footer = ListFooter;
+  static PreloaderItem = null;
+  static BlurComponent = null;
   static Paginator = ListPaginator;
   static FilterButton = ListFilterButton;
-  static PreloaderItem = null;
   static Empty = ListEmpty;
   static SortHeader = ListSortHeader;
   static Checkbox = ListCheckbox;
@@ -196,6 +193,7 @@ class List extends Component {
       'FilterButton',
       'Empty',
       'PreloaderItem',
+      'BlurComponent',
       'SortHeader',
       'Checkbox',
       'SelectRow',

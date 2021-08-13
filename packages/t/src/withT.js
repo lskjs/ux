@@ -1,6 +1,7 @@
 import React from 'react';
-import { inject, observer } from 'mobx-react';
+import { inject, observer } from '@lskjs/mobx';
 
-const withT = (Component, fn = a => a) => inject('i18')(observer(props => React.createElement(Component, fn(props))));
+export const withT = (Component, fn = (a) => a) =>
+  inject('i18')(observer((props) => React.createElement(Component, fn(props))));
 
 export default withT;

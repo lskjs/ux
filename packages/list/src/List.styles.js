@@ -1,15 +1,95 @@
-import styled from '@emotion/styled';
 import { css } from '@emotion/core';
-import { injectGlobal } from 'emotion';
+import styled from '@emotion/styled';
+import { Row } from '@lskjs/grid';
 import getTheme from '@lskjs/theme/getTheme';
 import createDynamicTag from '@lskjs/utils/createDynamicTag';
 import removeProps from '@lskjs/utils/removeProps';
-import { Row } from '@lskjs/grid';
 
-export const loadMoreButton = css`
-  border-radius: 0 !important;
-  box-shadow: 0 0 0 1px #e3e3e3 !important;
-  width: 100% !important;
+export const ListRowButton = styled('button')`
+  padding: 13px 11px;
+  font-size: 13px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.08;
+  letter-spacing: -0.1px;
+  color: ${(p) => getTheme(p.theme, 'colors.main')};
+  background-color: transparent;
+  font-family: ${(p) => getTheme(p.theme, 'fontFamily')};
+  border: none;
+  outline: none;
+  border-radius: 0;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  margin: auto;
+  cursor: pointer;
+  height: 56px;
+  pointer-events: ${(p) => (p.disabled ? 'none' : 'auto')};
+
+  will-change: background-color;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: ${(p) => getTheme(p.theme, 'colors.lighterPrimary')};
+  }
+`;
+
+export const CommonButton = styled('button')`
+  padding: 13px 11px;
+  font-size: 13px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.08;
+  letter-spacing: -0.1px;
+  max-width: 214px;
+  color: ${(p) => getTheme(p.theme, 'colors.white')};
+  background-color: ${(p) => getTheme(p.theme, 'colors.primary')};
+  font-family: ${(p) => getTheme(p.theme, 'fontFamily')};
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  text-decoration: none;
+  width: 100%;
+  margin: auto;
+  cursor: pointer;
+  pointer-events: ${(p) => (p.disabled ? 'none' : 'auto')};
+
+  will-change: background-color;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: ${(p) => getTheme(p.theme, 'colors.darkPrimary')};
+  }
+`;
+
+export const LoadMoreButton = styled('button')`
+  padding: 17px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.08;
+  letter-spacing: -0.1px;
+  color: ${(p) => getTheme(p.theme, 'colors.main')};
+  background-color: ${(p) => getTheme(p.theme, 'colors.white')};
+  width: 100%;
+  font-family: ${(p) => getTheme(p.theme, 'fontFamily')};
+  pointer-events: ${(p) => (p.disabled ? 'none' : 'auto')};
+  text-decoration: none;
+  outline: none;
+  border: none;
+  box-shadow: 0 0 0 1px ${(p) => getTheme(p.theme, 'colors.border')};
+  text-align: center;
+  cursor: pointer;
+
+  will-change: background-color;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: rgba(130, 130, 139, 0.08);
+  }
 `;
 
 export const Title = styled('div')`
@@ -374,14 +454,6 @@ export const SearchResultsWrapper = styled('div')`
   color: ${(p) => getTheme(p.theme, 'colors.main')};
 `;
 
-export const FilterButtonWrapper = styled('div')`
-  button {
-    &:focus {
-      background-color: transparent;
-    }
-  }
-`;
-
 export const SearchWrapper = styled('div')`
   position: relative;
   box-sizing: border-box;
@@ -391,13 +463,4 @@ export const SearchWrapper = styled('div')`
       display: flex;
       align-items: center;
     `}
-`;
-
-export const globalStylesList = () => injectGlobal`
-  .ant-checkbox-inner {
-    box-shadow: inset 0px 0px 0px 1px #d9d9d9;
-  }
-  .ant-checkbox-checked:after {
-    border: none !important;
-  }
 `;

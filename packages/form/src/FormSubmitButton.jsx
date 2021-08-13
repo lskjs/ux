@@ -1,23 +1,9 @@
-import React from 'react';
-import If from 'react-if';
 import Button from '@lskjs/button';
 import T from '@lskjs/t';
+import React from 'react';
 
-export default ({
-  componentClass: Component = Button, errors, isSubmitting, status, children, ...props
-}) => (
-  <Component
-    paint="primary"
-    type="submit"
-    state={status}
-    disabled={!!status}
-    {...props}
-  >
-    <If condition={!!isSubmitting}>
-      <T name="buttons.waiting" />
-    </If>
-    <If condition={!isSubmitting}>
-      {children || <T name="common.submit" />}
-    </If>
+export default ({ componentClass: Component = Button, isSubmitting, status, children, ...props }) => (
+  <Component paint="primary" type="submit" state={status} disabled={!!status} {...props}>
+    {isSubmitting ? <T name="lsk.form.waiting" /> : children || <T name="lsk.form.submit" />}
   </Component>
 );

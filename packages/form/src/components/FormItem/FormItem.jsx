@@ -30,6 +30,7 @@ FormItem.defaultProps = {
   help: undefined,
   errorMessage: undefined,
   children: undefined,
+  tooltip: undefined,
 };
 
 export default FormItem;

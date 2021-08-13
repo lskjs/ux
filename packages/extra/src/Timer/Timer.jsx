@@ -1,5 +1,5 @@
-import React, { useRef, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import React, { useEffect, useRef, useState } from 'react';
 
 const Timer = ({ seconds, updateFrequency, children, autoStart, autoReset, restartOnEnded, onEnded }) => {
   const [sec, setSec] = useState(seconds);

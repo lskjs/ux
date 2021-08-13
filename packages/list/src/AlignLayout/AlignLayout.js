@@ -1,6 +1,5 @@
-
-import styled from '@emotion/styled';
 import { css } from '@emotion/core';
+import styled from '@emotion/styled';
 
 export const Container = styled('div')`
   /* background: #ddd; */
@@ -26,8 +25,8 @@ export const Item = styled('div')`
 `;
 
 export const rightOrLeft = css`
-  margin-left:0px;
-  margin-right:0px;
+  margin-left: 0px;
+  margin-right: 0px;
 
   display: flex;
   flex: 1;

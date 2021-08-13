@@ -3,9 +3,156 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [1.36.11](https://github.com/lskjs/ux/tree/master/packages/list/compare/v1.36.10...v1.36.11) (2021-02-05)
+# [2.4.0-beta.1](https://github.com/lskjs/ux/compare/v2.3.0-beta.29...v2.4.0-beta.1) (2021-08-11)
+
+
+### Features
+
+* **list:** remove react-visibility-sensor ([8a5bc05](https://github.com/lskjs/ux/commit/8a5bc056bba625a1cf6196ea74cccbabc465f4c2))
+
+
+
+
+
+# [2.3.0-beta.29](https://github.com/lskjs/ux/tree/master/packages/list/compare/v2.3.0-beta.28...v2.3.0-beta.29) (2021-08-11)
+
+
+### Features
+
+* **List:** add BlurComponent ([f7da4dd](https://github.com/lskjs/ux/tree/master/packages/list/commit/f7da4dd218777c786116616b690e393f4b53209e))
+
+
+
+
+
+# [2.3.0-beta.21](https://github.com/lskjs/ux/tree/master/packages/list/compare/v2.3.0-beta.20...v2.3.0-beta.21) (2021-06-03)
+
+
+### Features
+
+* **list:** add support preloader item ([88a5767](https://github.com/lskjs/ux/tree/master/packages/list/commit/88a576740495d0daf4ecfb4e02f835abd4a27305))
+
+
+
+
+
+# [2.3.0-beta.17](https://github.com/lskjs/ux/tree/master/packages/list/compare/v2.3.0-beta.15...v2.3.0-beta.17) (2021-05-24)
 
 **Note:** Version bump only for package @lskjs/list
+
+
+
+
+
+# [2.3.0-beta.15](https://github.com/lskjs/ux/tree/master/packages/list/compare/v2.3.0-beta.13...v2.3.0-beta.15) (2021-05-24)
+
+**Note:** Version bump only for package @lskjs/list
+
+
+
+
+
+# [2.3.0-beta.12](https://github.com/lskjs/ux/tree/master/packages/list/compare/v2.3.0-beta.12...v2.3.0-beta.12) (2021-05-21)
+
+
+### Features
+
+* **list:** reworked list ([f9465b3](https://github.com/lskjs/ux/tree/master/packages/list/commit/f9465b3eeab0a5742e007c733f2aeed656a5aea2))
+
+
+
+
+
+# [2.3.0-beta.12](https://github.com/lskjs/ux/tree/master/packages/list/compare/v2.3.0-beta.11...v2.3.0-beta.12) (2021-05-20)
+
+**Note:** Version bump only for package @lskjs/list
+
+
+
+
+
+# [2.3.0-beta.10](https://github.com/lskjs/ux/tree/master/packages/list/compare/v2.3.0-beta.9...v2.3.0-beta.10) (2021-05-18)
+
+
+### Features
+
+* **list:** [WIP] upgrade list. ([2e3c744](https://github.com/lskjs/ux/tree/master/packages/list/commit/2e3c744093e962f8c4ac6a18ac600b210274ff8c))
+
+
+
+
+
+# [2.3.0-beta.7](https://github.com/lskjs/ux/tree/master/packages/list/compare/v2.3.0-beta.6...v2.3.0-beta.7) (2021-05-14)
+
+**Note:** Version bump only for package @lskjs/list
+
+
+
+
+
+# [2.3.0-beta.6](https://github.com/lskjs/ux/tree/master/packages/list/compare/v2.3.0-beta.4...v2.3.0-beta.6) (2021-04-15)
+
+**Note:** Version bump only for package @lskjs/list
+
+
+
+
+
+# [2.3.0-beta.4](https://github.com/lskjs/ux/tree/master/packages/list/compare/v2.0.0-beta.4...v2.3.0-beta.4) (2021-02-19)
+
+
+### Features
+
+* lsk run update ([5311035](https://github.com/lskjs/ux/tree/master/packages/list/commit/5311035a4a997dba9a2c4c5f10b9e46991756118))
+
+
+
+
+
+# [2.0.0-beta.5](https://github.com/lskjs/ux/tree/master/packages/list/compare/v2.0.0-beta.4...v2.0.0-beta.5) (2021-02-19)
+
+
+### Features
+
+* lsk run update ([5311035](https://github.com/lskjs/ux/tree/master/packages/list/commit/5311035a4a997dba9a2c4c5f10b9e46991756118))
+
+
+
+
+
+# [2.0.0-beta.4](https://github.com/lskjs/ux/tree/master/packages/list/compare/v2.0.0-beta.3...v2.0.0-beta.4) (2021-01-31)
+
+**Note:** Version bump only for package @lskjs/list
+
+
+
+
+
+# [2.0.0-beta.3](https://github.com/lskjs/ux/tree/master/packages/list/compare/v2.0.0-beta.2...v2.0.0-beta.3) (2021-01-31)
+
+**Note:** Version bump only for package @lskjs/list
+
+
+
+
+
+# [2.0.0-beta.2](https://github.com/lskjs/ux/tree/master/packages/list/compare/v2.0.0-beta.1...v2.0.0-beta.2) (2021-01-06)
+
+
+### Features
+
+* prepare for version 2 ([96a509b](https://github.com/lskjs/ux/tree/master/packages/list/commit/96a509ba00518803fe27868f19d329561aeaa650))
+
+
+
+
+
+# [2.0.0-beta.1](https://github.com/lskjs/ux/tree/master/packages/list/compare/v1.36.10...v2.0.0-beta.1) (2021-01-06)
+
+
+### Features
+
+* prepare for version 2 ([afc319e](https://github.com/lskjs/ux/tree/master/packages/list/commit/afc319ec7bb9f1d4236ad02e951f295f6d79a3e9))
 
 
 

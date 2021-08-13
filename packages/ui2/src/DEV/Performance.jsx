@@ -1,7 +1,7 @@
 /* eslint-disable camelcase */
-import React, { Component } from 'react';
+import { Component } from 'react';
 
-class Performance extends Component {
+export class Performance extends Component {
   perf = {};
   UNSAFE_componentWillMount() {
     const { disabled } = this.props;

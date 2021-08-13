@@ -3,34 +3,401 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [1.37.2](https://github.com/isuvorov/lib-starter-kit/compare/v1.37.1...v1.37.2) (2021-06-04)
+# [2.4.0-beta.1](https://github.com/lskjs/cli/compare/v2.3.0-beta.29...v2.4.0-beta.1) (2021-08-11)
 
 
 ### Bug Fixes
 
-* **downloads:** slice array ([d34149c](https://github.com/isuvorov/lib-starter-kit/commit/d34149c01d40a2282eb3a5319c5ebb55127a8365))
-
-
-
-
-
-## [1.37.1](https://github.com/isuvorov/lib-starter-kit/compare/v1.36.11...v1.37.1) (2021-04-23)
-
-
-### Bug Fixes
-
-* **download:** return counts of items and change how many requests left ([eae5bdd](https://github.com/isuvorov/lib-starter-kit/commit/eae5bddb470791b4259850e9ae65a418de904da1))
-* ids ([b13c568](https://github.com/isuvorov/lib-starter-kit/commit/b13c56895f1f31345e579aa62102fc736a828f87))
-
-
-
-
-
-## [1.36.11](https://github.com/isuvorov/lib-starter-kit/compare/v1.36.10...v1.36.11) (2021-02-05)
+* babel-plugin-emotion ([f74aa46](https://github.com/lskjs/cli/commit/f74aa46c72fd241054fef560f239a2e9db8e7deb))
+* **button2:** types ([ba2c002](https://github.com/lskjs/cli/commit/ba2c002bb8d5e8e7f38a394a3ed269af65ad09d8))
+* **chat:** types ([2fef509](https://github.com/lskjs/cli/commit/2fef509a7c94f96bb75dc72adedde183b3b5dd88))
+* **landing:** remove ([81d2179](https://github.com/lskjs/cli/commit/81d21799145a7db3cde6c599066d83821e02ea0a))
+* **landing:** types ([0100de7](https://github.com/lskjs/cli/commit/0100de7ea5e0815c4aed3c166024a9d9f3bfced5))
 
 
 ### Features
 
+* **list:** remove react-visibility-sensor ([8a5bc05](https://github.com/lskjs/cli/commit/8a5bc056bba625a1cf6196ea74cccbabc465f4c2))
+
+
+
+
+
+# [2.3.0-beta.29](https://github.com/lskjs/cli/compare/v2.3.0-beta.28...v2.3.0-beta.29) (2021-08-11)
+
+
+### Features
+
+* **List:** add BlurComponent ([f7da4dd](https://github.com/lskjs/cli/commit/f7da4dd218777c786116616b690e393f4b53209e))
+
+
+
+
+
+# [2.3.0-beta.28](https://github.com/lskjs/cli/compare/v2.3.0-beta.27...v2.3.0-beta.28) (2021-06-28)
+
+
+### Bug Fixes
+
+* dropdown style ([ef27ab1](https://github.com/lskjs/cli/commit/ef27ab182a8cc09c49749c45af8782fba021d4b8))
+
+
+
+
+
+# [2.3.0-beta.27](https://github.com/lskjs/cli/compare/v2.3.0-beta.26...v2.3.0-beta.27) (2021-06-15)
+
+
+### Bug Fixes
+
+* **form-control-percentslider:** handle smoothing ([0dec240](https://github.com/lskjs/cli/commit/0dec24035da6ff438d29d8c9e7cef9ce753bfad2))
+
+
+
+
+
+# [2.3.0-beta.26](https://github.com/lskjs/cli/compare/v2.3.0-beta.25...v2.3.0-beta.26) (2021-06-11)
+
+
+### Bug Fixes
+
+* **form-control-percentslider:** slider handle style ([9126939](https://github.com/lskjs/cli/commit/91269394d7623178a41294c5a613c33e055c7f45))
+
+
+
+
+
+# [2.3.0-beta.25](https://github.com/lskjs/cli/compare/v2.3.0-beta.24...v2.3.0-beta.25) (2021-06-11)
+
+
+### Bug Fixes
+
+* **form-control-percentslider:** style fixes ([8dec3d1](https://github.com/lskjs/cli/commit/8dec3d18bd3f8df1852b6dd2ac191e1c6cb1b6cf))
+
+
+
+
+
+# [2.3.0-beta.24](https://github.com/lskjs/cli/compare/v2.3.0-beta.23...v2.3.0-beta.24) (2021-06-11)
+
+
+### Bug Fixes
+
+* tooltip formitem ([01efd60](https://github.com/lskjs/cli/commit/01efd60e7001d1d7f2704a49ad9ae7ccdc679dd3))
+
+
+
+
+
+# [2.3.0-beta.23](https://github.com/lskjs/cli/compare/v2.3.0-beta.22...v2.3.0-beta.23) (2021-06-11)
+
+
+### Bug Fixes
+
+* form item ([3a809cc](https://github.com/lskjs/cli/commit/3a809ccfb926334bddf8b69725495f03aa5696ad))
+* **downloads:** slice array ([77ed338](https://github.com/lskjs/cli/commit/77ed3388a906043f3793c0ade0f97723b366b5b3))
+
+
+
+
+
+# [2.3.0-beta.22](https://github.com/lskjs/cli/compare/v2.3.0-beta.21...v2.3.0-beta.22) (2021-06-03)
+
+
+### Bug Fixes
+
+* **form-control-select:** clearable and input val ([8305e5b](https://github.com/lskjs/cli/commit/8305e5b4aacfdc79dc755458ac6ab188798d4897))
+
+
+
+
+
+# [2.3.0-beta.21](https://github.com/lskjs/cli/compare/v2.3.0-beta.20...v2.3.0-beta.21) (2021-06-03)
+
+
+### Features
+
+* **list:** add support preloader item ([88a5767](https://github.com/lskjs/cli/commit/88a576740495d0daf4ecfb4e02f835abd4a27305))
+
+
+
+
+
+# [2.3.0-beta.20](https://github.com/lskjs/cli/compare/v2.3.0-beta.19...v2.3.0-beta.20) (2021-05-26)
+
+
+### Bug Fixes
+
+* **form-control-password:** package name ([0cad007](https://github.com/lskjs/cli/commit/0cad007c5e452c0790cbcdce3f9c720a7949a607))
+
+
+
+
+
+# [2.3.0-beta.19](https://github.com/lskjs/cli/compare/v2.3.0-beta.18...v2.3.0-beta.19) (2021-05-26)
+
+
+### Features
+
+* **form-control:** replace icons, improve package ([74b2428](https://github.com/lskjs/cli/commit/74b2428eebd5b103ed9ed4fd93fbf3361a534d06))
+
+
+
+
+
+# [2.3.0-beta.18](https://github.com/lskjs/cli/compare/v2.3.0-beta.17...v2.3.0-beta.18) (2021-05-26)
+
+
+### Bug Fixes
+
+* **form-control:** improve packages ([0b7c0a8](https://github.com/lskjs/cli/commit/0b7c0a822c2dd5d0619a035e4a9ac55e0fea929a))
+
+
+### Features
+
+* **form-control-checkbox:** init package ([51ab21a](https://github.com/lskjs/cli/commit/51ab21a719fcb8f8cca2bb8e97686544e282575a))
+* **form-control-percentslider:** init package ([6c63f9f](https://github.com/lskjs/cli/commit/6c63f9fec53a214642a34cf11df8c480ccf88209))
+* **form2:** add stories ([5140e9f](https://github.com/lskjs/cli/commit/5140e9fc45944f24ba78a39caf393e7f0aa75b1e))
+
+
+
+
+
+# [2.3.0-beta.17](https://github.com/lskjs/cli/compare/v2.3.0-beta.15...v2.3.0-beta.17) (2021-05-24)
+
+**Note:** Version bump only for package @lskjs/cli-sample
+
+
+
+
+
+# [2.3.0-beta.15](https://github.com/lskjs/cli/compare/v2.3.0-beta.13...v2.3.0-beta.15) (2021-05-24)
+
+
+### Features
+
+* **form-control-files:** init package ([7e470e5](https://github.com/lskjs/cli/commit/7e470e516e17684fe8a4dfe04ab4a6e3abb0bd58))
+
+
+
+
+
+# [2.3.0-beta.12](https://github.com/lskjs/cli/compare/v2.3.0-beta.12...v2.3.0-beta.12) (2021-05-21)
+
+
+### Features
+
+* **form-control-checkblock:** init package ([2fd016d](https://github.com/lskjs/cli/commit/2fd016d46e3d73ace781a2a65638653e8705c36b))
+* **form-control-groupof:** init package ([0e7762c](https://github.com/lskjs/cli/commit/0e7762ca03dfd2859d440bf6caa2f5cc25a92266))
+* **form-control-password:** init package ([fc93685](https://github.com/lskjs/cli/commit/fc936853a77ceaf576829b0c581f545579566296))
+* **form-control-phoneinput:** init package ([e2dd18e](https://github.com/lskjs/cli/commit/e2dd18e660940f8c4e9d2c07d7b0734d9b886c0d))
+* **form-control-radiobuttongroup:** init package ([131f9a2](https://github.com/lskjs/cli/commit/131f9a215a37c42d42910297ab5f4c1e57a71478))
+* **form-control-switcher:** init package ([5baea80](https://github.com/lskjs/cli/commit/5baea80a8a7536766ae247d32b6f123ac31b9517))
+* **form-control-textarea:** init package ([9af2e03](https://github.com/lskjs/cli/commit/9af2e0350a2ea6ab60710b92dcc2f4e8795371a3))
+* **form2:** add control stories ([b8ba58b](https://github.com/lskjs/cli/commit/b8ba58b6acb45f88e3c1488d165637e5985ec54f))
+* **list:** reworked list ([f9465b3](https://github.com/lskjs/cli/commit/f9465b3eeab0a5742e007c733f2aeed656a5aea2))
+
+
+
+
+
+# [2.3.0-beta.12](https://github.com/lskjs/cli/compare/v2.3.0-beta.11...v2.3.0-beta.12) (2021-05-20)
+
+
+### Bug Fixes
+
+* **form2:** emotion babel plugin 10 ([111b6e0](https://github.com/lskjs/cli/commit/111b6e0e927fafb4c1ad883d2efcb5aa8353e2ac))
+* babelrc emotion ([394fb3f](https://github.com/lskjs/cli/commit/394fb3f77ae0f84e152314003390dcdeb39f0a23))
+
+
+### Features
+
+* **form3:** add emotion ([7587c24](https://github.com/lskjs/cli/commit/7587c247bc6d8976e1cb254fba870793ac2d398e))
+
+
+
+
+
+# [2.3.0-beta.11](https://github.com/lskjs/cli/compare/v2.3.0-beta.10...v2.3.0-beta.11) (2021-05-19)
+
+
+### Bug Fixes
+
+* **form2:** babelrc emotion ([cab65cb](https://github.com/lskjs/cli/commit/cab65cbb0370827017dd7ca7fa6fda838a07c6b2))
+
+
+
+
+
+# [2.3.0-beta.10](https://github.com/lskjs/cli/compare/v2.3.0-beta.9...v2.3.0-beta.10) (2021-05-18)
+
+
+### Bug Fixes
+
+* temporary support legacy peerDeps ([f32e6dd](https://github.com/lskjs/cli/commit/f32e6dd48fc7ac9348d57b7bb0974c1d4e143680))
+
+
+### Features
+
+* **form-control-select:** init package ([b810891](https://github.com/lskjs/cli/commit/b8108913ce953e89c363425b761430a1a9d3bfda))
+* **list:** [WIP] upgrade list. ([2e3c744](https://github.com/lskjs/cli/commit/2e3c744093e962f8c4ac6a18ac600b210274ff8c))
+
+
+
+
+
+# [2.3.0-beta.9](https://github.com/lskjs/cli/compare/v2.3.0-beta.8...v2.3.0-beta.9) (2021-05-18)
+
+
+### Features
+
+* **form2:** optimize code, remove unused styles ([89613de](https://github.com/lskjs/cli/commit/89613defeed8723c63f9d83525d97b99857fa58b))
+* **form3:** optimize code, remove unused styles ([41cf606](https://github.com/lskjs/cli/commit/41cf606ad0c78c1d6bab5a03e720621b8f7a9e6d))
+
+
+
+
+
+# [2.3.0-beta.8](https://github.com/lskjs/cli/compare/v2.3.0-beta.7...v2.3.0-beta.8) (2021-05-17)
+
+
+### Bug Fixes
+
+* **submit-button:** add styles ([5c3e3f3](https://github.com/lskjs/cli/commit/5c3e3f3d381d9629816fdf538fdd2c93ef66e8ca))
+
+
+### Features
+
+* **form3:** init package(with formik 2.2.6) ([b5f959e](https://github.com/lskjs/cli/commit/b5f959e1e75356d58b285a3bd9f8368507edd7d8))
+
+
+
+
+
+# [2.3.0-beta.7](https://github.com/lskjs/cli/compare/v2.3.0-beta.6...v2.3.0-beta.7) (2021-05-14)
+
+
+### Bug Fixes
+
+* **t:** optimize deps ([c8496a1](https://github.com/lskjs/cli/commit/c8496a1848ca776404fa5898895a5c4f86492495))
+* form2, form-control-input ([f5b11c1](https://github.com/lskjs/cli/commit/f5b11c1106c6e68ae42579569a16adbd692bee27))
+
+
+### Features
+
+* **form-control-input:** init package ([fa9ff9a](https://github.com/lskjs/cli/commit/fa9ff9a5b98292c285d64991bb7ead5a692b7909))
+* **form2:** init package ([84b1bc0](https://github.com/lskjs/cli/commit/84b1bc02ebfaa475dc32ffce7f1031033182813e))
+
+
+
+
+
+# [2.3.0-beta.6](https://github.com/lskjs/cli/compare/v2.3.0-beta.4...v2.3.0-beta.6) (2021-04-15)
+
+
+### Bug Fixes
+
+* **button:** ids ([186532e](https://github.com/lskjs/cli/commit/186532e70fb621e5932f7d071838d7eed4674be1))
+
+
+
+
+
+# [2.3.0-beta.4](https://github.com/lskjs/cli/compare/v2.0.0-beta.4...v2.3.0-beta.4) (2021-02-19)
+
+
+### Bug Fixes
+
+* chore: add pre commit eslint ([4eda6cd](https://github.com/lskjs/cli/commit/4eda6cd71f32ee6114629ac5a2fdca98cff672c0))
+* update packages ([9c73822](https://github.com/lskjs/cli/commit/9c738228a081e414eefdc356ab45df798e442166))
+* upstream ([67e646a](https://github.com/lskjs/cli/commit/67e646acf3178bce28d627035c01d56fd31a54e6))
+* **button2:** remove duplicate emotion instances ([5110afd](https://github.com/lskjs/cli/commit/5110afd1432849bb44f4cc5ba48954aeaa5a825f))
+* **button2:** right typing child ([7111562](https://github.com/lskjs/cli/commit/71115620bca932072b56682c166f3d85fcc50f7a))
+* **scripts:** ncu bootstrap cli ([38c0b64](https://github.com/lskjs/cli/commit/38c0b64c5d21c0d7d0b3d25d1bcdf3555ac96af7))
+
+
+### Features
+
+* lsk run update ([5311035](https://github.com/lskjs/cli/commit/5311035a4a997dba9a2c4c5f10b9e46991756118))
+* **button2:** declare utils/sizes ([3ae7dc2](https://github.com/lskjs/cli/commit/3ae7dc2e88d6cbd188a962a449190e30478ede51))
+* **button2:** sizes support ([62aed36](https://github.com/lskjs/cli/commit/62aed3642b26c96c920097c5dfa5a623dcb9868e))
+* **button2:** test story CSF format ([3c1a463](https://github.com/lskjs/cli/commit/3c1a4630e3af72b0ec4b4bc1712284afe76cdbaf))
+* **button2:** use Symbol for constant theme key ([82c2e36](https://github.com/lskjs/cli/commit/82c2e364b45b67e14a6a47f6a75d91eefd63c75e))
+* **dash:** add forms ([93141ca](https://github.com/lskjs/cli/commit/93141ca67d53d481f0f8fb53321bdd3789fcc5ff))
+* **dash:** rewrite forms ([5730079](https://github.com/lskjs/cli/commit/57300798ce7f77e6802074ac17682b6b674f501b))
+* **dash:** starting to develop dash ([7cadcda](https://github.com/lskjs/cli/commit/7cadcdac503aa1f1d424fa315134948e23b77662))
+* new stable storybook with image and button2 ([2dcd713](https://github.com/lskjs/cli/commit/2dcd713edb89112907a2dfd4dc6a01412cbd0741))
+
+
+
+
+
+# [2.0.0-beta.5](https://github.com/lskjs/cli/compare/v2.0.0-beta.4...v2.0.0-beta.5) (2021-02-19)
+
+
+### Bug Fixes
+
+* chore: add pre commit eslint ([4eda6cd](https://github.com/lskjs/cli/commit/4eda6cd71f32ee6114629ac5a2fdca98cff672c0))
+* update packages ([9c73822](https://github.com/lskjs/cli/commit/9c738228a081e414eefdc356ab45df798e442166))
+* upstream ([67e646a](https://github.com/lskjs/cli/commit/67e646acf3178bce28d627035c01d56fd31a54e6))
+* **button2:** remove duplicate emotion instances ([5110afd](https://github.com/lskjs/cli/commit/5110afd1432849bb44f4cc5ba48954aeaa5a825f))
+* **button2:** right typing child ([7111562](https://github.com/lskjs/cli/commit/71115620bca932072b56682c166f3d85fcc50f7a))
+* **scripts:** ncu bootstrap cli ([38c0b64](https://github.com/lskjs/cli/commit/38c0b64c5d21c0d7d0b3d25d1bcdf3555ac96af7))
+
+
+### Features
+
+* lsk run update ([5311035](https://github.com/lskjs/cli/commit/5311035a4a997dba9a2c4c5f10b9e46991756118))
+* **button2:** declare utils/sizes ([3ae7dc2](https://github.com/lskjs/cli/commit/3ae7dc2e88d6cbd188a962a449190e30478ede51))
+* **button2:** sizes support ([62aed36](https://github.com/lskjs/cli/commit/62aed3642b26c96c920097c5dfa5a623dcb9868e))
+* **button2:** test story CSF format ([3c1a463](https://github.com/lskjs/cli/commit/3c1a4630e3af72b0ec4b4bc1712284afe76cdbaf))
+* **button2:** use Symbol for constant theme key ([82c2e36](https://github.com/lskjs/cli/commit/82c2e364b45b67e14a6a47f6a75d91eefd63c75e))
+* **dash:** add forms ([93141ca](https://github.com/lskjs/cli/commit/93141ca67d53d481f0f8fb53321bdd3789fcc5ff))
+* **dash:** rewrite forms ([5730079](https://github.com/lskjs/cli/commit/57300798ce7f77e6802074ac17682b6b674f501b))
+* **dash:** starting to develop dash ([7cadcda](https://github.com/lskjs/cli/commit/7cadcdac503aa1f1d424fa315134948e23b77662))
+* new stable storybook with image and button2 ([2dcd713](https://github.com/lskjs/cli/commit/2dcd713edb89112907a2dfd4dc6a01412cbd0741))
+
+
+
+
+
+# [2.0.0-beta.4](https://github.com/isuvorov/lib-starter-kit/compare/v2.0.0-beta.3...v2.0.0-beta.4) (2021-01-31)
+
+**Note:** Version bump only for package lskjs-ux
+
+
+
+
+
+# [2.0.0-beta.3](https://github.com/isuvorov/lib-starter-kit/compare/v2.0.0-beta.2...v2.0.0-beta.3) (2021-01-31)
+
+
+### Features
+
+* **page:** migrate mobx-react to lskjs/mobx ([5dd5f0e](https://github.com/isuvorov/lib-starter-kit/commit/5dd5f0e4ea4e3a030c2ce258388710648841ce33))
+* **t:** migrate mobx-react to lskjs/mobx and move safest T ([3614957](https://github.com/isuvorov/lib-starter-kit/commit/361495707fe650aa2720e6793a02c7e249683eb1))
+
+
+
+
+
+# [2.0.0-beta.2](https://github.com/isuvorov/lib-starter-kit/compare/v2.0.0-beta.1...v2.0.0-beta.2) (2021-01-06)
+
+
+### Features
+
+* prepare for version 2 ([96a509b](https://github.com/isuvorov/lib-starter-kit/commit/96a509ba00518803fe27868f19d329561aeaa650))
+
+
+
+
+
+# [2.0.0-beta.1](https://github.com/isuvorov/lib-starter-kit/compare/v1.36.10...v2.0.0-beta.1) (2021-01-06)
+
+
+### Features
+
+* prepare for version 2 ([afc319e](https://github.com/isuvorov/lib-starter-kit/commit/afc319ec7bb9f1d4236ad02e951f295f6d79a3e9))
 * prepare for version 2 ([402c360](https://github.com/isuvorov/lib-starter-kit/commit/402c36042dfd74b1fbd872e18005322eee1a3239))
 
 

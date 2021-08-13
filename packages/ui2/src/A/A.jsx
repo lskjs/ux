@@ -1,9 +1,12 @@
 /* eslint import/no-extraneous-dependencies: 0 */
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
+
 import Tag from './A.styles';
 
-const A = ({ bsStyle, className, href, to, ...props }) => <Tag className={className} href={href || to} {...props} />;
+export const A = ({ bsStyle, className, href, to, ...props }) => (
+  <Tag className={className} href={href || to} {...props} />
+);
 
 A.defaultProps = {
   className: null,

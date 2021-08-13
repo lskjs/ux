@@ -1,5 +1,6 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
+/* eslint-disable react/prop-types */
 import React, { Component } from 'react';
+
 import Message from './Message';
 
 const MessageGroup: React.FC = ({ children }) => <div>{children}</div>;
@@ -37,7 +38,7 @@ const groupItems = (items: ChatItemType[], { userId }: { userId?: string | numbe
 export interface ChatExampleProps {
   items: Array<ChatItemType>;
   userId?: string | number;
-};
+}
 
 class ChatExample extends Component<ChatExampleProps> {
   state = {
@@ -65,16 +66,15 @@ class ChatExample extends Component<ChatExampleProps> {
 
     return (
       <div>
-        {groups.map(({ items, ...group }) => (
-          <MessageGroup {...group}>
-            {items.map((item) => (
+        {groups.map(({ items, ...group }, index) => (
+          <MessageGroup key={index} {...group}>
+            {items.map((item, idx) => (
               <Message
+                key={`${index}-${idx}`}
                 // {...item.content}
                 time={getTimeString(item.createdAt)}
-
                 text={item.content.text}
                 image={item.content.image}
-
                 authorName={item.user.name}
                 avatar={item.user.avatar}
                 showTitle={item.user._id !== userId}

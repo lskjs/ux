@@ -1,13 +1,11 @@
-import React from 'react';
-import { toJS } from 'mobx';
-import { observer } from 'mobx-react';
-
+import forEach from 'lodash/forEach';
 import get from 'lodash/get';
 import isEmptyLodash from 'lodash/isEmpty';
-import forEach from 'lodash/forEach';
+import { toJS } from 'mobx';
+import { observer } from 'mobx-react';
+import React from 'react';
 
-
-const isEmpty = val => val !== true && isEmptyLodash(val);
+const isEmpty = (val) => val !== true && isEmptyLodash(val);
 
 const DefaultTags = ({ listStore, Tag }) => {
   const tags = [];
@@ -27,14 +25,15 @@ const DefaultTags = ({ listStore, Tag }) => {
       key,
       id: key,
       children: `${key}: ${value}`,
-      onClose: () => listStore.setFilter({
-        ...listStore.filter,
-        [key]: undefined,
-      }),
+      onClose: () =>
+        listStore.setFilter({
+          ...listStore.filter,
+          [key]: undefined,
+        }),
     });
   });
-  // console.log(listStore, { tags });
+  console.log(listStore, { tags });
 
-  return tags.map(tag => <Tag key={tag.key} {...tag} />);
+  return tags.map((tag) => <Tag key={tag.key} {...tag} />);
 };
 export default observer(DefaultTags);

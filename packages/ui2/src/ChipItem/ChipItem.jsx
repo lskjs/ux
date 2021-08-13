@@ -1,16 +1,16 @@
-import React from 'react';
+import Avatar from '@lskjs/avatar';
 import Link from '@lskjs/link';
-import Avatar from '../Avatar';
-import Sider from '../Sider';
+import React from 'react';
 
+import { Sider } from '../Sider';
 import { ImageWrapper, TextWrapper } from './ChipItem.styles';
 
-const ChipItem = ({ link, item = {}, size = 40, children: content }) => {
+export const ChipItem = ({ link, item = {}, size = 40, children: content }) => {
   const children = (
     <Sider
       verticalAlign="center"
       gap={12}
-      left={(
+      left={
         <ImageWrapper>
           <Avatar
             id={item.id || item._id}
@@ -20,14 +20,14 @@ const ChipItem = ({ link, item = {}, size = 40, children: content }) => {
             style={{ flexShrink: 0 }}
           />
         </ImageWrapper>
-      )}
+      }
       // style={{ marginRight: 10, padding: '5px 0' }}
-      right={(
+      right={
         <TextWrapper>
           {item.title || item.name}
           <div>{content}</div>
         </TextWrapper>
-      )}
+      }
     />
   );
 

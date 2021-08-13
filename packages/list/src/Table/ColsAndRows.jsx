@@ -1,7 +1,7 @@
+import { Col, Row } from '@lskjs/ui/Table';
 import React from 'react';
-import { Row, Col } from '@lskjs/ui/Table';
-import { HeaderRowWrapper, HeaderColWrapper, ItemRowWrapper, ItemColWrapper } from './ColsAndRows.styles';
 
+import { HeaderColWrapper, HeaderRowWrapper, ItemColWrapper, ItemRowWrapper } from './ColsAndRows.styles';
 
 const stopPropagation = (e) => {
   e.preventDefault();
@@ -16,7 +16,7 @@ const addStopPropagation = (props) => {
   };
 };
 
-export const HeaderCol = props => <Col componentClass={HeaderColWrapper} {...addStopPropagation(props)} />;
-export const ItemCol = props => <Col componentClass={ItemColWrapper} {...addStopPropagation(props)} />;
-export const HeaderRow = props => <Row componentClass={HeaderRowWrapper} gap={12} {...props} />;
-export const ItemRow = props => <Row componentClass={ItemRowWrapper} gap={12} {...props} />;
+export const HeaderCol = (props) => <Col componentClass={HeaderColWrapper} {...addStopPropagation(props)} />;
+export const ItemCol = (props) => <Col componentClass={ItemColWrapper} {...addStopPropagation(props)} />;
+export const HeaderRow = (props) => <Row componentClass={HeaderRowWrapper} gap={12} {...props} />;
+export const ItemRow = (props) => <Row componentClass={ItemRowWrapper} gap={12} {...props} />;

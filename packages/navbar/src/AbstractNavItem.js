@@ -1,7 +1,7 @@
+import useEventCallback from '@restart/hooks/useEventCallback';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React, { useContext } from 'react';
-import useEventCallback from '@restart/hooks/useEventCallback';
 
 import NavContext from './NavContext';
 import SelectableContext, { makeEventKey } from './SelectableContext';
@@ -25,19 +25,7 @@ const defaultProps = {
 };
 
 const AbstractNavItem = React.forwardRef(
-  (
-    {
-      active,
-      className,
-      tabIndex,
-      eventKey,
-      onSelect,
-      onClick,
-      as: Component,
-      ...props
-    },
-    ref,
-  ) => {
+  ({ active, className, tabIndex, eventKey, onSelect, onClick, as: Component, ...props }, ref) => {
     const navKey = makeEventKey(eventKey, props.href);
     const parentOnSelect = useContext(SelectableContext);
     const navContext = useContext(NavContext);
@@ -50,10 +38,7 @@ const AbstractNavItem = React.forwardRef(
       props.id = navContext.getControllerId(navKey);
       props['aria-controls'] = navContext.getControlledId(navKey);
 
-      isActive =
-        active == null && navKey != null
-          ? navContext.activeKey === navKey
-          : active;
+      isActive = active == null && navKey != null ? navContext.activeKey === navKey : active;
     }
 
     if (props.role === 'tab') {
@@ -61,7 +46,7 @@ const AbstractNavItem = React.forwardRef(
       props['aria-selected'] = isActive;
     }
 
-    const handleOnclick = useEventCallback(e => {
+    const handleOnclick = useEventCallback((e) => {
       if (onClick) onClick(e);
       if (navKey == null) return;
       if (onSelect) onSelect(navKey, e);
@@ -69,12 +54,7 @@ const AbstractNavItem = React.forwardRef(
     });
 
     return (
-      <Component
-        {...props}
-        ref={ref}
-        onClick={handleOnclick}
-        className={classNames(className, isActive && 'active')}
-      />
+      <Component {...props} ref={ref} onClick={handleOnclick} className={classNames(className, isActive && 'active')} />
     );
   },
 );

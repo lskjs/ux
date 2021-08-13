@@ -1,0 +1,65 @@
+{
+  "name": "@lskjs/button2",
+  "version": "2.4.0-beta.1",
+  "description": "LSK ux subrepo: button",
+  "keywords": [
+    "Buttons",
+    "UI kit"
+  ],
+  "homepage": "https://lskjs.github.io/ux/?path=/story/button",
+  "repository": "https://github.com/lskjs/ux/tree/master/packages/button",
+  "license": "MIT",
+  "scripts": {
+    "bootstrap": "lsk run bootstrap",
+    "build": "lsk run build",
+    "dev": "lsk run dev",
+    "i18": "lsk run i18",
+    "prepublishOnly": "lsk run prepublishOnly",
+    "release": "lsk run release",
+    "start": "lsk run start",
+    "storybook": "lsk run storybook",
+    "test": "lsk run test",
+    "test:jest": "../../node_modules/.bin/jest --verbose --color",
+    "watch": "lsk run watch"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.4.1",
+    "@emotion/styled": "^11.3.0",
+    "@lskjs/theme": "1.36.10"
+  },
+  "devDependencies": {
+    "@lskjs/utils": "^2.5.0",
+    "@types/jest": "^26.0.20",
+    "@types/lodash.merge": "^4.6.6",
+    "@types/react": "^17.0.0",
+    "lodash": "^4.17.21",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.1"
+  },
+  "peerDependencies": {
+    "@lskjs/utils": "2.5.x",
+    "lodash": "4.x",
+    "prop-types": "15.7.x",
+    "react": "17.x"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "authors": [
+    "Igor Suvorov <hi@isuvorov.com>",
+    "Andrey Kondalov <i@yukio.ru>"
+  ],
+  "qwedevDependencies": {
+    "@babel/core": "^7.12.10",
+    "@emotion/babel-plugin": "^11.1.2",
+    "@storybook/addon-actions": "^6.1.14",
+    "@storybook/addon-essentials": "^6.1.14",
+    "@storybook/addon-links": "^6.1.14",
+    "@storybook/react": "^6.1.14",
+    "@types/jest": "^26.0.20",
+    "@types/lodash.merge": "^4.6.6",
+    "@types/react": "^17.0.0",
+    "babel-loader": "^8.2.2",
+    "react": "^17.0.1"
+  }
+}

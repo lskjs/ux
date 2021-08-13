@@ -1,21 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import reduce from 'lodash/reduce';
 import findLast from 'lodash/findLast';
+import reduce from 'lodash/reduce';
+import PropTypes from 'prop-types';
+import React, { useEffect, useState } from 'react';
 
 interface LandingSlide {
   type: string;
-  data: object;
+  data: Record<string, unknown>;
 }
 
 interface LandingProps {
   markup: LandingSlide[];
-  slides?: (arg0: Slides) => Slides;
   id: string;
+  [type: string]: any;
 }
 
 interface Slides {
-  [name: string]: React.ComponentType<any>;
+  [name: string]: any;
 }
 
 interface LandingFC<T> extends React.FC<T> {
@@ -38,11 +38,11 @@ const Landing: LandingFC<LandingProps> = ({ id, markup, slides }) => {
   const acceptableSlidesKeys = Object.keys(acceptableSlides || {});
   // console.log({ acceptableSlides, acceptableSlidesKeys });
   if (!(markup && Array.isArray(markup))) {
-    console.log('Landing: markup is empty') // eslint-disable-line no-console
+    console.log('Landing: markup is empty'); // eslint-disable-line no-console
     return null;
   }
   if (!acceptableSlidesKeys.length) {
-    console.log('Landing: slides is empty') // eslint-disable-line no-console
+    console.log('Landing: slides is empty'); // eslint-disable-line no-console
     return null;
   }
   const arr = reduce<LandingSlide[], LandingSlide[]>(

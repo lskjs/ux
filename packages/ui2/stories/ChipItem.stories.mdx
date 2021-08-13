@@ -1,0 +1,20 @@
+import { user, random } from './helpers';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { ChipItem } from '../src';
+
+<Meta
+  title="ChipItem"
+/>
+
+## ChipItem
+<Canvas>
+  <Story name="<ChipItem>">
+    <ChipItem item={{
+      id: random(99),
+      title: 'John Smith',
+      src: `https://randomuser.me/api/portraits/men/${random(99)}.jpg`,
+    }} />
+    <ChipItem item={user()} />
+  </Story>
+</Canvas> 
+

@@ -1,9 +1,9 @@
-import React from 'react';
-import If from 'react-if';
 import styled from '@emotion/styled';
 import getTheme from '@lskjs/theme/getTheme';
-import getControlHtmlId from './createForm/getControlHtmlId';
+import React from 'react';
+
 import FormItem from './components/FormItem';
+import getControlHtmlId from './createForm/getControlHtmlId';
 import FormError from './FormError';
 
 const Notice = styled('div')`
@@ -30,12 +30,10 @@ const Notice = styled('div')`
 
 export default ({ errors }) => (
   <FormItem hasError={!!errors}>
-    <If condition={!!errors.onSubmit}>
-      {/* <FormError id={getControlHtmlId('onSubmit')}>{errors.onSubmit}</FormError> */}
+    {!!errors.onSubmit && (
       <Notice>
         <FormError id={getControlHtmlId('onSubmit')}>{errors.onSubmit}</FormError>
-        {/* {errors.general} */}
       </Notice>
-    </If>
+    )}
   </FormItem>
 );

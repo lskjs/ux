@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+
 import { IMessageProps } from './types';
 
 export const ContentWrapper = styled('div')`
@@ -67,13 +68,11 @@ export const Message = styled('div')`
   width: 100%;
 `;
 
-
 export const Wrapper = styled('div')<IMessageProps>`
   display: flex;
   max-width: 90%;
   align-items: stretch;
-  margin: ${({ isRightDir }) =>
-    isRightDir ? '0 0 20px auto' : '0 auto 20px 0'};
+  margin: ${({ isRightDir }) => (isRightDir ? '0 0 20px auto' : '0 auto 20px 0')};
   /* margin-top: 20px; */
   &:hover {
     ${Time}, ${Title} {
@@ -87,18 +86,15 @@ export const Wrapper = styled('div')<IMessageProps>`
 
   /* text-align: right; */
   ${ContentWrapper} {
-    justify-content: ${({ isRightDir }) =>
-      isRightDir ? 'flex-end' : 'flex-start'};
+    justify-content: ${({ isRightDir }) => (isRightDir ? 'flex-end' : 'flex-start')};
   }
   ${Title}, ${Time} {
     text-align: ${({ isRightDir }) => (isRightDir ? 'right' : 'left')};
   }
   ${Text} {
-    background-color: ${({ isRightDir }) =>
-      isRightDir ? '#2dce89' : '#e9ecef'};
+    background-color: ${({ isRightDir }) => (isRightDir ? '#2dce89' : '#e9ecef')};
     color: ${({ isRightDir }) => (isRightDir ? '#ffffff' : '#333333')};
-    border-radius: ${({ isRightDir }) =>
-      isRightDir ? '18px 18px 0 18px' : '18px 18px 18px 0'};
+    border-radius: ${({ isRightDir }) => (isRightDir ? '18px 18px 0 18px' : '18px 18px 18px 0')};
   }
 
   ${Time} {

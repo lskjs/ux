@@ -1,4 +1,7 @@
+export * from './utils/isDev';
+export * from './utils/setDev';
+export * from './DEV';
+export * from './Zebra';
+export * from './Grill';
+export * from './Performance';
 export { default } from './DEV';
-export { default as Zebra } from './Zebra';
-export { default as Grill } from './Grill';
-export { default as Performance } from './Performance';

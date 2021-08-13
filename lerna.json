@@ -1,29 +1,21 @@
 {
-  "version": "1.37.2",
+  "version": "2.4.0-beta.1",
   "packages": [
     "packages/*"
   ],
   "command": {
-    "create": {
-      "homepage": "https://github.com/lskjs/ux",
-      "license": "MIT"
-    },
     "version": {
-      "allowBranch": "master",
+      "allowBranch": [
+        "master",
+        "beta"
+      ],
       "conventionalCommits": true,
-      "message": "chore(release): %s"
-    },
-    "version2": {
-      "allowBranch": "master",
-      "conventionalCommits": true,
-      "exact": true,
-      "gitRemote": "upstream",
       "message": "chore(release): %s"
     },
     "publish": {
       "conventionalCommits": true,
       "ignoreChanges": [
-        "**/dist/**",
+        "**/build/**",
         "**/release/**",
         "**/*.md",
         "**/example/**",

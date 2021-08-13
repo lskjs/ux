@@ -1,30 +1,23 @@
-import React, { Component } from 'react';
-import { observer, inject } from 'mobx-react';
-import PropTypes from 'prop-types';
-import filterProps from '@lskjs/utils/filterProps';
 import Sticky from '@lskjs/ui/Sticky';
+import filterProps from '@lskjs/utils/filterProps';
+import { inject, observer } from 'mobx-react';
+import PropTypes from 'prop-types';
+import React from 'react';
 
-@inject('listStore')
-@observer
-class ListSticky extends Component {
-  static propTypes = {
-    children: PropTypes.any,
-    offset: PropTypes.number,
-  }
+const ListSticky = ({ children, offset, ...props }) => (
+  <Sticky offset={offset} {...filterProps(props)}>
+    {children}
+  </Sticky>
+);
 
-  static defaultProps = {
-    children: null,
-    offset: 0,
-  }
+ListSticky.propTypes = {
+  children: PropTypes.node,
+  offset: PropTypes.number,
+};
 
-  render() {
-    const { children, offset, ...props } = this.props;
-    return (
-      <Sticky offset={offset} {...filterProps(props)}>
-        {children}
-      </Sticky>
-    );
-  }
-}
+ListSticky.defaultProps = {
+  children: null,
+  offset: 0,
+};
 
-export default ListSticky;
+export default inject('listStore')(observer(ListSticky));

@@ -1,0 +1,75 @@
+import { useState } from 'react';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { Typo } from '../src';
+
+<Meta
+  title="Typo"
+/>
+
+# Lsk.js – Typo
+
+> *Typo* – типографика
+
+## Свойство *view*
+<Canvas>
+  <Story name="view">
+    <Typo view="h1">h1. Lego Starter Kit heading</Typo>
+    <Typo view="h2">h2. Lego Starter Kit heading</Typo>
+    <Typo view="h3">h3. Lego Starter Kit heading</Typo>
+    <Typo view="h4">h4. Lego Starter Kit heading</Typo>
+    <Typo view="h5">h6. Lego Starter Kit heading</Typo>
+    <Typo view="h6">h6. Lego Starter Kit heading</Typo>
+    <hr />
+    <Typo view="h2">h2</Typo>
+    <Typo view="h3">h3</Typo>
+    <Typo view="h4">h4</Typo>
+    <hr />
+    <Typo view="title-1">Title-1</Typo>
+    <Typo view="title-2">Title-2</Typo>
+    <Typo view="title-3">Title-3</Typo>
+    <Typo view="title-4">Title-4</Typo>
+    <Typo view="title-5">Title-5</Typo>
+    <hr />
+    <Typo view="heading-1">Heading-1</Typo>
+    <Typo view="heading-2">Heading-2</Typo>
+    <hr />
+    <Typo view="huge-1">Huge-1</Typo>
+    <Typo view="huge-2">Huge-2</Typo>
+    <Typo view="huge-3">Huge-3</Typo>
+    <Typo view="huge-9">Huge-9</Typo>
+    <Typo view="huge-10">Huge-10</Typo>
+  </Story>
+</Canvas> 
+
+## Свойство *pre*
+<Canvas>
+  <Story name="pre">
+    <Typo view="title-1" pre="line">Title-1</Typo>
+    <Typo view="title-2" pre="wrap">Title-2</Typo>
+  </Story>
+</Canvas> 
+
+
+## Свойство *paragraph*
+<Canvas>
+  <Story name="paragraph">
+    <Typo view="title-1" paragraph>Title-1</Typo>
+    <Typo view="title-2" paragraph={50}>Title-2</Typo>
+  </Story>
+</Canvas> 
+
+## Свойство *color*
+<Canvas>
+  <Story name="color">
+    <Typo view="title-1" color="red">Title-1</Typo>
+  </Story>
+</Canvas> 
+
+## Разные поведения
+<Canvas>
+  <Story name="other">
+    <div style={{ width: '120px', border: '1px solid red' }}>
+      <Typo textOverflow view="title-1">Title-1 Title-1 Title-1 Title-1 Title-1 </Typo>
+    </div>
+  </Story>
+</Canvas> 
