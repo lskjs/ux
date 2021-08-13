@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/t",
-  "version": "2.4.0-beta.1",
+  "version": "2.5.2",
   "description": "LSK ux subrepo: t",
   "keywords": [],
   "repository": "https://github.com/lskjs/ux/tree/master/packages/t",
@@ -23,7 +23,7 @@
     "@lskjs/utils": "2.3.0-beta.4"
   },
   "devDependencies": {
-    "@lskjs/dev": "2.4.0-beta.1",
+    "@lskjs/dev": "2.5.2",
     "mobx": "5.15.4",
     "mobx-react": "6.2.2",
     "prop-types": "15.7.2",

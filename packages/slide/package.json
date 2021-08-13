@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/slide",
-  "version": "2.4.0-beta.1",
+  "version": "2.5.2",
   "description": "LSK ux subrepo: slide",
   "keywords": [],
   "repository": "https://github.com/lskjs/ux/tree/master/packages/slide",
@@ -19,15 +19,15 @@
     "watch": "lsk run watch"
   },
   "dependencies": {
-    "@lskjs/grid": "2.4.0-beta.1",
+    "@lskjs/grid": "2.5.2",
     "prop-types": "15.7.2",
     "react-drive-in2": "1.8.1"
   },
   "devDependencies": {
     "@emotion/core": "10.0.27",
     "@emotion/styled": "10.0.27",
-    "@lskjs/dev": "2.4.0-beta.1",
-    "@lskjs/theme": "2.4.0-beta.1",
+    "@lskjs/dev": "2.5.2",
+    "@lskjs/theme": "2.5.2",
     "@lskjs/utils": "0.39.0",
     "react": "16.8.6"
   },
