@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/form-control-checkbox",
-  "version": "2.4.0-beta.1",
+  "version": "2.5.1",
   "description": "Checkbox control for Form",
   "keywords": [],
   "repository": "https://github.com/lskjs/ux/tree/master/packages/form-control-checkbox",
