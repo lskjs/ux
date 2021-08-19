@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/extra",
-  "version": "2.5.2",
+  "version": "2.5.3",
   "description": "LSK ux subrepo: extra",
   "keywords": [],
   "repository": "https://github.com/lskjs/ux/tree/master/packages/extra",
