@@ -37,6 +37,8 @@ const Files = ({
     <FilesBase
       value2={field.value}
       {...props}
+      onError={onError}
+      valueType={valueType}
       hasCropper={hasCropper}
       CropperComponent={CropperComponent}
       multiple={isMulti}
@@ -88,6 +90,7 @@ Files.propTypes = {
   field: PropTypes.objectOf(Object).isRequired,
   CropperComponent: PropTypes.elementType,
   onError: PropTypes.func,
+  valueType: PropTypes.string,
 };
 
 Files.defaultProps = {
@@ -99,6 +102,7 @@ Files.defaultProps = {
   hasCropper: false,
   CropperComponent: undefined,
   onError: null,
+  valueType: 'url',
 };
 
 export default Files;
