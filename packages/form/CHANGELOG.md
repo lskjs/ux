@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.5.4](https://github.com/lskjs/ux/compare/v2.5.3...v2.5.4) (2021-08-19)
+
+
+### Bug Fixes
+
+* emotion 10 support ([30a32a8](https://github.com/lskjs/ux/commit/30a32a87f36541c0ab5438f48584ed71b10d16ce))
+
+
+
+
+
 ## [2.5.3](https://github.com/lskjs/ux/compare/v2.5.2...v2.5.3) (2021-08-19)
 
 
