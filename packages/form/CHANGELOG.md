@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.5.5](https://github.com/lskjs/ux/compare/v2.5.4...v2.5.5) (2021-08-20)
+
+
+### Bug Fixes
+
+* update PhoneInput's without assets ([d18fa1d](https://github.com/lskjs/ux/commit/d18fa1d7ea4db6dbbfc18044f9d4c71fea4b19c8))
+
+
+
+
+
 ## [2.5.4](https://github.com/lskjs/ux/compare/v2.5.3...v2.5.4) (2021-08-19)
 
 
