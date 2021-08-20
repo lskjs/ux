@@ -7,7 +7,7 @@ import PhoneInputBase from './react-phone-input-2';
 
 injectStyles();
 
-export const PhoneInput = ({ field, form, htmlId, ...props }) => {
+export const PhoneInput = ({ field, form, htmlId, imagePath, ...props }) => {
   const refInput = useRef();
   let width = get(refInput, 'current.numberInputRef.offsetWidth');
   if (!width) width = '100%';
@@ -18,7 +18,7 @@ export const PhoneInput = ({ field, form, htmlId, ...props }) => {
   }, []);
   const hasError = field && field.name && !!(form || {}).errors[field.name];
   return (
-    <Container>
+    <Container imagePath={imagePath || '//lskjs.github.io/assets/images/flags.png'}>
       <PhoneInputBase
         ref={refInput}
         buttonStyle={{
@@ -55,11 +55,13 @@ PhoneInput.propTypes = {
   field: PropTypes.objectOf(Object),
   form: PropTypes.objectOf(Object),
   htmlId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  imagePath: PropTypes.string,
 };
 
 PhoneInput.defaultProps = {
   field: {},
   form: {},
   htmlId: '',
+  imagePath: null,
 };
 export default PhoneInput;

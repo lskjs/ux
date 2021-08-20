@@ -1,12 +1,13 @@
-import React, { useEffect, useRef, useState, useCallback } from 'react';
-import PropTypes from 'prop-types';
 import get from 'lodash/get';
-import PhoneInputBase from './react-phone-input-2';
+import PropTypes from 'prop-types';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
+
 import { Container, injectStyles } from './PhoneInput.style';
+import PhoneInputBase from './react-phone-input-2';
 
 injectStyles();
 
-const PhoneInput = ({ field, form, htmlId = '', ...props }) => {
+const PhoneInput = ({ field, form, htmlId = '', imagePath, ...props }) => {
   const refInput = useRef();
   let width = get(refInput, 'current.numberInputRef.offsetWidth');
   if (!width) width = '100%';
@@ -17,7 +18,7 @@ const PhoneInput = ({ field, form, htmlId = '', ...props }) => {
   }, []);
   const hasError = !!form.errors[field.name];
   return (
-    <Container>
+    <Container imagePath={imagePath || '//lskjs.github.io/assets/images/flags.png'}>
       <PhoneInputBase
         ref={refInput}
         buttonStyle={{
@@ -42,7 +43,7 @@ const PhoneInput = ({ field, form, htmlId = '', ...props }) => {
         {...field}
         {...props}
         value={(get(field, 'value') || '').startsWith('+') ? get(field, 'value') : `+${get(field, 'value')}`}
-        onChange={value => {
+        onChange={(value) => {
           form.setFieldValue(get(field, 'name'), value.replace(/\D+/g, ''));
         }}
       />
@@ -53,10 +54,14 @@ const PhoneInput = ({ field, form, htmlId = '', ...props }) => {
 PhoneInput.propTypes = {
   field: PropTypes.objectOf(Object),
   form: PropTypes.objectOf(Object),
+  imagePath: PropTypes.string,
+  htmlId: PropTypes.string,
 };
 
 PhoneInput.defaultProps = {
   field: {},
   form: {},
+  imagePath: null,
+  htmlId: null,
 };
 export default PhoneInput;

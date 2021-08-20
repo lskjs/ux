@@ -2,8 +2,6 @@ import styled from '@emotion/styled';
 import getTheme from '@lskjs/theme/getTheme';
 import { injectGlobal } from 'emotion';
 
-import highResPng from './high-res.png';
-
 export const Container = styled.div`
   /* .react-tel-input {
     font-family: ${(props) => props.theme.fontFamily};
@@ -230,7 +228,7 @@ export const injectStyles = () => injectGlobal`
   .flag {
     width: 25px;
     height: 20px;
-    background: url(${highResPng});
+    background: url(${(p) => p.imagePath});
     background-repeat: no-repeat;
   }
   .ad { background-position: -48px -24px; }

@@ -1,11 +1,10 @@
 import styled from '@emotion/styled';
-import { injectGlobal } from 'emotion';
 import getTheme from '@lskjs/theme/getTheme';
-import highResPng from './high-res.png';
+import { injectGlobal } from 'emotion';
 
 export const Container = styled.div`
   /* .react-tel-input {
-    font-family: ${props => props.theme.fontFamily};
+    font-family: ${(props) => props.theme.fontFamily};
   }
   .react-tel-input .flag-dropdown:hover .selected-flag{
     background: none;
@@ -28,24 +27,25 @@ export const Container = styled.div`
   } */
 
   .react-tel-input .selected-flag .arrow {
-    border-top: 4px solid ${p => getTheme(p.theme, 'colors.primary')};
+    border-top: 4px solid ${(p) => getTheme(p.theme, 'colors.primary')};
     &.up {
       border-top: none;
-      border-bottom: 4px solid ${p => getTheme(p.theme, 'colors.primary')};
+      border-bottom: 4px solid ${(p) => getTheme(p.theme, 'colors.primary')};
     }
   }
   .react-tel-input {
     .form-control {
       line-height: normal;
-      &:focus, &.open {
+      &:focus,
+      &.open {
         outline: none;
-        border: solid 1px ${p => getTheme(p.theme, 'colors.primary')} !important;
+        border: solid 1px ${(p) => getTheme(p.theme, 'colors.primary')} !important;
         box-shadow: none;
       }
     }
   }
   .ant-form-item-control input {
-    border: solid 1px #e3e3e3,
+    border: solid 1px #e3e3e3;
   }
   .ant-form-item-control .has-error input {
     border: 1px solid #ee1e31 !important;
@@ -228,7 +228,7 @@ export const injectStyles = () => injectGlobal`
   .flag {
     width: 25px;
     height: 20px;
-    background: url(${highResPng});
+    background: url(${(p) => p.imagePath});
     background-repeat: no-repeat;
   }
   .ad { background-position: -48px -24px; }
