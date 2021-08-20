@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.5.7](https://github.com/lskjs/ux/compare/v2.5.6...v2.5.7) (2021-08-20)
+
+
+### Bug Fixes
+
+* phoneinput background prop ([9609909](https://github.com/lskjs/ux/commit/9609909a5d6016f6463a814149708411a8eaa54b))
+
+
+
+
+
 ## [2.5.6](https://github.com/lskjs/ux/compare/v2.5.5...v2.5.6) (2021-08-20)
 
 
