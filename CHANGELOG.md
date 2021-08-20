@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.5.6](https://github.com/lskjs/cli/compare/v2.5.5...v2.5.6) (2021-08-20)
+
+
+### Bug Fixes
+
+* phoneinput background ([ea341a7](https://github.com/lskjs/cli/commit/ea341a7286ee4f813ad56e2fe0561b960960e521))
+
+
+
+
+
 ## [2.5.5](https://github.com/lskjs/cli/compare/v2.5.4...v2.5.5) (2021-08-20)
 
 
