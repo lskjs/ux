@@ -34,7 +34,7 @@ export const Container = styled.div`
   }
   .react-tel-input {
     .flag {
-      background: url(${(p) => p.imagePath}) !important;
+      background-image: url(${(p) => p.imagePath});
     }
     .form-control {
       line-height: normal;
