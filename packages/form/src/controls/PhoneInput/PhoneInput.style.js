@@ -25,7 +25,6 @@ export const Container = styled.div`
   .react-tel-input .country-list {
     margin: 0px;
   } */
-
   .react-tel-input .selected-flag .arrow {
     border-top: 4px solid ${(p) => getTheme(p.theme, 'colors.primary')};
     &.up {
@@ -34,6 +33,9 @@ export const Container = styled.div`
     }
   }
   .react-tel-input {
+    .flag {
+      background: url(${(p) => p.imagePath}) !important;
+    }
     .form-control {
       line-height: normal;
       &:focus,
@@ -228,7 +230,6 @@ export const injectStyles = () => injectGlobal`
   .flag {
     width: 25px;
     height: 20px;
-    background: url(${(p) => p.imagePath});
     background-repeat: no-repeat;
   }
   .ad { background-position: -48px -24px; }
