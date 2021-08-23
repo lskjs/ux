@@ -20,24 +20,7 @@ export class ListEmptyPure extends Component {
   getType() {
     const { listStore, type } = this.props;
     if (type) return type;
-    if (!listStore.fetchedAt) {
-      return 1;
-      // 1) совсем пусто, первый раз заходим
-    }
-    if (!listStore.hasFilter) {
-      // 2) пусто после фетча, фильры выключены
-      if (listStore.paywall) {
-        return 5;
-      }
-      return 2;
-    }
-    if (!listStore.skip) {
-      // 3) пусто после фетча, фильтры включены, скип не стоит
-      return 3;
-    }
-    // 4) пусто после фетча, фильтры включены, скип стоит */}
-
-    return 4;
+    return listStore.emptyType;
   }
 
   renderTitle() {
