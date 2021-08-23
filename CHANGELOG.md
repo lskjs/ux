@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.6.0](https://github.com/lskjs/cli/compare/v2.5.7...v2.6.0) (2021-08-23)
+
+
+### Features
+
+* **list:** emptyType liststore usage ([002b2c0](https://github.com/lskjs/cli/commit/002b2c0796acb8fbcb50aab977574fd6ad3f9fb3))
+
+
+
+
+
 ## [2.5.7](https://github.com/lskjs/cli/compare/v2.5.6...v2.5.7) (2021-08-20)
 
 
