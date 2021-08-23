@@ -5,11 +5,12 @@ import React from 'react';
 import { contextToProps } from './List.context';
 
 const ListTagsPanel = ({ List, form, listStore, filterProps }) => {
-  if (!listStore.getActiveFilter) return null;
+  // if (!listStore.getActiveFilter) return null;
   return (
     <List.TagsPanelWrapper>
       <List.Tags listStore={listStore} Tag={List.Tag} form={form} {...filterProps} />
-      <List.Button
+      <List.PreSearch />
+      {/* <List.Button
         size="extraSmall"
         paint="primary"
         view="text"
@@ -18,7 +19,7 @@ const ListTagsPanel = ({ List, form, listStore, filterProps }) => {
         onClick={listStore.clearFilter}
       >
         <T name="lskList.resetFilterButton" />
-      </List.Button>
+      </List.Button> */}
     </List.TagsPanelWrapper>
   );
 };

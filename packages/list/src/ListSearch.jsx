@@ -12,10 +12,10 @@ const ListSearch = ({ i18, List, listStore, show, actions, ...props }) => (
       current={listStore.items.length}
       max={formatter(listStore.count)}
       debounceTimeout={100}
-      onChange={(e) => listStore.setSearch(get(e, 'target.value', e))}
+      onChange={(e) => listStore.setPreSearch(get(e, 'target.value', e))}
       value={listStore.search || ''}
       canClear={!!listStore.search}
-      onClear={() => listStore.setSearch(null)}
+      onClear={() => listStore.setPreSearch(null)}
       actions={show.filterButton && <List.FilterButton />}
       placeholder={i18.t('lskList.searchPlaceholder')}
       block={!!show.searchActions}

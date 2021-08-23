@@ -1,6 +1,5 @@
 import Button from '@lskjs/button';
 import DEV from '@lskjs/dev/DEV';
-import ListStore from '@lskjs/mobx/mobxStores/ListStore';
 import scroll from '@lskjs/scroll';
 import { Table } from '@lskjs/ui/Table';
 import collectProp from '@lskjs/utils/collectProp';
@@ -24,6 +23,7 @@ import {
   ItemsWrapper,
   PagesWrapper,
   PaginatorWrapper,
+  PreSearchWrapper,
   SearchActionsWrapper,
   SearchResultsWrapper,
   SearchWrapper,
@@ -43,11 +43,13 @@ import ListHeader from './ListHeader';
 import ListHeaderRow from './ListHeaderRow';
 import ListItems from './ListItems';
 import ListPaginator from './ListPaginator';
+import ListPreSearch from './ListPreSearch';
 import ListSearch from './ListSearch';
 import ListSearchResults from './ListSearchResults';
 import ListSelectRow from './ListSelectRow';
 import ListSortHeader from './ListSortHeader';
 import ListSticky from './ListSticky';
+import { ListStore } from './ListStore';
 import ListTagsPanel from './ListTagsPanel';
 
 const defaultShow = {
@@ -97,8 +99,10 @@ class List extends Component {
   static HoverRow = HoverRowWrapper;
   static isFilterModal = true;
   static Button = Button;
+  static PreSearch = ListPreSearch;
   static SearchResults = ListSearchResults;
   static SearchWrapper = SearchWrapper;
+  static PreSearchWrapper = PreSearchWrapper;
   static SearchActionsWrapper = SearchActionsWrapper;
   static SearchComponent = DefaultSearchComponent;
   static SearchResultsWrapper = SearchResultsWrapper;
@@ -200,8 +204,10 @@ class List extends Component {
       'HoverRow',
 
       'Button',
+      'PreSearch',
       'SearchResults',
       'SearchWrapper',
+      'PreSearchWrapper',
       'SearchComponent',
       'SearchResultsWrapper',
       'SearchActionsWrapper',

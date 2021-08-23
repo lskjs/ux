@@ -16,7 +16,7 @@ const ListFilter = ({ List, FilterForm, listStore, debug, filterProps }) => {
           enableReinitialize
           initialValues={listStore.filter}
           hash={listStore.filter}
-          onChange={listStore.setFilter}
+          onChange={listStore.setPreFilter}
         />
         {debug && <DEV json={listStore.filter} />}
       </List.FilterWrapper>
