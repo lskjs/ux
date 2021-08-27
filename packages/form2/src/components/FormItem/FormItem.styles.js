@@ -33,10 +33,11 @@ export const Wrapper = styled('div')`
   font-variant: tabular-nums;
   color: ${(props) => getTheme(props.theme, 'colors.main')};
   box-sizing: border-box;
-  margin: 0 0 24px;
+  margin: 0 6px 24px;
   padding: 0px;
   list-style: none;
   display: block;
+  width: 100%;
 `;
 
 export const TooltipWrapper = styled('div')`
