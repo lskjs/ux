@@ -1,6 +1,8 @@
+/* eslint-disable react/display-name */
 import React from 'react';
-import Zebra from '../Zebra';
+
 import Grill from '../Grill';
+import Zebra from '../Zebra';
 
 document.querySelector('body').style.margin = 0;
 document.querySelector('body').style.padding = 0;

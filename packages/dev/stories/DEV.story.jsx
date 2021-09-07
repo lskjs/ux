@@ -1,10 +1,11 @@
 import React from 'react';
-import DEV from './DEV';
-import Story from './Story';
-import Zebra from './Zebra';
-import Grill from './Grill';
-import Performance from './Performance';
-import setDev from './utils/setDev';
+
+import DEV from '../src/DEV';
+import Grill from '../src/Grill';
+import Performance from '../src/Performance';
+import Story from '../src/Story';
+import setDev from '../src/utils/setDev';
+import Zebra from '../src/Zebra';
 // import ObserverDEV from './ObserverDEV';
 setDev(true);
 export default ({ storiesOf, action }) =>

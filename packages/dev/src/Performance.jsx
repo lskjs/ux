@@ -1,5 +1,13 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable camelcase */
+import Log from '@lskjs/log2';
 import { Component } from 'react';
+
+const log = new Log({
+  ns: 'perf',
+  name: 'Perf',
+  level: 'warn',
+});
 
 class Performance extends Component {
   perf = {};
@@ -12,7 +20,7 @@ class Performance extends Component {
     const { disabled, name = 'Component' } = this.props;
     if (disabled) return;
     this.perf.componentDidMount = Date.now();
-    console.log(`[P] ${name}.mount time ${this.perf.componentDidMount - this.perf.componentWillMount}ms`); // eslint-disable-line no-console
+    log.trace(`[P] ${name}.mount time ${this.perf.componentDidMount - this.perf.componentWillMount}ms`); // eslint-disable-line no-console
   }
   UNSAFE_componentWillUpdate() {
     const { disabled } = this.props;
@@ -23,7 +31,7 @@ class Performance extends Component {
     const { disabled, name = 'Component' } = this.props;
     if (disabled) return;
     this.perf.componentDidUpdate = Date.now();
-    console.log(`[P] ${name}.update time ${this.perf.componentDidUpdate - this.perf.componentWillUpdate}ms`); // eslint-disable-line no-console
+    log.trace(`[P] ${name}.update time ${this.perf.componentDidUpdate - this.perf.componentWillUpdate}ms`); // eslint-disable-line no-console
   }
   render() {
     const { children } = this.props;
