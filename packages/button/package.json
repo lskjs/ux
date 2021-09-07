@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/button",
-  "version": "2.5.4",
+  "version": "2.6.1",
   "description": "LSK ux subrepo: button",
   "keywords": [
     "Buttons",
@@ -34,7 +34,7 @@
     "prop-types": "15.7.2"
   },
   "devDependencies": {
-    "@lskjs/dev": "2.5.3",
+    "@lskjs/dev": "2.6.1",
     "@lskjs/grid": "1.1.41",
     "antd": "3.26.9",
     "lodash": "4.17.20",

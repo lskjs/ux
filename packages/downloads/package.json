@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/downloads",
-  "version": "2.5.3",
+  "version": "2.6.1",
   "description": "LSK ux subrepo: download",
   "keywords": [],
   "repository": "https://github.com/lskjs/ux/tree/master/packages/download",
@@ -27,7 +27,7 @@
     "@lskjs/autobind": "0.39.0",
     "@lskjs/button": "2.3.0-beta.4",
     "@lskjs/css": "2.5.3",
-    "@lskjs/dev": "2.5.3",
+    "@lskjs/dev": "2.6.1",
     "@lskjs/mobx": "1.100.1",
     "@lskjs/theme": "2.5.3",
     "@lskjs/utils": "0.39.0",

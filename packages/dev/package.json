@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/dev",
-  "version": "2.5.3",
+  "version": "2.6.1",
   "description": "LSK ux subrepo: ui-dev",
   "keywords": [],
   "repository": "https://github.com/lskjs/ux/tree/master/packages/ui-dev",

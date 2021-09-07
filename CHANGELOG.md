@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.6.1](https://github.com/lskjs/cli/compare/v2.6.0...v2.6.1) (2021-09-07)
+
+
+### Bug Fixes
+
+* **dev:** migrate console logs to log2 ([141e2b9](https://github.com/lskjs/cli/commit/141e2b9a2df19a13102e8cde2fd9b18aa7cc3dfc))
+
+
+
+
+
 # [2.6.0](https://github.com/lskjs/cli/compare/v2.5.7...v2.6.0) (2021-08-23)
 
 
