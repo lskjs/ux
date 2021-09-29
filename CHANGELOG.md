@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.6.2](https://github.com/lskjs/cli/compare/v2.6.1...v2.6.2) (2021-09-29)
+
+
+### Bug Fixes
+
+* **avatar:** new url no-avatar ([93066b5](https://github.com/lskjs/cli/commit/93066b56c90badf05da73e76ae5a64d4e7d0c51f))
+
+
+
+
+
 ## [2.6.1](https://github.com/lskjs/cli/compare/v2.6.0...v2.6.1) (2021-09-07)
 
 

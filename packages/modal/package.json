@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/modal",
-  "version": "2.6.1",
+  "version": "2.6.2",
   "description": "LSK ux subrepo: modal",
   "keywords": [],
   "repository": "https://github.com/lskjs/ux/tree/master/packages/modal",
@@ -31,7 +31,7 @@
     "@lskjs/css": "2.5.3",
     "@lskjs/dev": "2.6.1",
     "@lskjs/theme": "2.5.3",
-    "@lskjs/ui": "2.6.1",
+    "@lskjs/ui": "2.6.2",
     "@lskjs/utils": "0.39.0",
     "bluebird": "3.7.2",
     "classnames": "2.2.6",
