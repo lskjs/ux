@@ -1,10 +1,11 @@
-import React, { createRef, Component } from 'react';
-import PropTypes from 'prop-types';
 import merge from 'lodash/merge';
+import omit from 'lodash/omit';
+import PropTypes from 'prop-types';
+import React, { Component, createRef } from 'react';
 
-import { Provider } from './Modal.context';
-import GlobalModal from './GlobalModal';
 import Modal from '../index';
+import GlobalModal from './GlobalModal';
+import { Provider } from './Modal.context';
 
 /**
  * @callback createCb
@@ -155,7 +156,7 @@ class GlobalModalProvider extends Component {
    */
   update(id, props = {}, content) {
     const modal = this.get(id);
-    const data = merge(modal, props);
+    const data = Object.assign(modal, props);
     const self = {
       ...props,
       id,

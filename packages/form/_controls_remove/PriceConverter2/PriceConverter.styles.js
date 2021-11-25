@@ -116,12 +116,12 @@ export const Action = styled('button')`
   will-change: background-color, color, border-color;
 
   &:first-child {
-    border-radius: 4px 0 0 4px;
+    border-radius: 8px 0 0 8px;
     border-right: none;
   }
 
   &:last-child {
-    border-radius: 0 4px 4px 0;
+    border-radius: 0 8px 8px 0;
     border-left: none;
   }
 

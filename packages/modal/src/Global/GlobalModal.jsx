@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
 import omit from 'lodash/omit';
-import unset from 'lodash/unset';
 import remove from 'lodash/remove';
+import unset from 'lodash/unset';
+import React, { Component } from 'react';
+
 import Modal from '../index';
 
 class GlobalModal extends Component {
