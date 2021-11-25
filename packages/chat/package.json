@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/chat",
-  "version": "2.5.3",
+  "version": "2.6.3",
   "description": "LSK ux subrepo: chat",
   "keywords": [],
   "repository": "https://github.com/lskjs/ux/tree/master/packages/chat",

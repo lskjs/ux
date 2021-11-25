@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/form-control-password",
-  "version": "2.5.3",
+  "version": "2.6.3",
   "description": "Password input control for Form",
   "keywords": [],
   "repository": "https://github.com/lskjs/ux/tree/master/packages/form-control-password",

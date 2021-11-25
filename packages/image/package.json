@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/image",
-  "version": "2.6.1",
+  "version": "2.6.3",
   "description": "LSK ux subrepo: image",
   "keywords": [],
   "repository": "https://github.com/lskjs/ux/tree/master/packages/image",
@@ -19,13 +19,13 @@
     "watch": "lsk run watch"
   },
   "dependencies": {
-    "@lskjs/link": "2.6.1",
+    "@lskjs/link": "2.6.3",
     "react-image-fallback": "8.0.0"
   },
   "devDependencies": {
     "@emotion/react": "11.1.4",
     "@emotion/styled": "11.0.0",
-    "@lskjs/dev": "2.6.1",
+    "@lskjs/dev": "2.6.3",
     "prop-types": "15.7.2",
     "react": "17.0.1"
   },

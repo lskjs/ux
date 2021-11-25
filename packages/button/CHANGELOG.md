@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.6.3](https://github.com/lskjs/ux/compare/v2.6.2...v2.6.3) (2021-11-25)
+
+
+### Bug Fixes
+
+* object.assign instead merge ([f31487e](https://github.com/lskjs/ux/commit/f31487e8a408488c21a378371adfdd5267788c70))
+
+
+
+
+
 ## [2.6.1](https://github.com/lskjs/ux/compare/v2.6.0...v2.6.1) (2021-09-07)
 
 **Note:** Version bump only for package @lskjs/button
