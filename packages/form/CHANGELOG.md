@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.6.5](https://github.com/lskjs/ux/compare/v2.6.4...v2.6.5) (2021-12-02)
+
+
+### Bug Fixes
+
+* **form:** titleComponent 100% width ([9764579](https://github.com/lskjs/ux/commit/97645797b215f733bb2a45c5fd875a7376d95c19))
+
+
+
+
+
 ## [2.6.4](https://github.com/lskjs/ux/compare/v2.6.3...v2.6.4) (2021-12-02)
 
 **Note:** Version bump only for package @lskjs/form

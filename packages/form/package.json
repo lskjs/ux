@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/form",
-  "version": "2.6.4",
+  "version": "2.6.5",
   "description": "LSK ux subrepo: form",
   "keywords": [],
   "repository": "https://github.com/lskjs/ux/tree/master/packages/form",
