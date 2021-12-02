@@ -1,6 +1,6 @@
-import getTheme from '@lskjs/theme/getTheme';
-import styled from '@emotion/styled';
 import { css } from '@emotion/core';
+import styled from '@emotion/styled';
+import getTheme from '@lskjs/theme/getTheme';
 
 export const Title = styled('div')`
   ${(p) =>
@@ -13,6 +13,7 @@ export const Title = styled('div')`
 export const Wrapper = styled('div')`
   display: flex;
   justify-content: space-between;
+  width: 100%;
   ${(p) =>
     p.infoLeft &&
     css`
