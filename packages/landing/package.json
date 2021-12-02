@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/landing",
-  "version": "2.6.3",
+  "version": "2.6.4",
   "description": "LSK ux subrepo: landing",
   "keywords": [],
   "repository": "https://github.com/lskjs/ux/tree/master/packages/landing",
@@ -23,7 +23,7 @@
     "lodash": "4.17.20"
   },
   "devDependencies": {
-    "@lskjs/grid": "2.6.3",
+    "@lskjs/grid": "2.6.4",
     "@lskjs/theme": "2.6.3",
     "@types/lodash": "4.14.157",
     "install": "0.13.0",

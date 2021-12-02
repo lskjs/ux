@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/grid",
-  "version": "2.6.3",
+  "version": "2.6.4",
   "description": "LSK ux subrepo: grid",
   "keywords": [],
   "repository": "https://github.com/lskjs/ux/tree/master/packages/grid",

@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/slide",
-  "version": "2.6.3",
+  "version": "2.6.4",
   "description": "LSK ux subrepo: slide",
   "keywords": [],
   "repository": "https://github.com/lskjs/ux/tree/master/packages/slide",
@@ -19,7 +19,7 @@
     "watch": "lsk run watch"
   },
   "dependencies": {
-    "@lskjs/grid": "2.6.3",
+    "@lskjs/grid": "2.6.4",
     "prop-types": "15.7.2",
     "react-drive-in2": "1.8.1"
   },
