@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/list",
-  "version": "3.1.0-alpha.6",
+  "version": "3.1.0-alpha.7",
   "description": "LSK ux subrepo: list",
   "keywords": [],
   "repository": "https://github.com/lskjs/ux/tree/master/packages/list",
