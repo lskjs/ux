@@ -37,7 +37,7 @@
     "@lskjs/dev": "2.7.0",
     "@lskjs/grid": "1.1.41",
     "antd": "3.26.9",
-    "lodash": "4.17.20",
+    "lodash": "4.17.21",
     "mobx": "5.15.4",
     "mobx-react": "6.1.7",
     "react": "16.8.6",
