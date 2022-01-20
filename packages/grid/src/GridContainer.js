@@ -1,8 +1,8 @@
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { css } from '@emotion/core';
 import getTheme from '@lskjs/theme/getTheme';
 
-export default styled('div', { shouldForwardProp: prop => !['fluid'].includes(prop) })`
+export default styled('div', { shouldForwardProp: (prop) => !['fluid'].includes(prop) })`
   box-sizing: border-box;
   width: 100%;
   margin-right: auto;
@@ -14,7 +14,7 @@ export default styled('div', { shouldForwardProp: prop => !['fluid'].includes(pr
   @media print {
     min-width: 992px !important;
   }
-  ${p =>
+  ${(p) =>
     !p.fluid &&
     css`
       @media (min-width: 576px) {

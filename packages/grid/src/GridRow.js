@@ -1,15 +1,15 @@
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { css } from '@emotion/core';
 import getTheme from '@lskjs/theme/getTheme';
 
-export default styled('div', { shouldForwardProp: prop => !['vertical', 'gap'].includes(prop) })`
+export default styled('div', { shouldForwardProp: (prop) => !['vertical', 'gap'].includes(prop) })`
   box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
-  margin-right: -${p => p.gap || getTheme(p.theme, 'gridGap')}px;
-  margin-left: -${p => p.gap || getTheme(p.theme, 'gridGap')}px;
+  margin-right: -${(p) => p.gap || getTheme(p.theme, 'gridGap')}px;
+  margin-left: -${(p) => p.gap || getTheme(p.theme, 'gridGap')}px;
 
-  ${p =>
+  ${(p) =>
     p.gap &&
     css`
       > div {
@@ -18,7 +18,7 @@ export default styled('div', { shouldForwardProp: prop => !['vertical', 'gap'].i
       }
     `}
 
-  ${p =>
+  ${(p) =>
     p.vertical &&
     css`
       margin-top: -${p.gap || getTheme(p.theme, 'gridGap')}px;

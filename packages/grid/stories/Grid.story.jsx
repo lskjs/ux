@@ -1,6 +1,7 @@
-import React from 'react';
 import Story from '@lskjs/dev/Story';
-import { Container, Row, Col } from './index';
+import React from 'react';
+
+import { Col, Container, Row } from '../src';
 
 const defaultStyle = {
   height: 100,
@@ -17,24 +18,16 @@ export default ({ storiesOf }) => {
         <Container>
           <Row>
             <Col lg={6} md={12}>
-              <Item>
-                lg-6 md-12
-              </Item>
+              <Item>lg-6 md-12</Item>
             </Col>
             <Col lg={2} md={4} xs={6}>
-              <Item>
-                lg-2 md-4 xs-6
-              </Item>
+              <Item>lg-2 md-4 xs-6</Item>
             </Col>
             <Col lg={2} md={4} xs={6}>
-              <Item>
-                lg-2 md-4 xs-6
-              </Item>
+              <Item>lg-2 md-4 xs-6</Item>
             </Col>
             <Col lg={2} md={4} xs={12}>
-              <Item>
-                lg-2 md-4 xs-12
-              </Item>
+              <Item>lg-2 md-4 xs-12</Item>
             </Col>
           </Row>
         </Container>
@@ -45,24 +38,16 @@ export default ({ storiesOf }) => {
         <Container>
           <Row vertical>
             <Col lg={6} md={12}>
-              <Item>
-                lg-6 md-12
-              </Item>
+              <Item>lg-6 md-12</Item>
             </Col>
             <Col lg={2} md={4} xs={6}>
-              <Item style={{ height: 50 }}>
-                lg-2 md-4 xs-6
-              </Item>
+              <Item style={{ height: 50 }}>lg-2 md-4 xs-6</Item>
             </Col>
             <Col lg={2} md={4} xs={6}>
-              <Item style={{ height: 150 }}>
-                lg-2 md-4 xs-6
-              </Item>
+              <Item style={{ height: 150 }}>lg-2 md-4 xs-6</Item>
             </Col>
             <Col lg={2} md={4} xs={12}>
-              <Item>
-                lg-2 md-4 xs-12
-              </Item>
+              <Item>lg-2 md-4 xs-12</Item>
             </Col>
           </Row>
         </Container>
@@ -73,19 +58,13 @@ export default ({ storiesOf }) => {
         <Container>
           <Row vertical gap={32}>
             <Col md={4}>
-              <Item>
-                Col 4
-              </Item>
+              <Item>Col 4</Item>
             </Col>
             <Col md={4}>
-              <Item>
-                Col 4
-              </Item>
+              <Item>Col 4</Item>
             </Col>
             <Col md={4}>
-              <Item>
-                Col 4
-              </Item>
+              <Item>Col 4</Item>
             </Col>
           </Row>
         </Container>
@@ -96,34 +75,22 @@ export default ({ storiesOf }) => {
         <Container>
           <Row vertical gap={6}>
             <Col md={4}>
-              <Item>
-                Col 4
-              </Item>
+              <Item>Col 4</Item>
             </Col>
             <Col md={4}>
-              <Item>
-                Col 4
-              </Item>
+              <Item>Col 4</Item>
             </Col>
             <Col md={4}>
-              <Item>
-                Col 4
-              </Item>
+              <Item>Col 4</Item>
             </Col>
             <Col md={4}>
-              <Item>
-                Col 4
-              </Item>
+              <Item>Col 4</Item>
             </Col>
             <Col md={4}>
-              <Item>
-                Col 4
-              </Item>
+              <Item>Col 4</Item>
             </Col>
             <Col md={4}>
-              <Item>
-                Col 4
-              </Item>
+              <Item>Col 4</Item>
             </Col>
           </Row>
         </Container>
@@ -133,19 +100,13 @@ export default ({ storiesOf }) => {
       <Story style={{ background: '#42cafd' }}>
         <Row>
           <Col md={4}>
-            <Item>
-              Col 4
-            </Item>
+            <Item>Col 4</Item>
           </Col>
           <Col md={4}>
-            <Item>
-              Col 4
-            </Item>
+            <Item>Col 4</Item>
           </Col>
           <Col md={4}>
-            <Item>
-              Col 4
-            </Item>
+            <Item>Col 4</Item>
           </Col>
         </Row>
       </Story>
@@ -155,72 +116,46 @@ export default ({ storiesOf }) => {
         <Container>
           <Row vertical>
             <Col md={4}>
-              <Item>
-              a
-              </Item>
+              <Item>a</Item>
             </Col>
             <Col md={4}>
-              <Item>
-              a
-              </Item>
+              <Item>a</Item>
             </Col>
             <Col md={4}>
-              <Item>
-              a
-              </Item>
+              <Item>a</Item>
             </Col>
             <Col md={4}>
-              <Item>
-              a
-              </Item>
+              <Item>a</Item>
             </Col>
             <Col md={4}>
-              <Item>
-              a
-              </Item>
+              <Item>a</Item>
             </Col>
             <Col md={4}>
               <Item>
                 <Row vertical>
                   <Col md={6}>
-                    <Item style={{ background: '#68977c' }}>
-                     b
-                    </Item>
+                    <Item style={{ background: '#68977c' }}>b</Item>
                   </Col>
                   <Col md={6}>
-                    <Item style={{ background: '#68977c' }}>
-                     b
-                    </Item>
+                    <Item style={{ background: '#68977c' }}>b</Item>
                   </Col>
                   <Col md={6}>
-                    <Item style={{ background: '#68977c' }}>
-                     b
-                    </Item>
+                    <Item style={{ background: '#68977c' }}>b</Item>
                   </Col>
                   <Col md={6}>
-                    <Item style={{ background: '#68977c' }}>
-                     b
-                    </Item>
+                    <Item style={{ background: '#68977c' }}>b</Item>
                   </Col>
                   <Col md={6}>
-                    <Item style={{ background: '#68977c' }}>
-                     b
-                    </Item>
+                    <Item style={{ background: '#68977c' }}>b</Item>
                   </Col>
                   <Col md={6}>
-                    <Item style={{ background: '#68977c' }}>
-                     b
-                    </Item>
+                    <Item style={{ background: '#68977c' }}>b</Item>
                   </Col>
                   <Col md={6}>
-                    <Item style={{ background: '#68977c' }}>
-                     b
-                    </Item>
+                    <Item style={{ background: '#68977c' }}>b</Item>
                   </Col>
                   <Col md={6}>
-                    <Item style={{ background: '#68977c' }}>
-                     b
-                    </Item>
+                    <Item style={{ background: '#68977c' }}>b</Item>
                   </Col>
                 </Row>
               </Item>
