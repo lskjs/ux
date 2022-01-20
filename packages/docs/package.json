@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/docs",
-  "version": "2.6.4",
+  "version": "3.1.0-alpha.2",
   "description": "lskjs docs",
   "keywords": [],
   "repository": "https://github.com/isuvorov/lib-starter-kit/tree/master/packages/lib1",
@@ -41,7 +41,7 @@
     "@lskjs/link": "2.6.3",
     "@lskjs/list": "2.3.0-beta.12",
     "@lskjs/mobx": "1.100.1",
-    "@lskjs/modal": "2.6.4",
+    "@lskjs/modal": "3.1.0-alpha.2",
     "@lskjs/navbar": "2.6.3",
     "@lskjs/notification": "2.6.3",
     "@lskjs/page": "2.6.4",

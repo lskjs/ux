@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/modal",
-  "version": "2.6.4",
+  "version": "3.1.0-alpha.2",
   "description": "LSK ux subrepo: modal",
   "keywords": [],
   "repository": "https://github.com/lskjs/ux/tree/master/packages/modal",
@@ -27,7 +27,7 @@
   "devDependencies": {
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
-    "@lskjs/button": "^3.1.0-alpha.1",
+    "@lskjs/button": "3.1.0-alpha.2",
     "@lskjs/css": "2.6.3",
     "@lskjs/dev": "2.6.3",
     "@lskjs/t": "^2.6.3",
