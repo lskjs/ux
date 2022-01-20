@@ -1,34 +1,34 @@
 /* eslint-disable no-unused-vars */
 /** @jsx jsx */
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
-import { css, jsx, Global } from '@emotion/core';
-import If from 'react-if';
-import noop from 'lodash/noop';
-import uniq from 'lodash/uniq';
-import filter from 'lodash/filter';
-import pick from 'lodash/pick';
-import omit from 'lodash/omit';
-import merge from 'lodash/merge';
+import { css, Global, jsx } from '@emotion/core';
 import autobind from '@lskjs/autobind';
-import ReactModal from 'react-modal';
-import sizes from '@lskjs/utils/sizes';
 import isTouchDevice from '@lskjs/utils/isTouchDevice';
-import ModalSubtitle from './components/ModalSubtitle';
-import ModalDescription from './components/ModalDescription';
+import sizes from '@lskjs/utils/sizes';
+import filter from 'lodash/filter';
+import merge from 'lodash/merge';
+import noop from 'lodash/noop';
+import omit from 'lodash/omit';
+import pick from 'lodash/pick';
+import uniq from 'lodash/uniq';
+import { inject } from 'mobx-react';
+import PropTypes from 'prop-types';
+import React, { PureComponent } from 'react';
+import If from 'react-if';
+import ReactModal from 'react-modal';
+
+import ModalCloseIcon from './components/ModalCloseIcon';
 import ModalContent from './components/ModalContent';
+import ModalDescription from './components/ModalDescription';
 import ModalFooter from './components/ModalFooter';
-import ModalImage from './components/ModalImage';
 import ModalHelp from './components/ModalHelp';
+import ModalImage from './components/ModalImage';
+import ModalInner from './components/ModalInner';
 import ModalScroll from './components/ModalScroll';
+import ModalSubtitle from './components/ModalSubtitle';
 import ModalTitle from './components/ModalTitle';
 import ModalTrigger from './components/ModalTrigger';
-import ModalInner from './components/ModalInner';
-import ModalCloseIcon from './components/ModalCloseIcon';
-
-import { globalStyles, modalStyle, modalSmall, modalNormal, modalLarge, InnerWrapper } from './Modal2.styles';
-
 import { Provider } from './Modal2.context';
+import { globalStyles, InnerWrapper, modalLarge, modalNormal, modalSmall, modalStyle } from './Modal2.styles';
 
 const reactModalProps = [
   'isOpen',
@@ -128,8 +128,12 @@ class Modal2 extends PureComponent {
 
   @autobind
   open() {
+    const { uapp } = this.props;
     this.setState({ visible: true });
     if (this.props.onOpen) this.props.onOpen();
+    if (uapp && uapp.ee && uapp.emit) {
+      uapp.emit('modal:open');
+    }
   }
   @autobind
   close() {
@@ -252,6 +256,7 @@ Modal2.propTypes = {
   trigger: PropTypes.any, // eslint-disable-line react/forbid-prop-types
   style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   whiteTheme: PropTypes.bool,
+  uapp: PropTypes.objectOf(Object).isRequired,
 };
 
 Modal2.defaultProps = {
@@ -278,4 +283,4 @@ Modal2.defaultProps = {
   whiteTheme: true,
 };
 
-export default Modal2;
+export default inject('uapp')(Modal2);
