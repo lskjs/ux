@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.7.0](https://github.com/lskjs/cli/compare/v2.6.5...v2.7.0) (2022-01-20)
+
+
+### Features
+
+* add emit to modal open ([b17ffb1](https://github.com/lskjs/cli/commit/b17ffb1fdcfb5035674f8939ca7e565c9ad6e4ff))
+
+
+
+
+
 ## [2.6.5](https://github.com/lskjs/cli/compare/v2.6.4...v2.6.5) (2021-12-02)
 
 

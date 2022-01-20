@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/form-control-input",
-  "version": "2.6.3",
+  "version": "2.7.0",
   "description": "Input control for Form",
   "keywords": [],
   "repository": "https://github.com/lskjs/ux/tree/master/packages/form-control-input",
