@@ -1,25 +1,25 @@
+import Story from '@lskjs/dev/Story';
+import socialColors from '@lskjs/utils/socialColors';
 import React from 'react';
-import Plus from 'react-icons2/mdi/plus';
 import Facebook from 'react-icons2/mdi/facebook-box';
+import Plus from 'react-icons2/mdi/plus';
+import Telegram from 'react-icons2/mdi/telegram';
 import Twitter from 'react-icons2/mdi/twitter-circle';
 import Vk from 'react-icons2/mdi/vk';
 import Youtube from 'react-icons2/mdi/youtube';
-import Telegram from 'react-icons2/mdi/telegram';
-import { Badge, Icon } from 'antd';
-import Story from '@lskjs/dev/Story';
-import socialColors from '@lskjs/utils/socialColors';
-import Button from './Button';
-import ButtonGroup from './ButtonGroup';
-import IconCircleButton from './IconCircleButton';
+
+import Button from '../src/Button';
+import ButtonGroup from '../src/ButtonGroup';
+import IconCircleButton from '../src/IconCircleButton';
 // import Link from '@lskjs/ui/Link';
-import withResponsive from './withResponsive';
+import withResponsive from '../src/withResponsive';
 
 const ResponsiveButton = withResponsive(Button);
 
 const Grill = ({ children, cols = 6 }) => {
   let items;
   if (Array.isArray(children)) {
-    items = children.map(item => <div>{item}</div>);
+    items = children.map((item) => <div>{item}</div>);
   } else {
     items = [children];
   }
@@ -240,50 +240,6 @@ export default ({ storiesOf }) => {
         </ButtonGroup>
       </Story>
     ))
-    .add('badge', () => (
-      <Story>
-        <Badge count={5}>
-          <Button paint="primary">Default</Button>
-        </Badge>
-        <br />
-        <br />
-        <Badge count={0} showZero>
-          <Button paint="primary">Default</Button>
-        </Badge>
-        <br />
-        <br />
-        <Badge count={<Icon type="clock-circle" style={{ color: '#f5222d' }} />}>
-          <Button paint="primary">Default</Button>
-        </Badge>
-        <br />
-        <br />
-        <Badge count={1000} overflowCount={999}>
-          <Button paint="primary">Default</Button>
-        </Badge>
-        <br />
-        <br />
-        <Badge count={109} style={{ backgroundColor: '#52c41a' }}>
-          <Button paint="primary">Default</Button>
-        </Badge>
-      </Story>
-    ))
-    .add('dot badge', () => (
-      <Story>
-        <Badge dot>
-          <Button paint="primary">Default</Button>
-        </Badge>
-      </Story>
-    ))
-    .add('badge with title', () => (
-      <Story>
-        <Badge count={5} title="Custom hover text">
-          <Button paint="primary">Default</Button>
-        </Badge>
-        <Badge status="processing" count={5} title="Custom hover text">
-          <Button paint="primary">Default</Button>
-        </Badge>
-      </Story>
-    ))
     .add('ButtonGroup', () => (
       <Story>
         <ButtonGroup block>
@@ -301,15 +257,6 @@ export default ({ storiesOf }) => {
         <ResponsiveButton paint="primary" size="small" icon={<Plus />}>
           Responsive
         </ResponsiveButton>
-      </Story>
-    ))
-    .add('badge status', () => (
-      <Story>
-        <Badge status="success" />
-        <Badge status="error" />
-        <Badge status="default" />
-        <Badge status="processing" />
-        <Badge status="warning" />
       </Story>
     ))
     .add('without ripple', () => (

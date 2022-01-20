@@ -34,23 +34,25 @@
   "devDependencies": {
     "@lskjs/dev": "2.6.3",
     "@lskjs/grid": "1.1.41",
-    "antd": "3.26.9",
     "lodash": "4.17.20",
     "mobx": "5.15.4",
     "mobx-react": "6.1.7",
-    "react": "16.8.6",
+    "react": "^17.0.2",
     "react-icons2": "2.5.0"
   },
   "peerDependencies": {
-    "@lskjs/dev": "*",
-    "@lskjs/grid": "*",
-    "antd": "*",
-    "lodash": "*",
-    "react": "*"
+    "@lskjs/dev": "2.x",
+    "@lskjs/grid": "1.x",
+    "mobx": "5.x",
+    "mobx-react": "6.x",
+    "lodash": "4.x",
+    "react": "17.x",
+    "react-icons2": "2.x"
   },
   "optionalDependencies": {
-    "mobx": "*",
-    "mobx-react": "*"
+    "mobx": "5.x",
+    "mobx-react": "6.x",
+    "react-icons2": "2.x"
   },
   "publishConfig": {
     "access": "public"

@@ -1,7 +1,8 @@
-import React from 'react';
 import Story from '@lskjs/dev/Story';
-import Button from '../Button';
-import UrlButton from './UrlButton';
+import React from 'react';
+
+import Button from '../src/Button';
+import UrlButton from '../src/UrlButton';
 
 // import '../../../Root/Storybook.g.css';
 

@@ -1,40 +1,32 @@
-import React from 'react';
 import Story from '@lskjs/dev/Story';
-import Button from '../Button';
-import StatefulButton from './StatefulButton';
+import React from 'react';
 
-const promisedHandleSubmit = () => new Promise((resolve, reject) => {
-  const headsOrTails = () => Math.random() > 0.5;
-  const resolveOrReject = () => {
-    const bool = headsOrTails();
-    bool ? resolve() : reject();
-  };
-  setTimeout(resolveOrReject, 1000);
-});
+import Button from '../src/Button';
+import StatefulButton from '../src/StatefulButton';
+
+const promisedHandleSubmit = () =>
+  new Promise((resolve, reject) => {
+    const headsOrTails = () => Math.random() > 0.5;
+    const resolveOrReject = () => {
+      const bool = headsOrTails();
+      bool ? resolve() : reject();
+    };
+    setTimeout(resolveOrReject, 1000);
+  });
 
 export default ({ storiesOf }) => {
   storiesOf('button/StatefulButton', module)
     .add('Default', () => (
       <Story>
-        <StatefulButton
-          componentClass={Button}
-          onClick={promisedHandleSubmit}
-          paint="primary"
-          size="large"
-        >
+        <StatefulButton componentClass={Button} onClick={promisedHandleSubmit} paint="primary" size="large">
           Умная кнопочка
         </StatefulButton>
       </Story>
     ))
     .add('Loooooong', () => (
       <Story>
-        <StatefulButton
-          componentClass={Button}
-          onClick={promisedHandleSubmit}
-          paint="primary"
-          size="large"
-        >
-        Очень много текста в умной промисифицированной кнопке
+        <StatefulButton componentClass={Button} onClick={promisedHandleSubmit} paint="primary" size="large">
+          Очень много текста в умной промисифицированной кнопке
         </StatefulButton>
       </Story>
     ))
@@ -49,7 +41,7 @@ export default ({ storiesOf }) => {
           textSuccess="Готово"
           textError="Не повезло"
         >
-        Очень много текста
+          Очень много текста
         </StatefulButton>
       </Story>
     ))
@@ -64,7 +56,7 @@ export default ({ storiesOf }) => {
           contentSuccess="Готово"
           contentError="Не повезло"
         >
-        Очень много текста
+          Очень много текста
         </StatefulButton>
       </Story>
     ));
