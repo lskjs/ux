@@ -399,8 +399,7 @@ export const HoverRowWrapper = styled(hoverTag, { shouldForwardProp: (prop) => !
     `}
 `;
 
-const filteredSelectTag = removeProps('div', ['bordered']);
-export const SelectRowWrapper = styled(filteredSelectTag)`
+export const SelectRowWrapper = styled('div', { shouldForwardProp: (prop) => !['bordered'].includes(prop) })`
   cursor: pointer;
   display: block;
   &:not(:last-child) {
