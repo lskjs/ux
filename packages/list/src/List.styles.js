@@ -1,9 +1,8 @@
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { Row } from '@lskjs/grid';
 import getTheme from '@lskjs/theme/getTheme';
 import createDynamicTag from '@lskjs/utils/createDynamicTag';
-import removeProps from '@lskjs/utils/removeProps';
 
 export const ListRowButton = styled('button')`
   padding: 13px 11px;
@@ -364,8 +363,7 @@ export const ArrowBlock = styled('div')`
 `;
 
 const hoverTag = createDynamicTag('div');
-const filteredHoverTag = removeProps(hoverTag, ['bordered']);
-export const HoverRowWrapper = styled(filteredHoverTag)`
+export const HoverRowWrapper = styled(hoverTag, { shouldForwardProp: (prop) => !['bordered'].includes(prop) })`
   cursor: pointer;
   display: block;
   > .table-gird-row {

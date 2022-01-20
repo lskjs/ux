@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-wrap-multilines */
-import { ClassNames } from '@emotion/core';
+import { ClassNames } from '@emotion/react';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import ReactPaginate from 'react-paginate';

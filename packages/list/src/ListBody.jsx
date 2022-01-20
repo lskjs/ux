@@ -1,18 +1,18 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from '@emotion/core';
+import { jsx } from '@emotion/react';
 import T from '@lskjs/t';
 import Loading from '@lskjs/ui/Loading';
 import Progress from '@lskjs/ui/Progress';
 import { inject, observer } from 'mobx-react';
 import React from 'react';
-// import VisibilitySensor from 'react-visibility-sensor';
 
+// import VisibilitySensor from 'react-visibility-sensor';
 import { contextToProps } from './List.context';
 import { LoadMoreButton } from './List.styles';
 
 const ListBody = ({ List, listStore, show = {}, ...props }) => {
-  const ButtonWrapper = 'div'
+  const ButtonWrapper = 'div';
   // const ButtonWrapper = show.autoload ? VisibilitySensor : 'div';
   return (
     <List.BodyWrapper {...props} style={{ position: 'relative' }}>
