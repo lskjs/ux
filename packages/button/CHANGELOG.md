@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.1.0-alpha.1](https://github.com/lskjs/ux/compare/v3.1.0-alpha.0...v3.1.0-alpha.1) (2022-01-20)
+
+
+### Bug Fixes
+
+* **button:** update peer deps & clear code ([ea139dc](https://github.com/lskjs/ux/commit/ea139dc91754d88c9e5abec7be54d9aa1e86149d))
+
+
+
+
+
 # [3.1.0-alpha.0](https://github.com/lskjs/ux/compare/v2.6.5...v3.1.0-alpha.0) (2022-01-20)
 
 

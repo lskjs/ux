@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/button",
-  "version": "3.1.0-alpha.0",
+  "version": "3.1.0-alpha.1",
   "description": "LSK ux subrepo: button",
   "keywords": [
     "Buttons",
@@ -43,9 +43,9 @@
   "peerDependencies": {
     "@lskjs/dev": "2.x",
     "@lskjs/grid": "1.x",
+    "lodash": "4.x",
     "mobx": "5.x",
     "mobx-react": "6.x",
-    "lodash": "4.x",
     "react": "17.x",
     "react-icons2": "2.x"
   },
