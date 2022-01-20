@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/form",
-  "version": "3.1.0-alpha.2",
+  "version": "3.1.0-alpha.3",
   "description": "LSK ux subrepo: form",
   "keywords": [],
   "repository": "https://github.com/lskjs/ux/tree/master/packages/form",
@@ -83,9 +83,9 @@
   },
   "peerDependencies": {
     "@babel/polyfill": "7.x",
+    "@emotion/css": "11.x",
     "@emotion/react": "11.x",
     "@emotion/styled": "11.x",
-    "@emotion/css": "11.x",
     "@lskjs/apiquery": "1.x",
     "@lskjs/autobind": "0.x",
     "@lskjs/avatar": "1.x",
