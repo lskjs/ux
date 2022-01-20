@@ -256,7 +256,7 @@ Modal2.propTypes = {
   trigger: PropTypes.any, // eslint-disable-line react/forbid-prop-types
   style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   whiteTheme: PropTypes.bool,
-  uapp: PropTypes.objectOf(Object).isRequired,
+  uapp: PropTypes.objectOf(Object),
 };
 
 Modal2.defaultProps = {
@@ -281,6 +281,7 @@ Modal2.defaultProps = {
   trigger: null,
   style: {},
   whiteTheme: true,
+  uapp: null,
 };
 
 export default inject('uapp')(Modal2);
