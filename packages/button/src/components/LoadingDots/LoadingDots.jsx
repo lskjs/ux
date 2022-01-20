@@ -1,6 +1,7 @@
-import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Spinner, BounceOne, BounceTwo, BounceThree } from './LoadingDots.styles';
+import React, { PureComponent } from 'react';
+
+import { BounceOne, BounceThree, BounceTwo, Spinner } from './LoadingDots.styles';
 
 class LoadingDots extends PureComponent {
   static propTypes = {

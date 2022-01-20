@@ -1,5 +1,5 @@
 {
-  "version": "2.6.5",
+  "version": "3.0.0",
   "packages": [
     "packages/*"
   ],
@@ -7,17 +7,18 @@
     "version": {
       "allowBranch": [
         "master",
-        "beta"
+        "beta",
+        "emotion-11"
       ],
       "exact": true,
       "conventionalCommits": true,
-      "conventionalPrerelease": false,
+      "conventionalPrerelease": true,
       "message": "chore(release): %s"
     },
     "publish": {
       "exact": true,
       "conventionalCommits": true,
-      "conventionalPrerelease": false,
+      "conventionalPrerelease": true,
       "ignoreChanges": [
         "**/dist/**",
         "**/build/**",

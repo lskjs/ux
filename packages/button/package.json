@@ -23,14 +23,12 @@
     "watch": "lsk run watch"
   },
   "dependencies": {
-    "@emotion/core": "10.0.27",
-    "@emotion/styled": "10.0.27",
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
     "@lskjs/autobind": "1.100.1",
     "@lskjs/theme": "2.6.3",
     "@lskjs/utils": "1.99.1",
     "classnames": "2.2.6",
-    "mobx": "*",
-    "mobx-react": "*",
     "prop-types": "15.7.2"
   },
   "devDependencies": {

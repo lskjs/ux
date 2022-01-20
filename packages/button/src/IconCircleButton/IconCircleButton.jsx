@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
-import PlusIcon from '../icons/plus';
 
+import PlusIcon from '../icons/plus';
 import Block from './IconCircleButton.styles';
 
 class IconCircleButton extends PureComponent {
@@ -19,7 +19,7 @@ class IconCircleButton extends PureComponent {
       transparent,
     } = this.props;
     const props = {
-      componentClass,
+      as: componentClass,
       inverse,
       small,
       disabled,

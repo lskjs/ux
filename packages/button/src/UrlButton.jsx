@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import autobind from '@lskjs/autobind';
+import filterProps from '@lskjs/utils/filterProps';
 import omit from 'lodash/omit';
 import { inject } from 'mobx-react';
-import filterProps from '@lskjs/utils/filterProps';
-import StatefulButton from '../StatefulButton';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+
+import StatefulButton from './StatefulButton';
 
 @inject('api', 'uapp')
 // @observer

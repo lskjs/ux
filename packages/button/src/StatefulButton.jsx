@@ -1,10 +1,8 @@
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
-import theme from '@lskjs/theme';
-import getTheme from '@lskjs/theme/getTheme';
 import autobind from '@lskjs/autobind';
-import omit from 'lodash/omit';
 import filterProps from '@lskjs/utils/filterProps';
+import omit from 'lodash/omit';
+import PropTypes from 'prop-types';
+import React, { PureComponent } from 'react';
 
 class StatefulButton extends PureComponent {
   static propTypes = {
@@ -143,8 +141,8 @@ class StatefulButton extends PureComponent {
     const { stableSuccess, onError } = this.props;
     if (typeof promise === 'object') {
       return promise
-        .then(() => {
-          return (
+        .then(
+          () =>
             this.isMounted &&
             this.setState(
               {
@@ -157,10 +155,9 @@ class StatefulButton extends PureComponent {
                   this.doResetInternalState();
                 }
               },
-            )
-          );
-        })
-        .catch(err => {
+            ),
+        )
+        .catch((err) => {
           if (this.isMounted) {
             this.setState(
               {

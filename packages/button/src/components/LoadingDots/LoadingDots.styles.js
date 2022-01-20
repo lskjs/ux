@@ -1,5 +1,5 @@
+import { keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
-import { keyframes } from '@emotion/core';
 
 const bounce = keyframes`
   0%, 80%, 100% { 
@@ -17,7 +17,7 @@ export const Spinner = styled('div')`
   > div {
     width: 8px;
     height: 8px;
-    background-color: ${p => p.color};
+    background-color: ${(p) => p.color};
 
     border-radius: 100%;
     display: inline-block;

@@ -1,13 +1,14 @@
-import React, { PureComponent } from 'react';
 import autobind from '@lskjs/autobind';
-import PropTypes from 'prop-types';
-import omit from 'lodash/omit';
-import isTouchDevice from '@lskjs/utils/isTouchDevice';
 import isBrowser from '@lskjs/utils/isBrowser';
+import isTouchDevice from '@lskjs/utils/isTouchDevice';
+import omit from 'lodash/omit';
+import PropTypes from 'prop-types';
+import React, { PureComponent } from 'react';
+
+import { Btn, Icon, Ripple, RippleCircle, State, Text } from './Button.styles';
+import LoadingDots from './components/LoadingDots';
 import CheckIcon from './icons/check';
 import CloseIcon from './icons/close';
-import LoadingDots from './components/LoadingDots';
-import { Btn, Text, Icon, State, Ripple, RippleCircle } from './Button.styles';
 
 class Button extends PureComponent {
   constructor(props) {
@@ -50,16 +51,8 @@ class Button extends PureComponent {
   }
 
   getButtonStateTheme() {
-    const {
-      paint,
-      contentError,
-      contentProcessing,
-      contentSuccess,
-      textError,
-      textProcessing,
-      textSuccess,
-      id,
-    } = this.props;
+    const { paint, contentError, contentProcessing, contentSuccess, textError, textProcessing, textSuccess, id } =
+      this.props;
     switch (this.getPropsState()) {
       case 'processing':
         return {
@@ -117,7 +110,6 @@ class Button extends PureComponent {
     }
   }
 
-
   @autobind
   endAnimationRipple() {
     const { disabled, isRipple } = this.props;
@@ -129,7 +121,11 @@ class Button extends PureComponent {
   @autobind
   renderIcon(icon, dir) {
     const { id } = this.props;
-    return <Icon id={id} direction={dir}>{icon}</Icon>;
+    return (
+      <Icon id={id} direction={dir}>
+        {icon}
+      </Icon>
+    );
   }
 
   render() {
@@ -210,7 +206,7 @@ class Button extends PureComponent {
         {!disabled && isRipple && (
           <Ripple id={id} ref={this.ripple} active={isRippleActive}>
             <RippleCircle
-              ref={el => {
+              ref={(el) => {
                 this.circle = el;
               }}
               onAnimationEnd={this.endAnimationRipple}
