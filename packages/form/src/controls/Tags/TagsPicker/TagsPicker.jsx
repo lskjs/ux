@@ -1,14 +1,13 @@
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
-import getKeys from 'lodash/keys';
+import autobind from '@lskjs/autobind';
+import Button from '@lskjs/button';
+import Add from '@lskjs/button/IconCircleButton';
+import get from 'lodash/get';
 import intersection from 'lodash/intersection';
 import isEqual from 'lodash/isEqual';
-import autobind from '@lskjs/autobind';
-import get from 'lodash/get';
+import PropTypes from 'prop-types';
+import React, { PureComponent } from 'react';
 import Plus from 'react-icons2/mdi/plus-circle';
 import If from 'react-if';
-import Add from '@lskjs/button/IconCircleButton';
-import Button from '@lskjs/button';
 
 import Tag from '../Tag';
 import TagsWrapper from '../TagsWrapper';
@@ -43,7 +42,7 @@ class TagsPicker extends PureComponent {
     disabled: PropTypes.bool,
     readOnly: PropTypes.bool,
     maxLength: PropTypes.number,
-  }
+  };
   static defaultProps = {
     fields: [],
     value: [],
@@ -55,7 +54,7 @@ class TagsPicker extends PureComponent {
     disabled: false,
     readOnly: false,
     maxLength: null,
-  }
+  };
   constructor(props) {
     super(props);
     this.state = {
@@ -82,7 +81,7 @@ class TagsPicker extends PureComponent {
   @autobind
   handleDeleteTag(id) {
     const { value } = this.state;
-    this.setState({ value: value.filter(e => e !== id) }, this.callbackCombo);
+    this.setState({ value: value.filter((e) => e !== id) }, this.callbackCombo);
   }
 
   @autobind
@@ -132,9 +131,7 @@ class TagsPicker extends PureComponent {
 
   @autobind
   renderModal(trigger) {
-    const {
-      flat, title, onChange, fields, createTag, sortable,
-    } = this.props;
+    const { flat, title, onChange, fields, createTag, sortable } = this.props;
     // const { fields } = this.state;
     const value = this.getValue();
     if (sortable) {
@@ -156,15 +153,14 @@ class TagsPicker extends PureComponent {
     );
   }
   render() {
-    const {
-      block, triggerTitle, fields, disabled, readOnly, validationState, maxLength,
-    } = this.props;
+    const { block, triggerTitle, fields, disabled, readOnly, validationState, maxLength } = this.props;
     const value = this.getValue();
     const fieldsKeys = getFieldsKeys(fields);
 
-    const trigger = value.length > 0
-      ? <Add inverse disabled={disabled} />
-      : (
+    const trigger =
+      value.length > 0 ? (
+        <Add inverse disabled={disabled} />
+      ) : (
         <Button
           paint={validationState !== 'error' ? 'primary' : 'danger'}
           block={block}
@@ -180,8 +176,8 @@ class TagsPicker extends PureComponent {
         <If condition={value.length > 0}>
           <TagsWrapper>
             {(maxLength ? value.splice(0, maxLength) : value)
-              .filter(item => !(!get(fieldsKeys, `${item}.title`) && __DEV__))
-              .map(item => (
+              .filter((item) => !(!get(fieldsKeys, `${item}.title`) && __DEV__))
+              .map((item) => (
                 <Tag
                   key={item}
                   id={item}
@@ -190,15 +186,11 @@ class TagsPicker extends PureComponent {
                 >
                   {get(fieldsKeys, `${item}.title`, '???')}
                 </Tag>
-            ))}
-            <If condition={!readOnly}>
-              {disabled ? trigger : this.renderModal(trigger)}
-            </If>
+              ))}
+            <If condition={!readOnly}>{disabled ? trigger : this.renderModal(trigger)}</If>
           </TagsWrapper>
         </If>
-        <If condition={!readOnly && value.length === 0}>
-          {disabled ? trigger : this.renderModal(trigger)}
-        </If>
+        <If condition={!readOnly && value.length === 0}>{disabled ? trigger : this.renderModal(trigger)}</If>
       </div>
     );
   }

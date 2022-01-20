@@ -1,19 +1,11 @@
 import React, { Component } from 'react';
-import If from 'react-if';
-import T from '@lskjs/t';
-import { BaseCheckbox as Checkbox } from '../../controls/Checkbox';
 
-import {
-  Block,
-  CheckBoxWrapper,
-  Title,
-} from './CheckboxDeal.styles';
+import { BaseCheckbox as Checkbox } from '../../controls/Checkbox';
+import { Block, CheckBoxWrapper, Title } from './CheckboxDeal.styles';
 
 class CheckboxDeal extends Component {
   render() {
-    const {
-      checked, onChange, item,
-    } = this.props;
+    const { checked, onChange, item } = this.props;
     return (
       <Block
         active={checked}
@@ -27,14 +19,12 @@ class CheckboxDeal extends Component {
           <Checkbox
             checked={checked}
             onChange={(e) => {
-                e.preventDefault();
-                e.stopPropagation();
+              e.preventDefault();
+              e.stopPropagation();
             }}
           />
         </CheckBoxWrapper>
-        <Title>
-          {item.title}
-        </Title>
+        <Title>{item.title}</Title>
       </Block>
     );
   }

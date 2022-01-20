@@ -43,4 +43,3 @@ export const Wrapper = styled('div')`
 export const TooltipWrapper = styled('div')`
   margin-left: 4px;
 `;
-

@@ -1,25 +1,23 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
-import Marker from 'react-icons2/md/room';
+import { css } from '@emotion/react';
 import autobind from '@lskjs/autobind';
 import GoogleMapReact from 'google-map-react';
-import { css } from '@emotion/core';
+import React, { Component } from 'react';
+import Marker from 'react-icons2/md/room';
+
 import SearchBox from './SearchBox';
 // import { Icon } from './Geo.styles';
 
 const markerWrapperStyle = css`
-/* border: 1px red solid; */
+  /* border: 1px red solid; */
 `;
 const markerStyle = css`
   font-size: 48px;
-  color: #B71C1C;
+  color: #b71c1c;
   /* border: 1px black solid; */
   position: relative;
   left: -26px;
   top: -53px;
 `;
-
 
 class Geo extends Component {
   constructor(props) {
@@ -38,7 +36,6 @@ class Geo extends Component {
       mapsapi: null,
     };
   }
-
 
   // @autobind
   // onCircleInteraction(childKey, childProps, mouse) {
@@ -76,17 +73,9 @@ class Geo extends Component {
     });
   }
 
-
   render() {
-    const {
-      field, form, height = 300, width = '100%', apiKey, search = true, ...props
-    } = this.props;
-    const {
-
-      mapsApiLoaded,
-      mapInstance,
-      mapsApi,
-    } = this.state;
+    const { field, form, height = 300, width = '100%', apiKey, search = true, ...props } = this.props;
+    const { mapsApiLoaded, mapInstance, mapsApi } = this.state;
 
     return (
       <div style={{ height, width, position: 'relative' }}>
@@ -127,7 +116,7 @@ class Geo extends Component {
           center={this.state.center}
           defaultZoom={9}
           layerTypes={['TrafficLayer', 'TransitLayer']}
-          options={maps => ({
+          options={(maps) => ({
             panControl: true,
             mapTypeControl: false,
             streetViewControl: false,
@@ -147,8 +136,8 @@ class Geo extends Component {
           // onChildClick={() => console.log('child click')}
           // onClick={() => console.log('mapClick')}
         >
-          <div className={markerWrapperStyle} >
-            <span className={markerStyle} >
+          <div className={markerWrapperStyle}>
+            <span className={markerStyle}>
               <Marker />
             </span>
           </div>
@@ -159,7 +148,6 @@ class Geo extends Component {
 }
 
 export default Geo;
-
 
 // const {
 //   field, form, height = 300, width = 300, apiKey, ...props
@@ -200,4 +188,3 @@ export default Geo;
 //     </GoogleMapReact>
 //   </div>
 // );
-

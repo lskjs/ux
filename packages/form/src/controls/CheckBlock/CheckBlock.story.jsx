@@ -1,12 +1,12 @@
-import React from 'react';
-import { Form, Field } from 'formik';
 import Story from '@lskjs/dev/Story';
+import { Field, Form } from 'formik';
+import React from 'react';
+
 import createForm from '../../createForm';
-import CheckBlock from './CheckBlock';
 import FormDebug from '../../FormDebug';
+import CheckBlock from './CheckBlock';
 
-
-const CheckBlockViewForm = props => (
+const CheckBlockViewForm = (props) => (
   <Form>
     <Field {...props.control('radio')} />
     <Field {...props.control('checkbox')} />
@@ -39,11 +39,8 @@ const CheckBlockForm = createForm({
 });
 
 export default ({ storiesOf }) =>
-  storiesOf('form/controls', module)
-    .add('CheckBlock ', () => {
-      return (
-        <Story>
-          <CheckBlockForm />
-        </Story>
-      );
-    });
+  storiesOf('form/controls', module).add('CheckBlock ', () => (
+    <Story>
+      <CheckBlockForm />
+    </Story>
+  ));

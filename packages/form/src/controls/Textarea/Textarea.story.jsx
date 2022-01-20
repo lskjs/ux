@@ -1,12 +1,13 @@
-import React from 'react';
-import { Form, Field } from 'formik';
 // import { Button } from 'react-bootstrap';
 import Story from '@lskjs/dev/Story';
-import createForm from '../../createForm';
-import Textarea from './Textarea';
-import FormDebug from '../../FormDebug';
+import { Field, Form } from 'formik';
+import React from 'react';
 
-const TextareaFormView = props => (
+import createForm from '../../createForm';
+import FormDebug from '../../FormDebug';
+import Textarea from './Textarea';
+
+const TextareaFormView = (props) => (
   <Form>
     <Field {...props.control('textarea')} />
     <FormDebug {...props} />
@@ -28,11 +29,8 @@ const TextareaForm = createForm({
 });
 
 export default ({ storiesOf }) =>
-  storiesOf('form/controls', module)
-    .add('Textarea ', () => {
-      return (
-        <Story>
-          <TextareaForm />
-        </Story>
-      );
-    });
+  storiesOf('form/controls', module).add('Textarea ', () => (
+    <Story>
+      <TextareaForm />
+    </Story>
+  ));

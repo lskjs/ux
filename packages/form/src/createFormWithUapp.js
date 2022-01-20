@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
 import isFunction from 'lodash/isFunction';
 import { inject, observer } from 'mobx-react';
+import React, { Component } from 'react';
+
 import createForm from './createForm';
 
 const createFormWithUapp = (callback) => {

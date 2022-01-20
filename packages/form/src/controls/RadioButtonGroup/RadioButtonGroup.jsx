@@ -1,21 +1,24 @@
-import React, { PureComponent } from 'react';
+import ButtonGroup from '@lskjs/button/ButtonGroup';
 import omit from 'lodash/omit';
 import PropTypes from 'prop-types';
-import ButtonGroup from '@lskjs/button/ButtonGroup';
+import React, { PureComponent } from 'react';
+
 import Bool from '../Checkbox/Bool';
 import StyledButton, { Wrapper } from './RadioButtonGroup.styles';
 
 class RadioButtonGroup extends PureComponent {
   static propTypes = {
-    options: PropTypes.arrayOf(PropTypes.shape({
-      value: PropTypes.any,
-      title: PropTypes.any,
-    })),
+    options: PropTypes.arrayOf(
+      PropTypes.shape({
+        value: PropTypes.any,
+        title: PropTypes.any,
+      }),
+    ),
     value: PropTypes.string,
     block: PropTypes.bool,
     paint: PropTypes.string,
     onChange: PropTypes.func,
-  }
+  };
 
   static defaultProps = {
     options: [],
@@ -23,7 +26,7 @@ class RadioButtonGroup extends PureComponent {
     value: null,
     paint: 'primary',
     onChange: null,
-  }
+  };
 
   onChange(value) {
     const { onChange } = this.props;
@@ -33,18 +36,9 @@ class RadioButtonGroup extends PureComponent {
   }
 
   render() {
-    const {
-      options,
-      value,
-      paint,
-      block,
-      ...props
-    } = this.props;
+    const { options, value, paint, block, ...props } = this.props;
     return (
-      <ButtonGroup
-        panel
-        {...omit(props, ['onChange'])}
-      >
+      <ButtonGroup panel {...omit(props, ['onChange'])}>
         <Wrapper block={block}>
           {options.map((item, index) => (
             <StyledButton
@@ -66,4 +60,4 @@ class RadioButtonGroup extends PureComponent {
   }
 }
 
-export default props => <Bool {...props} componentClass={RadioButtonGroup} />;
+export default (props) => <Bool {...props} componentClass={RadioButtonGroup} />;

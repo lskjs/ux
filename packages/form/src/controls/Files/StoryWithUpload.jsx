@@ -1,10 +1,10 @@
-import React from 'react';
-import { Provider } from 'mobx-react';
 import Story from '@lskjs/dev/Story';
+import { Provider } from 'mobx-react';
+import React from 'react';
 
 export const uapp = {
-  i18: { t: a => a },
-  module: type => ({
+  i18: { t: (a) => a },
+  module: (type) => ({
     uploadFiles(files) {
       // console.log('UPLOAD => ', files);
       return [

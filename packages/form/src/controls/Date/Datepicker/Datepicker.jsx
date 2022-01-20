@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
 import autobind from '@lskjs/autobind';
-import PropTypes from 'prop-types';
-import { inject, observer } from 'mobx-react';
 import DatePicker from 'antd/lib/date-picker';
 import LocaleProvider from 'antd/lib/locale-provider';
 import en from 'antd/lib/locale-provider/en_US';
 import ru from 'antd/lib/locale-provider/ru_RU';
 import cx from 'classnames';
+import { inject, observer } from 'mobx-react';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 
 const { RangePicker } = DatePicker;
 
@@ -50,7 +50,7 @@ class Datepicker extends Component {
           ) : (
             <DatePicker
               className="datepicker"
-              onChange={m => {
+              onChange={(m) => {
                 this.onChange(m.toDate());
               }}
               getCalendarContainer={this.getCalendarContainer}

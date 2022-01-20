@@ -1,10 +1,11 @@
-import React, { useMemo } from 'react';
-import PropTypes from 'prop-types';
-import { components } from 'react-select';
 import isEqual from 'lodash/isEqual';
 import pick from 'lodash/pick';
+import PropTypes from 'prop-types';
+import React, { useMemo } from 'react';
 import If from 'react-if';
-import { Option, Image, Title, Icon } from './SingleValue.styles';
+import { components } from 'react-select';
+
+import { Icon, Image, Option, Title } from './SingleValue.styles';
 
 const SingleValue = (props) => {
   const { data } = props;

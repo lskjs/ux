@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import get from 'lodash/get';
 import { inject } from 'mobx-react';
-import { GoogleReCaptchaProvider, GoogleReCaptcha } from 'react-google-recaptcha-v3';
+import PropTypes from 'prop-types';
+import React from 'react';
+import { GoogleReCaptcha, GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 
 const ReCaptchaV3 = ({ uapp, field, form, ...props }) => {
   const hasError = field && field.name && !!get(form.errors, field.name);

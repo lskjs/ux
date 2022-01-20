@@ -3,7 +3,7 @@ import getTheme from '@lskjs/theme/getTheme';
 
 export const Header = styled('div')`
   width: 278px;
-  background-color: ${p => getTheme(p.theme, 'colors.lighterPrimary')};
+  background-color: ${(p) => getTheme(p.theme, 'colors.lighterPrimary')};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -50,7 +50,7 @@ export const Title = styled('b')`
   line-height: 1.43;
   letter-spacing: -0.1px;
   text-align: left;
-  color: ${p => getTheme(p.theme, 'colors.main')};
+  color: ${(p) => getTheme(p.theme, 'colors.main')};
   font-weight: normal;
   margin-bottom: 6px;
 `;
@@ -60,27 +60,29 @@ export const Desc = styled('p')`
   line-height: 1.43;
   letter-spacing: -0.1px;
   text-align: left;
-  color: ${p => getTheme(p.theme, 'colors.secondary')};
+  color: ${(p) => getTheme(p.theme, 'colors.secondary')};
   margin: 0;
 `;
 
 export const Block = styled('button')`
   width: 280px;
   height: 200px;
-  background-color: ${p => getTheme(p.theme, 'colors.white')};
-  border: solid 1px ${p => getTheme(p.theme, 'colors.border')};
+  background-color: ${(p) => getTheme(p.theme, 'colors.white')};
+  border: solid 1px ${(p) => getTheme(p.theme, 'colors.border')};
   display: flex;
   flex-direction: column;
   outline: none;
   padding: 0;
   cursor: pointer;
-  ${p => (p.checked && `
+  ${(p) =>
+    p.checked &&
+    `
     border-color: ${getTheme(p.theme, 'colors.primary')};
     ${Radio} {
       border: none;
       background-color: ${getTheme(p.theme, 'colors.primary')};
     }
-  `)}
+  `}
   ${(p) => {
     switch (p.validationState) {
       case 'error':

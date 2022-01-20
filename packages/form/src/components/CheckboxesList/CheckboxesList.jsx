@@ -1,8 +1,8 @@
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
 import autobind from '@lskjs/autobind';
-import { Scrollbars } from 'react-custom-scrollbars';
 import cloneDeep from 'lodash/cloneDeep';
+import PropTypes from 'prop-types';
+import React, { PureComponent } from 'react';
+import { Scrollbars } from 'react-custom-scrollbars';
 
 import { BaseCheckbox as Checkbox } from '../../controls/Checkbox';
 import Block from './CheckboxesList.styles';
@@ -14,14 +14,14 @@ class CheckboxesList extends PureComponent {
     height: PropTypes.number,
     data: PropTypes.array,
     itemComponent: PropTypes.any,
-  }
+  };
   static defaultProps = {
     selected: [],
     onChange: null,
     height: 254,
     data: [],
     itemComponent: null,
-  }
+  };
   constructor(props) {
     super(props);
     this.state = {
@@ -40,7 +40,7 @@ class CheckboxesList extends PureComponent {
     const isExists = selected.includes(id);
     let arr = cloneDeep(selected);
     if (isExists) {
-      arr = arr.filter(i => i !== id);
+      arr = arr.filter((i) => i !== id);
     } else {
       arr.push(id);
     }
@@ -58,36 +58,28 @@ class CheckboxesList extends PureComponent {
     const Item = itemComponent || Checkbox;
     return (
       <Block>
-        <Scrollbars
-          universal
-          autoHide
-          autoHeight
-          autoHeightMax={height}
-        >
+        <Scrollbars universal autoHide autoHeight autoHeightMax={height}>
           <div>
             {data.map((element) => {
               const props = {
-                ...(!itemComponent ? {
-                  ...element,
-                  children: element.title,
-                  onChange: this.handleSelect,
-                  checked: selected.includes(element.value || element._id),
-                } : {
-                  item: {
-                    ...element,
-                    _id: element.value,
-                    title: element.title,
-                  },
-                  onChange: this.handleSelect,
-                  checked: selected.includes(element.value || element._id),
-                }),
+                ...(!itemComponent
+                  ? {
+                      ...element,
+                      children: element.title,
+                      onChange: this.handleSelect,
+                      checked: selected.includes(element.value || element._id),
+                    }
+                  : {
+                      item: {
+                        ...element,
+                        _id: element.value,
+                        title: element.title,
+                      },
+                      onChange: this.handleSelect,
+                      checked: selected.includes(element.value || element._id),
+                    }),
               };
-              return (
-                <Item
-                  key={element.value || element._id}
-                  {...props}
-                />
-              );
+              return <Item key={element.value || element._id} {...props} />;
             })}
           </div>
         </Scrollbars>

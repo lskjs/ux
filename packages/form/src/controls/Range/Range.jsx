@@ -1,17 +1,12 @@
+import debounce from 'lodash/debounce';
 import React from 'react';
-import debounce from 'lodash.debounce';
+
 import RangeBase from './RangeGroup';
 
-const Range = ({
-  field,
-  form,
-  ...props
-}) => {
+const Range = ({ field, form, ...props }) => {
   let debounceFunction;
-  const handleChange = (value) => {
-    return () => {
-      form.setFieldValue(field.name, value);
-    };
+  const handleChange = (value) => () => {
+    form.setFieldValue(field.name, value);
   };
   return (
     <RangeBase

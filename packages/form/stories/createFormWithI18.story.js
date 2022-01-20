@@ -1,24 +1,21 @@
+import { Field, Form } from 'formik';
 import React from 'react';
-import { Form, Field } from 'formik';
-import createFormWithI18 from '../createFormWithI18';
-import Input from '../controls/Input';
+
+import Input from '../src/controls/Input';
+import createFormWithI18 from '../src/createFormWithI18';
 import Story from './Story';
 
-const InputFormView = (props) => {
-  return (
-    <Form>
-      <Field {...props.control('input')} />
-      <InputFormNested />
-    </Form>
-  );
-};
-const InputFormViewNested = (props) => {
-  return (
-    <Form>
-      <Field {...props.control('input')} />
-    </Form>
-  );
-};
+const InputFormView = (props) => (
+  <Form>
+    <Field {...props.control('input')} />
+    <InputFormNested />
+  </Form>
+);
+const InputFormViewNested = (props) => (
+  <Form>
+    <Field {...props.control('input')} />
+  </Form>
+);
 
 const InputForm = createFormWithI18({
   view: InputFormView,
@@ -50,10 +47,8 @@ const InputFormNested = createFormWithI18({
 });
 
 export default ({ storiesOf }) =>
-  storiesOf('form/nested form', module).add('createFormWithI18', () => {
-    return (
-      <Story>
-        <InputForm initialValues={{}} />
-      </Story>
-    );
-  });
+  storiesOf('form/nested form', module).add('createFormWithI18', () => (
+    <Story>
+      <InputForm initialValues={{}} />
+    </Story>
+  ));

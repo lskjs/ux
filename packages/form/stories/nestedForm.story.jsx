@@ -1,14 +1,14 @@
-import React, { createRef } from 'react';
-import { Form, Field } from 'formik';
 import DEV from '@lskjs/dev/DEV';
-import Story from './Story';
-import createForm from '../createForm';
-import FormDebug from '../FormDebug';
+import { Field, Form } from 'formik';
+import React, { createRef } from 'react';
 
-import Input from '../controls/Input';
-import Select from '../controls/Select';
-import ArrayOf from '../controls/ArrayOf';
-import createNestedFormControl from '../createNestedFormControl';
+import ArrayOf from '../src/controls/ArrayOf';
+import Input from '../src/controls/Input';
+import Select from '../src/controls/Select';
+import createForm from '../src/createForm';
+import createNestedFormControl from '../src/createNestedFormControl';
+import FormDebug from '../src/FormDebug';
+import Story from './Story';
 
 window.__DEV__ = typeof window !== 'undefined' && window.location.hostname === 'localhost';
 

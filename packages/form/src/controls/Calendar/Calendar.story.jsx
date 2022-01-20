@@ -1,13 +1,13 @@
-import React from 'react';
-import { Form, Field } from 'formik';
 import Story from '@lskjs/dev/Story';
+import { Field, Form } from 'formik';
+import React from 'react';
+
 import createForm from '../../createForm';
-import Calendar from './Calendar';
-import Input from '../Input';
 import FormDebug from '../../FormDebug';
+import Input from '../Input';
+import Calendar from './Calendar';
 
-
-const CalendarFormView = props => (
+const CalendarFormView = (props) => (
   <Form>
     <Field {...props.control('calendar1')} />
     <Field {...props.control('calendar2')} />
@@ -70,8 +70,8 @@ const CalendarForm = createForm({
   },
 });
 
-export default ({ storiesOf }) => storiesOf('form/controls', module)
-  .add('Calendar ', () => (
+export default ({ storiesOf }) =>
+  storiesOf('form/controls', module).add('Calendar ', () => (
     <Story>
       <CalendarForm
         initialValues={{
@@ -83,7 +83,7 @@ export default ({ storiesOf }) => storiesOf('form/controls', module)
           // calendar5: new Date('invalid'),
           calendar6: Date.now(),
         }}
-        onChange={values => console.log('onChange', values)}
+        onChange={(values) => console.log('onChange', values)}
       />
     </Story>
   ));

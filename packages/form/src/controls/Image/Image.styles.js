@@ -1,5 +1,5 @@
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { css } from '@emotion/core';
 import getTheme from '@lskjs/theme/getTheme';
 
 export const zoneStyle = css`
@@ -16,8 +16,8 @@ export const Drop = styled('div')`
   width: 280px;
   height: 392px;
   border-radius: 3px;
-  background-color: ${p => getTheme(p.theme, 'colors.white')};
-  border: solid 3px ${p => getTheme(p.theme, 'colors.primary')};
+  background-color: ${(p) => getTheme(p.theme, 'colors.white')};
+  border: solid 3px ${(p) => getTheme(p.theme, 'colors.primary')};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -28,16 +28,16 @@ export const Drop = styled('div')`
 `;
 
 export const DropText = styled('div')`
-  font-family: ${p => getTheme(p.theme, 'fontFamily')};
+  font-family: ${(p) => getTheme(p.theme, 'fontFamily')};
   font-size: 20px;
   text-align: center;
-  color: ${p => getTheme(p.theme, 'colors.primary')};
+  color: ${(p) => getTheme(p.theme, 'colors.primary')};
   margin-bottom: 18px;
   width: 70%;
 `;
 
 export const DropIcon = styled('div')`
-  color: ${p => getTheme(p.theme, 'colors.primary')};
+  color: ${(p) => getTheme(p.theme, 'colors.primary')};
   font-size: 64px;
   > svg {
     display: flex;
@@ -61,7 +61,7 @@ export const RemoveButton = styled('button')`
   border: none;
   outline: none;
   opacity: 0.7;
-  color: ${p => getTheme(p.theme, 'colors.white')};
+  color: ${(p) => getTheme(p.theme, 'colors.white')};
   position: absolute;
   top: 0;
   right: 0;
@@ -74,15 +74,15 @@ export const RemoveButton = styled('button')`
 
 export const PlaceholderFooter = styled('div')`
   opacity: 0.5;
-  font-family: ${p => getTheme(p.theme, 'fontFamily')};
+  font-family: ${(p) => getTheme(p.theme, 'fontFamily')};
   font-size: 11px;
   letter-spacing: -0.1px;
   text-align: center;
-  color: ${p => getTheme(p.theme, 'colors.primary')};
+  color: ${(p) => getTheme(p.theme, 'colors.primary')};
 `;
 
 export const IconFooter = styled('div')`
-  color: ${p => getTheme(p.theme, 'colors.primary')};
+  color: ${(p) => getTheme(p.theme, 'colors.primary')};
   opacity: 0.5;
   font-size: 64px;
   margin-bottom: 24px;
@@ -95,7 +95,7 @@ export const IconFooter = styled('div')`
 export const Footer = styled('div')`
   height: 200px;
   width: 100%;
-  background-color: ${p => getTheme(p.theme, 'colors.lighterPrimary')};
+  background-color: ${(p) => getTheme(p.theme, 'colors.lighterPrimary')};
   position: relative;
   display: flex;
   flex-direction: column;
@@ -111,11 +111,11 @@ export const Button = styled('button')`
   padding: 12px 20px;
   border-radius: 3px;
   background-color: rgba(155, 155, 155, 0.12);
-  font-family: ${p => getTheme(p.theme, 'fontFamily')};
+  font-family: ${(p) => getTheme(p.theme, 'fontFamily')};
   font-size: 13px;
   line-height: 1;
   text-align: center;
-  color: ${p => getTheme(p.theme, 'colors.primary')};
+  color: ${(p) => getTheme(p.theme, 'colors.primary')};
   border: none;
   outline: none;
   cursor: pointer;
@@ -137,14 +137,14 @@ export const Info = styled('div')`
   line-height: 1.43;
   letter-spacing: -0.1px;
   text-align: left;
-  color: ${p => getTheme(p.theme, 'colors.main')};
-  font-family: ${p => getTheme(p.theme, 'fontFamily')};
+  color: ${(p) => getTheme(p.theme, 'colors.main')};
+  font-family: ${(p) => getTheme(p.theme, 'fontFamily')};
   margin-bottom: 32px;
 `;
 
 export const Header = styled('div')`
   padding: 12px 16px;
-  background-color: ${p => getTheme(p.theme, 'colors.white')};
+  background-color: ${(p) => getTheme(p.theme, 'colors.white')};
   flex: 1;
   border-radius: 3px 3px 0 0;
 `;
@@ -154,16 +154,16 @@ export const Block = styled('div')`
   height: 391px;
   padding: 0;
   border-radius: 3px;
-  background-color: ${p => getTheme(p.theme, 'colors.white')};
+  background-color: ${(p) => getTheme(p.theme, 'colors.white')};
   border: solid 1px #e3e3e3;
   display: flex;
   flex-direction: column;
-  ${p =>
+  ${(p) =>
     p.validationState === 'error' &&
     `
     border-color: #da4c5a;
   `}
-  ${p =>
+  ${(p) =>
     p.avatar &&
     `
     height: 384px;

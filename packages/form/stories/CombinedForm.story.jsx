@@ -1,13 +1,14 @@
 /* eslint-disable react/destructuring-assignment */
-import React, { useState } from 'react';
-import { Form, Field } from 'formik';
+import { Field, Form } from 'formik';
 import get from 'lodash/get';
+import React, { useState } from 'react';
+
+import Input from '../src/controls/Input';
+import PhoneInput from '../src/controls/PhoneInput';
+import RadioButtonGroup from '../src/controls/RadioButtonGroup';
+import createForm from '../src/createForm';
+import FormDebug from '../src/FormDebug';
 import Story from './Story';
-import createForm from '../createForm';
-import Input from '../controls/Input';
-import PhoneInput from '../controls/PhoneInput';
-import RadioButtonGroup from '../controls/RadioButtonGroup';
-import FormDebug from '../FormDebug';
 
 const Form1View = ({ control }) => (
   <Form>
@@ -97,7 +98,7 @@ const Form3 = createForm({
           if (phone.charAt(0) !== '+') phone = `+${phone}`;
           const phoneNumber = {
             isValid: () => true,
-          }
+          };
           if (phoneNumber && phoneNumber.isValid()) {
             return '';
           }

@@ -1,11 +1,11 @@
-import React from 'react';
 // import PropTypes from 'prop-types';
 import autobind from '@lskjs/autobind';
-import isEqual from 'lodash/isEqual';
-import isEmpty from 'lodash/isEmpty';
-import DebounceInput from 'react-debounce-input';
 import debounce from '@lskjs/utils/decorator-debounce';
+import isEmpty from 'lodash/isEmpty';
+import isEqual from 'lodash/isEqual';
+import React from 'react';
 import { FormControl } from 'react-bootstrap';
+import DebounceInput from 'react-debounce-input';
 
 import Input from '../BaseInput';
 import inputArrayStyles from './InputArray.styles';
@@ -13,7 +13,7 @@ import inputArrayStyles from './InputArray.styles';
 class InputArray extends React.Component {
   constructor(props) {
     super(props);
-    const val = (props.value || props.defaultValue);
+    const val = props.value || props.defaultValue;
     const value = isEmpty(val) ? [''] : val;
     // console.log({ value }, props.value, props.defaultValue);
     this.state = {
@@ -42,7 +42,7 @@ class InputArray extends React.Component {
   @autobind
   onChange() {
     const { value } = this.state;
-    if (this.props.onChange) this.props.onChange((value || []).filter(a => a));
+    if (this.props.onChange) this.props.onChange((value || []).filter((a) => a));
   }
 
   @autobind
@@ -50,11 +50,14 @@ class InputArray extends React.Component {
     const value = [...this.state.value];
     value[i] = val;
 
-    this.setState({
-      value,
-    }, () => {
-      this.onChangeDebounced();
-    });
+    this.setState(
+      {
+        value,
+      },
+      () => {
+        this.onChangeDebounced();
+      },
+    );
   }
 
   @autobind
@@ -64,15 +67,17 @@ class InputArray extends React.Component {
         const value = [...this.state.value];
         value.splice(i, 1);
 
-        this.setState({
-          value,
-        }, () => {
-          this.onChangeDebounced();
-        });
+        this.setState(
+          {
+            value,
+          },
+          () => {
+            this.onChangeDebounced();
+          },
+        );
       }
     }
   }
-
 
   getValues() {
     const value = this.state.value || [];
@@ -83,14 +88,10 @@ class InputArray extends React.Component {
       return [''];
     }
     if (value[value.length - 1] !== '') {
-      return [
-        ...value,
-        '',
-      ];
+      return [...value, ''];
     }
     return value;
   }
-
 
   render() {
     // __DEV__ && console.log('props', this.props);
@@ -98,47 +99,43 @@ class InputArray extends React.Component {
     if (component === 'bootstrap') {
       return (
         <div>
-          {this.getValues().map((val, i) => {
-            return (
-              <FormControl
+          {this.getValues().map((val, i) => (
+            <FormControl
                 key={i} // eslint-disable-line
-                className={inputArrayStyles}
-                componentClass={DebounceInput}
-                // debounceTimeout={100}
-                type="text"
-                value={val}
-                // placeholder={min}
-                onChange={e => this.onChangeHandler(i, e)}
-                onBlur={() => this.onBlurHandler(i)}
-                // min={disabled ? null : min}
-                // max={disabled ? null : valueRight - 1}
-                // disabled={disabled}
-              />
-              // <input type="text" key={i} value={val} onChange={e => this.onChangeHandler(i, e.target.value)}
-              //   onBlur={() => this.onBlurHandler(i)}
-              // />
-            );
-          })}
+              className={inputArrayStyles}
+              componentClass={DebounceInput}
+              // debounceTimeout={100}
+              type="text"
+              value={val}
+              // placeholder={min}
+              onChange={(e) => this.onChangeHandler(i, e)}
+              onBlur={() => this.onBlurHandler(i)}
+              // min={disabled ? null : min}
+              // max={disabled ? null : valueRight - 1}
+              // disabled={disabled}
+            />
+            // <input type="text" key={i} value={val} onChange={e => this.onChangeHandler(i, e.target.value)}
+            //   onBlur={() => this.onBlurHandler(i)}
+            // />
+          ))}
         </div>
       );
     }
 
     return (
       <div>
-        {this.getValues().map((val, i) => {
-          return (
-            <Input
+        {this.getValues().map((val, i) => (
+          <Input
               key={i} // eslint-disable-line
-              className={inputArrayStyles}
-              block
-              componentClass={DebounceInput}
-              {...props}
-              value={val}
-              onChange={e => this.onChangeHandler(i, e)}
-              onBlur={() => this.onBlurHandler(i)}
-            />
-          );
-        })}
+            className={inputArrayStyles}
+            block
+            componentClass={DebounceInput}
+            {...props}
+            value={val}
+            onChange={(e) => this.onChangeHandler(i, e)}
+            onBlur={() => this.onBlurHandler(i)}
+          />
+        ))}
       </div>
     );
   }

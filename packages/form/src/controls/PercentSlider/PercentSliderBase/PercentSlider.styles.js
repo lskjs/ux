@@ -5,8 +5,8 @@ export const Value = styled('div')`
   font-weight: 500;
   font-size: 14px;
   margin-right: 12px;
-  font-family: ${p => getTheme(p.theme, 'fontFamily')};
-  color: ${p => getTheme(p.theme, 'colors.primary')};
+  font-family: ${(p) => getTheme(p.theme, 'fontFamily')};
+  color: ${(p) => getTheme(p.theme, 'colors.primary')};
   flex-shrink: 0;
   width: 38px;
 `;
@@ -14,10 +14,10 @@ export const Value = styled('div')`
 export const SliderWrapper = styled('div')`
   width: 100%;
   .ant-slider .ant-slider-track {
-    background-color: ${p => getTheme(p.theme, 'colors.primary')};
+    background-color: ${(p) => getTheme(p.theme, 'colors.primary')};
   }
   .ant-slider .ant-slider-handle {
-    border: solid 2px ${p => getTheme(p.theme, 'colors.primary')};
+    border: solid 2px ${(p) => getTheme(p.theme, 'colors.primary')};
   }
 `;
 
@@ -37,14 +37,14 @@ export const Wrapper = styled('div')`
 
   .ant-slider-rail {
     height: 2px !important;
-    background-color: ${p => getTheme(p.theme, 'colors.darkerBackground')} !important;
+    background-color: ${(p) => getTheme(p.theme, 'colors.darkerBackground')} !important;
     top: 0 !important;
     left: 0 !important;
   }
 
   .ant-slider-track {
     height: 2px !important;
-    background-color: ${p => getTheme(p.theme, 'colors.primary')} !important;
+    background-color: ${(p) => getTheme(p.theme, 'colors.primary')} !important;
     top: 0 !important;
   }
 
@@ -58,16 +58,16 @@ export const Wrapper = styled('div')`
     width: 8px !important;
     height: 8px !important;
     border: none !important;
-    background-color: ${p => getTheme(p.theme, 'colors.primary')} !important;
+    background-color: ${(p) => getTheme(p.theme, 'colors.primary')} !important;
     outline: none !important;
-    box-shadow: 0 0 0 1px ${p => getTheme(p.theme, 'colors.primary')};
+    box-shadow: 0 0 0 1px ${(p) => getTheme(p.theme, 'colors.primary')};
 
     transition: box-shadow 0.2s ease-out !important;
     will-change: box-shadow;
   }
 
   .ant-slider-handle:hover {
-    box-shadow: 0 0 0 6px ${p => getTheme(p.theme, 'colors.primary')};
+    box-shadow: 0 0 0 6px ${(p) => getTheme(p.theme, 'colors.primary')};
     transform: scale(1) !important;
   }
 
@@ -103,7 +103,7 @@ export const Wrapper = styled('div')`
   }
 
   .ant-slider-mark-text-active {
-    color: ${p => getTheme(p.theme, 'colors.primary')} !important;
+    color: ${(p) => getTheme(p.theme, 'colors.primary')} !important;
   }
 
   .ant-slider-dot {
@@ -116,6 +116,6 @@ export const Wrapper = styled('div')`
   }
 
   .ant-slider-dot-active {
-    background-color: ${p => getTheme(p.theme, 'colors.primary')} !important;
+    background-color: ${(p) => getTheme(p.theme, 'colors.primary')} !important;
   }
 `;

@@ -1,17 +1,18 @@
-import React from 'react';
-import { Form, Field, FastField, withFormik } from 'formik';
 import Story from '@lskjs/dev/Story';
+import { FastField, Field, Form, withFormik } from 'formik';
+import React from 'react';
+
 import createForm from '../../createForm';
-import ArrayOf from './ArrayOf';
-import Input from '../Input/Input';
-import Select from '../Select';
 import createFormWithI18 from '../../createFormWithI18';
-import Radio from '../Radio';
 import FormDebug from '../../FormDebug';
+import Input from '../Input/Input';
+import Radio from '../Radio';
+import Select from '../Select';
+import ArrayOf from './ArrayOf';
 
 const loadOption = async () => ['1', '1', '1', '1', '1'];
 
-const createNestedFormControl = Component => (props) => {
+const createNestedFormControl = (Component) => (props) => {
   const { form, field, ...otherProps } = props;
   const { value } = field;
   return (
@@ -25,7 +26,8 @@ const createNestedFormControl = Component => (props) => {
   );
 };
 
-const SpeakerFormView = ({ i18, loadOptions, ...props }) => { // loadOptions не прокидывается
+const SpeakerFormView = ({ i18, loadOptions, ...props }) => {
+  // loadOptions не прокидывается
   console.log(props);
   return (
     <Form className="ant-form ant-form-vertical">
@@ -49,7 +51,7 @@ const SpeakerForm = createFormWithI18(({ i18 }) => ({
   },
 }));
 
-const ArrayOfFormView = props => (
+const ArrayOfFormView = (props) => (
   <Form>
     <Field {...props.control('inputArray')} />
     <FastField {...props.control('inputArray')} title="FastField/inputArray" />
@@ -101,15 +103,12 @@ const ArrayOfForm = createForm({
   },
 });
 
-export default ({ storiesOf }) => storiesOf('form/controls', module)
-  .add('ArrayOf ', () => (
+export default ({ storiesOf }) =>
+  storiesOf('form/controls', module).add('ArrayOf ', () => (
     <Story>
       <ArrayOfForm
         initialValues={{
-          inputArray: [
-            1122221,
-            222222,
-          ],
+          inputArray: [1122221, 222222],
         }}
       />
     </Story>

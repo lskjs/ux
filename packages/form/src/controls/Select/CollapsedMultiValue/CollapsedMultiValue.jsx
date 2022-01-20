@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
+import T from '@lskjs/t';
 import isEqual from 'lodash/isEqual';
 import pick from 'lodash/pick';
-import T from '@lskjs/t';
-import { ValueBlock, Value } from './CollapsedMultiValue.styles';
+import React, { Component } from 'react';
+
+import { Value, ValueBlock } from './CollapsedMultiValue.styles';
 
 class CollapsedMultiValue extends Component {
   static sCUFields = ['isDisabled', 'isFocused', 'selectProps.value', 'isSelected'];

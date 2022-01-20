@@ -1,6 +1,6 @@
+import { injectGlobal } from '@emotion/css';
 import styled from '@emotion/styled';
 import getTheme from '@lskjs/theme/getTheme';
-import { injectGlobal } from 'emotion';
 
 export const Container = styled.div`
   /* .react-tel-input {

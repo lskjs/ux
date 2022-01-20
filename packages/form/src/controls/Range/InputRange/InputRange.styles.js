@@ -1,5 +1,5 @@
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { css } from '@emotion/core';
 import getTheme from '@lskjs/theme/getTheme';
 
 export const elInput = css`
@@ -26,18 +26,22 @@ export const El = styled('div')`
     border-radius: 4px !important;
     min-height: 36px !important;
     &:focus {
-      border-color: ${p => getTheme(p.theme, 'colors.primary')} !important;
+      border-color: ${(p) => getTheme(p.theme, 'colors.primary')} !important;
     }
-    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    &::-webkit-input-placeholder {
+      /* Chrome/Opera/Safari */
       font-size: 11px !important;
     }
-    &::-moz-placeholder { /* Firefox 19+ */
+    &::-moz-placeholder {
+      /* Firefox 19+ */
       font-size: 11px !important;
     }
-    &:-ms-input-placeholder { /* IE 10+ */
+    &:-ms-input-placeholder {
+      /* IE 10+ */
       font-size: 11px !important;
     }
-    &:-moz-placeholder { /* Firefox 18- */
+    &:-moz-placeholder {
+      /* Firefox 18- */
       font-size: 11px !important;
     }
   }
@@ -54,10 +58,10 @@ export const ElPlace = styled('div')`
   margin: auto;
   display: flex;
   align-items: center;
-  
-  font-family: ${p => getTheme(p.theme, 'fontFamily')};
+
+  font-family: ${(p) => getTheme(p.theme, 'fontFamily')};
   font-size: 13px;
   line-height: 1.43;
   text-align: left;
-  color: ${p => getTheme(p.theme, 'colors.secondary')};
+  color: ${(p) => getTheme(p.theme, 'colors.secondary')};
 `;

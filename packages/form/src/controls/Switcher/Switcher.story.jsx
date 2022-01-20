@@ -1,11 +1,12 @@
-import React from 'react';
-import { Form, Field } from 'formik';
 import Story from '@lskjs/dev/Story';
-import createForm from '../../createForm';
-import Switcher from './Switcher';
-import FormDebug from '../../FormDebug';
+import { Field, Form } from 'formik';
+import React from 'react';
 
-const SwitcherFormView = props => (
+import createForm from '../../createForm';
+import FormDebug from '../../FormDebug';
+import Switcher from './Switcher';
+
+const SwitcherFormView = (props) => (
   <Form>
     <Field {...props.control('switcher')} />
     <Field {...props.control('switcher2')} />
@@ -61,11 +62,8 @@ const SwitcherForm = createForm({
 });
 
 export default ({ storiesOf }) =>
-  storiesOf('form/controls', module)
-    .add('Switcher ', () => {
-      return (
-        <Story>
-          <SwitcherForm />
-        </Story>
-      );
-    });
+  storiesOf('form/controls', module).add('Switcher ', () => (
+    <Story>
+      <SwitcherForm />
+    </Story>
+  ));

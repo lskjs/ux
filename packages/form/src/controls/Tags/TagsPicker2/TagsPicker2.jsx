@@ -1,15 +1,15 @@
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
-import getKeys from 'lodash/keys';
+import autobind from '@lskjs/autobind';
+import Button from '@lskjs/button';
+import Tags from '@lskjs/tag/TagGroup';
+import get from 'lodash/get';
 import intersection from 'lodash/intersection';
 import isEqual from 'lodash/isEqual';
-import autobind from '@lskjs/autobind';
-import get from 'lodash/get';
+import getKeys from 'lodash/keys';
+import PropTypes from 'prop-types';
+import React, { PureComponent } from 'react';
 import Plus from 'react-icons2/mdi/plus-circle';
 import If from 'react-if';
 
-import Tags from '@lskjs/tag/TagGroup';
-import Button from '@lskjs/button';
 import Tag from '../Tag';
 import TagsWrapper from '../TagsWrapper';
 import TreePicker from '../TreePicker';
@@ -18,9 +18,9 @@ const Add = 'Add';
 
 function getFieldsKeys(fields = []) {
   const keys = {};
-  fields.forEach(field => {
+  fields.forEach((field) => {
     keys[field.value] = field;
-    (field.children || []).forEach(f => {
+    (field.children || []).forEach((f) => {
       keys[f.value] = f;
     });
   });
@@ -84,7 +84,7 @@ class TagsPicker extends PureComponent {
   @autobind
   handleDeleteTag(id) {
     const { value } = this.state;
-    this.setState({ value: value.filter(e => e !== id) }, this.callbackCombo);
+    this.setState({ value: value.filter((e) => e !== id) }, this.callbackCombo);
   }
 
   @autobind

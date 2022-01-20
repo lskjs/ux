@@ -1,91 +1,96 @@
 import styled from '@emotion/styled';
 import getTheme from '@lskjs/theme/getTheme';
 
-export default (component = 'input') => (
+export default (component = 'input') =>
   styled(component)`
-    border-radius: ${p => getTheme(p.theme, 'borderSmall')};
+    border-radius: ${(p) => getTheme(p.theme, 'borderSmall')};
     width: 100%;
     /* background-color: rgba(255, 255, 255, 0.44); */
     border: solid 1px #e3e3e3;
-    color: ${p => getTheme(p.theme, 'colors.main')};
-    font-family: ${p => getTheme(p.theme, 'fontFamily')};
+    color: ${(p) => getTheme(p.theme, 'colors.main')};
+    font-family: ${(p) => getTheme(p.theme, 'fontFamily')};
     font-size: 13px;
     line-height: 1.43;
     text-align: left;
     min-height: 48px;
     padding: ${(p) => {
-    if (p.iconLeft && p.iconRight) {
-      return '13px 40px';
-    }
-    if (p.iconLeft) {
-      return '13px 12px 13px 40px';
-    }
-    if (p.iconRight) {
-      return '13px 40px 14px 12px';
-    }
-    return '13px 12px';
-  }};
+      if (p.iconLeft && p.iconRight) {
+        return '13px 40px';
+      }
+      if (p.iconLeft) {
+        return '13px 12px 13px 40px';
+      }
+      if (p.iconRight) {
+        return '13px 40px 14px 12px';
+      }
+      return '13px 12px';
+    }};
     outline: none;
     box-sizing: border-box;
     margin: 0;
     display: block;
     resize: none;
 
-    ${p => (p.disabled && `
+    ${(p) =>
+      p.disabled &&
+      `
       background-color: rgba(155, 155, 155, 0.03) !important;
       color: rgba(74, 74, 74, 0.5) !important;
       border-color: ${getTheme(p.theme, 'colors.border')} !important;
-    `)}
+    `}
 
     &:focus,
     &:active {
-      border-color: ${p => getTheme(p.theme, 'colors.primary')};
+      border-color: ${(p) => getTheme(p.theme, 'colors.primary')};
     }
 
     &::-webkit-input-placeholder {
       opacity: 0.5 !important;
-      color: ${p => getTheme(p.theme, 'colors.secondary')} !important;
-      font-family: ${p => getTheme(p.theme, 'fontFamily')};
+      color: ${(p) => getTheme(p.theme, 'colors.secondary')} !important;
+      font-family: ${(p) => getTheme(p.theme, 'fontFamily')};
       font-size: 13px !important;
       line-height: 1.43 !important;
     }
 
     &::-moz-placeholder {
       opacity: 0.5 !important;
-      color: ${p => getTheme(p.theme, 'colors.secondary')} !important;
-      font-family: ${p => getTheme(p.theme, 'fontFamily')};
+      color: ${(p) => getTheme(p.theme, 'colors.secondary')} !important;
+      font-family: ${(p) => getTheme(p.theme, 'fontFamily')};
       font-size: 13px !important;
       line-height: 1.43 !important;
     }
 
     &:-moz-placeholder {
       opacity: 0.5 !important;
-      color: ${p => getTheme(p.theme, 'colors.secondary')} !important;
-      font-family: ${p => getTheme(p.theme, 'fontFamily')};
+      color: ${(p) => getTheme(p.theme, 'colors.secondary')} !important;
+      font-family: ${(p) => getTheme(p.theme, 'fontFamily')};
       font-size: 13px !important;
       line-height: 1.43 !important;
     }
 
     &:-ms-input-placeholder {
       opacity: 0.5 !important;
-      color: ${p => getTheme(p.theme, 'colors.secondary')} !important;
-      font-family: ${p => getTheme(p.theme, 'fontFamily')};
+      color: ${(p) => getTheme(p.theme, 'colors.secondary')} !important;
+      font-family: ${(p) => getTheme(p.theme, 'fontFamily')};
       font-size: 13px !important;
       line-height: 1.43 !important;
     }
 
     ${(p) => {
-    switch (p.validationState) {
-      case 'error': return 'border-color: #da4c5a !important;';
-      case 'success': return 'border-color: #4DB36D !important;';
-      case 'warning': return 'border-color: #fbc545 !important;';
-      default: return '';
-    }
-  }}
+      switch (p.validationState) {
+        case 'error':
+          return 'border-color: #da4c5a !important;';
+        case 'success':
+          return 'border-color: #4DB36D !important;';
+        case 'warning':
+          return 'border-color: #fbc545 !important;';
+        default:
+          return '';
+      }
+    }}
 
-    ${p => (p.block && 'width: 100%;')}
-  `
-);
+    ${(p) => p.block && 'width: 100%;'}
+  `;
 
 // export const InputBox = styled('div')`
 //   position: relative;

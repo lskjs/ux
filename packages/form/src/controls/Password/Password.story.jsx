@@ -1,10 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Form, FastField } from 'formik';
 import Story from '@lskjs/dev/Story/UappStory';
+import { FastField, Form } from 'formik';
+import PropTypes from 'prop-types';
+import React from 'react';
+
 import createForm from '../../createForm';
-import Password from './Password';
 import FormDebug from '../../FormDebug';
+import Password from './Password';
 
 const PasswordFormView = (props) => {
   const { control } = props;
@@ -31,11 +32,9 @@ const PasswordForm = createForm({
   },
 });
 
-export default ({ storiesOf }) => (
-  storiesOf('form/controls', module)
-    .add('Password', () => (
-      <Story>
-        <PasswordForm />
-      </Story>
-    ))
-);
+export default ({ storiesOf }) =>
+  storiesOf('form/controls', module).add('Password', () => (
+    <Story>
+      <PasswordForm />
+    </Story>
+  ));

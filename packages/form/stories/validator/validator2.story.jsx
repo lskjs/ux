@@ -1,9 +1,10 @@
+import { Field, Form } from 'formik';
 import React from 'react';
-import { Form, Field } from 'formik';
+
+import Input from '../../src/controls/Input';
+import createForm from '../../src/createForm';
+import FormDebug from '../../src/FormDebug';
 import Story from '../Story';
-import createForm from '../../createForm';
-import Input from '../../controls/Input';
-import FormDebug from '../../FormDebug';
 
 const ValidationView = (props) => (
   <Form>
@@ -41,17 +42,15 @@ const Validation = createForm({
 });
 
 export default ({ storiesOf }) =>
-  storiesOf('form/validator', module).add('Validation2', () => {
-    return (
-      <Story>
-        <Validation
-          onSubmit={(values, form) => {
-            console.log('onSubmit', values, form);
-            form.setFieldError('password2', 'error in onSubmit');
-            // form.setErrors({ password: 'dfhdkgjhjl' });
-            console.log({ values });
-          }}
-        />
-      </Story>
-    );
-  });
+  storiesOf('form/validator', module).add('Validation2', () => (
+    <Story>
+      <Validation
+        onSubmit={(values, form) => {
+          console.log('onSubmit', values, form);
+          form.setFieldError('password2', 'error in onSubmit');
+          // form.setErrors({ password: 'dfhdkgjhjl' });
+          console.log({ values });
+        }}
+      />
+    </Story>
+  ));

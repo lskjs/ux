@@ -1,18 +1,18 @@
 import styled from '@emotion/styled';
-import A from '@lskjs/ui/A';
 import getTheme from '@lskjs/theme/getTheme';
+import A from '@lskjs/ui/A';
 
 export const Block = styled('button')`
   display: flex;
   width: 100%;
-  background: ${p => getTheme(p.theme, 'colors.white')};
+  background: ${(p) => getTheme(p.theme, 'colors.white')};
   border: none;
   padding: 0;
   outline: none;
   align-items: center;
   padding: 18px;
   overflow: hidden;
-  transition: background .2s ease;
+  transition: background 0.2s ease;
 
   border-bottom: solid 1px rgba(0, 0, 0, 0.1);
   cursor: pointer;
@@ -20,11 +20,13 @@ export const Block = styled('button')`
     border-bottom: none;
   }
   &:hover {
-    background: #EEEFF4;
+    background: #eeeff4;
   }
-  ${p => (p.active && `
+  ${(p) =>
+    p.active &&
+    `
     background: ${getTheme(p.theme, 'colors.mainBackground')};
-  `)}
+  `}
 `;
 
 export const CheckBoxWrapper = styled('div')`

@@ -1,8 +1,8 @@
 import React from 'react';
-import { LineFilesWrapper } from './LineFiles.styles';
 
-import normilizeFiles from '../normilizeFiles';
 import LineFile from '../LineFile';
+import normilizeFiles from '../normilizeFiles';
+import { LineFilesWrapper } from './LineFiles.styles';
 
 const LineFiles = ({ items }) => (
   <LineFilesWrapper>

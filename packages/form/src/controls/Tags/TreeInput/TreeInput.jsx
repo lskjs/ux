@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
 import autobind from '@lskjs/autobind';
 import debounce from '@lskjs/utils/decorator-debounce';
-import { inject, observer } from 'mobx-react';
-import uniq from 'lodash/uniq';
 import Tree from 'antd/lib/tree';
+import uniq from 'lodash/uniq';
+import { inject, observer } from 'mobx-react';
+import React, { Component } from 'react';
 
 const { TreeNode } = Tree;
 
@@ -33,7 +33,7 @@ class TreeInput extends Component {
     const { flat = false } = this.props;
     // чистим от категорий игр
     if (!flat) {
-      value = value.filter(id => id.charAt(0) !== '@');
+      value = value.filter((id) => id.charAt(0) !== '@');
     }
     value = uniq(value);
 
@@ -56,21 +56,11 @@ class TreeInput extends Component {
         onSelect={this.handleChange}
         onCheck={this.handleChange}
       >
-        {
-          (fields || []).map((category) => {
-            return (
-              <TreeNode title={category.title} key={flat ? category._id : `@${category._id}`}>
-                {
-                  category.children && category.children.map((game) => {
-                    return (
-                      <TreeNode title={game.title} key={game._id} />
-                    );
-                  })
-                }
-              </TreeNode>
-            );
-          })
-        }
+        {(fields || []).map((category) => (
+          <TreeNode title={category.title} key={flat ? category._id : `@${category._id}`}>
+            {category.children && category.children.map((game) => <TreeNode title={game.title} key={game._id} />)}
+          </TreeNode>
+        ))}
       </Tree>
     );
   }

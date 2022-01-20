@@ -1,12 +1,12 @@
-import React from 'react';
-import { Form, FastField } from 'formik';
 import Story from '@lskjs/dev/Story';
+import { FastField, Form } from 'formik';
+import React from 'react';
+
 import createForm from '../../createForm';
-import CheckBlockList from './CheckBlockList';
 import FormDebug from '../../FormDebug';
+import CheckBlockList from './CheckBlockList';
 
-
-const CheckBlockListViewForm = props => (
+const CheckBlockListViewForm = (props) => (
   <Form>
     <FastField {...props.control('test')} />
     <FormDebug {...props} />
@@ -44,9 +44,8 @@ const CheckBlockListForm = createForm({
 });
 
 export default ({ storiesOf }) =>
-  storiesOf('form/controls', module)
-    .add('CheckBlockList', () => (
-      <Story>
-        <CheckBlockListForm />
-      </Story>
-    ));
+  storiesOf('form/controls', module).add('CheckBlockList', () => (
+    <Story>
+      <CheckBlockListForm />
+    </Story>
+  ));

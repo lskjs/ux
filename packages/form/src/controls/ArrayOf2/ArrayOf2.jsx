@@ -1,22 +1,24 @@
-import React, { Component } from 'react';
 import autobind from '@lskjs/autobind';
-import isArray from 'lodash/isArray';
+import IconCircleButton from '@lskjs/button/IconCircleButton';
 import { Field } from 'formik';
-import Tooltip from 'antd/lib/tooltip';
+import isArray from 'lodash/isArray';
+import React, { Component } from 'react';
 import CloseIcon from 'react-icons2/mdi/close';
 import If from 'react-if';
-import IconCircleButton from '@lskjs/button/IconCircleButton';
+
 import DebugJson from '../DebugJson';
 import Horizontal from './Horizontal';
 
-const DefaultRemoveButton = props => <IconCircleButton {...props}><CloseIcon /></IconCircleButton>;
-const DefaultAddButton = props => <IconCircleButton {...props} />;
+const DefaultRemoveButton = (props) => (
+  <IconCircleButton {...props}>
+    <CloseIcon />
+  </IconCircleButton>
+);
+const DefaultAddButton = (props) => <IconCircleButton {...props} />;
 
 class ArrayOf extends Component {
   getValues() {
-    const {
-      field, maxCount, autoAddLastItem, itemInitialValue = null,
-    } = this.props;
+    const { field, maxCount, autoAddLastItem, itemInitialValue = null } = this.props;
     let value = field.value || [];
     if (!isArray(value)) value = [];
     if (maxCount) {
@@ -24,10 +26,7 @@ class ArrayOf extends Component {
     }
     if (value.length === maxCount) return value;
     if (typeof autoAddLastItem !== 'undefined') {
-      return [
-        ...value,
-        itemInitialValue,
-      ];
+      return [...value, itemInitialValue];
     }
     return value;
   }
@@ -37,10 +36,7 @@ class ArrayOf extends Component {
     const { form, field } = this.props;
     let value = field.value || [];
     if (!isArray(value)) value = [];
-    form.setFieldValue(field.name, [
-      ...value.slice(0, key),
-      ...value.slice(key + 1),
-    ]);
+    form.setFieldValue(field.name, [...value.slice(0, key), ...value.slice(key + 1)]);
   }
 
   @autobind
@@ -48,10 +44,7 @@ class ArrayOf extends Component {
     const { form, field, itemInitialValue = null } = this.props;
     let value = field.value || [];
     if (!isArray(value)) value = [];
-    form.setFieldValue(field.name, [
-      ...value,
-      itemInitialValue,
-    ]);
+    form.setFieldValue(field.name, [...value, itemInitialValue]);
   }
 
   render() {
@@ -78,7 +71,7 @@ class ArrayOf extends Component {
     return (
       <React.Fragment>
         {values.map((value, key) => {
-          const removeBtnCondition = (showRemoveButton && !(values.length === key + 1 && autoAddLastItem));
+          const removeBtnCondition = showRemoveButton && !(values.length === key + 1 && autoAddLastItem);
           let removeButton = <DefaultRemoveButton onClick={() => this.removeButtonHandler(key)} />;
           if (createRemoveButton) {
             removeButton = createRemoveButton({
@@ -97,19 +90,18 @@ class ArrayOf extends Component {
           );
           return (
             <Horizontal>
-              <If condition={placementRemoveButton === 'left' && removeBtnCondition}>
-                {removeButton}
-              </If>
-              <div style={{ flex: 1 }}>
-                {children}
-              </div>
-              <If condition={placementRemoveButton === 'right' && removeBtnCondition}>
-                {removeButton}
-              </If>
+              <If condition={placementRemoveButton === 'left' && removeBtnCondition}>{removeButton}</If>
+              <div style={{ flex: 1 }}>{children}</div>
+              <If condition={placementRemoveButton === 'right' && removeBtnCondition}>{removeButton}</If>
             </Horizontal>
           );
         })}
-        <If condition={Boolean(values.length > 1 || showAddButton) && Boolean((showAddButton || addButton) && (!maxCount || values.length < maxCount))}>
+        <If
+          condition={
+            Boolean(values.length > 1 || showAddButton) &&
+            Boolean((showAddButton || addButton) && (!maxCount || values.length < maxCount))
+          }
+        >
           {addButton}
         </If>
       </React.Fragment>

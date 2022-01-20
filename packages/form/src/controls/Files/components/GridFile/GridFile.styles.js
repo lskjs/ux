@@ -1,5 +1,5 @@
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { css } from '@emotion/core';
 import getTheme from '@lskjs/theme/getTheme';
 
 export const containerStyle = css`
@@ -9,7 +9,7 @@ export const containerStyle = css`
   text-decoration: none;
   cursor: pointer;
   outline: none;
-  transition: background-color .2s ease-out;
+  transition: background-color 0.2s ease-out;
   &:hover,
   &:focus,
   &:active {
@@ -51,7 +51,7 @@ export const RemoveButton = styled('span')`
   border: none;
   outline: none;
   opacity: 0.7;
-  color: ${props => getTheme(props.theme, 'colors.danger')};
+  color: ${(props) => getTheme(props.theme, 'colors.danger')};
   position: absolute;
   top: 3px;
   right: 3px;

@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { inject, observer } from 'mobx-react';
-import TimePicker from 'antd/lib/time-picker';
 import LocaleProvider from 'antd/lib/locale-provider';
 import en from 'antd/lib/locale-provider/en_US';
 import ru from 'antd/lib/locale-provider/ru_RU';
+import TimePicker from 'antd/lib/time-picker';
 import cx from 'classnames';
+import { inject, observer } from 'mobx-react';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 
 @inject('i18')
 @observer

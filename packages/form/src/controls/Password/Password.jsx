@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import get from 'lodash/get';
-import If from 'react-if';
 import T from '@lskjs/t';
 import getPasswordEntropy from '@lskjs/utils/getPasswordEntropy';
-import Info from './components/Info';
-import PassType from './components/PassType';
+import get from 'lodash/get';
+import PropTypes from 'prop-types';
+import React, { useState } from 'react';
+import If from 'react-if';
+
+import BaseInput from '../../components/BaseInput';
 import Eye from './assets/icons/eye';
 import EyeClose from './assets/icons/eye-close';
-import BaseInput from '../../components/BaseInput';
+import Info from './components/Info';
+import PassType from './components/PassType';
 
 const Password = ({ field, form, validationInfo, ...props }) => {
   const [type, setType] = useState('password');

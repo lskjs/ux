@@ -1,14 +1,14 @@
-import React from 'react';
-import { Form, FastField } from 'formik';
+import Button from '@lskjs/button';
 import UappStory from '@lskjs/dev/Story/UappStory';
 import Modal from '@lskjs/modal';
-import Button from '@lskjs/button';
+import { FastField, Form } from 'formik';
+import React from 'react';
 
-import createForm from '../../createForm';
-import Input from '../../controls/Input';
-import FormDebug from '../../FormDebug';
+import Input from '../../src/controls/Input';
+import createForm from '../../src/createForm';
+import FormDebug from '../../src/FormDebug';
 
-const FormExample5View = props => {
+const FormExample5View = (props) => {
   const { control } = props;
   console.log(props);
   return (

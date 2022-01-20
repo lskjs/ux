@@ -1,24 +1,23 @@
+import { FastField, Form } from 'formik';
 import React from 'react';
-import { Form, FastField } from 'formik';
 
+import Checkbox from '../../src/controls/Checkbox';
+import Input from '../../src/controls/Input';
+import createForm from '../../src/createForm';
+import defaultShouldUpdate from '../../src/defaultShouldUpdate';
+import FormDebug from '../../src/FormDebug';
 import Story from '../Story';
-import createForm from '../../createForm';
-import defaultShouldUpdate from '../../defaultShouldUpdate';
-import Input from '../../controls/Input';
-import Checkbox from '../../controls/Checkbox';
-import FormDebug from '../../FormDebug';
 
-const FormExample3View = props => (
+const FormExample3View = (props) => (
   <Form>
     <FastField {...props.control('checkbox')} />
     <FastField
       {...props.control('input')}
       isDisabled={!props.values.checkbox}
       _required={props.values.checkbox}
-      shouldUpdate={(nextProps, prevProps) => (
-        nextProps._required !== prevProps._required
-        || defaultShouldUpdate(nextProps, prevProps)
-      )}
+      shouldUpdate={(nextProps, prevProps) =>
+        nextProps._required !== prevProps._required || defaultShouldUpdate(nextProps, prevProps)
+      }
     />
     <FormDebug {...props} />
   </Form>
@@ -43,11 +42,8 @@ export const FormExample3 = createForm({
 });
 
 export default ({ storiesOf }) =>
-  storiesOf('form/examples', module)
-    .add('FormExample4', () => {
-      return (
-        <Story>
-          <FormExample3 onSubmit={console.log} />
-        </Story>
-      );
-    });
+  storiesOf('form/examples', module).add('FormExample4', () => (
+    <Story>
+      <FormExample3 onSubmit={console.log} />
+    </Story>
+  ));

@@ -1,10 +1,11 @@
 /* eslint-disable react/destructuring-assignment */
+import { Field, Form } from 'formik';
 import React from 'react';
-import { Form, Field } from 'formik';
+
+import InputComponent from '../../src/controls/Input';
+import createForm from '../../src/createForm';
+import FormDebug from '../../src/FormDebug';
 import Story from '../Story';
-import createForm from '../../createForm';
-import InputComponent from '../../controls/Input';
-import FormDebug from '../../FormDebug';
 
 const ValidationView = (props) => {
   const { isSubmitting } = props;
@@ -19,8 +20,8 @@ const ValidationView = (props) => {
   );
 };
 
-const checkEmail = async (data) => {
-  return new Promise((resolve, reject) => {
+const checkEmail = async (data) =>
+  new Promise((resolve, reject) => {
     setTimeout(() => {
       if (data === 'someasync@email.com') {
         reject(new Error('email already exists'));
@@ -29,7 +30,6 @@ const checkEmail = async (data) => {
       }
     }, 1000);
   });
-};
 
 const checkUrl = async (data) => {
   const regex = /^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#-]+\/?)*$/;
@@ -92,14 +92,12 @@ const ValidationAsync = createForm({
 });
 
 export default ({ storiesOf }) =>
-  storiesOf('form/validator', module).add('async validator', () => {
-    return (
-      <Story>
-        <ValidationAsync
-          onSubmit={(values) => {
-            console.log({ values });
-          }}
-        />
-      </Story>
-    );
-  });
+  storiesOf('form/validator', module).add('async validator', () => (
+    <Story>
+      <ValidationAsync
+        onSubmit={(values) => {
+          console.log({ values });
+        }}
+      />
+    </Story>
+  ));

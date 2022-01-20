@@ -1,24 +1,24 @@
-import React from 'react';
-import AntForm from 'antd/lib/form';
 import Button from '@lskjs/button';
-import isEmpty from 'lodash/isEmpty';
-import { Form, Field, FastField } from 'formik';
-import { Row, Col } from '@lskjs/grid';
 import Story from '@lskjs/dev/Story';
-import createForm from '../../createForm';
-import GroupOf from './GroupOf';
-import Radio from '../Radio';
-import Checkbox from '../Checkbox';
-import Checkblock from '../CheckBlock';
-import FormDebug from '../../FormDebug';
-import Input from '../Input';
+import { Col, Row } from '@lskjs/grid';
 import T from '@lskjs/t';
+import AntForm from 'antd/lib/form';
+import { FastField, Field, Form } from 'formik';
+import isEmpty from 'lodash/isEmpty';
+import React from 'react';
 import Account from 'react-icons2/mdi/account-box-outline';
-import Desktop from 'react-icons2/mdi/desktop-mac';
 import Camera from 'react-icons2/mdi/camcorder';
-import { CheckBlockList, ColumnCheckBlockList } from '../CheckBlock/ExtendedCheckblock/ExtendedCheckblock.styles';
-import { LabelWrapper, checkBlockListStyle } from './GroupOf.styles';
+import Desktop from 'react-icons2/mdi/desktop-mac';
 
+import createForm from '../../createForm';
+import FormDebug from '../../FormDebug';
+import Checkblock from '../CheckBlock';
+import { CheckBlockList, ColumnCheckBlockList } from '../CheckBlock/ExtendedCheckblock/ExtendedCheckblock.styles';
+import Checkbox from '../Checkbox';
+import Input from '../Input';
+import Radio from '../Radio';
+import GroupOf from './GroupOf';
+import { checkBlockListStyle, LabelWrapper } from './GroupOf.styles';
 
 const RadioFormView = (props) => {
   const checkBlockListValues = props.values.checkBlockList;
@@ -32,7 +32,7 @@ const RadioFormView = (props) => {
       <hr />
       <AntForm.Item
         className={checkBlockListStyle}
-        label={(
+        label={
           <LabelWrapper>
             <div>test</div>
             <Button
@@ -57,18 +57,17 @@ const RadioFormView = (props) => {
               {checkBlockListValues && !isEmpty(checkBlockListValues) ? 'Очистить все' : 'Выделить все'}
             </Button>
           </LabelWrapper>
-        )}
+        }
       >
-        <Field {...props.control('checkBlockList')}
+        <Field
+          {...props.control('checkBlockList')}
           render2={({ options }) => (
             <CheckBlockList>
-              {options.map(({ Component }) => {
-                return (
-                  <Col xs={6}>
-                    <Component />
-                  </Col>
-                );
-              })}
+              {options.map(({ Component }) => (
+                <Col xs={6}>
+                  <Component />
+                </Col>
+              ))}
             </CheckBlockList>
           )}
         />
@@ -76,16 +75,15 @@ const RadioFormView = (props) => {
       <hr />
       <br />
       <br />
-      <Field {...props.control('checkBlockList2')}
+      <Field
+        {...props.control('checkBlockList2')}
         render2={({ options }) => (
           <ColumnCheckBlockList>
-            {options.map(({ Component }) => {
-              return (
-                <Col xs={12}>
-                  <Component />
-                </Col>
-              );
-            })}
+            {options.map(({ Component }) => (
+              <Col xs={12}>
+                <Component />
+              </Col>
+            ))}
           </ColumnCheckBlockList>
         )}
       />
@@ -97,7 +95,9 @@ const RadioFormView = (props) => {
         render2={({ options }) => (
           <div style={{ border: '1px black solid' }}>
             {options.map(({ Component, option }) => (
-              <div style={{ border: `1px ${option.value} dotted` }}><Component /></div>
+              <div style={{ border: `1px ${option.value} dotted` }}>
+                <Component />
+              </div>
             ))}
           </div>
         )}
@@ -194,18 +194,29 @@ const RadioForm = createForm({
         {
           value: 'screen',
           title: 'videoTypes.screencast',
-          label: <span><Desktop /> <T name="videoTypes.screencast" /></span>,
+          label: (
+            <span>
+              <Desktop /> <T name="videoTypes.screencast" />
+            </span>
+          ),
         },
         {
           value: 'camera',
           title: 'videoTypes.camera',
-          label: <span><Camera /> <T name="videoTypes.camera" /></span>,
-
+          label: (
+            <span>
+              <Camera /> <T name="videoTypes.camera" />
+            </span>
+          ),
         },
         {
           value: 'webcam',
           title: 'videoTypes.webcamera',
-          label: <span><Account /> <T name="videoTypes.webcamera" /></span>,
+          label: (
+            <span>
+              <Account /> <T name="videoTypes.webcamera" />
+            </span>
+          ),
         },
       ],
     },
@@ -216,15 +227,18 @@ const RadioForm = createForm({
         view: 'radio',
         block: true,
       },
-      options: [{
-        value: 'cpm',
-        label: 'CPM',
-        info: 'this is info',
-      }, {
-        value: 'fix',
-        label: 'Fix price',
-        info: 'this is info',
-      }],
+      options: [
+        {
+          value: 'cpm',
+          label: 'CPM',
+          info: 'this is info',
+        },
+        {
+          value: 'fix',
+          label: 'Fix price',
+          info: 'this is info',
+        },
+      ],
     },
     checkBlockList: {
       component: GroupOf,
@@ -303,18 +317,29 @@ const RadioForm = createForm({
         {
           value: 'screen',
           title: 'videoTypes.screencast',
-          label: <span><Desktop /> <T name="videoTypes.screencast" /></span>,
+          label: (
+            <span>
+              <Desktop /> <T name="videoTypes.screencast" />
+            </span>
+          ),
         },
         {
           value: 'camera',
           title: 'videoTypes.camera',
-          label: <span><Camera /> <T name="videoTypes.camera" /></span>,
-
+          label: (
+            <span>
+              <Camera /> <T name="videoTypes.camera" />
+            </span>
+          ),
         },
         {
           value: 'webcam',
           title: 'videoTypes.webcamera',
-          label: <span><Account /> <T name="videoTypes.webcamera" /></span>,
+          label: (
+            <span>
+              <Account /> <T name="videoTypes.webcamera" />
+            </span>
+          ),
         },
       ],
     },
@@ -322,11 +347,8 @@ const RadioForm = createForm({
 });
 
 export default ({ storiesOf }) =>
-  storiesOf('form/controls', module)
-    .add('GroupOf ', () => {
-      return (
-        <Story>
-          <RadioForm />
-        </Story>
-      );
-    });
+  storiesOf('form/controls', module).add('GroupOf ', () => (
+    <Story>
+      <RadioForm />
+    </Story>
+  ));

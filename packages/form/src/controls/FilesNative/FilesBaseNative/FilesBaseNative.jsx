@@ -1,13 +1,14 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { inject, observer } from 'mobx-react';
 import autobind from '@lskjs/autobind';
 import Promise from 'bluebird';
-import isFunction from 'lodash/isFunction';
 import cx from 'classnames';
+import isFunction from 'lodash/isFunction';
+import { inject, observer } from 'mobx-react';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+
 import zoneStyle from './FilesBaseNative.styles';
 
-@inject(s => ({
+@inject((s) => ({
   upload: s.uapp.modules.upload,
   uapp: s.uapp,
 }))
@@ -76,8 +77,8 @@ class Files extends Component {
     if (!upload) return;
     let value = null;
     try {
-      const res = await Promise.map(files, file => upload.uploadFile(file));
-      if (multiple) value = res.map(e => ({ url: e.url, filename: e.filename }));
+      const res = await Promise.map(files, (file) => upload.uploadFile(file));
+      if (multiple) value = res.map((e) => ({ url: e.url, filename: e.filename }));
       else value = res[0] && res[0].url;
       if (onSubmit) onSubmit(value);
     } catch (err) {
@@ -181,7 +182,7 @@ class Files extends Component {
               height: '100%',
               zIndex: 10,
             }}
-            onChange={e => {
+            onChange={(e) => {
               this.onDrop(e.target.files);
             }}
           />

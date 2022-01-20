@@ -1,28 +1,27 @@
 /* eslint-disable react/destructuring-assignment */
+import { Field, Form } from 'formik';
 import React from 'react';
-import { Form, Field } from 'formik';
-// import Story from '@lskjs/dev/Story/UappStory';
-import StoryWithUpload from './StoryWithUpload';
+
 import createForm from '../../createForm';
-import Files from './Files';
 import FormDebug from '../../FormDebug';
 import Body from '../Image/ImageDefaultBody';
+import Files from './Files';
+// import Story from '@lskjs/dev/Story/UappStory';
+import StoryWithUpload from './StoryWithUpload';
 
-const CroppperDemo = ({ src, onSubmit }) => {
-  return (
-    <div style={{ border: '2px dashed red' }}>
-      <img alt="" src={src.preview} width={400} height={400} style={{ objectFit: 'cover' }} />
-      <button
-        type="button"
-        onClick={() => {
-          onSubmit(src);
-        }}
-      >
-        Crop this pic
-      </button>
-    </div>
-  );
-};
+const CroppperDemo = ({ src, onSubmit }) => (
+  <div style={{ border: '2px dashed red' }}>
+    <img alt="" src={src.preview} width={400} height={400} style={{ objectFit: 'cover' }} />
+    <button
+      type="button"
+      onClick={() => {
+        onSubmit(src);
+      }}
+    >
+      Crop this pic
+    </button>
+  </div>
+);
 
 const FilesFormView = (props) => (
   <Form>

@@ -33,9 +33,8 @@ const Bool = ({
     >
       {children}
     </Component>
-  // </div>
+    // </div>
   );
 };
 
 export default Bool;
-

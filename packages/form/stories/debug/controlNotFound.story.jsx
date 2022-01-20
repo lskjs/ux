@@ -1,11 +1,12 @@
+import { Field, Form } from 'formik';
 import React from 'react';
-import { Form, Field } from 'formik';
-import Story from '../Story';
-import createForm from '../../createForm';
-import Input from '../../controls/Input';
-import FormDebug from '../../FormDebug';
 
-const InputFormView = props => (
+import Input from '../../src/controls/Input';
+import createForm from '../../src/createForm';
+import FormDebug from '../../src/FormDebug';
+import Story from '../Story';
+
+const InputFormView = (props) => (
   <Form>
     <Field {...props.control('notFound')} />
     <FormDebug {...props} />
@@ -28,14 +29,12 @@ const DemoForm = createForm({
 });
 
 export default ({ storiesOf }) =>
-  storiesOf('form/debug', module)
-    .add('controlNotFound', () => {
-      return (
-        <Story>
-          <DemoForm
-            onSubmit={(values) => { console.log({ values }); }}
-          />
-        </Story>
-      );
-    });
-
+  storiesOf('form/debug', module).add('controlNotFound', () => (
+    <Story>
+      <DemoForm
+        onSubmit={(values) => {
+          console.log({ values });
+        }}
+      />
+    </Story>
+  ));

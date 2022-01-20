@@ -1,22 +1,21 @@
+import { Field, Form } from 'formik';
 import React from 'react';
-import { Form, Field } from 'formik';
-import Story from './Story';
-import createForm from '../createForm';
-import Input from '../controls/Input';
-import Select from '../controls/Select';
-import FormDebug from '../FormDebug';
 
-const InputFormView = (props) => {
-  return (
-    <Form>
-      <Field {...props.control('input')} />
-      <Field {...props.control('dependent')} />
-      <Field {...props.controls['test.input']} />
-      <Field {...props.control('input3')} />
-      <FormDebug {...props} />
-    </Form>
-  );
-};
+import Input from '../src/controls/Input';
+import Select from '../src/controls/Select';
+import createForm from '../src/createForm';
+import FormDebug from '../src/FormDebug';
+import Story from './Story';
+
+const InputFormView = (props) => (
+  <Form>
+    <Field {...props.control('input')} />
+    <Field {...props.control('dependent')} />
+    <Field {...props.controls['test.input']} />
+    <Field {...props.control('input3')} />
+    <FormDebug {...props} />
+  </Form>
+);
 
 const InputForm = createForm({
   view: InputFormView,
@@ -55,17 +54,15 @@ const InputForm = createForm({
 });
 
 export default ({ storiesOf }) =>
-  storiesOf('form/Form', module).add('nestedKeys', () => {
-    return (
-      <Story>
-        <InputForm
-          onChange={(values) => {
-            console.log('onChange', values);
-          }}
-          onSubmit={(values) => {
-            console.log('onSubmit', values);
-          }}
-        />
-      </Story>
-    );
-  });
+  storiesOf('form/Form', module).add('nestedKeys', () => (
+    <Story>
+      <InputForm
+        onChange={(values) => {
+          console.log('onChange', values);
+        }}
+        onSubmit={(values) => {
+          console.log('onSubmit', values);
+        }}
+      />
+    </Story>
+  ));

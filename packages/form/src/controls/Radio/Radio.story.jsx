@@ -1,12 +1,13 @@
-import React from 'react';
-import { Form, Field } from 'formik';
 import Story from '@lskjs/dev/Story';
-import createForm from '../../createForm';
-import Radio from './Radio';
-import Checkbox from '../Checkbox';
-import FormDebug from '../../FormDebug';
+import { Field, Form } from 'formik';
+import React from 'react';
 
-const RadioFormView = props => (
+import createForm from '../../createForm';
+import FormDebug from '../../FormDebug';
+import Checkbox from '../Checkbox';
+import Radio from './Radio';
+
+const RadioFormView = (props) => (
   <Form>
     <Field {...props.control('blue')} />
     <Field {...props.control('blue')} />
@@ -14,7 +15,6 @@ const RadioFormView = props => (
     <FormDebug {...props} />
   </Form>
 );
-
 
 const RadioForm = createForm({
   view: RadioFormView,
@@ -32,11 +32,8 @@ const RadioForm = createForm({
 });
 
 export default ({ storiesOf }) =>
-  storiesOf('form/controls', module)
-    .add('Radio ', () => {
-      return (
-        <Story>
-          <RadioForm />
-        </Story>
-      );
-    });
+  storiesOf('form/controls', module).add('Radio ', () => (
+    <Story>
+      <RadioForm />
+    </Story>
+  ));

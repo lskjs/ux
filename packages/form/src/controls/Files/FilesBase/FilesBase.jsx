@@ -1,11 +1,12 @@
 /** @jsx jsx */
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { inject } from 'mobx-react';
-import { jsx } from '@emotion/core';
+import { jsx } from '@emotion/react';
 import autobind from '@lskjs/autobind';
 import isFunction from 'lodash/isFunction';
+import { inject } from 'mobx-react';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import Dropzone from 'react-dropzone';
+
 import zoneStyle from './FilesBase.styles';
 
 const DEBUG = 0;

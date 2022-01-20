@@ -1,8 +1,9 @@
-import React, { useState, useRef, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import ASlider from 'antd/lib/slider';
 import debounce from 'lodash/debounce';
-import { Wrapper, Value, SliderWrapper } from './PercentSlider.styles';
+import PropTypes from 'prop-types';
+import React, { useEffect, useRef, useState } from 'react';
+
+import { SliderWrapper, Value, Wrapper } from './PercentSlider.styles';
 
 const Slider = ({ onChange, value: propValue, htmlId, name, onBlur, ...props }) => {
   const [value, setValue] = useState(propValue);
@@ -28,11 +29,7 @@ const Slider = ({ onChange, value: propValue, htmlId, name, onBlur, ...props }) 
     <Wrapper id={htmlId} name={name}>
       <Value>{value}%</Value>
       <SliderWrapper>
-        <ASlider
-          {...props}
-          onChange={handleLocalChange}
-          value={value}
-        />
+        <ASlider {...props} onChange={handleLocalChange} value={value} />
       </SliderWrapper>
     </Wrapper>
   );

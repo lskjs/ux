@@ -1,16 +1,15 @@
 /* eslint-disable react/destructuring-assignment */
-import React from 'react';
-import { Form, Field } from 'formik';
+import { Field, Form } from 'formik';
 import { Provider } from 'mobx-react';
+import React from 'react';
+
+import ArrayOf from '../src/controls/ArrayOf';
+import Input from '../src/controls/Input';
+import Select from '../src/controls/Select';
+import createForm from '../src/createForm';
+import createNestedFormControl from '../src/createNestedFormControl';
+import FormDebug from '../src/FormDebug';
 import Story from './Story';
-
-import createForm from '../createForm';
-import FormDebug from '../FormDebug';
-
-import Input from '../controls/Input';
-import Select from '../controls/Select';
-import ArrayOf from '../controls/ArrayOf';
-import createNestedFormControl from '../createNestedFormControl';
 
 const EntityFormView = (props) => (
   <Form>

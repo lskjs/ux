@@ -1,7 +1,8 @@
 import React from 'react';
+
+import Bool from '../Checkbox/Bool';
 // import get from 'lodash/get';
 import ExtendedCheckblock from './ExtendedCheckblock';
-import Bool from '../Checkbox/Bool';
 
 // const CheckBlock = ({
 //   field,
@@ -30,7 +31,6 @@ import Bool from '../Checkbox/Bool';
 
 // export default CheckBlock;
 
-
 const BaseExtendedCheckblock = ({ checked, view, ...props }) => (
   <ExtendedCheckblock
     {...props}
@@ -41,4 +41,4 @@ const BaseExtendedCheckblock = ({ checked, view, ...props }) => (
   />
 );
 
-export default props => <Bool {...props} componentClass={BaseExtendedCheckblock} />;
+export default (props) => <Bool {...props} componentClass={BaseExtendedCheckblock} />;

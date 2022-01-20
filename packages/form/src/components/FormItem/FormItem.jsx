@@ -1,5 +1,6 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
+
 import * as Styles from './FormItem.styles';
 
 const FormItem = ({ id, label, help, hasError, errorMessage, children, tooltip }) => (

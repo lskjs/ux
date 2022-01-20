@@ -1,11 +1,12 @@
-import React from 'react';
-import { Form, Field } from 'formik';
 import Story from '@lskjs/dev/Story';
-import createForm from '../../createForm';
-import Range from './Range';
-import FormDebug from '../../FormDebug';
+import { Field, Form } from 'formik';
+import React from 'react';
 
-const RangeFormView = props => (
+import createForm from '../../createForm';
+import FormDebug from '../../FormDebug';
+import Range from './Range';
+
+const RangeFormView = (props) => (
   <Form>
     <Field {...props.control('range')} />
     <FormDebug {...props} />
@@ -25,11 +26,8 @@ const RangeForm = createForm({
 });
 
 export default ({ storiesOf }) =>
-  storiesOf('form/controls', module)
-    .add('Range ', () => {
-      return (
-        <Story>
-          <RangeForm />
-        </Story>
-      );
-    });
+  storiesOf('form/controls', module).add('Range ', () => (
+    <Story>
+      <RangeForm />
+    </Story>
+  ));

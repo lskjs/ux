@@ -1,10 +1,11 @@
 /* eslint-disable react/destructuring-assignment */
+import { Field, Form } from 'formik';
 import React from 'react';
-import { Form, Field } from 'formik';
+
+import Input from '../../src/controls/Input';
+import createForm from '../../src/createForm';
+import FormDebug from '../../src/FormDebug';
 import Story from '../Story';
-import createForm from '../../createForm';
-import Input from '../../controls/Input';
-import FormDebug from '../../FormDebug';
 
 const ValidationView = (props) => (
   <Form>
@@ -35,18 +36,16 @@ const ValidationAsync = createForm({
 });
 
 export default ({ storiesOf }) =>
-  storiesOf('form/validator', module).add('validator and submit', () => {
-    return (
-      <Story>
-        <ValidationAsync
-          onSubmit={async (values) => {
-            throw new Error('Емейл уже есть в базе');
-            await Promise.delay(3000);
-            if (Math.random() < 0.5) {
-              throw 'Емейл уже есть в базе';
-            }
-          }}
-        />
-      </Story>
-    );
-  });
+  storiesOf('form/validator', module).add('validator and submit', () => (
+    <Story>
+      <ValidationAsync
+        onSubmit={async (values) => {
+          throw new Error('Емейл уже есть в базе');
+          await Promise.delay(3000);
+          if (Math.random() < 0.5) {
+            throw 'Емейл уже есть в базе';
+          }
+        }}
+      />
+    </Story>
+  ));

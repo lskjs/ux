@@ -1,25 +1,13 @@
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
 import autobind from '@lskjs/autobind';
-import If from 'react-if';
-
+import PropTypes from 'prop-types';
+import React, { PureComponent } from 'react';
+import RadioBlank from 'react-icons2/mdi/checkbox-blank-circle-outline';
 import CheckboxBlank from 'react-icons2/mdi/checkbox-blank-outline';
 import CheckboxCheck from 'react-icons2/mdi/checkbox-marked';
-
-import RadioBlank from 'react-icons2/mdi/checkbox-blank-circle-outline';
 import RadioCheck from 'react-icons2/mdi/checkbox-marked-circle';
+import If from 'react-if';
 
-import {
-  Additional,
-  General,
-  Block,
-  Icon,
-  Item,
-  Header,
-  Label,
-  Footer,
-  Info,
-} from './ExtendedCheckblock.styles';
+import { Additional, Block, Footer, General, Header, Icon, Info, Item, Label } from './ExtendedCheckblock.styles';
 
 class ExtendedCheckblock extends PureComponent {
   static propTypes = {
@@ -32,7 +20,7 @@ class ExtendedCheckblock extends PureComponent {
     onChange: PropTypes.func,
     disabled: PropTypes.bool,
     type: PropTypes.oneOf(['radio', 'checkbox']),
-  }
+  };
   static defaultProps = {
     value: false,
     block: false,
@@ -42,25 +30,14 @@ class ExtendedCheckblock extends PureComponent {
     children: null,
     disabled: false,
     type: 'checkbox',
-  }
+  };
   @autobind
   handleClick() {
     const { onChange, value, type } = this.props;
     if (onChange) onChange(type === 'radio' ? true : !value);
   }
   render() {
-    const {
-      children,
-      label,
-      validationState,
-      info,
-      disabled,
-      block,
-      type,
-      height,
-      value,
-      ...props
-    } = this.props;
+    const { children, label, validationState, info, disabled, block, type, height, value, ...props } = this.props;
     let checkIcon;
     let blankIcon;
     if (type === 'checkbox') {
@@ -71,13 +48,7 @@ class ExtendedCheckblock extends PureComponent {
       blankIcon = <RadioBlank />;
     }
     return (
-      <Block
-        checked={value}
-        disabled={disabled}
-        hasChildren={children}
-        type="button"
-        {...props}
-      >
+      <Block checked={value} disabled={disabled} hasChildren={children} type="button" {...props}>
         {/* <DEV json={{ value }} /> */}
         <General>
           <Item
@@ -89,24 +60,18 @@ class ExtendedCheckblock extends PureComponent {
             style={{ height }}
           >
             <Header>
-              <Icon isActive={!!value}>
-                {value ? checkIcon : blankIcon}
-              </Icon>
+              <Icon isActive={!!value}>{value ? checkIcon : blankIcon}</Icon>
               <Label>{label}</Label>
             </Header>
             <If condition={!!info}>
               <Footer>
-                <Info>
-                  {info}
-                </Info>
+                <Info>{info}</Info>
               </Footer>
             </If>
           </Item>
         </General>
         <If condition={!!children}>
-          <Additional>
-            {children}
-          </Additional>
+          <Additional>{children}</Additional>
         </If>
       </Block>
     );

@@ -1,19 +1,20 @@
-import React, { PureComponent } from 'react';
-// import get from 'lodash/get';
-import PropTypes from 'prop-types';
-import CalendarBase from 'react-calendar';
 import autobind from '@lskjs/autobind';
 import moment from 'moment';
-import HighlightedCell from './HighlightedCell';
+// import get from 'lodash/get';
+import PropTypes from 'prop-types';
+import React, { PureComponent } from 'react';
+import CalendarBase from 'react-calendar';
+
 // import CalendarBase from './antd-calendar';
 import { globalStylesCalendar, globalStylesFullCalendar } from './Calendar.styles';
+import HighlightedCell from './HighlightedCell';
 
 globalStylesCalendar();
 globalStylesFullCalendar();
 
 class Calendar extends PureComponent {
   static isAnyTypeDate(f) {
-    return (new Date(f)).getTime() > 0;
+    return new Date(f).getTime() > 0;
   }
   @autobind
   validationDate(value) {
@@ -29,7 +30,7 @@ class Calendar extends PureComponent {
   @autobind
   disabledDate(current) {
     const { highlightedDates = [], futureOnly } = this.props;
-    current = (moment(current)).startOf('day').valueOf();
+    current = moment(current).startOf('day').valueOf();
     if (!Array.isArray(highlightedDates)) return false;
 
     if (futureOnly) {
@@ -46,12 +47,7 @@ class Calendar extends PureComponent {
     return true;
   }
   render() {
-    const {
-      field,
-      form,
-      highlightedDates,
-      ...props
-    } = this.props;
+    const { field, form, highlightedDates, ...props } = this.props;
     return (
       <CalendarBase
         {...field}
@@ -61,18 +57,10 @@ class Calendar extends PureComponent {
           form.setFieldValue(field.name, selectedDate);
         }}
         dateCellRender={(date) => {
-          const dates = (highlightedDates || []).map(d => this.validationDate(d));
-          const isValid = !!dates
-            .filter(e =>
-              date
-                .startOf('day')
-                .toDate()
-                .getTime()
-              ===
-              e
-                .startOf('day')
-                .toDate()
-                .getTime()).length;
+          const dates = (highlightedDates || []).map((d) => this.validationDate(d));
+          const isValid = !!dates.filter(
+            (e) => date.startOf('day').toDate().getTime() === e.startOf('day').toDate().getTime(),
+          ).length;
           if (isValid) return <HighlightedCell />;
           return '';
         }}

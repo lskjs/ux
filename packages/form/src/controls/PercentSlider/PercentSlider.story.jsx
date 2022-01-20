@@ -1,17 +1,17 @@
-import React from 'react';
-import { Form, Field } from 'formik';
 import Story from '@lskjs/dev/Story/UappStory';
-import createForm from '../../createForm';
-import PercentSlider from './PercentSlider';
-import FormDebug from '../../FormDebug';
+import { Field, Form } from 'formik';
+import React from 'react';
 
-const PercentSliderFormView = props => (
+import createForm from '../../createForm';
+import FormDebug from '../../FormDebug';
+import PercentSlider from './PercentSlider';
+
+const PercentSliderFormView = (props) => (
   <Form>
     <Field {...props.control('slider')} />
     <FormDebug {...props} />
   </Form>
 );
-
 
 const PercentSliderForm = createForm({
   view: PercentSliderFormView,
@@ -27,12 +27,8 @@ const PercentSliderForm = createForm({
 });
 
 export default ({ storiesOf }) =>
-  storiesOf('form/controls', module)
-    .add('PercentSlider', () => {
-      return (
-        <Story>
-          <PercentSliderForm />
-        </Story>
-      );
-    });
-
+  storiesOf('form/controls', module).add('PercentSlider', () => (
+    <Story>
+      <PercentSliderForm />
+    </Story>
+  ));

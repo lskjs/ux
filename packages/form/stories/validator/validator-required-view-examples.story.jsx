@@ -1,10 +1,10 @@
+import { Field, Form, withFormik } from 'formik';
 import React from 'react';
-import { Form, Field, withFormik } from 'formik';
-import Story from '../Story';
-import createForm from '../../createForm';
-import FormDebug from '../../FormDebug';
 
-import Input from '../../controls/Input';
+import Input from '../../src/controls/Input';
+import createForm from '../../src/createForm';
+import FormDebug from '../../src/FormDebug';
+import Story from '../Story';
 
 const ValidationView = (props) => {
   const { control } = props;

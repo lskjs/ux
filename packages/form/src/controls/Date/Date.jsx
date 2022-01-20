@@ -1,31 +1,24 @@
-import React from 'react';
-import moment from 'moment';
 import 'moment/locale/ru';
-import PropTypes from 'prop-types';
-import DatePickerBase from './Datepicker';
-import globalStyles from './Date.styles';
+
+import moment from 'moment';
+import React from 'react';
+
 import { globalStylesCalendar } from '../Calendar/Calendar.styles';
+import globalStyles from './Date.styles';
+import DatePickerBase from './Datepicker';
 
 globalStyles();
 globalStylesCalendar();
 
 const DatePicker = (data) => {
-  const {
-    field,
-    form,
-    ranged,
-    t,
-    futureOnly,
-    showTime,
-    ...props
-  } = data;
+  const { field, form, ranged, t, futureOnly, showTime, ...props } = data;
   let dateFormat;
   if (!showTime) {
-    dateFormat = t && t('format.date') || 'DD.MM.YYYY';
+    dateFormat = (t && t('format.date')) || 'DD.MM.YYYY';
   } else {
-    dateFormat = t && t('format.dateTime') || 'DD.MM.YYYY HH:mm';
+    dateFormat = (t && t('format.dateTime')) || 'DD.MM.YYYY HH:mm';
   }
-  const locale = t && t('locale') || 'ru';
+  const locale = (t && t('locale')) || 'ru';
   let value = field.value && moment(new Date(field.value), dateFormat, locale) || null; // eslint-disable-line
   let change = (val) => {
     form.setFieldValue(field.name, val);
@@ -52,10 +45,9 @@ const DatePicker = (data) => {
   }
   let disabledDate = () => false;
   if (futureOnly) {
-    disabledDate = (current) => {
+    disabledDate = (current) =>
       // Can not select days before today and today
-      return current.valueOf() < Date.now();
-    };
+      current.valueOf() < Date.now();
   }
   return (
     <DatePickerBase
@@ -66,8 +58,8 @@ const DatePicker = (data) => {
       ranged={ranged}
       validationState={form.errors[field.name] ? 'error' : null}
       onChange={change}
-        // await this.handleChangeField(name1)(range[0].toDate());
-        // await this.handleChangeField(name2)(range[1].toDate());
+      // await this.handleChangeField(name1)(range[0].toDate());
+      // await this.handleChangeField(name2)(range[1].toDate());
       value={value}
       format={dateFormat}
       disabledDate={disabledDate}
@@ -75,7 +67,6 @@ const DatePicker = (data) => {
     />
   );
 };
-
 
 // DatePicker.propTypes = {
 //   ranged: PropTypes.bool,
@@ -88,4 +79,3 @@ const DatePicker = (data) => {
 // };
 
 export default DatePicker;
-

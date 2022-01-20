@@ -1,5 +1,6 @@
-import React from 'react';
 import isPlainObject from 'lodash/isPlainObject';
+import React from 'react';
+
 import TagsPickerBase from './TagsPicker2';
 // import { getNormalizedOptions } from '../Select/utils';
 
@@ -28,14 +29,8 @@ function getNormalizedOptions(options) {
   });
 }
 
-const TagsPicker = ({
-  field,
-  form,
-  options,
-  fields,
-  ...props
-}) => {
-  const norimalizedOptions = getNormalizedOptions((options || fields || []));
+const TagsPicker = ({ field, form, options, fields, ...props }) => {
+  const norimalizedOptions = getNormalizedOptions(options || fields || []);
   // console.log('props', props);
   // console.log('options', options);
   // console.log('fields', field.name);
@@ -58,4 +53,3 @@ const TagsPicker = ({
 };
 
 export default TagsPicker;
-

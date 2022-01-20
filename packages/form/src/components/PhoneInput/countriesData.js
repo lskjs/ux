@@ -36,7 +36,7 @@ for (let i = 0; i < countriesCodes.length; i++) {  //eslint-disable-line
 
   // format
   if (c[3]) {
-    const [,,, format] = c;
+    const [, , , format] = c;
     allCountries[countryIdx].format = format;
   }
 
@@ -48,7 +48,7 @@ for (let i = 0; i < countriesCodes.length; i++) {  //eslint-disable-line
       const dialCode = c[2] + c[5][j];
       addCountryCode(c[1], dialCode);
 
-      const virtualCountry = Object.assign({}, allCountries[countryIdx]);
+      const virtualCountry = { ...allCountries[countryIdx] };
       virtualCountry.dialCode = dialCode;
       allCountries.push(virtualCountry);
     }

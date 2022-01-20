@@ -1,4 +1,4 @@
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 
 const globalStyles = css`
   .lsk-form-select .react-select__control.react-select__control--is-focused {
@@ -75,7 +75,7 @@ const globalStyles = css`
   }
 
   .lsk-form-select.react-select__control--is-focused > .react-select__control {
-    border-color: #B3B3B3;
+    border-color: #b3b3b3;
     box-shadow: none !important;
   }
 
@@ -93,7 +93,7 @@ const globalStyles = css`
   }
 
   .lsk-form-select .react-select__control--is-disabled {
-    opacity: .5;
+    opacity: 0.5;
     cursor: not-allowed;
   }
 `;

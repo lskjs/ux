@@ -1,27 +1,22 @@
-import React from 'react';
 import AntRadio from 'antd/lib/radio';
-import RadioBase from './RadioBase';
+import React from 'react';
+
 import Bool from '../Checkbox/Bool';
 import Label from '../Checkbox/Checkbox.styles';
 import globalStyles from './Radio.styles';
+import RadioBase from './RadioBase';
 
 globalStyles();
 
 // export default (...props) => <Bool {...props} componentClass={AntRadio} />;
 
 const BaseRadio = ({ onChange, validationState, ...props }) => (
-  <AntRadio
-    {...props}
-    onClick={() => onChange(true)}
-  >
-    <Label validationState={validationState} >
-      {props.label}
-    </Label>
+  <AntRadio {...props} onClick={() => onChange(true)}>
+    <Label validationState={validationState}>{props.label}</Label>
   </AntRadio>
 );
 
-export default props => <Bool {...props} componentClass={BaseRadio} />;
-
+export default (props) => <Bool {...props} componentClass={BaseRadio} />;
 
 // )
 // const Radio = ({
@@ -29,7 +24,6 @@ export default props => <Bool {...props} componentClass={BaseRadio} />;
 //   form,
 //   ...props
 // }) => {
-
 
 //   return (
 //     <RadioBase
@@ -47,4 +41,3 @@ export default props => <Bool {...props} componentClass={BaseRadio} />;
 // };
 
 // export default Radio;
-

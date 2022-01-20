@@ -1,17 +1,17 @@
-import React from 'react';
-import { Form, Field } from 'formik';
 import Story from '@lskjs/dev/Story';
-import createForm from '../../createForm';
-import Geo from './Geo';
-import FormDebug from '../../FormDebug';
+import { Field, Form } from 'formik';
+import React from 'react';
 
-const GeoViewForm = props => (
+import createForm from '../../createForm';
+import FormDebug from '../../FormDebug';
+import Geo from './Geo';
+
+const GeoViewForm = (props) => (
   <Form>
     <Field {...props.control('geo')} />
     <FormDebug {...props} />
   </Form>
 );
-
 
 const GeoGoogleForm = createForm({
   view: GeoViewForm,
@@ -26,15 +26,12 @@ const GeoGoogleForm = createForm({
 });
 
 export default ({ storiesOf }) =>
-  storiesOf('form/controls', module)
-    .add('Geo', () => {
-      return (
-        <Story>
-          <GeoGoogleForm
-            initialValues={{
-              geo: [-122.268783, 37.871263],
-            }}
-          />
-        </Story>
-      );
-    });
+  storiesOf('form/controls', module).add('Geo', () => (
+    <Story>
+      <GeoGoogleForm
+        initialValues={{
+          geo: [-122.268783, 37.871263],
+        }}
+      />
+    </Story>
+  ));

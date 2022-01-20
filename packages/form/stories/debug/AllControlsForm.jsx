@@ -1,30 +1,30 @@
+import { Field, Form } from 'formik';
 import React from 'react';
-import { Form, Field } from 'formik';
 import Icon from 'react-icons2/mdi/magnify';
 
-import createForm from '../../createForm';
-import Input from '../../controls/Input';
-import Select from '../../controls/Select';
-import Tags from '../../controls/Tags';
-import PhoneInput from '../../controls/PhoneInput';
-import FormDebug from '../../FormDebug';
-import PercentSlider from '../../controls/PercentSlider';
-import Files from '../../controls/Files';
-import ArrayOf from '../../controls/ArrayOf';
-import Calendar from '../../controls/Calendar';
-import CheckBlock from '../../controls/CheckBlock';
-import Checkbox from '../../controls/Checkbox';
-import Geo from '../../controls/Geo';
-// import Date from '../../controls/Date';
-import GroupOf from '../../controls/GroupOf';
-import Image from '../../controls/Image';
-import Radio from '../../controls/Radio';
-import RadioCards from '../../controls/RadioCards';
-import Range from '../../controls/Range';
-import Switcher from '../../controls/Switcher';
-import Textarea from '../../controls/Textarea';
+import ArrayOf from '../../src/controls/ArrayOf';
+import Calendar from '../../src/controls/Calendar';
+import CheckBlock from '../../src/controls/CheckBlock';
+import Checkbox from '../../src/controls/Checkbox';
+import Files from '../../src/controls/Files';
+import Geo from '../../src/controls/Geo';
+// import Date from '../../src/controls/Date';
+import GroupOf from '../../src/controls/GroupOf';
+import Image from '../../src/controls/Image';
+import Input from '../../src/controls/Input';
+import PercentSlider from '../../src/controls/PercentSlider';
+import PhoneInput from '../../src/controls/PhoneInput';
+import Radio from '../../src/controls/Radio';
+import RadioCards from '../../src/controls/RadioCards';
+import Range from '../../src/controls/Range';
+import Select from '../../src/controls/Select';
+import Switcher from '../../src/controls/Switcher';
+import Tags from '../../src/controls/Tags';
+import Textarea from '../../src/controls/Textarea';
+import createForm from '../../src/createForm';
+import FormDebug from '../../src/FormDebug';
 
-export const View = props => (
+export const View = (props) => (
   <Form>
     <Field {...props.control('input')} />
     <Field {...props.control('select')} />

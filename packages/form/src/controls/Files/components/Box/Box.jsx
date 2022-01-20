@@ -1,14 +1,14 @@
 /** @jsx jsx */
-import React, { PureComponent } from 'react';
-import { jsx } from '@emotion/core';
+import { jsx } from '@emotion/react';
 import PropTypes from 'prop-types';
-import BoxHeader from './BoxHeader';
-import BoxBody from './BoxBody';
-import BoxFooter from './BoxFooter';
-import BoxBadge from './BoxBadge';
-import BoxDivider from './BoxDivider';
+import React, { PureComponent } from 'react';
 
 import BoxItem from './Box.styles';
+import BoxBadge from './BoxBadge';
+import BoxBody from './BoxBody';
+import BoxDivider from './BoxDivider';
+import BoxFooter from './BoxFooter';
+import BoxHeader from './BoxHeader';
 
 class Box extends PureComponent {
   static Header = BoxHeader;
@@ -30,16 +30,9 @@ class Box extends PureComponent {
     padded: false,
     paint: null,
     image: null,
-  }
+  };
   render() {
-    const {
-      children,
-      padded,
-      paint,
-      componentClass,
-      image,
-      ...props
-    } = this.props;
+    const { children, padded, paint, componentClass, image, ...props } = this.props;
     const tag = componentClass || 'div';
     return (
       <BoxItem padded={padded} paint={paint} image={image} componentClass={tag} {...props}>

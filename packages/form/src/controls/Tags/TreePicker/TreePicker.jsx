@@ -1,24 +1,22 @@
 /* eslint import/no-unresolved: 0, import/extensions: 0 */
-import React, { Component } from 'react';
-import If from 'react-if';
 import autobind from '@lskjs/autobind';
-
-import PropTypes from 'prop-types';
-import { inject, observer } from 'mobx-react';
+import Button from '@lskjs/button';
+import Modal2, { Content, Footer, Subtitle, Title } from '@lskjs/modal';
+import T from '@lskjs/t';
 import Fuse from 'fuse.js';
-import Magnify from 'react-icons2/mdi/magnify';
 import map from 'lodash/map';
 import omit from 'lodash/omit';
 import uniqBy from 'lodash/uniqBy';
-import T from '@lskjs/t';
-import Button from '@lskjs/button';
-import Modal2, { Title, Subtitle, Content, Footer } from '@lskjs/modal';
+import { inject, observer } from 'mobx-react';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+import Magnify from 'react-icons2/mdi/magnify';
+import If from 'react-if';
 
-import TextButton from './TextButton';
-import TreeInput from '../TreeInput';
 import Input from '../../../components/BaseInput';
-
-import { Block, ScrollContent, Meta, InnerBlock } from './TreePicker.styles';
+import TreeInput from '../TreeInput';
+import TextButton from './TextButton';
+import { Block, InnerBlock, Meta, ScrollContent } from './TreePicker.styles';
 
 @inject('i18')
 @observer
@@ -67,7 +65,7 @@ class TreePicker extends Component {
   }
 
   getArrays(items, array = []) {
-    items.forEach(item => {
+    items.forEach((item) => {
       item._title = item.title;
       if (Array.isArray(item.children) && item.children.length > 0) {
         this.getArrays(item.children, array, item);
@@ -81,7 +79,7 @@ class TreePicker extends Component {
   }
 
   getChildrenTitles(items, titles = '') {
-    items.forEach(item => {
+    items.forEach((item) => {
       item._title = item.title;
       titles += `.${item._title}`;
       if (Array.isArray(item.children) && item.children.length > 0) {
@@ -147,7 +145,7 @@ class TreePicker extends Component {
     if (!searchedFieldIds) {
       searchedFieldIds = map(searchedFields, '_id');
     }
-    const tree = JSON.parse(JSON.stringify(fields)).filter(field => {
+    const tree = JSON.parse(JSON.stringify(fields)).filter((field) => {
       if (searchedFieldIds.indexOf(field._id) !== -1) {
         if (Array.isArray(field.children) && field.children.length > 0) {
           field.children = this.deepSearch(searchedFields, field.children, searchedFieldIds);
@@ -174,7 +172,7 @@ class TreePicker extends Component {
         size="small"
         trigger={children}
         onClose={this.resetToProps}
-        ref={modal => {
+        ref={(modal) => {
           this.modal = modal;
         }}
       >
@@ -185,11 +183,8 @@ class TreePicker extends Component {
         </Block>
         <InnerBlock>
           <Subtitle>
-            {i18.t('admin.header.tags')}
-{' '}
-({value ? value.length : 0}
-)
-</Subtitle>
+            {i18.t('admin.header.tags')} ({value ? value.length : 0})
+          </Subtitle>
           <Meta>
             <If condition={value && value.length > 0}>
               <TextButton className={clearBtnStyles} onClick={() => this.handleSelect([])}>

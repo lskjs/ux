@@ -1,9 +1,9 @@
-import React, { PureComponent } from 'react';
 import autobind from '@lskjs/autobind';
 import PropTypes from 'prop-types';
-
+import React, { PureComponent } from 'react';
 import Blank from 'react-icons2/mdi/checkbox-blank-circle-outline';
 import Selected from 'react-icons2/mdi/checkbox-marked-circle';
+
 import { Icon, Item } from './Radio.styles';
 
 class Radio extends PureComponent {
@@ -15,14 +15,14 @@ class Radio extends PureComponent {
     children: PropTypes.any,
     validationState: PropTypes.oneOf(['success', 'error', 'warning']),
     disabled: PropTypes.bool,
-  }
+  };
   static defaultProps = {
     onChange: null,
     checked: false,
     children: null,
     validationState: null,
     disabled: false,
-  }
+  };
   constructor({ checked }) {
     super();
     this.state = {
@@ -43,22 +43,9 @@ class Radio extends PureComponent {
   }
   render() {
     const { checked } = this.state;
-    const {
-      block,
-      disabled,
-      validationState,
-      id = `r${Math.random()}`,
-      children,
-      ...otherProps
-    } = this.props;
+    const { block, disabled, validationState, id = `r${Math.random()}`, children, ...otherProps } = this.props;
     return (
-      <Item
-        selected={checked}
-        validationState={validationState}
-        disabled={disabled}
-        block={block}
-        {...otherProps}
-      >
+      <Item selected={checked} validationState={validationState} disabled={disabled} block={block} {...otherProps}>
         <input
           // {...otherProps}
           type="radio"

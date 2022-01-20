@@ -5,7 +5,7 @@ export const Icon = styled('button')`
   background: none;
   outline: none;
   border: none;
-  color: ${p => (p.isActive ? p.theme.colors.primary : p.theme.colors.gray)};
+  color: ${(p) => (p.isActive ? p.theme.colors.primary : p.theme.colors.gray)};
   font-size: 24px;
   margin: 0;
   padding: 0;
@@ -35,8 +35,8 @@ export const Item = styled('div')`
     line-height: 1.43;
     letter-spacing: -0.1px;
     text-align: left;
-    font-family: ${p => getTheme(p.theme, 'fontFamily')};
-    color: ${p => getTheme(p.theme, 'colors.main')};
+    font-family: ${(p) => getTheme(p.theme, 'fontFamily')};
+    color: ${(p) => getTheme(p.theme, 'colors.main')};
     cursor: pointer;
   }
   ${(p) => {
@@ -53,8 +53,10 @@ export const Item = styled('div')`
       default:
         return '';
     }
-  }}  
-${p => (p.selected && `
+  }}
+  ${(p) =>
+    p.selected &&
+    `
     ${Icon} {
       color: ${getTheme(p.theme, 'colors.primary')};
       cursor: default;
@@ -63,8 +65,10 @@ ${p => (p.selected && `
       cursor: default;
       color: ${getTheme(p.theme, 'colors.main')} !important;
     }
-    `)}
-  ${p => (p.disabled && `
+    `}
+  ${(p) =>
+    p.disabled &&
+    `
     ${Icon} {
       color: ${getTheme(p.theme, 'colors.border')} !important;
       cursor: not-allowed;
@@ -77,5 +81,5 @@ ${p => (p.selected && `
     &:hover label {
       color: ${getTheme(p.theme, 'colors.primary')};
     }
-    `)}
+    `}
 `;

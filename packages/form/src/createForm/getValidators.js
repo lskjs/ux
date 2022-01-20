@@ -1,27 +1,23 @@
 import forEach from 'lodash/forEach';
-import pickBy from 'lodash/pickBy';
+import isEmpty from 'lodash/isEmpty';
 import isFunction from 'lodash/isFunction';
 import map from 'lodash/map';
-import isEmpty from 'lodash/isEmpty';
+import pickBy from 'lodash/pickBy';
 
 export default (controls) => {
   const validators = {};
   let customValidators = [];
   forEach(controls, (value, key) => {
-    validators[key] = pickBy(value.validator, (validator) => {
-      return !isFunction(validator);
-    });
+    validators[key] = pickBy(value.validator, (validator) => !isFunction(validator));
 
     const custom = pickBy(value.validator, isFunction);
     if (!isEmpty(custom)) {
       customValidators = [
         ...customValidators,
-        ...map(custom, (validator) => {
-          return {
-            name: key,
-            validator,
-          };
-        }),
+        ...map(custom, (validator) => ({
+          name: key,
+          validator,
+        })),
       ];
     }
   });
@@ -30,4 +26,3 @@ export default (controls) => {
     customValidators,
   };
 };
-

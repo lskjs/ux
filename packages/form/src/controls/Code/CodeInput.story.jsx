@@ -1,8 +1,9 @@
-import React from 'react';
-import { Form, FastField } from 'formik';
 import Story from '@lskjs/dev/Story';
-import FormDebug from '../../FormDebug';
+import { FastField, Form } from 'formik';
+import React from 'react';
+
 import createForm from '../../createForm';
+import FormDebug from '../../FormDebug';
 import CodeInput from './CodeInput';
 
 // eslint-disable-next-line react/prop-types

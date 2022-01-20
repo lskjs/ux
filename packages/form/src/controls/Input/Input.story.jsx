@@ -1,12 +1,13 @@
-import React from 'react';
-import { Form, Field, FastField } from 'formik';
-import UsdIcon from 'react-icons2/mdi/currency-usd';
 import Story from '@lskjs/dev/Story';
+import { FastField, Field, Form } from 'formik';
+import React from 'react';
+import UsdIcon from 'react-icons2/mdi/currency-usd';
+
 import createForm from '../../createForm';
-import Input from './Input';
+import FormDebug from '../../FormDebug';
 import Textarea from '../Textarea';
 import currency from './formats/currency';
-import FormDebug from '../../FormDebug';
+import Input from './Input';
 
 const InputFormView = ({ control, ...props }) => (
   <Form>

@@ -1,10 +1,11 @@
 /* eslint-disable react/destructuring-assignment */
+import { Field, Form } from 'formik';
 import React from 'react';
-import { Form, Field } from 'formik';
+
+import InputComponent from '../../src/controls/Input';
+import createForm from '../../src/createForm';
+import FormDebug from '../../src/FormDebug';
 import Story from '../Story';
-import createForm from '../../createForm';
-import InputComponent from '../../controls/Input';
-import FormDebug from '../../FormDebug';
 
 const ValidationView = (props) => (
   <Form>
@@ -43,14 +44,12 @@ const Validation = createForm({
 });
 
 export default ({ storiesOf }) =>
-  storiesOf('form/validator', module).add('Validation with validate.js', () => {
-    return (
-      <Story>
-        <Validation
-          onSubmit={(values) => {
-            console.log({ values });
-          }}
-        />
-      </Story>
-    );
-  });
+  storiesOf('form/validator', module).add('Validation with validate.js', () => (
+    <Story>
+      <Validation
+        onSubmit={(values) => {
+          console.log({ values });
+        }}
+      />
+    </Story>
+  ));

@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 
 class SearchBox extends Component {
   static propTypes = {
@@ -71,7 +71,6 @@ class SearchBox extends Component {
 }
 
 export default SearchBox;
-
 
 // class SearchBox {
 //   constructor(props) {

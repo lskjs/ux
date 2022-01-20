@@ -1,11 +1,12 @@
-import React, { PureComponent } from 'react';
 import autobind from '@lskjs/autobind';
-import PropTypes from 'prop-types';
-import Numeric from 'react-numeric-input';
 import filterProps from '@lskjs/utils/filterProps';
+import PropTypes from 'prop-types';
+import React, { PureComponent } from 'react';
+import Numeric from 'react-numeric-input';
+
 import Input from '../../../components/BaseInput';
 // import Input from '@lskjs/ui/Input';
-import { elInput, El, Block } from './InputRange.styles';
+import { Block, El, elInput } from './InputRange.styles';
 
 class InputRange extends PureComponent {
   static propTypes = {
@@ -16,7 +17,7 @@ class InputRange extends PureComponent {
     min: PropTypes.number,
     minProps: PropTypes.object,
     maxProps: PropTypes.object,
-  }
+  };
   static defaultProps = {
     value: [null, null],
     minProps: {},
@@ -25,7 +26,7 @@ class InputRange extends PureComponent {
     validationState: null,
     max: null,
     min: null,
-  }
+  };
   constructor(props) {
     super(props);
     this.state = {
@@ -52,9 +53,7 @@ class InputRange extends PureComponent {
   }
   render() {
     const { value } = this.state;
-    const {
-      validationState, min, max, minProps, maxProps,
-    } = this.props;
+    const { validationState, min, max, minProps, maxProps } = this.props;
     const [from, to] = value;
     return (
       <Block>

@@ -1,4 +1,4 @@
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 
 export const highlightedStyle = css`
   background-color: #e6f7ff !important;
@@ -24,7 +24,10 @@ export const globalStyles = css`
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.125em;
 
-    &, & *, & *:before, & *:after {
+    &,
+    & *,
+    & *:before,
+    & *:after {
       -moz-box-sizing: border-box;
       -webkit-box-sizing: border-box;
       box-sizing: border-box;
@@ -51,7 +54,8 @@ export const globalStyles = css`
         background: none;
 
         &:enabled {
-          &:hover, &:focus {
+          &:hover,
+          &:focus {
             background-color: rgb(230, 230, 230);
           }
         }
@@ -67,10 +71,10 @@ export const globalStyles = css`
         text-align: center;
         text-transform: uppercase;
         font-weight: bold;
-        font-size: .75em;
+        font-size: 0.75em;
 
         &__weekday {
-          padding: .5em;
+          padding: 0.5em;
         }
       }
 
@@ -81,8 +85,8 @@ export const globalStyles = css`
           display: flex;
           align-items: center;
           justify-content: center;
-          font-size: .75em;
-          padding: calc(.75em / .75) calc(.5em / .75);
+          font-size: 0.75em;
+          padding: calc(0.75em / 0.75) calc(0.5em / 0.75);
         }
       }
 
@@ -103,14 +107,14 @@ export const globalStyles = css`
     &__decade-view,
     &__century-view {
       .react-calendar__tile {
-        padding: 2em .5em;
+        padding: 2em 0.5em;
       }
     }
 
     &__tile {
       max-width: 100%;
       text-align: center;
-      padding: .75em .5em;
+      padding: 0.75em 0.5em;
       background: none;
 
       &:disabled {
@@ -118,7 +122,8 @@ export const globalStyles = css`
       }
 
       &:enabled {
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
           background-color: rgb(230, 230, 230);
         }
       }
@@ -128,7 +133,8 @@ export const globalStyles = css`
         background: @bgcolor;
 
         &:enabled {
-          &:hover, &:focus {
+          &:hover,
+          &:focus {
             background: lighten(@bgcolor, 10%);
           }
         }
@@ -140,7 +146,8 @@ export const globalStyles = css`
         color: white !important;
 
         &:enabled {
-          &:hover, &:focus {
+          &:hover,
+          &:focus {
             background: lighten(@bgcolor, 10%);
           }
         }

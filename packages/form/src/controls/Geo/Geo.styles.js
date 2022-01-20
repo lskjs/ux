@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 export const Icon = styled('div')`
   font-size: 48px;
-  color: #B71C1C;
+  color: #b71c1c;
 `;
 
 export const Footer = styled('div')`

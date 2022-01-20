@@ -4,7 +4,7 @@ import createForm from './createForm';
 
 console.log('createFormWithI18 DEPRECATED -- DANGER DON\'T USE IT -- createFormWithI18 DEPRECATED -- DANGER DON\'T USE IT -- createFormWithI18 DEPRECATED -- DANGER DON\'T USE IT -- createFormWithI18 DEPRECATED -- DANGER DON\'T USE IT -- ');  //eslint-disable-line
 
-export default config => configParams => {
+export default (config) => (configParams) => {
   console.log('createFormWithI18 DEPRECATED -- DANGER DON\'T USE IT -- createFormWithI18 DEPRECATED -- DANGER DON\'T USE IT -- createFormWithI18 DEPRECATED -- DANGER DON\'T USE IT -- createFormWithI18 DEPRECATED -- DANGER DON\'T USE IT -- '); //eslint-disable-line
   return createForm(config(configParams));
 };

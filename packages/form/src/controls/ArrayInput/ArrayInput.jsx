@@ -1,13 +1,14 @@
-import React from 'react';
-import If from 'react-if';
-import isArray from 'lodash/isArray';
-import get from 'lodash/get';
 import Button from '@lskjs/button';
-import CloseIcon from 'react-icons2/mdi/close';
 import IconCircleButton from '@lskjs/button/IconCircleButton';
+import get from 'lodash/get';
+import isArray from 'lodash/isArray';
+import React from 'react';
+import CloseIcon from 'react-icons2/mdi/close';
+import If from 'react-if';
+
 import BaseInput from '../../components/BaseInput';
 
-const DefaultAddButton = props => <IconCircleButton {...props} />;
+const DefaultAddButton = (props) => <IconCircleButton {...props} />;
 
 const ArrayInput = ({
   form,
@@ -27,28 +28,19 @@ const ArrayInput = ({
     }
     if (value.length === maxCount) return value;
     if (typeof autoAddLastItem !== 'undefined') {
-      return [
-        ...value,
-        itemInitialValue,
-      ];
+      return [...value, itemInitialValue];
     }
     return value;
   }
   function removeButtonHandler(key) {
     let value = field.value || [];
     if (!isArray(value)) value = [];
-    form.setFieldValue(field.name, [
-      ...value.slice(0, key),
-      ...value.slice(key + 1),
-    ]);
+    form.setFieldValue(field.name, [...value.slice(0, key), ...value.slice(key + 1)]);
   }
   function addButtonHandler() {
     let value = field.value || [];
     if (!isArray(value)) value = [];
-    form.setFieldValue(field.name, [
-      ...value,
-      itemInitialValue,
-    ]);
+    form.setFieldValue(field.name, [...value, itemInitialValue]);
   }
   let addButton = <DefaultAddButton />;
   if (typeof createAddButton === 'function') {
@@ -60,25 +52,25 @@ const ArrayInput = ({
   const hasError = field && field.name && !!get(form.errors, field.name);
   return (
     <>
-      {values.map((value, key) => {
-        return (
-          <BaseInput
-            // eslint-disable-next-line react/no-array-index-key
-            key={key}
-            {...field}
-            value={value}
-            debounce={0}
-            {...props}
-            style={{
-              border: hasError ? '1px solid red' : '',
-              marginBottom: 16,
-            }}
-            onChange={(value) => {
-              const val = values;
-              val[key] = value;
-              form.setFieldValue(field.name, val);
-            }}
-            rightIcon={!(values.length === key + 1 && autoAddLastItem) && (
+      {values.map((value, key) => (
+        <BaseInput
+          // eslint-disable-next-line react/no-array-index-key
+          key={key}
+          {...field}
+          value={value}
+          debounce={0}
+          {...props}
+          style={{
+            border: hasError ? '1px solid red' : '',
+            marginBottom: 16,
+          }}
+          onChange={(value) => {
+            const val = values;
+            val[key] = value;
+            form.setFieldValue(field.name, val);
+          }}
+          rightIcon={
+            !(values.length === key + 1 && autoAddLastItem) && (
               <Button
                 view="text"
                 paint="primary"
@@ -86,14 +78,12 @@ const ArrayInput = ({
                 onClick={() => removeButtonHandler(key)}
                 style={{ margin: '4px -4px 4px 0' }}
               />
-            )}
-            {...format({ field, form, ...props })}
-          />
-        );
-      })}
-      <If condition={!maxCount || values.length < maxCount}>
-        {addButton}
-      </If>
+            )
+          }
+          {...format({ field, form, ...props })}
+        />
+      ))}
+      <If condition={!maxCount || values.length < maxCount}>{addButton}</If>
     </>
   );
 };

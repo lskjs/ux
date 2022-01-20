@@ -1,26 +1,23 @@
+import { FastField, Form } from 'formik';
 import React from 'react';
-import { Form, FastField } from 'formik';
 
+import Checkbox from '../../src/controls/Checkbox';
+import Input from '../../src/controls/Input';
+import Select from '../../src/controls/Select';
+import Tags from '../../src/controls/Tags';
+import createForm from '../../src/createForm';
+import FormDebug from '../../src/FormDebug';
 import Story from '../Story';
-import createForm from '../../createForm';
-import FormDebug from '../../FormDebug';
 
-import Input from '../../controls/Input';
-import Select from '../../controls/Select';
-import Checkbox from '../../controls/Checkbox';
-import Tags from '../../controls/Tags';
-
-const FormExample1View = (props) => {
-  return (
-    <Form>
-      <FastField {...props.control('input')} />
-      <FastField {...props.control('select')} />
-      <FastField {...props.control('checkbox')} />
-      <FastField {...props.control('tags')} />
-      <FormDebug {...props} />
-    </Form>
-  );
-};
+const FormExample1View = (props) => (
+  <Form>
+    <FastField {...props.control('input')} />
+    <FastField {...props.control('select')} />
+    <FastField {...props.control('checkbox')} />
+    <FastField {...props.control('tags')} />
+    <FormDebug {...props} />
+  </Form>
+);
 
 export const FormExample1 = createForm({
   view: FormExample1View,
@@ -79,11 +76,8 @@ export const FormExample1 = createForm({
 });
 
 export default ({ storiesOf }) =>
-  storiesOf('form/examples', module)
-    .add('FormExample1', () => {
-      return (
-        <Story>
-          <FormExample1 />
-        </Story>
-      );
-    });
+  storiesOf('form/examples', module).add('FormExample1', () => (
+    <Story>
+      <FormExample1 />
+    </Story>
+  ));

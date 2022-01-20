@@ -1,20 +1,20 @@
+import Performance from '@lskjs/dev/Performance';
+import Story from '@lskjs/dev/Story/UappStory';
+import Flag from '@lskjs/flag';
+import Modal, { Content, Title } from '@lskjs/modal';
+import { Field, Form } from 'formik';
+import keys from 'lodash/keys';
+import range from 'lodash/range';
 import React from 'react';
-import { Form, Field } from 'formik';
+import RadioBlank from 'react-icons2/mdi/checkbox-blank-circle-outline';
 import CheckBlank from 'react-icons2/mdi/checkbox-blank-outline';
 import CheckMarked from 'react-icons2/mdi/checkbox-marked';
-import RadioBlank from 'react-icons2/mdi/checkbox-blank-circle-outline';
 import RadioSelected from 'react-icons2/mdi/checkbox-marked-circle';
-import range from 'lodash/range';
-import keys from 'lodash/keys';
 
-import Modal, { Title, Content } from '@lskjs/modal';
-import Story from '@lskjs/dev/Story/UappStory';
-import Performance from '@lskjs/dev/Performance';
-import Flag from '@lskjs/flag';
 import createForm from '../../createForm';
 import FormDebug from '../../FormDebug';
-import Select from './Select';
 import countriesList from './countriesList';
+import Select from './Select';
 
 const SelectFormView = ({ control, ...props }) => (
   <Form>
@@ -293,13 +293,11 @@ const SelectForm = createForm({
     countries: {
       title: 'Countries',
       component: Select,
-      options: keys(countriesList).map((value) => {
-        return {
-          title: value,
-          value,
-          icon: <Flag country={value} />,
-        };
-      }),
+      options: keys(countriesList).map((value) => ({
+        title: value,
+        value,
+        icon: <Flag country={value} />,
+      })),
     },
     // /////
     asyncSelect: {
@@ -337,14 +335,12 @@ const SelectForm = createForm({
       isMulti: true,
       loadOption: async (values) => {
         if (Array.isArray(values)) {
-          return values.map((value) => {
-            return {
-              value,
-              id: value,
-              image: `https://picsum.photos/40/40/?image=${value}`,
-              label: `User ${value}`,
-            };
-          });
+          return values.map((value) => ({
+            value,
+            id: value,
+            image: `https://picsum.photos/40/40/?image=${value}`,
+            label: `User ${value}`,
+          }));
         }
         return [];
       },
@@ -374,14 +370,12 @@ const SelectForm = createForm({
       blurInputOnSelect: false,
       loadOption: async (values) => {
         if (Array.isArray(values)) {
-          return values.map((value) => {
-            return {
-              value,
-              id: value,
-              image: `https://picsum.photos/40/40/?image=${value}`,
-              label: `User ${value}`,
-            };
-          });
+          return values.map((value) => ({
+            value,
+            id: value,
+            image: `https://picsum.photos/40/40/?image=${value}`,
+            label: `User ${value}`,
+          }));
         }
         return [];
       },
@@ -476,29 +470,25 @@ const SelectForm = createForm({
 
 export default ({ storiesOf }) =>
   storiesOf('form/controls', module)
-    .add('Select ', () => {
-      return (
-        <Story devtools perf>
-          <SelectForm
-            initialValues={{
-              select4: 'two',
-              asyncSelect2: 99,
-              asyncSelect: 1,
-              asyncMultiSelect: [4],
-            }}
-          />
-        </Story>
-      );
-    })
-    .add('Modal select', () => {
-      return (
-        <Story devtools perf>
-          <Modal trigger={<div>asd</div>}>
-            <Title>asd</Title>
-            <Content>
-              <SelectForm />
-            </Content>
-          </Modal>
-        </Story>
-      );
-    });
+    .add('Select ', () => (
+      <Story devtools perf>
+        <SelectForm
+          initialValues={{
+            select4: 'two',
+            asyncSelect2: 99,
+            asyncSelect: 1,
+            asyncMultiSelect: [4],
+          }}
+        />
+      </Story>
+    ))
+    .add('Modal select', () => (
+      <Story devtools perf>
+        <Modal trigger={<div>asd</div>}>
+          <Title>asd</Title>
+          <Content>
+            <SelectForm />
+          </Content>
+        </Modal>
+      </Story>
+    ));

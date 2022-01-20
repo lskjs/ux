@@ -1,10 +1,10 @@
-import React from 'react';
-import { Global } from '@emotion/core';
-import PropTypes from 'prop-types';
+import { Global } from '@emotion/react';
 import AntCheckbox from 'antd/lib/checkbox';
-import Label, { globalStyles } from './Checkbox.styles';
-import Bool from './Bool';
+import PropTypes from 'prop-types';
+import React from 'react';
 
+import Bool from './Bool';
+import Label, { globalStyles } from './Checkbox.styles';
 
 export const BaseCheckbox = ({ onChange, validationState, ...props }) => (
   <>
@@ -14,9 +14,7 @@ export const BaseCheckbox = ({ onChange, validationState, ...props }) => (
       onChange={({ target: { checked } }) => onChange(checked)}
       // onChange={value => onChange(value.target.checked)}
     >
-      <Label validationState={validationState}>
-        {props.label}
-      </Label>
+      <Label validationState={validationState}>{props.label}</Label>
     </AntCheckbox>
   </>
 );
@@ -29,4 +27,4 @@ BaseCheckbox.defaultProps = {
   name: 'checkbox',
 };
 
-export default props => <Bool {...props} componentClass={BaseCheckbox} />;
+export default (props) => <Bool {...props} componentClass={BaseCheckbox} />;

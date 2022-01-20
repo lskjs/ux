@@ -1,1 +1,1 @@
-export default LskForm => <div />; // FormiForm
+export default (LskForm) => <div />; // FormiForm

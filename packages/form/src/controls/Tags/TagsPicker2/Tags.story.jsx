@@ -1,19 +1,18 @@
-import React from 'react';
-import { Form, Field } from 'formik';
-import range from 'lodash/range';
 import Story from '@lskjs/dev/Story';
-import createForm from '../../../createForm';
-import Tags from './Tags';
-import FormDebug from '../../../FormDebug';
+import { Field, Form } from 'formik';
+import range from 'lodash/range';
+import React from 'react';
 
-const TagsFormView = (props) => {
-  return (
-    <Form>
-      <Field {...props.control('tags')} />
-      <FormDebug {...props} />
-    </Form>
-  );
-};
+import createForm from '../../../createForm';
+import FormDebug from '../../../FormDebug';
+import Tags from './Tags';
+
+const TagsFormView = (props) => (
+  <Form>
+    <Field {...props.control('tags')} />
+    <FormDebug {...props} />
+  </Form>
+);
 
 const TagsForm = createForm({
   view: TagsFormView,
@@ -45,13 +44,9 @@ const TagsForm = createForm({
   },
 });
 
-
 export default ({ storiesOf }) =>
-  storiesOf('form/controls', module)
-    .add('Custom Tags ', () => {
-      return (
-        <Story>
-          <TagsForm />
-        </Story>
-      );
-    });
+  storiesOf('form/controls', module).add('Custom Tags ', () => (
+    <Story>
+      <TagsForm />
+    </Story>
+  ));

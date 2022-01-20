@@ -1,18 +1,19 @@
-import React from 'react';
-import forEach from 'lodash/forEach';
-import set from 'lodash/set';
-import pickBy from 'lodash/pickBy';
-import isFunction from 'lodash/isFunction';
-import map from 'lodash/map';
-import get from 'lodash/get';
+import getError from '@lskjs/utils/getError';
+import Promise from 'bluebird';
+import { withFormik } from 'formik';
 // import omit from 'lodash/omit';
 // import some from 'lodash/some';
 import cloneDeep from 'lodash/cloneDeep';
+import forEach from 'lodash/forEach';
+import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
-import { withFormik } from 'formik';
+import isFunction from 'lodash/isFunction';
+import map from 'lodash/map';
+import pickBy from 'lodash/pickBy';
+import set from 'lodash/set';
+import React from 'react';
 import validate from 'validate.js';
-import Promise from 'bluebird';
-import getError from '../getError';
+
 import OnChangeListener from '../OnChangeListener';
 // import getControlHtmlId from './getControlHtmlId';
 
@@ -24,14 +25,9 @@ const prepareControls = (ctrls, FormGroup) => {
     const ControlWrapper = ctrl.FormGroup || FormGroup;
     let component;
     if (ControlWrapper) {
-      component = (props2) => {
+      component = (props2) =>
         // console.log('component', props2);
-        return React.createElement(
-          ControlWrapper,
-          props2,
-          React.createElement(ctrl.component, props2),
-        );
-      };
+        React.createElement(ControlWrapper, props2, React.createElement(ctrl.component, props2));
     } else {
       ({ component } = ctrl);
     }
@@ -91,25 +87,20 @@ export const avoidNestedFields = (values) => {
   return newValues;
 };
 
-
 const getValidators = (controls) => {
   const validators = {};
   let customValidators = [];
   forEach(controls, (value, key) => {
-    validators[key] = pickBy(value.validator, (validator) => {
-      return !isFunction(validator);
-    });
+    validators[key] = pickBy(value.validator, (validator) => !isFunction(validator));
 
     const custom = pickBy(value.validator, isFunction);
     if (!isEmpty(custom)) {
       customValidators = [
         ...customValidators,
-        ...map(custom, (validator) => {
-          return {
-            name: key,
-            validator,
-          };
-        }),
+        ...map(custom, (validator) => ({
+          name: key,
+          validator,
+        })),
       ];
     }
   });
@@ -154,7 +145,6 @@ const createForm = ({
     return React.createElement(OnChangeListener, mergedProps, formView);
   };
 
-
   const wrapperWithFormik = rawWithFormik || withFormik;
   return wrapperWithFormik({
     mapPropsToValues(props) {
@@ -176,9 +166,7 @@ const createForm = ({
       return defaultValues;
     },
     handleSubmit: async (values, props2) => {
-      const {
-        setSubmitting, props, setStatus, setFieldError, status, isSubmitting,
-      } = props2;
+      const { setSubmitting, props, setStatus, setFieldError, status, isSubmitting } = props2;
       const { onSubmit } = props;
       if (DEBUG) console.log('Form2 handleSubmit', { status, isSubmitting }); // eslint-disable-line
 
@@ -208,7 +196,6 @@ const createForm = ({
     async validate(values) {
       if (DEBUG) console.log('Form2 validate', values);
       const errors = {};
-
 
       // validate by validate.js
       if (DEBUG) console.log('@@@@@@@@ prepare');

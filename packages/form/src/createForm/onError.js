@@ -1,5 +1,6 @@
-import some from 'lodash/some';
 import scrollTo from '@lskjs/scroll';
+import some from 'lodash/some';
+
 import getControlHtmlId from './getControlHtmlId';
 
 export default ({ errors, controls, scroll = true }) => {

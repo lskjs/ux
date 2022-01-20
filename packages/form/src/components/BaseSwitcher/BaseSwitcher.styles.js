@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import getTheme from '@lskjs/theme/getTheme';
 
 export const Label = styled('b')`
-  font-family: ${p => getTheme(p.theme, 'fontFamily')};
+  font-family: ${(p) => getTheme(p.theme, 'fontFamily')};
   font-size: 13px;
   font-weight: bold;
   font-style: normal;
@@ -10,14 +10,14 @@ export const Label = styled('b')`
   line-height: 1.54;
   letter-spacing: -0.1px;
   text-align: right;
-  color: ${p => getTheme(p.theme, 'colors.main')};
+  color: ${(p) => getTheme(p.theme, 'colors.main')};
   margin-right: 12px;
 `;
 
 export const Handler = styled('div')`
   width: 18px;
   height: 18px;
-  background-color: ${p => getTheme(p.theme, 'colors.white')};
+  background-color: ${(p) => getTheme(p.theme, 'colors.white')};
   border-radius: 50px;
   margin-left: 0;
 
@@ -37,17 +37,17 @@ export const Block = styled('button')`
   cursor: pointer;
 
   border-radius: 50px;
-  background-color: ${p => getTheme(p.theme, 'colors.border')};
+  background-color: ${(p) => getTheme(p.theme, 'colors.border')};
   padding: 4px;
 
   transition: background-color 0.2s ease;
-  ${p =>
+  ${(p) =>
     p.validationState === 'error' &&
     `
     background-color: ${getTheme(p.theme, 'colors.danger')};
   `}
   will-change: background-color;
-  ${p =>
+  ${(p) =>
     p.checked &&
     `
     background-color: ${getTheme(p.theme, 'colors.primary')};
@@ -61,7 +61,7 @@ export const Wrap = styled('div')`
   display: flex;
   align-items: center;
   flex-shrink: 0;
-  ${p =>
+  ${(p) =>
     p.disabled &&
     `
     ${Block} {
@@ -76,13 +76,13 @@ export const Wrap = styled('div')`
 
 export const LabelWrapper = styled('div')`
   * {
-    color: ${p => p.checked && getTheme(p.theme, 'colors.primary')} !important;
+    color: ${(p) => p.checked && getTheme(p.theme, 'colors.primary')} !important;
   }
-  ${p =>
+  ${(p) =>
     p.left &&
     `margin-right: 12px;
   `};
-  ${p =>
+  ${(p) =>
     p.right &&
     `margin-left: 12px;
   `};

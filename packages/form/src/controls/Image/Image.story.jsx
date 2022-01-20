@@ -1,13 +1,14 @@
+import { Field, Form } from 'formik';
 import React from 'react';
-import { Form, Field } from 'formik';
-// import StoryWithUpload from '@lskjs/dev/Story';
-import StoryWithUpload from '../Files/StoryWithUpload';
+
 import createForm from '../../createForm';
-import Image from './Image';
 import FormDebug from '../../FormDebug';
 import Footer from '../Files/FilesDefaultFooter';
+// import StoryWithUpload from '@lskjs/dev/Story';
+import StoryWithUpload from '../Files/StoryWithUpload';
+import Image from './Image';
 
-const ImageFormView = props => (
+const ImageFormView = (props) => (
   <Form>
     <Field {...props.control('image')} />
     <Field {...props.control('image1')} />

@@ -1,31 +1,32 @@
-import React, { Component } from 'react';
 import isFunction from 'lodash/isFunction';
 import PropTypes from 'prop-types';
-import { getOptionValue, getReverseOptionValue, getNormalizedOptions, NULL_STRING } from '../Select/utils';
+import React, { Component } from 'react';
+
+import { getNormalizedOptions, getOptionValue, getReverseOptionValue, NULL_STRING } from '../Select/utils';
 
 const DefaultItemComponent = () => 'itemComponent';
 class GroupOf extends Component {
   getOptions() {
-    const {
-      options = [], itemComponent: ItemComponent = DefaultItemComponent, itemProps, ...props
-    } = this.props;
+    const { options = [], itemComponent: ItemComponent = DefaultItemComponent, itemProps, ...props } = this.props;
     const normalizedOptions = getNormalizedOptions(options, props);
-    return normalizedOptions.map(option => ({
+    return normalizedOptions.map((option) => ({
       option,
-      Component: props2 => (
+      Component: (props2) => (
         <ItemComponent
           {...itemProps}
           {...option}
           value={this.isChecked(option)}
-          onChange={checked => this.handleChange({ checked, option })}
-
+          onChange={(checked) => this.handleChange({ checked, option })}
           {...props2}
         />
       ),
     }));
   }
   isChecked(option) {
-    const { field: { value }, isMulti = false } = this.props;
+    const {
+      field: { value },
+      isMulti = false,
+    } = this.props;
     // const value = field && field.value;
     const optionValue = getReverseOptionValue(option.value);
     if (isMulti) {
@@ -49,7 +50,7 @@ class GroupOf extends Component {
     if (checked) {
       newValue = [...value, optionValue];
     } else {
-      newValue = value.filter(val => val !== optionValue);
+      newValue = value.filter((val) => val !== optionValue);
     }
     form.setFieldValue(field.name, newValue);
   }

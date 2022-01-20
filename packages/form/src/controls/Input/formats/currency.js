@@ -5,7 +5,7 @@ export default ({ form, field }) => ({
   thousandSeparator: true,
   decimalSeparator: '.',
   onBlur: () => {
-    const value = parseFloat((field.value).replace(/[^\w.?]+/g, ''));
+    const value = parseFloat(field.value.replace(/[^\w.?]+/g, ''));
     form.setFieldValue(field.name, value);
   },
 });

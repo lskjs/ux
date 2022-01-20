@@ -1,10 +1,10 @@
-import React from 'react';
 import { observer } from 'mobx-react';
-import { components } from 'react-select';
+import React from 'react';
 import Down from 'react-icons2/mdi/chevron-down';
 import Up from 'react-icons2/mdi/chevron-up';
+import { components } from 'react-select';
 
-const DropdownIndicator = props => {
+const DropdownIndicator = (props) => {
   const { selectProps } = props;
   let arrow;
   if (selectProps.menuIsOpen) {

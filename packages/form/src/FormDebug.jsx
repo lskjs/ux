@@ -1,9 +1,10 @@
-import React from 'react';
-import pick from 'lodash/pick';
 import DEV from '@lskjs/dev/DEV';
+import pick from 'lodash/pick';
+import React from 'react';
+
 import FormSubmit from './FormSubmit';
 
-export default props => (
+export default (props) => (
   <>
     <hr />
     <FormSubmit {...props}>Submit</FormSubmit>

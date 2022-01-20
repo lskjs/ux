@@ -1,18 +1,18 @@
-import React, { PureComponent } from 'react';
 // import get from 'lodash/get';
 // import PropTypes from 'prop-types';
-import { Global } from '@emotion/core';
-import CalendarBase from 'react-calendar/dist/entry.nostyle';
+import { Global } from '@emotion/react';
 import autobind from '@lskjs/autobind';
 import moment from 'moment';
+import React, { PureComponent } from 'react';
+import CalendarBase from 'react-calendar/dist/entry.nostyle';
+
 // import moment from 'moment';
 // import HighlightedCell from './HighlightedCell';
-import { highlightedStyle, globalStyles } from './highlightedStyle';
-
+import { globalStyles, highlightedStyle } from './highlightedStyle';
 
 class Calendar extends PureComponent {
   static isAnyTypeDate(f) {
-    return (new Date(f)).getTime() > 0;
+    return new Date(f).getTime() > 0;
   }
   @autobind
   validationDate(value) {
@@ -26,13 +26,7 @@ class Calendar extends PureComponent {
     return validValue;
   }
   render() {
-    const {
-      field,
-      form,
-      highlightedDates,
-      futureOnly,
-      ...props
-    } = this.props;
+    const { field, form, highlightedDates, futureOnly, ...props } = this.props;
     return (
       <>
         <Global styles={globalStyles} />
@@ -46,8 +40,8 @@ class Calendar extends PureComponent {
             form.setFieldValue(field.name, selectedDate);
           }}
           tileClassName={({ date }) => {
-            const dates = (highlightedDates || []).map(d => this.validationDate(d));
-            const isValid = !!dates.filter(e => date.toDateString() === e.toDateString()).length;
+            const dates = (highlightedDates || []).map((d) => this.validationDate(d));
+            const isValid = !!dates.filter((e) => date.toDateString() === e.toDateString()).length;
             if (isValid) return highlightedStyle;
             return '';
           }}

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Wrapper, Items, Memory, Button, LineFilesWrapper } from './LineFile.styles';
+
+import { Button, Items, LineFilesWrapper, Memory, Wrapper } from './LineFile.styles';
 
 const LineFile = ({ title, size }) => (
   <LineFilesWrapper>

@@ -1,8 +1,9 @@
-import React, { PureComponent } from 'react';
-import If from 'react-if';
 import autobind from '@lskjs/autobind';
 import PropTypes from 'prop-types';
-import { Label, Handler, Block, Wrap, LabelWrapper } from './BaseSwitcher.styles';
+import React, { PureComponent } from 'react';
+import If from 'react-if';
+
+import { Block, Handler, Label, LabelWrapper, Wrap } from './BaseSwitcher.styles';
 
 class BaseSwitcher extends PureComponent {
   @autobind

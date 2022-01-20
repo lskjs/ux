@@ -1,11 +1,12 @@
 /* eslint import/no-extraneous-dependencies: 0 */
-import React, { createRef } from 'react';
-import Story from '@lskjs/dev/Story';
 import Button from '@lskjs/button';
-import Input from '../controls/Input';
-import Textarea from '../controls/Textarea';
-import sure from './sure';
-import form from './modal';
+import Story from '@lskjs/dev/Story';
+import React, { createRef } from 'react';
+
+import Input from '../src/controls/Input';
+import Textarea from '../src/controls/Textarea';
+import form from '../src/hoc/modal';
+import sure from '../src/hoc/sure';
 
 export default ({ storiesOf }) =>
   storiesOf('form/hoc', module)
@@ -52,7 +53,7 @@ export default ({ storiesOf }) =>
             ref={ref}
             title="Request"
             content="Do you want"
-            onSubmit={values => console.log('yes', values)}
+            onSubmit={(values) => console.log('yes', values)}
             onClose={() => console.log('onClose')}
           >
             <Button paint="success">Send bio</Button>

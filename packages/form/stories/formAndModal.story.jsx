@@ -1,14 +1,14 @@
-import React from 'react';
-import { Form, Field } from 'formik';
 import Button from '@lskjs/button';
-import Story from './Story';
-// import GridFile from '../components/Files/components/GridFile';
-import GridFile from '../controls/Files/components/GridFile';
-import sure from '../hoc/sure';
+import { Field, Form } from 'formik';
+import React from 'react';
 
-import createForm from '../createForm';
-import Input from '../controls/Input';
-import FormDebug from '../FormDebug';
+// import GridFile from '../components/Files/components/GridFile';
+import GridFile from '../src/controls/Files/components/GridFile';
+import Input from '../src/controls/Input';
+import createForm from '../src/createForm';
+import FormDebug from '../src/FormDebug';
+import sure from '../src/hoc/sure';
+import Story from './Story';
 // import form from './modal';
 
 const SureModal = sure();

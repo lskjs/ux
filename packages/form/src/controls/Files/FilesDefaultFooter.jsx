@@ -1,6 +1,7 @@
-import React from 'react';
 import Button from '@lskjs/button';
 import T from '@lskjs/t';
+import React from 'react';
+
 import Box from './components/Box';
 import GridFiles from './components/GridFiles';
 

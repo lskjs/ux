@@ -1,20 +1,19 @@
+import autobind from '@lskjs/autobind';
+import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 import If from 'react-if';
-import PropTypes from 'prop-types';
-import autobind from '@lskjs/autobind';
 
 import InputRange from '../InputRange';
 import Slider from '../Slider';
-
 import { Graph, GraphItem } from './RangeGroup.styles';
 
 class RangeGroup extends PureComponent {
   static propTypes = {
     validationState: PropTypes.oneOf(['success', 'warning', 'error']),
-  }
+  };
   static defaultProps = {
     validationState: null,
-  }
+  };
   constructor(props) {
     super(props);
     this.state = {
@@ -33,18 +32,7 @@ class RangeGroup extends PureComponent {
   }
   render() {
     const { value } = this.state;
-    const {
-      stats = [],
-      range,
-      slider,
-      min,
-      max,
-      validationState,
-      minProps,
-      maxProps,
-      minRef,
-      maxRef,
-    } = this.props;
+    const { stats = [], range, slider, min, max, validationState, minProps, maxProps, minRef, maxRef } = this.props;
     const [innerMin, innerMax] = value || [null, null];
     const sliderValue = [innerMin || min, innerMax || max];
     const marks = {

@@ -1,12 +1,13 @@
-import React from 'react';
-import { Form, Field } from 'formik';
 import Story from '@lskjs/dev/Story';
+import { Field, Form } from 'formik';
+import React from 'react';
+
 import createForm from '../../createForm';
-import FilesNative from './FilesNative';
 import FormDebug from '../../FormDebug';
 import Body from '../Image/ImageDefaultBody';
+import FilesNative from './FilesNative';
 
-const FilesFormView = props => (
+const FilesFormView = (props) => (
   <Form>
     <Field {...props.control('files')} />
     <Field {...props.control('files2')} />
@@ -57,8 +58,8 @@ const FilesForm = createForm({
   },
 });
 
-export default ({ storiesOf }) => storiesOf('form/controls', module)
-  .add('FilesNative', () => (
+export default ({ storiesOf }) =>
+  storiesOf('form/controls', module).add('FilesNative', () => (
     <Story>
       <FilesForm
         initialValues={{

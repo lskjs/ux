@@ -1,24 +1,18 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import Files from './FilesBaseNative';
+import React from 'react';
 
 import DefaultBody from './DefaultBody';
 import DefaultFooter from './DefaultFooter';
+import Files from './FilesBaseNative';
 
-const getArray = val => (
-  val == null ? [] : ( // eslint-disable-line no-nested-ternary
-    Array.isArray(val) ? val : [val]
-  )
-);
+const getArray = (val) =>
+  val == null
+    ? [] // eslint-disable-line no-nested-ternary
+    : Array.isArray(val)
+    ? val
+    : [val];
 
-const FilesUploader = ({
-  field,
-  form,
-  onError,
-  components,
-  isMulti,
-  ...props
-}) => {
+const FilesUploader = ({ field, form, onError, components, isMulti, ...props }) => {
   // console.log(1111, { field });
   // const defaultValue = field.value;
   const Body = components.Body || FilesUploader.defaultProps.components.Body;
@@ -33,7 +27,16 @@ const FilesUploader = ({
       onSubmit={(incomeValues) => {
         if (incomeValues && incomeValues.type === 'remove') {
           if (isMulti) {
-            form.setFieldValue(field.name, (field.value || []).filter(item => !(item && (item === incomeValues.src || item.src === incomeValues.src || item.url === incomeValues.src))));
+            form.setFieldValue(
+              field.name,
+              (field.value || []).filter(
+                (item) =>
+                  !(
+                    item &&
+                    (item === incomeValues.src || item.src === incomeValues.src || item.url === incomeValues.src)
+                  ),
+              ),
+            );
           } else if (incomeValues.src === field.value) {
             form.setFieldValue(field.name, null);
           }
@@ -52,10 +55,7 @@ const FilesUploader = ({
           form.setFieldValue(field.name, incomeValues);
           return;
         }
-        const values = [
-          ...getArray(field.value),
-          ...getArray(incomeValues),
-        ];
+        const values = [...getArray(field.value), ...getArray(incomeValues)];
         // console.log('field.value', field.value);
         // console.log('getArray(field.value)', getArray(field.value));
         // console.log('incomeValues', incomeValues);

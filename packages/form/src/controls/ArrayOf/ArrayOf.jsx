@@ -1,18 +1,21 @@
-import React, { Component } from 'react';
 import autobind from '@lskjs/autobind';
-import isArray from 'lodash/isArray';
-import PropTypes from 'prop-types';
-import { Field } from 'formik';
+import IconCircleButton from '@lskjs/button/IconCircleButton';
 import Tooltip from 'antd/lib/tooltip';
+import { Field } from 'formik';
+import isArray from 'lodash/isArray';
+import React, { Component } from 'react';
 import CloseIcon from 'react-icons2/mdi/close';
 import If from 'react-if';
-import IconCircleButton from '@lskjs/button/IconCircleButton';
+
 import DebugJson from '../DebugJson';
 import Horizontal from './Horizontal';
 
-
-const DefaultRemoveButton = props => <IconCircleButton {...props}><CloseIcon /></IconCircleButton>;
-const DefaultAddButton = props => <IconCircleButton {...props} />;
+const DefaultRemoveButton = (props) => (
+  <IconCircleButton {...props}>
+    <CloseIcon />
+  </IconCircleButton>
+);
+const DefaultAddButton = (props) => <IconCircleButton {...props} />;
 
 class ArrayOf extends Component {
   // shouldComponentUpdate(nextProps, nextState) {
@@ -58,11 +61,8 @@ class ArrayOf extends Component {
   //   }
   // }
 
-
   getValues() {
-    const {
-      field, maxCount, autoAddLastItem, itemInitialValue = null,
-    } = this.props;
+    const { field, maxCount, autoAddLastItem, itemInitialValue = null } = this.props;
     let value = field.value || [];
     if (!isArray(value)) value = [];
     if (maxCount) {
@@ -70,16 +70,11 @@ class ArrayOf extends Component {
     }
     if (value.length === maxCount) return value;
 
-
     if (typeof autoAddLastItem !== 'undefined') {
-      return [
-        ...value,
-        itemInitialValue,
-      ];
+      return [...value, itemInitialValue];
     }
     return value;
   }
-
 
   @autobind
   removeButtonHandler(key) {
@@ -93,11 +88,7 @@ class ArrayOf extends Component {
     //   ...value.slice(key + 1),
     // ]);
 
-
-    form.setFieldValue(field.name, [
-      ...value.slice(0, key),
-      ...value.slice(key + 1),
-    ]);
+    form.setFieldValue(field.name, [...value.slice(0, key), ...value.slice(key + 1)]);
   }
 
   @autobind
@@ -108,10 +99,7 @@ class ArrayOf extends Component {
     let value = field.value || [];
     if (!isArray(value)) value = [];
 
-    form.setFieldValue(field.name, [
-      ...value,
-      itemInitialValue,
-    ]);
+    form.setFieldValue(field.name, [...value, itemInitialValue]);
   }
 
   render() {
@@ -164,19 +152,13 @@ class ArrayOf extends Component {
                     <RemoveButton onClick={() => this.removeButtonHandler(key)} />
                   </Tooltip>
                 </If>
-                <If condition={!showAddButton && values.length === 1}>
-                  {addBtn}
-                </If>
+                <If condition={!showAddButton && values.length === 1}>{addBtn}</If>
               </div>
-              <div style={{ flex: 1 }}>
-                {children}
-              </div>
+              <div style={{ flex: 1 }}>{children}</div>
             </Horizontal>
           );
         })}
-        <If condition={values.length > 1 || showAddButton}>
-          {addBtn}
-        </If>
+        <If condition={values.length > 1 || showAddButton}>{addBtn}</If>
       </React.Fragment>
     );
   }

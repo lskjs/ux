@@ -1,24 +1,24 @@
-import React from 'react';
-import If from 'react-if';
-import File from 'react-icons2/mdi/file-image';
-import Remove from 'react-icons2/mdi/close-circle-outline';
-import T from '@lskjs/t';
 import Avatar from '@lskjs/avatar';
+import T from '@lskjs/t';
+import React from 'react';
+import Remove from 'react-icons2/mdi/close-circle-outline';
+import File from 'react-icons2/mdi/file-image';
+import If from 'react-if';
 
 import {
+  Actions,
+  Block,
+  Button,
   Drop,
   DropIcon,
   DropText,
-  Overlay,
-  RemoveButton,
-  PlaceholderFooter,
-  IconFooter,
   Footer,
-  Button,
-  Actions,
-  Info,
   Header,
-  Block,
+  IconFooter,
+  Info,
+  Overlay,
+  PlaceholderFooter,
+  RemoveButton,
 } from './ImageNative.styles';
 
 const DefaultBody = ({
@@ -51,29 +51,26 @@ const DefaultBody = ({
         </Drop>
       </If>
       <If condition={!dragged}>
-        <Block
-          validationState={validationState}
-          type={type}
-        >
+        <Block validationState={validationState} type={type}>
           <Header>
             <Info>
               <T name="upload.infoImage" />
             </Info>
             <Actions>
-              <Button
-                type="button"
-                onTouchStart={open}
-                onClick={open}
-              >
+              <Button type="button" onTouchStart={open} onClick={open}>
                 <T name="upload.buttonImage" />
               </Button>
             </Actions>
           </Header>
           <If condition={showPreview}>
             <Footer
-              style={(value && type === 'image') ? {
-                backgroundImage: `url(${value})`,
-              } : {}}
+              style={
+                value && type === 'image'
+                  ? {
+                      backgroundImage: `url(${value})`,
+                    }
+                  : {}
+              }
             >
               <If condition={!value || type === 'avatar'}>
                 <IconFooter>
@@ -91,10 +88,7 @@ const DefaultBody = ({
               {removable && value && (
                 <React.Fragment>
                   <Overlay />
-                  <RemoveButton
-                    type="button"
-                    onClick={onRemoveAll}
-                  >
+                  <RemoveButton type="button" onClick={onRemoveAll}>
                     <Remove />
                   </RemoveButton>
                 </React.Fragment>

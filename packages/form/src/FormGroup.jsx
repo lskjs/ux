@@ -1,8 +1,9 @@
-import React from 'react';
-import get from 'lodash/get';
 import T from '@lskjs/t';
-import Title from './components/TitleComponent';
+import get from 'lodash/get';
+import React from 'react';
+
 import FormItem from './components/FormItem';
+import Title from './components/TitleComponent';
 
 export default ({
   field,

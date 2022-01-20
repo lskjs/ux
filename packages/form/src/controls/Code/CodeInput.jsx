@@ -1,14 +1,15 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import range from 'lodash/range';
 import get from 'lodash/get';
+import range from 'lodash/range';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+
 import BaseInput from '../../components/BaseInput';
 import Wrapper from './CodeInput.styles';
 
 class CodeInput extends Component {
   constructor(props) {
     super(props);
-    range(props.count).forEach(i => {
+    range(props.count).forEach((i) => {
       this[`refCode${i}`] = React.createRef();
     });
     this.getArrayOfCount = this.getArrayOfCount.bind(this);
@@ -33,7 +34,7 @@ class CodeInput extends Component {
     const { count } = this.props;
     const array = this.getArrayOfCount();
     const val = array
-      .map(idx => this[`refCode${idx}`].current.value)
+      .map((idx) => this[`refCode${idx}`].current.value)
       .join('')
       .slice(0, count);
     if (value === '' || Number.isNaN(Number(val))) return null;
@@ -56,7 +57,7 @@ class CodeInput extends Component {
   renderItem(index) {
     const { field, form, count, ...props } = this.props;
     const array = this.getArrayOfCount();
-    const values = array.map(e => String(get(field, 'value', '')).slice(0, count)[e] || '');
+    const values = array.map((e) => String(get(field, 'value', '')).slice(0, count)[e] || '');
     return (
       <BaseInput
         key={index}
@@ -72,7 +73,7 @@ class CodeInput extends Component {
             this.handleKeyDown(index);
           }
         }}
-        onChange={value => {
+        onChange={(value) => {
           const val = this.getNumbers(value, index);
           if (!val) return false;
           return form.setFieldValue(field.name, val);

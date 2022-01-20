@@ -1,6 +1,7 @@
-import React, { PureComponent } from 'react';
 import autobind from '@lskjs/autobind';
 import PropTypes from 'prop-types';
+import React, { PureComponent } from 'react';
+
 import SelectCard from '../SelectCard';
 import Block from './RadioCards.styles';
 
@@ -10,13 +11,13 @@ class RadioCards extends PureComponent {
     value: PropTypes.any,
     onChange: PropTypes.func,
     validationState: PropTypes.oneOf(['success', 'warning', 'error']),
-  }
+  };
   static defaultProps = {
     value: null,
     onChange: () => {},
     options: [],
     validationState: null,
-  }
+  };
   constructor(props) {
     super(props);
     this.state = {
@@ -42,7 +43,7 @@ class RadioCards extends PureComponent {
     const { validationState, options } = this.props;
     return (
       <Block>
-        {options.map(e => (
+        {options.map((e) => (
           <SelectCard
             key={e.value}
             {...e}

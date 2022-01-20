@@ -1,11 +1,12 @@
-import React from 'react';
-import { Form, Field } from 'formik';
 import Story from '@lskjs/dev/Story';
-import RadioButtonGroup from './RadioButtonGroup';
+import { Field, Form } from 'formik';
+import React from 'react';
+
 import createForm from '../../createForm';
 import FormDebug from '../../FormDebug';
+import RadioButtonGroup from './RadioButtonGroup';
 
-const RadioButtonGroupFormView = props => (
+const RadioButtonGroupFormView = (props) => (
   <Form>
     <Field {...props.control('RadioButtonGroup')} block />
     <FormDebug {...props} />
@@ -37,10 +38,9 @@ const RadioButtonGroupForm = createForm({
 });
 
 export default ({ storiesOf }) => {
-  storiesOf('form/controls', module)
-    .add('RadioButtonGroup', () => (
-      <Story>
-        <RadioButtonGroupForm />
-      </Story>
-    ));
+  storiesOf('form/controls', module).add('RadioButtonGroup', () => (
+    <Story>
+      <RadioButtonGroupForm />
+    </Story>
+  ));
 };

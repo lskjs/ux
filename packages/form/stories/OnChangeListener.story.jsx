@@ -1,18 +1,17 @@
+import { Field, Form } from 'formik';
 import React from 'react';
-import { Form, Field } from 'formik';
-import Story from './Story';
-import createForm from '../createForm';
-import Input from '../controls/Input';
-import FormDebug from '../FormDebug';
 
-const OnChangeView = (props) => {
-  return (
-    <Form>
-      <Field {...props.control('input')} />
-      <FormDebug {...props} />
-    </Form>
-  );
-};
+import Input from '../src/controls/Input';
+import createForm from '../src/createForm';
+import FormDebug from '../src/FormDebug';
+import Story from './Story';
+
+const OnChangeView = (props) => (
+  <Form>
+    <Field {...props.control('input')} />
+    <FormDebug {...props} />
+  </Form>
+);
 
 const OnChangeForm = createForm({
   view: OnChangeView,
@@ -25,14 +24,12 @@ const OnChangeForm = createForm({
 });
 
 export default ({ storiesOf }) =>
-  storiesOf('form/Form', module).add('onChange ', () => {
-    return (
-      <Story>
-        <OnChangeForm
-          onChange={(values) => {
-            console.log('onChange', values);
-          }}
-        />
-      </Story>
-    );
-  });
+  storiesOf('form/Form', module).add('onChange ', () => (
+    <Story>
+      <OnChangeForm
+        onChange={(values) => {
+          console.log('onChange', values);
+        }}
+      />
+    </Story>
+  ));

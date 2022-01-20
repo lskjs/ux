@@ -2,7 +2,7 @@ import React from 'react'; //eslint-disable-line
 import Slider from './Slider';
 import Story from '@lskjs/dev/Story';
 
-const getFont = fontName => (
+const getFont = (fontName) => (
   <link
     href={`https://fonts.googleapis.com/css?family=${fontName.split(' ').join('+')}&amp;subset=cyrillic`}
     rel="stylesheet"
@@ -34,17 +34,12 @@ const marks = {
   100: '100%',
 };
 
-export default ({ storiesOf }) => (
-  storiesOf('form/components/Slider', module)
-    .add('default', () => (
-      <Story>
-        <Slider
-          defaultValue={30}
-          tipFormatter={formatter}
-        />
-      </Story>
-    ))
-);
+export default ({ storiesOf }) =>
+  storiesOf('form/components/Slider', module).add('default', () => (
+    <Story>
+      <Slider defaultValue={30} tipFormatter={formatter} />
+    </Story>
+  ));
 // export default ({ storiesOf, action, knob }) => {
 //   storiesOf('form/Slider', module)
 //     // .addHtml(getStyles())

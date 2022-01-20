@@ -1,10 +1,11 @@
-import React from 'react';
-import { Form, Field } from 'formik';
-import PropTypes from 'prop-types';
 import Story from '@lskjs/dev/Story/UappStory';
+import { Field, Form } from 'formik';
+import PropTypes from 'prop-types';
+import React from 'react';
+
 import createForm from '../../createForm';
-import ReCaptchaV2 from './ReCaptchaV2';
 import FormDebug from '../../FormDebug';
+import ReCaptchaV2 from './ReCaptchaV2';
 
 const ReCaptchaV2FormView = (props) => {
   const { control } = props;
@@ -35,10 +36,8 @@ const ReCaptchaV2Form = createForm({
 });
 
 export default ({ storiesOf }) =>
-  storiesOf('form/controls', module).add('ReCaptchaV2Form ', () => {
-    return (
-      <Story>
-        <ReCaptchaV2Form />
-      </Story>
-    );
-  });
+  storiesOf('form/controls', module).add('ReCaptchaV2Form ', () => (
+    <Story>
+      <ReCaptchaV2Form />
+    </Story>
+  ));

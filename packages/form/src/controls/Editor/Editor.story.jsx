@@ -5,7 +5,6 @@
 // import EditorComponent from '../../controls/Editor';
 // import FormGroup from '../../FormGroup';
 
-
 // const EditorView = (props) => {
 //   const {
 //     controls,

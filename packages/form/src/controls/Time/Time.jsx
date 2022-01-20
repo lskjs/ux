@@ -1,19 +1,15 @@
-import React from 'react';
-import moment from 'moment';
 import 'moment/locale/ru';
-import TimePickerBase from './Timepicker';
+
+import moment from 'moment';
+import React from 'react';
+
 import globalStyles from './Time.styles';
+import TimePickerBase from './Timepicker';
 
 globalStyles();
 
 const Time = (data) => {
-  const {
-    field,
-    form,
-    t,
-    dateFormat = 'HH:mm',
-    ...props
-  } = data;
+  const { field, form, t, dateFormat = 'HH:mm', ...props } = data;
   const locale = (t && t('locale')) || 'ru';
   let value = field.value && moment(new Date(field.value), dateFormat, locale) || null; // eslint-disable-line
   const change = (val) => {

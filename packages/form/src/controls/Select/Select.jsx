@@ -1,25 +1,26 @@
-import React, { Component } from 'react';
-import { Global } from '@emotion/core';
+import { Global } from '@emotion/react';
+import autobind from '@lskjs/autobind';
+import cx from 'classnames';
 import find from 'lodash/find';
 import get from 'lodash/get';
 import isEqual from 'lodash/isEqual';
-import autobind from '@lskjs/autobind';
+import React, { Component } from 'react';
 import ReactSelect from 'react-select';
 import ReactAsyncSelect from 'react-select/async';
-import cx from 'classnames';
-import { getOptionValue, getReverseOptionValue, getNormalizedOptions, NULL_STRING } from './utils';
+
+import CollapsedMultiValue from './CollapsedMultiValue';
+import CollapsedValueContainer from './CollapsedValueContainer';
+import DropdownIndicator from './DropdownIndicator';
+import Option from './Option';
 import globalStyles from './Select.styles';
 import SingleValue from './SingleValue';
-import Option from './Option';
-import CollapsedValueContainer from './CollapsedValueContainer';
-import CollapsedMultiValue from './CollapsedMultiValue';
-import DropdownIndicator from './DropdownIndicator';
+import { getNormalizedOptions, getOptionValue, getReverseOptionValue, NULL_STRING } from './utils';
 
 class Select extends Component {
   static getDerivedStateFromProps(props, state) {
     const propValue = props.field ? props.field.value : props.value;
     const stateValue = state._value;
-    const prevPropValue = state.prevPropValue;
+    const { prevPropValue } = state;
     if (!propValue && !isEqual(stateValue, prevPropValue)) return null;
     if (isEqual(prevPropValue, propValue) && !isEqual(propValue, stateValue)) {
       return {
@@ -135,12 +136,10 @@ class Select extends Component {
     if (typeof value === 'undefined') {
       this.handleLocaleChange(value);
       this.handleRemoteChange(value);
+    } else if (blurInputOnSelect) {
+      this.handleRemoteChange(value);
     } else {
-      if (blurInputOnSelect) {
-        this.handleRemoteChange(value);
-      } else {
-        this.handleLocaleChange(value);
-      }
+      this.handleLocaleChange(value);
     }
   }
   @autobind
@@ -166,7 +165,7 @@ class Select extends Component {
     const { blurInputOnSelect = true, field, value } = this.props;
     const { _value } = this.state;
     if (!blurInputOnSelect) {
-      const callbackValue = _value || field && field.value || value;
+      const callbackValue = _value || (field && field.value) || value;
       this.handleRemoteChange(callbackValue);
       this.handleLocaleChange(undefined, true);
     }
@@ -199,15 +198,12 @@ class Select extends Component {
       filterOption = (option, inputValue) => {
         const { label, value } = option;
         const valueSearch =
-          options.filter((opt) => {
-            return opt.value.toLowerCase().includes(inputValue.toLowerCase());
-          }).length === 1;
-        const otherKey = options.filter((opt) => {
-          return (
+          options.filter((opt) => opt.value.toLowerCase().includes(inputValue.toLowerCase())).length === 1;
+        const otherKey = options.filter(
+          (opt) =>
             (opt.title === label && opt.en.toLowerCase().includes(inputValue.toLowerCase())) ||
-            (opt.title === label && opt.ru.toLowerCase().includes(inputValue.toLowerCase()))
-          );
-        });
+            (opt.title === label && opt.ru.toLowerCase().includes(inputValue.toLowerCase())),
+        );
         return value.toLowerCase().includes(inputValue.toLowerCase()) || (!valueSearch && otherKey.length > 0);
       };
     }
@@ -223,7 +219,7 @@ class Select extends Component {
     }
     // if (!async) {
     value = getOptionValue(rawValue);
-      // }
+    // }
     if (async) {
       ({ option } = this.state);
       if (value == null || value === NULL_STRING) {
@@ -303,7 +299,7 @@ class Select extends Component {
           loadOptions={this.loadOptions}
           onChange={this.handleChange}
           options={async ? null : normalizedOptions}
-          onMenuClose={onMenuClose || !blurInputOnSelect && this.callbackCloseMenu}
+          onMenuClose={onMenuClose || (!blurInputOnSelect && this.callbackCloseMenu)}
         />
       </>
     );

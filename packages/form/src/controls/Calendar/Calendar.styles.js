@@ -1,4 +1,4 @@
-import { injectGlobal } from 'emotion';
+import { injectGlobal } from '@emotion/css';
 
 export const globalStylesCalendar = () => injectGlobal`
   .ant-calendar-picker-container {

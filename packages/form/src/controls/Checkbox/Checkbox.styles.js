@@ -1,16 +1,19 @@
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { css } from '@emotion/core';
 import getTheme from '@lskjs/theme/getTheme';
 
 export default styled('span')`
-  ${p => (p.validationState === 'error' && `
+  ${(p) =>
+    p.validationState === 'error' &&
+    `
     color: ${getTheme(p.theme, 'colors.danger')};
-  `)}
+  `}
 `;
 
 export const globalStyles = css`
   .ant-checkbox {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif,
+      'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
     font-size: 14px;
     font-variant: tabular-nums;
     line-height: 1.71428571;
@@ -41,7 +44,7 @@ export const globalStyles = css`
     height: 100%;
     border-radius: 2px;
     border: 1px solid #1890ff;
-    content: "";
+    content: '';
     animation: antCheckboxEffect 0.36s ease-in-out;
     animation-fill-mode: both;
     visibility: hidden;
@@ -129,7 +132,8 @@ export const globalStyles = css`
     cursor: not-allowed;
   }
   .ant-checkbox-wrapper {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif,
+      'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
     font-size: 14px;
     font-variant: tabular-nums;
     line-height: 1.71428571;
@@ -151,7 +155,8 @@ export const globalStyles = css`
     padding-right: 8px;
   }
   .ant-checkbox-group {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif,
+      'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
     font-size: 14px;
     font-variant: tabular-nums;
     line-height: 1.71428571;

@@ -1,12 +1,12 @@
 /* eslint-disable react/destructuring-assignment */
-import React from 'react';
-import { Form, Field } from 'formik';
 import Apiquery from '@lskjs/apiquery';
+import { Field, Form } from 'formik';
+import React from 'react';
 
+import InputComponent from '../../src/controls/Input';
+import createForm from '../../src/createForm';
+import FormDebug from '../../src/FormDebug';
 import Story from '../Story';
-import createForm from '../../createForm';
-import InputComponent from '../../controls/Input';
-import FormDebug from '../../FormDebug';
 
 const ValidationView = (props) => (
   <Form>

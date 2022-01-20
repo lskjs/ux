@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import { Form, Field } from 'formik';
-
-import DEV from '@lskjs/dev/DEV';
 import Button from '@lskjs/button';
+import DEV from '@lskjs/dev/DEV';
+import { Field, Form } from 'formik';
+import React, { Component } from 'react';
+
+import FormItem from '../src/components/FormItem';
+import Input from '../src/controls/Input';
+import createForm from '../src/createForm';
+import FormGroup from '../src/FormGroup';
+import SimpleFormGroup from '../src/SimpleFormGroup';
 import Story from './Story';
-import createForm from '../createForm';
-import FormGroup from '../FormGroup';
-import FormItem from '../components/FormItem';
-import SimpleFormGroup from '../SimpleFormGroup';
-import Input from '../controls/Input';
 
 const SimpleInput = ({ form, field, ...props }) => (
   <input
@@ -113,31 +113,23 @@ const SimpleFormGroupForm = createForm({
 
 export default ({ storiesOf }) =>
   storiesOf('form/FormGroup', module)
-    .add('EmptyFormGroup', () => {
-      return (
-        <Story>
-          <EmptyFormGroupForm />
-        </Story>
-      );
-    })
-    .add('FormGroup', () => {
-      return (
-        <Story>
-          <FormGroupForm />
-        </Story>
-      );
-    })
-    .add('FormGroupForm2', () => {
-      return (
-        <Story>
-          <FormGroupForm2 />
-        </Story>
-      );
-    })
-    .add('SimpleFormGroupForm', () => {
-      return (
-        <Story>
-          <SimpleFormGroupForm />
-        </Story>
-      );
-    });
+    .add('EmptyFormGroup', () => (
+      <Story>
+        <EmptyFormGroupForm />
+      </Story>
+    ))
+    .add('FormGroup', () => (
+      <Story>
+        <FormGroupForm />
+      </Story>
+    ))
+    .add('FormGroupForm2', () => (
+      <Story>
+        <FormGroupForm2 />
+      </Story>
+    ))
+    .add('SimpleFormGroupForm', () => (
+      <Story>
+        <SimpleFormGroupForm />
+      </Story>
+    ));

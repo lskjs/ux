@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
 import isFunction from 'lodash/isFunction';
 import { inject, observer } from 'mobx-react/native';
+import React, { Component } from 'react';
+
 import createForm from './createForm';
 
 const createFormWithI18 = (callback) => {
@@ -15,9 +16,7 @@ const createFormWithI18 = (callback) => {
       return !!(nextProps.hash && this.props.hash && nextProps.hash !== this.props.hash);
     }
     render() {
-      const {
-        i18, config, user, ...props
-      } = this.props;
+      const { i18, config, user, ...props } = this.props;
       const params = callback({ i18, config, user });
       const Component3 = createForm(params);
       // console.log('createFormWithI18', props);

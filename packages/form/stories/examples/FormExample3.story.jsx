@@ -1,15 +1,15 @@
+import { Field, Form } from 'formik';
 import React from 'react';
-import { Form, Field } from 'formik';
 
+import Input from '../../src/controls/Input';
+import PhoneInput from '../../src/controls/PhoneInput';
+import Select from '../../src/controls/Select';
+import Textarea from '../../src/controls/Textarea';
+import createForm from '../../src/createForm';
+import FormDebug from '../../src/FormDebug';
 import Story from '../Story';
-import createForm from '../../createForm';
-import Input from '../../controls/Input';
-import Select from '../../controls/Select';
-import Textarea from '../../controls/Textarea';
-import PhoneInput from '../../controls/PhoneInput';
-import FormDebug from '../../FormDebug';
 
-const FormExample3View = props => (
+const FormExample3View = (props) => (
   <Form>
     <Field {...props.control('email')} />
     <Field {...props.control('password')} />
@@ -67,11 +67,8 @@ export const FormExample3 = createForm({
 });
 
 export default ({ storiesOf }) =>
-  storiesOf('form/examples', module)
-    .add('FormExample3', () => {
-      return (
-        <Story>
-          <FormExample3 onSubmit={console.log} />
-        </Story>
-      );
-    });
+  storiesOf('form/examples', module).add('FormExample3', () => (
+    <Story>
+      <FormExample3 onSubmit={console.log} />
+    </Story>
+  ));

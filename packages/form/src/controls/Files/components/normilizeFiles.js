@@ -1,5 +1,6 @@
-import isPlainObject from 'lodash/isPlainObject';
 import clone from 'lodash/clone';
+import isPlainObject from 'lodash/isPlainObject';
+
 import fileTypes from './fileTypes';
 
 function determineType(src) {

@@ -1,13 +1,14 @@
-import React from 'react';
-import { Form, Field } from 'formik';
 import Story from '@lskjs/dev/Story';
+import { Field, Form } from 'formik';
+import React from 'react';
+
 import createForm from '../../createForm';
-import Date from './Date';
 import FormDebug from '../../FormDebug';
+import Date from './Date';
 
 window.__CLIENT__ = true;
 
-const DateFormView = props => (
+const DateFormView = (props) => (
   <Form>
     <div style={{ position: 'relative' }}>
       <Field {...props.control('date')} />
@@ -41,11 +42,8 @@ const DateForm = createForm({
 });
 
 export default ({ storiesOf }) =>
-  storiesOf('form/controls', module)
-    .add('Date ', () => {
-      return (
-        <Story>
-          <DateForm />
-        </Story>
-      );
-    });
+  storiesOf('form/controls', module).add('Date ', () => (
+    <Story>
+      <DateForm />
+    </Story>
+  ));

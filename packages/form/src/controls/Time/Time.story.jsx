@@ -1,13 +1,14 @@
-import React from 'react';
-import { Form, Field } from 'formik';
 import Story from '@lskjs/dev/Story';
+import { Field, Form } from 'formik';
+import React from 'react';
+
 import createForm from '../../createForm';
-import Time from './Time';
 import FormDebug from '../../FormDebug';
+import Time from './Time';
 
 window.__CLIENT__ = true;
 
-const TimeFormView = props => (
+const TimeFormView = (props) => (
   <Form>
     <div style={{ position: 'relative' }}>
       <Field {...props.control('time')} />
@@ -26,8 +27,8 @@ const TimeForm = createForm({
   },
 });
 
-export default ({ storiesOf }) => storiesOf('form/controls', module)
-  .add('Time ', () => (
+export default ({ storiesOf }) =>
+  storiesOf('form/controls', module).add('Time ', () => (
     <Story>
       <TimeForm />
     </Story>

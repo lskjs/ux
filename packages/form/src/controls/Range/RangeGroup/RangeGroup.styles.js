@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import removeProps from '@lskjs/utils/removeProps';
 import getTheme from '@lskjs/theme/getTheme';
 
 export const Graph = styled('div')`
@@ -9,9 +8,9 @@ export const Graph = styled('div')`
   align-items: flex-end;
 `;
 
-export const GraphItem = styled(removeProps('div', ['height']))`
+export const GraphItem = styled('div', { shouldForwardProp: (prop) => !['height'].includes(prop) })`
   flex-grow: 1;
   border-radius: 2px 2px 0px 0px;
-  background-color: ${p => getTheme(p.theme, 'colors.darkerBackground')};
-  height: ${p => p.height};
+  background-color: ${(p) => getTheme(p.theme, 'colors.darkerBackground')};
+  height: ${(p) => p.height};
 `;

@@ -1,24 +1,21 @@
-import React from 'react';
-import { Form, Field } from 'formik';
 import Story from '@lskjs/dev/Story/UappStory';
-import createForm from '../../createForm';
-import Checkbox from './Checkbox';
-import FormDebug from '../../FormDebug';
-
 import T from '@lskjs/t';
-import Account from 'react-icons2/mdi/account-box-outline';
+import { Field, Form } from 'formik';
+import React from 'react';
 import Desktop from 'react-icons2/mdi/desktop-mac';
-import Camera from 'react-icons2/mdi/camcorder';
 
+import createForm from '../../createForm';
+import FormDebug from '../../FormDebug';
+import Checkbox from './Checkbox';
 
-const CheckboxFormView = props => (
+const CheckboxFormView = (props) => (
   <Form>
     <Checkbox label="test" />
     <Checkbox checked />
     <Checkbox checked={false} />
     <Checkbox value />
     <Checkbox value={false} />
-    <Checkbox onChange={value => console.log({ value })} />
+    <Checkbox onChange={(value) => console.log({ value })} />
     <hr />
     <Field {...props.control('blue')} />
     <Field {...props.control('black')} />
@@ -49,17 +46,18 @@ const CheckboxForm = createForm({
     screen: {
       component: Checkbox,
       title: 'videoTypes.screencast',
-      label: <span><Desktop /> <T name="videoTypes.screencast" /></span>,
+      label: (
+        <span>
+          <Desktop /> <T name="videoTypes.screencast" />
+        </span>
+      ),
     },
   },
 });
 
 export default ({ storiesOf }) =>
-  storiesOf('form/controls', module)
-    .add('Checkbox ', () => {
-      return (
-        <Story>
-          <CheckboxForm />
-        </Story>
-      );
-    });
+  storiesOf('form/controls', module).add('Checkbox ', () => (
+    <Story>
+      <CheckboxForm />
+    </Story>
+  ));

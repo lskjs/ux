@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import get from 'lodash/get';
 import { inject } from 'mobx-react';
+import PropTypes from 'prop-types';
+import React from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 
 const ReCaptchaV2 = ({ uapp, field, form, ...props }) => {

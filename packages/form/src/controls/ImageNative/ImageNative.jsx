@@ -1,18 +1,11 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import Files from '../FilesNative/FilesBaseNative';
+import React from 'react';
 
+import Files from '../FilesNative/FilesBaseNative';
 import DefaultBody from './DefaultBody';
 import DefaultFooter from './DefaultFooter';
 
-const ImageUploader = ({
-  field,
-  form,
-  onError,
-  components,
-  isMulti,
-  ...props
-}) => {
+const ImageUploader = ({ field, form, onError, components, isMulti, ...props }) => {
   const Body = components.Body || ImageUploader.defaultProps.components.Body;
   const Footer = components.Footer || ImageUploader.defaultProps.components.Footer;
   return (
@@ -21,7 +14,7 @@ const ImageUploader = ({
       {...props}
       value2={field.value}
       multiple={isMulti}
-      onSubmit={value => form.setFieldValue(field.name, value)}
+      onSubmit={(value) => form.setFieldValue(field.name, value)}
       onError={() => onError && onError(form.errors[field.name])} // this.globalError
       validationState={form.errors[field.name] ? 'error' : null}
       files={field.value}

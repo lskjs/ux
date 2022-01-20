@@ -1,21 +1,22 @@
 /** @jsx jsx */
-import React, { Component } from 'react';
-import { jsx } from '@emotion/core';
+import { jsx } from '@emotion/react';
 import autobind from '@lskjs/autobind';
 import Link from '@lskjs/link';
+import React, { Component } from 'react';
 import Remove from 'react-icons2/mdi/close-circle-outline';
+
 import Box from '../Box';
 import fileTypes from '../fileTypes';
 import Typography from '../Typography';
 import {
+  centerFile,
   containerStyle,
-  typeStyle,
-  urlStyle,
+  Info,
+  PreviewContainer,
   PreviewImage,
   RemoveButton,
-  PreviewContainer,
-  Info,
-  centerFile,
+  typeStyle,
+  urlStyle,
 } from './GridFile.styles';
 
 class GridFile extends Component {

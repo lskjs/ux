@@ -3,9 +3,9 @@ import getTheme from '@lskjs/theme/getTheme';
 
 export const Wrapper = styled.div`
   display: flex;
-  font-family: ${props => getTheme(props.theme, 'fontFamily')};
+  font-family: ${(props) => getTheme(props.theme, 'fontFamily')};
   border-radius: 3px;
-  border: solid 1px ${p => getTheme(p.theme, 'colors.border')};
+  border: solid 1px ${(p) => getTheme(p.theme, 'colors.border')};
   padding-top: 8px;
   padding-left: 12px;
   padding-right: 12px;
@@ -24,20 +24,20 @@ export const Items = styled.a`
 `;
 
 export const Memory = styled.span`
- color: ${p => getTheme(p.theme, 'colors.secondary')};
+  color: ${(p) => getTheme(p.theme, 'colors.secondary')};
 `;
 
 export const Button = styled.button`
- margin-left: auto;
- border: none;
- background: none;
- color: #4a85cc;
- cursor: pointer;
- border-bottom: 1px dashed #4a85cc;
- outline: none;
- padding: 0;
- @media screen and (max-width: 440px) {
-  margin-left: 0;
+  margin-left: auto;
+  border: none;
+  background: none;
+  color: #4a85cc;
+  cursor: pointer;
+  border-bottom: 1px dashed #4a85cc;
+  outline: none;
+  padding: 0;
+  @media screen and (max-width: 440px) {
+    margin-left: 0;
   }
 `;
 

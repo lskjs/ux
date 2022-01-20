@@ -1,12 +1,13 @@
-import React from 'react';
-import { Form, Field } from 'formik';
 import Story from '@lskjs/dev/Story';
+import { Field, Form } from 'formik';
+import React from 'react';
+
 import createForm from '../../createForm';
-import ImageNative from './ImageNative';
 import FormDebug from '../../FormDebug';
 import Footer from '../Files/FilesDefaultFooter';
+import ImageNative from './ImageNative';
 
-const ImageFormView = props => (
+const ImageFormView = (props) => (
   <Form>
     <Field {...props.control('image')} />
     <Field {...props.control('image1')} />
@@ -38,11 +39,9 @@ const ImageForm = createForm({
   },
 });
 
-export default ({ storiesOf }) => (
-  storiesOf('form/controls', module)
-    .add('ImageNative ', () => (
-      <Story>
-        <ImageForm />
-      </Story>
-    ))
-);
+export default ({ storiesOf }) =>
+  storiesOf('form/controls', module).add('ImageNative ', () => (
+    <Story>
+      <ImageForm />
+    </Story>
+  ));

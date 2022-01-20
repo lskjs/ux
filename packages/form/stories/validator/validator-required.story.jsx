@@ -1,22 +1,22 @@
 /* eslint-disable react/destructuring-assignment */
+import { Field, Form } from 'formik';
 import React from 'react';
-import { Form, Field } from 'formik';
-import Story from '../Story';
-import createForm from '../../createForm';
-import FormDebug from '../../FormDebug';
 
-import Input from '../../controls/Input';
-import Select from '../../controls/Select';
-import Switcher from '../../controls/Switcher';
-import Checkbox from '../../controls/Checkbox';
-import Radio from '../../controls/Radio';
-import Range from '../../controls/Range';
-import Date from '../../controls/Date';
-import Files from '../../controls/Files';
-import Image from '../../controls/Image';
-import PhoneInput from '../../controls/PhoneInput';
-import Tags from '../../controls/Tags';
-import ArrayOf from '../../controls/ArrayOf';
+import ArrayOf from '../../src/controls/ArrayOf';
+import Checkbox from '../../src/controls/Checkbox';
+import Date from '../../src/controls/Date';
+import Files from '../../src/controls/Files';
+import Image from '../../src/controls/Image';
+import Input from '../../src/controls/Input';
+import PhoneInput from '../../src/controls/PhoneInput';
+import Radio from '../../src/controls/Radio';
+import Range from '../../src/controls/Range';
+import Select from '../../src/controls/Select';
+import Switcher from '../../src/controls/Switcher';
+import Tags from '../../src/controls/Tags';
+import createForm from '../../src/createForm';
+import FormDebug from '../../src/FormDebug';
+import Story from '../Story';
 
 const ValidationView = (props) => (
   <Form>
@@ -112,14 +112,12 @@ const Validation = createForm({
 });
 
 export default ({ storiesOf }) =>
-  storiesOf('form/validator', module).add('validator with required', () => {
-    return (
-      <Story>
-        <Validation
-          onSubmit={(values) => {
-            console.log({ values });
-          }}
-        />
-      </Story>
-    );
-  });
+  storiesOf('form/validator', module).add('validator with required', () => (
+    <Story>
+      <Validation
+        onSubmit={(values) => {
+          console.log({ values });
+        }}
+      />
+    </Story>
+  ));

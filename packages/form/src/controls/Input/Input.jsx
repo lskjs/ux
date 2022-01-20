@@ -1,13 +1,9 @@
-import React from 'react';
 import get from 'lodash/get';
+import React from 'react';
+
 import BaseInput from '../../components/BaseInput';
 
-const Input = ({
-  field,
-  form,
-  format = () => ({}),
-  ...props
-}) => {
+const Input = ({ field, form, format = () => ({}), ...props }) => {
   const hasError = field && field.name && !!get(form.errors, field.name);
   return (
     <BaseInput
