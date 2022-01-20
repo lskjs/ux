@@ -1,5 +1,3 @@
-import merge from 'lodash/merge';
-import omit from 'lodash/omit';
 import PropTypes from 'prop-types';
 import React, { Component, createRef } from 'react';
 

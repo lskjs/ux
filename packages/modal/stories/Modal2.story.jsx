@@ -1,14 +1,12 @@
-/* eslint-disable react/jsx-wrap-multilines */
-/* eslint import/no-extraneous-dependencies: 0 */
-import React, { Component, useContext, useState } from 'react';
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 import autobind from '@lskjs/autobind';
-import Story from '@lskjs/dev/Story';
 import Button from '@lskjs/button';
+import Story from '@lskjs/dev/Story';
 import Promise from 'bluebird';
-import Modal from './Modal2';
-import StatefulModal from './StatefulModal';
-import { ModalProvider, ModalConsumer, ModalContext } from './Global';
+import React, { Component } from 'react';
+
+import Modal from '../src/Modal2';
+import StatefulModal from '../src/StatefulModal';
 
 global.Promise = Promise;
 
@@ -37,11 +35,11 @@ class ModalWithRoutesExample extends Component {
   @autobind
   getRoutes() {
     const ctx = this;
-    return function(modal) {
+    return function (modal) {
       return [
         {
           path: '/',
-          action: async data => {
+          action: async (data) => {
             // eslint-disable-line
             const { pathname } = data;
             console.log('default');
@@ -99,7 +97,7 @@ class ModalWithRoutesExample extends Component {
             },
             {
               path: '/path1/:id',
-              action: async data => {
+              action: async (data) => {
                 const { id } = data.params;
                 return {
                   title: `Path 1 subPath with ${id} title`,
@@ -124,7 +122,7 @@ class ModalWithRoutesExample extends Component {
           ],
         },
       ];
-    }.bind(this);
+    };
   }
   @autobind
   async toPath(...args) {
@@ -146,7 +144,7 @@ class ModalWithRoutesExample extends Component {
         {...props}
         routes={this.getRoutes()}
         preRenderRoutes={['/path1']}
-        onOpen={modal => {
+        onOpen={(modal) => {
           modal.toPath('/path1');
         }}
       >
@@ -252,7 +250,7 @@ export default ({ storiesOf }) =>
           image="https://picsum.photos/1280/720/?random"
           content={
             <div>
-              {['Title', 'Title2', 'Title3'].map(title => (
+              {['Title', 'Title2', 'Title3'].map((title) => (
                 <React.Fragment key={title}>
                   <h3>{title}</h3>
                   <p>{lorem}</p>

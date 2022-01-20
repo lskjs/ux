@@ -1,7 +1,8 @@
 /* eslint import/no-extraneous-dependencies: 0 */
-import React, { forwardRef, createRef } from 'react';
 import Button from '@lskjs/button';
 import T from '@lskjs/t';
+import React, { createRef, forwardRef } from 'react';
+
 import DefaultModal from '../Modal2';
 
 export default ({ Modal = DefaultModal, ...params } = {}) =>
@@ -9,7 +10,7 @@ export default ({ Modal = DefaultModal, ...params } = {}) =>
     <Modal
       size="small"
       ref={ref}
-      footer={(
+      footer={
         <>
           <Button
             paint="primary"
@@ -26,7 +27,7 @@ export default ({ Modal = DefaultModal, ...params } = {}) =>
             </Button>
           </Modal.Trigger>
         </>
-      )}
+      }
       {...params}
       {...props}
       trigger={children}

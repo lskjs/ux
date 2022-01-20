@@ -1,14 +1,15 @@
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
-import get from 'lodash/get';
-import Promise from 'bluebird';
 import autobind from '@lskjs/autobind';
+import Promise from 'bluebird';
+import get from 'lodash/get';
+import PropTypes from 'prop-types';
+import React, { PureComponent } from 'react';
 import UniversalRouter from 'universal-router';
+
+import Layout from './components/Layout';
 // import createMemoryHistory from 'history/createMemoryHistory';
 import Modal from './Modal2';
-import Layout from './components/Layout';
 
-const createMemoryHistory = require('history').createMemoryHistory;
+const { createMemoryHistory } = require('history');
 
 class StatefulModal extends PureComponent {
   static propTypes = {
@@ -18,7 +19,7 @@ class StatefulModal extends PureComponent {
     onClose: PropTypes.func,
     children: PropTypes.any, // eslint-disable-line react/forbid-prop-types
     routes: PropTypes.any, // eslint-disable-line react/forbid-prop-types
-  }
+  };
   static defaultProps = {
     pathname: null,
     preRenderRoutes: [],
@@ -26,7 +27,7 @@ class StatefulModal extends PureComponent {
     onClose: null,
     children: null,
     routes: null,
-  }
+  };
   constructor(props) {
     super(props);
     this.state = {
@@ -38,14 +39,11 @@ class StatefulModal extends PureComponent {
     this.history = createMemoryHistory();
     this.history.listen((data) => {
       const { pathname } = data;
-      return this
-        .router
-        .resolve(data)
-        .then((page) => {
-          // console.log(page, pathname);
-          // this.page = page;
-          this.setState({ pathname, page });
-        });
+      return this.router.resolve(data).then((page) => {
+        // console.log(page, pathname);
+        // this.page = page;
+        this.setState({ pathname, page });
+      });
     });
   }
   async componentDidMount() {

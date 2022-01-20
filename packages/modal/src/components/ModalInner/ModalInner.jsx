@@ -1,17 +1,13 @@
 /* eslint import/no-extraneous-dependencies: 0 */
-import React, { PureComponent } from 'react';
 import isFunction from 'lodash/isFunction';
+import React, { PureComponent } from 'react';
+
 import { contextToProps } from '../../Modal2.context';
 
 @contextToProps('Modal', 'modal')
 class ModalInner extends PureComponent { // eslint-disable-line
   render() {
-    const {
-      Modal, modal,
-      title, subtitle, image, content, footer, children,
-      whiteTheme,
-      ...props
-    } = this.props;
+    const { Modal, modal, title, subtitle, image, content, footer, children, whiteTheme, ...props } = this.props;
 
     if (children) {
       if (isFunction(children)) {

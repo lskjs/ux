@@ -1,7 +1,8 @@
 /* eslint import/no-extraneous-dependencies: 0 */
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
 import cx from 'classnames';
+import PropTypes from 'prop-types';
+import React, { PureComponent } from 'react';
+
 import Content from './ModalContent.styles';
 
 class ModalContent extends PureComponent {
@@ -9,15 +10,13 @@ class ModalContent extends PureComponent {
     children: PropTypes.any.isRequired,
     align: PropTypes.oneOf(['left', 'center', 'right', 'auto']),
     size: PropTypes.oneOf(['default', 'large']),
-  }
+  };
   static defaultProps = {
     align: 'auto',
     size: 'default',
-  }
+  };
   render() {
-    const {
-      children, align, size, className, ...props
-    } = this.props;
+    const { children, align, size, className, ...props } = this.props;
     return (
       <Content
         align={align}

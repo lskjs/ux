@@ -1,12 +1,12 @@
-import React from 'react';
-import Story from '@lskjs/dev/Story';
 import Button from '@lskjs/button';
-import { ModalProvider, ModalConsumer } from '../index';
+import Story from '@lskjs/dev/Story';
+import React from 'react';
 
+import { ModalConsumer, ModalProvider } from '../../src/Global';
 import TestAutoGlobalModalHook from './TestAutoGlobalModalHook';
 import TestManualGlobalModalHook from './TestManualGlobalModalHook';
-import TestTriggerGlobalModalHook from './TestTriggerGlobalModalHook';
 import TestTriggerGlobalModalConsumer from './TestTriggerGlobalModalConsumer';
+import TestTriggerGlobalModalHook from './TestTriggerGlobalModalHook';
 import TestTriggerGlobalModalHookWithUpdate from './TestTriggerGlobalModalHookWithUpdate';
 
 export default ({ storiesOf }) =>

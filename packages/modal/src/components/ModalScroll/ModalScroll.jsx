@@ -1,11 +1,10 @@
 /* eslint import/no-extraneous-dependencies: 0 */
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
-import { css } from '@emotion/core';
-import { withTheme } from 'emotion-theming';
-import { Scrollbars } from 'react-custom-scrollbars';
-import cx from 'classnames';
+import { css, withTheme } from '@emotion/react';
 import getTheme from '@lskjs/theme/getTheme';
+import cx from 'classnames';
+import PropTypes from 'prop-types';
+import React, { PureComponent } from 'react';
+import { Scrollbars } from 'react-custom-scrollbars';
 
 @withTheme
 class ModalScroll extends PureComponent {
@@ -16,13 +15,13 @@ class ModalScroll extends PureComponent {
     children: PropTypes.any.isRequired,
     inner: PropTypes.bool,
     className: PropTypes.string,
-  }
+  };
   static defaultProps = {
     minHeight: 0,
     maxHeight: 510,
     inner: false,
     className: null,
-  }
+  };
   constructor(props) {
     super(props);
     this.state = {
@@ -49,13 +48,19 @@ class ModalScroll extends PureComponent {
   }
   render() {
     const { top, bottom } = this.state;
-    const {
-      theme, children, maxHeight, minHeight, inner, className,
-    } = this.props;
-    const style = inner ? css`
-      ${top && css`border-top: 1px solid ${getTheme(theme, 'colors.border')};`}
-      ${bottom && css`border-bottom: 1px solid ${getTheme(theme, 'colors.border')};`}
-    ` : null;
+    const { theme, children, maxHeight, minHeight, inner, className } = this.props;
+    const style = inner
+      ? css`
+          ${top &&
+          css`
+            border-top: 1px solid ${getTheme(theme, 'colors.border')};
+          `}
+          ${bottom &&
+          css`
+            border-bottom: 1px solid ${getTheme(theme, 'colors.border')};
+          `}
+        `
+      : null;
     return (
       <Scrollbars
         autoHide
