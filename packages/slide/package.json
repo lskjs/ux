@@ -24,19 +24,20 @@
     "react-drive-in2": "1.8.1"
   },
   "devDependencies": {
-    "@emotion/core": "10.0.27",
-    "@emotion/styled": "10.0.27",
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
     "@lskjs/dev": "2.6.3",
     "@lskjs/theme": "2.6.3",
     "@lskjs/utils": "0.39.0",
-    "react": "16.8.6"
+    "react": "^17.0.2"
   },
   "peerDependencies": {
-    "@emotion/core": "*",
-    "@emotion/styled": "*",
-    "@lskjs/theme": "*",
-    "@lskjs/utils": "*",
-    "react": "*"
+    "@emotion/react": "11.x",
+    "@emotion/styled": "11.x",
+    "@lskjs/dev": "2.x",
+    "@lskjs/theme": "2.x",
+    "@lskjs/utils": "0.x",
+    "react": "17.x"
   },
   "publishConfig": {
     "access": "public"

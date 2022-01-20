@@ -1,9 +1,10 @@
-import React from 'react';
 import Story from '@lskjs/dev/Story';
+import React from 'react';
+
 // import Error404 from './icons/error404';
 // import Error403 from './icons/error403';
 // import Error500 from './icons/error500';
-import SlideContent from './SlideContent';
+import SlideContent from '../src/SlideContent';
 
 const Icon = () => 'Icon';
 const Error404 = () => 'Error404';

@@ -1,8 +1,8 @@
-import React, { PureComponent } from 'react';
+import { Col, Container } from '@lskjs/grid';
 import PropTypes from 'prop-types';
-import { Container, Col } from '@lskjs/grid';
+import React, { PureComponent } from 'react';
 
-import { Title, Subtitle, Footer, IconWrapper, Wrapper, ImageWrapper, ContentWrapper } from './SlideContent.styles';
+import { ContentWrapper, Footer, IconWrapper, ImageWrapper, Subtitle, Title, Wrapper } from './SlideContent.styles';
 
 class SlideContent extends PureComponent {
   render() {

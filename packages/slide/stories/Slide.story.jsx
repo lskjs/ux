@@ -1,6 +1,7 @@
-import React from 'react';
 import Story from '@lskjs/dev/Story';
-import Slide from './Slide';
+import React from 'react';
+
+import Slide from '../src/Slide';
 
 const repeat = (str, c) => {
   str = str || '0';

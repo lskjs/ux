@@ -1,29 +1,30 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import ReactDriveIn from 'react-drive-in2';
 import isIE from '@lskjs/utils/isIE';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+import ReactDriveIn from 'react-drive-in2';
+
 import {
-  Content,
-  Middle,
-  InnerBlock,
-  InnerTable,
-  TopBlock,
-  TopTable,
+  Background,
   BottomBlock,
   BottomTable,
-  SlideFrame,
+  Center,
+  Content,
+  IFrameVideo,
+  Image,
+  InnerBlock,
+  InnerTable,
   LeftBlock,
   LeftTable,
-  RightBlock,
-  RightTable,
-  Center,
-  Background,
+  Middle,
   NoClick,
   Overlay,
+  RightBlock,
+  RightTable,
+  SlideFrame,
+  TopBlock,
+  TopTable,
   Video,
   VideoForeground,
-  Image,
-  IFrameVideo,
 } from './Slide.styles';
 
 class Slide extends Component {
