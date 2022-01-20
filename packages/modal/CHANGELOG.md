@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.7.1](https://github.com/lskjs/ux/compare/v2.7.0...v2.7.1) (2022-01-20)
+
+
+### Bug Fixes
+
+* uapp in modal ([1129086](https://github.com/lskjs/ux/commit/1129086c6824d501c25543c40f545484758d72d2))
+
+
+
+
+
 # [2.7.0](https://github.com/lskjs/ux/compare/v2.6.5...v2.7.0) (2022-01-20)
 
 

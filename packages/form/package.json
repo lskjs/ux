@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/form",
-  "version": "2.7.0",
+  "version": "2.7.1",
   "description": "LSK ux subrepo: form",
   "keywords": [],
   "repository": "https://github.com/lskjs/ux/tree/master/packages/form",
@@ -45,7 +45,7 @@
     "@lskjs/grid": "2.7.0",
     "@lskjs/gridtable": "2.7.0",
     "@lskjs/link": "2.7.0",
-    "@lskjs/modal": "2.7.0",
+    "@lskjs/modal": "2.7.1",
     "@lskjs/scroll": "2.7.0",
     "@lskjs/t": "1.27.4",
     "@lskjs/tag": "1.27.4",
