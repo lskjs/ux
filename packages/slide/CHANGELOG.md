@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.1.0-alpha.6](https://github.com/lskjs/ux/compare/v3.1.0-alpha.5...v3.1.0-alpha.6) (2022-01-20)
+
+
+### Features
+
+* **slide:** 11 emotion ([ab8b21b](https://github.com/lskjs/ux/commit/ab8b21bec8037efbd2d070f468c3f3dbaa53da6c))
+
+
+
+
+
 # [3.1.0-alpha.4](https://github.com/lskjs/ux/compare/v3.1.0-alpha.3...v3.1.0-alpha.4) (2022-01-20)
 
 **Note:** Version bump only for package @lskjs/slide
