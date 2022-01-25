@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.7.2](https://github.com/lskjs/cli/compare/v2.7.1...v2.7.2) (2022-01-25)
+
+
+### Bug Fixes
+
+* stateful button error close icon ([5eada46](https://github.com/lskjs/cli/commit/5eada4664c5eae3a1cf3c0623259588aefd917a3))
+
+
+
+
+
 ## [2.7.1](https://github.com/lskjs/cli/compare/v2.7.0...v2.7.1) (2022-01-20)
 
 
