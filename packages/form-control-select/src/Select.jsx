@@ -233,7 +233,7 @@ class Select extends Component {
       if (value == null || value === NULL_STRING) {
         value = null;
         option = null;
-      } else if (((option && option.value) || null) !== value) {
+      } else if (((option && option.value) || null) !== value && !isMulti) {
         // Увы, мы наверное не имеем право перезапросить option если сверху поменялся value
         this.initOption(); // TODO: потестировать может быть рекурсия
       }
