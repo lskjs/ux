@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.7.4](https://github.com/lskjs/ux/compare/v2.7.3...v2.7.4) (2022-03-22)
+
+
+### Bug Fixes
+
+* **form-control-select:** improve multiselect props change ([9ec6c08](https://github.com/lskjs/ux/commit/9ec6c08e4cc4185e563a87ff3424bcc3b0fa93b3))
+
+
+
+
+
 ## [2.7.3](https://github.com/lskjs/ux/compare/v2.7.2...v2.7.3) (2022-03-21)
 
 
