@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/form-control-files",
-  "version": "2.7.5",
+  "version": "2.7.0",
   "description": "Files control for Form",
   "keywords": [],
   "repository": "https://github.com/lskjs/ux/tree/master/packages/form-control-files",

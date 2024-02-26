@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/css",
-  "version": "2.7.5",
+  "version": "2.7.0",
   "description": "LSK ux subrepo: css",
   "keywords": [],
   "repository": "https://github.com/lskjs/ux/tree/master/packages/css",
