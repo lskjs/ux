@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/form-control-switcher",
-  "version": "2.7.0",
+  "version": "2.7.5",
   "description": "Switcher control for Form",
   "keywords": [],
   "repository": "https://github.com/lskjs/ux/tree/master/packages/form-control-switcher",
