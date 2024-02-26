@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.7.5](https://github.com/lskjs/ux/compare/v2.7.4...v2.7.5) (2024-02-26)
+
+
+### Bug Fixes
+
+* color variables ([2d54eb5](https://github.com/lskjs/ux/commit/2d54eb567dd50825cdd54768ff24af366f74c2fa))
+
+
+
+
+
 # [2.7.0](https://github.com/lskjs/ux/compare/v2.6.5...v2.7.0) (2022-01-20)
 
 **Note:** Version bump only for package @lskjs/form-control-input

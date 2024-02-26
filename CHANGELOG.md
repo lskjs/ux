@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.7.5](https://github.com/lskjs/cli/compare/v2.7.4...v2.7.5) (2024-02-26)
+
+
+### Bug Fixes
+
+* color variables ([2d54eb5](https://github.com/lskjs/cli/commit/2d54eb567dd50825cdd54768ff24af366f74c2fa))
+
+
+
+
+
 ## [2.7.4](https://github.com/lskjs/cli/compare/v2.7.3...v2.7.4) (2022-03-22)
 
 
