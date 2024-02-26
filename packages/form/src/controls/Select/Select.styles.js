@@ -2,15 +2,15 @@ import { css } from '@emotion/core';
 
 const globalStyles = css`
   .lsk-form-select .react-select__control.react-select__control--is-focused {
-    border: solid 1px #7070ff !important;
+    border: solid 1px var(--colors-primary, #7070ff) !important;
     box-shadow: none !important;
   }
 
   .lsk-form-select .react-select__control {
     border-radius: 3px;
-    background-color: #fff;
-    border: solid 1px #e3e3e3;
-    color: #4a4a4a;
+    background-color: var(--colors-white, #fff);
+    border: solid 1px var(--colors-border, #e3e3e3);
+    color: var(--colors-main, #4a4a4a);
     font-family: 'Gotham Pro', Helvetica, Arial;
     font-size: 13px;
     line-height: 1.43;
@@ -29,7 +29,7 @@ const globalStyles = css`
     font-size: 13px;
     line-height: 1.43;
     text-align: left;
-    color: #4a4a4a;
+    color: var(--colors-main, #4a4a4a);
     font-family: 'Gotham Pro', Helvetica, Arial;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -65,27 +65,27 @@ const globalStyles = css`
   }
 
   .lsk-form-select .react-select__option.react-select__option--is-focused {
-    background-color: #eff4fa !important;
-    color: #4a4a4a !important;
+    background-color: var(--colors-lightPrimary, #eff4fa) !important;
+    color: var(--colors-main, #4a4a4a) !important;
   }
 
   .lsk-form-select .react-select__option.react-select__option--is-selected {
-    background-color: #f0f0ff !important;
-    color: #7070ff !important;
+    background-color: var(--colors-lighterPrimary, #f0f0ff) !important;
+    color: var(--colors-primary, #7070ff) !important;
   }
 
   .lsk-form-select.react-select__control--is-focused > .react-select__control {
-    border-color: #B3B3B3;
+    border-color: var(--colors-border, #B3B3B3);
     box-shadow: none !important;
   }
 
   .lsk-form-select.has-error .react-select__control {
-    border-color: #da4c5a !important;
-    color: #da4c5a !important;
+    border-color: var(--colors-danger, #da4c5a) !important;
+    color: var(--colors-danger, #da4c5a) !important;
   }
 
   .lsk-form-select.has-error .react-select__control {
-    border-color: #da4c5a !important;
+    border-color: var(--colors-danger, #da4c5a) !important;
   }
 
   .lsk-form-select .react-select__clear {

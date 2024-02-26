@@ -27,11 +27,11 @@ const PhoneInput = ({ field, form, htmlId = '', imagePath, ...props }) => {
         }}
         inputStyle={{
           width: '100%',
-          border: !hasError ? 'solid 1px #e3e3e3' : 'solid 1px #EE1E31',
+          border: !hasError ? 'solid 1px var(--colors-border, #e3e3e3)' : 'solid 1px var(--colors-danger, #EE1E31)',
           fontSize: '13px',
           // paddingTop: '23px',
           // paddingBottom: '23px',
-          color: '#4a4a4a',
+          color: 'var(--colors-main, #4a4a4a)',
           borderRadius: '3px',
           // background: 'none',
         }}

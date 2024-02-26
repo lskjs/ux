@@ -31,7 +31,7 @@ export const globalStyles = css`
   .ant-checkbox-wrapper:hover .ant-checkbox-inner,
   .ant-checkbox:hover .ant-checkbox-inner,
   .ant-checkbox-input:focus + .ant-checkbox-inner {
-    border-color: #1890ff;
+    border-color: var(--colors-primary, #1890ff);
   }
   .ant-checkbox-checked:after {
     position: absolute;
@@ -40,7 +40,7 @@ export const globalStyles = css`
     width: 100%;
     height: 100%;
     border-radius: 2px;
-    border: 1px solid #1890ff;
+    border: 1px solid var(--colors-primary, #1890ff);
     content: "";
     animation: antCheckboxEffect 0.36s ease-in-out;
     animation-fill-mode: both;
@@ -57,9 +57,9 @@ export const globalStyles = css`
     display: block;
     width: 16px;
     height: 16px;
-    border: 1px solid #d9d9d9;
+    border: 1px solid var(--colors-border, #d9d9d9);
     border-radius: 2px;
-    background-color: #fff;
+    background-color: var(--colors-white, #fff);
     transition: all 0.3s;
     border-collapse: separate;
   }
@@ -71,7 +71,7 @@ export const globalStyles = css`
     display: table;
     width: 5.71428571px;
     height: 9.14285714px;
-    border: 2px solid #fff;
+    border: 2px solid var(--colors-white, #fff);
     border-top: 0;
     border-left: 0;
     content: ' ';
@@ -94,7 +94,7 @@ export const globalStyles = css`
     transform: rotate(45deg) scale(1);
     position: absolute;
     display: table;
-    border: 2px solid #fff;
+    border: 2px solid var(--colors-white, #fff);
     border-top: 0;
     border-left: 0;
     content: ' ';
@@ -102,8 +102,8 @@ export const globalStyles = css`
     opacity: 1;
   }
   .ant-checkbox-checked .ant-checkbox-inner {
-    background-color: #1890ff;
-    border-color: #1890ff;
+    background-color: var(--colors-primary, #1890ff);
+    border-color: var(--colors-primary, #1890ff);
   }
   .ant-checkbox-disabled {
     cursor: not-allowed;
@@ -116,7 +116,7 @@ export const globalStyles = css`
     cursor: not-allowed;
   }
   .ant-checkbox-disabled .ant-checkbox-inner {
-    border-color: #d9d9d9 !important;
+    border-color: var(--colors-border, #d9d9d9) !important;
     background-color: #f5f5f5;
   }
   .ant-checkbox-disabled .ant-checkbox-inner:after {
@@ -173,8 +173,8 @@ export const globalStyles = css`
     margin-left: 0;
   }
   .ant-checkbox-indeterminate .ant-checkbox-inner {
-    background-color: #fff;
-    border-color: #d9d9d9;
+    background-color: var(--colors-white, #fff);
+    border-color: var(--colors-border, #d9d9d9);
   }
   .ant-checkbox-indeterminate .ant-checkbox-inner:after {
     content: ' ';
@@ -184,7 +184,7 @@ export const globalStyles = css`
     top: 50%;
     width: 8px;
     height: 8px;
-    background-color: #1890ff;
+    background-color: var(--colors-primary, #1890ff);
     opacity: 1;
   }
   .ant-checkbox-indeterminate.ant-checkbox-disabled .ant-checkbox-inner:after {

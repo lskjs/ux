@@ -62,14 +62,14 @@ export default () => injectGlobal`
     width: 100%;
     height: 4px;
     border-radius: 2px;
-    background-color: #f5f5f5;
+    background-color: var(--colors-mainBackground, #f5f5f5);
     transition: background-color 0.3s;
   }
   .ant-slider-track {
     position: absolute;
     height: 4px;
     border-radius: 6px;
-    background-color: #91d5ff;
+    background-color: var(--colors-lightPrimary, #91d5ff);
     transition: background-color 0.3s ease;
   }
   .ant-slider-handle {
@@ -80,17 +80,17 @@ export default () => injectGlobal`
     height: 14px;
     cursor: pointer;
     border-radius: 50%;
-    border: solid 2px #91d5ff;
+    border: solid 2px var(--colors-lightPrimary, #91d5ff);
     background-color: #fff;
     transition: border-color 0.3s, transform 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
   }
   .ant-slider-handle:focus {
-    border-color: #46a6ff;
+    border-color: var(--colors-focusPrimary, #46a6ff);
     box-shadow: 0 0 0 5px #8cc8ff;
     outline: none;
   }
   .ant-slider-handle.ant-tooltip-open {
-    border-color: #1890ff;
+    border-color: var(--colors-primary, #1890ff);
   }
   .ant-slider:hover .ant-slider-rail {
     background-color: #e1e1e1;

@@ -51,7 +51,7 @@ export default () => injectGlobal`
   .ant-radio-wrapper:hover .ant-radio .ant-radio-inner,
   .ant-radio:hover .ant-radio-inner,
   .ant-radio-focused .ant-radio-inner {
-    border-color: #1890ff;
+    border-color: var(--colors-border, #1890ff);
   }
   .ant-radio-checked:after {
     position: absolute;
@@ -60,7 +60,7 @@ export default () => injectGlobal`
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    border: 1px solid #1890ff;
+    border: 1px solid var(--colors-border, #1890ff);
     content: "";
     animation: antRadioEffect 0.36s ease-in-out;
     animation-fill-mode: both;
@@ -80,7 +80,7 @@ export default () => injectGlobal`
     border-width: 1px;
     border-style: solid;
     border-radius: 100px;
-    border-color: #d9d9d9;
+    border-color: var(--colors-border, #d9d9d9);
     background-color: #fff;
     transition: all 0.3s;
   }
@@ -95,7 +95,7 @@ export default () => injectGlobal`
     border-top: 0;
     border-left: 0;
     content: ' ';
-    background-color: #1890ff;
+    background-color: var(--colors-border, #1890ff);
     opacity: 0;
     transform: scale(0);
     transition: all 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
@@ -111,7 +111,7 @@ export default () => injectGlobal`
     right: 0;
   }
   .ant-radio-checked .ant-radio-inner {
-    border-color: #1890ff;
+    border-color: var(--colors-border, #1890ff);
   }
   .ant-radio-checked .ant-radio-inner:after {
     transform: scale(0.875);
@@ -119,7 +119,7 @@ export default () => injectGlobal`
     transition: all 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
   }
   .ant-radio-disabled .ant-radio-inner {
-    border-color: #d9d9d9 !important;
+    border-color: var(--colors-border, #d9d9d9) !important;
     background-color: #f5f5f5;
   }
   .ant-radio-disabled .ant-radio-inner:after {
@@ -144,7 +144,7 @@ export default () => injectGlobal`
     display: inline-block;
     transition: all 0.3s ease;
     cursor: pointer;
-    border: 1px solid #d9d9d9;
+    border: 1px solid var(--colors-border, #d9d9d9);
     border-left: 0;
     border-top-width: 1.02px;
     background: #fff;
@@ -178,11 +178,11 @@ export default () => injectGlobal`
     width: 1px;
     height: 100%;
     position: absolute;
-    background-color: #d9d9d9;
+    background-color: var(--colors-border, #d9d9d9);
   }
   .ant-radio-button-wrapper:first-child {
     border-radius: 6px 0 0 6px;
-    border-left: 1px solid #d9d9d9;
+    border-left: 1px solid var(--colors-border, #d9d9d9);
   }
   .ant-radio-button-wrapper:last-child {
     border-radius: 0 6px 6px 0;
@@ -192,7 +192,7 @@ export default () => injectGlobal`
   }
   .ant-radio-button-wrapper:hover,
   .ant-radio-button-wrapper-focused {
-    color: #1890ff;
+    color: var(--colors-border, #1890ff);
     position: relative;
   }
   .ant-radio-button-wrapper .ant-radio-inner,
@@ -204,17 +204,17 @@ export default () => injectGlobal`
   }
   .ant-radio-button-wrapper-checked {
     background: #fff;
-    border-color: #1890ff;
-    color: #1890ff;
-    box-shadow: -1px 0 0 0 #1890ff;
+    border-color: var(--colors-border, #1890ff);
+    color: var(--colors-border, #1890ff);
+    box-shadow: -1px 0 0 0 var(--colors-border, #1890ff);
     z-index: 1;
   }
   .ant-radio-button-wrapper-checked::before {
-    background-color: #1890ff !important;
+    background-color: var(--colors-border, #1890ff) !important;
     opacity: 0.1;
   }
   .ant-radio-button-wrapper-checked:first-child {
-    border-color: #1890ff;
+    border-color: var(--colors-border, #1890ff);
     box-shadow: none !important;
   }
   .ant-radio-button-wrapper-checked:hover {
@@ -228,8 +228,8 @@ export default () => injectGlobal`
     color: #096dd9;
   }
   .ant-radio-group-solid .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
-    background: #1890ff;
-    border-color: #1890ff;
+    background: var(--colors-border, #1890ff);
+    border-color: var(--colors-border, #1890ff);
     color: #fff;
   }
   .ant-radio-group-solid .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):hover {
@@ -243,24 +243,24 @@ export default () => injectGlobal`
     color: #fff;
   }
   .ant-radio-button-wrapper-disabled {
-    border-color: #d9d9d9;
+    border-color: var(--colors-border, #d9d9d9);
     background-color: #f5f5f5;
     cursor: not-allowed;
     color: rgba(0, 0, 0, 0.25);
   }
   .ant-radio-button-wrapper-disabled:first-child,
   .ant-radio-button-wrapper-disabled:hover {
-    border-color: #d9d9d9;
+    border-color: var(--colors-border, #d9d9d9);
     background-color: #f5f5f5;
     color: rgba(0, 0, 0, 0.25);
   }
   .ant-radio-button-wrapper-disabled:first-child {
-    border-left-color: #d9d9d9;
+    border-left-color: var(--colors-border, #d9d9d9);
   }
   .ant-radio-button-wrapper-disabled.ant-radio-button-wrapper-checked {
     color: #fff;
     background-color: #e6e6e6;
-    border-color: #d9d9d9;
+    border-color: var(--colors-border, #d9d9d9);
     box-shadow: none;
   }
   @keyframes antRadioEffect {

@@ -3,7 +3,7 @@ import getTheme from '@lskjs/theme/getTheme';
 
 export const Additional = styled('div')`
   background-color: ${(p) => getTheme(p.theme, 'colors.mainBackground')};
-  border: solid 1px #e3e3e3;
+  border: solid 1px ${(p) => getTheme(p.theme, 'colors.border')};
   border-top: none;
   border-radius: 0 0 3px 3px;
   position: relative;

@@ -29,7 +29,7 @@ export default {
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    color: #9b9b9b;
+    color: var(--colors-secondary, #9b9b9b);
     cursor: pointer;
     font-size: 13px;
     font-weight: normal;
@@ -38,8 +38,8 @@ export default {
     line-height: 3.08;
     letter-spacing: -0.2px;
     &:hover {
-      background-color: #dedeff;
-      color: #1890ff;
+      background-color: var(--colors-lightPrimary, #dedeff);
+      color: var(--colors-primary, #1890ff);
     }
     @media screen and (max-width: 991px) {
       width: 32px;
@@ -62,7 +62,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #1890ff;
+    background-color: var(--colors-primary, #1890ff);
     border-radius: 20px;
     color: #fff;
     cursor: pointer;
@@ -74,9 +74,9 @@ export default {
     letter-spacing: -0.2px;
     padding: 0 4px;
     &:hover {
-      background-color: #1890ff;
+      background-color: var(--colors-primary, #1890ff);
       color: #fff;
-      box-shadow: 0 0 0 4px #dedeff;
+      box-shadow: 0 0 0 4px var(--colors-lightPrimary, #dedeff);
     }
     &:focus {
       color: #fff;
@@ -113,7 +113,7 @@ export default {
     line-height: 3.08;
     letter-spacing: -0.2px;
     > a {
-      color: #9b9b9b;
+      color: var(--colors-secondary, #9b9b9b);
     }
     @media screen and (max-width: 991px) {
       width: 32px;
@@ -135,10 +135,10 @@ export default {
       pointer-events: none;
       cursor: default;
       svg {
-        color: #595959 !important;
+        color: var(--colors-gray, #595959) !important;
       }
       > div {
-        color: #595959 !important;
+        color: var(--colors-gray, #595959) !important;
 
         @media screen and (max-width: 991px) {
           background-color: transparent;
@@ -166,11 +166,11 @@ export default {
     font-style: normal;
     line-height: 3.08;
     letter-spacing: -0.1px;
-    color: #1890ff;
+    color: var(--colors-primary, #1890ff);
     cursor: pointer;
     &:active,
     &:hover {
-      color: #40a9ff;
+      color: var(--colors-focusPrimary, #40a9ff);
     }
     margin-left: 36px;
     @media screen and (max-width: 991px) {
@@ -181,7 +181,7 @@ export default {
       line-height: 3.08;
       letter-spacing: -0.1px;
       padding: 0;
-      color: #1890ff;
+      color: var(--colors-primary, #1890ff);
       margin-left: 8px;
       svg {
         margin-left: 4px !important;
@@ -200,11 +200,11 @@ export default {
     font-style: normal;
     line-height: 3.08;
     letter-spacing: -0.1px;
-    color: #1890ff;
+    color: var(--colors-primary, #1890ff);
     cursor: pointer;
     &:active,
     &:hover {
-      color: #40a9ff;
+      color: var(--colors-focusPrimary, #40a9ff);
     }
     margin-right: 36px;
     @media screen and (max-width: 991px) {

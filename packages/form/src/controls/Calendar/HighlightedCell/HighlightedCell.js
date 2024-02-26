@@ -1,7 +1,8 @@
 import styled from '@emotion/styled';
+import getTheme from '@lskjs/theme/getTheme';
 
 export default styled('div')`
-  background-color: #e6f7ff;
+  background-color: ${props => getTheme(props.theme, 'colors.lighterPrimary')};
   height: 24px;
   z-index: 0;
   width: 24px;
@@ -12,6 +13,6 @@ export default styled('div')`
   right: 0;
   top: 0;
   margin: auto;
-  outline: 5px solid #e6f7ff;
+  outline: 5px solid ${props => getTheme(props.theme, 'colors.lighterPrimary')};
 `;
 

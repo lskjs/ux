@@ -47,10 +47,10 @@ export const Container = styled.div`
     }
   }
   .ant-form-item-control input {
-    border: solid 1px #e3e3e3;
+    border: solid 1px var(--colors-border, #e3e3e3);
   }
   .ant-form-item-control .has-error input {
-    border: 1px solid #ee1e31 !important;
+    border: 1px solid var(--colors-danger, #ee1e31) !important;
   }
 `;
 
@@ -60,16 +60,16 @@ export const injectStyles = () => injectGlobal`
 
   }
   .ant-form-item-control input {
-    border: solid 1px #e3e3e3,
+    border: solid 1px var(--colors-border, #e3e3e3),
   }
   .ant-form-item-control .has-error input {
-    border: 1px solid #ee1e31 !important;
+    border: 1px solid var(--colors-danger, #ee1e31) !important;
   }
   .react-tel-input {
     .form-control {
       font-size: 16px;
-      background: #FFFFFF;
-      border: 1px solid #CACACA;
+      background: var(--colors-white, #FFFFFF);
+      border: 1px solid var(--colors-border, #CACACA);
       border-radius: 5px;
       width: 300px;
       outline: none;
@@ -77,17 +77,17 @@ export const injectStyles = () => injectGlobal`
       transition: box-shadow ease .25s, border-color ease .25s;
       color: #495057;
 
-      
+
 
       &:focus, &.open {
-        background-color: #fff;
+        background-color: var(--colors-white, #fff);
         border-color: #80bdff;
         outline: none !important;
         /* box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25); */
       }
       &.invalid-number {
         border: 1px solid #f44336;
-        border-left-color: #cacaca;
+        border-left-color: var(--colors-border, #cacaca);
         &:focus {
           box-shadow: 0 0 0 1px #f44336;
         }
@@ -198,7 +198,7 @@ export const injectStyles = () => injectGlobal`
         z-index: 2;
         position: sticky;
         top: 0;
-        background-color: #fff;
+        background-color: var(--colors-white, #fff);
         padding: 10px 0 6px 10px;
       }
       .search-emoji {
@@ -206,7 +206,7 @@ export const injectStyles = () => injectGlobal`
         font-size: 15px;
       }
       .search-box {
-        border: 1px solid #cacaca;
+        border: 1px solid var(--colors-border, #cacaca);
         border-radius: 3px;
         font-size: 15px;
         line-height: 15px;

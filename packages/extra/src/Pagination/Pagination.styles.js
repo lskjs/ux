@@ -22,23 +22,23 @@ export const PaginationBtn = styled.button`
   border-radius: 2px;
   line-height: 20px;
   width: 40px;
-  border: ${(props) => (props.current ? '1px solid #1890ff' : '1px solid #d9d9d9')};
+  border: ${(props) => (props.current ? `1px solid var(--colors-primary, #1890ff)` : '1px solid var(--colors-secondary, #d9d9d9)')};
   color: ${(props) => {
     if (props.current) {
-      return '#1890ff';
+      return 'var(--colors-primary, #1890ff)';
     }
     if (props.disabled) {
-      return '#736e6e';
+      return 'var(--colors-gray, #736e6e)';
     }
     return '#000';
   }};
   &:hover {
-    color: ${(props) => (props.disabled ? '#736e6e' : '#1890ff')};
-    border: ${(props) => (props.disabled ? '1px solid #d9d9d9' : '1px solid #1890ff')};
+    color: ${(props) => (props.disabled ? 'var(--colors-gray, #736e6e)' : 'var(--colors-primary, #1890ff)')};
+    border: ${(props) => (props.disabled ? '1px solid var(--colors-secondary, #d9d9d9)' : '1px solid var(--colors-primary, #1890ff)')};
     cursor: ${(props) => (props.disabled ? 'default' : 'pointer')};
   }
   &:focus {
-    outline-color: #1890ff;
+    outline-color: var(--colors-primary, #1890ff);
   }
   svg {
     vertical-align: middle;

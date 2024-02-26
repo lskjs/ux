@@ -76,9 +76,9 @@ export default (component = 'input') => (
 
     ${(p) => {
     switch (p.validationState) {
-      case 'error': return 'border-color: #da4c5a !important;';
-      case 'success': return 'border-color: #4DB36D !important;';
-      case 'warning': return 'border-color: #fbc545 !important;';
+      case 'error': return 'border-color: var(--colors-danger, #da4c5a) !important;';
+      case 'success': return 'border-color: var(--colors-success, #4DB36D) !important;';
+      case 'warning': return 'border-color: var(--colors-warning, #fbc545) !important;';
       default: return '';
     }
   }}

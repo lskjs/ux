@@ -7,7 +7,7 @@ class LoadingDots extends PureComponent {
     color: PropTypes.string,
   };
   static defaultProps = {
-    color: '#fff',
+    color: 'var(--colors-white, #fff)',
   };
   render() {
     const { color } = this.props;

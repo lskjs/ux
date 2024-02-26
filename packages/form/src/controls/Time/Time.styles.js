@@ -140,7 +140,7 @@ export default () => injectGlobal`
     width: 14px;
     height: 14px;
     margin-top: -7px;
-    color: #BFBFBF;
+    color: var(--colors-icon, #BFBFBF);
     line-height: 14px;
     -webkit-transition: all .3s cubic-bezier(.645, .045, .355, 1);
     transition: all .3s cubic-bezier(.645, .045, .355, 1);
@@ -151,7 +151,7 @@ export default () => injectGlobal`
   }
   .anticon .anticon-clock-circle .ant-time-picker-clock-icon {
     display: block;
-    color: #BFBFBF;
+    color: var(--colors-icon, #BFBFBF);
     line-height: 1;
   }
   .ant-time-picker-icon, .ant-time-picker-clear {
@@ -161,7 +161,7 @@ export default () => injectGlobal`
     width: 14px;
     height: 14px;
     margin-top: -7px;
-    color: #BFBFBF;
+    color: var(--colors-icon, #BFBFBF);
     line-height: 14px;
     -webkit-transition: all .3s cubic-bezier(.645, .045, .355, 1);
     transition: all .3s cubic-bezier(.645, .045, .355, 1);
@@ -185,7 +185,7 @@ export default () => injectGlobal`
     max-height: 192px;
     overflow: hidden;
     font-size: 14px;
-    border-left: 1px solid #e8e8e8;
+    border-left: 1px solid var(--colors-border, #e8e8e8);
     @media screen and (max-width: 991px) {
       overflow: scroll;
     }

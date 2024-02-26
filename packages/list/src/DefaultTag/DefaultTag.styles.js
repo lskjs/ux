@@ -3,7 +3,7 @@ import getTheme from '@lskjs/theme/getTheme';
 
 export const Base = styled('div')`
   background: #fafafa;
-  border: 1px solid #d9d9d9;
+  border: 1px solid ${(p) => getTheme(p.theme, 'colors.border')};
   border-radius: 2px;
   box-sizing: border-box;
   display: inline-block;

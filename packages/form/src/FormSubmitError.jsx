@@ -10,7 +10,7 @@ const Notice = styled('div')`
   margin-bottom: 8px;
   /* min-height: 48px; */
   border-radius: 3px;
-  background-color: #f0f0f0;
+  background-color: ${p => getTheme(p.theme, 'colors.lighterPrimary')};
   display: flex;
   flex-direction: column;
   align-items: center;

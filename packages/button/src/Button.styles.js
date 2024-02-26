@@ -283,16 +283,16 @@ const viewBaseDisabled = css`
 `;
 
 const defaultSolidTheme = props => css`
-  color: #4a4a4a;
+  color: ${getTheme(props.theme, 'colors.main')};
   background-color: #fff;
 
   &:hover {
-    color: #4a4a4a;
+    color: ${getTheme(props.theme, 'colors.main')};
     background-color: #fff;
   }
 
   &:active {
-    color: #4a4a4a;
+    color: ${getTheme(props.theme, 'colors.main')};
     background-color: #f0f0f0;
   }
 
@@ -513,17 +513,17 @@ const viewTextDisabled = props => css`
   }
 `;
 
-const defaultTextTheme = css`
-  color: #4a4a4a;
+const defaultTextTheme = props => css`
+  color: ${getTheme(props.theme, 'colors.main')};
   background-color: transparent;
 
   &:hover {
-    color: #4a4a4a;
+    color: ${getTheme(props.theme, 'colors.main')};
     background-color: rgba(130, 130, 139, 0.08);
   }
 
   &:active {
-    color: #4a4a4a;
+    color: ${getTheme(props.theme, 'colors.main')};
     background-color: rgba(130, 130, 139, 0.08);
   }
 `;

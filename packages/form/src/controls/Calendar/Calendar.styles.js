@@ -7,7 +7,7 @@ export const globalStylesCalendar = () => injectGlobal`
   .ant-calendar-input-wrap {
     height: 34px;
     padding: 6px 10px;
-    border-bottom: 1px solid #e8e8e8;
+    border-bottom: 1px solid var(--colors-border, #e8e8e8);
   }
   .ant-calendar-input {
     border: 0;
@@ -16,7 +16,7 @@ export const globalStylesCalendar = () => injectGlobal`
     outline: 0;
     height: 22px;
     color: rgba(0, 0, 0, 0.65);
-    background: #fff;
+    background: var(--colors-white, #fff);
   }
   .ant-calendar-input::-moz-placeholder {
     color: #bfbfbf;
@@ -39,7 +39,7 @@ export const globalStylesCalendar = () => injectGlobal`
     line-height: 40px;
     text-align: center;
     user-select: none;
-    border-bottom: 1px solid #e8e8e8;
+    border-bottom: 1px solid var(--colors-border, #e8e8e8);
   }
   .ant-calendar-header a:hover {
     color: #40a9ff;
@@ -167,7 +167,7 @@ export const globalStylesCalendar = () => injectGlobal`
     cursor: pointer;
   }
   .ant-calendar-date:active {
-    color: #fff;
+    color: var(--colors-white, #fff);
     background: #40a9ff;
   }
   .ant-calendar-today .ant-calendar-date {
@@ -186,7 +186,7 @@ export const globalStylesCalendar = () => injectGlobal`
   .ant-calendar-selected-start-date .ant-calendar-date,
   .ant-calendar-selected-end-date .ant-calendar-date {
     background: #1890ff;
-    color: #fff;
+    color: var(--colors-white, #fff);
     border: 1px solid transparent;
   }
   .ant-calendar-selected-date .ant-calendar-date:hover,
@@ -229,7 +229,7 @@ export const globalStylesCalendar = () => injectGlobal`
     border-bottom-right-radius: 4px;
   }
   .ant-calendar-footer {
-    border-top: 1px solid #e8e8e8;
+    border-top: 1px solid var(--colors-border, #e8e8e8);
     line-height: 38px;
     padding: 0 12px;
   }
@@ -298,7 +298,7 @@ export const globalStylesCalendar = () => injectGlobal`
     transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
     position: relative;
     box-shadow: 0 2px 0 rgba(0, 0, 0, 0.015);
-    color: #fff;
+    color: var(--colors-white, #fff);
     background-color: #1890ff;
     border-color: #1890ff;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
@@ -358,7 +358,7 @@ export const globalStylesCalendar = () => injectGlobal`
   }
   .ant-calendar .ant-calendar-ok-btn:hover,
   .ant-calendar .ant-calendar-ok-btn:focus {
-    color: #fff;
+    color: var(--colors-white, #fff);
     background-color: #40a9ff;
     border-color: #40a9ff;
   }
@@ -378,7 +378,7 @@ export const globalStylesCalendar = () => injectGlobal`
   }
   .ant-calendar .ant-calendar-ok-btn:active,
   .ant-calendar .ant-calendar-ok-btn.active {
-    color: #fff;
+    color: var(--colors-white, #fff);
     background-color: #096dd9;
     border-color: #096dd9;
   }
@@ -534,13 +534,13 @@ export const globalStylesCalendar = () => injectGlobal`
     float: left;
   }
   .ant-calendar-range-left .ant-calendar-time-picker-inner {
-    border-right: 1px solid #e8e8e8;
+    border-right: 1px solid var(--colors-border, #e8e8e8);
   }
   .ant-calendar-range-right {
     float: right;
   }
   .ant-calendar-range-right .ant-calendar-time-picker-inner {
-    border-left: 1px solid #e8e8e8;
+    border-left: 1px solid var(--colors-border, #e8e8e8);
   }
   .ant-calendar-range-middle {
     position: absolute;
@@ -575,7 +575,7 @@ export const globalStylesCalendar = () => injectGlobal`
     font-size: 14px;
     line-height: 1.71428571;
     color: rgba(0, 0, 0, 0.65);
-    background-color: #fff;
+    background-color: var(--colors-white, #fff);
     background-image: none;
     border: 1px solid #d9d9d9;
     border-radius: 6px;
@@ -705,7 +705,7 @@ export const globalStylesCalendar = () => injectGlobal`
   .ant-calendar-range .ant-calendar-body,
   .ant-calendar-range .ant-calendar-month-panel-body,
   .ant-calendar-range .ant-calendar-year-panel-body {
-    border-top: 1px solid #e8e8e8;
+    border-top: 1px solid var(--colors-border, #e8e8e8);
   }
   .ant-calendar-range.ant-calendar-time .ant-calendar-time-picker {
     height: 207px;
@@ -725,8 +725,8 @@ export const globalStylesCalendar = () => injectGlobal`
   .ant-calendar-range.ant-calendar-time .ant-calendar-time-picker-combobox {
     display: inline-block;
     height: 100%;
-    background-color: #fff;
-    border-top: 1px solid #e8e8e8;
+    background-color: var(--colors-white, #fff);
+    border-top: 1px solid var(--colors-border, #e8e8e8);
   }
   .ant-calendar-range.ant-calendar-time .ant-calendar-time-picker-select {
     height: 100%;
@@ -752,7 +752,7 @@ export const globalStylesCalendar = () => injectGlobal`
     position: absolute;
     width: 100%;
     top: 40px;
-    background-color: #fff;
+    background-color: var(--colors-white, #fff);
   }
   .ant-calendar-time-picker-panel {
     z-index: 1050;
@@ -766,7 +766,7 @@ export const globalStylesCalendar = () => injectGlobal`
     list-style: none;
     font-size: 14px;
     text-align: left;
-    background-color: #fff;
+    background-color: var(--colors-white, #fff);
     background-clip: padding-box;
     line-height: 1.5;
     overflow: hidden;
@@ -794,7 +794,7 @@ export const globalStylesCalendar = () => injectGlobal`
   .ant-calendar-time-picker-select {
     float: left;
     font-size: 14px;
-    border-right: 1px solid #e8e8e8;
+    border-right: 1px solid var(--colors-border, #e8e8e8);
     box-sizing: border-box;
     overflow: hidden;
     position: relative;
@@ -882,7 +882,7 @@ export const globalStylesCalendar = () => injectGlobal`
     left: 0;
     z-index: 10;
     border-radius: 6px;
-    background: #fff;
+    background: var(--colors-white, #fff);
     outline: none;
   }
   .ant-calendar-month-panel > div {
@@ -896,7 +896,7 @@ export const globalStylesCalendar = () => injectGlobal`
     line-height: 40px;
     text-align: center;
     user-select: none;
-    border-bottom: 1px solid #e8e8e8;
+    border-bottom: 1px solid var(--colors-border, #e8e8e8);
   }
   .ant-calendar-month-panel-header a:hover {
     color: #40a9ff;
@@ -977,11 +977,11 @@ export const globalStylesCalendar = () => injectGlobal`
   }
   .ant-calendar-month-panel-selected-cell .ant-calendar-month-panel-month {
     background: #1890ff;
-    color: #fff;
+    color: var(--colors-white, #fff);
   }
   .ant-calendar-month-panel-selected-cell .ant-calendar-month-panel-month:hover {
     background: #1890ff;
-    color: #fff;
+    color: var(--colors-white, #fff);
   }
   .ant-calendar-month-panel-cell {
     text-align: center;
@@ -1016,7 +1016,7 @@ export const globalStylesCalendar = () => injectGlobal`
     left: 0;
     z-index: 10;
     border-radius: 6px;
-    background: #fff;
+    background: var(--colors-white, #fff);
     outline: none;
   }
   .ant-calendar-year-panel > div {
@@ -1030,7 +1030,7 @@ export const globalStylesCalendar = () => injectGlobal`
     line-height: 40px;
     text-align: center;
     user-select: none;
-    border-bottom: 1px solid #e8e8e8;
+    border-bottom: 1px solid var(--colors-border, #e8e8e8);
   }
   .ant-calendar-year-panel-header a:hover {
     color: #40a9ff;
@@ -1130,11 +1130,11 @@ export const globalStylesCalendar = () => injectGlobal`
   }
   .ant-calendar-year-panel-selected-cell .ant-calendar-year-panel-year {
     background: #1890ff;
-    color: #fff;
+    color: var(--colors-white, #fff);
   }
   .ant-calendar-year-panel-selected-cell .ant-calendar-year-panel-year:hover {
     background: #1890ff;
-    color: #fff;
+    color: var(--colors-white, #fff);
   }
   .ant-calendar-year-panel-last-decade-cell .ant-calendar-year-panel-year,
   .ant-calendar-year-panel-next-decade-cell .ant-calendar-year-panel-year {
@@ -1148,7 +1148,7 @@ export const globalStylesCalendar = () => injectGlobal`
     bottom: 0;
     left: 0;
     z-index: 10;
-    background: #fff;
+    background: var(--colors-white, #fff);
     border-radius: 6px;
     outline: none;
   }
@@ -1160,7 +1160,7 @@ export const globalStylesCalendar = () => injectGlobal`
     line-height: 40px;
     text-align: center;
     user-select: none;
-    border-bottom: 1px solid #e8e8e8;
+    border-bottom: 1px solid var(--colors-border, #e8e8e8);
   }
   .ant-calendar-decade-panel-header a:hover {
     color: #40a9ff;
@@ -1261,11 +1261,11 @@ export const globalStylesCalendar = () => injectGlobal`
   }
   .ant-calendar-decade-panel-selected-cell .ant-calendar-decade-panel-decade {
     background: #1890ff;
-    color: #fff;
+    color: var(--colors-white, #fff);
   }
   .ant-calendar-decade-panel-selected-cell .ant-calendar-decade-panel-decade:hover {
     background: #1890ff;
-    color: #fff;
+    color: var(--colors-white, #fff);
   }
   .ant-calendar-decade-panel-last-century-cell .ant-calendar-decade-panel-decade,
   .ant-calendar-decade-panel-next-century-cell .ant-calendar-decade-panel-decade {
@@ -1376,7 +1376,7 @@ export const globalStylesCalendar = () => injectGlobal`
     z-index: 0;
     font-size: 14px;
     color: rgba(0, 0, 0, 0.25);
-    background: #fff;
+    background: var(--colors-white, #fff);
     pointer-events: none;
     cursor: pointer;
   }
@@ -1497,7 +1497,7 @@ export const globalStylesFullCalendar = () => injectGlobal`
   }
   .ant-fullcalendar-value:active {
     background: #1890ff;
-    color: #fff;
+    color: var(--colors-white, #fff);
   }
   .ant-fullcalendar-month-panel-cell .ant-fullcalendar-value {
     width: 48px;
@@ -1509,7 +1509,7 @@ export const globalStylesFullCalendar = () => injectGlobal`
   .ant-fullcalendar-selected-day .ant-fullcalendar-value,
   .ant-fullcalendar-month-panel-selected-cell .ant-fullcalendar-value {
     background: #1890ff;
-    color: #fff;
+    color: var(--colors-white, #fff);
   }
   .ant-fullcalendar-disabled-cell-first-of-row .ant-fullcalendar-value {
     border-top-left-radius: 6px;
@@ -1555,7 +1555,7 @@ export const globalStylesFullCalendar = () => injectGlobal`
     color: rgba(0, 0, 0, 0.65);
     height: 116px;
     padding: 4px 8px;
-    border-top: 2px solid #e8e8e8;
+    border-top: 2px solid var(--colors-border, #e8e8e8);
     transition: background 0.3s;
   }
   .ant-fullcalendar-fullscreen .ant-fullcalendar-month:hover,
@@ -1862,7 +1862,7 @@ export const globalStylesFullCalendar = () => injectGlobal`
 }
 .ant-select > ul > li > a {
   padding: 0;
-  background-color: #fff;
+  background-color: var(--colors-white, #fff);
 }
 .ant-select-arrow {
   display: inline-block;
@@ -1903,7 +1903,7 @@ export const globalStylesFullCalendar = () => injectGlobal`
   user-select: none;
   box-sizing: border-box;
   display: block;
-  background-color: #fff;
+  background-color: var(--colors-white, #fff);
   border-radius: 6px;
   border: 1px solid #d9d9d9;
   border-top-width: 1.02px;
@@ -1932,7 +1932,7 @@ export const globalStylesFullCalendar = () => injectGlobal`
   position: absolute;
   right: 11px;
   z-index: 1;
-  background: #fff;
+  background: var(--colors-white, #fff);
   top: 50%;
   font-size: 12px;
   color: rgba(0, 0, 0, 0.25);
@@ -2150,7 +2150,7 @@ export const globalStylesFullCalendar = () => injectGlobal`
 .ant-select-selection--multiple .ant-select-selection__choice {
   color: rgba(0, 0, 0, 0.65);
   background-color: #fafafa;
-  border: 1px solid #e8e8e8;
+  border: 1px solid var(--colors-border, #e8e8e8);
   border-radius: 2px;
   cursor: default;
   float: left;
@@ -2261,7 +2261,7 @@ export const globalStylesFullCalendar = () => injectGlobal`
   padding: 0;
   list-style: none;
   font-variant: initial;
-  background-color: #fff;
+  background-color: var(--colors-white, #fff);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   border-radius: 6px;
   box-sizing: border-box;
@@ -2343,7 +2343,7 @@ export const globalStylesFullCalendar = () => injectGlobal`
 }
 .ant-select-dropdown-menu-item-disabled:hover {
   color: rgba(0, 0, 0, 0.25);
-  background-color: #fff;
+  background-color: var(--colors-white, #fff);
   cursor: not-allowed;
 }
 .ant-select-dropdown-menu-item-selected,
@@ -2359,7 +2359,7 @@ export const globalStylesFullCalendar = () => injectGlobal`
   height: 1px;
   margin: 1px 0;
   overflow: hidden;
-  background-color: #e8e8e8;
+  background-color: var(--colors-border, #e8e8e8);
   line-height: 0;
 }
 .ant-select-dropdown.ant-select-dropdown--multiple .ant-select-dropdown-menu-item {

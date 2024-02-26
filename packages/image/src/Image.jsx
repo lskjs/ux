@@ -135,7 +135,7 @@ Image.defaultProps = {
   objectFit: 'cover',
 
   // backgroundColor: '#838383',
-  textColor: '#d9d9d9',
+  textColor: 'var(--colors-gray, #d9d9d9)',
   // textScale: 1,
 
   placeholder: null,

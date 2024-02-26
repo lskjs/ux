@@ -18,16 +18,16 @@ const views = {
     }
   `,
   shadow: (p) => css`
-    background-color: ${p.active ? 'rgba(130, 130, 139, 0.08)' : 'transparent'};
+    background-color: ${p.active ? 'var(--colors-shadowPrimary, rgba(130, 130, 139, 0.08))' : 'transparent'};
     color: ${getTheme(p.theme, 'colors.main')};
     &:active {
-      background-color: rgba(130, 130, 139, 0.08);
+      background-color: var(--colors-shadowPrimary, rgba(130, 130, 139, 0.08));
     }
     &:focus {
-      background-color: rgba(130, 130, 139, 0.08);
+      background-color: var(--colors-shadowPrimary, rgba(130, 130, 139, 0.08));
     }
     &:hover {
-      background-color: rgba(130, 130, 139, 0.08);
+      background-color: var(--colors-shadowPrimary, rgba(130, 130, 139, 0.08));
     }
   `,
 };

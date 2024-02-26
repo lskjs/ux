@@ -75,7 +75,7 @@ AvatarGroup.defaultProps = {
   limit: null,
   offset: -0.35,
   count: null,
-  backgroundColor: '#838383',
+  backgroundColor: 'var(--colors-secondary, #838383)',
   items: [],
 };
 

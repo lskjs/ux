@@ -15,22 +15,22 @@ export default () => injectGlobal`
     right: 28px;
   }
   .has-warning .ant-calendar-picker-open .ant-calendar-picker-input {
-    border-color: #ffd666;
+    border-color: var(--colors-warning, #ffd666);
     outline: 0;
     box-shadow: 0 0 0 2px rgba(255, 197, 61, 0.2);
     border-right-width: 1px !important;
   }
   .has-warning .ant-calendar-picker-icon:after {
-    color: #ffc53d;
+    color: var(--colors-warning, #ffc53d);
   }
   .has-error .ant-calendar-picker-open .ant-calendar-picker-input {
-    border-color: #ff7875;
+    border-color: var(--colors-danger, #ff7875);
     outline: 0;
     box-shadow: 0 0 0 2px rgba(255, 77, 79, 0.2);
     border-right-width: 1px !important;
   }
   .has-error .ant-calendar-picker-icon:after {
-    color: #ff4d4f;
+    color: var(--colors-danger, #ff4d4f);
   }
   .ant-input-group.ant-input-group-compact > .ant-calendar-picker .ant-input {
     border-radius: 0;
@@ -38,11 +38,11 @@ export default () => injectGlobal`
     border-right-color: transparent;
   }
   .ant-input-group.ant-input-group-compact > .ant-calendar-picker .ant-input:hover {
-    border-color: #40a9ff;
+    border-color: var(--colors-focusPrimary, #40a9ff);
     border-right-width: 1px !important;
   }
   .ant-input-group.ant-input-group-compact > .ant-calendar-picker .ant-input:focus {
-    border-color: #40a9ff;
+    border-color: var(--colors-focusPrimary, #40a9ff);
     outline: 0;
     box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
     border-right-width: 1px !important;
@@ -55,20 +55,20 @@ export default () => injectGlobal`
     border-top-right-radius: 6px;
     border-bottom-right-radius: 6px;
     border-right-width: 1px;
-    border-right-color: #d9d9d9;
+    border-right-color: var(--colors-gray, #d9d9d9);
   }
   .ant-input-group.ant-input-group-compact > .ant-calendar-picker:last-child .ant-input:hover {
-    border-color: #40a9ff;
+    border-color: var(--colors-focusPrimary, #40a9ff);
     border-right-width: 1px !important;
   }
   .ant-input-group.ant-input-group-compact > .ant-calendar-picker:last-child .ant-input:focus {
-    border-color: #40a9ff;
+    border-color: var(--colors-focusPrimary, #40a9ff);
     outline: 0;
     box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
     border-right-width: 1px !important;
   }
   .ant-input-group.ant-input-group-compact > .ant-calendar-picker:last-child .ant-input:focus .ant-cascader-input {
-    border-color: #40a9ff;
+    border-color: var(--colors-focusPrimary, #40a9ff);
     outline: 0;
     box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
     border-right-width: 1px !important;
@@ -146,7 +146,7 @@ export default () => injectGlobal`
     border-top-left-radius: 0;
   }
   .ant-input-group-wrap .ant-select-selection:hover {
-    border-color: #d9d9d9;
+    border-color: var(--colors-gray, #d9d9d9);
   }
   .ant-input-group-wrap .ant-select-selection--single {
     margin-left: -1px;
@@ -159,89 +159,89 @@ export default () => injectGlobal`
     line-height: 30px;
   }
   .ant-input-group-wrap .ant-select-open .ant-select-selection {
-    border-color: #d9d9d9;
+    border-color: var(--colors-gray, #d9d9d9);
     box-shadow: none;
   }
   .has-warning .ant-input,
   .has-warning .ant-input:hover {
-    border-color: #ffc53d;
+    border-color: var(--colors-warning, #ffc53d);
   }
   .has-warning .ant-input:focus {
-    border-color: #ffd666;
+    border-color: var(--colors-warning, #ffd666);
     outline: 0;
     box-shadow: 0 0 0 2px rgba(255, 197, 61, 0.2);
     border-right-width: 1px !important;
   }
   .has-warning .ant-input:not([disabled]):hover {
-    border-color: #ffc53d;
+    border-color: var(--colors-warning, #ffc53d);
   }
   .has-warning .ant-calendar-picker-open .ant-calendar-picker-input {
-    border-color: #ffd666;
+    border-color: var(--colors-warning, #ffd666);
     outline: 0;
     box-shadow: 0 0 0 2px rgba(255, 197, 61, 0.2);
     border-right-width: 1px !important;
   }
   .has-warning .ant-input-prefix {
-    color: #ffc53d;
+    color: var(--colors-warning, #ffc53d);
   }
   .has-warning .ant-input-group-addon {
-    color: #ffc53d;
-    border-color: #ffc53d;
+    color: var(--colors-warning, #ffc53d);
+    border-color: var(--colors-warning, #ffc53d);
     background-color: #fff;
   }
   .has-warning .ant-input-number {
-    border-color: #ffc53d;
+    border-color: var(--colors-warning, #ffc53d);
   }
   .has-warning .ant-input-number-focused,
   .has-warning .ant-input-number:focus {
-    border-color: #ffd666;
+    border-color: var(--colors-warning, #ffd666);
     outline: 0;
     box-shadow: 0 0 0 2px rgba(255, 197, 61, 0.2);
     border-right-width: 1px !important;
   }
   .has-warning .ant-input-number:not([disabled]):hover {
-    border-color: #ffc53d;
+    border-color: var(--colors-warning, #ffc53d);
   }
   .has-error .ant-input,
   .has-error .ant-input:hover {
-    border-color: #ff4d4f;
+    border-color: var(--colors-danger, #ff4d4f);
   }
   .has-error .ant-input:focus {
-    border-color: #ff7875;
+    border-color: var(--colors-danger, #ff7875);
     outline: 0;
     box-shadow: 0 0 0 2px rgba(255, 77, 79, 0.2);
     border-right-width: 1px !important;
   }
   .has-error .ant-input:not([disabled]):hover {
-    border-color: #ff4d4f;
+    border-color: var(--colors-danger, #ff4d4f);
   }
   .has-error .ant-input-prefix {
-    color: #ff4d4f;
+    color: var(--colors-danger, #ff4d4f);
   }
   .has-error .ant-input-group-addon {
-    color: #ff4d4f;
-    border-color: #ff4d4f;
+    color: var(--colors-danger, #ff4d4f);
+    border-color: var(--colors-danger, #ff4d4f);
     background-color: #fff;
   }
   .has-error .ant-select.ant-select-auto-complete .ant-input:focus {
-    border-color: #ff4d4f;
+    border-color: var(--colors-danger, #ff4d4f);
   }
   .has-error .ant-input-group-addon .ant-select-selection {
     border-color: transparent;
     box-shadow: none;
   }
   .has-error .ant-input-number {
-    border-color: #ff4d4f;
+    border-color: var(--colors-danger, #ff4d4f);
   }
   .has-error .ant-input-number-focused,
   .has-error .ant-input-number:focus {
-    border-color: #ff7875;
+    border-color: var(--colors-danger, #ff7875);
     outline: 0;
     box-shadow: 0 0 0 2px rgba(255, 77, 79, 0.2);
     border-right-width: 1px !important;
   }
   .has-error .ant-input-number:not([disabled]):hover {
-    border-color: #ff4d4f;
+    border-color: var(--colors-danger, #ff4d4f);
   }
   .ant-input {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -260,7 +260,7 @@ export default () => injectGlobal`
     color: rgba(0, 0, 0, 0.65);
     background-color: #fff;
     background-image: none;
-    border: 1px solid #d9d9d9;
+    border: 1px solid var(--colors-gray, #d9d9d9);
     border-radius: 6px;
     transition: all 0.3s;
   }
@@ -275,17 +275,17 @@ export default () => injectGlobal`
     color: #bfbfbf;
   }
   .ant-input:hover {
-    border-color: #40a9ff;
+    border-color: var(--colors-focusPrimary, #40a9ff);
     border-right-width: 1px !important;
   }
   .ant-input:focus {
-    border-color: #40a9ff;
+    border-color: var(--colors-focusPrimary, #40a9ff);
     outline: 0;
     box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
     border-right-width: 1px !important;
   }
   .ant-input-disabled {
-    background-color: #f5f5f5;
+    background-color: var(--colors-mainBackground, #f5f5f5);
     opacity: 1;
     cursor: not-allowed;
     color: rgba(0, 0, 0, 0.25);
@@ -377,7 +377,7 @@ export default () => injectGlobal`
     color: rgba(0, 0, 0, 0.65);
     text-align: center;
     background-color: #fafafa;
-    border: 1px solid #d9d9d9;
+    border: 1px solid var(--colors-gray, #d9d9d9);
     border-radius: 6px;
     position: relative;
     transition: all 0.3s;
@@ -480,13 +480,13 @@ export default () => injectGlobal`
   .ant-input-group.ant-input-group-compact-addon:not(:first-child):not(:last-child):hover,
   .ant-input-group.ant-input-group-compact-wrap:not(:first-child):not(:last-child):hover,
   .ant-input-group.ant-input-group-compact > .ant-input:not(:first-child):not(:last-child):hover {
-    border-color: #40a9ff;
+    border-color: var(--colors-focusPrimary, #40a9ff);
     border-right-width: 1px !important;
   }
   .ant-input-group.ant-input-group-compact-addon:not(:first-child):not(:last-child):focus,
   .ant-input-group.ant-input-group-compact-wrap:not(:first-child):not(:last-child):focus,
   .ant-input-group.ant-input-group-compact > .ant-input:not(:first-child):not(:last-child):focus {
-    border-color: #40a9ff;
+    border-color: var(--colors-focusPrimary, #40a9ff);
     outline: 0;
     box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
     border-right-width: 1px !important;
@@ -520,7 +520,7 @@ export default () => injectGlobal`
   .ant-input-group.ant-input-group-compact > .ant-cascader-picker .ant-input:hover,
   .ant-input-group.ant-input-group-compact > .ant-mention-wrapper .ant-mention-editor:hover,
   .ant-input-group.ant-input-group-compact > .ant-time-picker .ant-time-picker-input:hover {
-    border-color: #40a9ff;
+    border-color: var(--colors-focusPrimary, #40a9ff);
     border-right-width: 1px !important;
   }
   .ant-input-group.ant-input-group-compact > .ant-select > .ant-select-selection:focus,
@@ -529,7 +529,7 @@ export default () => injectGlobal`
   .ant-input-group.ant-input-group-compact > .ant-cascader-picker .ant-input:focus,
   .ant-input-group.ant-input-group-compact > .ant-mention-wrapper .ant-mention-editor:focus,
   .ant-input-group.ant-input-group-compact > .ant-time-picker .ant-time-picker-input:focus {
-    border-color: #40a9ff;
+    border-color: var(--colors-focusPrimary, #40a9ff);
     outline: 0;
     box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
     border-right-width: 1px !important;
@@ -555,7 +555,7 @@ export default () => injectGlobal`
     border-top-right-radius: 6px;
     border-bottom-right-radius: 6px;
     border-right-width: 1px;
-    border-right-color: #d9d9d9;
+    border-right-color: var(--colors-gray, #d9d9d9);
   }
   .ant-input-group.ant-input-group-compact > *:last-child:hover,
   .ant-input-group.ant-input-group-compact > .ant-select:last-child > .ant-select-selection:hover,
@@ -565,7 +565,7 @@ export default () => injectGlobal`
   .ant-input-group.ant-input-group-compact > .ant-cascader-picker-focused:last-child .ant-input:hover,
   .ant-input-group.ant-input-group-compact > .ant-mention-wrapper:last-child .ant-mention-editor:hover,
   .ant-input-group.ant-input-group-compact > .ant-time-picker:last-child .ant-time-picker-input:hover {
-    border-color: #40a9ff;
+    border-color: var(--colors-focusPrimary, #40a9ff);
     border-right-width: 1px !important;
   }
   .ant-input-group.ant-input-group-compact > *:last-child:focus,
@@ -576,7 +576,7 @@ export default () => injectGlobal`
   .ant-input-group.ant-input-group-compact > .ant-cascader-picker-focused:last-child .ant-input:focus,
   .ant-input-group.ant-input-group-compact > .ant-mention-wrapper:last-child .ant-mention-editor:focus,
   .ant-input-group.ant-input-group-compact > .ant-time-picker:last-child .ant-time-picker-input:focus {
-    border-color: #40a9ff;
+    border-color: var(--colors-focusPrimary, #40a9ff);
     outline: 0;
     box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
     border-right-width: 1px !important;
@@ -589,7 +589,7 @@ export default () => injectGlobal`
   .ant-input-group.ant-input-group-compact > .ant-cascader-picker-focused:last-child .ant-input:focus .ant-cascader-input,
   .ant-input-group.ant-input-group-compact > .ant-mention-wrapper:last-child .ant-mention-editor:focus .ant-cascader-input,
   .ant-input-group.ant-input-group-compact > .ant-time-picker:last-child .ant-time-picker-input:focus .ant-cascader-input {
-    border-color: #40a9ff;
+    border-color: var(--colors-focusPrimary, #40a9ff);
     outline: 0;
     box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
     border-right-width: 1px !important;
@@ -617,7 +617,7 @@ export default () => injectGlobal`
     width: 100%;
   }
   .ant-input-affix-wrapper:hover .ant-input:not(.ant-input-disabled) {
-    border-color: #40a9ff;
+    border-color: var(--colors-focusPrimary, #40a9ff);
     border-right-width: 1px !important;
   }
   .ant-input-affix-wrapper .ant-input {
@@ -692,7 +692,7 @@ export default () => injectGlobal`
     margin: 0;
     padding: 0;
     display: inline-block;
-    border: 1px solid #d9d9d9;
+    border: 1px solid var(--colors-gray, #d9d9d9);
     border-radius: 6px;
     width: 90px;
   }
@@ -707,17 +707,17 @@ export default () => injectGlobal`
     color: #bfbfbf;
   }
   .ant-input-number:hover {
-    border-color: #40a9ff;
+    border-color: var(--colors-focusPrimary, #40a9ff);
     border-right-width: 1px !important;
   }
   .ant-input-number:focus {
-    border-color: #40a9ff;
+    border-color: var(--colors-focusPrimary, #40a9ff);
     outline: 0;
     box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
     border-right-width: 1px !important;
   }
   .ant-input-number-disabled {
-    background-color: #f5f5f5;
+    background-color: var(--colors-mainBackground, #f5f5f5);
     opacity: 1;
     cursor: not-allowed;
     color: rgba(0, 0, 0, 0.25);
@@ -759,7 +759,7 @@ export default () => injectGlobal`
   }
   .ant-input-number-handler:hover .ant-input-number-handler-up-inner,
   .ant-input-number-handler:hover .ant-input-number-handler-down-inner {
-    color: #40a9ff;
+    color: var(--colors-focusPrimary, #40a9ff);
   }
   .ant-input-number-handler-up-inner,
   .ant-input-number-handler-down-inner {
@@ -807,17 +807,17 @@ export default () => injectGlobal`
     font-size: 12px;
   }
   .ant-input-number:hover {
-    border-color: #40a9ff;
+    border-color: var(--colors-focusPrimary, #40a9ff);
     border-right-width: 1px !important;
   }
   .ant-input-number-focused {
-    border-color: #40a9ff;
+    border-color: var(--colors-focusPrimary, #40a9ff);
     outline: 0;
     box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
     border-right-width: 1px !important;
   }
   .ant-input-number-disabled {
-    background-color: #f5f5f5;
+    background-color: var(--colors-mainBackground, #f5f5f5);
     opacity: 1;
     cursor: not-allowed;
     color: rgba(0, 0, 0, 0.25);
@@ -869,7 +869,7 @@ export default () => injectGlobal`
     padding: 0 7px;
   }
   .ant-input-number-handler-wrap {
-    border-left: 1px solid #d9d9d9;
+    border-left: 1px solid var(--colors-gray, #d9d9d9);
     width: 22px;
     height: 100%;
     background: #fff;
@@ -898,7 +898,7 @@ export default () => injectGlobal`
     height: 60% !important;
   }
   .ant-input-number-handler-down {
-    border-top: 1px solid #d9d9d9;
+    border-top: 1px solid var(--colors-gray, #d9d9d9);
     top: 0;
     cursor: pointer;
   }
@@ -922,10 +922,10 @@ export default () => injectGlobal`
     right: 28px;
   }
   .has-warning .ant-calendar-picker-icon:after {
-    color: #ffc53d;
+    color: var(--colors-warning, #ffc53d);
   }
   .has-error .ant-calendar-picker-icon:after {
-    color: #ff4d4f;
+    color: var(--colors-danger, #ff4d4f);
   }
   .ant-calendar-picker-icon {
     font-size: 14px;
@@ -994,7 +994,7 @@ export default () => injectGlobal`
   .ant-calendar-input-wrap {
     height: 24px;
     padding: 6px 10px;
-    border-bottom: 1px solid #e8e8e8;
+    border-bottom: 1px solid var(--colors-border, #e8e8e8);
   }
   .ant-calendar-input {
     width: 100%;
@@ -1029,7 +1029,7 @@ export default () => injectGlobal`
     height: 40px;
     line-height: 40px;
     text-align: center;
-    border-bottom: 1px solid #e8e8e8;
+    border-bottom: 1px solid var(--colors-border, #e8e8e8);
     user-select: none;
   }
   .ant-calendar-body {
@@ -1038,7 +1038,7 @@ export default () => injectGlobal`
   .ant-calendar-footer {
     padding: 0 12px;
     line-height: 38px;
-    border-top: 1px solid #e8e8e8;
+    border-top: 1px solid var(--colors-border, #e8e8e8);
   }
   .ant-calendar-range {
     width: 552px;

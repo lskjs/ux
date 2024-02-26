@@ -44,16 +44,16 @@ export const Item = styled('div')`
       case 'error':
         return `
         ${Icon} {
-          color: #da4c5a;
+          color: ${getTheme(p.theme, 'colors.danger')};
         }
         label {
-          color: #da4c5a;
+          color: ${getTheme(p.theme, 'colors.danger')};
         }
 `;
       default:
         return '';
     }
-  }}  
+  }}
 ${p => (p.selected && `
     ${Icon} {
       color: ${getTheme(p.theme, 'colors.primary')};

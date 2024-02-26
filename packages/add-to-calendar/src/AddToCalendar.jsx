@@ -8,8 +8,8 @@ import HelpersClass from './helpers';
 const helpers = new HelpersClass();
 
 const styleDropdown = css`
-  background-color: #fff;
-  border: 1px solid #9b9b9b;
+  background-color: var(--colors-white, #fff);
+  border: 1px solid var(--colors-secondary, #9b9b9b);
   border-radius: 2px;
   padding: 5px 10px;
   margin-top: 4px;
@@ -109,7 +109,7 @@ export default class ReactAddToCalendar extends Component {
         <li key={helpers.getRandomKey()}>
           <a
             className={`${currentItem}-link`}
-            style={{ color: '#4a4a4a' }}
+            style={{ color: 'var(--colors-main, #4a4a4a)' }}
             onClick={self.handleDropdownLinkClick}
             href={helpers.buildUrl(self.props.event, currentItem, self.state.isCrappyIE)}
             target="_blank"

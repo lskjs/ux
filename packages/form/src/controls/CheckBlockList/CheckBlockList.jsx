@@ -7,7 +7,7 @@ import CheckBlock from '../CheckBlock';
 import checkBlockStyle from './CheckBlockList.style';
 
 const CheckBlockList = ({ field, form, options, onChange, cols, htmlId }) => (
-  <Row id={htmlId} style={{ margin: 0, border: 'solid 1px #e3e3e3' }}>
+  <Row id={htmlId} style={{ margin: 0, border: 'solid 1px var(--colors-border, #e3e3e3)' }}>
     {(options || []).map(item => (
       <Col
         key={item.value}
