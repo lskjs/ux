@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.7.8](https://github.com/lskjs/ux/compare/v2.7.7...v2.7.8) (2024-03-04)
+
+
+### Bug Fixes
+
+* **list:** colors fix ([25a6ea3](https://github.com/lskjs/ux/commit/25a6ea320c6f70f6ded219affaa4d1986d051e83))
+
+
+
+
+
 ## [2.7.5](https://github.com/lskjs/ux/compare/v2.7.4...v2.7.5) (2024-02-26)
 
 
