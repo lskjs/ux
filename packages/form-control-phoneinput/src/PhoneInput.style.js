@@ -47,10 +47,10 @@ export const Container = styled.div`
     }
   }
   .ant-form-item-control input {
-    border: solid 1px #e3e3e3;
+    border: solid 1px ${(p) => getTheme(p.theme, 'colors.border')};
   }
   .ant-form-item-control .has-error input {
-    border: 1px solid #ee1e31 !important;
+    border: 1px solid ${(p) => getTheme(p.theme, 'colors.danger')} !important;
   }
 `;
 
@@ -60,16 +60,16 @@ export const injectStyles = () => injectGlobal`
 
   }
   .ant-form-item-control input {
-    border: solid 1px #e3e3e3,
+    border: solid 1px var(--colors-border, #e3e3e3),
   }
   .ant-form-item-control .has-error input {
-    border: 1px solid #ee1e31 !important;
+    border: 1px solid var(--colors-danger, #ee1e31) !important;
   }
   .react-tel-input {
     .form-control {
       font-size: 16px;
-      background: #FFFFFF;
-      border: 1px solid #CACACA;
+      background: var(--colors-white, #FFFFFF);
+      border: 1px solid var(--colors-border, #CACACA);
       border-radius: 5px;
       width: 300px;
       outline: none;
@@ -77,19 +77,19 @@ export const injectStyles = () => injectGlobal`
       transition: box-shadow ease .25s, border-color ease .25s;
       color: #495057;
 
-      
+
 
       &:focus, &.open {
-        background-color: #fff;
-        border-color: #80bdff;
+        background-color: var(--colors-white, #FFFFFF);
+        border-color: var(--colors-primary, #80bdff);
         outline: none !important;
         /* box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25); */
       }
       &.invalid-number {
-        border: 1px solid #f44336;
-        border-left-color: #cacaca;
+        border: 1px solid var(--colors-danger, #ee1e31);
+        border-left-color: var(--colors-border, #cacaca);
         &:focus {
-          box-shadow: 0 0 0 1px #f44336;
+          box-shadow: 0 0 0 1px var(--colors-danger, #ee1e31);
         }
       }
       &.open {
@@ -167,7 +167,7 @@ export const injectStyles = () => injectGlobal`
       .divider {
         padding-bottom: 5px;
         margin-bottom: 5px;
-        border-bottom: 1px solid #ccc;
+        border-bottom: 1px solid var(--colors-gray, #6b6b6b);
       }
       .country {
         display: flex;
@@ -175,14 +175,14 @@ export const injectStyles = () => injectGlobal`
         position: relative;
         padding: 12px 9px 13px 46px;
         .dial-code {
-          color: #6b6b6b;
+          color: var(--colors-gray, #6b6b6b);
           line-height: 1.57;
         }
         &:hover {
-          background-color: #f1f1f1;
+          background-color: var(--colors-lightestGray, #f1f1f1);
         }
         &.highlight {
-          background-color: #f1f1f1;
+          background-color: var(--colors-lightestGray, #f1f1f1);
         }
       }
       .flag {
@@ -198,7 +198,7 @@ export const injectStyles = () => injectGlobal`
         z-index: 2;
         position: sticky;
         top: 0;
-        background-color: #fff;
+        background-color: var(--colors-white, #ffffff);
         padding: 10px 0 6px 10px;
       }
       .search-emoji {
@@ -206,7 +206,7 @@ export const injectStyles = () => injectGlobal`
         font-size: 15px;
       }
       .search-box {
-        border: 1px solid #cacaca;
+        border: 1px solid var(--colors-border, #cacaca);
         border-radius: 3px;
         font-size: 15px;
         line-height: 15px;

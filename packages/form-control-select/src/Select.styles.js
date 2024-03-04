@@ -2,16 +2,16 @@ import { css } from '@emotion/core';
 
 const globalStyles = css`
   .lsk-form-select .react-select__control.react-select__control--is-focused {
-    border: solid 1px #7070ff !important;
+    border: solid 1px var(--colors-primary, #0000ff) !important;
     box-shadow: none !important;
   }
 
   .lsk-form-select .react-select__control {
     border-radius: 3px;
-    background-color: #fff;
-    border: solid 1px #e3e3e3;
-    color: #4a4a4a;
-    font-family: 'Gotham Pro', Helvetica, Arial;
+    background-color: var(--colors-white, #fff);
+    border: solid 1px var(--colors-border, #e3e3e3);
+    color: var(--colors-main, #4a4a4a);
+    font-family: var(--fontFamily);
     font-size: 13px;
     line-height: 1.43;
     text-align: left;
@@ -29,8 +29,8 @@ const globalStyles = css`
     font-size: 13px;
     line-height: 1.43;
     text-align: left;
-    color: #4a4a4a;
-    font-family: 'Gotham Pro', Helvetica, Arial;
+    color: var(--colors-main, #4a4a4a);
+    font-family: var(--fontFamily);
     overflow: hidden;
     text-overflow: ellipsis;
   }
@@ -40,11 +40,11 @@ const globalStyles = css`
   }
 
   .lsk-form-select .Select-arrow {
-    border-color: rgb(112, 112, 255) transparent transparent !important;
+    border-color: var(--colors-primary, #0000ff) transparent transparent !important;
   }
 
   .lsk-form-select.is-open .Select-arrow {
-    border-color: transparent transparent rgb(112, 112, 255) !important;
+    border-color: transparent transparent var(--colors-primary, #0000ff) !important;
   }
 
   .lsk-form-select .Select-arrow-zone {
@@ -61,31 +61,31 @@ const globalStyles = css`
     padding: 13px 12px !important;
     font-size: 14px !important;
     line-height: 1.43 !important;
-    font-family: 'Gotham Pro', Helvetica, Arial;
+    font-family: var(--fontFamily);
   }
 
   .lsk-form-select .react-select__option.react-select__option--is-focused {
-    background-color: #eff4fa !important;
-    color: #4a4a4a !important;
+    background-color: var(--colors-lighterPrimary, #f0f0ff) !important;
+    color: var(--colors-main, #4a4a4a) !important;
   }
 
   .lsk-form-select .react-select__option.react-select__option--is-selected {
-    background-color: #f0f0ff !important;
-    color: #7070ff !important;
+    background-color: var(--colors-lighterPrimary, #f0f0ff) !important;
+    color: var(--colors-primary, #0000ff) !important;
   }
 
   .lsk-form-select.react-select__control--is-focused > .react-select__control {
-    border-color: #B3B3B3;
+    border-color: var(--colors-gray, #b3b3b3);
     box-shadow: none !important;
   }
 
   .lsk-form-select.has-error .react-select__control {
-    border-color: #da4c5a !important;
-    color: #da4c5a !important;
+    border-color: var(--colors-danger, #da4c5a) !important;
+    color: var(--colors-danger, #da4c5a) !important;
   }
 
   .lsk-form-select.has-error .react-select__control {
-    border-color: #da4c5a !important;
+    border-color: var(--colors-danger, #da4c5a) !important;
   }
 
   .lsk-form-select .react-select__clear {
