@@ -396,7 +396,7 @@ export const HoverRowWrapper = styled(filteredHoverTag)`
     p.checked &&
     css`
       > .table-gird-row {
-        background-color: ${getTheme(p.theme, 'colors.semiPrimary')};
+        background-color: ${getTheme(p.theme, 'colors.lightPrimary')};
       }
     `}
 `;
