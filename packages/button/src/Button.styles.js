@@ -557,7 +557,7 @@ const primaryTextTheme = ({ theme }) => css`
 
   &:focus {
     color: ${getTheme(theme, 'colors.primary')};
-    background-color: ${getTheme(theme, 'colors.focusPrimaryText')};
+    background-color: ${getTheme(theme, 'colors.lightPrimary')};
   }
 
   &:active {
