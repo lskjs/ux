@@ -507,8 +507,8 @@ class ReactPhoneInput extends Component {
     });
     const inputClasses = classNames({
       'form-control': true,
-      'buzz-input': true,
-      'buzz-auth-input': this.props.new,
+      'id-input': true,
+      'id-auth-input': this.props.new,
       'invalid-number': !this.props.isValid(this.state.formattedNumber.replace(/\D/g, '')),
     });
 

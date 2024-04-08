@@ -10,9 +10,9 @@ class Slider extends Component {
     return (
       <div
         className={cx({
-          'buzz-slider': true,
+          'id-slider': true,
           'with-graphs': graphs,
-          'buzz-slider-inverse-track': inverseTrack,
+          'id-slider-inverse-track': inverseTrack,
         })}
         style={styleWrapper}
       >

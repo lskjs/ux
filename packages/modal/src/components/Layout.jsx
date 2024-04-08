@@ -35,7 +35,7 @@ const transitionLayout = css`
   }
 
 
-  > .stateful-modal-inner .modal-help .buzz-modal-content {
+  > .stateful-modal-inner .modal-help .id-modal-content {
     padding-top: 8px;
   }
 `;

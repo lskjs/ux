@@ -23,7 +23,7 @@ class ModalContent extends PureComponent {
         align={align}
         size={size}
         className={cx({
-          'buzz-modal-content': true,
+          'id-modal-content': true,
           [className]: className,
         })}
         {...props}
