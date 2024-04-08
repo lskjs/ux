@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/form3",
-  "version": "2.7.5",
+  "version": "2.8.0",
   "description": "Open source form library for React and React Native with updated formik",
   "keywords": [
     "form",

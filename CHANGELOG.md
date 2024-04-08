@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.8.0](https://github.com/lskjs/cli/compare/v2.7.8...v2.8.0) (2024-04-08)
+
+
+### Features
+
+* remove mentions ([e62842c](https://github.com/lskjs/cli/commit/e62842c55ad14b3c4462d2797c8699f47e8fc963))
+
+
+
+
+
 ## [2.7.8](https://github.com/lskjs/cli/compare/v2.7.7...v2.7.8) (2024-03-04)
 
 
