@@ -1,14 +1,15 @@
 /* eslint-disable react/jsx-wrap-multilines */
 /* eslint import/no-extraneous-dependencies: 0 */
-import React, { Component, useContext, useState } from 'react';
 import { css } from '@emotion/core';
 import autobind from '@lskjs/autobind';
-import Story from '@lskjs/dev/Story';
 import Button from '@lskjs/button';
+import Story from '@lskjs/dev/Story/UappStory';
 import Promise from 'bluebird';
-import Modal from './Modal2';
-import StatefulModal from './StatefulModal';
-import { ModalProvider, ModalConsumer, ModalContext } from './Global';
+import React, { Component, useContext, useState } from 'react';
+
+import { ModalConsumer, ModalContext, ModalProvider } from '../src/Global';
+import Modal from '../src/Modal2';
+import StatefulModal from '../src/StatefulModal';
 
 global.Promise = Promise;
 
@@ -37,11 +38,11 @@ class ModalWithRoutesExample extends Component {
   @autobind
   getRoutes() {
     const ctx = this;
-    return function(modal) {
+    return function (modal) {
       return [
         {
           path: '/',
-          action: async data => {
+          action: async (data) => {
             // eslint-disable-line
             const { pathname } = data;
             console.log('default');
@@ -99,7 +100,7 @@ class ModalWithRoutesExample extends Component {
             },
             {
               path: '/path1/:id',
-              action: async data => {
+              action: async (data) => {
                 const { id } = data.params;
                 return {
                   title: `Path 1 subPath with ${id} title`,
@@ -124,7 +125,7 @@ class ModalWithRoutesExample extends Component {
           ],
         },
       ];
-    }.bind(this);
+    };
   }
   @autobind
   async toPath(...args) {
@@ -146,7 +147,7 @@ class ModalWithRoutesExample extends Component {
         {...props}
         routes={this.getRoutes()}
         preRenderRoutes={['/path1']}
-        onOpen={modal => {
+        onOpen={(modal) => {
           modal.toPath('/path1');
         }}
       >
@@ -156,40 +157,64 @@ class ModalWithRoutesExample extends Component {
   }
 }
 
-export default ({ storiesOf }) =>
-  storiesOf('modal/Modal2', module)
-    .add('1. Easy use', () => (
-      <Story>
-        <Modal
-          title="title"
-          size="small"
-          trigger="trigger"
-          subtitle="subtitle"
-          image="https://picsum.photos/1280/720/?random"
-          content="content"
-          footer="footer"
-          onClose={() => console.log('onClose')}
-          onOpen={() => console.log('onOpen')}
-        />
-      </Story>
-    ))
-    .add('2. defaultVisible', () => (
-      <Story>
-        <Modal
-          size="small"
-          trigger="trigger"
-          title="title"
-          subtitle="subtitle"
-          image="https://picsum.photos/1280/720/?random"
-          content="content"
-          footer="footer"
-          defaultVisible
-        />
-      </Story>
-    ))
-    .add('3. Children', () => (
-      <Story>
-        <Modal size="small" defaultVisible>
+export default {
+  title: 'modal/Modal2',
+};
+
+export const EasyUse = () => (
+  <Story>
+    <Modal
+      title="title"
+      size="small"
+      trigger="trigger"
+      subtitle="subtitle"
+      image="https://picsum.photos/1280/720/?random"
+      content="content"
+      footer="footer"
+      onClose={() => console.log('onClose')}
+      onOpen={() => console.log('onOpen')}
+    />
+  </Story>
+);
+
+export const DefaultVisible = () => (
+  <Story>
+    <Modal
+      size="small"
+      trigger="trigger"
+      title="title"
+      subtitle="subtitle"
+      image="https://picsum.photos/1280/720/?random"
+      content="content"
+      footer="footer"
+      defaultVisible
+    />
+  </Story>
+);
+
+export const Children = () => (
+  <Story>
+    <Modal size="small" defaultVisible>
+      <Title>title</Title>
+      <Subtitle>Subtitle</Subtitle>
+      <Description>Description</Description>
+      <Help>Help</Help>
+      <Image src="https://picsum.photos/1280/720/?random" />
+      <Content>content</Content>
+      <Footer>
+        <Trigger>
+          <Button paint="primary">OK</Button>
+        </Trigger>
+      </Footer>
+    </Modal>
+  </Story>
+);
+
+export const ChildrenAsFunction = () => (
+  <Story>
+    <Modal size="small" defaultVisible>
+      {({ modal }) => (
+        <>
           <Title>title</Title>
           <Subtitle>Subtitle</Subtitle>
           <Description>Description</Description>
@@ -197,148 +222,128 @@ export default ({ storiesOf }) =>
           <Image src="https://picsum.photos/1280/720/?random" />
           <Content>content</Content>
           <Footer>
-            <Trigger>
-              <Button paint="primary">OK</Button>
-            </Trigger>
+            <Button paint="primary" onClick={() => modal.close()}>
+              OK
+            </Button>
           </Footer>
-        </Modal>
-      </Story>
-    ))
-    .add('4. Children as function', () => (
-      <Story>
-        <Modal size="small" defaultVisible>
-          {({ modal }) => (
-            <>
-              <Title>title</Title>
-              <Subtitle>Subtitle</Subtitle>
-              <Description>Description</Description>
-              <Help>Help</Help>
-              <Image src="https://picsum.photos/1280/720/?random" />
-              <Content>content</Content>
-              <Footer>
-                <Button paint="primary" onClick={() => modal.close()}>
-                  OK
-                </Button>
-              </Footer>
-            </>
-          )}
-        </Modal>
-      </Story>
-    ))
-    .add('5. Children with random div wrappers', () => (
-      <Story>
-        <Modal size="small" defaultVisible>
-          <Title>title</Title>
-          <Subtitle>Subtitle</Subtitle>
-          <div>
-            <Description>Description</Description>
-            <Help>Help</Help>
-            <Image src="https://picsum.photos/1280/720/?random" />
-            <Content>content</Content>
-          </div>
-          <Footer>
-            <Button paint="primary">OK</Button>
-          </Footer>
-        </Modal>
-      </Story>
-    ))
-    .add('6. Large content', () => (
-      <Story>
+        </>
+      )}
+    </Modal>
+  </Story>
+);
+
+export const ChildrenWithRandomDivWrappers = () => (
+  <Story>
+    <Modal size="small" defaultVisible>
+      <Title>title</Title>
+      <Subtitle>Subtitle</Subtitle>
+      <div>
+        <Description>Description</Description>
+        <Help>Help</Help>
+        <Image src="https://picsum.photos/1280/720/?random" />
+        <Content>content</Content>
+      </div>
+      <Footer>
+        <Button paint="primary">OK</Button>
+      </Footer>
+    </Modal>
+  </Story>
+);
+
+export const LargeContent = () => (
+  <Story>
+    <Modal
+      size="small"
+      trigger="trigger"
+      title="title"
+      subtitle="subtitle"
+      image="https://picsum.photos/1280/720/?random"
+      content={
+        <div>
+          {['Title', 'Title2', 'Title3'].map((title) => (
+            <React.Fragment key={title}>
+              <h3>{title}</h3>
+              <p>{lorem}</p>
+            </React.Fragment>
+          ))}
+        </div>
+      }
+      footer="footer"
+      defaultVisible
+    />
+  </Story>
+);
+
+export const ModalWithProps = () => (
+  <Story>
+    <Modal
+      // title="asd"
+      size="large"
+      // children={<Button>asd</Button>}
+      // subHeader={<Button>asd</Button>}
+      // closeComponent={() => console.log('closeComponent')}
+      trigger={<div>asd</div>}
+      // color="#ff0000"
+      className={style}
+      closable={false}
+      // closeOnBackdrop={false}
+      // body="asd"
+      // disabled
+      // small
+      // onEdit={() => console.log('onEdit')}
+      onClose={() => console.log('onClose')}
+      onOpen={() => console.log('onOpen')}
+    >
+      <Title>title</Title>
+      <Subtitle>Subtitle</Subtitle>
+      <div>
+        <Description>Description</Description>
+        <Help>Help</Help>
+        <Image src="https://picsum.photos/1280/720/?random" />
+        <Content>content</Content>
+      </div>
+      <Footer>
+        <Button paint="primary">OK</Button>
+      </Footer>
+    </Modal>
+  </Story>
+);
+
+export const NestedModals = () => (
+  <Story>
+    <Modal
+      size="small"
+      trigger="trigger"
+      title="title"
+      subtitle="subtitle"
+      image="https://picsum.photos/1280/720/?random"
+      content={
         <Modal
-          size="small"
-          trigger="trigger"
-          title="title"
-          subtitle="subtitle"
-          image="https://picsum.photos/1280/720/?random"
-          content={
-            <div>
-              {['Title', 'Title2', 'Title3'].map(title => (
-                <React.Fragment key={title}>
-                  <h3>{title}</h3>
-                  <p>{lorem}</p>
-                </React.Fragment>
-              ))}
-            </div>
-          }
-          footer="footer"
-          defaultVisible
-        />
-      </Story>
-    ))
-    .add('7. Modal with props', () => (
-      <Story>
-        <Modal
-          // title="asd"
           size="large"
-          // children={<Button>asd</Button>}
-          // subHeader={<Button>asd</Button>}
-          // closeComponent={() => console.log('closeComponent')}
-          trigger={<div>asd</div>}
-          // color="#ff0000"
-          className={style}
-          closable={false}
-          // closeOnBackdrop={false}
-          // body="asd"
-          // disabled
-          // small
-          // onEdit={() => console.log('onEdit')}
-          onClose={() => console.log('onClose')}
-          onOpen={() => console.log('onOpen')}
-        >
-          <Title>title</Title>
-          <Subtitle>Subtitle</Subtitle>
-          <div>
-            <Description>Description</Description>
-            <Help>Help</Help>
-            <Image src="https://picsum.photos/1280/720/?random" />
-            <Content>content</Content>
-          </div>
-          <Footer>
-            <Button paint="primary">OK</Button>
-          </Footer>
-        </Modal>
-      </Story>
-    ))
-    .add('8. Nested modals', () => (
-      <Story>
-        <Modal
-          size="small"
           trigger="trigger"
           title="title"
           subtitle="subtitle"
           image="https://picsum.photos/1280/720/?random"
           content={
             <Modal
-              size="large"
               trigger="trigger"
               title="title"
               subtitle="subtitle"
               image="https://picsum.photos/1280/720/?random"
               content={
                 <Modal
+                  size="small"
                   trigger="trigger"
                   title="title"
                   subtitle="subtitle"
                   image="https://picsum.photos/1280/720/?random"
                   content={
                     <Modal
-                      size="small"
                       trigger="trigger"
                       title="title"
                       subtitle="subtitle"
                       image="https://picsum.photos/1280/720/?random"
-                      content={
-                        <Modal
-                          trigger="trigger"
-                          title="title"
-                          subtitle="subtitle"
-                          image="https://picsum.photos/1280/720/?random"
-                          content="nested"
-                          footer="nested footer"
-                          onClose={() => console.log('onClose')}
-                          onOpen={() => console.log('onOpen')}
-                        />
-                      }
+                      content="nested"
                       footer="nested footer"
                       onClose={() => console.log('onClose')}
                       onOpen={() => console.log('onOpen')}
@@ -354,195 +359,20 @@ export default ({ storiesOf }) =>
               onOpen={() => console.log('onOpen')}
             />
           }
-          footer="footer"
+          footer="nested footer"
           onClose={() => console.log('onClose')}
           onOpen={() => console.log('onOpen')}
         />
-      </Story>
-    ))
-    .add('9. Modal with router', () => (
-      <Story>
-        <ModalWithRoutesExample>Modal trigger</ModalWithRoutesExample>
-      </Story>
-    ));
-// .add('2. With title and wrap', () => (
-//   <Story>
-//     <Modal>
-//       <Trigger>
-//         <button>Open modal</button>
-//       </Trigger>
-//       <Content title="Sample title">
-//       Sample content
-//       </Content>
-//     </Modal>
-//   </Story>
-// ))
-// .add('3. Trigger close', () => (
-//   <Story>
-//     <Modal>
-//       <Trigger>
-//         <button>Trigger modal</button>
-//       </Trigger>
-//       <Content body>
-//       Sample content, and &nbsp;
-//         <Trigger type="close">
-//           <a>close</a>
-//         </Trigger>
-//       </Content>
-//     </Modal>
-//   </Story>
-// ))
-// .add('4. Full control', () => (
-//   <Story>
-//     <Modal>
-//       <Trigger>
-//         <button>Open modal</button>
-//       </Trigger>
-//       <Content>
-//         <Header closeButton>
-//         Hello!
-//         </Header>
-//         <Body>
-//         Some info content
-//         </Body>
-//         <Footer>
-//           <Close>
-//             <button>CLOSE ME</button>
-//           </Close>
-//         </Footer>
-//       </Content>
-//     </Modal>
-//   </Story>
-// ))
-// .add('5. Nested', () => (
-//   <Story>
-//     <Modal>
-//       <Trigger>
-//         <button>Open modal</button>
-//       </Trigger>
-//       <Content>
-//         <Header closeButton>
-//         Hello!
-//         </Header>
-//         <Body>
-//         Some info content
-//           <Modal>
-//             <Trigger>
-//               <button>Open new modal</button>
-//             </Trigger>
-//             <Content>
-//               <Header closeButton>
-//               Hello!
-//               </Header>
-//               <Body>
-//               Some info content
-//               </Body>
-//               <Footer>
-//                 <Close>
-//                   <button>CLOSE ME</button>
-//                 </Close>
-//               </Footer>
-//             </Content>
-//           </Modal>
-//         </Body>
-//         <Footer>
-//           <Close>
-//             <button>CLOSE ME</button>
-//           </Close>
-//         </Footer>
-//       </Content>
-//     </Modal>
-//   </Story>
-// ))
+      }
+      footer="footer"
+      onClose={() => console.log('onClose')}
+      onOpen={() => console.log('onOpen')}
+    />
+  </Story>
+);
 
-// .add('6. External open and close', () => {
-//   class ComponentWithModal extends Component {
-//     render() {
-//       return (
-//         <div>
-//           <button onClick={() => this.modal.open()}>Open</button>
-//           <button onClick={() => this.modal.close()}>Close</button>
-//           <Modal ref={modal => this.modal = modal}>
-//             <Content>
-//               <Header closeButton>
-//                 Hello!
-//               </Header>
-//               <Body>
-//                 Some info content
-//               </Body>
-//               <Footer>
-//                 <Close>
-//                   <button>CLOSE ME</button>
-//                 </Close>
-//               </Footer>
-//             </Content>
-//           </Modal>
-//         </div>
-//       );
-//     }
-//   }
-//   return (
-//     <Story>
-//       <ComponentWithModal />
-//     </Story>
-//   );
-// })
-// .add('7. Visible by default', () => (
-//   <Story>
-//     <Modal visible>
-//       <Trigger>
-//         <button>Open modal</button>
-//       </Trigger>
-//       <Content>
-//         Sample content
-//       </Content>
-//     </Modal>
-//   </Story>
-// ))
-// .add('8. e.preventDefault', () => (
-//   <Story>
-//     <Modal>
-//       <Trigger>
-//         some trigger text, open modal <br />
-//         <button onClick={() => console.log('log1 log1 log1')}>Some console.log into modal and open modal</button>  <br />
-//         <button onClick={(e) => { e.preventDefault(); console.log('log2 log2 log2'); }}>Some console.log into modal  without open modal</button>
-//       </Trigger>
-//       <Content>
-//         Sample content
-//       </Content>
-//     </Modal>
-//   </Story>
-// ));
-
-// .add('Modal async trigger', () => {
-//   // npm i eventemitter3
-//   if (!require('eventemitter3')) {
-//     return <div>npm i eventemitter3</div>
-//   }
-//   const emitter = new require('eventemitter3').EventEmitter;
-//   // const emitter = {}
-//   const open = () => {
-//     setTimeout(() => {
-//       emitter.emit('open');
-//     }, 1000);
-//   };
-//   const close = () => {
-//     setTimeout(() => {
-//       emitter.emit('close');
-//     }, 1000);
-//   };
-//   return (<div>
-//     <button onClick={open}>
-//       Open async modal
-//     </button>
-//     <Modal emitter={emitter}>
-//       <Content>
-//         Sample content
-//         <button onClick={close}>
-//           Close async modal
-//         </button>
-//       </Content>
-//     </Modal>
-// </Story>
-//   </div>);
-// });
+export const ModalWithRouter = () => (
+  <Story>
+    <ModalWithRoutesExample>Modal trigger</ModalWithRoutesExample>
+  </Story>
+);

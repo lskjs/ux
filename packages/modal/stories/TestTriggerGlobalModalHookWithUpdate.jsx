@@ -1,7 +1,7 @@
-import React, { useEffect, useContext } from 'react';
 import Button from '@lskjs/button';
+import React, { useContext, useEffect } from 'react';
 
-import { ModalContext } from '../index';
+import { ModalContext } from '../src/Global';
 
 const TestTriggerGlobalModalHookWithUpdate = () => {
   const modal = useContext(ModalContext);

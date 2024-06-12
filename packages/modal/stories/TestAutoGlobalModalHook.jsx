@@ -1,14 +1,14 @@
-import React, { useEffect, useContext } from 'react';
 import Button from '@lskjs/button';
+import React, { useContext, useEffect } from 'react';
 
-import { ModalContext } from '../index';
+import { ModalContext } from '../src/Global';
 
-const TestManualGlobalModalHook = () => {
+const TestAutoGlobalModalHook = () => {
   const modal = useContext(ModalContext);
   useEffect(() => {
-    const refModal = modal.create('test-1', { size: 'small' }, ({ Modal: M, methods, ref, id }) => (
+    modal.create('test-2', { size: 'small', defaultVisible: true }, ({ Modal: M, methods, ref, id }) => (
       <>
-        <M.Title>TestManualGlobalModalHook</M.Title>
+        <M.Title>TestAutoGlobalModalHook </M.Title>
         <M.Content>
           Пример контента
           <h1>Заголовок</h1>
@@ -23,13 +23,8 @@ const TestManualGlobalModalHook = () => {
         </M.Footer>
       </>
     ));
-    setTimeout(() => {
-      if (refModal && refModal.current) {
-        refModal.current.open();
-      }
-    }, 0);
   }, []);
   return '';
 };
 
-export default TestManualGlobalModalHook;
+export default TestAutoGlobalModalHook;

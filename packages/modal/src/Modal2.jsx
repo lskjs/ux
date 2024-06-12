@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+/** @jsxRuntime classic */
 /** @jsx jsx */
 import { css, Global, jsx } from '@emotion/core';
 import autobind from '@lskjs/autobind';

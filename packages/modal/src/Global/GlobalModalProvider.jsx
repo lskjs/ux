@@ -223,9 +223,15 @@ class GlobalModalProvider extends Component {
    * @method open
    * @extends simple
    */
-  open(id) {
+  open(...args) {
+    const [id, ...rest] = args;
     const modal = this.get(id);
     if (!modal) return null;
+
+    if (rest.length) {
+      this.update(id, ...rest);
+    }
+
     modal.ref.current.open();
     return id;
   }
@@ -235,9 +241,14 @@ class GlobalModalProvider extends Component {
    * @method open
    * @extends simple
    */
-  close(id) {
+  close(...args) {
+    const [id, ...rest] = args;
     const modal = this.get(id);
     if (!modal) return null;
+    if (rest.length) {
+      this.update(id, ...rest);
+    }
+
     modal.ref.current.close();
     return id;
   }
