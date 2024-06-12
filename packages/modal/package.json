@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/modal",
-  "version": "2.8.0",
+  "version": "2.9.0",
   "description": "LSK ux subrepo: modal",
   "keywords": [],
   "repository": "https://github.com/lskjs/ux/tree/master/packages/modal",

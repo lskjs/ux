@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.9.0](https://github.com/lskjs/ux/compare/v2.8.0...v2.9.0) (2024-06-12)
+
+
+### Features
+
+* **modal:** improve global modal .open & .close methods ([3f75f9f](https://github.com/lskjs/ux/commit/3f75f9feefc63795e7ff16f7c2cc4032ee09971f))
+
+
+
+
+
 # [2.8.0](https://github.com/lskjs/ux/compare/v2.7.8...v2.8.0) (2024-04-08)
 
 

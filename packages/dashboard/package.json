@@ -1,6 +1,6 @@
 {
   "name": "@lskjs/dashboard",
-  "version": "2.8.0",
+  "version": "2.9.0",
   "description": "LSK ux subrepo: dashboard",
   "keywords": [],
   "repository": "https://github.com/lskjs/ux/tree/master/packages/dashboard",
@@ -29,7 +29,7 @@
     "@lskjs/button": "2.3.0-beta.4",
     "@lskjs/css": "2.8.0",
     "@lskjs/dev": "2.8.0",
-    "@lskjs/modal": "2.8.0",
+    "@lskjs/modal": "2.9.0",
     "@lskjs/theme": "2.8.0",
     "@lskjs/ui": "2.8.0",
     "@lskjs/utils": "0.39.0",
